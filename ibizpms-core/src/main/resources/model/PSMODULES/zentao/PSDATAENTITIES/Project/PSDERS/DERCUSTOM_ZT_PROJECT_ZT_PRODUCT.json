@@ -1,5 +1,6 @@
 {
   "codeName" : "Product",
+  "dERSubType" : "DER1N",
   "dERType" : "DERCUSTOM",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DERCUSTOM_ZT_PROJECT_ZT_PRODUCT.json",
   "logicName" : "产品",

@@ -143,6 +143,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/activate`, _data);
+        }
         if (_context.project && _context.testtask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/activate`, _data);
@@ -163,6 +167,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async Block(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/block`, _data);
+        }
         if (_context.project && _context.testtask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/block`, _data);
@@ -183,6 +191,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/close`, _data);
+        }
         if (_context.project && _context.testtask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/close`, _data);
@@ -203,6 +215,16 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks`, _data);
+        }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -235,6 +257,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testtask) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}`);
+            return res;
+        }
         if (_context.project && _context.testtask) {
             const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}`);
             return res;
@@ -255,6 +281,12 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testtasks/getdraft`, _data);
+            return res;
+        }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -292,6 +324,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async LinkCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/linkcase`, _data);
+        }
         if (_context.project && _context.testtask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/linkcase`, _data);
@@ -312,6 +348,9 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testtask) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}`);
+        }
         if (_context.project && _context.testtask) {
             return this.http.delete(`/projects/${_context.project}/testtasks/${_context.testtask}`);
         }
@@ -330,6 +369,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/start`, _data);
+        }
         if (_context.project && _context.testtask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/start`, _data);
@@ -350,6 +393,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async UnlinkCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/unlinkcase`, _data);
+        }
         if (_context.project && _context.testtask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/unlinkcase`, _data);
@@ -370,6 +417,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}`, _data);
+        }
         if (_context.project && _context.testtask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/testtasks/${_context.testtask}`, _data);
@@ -390,6 +441,9 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/fetchdefault`, _data);
+        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/fetchdefault`, _data);
         }
@@ -408,6 +462,9 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskService
      */
     async FetchProjectTestTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/fetchprojecttesttask`, _data);
+        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/fetchprojecttesttask`, _data);
         }
@@ -428,6 +485,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskServiceBase
      */
     public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/activatebatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/activatebatch`,_data);
@@ -450,6 +511,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskServiceBase
      */
     public async BlockBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/blockbatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/blockbatch`,_data);
@@ -472,6 +537,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskServiceBase
      */
     public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/closebatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/closebatch`,_data);
@@ -494,6 +563,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskServiceBase
      */
     public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/linkcasebatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/linkcasebatch`,_data);
@@ -516,6 +589,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskServiceBase
      */
     public async StartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/startbatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/startbatch`,_data);
@@ -538,6 +615,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @memberof TestTaskServiceBase
      */
     public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/unlinkcasebatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/unlinkcasebatch`,_data);

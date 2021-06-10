@@ -427,7 +427,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取指定用户数据", tags = {"项目" } ,notes = "获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchaccount")
 	public ResponseEntity<List<ProjectDTO>> fetchaccount(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchAccount(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -452,7 +451,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取默认查询", tags = {"项目" } ,notes = "获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurdefaultquery")
 	public ResponseEntity<List<ProjectDTO>> fetchcurdefaultquery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurDefaultQuery(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -465,7 +463,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取默认查询（项目导航）", tags = {"项目" } ,notes = "获取默认查询（项目导航）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurdefaultqueryexp")
 	public ResponseEntity<List<ProjectDTO>> fetchcurdefaultqueryexp(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurDefaultQueryExp(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -478,7 +475,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取当前计划项目", tags = {"项目" } ,notes = "获取当前计划项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurplanproject")
 	public ResponseEntity<List<ProjectDTO>> fetchcurplanproject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurPlanProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -491,7 +487,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取当前项目", tags = {"项目" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurproduct")
 	public ResponseEntity<List<ProjectDTO>> fetchcurproduct(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurProduct(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -504,7 +499,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取当前用户项目", tags = {"项目" } ,notes = "获取当前用户项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcuruser")
 	public ResponseEntity<List<ProjectDTO>> fetchcuruser(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurUser(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -517,7 +511,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取当前用户项目（企业版）", tags = {"项目" } ,notes = "获取当前用户项目（企业版）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurusersa")
 	public ResponseEntity<List<ProjectDTO>> fetchcurusersa(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurUserSa(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -530,7 +523,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchdefault")
 	public ResponseEntity<List<ProjectDTO>> fetchdefault(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchDefault(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -543,7 +535,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取ES批量的导入", tags = {"项目" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchesbulk")
 	public ResponseEntity<List<ProjectDTO>> fetchesbulk(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchESBulk(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -556,7 +547,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取参与项目(年度总结)", tags = {"项目" } ,notes = "获取参与项目(年度总结)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchinvolvedproject")
 	public ResponseEntity<List<ProjectDTO>> fetchinvolvedproject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchInvolvedProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -569,7 +559,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取参与项目完成需求任务bug", tags = {"项目" } ,notes = "获取参与项目完成需求任务bug")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchinvolvedproject_storytaskbug")
 	public ResponseEntity<List<ProjectDTO>> fetchinvolvedproject_storytaskbug(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchInvolvedProject_StoryTaskBug(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -582,7 +571,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取我的数据", tags = {"项目" } ,notes = "获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchmy")
 	public ResponseEntity<List<ProjectDTO>> fetchmy(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchMy(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -595,7 +583,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取我的项目", tags = {"项目" } ,notes = "获取我的项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchmyproject")
 	public ResponseEntity<List<ProjectDTO>> fetchmyproject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchMyProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -608,7 +595,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取项目团队", tags = {"项目" } ,notes = "获取项目团队")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchprojectteam")
 	public ResponseEntity<List<ProjectDTO>> fetchprojectteam(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchProjectTeam(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -621,7 +607,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取需求影响项目", tags = {"项目" } ,notes = "获取需求影响项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchstoryproject")
 	public ResponseEntity<List<ProjectDTO>> fetchstoryproject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchStoryProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -634,7 +619,6 @@ public class ProjectResource {
 	@ApiOperation(value = "获取未完成项目", tags = {"项目" } ,notes = "获取未完成项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchundoneproject")
 	public ResponseEntity<List<ProjectDTO>> fetchundoneproject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchUnDoneProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

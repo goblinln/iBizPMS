@@ -624,18 +624,10 @@
   }, {
     "codeName" : "FetchCurProduct",
     "methodType" : "FETCH",
-    "name" : "FetchCurProduct",
+    "name" : "CurProduct",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "CurProduct"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCurProduct"
     },
     "builtinMethod" : false
   }, {
@@ -2210,18 +2202,10 @@
   }, {
     "codeName" : "FetchCurProduct",
     "methodType" : "FETCH",
-    "name" : "FetchCurProduct",
+    "name" : "CurProduct",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "CurProduct"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCurProduct"
     },
     "builtinMethod" : false
   }, {
@@ -3926,6 +3910,28 @@
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json",
   "enableUIActions" : 15,
   "logicName" : "项目",
+  "getMinorPSAppDERSs" : [ {
+    "actionRSMode" : 1,
+    "codeName" : "Projects",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "name" : "PRODUCT__PROJECT",
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ],
   "name" : "ZT_PROJECT",
   "getPSDEName" : "ZT_PROJECT",
   "getPSDEServiceAPI" : {

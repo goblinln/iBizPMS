@@ -366,6 +366,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/activate`, _data);
+        }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/activate`, _data);
@@ -386,6 +390,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
+        }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
@@ -406,6 +414,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Change(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/change`, _data);
+        }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/change`, _data);
@@ -426,6 +438,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/close`, _data);
+        }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/close`, _data);
@@ -446,6 +462,16 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories`, _data);
+        }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -478,6 +504,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`);
+            return res;
+        }
         if (_context.project && _context.story) {
             const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}`);
             return res;
@@ -498,6 +528,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async GetByVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/getbyversion`, _data);
+        }
         if (_context.project && _context.story) {
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/getbyversion`, _data);
         }
@@ -516,6 +549,12 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/stories/getdraft`, _data);
+            return res;
+        }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -553,6 +592,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`);
+        }
         if (_context.project && _context.story) {
             return this.http.delete(`/projects/${_context.project}/stories/${_context.story}`);
         }
@@ -571,6 +613,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/review`, _data);
+        }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/review`, _data);
@@ -591,6 +637,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async StoryFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storyfavorites`, _data);
+        }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/storyfavorites`, _data);
@@ -611,6 +661,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storynfavorites`, _data);
+        }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/storynfavorites`, _data);
@@ -631,6 +685,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`, _data);
+        }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/stories/${_context.story}`, _data);
@@ -651,6 +709,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchdefault`, _data);
+        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/stories/fetchdefault`, _data);
         }
@@ -669,6 +730,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async FetchParentDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchparentdefault`, _data);
+        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/stories/fetchparentdefault`, _data);
         }
@@ -687,6 +751,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async FetchProjectStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchprojectstories`, _data);
+        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/stories/fetchprojectstories`, _data);
         }
@@ -705,6 +772,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async FetchStoryRelated(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchstoryrelated`, _data);
+        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/stories/fetchstoryrelated`, _data);
         }
@@ -725,6 +795,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryServiceBase
      */
     public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/activatebatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/activatebatch`,_data);
@@ -747,6 +821,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryServiceBase
      */
     public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/assigntobatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/assigntobatch`,_data);
@@ -769,6 +847,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryServiceBase
      */
     public async ChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/changebatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/changebatch`,_data);
@@ -791,6 +873,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryServiceBase
      */
     public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/closebatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/closebatch`,_data);
@@ -813,6 +899,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryServiceBase
      */
     public async ReviewBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/reviewbatch`,_data);
+        }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/stories/reviewbatch`,_data);

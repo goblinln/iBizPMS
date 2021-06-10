@@ -334,5 +334,288 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品项目建立任务", tags = {"任务" },  notes = "根据产品项目建立任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks")
+    public ResponseEntity<TaskDTO> createByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+		taskService.create(domain);
+        TaskDTO dto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品项目批量建立任务", tags = {"任务" },  notes = "根据产品项目批量建立任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/batch")
+    public ResponseEntity<Boolean> createBatchByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domainlist=taskMapping.toDomain(taskdtos);
+        for(Task domain:domainlist){
+            domain.setProject(project_id);
+        }
+        taskService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'READ')")
+    @ApiOperation(value = "根据产品项目获取任务", tags = {"任务" },  notes = "根据产品项目获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'DELETE')")
+    @ApiOperation(value = "根据产品项目删除任务", tags = {"任务" },  notes = "根据产品项目删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}")
+    public ResponseEntity<Boolean> removeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'DELETE')")
+    @ApiOperation(value = "根据产品项目批量删除任务", tags = {"任务" },  notes = "根据产品项目批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/tasks/batch")
+    public ResponseEntity<Boolean> removeBatchByProductProject(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @VersionCheck(entity = "task" , versionfield = "lastediteddate")
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品项目更新任务", tags = {"任务" },  notes = "根据产品项目更新任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> updateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+		taskService.update(domain);
+        TaskDTO dto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'ACTIVATE')")
+    @ApiOperation(value = "根据产品项目激活", tags = {"任务" },  notes = "根据产品项目激活")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/activate")
+    public ResponseEntity<TaskDTO> activateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.activate(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'ASSIGNTO')")
+    @ApiOperation(value = "根据产品项目指派/转交", tags = {"任务" },  notes = "根据产品项目指派/转交")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/assignto")
+    public ResponseEntity<TaskDTO> assignToByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.assignTo(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'CANCEL')")
+    @ApiOperation(value = "根据产品项目取消", tags = {"任务" },  notes = "根据产品项目取消")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/cancel")
+    public ResponseEntity<TaskDTO> cancelByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.cancel(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'CLOSE')")
+    @ApiOperation(value = "根据产品项目关闭", tags = {"任务" },  notes = "根据产品项目关闭")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/close")
+    public ResponseEntity<TaskDTO> closeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.close(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
+    @ApiOperation(value = "根据产品项目需求变更确认", tags = {"任务" },  notes = "根据产品项目需求变更确认")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/confirmstorychange")
+    public ResponseEntity<TaskDTO> confirmStoryChangeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.confirmStoryChange(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'FINISH')")
+    @ApiOperation(value = "根据产品项目完成", tags = {"任务" },  notes = "根据产品项目完成")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/finish")
+    public ResponseEntity<TaskDTO> finishByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.finish(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品项目获取任务草稿", tags = {"任务" },  notes = "根据产品项目获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'PAUSE')")
+    @ApiOperation(value = "根据产品项目暂停", tags = {"任务" },  notes = "根据产品项目暂停")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/pause")
+    public ResponseEntity<TaskDTO> pauseByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.pause(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'RESTART')")
+    @ApiOperation(value = "根据产品项目继续", tags = {"任务" },  notes = "根据产品项目继续")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/restart")
+    public ResponseEntity<TaskDTO> restartByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.restart(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'START')")
+    @ApiOperation(value = "根据产品项目开始", tags = {"任务" },  notes = "根据产品项目开始")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/start")
+    public ResponseEntity<TaskDTO> startByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.start(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'FAVORITES')")
+    @ApiOperation(value = "根据产品项目任务收藏", tags = {"任务" },  notes = "根据产品项目任务收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/taskfavorites")
+    public ResponseEntity<TaskDTO> taskFavoritesByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.taskFavorites(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'NFAVORITES')")
+    @ApiOperation(value = "根据产品项目任务收藏", tags = {"任务" },  notes = "根据产品项目任务收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}/tasknfavorites")
+    public ResponseEntity<TaskDTO> taskNFavoritesByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.taskNFavorites(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        taskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目获取当前项目任务", tags = {"任务" } ,notes = "根据产品项目获取当前项目任务")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/tasks/fetchcurprojecttaskquery")
+	public ResponseEntity<List<TaskDTO>> fetchCurProjectTaskQueryByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Task> domains = taskService.searchCurProjectTaskQuery(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目获取DEFAULT", tags = {"任务" } ,notes = "根据产品项目获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/tasks/fetchdefault")
+	public ResponseEntity<List<TaskDTO>> fetchDefaultByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Task> domains = taskService.searchDefault(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目获取任务类型分组", tags = {"任务" } ,notes = "根据产品项目获取任务类型分组")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/tasks/fetchgantt")
+	public ResponseEntity<List<Map>> fetchGanttByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Map> domains = taskService.searchTypeGroup(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(domains.getContent());
+	}
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目获取透视表结果集", tags = {"任务" } ,notes = "根据产品项目获取透视表结果集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/tasks/fetchreport")
+	public ResponseEntity<List<TaskDTO>> fetchReportByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Task> domains = taskService.searchReportDS(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 

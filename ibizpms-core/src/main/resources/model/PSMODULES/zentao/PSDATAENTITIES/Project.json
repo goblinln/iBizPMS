@@ -7813,7 +7813,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -8448,6 +8448,7 @@
     "removeOrder" : 0
   }, {
     "codeName" : "Product",
+    "dERSubType" : "DER1N",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DERCUSTOM_ZT_PROJECT_ZT_PRODUCT.json",
     "logicName" : "产品",

@@ -108,6 +108,16 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports`, _data);
+        }
         if (_context.test && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -140,6 +150,10 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testreport) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}`);
+            return res;
+        }
         if (_context.test && _context.testreport) {
             const res = await this.http.get(`/tests/${_context.test}/testreports/${_context.testreport}`);
             return res;
@@ -160,6 +174,12 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testreports/getdraft`, _data);
+            return res;
+        }
         if (_context.test && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -184,6 +204,10 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async InitProjectDuringReport(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testreport) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/initprojectduringreport`, _data);
+        }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/initprojectduringreport`, _data);
@@ -204,6 +228,10 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async InitProjectReport(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testreport) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/initprojectreport`, _data);
+        }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/initprojectreport`, _data);
@@ -224,6 +252,10 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async InitTestTaskReport(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testreport) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreport`, _data);
+        }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/inittesttaskreport`, _data);
@@ -244,6 +276,10 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async InitTestTaskReportMulti(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testreport) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreportmulti`, _data);
+        }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/inittesttaskreportmulti`, _data);
@@ -264,6 +300,10 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async LoadTestReportBasic(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testreport) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/loadtestreportbasic`, _data);
+        }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/loadtestreportbasic`, _data);
@@ -284,6 +324,9 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testreport) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}`);
+        }
         if (_context.test && _context.testreport) {
             return this.http.delete(`/tests/${_context.test}/testreports/${_context.testreport}`);
         }
@@ -302,6 +345,10 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.testreport) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}`, _data);
+        }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/tests/${_context.test}/testreports/${_context.testreport}`, _data);
@@ -322,6 +369,9 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
      * @memberof TestReportService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/fetchdefault`, _data);
+        }
         if (_context.test && true) {
             return this.http.post(`/tests/${_context.test}/testreports/fetchdefault`, _data);
         }

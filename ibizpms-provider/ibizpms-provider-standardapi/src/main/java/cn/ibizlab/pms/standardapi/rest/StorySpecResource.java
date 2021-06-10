@@ -82,5 +82,21 @@ public class StorySpecResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
+
+    @PreAuthorize("test('ZT_STORYSPEC', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目需求获取版本", tags = {"需求描述" } ,notes = "根据产品项目需求获取版本")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/stories/{story_id}/storyspecs/fetchversion")
+	public ResponseEntity<List<StorySpecDTO>> fetchVersionByProductProjectStory(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
+        context.setN_story_eq(story_id);
+        Page<StorySpec> domains = storyspecService.searchVersion(context) ;
+        List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 

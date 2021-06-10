@@ -1008,7 +1008,7 @@
 
     <!--数据查询[ReleaseStories]-->
     <sql id="ReleaseStories" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`COLOR`, 	t1.`ESTIMATE`, 	t1.`ID`, 	( SELECT 	( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES  FROM 	T_IBZ_FAVORITES t  WHERE 	t.TYPE = 'story'  	AND t.ACCOUNT = #{srf.sessioncontext.srfloginname} 	 	AND t.OBJECTID = t1.id  	) AS `ISFAVORITES`, 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`, 	t1.`PRI`, 	t1.`STAGE`, 	t1.`STATUS`, 	t1.`TITLE`, 	'' AS isChild, 	t1.id  FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.id  	LEFT JOIN zt_story t21 ON t1.PARENT = t21.id  	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.id ]]>
+		<![CDATA[ SELECT 	t1.`COLOR`, 	t1.`ESTIMATE`, 	t1.`ID`, 	( SELECT 	( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES  FROM 	T_IBZ_FAVORITES t  WHERE 	t.TYPE = 'story'  	AND t.ACCOUNT = #{srf.sessioncontext.srfloginname} 	 	AND t.OBJECTID = t1.id  	) AS `ISFAVORITES`, 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`, 	t1.`PRI`, 	t1.`STAGE`, 	t1.`STATUS`, 	t1.`TITLE`, 	'' AS isChild FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.id  	LEFT JOIN zt_story t21 ON t1.PARENT = t21.id  	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.id ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_RELEASE WHERE ID = #{srf.datacontext.srfparentkey})) ]]>

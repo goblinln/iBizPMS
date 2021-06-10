@@ -89,6 +89,9 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
      * @memberof StorySpecService
      */
     async FetchVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+        }
         if (_context.project && _context.story && true) {
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
         }

@@ -143,6 +143,16 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.task && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates`, _data);
+        }
         if (_context.project && _context.task && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -165,6 +175,10 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.task && _context.taskestimate) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+            return res;
+        }
         if (_context.project && _context.task && _context.taskestimate) {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
             return res;
@@ -181,6 +195,12 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/getdraft`, _data);
+            return res;
+        }
         if (_context.project && _context.task && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -199,6 +219,9 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.task && _context.taskestimate) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+        }
         if (_context.project && _context.task && _context.taskestimate) {
             return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
         }
@@ -214,6 +237,10 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.task && _context.taskestimate) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
+        }
         if (_context.project && _context.task && _context.taskestimate) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
@@ -230,6 +257,9 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
+        }
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
         }

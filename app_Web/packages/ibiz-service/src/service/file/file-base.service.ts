@@ -120,6 +120,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && _context.file) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/${_context.file}`);
+        }
         if (_context.test && _context.testcase && _context.testreult && _context.file) {
             return this.http.delete(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/${_context.file}`);
         }
@@ -128,6 +131,30 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.project && _context.doclib && _context.doc && _context.file) {
             return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/${_context.file}`);
+        }
+        if (_context.product && _context.project && _context.testtask && _context.file) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/files/${_context.file}`);
+        }
+        if (_context.product && _context.project && _context.testreport && _context.file) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/files/${_context.file}`);
+        }
+        if (_context.product && _context.project && _context.story && _context.file) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/files/${_context.file}`);
+        }
+        if (_context.product && _context.project && _context.task && _context.file) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/files/${_context.file}`);
+        }
+        if (_context.product && _context.project && _context.build && _context.file) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/files/${_context.file}`);
+        }
+        if (_context.product && _context.project && _context.bug && _context.file) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/files/${_context.file}`);
+        }
+        if (_context.product && _context.project && _context.productplan && _context.file) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/files/${_context.file}`);
+        }
+        if (_context.product && _context.project && _context.doclib && _context.file) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/files/${_context.file}`);
         }
         if (_context.product && _context.doclib && _context.doc && _context.file) {
             return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/${_context.file}`);
@@ -164,6 +191,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.project && _context.doclib && _context.file) {
             return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/files/${_context.file}`);
+        }
+        if (_context.product && _context.project && _context.file) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/files/${_context.file}`);
         }
         if (_context.product && _context.story && _context.file) {
             return this.http.delete(`/products/${_context.product}/stories/${_context.story}/files/${_context.file}`);
@@ -236,6 +266,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproduct`, _data);
+        }
         if (_context.test && _context.testcase && _context.testreult && true) {
             return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchproduct`, _data);
         }
@@ -244,6 +277,30 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.testreport && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchproduct`, _data);
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproduct`, _data);
@@ -280,6 +337,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.project && _context.doclib && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/files/fetchproduct`, _data);
         }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchproduct`, _data);
@@ -352,6 +412,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproject`, _data);
+        }
         if (_context.test && _context.testcase && _context.testreult && true) {
             return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchproject`, _data);
         }
@@ -360,6 +423,30 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.testreport && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchproject`, _data);
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproject`, _data);
@@ -396,6 +483,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.project && _context.doclib && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/files/fetchproject`, _data);
         }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchproject`, _data);
@@ -468,6 +558,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
+        }
         if (_context.test && _context.testcase && _context.testreult && true) {
             return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchtype`, _data);
         }
@@ -476,6 +569,30 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.project && _context.testreport && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.project && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.project && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchtype`, _data);
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
@@ -512,6 +629,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.project && _context.doclib && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/files/fetchtype`, _data);
         }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchtype`, _data);

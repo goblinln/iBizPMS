@@ -165,6 +165,10 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Collect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+        }
         if (_context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
@@ -192,6 +196,16 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs`, _data);
+        }
         if (_context.project && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -250,6 +264,10 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            return res;
+        }
         if (_context.project && _context.doclib && _context.doc) {
             const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
             return res;
@@ -278,6 +296,10 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async GetDocStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+        }
         if (_context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
@@ -305,6 +327,12 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/getdraft`, _data);
+            return res;
+        }
         if (_context.project && _context.doclib && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -343,6 +371,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+        }
         if (_context.project && _context.doclib && _context.doc) {
             return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
         }
@@ -366,6 +397,10 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async UnCollect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+        }
         if (_context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
@@ -393,6 +428,10 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+        }
         if (_context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
@@ -421,6 +460,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchLastedModify(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+        }
         if (_context.project && _context.doclib && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
         }
@@ -444,6 +486,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+        }
         if (_context.project && _context.doclib && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmy`, _data);
         }
@@ -467,6 +512,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchMyFavourites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+        }
         if (_context.project && _context.doclib && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
         }
@@ -490,6 +538,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchRootDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+        }
         if (_context.project && _context.doclib && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
         }
@@ -515,6 +566,10 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocServiceBase
      */
     public async CollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && _context.doclib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+        }
         if(_context.project && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/collectbatch`,_data);
@@ -545,6 +600,10 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocServiceBase
      */
     public async GetDocStatusBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && _context.doclib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+        }
         if(_context.project && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
@@ -575,6 +634,10 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocServiceBase
      */
     public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && _context.doclib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+        }
         if(_context.project && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);

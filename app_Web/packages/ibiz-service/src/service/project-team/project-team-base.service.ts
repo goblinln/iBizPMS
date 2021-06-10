@@ -143,6 +143,16 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams`, _data);
+        }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -165,6 +175,10 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.projectteam) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            return res;
+        }
         if (_context.project && _context.projectteam) {
             const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
             return res;
@@ -181,6 +195,12 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/projectteams/getdraft`, _data);
+            return res;
+        }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -199,6 +219,9 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.projectteam) {
+            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`);
+        }
         if (_context.project && _context.projectteam) {
             return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
         }
@@ -214,6 +237,10 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.projectteam) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
+        }
         if (_context.project && _context.projectteam) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
@@ -230,6 +257,9 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async FetchCntEst(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams/fetchcntest`, _data);
+        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
         }
@@ -245,6 +275,9 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
+        }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
         }

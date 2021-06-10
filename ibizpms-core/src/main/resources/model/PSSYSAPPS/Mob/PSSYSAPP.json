@@ -6806,6 +6806,52 @@
         "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
+          "codeName" : "Projects",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "name" : "PRODUCT__PROJECT",
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        }, {
+          "actionRSMode" : 1,
+          "codeName" : "Tasks",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+          },
+          "name" : "PROJECT__PROJECT_TASK",
+          "getParentPSAppDEField" : {
+            "name" : "PROJECT",
+            "codeName" : "Project"
+          },
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
+          "actionRSMode" : 1,
           "codeName" : "Tasks",
           "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
@@ -7605,6 +7651,48 @@
         "modelid" : "d55a1b0b16ed24657e74c3fe3c95d3f0",
         "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
+          "actionRSMode" : 1,
+          "codeName" : "Projects",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "name" : "PRODUCT__PROJECT",
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        }, {
+          "actionRSMode" : 1,
+          "codeName" : "Stories",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+          },
+          "name" : "PROJECT__STORY",
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
           "dataRSMode" : 0,
@@ -9702,6 +9790,52 @@
         "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
+          "codeName" : "Projects",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "name" : "PRODUCT__PROJECT",
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        }, {
+          "actionRSMode" : 1,
+          "codeName" : "Bugs",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+          },
+          "name" : "PROJECT__PROJECT_BUG",
+          "getParentPSAppDEField" : {
+            "name" : "PROJECT",
+            "codeName" : "Project"
+          },
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
+          "actionRSMode" : 1,
           "codeName" : "Bugs",
           "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
@@ -11158,6 +11292,52 @@
         "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
+          "codeName" : "Projects",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "name" : "PRODUCT__PROJECT",
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        }, {
+          "actionRSMode" : 1,
+          "codeName" : "Tasks",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+          },
+          "name" : "PROJECT__PROJECT_TASK",
+          "getParentPSAppDEField" : {
+            "name" : "PROJECT",
+            "codeName" : "Project"
+          },
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
+          "actionRSMode" : 1,
           "codeName" : "Tasks",
           "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
@@ -12187,6 +12367,48 @@
         "modelid" : "3a895c526bada08b2951be4be8fe2500",
         "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
+          "actionRSMode" : 1,
+          "codeName" : "Projects",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "name" : "PRODUCT__PROJECT",
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        }, {
+          "actionRSMode" : 1,
+          "codeName" : "Stories",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+          },
+          "name" : "PROJECT__STORY",
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
           "dataRSMode" : 0,
@@ -17465,7 +17687,29 @@
       "enableSearch" : true,
       "showCaptionBar" : true,
       "modelid" : "1b8475a617a67336720ec64b72c45ad5",
-      "modeltype" : "PSAPPDEVIEW"
+      "modeltype" : "PSAPPDEVIEW",
+      "getPSAppDERSPaths" : [ [ {
+        "actionRSMode" : 1,
+        "codeName" : "Projects",
+        "dataRSMode" : 0,
+        "getMajorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+        },
+        "getMinorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        },
+        "name" : "PRODUCT__PROJECT",
+        "rSMode" : 2,
+        "enableCreateDataRS" : false,
+        "enableDEAction" : true,
+        "enableDEDataSet" : true,
+        "enableGetDataRS" : false,
+        "enableSelect" : true,
+        "enableSelectDataRS" : false,
+        "enableUpdateDataRS" : false
+      } ] ]
     }, {
       "accUserMode" : 0,
       "caption" : "我的",
@@ -27578,18 +27822,10 @@
       }, {
         "codeName" : "FetchCurProduct",
         "methodType" : "FETCH",
-        "name" : "FetchCurProduct",
+        "name" : "CurProduct",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "CurProduct"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "READ"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "FetchCurProduct"
         },
         "builtinMethod" : false
       }, {
@@ -29164,18 +29400,10 @@
       }, {
         "codeName" : "FetchCurProduct",
         "methodType" : "FETCH",
-        "name" : "FetchCurProduct",
+        "name" : "CurProduct",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "CurProduct"
-        },
-        "getPSDEOPPriv" : {
-          "modelref" : true,
-          "id" : "READ"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "FetchCurProduct"
         },
         "builtinMethod" : false
       }, {
@@ -30880,6 +31108,28 @@
       "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json",
       "enableUIActions" : 15,
       "logicName" : "项目",
+      "getMinorPSAppDERSs" : [ {
+        "actionRSMode" : 1,
+        "codeName" : "Projects",
+        "dataRSMode" : 0,
+        "getMajorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+        },
+        "getMinorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        },
+        "name" : "PRODUCT__PROJECT",
+        "rSMode" : 2,
+        "enableCreateDataRS" : false,
+        "enableDEAction" : true,
+        "enableDEDataSet" : true,
+        "enableGetDataRS" : false,
+        "enableSelect" : true,
+        "enableSelectDataRS" : false,
+        "enableUpdateDataRS" : false
+      } ],
       "name" : "ZT_PROJECT",
       "getPSDEName" : "ZT_PROJECT",
       "getPSDEServiceAPI" : {

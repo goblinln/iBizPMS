@@ -107,8 +107,35 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
         if (_context.project && _context.doclib && _context.doc && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.product && _context.project && _context.testreport && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.product && _context.project && _context.story && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.product && _context.project && _context.task && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.product && _context.project && _context.build && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.product && _context.doclib && _context.doc && _context.action && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
@@ -145,6 +172,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.project && _context.doclib && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.product && _context.project && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.product && _context.story && _context.action && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);

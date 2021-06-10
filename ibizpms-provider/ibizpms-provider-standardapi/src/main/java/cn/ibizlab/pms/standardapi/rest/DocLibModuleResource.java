@@ -489,5 +489,152 @@ public class DocLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
+
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品项目文档库建立文档库分类", tags = {"文档库分类" },  notes = "根据产品项目文档库建立文档库分类")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules")
+    public ResponseEntity<DocLibModuleDTO> createByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
+        DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
+        domain.setRoot(doclib_id);
+		doclibmoduleService.create(domain);
+        DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivs = doclibmoduleRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doclibmodule_id, 'READ')")
+    @ApiOperation(value = "根据产品项目文档库获取文档库分类", tags = {"文档库分类" },  notes = "根据产品项目文档库获取文档库分类")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
+    public ResponseEntity<DocLibModuleDTO> getByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
+        DocLibModule domain = doclibmoduleService.get(doclibmodule_id);
+        DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivs = doclibmoduleRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doclibmodule_id, 'DELETE')")
+    @ApiOperation(value = "根据产品项目文档库删除文档库分类", tags = {"文档库分类" },  notes = "根据产品项目文档库删除文档库分类")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
+    public ResponseEntity<Boolean> removeByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
+    }
+
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'DELETE')")
+    @ApiOperation(value = "根据产品项目文档库批量删除文档库分类", tags = {"文档库分类" },  notes = "根据产品项目文档库批量删除文档库分类")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/batch")
+    public ResponseEntity<Boolean> removeBatchByProductProjectDocLib(@RequestBody List<Long> ids) {
+        doclibmoduleService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doclibmodule_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品项目文档库更新文档库分类", tags = {"文档库分类" },  notes = "根据产品项目文档库更新文档库分类")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
+    public ResponseEntity<DocLibModuleDTO> updateByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
+        DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
+        domain.setRoot(doclib_id);
+        domain.setId(doclibmodule_id);
+		doclibmoduleService.update(domain);
+        DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivs = doclibmoduleRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doclibmodule_id, 'COLLECT')")
+    @ApiOperation(value = "根据产品项目文档库收藏", tags = {"文档库分类" },  notes = "根据产品项目文档库收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/collect")
+    public ResponseEntity<DocLibModuleDTO> collectByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
+        DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
+        domain.setRoot(doclib_id);
+        domain.setId(doclibmodule_id);
+        domain = doclibmoduleService.collect(domain) ;
+        doclibmoduledto = doclibmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivs = doclibmoduleRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        doclibmoduledto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
+    }
+
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品项目文档库获取文档库分类草稿", tags = {"文档库分类" },  notes = "根据产品项目文档库获取文档库分类草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/getdraft")
+    public ResponseEntity<DocLibModuleDTO> getDraftByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, DocLibModuleDTO dto) {
+        DocLibModule domain = doclibmoduleMapping.toDomain(dto);
+        domain.setRoot(doclib_id);
+        return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleMapping.toDto(doclibmoduleService.getDraft(domain)));
+    }
+
+
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
+    @ApiOperation(value = "根据产品项目文档库批量保存文档库分类", tags = {"文档库分类" },  notes = "根据产品项目文档库批量保存文档库分类")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
+        List<DocLibModule> domainlist=doclibmoduleMapping.toDomain(doclibmoduledtos);
+        for(DocLibModule domain:domainlist){
+             domain.setRoot(doclib_id);
+        }
+        doclibmoduleService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doclibmodule_id, 'UNCOLLECT')")
+    @ApiOperation(value = "根据产品项目文档库取消收藏", tags = {"文档库分类" },  notes = "根据产品项目文档库取消收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/uncollect")
+    public ResponseEntity<DocLibModuleDTO> unCollectByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
+        DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
+        domain.setRoot(doclib_id);
+        domain.setId(doclibmodule_id);
+        domain = doclibmoduleService.unCollect(domain) ;
+        doclibmoduledto = doclibmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivs = doclibmoduleRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        doclibmoduledto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
+    }
+
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据产品项目文档库获取所有文档库模块", tags = {"文档库分类" } ,notes = "根据产品项目文档库获取所有文档库模块")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchalldir")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDirByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+        context.setN_root_eq(doclib_id);
+        Page<DocLibModule> domains = doclibmoduleService.searchAllDoclibModule(context) ;
+        List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据产品项目文档库获取所有根模块目录", tags = {"文档库分类" } ,notes = "根据产品项目文档库获取所有根模块目录")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchdir")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchDirByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+        context.setN_root_eq(doclib_id);
+        Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLu(context) ;
+        List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据产品项目文档库获取我的收藏", tags = {"文档库分类" } ,notes = "根据产品项目文档库获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchmyfavourites")
+	public ResponseEntity<List<DocLibModuleDTO>> fetchMyFavouritesByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+        context.setN_root_eq(doclib_id);
+        Page<DocLibModule> domains = doclibmoduleService.searchMyFavourites(context) ;
+        List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 

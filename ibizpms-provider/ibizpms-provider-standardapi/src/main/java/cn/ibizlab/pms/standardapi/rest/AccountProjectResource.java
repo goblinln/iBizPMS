@@ -67,7 +67,6 @@ public class AccountProjectResource {
 	@ApiOperation(value = "获取指定用户数据", tags = {"项目" } ,notes = "获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/accountprojects/fetchaccount")
 	public ResponseEntity<List<AccountProjectDTO>> fetchaccount(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchAccount(context) ;
         List<AccountProjectDTO> list = accountprojectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -80,7 +79,6 @@ public class AccountProjectResource {
 	@ApiOperation(value = "获取我的数据", tags = {"项目" } ,notes = "获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/accountprojects/fetchmy")
 	public ResponseEntity<List<AccountProjectDTO>> fetchmy(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchMy(context) ;
         List<AccountProjectDTO> list = accountprojectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -98,7 +96,7 @@ public class AccountProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(accountprojectdto);
     }
 
-    @PreAuthorize("test('ZT_PROJECT', #accountproject_id, 'READ')")
+    @PreAuthorize("quickTest('ZT_PROJECT', 'READ')")
     @ApiOperation(value = "根据系统用户获取项目", tags = {"项目" },  notes = "根据系统用户获取项目")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accountprojects/{accountproject_id}")
     public ResponseEntity<AccountProjectDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountproject_id") Long accountproject_id) {
@@ -109,12 +107,11 @@ public class AccountProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_PROJECT','READ')")
+    @PreAuthorize("quickTest('ZT_PROJECT', 'READ')")
 	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"项目" } ,notes = "根据系统用户获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountprojects/fetchaccount")
 	public ResponseEntity<List<AccountProjectDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ProjectSearchContext context) {
         
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchAccount(context) ;
         List<AccountProjectDTO> list = accountprojectMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -123,12 +120,11 @@ public class AccountProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("quickTest('ZT_PROJECT','READ')")
+    @PreAuthorize("quickTest('ZT_PROJECT', 'READ')")
 	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"项目" } ,notes = "根据系统用户获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountprojects/fetchmy")
 	public ResponseEntity<List<AccountProjectDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ProjectSearchContext context) {
         
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchMy(context) ;
         List<AccountProjectDTO> list = accountprojectMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)

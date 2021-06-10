@@ -297,7 +297,29 @@
       "expandSearchForm" : true,
       "showCaptionBar" : true,
       "modelid" : "f9cd2bec44b69f73aecbda48ae51ca87",
-      "modeltype" : "PSAPPDEVIEW"
+      "modeltype" : "PSAPPDEVIEW",
+      "getPSAppDERSPaths" : [ [ {
+        "actionRSMode" : 1,
+        "codeName" : "Projects",
+        "dataRSMode" : 0,
+        "getMajorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+        },
+        "getMinorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        },
+        "name" : "PRODUCT__PROJECT",
+        "rSMode" : 2,
+        "enableCreateDataRS" : false,
+        "enableDEAction" : true,
+        "enableDEDataSet" : true,
+        "enableGetDataRS" : false,
+        "enableSelect" : true,
+        "enableSelectDataRS" : false,
+        "enableUpdateDataRS" : false
+      } ] ]
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "name" : "pickupviewpanel",
@@ -331,5 +353,27 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
   "modelid" : "1e4e95416f6ad3614a107303d3fe1cd3",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Projects",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "name" : "PRODUCT__PROJECT",
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

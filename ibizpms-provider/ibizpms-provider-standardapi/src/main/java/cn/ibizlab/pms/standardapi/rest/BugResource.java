@@ -430,5 +430,195 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品项目建立Bug", tags = {"Bug" },  notes = "根据产品项目建立Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs")
+    public ResponseEntity<BugDTO> createByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+		bugService.create(domain);
+        BugDTO dto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', #bug_id, 'READ')")
+    @ApiOperation(value = "根据产品项目获取Bug", tags = {"Bug" },  notes = "根据产品项目获取Bug")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}")
+    public ResponseEntity<BugDTO> getByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
+        Bug domain = bugService.get(bug_id);
+        BugDTO dto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DELETE')")
+    @ApiOperation(value = "根据产品项目删除Bug", tags = {"Bug" },  notes = "根据产品项目删除Bug")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}")
+    public ResponseEntity<Boolean> removeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(bug_id));
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'DELETE')")
+    @ApiOperation(value = "根据产品项目批量删除Bug", tags = {"Bug" },  notes = "根据产品项目批量删除Bug")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/bugs/batch")
+    public ResponseEntity<Boolean> removeBatchByProductProject(@RequestBody List<Long> ids) {
+        bugService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品项目更新Bug", tags = {"Bug" },  notes = "根据产品项目更新Bug")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}")
+    public ResponseEntity<BugDTO> updateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+		bugService.update(domain);
+        BugDTO dto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'ACTIVATE')")
+    @ApiOperation(value = "根据产品项目激活", tags = {"Bug" },  notes = "根据产品项目激活")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/activate")
+    public ResponseEntity<BugDTO> activateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.activate(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'ASSIGNTO')")
+    @ApiOperation(value = "根据产品项目指派", tags = {"Bug" },  notes = "根据产品项目指派")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/assignto")
+    public ResponseEntity<BugDTO> assignToByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.assignTo(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', #bug_id, 'FAVORITES')")
+    @ApiOperation(value = "根据产品项目Bug收藏", tags = {"Bug" },  notes = "根据产品项目Bug收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/bugfavorites")
+    public ResponseEntity<BugDTO> bugFavoritesByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.bugFavorites(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', #bug_id, 'NFAVORITES')")
+    @ApiOperation(value = "根据产品项目取消收藏", tags = {"Bug" },  notes = "根据产品项目取消收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/bugnfavorites")
+    public ResponseEntity<BugDTO> bugNFavoritesByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.bugNFavorites(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'CONFIRM')")
+    @ApiOperation(value = "根据产品项目确认", tags = {"Bug" },  notes = "根据产品项目确认")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/confirm")
+    public ResponseEntity<BugDTO> confirmByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.confirm(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品项目获取Bug草稿", tags = {"Bug" },  notes = "根据产品项目获取Bug草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/bugs/getdraft")
+    public ResponseEntity<BugDTO> getDraftByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, BugDTO dto) {
+        Bug domain = bugMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'RESOLVE')")
+    @ApiOperation(value = "根据产品项目解决", tags = {"Bug" },  notes = "根据产品项目解决")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/resolve")
+    public ResponseEntity<BugDTO> resolveByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.resolve(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目获取DEFAULT", tags = {"Bug" } ,notes = "根据产品项目获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/bugs/fetchdefault")
+	public ResponseEntity<List<BugDTO>> fetchDefaultByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Bug> domains = bugService.searchDefault(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目获取产品BUG", tags = {"Bug" } ,notes = "根据产品项目获取产品BUG")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/bugs/fetchproductbug")
+	public ResponseEntity<List<BugDTO>> fetchProductBugByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Bug> domains = bugService.searchProductBugDS(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目获取项目BUG", tags = {"Bug" } ,notes = "根据产品项目获取项目BUG")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/bugs/fetchprojectbug")
+	public ResponseEntity<List<BugDTO>> fetchProjectBugByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Bug> domains = bugService.searchProjectBugDS(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 

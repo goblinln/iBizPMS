@@ -348,6 +348,22 @@ public class HistoryResource {
 
 
 
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
     @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
 	@ApiOperation(value = "根据项目文档库系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/{action_id}/histories/fetchdefault")
@@ -543,9 +559,163 @@ public class HistoryResource {
 
 
     @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据产品项目文档库系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目文档库系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectDocLibAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
+
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目产品计划系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目产品计划系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/productplans/{productplan_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectProductPlanAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
+
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目Bug系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目Bug系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/bugs/{bug_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectBugAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
+
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目版本系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/builds/{build_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectBuildAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
+
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目任务系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目任务系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/tasks/{task_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectTaskAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
+
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目需求系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目需求系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/stories/{story_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectStoryAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
+
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目测试报告系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目测试报告系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectTestReportAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
+
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目测试版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目测试版本系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/testtasks/{testtask_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectTestTaskAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
+
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库文档系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProjectDocLibDocAction(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
+
+
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据产品项目文档库文档系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目文档库文档系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectDocLibDocAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
         List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
