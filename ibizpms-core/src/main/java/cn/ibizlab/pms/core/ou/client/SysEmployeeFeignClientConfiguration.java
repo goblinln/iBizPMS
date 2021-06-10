@@ -28,27 +28,34 @@ public class SysEmployeeFeignClientConfiguration {
     @Value("${ibiz.ref.service.ibzou-api.name:ibzou-api}")
     String serviceValue;
 
-     @Value("${ibiz.ref.service.ibzou-api.system:f7ad7e05-9031-11eb-b882-00163e06e68c}")
+    @Value("${ibiz.ref.service.ibzou-api.system:f7ad7e05-9031-11eb-b882-00163e06e68c}")
     String serviceSystem;
 
-     @Value("${ibiz.ref.service.ibzou-api.super:}")
+    @Value("${ibiz.ref.service.ibzou-api.super:}")
     boolean superapi;
 
-     @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")
+    @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")
     String uaaservice;
 
-     @Value("${ibiz.ref.service.ibzou-api.login:}")
+    @Value("${ibiz.ref.service.ibzou-api.login:}")
     String login;
 
-     @Value("${ibiz.ref.service.ibzou-api.password:}")
+    @Value("${ibiz.ref.service.ibzou-api.password:}")
     String password;
 
     @Autowired
     Feign.Builder builder;
 
+    @Autowired
+    OutsideAccessorUtils outsideAccessorUtils;
+
+    @Autowired
+    List<RequestInterceptor> defaultInterceptors;
+
     @Bean
-    public SysEmployeeFeignClient sysEmployeeFeignClient(Decoder decoder, Encoder encoder, Client client, Contract contract, List<RequestInterceptor> requestInterceptors) {
+    public SysEmployeeFeignClient sysEmployeeFeignClient() {
         List<RequestInterceptor> requestInterceptors = new ArrayList<>();
+        requestInterceptors.addAll(defaultInterceptors);
         RequestInterceptor systemInterceptor = new RequestInterceptor() {
             @Override
             public void apply(RequestTemplate requestTemplate) {

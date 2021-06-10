@@ -28,27 +28,34 @@ public class IBIZProKeywordFeignClientConfiguration {
     @Value("${ibiz.ref.service.pmspro-pluginserviceapi.name:pmspro-pluginserviceapi}")
     String serviceValue;
 
-     @Value("${ibiz.ref.service.pmspro-pluginserviceapi.system:}")
+    @Value("${ibiz.ref.service.pmspro-pluginserviceapi.system:}")
     String serviceSystem;
 
-     @Value("${ibiz.ref.service.pmspro-pluginserviceapi.super:}")
+    @Value("${ibiz.ref.service.pmspro-pluginserviceapi.super:}")
     boolean superapi;
 
-     @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")
+    @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")
     String uaaservice;
 
-     @Value("${ibiz.ref.service.pmspro-pluginserviceapi.login:}")
+    @Value("${ibiz.ref.service.pmspro-pluginserviceapi.login:}")
     String login;
 
-     @Value("${ibiz.ref.service.pmspro-pluginserviceapi.password:}")
+    @Value("${ibiz.ref.service.pmspro-pluginserviceapi.password:}")
     String password;
 
     @Autowired
     Feign.Builder builder;
 
+    @Autowired
+    OutsideAccessorUtils outsideAccessorUtils;
+
+    @Autowired
+    List<RequestInterceptor> defaultInterceptors;
+
     @Bean
-    public IBIZProKeywordFeignClient iBIZProKeywordFeignClient(Decoder decoder, Encoder encoder, Client client, Contract contract, List<RequestInterceptor> requestInterceptors) {
+    public IBIZProKeywordFeignClient iBIZProKeywordFeignClient() {
         List<RequestInterceptor> requestInterceptors = new ArrayList<>();
+        requestInterceptors.addAll(defaultInterceptors);
         RequestInterceptor systemInterceptor = new RequestInterceptor() {
             @Override
             public void apply(RequestTemplate requestTemplate) {

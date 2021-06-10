@@ -28,27 +28,34 @@ public class DynaDashboardFeignClientConfiguration {
     @Value("${ibiz.ref.service.r7rt-dyna.name:r7rt-dyna}")
     String serviceValue;
 
-     @Value("${ibiz.ref.service.r7rt-dyna.system:}")
+    @Value("${ibiz.ref.service.r7rt-dyna.system:}")
     String serviceSystem;
 
-     @Value("${ibiz.ref.service.r7rt-dyna.super:}")
+    @Value("${ibiz.ref.service.r7rt-dyna.super:}")
     boolean superapi;
 
-     @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")
+    @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")
     String uaaservice;
 
-     @Value("${ibiz.ref.service.r7rt-dyna.login:}")
+    @Value("${ibiz.ref.service.r7rt-dyna.login:}")
     String login;
 
-     @Value("${ibiz.ref.service.r7rt-dyna.password:}")
+    @Value("${ibiz.ref.service.r7rt-dyna.password:}")
     String password;
 
     @Autowired
     Feign.Builder builder;
 
+    @Autowired
+    OutsideAccessorUtils outsideAccessorUtils;
+
+    @Autowired
+    List<RequestInterceptor> defaultInterceptors;
+
     @Bean
-    public DynaDashboardFeignClient dynaDashboardFeignClient(Decoder decoder, Encoder encoder, Client client, Contract contract, List<RequestInterceptor> requestInterceptors) {
+    public DynaDashboardFeignClient dynaDashboardFeignClient() {
         List<RequestInterceptor> requestInterceptors = new ArrayList<>();
+        requestInterceptors.addAll(defaultInterceptors);
         RequestInterceptor systemInterceptor = new RequestInterceptor() {
             @Override
             public void apply(RequestTemplate requestTemplate) {

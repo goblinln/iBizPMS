@@ -28,27 +28,34 @@ public class PSDEFieldFeignClientConfiguration {
     @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.name:ibizpssysmodelapi-sysmodelapi}")
     String serviceValue;
 
-     @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.system:}")
+    @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.system:}")
     String serviceSystem;
 
-     @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.super:}")
+    @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.super:}")
     boolean superapi;
 
-     @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")
+    @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")
     String uaaservice;
 
-     @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.login:}")
+    @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.login:}")
     String login;
 
-     @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.password:}")
+    @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.password:}")
     String password;
 
     @Autowired
     Feign.Builder builder;
 
+    @Autowired
+    OutsideAccessorUtils outsideAccessorUtils;
+
+    @Autowired
+    List<RequestInterceptor> defaultInterceptors;
+
     @Bean
-    public PSDEFieldFeignClient pSDEFieldFeignClient(Decoder decoder, Encoder encoder, Client client, Contract contract, List<RequestInterceptor> requestInterceptors) {
+    public PSDEFieldFeignClient pSDEFieldFeignClient() {
         List<RequestInterceptor> requestInterceptors = new ArrayList<>();
+        requestInterceptors.addAll(defaultInterceptors);
         RequestInterceptor systemInterceptor = new RequestInterceptor() {
             @Override
             public void apply(RequestTemplate requestTemplate) {
