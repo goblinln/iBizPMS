@@ -98,6 +98,18 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "TEST",
+    "name" : "TEST",
+    "value" : "product",
+    "rawValue" : false
+  } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "type",
+    "name" : "type",
+    "value" : "ReleaseBugs",
+    "rawValue" : true
+  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
     "openMode" : "DRAWER_RIGHT",
@@ -336,7 +348,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchReleaseBugs"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

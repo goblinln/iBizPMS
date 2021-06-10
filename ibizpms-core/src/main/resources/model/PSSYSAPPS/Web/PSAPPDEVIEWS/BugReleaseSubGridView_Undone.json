@@ -98,6 +98,18 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "TEST",
+    "name" : "TEST",
+    "value" : "product",
+    "rawValue" : false
+  } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "type",
+    "name" : "type",
+    "value" : "ReleaseLeftBugs",
+    "rawValue" : true
+  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
     "openMode" : "DRAWER_RIGHT",

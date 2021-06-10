@@ -3174,6 +3174,11 @@
               }
             } ],
             "getPSAppViewNavContexts" : [ {
+              "key" : "TEST",
+              "name" : "TEST",
+              "value" : "product",
+              "rawValue" : false
+            }, {
               "key" : "PLAN",
               "name" : "PLAN",
               "value" : "srfparentkey",
