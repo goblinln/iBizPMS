@@ -251,7 +251,8 @@ export default class AppImageUpload extends Vue {
      */
     private setFiles(value:any): void {
         if (!value) {
-          return
+            this.files = [];
+            return
         }
         let _files = JSON.parse(value);
         if (value && Object.prototype.toString.call(_files)=='[object Array]') {

@@ -392,9 +392,9 @@
             "enableCond" : 0,
             "ignoreInput" : 0,
             "itemHeight" : 32.0,
-            "itemWidth" : 42.0,
+            "itemWidth" : 110.0,
             "labelPos" : "LEFT",
-            "labelWidth" : 2,
+            "labelWidth" : 70,
             "name" : "id",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -410,7 +410,7 @@
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
-              "colLG" : 1,
+              "colLG" : 3,
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
@@ -430,7 +430,7 @@
             "enableCond" : 3,
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
-            "labelWidth" : 1,
+            "labelWidth" : 70,
             "name" : "title",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {

@@ -1159,6 +1159,11 @@
       "value" : "product",
       "rawValue" : false
     }, {
+      "key" : "test",
+      "name" : "test",
+      "value" : "product",
+      "rawValue" : false
+    }, {
       "key" : "release",
       "name" : "release",
       "value" : "release",

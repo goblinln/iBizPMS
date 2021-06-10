@@ -38,6 +38,11 @@
     "name" : "build",
     "value" : "build",
     "rawValue" : false
+  }, {
+    "key" : "type",
+    "name" : "type",
+    "value" : "ReleaseLinkableStories",
+    "rawValue" : true
   } ],
   "getPSControls" : [ {
     "aggMode" : "NONE",
@@ -80,7 +85,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchReleaseLinkableStories"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
