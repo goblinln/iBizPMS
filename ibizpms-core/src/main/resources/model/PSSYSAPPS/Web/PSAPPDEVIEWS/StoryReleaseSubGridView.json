@@ -109,6 +109,12 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "type",
+    "name" : "type",
+    "value" : "ReleaseStories",
+    "rawValue" : true
+  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_TOP",
