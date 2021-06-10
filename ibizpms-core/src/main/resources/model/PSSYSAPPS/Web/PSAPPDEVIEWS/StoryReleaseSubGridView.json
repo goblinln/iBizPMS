@@ -110,6 +110,11 @@
     }
   } ],
   "getPSAppViewNavParams" : [ {
+    "key" : "id",
+    "name" : "id",
+    "value" : "srfparentkey",
+    "rawValue" : false
+  }, {
     "key" : "type",
     "name" : "type",
     "value" : "ReleaseStories",
