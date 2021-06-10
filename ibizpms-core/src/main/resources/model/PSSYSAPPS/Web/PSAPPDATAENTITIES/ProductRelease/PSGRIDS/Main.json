@@ -372,6 +372,11 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
           },
           "getPSNavigateContexts" : [ {
+            "key" : "TEST",
+            "name" : "TEST",
+            "value" : "product",
+            "rawValue" : false
+          }, {
             "key" : "RELEASE",
             "name" : "RELEASE",
             "value" : "release",
@@ -385,11 +390,6 @@
           "getPSNavigateParams" : [ {
             "key" : "product",
             "name" : "product",
-            "value" : "product",
-            "rawValue" : false
-          }, {
-            "key" : "test",
-            "name" : "test",
             "value" : "product",
             "rawValue" : false
           }, {

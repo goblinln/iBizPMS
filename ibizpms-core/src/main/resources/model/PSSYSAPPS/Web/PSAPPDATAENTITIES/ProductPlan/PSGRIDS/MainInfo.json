@@ -435,9 +435,9 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
           },
-          "getPSNavigateParams" : [ {
-            "key" : "test",
-            "name" : "test",
+          "getPSNavigateContexts" : [ {
+            "key" : "TEST",
+            "name" : "TEST",
             "value" : "product",
             "rawValue" : false
           } ],
