@@ -1,15 +1,16 @@
 import { IPSAppDETabExplorerView, IPSTabExpPanel, IPSDEEditForm } from '@ibiz/dynamic-model-api';
-import { DataPanelEngine, ModelTool, TabExpViewEngine } from 'ibiz-core';
+import { DataPanelEngine, ModelTool, TabExpViewEngine, TabExpViewInterface } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 /**
  * 分页导航视图基类
  *
  * @export
- * @class TabexpviewBase
+ * @class TabExpViewBase
  * @extends {MainViewBase}
+ * @implements {TabExpViewInterface}
  */
-export class TabExpViewBase extends MainViewBase {
+export class TabExpViewBase extends MainViewBase implements TabExpViewInterface {
 
     /**
      * 视图实例

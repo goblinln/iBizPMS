@@ -1,5 +1,5 @@
 import { IPSAppDataEntity, IPSAppDEField, IPSAppDEKanbanView, IPSDEKanban } from "@ibiz/dynamic-model-api";
-import { KanBanViewEngine, ModelTool } from "ibiz-core";
+import { KanBanViewEngine, ModelTool, KanbanViewInterface } from "ibiz-core";
 import { MDViewBase } from "./mdview-base";
 
 
@@ -9,8 +9,9 @@ import { MDViewBase } from "./mdview-base";
  * @export
  * @class KanbanViewBase
  * @extends {MDViewBase}
+ * @implements {KanbanViewInterface}
  */
-export class KanbanViewBase extends MDViewBase {
+export class KanbanViewBase extends MDViewBase implements KanbanViewInterface {
     /**
      * 看板视图实例
      * 

@@ -1,16 +1,16 @@
-import { Subject } from 'rxjs';
-import { DataPanelEngine, EditView3Engine, EditViewEngine, ModelTool, ViewState } from 'ibiz-core';
+import { EditView3Engine, ModelTool, EditView3Interface } from 'ibiz-core';
 import { EditViewBase } from './editview-base';
 import { IPSAppDEEditView, IPSDRTab } from '@ibiz/dynamic-model-api';
 
 /**
- * 编辑视图基类
+ * 实体编辑视图（分页关系）基类
  *
  * @export
  * @class EditView3Base
- * @extends {MainViewBase}
+ * @extends {EditViewBase}
+ * @implements {EditView3Interface}
  */
-export class EditView3Base extends EditViewBase {
+export class EditView3Base extends EditViewBase implements EditView3Interface {
 
     /**
      * 视图实例

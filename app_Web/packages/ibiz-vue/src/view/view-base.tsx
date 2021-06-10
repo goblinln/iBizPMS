@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
-import { IPSAppCounterRef, IPSAppView, IPSAppDEView, IPSControl, IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, removeSessionStorage, LogUtil, SandboxInstance } from 'ibiz-core';
+import { IPSAppCounterRef, IPSAppView, IPSControl, IPSLanguageRes } from '@ibiz/dynamic-model-api';
+import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface } from 'ibiz-core';
 import { CounterServiceRegister } from 'ibiz-service';
 import { AppNavHistory, NavDataService, ViewLoadingService } from '../app-service';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
@@ -12,8 +12,9 @@ import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
  * @export
  * @class ViewBase
  * @extends {Vue}
+ * @implements {ViewInterface}
  */
-export class ViewBase extends Vue {
+export class ViewBase extends Vue implements ViewInterface {
 
     /**
      * 环境文件
@@ -522,8 +523,7 @@ export class ViewBase extends Vue {
             || Object.is(modeldata.viewType, 'DEMPICKUPVIEW2')
             || Object.is(modeldata.viewType, 'DEOPTVIEW')
             || Object.is(modeldata.viewType, 'DEWFSTARTVIEW')
-            || Object.is(modeldata.viewType, 'DEWFACTIONVIEW'))
-        {
+            || Object.is(modeldata.viewType, 'DEWFACTIONVIEW')) {
             this.containerModel = {
                 view_okbtn: { name: 'okbtn', type: 'button', text: this.$t('app.commonwords.ok'), disabled: true },
                 view_cancelbtn: { name: 'cancelbtn', type: 'button', text: this.$t('app.commonwords.cancel'), disabled: false },
@@ -544,7 +544,8 @@ export class ViewBase extends Vue {
 
     /**
      * 初始化计数器服务
-     * 
+     *
+     * @param {*} param 视图实例
      * @memberof ViewBase
      */
     public async initCounterService(param: any) {
@@ -564,7 +565,7 @@ export class ViewBase extends Vue {
     /**
      * 初始化视图标题数据
      *
-     * @param {*} result
+     * @param {*} view 视图实例
      * @memberof ViewBase
      */
     public initModel(view: IPSAppView) {
@@ -924,7 +925,7 @@ export class ViewBase extends Vue {
     public closeView(args: any[]) {
         let view: any = this;
         if (window.opener && Boolean(this.$store.getters['getCustomParamByTag']('srffullscreen'))) {
-            window.opener.postMessage({type:'CLOSE',data:args},'*');
+            window.opener.postMessage({ type: 'CLOSE', data: args }, '*');
             window.close();
             return;
         }
@@ -1180,7 +1181,8 @@ export class ViewBase extends Vue {
 
     /**
      * 部件事件
-     * @param ctrl 部件 
+     * 
+     * @param controlname 部件名称 
      * @param action  行为
      * @param data 数据
      * 

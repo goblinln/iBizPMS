@@ -1,5 +1,5 @@
 import { IPSAppDEDashboardView, IPSDEDashboard } from '@ibiz/dynamic-model-api';
-import { ModelTool, PortalViewEngine } from 'ibiz-core';
+import { ModelTool, PortalViewEngine, DashboardViewInterface } from 'ibiz-core';
 import { GlobalService } from 'ibiz-service';
 import { MainViewBase } from './mainview-base';
 
@@ -9,8 +9,9 @@ import { MainViewBase } from './mainview-base';
  * @export
  * @class DashboardViewBase
  * @extends {MainViewBase}
+ * @implements {DashboardViewInterface}
  */
-export class DashboardViewBase extends MainViewBase {
+export class DashboardViewBase extends MainViewBase implements DashboardViewInterface {
 
     /**
      * 数据视图视图实例

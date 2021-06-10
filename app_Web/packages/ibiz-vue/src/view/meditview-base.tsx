@@ -1,15 +1,16 @@
-import { Subject } from "rxjs";
-import { ModelTool, ViewState } from 'ibiz-core';
+import { ModelTool, MEditViewInterface } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 import { IPSDEMultiEditViewPanel } from "@ibiz/dynamic-model-api";
+
 /**
  * 多表单编辑视图基类
  *
  * @export
- * @class EditViewBase
- * @extends {MainViewBase}
+ * @class MEditViewBase
+ * @extends {MDViewBase}
+ * @implements {MEditViewInterface}
  */
-export class MEditViewBase extends MDViewBase {
+export class MEditViewBase extends MDViewBase implements MEditViewInterface {
 
     /**
      * 视图实例

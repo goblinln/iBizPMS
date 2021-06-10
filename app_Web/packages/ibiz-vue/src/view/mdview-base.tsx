@@ -1,5 +1,6 @@
 import { IPSDESearchForm, IPSSearchBar, IPSAppDEMultiDataView, IPSAppCodeList, IPSCodeItem, IPSAppDEField } from '@ibiz/dynamic-model-api';
 import { CodeListServiceBase, debounce, LogUtil, ModelTool, Util } from 'ibiz-core'
+import { MDViewInterface } from 'ibiz-core/src/interface/view/md-view';
 import { AppGlobalService } from '../app-service/logic-service/app-global-action-service';
 import { MainViewBase } from "./mainview-base";
 
@@ -9,8 +10,9 @@ import { MainViewBase } from "./mainview-base";
  * @export
  * @class MDViewBase
  * @extends {MainViewBase}
+ * @implements {MDViewInterface}
  */
-export class MDViewBase extends MainViewBase {
+export class MDViewBase extends MainViewBase implements MDViewInterface {
 
     /**
      * 多数据部件是否单选
@@ -187,7 +189,8 @@ export class MDViewBase extends MainViewBase {
 
     /**
      * 快速分组值变化
-     *
+     * 
+     * @param {*} $event 事件源
      * @memberof MDViewBase
      */
     public quickGroupValueChange($event: any) {

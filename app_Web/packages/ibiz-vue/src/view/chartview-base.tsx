@@ -1,5 +1,5 @@
 import { IPSAppDataEntity, IPSAppDEChartView, IPSAppDEField, IPSDEChart } from '@ibiz/dynamic-model-api';
-import { ChartViewEngine, ModelTool } from 'ibiz-core';
+import { ChartViewEngine, ModelTool, ChartViewInterface } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 
 /**
@@ -8,8 +8,9 @@ import { MDViewBase } from './mdview-base';
  * @export
  * @class ChartViewBase
  * @extends {MDViewBase}
+ * @implements {ChartViewInterface}
  */
-export class ChartViewBase extends MDViewBase {
+export class ChartViewBase extends MDViewBase implements ChartViewInterface {
 
     /**
      * 视图实例

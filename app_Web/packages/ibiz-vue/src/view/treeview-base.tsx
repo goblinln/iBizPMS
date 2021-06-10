@@ -1,5 +1,5 @@
-import { TreeViewEngine, ModelTool } from 'ibiz-core';
-import { IPSAppDETreeView, IPSDETree, IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
+import { TreeViewEngine, ModelTool, TreeViewInterface } from 'ibiz-core';
+import { IPSAppDETreeView, IPSDETree } from '@ibiz/dynamic-model-api';
 import { MDViewBase } from './mdview-base';
 
 /**
@@ -8,8 +8,9 @@ import { MDViewBase } from './mdview-base';
  * @export
  * @class TreeViewBase
  * @extends {MDViewBase}
+ * @implements {TreeViewInterface}
  */
-export class TreeViewBase extends MDViewBase {
+export class TreeViewBase extends MDViewBase implements TreeViewInterface {
 
     /**
      * 视图实例

@@ -1,5 +1,5 @@
-import { IPSAppDataEntity, IPSAppDEField, IPSAppDEGridView, IPSDEGrid } from '@ibiz/dynamic-model-api';
-import { GridViewEngine, ModelTool } from 'ibiz-core';
+import { IPSAppDEGridView, IPSDEGrid } from '@ibiz/dynamic-model-api';
+import { GirdViewInterface, GridViewEngine, ModelTool } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 
 /**
@@ -8,8 +8,9 @@ import { MDViewBase } from './mdview-base';
  * @export
  * @class GridViewBase
  * @extends {MDViewBase}
+ * @implements {GirdViewInterface}
  */
-export class GridViewBase extends MDViewBase {
+export class GridViewBase extends MDViewBase implements GirdViewInterface {
 
     /**
      * 视图实例
@@ -87,7 +88,6 @@ export class GridViewBase extends MDViewBase {
     /**
      * 初始化表格视图实例
      * 
-     * @param opts 
      * @memberof GridViewBase
      */
     public async viewModelInit() {
@@ -110,7 +110,7 @@ export class GridViewBase extends MDViewBase {
     /**
      * 快速搜索
      *
-     * @param {*} $event
+     * @param {*} $event 事件源对象
      * @memberof GridViewBase
      */
     public onSearch($event: any): void {
@@ -126,7 +126,7 @@ export class GridViewBase extends MDViewBase {
     /**
      * 计算目标部件所需参数
      *
-     * @param {string} [controlType]
+     * @param {any} [controlInstance] 部件模型实例
      * @returns
      * @memberof GridViewBase
      */

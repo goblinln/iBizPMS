@@ -1,8 +1,9 @@
 import { Subject, Subscription } from 'rxjs';
-import { DataPanelEngine, EditViewEngine, LogUtil, ModelTool, ViewState } from 'ibiz-core';
+import { DataPanelEngine, EditViewEngine, LogUtil, ModelTool, ViewState, EditViewInterface } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 import { IPSAppDEEditView, IPSDEForm } from '@ibiz/dynamic-model-api';
 import { AppCenterService } from 'ibiz-vue';
+
 
 /**
  * 编辑视图基类
@@ -10,8 +11,9 @@ import { AppCenterService } from 'ibiz-vue';
  * @export
  * @class EditViewBase
  * @extends {MainViewBase}
+ * @implements {EditViewInterface}
  */
-export class EditViewBase extends MainViewBase {
+export class EditViewBase extends MainViewBase implements EditViewInterface {
 
     /**
      * 视图实例

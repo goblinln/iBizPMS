@@ -1,54 +1,53 @@
-import { Util } from 'ibiz-core';
-import { CreateElement } from 'vue';
-import { DeReportViewBase } from '../../../view/dereportview-base';
-import { AppLayoutService } from '../../../app-service/common-service/app-layout-service';
 import { Prop, Watch } from 'vue-property-decorator';
+import { Util } from 'ibiz-core';
+import { DashboardViewBase } from '../../../view/dashboardview-base';
+import { AppLayoutService } from '../../../app-service';
 
 /**
- * 应用实体报表视图基类
+ * 应用实体数据看板视图基类
  *
  * @export
- * @class AppDeReportViewBase
- * @extends {DeReportViewBase}
+ * @class AppDePortalViewBase
+ * @extends {DashboardViewBase}
  */
-export class AppDeReportViewBase extends DeReportViewBase {
+export class AppDePortalViewBase extends DashboardViewBase {
 
     /**
      * 视图动态参数
      *
      * @type {string}
-     * @memberof AppDeReportViewBase
+     * @memberof AppDePortalViewBase
      */
     @Prop() public dynamicProps!: any;
 
-     /**
-      * 视图静态参数
-      *
-      * @type {string}
-      * @memberof AppDeReportViewBase
-      */
+    /**
+     * 视图静态参数
+     *
+     * @type {string}
+     * @memberof AppDePortalViewBase
+     */
     @Prop() public staticProps!: any;
- 
-     /**
-      * 监听视图动态参数变化
-      *
-      * @param {*} newVal
-      * @param {*} oldVal
-      * @memberof AppDeReportViewBase
-      */
+
+    /**
+     * 监听视图动态参数变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof AppDePortalViewBase
+     */
     @Watch('dynamicProps',{
         immediate: true,
     })
     public onDynamicPropsChange(newVal: any, oldVal: any) {
         if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-            super.onDynamicPropsChange(newVal,oldVal);
+           super.onDynamicPropsChange(newVal,oldVal);
         }
     }
- 
+
     /**
      * 监听视图静态参数变化
      * 
-     * @memberof AppDeReportViewBase
+     * @memberof AppDePortalViewBase
      */
     @Watch('staticProps', {
         immediate: true,
@@ -58,49 +57,33 @@ export class AppDeReportViewBase extends DeReportViewBase {
             super.onStaticPropsChange(newVal,oldVal);
         }
     }
- 
+
     /**
      * 销毁视图回调
      *
-     * @memberof AppDeReportViewBase
+     * @memberof AppDePortalViewBase
      */
     public destroyed(){
         this.viewDestroyed();
     }
-
     /**
-     * 渲染视图主体内容区
-     * 
-     * @memberof DeReportViewBase
+     * 实体数据看板视图渲染
+     *
+     * @memberof AppDePortalViewBase
      */
-    public renderMainContent() {
-        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(this.reportPanelInstance);
-        return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.reportPanelInstance?.name, on: targetCtrlEvent },);
-    }
-
-    /**
-     * 实体报表视图渲染
-     * 
-     * @memberof AppDeReportViewBase
-     */
-    render(h:CreateElement) {
+    render(h: any) {
         if (!this.viewIsLoaded) {
             return null;
         }
-        const targetViewLayoutComponent:any = AppLayoutService.getLayoutComponent(`${this.viewInstance.viewType}-${this.viewInstance.viewStyle}`);
+        const targetViewLayoutComponent:any = AppLayoutService.getLayoutComponent(`${this.viewInstance?.viewType}-${this.viewInstance?.viewStyle}`);
         return h(targetViewLayoutComponent, {
             props: { viewInstance: this.viewInstance, model: this.model, modelService: this.modelService, viewparams: this.viewparams, context: this.context }
         }, [
             this.renderTopMessage(),
-            this.renderToolBar(),
-            this.renderQuickGroup(),
-            this.renderQuickSearch(),
-            this.renderQuickSearchForm(),
-            this.renderSearchForm(),
-            this.renderSearchBar(),
+            this.renderCaptionInfo(),
             this.renderBodyMessage(),
             this.renderMainContent(),
-            this.renderBottomMessage(),
+            this.renderBottomMessage()
         ]);
     }
 }

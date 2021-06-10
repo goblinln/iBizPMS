@@ -1,5 +1,5 @@
-import { IPSAppDEDataView, IPSDEDataView, IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
-import {  DataViewEngine, ModelTool } from 'ibiz-core';
+import { IPSAppDEDataView, IPSDEDataView } from '@ibiz/dynamic-model-api';
+import {  DataViewEngine, ModelTool, DataViewInterface } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 
 /**
@@ -7,9 +7,10 @@ import { MDViewBase } from './mdview-base';
  *
  * @export
  * @class DataViewBase
- * @extends {MainViewBase}
+ * @extends {MDViewBase}
+ * @implements {DataViewInterface}
  */
-export class DataViewBase extends MDViewBase {
+export class DataViewBase extends MDViewBase implements DataViewInterface {
 
     /**
      * 数据视图视图实例

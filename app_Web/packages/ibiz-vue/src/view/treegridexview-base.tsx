@@ -1,15 +1,16 @@
 import { MDViewBase } from "./mdview-base";
-import { TreeGridExViewEngine, ModelTool } from 'ibiz-core';
-import { IPSAppDETreeGridExView, IPSDETreeGridEx, IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
+import { TreeGridExViewEngine, ModelTool, TreeGridExViewInterface } from 'ibiz-core';
+import { IPSAppDETreeGridExView, IPSDETreeGridEx } from '@ibiz/dynamic-model-api';
 
 /**
  * 实体树表格视图基类
  *
  * @export
- * @class DataViewBase
+ * @class TreeGridExView
  * @extends {MDViewBase}
+ * @implements {TreeGridExViewInterface}
  */
-export class TreeGridExView extends MDViewBase {
+export class TreeGridExView extends MDViewBase implements TreeGridExViewInterface {
 
     /**
      * 视图实例
@@ -63,7 +64,6 @@ export class TreeGridExView extends MDViewBase {
     /**
       * 初始化树表格视图实例
       * 
-      * @param opts 
       * @memberof TreeGridExView
       */
     public async viewModelInit() {

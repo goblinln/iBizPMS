@@ -69,6 +69,16 @@ export class AppDeReportViewBase extends DeReportViewBase {
     }
 
     /**
+     * 渲染视图主体内容区
+     * 
+     * @memberof DeReportViewBase
+     */
+    public renderMainContent() {
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(this.reportPanelInstance);
+        return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.reportPanelInstance?.name, on: targetCtrlEvent },);
+    }
+
+    /**
      * 实体报表视图渲染
      * 
      * @memberof AppDeReportViewBase
@@ -86,7 +96,8 @@ export class AppDeReportViewBase extends DeReportViewBase {
             this.renderQuickGroup(),
             this.renderQuickSearch(),
             this.renderQuickSearchForm(),
-            !(this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) ? [this.renderSearchForm(), this.renderSearchBar()] : null,
+            this.renderSearchForm(),
+            this.renderSearchBar(),
             this.renderBodyMessage(),
             this.renderMainContent(),
             this.renderBottomMessage(),

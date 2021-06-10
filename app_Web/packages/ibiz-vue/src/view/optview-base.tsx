@@ -1,14 +1,16 @@
 import { MainViewBase } from "./mainview-base";
-import { OptionViewEngine, ModelTool, debounce } from 'ibiz-core';
+import { OptionViewEngine, ModelTool, debounce, OptViewInterface } from 'ibiz-core';
 import { IPSAppDEEditView, IPSDEForm } from "@ibiz/dynamic-model-api";
+
 /**
  * 选项操作视图基类
  *
  * @export
  * @class OptViewBase
  * @extends {MainViewBase}
+ * @implements {OptViewInterface}
  */
-export class OptViewBase extends MainViewBase {
+export class OptViewBase extends MainViewBase implements OptViewInterface {
 
     /**
      * 视图实例

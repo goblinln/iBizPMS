@@ -1,5 +1,5 @@
 import { MDViewBase } from './mdview-base';
-import { ModelTool } from 'ibiz-core';
+import { ModelTool, CalendarViewInterface } from 'ibiz-core';
 import { IPSAppDECalendarView, IPSDECalendar } from '@ibiz/dynamic-model-api';
 
 /**
@@ -8,8 +8,9 @@ import { IPSAppDECalendarView, IPSDECalendar } from '@ibiz/dynamic-model-api';
  * @export
  * @class CalendarViewBase
  * @extends {MDViewBase}
+ * @implements {CalendarViewInterface}
  */
-export class CalendarViewBase extends MDViewBase {
+export class CalendarViewBase extends MDViewBase implements CalendarViewInterface {
 
     /**
      * 视图实例

@@ -1,5 +1,5 @@
 import { IPSAppDataEntity, IPSAppDEField, IPSAppDEListView, IPSDEList } from '@ibiz/dynamic-model-api';
-import { ListViewEngine, ModelTool } from 'ibiz-core';
+import { ListViewEngine, ModelTool, ListViewInterface } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 
 
@@ -9,8 +9,9 @@ import { MDViewBase } from './mdview-base';
  * @export
  * @class ListViewBase
  * @extends {MDViewBase}
+ * @implements {ListViewInterface}
  */
-export class ListViewBase extends MDViewBase {
+export class ListViewBase extends MDViewBase implements ListViewInterface {
 
     /**
      * 视图实例

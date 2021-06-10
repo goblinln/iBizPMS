@@ -1,6 +1,6 @@
-import { IPSAppDEGanttView, IPSDEGantt, IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
+import { IPSAppDEGanttView, IPSDEGantt } from '@ibiz/dynamic-model-api';
 import { MDViewBase } from './mdview-base';
-import { ModelTool } from 'ibiz-core';
+import { ModelTool, GanttViewInterface } from 'ibiz-core';
 
 /**
  * 甘特视图基类
@@ -8,8 +8,9 @@ import { ModelTool } from 'ibiz-core';
  * @export
  * @class GanttViewBase
  * @extends {MDViewBase}
+ * @implements {GanttViewInterface}
  */
-export class GanttViewBase extends MDViewBase {
+export class GanttViewBase extends MDViewBase implements GanttViewInterface {
 
     /**
      * 甘特视图实例
@@ -42,7 +43,7 @@ export class GanttViewBase extends MDViewBase {
         this.viewInstance = (this.staticProps.modeldata) as IPSAppDEGanttView;
         await super.viewModelInit();
         this.isLoadDefault = this.viewInstance?.loadDefault;
-        this.ganttInstance = ModelTool.findPSControlByName('gantt',this.viewInstance.getPSControls()) as IPSDEGantt;
+        this.ganttInstance = ModelTool.findPSControlByName('gantt', this.viewInstance.getPSControls()) as IPSDEGantt;
     }
 
     /**
@@ -52,8 +53,8 @@ export class GanttViewBase extends MDViewBase {
      */
     public viewMounted() {
         super.viewMounted();
-        if(this.viewIsLoaded && this.isLoadDefault) {
-            this.viewState.next({ tag:'gantt', action: 'load', data: this.viewparams });
+        if (this.viewIsLoaded && this.isLoadDefault) {
+            this.viewState.next({ tag: 'gantt', action: 'load', data: this.viewparams });
         }
     }
 
@@ -63,8 +64,8 @@ export class GanttViewBase extends MDViewBase {
      * @memberof GanttViewBase
      */
     public renderMainContent() {
-        let { targetCtrlName, targetCtrlParam,targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any,targetCtrlEvent:any } = this.computeTargetCtrlData(this.ganttInstance);
-        return this.$createElement(targetCtrlName,{ props: targetCtrlParam,ref: this.ganttInstance?.name ,on: targetCtrlEvent},);
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(this.ganttInstance);
+        return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.ganttInstance?.name, on: targetCtrlEvent },);
     }
 
 }

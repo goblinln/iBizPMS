@@ -156,6 +156,14 @@ export default class DropDownListMpicker extends Vue {
     @Prop() public data?: any;
 
     /**
+     * 当前值
+     *
+     * @type {*}
+     * @memberof DropDownListMpicker
+     */
+    public value: string = '';
+
+    /**
      * 计算属性(当前值)
      * @type {any}
      * @memberof DropDownListMpicker
@@ -171,8 +179,7 @@ export default class DropDownListMpicker extends Vue {
         }
         const type: string = this.$util.typeOf(val);
         val = Object.is(type, 'null') || Object.is(type, 'undefined') ? [] : val;
-        let value = val.length > 0 ? val.join(this.valueSeparator) : '';
-        this.$emit('change', value);
+        this.value = val.length > 0 ? val.join(this.valueSeparator) : '';
     }
 
     /**
@@ -221,6 +228,20 @@ export default class DropDownListMpicker extends Vue {
     }
 
     /**
+     * 输入框添加blur事件
+     *
+     * @memberof DropDownListMpicker
+     */
+    public addSelectBlur() {
+        if (this.$el) {
+            let input = this.$el?.getElementsByClassName("ivu-select-input")[0];
+            input.addEventListener("blur",() => {
+                this.$emit('change', this.value);
+            })
+        }
+    }
+
+    /**
      * 代码表
      *
      * @type {any[]}
@@ -260,6 +281,16 @@ export default class DropDownListMpicker extends Vue {
         if(this.itemValue){
             this.handleCodeListItems();
         }
+        this.addSelectBlur();
+    }
+
+    /**
+     * vue  生命周期
+     *
+     * @memberof DropDownListMpicker
+     */
+    public mounted() {
+        this.addSelectBlur();
     }
 
     /**

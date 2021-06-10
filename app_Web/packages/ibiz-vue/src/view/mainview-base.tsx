@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs';
 import { GlobalService, UIServiceRegister } from 'ibiz-service';
-import { debounce, LogUtil, ModelTool, Util, ViewTool } from 'ibiz-core';
+import { debounce, LogUtil, MainViewInterface, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { ViewBase } from './view-base';
 import {
     IPSAppDataEntity,
@@ -30,8 +30,9 @@ import { AppViewLogicService } from '../app-service';
  * @export
  * @class MainViewBase
  * @extends {ViewBase}
+ * @implements {MainViewInterface}
  */
-export class MainViewBase extends ViewBase {
+export class MainViewBase extends ViewBase implements MainViewInterface {
     /**
      * 视图引擎
      *
@@ -335,6 +336,16 @@ export class MainViewBase extends ViewBase {
     /**
      * 打开目标视图
      *
+     * @param {*} openView 目标视图模型对象
+     * @param {*} view 视图对象
+     * @param {*} tempContext 临时上下文
+     * @param {*} data 数据
+     * @param {*} xData 数据部件实例
+     * @param {*} $event 事件源
+     * @param {*} deResParameters 
+     * @param {*} parameters
+     * @param {*} args 额外参数
+     * @param {Function} callback 回调
      * @memberof MainViewBase
      */
     public openTargtView(
