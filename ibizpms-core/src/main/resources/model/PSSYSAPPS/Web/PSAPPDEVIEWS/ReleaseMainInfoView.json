@@ -27,6 +27,11 @@
     "name" : "OBJECTTYPE",
     "value" : "release",
     "rawValue" : true
+  }, {
+    "key" : "SRFPARENTKEY",
+    "name" : "SRFPARENTKEY",
+    "value" : "productrelease",
+    "rawValue" : false
   } ],
   "getPSControls" : [ {
     "codeName" : "Main",
