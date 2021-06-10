@@ -120,6 +120,12 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "n_parent_gtandeq",
+    "name" : "n_parent_gtandeq",
+    "value" : "0",
+    "rawValue" : true
+  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_TOP",

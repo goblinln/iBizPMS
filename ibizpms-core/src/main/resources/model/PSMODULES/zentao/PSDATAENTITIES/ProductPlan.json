@@ -2610,6 +2610,21 @@
     "logicName" : "获取上一个计划的名称",
     "name" : "获取上一个计划的名称",
     "getPSDELogicNodes" : [ {
+      "codeName" : "Prepareparam1",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "重置主键",
+      "getPSDELogicNodeParams" : [ {
+        "dstFieldName" : "ID",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "空值（NULL） ==> Default[ID]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValueType" : "NULLVALUE"
+      } ],
+      "parallelOutput" : true
+    }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
@@ -2634,10 +2649,67 @@
       },
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取名称",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接1775",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "defaultLink" : false
+      } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[PRODUCT]",
         "paramAction" : "SQLPARAM",
         "srcFieldName" : "PRODUCT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "Default[PARENT]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "PARENT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "Default[PARENT]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "PARENT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "Default[PARENT]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "PARENT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "Default[PARENT]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "PARENT",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "Default[PARENT]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "PARENT",
         "getSrcPSDELogicParam" : {
           "modelref" : true,
           "id" : "Default"

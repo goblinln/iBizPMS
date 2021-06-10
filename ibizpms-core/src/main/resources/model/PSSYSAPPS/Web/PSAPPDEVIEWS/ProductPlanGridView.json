@@ -1038,8 +1038,18 @@
               "name" : "PARENT",
               "value" : "id",
               "rawValue" : false
+            }, {
+              "key" : "PRODUCTPLAN",
+              "name" : "PRODUCTPLAN",
+              "value" : "null",
+              "rawValue" : true
             } ],
             "getPSNavigateParams" : [ {
+              "key" : "productplan",
+              "name" : "productplan",
+              "value" : "null",
+              "rawValue" : true
+            }, {
               "key" : "parent",
               "name" : "parent",
               "value" : "id",
