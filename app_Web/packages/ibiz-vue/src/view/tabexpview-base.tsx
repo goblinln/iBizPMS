@@ -1,5 +1,5 @@
-import { IPSAppCounterRef, IPSAppDETabExplorerView, IPSDETabViewPanel, IPSTabExpPanel, IPSSysImage } from '@ibiz/dynamic-model-api';
-import { ModelTool, TabExpViewEngine, Util } from 'ibiz-core';
+import { IPSAppDETabExplorerView, IPSTabExpPanel, IPSDEEditForm } from '@ibiz/dynamic-model-api';
+import { DataPanelEngine, ModelTool, TabExpViewEngine } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 /**
@@ -25,14 +25,30 @@ export class TabExpViewBase extends MainViewBase {
      */
     public tabExpPanelInstance!: IPSTabExpPanel;
 
+     /**
+     * 数据面板表单实例
+     * 
+     * @memberof TabExpviewBase
+     */
+    public dataPanelInstance?: IPSDEEditForm;
+
     /**
      * 视图引擎
      *
      * @public
-     * @type {Engine}
+     * @type {TabExpViewEngine}
      * @memberof TabExpviewBase
      */
     public engine: TabExpViewEngine = new TabExpViewEngine();
+
+    /**
+     * 数据面板引擎
+     *
+     * @public
+     * @type {DataPanelEngine}
+     * @memberof TabExpviewBase
+     */
+    public dataPanelEngine: DataPanelEngine = new DataPanelEngine();
 
     /**
      * 加载模型
@@ -80,7 +96,7 @@ export class TabExpViewBase extends MainViewBase {
         if (this.Environment && this.Environment.isPreviewMode) {
             return;
         }
-        let engineOpts = ({
+        let viewEngineOpts = ({
             view: this,
             parentContainer: this.$parent,
             p2k: '0',
@@ -88,7 +104,17 @@ export class TabExpViewBase extends MainViewBase {
             majorPSDEField: this.appDeMajorFieldName.toLowerCase(),
             isLoadDefault: this.viewInstance?.loadDefault,
         });
-        this.engine.init(engineOpts);
+        this.engine.init(viewEngineOpts);
+        if (this.dataPanelInstance) {
+            let dataPanelEngineOpts = ({
+                view: this,
+                datapanel: (this.$refs[this.dataPanelInstance?.name] as any).ctrl,
+                keyPSDEField: this.appDeCodeName.toLowerCase(),
+                majorPSDEField: this.appDeMajorFieldName.toLowerCase(),
+                isLoadDefault: true,
+            });
+            this.dataPanelEngine.init(dataPanelEngineOpts);
+        }
     }
 
     /**
@@ -100,6 +126,7 @@ export class TabExpViewBase extends MainViewBase {
         this.viewInstance = (this.staticProps?.modeldata) as IPSAppDETabExplorerView;
         await super.viewModelInit();
         this.tabExpPanelInstance = ModelTool.findPSControlByType("TABEXPPANEL",this.viewInstance.getPSControls()) as IPSTabExpPanel;
+        this.dataPanelInstance = ModelTool.findPSControlByName("DATAPANEL",this.viewInstance.getPSControls()) as IPSDEEditForm;
     }
 
     /**

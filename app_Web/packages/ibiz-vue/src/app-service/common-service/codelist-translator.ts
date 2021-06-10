@@ -168,7 +168,7 @@ export class CodeListTranslator {
                 if(Util.typeOf(value) == 'number'){
                     values = [value]
                 }else{
-                    values = [...(value as any).split(valueSeparator)];
+                    values = [...value.toString().split(valueSeparator)];
                 }
                 values.forEach((v: any)=>{
                     let selected = codeListItems.find((_item:any)=> _item.value == v);

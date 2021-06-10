@@ -61,6 +61,16 @@ export class AppTabExpViewBase extends TabExpViewBase {
     }
 
     /**
+     * 渲染数据面板
+     * 
+     * @memberof AppTabExpViewBase
+     */
+    public renderDataPanel() {
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.dataPanelInstance);
+        return this.$createElement(targetCtrlName, { slot: 'datapanel', ref: this.dataPanelInstance?.name, props: targetCtrlParam, on: targetCtrlEvent });
+    }
+
+    /**
      * 分页导航视图渲染
      * 
      * @memberof AppTabExpViewBase
@@ -75,6 +85,7 @@ export class AppTabExpViewBase extends TabExpViewBase {
         }, [
             this.renderTopMessage(),
             this.renderCaptionInfo(),
+            this.renderDataPanel(),
             this.renderBodyMessage(),
             this.renderToolBar(),
             this.renderMainContent(),
