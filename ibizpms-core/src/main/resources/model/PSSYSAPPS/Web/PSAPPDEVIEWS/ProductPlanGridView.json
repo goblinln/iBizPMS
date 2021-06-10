@@ -1041,14 +1041,14 @@
             }, {
               "key" : "PRODUCTPLAN",
               "name" : "PRODUCTPLAN",
-              "value" : "''",
-              "rawValue" : true
+              "value" : "productplan",
+              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
               "key" : "productplan",
               "name" : "productplan",
-              "value" : "''",
-              "rawValue" : true
+              "value" : "productplan",
+              "rawValue" : false
             }, {
               "key" : "parent",
               "name" : "parent",
