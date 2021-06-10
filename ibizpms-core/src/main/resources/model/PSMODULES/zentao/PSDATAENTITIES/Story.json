@@ -927,6 +927,20 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "Simple",
+    "dEFGroupType" : "BASEFIELDS",
+    "logicName" : "基础属性查询",
+    "name" : "SIMPLE"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
         "customCond" : " FIND_IN_SET ( t1.ID, (select tt.childStories from zt_story tt where tt.id = ${srfdatacontext('srfparentkey','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))",
         "name" : "查询条件"
       } ]
@@ -5122,6 +5136,11 @@
       "name" : "N_PARENT_GTANDEQ",
       "stdDataType" : 1,
       "valueOP" : "GTANDEQ"
+    }, {
+      "codeName" : "N_PARENT_LTANDEQ",
+      "name" : "N_PARENT_LTANDEQ",
+      "stdDataType" : 1,
+      "valueOP" : "LTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -5520,10 +5539,11 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -5675,17 +5695,18 @@
     "getPSDELogicParams" : [ {
       "codeName" : "story",
       "name" : "story",
-      "default" : false,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec.json"
+      }
     }, {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -5789,16 +5810,18 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+      },
+      "default" : true
     }, {
       "codeName" : "IbzFavorites",
       "name" : "收藏",
-      "default" : false,
-      "envParam" : false,
-      "lastParam" : false,
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
+      },
       "sessionParam" : true
     } ],
     "getStartPSDELogicNode" : {
@@ -5854,10 +5877,11 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -5955,10 +5979,11 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -6056,10 +6081,11 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -6082,10 +6108,11 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -6108,10 +6135,11 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -12434,6 +12462,16 @@
     "id" : "ZTProduct__CREATE"
   }, {
     "logicName" : "删除",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
+    },
+    "name" : "DELETE",
+    "id" : "Project__DELETE"
+  }, {
+    "logicName" : "删除",
     "name" : "DELETE"
   }, {
     "logicName" : "Product_Delete",
@@ -12599,6 +12637,16 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   }, {
+    "logicName" : "更新",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Project__UPDATE"
+  }, {
     "logicName" : "Product_Update",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "UPDATE",
@@ -12610,6 +12658,50 @@
     "id" : "ZTProduct__UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/CURDEPT_R.json",
+    "name" : "当前部门（读）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURDEPT_R",
+    "secDR" : 1,
+    "userDRAction" : "READ",
+    "enableSecDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/CURDEPT_RW.json",
+    "name" : "当前部门（读写）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "CURDEPT_RW",
+    "secDR" : 1,
+    "userDRAction" : "READ",
+    "enableSecDR" : true
+  }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/CURORG_C.json",
     "name" : "当前组织（写）",
     "orgDR" : 1,
@@ -12622,6 +12714,50 @@
       }
     } ],
     "roleTag" : "CURORG_C",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/CURORG_R.json",
+    "name" : "当前组织（读）",
+    "orgDR" : 1,
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURORG_R",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/CURORG_RW.json",
+    "name" : "当前组织（读写）",
+    "orgDR" : 1,
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "CURORG_RW",
     "userDRAction" : "READ",
     "enableOrgDR" : true
   }, {

@@ -94,17 +94,18 @@
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
     "name" : "传入变量",
-    "default" : true,
-    "envParam" : false,
-    "lastParam" : false,
-    "sessionParam" : false
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    },
+    "default" : true
   }, {
     "codeName" : "IbzFavorite",
     "name" : "IbzFavorite",
-    "default" : false,
-    "envParam" : false,
-    "lastParam" : false,
-    "sessionParam" : false
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
+    }
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

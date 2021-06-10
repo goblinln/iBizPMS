@@ -142,17 +142,18 @@
   "getPSDELogicParams" : [ {
     "codeName" : "story",
     "name" : "story",
-    "default" : false,
-    "envParam" : false,
-    "lastParam" : false,
-    "sessionParam" : false
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec.json"
+    }
   }, {
     "codeName" : "Default",
     "name" : "传入变量",
-    "default" : true,
-    "envParam" : false,
-    "lastParam" : false,
-    "sessionParam" : false
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    },
+    "default" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

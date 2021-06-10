@@ -132,6 +132,9 @@
 		<if test="srf.n_parent_gtandeq != null ">
 			<![CDATA[ AND  t1.`PARENT` >= #{srf.n_parent_gtandeq,jdbcType=BIGINT} ]]>
         </if>
+		<if test="srf.n_parent_ltandeq != null ">
+			<![CDATA[ AND  t1.`PARENT` <= #{srf.n_parent_ltandeq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_module_eq != null ">
 			<![CDATA[ AND  t1.`MODULE` = #{srf.n_module_eq,jdbcType=BIGINT} ]]>
         </if>
@@ -1031,6 +1034,21 @@
 	
 	<select id="selectReportStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="ReportStories" />
+	</select>
+
+    <!--数据查询[Simple]-->
+    <sql id="Simple" databaseId="mysql">
+		<![CDATA[ SELECT t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, (case when t1.parent in (-1) and t1.stage = 'wait' then '1' when t1.parent in (0) and t1.stage = 'wait' then '2'  else '0' end) AS `ISCHILD`, '0' AS `ISFAVORITES`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`ORG`, t1.`ORGNAME`, t1.`STATUS`, t1.`TITLE` FROM `zt_story` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectSimple"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="Simple" />
 	</select>
 
     <!--数据查询[StoryChild]-->

@@ -273,9 +273,9 @@ export interface ISubStory extends IEntityBase {
     /**
      * 评审结果
      *
-     * @type {('pass' | 'revert' | 'clarify' | 'reject')} pass: 确认通过, revert: 撤销变更, clarify: 有待明确, reject: 拒绝
+     * @type {('pass' | 'revert' | 'clarify')} pass: 确认通过, revert: 撤销变更, clarify: 有待明确
      */
-    result?: 'pass' | 'revert' | 'clarify' | 'reject';
+    result?: 'pass' | 'revert' | 'clarify';
     /**
      * 归属组织
      */

@@ -1,14 +1,11 @@
-import { ViewTool, Util, ModelTool, LogUtil, debounce } from 'ibiz-core';
+import { ViewTool, Util, LogUtil, debounce, DataViewControlInterface } from 'ibiz-core';
 import {
     IPSDEDataView,
     IPSDEDataViewItem,
     IPSDEDataViewDataItem,
-    IPSDEToolbarItem,
     IPSSysPFPlugin,
     IPSUIActionGroupDetail,
     IPSUIAction,
-    IPSDETBUIActionItem,
-    IPSDEUIAction,
 } from '@ibiz/dynamic-model-api';
 import { MDControlBase } from './md-control-base';
 import { AppDataViewService } from '../ctrl-service';
@@ -22,7 +19,7 @@ import { notNilEmpty } from 'qx-util';
  * @class DataViewControlBase
  * @extends {MDControlBase}
  */
-export class DataViewControlBase extends MDControlBase {
+export class DataViewControlBase extends MDControlBase implements DataViewControlInterface{
     /**
      * 部件行为--submit
      *
@@ -195,6 +192,46 @@ export class DataViewControlBase extends MDControlBase {
     public thisRef: any = this;
 
     /**
+     * 拖拽元素对象
+     *
+     * @type {boolean}
+     * @memberof DataViewControlBase
+     */
+     public dragEle: any;
+
+     /**
+      * 拖拽后位置left
+      *
+      * @type {boolean}
+      * @memberof DataViewControlBase
+      */
+     public leftP: any;
+ 
+     /**
+      * 拖拽后位置top
+      *
+      * @type {boolean}
+      * @memberof DataViewControlBase
+      */
+     public topP: any;
+ 
+     /**
+      * 拖拽标识
+      *
+      * @type {boolean}
+      * @memberof DataViewControlBase
+      */
+     public dragflag: boolean = false;
+ 
+     /**
+      * 为拖拽不是点击
+      *
+      * @type {boolean}
+      * @memberof DataViewControlBase
+      */
+     public moveflag: boolean = false;
+
+    /**
      * 监听静态参数变化
      *
      * @param {*} newVal
@@ -286,130 +323,40 @@ export class DataViewControlBase extends MDControlBase {
     }
 
     /**
-     * 拖拽元素对象
+     * 初始化界面行为模型
      *
-     * @type {boolean}
+     * @type {*}
      * @memberof DataViewControlBase
      */
-    public dragEle: any;
-
-    /**
-     * 拖拽后位置left
-     *
-     * @type {boolean}
-     * @memberof DataViewControlBase
-     */
-    public leftP: any;
-
-    /**
-     * 拖拽后位置top
-     *
-     * @type {boolean}
-     * @memberof DataViewControlBase
-     */
-    public topP: any;
-
-    /**
-     * 拖拽标识
-     *
-     * @type {boolean}
-     * @memberof DataViewControlBase
-     */
-    public dragflag: boolean = false;
-
-    /**
-     * 为拖拽不是点击
-     *
-     * @type {boolean}
-     * @memberof DataViewControlBase
-     */
-    public moveflag: boolean = false;
-
-    /**
-     * 更改批量操作工具栏显示状态
-     *
-     * @param $event
-     * @memberof DataViewControlBase
-     */
-    public onClick($event: any) {
-        if (!this.moveflag) {
-            this.flag = !this.flag;
-        }
-        this.moveflag = false;
-    }
-
-    /**
-     * 排序点击事件
-     * @param {string} field 属性名
-     *
-     * @memberof DataViewControlBase
-     */
-    public sortClick(field: string) {
-        if (this.sortField !== field) {
-            this.sortField = field;
-            this.sortDir = 'asc';
-        } else if (this.sortDir === 'asc') {
-            this.sortDir = 'desc';
-        } else if (this.sortDir === 'desc') {
-            this.sortDir = '';
-        } else {
-            this.sortDir = 'asc';
-        }
-        this.refresh();
-    }
-
-    /**
-     * 排序class变更
-     * @param {string} field 属性名
-     *
-     * @memberof DataViewControlBase
-     */
-    public getsortClass(field: string) {
-        if (this.sortField !== field || this.sortDir === '') {
-            return '';
-        } else if (this.sortDir === 'asc') {
-            return 'sort-ascending';
-        } else if (this.sortDir === 'desc') {
-            return 'sort-descending';
-        }
-    }
-
-    /**
-     * 鼠标移动+放下
-     *
-     * @memberof DataViewControlBase
-     */
-    public mouseEvent() {
-        if (typeof this.$el.getElementsByClassName == 'function') {
-            this.dragEle = this.$el.getElementsByClassName('drag-filed')[0];
-        }
-        document.onmousemove = (e: any) => {
-            if (this.dragflag) {
-                this.dragEle.style.left = e.clientX - this.leftP + 'px';
-                this.dragEle.style.top = e.clientY - this.topP + 'px';
-                this.moveflag = true;
+     public initCtrlActionModel() {
+        let cardViewItems = this.controlInstance.getPSDEDataViewItems() || [];
+        if (cardViewItems?.length > 0) {
+            for (let cardItem of cardViewItems) {
+                let groupDetails = cardItem.getPSDEUIActionGroup()?.getPSUIActionGroupDetails() || [];
+                if (groupDetails?.length > 0) {
+                    for (let uiActionDetail of groupDetails) {
+                        if (uiActionDetail?.getPSUIAction()) {
+                            const appUIAction = Util.deepCopy(uiActionDetail.getPSUIAction());
+                            this.actionModel[appUIAction.uIActionTag] = Object.assign(appUIAction, {
+                                disabled: false,
+                                visabled: true,
+                                getNoPrivDisplayMode: appUIAction.getNoPrivDisplayMode
+                                    ? appUIAction.getNoPrivDisplayMode
+                                    : 6,
+                            });
+                        }
+                    }
+                }
             }
-        };
-        document.onmouseup = (e: any) => {
-            this.dragflag = false;
-        };
-    }
-
-    /**
-     * mousedown事件
-     *
-     * @param $event
-     * @memberof DataViewControlBase
-     */
-    public down(e: any) {
-        this.leftP = e.clientX - this.dragEle.offsetLeft;
-        this.topP = e.clientY - this.dragEle.offsetTop;
-        this.dragflag = true;
+        }
     }
 
     /**
      * 数据加载
      *
+     * @param {*} [opt={}] 额外参数
+     * @param {boolean} [isReset=false] 是否重置数据，默认加载到的数据附加在已有的之后
+     * @return {*} 
      * @memberof DataViewControlBase
      */
     public load(opt: any = {}, isReset: boolean = false) {
@@ -504,98 +451,9 @@ export class DataViewControlBase extends MDControlBase {
     }
 
     /**
-     * 获取界面行为权限状态
-     *
-     * @param {*} data 当前列表行数据
-     * @memberof DataViewControlBase
-     */
-    public getActionState(data: any) {
-        let tempActionModel: any = JSON.parse(JSON.stringify(this.actionModel));
-        let targetData: any = this.transformData(data);
-        ViewTool.calcActionItemAuthState(targetData, tempActionModel, this.appUIService);
-        return tempActionModel;
-    }
-
-    /**
-     * 初始化界面行为模型
-     *
-     * @type {*}
-     * @memberof DataViewControlBase
-     */
-    public initCtrlActionModel() {
-        let cardViewItems = this.controlInstance.getPSDEDataViewItems() || [];
-        if (cardViewItems?.length > 0) {
-            for (let cardItem of cardViewItems) {
-                let groupDetails = cardItem.getPSDEUIActionGroup()?.getPSUIActionGroupDetails() || [];
-                if (groupDetails?.length > 0) {
-                    for (let uiActionDetail of groupDetails) {
-                        if (uiActionDetail?.getPSUIAction()) {
-                            const appUIAction = Util.deepCopy(uiActionDetail.getPSUIAction());
-                            this.actionModel[appUIAction.uIActionTag] = Object.assign(appUIAction, {
-                                disabled: false,
-                                visabled: true,
-                                getNoPrivDisplayMode: appUIAction.getNoPrivDisplayMode
-                                    ? appUIAction.getNoPrivDisplayMode
-                                    : 6,
-                            });
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-     * 选择数据
-     * @memberof DataViewControlBase
-     *
-     */
-    public handleClick(args: any) {
-        args.isselected = !args.isselected;
-        if (this.isSingleSelect) {
-            this.items.forEach((item: any) => {
-                if (item.srfkey !== args.srfkey) {
-                    item.isselected = false;
-                }
-            });
-        }
-        this.selectchange();
-    }
-
-    /**
-     * 触发事件
-     * @memberof DataViewControlBase
-     *
-     */
-    public selectchange() {
-        this.selections = [];
-        this.items.map((item: any) => {
-            if (item.isselected) {
-                this.selections.push(item);
-            }
-        });
-        this.$emit('ctrl-event', {
-            controlname: this.controlInstance.name,
-            action: 'selectionchange',
-            data: this.selections,
-        });
-    }
-
-    /**
-     * 面板数据变化处理事件
-     * @param {any} item 当前卡片数据
-     * @param {any} $event 面板事件数据
-     *
-     * @memberof ${srfclassname('${ctrl.codeName}')}Base
-     */
-    public onPanelDataChange(item: any, $event: any) {
-        Object.assign(item, $event, { rowDataState: 'update' });
-    }
-
-    /**
      * 删除
      *
-     * @param {any[]} datas
+     * @param {any[]} datas 删除数据
      * @returns {Promise<any>}
      * @memberof DataViewControlBase
      */
@@ -717,11 +575,11 @@ export class DataViewControlBase extends MDControlBase {
     /**
      * 保存
      *
-     * @param {*} $event
-     * @returns {Promise<any>}
+     * @param {any[]} args 额外参数
+     * @return {*} 
      * @memberof DataViewControlBase
      */
-    public async save(args: any[], params?: any, $event?: any, xData?: any) {
+    public async save(args: any[]) {
         let _this = this;
         let successItems: any = [];
         let errorItems: any = [];
@@ -781,7 +639,7 @@ export class DataViewControlBase extends MDControlBase {
     /**
      * 刷新
      *
-     * @param {*} [args={}]
+     * @param {*} [args={}] 额外参数
      * @memberof DataViewControlBase
      */
     public refresh(args?: any) {
@@ -803,8 +661,57 @@ export class DataViewControlBase extends MDControlBase {
     }
 
     /**
-     * 双击数据
+     * 单击事件
      *
+     * @param {*} args 数据
+     * @memberof DataViewControlBase
+     */
+    public handleClick(args: any) {
+        args.isselected = !args.isselected;
+        if (this.isSingleSelect) {
+            this.items.forEach((item: any) => {
+                if (item.srfkey !== args.srfkey) {
+                    item.isselected = false;
+                }
+            });
+        }
+        this.selectchange();
+    }
+
+    /**
+     * 触发事件
+     *
+     * @memberof DataViewControlBase
+     */
+    public selectchange() {
+        this.selections = [];
+        this.items.map((item: any) => {
+            if (item.isselected) {
+                this.selections.push(item);
+            }
+        });
+        this.$emit('ctrl-event', {
+            controlname: this.controlInstance.name,
+            action: 'selectionchange',
+            data: this.selections,
+        });
+    }
+
+    /**
+     * 面板数据变化处理事件
+     * @param {any} item 当前卡片数据
+     * @param {any} $event 面板事件数据
+     *
+     * @memberof DataViewControlBase
+     */
+    public onPanelDataChange(item: any, $event: any) {
+        Object.assign(item, $event, { rowDataState: 'update' });
+    }
+
+    /**
+     * 双击事件
+     *
+     * @param {*} args 数据
      * @memberof DataViewControlBase
      */
     public handleDblClick(args: any) {
@@ -812,104 +719,42 @@ export class DataViewControlBase extends MDControlBase {
     }
 
     /**
-     * 根据分组代码表绘制分组列表
+     * 处理操作列点击
      *
+     * @param {*} data 数据
+     * @param {*} event 事件源
+     * @param {*} item 数据视图项模型
+     * @param {*} detail 操作列模型
      * @memberof DataViewControlBase
      */
-    public async drawCodeListGroup() {
-        let groups: Array<any> = [];
-        const groupTree: Array<any> = [];
-        const data: Array<any> = [...this.items];
-        if (this.groupCodeListParams) {
-            let groupCodelist: any = await this.codeListService.getDataItems(this.groupCodeListParams);
-            groups = Util.deepCopy(groupCodelist);
-        }
-        if (groups.length == 0) {
-            LogUtil.warn(this.$t('app.dataview.useless'));
-        }
-        const map: Map<string, any> = new Map();
-        data.forEach(item => {
-            const tag = item[this.groupAppField];
-            if (notNilEmpty(tag)) {
-                if (!map.has(tag)) {
-                    map.set(tag, []);
-                }
-                const arr: any[] = map.get(tag);
-                arr.push(item);
-            }
-        });
-        groups.forEach((group: any) => {
-            const children: any[] = [];
-            if (this.groupFieldCodelist && map.has(group.label)) {
-                children.push(...map.get(group.label));
-            } else if (map.has(group.value)) {
-                children.push(...map.get(group.value));
-            }
-            const item: any = {
-                label: group.label,
-                group: group.label,
-                data: group,
-                children,
-            };
-            groupTree.push(item);
-        });
-        const child: any[] = [];
-        data.forEach((item: any) => {
-            let i: number = 0;
-            if (this.groupFieldCodelist) {
-                i = groups.findIndex((group: any) => Object.is(group.label, item[this.groupAppField]));
-            } else {
-                i = groups.findIndex((group: any) => Object.is(group.value, item[this.groupAppField]));
-            }
-            if (i < 0) {
-                child.push(item);
-            }
-        });
-        const Tree: any = {
-            label: this.$t('app.commonwords.other'),
-            group: this.$t('app.commonwords.other'),
-            children: child,
-        };
-        if (child && child.length > 0) {
-            groupTree.push(Tree);
-        }
-        this.groupData = groupTree;
+    public handleActionClick(data: any, event: any, item: any, detail: any) {
+        AppViewLogicService.getInstance().executeViewLogic(
+            this.getViewLogicTag('dataviewexpbar_dataview', item.dataItemName, detail.name),
+            event,
+            this,
+            data,
+            this.controlInstance.getPSAppViewLogics() as Array<any>,
+        );
     }
 
     /**
-     * 绘制分组列表
+     * 排序点击事件
+     * @param {string} field 属性名
      *
      * @memberof DataViewControlBase
      */
-    public async drawGroup() {
-        const data: Array<any> = [...this.items];
-        let groups: Array<any> = [];
-        data.forEach((item: any) => {
-            if (item.hasOwnProperty(this.groupAppField)) {
-                groups.push(item[this.groupAppField]);
-            }
-        });
-        groups = [...new Set(groups)];
-        if (groups.length == 0) {
-            LogUtil.warn(this.$t('app.dataview.useless'));
+     public sortClick(field: string) {
+        if (this.sortField !== field) {
+            this.sortField = field;
+            this.sortDir = 'asc';
+        } else if (this.sortDir === 'asc') {
+            this.sortDir = 'desc';
+        } else if (this.sortDir === 'desc') {
+            this.sortDir = '';
+        } else {
+            this.sortDir = 'asc';
         }
-        const groupTree: Array<any> = [];
-        groups.forEach((group: any, i: number) => {
-            const children: Array<any> = [];
-            data.forEach((item: any, j: number) => {
-                if (Object.is(group, item[this.groupAppField])) {
-                    children.push(item);
-                }
-            });
-            group = group ? group : this.$t('app.commonwords.other');
-            const tree: any = {
-                label: group,
-                group: group,
-                children: children,
-            };
-            groupTree.push(tree);
-        });
-        this.groupData = groupTree;
+        this.refresh();
     }
 
     /**
@@ -917,7 +762,7 @@ export class DataViewControlBase extends MDControlBase {
      *
      * @memberof DataViewControlBase
      */
-    public group() {
+     public group() {
         if (Object.is(this.groupMode, 'AUTO')) {
             this.drawGroup();
         } else if (Object.is(this.groupMode, 'CODELIST')) {
@@ -926,42 +771,11 @@ export class DataViewControlBase extends MDControlBase {
     }
 
     /**
-     * 操作列界面行为
-     *
-     * @param {*} data
-     * @param {*} tag
-     * @param {*} $event
-     * @memberof DataViewControlBase
-     */
-    public uiAction(data: any, tag: any, $event: any) {
-        $event.stopPropagation();
-        // <#if ctrl.getPSAppViewLogics()??>
-        // <#list ctrl.getPSAppViewLogics() as logic>
-        // <#if logic.getPSAppViewUIAction().getPSUIAction()??>
-        // <#assign action = logic.getPSAppViewUIAction().getPSUIAction()>
-        // if(Object.is('${action.getUIActionTag()}', tag)) {
-        //     this.${logic.getName()}(data, tag, $event);
-        // }
-        // </#if>
-        // </#list>
-        // </#if>
-
-        const viewLogics = this.controlInstance.getPSAppViewLogics() || [];
-        if (viewLogics.length > 0) {
-            for (const logic of viewLogics) {
-                if (logic.getPSAppViewUIAction()) {
-                    //todo
-                }
-            }
-        }
-    }
-
-    /**
      * 部件事件
      *
-     * @param {string} controlname
-     * @param {string} action
-     * @param {*} data
+     * @param {string} controlname 部件名
+     * @param {string} action 事件名
+     * @param {*} data 数据
      * @memberof DataViewControlBase
      */
     public onCtrlEvent(controlname: string, action: string, data: any) {
@@ -1049,6 +863,18 @@ export class DataViewControlBase extends MDControlBase {
     }
 
     /**
+     * 更改批量操作工具栏显示状态
+     *
+     * @param $event 时间源
+     * @memberof DataViewControlBase
+     */
+     public onClick($event: any) {
+        if (!this.moveflag) {
+            this.flag = !this.flag;
+        }
+        this.moveflag = false;
+    }
+    /**
      * 绘制加载数据提示信息
      *
      * @memberof DataViewControlBase
@@ -1096,7 +922,7 @@ export class DataViewControlBase extends MDControlBase {
     }
 
     /**
-     * 分组项
+     * 绘制有子成员的项
      *
      */
     public hasChildrenRender(h: any, group: any, dataViewItem: IPSDEDataViewItem) {
@@ -1230,22 +1056,7 @@ export class DataViewControlBase extends MDControlBase {
     }
 
     /**
-     * 处理操作列点击
-     *
-     * @memberof DataViewControlBase
-     */
-    public handleActionClick(data: any, event: any, item: any, detail: any) {
-        AppViewLogicService.getInstance().executeViewLogic(
-            this.getViewLogicTag('dataviewexpbar_dataview', item.dataItemName, detail.name),
-            event,
-            this,
-            data,
-            this.controlInstance.getPSAppViewLogics() as Array<any>,
-        );
-    }
-
-    /**
-     * sortbar
+     * 绘制排序栏
      *
      * @memberof DataViewControlBase
      */
@@ -1262,5 +1073,169 @@ export class DataViewControlBase extends MDControlBase {
                 ></app-sort-bar>
             );
         }
+    }
+
+    /**
+     * 根据分组代码表绘制分组列表
+     *
+     * @memberof DataViewControlBase
+     */
+     public async drawCodeListGroup() {
+        let groups: Array<any> = [];
+        const groupTree: Array<any> = [];
+        const data: Array<any> = [...this.items];
+        if (this.groupCodeListParams) {
+            let groupCodelist: any = await this.codeListService.getDataItems(this.groupCodeListParams);
+            groups = Util.deepCopy(groupCodelist);
+        }
+        if (groups.length == 0) {
+            LogUtil.warn(this.$t('app.dataview.useless'));
+        }
+        const map: Map<string, any> = new Map();
+        data.forEach(item => {
+            const tag = item[this.groupAppField];
+            if (notNilEmpty(tag)) {
+                if (!map.has(tag)) {
+                    map.set(tag, []);
+                }
+                const arr: any[] = map.get(tag);
+                arr.push(item);
+            }
+        });
+        groups.forEach((group: any) => {
+            const children: any[] = [];
+            if (this.groupFieldCodelist && map.has(group.label)) {
+                children.push(...map.get(group.label));
+            } else if (map.has(group.value)) {
+                children.push(...map.get(group.value));
+            }
+            const item: any = {
+                label: group.label,
+                group: group.label,
+                data: group,
+                children,
+            };
+            groupTree.push(item);
+        });
+        const child: any[] = [];
+        data.forEach((item: any) => {
+            let i: number = 0;
+            if (this.groupFieldCodelist) {
+                i = groups.findIndex((group: any) => Object.is(group.label, item[this.groupAppField]));
+            } else {
+                i = groups.findIndex((group: any) => Object.is(group.value, item[this.groupAppField]));
+            }
+            if (i < 0) {
+                child.push(item);
+            }
+        });
+        const Tree: any = {
+            label: this.$t('app.commonwords.other'),
+            group: this.$t('app.commonwords.other'),
+            children: child,
+        };
+        if (child && child.length > 0) {
+            groupTree.push(Tree);
+        }
+        this.groupData = groupTree;
+    }
+
+    /**
+     * 绘制分组列表
+     *
+     * @memberof DataViewControlBase
+     */
+    public async drawGroup() {
+        const data: Array<any> = [...this.items];
+        let groups: Array<any> = [];
+        data.forEach((item: any) => {
+            if (item.hasOwnProperty(this.groupAppField)) {
+                groups.push(item[this.groupAppField]);
+            }
+        });
+        groups = [...new Set(groups)];
+        if (groups.length == 0) {
+            LogUtil.warn(this.$t('app.dataview.useless'));
+        }
+        const groupTree: Array<any> = [];
+        groups.forEach((group: any, i: number) => {
+            const children: Array<any> = [];
+            data.forEach((item: any, j: number) => {
+                if (Object.is(group, item[this.groupAppField])) {
+                    children.push(item);
+                }
+            });
+            group = group ? group : this.$t('app.commonwords.other');
+            const tree: any = {
+                label: group,
+                group: group,
+                children: children,
+            };
+            groupTree.push(tree);
+        });
+        this.groupData = groupTree;
+    }
+    
+
+    /**
+     * 排序class变更
+     * @param {string} field 属性名
+     *
+     * @memberof DataViewControlBase
+     */
+     public getsortClass(field: string) {
+        if (this.sortField !== field || this.sortDir === '') {
+            return '';
+        } else if (this.sortDir === 'asc') {
+            return 'sort-ascending';
+        } else if (this.sortDir === 'desc') {
+            return 'sort-descending';
+        }
+    }
+
+    /**
+     * 鼠标移动+放下
+     *
+     * @memberof DataViewControlBase
+     */
+    public mouseEvent() {
+        if (typeof this.$el.getElementsByClassName == 'function') {
+            this.dragEle = this.$el.getElementsByClassName('drag-filed')[0];
+        }
+        document.onmousemove = (e: any) => {
+            if (this.dragflag) {
+                this.dragEle.style.left = e.clientX - this.leftP + 'px';
+                this.dragEle.style.top = e.clientY - this.topP + 'px';
+                this.moveflag = true;
+            }
+        };
+        document.onmouseup = (e: any) => {
+            this.dragflag = false;
+        };
+    }
+
+    /**
+     * mousedown事件
+     *
+     * @param e 事件源
+     * @memberof DataViewControlBase
+     */
+    public down(e: any) {
+        this.leftP = e.clientX - this.dragEle.offsetLeft;
+        this.topP = e.clientY - this.dragEle.offsetTop;
+        this.dragflag = true;
+    }
+
+    /**
+     * 获取界面行为权限状态
+     *
+     * @param {*} data 当前列表行数据
+     * @memberof DataViewControlBase
+     */
+     public getActionState(data: any) {
+        let tempActionModel: any = JSON.parse(JSON.stringify(this.actionModel));
+        let targetData: any = this.transformData(data);
+        ViewTool.calcActionItemAuthState(targetData, tempActionModel, this.appUIService);
+        return tempActionModel;
     }
 }

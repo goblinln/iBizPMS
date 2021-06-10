@@ -107,6 +107,7 @@ public interface IStoryService extends IService<Story> {
     List<Story> selectReleaseLinkableStories(StorySearchContext context);
     List<Story> selectReleaseStories(StorySearchContext context);
     List<Story> selectReportStories(StorySearchContext context);
+    List<Story> selectSimple(StorySearchContext context);
     List<Story> selectStoryChild(StorySearchContext context);
     List<Story> selectStoryRelated(StorySearchContext context);
     List<Story> selectSubStory(StorySearchContext context);

@@ -3189,7 +3189,7 @@ public class ActionResource {
     }
 
     @VersionCheck(entity = "action" , versionfield = "updatedate")
-    @PreAuthorize("quickTest('ZT_ACTION', 'UPDATE')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据项目需求更新系统日志", tags = {"系统日志" },  notes = "根据项目需求更新系统日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/stories/{story_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> updateByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
@@ -3198,7 +3198,7 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
-        Map<String, Integer> opprivs = actionRuntime.getOPPrivs(domain.getId());    
+        Map<String, Integer> opprivs = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

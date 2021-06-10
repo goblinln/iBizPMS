@@ -1,8 +1,8 @@
-import { ModelTool, Util } from 'ibiz-core';
+import { KanbanControlInterface, Util } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { AppViewLogicService } from '../app-service';
 import { AppKanbanService } from '../ctrl-service';
-import { IPSAppDEKanbanView, IPSAppView, IPSAppViewRef, IPSCodeList, IPSDEKanban, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction } from '@ibiz/dynamic-model-api';
+import { IPSAppDEKanbanView, IPSAppView, IPSAppViewRef, IPSCodeList, IPSDEKanban } from '@ibiz/dynamic-model-api';
 import { Subject } from 'rxjs';
 /**
  * 看板视图部件基类
@@ -11,7 +11,7 @@ import { Subject } from 'rxjs';
  * @class KanbanControlBase
  * @extends {MDControlBase}
  */
-export class KanbanControlBase extends MDControlBase {
+export class KanbanControlBase extends MDControlBase implements KanbanControlInterface{
 
     /**
      * 看板数据
@@ -30,43 +30,12 @@ export class KanbanControlBase extends MDControlBase {
     public controlInstance!: IPSDEKanban;
 
     /**
-     * 是否默认选中第一条数据
-     *
-     * @type {boolean}
-     * @memberof KanbanControlBase
-     */
-    public isSelectFirstDefault: boolean = false;
-
-    /**
-     * 显示处理提示
-     *
-     * @type {boolean}
-     * @memberof KanbanControlBase
-     */
-    public showBusyIndicator: boolean = true;
-
-    /**
-     * 是否单选
-     *
-     * @type {boolean}
-     * @memberof KanbanControlBase
-     */
-    public isSingleSelect?: boolean;
-
-    /**
      * 加载的数据是否附加在items之后
      *
      * @type {boolean}
      * @memberof KanbanControlBase
      */
     public isAddBehind: boolean = false;
-
-    /**
-     * 选中数组
-     * @type {Array<any>}
-     * @memberof KanbanControlBase
-     */
-    public selections: Array<any> = [];
 
     /**
      * 代码表数据
@@ -133,30 +102,9 @@ export class KanbanControlBase extends MDControlBase {
     public thisRef: any = this;
 
     /**
-     * 监听部件动态参数变化
-     *
-     * @param {*} newVal
-     * @param {*} oldVal
-     * @memberof KanbanControlBase
-     */
-    public onDynamicPropsChange(newVal: any, oldVal: any) {
-        super.onDynamicPropsChange(newVal, oldVal);
-    }
-
-    /**
-     * 监听部件参数变化
-     *
-     * @param {*} newVal
-     * @param {*} oldVal
-     * @memberof KanbanControlBase
-     */
-    public onStaticPropsChange(newVal: any, oldVal: any) {
-        super.onStaticPropsChange(newVal, oldVal)
-    }
-
-    /**
      * 部件模型数据初始化
      *
+     * @param {*} [args]
      * @memberof KanbanControlBase
      */
     public async ctrlModelInit(args?: any) {
@@ -263,62 +211,11 @@ export class KanbanControlBase extends MDControlBase {
     }
 
     /**
-     * 界面行为
-     *
-     * @param {*} detail 界面行为
-     * @param {*} $event   
-     * @param {*} group 看板分组
-     * @memberof AppDefaultKanban
-     */
-    public uiActionClick(detail: any, $event: any, group: any) {
-        let row = this.selections.length > 0 && group.items.includes(this.selections[0]) ? this.selections[0] : {};
-        if (!row.hasOwnProperty('srfgroup')) {
-            Object.assign(row, { srfgroup: group.value });
-        }
-        AppViewLogicService.getInstance().executeViewLogic(this.getViewLogicTag(this.controlInstance.name, 'group', detail.name), $event, this, row, this.controlInstance?.getPSAppViewLogics() as any);
-    }
-
-    /**
-     * 加载更多
-     *
-     * @memberof KanbanControlBase
-     */
-    public loadMore() {
-        if (this.totalRecord > this.items.length) {
-            this.curPage = ++this.curPage;
-            this.isAddBehind = true;
-            this.load({});
-        }
-    }
-
-    /**
-     * 刷新
-     *
-     * @param {*} [opt={}]
-     * @memberof KanbanControlBase
-     */
-    public refresh(args?: any) {
-        this.curPage = 1;
-        this.load(args, true);
-    }
-
-    /**
-     * 执行destroyed后的逻辑
-     *
-     * @memberof KanbanControlBase
-     */
-    public afterDestroy() {
-        if (this.viewStateEvent) {
-            this.viewStateEvent.unsubscribe();
-        }
-    }
-
-    /**
      * 看板数据加载
      *
-     * @public
-     * @param {*} [arg={}]
+     * @param {*} [opt={}] 额外参数
      * @param {boolean} [isReset=false] 是否重置items
+     * @return {*} 
      * @memberof KanbanControlBase
      */
     public async load(opt: any = {}, isReset: boolean = false) {
@@ -382,98 +279,37 @@ export class KanbanControlBase extends MDControlBase {
     }
 
     /**
-     * 面板数据变化处理事件
-     * @param {any} item 当前列数据
-     * @param {any} $event 面板事件数据
+     * 加载更多
      *
      * @memberof KanbanControlBase
      */
-    public onPanelDataChange(item: any, $event: any) {
-        Object.assign(item, $event, { rowDataState: 'update' });
-    }
-
-    /**
-     * 拖拽变化
-     *
-     * @param {*} evt
-     * @param {*} name
-     * @memberof KanbanControlBase
-     */
-    public async onDragChange(evt: any, name: string) {
-        if (evt?.added?.element) {
-            let item: any = JSON.parse(JSON.stringify(evt.added.element))
-            let updateView: IPSAppView | null = await this.getUpdateView(name);
-            if (updateView) {
-                let view: any = {
-                    viewname: 'app-view-shell',
-                    height: updateView.height,
-                    width: updateView.width,
-                    title: this.$tl(updateView.getCapPSLanguageRes()?.lanResTag, updateView.caption),
-                };
-                const _context: any = JSON.parse(JSON.stringify(this.context));
-                const _param: any = JSON.parse(JSON.stringify(this.viewparams));
-                Object.assign(_context, { [this.appDeCodeName.toLowerCase()]: item.srfkey });
-                if (updateView && updateView.modelPath) {
-                    Object.assign(_context, { viewpath: updateView.modelPath });
-                }
-                let container: Subject<any>;
-                if (updateView.openMode && !Object.is(updateView.openMode, '') && updateView.openMode.indexOf('DRAWER') !== -1) {
-                    if (Object.is(updateView.openMode, 'DRAWER_TOP')) {
-                        Object.assign(view, { isfullscreen: true });
-                        container = this.$appdrawer.openTopDrawer(
-                            view,
-                            Util.getViewProps(_context, _param),
-                        );
-                    } else {
-                        Object.assign(view, { placement: updateView.openMode });
-                        container = this.$appdrawer.openDrawer(view, Util.getViewProps(_context, _param));
-                    }
-                } else {
-                    container = this.$appmodal.openModal(view, _context, _param);
-                }
-                container.subscribe((result: any) => {
-                    if (!result || !Object.is(result.ret, 'OK')) {
-                        this.setGroups();
-                        return;
-                    }
-                    this.refresh();
-                });
-            } else {
-                this.updateData(item, name)
-            }
+     public loadMore() {
+        if (this.totalRecord > this.items.length) {
+            this.curPage = ++this.curPage;
+            this.isAddBehind = true;
+            this.load({});
         }
     }
-
+    
     /**
-     * 拖拽更新页面
+     * 刷新
      *
-     * @param {string} group
+     * @param {*} [opt={}] 额外参数
      * @memberof KanbanControlBase
      */
-    public async getUpdateView(group: string) {
-        if (!group) return null;
-        let parentModel: IPSAppDEKanbanView = (this.controlInstance as any).parentModel;
-        if (parentModel.getPSAppViewRefs() && (parentModel.getPSAppViewRefs() as IPSAppViewRef[]).length > 0) {
-            let activeAppViewRef: any = parentModel.getPSAppViewRefs()?.find((item: IPSAppViewRef) => {
-                return item.name === `EDITDATA:${group.toUpperCase()}`;
-            })
-            if (!activeAppViewRef || !activeAppViewRef.getRefPSAppView()) return null;
-            const openView: IPSAppView = activeAppViewRef.getRefPSAppView();
-            await openView.fill();
-            return openView;
-        } else {
-            return null;
-        }
+     public refresh(args?: any) {
+        this.curPage = 1;
+        this.load(args, true);
     }
 
     /**
      * 删除
      *
-     * @param {any[]} datas
+     * @param {any[]} datas 删除数据
      * @returns {Promise<any>}
      * @memberof KanbanControlBase
      */
-    public async remove(datas: any[]): Promise<any> {
+     public async remove(datas: any[]): Promise<any> {
         if (!this.removeAction) {
             this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.kanban.notconfig.removeaction') as string),'remove');
             return;
@@ -567,9 +403,89 @@ export class KanbanControlBase extends MDControlBase {
     }
 
     /**
-     * 设置分组集合
+     * 界面行为
      *
-     * @param {*}
+     * @param {*} detail 界面行为
+     * @param {*} $event 事件源
+     * @param {*} group 看板分组
+     * @memberof KanbanControlBase
+     */
+     public uiActionClick(detail: any, $event: any, group: any) {
+        let row = this.selections.length > 0 && group.items.includes(this.selections[0]) ? this.selections[0] : {};
+        if (!row.hasOwnProperty('srfgroup')) {
+            Object.assign(row, { srfgroup: group.value });
+        }
+        AppViewLogicService.getInstance().executeViewLogic(this.getViewLogicTag(this.controlInstance.name, 'group', detail.name), $event, this, row, this.controlInstance?.getPSAppViewLogics() as any);
+    }
+
+    /**
+     * 面板数据变化处理事件
+     * @param {any} item 当前列数据
+     * @param {any} $event 面板事件数据
+     *
+     * @memberof KanbanControlBase
+     */
+    public onPanelDataChange(item: any, $event: any) {
+        Object.assign(item, $event, { rowDataState: 'update' });
+    }
+
+    /**
+     * 拖拽变化
+     *
+     * @param {*} evt 拖住对象
+     * @param {*} name 分组名
+     * @memberof KanbanControlBase
+     */
+    public async onDragChange(evt: any, name: string) {
+        if (evt?.added?.element) {
+            let item: any = JSON.parse(JSON.stringify(evt.added.element))
+            let updateView: IPSAppView | null = await this.getUpdateView(name);
+            if (updateView) {
+                let view: any = {
+                    viewname: 'app-view-shell',
+                    height: updateView.height,
+                    width: updateView.width,
+                    title: this.$tl(updateView.getCapPSLanguageRes()?.lanResTag, updateView.caption),
+                };
+                const _context: any = JSON.parse(JSON.stringify(this.context));
+                const _param: any = JSON.parse(JSON.stringify(this.viewparams));
+                Object.assign(_context, { [this.appDeCodeName.toLowerCase()]: item.srfkey });
+                if (updateView && updateView.modelPath) {
+                    Object.assign(_context, { viewpath: updateView.modelPath });
+                }
+                let container: Subject<any>;
+                if (updateView.openMode && !Object.is(updateView.openMode, '') && updateView.openMode.indexOf('DRAWER') !== -1) {
+                    if (Object.is(updateView.openMode, 'DRAWER_TOP')) {
+                        Object.assign(view, { isfullscreen: true });
+                        container = this.$appdrawer.openTopDrawer(
+                            view,
+                            Util.getViewProps(_context, _param),
+                        );
+                    } else {
+                        Object.assign(view, { placement: updateView.openMode });
+                        container = this.$appdrawer.openDrawer(view, Util.getViewProps(_context, _param));
+                    }
+                } else {
+                    container = this.$appmodal.openModal(view, _context, _param);
+                }
+                container.subscribe((result: any) => {
+                    if (!result || !Object.is(result.ret, 'OK')) {
+                        this.setGroups();
+                        return;
+                    }
+                    this.refresh();
+                });
+            } else {
+                this.updateData(item, name)
+            }
+        }
+    }
+
+    /**
+     * 修改分组集合
+     *
+     * @param {*} opt 数据
+     * @param {*} newVal 新分组值
      * @memberof KanbanControlBase
      */
     public updateData(opt: any, newVal: any) {
@@ -606,12 +522,70 @@ export class KanbanControlBase extends MDControlBase {
     }
 
     /**
-     * 设置分组集合
-     *
-     * @param {}
+     * 单击事件
+     * 
+     * @param {*} args 数据
      * @memberof KanbanControlBase
      */
-    public async setGroups() {
+    public handleClick(args: any) {
+        args.isselected = !args.isselected;
+        this.items.forEach((item: any) => {
+            if (item.srfkey !== args.srfkey) {
+                item.isselected = false;
+            }
+        })
+        this.selectchange();
+    }
+
+    /**
+     * 双击事件
+     *
+     * @param {*} args 数据
+     * @memberof KanbanControlBase
+     */
+    public handleDblClick(args: any) {
+        args.isselected = true;
+        this.items.forEach((item: any) => {
+            if (item.srfkey !== args.srfkey) {
+                item.isselected = false;
+            }
+        })
+        this.$emit("ctrl-event", { controlname: "kanban", action: "rowdblclick", data: args });
+    }
+
+    /**
+     * 触发事件
+     * @memberof KanbanControlBase
+     *
+     */
+    public selectchange() {
+        this.selections = [];
+        this.items.map((item: any) => {
+            if (item.isselected) {
+                this.selections.push(item);
+            }
+        });
+        this.$emit("ctrl-event", { controlname: "kanban", action: "selectionchange", data: this.selections });
+    }
+
+    /**
+     * 点击时触发看板的展开和收起
+     * 
+     * @param group 分组看板
+     * @param index 分组看板编号
+     * @memberof KanbanControlBase
+     */
+    public onClick(group: any, index: number) {
+        group.folding = !group.folding;
+        this.$forceUpdate();
+    }
+    
+    /**
+     * 设置分组集合
+     *
+     * @memberof KanbanControlBase
+     */
+     public async setGroups() {
         let tempGroups: Array<any> = this.groups;
         if (!this.isGroup || !this.groupField || Object.is(this.groupMode, 'NONE')) {
             return;
@@ -651,12 +625,34 @@ export class KanbanControlBase extends MDControlBase {
     }
 
     /**
-     * 设置分组集合
+     * 拖拽更新页面
      *
-     * @param {string} name
+     * @param {string} group 分组名称
      * @memberof KanbanControlBase
      */
-    public getGroupItems(name: string) {
+     public async getUpdateView(group: string) {
+        if (!group) return null;
+        let parentModel: IPSAppDEKanbanView = (this.controlInstance as any).parentModel;
+        if (parentModel.getPSAppViewRefs() && (parentModel.getPSAppViewRefs() as IPSAppViewRef[]).length > 0) {
+            let activeAppViewRef: any = parentModel.getPSAppViewRefs()?.find((item: IPSAppViewRef) => {
+                return item.name === `EDITDATA:${group.toUpperCase()}`;
+            })
+            if (!activeAppViewRef || !activeAppViewRef.getRefPSAppView()) return null;
+            const openView: IPSAppView = activeAppViewRef.getRefPSAppView();
+            await openView.fill();
+            return openView;
+        } else {
+            return null;
+        }
+    }
+    
+    /**
+     * 获取对应分组的数据集合
+     *
+     * @param {string} name 分组值
+     * @memberof KanbanControlBase
+     */
+     public getGroupItems(name: string) {
         let datas: any = [];
         this.items.forEach(item => {
             if (Object.is(item[this.groupField], name)) {
@@ -667,9 +663,9 @@ export class KanbanControlBase extends MDControlBase {
     }
 
     /**
-     * 设置分组集合
+     * 获取分组的text
      *
-     * @param {string} name
+     * @param {string} name 分组值
      * @memberof KanbanControlBase
      */
     public getGroupText(name: string) {
@@ -686,62 +682,5 @@ export class KanbanControlBase extends MDControlBase {
         } else {
             return name;
         }
-    }
-
-    /**
-     * 选择数据
-     * @memberof KanbanControlBase
-     *
-     */
-    public handleClick(args: any) {
-        args.isselected = !args.isselected;
-        this.items.forEach((item: any) => {
-            if (item.srfkey !== args.srfkey) {
-                item.isselected = false;
-            }
-        })
-        this.selectchange();
-    }
-
-    /**
-     * 双击数据
-     * @memberof KanbanControlBase
-     *
-     */
-    public handleDblClick(args: any) {
-        args.isselected = true;
-        this.items.forEach((item: any) => {
-            if (item.srfkey !== args.srfkey) {
-                item.isselected = false;
-            }
-        })
-        this.$emit("ctrl-event", { controlname: "kanban", action: "rowdblclick", data: args });
-    }
-
-    /**
-     * 触发事件
-     * @memberof KanbanControlBase
-     *
-     */
-    public selectchange() {
-        this.selections = [];
-        this.items.map((item: any) => {
-            if (item.isselected) {
-                this.selections.push(item);
-            }
-        });
-        this.$emit("ctrl-event", { controlname: "kanban", action: "selectionchange", data: this.selections });
-    }
-
-    /**
-     * 点击时触发看板的展开和收起
-     * 
-     * @param group 分组看板
-     * @param index 分组看板编号
-     * @memberof KanbanControlBase
-     */
-    public onClick(group: any, index: number) {
-        group.folding = !group.folding;
-        this.$forceUpdate();
     }
 }

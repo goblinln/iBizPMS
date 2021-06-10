@@ -330,14 +330,14 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_STORY', 'DELETE')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'UPDATE', #story_id, 'DELETE')")
     @ApiOperation(value = "根据项目删除需求", tags = {"需求" },  notes = "根据项目删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/stories/{story_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
     }
 
-    @PreAuthorize("quickTest('ZT_STORY', 'DELETE')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'UPDATE', 'DELETE')")
     @ApiOperation(value = "根据项目批量删除需求", tags = {"需求" },  notes = "根据项目批量删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/stories/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -346,7 +346,7 @@ public class StoryResource {
     }
 
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
-    @PreAuthorize("quickTest('ZT_STORY', 'UPDATE')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'UPDATE', #story_id, 'UPDATE')")
     @ApiOperation(value = "根据项目更新需求", tags = {"需求" },  notes = "根据项目更新需求")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/stories/{story_id}")
     public ResponseEntity<StoryDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -355,7 +355,7 @@ public class StoryResource {
         domain.setId(story_id);
 		storyService.update(domain);
         StoryDTO dto = storyMapping.toDto(domain);
-        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

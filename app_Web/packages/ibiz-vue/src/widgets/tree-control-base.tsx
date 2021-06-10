@@ -1,5 +1,5 @@
 import { Provide } from 'vue-property-decorator';
-import { LogUtil, Util, ViewTool } from 'ibiz-core';
+import { LogUtil, TreeControlInterface, Util, ViewTool } from 'ibiz-core';
 import { AppTreeService } from '../ctrl-service';
 import { MDControlBase } from './md-control-base';
 import { GlobalService, UIServiceRegister } from 'ibiz-service';
@@ -13,7 +13,7 @@ import { IPSDETree, IPSDETreeNode, IPSDEToolbarItem, IPSDECMUIActionItem, IPSDEU
  * @class TreeControlBase
  * @extends {MDControlBase}
  */
-export class TreeControlBase extends MDControlBase {
+export class TreeControlBase extends MDControlBase implements TreeControlInterface{
     /**
      * 部件模型实例对象
      *
@@ -88,9 +88,158 @@ export class TreeControlBase extends MDControlBase {
     public srfnodefilter: string = '';
 
     /**
+     * 备份树节点上下文菜单
+     *
+     * @type any
+     * @memberof TreeControlBase
+     */
+    public copyActionModel: any;
+
+    /**
+     * 监听动态参数变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof TreeControlBase
+     */
+    public onDynamicPropsChange(newVal: any, oldVal: any) {
+        super.onDynamicPropsChange(newVal, oldVal);
+        if(newVal?.selectedData && newVal.selectedData != oldVal?.selectedData){
+            this.selectedData = newVal.selectedData;
+            this.onSelectedDataValueChange(newVal.selectedData)
+        }
+    }
+
+    /**
+     * 监听静态参数变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof TreeControlBase
+     */
+    public onStaticPropsChange(newVal: any, oldVal: any) {
+        this.isBranchAvailable = newVal?.isBranchAvailable !== false;
+        this.isSingleSelect = newVal.isSingleSelect
+        super.onStaticPropsChange(newVal, oldVal);
+    }
+
+    /**
+     * 部件模型数据初始化
+     *
+     * @memberof TreeControlBase
+     */
+    public async ctrlModelInit(args?: any) {
+        await super.ctrlModelInit();
+        this.service = new AppTreeService(this.controlInstance);
+        this.initActionModel();   
+    }
+
+    /**
+     * 初始化树节点上下文菜单集合
+     * 
+     * @memberof TreeControlBase
+     */
+    public initActionModel() {
+        const allTreeNodes = this.controlInstance.getPSDETreeNodes() || [];
+        let tempModel: any = {};
+        if(allTreeNodes?.length>0 ) {
+            allTreeNodes.forEach((item: IPSDETreeNode) => {
+                if(item?.getPSDEContextMenu()) {
+                    let toobarItems: any = item.getPSDEContextMenu()?.getPSDEToolbarItems();
+                    if (toobarItems.length > 0) {     
+                        toobarItems.forEach((toolbarItem: IPSDEToolbarItem) => {
+                            this.initActionModelItem(toolbarItem,item,tempModel)
+                        })
+                    }
+                }
+            })
+        }
+        this.actionModel = {};
+        Object.assign(this.actionModel, tempModel);
+    }
+
+    /**
+     * 初始化上下菜单项
+     * 
+     * @param toolbarItem 工具栏菜单模型
+     * @param item 节点模型
+     * @param tempModel 界面行为模型对象
+     * @memberof TreeControlBase
+     */
+    public initActionModelItem(toolbarItem: IPSDEToolbarItem,item: IPSDETreeNode,tempModel: any){
+        let tempItem: any = {
+            name: toolbarItem.name,
+            ctrlname: item.getPSDEContextMenu()?.name,
+            nodeOwner: item.nodeType
+        }
+        if(toolbarItem.itemType == 'DEUIACTION') {
+            const uiAction:IPSDEUIAction = (toolbarItem as IPSDECMUIActionItem).getPSUIAction() as IPSDEUIAction;
+            if (uiAction) {
+              tempItem.type = uiAction.uIActionType;
+              tempItem.tag = uiAction.uIActionTag;
+              tempItem.visabled = true;
+              tempItem.disabled = false;
+              if(uiAction?.actionTarget && uiAction?.actionTarget != ""){
+                  tempItem.actiontarget = uiAction.actionTarget;
+              }
+              if(uiAction.noPrivDisplayMode) {
+                  tempItem.noprivdisplaymode = uiAction.noPrivDisplayMode;
+              }
+              if(uiAction.dataAccessAction) {
+                  tempItem.dataaccaction = uiAction.dataAccessAction;
+              }
+            }
+        }
+        tempItem.imgclass = toolbarItem.showIcon && toolbarItem.getPSSysImage() ? toolbarItem.getPSSysImage()?.cssClass : '';
+        tempItem.caption = toolbarItem.showCaption ? toolbarItem.caption : '';
+        tempItem.title = toolbarItem.tooltip;
+        tempModel[`${item.nodeType}_${toolbarItem.name}`] = tempItem;
+        const toolbarItems = (toolbarItem as IPSDETBUIActionItem)?.getPSDEToolbarItems() || [];
+        if(toolbarItems?.length > 0){
+            for(let toolBarChild of toolbarItems){
+                this.initActionModelItem(toolBarChild,item,tempModel)               
+            }
+        }
+    }
+
+    /**
+     * 树视图部件初始化
+     *
+     * @memberof TreeControlBase
+     */
+    public ctrlInit() {
+        super.ctrlInit();
+        if (this.viewState) {
+            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
+                if (!Object.is(tag, this.name)) {
+                    return;
+                }
+                if (Object.is('load', action)) {
+                    this.inited = false;
+                    this.$nextTick(() => {
+                        this.inited = true;
+                    });
+                }
+                if (Object.is('filter', action)) {
+                    this.srfnodefilter = data.srfnodefilter;
+                    this.refresh_all();
+                }
+                if (Object.is('refresh_parent', action)) {
+                    this.refresh_parent();
+                }
+                if (Object.is('refresh_current', action)) {
+                    this.refresh_current();
+                }
+            });
+        }
+    }
+
+    /**
      * 数据加载
      *
-     * @param {*} node
+     * @param {*} [node={}] 节点数据
+     * @param {*} [resolve] 渲染树节点回调
+     * @return {*} 
      * @memberof TreeControlBase
      */
     public load(node: any = {}, resolve?: any) {
@@ -149,6 +298,279 @@ export class TreeControlBase extends MDControlBase {
     }
 
     /**
+     * 节点复选框选中事件
+     *
+     * @public
+     * @param {*} data 当前节点对应传入对象
+     * @param {*} checkedState 树目前选中状态对象
+     * @memberof TreeControlBase
+     */
+    public onCheck(data: any, checkedState: any) {
+        // 处理多选数据
+        if (!this.isSingleSelect) {
+            let leafNodes = checkedState.checkedNodes.filter((item: any) => item.leaf);
+            this.selectedNodes = JSON.parse(JSON.stringify(leafNodes));
+            this.ctrlEvent({
+                controlname: this.name,
+                action: 'selectionchange',
+                data: this.selectedNodes,
+            });
+        }
+    }
+
+    /**
+     * 当前选中节点变更事件
+     *
+     * @public
+     * @param {*} data 节点对应传入对象
+     * @param {*} node 节点对应node对象
+     * @memberof TreeControlBase
+     */
+    public selectionChange(data: any, node: any) {
+        // 禁用项处理
+        if (data.disabled) {
+            node.isCurrent = false;
+            return;
+        }
+        // 只处理最底层子节点
+        if (this.isBranchAvailable || data.leaf) {
+            this.currentselectedNode = JSON.parse(JSON.stringify(data));
+            // 单选直接替换
+            if (this.isSingleSelect) {
+                this.selectedNodes = [this.currentselectedNode];
+                this.ctrlEvent({
+                    controlname: this.name,
+                    action: 'selectionchange',
+                    data: this.selectedNodes,
+                });
+            }
+            // 多选用check方法
+        }
+    }
+
+    /**
+     * 刷新
+     *
+     * @param {*} [args] 额外参数
+     * @memberof TreeControlBase
+     */
+    public refresh(args?: any): void {
+        this.refresh_all();
+    }
+
+    /**
+     * 刷新整个树
+     *
+     * @memberof TreeControlBase
+     */
+    public refresh_all(): void {
+        this.inited = false;
+        this.$nextTick(() => {
+            this.inited = true;
+        });
+    }
+
+    /**
+     * 刷新节点
+     *
+     * @public
+     * @param {*} [curContext] 当前节点上下文
+     * @param {*} [arg={}] 当前节点附加参数
+     * @param {boolean} parentnode 是否是刷新父节点
+     * @memberof TreeControlBase
+     */
+    public refresh_node(curContext: any, arg: any = {}, parentnode?: boolean): void {
+        const { srfnodeid: id } = arg;
+        Object.assign(arg, { viewparams: this.viewparams });
+        let tempContext:any = JSON.parse(JSON.stringify(curContext));
+        this.onControlRequset('refresh_node', tempContext, arg);
+        const get: Promise<any> = this.service.getNodes(tempContext, arg);
+        get.then((response: any) => {
+            this.onControlResponse('refresh_node', response);
+            if (!response || response.status !== 200) {
+                this.$throw(response.info,'refresh_node');
+                return;
+            }
+            const _items = [...response.data];
+            this.formatExpanded(_items);
+            const tree: any = this.$refs[this.name];
+            tree.updateKeyChildren(id, _items);
+            if (parentnode) {
+                this.currentselectedNode = {};
+            }
+            this.$forceUpdate();
+            this.setDefaultSelection(_items);
+        }).catch((response: any) => {
+            this.onControlResponse('refresh_node', response);
+            this.$throw(response,'refresh_node');
+        });
+    }
+
+    /**
+     * 刷新当前节点
+     *
+     * @memberof TreeControlBase
+     */
+    public refresh_current(): void {
+        if (Object.keys(this.currentselectedNode).length === 0) {
+            return;
+        }
+        const tree: any = this.$refs[this.name];
+        const node: any = tree.getNode(this.currentselectedNode.id);
+        if (!node || !node.parent) {
+            return;
+        }
+        let curNode: any = {};
+        curNode = Util.deepObjectMerge(curNode, node);
+        let tempContext: any = {};
+        if (curNode.data && curNode.data.srfappctx) {
+            Object.assign(tempContext, curNode.data.srfappctx);
+        } else {
+            Object.assign(tempContext, this.context);
+        }
+        const id: string = node.key ? node.key : '#';
+        const param: any = { srfnodeid: id };
+        this.refresh_node(tempContext, param, false);
+    }
+
+    /**
+     * 刷新当前节点的父节点
+     *
+     * @memberof TreeControlBase
+     */
+    public refresh_parent(): void {
+        if (Object.keys(this.currentselectedNode).length === 0) {
+            return;
+        }
+        const tree: any = this.$refs[this.name];
+        const node: any = tree.getNode(this.currentselectedNode.id);
+        if (!node || !node.parent) {
+            return;
+        }
+        let curNode: any = {};
+        const { parent: _parent } = node;
+        curNode = Util.deepObjectMerge(curNode, _parent);
+        let tempContext: any = {};
+        if (curNode.data && curNode.data.srfappctx) {
+            Object.assign(tempContext, curNode.data.srfappctx);
+        } else {
+            Object.assign(tempContext, this.context);
+        }
+        const id: string = _parent.key ? _parent.key : '#';
+        const param: any = { srfnodeid: id };
+        this.refresh_node(tempContext, param, true);
+    }
+
+    /**
+     * 执行默认界面行为(树节点双击事件)
+     *
+     * @param {*} node 节点数据
+     * @memberof TreeControlBase
+     */
+    public doDefaultAction(node: any) {
+        // todo 默认界面行为
+
+        this.ctrlEvent({
+            controlname: this.name,
+            action: 'nodedblclick',
+            data: this.selectedNodes,
+        });
+    }
+
+    /**
+     * 显示上下文菜单事件
+     *
+     * @param data 节点数据
+     * @param event 事件源
+     * @memberof TreeControlBase
+     */
+    public showContext(data: any, event: any) {
+        let _this: any = this;
+        this.copyActionModel = {};
+        const tags: string[] = data.id.split(';');
+        Object.values(this.actionModel).forEach((item: any) => {
+            if (Object.is(item.nodeOwner, tags[0])) {
+                this.copyActionModel[item.name] = item;
+            }
+        });
+        if (Object.keys(this.copyActionModel).length === 0) {
+            return;
+        }
+        this.computeNodeState(data, data.nodeType, data.appEntityName).then((result: any) => {
+            let flag: boolean = false;
+            if (Object.values(result).length > 0) {
+                flag = Object.values(result).some((item: any) => {
+                    return item.visabled === true;
+                });
+            }
+            if (flag) {
+                (_this.$refs[data.id] as any).showContextMenu(event.clientX, event.clientY);
+            }
+        });
+    }
+
+    /**
+     * 计算节点右键权限
+     *
+     * @param {*} node 节点数据
+     * @param {*} nodeType 节点类型
+     * @param {*} appEntityName 应用实体名称
+     * @returns
+     * @memberof TreeControlBase
+     */
+    public async computeNodeState(node: any, nodeType: string, appEntityName: string) {
+        if (Object.is(nodeType, 'STATIC')) {
+            return this.copyActionModel;
+        }
+        let service: any = await new GlobalService().getService(appEntityName);
+        if (this.copyActionModel && Object.keys(this.copyActionModel).length > 0) {
+            if (service['Get'] && service['Get'] instanceof Function) {
+                let tempContext: any = Util.deepCopy(this.context);
+                tempContext[appEntityName.toLowerCase()] = node.srfkey;
+                let targetData = await service.Get(tempContext, {}, false);
+                const nodeUIService = await UIServiceRegister.getInstance().getService(this.context, appEntityName.toLowerCase());
+                if (nodeUIService) {
+                    await nodeUIService.loaded();
+                }
+                ViewTool.calcTreeActionItemAuthState(targetData.data, this.copyActionModel, nodeUIService);
+                return this.copyActionModel;
+            } else {
+                LogUtil.warn(this.$t('app.warn.geterror'));
+                return this.copyActionModel;
+            }
+        }
+    }
+
+    /**
+     * 部件事件
+     * @param ctrl 部件 
+     * @param action  行为
+     * @param data 数据
+     * 
+     * @memberof TreeControlBase
+     */
+    public onCtrlEvent(controlname: string, action: string, data: any, selectedNode?: any) {
+        if(action == 'contextMenuItemClick'){
+            AppViewLogicService.getInstance().executeViewLogic(`${controlname}_${data}_click`, undefined, this, selectedNode.curData, this.controlInstance?.getPSAppViewLogics() || []);
+        }else{
+            this.ctrlEvent({ controlname, action, data });
+        }
+    }
+    
+    /**
+     * 自定义树节点筛选操作逻辑
+     *
+     * @param {*} value 过滤值
+     * @param {*} data 节点值
+     * @return {*} 
+     * @memberof TreeControlBase
+     */
+    public filterNode(value: any, data: any) {
+        if (!value) return true;
+        return data.text.indexOf(value) !== -1;
+    }
+
+    /**
      * 计算当前节点的上下文
      *
      * @param {*} curNode 当前节点
@@ -164,12 +586,11 @@ export class TreeControlBase extends MDControlBase {
         return tempContext;
     }
 
-
     /**
-     * 默认展开节点
+     * 设置默认展开节点
      *
      * @public
-     * @param {any[]} items
+     * @param {any[]} items 节点集合
      * @returns {any[]}
      * @memberof TreeControlBase
      */
@@ -278,7 +699,7 @@ export class TreeControlBase extends MDControlBase {
     /**
      * 设置选中高亮
      *
-     * @param {*} data
+     * @param {*} data 节点数据
      * @memberof TreeControlBase
      */
     public setTreeNodeHighLight(data: any): void {
@@ -286,198 +707,6 @@ export class TreeControlBase extends MDControlBase {
         tree.setCurrentKey(data.id);
     }
 
-    /**
-     * 选中数据变更事件
-     *
-     * @public
-     * @param {*} data
-     * @param {*} data 当前节点对应传入对象
-     * @param {*} checkedState 树目前选中状态对象
-     * @memberof TreeControlBase
-     */
-    public onCheck(data: any, checkedState: any) {
-        // 处理多选数据
-        if (!this.isSingleSelect) {
-            let leafNodes = checkedState.checkedNodes.filter((item: any) => item.leaf);
-            this.selectedNodes = JSON.parse(JSON.stringify(leafNodes));
-            this.ctrlEvent({
-                controlname: this.name,
-                action: 'selectionchange',
-                data: this.selectedNodes,
-            });
-        }
-    }
-
-    /**
-     * 选中数据变更事件
-     *
-     * @public
-     * @param {*} data 节点对应传入对象
-     * @param {*} node 节点对应node对象
-     * @memberof TreeControlBase
-     */
-    public selectionChange(data: any, node: any) {
-        // 禁用项处理
-        if (data.disabled) {
-            node.isCurrent = false;
-            return;
-        }
-        // 只处理最底层子节点
-        if (this.isBranchAvailable || data.leaf) {
-            this.currentselectedNode = JSON.parse(JSON.stringify(data));
-            // 单选直接替换
-            if (this.isSingleSelect) {
-                this.selectedNodes = [this.currentselectedNode];
-                this.ctrlEvent({
-                    controlname: this.name,
-                    action: 'selectionchange',
-                    data: this.selectedNodes,
-                });
-            }
-            // 多选用check方法
-        }
-    }
-
-    /**
-     * 刷新功能
-     *
-     * @param {*} [args]
-     * @memberof TreeControlBase
-     */
-    public refresh(args?: any): void {
-        this.refresh_all();
-    }
-
-    /**
-     * 刷新数据
-     *
-     * @memberof TreeControlBase
-     */
-    public refresh_all(): void {
-        this.inited = false;
-        this.$nextTick(() => {
-            this.inited = true;
-        });
-    }
-
-    /**
-     * 刷新节点
-     *
-     * @public
-     * @param {*} [curContext] 当前节点上下文
-     * @param {*} [arg={}] 当前节点附加参数
-     * @param {boolean} parentnode 是否是刷新父节点
-     * @memberof TreeControlBase
-     */
-    public refresh_node(curContext: any, arg: any = {}, parentnode: boolean): void {
-        const { srfnodeid: id } = arg;
-        Object.assign(arg, { viewparams: this.viewparams });
-        let tempContext:any = JSON.parse(JSON.stringify(curContext));
-        this.onControlRequset('refresh_node', tempContext, arg);
-        const get: Promise<any> = this.service.getNodes(tempContext, arg);
-        get.then((response: any) => {
-            this.onControlResponse('refresh_node', response);
-            if (!response || response.status !== 200) {
-                this.$throw(response.info,'refresh_node');
-                return;
-            }
-            const _items = [...response.data];
-            this.formatExpanded(_items);
-            const tree: any = this.$refs[this.name];
-            tree.updateKeyChildren(id, _items);
-            if (parentnode) {
-                this.currentselectedNode = {};
-            }
-            this.$forceUpdate();
-            this.setDefaultSelection(_items);
-        }).catch((response: any) => {
-            this.onControlResponse('refresh_node', response);
-            this.$throw(response,'refresh_node');
-        });
-    }
-
-    /**
-     * 刷新当前节点
-     *
-     * @memberof TreeControlBase
-     */
-    public refresh_current(): void {
-        if (Object.keys(this.currentselectedNode).length === 0) {
-            return;
-        }
-        const tree: any = this.$refs[this.name];
-        const node: any = tree.getNode(this.currentselectedNode.id);
-        if (!node || !node.parent) {
-            return;
-        }
-        let curNode: any = {};
-        curNode = Util.deepObjectMerge(curNode, node);
-        let tempContext: any = {};
-        if (curNode.data && curNode.data.srfappctx) {
-            Object.assign(tempContext, curNode.data.srfappctx);
-        } else {
-            Object.assign(tempContext, this.context);
-        }
-        const id: string = node.key ? node.key : '#';
-        const param: any = { srfnodeid: id };
-        this.refresh_node(tempContext, param, false);
-    }
-
-    /**
-     * 刷新父节点
-     *
-     * @memberof TreeControlBase
-     */
-    public refresh_parent(): void {
-        if (Object.keys(this.currentselectedNode).length === 0) {
-            return;
-        }
-        const tree: any = this.$refs[this.name];
-        const node: any = tree.getNode(this.currentselectedNode.id);
-        if (!node || !node.parent) {
-            return;
-        }
-        let curNode: any = {};
-        const { parent: _parent } = node;
-        curNode = Util.deepObjectMerge(curNode, _parent);
-        let tempContext: any = {};
-        if (curNode.data && curNode.data.srfappctx) {
-            Object.assign(tempContext, curNode.data.srfappctx);
-        } else {
-            Object.assign(tempContext, this.context);
-        }
-        const id: string = _parent.key ? _parent.key : '#';
-        const param: any = { srfnodeid: id };
-        this.refresh_node(tempContext, param, true);
-    }
-
-    /**
-     * 监听动态参数变化
-     *
-     * @param {*} newVal
-     * @param {*} oldVal
-     * @memberof TreeControlBase
-     */
-    public onDynamicPropsChange(newVal: any, oldVal: any) {
-        super.onDynamicPropsChange(newVal, oldVal);
-        if(newVal?.selectedData && newVal.selectedData != oldVal?.selectedData){
-            this.selectedData = newVal.selectedData;
-            this.onSelectedDataValueChange(newVal.selectedData)
-        }
-    }
-
-    /**
-     * 监听静态参数变化
-     *
-     * @param {*} newVal
-     * @param {*} oldVal
-     * @memberof TreeControlBase
-     */
-    public onStaticPropsChange(newVal: any, oldVal: any) {
-        this.isBranchAvailable = newVal?.isBranchAvailable !== false;
-        this.isSingleSelect = newVal.isSingleSelect
-        super.onStaticPropsChange(newVal, oldVal);
-    }
 
     /**
      * selectedData选中值变化
@@ -498,230 +727,6 @@ export class TreeControlBase extends MDControlBase {
               }
             }
             this.setDefaultSelection(AllnodesArray);
-        }
-    }
-
-    /**
-     * 部件模型数据初始化
-     *
-     * @memberof TreeControlBase
-     */
-    public async ctrlModelInit(args?: any) {
-        await super.ctrlModelInit();
-        this.service = new AppTreeService(this.controlInstance);
-        this.initActionModel();   
-    }
-
-    /**
-     * 初始化树节点上下文菜单集合
-     * 
-     * @memberof TreeControlBase
-     */
-    public initActionModel() {
-        const allTreeNodes = this.controlInstance.getPSDETreeNodes() || [];
-        let tempModel: any = {};
-        if(allTreeNodes?.length>0 ) {
-            allTreeNodes.forEach((item: IPSDETreeNode) => {
-                if(item?.getPSDEContextMenu()) {
-                    let toobarItems: any = item.getPSDEContextMenu()?.getPSDEToolbarItems();
-                    if (toobarItems.length > 0) {     
-                        toobarItems.forEach((toolbarItem: IPSDEToolbarItem) => {
-                            this.initActionModelItem(toolbarItem,item,tempModel)
-                        })
-                    }
-                }
-            })
-        }
-        this.actionModel = {};
-        Object.assign(this.actionModel, tempModel);
-    }
-
-    /**
-     * 初始化上下菜单项
-     * 
-     * @param toolbarItem 
-     * @param item 
-     * @param tempModel 
-     * @memberof TreeControlBase
-     */
-    public initActionModelItem(toolbarItem: IPSDEToolbarItem,item: IPSDETreeNode,tempModel: any){
-        let tempItem: any = {
-            name: toolbarItem.name,
-            ctrlname: item.getPSDEContextMenu()?.name,
-            nodeOwner: item.nodeType
-        }
-        if(toolbarItem.itemType == 'DEUIACTION') {
-            const uiAction:IPSDEUIAction = (toolbarItem as IPSDECMUIActionItem).getPSUIAction() as IPSDEUIAction;
-            if (uiAction) {
-              tempItem.type = uiAction.uIActionType;
-              tempItem.tag = uiAction.uIActionTag;
-              tempItem.visabled = true;
-              tempItem.disabled = false;
-              if(uiAction?.actionTarget && uiAction?.actionTarget != ""){
-                  tempItem.actiontarget = uiAction.actionTarget;
-              }
-              if(uiAction.noPrivDisplayMode) {
-                  tempItem.noprivdisplaymode = uiAction.noPrivDisplayMode;
-              }
-              if(uiAction.dataAccessAction) {
-                  tempItem.dataaccaction = uiAction.dataAccessAction;
-              }
-            }
-        }
-        tempItem.imgclass = toolbarItem.showIcon && toolbarItem.getPSSysImage() ? toolbarItem.getPSSysImage()?.cssClass : '';
-        tempItem.caption = toolbarItem.showCaption ? toolbarItem.caption : '';
-        tempItem.title = toolbarItem.tooltip;
-        tempModel[`${item.nodeType}_${toolbarItem.name}`] = tempItem;
-        const toolbarItems = (toolbarItem as IPSDETBUIActionItem)?.getPSDEToolbarItems() || [];
-        if(toolbarItems?.length > 0){
-            for(let toolBarChild of toolbarItems){
-                this.initActionModelItem(toolBarChild,item,tempModel)               
-            }
-        }
-    }
-
-    /**
-     * 树视图部件初始化
-     *
-     * @memberof TreeControlBase
-     */
-    public ctrlInit() {
-        super.ctrlInit();
-        if (this.viewState) {
-            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
-                if (!Object.is(tag, this.name)) {
-                    return;
-                }
-                if (Object.is('load', action)) {
-                    this.inited = false;
-                    this.$nextTick(() => {
-                        this.inited = true;
-                    });
-                }
-                if (Object.is('filter', action)) {
-                    this.srfnodefilter = data.srfnodefilter;
-                    this.refresh_all();
-                }
-                if (Object.is('refresh_parent', action)) {
-                    this.refresh_parent();
-                }
-                if (Object.is('refresh_current', action)) {
-                    this.refresh_current();
-                }
-            });
-        }
-    }
-
-    /**
-     * 对树节点进行筛选操作
-     * @memberof TreeControlBase
-     */
-    public filterNode(value: any, data: any) {
-        if (!value) return true;
-        return data.text.indexOf(value) !== -1;
-    }
-
-    /**
-     * 备份树节点上下文菜单
-     *
-     * @type any
-     * @memberof TreeControlBase
-     */
-    public copyActionModel: any;
-
-    /**
-     * 显示上下文菜单
-     *
-     * @param data 节点数据
-     * @param event 事件源
-     * @memberof TreeControlBase
-     */
-    public showContext(data: any, event: any) {
-        let _this: any = this;
-        this.copyActionModel = {};
-        const tags: string[] = data.id.split(';');
-        Object.values(this.actionModel).forEach((item: any) => {
-            if (Object.is(item.nodeOwner, tags[0])) {
-                this.copyActionModel[item.name] = item;
-            }
-        });
-        if (Object.keys(this.copyActionModel).length === 0) {
-            return;
-        }
-        this.computeNodeState(data, data.nodeType, data.appEntityName).then((result: any) => {
-            let flag: boolean = false;
-            if (Object.values(result).length > 0) {
-                flag = Object.values(result).some((item: any) => {
-                    return item.visabled === true;
-                });
-            }
-            if (flag) {
-                (_this.$refs[data.id] as any).showContextMenu(event.clientX, event.clientY);
-            }
-        });
-    }
-
-    /**
-     * 计算节点右键权限
-     *
-     * @param {*} node 节点数据
-     * @param {*} nodeType 节点类型
-     * @param {*} appEntityName 应用实体名称
-     * @returns
-     * @memberof TreeControlBase
-     */
-    public async computeNodeState(node: any, nodeType: string, appEntityName: string) {
-        if (Object.is(nodeType, 'STATIC')) {
-            return this.copyActionModel;
-        }
-        let service: any = await new GlobalService().getService(appEntityName);
-        if (this.copyActionModel && Object.keys(this.copyActionModel).length > 0) {
-            if (service['Get'] && service['Get'] instanceof Function) {
-                let tempContext: any = Util.deepCopy(this.context);
-                tempContext[appEntityName.toLowerCase()] = node.srfkey;
-                let targetData = await service.Get(tempContext, {}, false);
-                const nodeUIService = await UIServiceRegister.getInstance().getService(this.context, appEntityName.toLowerCase());
-                if (nodeUIService) {
-                    await nodeUIService.loaded();
-                }
-                ViewTool.calcTreeActionItemAuthState(targetData.data, this.copyActionModel, nodeUIService);
-                return this.copyActionModel;
-            } else {
-                LogUtil.warn(this.$t('app.warn.geterror'));
-                return this.copyActionModel;
-            }
-        }
-    }
-
-    /**
-     * 执行默认界面行为
-     *
-     * @param {*} node
-     * @memberof TreeControlBase
-     */
-    public doDefaultAction(node: any) {
-        // todo 默认界面行为
-
-        this.ctrlEvent({
-            controlname: this.name,
-            action: 'nodedblclick',
-            data: this.selectedNodes,
-        });
-    }
-
-    /**
-     * 部件事件
-     * @param ctrl 部件 
-     * @param action  行为
-     * @param data 数据
-     * 
-     * @memberof TreeControlBase
-     */
-    public onCtrlEvent(controlname: string, action: string, data: any, selectedNode?: any) {
-        if(action == 'contextMenuItemClick'){
-            AppViewLogicService.getInstance().executeViewLogic(`${controlname}_${data}_click`, undefined, this, selectedNode.curData, this.controlInstance?.getPSAppViewLogics() || []);
-        }else{
-            this.ctrlEvent({ controlname, action, data });
         }
     }
 }

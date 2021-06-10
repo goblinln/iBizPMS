@@ -4264,17 +4264,18 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+      },
+      "default" : true
     }, {
       "codeName" : "IbzFavorite",
       "name" : "取消收藏",
-      "default" : false,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
+      }
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -4337,10 +4338,11 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -4444,17 +4446,18 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+      },
+      "default" : true
     }, {
       "codeName" : "IbzFavorite",
       "name" : "IbzFavorite",
-      "default" : false,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
+      }
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -4576,10 +4579,11 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -4745,17 +4749,18 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+      },
+      "default" : true
     }, {
       "codeName" : "testrun",
       "name" : "testrun",
-      "default" : false,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
+      }
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -4879,17 +4884,18 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+      },
+      "default" : true
     }, {
       "codeName" : "testrun",
       "name" : "testrun",
-      "default" : false,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
+      }
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -4987,10 +4993,11 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,

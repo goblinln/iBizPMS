@@ -250,6 +250,7 @@
           },
           "getPSEditor" : {
             "editorParams" : {
+              "SRFNAVPARAM.root" : "%product%",
               "SRFNAVPARAM.product" : "%product%",
               "SRFNAVCTX.product" : "%product%"
             },
@@ -268,6 +269,11 @@
             "getPSNavigateParams" : [ {
               "key" : "product",
               "name" : "product",
+              "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "root",
+              "name" : "root",
               "value" : "product",
               "rawValue" : false
             } ],

@@ -10,6 +10,7 @@ import {
     ChartBarSeries,
     ChartRadarSeries,
     LogUtil,
+    ChartControlInterface,
 } from 'ibiz-core';
 import {
     IPSChartCoordinateSystemCartesian2D,
@@ -26,10 +27,10 @@ import {
  * 图表部件基类
  *
  * @export
- * @class GridControlBase
+ * @class ChartControlBase
  * @extends {MDControlBase}
  */
-export class ChartControlBase extends MDControlBase {
+export class ChartControlBase extends MDControlBase implements ChartControlInterface{
     /**
      * 图表的模型对象
      *
@@ -72,6 +73,84 @@ export class ChartControlBase extends MDControlBase {
     public seriesModel: any = {};
 
     /**
+     * 图表绘制最终参数
+     *
+     * @memberof ChartControlBase
+     */
+    public chartRenderOption: any = {};
+
+    /**
+     * 初始化图表所需参数
+     *
+     * @type {}
+     * @memberof ChartControlBase
+     */
+    public chartOption: any = {};
+
+    /**
+     * 图表自定义参数集合
+     * 
+     * @memberof ChartControlBase
+     */
+    public chartUserParams: any = {};
+
+    /**
+     * 图表基础动态模型
+     * 
+     * @memberof ChartControlBase
+     */
+    public chartBaseOPtion: any = {};
+
+
+    /**
+     * 部件模型数据初始化实例
+     *
+     * @memberof ChartControlBase
+     */
+    public async ctrlModelInit(args?: any) {
+        await super.ctrlModelInit();
+        this.service = new AppChartService(this.controlInstance);
+        await this.service.loaded(this.controlInstance);
+        this.initChartParams();
+    }
+
+    /**
+     * 执行created后的逻辑
+     *
+     * @memberof ChartControlBase
+     */
+    public ctrlInit() {
+        super.ctrlInit();
+        if (this.viewState) {
+            this.viewStateEvent = this.viewState.subscribe(
+                ({ tag, action, data }: { tag: string; action: string; data: any }) => {
+                    if (!Object.is(tag, this.name)) {
+                        return;
+                    }
+                    if (Object.is('load', action)) {
+                        this.load(data);
+                    }
+                    if (Object.is('refresh', action)) {
+                        this.refresh(data);
+                    }
+                },
+            );
+        }
+    }
+
+    /**
+     * 初始化chart参数
+     *
+     * @memberof ChartControlBase
+     */
+     public initChartParams() {
+        this.initSeriesModel();
+        this.initChartOption();
+        this.initChartUserParams();
+        this.initChartBaseOPtion();
+    }
+
+    /**
      * 初始化series
      *
      * @memberof ChartControlBase
@@ -91,6 +170,8 @@ export class ChartControlBase extends MDControlBase {
     /**
      * 获取SeriesModel参数
      *
+     * @param {*} series 序列模型
+     * @return {*}  {Promise<any>}
      * @memberof ChartControlBase
      */
     public getSeriesModelParam(series: any): Promise<any> {
@@ -167,6 +248,10 @@ export class ChartControlBase extends MDControlBase {
 
     /**
      * 临时获取seriesDataSetField 模型
+     *
+     * @param {*} series 序列模型
+     * @return {*} 
+     * @memberof ChartControlBase
      */
     public getDataSetFields(series: any) {
         const seriesData: any = [];
@@ -189,88 +274,14 @@ export class ChartControlBase extends MDControlBase {
             seriesData.push(data);
         }
         return seriesData
-
-    }
-
-    /**
-     * 处理用户自定义参数
-     *
-     * @memberof ChartControlBase
-     */
-    public fillUserParam(param: any, opts: any, tag: string) {
-        if (!param.userParams) {
-            return;
-        }
-        const userParam = param.userParams;
-        switch (tag) {
-            case 'ECX':
-                if (userParam['ECX.label']) {
-                    opts['label'] = eval("("+userParam['ECX.label']+")");
-                }
-                if (userParam['ECX.labelLine']) {
-                    opts['labelLine'] = eval("("+userParam['ECX.labelLine']+")");
-                }
-                if (userParam['ECX.itemStyle']) {
-                    opts['itemStyle'] = eval("("+userParam['ECX.itemStyle']+")");
-                }
-                if (userParam['ECX.emphasis']) {
-                    opts['emphasis'] = eval("("+userParam['ECX.emphasis']+")");
-                }
-                for (const key in userParam) {
-                    if (Object.prototype.hasOwnProperty.call(userParam, key)) {
-                        if (key.indexOf('EC.') != -1) {
-                            const value = userParam[key].trim();
-                            opts[key.replace('EC.', '')] = value;
-                        }
-                    }
-                }
-                break;
-            case 'EC':
-                for (const key in userParam) {
-                    if (Object.prototype.hasOwnProperty.call(userParam, key)) {
-                        if (key.indexOf('EC.') != -1) {
-                            const value = userParam[key].trim();
-                            opts[key.replace('EC.', '')] = this.isJson(value)
-                                ? JSON.parse(value)
-                                : this.isArray(value)
-                                    ? eval(value)
-                                    : value;
-                        }
-                    }
-                }
-                break;
-            default:
-                break;
-        }
-    }
-
-    /**
-     * 是否为数组字符串
-     */
-    public isArray(str: string) {
-        try {
-            eval(str);
-            return true;
-        } catch (error) {
-            return false;
-        }
-    }
-
-    /**
-     * 是否为json字符串
-     */
-    public isJson(str: any): boolean {
-        try {
-            JSON.parse(str);
-            return true;
-        } catch (error) {
-            return false;
-        }
     }
 
     /**
      * 初始化填充seriesModel
      *
+     * @param {*} opts 图表参数
+     * @param {*} series 序列模型
+     * @return {*}  {*}
      * @memberof ChartControlBase
      */
     public initChartSeries(opts: any, series: any): any {
@@ -297,53 +308,6 @@ export class ChartControlBase extends MDControlBase {
                 break;
         }
     }
-
-    /**
-     * 图表自定义参数集合
-     * 
-     * @memberof ChartControlBase
-     */
-    public chartUserParams: any = {};
-
-    /**
-     * 初始化chartUserParams
-     *
-     * @memberof ChartControlBase
-     */
-    public initChartUserParams() {
-        this.fillUserParam(this.controlInstance, this.chartUserParams, 'EC');
-    }
-
-    /**
-     * 图表基础动态模型
-     * 
-     * @memberof ChartControlBase
-     */
-    public chartBaseOPtion: any = {};
-
-    /**
-     * 初始化图表基础动态模型
-     */
-    public initChartBaseOPtion() {
-        this.chartBaseOPtion = new Function(
-            'return {' + this.controlInstance?.baseOptionJOString + '}',
-        )();
-    }
-
-    /**
-     * 图表绘制最终参数
-     *
-     * @memberof ChartControlBase
-     */
-    public chartRenderOption: any = {};
-
-    /**
-     * 初始化图表所需参数
-     *
-     * @type {}
-     * @memberof ChartControlBase
-     */
-    public chartOption: any = {};
 
     /**
      * 填充chartOption
@@ -409,6 +373,11 @@ export class ChartControlBase extends MDControlBase {
 
     /**
      * 填充 series
+     *
+     * @param {*} series 序列模型
+     * @param {*} [indicator={}] 雷达图参数
+     * @return {*} 
+     * @memberof ChartControlBase
      */
     public fillSeries(series: any, indicator: any = {}) {
         const encode: any = {};
@@ -459,24 +428,11 @@ export class ChartControlBase extends MDControlBase {
     }
 
     /**
-     * 数组元素小写
-     *
-     * @param {*} arr
-     * @returns
-     * @memberof ChartControlBase
-     */
-    public arrayToLowerCase(arr: any) {
-        if (!arr || arr.length == 0) {
-            return [];
-        }
-        for (let index = 0; index < arr.length; index++) {
-            arr[index] = arr[index].toLowerCase();
-        }
-        return arr;
-    }
-
-    /**
      * 填充 axis
+     *
+     * @param {IPSChartGridXAxis} axis 坐标模型
+     * @return {*}  {*}
+     * @memberof ChartControlBase
      */
     public fillAxis(axis: IPSChartGridXAxis): any {
         const _axis: any = {
@@ -496,11 +452,87 @@ export class ChartControlBase extends MDControlBase {
         }
         return _axis;
     }
+    
+    /**
+     * 处理用户自定义参数
+     *
+     * @param {*} param 模型对象
+     * @param {*} opts 图表参数
+     * @param {string} tag 模式标识
+     * @return {*} 
+     * @memberof ChartControlBase
+     */
+    public fillUserParam(param: any, opts: any, tag: string) {
+        if (!param.userParams) {
+            return;
+        }
+        const userParam = param.userParams;
+        switch (tag) {
+            case 'ECX':
+                if (userParam['ECX.label']) {
+                    opts['label'] = eval("("+userParam['ECX.label']+")");
+                }
+                if (userParam['ECX.labelLine']) {
+                    opts['labelLine'] = eval("("+userParam['ECX.labelLine']+")");
+                }
+                if (userParam['ECX.itemStyle']) {
+                    opts['itemStyle'] = eval("("+userParam['ECX.itemStyle']+")");
+                }
+                if (userParam['ECX.emphasis']) {
+                    opts['emphasis'] = eval("("+userParam['ECX.emphasis']+")");
+                }
+                for (const key in userParam) {
+                    if (Object.prototype.hasOwnProperty.call(userParam, key)) {
+                        if (key.indexOf('EC.') != -1) {
+                            const value = userParam[key].trim();
+                            opts[key.replace('EC.', '')] = value;
+                        }
+                    }
+                }
+                break;
+            case 'EC':
+                for (const key in userParam) {
+                    if (Object.prototype.hasOwnProperty.call(userParam, key)) {
+                        if (key.indexOf('EC.') != -1) {
+                            const value = userParam[key].trim();
+                            opts[key.replace('EC.', '')] = this.isJson(value)
+                                ? JSON.parse(value)
+                                : this.isArray(value)
+                                    ? eval(value)
+                                    : value;
+                        }
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 初始化chartUserParams
+     *
+     * @memberof ChartControlBase
+     */
+     public initChartUserParams() {
+        this.fillUserParam(this.controlInstance, this.chartUserParams, 'EC');
+    }
+
+    /**
+     * 初始化图表基础动态模型
+     *
+     * @memberof ChartControlBase
+     */
+    public initChartBaseOPtion() {
+        this.chartBaseOPtion = new Function(
+            'return {' + this.controlInstance?.baseOptionJOString + '}',
+        )();
+    }
 
     /**
      * 刷新
      *
-     * @param {*} [args={}]
+     * @param {*} [args={}] 额外参数
      * @memberof ChartControlBase
      */
     public refresh(args?: any) {
@@ -510,7 +542,7 @@ export class ChartControlBase extends MDControlBase {
     /**
      * 获取图表数据
      *
-     * @returns {*}
+     * @param {*} [opt] 额外参数
      * @memberof ChartControlBase
      */
     public load(opt?: any) {
@@ -565,6 +597,55 @@ export class ChartControlBase extends MDControlBase {
             this.myChart.setOption(_chartOption);
             this.myChart.resize();
         }
+    }
+
+    /**
+     * 是否为数组字符串
+     *
+     * @param {string} str 字符串
+     * @return {*} 
+     * @memberof ChartControlBase
+     */
+    public isArray(str: string) {
+        try {
+            eval(str);
+            return true;
+        } catch (error) {
+            return false;
+        }
+    }
+
+    /**
+     * 是否为json字符串
+     *
+     * @param {*} str 字符串
+     * @return {*}  {boolean}
+     * @memberof ChartControlBase
+     */
+    public isJson(str: any): boolean {
+        try {
+            JSON.parse(str);
+            return true;
+        } catch (error) {
+            return false;
+        }
+    }
+
+    /**
+     * 数组元素小写
+     *
+     * @param {*} arr 数组
+     * @returns
+     * @memberof ChartControlBase
+     */
+    public arrayToLowerCase(arr: any) {
+        if (!arr || arr.length == 0) {
+            return [];
+        }
+        for (let index = 0; index < arr.length; index++) {
+            arr[index] = arr[index].toLowerCase();
+        }
+        return arr;
     }
 
     /**
@@ -826,12 +907,15 @@ export class ChartControlBase extends MDControlBase {
 
     /**
      * 分组和求和
+     *
      * @param {Array<any>} groupField 分组属性
-     * @param {Array<any>} groupField 值属性
-     * @param {Array<any>} data 传入数据
+     * @param {Array<any>} seriesField 序列属性
+     * @param {Array<any>} valueField 值属性
+     * @param {*} data 传入数据
+     * @param {*} item 单个序列
      * @param {*} groupFieldModel 分组属性模型
      * @param {*} allCodeList 所有代码表
-     *
+     * @return {*} 
      * @memberof ChartControlBase
      */
     public groupAndAdd(
@@ -1312,6 +1396,7 @@ export class ChartControlBase extends MDControlBase {
      * @param {*} field 属性值
      * @param {*} allCodeList 所有代码表
      * @param {*} result 结果值
+     * @param {*} groupField 分组属性
      *
      * @memberof ChartControlBase
      */
@@ -1420,7 +1505,8 @@ export class ChartControlBase extends MDControlBase {
     /**
      * 获取代码表
      *
-     * @returns {Promise<any>}
+     * @param {*} codeListObject 代码表对象
+     * @return {*}  {Promise<any>}
      * @memberof ChartControlBase
      */
     public getCodeList(codeListObject: any): Promise<any> {
@@ -1447,51 +1533,4 @@ export class ChartControlBase extends MDControlBase {
         });
     }
 
-    /**
-     * 部件模型数据初始化实例
-     *
-     * @memberof AppDefaultChart
-     */
-    public async ctrlModelInit(args?: any) {
-        await super.ctrlModelInit();
-        this.service = new AppChartService(this.controlInstance);
-        await this.service.loaded(this.controlInstance);
-        this.initChartParams();
-    }
-
-    /**
-     * 执行created后的逻辑
-     *
-     * @memberof ChartControlBase
-     */
-    public ctrlInit() {
-        super.ctrlInit();
-        if (this.viewState) {
-            this.viewStateEvent = this.viewState.subscribe(
-                ({ tag, action, data }: { tag: string; action: string; data: any }) => {
-                    if (!Object.is(tag, this.name)) {
-                        return;
-                    }
-                    if (Object.is('load', action)) {
-                        this.load(data);
-                    }
-                    if (Object.is('refresh', action)) {
-                        this.refresh(data);
-                    }
-                },
-            );
-        }
-    }
-
-    /**
-     * 初始化chart参数
-     *
-     * @memberof ChartControlBase
-     */
-    public initChartParams() {
-        this.initSeriesModel();
-        this.initChartOption();
-        this.initChartUserParams();
-        this.initChartBaseOPtion();
-    }
 }

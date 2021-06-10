@@ -98,17 +98,18 @@
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
     "name" : "传入变量",
-    "default" : true,
-    "envParam" : false,
-    "lastParam" : false,
-    "sessionParam" : false
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+    },
+    "default" : true
   }, {
     "codeName" : "IBZ_FAVORITES",
     "name" : "收藏",
-    "default" : false,
-    "envParam" : false,
-    "lastParam" : false,
-    "sessionParam" : false
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzFavorites.json"
+    }
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

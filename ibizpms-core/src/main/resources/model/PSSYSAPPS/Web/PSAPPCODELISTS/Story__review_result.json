@@ -23,11 +23,6 @@
     "text" : "有待明确",
     "value" : "clarify",
     "default" : true
-  }, {
-    "codeName" : "Reject",
-    "text" : "拒绝",
-    "value" : "reject",
-    "disableSelect" : true
   } ],
   "enableCache" : true
 }

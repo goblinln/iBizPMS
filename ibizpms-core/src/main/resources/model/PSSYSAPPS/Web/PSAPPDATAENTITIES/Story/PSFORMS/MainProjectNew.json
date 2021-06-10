@@ -688,12 +688,21 @@
           "notMode" : false
         } ],
         "getPSEditor" : {
+          "editorParams" : {
+            "SRFNAVPARAM.root" : "%product%"
+          },
           "editorType" : "DROPDOWNLIST",
           "name" : "assignedto",
           "getPSAppCodeList" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
           },
+          "getPSNavigateParams" : [ {
+            "key" : "root",
+            "name" : "root",
+            "value" : "product",
+            "rawValue" : false
+          } ],
           "singleSelect" : true
         },
         "getPSLayoutPos" : {

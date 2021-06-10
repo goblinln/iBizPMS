@@ -1723,17 +1723,18 @@
     "getPSDELogicParams" : [ {
       "codeName" : "ZT_Module",
       "name" : "模块实体",
-      "default" : false,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      }
     }, {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -1817,17 +1818,18 @@
     "getPSDELogicParams" : [ {
       "codeName" : "module",
       "name" : "模块",
-      "default" : false,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      }
     }, {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,

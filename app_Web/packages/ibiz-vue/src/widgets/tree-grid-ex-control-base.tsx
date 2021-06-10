@@ -1,4 +1,4 @@
-import { CodeListServiceBase, Util } from "ibiz-core";
+import { CodeListServiceBase, TreeGridExControlInterface, Util } from "ibiz-core";
 import { MDControlBase } from "./md-control-base";
 import { AppTreeGridExService } from '../ctrl-service';
 import { IPSDETreeGridEx, IPSDETreeNode, IPSDETreeNodeDataItem, IPSDETreeColumn } from '@ibiz/dynamic-model-api';
@@ -7,16 +7,16 @@ import { IPSDETreeGridEx, IPSDETreeNode, IPSDETreeNodeDataItem, IPSDETreeColumn 
  * 树表格部件基类
  *
  * @export
- * @class TreeControlBase
+ * @class TreeGridExControlBase
  * @extends {MDControlBase}
  */
-export class TreeGridExControlBase extends MDControlBase {
+export class TreeGridExControlBase extends MDControlBase implements TreeGridExControlInterface{
 
     /**
      * 部件模型实例对象
      *
      * @type {*}
-     * @memberof AppDefaultTreeGridExView
+     * @memberof TreeGridExControlBase
      */
     public controlInstance!: IPSDETreeGridEx;
 
@@ -61,15 +61,26 @@ export class TreeGridExControlBase extends MDControlBase {
     /**
      * 代码表数据
      * 
-     * @memberof GanttControlBase
+     * @memberof TreeGridExControlBase
      */
     public codeListData: Map<string, any> = new Map();
+
+    /**
+     * 初始化部件数据
+     *
+     * @memberof TreeGridExControlBase
+     */
+    public async ctrlModelInit() {
+        await super.ctrlModelInit();
+        this.service = new AppTreeGridExService(this.controlInstance);
+        await this.initColumnsCodeList();
+    }
 
     /**
      * 初始化列代码表
      * 
      * @public
-     * @memberof GanttControlBase
+     * @memberof TreeGridExControlBase
      */
     public async initColumnsCodeList() {
         let _this: any = this;
@@ -95,54 +106,41 @@ export class TreeGridExControlBase extends MDControlBase {
     }
 
     /**
-     * 获取列属性值
+     * 执行created后的逻辑
      *
-     * @public
      * @memberof TreeGridExControlBase
      */
-    public getColumnValue(task: any, field: string) {
-        const { row } = task;
-        if (row.curData) {
-            Object.assign(row, row.curData)
-        }
-        const allTreeNodes = this.controlInstance.getPSDETreeNodes() || [];
-        const node = allTreeNodes?.find((_node: IPSDETreeNode) => {
-            return row.id.split(";")[0] == _node.nodeType;
-        }) as IPSDETreeNode;
-        const dataItems = node?.getPSDETreeNodeDataItems() || [];
-        if (dataItems?.length > 0) {
-            const dataItem = dataItems.find((_item: IPSDETreeNodeDataItem) => {
-                return _item.name == field;
-            });
-            if (dataItem) {
-                const codelistData = this.codeListData.get(dataItem.name);
-                if (codelistData) {
-                    const item = codelistData.find((item: any) => {
-                        return item.value == row[field];
-                    })
-                    if (item) {
-                        return item.text;
-                    }
-                }
+    public ctrlInit() {
+        super.ctrlInit();
+        this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
+            if (!Object.is(tag, this.name)) {
+                return;
             }
-        }
-        return row[field];
+            if (Object.is('load', action)) {
+                this.load(data);
+            }
+            if (Object.is('filter', action)) {
+                this.srfnodefilter = data.srfnodefilter;
+                this.refresh();
+            }
+        });
     }
 
     /**
-     * 搜索获取日程事件
+     * 加载数据
      *
-     * @param {*} $event 日期信息
+     * @param {*} [node={}] 节点数据
+     * @param {*} [resolve] 渲染回调
      * @memberof TreeGridExControlBase
      */
-    public load(task: any = {}, resolve?: any) {
+    public load(node: any = {}, resolve?: any) {
         const params: any = {
-            srfnodeid: task && task.id ? task.id : "#",
+            srfnodeid: node && node.id ? node.id : "#",
             srfnodefilter: this.srfnodefilter,
         };
         let tempViewParams: any = JSON.parse(JSON.stringify(this.viewparams));
         let curNode: any = {};
-        Util.deepObjectMerge(curNode, task);
+        Util.deepObjectMerge(curNode, node);
         let tempContext: any = this.computecurNodeContext(curNode);
         if (curNode && curNode.srfparentdename) {
             Object.assign(tempContext, { srfparentdename: curNode.srfparentdename });
@@ -187,33 +185,9 @@ export class TreeGridExControlBase extends MDControlBase {
     }
 
     /**
-     * 加载节点
-     *
-     * @memberof TreeTable
-     */
-    public loadTreeNode(tree: any, treeNode: any, resolve: any) {
-        this.load(tree, resolve);
-    }
-
-    /**
-     * 计算当前节点的上下文
-     *
-     * @param {*} curNode 当前节点
-     * @memberof AppDefaultTreeGridExView
-     */
-    public computecurNodeContext(curNode: any) {
-        let tempContext: any = {};
-        if (curNode?.srfappctx) {
-            tempContext = JSON.parse(JSON.stringify(curNode.srfappctx));
-        } else {
-            tempContext = JSON.parse(JSON.stringify(this.context));
-        }
-        return tempContext;
-    }
-
-    /**
      * 刷新
      *
+     * @param {*} [args] 额外参数
      * @memberof TreeGridExControlBase
      */
     public refresh(args?: any) {
@@ -221,52 +195,30 @@ export class TreeGridExControlBase extends MDControlBase {
     }
 
     /**
-     * 选中的数据
+     * 加载事件
      *
-     * @returns {any[]}
+     * @param {*} row 行数据
+     * @param {*} treeNode 节点信息
+     * @param {*} resolve 渲染回调
      * @memberof TreeGridExControlBase
      */
-    public selections: any[] = [];
-
-    /**
-     * 获取多项数据
-     *
-     * @returns {any[]}
-     * @memberof TreeGridExControlBase
-     */
-    public getDatas(): any[] {
-        return this.selections;
+    public loadTreeNode(row: any, treeNode: any, resolve: any) {
+        this.load(row, resolve);
     }
 
     /**
-     * 获取单项树
+     * 当前选中变化事件
      *
-     * @returns {*}
+     * @param {*} $event 行数据
+     * @return {*} 
      * @memberof TreeGridExControlBase
      */
-    public getData(): any {
-        return this.selections.length > 0 ? this.selections[0] : null;
-    }
-
-    /**
-     * 执行created后的逻辑
-     *
-     * @memberof TreeGridExControlBase
-     */
-    public ctrlInit() {
-        super.ctrlInit();
-        this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
-            if (!Object.is(tag, this.name)) {
-                return;
-            }
-            if (Object.is('load', action)) {
-                this.load(data);
-            }
-            if (Object.is('filter', action)) {
-                this.srfnodefilter = data.srfnodefilter;
-                this.refresh();
-            }
-        });
+    public select($event: any) {
+        if (!$event) {
+            return;
+        }
+        this.selections = [JSON.parse(JSON.stringify($event))];
+        this.ctrlEvent({ controlname: this.controlInstance.name, action: "selectionchange", data: this.selections });
     }
 
     /**
@@ -295,31 +247,6 @@ export class TreeGridExControlBase extends MDControlBase {
                 icons[0].click();
             }
         }
-    }
-
-    /**
-     * 选中变化
-     *
-     * @returns
-     * @memberof TreeGridExControlBase
-     */
-    public select($event: any) {
-        if (!$event) {
-            return;
-        }
-        this.selections = [JSON.parse(JSON.stringify($event))];
-        this.ctrlEvent({ controlname: this.controlInstance.name, action: "selectionchange", data: this.selections });
-    }
-
-    /**
-     * 初始化部件数据
-     *
-     * @memberof AppDefaultTree
-     */
-    public async ctrlModelInit() {
-        await super.ctrlModelInit();
-        this.service = new AppTreeGridExService(this.controlInstance);
-        await this.initColumnsCodeList();
     }
 
     /**
@@ -362,6 +289,57 @@ export class TreeGridExControlBase extends MDControlBase {
             })
 
         )
+    }
+
+    /**
+     * 获取列属性值
+     *
+     * @public
+     * @memberof TreeGridExControlBase
+     */
+    public getColumnValue(task: any, field: string) {
+        const { row } = task;
+        if (row.curData) {
+            Object.assign(row, row.curData)
+        }
+        const allTreeNodes = this.controlInstance.getPSDETreeNodes() || [];
+        const node = allTreeNodes?.find((_node: IPSDETreeNode) => {
+            return row.id.split(";")[0] == _node.nodeType;
+        }) as IPSDETreeNode;
+        const dataItems = node?.getPSDETreeNodeDataItems() || [];
+        if (dataItems?.length > 0) {
+            const dataItem = dataItems.find((_item: IPSDETreeNodeDataItem) => {
+                return _item.name == field;
+            });
+            if (dataItem) {
+                const codelistData = this.codeListData.get(dataItem.name);
+                if (codelistData) {
+                    const item = codelistData.find((item: any) => {
+                        return item.value == row[field];
+                    })
+                    if (item) {
+                        return item.text;
+                    }
+                }
+            }
+        }
+        return row[field];
+    }
+
+    /**
+     * 计算当前节点的上下文
+     *
+     * @param {*} curNode 当前节点
+     * @memberof TreeGridExControlBase
+     */
+    public computecurNodeContext(curNode: any) {
+        let tempContext: any = {};
+        if (curNode?.srfappctx) {
+            tempContext = JSON.parse(JSON.stringify(curNode.srfappctx));
+        } else {
+            tempContext = JSON.parse(JSON.stringify(this.context));
+        }
+        return tempContext;
     }
 
 }

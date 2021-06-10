@@ -913,12 +913,21 @@
               "codeName" : "AssignedTo"
             },
             "getPSEditor" : {
+              "editorParams" : {
+                "SRFNAVPARAM.root" : "%product%"
+              },
               "editorType" : "DROPDOWNLIST",
               "name" : "assignedto",
               "getPSAppCodeList" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
               },
+              "getPSNavigateParams" : [ {
+                "key" : "root",
+                "name" : "root",
+                "value" : "product",
+                "rawValue" : false
+              } ],
               "singleSelect" : true
             },
             "getPSLayoutPos" : {
@@ -1018,12 +1027,21 @@
             "codeName" : "ReviewedBy"
           },
           "getPSEditor" : {
+            "editorParams" : {
+              "SRFNAVPARAM.root" : "%product%"
+            },
             "editorType" : "MDROPDOWNLIST",
             "name" : "reviewedby",
             "getPSAppCodeList" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
+            "getPSNavigateParams" : [ {
+              "key" : "root",
+              "name" : "root",
+              "value" : "product",
+              "rawValue" : false
+            } ],
             "singleSelect" : false
           },
           "getPSLayoutPos" : {

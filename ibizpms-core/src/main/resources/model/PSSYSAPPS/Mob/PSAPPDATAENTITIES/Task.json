@@ -1863,10 +1863,15 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,

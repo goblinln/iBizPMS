@@ -420,7 +420,7 @@
       "noPrivDisplayMode" : 1,
       "getPSAppCodeList" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList25.json"
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
       },
       "getPSAppDEField" : {
         "name" : "ACCOUNT",
@@ -731,7 +731,7 @@
         "name" : "account",
         "getPSAppCodeList" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList25.json"
+          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "ACCOUNT",

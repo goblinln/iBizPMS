@@ -106,17 +106,18 @@
   "getPSDELogicParams" : [ {
     "codeName" : "product",
     "name" : "产品",
-    "default" : false,
-    "envParam" : false,
-    "lastParam" : false,
-    "sessionParam" : false
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
   }, {
     "codeName" : "Default",
     "name" : "传入变量",
-    "default" : true,
-    "envParam" : false,
-    "lastParam" : false,
-    "sessionParam" : false
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
+    },
+    "default" : true
   } ],
   "getStartPSDELogicNode" : {
     "modelref" : true,

@@ -446,6 +446,7 @@ export default class AppCustomTheme extends Vue {
      * @memberof AppCustomTheme
      */
     public share() {
+        this.saveThemeOptions();
         try {
             this.$http.get(`/configs/share/${this.AppTag}/theme-setting`).then((res: any) => {
                 if (res.status == 200 && res.data) {

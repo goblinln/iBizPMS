@@ -1636,17 +1636,18 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
+      },
+      "default" : true
     }, {
       "codeName" : "project",
       "name" : "项目",
-      "default" : false,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      }
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -1700,10 +1701,11 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,

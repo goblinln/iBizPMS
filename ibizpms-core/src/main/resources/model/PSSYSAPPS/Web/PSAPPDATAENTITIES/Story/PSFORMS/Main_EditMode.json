@@ -5571,11 +5571,13 @@
           } ],
           "getPSEditor" : {
             "editorParams" : {
+              "SRFNAVPARAM.n_parent_ltandeq" : "0",
               "SRFNAVPARAM.product" : "%product%",
               "AC" : "TRUE",
               "valFormat" : "{0: '/'}",
               "TRIGGER" : "TRUE",
               "SRFNAVCTX.product" : "%product%",
+              "SRFNAVPARAM.n_id_noteq" : "%story%",
               "PICKUPVIEW" : "FALSE"
             },
             "editorType" : "PICKEREX_TRIGGER",
@@ -5603,6 +5605,16 @@
               "key" : "product",
               "name" : "product",
               "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "n_parent_ltandeq",
+              "name" : "n_parent_ltandeq",
+              "value" : "0",
+              "rawValue" : true
+            }, {
+              "key" : "n_id_noteq",
+              "name" : "n_id_noteq",
+              "value" : "story",
               "rawValue" : false
             } ],
             "valueItemName" : "parent",
@@ -6235,12 +6247,21 @@
               "codeName" : "AssignedTo"
             },
             "getPSEditor" : {
+              "editorParams" : {
+                "SRFNAVPARAM.root" : "%product%"
+              },
               "editorType" : "DROPDOWNLIST",
               "name" : "assignedto",
               "getPSAppCodeList" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
               },
+              "getPSNavigateParams" : [ {
+                "key" : "root",
+                "name" : "root",
+                "value" : "product",
+                "rawValue" : false
+              } ],
               "singleSelect" : true
             },
             "getPSLayoutPos" : {

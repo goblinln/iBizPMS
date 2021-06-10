@@ -5,14 +5,14 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
-import { Util, ViewTool, ModelTool, LogUtil, debounce } from 'ibiz-core';
+import { Util, ViewTool, ModelTool, LogUtil, debounce, CalendarControlInterface } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { GlobalService } from 'ibiz-service';
 import { AppCalendarService } from '../ctrl-service';
 import { ContextMenu } from '../components/common/context-menu/context-menu';
 import { AppDefaultContextMenu } from '../components/control/app-default-contextmenu/app-default-contextmenu';
 import { AppViewLogicService } from '../app-service';
-import { IPSAppDataEntity, IPSControlParam, IPSDECalendar, IPSDECMUIActionItem, IPSDEContextMenu, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
+import { IPSAppDataEntity, IPSDECalendar, IPSDECMUIActionItem, IPSDEContextMenu, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
 
 /**
  * 应用日历部件基类
@@ -27,30 +27,15 @@ import { IPSAppDataEntity, IPSControlParam, IPSDECalendar, IPSDECMUIActionItem, 
         "app-default-contextmenu": AppDefaultContextMenu
     }
 })
-export class CalendarControlBase extends MDControlBase{
+export class CalendarControlBase extends MDControlBase implements CalendarControlInterface{
 
     /**
-     * 数据视图模型实例
+     * 日历部件模型实例
      * 
      * @type {*}
      * @memberof CalendarControlBase
      */
     public controlInstance!: IPSDECalendar;
-
-    /**
-     * 模型数据是否加载完成
-     * 
-     * @memberof CalendarControlBase
-     */
-    public controlIsLoaded:boolean = false;
-
-    /**
-     * 显示处理提示
-     * 
-     * @type {boolean}
-     * @memberof CalendarControlBase
-     */
-    public showBusyIndicator: boolean = false;
 
     /**
      * 日历部件样式名
@@ -169,30 +154,6 @@ export class CalendarControlBase extends MDControlBase{
     public ctrlParams: any;
 
     /**
-     * 打开时间选择模态
-     *
-     * @public
-     * @memberof CalendarControlBase
-     */
-    public openDateSelect(){
-        this.modalVisible = true;
-    }
-
-    /**
-     * 跳转到指定时间
-     *
-     * @public
-     * @memberof CalendarControlBase
-     */
-    public gotoDate(){
-        let appCalendar: any = this.$refs[this.controlInstance?.codeName];
-        let api = appCalendar?.getApi();
-        if (api) {
-            api.gotoDate(this.selectedGotoDate);
-        }
-    }
-
-    /**
      * 有效日期范围
      *
      * @public
@@ -229,31 +190,84 @@ export class CalendarControlBase extends MDControlBase{
      */
     public quickToolbarModels: any = {};
 
+
     /**
-     * 设置按钮文本
+     * 日程事件集合
      *
      * @public
+     * @type {any[]}
      * @memberof CalendarControlBase
      */
-    public setButtonText(){
-        this.buttonText.today = this.$t('app.calendar.today'),
-        this.buttonText.month = this.$t('app.calendar.month'),
-        this.buttonText.week = this.$t('app.calendar.week'),
-        this.buttonText.day = this.$t('app.calendar.day'),
-        this.buttonText.list = this.$t('app.calendar.list')
-        this.customButtons.gotoDate.text = this.$t('app.calendar.gotodate')
+     public events: any[] = [];
+
+    /**
+     * 日历项上下文菜单集合
+     *
+     * @type {string[]}
+     * @memberof CalendarControlBase
+     */
+    public actionModel: any = {
+        //TODO待补充
     }
 
     /**
-     * 监听语言变化
+     * 备份日历项上下文菜单
      *
-     * @public
+     * @type {string[]}
      * @memberof CalendarControlBase
      */
-    @Watch('$i18n.locale')
-    public onLocaleChange(newval: any, val: any) {
-        this.setButtonText();
-    }
+    public copyActionModel: any;
+
+    /**
+     * 日历样式类型
+     *
+     * @public
+     * @type {string}
+     * @memberof CalendarControlBase
+     */
+    public calendarType: string = '';
+
+    /**
+     * 图例显示控制
+     *
+     * @public
+     * @type {any}
+     * @memberof CalendarControlBase
+     */
+    public isShowlegend: any = {};
+
+    /**
+     * 是否已经选中第一条数据
+     *
+     * @type {boolean}
+     * @memberof CalendarControlBase
+     */
+    public isSelectFirst: boolean = false;
+
+    /**
+     * 事件id
+     *
+     * @type {string}
+     * @memberof CalendarControlBase
+     */
+    public eventid: string = "";
+
+    /**
+     * 事件类型map
+     *
+     * @type {any}
+     * @memberof CalendarControlBase
+     */
+    public eventKey: any = new Map();
+
+    /**
+     * 查询参数缓存
+     *
+     * @public
+     * @type {any}
+     * @memberof CalendarControlBase
+     */
+     public searchArgCache: any = {};
 
     /**
      * 监听部件动态参数变化
@@ -318,6 +332,41 @@ export class CalendarControlBase extends MDControlBase{
     }
 
     /**
+     * 日历视图部件初始化
+     *
+     * @memberof CalendarControlBase
+     */
+     public ctrlInit() {
+        super.ctrlInit();
+        if (Object.is(this.calendarType, 'TIMELINE')) {
+            this.searchEvents();
+        } else {
+            this.setButtonText();
+        }
+        if (this.viewState) {
+            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
+                if (!Object.is(tag, this.name)) {
+                    return;
+                }
+            });
+        }
+    }
+
+    /**
+     * 部件挂载
+     *
+     * @memberof CalendarControlBase
+     */
+    public ctrlMounted(){
+        super.ctrlMounted();
+        let appCalendar: any = this.$refs[this.controlInstance?.codeName];
+        if(appCalendar){
+            let api = appCalendar.getApi();
+            api.updateSize()
+        }
+    }
+    
+    /**
      * 初始化日历项上下文菜单集合
      * 
      * @memberof CalendarControlBase
@@ -376,6 +425,72 @@ export class CalendarControlBase extends MDControlBase{
     }
 
     /**
+     * 初始化快速工具栏
+     *
+     * @memberof CalendarControlBase
+     */
+     public initQuickToolbar() {
+        const quickToolbaItems: Array<IPSDEToolbarItem> = (ModelTool.findPSControlByType('QUICKTOOLBAR', this.controlInstance.getPSControls() || []) as IPSDEToolbar)?.getPSDEToolbarItems() || [];
+        if(quickToolbaItems.length > 0) {
+            let items: Array<any> = quickToolbaItems.filter((item: IPSDEToolbarItem) => {
+                return item.itemType == "DEUIACTION";
+            });
+            this.quickToolbarItems = [...items];
+        }
+        this.initQuickToolbarItemModel();
+    }
+
+
+    /**
+     * 初始化快速工具栏模型
+     *
+     * @memberof CalendarControlBase
+     */
+    public initQuickToolbarItemModel() {
+        const items: Array<IPSDEToolbarItem> = this.quickToolbarItems;
+        let models: any = {};
+        if(items.length>0) {
+            items.forEach((_item: IPSDEToolbarItem) => {
+                const item: IPSDETBUIActionItem = _item as IPSDETBUIActionItem;
+                const uiAction: IPSDEUIAction = item.getPSUIAction() as IPSDEUIAction;
+                let model: any = {};
+                Object.assign(model, {
+                    name: item.name?.toLowerCase(),
+                    actiontarget: "NONE",
+                    disabled: false,
+                    visabled: true,
+                    type: item.itemType,
+                    noprivdisplaymode: uiAction?.noPrivDisplayMode,
+                    dataaccaction: uiAction?.dataAccessAction,
+                    uiaction: {
+                        tag: uiAction?.uIActionTag ? uiAction.uIActionTag : uiAction.id ? uiAction.id : '',
+                        target: uiAction?.actionTarget
+                    }
+                });
+                Object.assign(models, { [`${item.name?.toLowerCase()}`]: model });
+            })
+        }
+        this.quickToolbarModels = {};
+        Object.assign(this.quickToolbarModels, models);
+    }
+    
+    /**
+     * 初始化事件map对象
+     *
+     * @memberof CalendarControlBase
+     */
+    public initEventKey() {
+        const calendarItems: Array<IPSSysCalendarItem> = (this.controlInstance as IPSSysCalendar).getPSSysCalendarItems() || [];
+        if (calendarItems.length > 0) {
+            calendarItems.forEach((calendarItem) => {
+            let eventKey = ModelTool.getAppEntityKeyField(calendarItem?.getPSAppDataEntity())?.codeName?.toLowerCase() || '';
+            this.eventKey.set(calendarItem.itemType,eventKey);
+            })
+            
+        }
+    }
+
+    /**
      * 初始化图例显示控制
      * 
      * @memberof CalendarControlBase
@@ -393,81 +508,13 @@ export class CalendarControlBase extends MDControlBase{
     }
 
     /**
-     * 日程事件集合
-     *
-     * @public
-     * @type {any[]}
-     * @memberof CalendarControlBase
-     */
-    public events: any[] = [];
-
-        /**
-     * 日历项上下文菜单集合
-     *
-     * @type {string[]}
-     * @memberof CalendarControlBase
-     */
-    public actionModel: any = {
-        //TODO待补充
-    }
-
-    /**
-     * 备份日历项上下文菜单
-     *
-     * @type {string[]}
-     * @memberof CalendarControlBase
-     */
-     public copyActionModel: any;
-
-    /**
-     * 日历样式类型
-     *
-     * @public
-     * @type {string}
-     * @memberof CalendarControlBase
-     */
-    public calendarType: string = '';
-
-    /**
-     * 图例显示控制
-     *
-     * @public
-     * @type {any}
-     * @memberof CalendarControlBase
-     */
-    public isShowlegend: any = {};
-
-    /**
-     * 是否已经选中第一条数据
-     *
-     * @type {boolean}
-     * @memberof MDControlBase
-     */
-     public isSelectFirst: boolean = false;
-
-     /**
-      * 事件id
-      *
-      * @type {string}
-      * @memberof MDControlBase
-      */
-    public eventid: string = "";
-
-    /**
-      * 事件类型map
-      *
-      * @type {any}
-      * @memberof MDControlBase
-      */
-    public eventKey: any = new Map();
-
-    /**
      * 图例点击事件
      *
-     * @public
+     * @param {string} itemType 日历项类型
+     * @return {*} 
      * @memberof CalendarControlBase
      */
-    legendTrigger(itemType:string){
+    public legendTrigger(itemType:string){
         const eventDisabled = this.$el.getElementsByClassName('event-disabled').length;
         if(Object.keys(this.isShowlegend).length != 1 && eventDisabled == Object.keys(this.isShowlegend).length -1 && this.isShowlegend[itemType]){
             return;
@@ -475,15 +522,6 @@ export class CalendarControlBase extends MDControlBase{
         this.isShowlegend[itemType] = !this.isShowlegend[itemType];
         this.refresh();
     }
-
-    /**
-     * 查询参数缓存
-     *
-     * @public
-     * @type {any}
-     * @memberof CalendarControlBase
-     */
-    public searchArgCache: any = {};
 
     /**
      * 面板数据变化处理事件
@@ -497,40 +535,14 @@ export class CalendarControlBase extends MDControlBase{
     }
 
     /**
-     * 初始化事件map对象
-     *
-     * @memberof CalendarControlBase
-     */
-    public initEventKey() {
-      const calendarItems: Array<IPSSysCalendarItem> = (this.controlInstance as IPSSysCalendar).getPSSysCalendarItems() || [];
-      if (calendarItems.length > 0) {
-        calendarItems.forEach((calendarItem) => {
-          let eventKey = ModelTool.getAppEntityKeyField(calendarItem?.getPSAppDataEntity())?.codeName?.toLowerCase() || '';
-          this.eventKey.set(calendarItem.itemType,eventKey);
-        })
-        
-      }
-    }
-
-    /**
-     * 获取事件key
-     *
-     * @memberof CalendarControlBase
-     */
-    public getEventKey(event: any) {
-      if (event?.itemType && this.eventKey.has(event.itemType)) {
-        return this.eventKey.get(event.itemType)
-      }
-      return "";
-    }
-
-    /**
      * 搜索获取日程事件
      *
-     * @param {*} $event 日期信息
+     * @param {*} [fetchInfo] 日期信息
+     * @param {*} [successCallback] 成功回调
+     * @return {*} 
      * @memberof CalendarControlBase
      */
-    public searchEvents(fetchInfo?:any, successCallback?:any, failureCallback?:any ) {
+    public searchEvents(fetchInfo?:any, successCallback?:any) {
         if (this.Environment && this.Environment.isPreviewMode) {
             this.events = [];
             return;
@@ -600,18 +612,6 @@ export class CalendarControlBase extends MDControlBase{
     public onDateClick($event: any) {
         let date = $event.date;
         let datestr = $event.dateStr;
-    }
-
-    /**
-     * 获取编辑视图信息
-     *
-     * @param {*} $event 事件信息
-     * @memberof CalendarControlBase
-     */
-    public getEditView(deName: string) {
-        let view: any = {};
-        //TODO
-        return view;
     }
 
     /**
@@ -695,6 +695,7 @@ export class CalendarControlBase extends MDControlBase{
     /**
      * 日历刷新
      *
+     * @param {*} [args] 额外参数
      * @memberof CalendarControlBase
      */
     public refresh(args?:any) {
@@ -754,79 +755,29 @@ export class CalendarControlBase extends MDControlBase{
     }
 
     /**
-     * 选中的数据
-     *
-     * @returns {any[]}
+     * 快速工具栏菜单项点击
+     * 
+     * @param {*} tag 菜单项标识
+     * @param {*} $event 事件源
      * @memberof CalendarControlBase
      */
-    public selections: any[] = [];
-
-    /**
-     * 应用状态事件
-     *
-     * @public
-     * @type {(Subscription | undefined)}
-     * @memberof CalendarControlBase
-     */
-    public appStateEvent: Subscription | undefined;
-
-    /**
-     * 获取多项数据
-     *
-     * @returns {any[]}
-     * @memberof CalendarControlBase
-     */
-    public getDatas(): any[] {
-        return this.selections;
+    public itemClick(tag: any, $event: any) {
+        AppViewLogicService.getInstance().executeViewLogic(`calendar_quicktoolbar_${tag}_click`, $event, this, {}, this.controlInstance.getPSAppViewLogics() || []);
     }
 
     /**
-     * 获取单项数据
+     * 时间点击
      *
-     * @returns {*}
+     * @param {*} $event 当前时间
+     * @param {*} jsEvent 原生事件对象  
+     * @returns
      * @memberof CalendarControlBase
      */
-    public getData(): any {
-        return null;
+    public onDayClick($event: any, jsEvent: any) {
+        let _this: any = this;
+        let content: any = this.renderBarMenu;
+        const container: any = _this.$apppopover.openPopover(jsEvent, content, "left-end", true, 103, _this.quickToolbarItems.length * 34);
     }
-
-    /**
-     * 日历视图部件初始化
-     *
-     * @memberof CalendarControlBase
-     */
-    public ctrlInit() {
-        super.ctrlInit();
-        if (Object.is(this.calendarType, 'TIMELINE')) {
-            this.searchEvents();
-        } else {
-            this.setButtonText();
-        }
-        if (this.viewState) {
-            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
-                if (!Object.is(tag, this.name)) {
-                    return;
-                }
-            });
-        }
-    }
-
-    /**
-     * 部件挂载
-     *
-     * @memberof CalendarControlBase
-     */
-    public ctrlMounted(){
-        super.ctrlMounted();
-        let appCalendar: any = this.$refs[this.controlInstance?.codeName];
-        if(appCalendar){
-            let api = appCalendar.getApi();
-            api.updateSize()
-        }
-    }
-
-    //快速工具栏
-    public quickToolbar: any;
 
     /**
      * 计算节点右键权限
@@ -916,8 +867,6 @@ export class CalendarControlBase extends MDControlBase{
         });
     }
 
-    public menuToolbar: Array<any> = [];
-
     /**
      * 绘制右键菜单
      *
@@ -944,81 +893,6 @@ export class CalendarControlBase extends MDControlBase{
         }
         return null;
     }
-
-    /**
-     * 菜单项点击
-     * 
-     * @memberof CalendarControlBase
-     */
-    public itemClick(tag: any, $event: any) {
-        AppViewLogicService.getInstance().executeViewLogic(`calendar_quicktoolbar_${tag}_click`, $event, this, {}, this.controlInstance.getPSAppViewLogics() || []);
-    }
-
-
-    /**
-     * 时间点击
-     *
-     * @param {*} $event 当前时间
-     * @param {*} jsEvent 原生事件对象  
-     * @returns
-     * @memberof CalendarControlBase
-     */
-    public onDayClick($event: any, jsEvent: any) {
-        let _this: any = this;
-        let content: any = this.renderBarMenu;
-        const container: any = _this.$apppopover.openPopover(jsEvent, content, "left-end", true, 103, _this.quickToolbarItems.length * 34);
-    }
-
-    /**
-     * 初始化快速工具栏
-     *
-     * @memberof CalendarControlBase
-     */
-    public initQuickToolbar() {
-        const quickToolbaItems: Array<IPSDEToolbarItem> = (ModelTool.findPSControlByType('QUICKTOOLBAR', this.controlInstance.getPSControls() || []) as IPSDEToolbar)?.getPSDEToolbarItems() || [];
-        if(quickToolbaItems.length > 0) {
-            let items: Array<any> = quickToolbaItems.filter((item: IPSDEToolbarItem) => {
-                return item.itemType == "DEUIACTION";
-            });
-            this.quickToolbarItems = [...items];
-        }
-        this.initQuickToolbarItemModel();
-    }
-
-
-    /**
-     * 初始化快速工具栏模型
-     *
-     * @memberof CalendarControlBase
-     */
-    public initQuickToolbarItemModel() {
-        const items: Array<IPSDEToolbarItem> = this.quickToolbarItems;
-        let models: any = {};
-        if(items.length>0) {
-            items.forEach((_item: IPSDEToolbarItem) => {
-                const item: IPSDETBUIActionItem = _item as IPSDETBUIActionItem;
-                const uiAction: IPSDEUIAction = item.getPSUIAction() as IPSDEUIAction;
-                let model: any = {};
-                Object.assign(model, {
-                    name: item.name?.toLowerCase(),
-                    actiontarget: "NONE",
-                    disabled: false,
-                    visabled: true,
-                    type: item.itemType,
-                    noprivdisplaymode: uiAction?.noPrivDisplayMode,
-                    dataaccaction: uiAction?.dataAccessAction,
-                    uiaction: {
-                        tag: uiAction?.uIActionTag ? uiAction.uIActionTag : uiAction.id ? uiAction.id : '',
-                        target: uiAction?.actionTarget
-                    }
-                });
-                Object.assign(models, { [`${item.name?.toLowerCase()}`]: model });
-            })
-        }
-        this.quickToolbarModels = {};
-        Object.assign(this.quickToolbarModels, models);
-    }
-
 
     /**
      * 绘制快速工具栏项
@@ -1068,6 +942,83 @@ export class CalendarControlBase extends MDControlBase{
         }else{
             this.ctrlEvent({ controlname, action, data });
         }
+    }
+
+    /**
+     * 设置按钮文本
+     *
+     * @public
+     * @memberof CalendarControlBase
+     */
+     public setButtonText(){
+        this.buttonText.today = this.$t('app.calendar.today'),
+        this.buttonText.month = this.$t('app.calendar.month'),
+        this.buttonText.week = this.$t('app.calendar.week'),
+        this.buttonText.day = this.$t('app.calendar.day'),
+        this.buttonText.list = this.$t('app.calendar.list')
+        this.customButtons.gotoDate.text = this.$t('app.calendar.gotodate')
+    }
+
+    /**
+     * 监听语言变化
+     *
+     * @public
+     * @memberof CalendarControlBase
+     */
+    @Watch('$i18n.locale')
+    public onLocaleChange(newval: any, val: any) {
+        this.setButtonText();
+    }
+
+    /**
+     * 打开时间选择模态
+     *
+     * @public
+     * @memberof CalendarControlBase
+     */
+     public openDateSelect(){
+        this.modalVisible = true;
+    }
+
+    /**
+     * 跳转到指定时间
+     *
+     * @public
+     * @memberof CalendarControlBase
+     */
+    public gotoDate(){
+        let appCalendar: any = this.$refs[this.controlInstance?.codeName];
+        let api = appCalendar?.getApi();
+        if (api) {
+            api.gotoDate(this.selectedGotoDate);
+        }
+    }
+    
+    /**
+     * 获取事件key
+     *
+     * @param {*} event 事件对象
+     * @return {*} 
+     * @memberof CalendarControlBase
+     */
+    public getEventKey(event: any) {
+        if (event?.itemType && this.eventKey.has(event.itemType)) {
+          return this.eventKey.get(event.itemType)
+        }
+        return "";
+    }
+    
+    /**
+     * 获取编辑视图信息
+     *
+     * @param {string} deName 视图名称
+     * @return {*} 
+     * @memberof CalendarControlBase
+     */
+    public getEditView(deName: string) {
+        let view: any = {};
+        //TODO
+        return view;
     }
 
 }

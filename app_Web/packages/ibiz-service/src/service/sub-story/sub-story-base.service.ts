@@ -293,6 +293,10 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.condCache.get('reportStories');
     }
 
+    protected getSimpleCond() {
+        return this.condCache.get('simple');
+    }
+
     protected getStoryChildCond() {
         if (!this.condCache.has('storyChild')) {
             const strCond: any[] = ['AND', ['EQ', 'PRODUCT',{ type: 'DATACONTEXT', value: 'product'}], ['EQ', 'BRANCH',{ type: 'DATACONTEXT', value: 'branch'}], ['EQ', 'MODULE',{ type: 'DATACONTEXT', value: 'nodeid'}]];

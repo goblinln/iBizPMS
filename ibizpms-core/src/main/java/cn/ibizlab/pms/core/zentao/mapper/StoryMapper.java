@@ -47,6 +47,7 @@ public interface StoryMapper extends BaseMapper<Story> {
     List<Story> selectReleaseLinkableStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectReleaseStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectReportStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectSimple(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectStoryChild(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectStoryRelated(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectSubStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);

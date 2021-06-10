@@ -247,6 +247,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.selectReleaseStories(searchContext);
         if (iPSDataQuery.getName().equals("ReportStories"))
             return storyService.selectReportStories(searchContext);
+        if (iPSDataQuery.getName().equals("SIMPLE"))
+            return storyService.selectSimple(searchContext);
         if (iPSDataQuery.getName().equals("StoryChild"))
             return storyService.selectStoryChild(searchContext);
         if (iPSDataQuery.getName().equals("StoryRelated"))

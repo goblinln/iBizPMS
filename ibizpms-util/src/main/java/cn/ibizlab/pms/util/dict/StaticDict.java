@@ -3109,8 +3109,7 @@ public class StaticDict {
     public enum Story__review_result {
         PASS("pass","确认通过"),
         REVERT("revert","撤销变更"),
-        CLARIFY("clarify","有待明确"),
-        REJECT("reject","拒绝");
+        CLARIFY("clarify","有待明确");
 
         private String value;
         private String text;

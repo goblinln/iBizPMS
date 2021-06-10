@@ -1,14 +1,13 @@
 import { Watch } from 'vue-property-decorator';
-import { Util, CodeListServiceBase, ViewTool, ModelTool } from 'ibiz-core';
+import { Util, CodeListServiceBase, ViewTool, ModelTool, GanttControlInterface } from 'ibiz-core';
 import { IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppUILogicRefView, IPSAppUIOpenDataLogic, IPSAppView, IPSAppViewLogic, IPSAppViewRef, IPSDEGantt, IPSDETreeColumn, IPSDETreeNode, IPSDETreeNodeDataItem, IPSNavigateContext, IPSNavigateParam } from '@ibiz/dynamic-model-api';
 import { MDControlBase } from './md-control-base';
 import { AppGanttService } from '../ctrl-service';
 import { UIServiceRegister } from 'ibiz-service';
 import { Subject } from 'rxjs';
 
-export class GanttControlBase extends MDControlBase {
+export class GanttControlBase extends MDControlBase implements GanttControlInterface{
     
-
     /**
      * 甘特图模型实例
      * 
@@ -117,6 +116,13 @@ export class GanttControlBase extends MDControlBase {
     public tasks: any[] = [];
 
     /**
+     * 代码表数据
+     * 
+     * @memberof GanttControlBase
+     */
+    public codeListData: Map<string, any> = new Map();
+
+    /**
      * 监听静态参数变化
      *
      * @param {*} newVal
@@ -180,13 +186,6 @@ export class GanttControlBase extends MDControlBase {
     }
 
     /**
-     * 代码表数据
-     * 
-     * @memberof GanttControlBase
-     */
-    public codeListData: Map<string, any> = new Map();
-
-    /**
      * 初始化列代码表
      * 
      * @public
@@ -216,20 +215,6 @@ export class GanttControlBase extends MDControlBase {
     }
 
     /**
-     * 监听语言变化
-     *
-     * @public
-     * @memberof GanttControlBase
-     */
-    @Watch('$i18n.locale')
-    public onLocaleChange(newval: any, val: any) {
-        if(newval != val){
-            this.locale = newval;
-            this.updateOptions();
-        }
-    }
-
-    /**
      * 部件初始化
      *
      * @public
@@ -249,6 +234,108 @@ export class GanttControlBase extends MDControlBase {
                 this.load(data);
             }
         });
+    }
+
+    /**
+     * 加载数据
+     *
+     *
+     * @param {*} [task={}] 节点数据
+     * @memberof GanttControlBase
+     */
+    public load(task: any = {}) {
+        const params: any = {
+            srfnodeid: task && task.id ? task.id : "#",
+            srfnodefilter: ''
+        };
+        let tempViewParams:any = JSON.parse(JSON.stringify(this.viewparams));
+        let curNode:any = {}; 
+        Util.deepObjectMerge(curNode, task);
+        let tempContext:any = this.computecurNodeContext(curNode);
+        if(curNode && curNode.srfparentdename) {
+            Object.assign(tempContext,{ srfparentdename: curNode.srfparentdename });
+            Object.assign(tempViewParams,{ srfparentdename: curNode.srfparentdename });
+        }
+        if(curNode && curNode.srfparentdemapname) {
+            Object.assign(tempContext,{ srfparentdemapname: curNode.srfparentdemapname });
+            Object.assign(tempViewParams,{ srfparentdemapname: curNode.srfparentdemapname });
+        }
+        if(curNode && curNode.srfparentkey) {
+            Object.assign(tempContext,{ srfparentkey: curNode.srfparentkey });
+            Object.assign(tempViewParams,{ srfparentkey: curNode.srfparentkey });
+        }
+        Object.assign(params,{ viewparams: tempViewParams });
+        this.onControlRequset('load', tempContext, params);
+        this.service.getNodes(tempContext,params).then((response: any) => {
+            this.onControlResponse('load', response);
+            if (!response || response.status !== 200) {
+                this.$throw(response,'load');
+                return;
+            }
+            this.tasks = [...this.tasks, ...response.data];
+            this.isControlLoaded = true;
+            response.data.forEach((item: any) => {
+                if(!item.collapsed) {
+                    this.load(item);
+                }
+            })
+            this.$emit("load", this.tasks);
+        }).catch((response: any) => {
+            this.onControlResponse('load', response);
+            this.$throw(response,'load');
+        });
+    }
+
+    /**
+     * 刷新功能
+     *
+     * @param {*} [args] 额外参数
+     * @memberof GanttControlBase
+     */
+    public refresh(args?: any) {
+        this.load();
+    }
+
+    /**
+     * 节点点击事件
+     *
+     * @param {{event: any, data: any}} {event, data} 事件源，节点数据
+     * @memberof GanttControlBase
+     */
+    public taskClick({event, data}: {event: any, data: any}) {
+        let logicTag: string = data.id.split(';')[0]?.toLowerCase() + '_opendata';
+        this.ganttOpendata([data], logicTag);
+    }
+
+    /**
+     * 节点展开事件
+     *
+     * @param {*} task 当前节点
+     * @memberof GanttControlBase
+     */
+    public taskItemExpand(task: any) {
+        if(!task.collapsed) {
+            let index: number = this.tasks.findIndex((item: any) => Object.is(task.id, item.parentId));
+            if(index < 0) {
+                this.load(task);
+            }
+        }
+    }
+
+    /**
+     * 计算当前节点的上下文
+     *
+     * @param {*} curNode 当前节点
+     * @memberof GanttControlBase
+     */
+    public computecurNodeContext(curNode:any){
+        let tempContext:any = {};
+        if(curNode && curNode.srfappctx){
+            tempContext = JSON.parse(JSON.stringify(curNode.srfappctx));
+        }else{
+            tempContext = JSON.parse(JSON.stringify(this.context));
+        }
+        return tempContext;
     }
 
     /**
@@ -297,107 +384,6 @@ export class GanttControlBase extends MDControlBase {
     }
 
     /**
-     * 搜索获取日程事件
-     *
-     * @param {*} $event 日期信息
-     * @memberof GanttControlBase
-     */
-    public load(task: any = {}) {
-        const params: any = {
-            srfnodeid: task && task.id ? task.id : "#",
-            srfnodefilter: ''
-        };
-        let tempViewParams:any = JSON.parse(JSON.stringify(this.viewparams));
-        let curNode:any = {}; 
-        Util.deepObjectMerge(curNode, task);
-        let tempContext:any = this.computecurNodeContext(curNode);
-        if(curNode && curNode.srfparentdename) {
-            Object.assign(tempContext,{ srfparentdename: curNode.srfparentdename });
-            Object.assign(tempViewParams,{ srfparentdename: curNode.srfparentdename });
-        }
-        if(curNode && curNode.srfparentdemapname) {
-            Object.assign(tempContext,{ srfparentdemapname: curNode.srfparentdemapname });
-            Object.assign(tempViewParams,{ srfparentdemapname: curNode.srfparentdemapname });
-        }
-        if(curNode && curNode.srfparentkey) {
-            Object.assign(tempContext,{ srfparentkey: curNode.srfparentkey });
-            Object.assign(tempViewParams,{ srfparentkey: curNode.srfparentkey });
-        }
-        Object.assign(params,{ viewparams: tempViewParams });
-        this.onControlRequset('load', tempContext, params);
-        this.service.getNodes(tempContext,params).then((response: any) => {
-            this.onControlResponse('load', response);
-            if (!response || response.status !== 200) {
-                this.$throw(response,'load');
-                return;
-            }
-            this.tasks = [...this.tasks, ...response.data];
-            this.isControlLoaded = true;
-            response.data.forEach((item: any) => {
-                if(!item.collapsed) {
-                    this.load(item);
-                }
-            })
-            this.$emit("load", this.tasks);
-        }).catch((response: any) => {
-            this.onControlResponse('load', response);
-            this.$throw(response,'load');
-        });
-    }
-
-    /**
-     * 计算当前节点的上下文
-     *
-     * @param {*} curNode 当前节点
-     * @memberof GanttControlBase
-     */
-    public computecurNodeContext(curNode:any){
-        let tempContext:any = {};
-        if(curNode && curNode.srfappctx){
-            tempContext = JSON.parse(JSON.stringify(curNode.srfappctx));
-        }else{
-            tempContext = JSON.parse(JSON.stringify(this.context));
-        }
-        return tempContext;
-    }
-
-    /**
-     * 节点展开
-     *
-     * @param {*} task 当前节点
-     * @memberof GanttControlBase
-     */
-    public taskItemExpand(task: any) {
-        if(!task.collapsed) {
-            let index: number = this.tasks.findIndex((item: any) => Object.is(task.id, item.parentId));
-            if(index < 0) {
-                this.load(task);
-            }
-        }
-    }
-
-    /**
-     * 点击事件
-     *
-     * @returns
-     * @memberof GanttControlBase
-     */
-    public taskClick({event, data}: {event: any, data: any}) {
-        let logicTag: string = data.id.split(';')[0]?.toLowerCase() + '_opendata';
-        this.ganttOpendata([data], logicTag);
-    }
-
-    /**
-     * 刷新功能
-     *
-     * @param {*} [args]
-     * @memberof GanttControlBase
-     */
-    public refresh(args?: any) {
-        this.load();
-    }
-
-    /**
      * 打开编辑数据视图
      *
      * @param {any[]} args 数据参数
@@ -405,9 +391,9 @@ export class GanttControlBase extends MDControlBase {
      * @param {*} [params]  额外参数
      * @param {*} [$event] 事件源数据
      * @param {*} [xData] 数据部件
-     * @memberof MainViewBase
+     * @memberof GanttControlBase
      */
-     public async ganttOpendata(args: any[], logicTag: string, fullargs?: any, params?: any, $event?: any, xData?: any) {
+    public async ganttOpendata(args: any[], logicTag: string, fullargs?: any, params?: any, $event?: any, xData?: any) {
         const openAppViewLogic: IPSAppViewLogic | undefined = this.controlInstance.getPSAppViewLogics()?.find((item: any) => {
             return item.name == logicTag;
         })
@@ -634,11 +620,35 @@ export class GanttControlBase extends MDControlBase {
     }
 
     /**
+     * 监听语言变化
+     *
+     * @public
+     * @memberof GanttControlBase
+     */
+    @Watch('$i18n.locale')
+    public onLocaleChange(newval: any, val: any) {
+        if(newval != val){
+            this.locale = newval;
+            this.updateOptions();
+        }
+    }
+
+    /**
      * 打开目标视图
      *
-     * @memberof MainViewBase
+     * @param {*} openView 目标视图模型对象
+     * @param {*} view 视图对象
+     * @param {*} tempContext 临时上下文
+     * @param {*} data 数据
+     * @param {*} xData 数据部件实例
+     * @param {*} $event 事件源
+     * @param {*} deResParameters 
+     * @param {*} parameters
+     * @param {*} args 额外参数
+     * @param {Function} callback 回调
+     * @memberof GanttControlBase
      */
-     public openTargtView(openView: any, view: any, tempContext: any, data: any, xData: any, $event: any, deResParameters: any, parameters: any, args: any, callback: Function) {
+    public openTargtView(openView: any, view: any, tempContext: any, data: any, xData: any, $event: any, deResParameters: any, parameters: any, args: any, callback: Function) {
         const _this: any = this;
         if (!openView?.openMode || openView.openMode == 'INDEXVIEWTAB') {
             if (tempContext.srfdynainstid) {

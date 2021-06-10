@@ -1711,10 +1711,15 @@
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
       "name" : "传入变量",
-      "default" : true,
-      "envParam" : false,
-      "lastParam" : false,
-      "sessionParam" : false
+      "getParamPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      },
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+      },
+      "default" : true
     } ],
     "getStartPSDELogicNode" : {
       "modelref" : true,
@@ -10488,6 +10493,16 @@
     "id" : "ZTProduct__CREATE"
   }, {
     "logicName" : "删除",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
+    },
+    "name" : "DELETE",
+    "id" : "Project__DELETE"
+  }, {
+    "logicName" : "删除",
     "name" : "DELETE"
   }, {
     "logicName" : "Product_Delete",
@@ -10652,6 +10667,16 @@
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "更新",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Project__UPDATE"
   }, {
     "logicName" : "Product_Update",
     "mapPSDEName" : "ZT_PRODUCT",

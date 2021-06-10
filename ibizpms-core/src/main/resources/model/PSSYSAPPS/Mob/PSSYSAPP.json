@@ -1067,11 +1067,6 @@
       "text" : "有待明确",
       "value" : "clarify",
       "default" : true
-    }, {
-      "codeName" : "Reject",
-      "text" : "拒绝",
-      "value" : "reject",
-      "disableSelect" : true
     } ],
     "enableCache" : true
   }, {
@@ -25852,10 +25847,15 @@
         "getPSDELogicParams" : [ {
           "codeName" : "Default",
           "name" : "传入变量",
-          "default" : true,
-          "envParam" : false,
-          "lastParam" : false,
-          "sessionParam" : false
+          "getParamPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          },
+          "getParamPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+          },
+          "default" : true
         } ],
         "getStartPSDELogicNode" : {
           "modelref" : true,
@@ -25985,17 +25985,23 @@
         "getPSDELogicParams" : [ {
           "codeName" : "ibzTop",
           "name" : "置顶",
-          "default" : false,
-          "envParam" : false,
-          "lastParam" : false,
+          "getParamPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
+          },
           "sessionParam" : true
         }, {
           "codeName" : "Default",
           "name" : "传入变量",
-          "default" : true,
-          "envParam" : false,
-          "lastParam" : false,
-          "sessionParam" : false
+          "getParamPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          },
+          "getParamPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+          },
+          "default" : true
         } ],
         "getStartPSDELogicNode" : {
           "modelref" : true,
@@ -28548,10 +28554,15 @@
         "getPSDELogicParams" : [ {
           "codeName" : "Default",
           "name" : "传入变量",
-          "default" : true,
-          "envParam" : false,
-          "lastParam" : false,
-          "sessionParam" : false
+          "getParamPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "getParamPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+          },
+          "default" : true
         } ],
         "getStartPSDELogicNode" : {
           "modelref" : true,
