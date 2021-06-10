@@ -64,9 +64,11 @@
 
     <!--数据集合[CurProduct]-->
 	 <select id="searchCurProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext"  resultMap="BranchResultMap">
+	 	select * from (
          select t1.* from (
                 <include refid="CurProduct" />
          )t1
+		 )t1
      </select>
 
     <!--数据集合[Default]-->

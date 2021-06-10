@@ -132,6 +132,11 @@
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurProduct",
     "logicName" : "CurProduct",
+    "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
     "name" : "CurProduct",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
