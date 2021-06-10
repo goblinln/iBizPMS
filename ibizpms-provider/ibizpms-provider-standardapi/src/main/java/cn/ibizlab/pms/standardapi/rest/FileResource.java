@@ -332,14 +332,14 @@ public class FileResource {
                 .body(list);
 	}
 
-    @PreAuthorize("quickTest('ZT_FILE', 'DELETE')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PRODUCT', #product_id, 'DELETE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除附件", tags = {"附件" },  notes = "根据产品删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/files/{file_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("file_id") Long file_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(fileService.remove(file_id));
     }
 
-    @PreAuthorize("quickTest('ZT_FILE', 'DELETE')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
     @ApiOperation(value = "根据产品批量删除附件", tags = {"附件" },  notes = "根据产品批量删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/files/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -387,14 +387,14 @@ public class FileResource {
                 .body(list);
 	}
 
-    @PreAuthorize("quickTest('ZT_FILE', 'DELETE')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DELETE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目删除附件", tags = {"附件" },  notes = "根据项目删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/files/{file_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("file_id") Long file_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(fileService.remove(file_id));
     }
 
-    @PreAuthorize("quickTest('ZT_FILE', 'DELETE')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DELETE', 'DELETE')")
     @ApiOperation(value = "根据项目批量删除附件", tags = {"附件" },  notes = "根据项目批量删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/files/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -1222,14 +1222,14 @@ public class FileResource {
 	}
 
 
-    @PreAuthorize("quickTest('ZT_FILE', 'DELETE')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DELETE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品项目删除附件", tags = {"附件" },  notes = "根据产品项目删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/files/{file_id}")
     public ResponseEntity<Boolean> removeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("file_id") Long file_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(fileService.remove(file_id));
     }
 
-    @PreAuthorize("quickTest('ZT_FILE', 'DELETE')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DELETE', 'DELETE')")
     @ApiOperation(value = "根据产品项目批量删除附件", tags = {"附件" },  notes = "根据产品项目批量删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/files/batch")
     public ResponseEntity<Boolean> removeBatchByProductProject(@RequestBody List<Long> ids) {

@@ -1220,6 +1220,26 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "产品-删除",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_PRODUCT.json"
+    },
+    "name" : "DELETE",
+    "id" : "product__DELETE"
+  }, {
+    "logicName" : "项目-删除",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_PROJECT.json"
+    },
+    "name" : "DELETE",
+    "id" : "project__DELETE"
+  }, {
     "logicName" : "计划-读取",
     "mapPSDEName" : "ZT_PRODUCTPLAN",
     "mapPSDEOPPrivName" : "READ",

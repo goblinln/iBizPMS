@@ -207,6 +207,7 @@ export class AppComponentService {
         this.controlMap.set("WIZARDPANEL_STATE", 'app-default-state-wizard-panel');
         this.controlMap.set("DRTAB_DEFAULT", 'app-default-drtab');
         this.controlMap.set("MAP_DEFAULT", 'app-default-map');
+        this.controlMap.set("REPORTPANEL_DEFAULT", 'app-default-report-panel');
         // 注册部件插件标识
         this.controlMap.set("CUSTOM_LEFTNAVLIST", 'app-custom-leftnavlist');
         this.controlMap.set("GRID_RENDER_TreeGrid", 'app-grid-render-tree-grid');

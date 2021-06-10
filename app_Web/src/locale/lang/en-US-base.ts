@@ -142,7 +142,9 @@ function getAppLocale(){
                     submitsuccess: "Workflow submitted successfully",
                 },
                 updateerror: "Form item update failed",  
-                valueverif:"Please input ",       
+                valueverif:"Please input ",
+                updateAction: "Update", 
+                createAction: "Create",      
             },
             gridexpbar: {
                 title: "Table navigation bar",

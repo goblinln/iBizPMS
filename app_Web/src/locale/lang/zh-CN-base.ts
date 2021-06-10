@@ -140,7 +140,9 @@ function getAppLocale(){
                     submitsuccess: "工作流提交成功",
                 },
                 updateerror: "表单项更新失败",   
-                valueverif:"请输入",     
+                valueverif:"请输入",
+                updateAction: "变更",
+                createAction: "创建",    
             },
             gridexpbar: {
                 title: "表格导航栏",
