@@ -244,6 +244,8 @@ export class AppStyle2IndexView extends AppIndexViewBase {
      * @memberof AppStyle2IndexViewLayout
      */
     protected click(item: any): void {
+        this.$store.commit('removeAllPage');
+        this.navDataService.removeNavDataFrist();
         let tempContext:any = Util.deepCopy(this.context);
         if(item.getPSNavigateContexts){
             const localContext = Util.formatNavParam(item.getPSNavigateContexts);

@@ -73,6 +73,15 @@ export class AppTabExpViewBase extends TabExpViewBase {
     }
 
     /**
+     *  视图销毁
+     *
+     * @memberof ViewBase
+     */
+    public destroyed() {
+        this.viewDestroyed();
+    }
+
+    /**
      * 分页导航视图渲染
      * 
      * @memberof AppTabExpViewBase
