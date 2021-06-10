@@ -1572,6 +1572,18 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "ID",
+      "name" : "ID",
+      "value" : "id",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "id",
+      "name" : "id",
+      "value" : "id",
+      "rawValue" : false
+    } ],
     "getPSSysImage" : {
       "glyph" : "xf0c1@FontAwesome",
       "cssClass" : "fa fa-link"
@@ -1609,6 +1621,17 @@
       "key" : "TEST",
       "name" : "TEST",
       "value" : "product",
+      "rawValue" : false
+    }, {
+      "key" : "ID",
+      "name" : "ID",
+      "value" : "id",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "id",
+      "name" : "id",
+      "value" : "id",
       "rawValue" : false
     } ],
     "getPSSysImage" : {
