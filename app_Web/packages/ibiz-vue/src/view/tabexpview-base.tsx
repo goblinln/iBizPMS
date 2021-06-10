@@ -126,7 +126,7 @@ export class TabExpViewBase extends MainViewBase {
         this.viewInstance = (this.staticProps?.modeldata) as IPSAppDETabExplorerView;
         await super.viewModelInit();
         this.tabExpPanelInstance = ModelTool.findPSControlByType("TABEXPPANEL",this.viewInstance.getPSControls()) as IPSTabExpPanel;
-        this.dataPanelInstance = ModelTool.findPSControlByName("DATAPANEL",this.viewInstance.getPSControls()) as IPSDEEditForm;
+        this.dataPanelInstance = ModelTool.findPSControlByName("datapanel",this.viewInstance.getPSControls()) as IPSDEEditForm;
     }
 
     /**
