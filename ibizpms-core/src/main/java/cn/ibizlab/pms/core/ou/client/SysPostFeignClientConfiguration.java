@@ -2,7 +2,7 @@ package cn.ibizlab.pms.core.ou.client;
 
 import cn.ibizlab.pms.util.client.SuperLoginClient;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
-import cn.ibizlab.pms.util.web.SuperLoginInterceptor;
+import cn.ibizlab.pms.util.web.IgnorePrivInterceptor;
 import feign.*;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
@@ -28,7 +28,7 @@ public class SysPostFeignClientConfiguration {
     @Value("${ibiz.ref.service.ibzou-api.name:ibzou-api}")
     String serviceValue;
 
-     @Value("${ibiz.ref.service.ibzou-api.name:f7ad7e05-9031-11eb-b882-00163e06e68c}")
+     @Value("${ibiz.ref.service.ibzou-api.system:f7ad7e05-9031-11eb-b882-00163e06e68c}")
     String serviceSystem;
 
      @Value("${ibiz.ref.service.ibzou-api.super:}")
@@ -69,9 +69,9 @@ public class SysPostFeignClientConfiguration {
                     requestTemplate.header("Authorization", Collections.emptyList());
                 }
             }));
-            RequestInterceptor superLoginInterceptor = new SuperLoginInterceptor(superLoginClient, login, password);
-            requestInterceptors.add(superLoginInterceptor);
+            RequestInterceptor ignorePrivInterceptor = new IgnorePrivInterceptor(superLoginClient, login, password);
+            requestInterceptors.add(ignorePrivInterceptor);
         }
-        return outsideAccessorUtils.buildAccessor(SysEmployeeFeignClient.class, new SysEmployeeFallback(), serviceValue, requestInterceptors);
+        return outsideAccessorUtils.buildAccessor(SysPostFeignClient.class, new SysPostFallback(), serviceValue, requestInterceptors);
     }
 }

@@ -2,7 +2,7 @@ package cn.ibizlab.pms.core.ibiz.client;
 
 import cn.ibizlab.pms.util.client.SuperLoginClient;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
-import cn.ibizlab.pms.util.web.SuperLoginInterceptor;
+import cn.ibizlab.pms.util.web.IgnorePrivInterceptor;
 import feign.*;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
@@ -28,7 +28,7 @@ public class DynaDashboardFeignClientConfiguration {
     @Value("${ibiz.ref.service.r7rt-dyna.name:r7rt-dyna}")
     String serviceValue;
 
-     @Value("${ibiz.ref.service.r7rt-dyna.name:}")
+     @Value("${ibiz.ref.service.r7rt-dyna.system:}")
     String serviceSystem;
 
      @Value("${ibiz.ref.service.r7rt-dyna.super:}")
@@ -69,9 +69,9 @@ public class DynaDashboardFeignClientConfiguration {
                     requestTemplate.header("Authorization", Collections.emptyList());
                 }
             }));
-            RequestInterceptor superLoginInterceptor = new SuperLoginInterceptor(superLoginClient, login, password);
-            requestInterceptors.add(superLoginInterceptor);
+            RequestInterceptor ignorePrivInterceptor = new IgnorePrivInterceptor(superLoginClient, login, password);
+            requestInterceptors.add(ignorePrivInterceptor);
         }
-        return outsideAccessorUtils.buildAccessor(SysEmployeeFeignClient.class, new SysEmployeeFallback(), serviceValue, requestInterceptors);
+        return outsideAccessorUtils.buildAccessor(DynaDashboardFeignClient.class, new DynaDashboardFallback(), serviceValue, requestInterceptors);
     }
 }
