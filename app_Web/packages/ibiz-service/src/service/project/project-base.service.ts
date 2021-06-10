@@ -457,6 +457,20 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         }
         return this.http.post(`/projects/fetchcurdefaultquery`, _data);
     }
+    /**
+     * FetchCurProduct
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchCurProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/projects/fetchcurproduct`, _data);
+        }
+        return this.http.post(`/projects/fetchcurproduct`, _data);
+    }
 
     /**
      * ActivateBatch接口方法

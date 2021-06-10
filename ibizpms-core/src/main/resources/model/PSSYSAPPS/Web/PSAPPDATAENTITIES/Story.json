@@ -3488,66 +3488,6 @@
     "id" : "OpenBaseInfoC@Story"
   }, {
     "actionTarget" : "NONE",
-    "caption" : "关联需求",
-    "codeName" : "releaseLinkStories",
-    "dataAccessAction" : "RELEASELINK",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryUsr2MPickupView.json",
-      "viewType" : "DEMPICKUPVIEW"
-    },
-    "fullCodeName" : "Story_releaseLinkStories",
-    "name" : "关联需求（发布—需求）",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "ReleaseLinkStory"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "STORY",
-      "name" : "STORY",
-      "value" : "0",
-      "rawValue" : true
-    }, {
-      "key" : "RELEASE",
-      "name" : "RELEASE",
-      "value" : "srfparentkey",
-      "rawValue" : false
-    }, {
-      "key" : "PRODUCT",
-      "name" : "PRODUCT",
-      "value" : "product",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "product",
-      "name" : "product",
-      "value" : "product",
-      "rawValue" : false
-    }, {
-      "key" : "story",
-      "name" : "story",
-      "value" : "0",
-      "rawValue" : true
-    }, {
-      "key" : "release",
-      "name" : "release",
-      "value" : "srfparentkey",
-      "rawValue" : false
-    } ],
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "releaseLinkStories",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "releaseLinkStories@Story"
-  }, {
-    "actionTarget" : "NONE",
     "caption" : "新建需求",
     "codeName" : "CreatePlan",
     "dataAccessAction" : "CREATE",

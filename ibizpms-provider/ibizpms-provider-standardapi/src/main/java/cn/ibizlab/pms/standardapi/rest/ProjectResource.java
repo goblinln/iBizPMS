@@ -284,6 +284,18 @@ public class ProjectResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("quickTest('ZT_PROJECT', 'READ')")
+	@ApiOperation(value = "获取当前项目", tags = {"项目" } ,notes = "获取当前项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurproduct")
+	public ResponseEntity<List<ProjectDTO>> fetchcurproduct(@RequestBody ProjectSearchContext context) {
+        Page<Project> domains = projectService.searchCurProduct(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/{action}")
@@ -517,6 +529,19 @@ public class ProjectResource {
 	public ResponseEntity<List<ProjectDTO>> fetchCurDefaultQueryByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectSearchContext context) {
         
         Page<Project> domains = projectService.searchCurDefaultQuery(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_PROJECT','READ')")
+	@ApiOperation(value = "根据产品获取当前项目", tags = {"项目" } ,notes = "根据产品获取当前项目")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/fetchcurproduct")
+	public ResponseEntity<List<ProjectDTO>> fetchCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectSearchContext context) {
+        
+        Page<Project> domains = projectService.searchCurProduct(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

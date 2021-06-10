@@ -181,6 +181,7 @@
       "getPSUIAction" : {
         "caption" : "新建行",
         "codeName" : "NewRow",
+        "dataAccessAction" : "CREATE",
         "fullCodeName" : "NewRow",
         "name" : "表格界面_新建行",
         "getPSSysImage" : {
@@ -212,6 +213,7 @@
       "getPSUIAction" : {
         "caption" : "保存行",
         "codeName" : "SaveRow",
+        "dataAccessAction" : "CREATE",
         "fullCodeName" : "SaveRow",
         "name" : "表格界面_保存行",
         "getPSSysImage" : {
@@ -503,6 +505,7 @@
           "getPSUIAction" : {
             "caption" : "新建行",
             "codeName" : "NewRow",
+            "dataAccessAction" : "CREATE",
             "fullCodeName" : "NewRow",
             "name" : "表格界面_新建行",
             "getPSSysImage" : {

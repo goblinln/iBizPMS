@@ -678,6 +678,7 @@
           },
           "getPSEditor" : {
             "editorParams" : {
+              "SRFNAVPARAM.n_branch_eq" : "%branch%",
               "SRFNAVPARAM.product" : "%product%",
               "AC" : "TRUE",
               "valFormat" : "{0: '/'}",
@@ -709,6 +710,11 @@
               "key" : "product",
               "name" : "product",
               "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "n_branch_eq",
+              "name" : "n_branch_eq",
+              "value" : "branch",
               "rawValue" : false
             } ],
             "getPickupPSAppView" : {

@@ -27832,10 +27832,18 @@
       }, {
         "codeName" : "FetchCurProduct",
         "methodType" : "FETCH",
-        "name" : "CurProduct",
+        "name" : "FetchCurProduct",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "CurProduct"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchCurProduct"
         },
         "builtinMethod" : false
       }, {
@@ -29410,10 +29418,18 @@
       }, {
         "codeName" : "FetchCurProduct",
         "methodType" : "FETCH",
-        "name" : "CurProduct",
+        "name" : "FetchCurProduct",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "CurProduct"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchCurProduct"
         },
         "builtinMethod" : false
       }, {

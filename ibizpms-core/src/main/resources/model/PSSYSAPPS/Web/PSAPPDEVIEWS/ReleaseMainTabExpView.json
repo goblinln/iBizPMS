@@ -212,12 +212,12 @@
           "getPSUIAction" : {
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
             },
             "modelref" : true,
-            "id" : "releaseLinkStories@Story"
+            "id" : "linkstory@Release"
           },
-          "uIActionTarget" : "NONE",
+          "uIActionTarget" : "SINGLEKEY",
           "xDataControlName" : "grid"
         }, {
           "name" : "toolbar_deuiaction2",
@@ -252,7 +252,7 @@
             "groupExtractMode" : "ITEM",
             "itemType" : "DEUIACTION",
             "name" : "deuiaction1",
-            "noPrivDisplayMode" : 2,
+            "noPrivDisplayMode" : 1,
             "getPSAppViewUIAction" : {
               "modelref" : true,
               "id" : "toolbar_deuiaction1"
@@ -262,34 +262,34 @@
               "cssClass" : "fa fa-link"
             },
             "getPSUIAction" : {
-              "actionTarget" : "NONE",
+              "actionTarget" : "SINGLEKEY",
+              "noPrivDisplayMode" : 1,
               "caption" : "关联需求",
-              "codeName" : "releaseLinkStories",
-              "dataAccessAction" : "RELEASELINK",
+              "codeName" : "linkstory",
+              "dataAccessAction" : "LINKSTORY",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryUsr2MPickupView.json",
                 "viewType" : "DEMPICKUPVIEW"
               },
-              "fullCodeName" : "Story_releaseLinkStories",
-              "name" : "关联需求（发布—需求）",
+              "fullCodeName" : "Release_linkstory",
+              "name" : "关联需求",
+              "getNextPSUIAction" : {
+                "modelref" : true,
+                "id" : "Refresh"
+              },
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "ReleaseLinkStory"
+                "id" : "LinkStory"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
               },
               "getPSNavigateContexts" : [ {
-                "key" : "STORY",
-                "name" : "STORY",
-                "value" : "0",
-                "rawValue" : true
-              }, {
                 "key" : "RELEASE",
                 "name" : "RELEASE",
-                "value" : "srfparentkey",
+                "value" : "id",
                 "rawValue" : false
               }, {
                 "key" : "PRODUCT",
@@ -303,24 +303,26 @@
                 "value" : "product",
                 "rawValue" : false
               }, {
-                "key" : "story",
-                "name" : "story",
-                "value" : "0",
-                "rawValue" : true
-              }, {
                 "key" : "release",
                 "name" : "release",
-                "value" : "srfparentkey",
+                "value" : "id",
                 "rawValue" : false
               } ],
+              "getPSSysImage" : {
+                "glyph" : "xf0c1@FontAwesome",
+                "cssClass" : "fa fa-link"
+              },
               "refreshMode" : 1,
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
-              "uIActionTag" : "releaseLinkStories",
+              "uIActionTag" : "linkstory",
               "uIActionType" : "DEUIACTION",
+              "closeEditView" : true,
+              "closePopupView" : true,
               "enableConfirm" : true,
+              "globalUIAction" : true,
               "reloadData" : true,
-              "id" : "releaseLinkStories@Story"
+              "id" : "linkstory@Release"
             },
             "tooltip" : "关联需求",
             "showCaption" : true,

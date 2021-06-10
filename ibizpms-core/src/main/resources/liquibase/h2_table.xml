@@ -2680,7 +2680,7 @@
 
 
     <!--输出实体[ZT_RELEASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_release-8-101">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_release-9-101">
         <createTable tableName="zt_release">
                 <column name="STORIES" remarks="" type="TEXT(65535)">
                 </column>

@@ -415,6 +415,7 @@
               "getPSUIAction" : {
                 "caption" : "新建行",
                 "codeName" : "NewRow",
+                "dataAccessAction" : "CREATE",
                 "fullCodeName" : "NewRow",
                 "name" : "表格界面_新建行",
                 "getPSSysImage" : {
