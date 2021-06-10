@@ -312,10 +312,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkBug.json"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkBug"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "UnlinkStory",
@@ -325,10 +322,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkStory.json"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkStory"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "Update",
@@ -1073,10 +1067,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkBug.json"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkBug"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "UnlinkStory",
@@ -1086,10 +1077,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkStory.json"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkStory"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "Update",

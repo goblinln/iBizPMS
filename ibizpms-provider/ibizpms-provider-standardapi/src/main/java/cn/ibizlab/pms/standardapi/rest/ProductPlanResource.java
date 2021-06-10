@@ -159,34 +159,6 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
-    @ApiOperation(value = "根据产品解除关联Bug", tags = {"产品计划" },  notes = "根据产品解除关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/unlinkbug")
-    public ResponseEntity<ProductPlanDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        domain.setProduct(product_id);
-        domain.setId(productplan_id);
-        domain = productplanService.unlinkBug(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
-        productplandto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
-    @ApiOperation(value = "根据产品解除关联需求", tags = {"产品计划" },  notes = "根据产品解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/unlinkstory")
-    public ResponseEntity<ProductPlanDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        domain.setProduct(product_id);
-        domain.setId(productplan_id);
-        domain = productplanService.unlinkStory(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
-        productplandto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
     @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取产品默认查询", tags = {"产品计划" } ,notes = "根据产品获取产品默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchproductquery")
@@ -314,34 +286,6 @@ public class ProductPlanResource {
         
         domain.setId(productplan_id);
         domain = productplanService.linkStory(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
-        productplandto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
-    @ApiOperation(value = "根据项目解除关联Bug", tags = {"产品计划" },  notes = "根据项目解除关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/productplans/{productplan_id}/unlinkbug")
-    public ResponseEntity<ProductPlanDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
-        domain.setId(productplan_id);
-        domain = productplanService.unlinkBug(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
-        productplandto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
-    @ApiOperation(value = "根据项目解除关联需求", tags = {"产品计划" },  notes = "根据项目解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/productplans/{productplan_id}/unlinkstory")
-    public ResponseEntity<ProductPlanDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
-        domain.setId(productplan_id);
-        domain = productplanService.unlinkStory(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
         productplandto.setSrfopprivs(opprivs);
@@ -476,34 +420,6 @@ public class ProductPlanResource {
         
         domain.setId(productplan_id);
         domain = productplanService.linkStory(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
-        productplandto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
-    @ApiOperation(value = "根据产品项目解除关联Bug", tags = {"产品计划" },  notes = "根据产品项目解除关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/productplans/{productplan_id}/unlinkbug")
-    public ResponseEntity<ProductPlanDTO> unlinkBugByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
-        domain.setId(productplan_id);
-        domain = productplanService.unlinkBug(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
-        productplandto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
-    @ApiOperation(value = "根据产品项目解除关联需求", tags = {"产品计划" },  notes = "根据产品项目解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/productplans/{productplan_id}/unlinkstory")
-    public ResponseEntity<ProductPlanDTO> unlinkStoryByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
-        domain.setId(productplan_id);
-        domain = productplanService.unlinkStory(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
         productplandto.setSrfopprivs(opprivs);

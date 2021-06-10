@@ -27685,10 +27685,7 @@
           "modelref" : true,
           "id" : "MANAGE"
         },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "UnlinkStory"
-        },
+        "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
         "codeName" : "Update",
@@ -29272,10 +29269,7 @@
           "modelref" : true,
           "id" : "MANAGE"
         },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "UnlinkStory"
-        },
+        "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
         "codeName" : "Update",

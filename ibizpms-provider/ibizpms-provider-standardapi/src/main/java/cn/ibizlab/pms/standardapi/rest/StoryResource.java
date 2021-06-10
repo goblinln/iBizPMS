@@ -148,6 +148,20 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'BUILDLINK')")
+    @ApiOperation(value = "根据产品版本解除关联需求", tags = {"需求" },  notes = "根据产品版本解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/buildunlinkstory")
+    public ResponseEntity<StoryDTO> buildUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setProduct(product_id);
+        domain.setId(story_id);
+        domain = storyService.buildUnlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
     @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'CHANGE')")
     @ApiOperation(value = "根据产品变更", tags = {"需求" },  notes = "根据产品变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/change")
@@ -197,6 +211,48 @@ public class StoryResource {
         Story domain = storyMapping.toDomain(dto);
         domain.setProduct(product_id);
         return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(storyService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'PLANLINK')")
+    @ApiOperation(value = "根据产品计划解除关联需求", tags = {"需求" },  notes = "根据产品计划解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/unlinkstory")
+    public ResponseEntity<StoryDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setProduct(product_id);
+        domain.setId(story_id);
+        domain = storyService.unlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'PROJECTLINK')")
+    @ApiOperation(value = "根据产品项目解除关联需求", tags = {"需求" },  notes = "根据产品项目解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/projectunlinkstory")
+    public ResponseEntity<StoryDTO> projectUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setProduct(product_id);
+        domain.setId(story_id);
+        domain = storyService.projectUnlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'RELEASELINK')")
+    @ApiOperation(value = "根据产品发布解除关联需求", tags = {"需求" },  notes = "根据产品发布解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/releaseunlinkstory")
+    public ResponseEntity<StoryDTO> releaseUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setProduct(product_id);
+        domain.setId(story_id);
+        domain = storyService.releaseUnlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
     @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'REVIEW')")
@@ -389,6 +445,20 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
+    @PreAuthorize("quickTest('ZT_STORY', 'BUILDLINK')")
+    @ApiOperation(value = "根据项目版本解除关联需求", tags = {"需求" },  notes = "根据项目版本解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/buildunlinkstory")
+    public ResponseEntity<StoryDTO> buildUnlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.buildUnlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
     @PreAuthorize("quickTest('ZT_STORY', 'CHANGE')")
     @ApiOperation(value = "根据项目变更", tags = {"需求" },  notes = "根据项目变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/change")
@@ -438,6 +508,48 @@ public class StoryResource {
         Story domain = storyMapping.toDomain(dto);
         
         return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(storyService.getDraft(domain)));
+    }
+
+    @PreAuthorize("quickTest('ZT_STORY', 'PLANLINK')")
+    @ApiOperation(value = "根据项目计划解除关联需求", tags = {"需求" },  notes = "根据项目计划解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/unlinkstory")
+    public ResponseEntity<StoryDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.unlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', #story_id, 'PROJECTLINK')")
+    @ApiOperation(value = "根据项目项目解除关联需求", tags = {"需求" },  notes = "根据项目项目解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/projectunlinkstory")
+    public ResponseEntity<StoryDTO> projectUnlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.projectUnlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("quickTest('ZT_STORY', 'RELEASELINK')")
+    @ApiOperation(value = "根据项目发布解除关联需求", tags = {"需求" },  notes = "根据项目发布解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/releaseunlinkstory")
+    public ResponseEntity<StoryDTO> releaseUnlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.releaseUnlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
     @PreAuthorize("quickTest('ZT_STORY', 'REVIEW')")
@@ -631,6 +743,20 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
+    @PreAuthorize("quickTest('ZT_STORY', 'BUILDLINK')")
+    @ApiOperation(value = "根据产品项目版本解除关联需求", tags = {"需求" },  notes = "根据产品项目版本解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/stories/{story_id}/buildunlinkstory")
+    public ResponseEntity<StoryDTO> buildUnlinkStoryByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.buildUnlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
     @PreAuthorize("quickTest('ZT_STORY', 'CHANGE')")
     @ApiOperation(value = "根据产品项目变更", tags = {"需求" },  notes = "根据产品项目变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/stories/{story_id}/change")
@@ -680,6 +806,48 @@ public class StoryResource {
         Story domain = storyMapping.toDomain(dto);
         
         return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(storyService.getDraft(domain)));
+    }
+
+    @PreAuthorize("quickTest('ZT_STORY', 'PLANLINK')")
+    @ApiOperation(value = "根据产品项目计划解除关联需求", tags = {"需求" },  notes = "根据产品项目计划解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/stories/{story_id}/unlinkstory")
+    public ResponseEntity<StoryDTO> unlinkStoryByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.unlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', #story_id, 'PROJECTLINK')")
+    @ApiOperation(value = "根据产品项目项目解除关联需求", tags = {"需求" },  notes = "根据产品项目项目解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/stories/{story_id}/projectunlinkstory")
+    public ResponseEntity<StoryDTO> projectUnlinkStoryByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.projectUnlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("quickTest('ZT_STORY', 'RELEASELINK')")
+    @ApiOperation(value = "根据产品项目发布解除关联需求", tags = {"需求" },  notes = "根据产品项目发布解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/stories/{story_id}/releaseunlinkstory")
+    public ResponseEntity<StoryDTO> releaseUnlinkStoryByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.releaseUnlinkStory(domain) ;
+        storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        storydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
     @PreAuthorize("quickTest('ZT_STORY', 'REVIEW')")

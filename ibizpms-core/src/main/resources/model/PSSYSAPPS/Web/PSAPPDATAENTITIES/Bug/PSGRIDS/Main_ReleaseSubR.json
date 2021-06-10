@@ -210,7 +210,7 @@
           "name" : "移除解决bug（发布）",
           "getPSAppDEMethod" : {
             "modelref" : true,
-            "id" : "ReleaseUnlinkBug"
+            "id" : "RelaseUnlinkBug"
           },
           "getPSAppDataEntity" : {
             "modelref" : true,

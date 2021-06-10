@@ -151,7 +151,10 @@
       "modelref" : true,
       "id" : "ZTProduct__LINKBUG"
     },
-    "userCat" : "CAT1",
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LinkBug"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "LinkBugbyBug",
@@ -269,10 +272,7 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkBug"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "UnlinkStory",
@@ -281,10 +281,6 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/UnlinkStory.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkStory"
     },
     "builtinMethod" : false
   }, {
@@ -708,7 +704,10 @@
       "modelref" : true,
       "id" : "ZTProduct__LINKBUG"
     },
-    "userCat" : "CAT1",
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LinkBug"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "LinkBugbyBug",
@@ -826,10 +825,7 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkBug"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "UnlinkStory",
@@ -838,10 +834,6 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/UnlinkStory.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkStory"
     },
     "builtinMethod" : false
   }, {

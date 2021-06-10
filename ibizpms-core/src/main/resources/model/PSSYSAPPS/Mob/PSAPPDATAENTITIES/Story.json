@@ -235,7 +235,10 @@
       "modelref" : true,
       "id" : "ZTProduct__BUILDLINK"
     },
-    "userCat" : "CAT1",
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "BuildUnlinkStory"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "Change",
@@ -426,6 +429,23 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "codeName" : "PlanUnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "UnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/UnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PLANLINK"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PlanUnlinkStory"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ProjectBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectBatchUnlinkStory",
@@ -465,7 +485,10 @@
       "modelref" : true,
       "id" : "ZTProduct__PROJECTLINK"
     },
-    "userCat" : "CAT1",
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ProjectUnlinkStory"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "Push",
@@ -520,7 +543,10 @@
       "modelref" : true,
       "id" : "ZTProduct__RELEASELINK"
     },
-    "userCat" : "CAT1",
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ReleaseUnlinkStory"
+    },
     "builtinMethod" : false
   }, {
     "batchActionMode" : 1,
@@ -667,20 +693,6 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UnlinkStory",
-    "methodType" : "DEACTION",
-    "name" : "UnlinkStory",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/UnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__PLANLINK"
-    },
-    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "Update",
@@ -1933,7 +1945,10 @@
       "modelref" : true,
       "id" : "ZTProduct__BUILDLINK"
     },
-    "userCat" : "CAT1",
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "BuildUnlinkStory"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "Change",
@@ -2124,6 +2139,23 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "codeName" : "PlanUnlinkStory",
+    "methodType" : "DEACTION",
+    "name" : "UnlinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/UnlinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__PLANLINK"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PlanUnlinkStory"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ProjectBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectBatchUnlinkStory",
@@ -2163,7 +2195,10 @@
       "modelref" : true,
       "id" : "ZTProduct__PROJECTLINK"
     },
-    "userCat" : "CAT1",
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ProjectUnlinkStory"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "Push",
@@ -2218,7 +2253,10 @@
       "modelref" : true,
       "id" : "ZTProduct__RELEASELINK"
     },
-    "userCat" : "CAT1",
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ReleaseUnlinkStory"
+    },
     "builtinMethod" : false
   }, {
     "batchActionMode" : 1,
@@ -2365,20 +2403,6 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UnlinkStory",
-    "methodType" : "DEACTION",
-    "name" : "UnlinkStory",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/UnlinkStory.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__PLANLINK"
-    },
-    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "Update",
@@ -3085,7 +3109,7 @@
     "name" : "取消计划关联（移动端）",
     "getPSAppDEMethod" : {
       "modelref" : true,
-      "id" : "UnlinkStory"
+      "id" : "PlanUnlinkStory"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

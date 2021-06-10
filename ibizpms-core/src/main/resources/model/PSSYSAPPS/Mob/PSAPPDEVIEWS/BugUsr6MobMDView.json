@@ -678,7 +678,7 @@
           "name" : "取消计划关联Bug（移动端）",
           "getPSAppDEMethod" : {
             "modelref" : true,
-            "id" : "UnlinkBug"
+            "id" : "PlanUnlinkBug"
           },
           "getPSAppDataEntity" : {
             "modelref" : true,

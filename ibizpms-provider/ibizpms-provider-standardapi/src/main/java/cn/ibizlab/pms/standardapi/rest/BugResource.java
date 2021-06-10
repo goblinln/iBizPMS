@@ -165,6 +165,20 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'BUILDLINK')")
+    @ApiOperation(value = "根据项目版本解除关联Bug", tags = {"Bug" },  notes = "根据项目版本解除关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/buildunlinkbug")
+    public ResponseEntity<BugDTO> buildUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.buildUnlinkBug(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
     @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'CONFIRM')")
     @ApiOperation(value = "根据项目确认", tags = {"Bug" },  notes = "根据项目确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/confirm")
@@ -186,6 +200,34 @@ public class BugResource {
         Bug domain = bugMapping.toDomain(dto);
         domain.setProject(project_id);
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'PLANLINK')")
+    @ApiOperation(value = "根据项目解除关联Bug", tags = {"Bug" },  notes = "根据项目解除关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/unlinkbug")
+    public ResponseEntity<BugDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.unlinkBug(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'RELEASELINK')")
+    @ApiOperation(value = "根据项目解除关联Bug", tags = {"Bug" },  notes = "根据项目解除关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/releaseunlinkbug")
+    public ResponseEntity<BugDTO> releaseUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.releaseUnlinkBug(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
     @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'RESOLVE')")
@@ -354,6 +396,20 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'BUILDLINK')")
+    @ApiOperation(value = "根据产品版本解除关联Bug", tags = {"Bug" },  notes = "根据产品版本解除关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/buildunlinkbug")
+    public ResponseEntity<BugDTO> buildUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProduct(product_id);
+        domain.setId(bug_id);
+        domain = bugService.buildUnlinkBug(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
     @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'CONFIRM')")
     @ApiOperation(value = "根据产品确认", tags = {"Bug" },  notes = "根据产品确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/confirm")
@@ -375,6 +431,34 @@ public class BugResource {
         Bug domain = bugMapping.toDomain(dto);
         domain.setProduct(product_id);
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'PLANLINK')")
+    @ApiOperation(value = "根据产品解除关联Bug", tags = {"Bug" },  notes = "根据产品解除关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/unlinkbug")
+    public ResponseEntity<BugDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProduct(product_id);
+        domain.setId(bug_id);
+        domain = bugService.unlinkBug(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'RELEASELINK')")
+    @ApiOperation(value = "根据产品解除关联Bug", tags = {"Bug" },  notes = "根据产品解除关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/releaseunlinkbug")
+    public ResponseEntity<BugDTO> releaseUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProduct(product_id);
+        domain.setId(bug_id);
+        domain = bugService.releaseUnlinkBug(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
     @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'RESOLVE')")
@@ -544,6 +628,20 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'BUILDLINK')")
+    @ApiOperation(value = "根据产品项目版本解除关联Bug", tags = {"Bug" },  notes = "根据产品项目版本解除关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/buildunlinkbug")
+    public ResponseEntity<BugDTO> buildUnlinkBugByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.buildUnlinkBug(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
     @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'CONFIRM')")
     @ApiOperation(value = "根据产品项目确认", tags = {"Bug" },  notes = "根据产品项目确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/confirm")
@@ -565,6 +663,34 @@ public class BugResource {
         Bug domain = bugMapping.toDomain(dto);
         domain.setProject(project_id);
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'PLANLINK')")
+    @ApiOperation(value = "根据产品项目解除关联Bug", tags = {"Bug" },  notes = "根据产品项目解除关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/unlinkbug")
+    public ResponseEntity<BugDTO> unlinkBugByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.unlinkBug(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
+    }
+
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'RELEASELINK')")
+    @ApiOperation(value = "根据产品项目解除关联Bug", tags = {"Bug" },  notes = "根据产品项目解除关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/releaseunlinkbug")
+    public ResponseEntity<BugDTO> releaseUnlinkBugByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug domain = bugMapping.toDomain(bugdto);
+        domain.setProject(project_id);
+        domain.setId(bug_id);
+        domain = bugService.releaseUnlinkBug(domain) ;
+        bugdto = bugMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        bugdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
     @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'RESOLVE')")

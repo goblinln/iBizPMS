@@ -881,7 +881,7 @@
                   "name" : "取消计划关联",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "UnlinkStory"
+                    "id" : "PlanUnlinkStory"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,

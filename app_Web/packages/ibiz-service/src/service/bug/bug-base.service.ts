@@ -551,6 +551,30 @@ export class BugBaseService extends EntityBaseService<IBug> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * BuildUnlinkBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugService
+     */
+    async BuildUnlinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/buildunlinkbug`, _data);
+        }
+        if (_context.test && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/buildunlinkbug`, _data);
+        }
+        if (_context.project && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/buildunlinkbug`, _data);
+        }
+    this.log.warn([`[Bug]>>>[BuildUnlinkBug函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Confirm
      *
      * @param {*} [_context={}]
@@ -682,6 +706,54 @@ export class BugBaseService extends EntityBaseService<IBug> {
         const appLogic = new GetCurUserConcatLogic(_context, _data);
         _data = await appLogic.onExecute();
         return new HttpResponse(_data);
+    }
+    /**
+     * PlanUnlinkBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugService
+     */
+    async PlanUnlinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/planunlinkbug`, _data);
+        }
+        if (_context.test && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/planunlinkbug`, _data);
+        }
+        if (_context.project && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/planunlinkbug`, _data);
+        }
+    this.log.warn([`[Bug]>>>[PlanUnlinkBug函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * RelaseUnlinkBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugService
+     */
+    async RelaseUnlinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/relaseunlinkbug`, _data);
+        }
+        if (_context.test && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/relaseunlinkbug`, _data);
+        }
+        if (_context.project && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/relaseunlinkbug`, _data);
+        }
+    this.log.warn([`[Bug]>>>[RelaseUnlinkBug函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -869,6 +941,32 @@ export class BugBaseService extends EntityBaseService<IBug> {
     }
 
     /**
+     * BuildUnlinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async BuildUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/buildunlinkbugbatch`,_data);
+        }
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/buildunlinkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/buildunlinkbugbatch`,_data);
+        }
+        this.log.warn([`[Bug]>>>[BuildUnlinkBugBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
      * ConfirmBatch接口方法
      *
      * @param {*} [context={}]
@@ -891,6 +989,58 @@ export class BugBaseService extends EntityBaseService<IBug> {
             return this.http.post(`/projects/${_context.project}/bugs/confirmbatch`,_data);
         }
         this.log.warn([`[Bug]>>>[ConfirmBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
+     * PlanUnlinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async PlanUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/planunlinkbugbatch`,_data);
+        }
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/planunlinkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/planunlinkbugbatch`,_data);
+        }
+        this.log.warn([`[Bug]>>>[PlanUnlinkBugBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
+     * RelaseUnlinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async RelaseUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/relaseunlinkbugbatch`,_data);
+        }
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/relaseunlinkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/relaseunlinkbugbatch`,_data);
+        }
+        this.log.warn([`[Bug]>>>[RelaseUnlinkBugBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 

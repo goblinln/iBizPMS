@@ -144,7 +144,10 @@
       "modelref" : true,
       "id" : "BUILDLINK"
     },
-    "userCat" : "CAT1",
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "BuildUnlinkBug"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "CheckKey",
@@ -273,6 +276,40 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "codeName" : "PlanUnlinkBug",
+    "methodType" : "DEACTION",
+    "name" : "UnlinkBug",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/UnlinkBug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PLANLINK"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PlanUnlinkBug"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RelaseUnlinkBug",
+    "methodType" : "DEACTION",
+    "name" : "ReleaseUnlinkBug",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseUnlinkBug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RELEASELINK"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "RelaseUnlinkBug"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ReleaaseBatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "ReleaaseBatchUnlinkBug",
@@ -325,20 +362,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "RESOLVE"
-    },
-    "userCat" : "CAT1",
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ReleaseUnlinkBug",
-    "methodType" : "DEACTION",
-    "name" : "ReleaseUnlinkBug",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseUnlinkBug.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "RELEASELINK"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -425,20 +448,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "TOSTORY"
-    },
-    "userCat" : "CAT1",
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UnlinkBug",
-    "methodType" : "DEACTION",
-    "name" : "UnlinkBug",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/UnlinkBug.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "PLANLINK"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -1650,7 +1659,10 @@
       "modelref" : true,
       "id" : "BUILDLINK"
     },
-    "userCat" : "CAT1",
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "BuildUnlinkBug"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "CheckKey",
@@ -1779,6 +1791,40 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "codeName" : "PlanUnlinkBug",
+    "methodType" : "DEACTION",
+    "name" : "UnlinkBug",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/UnlinkBug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PLANLINK"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "PlanUnlinkBug"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RelaseUnlinkBug",
+    "methodType" : "DEACTION",
+    "name" : "ReleaseUnlinkBug",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseUnlinkBug.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RELEASELINK"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "RelaseUnlinkBug"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ReleaaseBatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "ReleaaseBatchUnlinkBug",
@@ -1831,20 +1877,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "RESOLVE"
-    },
-    "userCat" : "CAT1",
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ReleaseUnlinkBug",
-    "methodType" : "DEACTION",
-    "name" : "ReleaseUnlinkBug",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseUnlinkBug.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "RELEASELINK"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -1931,20 +1963,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "TOSTORY"
-    },
-    "userCat" : "CAT1",
-    "builtinMethod" : false
-  }, {
-    "codeName" : "UnlinkBug",
-    "methodType" : "DEACTION",
-    "name" : "UnlinkBug",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/UnlinkBug.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "PLANLINK"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2877,7 +2895,7 @@
     "name" : "移除解决bug（发布）",
     "getPSAppDEMethod" : {
       "modelref" : true,
-      "id" : "ReleaseUnlinkBug"
+      "id" : "RelaseUnlinkBug"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -3086,7 +3104,7 @@
     "name" : "取消计划关联Bug",
     "getPSAppDEMethod" : {
       "modelref" : true,
-      "id" : "UnlinkBug"
+      "id" : "PlanUnlinkBug"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

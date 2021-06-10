@@ -258,20 +258,6 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("test('ZT_PROJECT', #project_id, 'MANAGE')")
-    @ApiOperation(value = "解除关联需求", tags = {"项目" },  notes = "解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkstory")
-    public ResponseEntity<ProjectDTO> unlinkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-        domain.setId(project_id);
-        domain = projectService.unlinkStory(domain);
-        projectdto = projectMapping.toDto(domain);
-        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
-        projectdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
-    }
-
-
     @PreAuthorize("quickTest('ZT_PROJECT', 'READ')")
 	@ApiOperation(value = "获取默认查询", tags = {"项目" } ,notes = "获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurdefaultquery")
@@ -503,20 +489,6 @@ public class ProjectResource {
         
         domain.setId(project_id);
         domain = projectService.unlinkProduct(domain) ;
-        projectdto = projectMapping.toDto(domain);
-        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());    
-        projectdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
-    }
-
-    @PreAuthorize("test('ZT_PROJECT', #project_id, 'MANAGE')")
-    @ApiOperation(value = "根据产品解除关联需求", tags = {"项目" },  notes = "根据产品解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/unlinkstory")
-    public ResponseEntity<ProjectDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-        Project domain = projectMapping.toDomain(projectdto);
-        
-        domain.setId(project_id);
-        domain = projectService.unlinkStory(domain) ;
         projectdto = projectMapping.toDto(domain);
         Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());    
         projectdto.setSrfopprivs(opprivs);

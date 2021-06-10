@@ -312,10 +312,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkBug.json"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkBug"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "UnlinkStory",
@@ -325,10 +322,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkStory.json"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkStory"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "Update",
@@ -1073,10 +1067,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkBug.json"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkBug"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "UnlinkStory",
@@ -1086,10 +1077,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkStory.json"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnlinkStory"
-    },
+    "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
     "codeName" : "Update",
@@ -1351,14 +1339,14 @@
     }, {
       "key" : "PRODUCTPLAN",
       "name" : "PRODUCTPLAN",
-      "value" : "productplan",
-      "rawValue" : false
+      "value" : "null",
+      "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
       "key" : "productplan",
       "name" : "productplan",
-      "value" : "productplan",
-      "rawValue" : false
+      "value" : "null",
+      "rawValue" : true
     }, {
       "key" : "parent",
       "name" : "parent",
@@ -1668,26 +1656,16 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "getPSNavigateContexts" : [ {
-      "key" : "PARENT",
-      "name" : "PARENT",
-      "value" : "id",
-      "rawValue" : false
-    }, {
       "key" : "PRODUCTPLAN",
       "name" : "PRODUCTPLAN",
-      "value" : "productplan",
-      "rawValue" : false
+      "value" : "null",
+      "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
       "key" : "productplan",
       "name" : "productplan",
-      "value" : "productplan",
-      "rawValue" : false
-    }, {
-      "key" : "parent",
-      "name" : "parent",
-      "value" : "id",
-      "rawValue" : false
+      "value" : "null",
+      "rawValue" : true
     } ],
     "getPSSysImage" : {
       "glyph" : "xf0e8@FontAwesome",
