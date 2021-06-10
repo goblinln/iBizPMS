@@ -157,13 +157,13 @@
         }, {
           "key" : "PRODUCTPLAN",
           "name" : "PRODUCTPLAN",
-          "value" : "null",
+          "value" : "''",
           "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
           "key" : "productplan",
           "name" : "productplan",
-          "value" : "null",
+          "value" : "''",
           "rawValue" : true
         }, {
           "key" : "parent",
