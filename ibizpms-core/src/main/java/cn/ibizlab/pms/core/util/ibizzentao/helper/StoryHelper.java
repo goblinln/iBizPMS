@@ -546,12 +546,12 @@ public class StoryHelper extends ZTBaseHelper<StoryMapper, Story> {
             if (StringUtils.compare(old.getStatus(), StaticDict.Story__status.DRAFT.getValue()) == 0 || StringUtils.compare(old.getStatus(), StaticDict.Story__status.CHANGED.getValue()) == 0) {
                 et.setStatus(StaticDict.Story__status.ACTIVE.getValue());
             }
-        } else if (StringUtils.compare(result, StaticDict.Story__review_result.REJECT.getValue()) == 0) {
-            et.setCloseddate(ZTDateUtil.nul());
-            et.setClosedby(AuthenticationUser.getAuthenticationUser().getUsername());
-            et.setStatus(StaticDict.Story__status.CLOSED.getValue());
-            et.setStage(StaticDict.Story__stage.CLOSED.getValue());
-            et.setAssignedto(StaticDict.Assignedto_closed.CLOSED.getValue());
+//        } else if (StringUtils.compare(result, StaticDict.Story__review_result.REJECT.getValue()) == 0) {
+//            et.setCloseddate(ZTDateUtil.nul());
+//            et.setClosedby(AuthenticationUser.getAuthenticationUser().getUsername());
+//            et.setStatus(StaticDict.Story__status.CLOSED.getValue());
+//            et.setStage(StaticDict.Story__stage.CLOSED.getValue());
+//            et.setAssignedto(StaticDict.Assignedto_closed.CLOSED.getValue());
         } else if (StringUtils.compare(result, StaticDict.Story__review_result.REVERT.getValue()) == 0) {
             et.setStatus(StaticDict.Story__status.ACTIVE.getValue());
             StorySpec oldStorySpec = storySpecHelper.getOne(new QueryWrapper<StorySpec>().eq(StaticDict.Action__object_type.STORY.getValue(), old.getId()).eq(FIELD_VERSION, et.getPreversion()));
@@ -567,19 +567,19 @@ public class StoryHelper extends ZTBaseHelper<StoryMapper, Story> {
         if (changes.size() > 0) {
             Action action = actionHelper.create(StaticDict.Action__object_type.STORY.getValue(), et.getId(), StaticDict.Action__type.REVIEWED.getValue(),
                     comment, result, null, true);
-            if (StringUtils.compare(result, StaticDict.Story__review_result.REJECT.getValue()) == 0) {
-                action = actionHelper.create(StaticDict.Action__object_type.STORY.getValue(), et.getId(), StaticDict.Action__type.CLOSED.getValue(),
-                        "", et.getClosedreason(), null, true);
-            }
+//            if (StringUtils.compare(result, StaticDict.Story__review_result.REJECT.getValue()) == 0) {
+//                action = actionHelper.create(StaticDict.Action__object_type.STORY.getValue(), et.getId(), StaticDict.Action__type.CLOSED.getValue(),
+//                        "", et.getClosedreason(), null, true);
+//            }
             if (changes.size() > 0) {
                 actionHelper.logHistory(action.getId(), changes);
             }
         }
-        if (StaticDict.Story__review_result.REJECT.getValue().equals(result)) {
-
-            this.setStage(et);
-
-        }
+//        if (StaticDict.Story__review_result.REJECT.getValue().equals(result)) {
+//
+//            this.setStage(et);
+//
+//        }
         return et;
     }
 

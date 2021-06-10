@@ -1181,13 +1181,14 @@ public class StoryExService extends StoryServiceImpl {
             if (StringUtils.compare(old.getStatus(), StaticDict.Story__status.DRAFT.getValue()) == 0 || StringUtils.compare(old.getStatus(), StaticDict.Story__status.CHANGED.getValue()) == 0) {
                 et.setStatus(StaticDict.Story__status.ACTIVE.getValue());
             }
-        } else if (StringUtils.compare(result, StaticDict.Story__review_result.REJECT.getValue()) == 0) {
-            et.setCloseddate(ZTDateUtil.nul());
-            et.setClosedby(AuthenticationUser.getAuthenticationUser().getUsername());
-            et.setStatus(StaticDict.Story__status.CLOSED.getValue());
-            et.setStage(StaticDict.Story__stage.CLOSED.getValue());
-            et.setAssignedto(StaticDict.Assignedto_closed.CLOSED.getValue());
-        } else if (StringUtils.compare(result, StaticDict.Story__review_result.REVERT.getValue()) == 0) {
+//        } else if (StringUtils.compare(result, StaticDict.Story__review_result.REJECT.getValue()) == 0) {
+//            et.setCloseddate(ZTDateUtil.nul());
+//            et.setClosedby(AuthenticationUser.getAuthenticationUser().getUsername());
+//            et.setStatus(StaticDict.Story__status.CLOSED.getValue());
+//            et.setStage(StaticDict.Story__stage.CLOSED.getValue());
+//            et.setAssignedto(StaticDict.Assignedto_closed.CLOSED.getValue());
+//        }
+        }else if (StringUtils.compare(result, StaticDict.Story__review_result.REVERT.getValue()) == 0) {
             et.setStatus(StaticDict.Story__status.ACTIVE.getValue());
             StorySpec oldStorySpec = iStorySpecService.getOne(new QueryWrapper<StorySpec>().eq(StaticDict.Action__object_type.STORY.getValue(), old.getId()).eq("version", et.getPreversion()));
             et.setTitle(oldStorySpec.getTitle());
@@ -1205,14 +1206,14 @@ public class StoryExService extends StoryServiceImpl {
         ActionHelper.sendTodoOrToread(et.getId(), et.getTitle(), noticeusers, et.getAssignedto(), et.getMailto(), "需求", StaticDict.Action__object_type.STORY.getValue(), "stories", StaticDict.Action__type.REVIEWED.getText(), true, iActionService);
         if (changes.size() > 0) {
             ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.STORY.getValue(), changes,  StaticDict.Action__type.REVIEWED.getValue(), comment, result, null, iActionService);
-            if (StringUtils.compare(result, StaticDict.Story__review_result.REJECT.getValue()) == 0) {
-                ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.STORY.getValue(), null,  StaticDict.Action__type.CLOSED.getValue(), comment, et.getClosedreason(), null, iActionService);
-            }
+//            if (StringUtils.compare(result, StaticDict.Story__review_result.REJECT.getValue()) == 0) {
+//                ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.STORY.getValue(), null,  StaticDict.Action__type.CLOSED.getValue(), comment, et.getClosedreason(), null, iActionService);
+//            }
 
         }
-        if (StaticDict.Story__review_result.REJECT.getValue().equals(result)) {
-            this.setStage(et);
-        }
+//        if (StaticDict.Story__review_result.REJECT.getValue().equals(result)) {
+//            this.setStage(et);
+//        }
         return et;
     }
     /**
