@@ -1,5 +1,8 @@
 package cn.ibizlab.pms.core.ou.client;
 
+import cn.ibizlab.pms.util.client.SuperLoginClient;
+import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
+import cn.ibizlab.pms.util.web.SuperLoginInterceptor;
 import feign.*;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
@@ -11,6 +14,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,39 +28,50 @@ public class SysEmployeeFeignClientConfiguration {
     @Value("${ibiz.ref.service.ibzou-api.name:ibzou-api}")
     String serviceValue;
 
-    @Value("${ibiz.ref.service.ibzou-api.system:f7ad7e05-9031-11eb-b882-00163e06e68c}")
+     @Value("${ibiz.ref.service.ibzou-api.name:f7ad7e05-9031-11eb-b882-00163e06e68c}")
     String serviceSystem;
+
+     @Value("${ibiz.ref.service.ibzou-api.super:}")
+    boolean superapi;
+
+     @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")
+    String uaaservice;
+
+     @Value("${ibiz.ref.service.ibzou-api.login:}")
+    String login;
+
+     @Value("${ibiz.ref.service.ibzou-api.password:}")
+    String password;
 
     @Autowired
     Feign.Builder builder;
 
     @Bean
     public SysEmployeeFeignClient sysEmployeeFeignClient(Decoder decoder, Encoder encoder, Client client, Contract contract, List<RequestInterceptor> requestInterceptors) {
-        requestInterceptors.add(new RequestInterceptor() {
+        List<RequestInterceptor> requestInterceptors = new ArrayList<>();
+        RequestInterceptor systemInterceptor = new RequestInterceptor() {
             @Override
             public void apply(RequestTemplate requestTemplate) {
                 ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
                 requestTemplate.header("srfsystemid", Collections.emptyList());
                 requestTemplate.header("srfsystemid", serviceSystem);
             }
-        });
-        if (builder instanceof HystrixFeign.Builder) {
-            HystrixFeign.Builder nameBuilder = HystrixFeign.builder()
-                    .client(client)
-                    .encoder(encoder)
-                    .decoder(decoder)
-                    .contract(contract)
-                    .requestInterceptors(requestInterceptors);
+        };
+        requestInterceptors.add(systemInterceptor);
 
-            return nameBuilder.target(SysEmployeeFeignClient.class, "http://" + serviceValue, new SysEmployeeFallback());
-        } else {
-            Feign.Builder nameBuilder = Feign.builder()
-                    .client(client)
-                    .encoder(encoder)
-                    .decoder(decoder)
-                    .contract(contract)
-                    .requestInterceptors(requestInterceptors);
-            return nameBuilder.target(SysEmployeeFeignClient.class, "http://" + serviceValue);
+        //忽略权限
+        if (superapi) {
+            SuperLoginClient superLoginClient = outsideAccessorUtils.buildAccessor(SuperLoginClient.class, null, uaaservice, Arrays.asList(new RequestInterceptor() {
+                @Override
+                public void apply(RequestTemplate requestTemplate) {
+                    requestTemplate.header("srfsystemid", Collections.emptyList());
+                    requestTemplate.header("srforgid", Collections.emptyList());
+                    requestTemplate.header("Authorization", Collections.emptyList());
+                }
+            }));
+            RequestInterceptor superLoginInterceptor = new SuperLoginInterceptor(superLoginClient, login, password);
+            requestInterceptors.add(superLoginInterceptor);
         }
+        return outsideAccessorUtils.buildAccessor(SysEmployeeFeignClient.class, new SysEmployeeFallback(), serviceValue, requestInterceptors);
     }
 }
