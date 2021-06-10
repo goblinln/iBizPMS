@@ -245,6 +245,7 @@ import { AppDefaultWizardPanel } from './control/app-default-wizard-panel/app-de
 import { AppDefaultStateWizardPanel } from './control/app-default-statewizard-panel/app-default-statewizard-panel';
 import { AppDefaultDrtab } from './control/app-default-drtab/app-default-drtab';
 import { AppDefaultMap } from './control/app-default-map/app-default-map';
+import { AppDefaultReportPanel } from './control/app-default-reportpanel/app-default-reportpanel';
 import { NotificationSignal } from '../directives';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
@@ -492,6 +493,7 @@ export const ComponentsRegister = {
         v.component('app-default-datainfobar', AppDefaultDataInfoBar);
         v.component('app-pivot-table', AppPivotTable);
         v.component('app-default-map', AppDefaultMap);
+        v.component('app-default-report-panel', AppDefaultReportPanel);
         // 注册指令
         v.directive('notification-signal', NotificationSignal);
     }

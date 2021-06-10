@@ -1,4 +1,4 @@
-import { ModelTool } from 'ibiz-core';
+import { ModelTool, ReportViewEngine } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 import { IPSAppDEReportView, IPSDEReportPanel } from '@ibiz/dynamic-model-api';
 
@@ -26,7 +26,14 @@ export class DeReportViewBase extends MDViewBase {
     public reportPanelInstance!: IPSDEReportPanel;
 
     /**
-     * 初始化表格视图实例
+     * 报表视图引擎
+     * 
+     * @memberof DeReportViewBase
+     */
+    public engine: ReportViewEngine = new ReportViewEngine();
+
+    /**
+     * 初始化报表视图实例
      * 
      * @param opts 
      * @memberof DeReportViewBase
@@ -38,12 +45,35 @@ export class DeReportViewBase extends MDViewBase {
     }
 
     /**
-     * 渲染视图主体内容区
+     * 报表视图引擎初始化
      * 
+     * @param opts 
      * @memberof DeReportViewBase
      */
-    public renderMainContent() {
-        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(this.reportPanelInstance);
-        return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.reportPanelInstance?.name, on: targetCtrlEvent },);
+    public engineInit() {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
+        if (this.reportPanelInstance) {
+            let engineOpts: any = ({
+                view: this,
+                parentContainer: this.$parent,
+                p2k: '0',
+                isLoadDefault: this.viewInstance?.loadDefault,
+                keyPSDEField: this.appDeCodeName.toLowerCase(),
+                majorPSDEField: this.appDeMajorFieldName.toLowerCase(),
+                reportpanel: (this.$refs[this.reportPanelInstance?.name] as any).ctrl,
+            });
+            if (this.searchFormInstance?.name && this.$refs[this.searchFormInstance.name]) {
+                engineOpts.searchform = ((this.$refs[this.searchFormInstance.name] as any).ctrl);
+            } else if(this.quickSearchFormInstance?.name && this.$refs[this.quickSearchFormInstance.name] ){
+                engineOpts.searchform = ((this.$refs[this.quickSearchFormInstance.name] as any).ctrl);
+            }
+            if(this.searchBarInstance?.name && this.$refs[this.searchBarInstance.name]) {
+                engineOpts.searchbar = ((this.$refs[this.searchBarInstance.name] as any).ctrl);
+            }
+            this.engine.init(engineOpts);
+        }
     }
+
 }

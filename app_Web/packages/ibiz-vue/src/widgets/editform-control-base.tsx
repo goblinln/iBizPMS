@@ -448,8 +448,8 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                 data.srfuf = '0';
             }
             const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
+            const actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
             if (!action) {
-                let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
                 this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string), 'save');
                 return;
             }
@@ -476,7 +476,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                     this.formState.next({ type: 'save', data: data });
                 });
                 if (this.controlInstance.formFuncMode?.toLowerCase() != 'wizardform' && showResultInfo) {
-                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.commonwords.savesuccess') as string), 'save');
+                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t(`app.formpage.${actionName}`)) + (this.$t('app.commonwords.success') as string), 'save');
                 }
                 resolve(response);
             }).catch((response: any) => {

@@ -50,3 +50,4 @@ export { WFGridViewEngine } from './wfgrid-view-engine';
 export { WFStartViewEngine } from './wfstart-view-engine';
 export { WizardViewEngine } from './wizard-view-engine';
 export { DataPanelEngine } from './data-panel-engine';
+export { ReportViewEngine } from './report-view-engine';
