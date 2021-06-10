@@ -1,9 +1,11 @@
+import { MDControlInterface } from 'ibiz-core';
+
 /**
  * 树基类接口
  *
  * @interface TreeControlInterface
  */
-export interface TreeControlInterface {
+export interface TreeControlInterface extends MDControlInterface {
 
     /**
      * 数据加载

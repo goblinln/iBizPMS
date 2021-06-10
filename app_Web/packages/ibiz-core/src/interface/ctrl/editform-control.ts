@@ -16,7 +16,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      */
     autoSave(opt: any): void;
 
-
     /**
      * 保存
      *
@@ -28,7 +27,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      */
     save(opt: any, showResultInfo: boolean, isStateNext: boolean): Promise<any>;
 
-
     /**
      * 删除
      *
@@ -38,7 +36,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      * @memberof EditFormControlInterface
      */
     remove(opt: Array<any>, showResultInfo?: boolean): Promise<any>;
-
 
     /**
      * 工作流启动
@@ -50,7 +47,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      */
     wfstart(data: any, localdata?: any): Promise<any>;
 
-
     /**
      * 工作流提交
      *
@@ -60,7 +56,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      * @memberof EditFormControlInterface
      */
     wfsubmit(data: any, localdata?: any): Promise<any>;
-
 
     /**
      * 表单刷新数据
@@ -81,7 +76,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      */
     panelAction(action: string, emitAction: string, data: any, showloading?: boolean): void;
 
-
     /**
      * 保存并退出
      *
@@ -90,7 +84,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      * @memberof EditFormControlInterface
      */
     saveAndExit(data: any[]): Promise<any>;
-
 
     /**
      * 保存并新建
@@ -101,7 +94,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      */
     saveAndNew(data: any[]): Promise<any>;
 
-
     /**
      * 删除并退出
      *
@@ -111,7 +103,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      */
     removeAndExit(data: any[]): Promise<any>;
 
-
     /**
      * 置空对象
      *
@@ -120,7 +111,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      */
     ResetData(_datas: any): void;
 
-
     /**
      * 表单按钮行为触发
      *
@@ -128,7 +118,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      * @memberof EditFormControlInterface
      */
     onFormItemActionClick({ formdetail, event }: any): void;
-
 
     /**
      * 表单项检查逻辑
@@ -139,7 +128,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      */
     checkItem(name: string): Promise<any>;
 
-
     /**
      * 计算表单按钮权限状态
      *
@@ -147,7 +135,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      * @memberof EditFormControlInterface
      */
     computeButtonState(data: any): void;
-
 
     /**
      * 显示更多模式切换操作
@@ -157,7 +144,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      */
     manageContainerClick(name: string): void;
 
-
     /**
      * 打印
      *
@@ -165,14 +151,12 @@ export interface EditFormControlInterface extends FormControlInterface {
      */
     print(): void;
 
-
     /**
      * 更新默认值
      *
      * @memberof EditFormControlInterface
      */
     updateDefault(): void;
-
 
     /**
      * 校验动态逻辑结果
@@ -183,7 +167,6 @@ export interface EditFormControlInterface extends FormControlInterface {
      * @memberof EditFormControlInterface
      */
     verifyGroupLogic(data: any, logic: IPSDEFDCatGroupLogic): boolean
-
 
     /**
      * 处理操作列点击

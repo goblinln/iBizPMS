@@ -1,9 +1,11 @@
+import { MDControlInterface } from 'ibiz-core';
+
 /**
  * 甘特视图基类接口
  *
  * @interface GanttControlInterface
  */
-export interface GanttControlInterface {
+export interface GanttControlInterface extends MDControlInterface{
 
     /**
      * 加载数据

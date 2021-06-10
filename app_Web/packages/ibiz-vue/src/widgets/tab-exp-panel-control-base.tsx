@@ -1,5 +1,5 @@
 import { IPSControl, IPSTabExpPanel } from '@ibiz/dynamic-model-api';
-import { Util, ViewTool } from 'ibiz-core';
+import { TabExpPanelControlInterface, Util, ViewTool } from 'ibiz-core';
 import { MainControlBase } from './main-control-base';
 /**
  * 分页导航面板部件基类
@@ -8,48 +8,15 @@ import { MainControlBase } from './main-control-base';
  * @class TabExpPanelBase
  * @extends {MainControlBase}
  */
-export class TabExpPanelBase extends MainControlBase {
+export class TabExpPanelBase extends MainControlBase implements TabExpPanelControlInterface{
 
     /**
      * 分页导航部件实例对象
      *
      * @type {*}
-     * @memberof ControlBase
+     * @memberof TabExpPanelBase
      */
     public controlInstance!: IPSTabExpPanel;
-
-    /**
-     * 部件模型数据初始化实例
-     *
-     * @memberof TabExpPanelBase
-     */
-    public async ctrlModelInit(args?: any) {
-        await super.ctrlModelInit();
-        const allControls: IPSControl[] = this.controlInstance.getPSControls() as IPSControl[];
-        if (allControls.length > 0) {
-            this.activiedTabViewPanel = allControls[0].name;
-        }
-    }
-
-    /**
-     * 初始化解析分页导航面板绘制参数
-     *
-     * @memberof TabExpPanelBase
-     */
-    public initRenderOptions() {
-        super.initRenderOptions();
-        const allControls: IPSControl[] = this.controlInstance.getPSControls() as IPSControl[];
-        this.authResourceObject = [];
-        allControls.forEach((item: any, index: number) => {
-            //  zktodo 权限待补充
-            this.authResourceObject[item.name] = {
-                resourcetag: "",
-                visabled: true,
-                disabled: false
-            }
-            this.isInit[item.name] = index === 0 ? true : false;
-        });
-    }
 
     /**
      * 实体权限服务对象
@@ -68,23 +35,52 @@ export class TabExpPanelBase extends MainControlBase {
     public isInit: any = {}
 
     /**
-     * 获取多项数据
+     * 行为参数
      *
-     * @returns {any[]}
+     * @public
+     * @type {*}
      * @memberof TabExpPanelBase
      */
-    public getDatas(): any[] {
-        return [];
-    }
+    public action: any = '';
+
+     /**
+      * 当前激活数据
+      *
+      * @public
+      * @type {*}
+      * @memberof TabExpPanelBase
+      */
+    public activeData: any = {};
+ 
+     /**
+      * 分页面板权限标识存储对象
+      *
+      * @public
+      * @type {*}
+      * @memberof TabExpPanelBase
+      */
+    public authResourceObject: any = {};
+ 
+     /**
+      * 被激活的分页面板
+      *
+      * @type {string}
+      * @memberof TabExpPanelBase
+      */
+    public activiedTabViewPanel: string = '';
 
     /**
-     * 获取单项树
+     * 部件模型数据初始化实例
      *
-     * @returns {*}
+     * @param {*} [args]
      * @memberof TabExpPanelBase
      */
-    public getData(): any {
-        return null;
+    public async ctrlModelInit(args?: any) {
+        await super.ctrlModelInit();
+        const allControls: IPSControl[] = this.controlInstance.getPSControls() as IPSControl[];
+        if (allControls.length > 0) {
+            this.activiedTabViewPanel = allControls[0].name;
+        }
     }
 
     /**
@@ -144,39 +140,90 @@ export class TabExpPanelBase extends MainControlBase {
     }
 
     /**
-     * 行为参数
+     * 分页视图面板数据变更
      *
-     * @public
-     * @type {*}
      * @memberof TabExpPanelBase
      */
-    public action: any = '';
+    public tabViewPanelDatasChange() {
+        this.counterRefresh();
+    }
 
     /**
-     * 当前激活数据
+     * 分页面板选中
      *
-     * @public
-     * @type {*}
+     * @param {*} $event 选中分页
+     * @returns
      * @memberof TabExpPanelBase
      */
-    public activeData: any = {};
+    public tabPanelClick($event: any) {
+        if (!$event ||  Object.is(this.activiedTabViewPanel, $event)) {
+            return;
+        }
+        this.isInit = [];
+        this.isInit[$event] = true;
+        if (!this.viewState) {
+            return;
+        }
+        this.activiedTabViewPanel = $event;
+        this.ctrlEvent({ controlname: this.controlInstance.name, action: 'viewPanelIsChange', data: this.activiedTabViewPanel });
+        this.viewState.next({ tag: this.activiedTabViewPanel, action: this.action, data: this.activeData });
+    }
 
     /**
-     * 分页面板权限标识存储对象
-     *
-     * @public
-     * @type {*}
+     * 部件事件
+     * @param ctrl 部件 
+     * @param action  行为
+     * @param data 数据
+     * 
      * @memberof TabExpPanelBase
      */
-    public authResourceObject: any = {};
+    public onCtrlEvent(controlname: string, action: string, data: any) {
+        if (Object.is(controlname, 'tabviewpanel') && action == 'viewpanelDatasChange') {
+            this.tabViewPanelDatasChange();
+        }else{
+            super.onCtrlEvent(controlname, action, data);
+        }
+    }
+    
+    /**
+     * 初始化解析分页导航面板绘制参数
+     *
+     * @memberof TabExpPanelBase
+     */
+    public initRenderOptions() {
+        super.initRenderOptions();
+        const allControls: IPSControl[] = this.controlInstance.getPSControls() as IPSControl[];
+        this.authResourceObject = [];
+        allControls.forEach((item: any, index: number) => {
+            //  zktodo 权限待补充
+            this.authResourceObject[item.name] = {
+                resourcetag: "",
+                visabled: true,
+                disabled: false
+            }
+            this.isInit[item.name] = index === 0 ? true : false;
+        });
+    }
+    
+    /**
+     * 获取多项数据
+     *
+     * @returns {any[]}
+     * @memberof TabExpPanelBase
+     */
+    public getDatas(): any[] {
+        return [];
+    }
 
     /**
-     * 被激活的分页面板
+     * 获取单项数据
      *
-     * @type {string}
+     * @returns {*}
      * @memberof TabExpPanelBase
      */
-    public activiedTabViewPanel: string = '';
+    public getData(): any {
+        return null;
+    }
 
     /**
      * 计算分页面板权限
@@ -219,51 +266,5 @@ export class TabExpPanelBase extends MainControlBase {
             return mainState === false ? false : true;
         const resourceAuth: boolean = this.appAuthService.getResourcePermission(this.authResourceObject[name]['resourcetag']);
         return !resourceAuth ? false : mainState ? true : false;
-    }
-
-    /**
-     * 分页视图面板数据变更
-     *
-     * @memberof TabExpPanelBase
-     */
-    public tabViewPanelDatasChange() {
-        this.counterRefresh();
-    }
-
-    /**
-     * 分页面板选中
-     *
-     * @param {*} $event
-     * @returns
-     * @memberof TabExpPanelBase
-     */
-    public tabPanelClick($event: any) {
-        if (!$event ||  Object.is(this.activiedTabViewPanel, $event)) {
-            return;
-        }
-        this.isInit = [];
-        this.isInit[$event] = true;
-        if (!this.viewState) {
-            return;
-        }
-        this.activiedTabViewPanel = $event;
-        this.ctrlEvent({ controlname: this.controlInstance.name, action: 'viewPanelIsChange', data: this.activiedTabViewPanel });
-        this.viewState.next({ tag: this.activiedTabViewPanel, action: this.action, data: this.activeData });
-    }
-
-    /**
-     * 部件事件
-     * @param ctrl 部件 
-     * @param action  行为
-     * @param data 数据
-     * 
-     * @memberof TabExpPanelBase
-     */
-    public onCtrlEvent(controlname: string, action: string, data: any) {
-        if (Object.is(controlname, 'tabviewpanel') && action == 'viewpanelDatasChange') {
-            this.tabViewPanelDatasChange();
-        }else{
-            super.onCtrlEvent(controlname, action, data);
-        }
     }
 }

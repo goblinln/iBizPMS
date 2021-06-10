@@ -1,11 +1,11 @@
 import { IPSAppDEField, IPSControlAction, IPSDEEditForm, IPSDEWizard, IPSDEWizardEditForm, IPSDEWizardForm, IPSDEWizardPanel, IPSDEWizardStep } from '@ibiz/dynamic-model-api';
-import { ViewState } from 'ibiz-core';
+import { ViewState, WizardPanelControlInterface } from 'ibiz-core';
 import { Subject } from 'rxjs';
 import { AppCenterService } from '../app-service';
 import { AppWizardPanelService } from '../ctrl-service';
 import { MainControlBase } from './main-control-base';
 
-export class WizardPanelControlBase extends MainControlBase {
+export class WizardPanelControlBase extends MainControlBase implements WizardPanelControlInterface{
 
     /**
      * 向导面板部件实例
@@ -122,6 +122,12 @@ export class WizardPanelControlBase extends MainControlBase {
         this.initActiveForm();
     }
 
+    /**
+     * 部件模型填充
+     *
+     * @return {*} 
+     * @memberof WizardPanelControlBase
+     */
     public async ctrlModelFill() {
         const wizard: IPSDEWizard | null = this.controlInstance.getPSDEWizard();
         if (!wizard) {
@@ -199,6 +205,127 @@ export class WizardPanelControlBase extends MainControlBase {
                 }
                 this.regFormAction(formName, action, this.getStepTag(wizard.getPSDEWizardSteps() || [], stepForm?.getPSDEWizardStep()?.stepTag as string));
             })
+        }
+    }
+
+    /**
+     * 上一步
+     *
+     * @memberof WizardPanelControlBase
+     */
+    public onClickPrev() {
+        if (!this.stateField) {
+            const length = this.historyForms.length;
+            if (length > 1) {
+                this.curState = 'PREV';
+                this.activeForm = this.historyForms[length - 1];
+                setTimeout(() => {
+                    this.formLoad(this.formParam);
+                }, 1);
+                this.historyForms.splice(length - 1, 1);
+            }
+        } else {
+            if (this.activeForm) {
+                if (this.$refs && this.$refs[this.activeForm] && (this.$refs[this.activeForm] as any).ctrl) {
+                    let form: any = (this.$refs[this.activeForm] as any).ctrl;
+                    this.curState = 'PREV';
+                    if (!this.stepActions[this.activeForm].preAction) {
+                        this.$throw((this.$t('app.wizardpanel.preactionmessage') as string),'onClickPrev');
+                        return;
+                    }
+                    this.viewState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].preAction, emitAction: 'save', data: this.formParam } });
+                }
+            }
+        }
+    }
+
+    /**
+     * 下一步
+     *
+     * @memberof WizardPanelControlBase
+     */
+    public onClickNext() {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
+        if (this.activeForm) {
+            if (this.$refs && (this.$refs[this.activeForm] as any)?.ctrl) {
+                let form: any = (this.$refs[this.activeForm] as any).ctrl;
+                if (form.formValidateStatus()) {
+                    this.curState = 'NEXT';
+                    this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].saveAction, emitAction: 'save', data: this.formParam } });
+                } else {
+                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickNext');
+                }
+            }
+        }
+    }
+
+    /**
+     * 完成
+     *
+     * @memberof WizardPanelControlBase
+     */
+    public onClickFinish() {
+        if (this.activeForm) {
+            if (this.$refs && this.$refs[this.activeForm] && (this.$refs[this.activeForm] as any).ctrl) {
+                let form: any = (this.$refs[this.activeForm] as any).ctrl;
+                if (form.formValidateStatus()) {
+                    this.curState = 'FINISH';
+                    this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].saveAction, emitAction: 'save', data: this.formParam } });
+                } else {
+                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickFinish');
+                }
+            }
+        }
+    }
+
+    /**
+    * 向导表单加载完成
+    *
+    * @param {*} args
+    * @param {string} name
+    * @memberof WizardPanelControlBase
+    */
+    public wizardpanelFormload(args: any, name: string) {
+        if (args) {
+            Object.assign(this.formParam, args);
+        }
+    }
+
+    /**
+     * 向导表单保存完成
+     *
+     * @param {*} args 
+     * @param {string} name
+     * @memberof WizardPanelControlBase
+     */
+    public wizardpanelFormsave(args: any, name: string) {
+        Object.assign(this.formParam, args);
+        if (Object.is(this.curState, 'NEXT')) {
+            this.historyForms.push(name);
+            if (!this.stateField) {
+                if (this.getNextForm()) {
+                    this.activeForm = this.getNextForm();
+                    setTimeout(() => {
+                        this.formLoad(this.formParam);
+                    }, 1);
+                } else {
+                    this.doFinish();
+                }
+            } else {
+                setTimeout(() => {
+                    this.formLoad(this.formParam);
+                }, 1);
+            }
+        } else if (Object.is(this.curState, 'PREV')) {
+            if (this.stateField) {
+                setTimeout(() => {
+                    this.formLoad(this.formParam);
+                }, 1);
+            }
+        } else if (Object.is(this.curState, 'FINISH')) {
+            this.doFinish();
         }
     }
 
@@ -328,79 +455,7 @@ export class WizardPanelControlBase extends MainControlBase {
         }
         return undefined;
     }
-
-    /**
-     * 上一步
-     *
-     * @memberof WizardPanelControlBase
-     */
-    public onClickPrev() {
-        if (!this.stateField) {
-            const length = this.historyForms.length;
-            if (length > 1) {
-                this.curState = 'PREV';
-                this.activeForm = this.historyForms[length - 1];
-                setTimeout(() => {
-                    this.formLoad(this.formParam);
-                }, 1);
-                this.historyForms.splice(length - 1, 1);
-            }
-        } else {
-            if (this.activeForm) {
-                if (this.$refs && this.$refs[this.activeForm] && (this.$refs[this.activeForm] as any).ctrl) {
-                    let form: any = (this.$refs[this.activeForm] as any).ctrl;
-                    this.curState = 'PREV';
-                    if (!this.stepActions[this.activeForm].preAction) {
-                        this.$throw((this.$t('app.wizardpanel.preactionmessage') as string),'onClickPrev');
-                        return;
-                    }
-                    this.viewState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].preAction, emitAction: 'save', data: this.formParam } });
-                }
-            }
-        }
-    }
-
-    /**
-     * 下一步
-     *
-     * @memberof WizardPanelControlBase
-     */
-    public onClickNext() {
-        if (this.Environment && this.Environment.isPreviewMode) {
-            return;
-        }
-        if (this.activeForm) {
-            if (this.$refs && (this.$refs[this.activeForm] as any)?.ctrl) {
-                let form: any = (this.$refs[this.activeForm] as any).ctrl;
-                if (form.formValidateStatus()) {
-                    this.curState = 'NEXT';
-                    this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].saveAction, emitAction: 'save', data: this.formParam } });
-                } else {
-                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickNext');
-                }
-            }
-        }
-    }
-
-    /**
-     * 完成
-     *
-     * @memberof WizardPanelControlBase
-     */
-    public onClickFinish() {
-        if (this.activeForm) {
-            if (this.$refs && this.$refs[this.activeForm] && (this.$refs[this.activeForm] as any).ctrl) {
-                let form: any = (this.$refs[this.activeForm] as any).ctrl;
-                if (form.formValidateStatus()) {
-                    this.curState = 'FINISH';
-                    this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].saveAction, emitAction: 'save', data: this.formParam } });
-                } else {
-                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickFinish');
-                }
-            }
-        }
-    }
-
+    
     /**
      * 是否隐藏
      *
@@ -430,54 +485,4 @@ export class WizardPanelControlBase extends MainControlBase {
             this.wizardpanelFormload(data, controlname);
         }
     }
-
-    /**
-    * 向导表单加载完成
-    *
-    * @param {*} args
-    * @param {string} name
-    * @memberof WizardPanelControlBase
-    */
-    public wizardpanelFormload(args: any, name: string) {
-        if (args) {
-            Object.assign(this.formParam, args);
-        }
-    }
-
-    /**
-     * 向导表单保存完成
-     *
-     * @param {*} args
-     * @param {string} name
-     * @memberof WizardPanelControlBase
-     */
-    public wizardpanelFormsave(args: any, name: string) {
-        Object.assign(this.formParam, args);
-        if (Object.is(this.curState, 'NEXT')) {
-            this.historyForms.push(name);
-            if (!this.stateField) {
-                if (this.getNextForm()) {
-                    this.activeForm = this.getNextForm();
-                    setTimeout(() => {
-                        this.formLoad(this.formParam);
-                    }, 1);
-                } else {
-                    this.doFinish();
-                }
-            } else {
-                setTimeout(() => {
-                    this.formLoad(this.formParam);
-                }, 1);
-            }
-        } else if (Object.is(this.curState, 'PREV')) {
-            if (this.stateField) {
-                setTimeout(() => {
-                    this.formLoad(this.formParam);
-                }, 1);
-            }
-        } else if (Object.is(this.curState, 'FINISH')) {
-            this.doFinish();
-        }
-    }
-
 }

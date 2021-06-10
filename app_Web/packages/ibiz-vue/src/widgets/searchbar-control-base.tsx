@@ -1,11 +1,10 @@
 import { IPSAppDEField, IPSApplication, IPSAppUtil, IPSDEFSearchMode, IPSSearchBar, IPSSearchBarFilter } from '@ibiz/dynamic-model-api';
-import { GetModelService, LogUtil } from 'ibiz-core';
+import { GetModelService, LogUtil, SearchBarControlInterface } from 'ibiz-core';
 import moment from 'moment';
 import { AppSearchBarService } from '../ctrl-service/app-searchbar-service';
 import { MDControlBase } from './md-control-base';
 
-export class SearchBarControlBase extends MDControlBase {
-
+export class SearchBarControlBase extends MDControlBase implements SearchBarControlInterface{
 
     /**
      * 搜索栏部件实例对象
@@ -30,15 +29,6 @@ export class SearchBarControlBase extends MDControlBase {
      * @memberof SearchBarControlBase
      */
     public detailsModel: any = {};
-
-    /**
-     * 过滤属性集合
-     * 
-     * @memberof SearchBarControlBase
-     */
-    get filterFields() {
-        return Object.values(this.detailsModel);
-    }
 
     /**
      * 过滤项集合
@@ -95,6 +85,15 @@ export class SearchBarControlBase extends MDControlBase {
      * @memberof SearchBarControlBase
      */
     protected saveItemName: string = "";
+
+    /**
+     * 过滤属性集合
+     * 
+     * @memberof SearchBarControlBase
+     */
+    get filterFields() {
+        return Object.values(this.detailsModel);
+    }
 
     /**
      * 监听动态参数变化
@@ -177,126 +176,9 @@ export class SearchBarControlBase extends MDControlBase {
     }
 
     /**
-     * 获取数据集
-     * 
-     * @memberof SearchBarControlBase
-     */
-    public getDatas(): any[] {
-        return [];
-    }
-
-    /**
-     * 获取单项数据
-     * 
-     * @memberof SearchBarControlBase
-     */
-    public getData() {
-        let data: any = {};
-        if(this.filterFields.length > 0) {
-            let filter: any = this.getFilter();
-            Object.assign(data, { filter: filter ? filter : null })
-        }
-        return data;
-    }
-
-    /**
-     * 获取过滤树
-     * 
-     * @memberof SearchBarControlBase
-     */
-    public getFilter() {
-        if(this.filterItems.length === 0) {
-            return null;
-        }
-        let ands: any[] = this.transformAnd(this.filterItems);
-        this.transformResult(ands, '$and');
-        if(ands.length === 0) {
-            return null;
-        }
-        return { '$and': ands };
-    }
-
-    /**
-     * 处理结果集
-     *
-     * @return {*}
-     * @memberof SearchBarControlBase
-     */
-    public transformResult(datas: any[], pName: string) {
-        let items: any[] = [];
-        for(let i = datas.length - 1; i >= 0; i--) {
-            let data: any = datas[i];
-            let field: string = Object.is(pName, '$and') ? '$or' : '$and';
-            if(data.hasOwnProperty(field)) {
-                items.push(data);
-                datas.splice(i, 1);
-                this.transformResult(data[field], field);
-            }
-
-        }
-        if(items.length > 0) {
-            let item: any = {};
-            item[pName] = items;
-            datas.push(item);
-        }
-    }
-
-    /**
-     * 处理并且逻辑
-     *
-     * @return {*}
-     * @memberof SearchBarControlBase
-     */
-    public transformAnd(datas: any[]): any {
-        let result: any[] = [];
-        datas.forEach((data: any) => {
-            let item: any = {};
-            if(data.field && data.mode) {
-                item[data.field] = {};
-                let valField: string = data.editor ? data.editor : data.field;
-                item[data.field][data.mode] = (data[valField] == null  ? '' : data[valField]);
-                result.push(item)
-            } else if(Object.is(data.label, '$and')) {
-                let items: any[] = this.transformAnd(data.children);
-                result = [...result, ...items];
-            } else if(Object.is(data.label, '$or')) {
-                item[data.label] = this.transformOr(data.children);
-                result.push(item)
-            }
-        })
-        return result;
-    }
-
-    /**
-     * 处理或逻辑
-     *
-     * @return {*}
-     * @memberof SearchBarControlBase
-     */
-    public transformOr(datas: any[]) {
-        let result: any[] = [];
-        datas.forEach((data: any) => {
-            let item: any = {};
-            if(data.field && data.mode) {
-                item[data.field] = {};
-                let valField: string = data.editor ? data.editor : data.field;
-                item[data.field][data.mode] = (data[valField] == null ? '' : data[valField]);
-                result.push(item);
-            } else if(Object.is(data.label, '$and')) {
-                item[data.label] = this.transformAnd(data.children);
-                result.push(item)
-            } else if(Object.is(data.label, '$or')) {
-                item[data.label] = this.transformOr(data.children);
-                result.push(item);
-            }
-        })
-        return result;
-    }
-
-    /**
      * 删除过滤项
      *
-     * @return {*}
+     * @param {number} index 索引
      * @memberof SearchBarControlBase
      */
     public onRemove(index: number) {
@@ -320,7 +202,7 @@ export class SearchBarControlBase extends MDControlBase {
     /**
      * 保存
      *
-     * @return {*}
+     * @param {string} [name] 名称
      * @memberof SearchBarControlBase
      */
     public onSave(name?: string) {
@@ -389,7 +271,7 @@ export class SearchBarControlBase extends MDControlBase {
     /**
      * 改变过滤条件
      *
-     * @return {*}
+     * @param {*} evt
      * @memberof SearchBarControlBase
      */
     public onFilterChange(evt: any) {
@@ -438,6 +320,126 @@ export class SearchBarControlBase extends MDControlBase {
         let propip: any = this.$refs.propip;
         propip.handleMouseleave();
         // this.onSave();
+    }
+
+    /**
+     * 获取数据集
+     * 
+     * @memberof SearchBarControlBase
+     */
+    public getDatas(): any[] {
+        return [];
+    }
+
+    /**
+     * 获取单项数据
+     * 
+     * @memberof SearchBarControlBase
+     */
+    public getData() {
+        let data: any = {};
+        if(this.filterFields.length > 0) {
+            let filter: any = this.getFilter();
+            Object.assign(data, { filter: filter ? filter : null })
+        }
+        return data;
+    }
+
+    /**
+     * 获取过滤树
+     * 
+     * @memberof SearchBarControlBase
+     */
+    public getFilter() {
+        if(this.filterItems.length === 0) {
+            return null;
+        }
+        let ands: any[] = this.transformAnd(this.filterItems);
+        this.transformResult(ands, '$and');
+        if(ands.length === 0) {
+            return null;
+        }
+        return { '$and': ands };
+    }
+
+    /**
+     * 处理结果集
+     *
+     * @param {any[]} datas 数据
+     * @param {string} pName
+     * @memberof SearchBarControlBase
+     */
+    public transformResult(datas: any[], pName: string) {
+        let items: any[] = [];
+        for(let i = datas.length - 1; i >= 0; i--) {
+            let data: any = datas[i];
+            let field: string = Object.is(pName, '$and') ? '$or' : '$and';
+            if(data.hasOwnProperty(field)) {
+                items.push(data);
+                datas.splice(i, 1);
+                this.transformResult(data[field], field);
+            }
+
+        }
+        if(items.length > 0) {
+            let item: any = {};
+            item[pName] = items;
+            datas.push(item);
+        }
+    }
+
+    /**
+     * 处理并且逻辑
+     *
+     * @param {any[]} datas 数据
+     * @return {*}  {*}
+     * @memberof SearchBarControlBase
+     */
+    public transformAnd(datas: any[]): any {
+        let result: any[] = [];
+        datas.forEach((data: any) => {
+            let item: any = {};
+            if(data.field && data.mode) {
+                item[data.field] = {};
+                let valField: string = data.editor ? data.editor : data.field;
+                item[data.field][data.mode] = (data[valField] == null  ? '' : data[valField]);
+                result.push(item)
+            } else if(Object.is(data.label, '$and')) {
+                let items: any[] = this.transformAnd(data.children);
+                result = [...result, ...items];
+            } else if(Object.is(data.label, '$or')) {
+                item[data.label] = this.transformOr(data.children);
+                result.push(item)
+            }
+        })
+        return result;
+    }
+
+    /**
+     * 处理或逻辑
+     *
+     * @param {any[]} datas 数据
+     * @return {*} 
+     * @memberof SearchBarControlBase
+     */
+    public transformOr(datas: any[]) {
+        let result: any[] = [];
+        datas.forEach((data: any) => {
+            let item: any = {};
+            if(data.field && data.mode) {
+                item[data.field] = {};
+                let valField: string = data.editor ? data.editor : data.field;
+                item[data.field][data.mode] = (data[valField] == null ? '' : data[valField]);
+                result.push(item);
+            } else if(Object.is(data.label, '$and')) {
+                item[data.label] = this.transformAnd(data.children);
+                result.push(item)
+            } else if(Object.is(data.label, '$or')) {
+                item[data.label] = this.transformOr(data.children);
+                result.push(item);
+            }
+        })
+        return result;
     }
 
 }

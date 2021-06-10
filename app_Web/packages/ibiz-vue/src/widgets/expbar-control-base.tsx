@@ -1,5 +1,5 @@
 import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSAppView, IPSCodeItem, IPSControl, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSSysImage, IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { CodeListServiceBase, debounce, LogUtil, ModelTool, Util, ViewTool } from 'ibiz-core';
+import { CodeListServiceBase, debounce, ExpBarControlInterface, LogUtil, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service';
 import { MainControlBase } from './main-control-base';
 
@@ -10,7 +10,7 @@ import { MainControlBase } from './main-control-base';
  * @class ExpBarControlBase
  * @extends {MainControlBase}
  */
-export class ExpBarControlBase extends MainControlBase {
+export class ExpBarControlBase extends MainControlBase implements ExpBarControlInterface{
     /**
      * 导航栏部件模型对象
      *

@@ -1,5 +1,5 @@
 import { IPSDEPickupViewPanel } from "@ibiz/dynamic-model-api";
-import { Util } from "ibiz-core";
+import { PickUpViewPanelControlInterface, Util } from "ibiz-core";
 import { MainControlBase } from './main-control-base';
 /**
  * 选择视图面板部件基类
@@ -8,13 +8,13 @@ import { MainControlBase } from './main-control-base';
  * @class PickUpViewPanelControlBase
  * @extends {MainControlBase}
  */
-export class PickUpViewPanelControlBase extends MainControlBase {
+export class PickUpViewPanelControlBase extends MainControlBase implements PickUpViewPanelControlInterface{
 
     /**
      * 部件模型实例对象
      *
      * @type {*}
-     * @memberof ControlBase
+     * @memberof PickUpViewPanelControlBase
      */
     public controlInstance!: IPSDEPickupViewPanel;
 
@@ -36,26 +36,6 @@ export class PickUpViewPanelControlBase extends MainControlBase {
      * @memberof PickUpViewPanelControlBase
      */
     public viewMode: number = 0;
-
-    /**
-     * 获取多项数据
-     *
-     * @returns {any[]}
-     * @memberof PickUpViewPanelControlBase
-     */
-    public getDatas(): any[] {
-        return [];
-    }
-
-    /**
-     * 获取单项树
-     *
-     * @returns {*}
-     * @memberof PickUpViewPanelControlBase
-     */
-    public getData(): any {
-        return {};
-    }
 
     /**
      * 视图名称
@@ -80,7 +60,7 @@ export class PickUpViewPanelControlBase extends MainControlBase {
      * 局部视图参数
      *
      * @type {*}
-     * @memberof PickupViewpickupviewpanel
+     * @memberof PickUpViewPanelControlBase
      */
     public localViewParam: any = "";
 
@@ -96,7 +76,7 @@ export class PickUpViewPanelControlBase extends MainControlBase {
      * 视图参数
      *
      * @type {*}
-     * @memberof PickupViewpickupviewpanel
+     * @memberof PickUpViewPanelControlBase
      */
     public viewparam: string = JSON.stringify(this.viewparams);
 
@@ -123,78 +103,6 @@ export class PickUpViewPanelControlBase extends MainControlBase {
      * @memberof PickUpViewPanelControlBase
      */
     public inited: boolean = false;
-
-
-    /**
-     * 视图数据变化
-     *
-     * @param {*} $event
-     * @memberof PickUpViewPanelControlBase
-     */
-    public onViewDatasChange($event: any): void {
-        if ($event.length > 0) {
-            $event.forEach((item: any, index: any) => {
-                let srfmajortext = item.srfmajortext ? item.srfmajortext : item[this.appDeMajorFieldName.toLowerCase()];
-                if (srfmajortext) {
-                    Object.assign($event[index], { srfmajortext: srfmajortext });
-                }
-            });
-        }
-        this.$emit("ctrl-event", { controlname: "pickupviewpanel", action: "selectionchange", data: $event });
-    }
-
-    /**
-     * 部件初始化
-     *
-     *  @memberof PickUpViewPanelControlBase
-     */
-    public ctrlInit() {
-        this.initNavParam();
-        if (this.viewState) {
-            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
-                if (!Object.is(tag, this.name)) {
-                    return;
-                }
-                if (Object.is('load', action)) {
-                    this.viewdata = JSON.stringify(this.context);
-                    this.viewparam = JSON.stringify(Object.assign(data, this.viewparams));
-                    this.handleLoad();
-                    this.inited = true;
-                }
-            });
-        }
-    }
-
-    public handleLoad() {
-        if (!this.inited || this.viewMode == 0) {
-            return;
-        }
-        const viewname = this.controlInstance.getEmbeddedPSAppDEView()?.name;
-        if (viewname && this.viewMode == 1) {
-            const viewDom: any = (this.$refs[viewname] as any)?.$children[0];
-            if (viewDom && viewDom.engine) {
-                viewDom.engine.load();
-            }
-        }
-    }
-
-    /**
-     * 初始化导航参数
-     *
-     *  @memberof PickUpViewPanelControlBase
-     */
-    public initNavParam() {
-        if (this.localContext && Object.keys(this.localContext).length > 0) {
-            let _context: any = Util.computedNavData({}, this.context, this.viewparams, this.localContext);
-            Object.assign(this.context, _context);
-        }
-        if (this.localViewParam && Object.keys(this.localViewParam).length > 0) {
-            let _param: any = Util.computedNavData({}, this.context, this.viewparams, this.localViewParam);
-            Object.assign(this.viewparams, _param);
-        }
-        this.viewdata = JSON.stringify(this.context);
-        this.viewparam = JSON.stringify(this.viewparams);
-    }
 
     /**
      * 监听部件动态参数变化
@@ -232,5 +140,102 @@ export class PickUpViewPanelControlBase extends MainControlBase {
     public async ctrlModelInit() {
         super.ctrlModelInit();
         this.view.viewName = 'app-view-shell';
+    }
+
+    /**
+     * 部件初始化
+     *
+     *  @memberof PickUpViewPanelControlBase
+     */
+    public ctrlInit() {
+        this.initNavParam();
+        if (this.viewState) {
+            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
+                if (!Object.is(tag, this.name)) {
+                    return;
+                }
+                if (Object.is('load', action)) {
+                    this.viewdata = JSON.stringify(this.context);
+                    this.viewparam = JSON.stringify(Object.assign(data, this.viewparams));
+                    this.handleLoad();
+                    this.inited = true;
+                }
+            });
+        }
+    }
+    
+    /**
+     * 初始化导航参数
+     *
+     *  @memberof PickUpViewPanelControlBase
+     */
+    public initNavParam() {
+        if (this.localContext && Object.keys(this.localContext).length > 0) {
+            let _context: any = Util.computedNavData({}, this.context, this.viewparams, this.localContext);
+            Object.assign(this.context, _context);
+        }
+        if (this.localViewParam && Object.keys(this.localViewParam).length > 0) {
+            let _param: any = Util.computedNavData({}, this.context, this.viewparams, this.localViewParam);
+            Object.assign(this.viewparams, _param);
+        }
+        this.viewdata = JSON.stringify(this.context);
+        this.viewparam = JSON.stringify(this.viewparams);
+    }
+    
+    /**
+     * 视图数据变化
+     *
+     * @param {*} $event
+     * @memberof PickUpViewPanelControlBase
+     */
+    public onViewDatasChange($event: any): void {
+        if ($event.length > 0) {
+            $event.forEach((item: any, index: any) => {
+                let srfmajortext = item.srfmajortext ? item.srfmajortext : item[this.appDeMajorFieldName.toLowerCase()];
+                if (srfmajortext) {
+                    Object.assign($event[index], { srfmajortext: srfmajortext });
+                }
+            });
+        }
+        this.$emit("ctrl-event", { controlname: "pickupviewpanel", action: "selectionchange", data: $event });
+    }
+
+    /**
+     * 视图加载完成
+     *
+     * @return {*} 
+     * @memberof PickUpViewPanelControlBase
+     */
+    public handleLoad() {
+        if (!this.inited || this.viewMode == 0) {
+            return;
+        }
+        const viewname = this.controlInstance.getEmbeddedPSAppDEView()?.name;
+        if (viewname && this.viewMode == 1) {
+            const viewDom: any = (this.$refs[viewname] as any)?.$children[0];
+            if (viewDom && viewDom.engine) {
+                viewDom.engine.load();
+            }
+        }
+    }
+    
+    /**
+     * 获取多项数据
+     *
+     * @returns {any[]}
+     * @memberof PickUpViewPanelControlBase
+     */
+     public getDatas(): any[] {
+        return [];
+    }
+
+    /**
+     * 获取单项数据
+     *
+     * @returns {*}
+     * @memberof PickUpViewPanelControlBase
+     */
+    public getData(): any {
+        return {};
     }
 }

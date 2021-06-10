@@ -1,14 +1,13 @@
 import { Subject } from 'rxjs';
-import { ViewState, ViewTool, Util, ModelTool, LogUtil } from 'ibiz-core';
+import { ViewState, ViewTool, Util, ModelTool, LogUtil, MEditViewPanelControlInterface } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { AppMEditViewPanelService } from '../ctrl-service';
 import { IPSAppDEField, IPSAppView, IPSDEMultiEditViewPanel, IPSAppDEView } from '@ibiz/dynamic-model-api';
 /**
  * 多编辑视图面板部件
  * 
- * 
  */
-export class MEditViewPanelControlBase extends MDControlBase {
+export class MEditViewPanelControlBase extends MDControlBase implements MEditViewPanelControlInterface{
     
     /**
      * 多编辑视图面板部件实例
@@ -23,21 +22,6 @@ export class MEditViewPanelControlBase extends MDControlBase {
      * @memberof MEditViewPanelControlBase
      */
     public panelStyle: string = 'ROW';
-
-    /**
-     * 部件模型数据初始化
-     *
-     * @memberof MEditViewPanelControlBase
-     */
-    public async ctrlModelInit(args?:any) {
-        await super.ctrlModelInit();
-        if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppMEditViewPanelService(this.controlInstance);
-        }
-        // 加载嵌入视图的数据
-        await this.controlInstance.getEmbeddedPSAppView()?.fill();
-        this.initParameters();
-    }
 
     /**
      * 面板状态订阅对象
@@ -81,6 +65,21 @@ export class MEditViewPanelControlBase extends MDControlBase {
      * @memberof MEditViewPanelControlBase
      */
     public parameters: any[] = [];
+
+    /**
+     * 部件模型数据初始化
+     *
+     * @memberof MEditViewPanelControlBase
+     */
+    public async ctrlModelInit(args?:any) {
+        await super.ctrlModelInit();
+        if (!(this.Environment && this.Environment.isPreviewMode)) {
+            this.service = new AppMEditViewPanelService(this.controlInstance);
+        }
+        // 加载嵌入视图的数据
+        await this.controlInstance.getEmbeddedPSAppView()?.fill();
+        this.initParameters();
+    }
 
     /**
      * 多编辑视图面板初始化
@@ -128,6 +127,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
     /**
      * 保存数据
      *
+     * @param {*} [data] 数据
      * @memberof MEditViewPanelControlBase
      */
     public saveData(data?: any) {
@@ -141,52 +141,10 @@ export class MEditViewPanelControlBase extends MDControlBase {
     }
 
     /**
-     * 处理数据
-     *
-     * @public
-     * @param {any[]} datas
-     * @memberof MEditViewPanelControlBase
-     */
-    public doItems(datas: any[]): void {
-        // todo 同类数据处理可以抽个工具类
-        const [{ pathName, parameterName }] = this.parameters;
-        datas.forEach((arg: any) => {
-            let id: string = arg[parameterName] ? arg[parameterName] : this.$util.createUUID();
-            let item: any = { id: id, viewdata: {}, viewparam: {} };
-            Object.assign(item.viewdata, ViewTool.getIndexViewParam());
-            Object.assign(item.viewdata, this.context);
-
-            // 关系应用实体参数
-            this.deResParameters.forEach(({ pathName, parameterName }: { pathName: string, parameterName: string }) => {
-                if (this.context[parameterName] && !Object.is(this.context[parameterName], '')) {
-                    Object.assign(item.viewdata, { [parameterName]: this.context[parameterName] });
-                } else if (arg[parameterName] && !Object.is(arg[parameterName], '')) {
-                    Object.assign(item.viewdata, { [parameterName]: arg[parameterName] });
-                }
-            });
-            
-            // 当前视图参数（应用实体视图）
-            this.parameters.forEach(({ pathName, parameterName, srfmajortext }: { pathName: string, parameterName: string, srfmajortext: string }) => {
-                if (arg[parameterName] && !Object.is(arg[parameterName], '')) {
-                    Object.assign(item.viewdata, { [parameterName]: arg[parameterName] });
-                }
-                // 当前页面实体主信息
-                if (arg[srfmajortext] && !Object.is(arg[srfmajortext], '')) {
-                    Object.assign(item, {srfmajortext: arg[srfmajortext]});
-                }
-            });
-
-            //合并视图参数
-            Object.assign(item.viewparam, this.viewparams);
-            this.items.push(item);        
-        });
-    }
-
-    /**
      * 数据加载
      *
      * @public
-     * @param {*} data
+     * @param {*} data 额外参数
      * @memberof MEditViewPanelControlBase
      */
     public load(data: any): void {
@@ -253,7 +211,10 @@ export class MEditViewPanelControlBase extends MDControlBase {
     }
 
      /**
-     * 部件抛出事件
+     * 视图数据变更事件
+     *
+     * @param {*} $event 回调对象
+     * @return {*} 
      * @memberof MEditViewPanelControlBase
      */
     public viewDataChange($event:any){
@@ -288,10 +249,53 @@ export class MEditViewPanelControlBase extends MDControlBase {
     /**
      * 视图加载完成
      *
-     * @returns
+     * @param {*} $event 回调对象
      * @memberof MEditViewPanelControlBase
      */
     public viewload($event:any){
         LogUtil.log(this.$t('components.appformdruipart.loadcomp'));
     }
+
+    /**
+     * 处理数据
+     *
+     * @public
+     * @param {any[]} datas 数据集合
+     * @memberof MEditViewPanelControlBase
+     */
+     public doItems(datas: any[]): void {
+        // todo 同类数据处理可以抽个工具类
+        const [{ pathName, parameterName }] = this.parameters;
+        datas.forEach((arg: any) => {
+            let id: string = arg[parameterName] ? arg[parameterName] : this.$util.createUUID();
+            let item: any = { id: id, viewdata: {}, viewparam: {} };
+            Object.assign(item.viewdata, ViewTool.getIndexViewParam());
+            Object.assign(item.viewdata, this.context);
+
+            // 关系应用实体参数
+            this.deResParameters.forEach(({ pathName, parameterName }: { pathName: string, parameterName: string }) => {
+                if (this.context[parameterName] && !Object.is(this.context[parameterName], '')) {
+                    Object.assign(item.viewdata, { [parameterName]: this.context[parameterName] });
+                } else if (arg[parameterName] && !Object.is(arg[parameterName], '')) {
+                    Object.assign(item.viewdata, { [parameterName]: arg[parameterName] });
+                }
+            });
+            
+            // 当前视图参数（应用实体视图）
+            this.parameters.forEach(({ pathName, parameterName, srfmajortext }: { pathName: string, parameterName: string, srfmajortext: string }) => {
+                if (arg[parameterName] && !Object.is(arg[parameterName], '')) {
+                    Object.assign(item.viewdata, { [parameterName]: arg[parameterName] });
+                }
+                // 当前页面实体主信息
+                if (arg[srfmajortext] && !Object.is(arg[srfmajortext], '')) {
+                    Object.assign(item, {srfmajortext: arg[srfmajortext]});
+                }
+            });
+
+            //合并视图参数
+            Object.assign(item.viewparam, this.viewparams);
+            this.items.push(item);        
+        });
+    }
+
 }

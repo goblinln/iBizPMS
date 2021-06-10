@@ -2,22 +2,22 @@ import { Subscription } from 'rxjs';
 import { UIServiceRegister } from 'ibiz-service';
 import { CtrlLoadingService } from '..';
 import { ControlBase } from './control-base';
-import { ModelTool, Util } from 'ibiz-core';
+import { MainControlInterface, ModelTool, Util } from 'ibiz-core';
 import { IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
 
 /**
- * 部件基础公共基类
+ * 实体部件基础公共基类
  *
  * @export
  * @class MainControlBase
  * @extends {ControlBase}
  */
-export class MainControlBase extends ControlBase {
+export class MainControlBase extends ControlBase implements MainControlInterface{
     /**
      * 编辑视图
      *
      * @type {*}
-     * @memberof ListControlBase
+     * @memberof MainControlBase
      */
     public opendata?: any;
 
@@ -25,7 +25,7 @@ export class MainControlBase extends ControlBase {
      * 新建视图
      *
      * @type {*}
-     * @memberof ListControlBase
+     * @memberof MainControlBase
      */
     public newdata?: any;
 
@@ -38,69 +38,12 @@ export class MainControlBase extends ControlBase {
     public viewLoadingService: any;
 
     /**
-     * 监听静态参数变化
-     *
-     * @param {*} newVal
-     * @param {*} oldVal
-     * @memberof ListControlBase
-     */
-    public onStaticPropsChange(newVal: any, oldVal: any) {
-        this.newdata = newVal.newdata;
-        this.opendata = newVal.opendata;
-        super.onStaticPropsChange(newVal, oldVal);
-        this.viewLoadingService = newVal.viewLoadingService;
-    }
-
-    /**
      * 加载服务
      *
      * @type {AppLoading}
      * @memberof MainControlBase
      */
     public ctrlLoadingService!: CtrlLoadingService;
-
-    /**
-     * 开始加载
-     */
-    public ctrlBeginLoading() {
-        this.ctrlLoadingService.beginLoading(this.controlId);
-    }
-
-    /**
-     * 结束加载
-     */
-    public ctrlEndLoading() {
-        this.ctrlLoadingService.endLoading();
-    }
-
-    /**
-     * 处理部件UI请求
-     *
-     * @memberof MainControlBase
-     */
-    public onControlRequset(action:string,context:any,viewparam:any){
-        this.ctrlBeginLoading();
-    }
-
-    /**
-     * 处理部件UI响应
-     *
-     * @memberof MainControlBase
-     */
-     public onControlResponse(action:string,response:any){
-        this.ctrlEndLoading();
-        if(Object.is(action,'load')){
-            this.isControlLoaded = true;
-        }
-        if(response && response.status && response.status == 403){
-            this.enableControlUIAuth = false;
-            this.ctrlEvent({
-                controlname: this.controlInstance.name,
-                action: 'authlimit',
-                data: response,
-            });
-        }
-    }
 
     /**
      * 应用状态事件
@@ -143,7 +86,7 @@ export class MainControlBase extends ControlBase {
      * @readonly
      * @memberof MainControlBase
      */
-     get deName(){
+    get deName() {
         return this.controlInstance?.getPSAppDataEntity()?.getPSDEName() || '';
     }
 
@@ -165,6 +108,20 @@ export class MainControlBase extends ControlBase {
      */
     get appDeMajorFieldName() {
         return (ModelTool.getAppEntityMajorField(this.controlInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';
+    }
+
+    /**
+     * 监听静态参数变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof MainControlBase
+     */
+    public onStaticPropsChange(newVal: any, oldVal: any) {
+        this.newdata = newVal.newdata;
+        this.opendata = newVal.opendata;
+        super.onStaticPropsChange(newVal, oldVal);
+        this.viewLoadingService = newVal.viewLoadingService;
     }
 
     /**
@@ -190,22 +147,6 @@ export class MainControlBase extends ControlBase {
     public initCtrlActionModel() { }
 
     /**
-     * 转化数据
-     *
-     * @param {*} args
-     * @memberof  MainControlBase
-     */
-    public transformData(args: any) {
-        let _this: any = this;
-        if (!_this.appDeCodeName) {
-            return;
-        }
-        if (_this.service && _this.service.handleRequestData instanceof Function && _this.service.handleRequestData('transform', Util.deepCopy(_this.context), args)) {
-            return _this.service.handleRequestData('transform', Util.deepCopy(_this.context), args)['data'];
-        }
-    }
-
-    /**
      * 部件初始化
      *
      * @param {*} [args]
@@ -229,7 +170,6 @@ export class MainControlBase extends ControlBase {
         }
     }
 
-
     /**
      * 部件刷新数据
      *
@@ -237,6 +177,74 @@ export class MainControlBase extends ControlBase {
      * @memberof  MainControlBase
      */
     public refresh(args?: any): void { }
+    
+    /**
+     * 开始加载
+     *
+     * @memberof MainControlBase
+     */
+    public ctrlBeginLoading() {
+        this.ctrlLoadingService.beginLoading(this.controlId);
+    }
+
+    /**
+     * 结束加载
+     *
+     * @memberof MainControlBase
+     */
+    public ctrlEndLoading() {
+        this.ctrlLoadingService.endLoading();
+    }
+
+    /**
+     * 处理部件UI请求
+     *
+     * @param {string} action 行为名称
+     * @param {*} context 上下文
+     * @param {*} viewparam 视图参数
+     * @memberof MainControlBase
+     */
+    public onControlRequset(action: string, context: any, viewparam: any) {
+        this.ctrlBeginLoading();
+    }
+
+    /**
+     * 处理部件UI响应
+     *
+     * @param {string} action 行为
+     * @param {*} response 响应对象
+     * @memberof MainControlBase
+     */
+    public onControlResponse(action: string, response: any) {
+        this.ctrlEndLoading();
+        if (Object.is(action, 'load')) {
+            this.isControlLoaded = true;
+        }
+        if (response && response.status && response.status == 403) {
+            this.enableControlUIAuth = false;
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'authlimit',
+                data: response,
+            });
+        }
+    }
+
+    /**
+     * 转化数据
+     *
+     * @param {*} args 数据
+     * @memberof  MainControlBase
+     */
+    public transformData(args: any) {
+        let _this: any = this;
+        if (!_this.appDeCodeName) {
+            return;
+        }
+        if (_this.service && _this.service.handleRequestData instanceof Function && _this.service.handleRequestData('transform', Util.deepCopy(_this.context), args)) {
+            return _this.service.handleRequestData('transform', Util.deepCopy(_this.context), args)['data'];
+        }
+    }
 
     /**
      * 获取视图逻辑标识（拼合逻辑：部件标识_列标识_成员标识_click）

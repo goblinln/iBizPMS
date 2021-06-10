@@ -1,12 +1,11 @@
-
+import { ControlInterface } from 'ibiz-core';
 
 /**
  * 菜单基类接口
  *
  * @interface MenuControlInterface
  */
-export interface MenuControlInterface {
-
+export interface MenuControlInterface extends ControlInterface{
 
     /**
      * 数据加载
@@ -15,7 +14,6 @@ export interface MenuControlInterface {
      */
     load(): void;
 
-
     /**
      * 菜单项选中处理
      *
@@ -23,7 +21,6 @@ export interface MenuControlInterface {
      * @memberof MenuControlInterface
      */
     select(menuName: any): void;
-
 
     /**
      * 计算菜单选中项
@@ -35,7 +32,6 @@ export interface MenuControlInterface {
      */
     computeMenuSelect(items: Array<any>, appfunctag: string): boolean;
 
-
     /**
      * 获取菜单项数据
      *
@@ -45,8 +41,6 @@ export interface MenuControlInterface {
      */
     compute(items: any[], name: string): void;
 
-
-
     /**
      * 菜单点击事件
      *
@@ -54,7 +48,6 @@ export interface MenuControlInterface {
      * @memberof MenuControlInterface
      */
     click(item: any): void;
-
 
     /**
      * 计算有效菜单项

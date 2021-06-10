@@ -3,6 +3,7 @@ import { AppMapService } from '../ctrl-service';
 import { IPSSysMap, IPSSysMapItem } from '@ibiz/dynamic-model-api';
 import { init } from 'echarts';
 import '../components/control/app-default-map/china.js'
+import { MapControlInterface } from "ibiz-core";
 /**
  * 地图部件基类
  *
@@ -10,7 +11,7 @@ import '../components/control/app-default-map/china.js'
  * @class MapControlBase
  * @extends {MDControlBase}
  */
-export class MapControlBase extends MDControlBase {
+export class MapControlBase extends MDControlBase implements MapControlInterface{
 
     /**
      * 地图的模型对象
@@ -94,6 +95,48 @@ export class MapControlBase extends MDControlBase {
     }
 
     /**
+     * 默认排序方向
+     *
+     * @readonly
+     * @memberof MapControlBase
+     */
+    public minorSortDir: any = '';
+
+     /**
+      * 默认排序应用实体属性
+      *
+      * @readonly
+      * @memberof MapControlBase
+      */
+    public minorSortPSDEF: any = '';
+
+    /**
+     * 监听静态参数变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof MapControlBase
+     */
+    public onStaticPropsChange(newVal: any, oldVal: any) {
+        this.isSelectFirstDefault = newVal.isSelectFirstDefault;
+        super.onStaticPropsChange(newVal, oldVal);
+    }
+
+    /**
+      * 部件模型数据初始化实例
+      *
+      * @memberof MapControlBase
+      */
+    public async ctrlModelInit(args?: any) {
+        await super.ctrlModelInit();
+        if (!(this.Environment && this.Environment.isPreviewMode)) {
+            this.service = new AppMapService(this.controlInstance);
+            await this.service.loaded(this.controlInstance);
+            this.initMapModel();
+        }
+    }
+
+    /**
      * 初始化
      *
      * @memberof MapControlBase
@@ -116,33 +159,6 @@ export class MapControlBase extends MDControlBase {
         }
     }
 
-    /**
-     * 获取选中数据
-     *
-     * @returns {any[]}
-     * @memberof GridControlBase
-     */
-    public getSelection(): any[] {
-        return this.selections;
-    }
-
-    /**
-     * 默认排序方向
-     *
-     * @readonly
-     * @memberof MapControlBase
-     */
-    public minorSortDir: any = '';
-
-
-    /**
-     * 默认排序应用实体属性
-     *
-     * @readonly
-     * @memberof MapControlBase
-     */
-    public minorSortPSDEF: any = '';
-
     /** 
      * 部件挂载完毕
      *
@@ -158,22 +174,10 @@ export class MapControlBase extends MDControlBase {
         this.map.setOption(this.initOptions);
     }
 
-
-    /**
-     * 消息中心
-     *
-     * @protected
-     * @param {*} data
-     * @memberof MapControlBase
-     */
-    protected accChange(data: any): void {
-        this.refresh();
-    }
-
     /**
      * 刷新
      *
-     * @param {*} [args]
+     * @param {*} [args] 额外参数
      * @memberof MapControlBase
      */
     public refresh(args?: any) {
@@ -183,7 +187,7 @@ export class MapControlBase extends MDControlBase {
     /**
      * 地图数据加载
      *
-     * @param {*} [opt={}]
+     * @param {*} [data={}] 额外参数
      * @returns {void}
      * @memberof MapControlBase
      */
@@ -239,6 +243,8 @@ export class MapControlBase extends MDControlBase {
     /**
      * 处理数据集
      *
+     * @param {any[]} items 数据集合
+     * @return {*} 
      * @memberof MapControlBase
      */
     public handleOptions(items: any[]) {
@@ -261,6 +267,10 @@ export class MapControlBase extends MDControlBase {
     /**
      * 配置整合
      *
+     * @param {Array<any>} longitude 经度
+     * @param {Array<any>} latitude 纬度
+     * @param {*} arg 数据
+     * @return {*} 
      * @memberof MapControlBase
      */
     public handleMapOptions(longitude: Array<any>, latitude: Array<any>, arg: any) {
@@ -285,39 +295,15 @@ export class MapControlBase extends MDControlBase {
     /**
      * 数据整合
      *
+     * @param {*} tempItem 临时序列
+     * @param {*} item 序列
+     * @param {*} data 数据
      * @memberof MapControlBase
      */
     public handleSeriesOptions(tempItem: any, item: any, data: any) {
         //  序列
         tempItem.push(item.seriesDataIndex);
     }
-
-    /**
-      * 部件模型数据初始化实例
-      *
-      * @memberof MapControlBase
-      */
-    public async ctrlModelInit(args?: any) {
-        await super.ctrlModelInit();
-        if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppMapService(this.controlInstance);
-            await this.service.loaded(this.controlInstance);
-            this.initMapModel();
-        }
-    }
-
-    /**
-     * 监听静态参数变化
-     *
-     * @param {*} newVal
-     * @param {*} oldVal
-     * @memberof MapControlBase
-     */
-    public onStaticPropsChange(newVal: any, oldVal: any) {
-        this.isSelectFirstDefault = newVal.isSelectFirstDefault;
-        super.onStaticPropsChange(newVal, oldVal);
-    }
-
 
     /**
      * 初始化地图参数
@@ -387,4 +373,13 @@ export class MapControlBase extends MDControlBase {
         }
     }
 
+    /**
+     * 获取选中数据
+     *
+     * @returns {any[]}
+     * @memberof GridControlBase
+     */
+     public getSelection(): any[] {
+        return this.selections;
+    }
 }

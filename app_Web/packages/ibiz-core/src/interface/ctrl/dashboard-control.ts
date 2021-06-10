@@ -1,3 +1,4 @@
+import { MainControlInterface } from 'ibiz-core';
 
 
 /**
@@ -5,7 +6,7 @@
  *
  * @interface DashboardControlInterface
  */
-export interface DashboardControlInterface {
+export interface DashboardControlInterface extends MainControlInterface{
 
     /**
      * 加载门户部件

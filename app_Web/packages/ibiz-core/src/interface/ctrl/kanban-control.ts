@@ -1,9 +1,11 @@
+import { MDControlInterface } from 'ibiz-core';
+
 /**
  * 看板基类接口
  *
  * @interface KanbanControlInterface
  */
-export interface KanbanControlInterface {
+export interface KanbanControlInterface extends MDControlInterface {
     
     /**
      * 数据加载

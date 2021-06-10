@@ -1,3 +1,4 @@
+import { MainControlInterface } from 'ibiz-core';
 
 
 /**
@@ -5,8 +6,7 @@
  *
  * @interface PortletControlInterface
  */
-export interface PortletControlInterface {
-
+export interface PortletControlInterface extends MainControlInterface{
 
     /**
      * 触发界面行为

@@ -1,11 +1,11 @@
+import { MainControlInterface } from 'ibiz-core';
 
 /**
- * 树导航基类接口
+ * 数据关系分页部件接口
  *
- * @interface TreeExpBarControlInterface
+ * @interface DrtabControlInterface
  */
-export interface DrtabControlInterface {
-
+export interface DrtabControlInterface extends MainControlInterface{
 
     /**
      *  选中节点

@@ -14,14 +14,12 @@ export interface SearchFormControlInterface extends EditFormControlInterface {
      */
     onOk(): void;
 
-
     /**
      * 取消设置
      *
      * @memberof SearchFormControlInterface
      */
     onCancel(): void;
-
 
     /**
      * 删除记录
@@ -32,7 +30,6 @@ export interface SearchFormControlInterface extends EditFormControlInterface {
      */
     removeHistoryItem(event: any, item: any): void;
 
-
     /**
      * 保存
      *
@@ -40,7 +37,6 @@ export interface SearchFormControlInterface extends EditFormControlInterface {
      * @memberof SearchFormControlInterface
      */
     onSave(name?: string): void;
-
 
     /**
      * 改变过滤条件

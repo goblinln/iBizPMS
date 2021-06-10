@@ -1,6 +1,6 @@
 import { IPSDEContextMenu } from '@ibiz/dynamic-model-api';
+import { ContextMenuControlInterface } from 'ibiz-core';
 import { MainControlBase } from './main-control-base';
-
 
 /**
  * 上下文菜单部件基类
@@ -9,7 +9,7 @@ import { MainControlBase } from './main-control-base';
  * @class FormControlBase
  * @extends {MainControlBase}
  */
-export class ContextMenuBase extends MainControlBase {
+export class ContextMenuBase extends MainControlBase implements ContextMenuControlInterface{
 
     /**
      * 部件模型
@@ -19,7 +19,6 @@ export class ContextMenuBase extends MainControlBase {
      */
     public controlInstance!: IPSDEContextMenu;
 
-    
     /**
      * 上下文菜单界面行为模型
      *

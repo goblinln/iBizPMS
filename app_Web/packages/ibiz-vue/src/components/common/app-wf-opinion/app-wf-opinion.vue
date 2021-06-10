@@ -6,7 +6,7 @@
                 <div class="header">
                     <span class="title">意见</span>
                     <div class="icon-container">
-                        <i :class="['icon', enableClick ? 'el-icon-lock' : 'el-icon-unlock' ]" @click="enableClick = !enableClick;"/>
+                        <i v-if="false" :class="['icon', enableClick ? 'el-icon-lock' : 'el-icon-unlock' ]" @click="enableClick = !enableClick;"/>
                         <i :class="['icon', 'el-icon-minus', enableClick ? 'enable' : '']" @click="minusClick"/>
                     </div>
                 </div>
@@ -17,7 +17,7 @@
                         </form-item>
                     </div>
                     <div class="navbar">
-                        <div class="navbar-header">
+                        <div v-if="false" class="navbar-header">
                             <i-input search placeholder="内容搜索…" @on-search="onSearch" />
                         </div>
                         <div class="navbar-items">
@@ -249,7 +249,7 @@ export default class AppWFOpinion extends Vue {
      * @memberof AppWFOpinion
      */
     public handleFilterItems() {
-        this.filterItems = ['同意', '不同意', '已阅', '待阅', '未查看', '已查看'];
+        this.filterItems = ['同意', '不同意', '已阅'];
     }
 
     /**

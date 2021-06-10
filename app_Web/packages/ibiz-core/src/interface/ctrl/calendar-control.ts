@@ -1,9 +1,11 @@
+import { MDControlInterface } from 'ibiz-core';
+
 /**
  * 日历基类接口
  *
  * @interface CalendarControlInterface
  */
-export interface CalendarControlInterface {
+export interface CalendarControlInterface extends MDControlInterface {
     /**
      * 图例点击事件
      *

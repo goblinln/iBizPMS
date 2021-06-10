@@ -1,14 +1,16 @@
+import { MainControlInterface } from "ibiz-core";
+
 /**
  * 导航基类接口
  *
- * @interface EepBarControlInterface
+ * @interface ExpBarControlInterface
  */
-export interface ExpBarControlInterface {
+export interface ExpBarControlInterface extends MainControlInterface{
 
     /**
      * 关闭编辑视图
      *
-     * @memberof EepBarControlInterface
+     * @memberof ExpBarControlInterface
      */
     close(): void;
 
@@ -16,7 +18,7 @@ export interface ExpBarControlInterface {
      *
      *
      * @param {*} [args] 额外参数
-     * @memberof EepBarControlInterface
+     * @memberof ExpBarControlInterface
      */
     refresh(): void;
 
@@ -25,7 +27,7 @@ export interface ExpBarControlInterface {
      * 选中数据事件
      *
      * @param {any[]} args 选中数据
-     * @memberof EepBarControlInterface
+     * @memberof ExpBarControlInterface
      */
     onSelectionChange(args: any[]): void;
 
@@ -34,7 +36,7 @@ export interface ExpBarControlInterface {
      * 快速分组值变化
      *
      * @param {*} $event 改变值
-     * @memberof EepBarControlInterface
+     * @memberof ExpBarControlInterface
      */
     quickGroupValueChange($event: any): void;
 
@@ -44,7 +46,7 @@ export interface ExpBarControlInterface {
      *
      * @param {*} data
      * @param {*} $event
-     * @memberof EepBarControlInterface
+     * @memberof ExpBarControlInterface
      */
     handleItemClick(data: any, $event: any): void;
 
@@ -52,14 +54,14 @@ export interface ExpBarControlInterface {
     /**
      * split值变化事件
      *
-     * @memberof EepBarControlInterface
+     * @memberof ExpBarControlInterface
      */
     onSplitChange(): void;
 
     /**
      * 执行搜索
      *
-     * @memberof EepBarControlInterface
+     * @memberof ExpBarControlInterface
      */
     onSearch(): void;
 }

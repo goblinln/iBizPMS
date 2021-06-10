@@ -1,9 +1,11 @@
+import { MDControlInterface } from 'ibiz-core';
+
 /**
  * 列表基类接口
  *
  * @interface ListControlInterface
  */
-export interface ListControlInterface {
+export interface ListControlInterface extends MDControlInterface {
     
     /**
      * 列表数据加载

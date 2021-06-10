@@ -1,9 +1,11 @@
+import { MDControlInterface } from 'ibiz-core';
+
 /**
  * 数据视图基类接口
  *
  * @interface DataViewControlInterface
  */
-export interface DataViewControlInterface {
+export interface DataViewControlInterface extends MDControlInterface{
     
     /**
      * 数据加载

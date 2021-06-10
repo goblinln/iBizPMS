@@ -1,5 +1,5 @@
 import { IPSAppDEView, IPSDETabViewPanel } from "@ibiz/dynamic-model-api";
-import { Util, ModelTool } from "ibiz-core";
+import { Util, ModelTool, TabViewPanelControlInterface } from "ibiz-core";
 import { MainControlBase } from './main-control-base';
 
 
@@ -10,34 +10,14 @@ import { MainControlBase } from './main-control-base';
  * @class TabViewPanelBase
  * @extends {MainControlBase}
  */
-export class TabViewPanelBase extends MainControlBase {
+export class TabViewPanelBase extends MainControlBase implements TabViewPanelControlInterface{
 
     /**
      * 部件模型
      *
-     * @type {AppTabViewPanelBase}
      * @memberof TabViewPanelBase
      */
     public controlInstance!: IPSDETabViewPanel;
-
-    /**
-     * 部件模型数据初始化实例
-     *
-     * @memberof TabViewPanelBase
-     */
-    public async ctrlModelInit(args?: any) {
-        const { navFilter, name } = this.controlInstance;
-        await super.ctrlModelInit();
-        this.name = name;
-        this.navFilter = navFilter;
-        this.isActivied = this.staticProps.isActivied;
-        this.localContext = ModelTool.getNavigateContext(this.controlInstance);
-        this.localViewParam = ModelTool.getNavigateParams(this.controlInstance);
-        const embedView: IPSAppDEView = this.controlInstance.getEmbeddedPSAppDEView() as IPSAppDEView;
-        if (this.isActivied && !embedView) {
-            await this.activiedChange()
-        }
-    }
 
     /**
      * 是否被激活
@@ -96,6 +76,25 @@ export class TabViewPanelBase extends MainControlBase {
     public navFilter: string = "";
 
     /**
+     * 部件模型数据初始化实例
+     *
+     * @memberof TabViewPanelBase
+     */
+    public async ctrlModelInit(args?: any) {
+        const { navFilter, name } = this.controlInstance;
+        await super.ctrlModelInit();
+        this.name = name;
+        this.navFilter = navFilter;
+        this.isActivied = this.staticProps.isActivied;
+        this.localContext = ModelTool.getNavigateContext(this.controlInstance);
+        this.localViewParam = ModelTool.getNavigateParams(this.controlInstance);
+        const embedView: IPSAppDEView = this.controlInstance.getEmbeddedPSAppDEView() as IPSAppDEView;
+        if (this.isActivied && !embedView) {
+            await this.activiedChange()
+        }
+    }
+
+    /**
      * 初始化导航参数
      *
      *  @memberof TabViewPanelBase
@@ -117,8 +116,27 @@ export class TabViewPanelBase extends MainControlBase {
     }
 
     /**
+     * 部件初始化
+     * 
+     * @memberof TabViewPanelBase
+     */
+    public ctrlInit() {
+        super.ctrlInit();
+        const _this: any = this
+        if (this.viewState) {
+            this.viewStateEvent = this.viewState.subscribe(({ tag }: any) => {
+                if (!Object.is(tag, _this.name)) {
+                    return;
+                }
+                this.activiedChange();
+            });
+        }
+    }
+    
+    /**
      * 视图数据变化
      *
+     * @param {*} $event
      * @memberof TabViewPanelBase
      */
     public viewDatasChange($event: any) {
@@ -142,23 +160,5 @@ export class TabViewPanelBase extends MainControlBase {
         this.$nextTick(() => {
             this.initNavParam();
         });
-    }
-
-    /**
-     * 部件初始化
-     * 
-     * @memberof TabViewPanelBase
-     */
-    public ctrlInit() {
-        super.ctrlInit();
-        const _this: any = this
-        if (this.viewState) {
-            this.viewStateEvent = this.viewState.subscribe(({ tag }: any) => {
-                if (!Object.is(tag, _this.name)) {
-                    return;
-                }
-                this.activiedChange();
-            });
-        }
     }
 }

@@ -1,10 +1,10 @@
 import { IPSAppDEField, IPSControlAction, IPSDEEditForm, IPSDEStateWizardPanel, IPSDEWizard, IPSDEWizardEditForm, IPSDEWizardForm, IPSDEWizardStep } from '@ibiz/dynamic-model-api';
-import { ViewState } from 'ibiz-core';
+import { StateWizardPanelControlInterface, ViewState } from 'ibiz-core';
 import { Subject } from 'rxjs';
 import { AppWizardPanelService } from '..';
 import { MainControlBase } from './main-control-base';
 
-export class StateWizardPanelControlBase extends MainControlBase {
+export class StateWizardPanelControlBase extends MainControlBase implements StateWizardPanelControlInterface{
 
     /**
      * 向导面板部件实例
@@ -53,7 +53,6 @@ export class StateWizardPanelControlBase extends MainControlBase {
      * @memberof StateWizardPanelControlBase
      */
     public stepActions: any = {};
-
 
     /**
      * 向导表单集合
@@ -137,9 +136,10 @@ export class StateWizardPanelControlBase extends MainControlBase {
         formName:""
     }
 
-        /**
+    /**
      * 部件模型数据初始化实例
      *
+     * @param {*} [args]
      * @memberof StateWizardPanelControlBase
      */
     public async ctrlModelInit(args?: any) {
@@ -156,6 +156,11 @@ export class StateWizardPanelControlBase extends MainControlBase {
         this.initFirstForm();
     }
 
+    /**
+     * 部件初始化
+     *
+     * @memberof StateWizardPanelControlBase
+     */
     public ctrlInit() {
         super.ctrlInit();
         this.regFormActions();
@@ -168,39 +173,6 @@ export class StateWizardPanelControlBase extends MainControlBase {
                     }
                 }
             });
-        }
-    }
-    
-    /**
-     * 初始化当前激活表单
-     * 
-     * @memberof StateWizardPanelControlBase
-     */
-    public initFirstForm() {
-        const wizard: IPSDEWizard | null = this.controlInstance.getPSDEWizard();
-        const wizardForms: Array<IPSDEWizardForm> = wizard?.getPSDEWizardForms() || [];
-        if (wizard && wizardForms.length > 0) {
-            //TODO IPSDEWizard getFirstPSDEWizardForm()无返回值
-            const firstForm = wizardForms.find((form: any) => { return form.firstForm; })
-            if (firstForm) {
-                this.firstForm = `${this.controlInstance.name}_form_${firstForm.formTag?.toLowerCase()}`;
-            }
-        }
-    }
-
-    /**
-     * 获取步骤标识
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public getStepTag(wizardSteps: Array<any>, tag: string) {
-        if (wizardSteps && (wizardSteps.length > 0) && tag) {
-            let curStep: any = wizardSteps.find((step: any) => {
-                return step.title === tag;
-            })
-            return curStep.stepTag || tag;
-        } else {
-            return tag;
         }
     }
 
@@ -220,8 +192,354 @@ export class StateWizardPanelControlBase extends MainControlBase {
     }
 
     /**
+     * 初始化当前激活表单
+     * 
+     * @memberof StateWizardPanelControlBase
+     */
+    public initFirstForm() {
+        const wizard: IPSDEWizard | null = this.controlInstance.getPSDEWizard();
+        const wizardForms: Array<IPSDEWizardForm> = wizard?.getPSDEWizardForms() || [];
+        if (wizard && wizardForms.length > 0) {
+            //TODO IPSDEWizard getFirstPSDEWizardForm()无返回值
+            const firstForm = wizardForms.find((form: any) => { return form.firstForm; })
+            if (firstForm) {
+                this.firstForm = `${this.controlInstance.name}_form_${firstForm.formTag?.toLowerCase()}`;
+            }
+        }
+    }
+
+    /**
+     * 状态表单加载完成
+     *
+     * @param {*} args 表单参数
+     * @param {string} name 名称
+     * @memberof StateWizardPanelControlBase
+     */
+    public wizardpanelFormload(args: any, name: string) {
+        if(args) {
+            Object.assign(this.formParam, args);
+        }
+    }
+
+     /**
+     * 向导表单保存完成
+     *
+     * @param {*} args 表单参数
+     * @param {string} name 名称
+     * @memberof StateWizardPanelControlBase
+     */
+    public wizardpanelFormsave(args: any, name: string) {
+        Object.assign(this.formParam, args);
+        if(Object.is(this.curState, 'NEXT')) {
+            if(this.historyForms.indexOf(name) === -1){
+                this.historyForms.push(name);
+            }
+            this.setPopVisiable(name,false);
+            if (this.getNextForm(name)) {
+                this.activeForm = this.getNextForm(name);
+                this.setPopVisiable(this.activeForm,true);
+                setTimeout(() => {
+                    this.formLoad(this.activeForm);
+                }, 1);
+            } else {
+                this.doFinish();
+            }
+        }else if(Object.is(this.curState, 'FINISH')) {
+            this.doFinish();
+        }
+    }
+
+    /**
+     * 步骤标题点击
+     *
+     * @param {string} name 步骤名称
+     * @return {*} 
+     * @memberof StateWizardPanelControlBase
+     */
+    public stepTitleClick(name: string) {
+        const that = this;
+        let activeIndex:number = that.wizardForms.indexOf(that.activeForm);
+        let curIndex:number = that.wizardForms.indexOf(name);
+        if(curIndex > activeIndex){
+            setTimeout(() =>{
+                (that.$refs[name+'_popover'] as any).showPopper = false;
+                that.curShow = "";
+            },0)
+            return;
+        }
+        that.stepVisiable[name] = !that.stepVisiable[name];
+        if(that.stepVisiable[name]){
+            that.curShow = name;
+            that.formLoad(name);
+        }else{
+            that.curShow = "";
+        }
+    }
+
+    /**
+     * 左右按钮点击
+     *
+     * @param {*} mode 左右标识
+     * @return {*} 
+     * @memberof StateWizardPanelControlBase
+     */
+    public handleClick(mode: any) {
+        if(Object.is(this.curShow,"")){
+            return;
+        }
+        let curIndex:number = this.wizardForms.indexOf(this.curShow);
+        if(Object.is(mode,"PRE") && (curIndex !== 0)){
+            this.setPopVisiable(this.wizardForms[curIndex],false);
+            setTimeout(() => {
+                this.setPopVisiable(this.wizardForms[curIndex-1],true);
+                this.formLoad(this.wizardForms[curIndex-1]);
+            }, 0);
+        }
+        if(Object.is(mode,"NEXT") && (curIndex < (this.wizardForms.length - 1) && this.historyForms.includes(this.wizardForms[curIndex+1]))){
+            this.setPopVisiable(this.wizardForms[curIndex],false);
+            setTimeout(() => {
+                this.setPopVisiable(this.wizardForms[curIndex+1],true);
+                this.formLoad(this.wizardForms[curIndex+1]);
+            }, 0);
+        }
+    }
+
+    /**
+     * 打开链接
+     *
+     * @param {string} name 表单名称
+     * @memberof StateWizardPanelControlBase
+     */
+    public handleOpen(name:string){
+        this.handleClose(name);
+        this.drawerOpenStatus.isOpen = true;
+        this.drawerOpenStatus.formName = name;
+    }
+
+    /**
+     * 关闭
+     *
+     * @param {string} name 表单名称
+     * @memberof StateWizardPanelControlBase
+     */
+    public handleClose(name:string){
+        this.setPopVisiable(name,false);
+    }
+
+    /**
+     * 上一步
+     *
+     * @param {string} name 表单名称
+     * @memberof StateWizardPanelControlBase
+     */
+    public onClickPrev(name:string) {
+        const length = this.historyForms.length;
+        if(length > 0) {
+            this.curState = 'PREV';
+            let curIndex:number = this.wizardForms.indexOf(name);
+            this.setPopVisiable(name,false);
+            setTimeout(() => {
+                this.setPopVisiable(this.historyForms[curIndex - 1],true);
+                this.formLoad(this.historyForms[curIndex - 1]);
+            }, 1);
+        }
+    }
+
+    /**
+     * 下一步
+     *
+     * @param {string} name 表单名称
+     * @memberof StateWizardPanelControlBase
+     */
+    public onClickNext(name:string) {
+        if(name) {
+            if(this.$refs && this.$refs[name]){
+                let form: any = (this.$refs[name] as any).ctrl;
+                if(form.formValidateStatus()) {
+                    this.curState = 'NEXT';
+                    this.wizardState.next({ tag: name, action: 'save', data: this.formParam });
+                } else {
+                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickNext');
+                }
+            }
+        }
+
+    }
+
+    /**
+     * 完成
+     *
+     * @param {string} name 表单名称
+     * @memberof StateWizardPanelControlBase
+     */
+    public onClickFinish(name:string) {
+        if(name) {
+            if(this.$refs && this.$refs[name]){
+                let form: any = (this.$refs[name] as any).ctrl;
+                if(form.formValidateStatus()) {
+                    this.curState = 'FINISH';
+                    this.wizardState.next({ tag: name, action: 'save', data: this.formParam });
+                } else {
+                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickFinish');
+                }
+            }
+        }
+    }
+
+    /**
+     * 抽屉状态改变
+     *
+     * @param {*} value  值
+     * @memberof StateWizardPanelControlBase
+     */
+    public onVisibleChange(value:any){
+        if(!value){
+            this.drawerOpenStatus.isOpen = false;
+        }
+    }
+
+    /**
+     * 获取步表单
+     *
+     * @param {IPSDEWizardStep} step 步骤模型
+     * @return {*} 
+     * @memberof StateWizardPanelControlBase
+     */
+    public getStepForm(step: IPSDEWizardStep) {
+        const editForms: Array<IPSDEEditForm> = this.controlInstance.getPSDEEditForms() || [];
+        let stepForm: any;
+        if (editForms.length > 0) {
+            stepForm = editForms.find((form: IPSDEEditForm) => {
+                const wizardForm: IPSDEWizardForm | null = (form as IPSDEWizardEditForm)?.getPSDEWizardForm();
+                if (wizardForm) {
+                    const wizardStep: string | undefined = wizardForm.getPSDEWizardStep()?.codeName;
+                    if (wizardStep && wizardStep == step.codeName) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+        }
+        return stepForm ? stepForm.name : "";
+    }
+
+    /**
+     * 设置popover是否显示
+     *
+     * @param {string} name 表单名称
+     * @param {boolean} isVisiable 是否显示
+     * @memberof StateWizardPanelControlBase
+     */
+    public setPopVisiable(name:string, isVisiable:boolean){
+        this.stepVisiable[name] = isVisiable;
+        const refFrom = (this.$refs[name+'_popover'] as any);
+        if (refFrom) {
+            refFrom.showPopper = isVisiable;
+            this.curShow = isVisiable?name:"";
+        } 
+    }
+
+    /**
+     * 是否显示
+     *
+     * @param {string} name 表单名称
+     * @param {string} type 类型
+     * @return {*} 
+     * @memberof StateWizardPanelControlBase
+     */
+    public isVisiable(name:string, type: string) {
+        const actions: Array<string> = this.stepActions[name];
+        if(actions && actions.indexOf(type) !== -1 && Object.is(name,this.activeForm)) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * 部件事件
+     * @param ctrl 部件 
+     * @param action  行为
+     * @param data 数据
+     * 
+     * @memberof StateWizardPanelControlBase
+     */
+    public onCtrlEvent(controlname: string, action: string, data: any) {
+        if (Object.is(action, "save")) {
+            this.wizardpanelFormsave(data, controlname);
+        } else if (Object.is(action, "load")) {
+            this.wizardpanelFormload(data, controlname);
+        }
+    }
+    
+    /**
+     * 获取下一步向导表单
+     *
+     * @memberof StateWizardPanelControlBase
+     */
+    public getNextForm(name:string) {
+        let index = this.wizardForms.indexOf(name);
+        if(index >= 0) {
+            if(this.wizardForms[index + 1]) {
+                return this.wizardForms[index + 1];
+            }
+        }
+        return undefined;
+    }
+    
+    /**
+     * 表单加载完成
+     *
+     * @memberof StateWizardPanelControlBase
+     */
+    public doFinish() {
+        let arg: any = {};
+        Object.assign(arg, this.formParam);
+        Object.assign(arg, { viewparams: this.viewparams });
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('doFinish', tempContext, arg);
+        const post: Promise<any> = this.service.finish(this.finishAction, tempContext, arg, this.showBusyIndicator);
+        post.then((response: any) => {
+            this.onControlResponse('doFinish', response);
+            if (response && response.status === 200) {
+                const data = response.data;
+                this.ctrlEvent({
+                    controlname: this.controlInstance.name,
+                    action: 'finish',
+                    data: data,
+                });
+            }
+        }).catch((response: any) => {
+            this.onControlResponse('doFinish', response);
+            this.$throw(response,'doFinish');
+        });
+    }
+    
+    /**
+     * 获取步骤标识
+     *
+     * @param {Array<any>} wizardSteps 步骤数组
+     * @param {string} tag 标识
+     * @return {*} 
+     * @memberof StateWizardPanelControlBase
+     */
+    public getStepTag(wizardSteps: Array<any>, tag: string) {
+        if (wizardSteps && (wizardSteps.length > 0) && tag) {
+            let curStep: any = wizardSteps.find((step: any) => {
+                return step.title === tag;
+            })
+            return curStep.stepTag || tag;
+        } else {
+            return tag;
+        }
+    }
+
+    /**
      * 注册表单
      *
+     * @param {string} name 名称
+     * @param {Array<string>} actions 步骤集合
+     * @param {*} stepTag 步骤标识
      * @memberof StateWizardPanelControlBase
      */
     public regFormAction(name: string, actions: Array<string>, stepTag: any) {
@@ -234,6 +552,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
     /**
      * 计算激活表单
      *
+     * @param {*} data 数据
      * @memberof StateWizardPanelControlBase
      */
     public computedActiveForm(data:any){
@@ -264,6 +583,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
     /**
      * 初始化
      *
+     * @param {*} [opt={}] 额外参数
      * @memberof StateWizardPanelControlBase
      */
     public doInit(opt: any = {}) {
@@ -290,6 +610,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
     /**
      * 表单加载
      *
+     * @param {string} name 表单名称
      * @memberof StateWizardPanelControlBase
      */
     public formLoad(name: string) {
@@ -297,289 +618,4 @@ export class StateWizardPanelControlBase extends MainControlBase {
             this.wizardState.next({ tag: name, action: 'load', data: this.formParam });
         }
     }
-
-    /**
-     * 表单加载完成
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public doFinish() {
-        let arg: any = {};
-        Object.assign(arg, this.formParam);
-        Object.assign(arg, { viewparams: this.viewparams });
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
-        this.onControlRequset('doFinish', tempContext, arg);
-        const post: Promise<any> = this.service.finish(this.finishAction, tempContext, arg, this.showBusyIndicator);
-        post.then((response: any) => {
-            this.onControlResponse('doFinish', response);
-            if (response && response.status === 200) {
-                const data = response.data;
-                this.ctrlEvent({
-                    controlname: this.controlInstance.name,
-                    action: 'finish',
-                    data: data,
-                });
-            }
-        }).catch((response: any) => {
-            this.onControlResponse('doFinish', response);
-            this.$throw(response,'doFinish');
-        });
-    }
-
-    /**
-     * 状态表单加载完成
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public wizardpanelFormload(args: any, name: string) {
-        if(args) {
-            Object.assign(this.formParam, args);
-        }
-    }
-
-     /**
-     * 向导表单保存完成
-     *
-     * @param {*} args
-     * @param {string} name
-     * @memberof StateWizardPanelControlBase
-     */
-    public wizardpanelFormsave(args: any, name: string) {
-        Object.assign(this.formParam, args);
-        if(Object.is(this.curState, 'NEXT')) {
-            if(this.historyForms.indexOf(name) === -1){
-                this.historyForms.push(name);
-            }
-            this.setPopVisiable(name,false);
-            if (this.getNextForm(name)) {
-                this.activeForm = this.getNextForm(name);
-                this.setPopVisiable(this.activeForm,true);
-                setTimeout(() => {
-                    this.formLoad(this.activeForm);
-                }, 1);
-            } else {
-                this.doFinish();
-            }
-        }else if(Object.is(this.curState, 'FINISH')) {
-            this.doFinish();
-        }
-    }
-
-    /**
-     * 步骤标题点击
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public stepTitleClick(name: string) {
-        const that = this;
-        let activeIndex:number = that.wizardForms.indexOf(that.activeForm);
-        let curIndex:number = that.wizardForms.indexOf(name);
-        if(curIndex > activeIndex){
-            setTimeout(() =>{
-                (that.$refs[name+'_popover'] as any).showPopper = false;
-                that.curShow = "";
-            },0)
-            return;
-        }
-        that.stepVisiable[name] = !that.stepVisiable[name];
-        if(that.stepVisiable[name]){
-            that.curShow = name;
-            that.formLoad(name);
-        }else{
-            that.curShow = "";
-        }
-    }
-
-    /**
-     * 左右按钮点击
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public handleClick(mode: any) {
-        if(Object.is(this.curShow,"")){
-            return;
-        }
-        let curIndex:number = this.wizardForms.indexOf(this.curShow);
-        if(Object.is(mode,"PRE") && (curIndex !== 0)){
-            this.setPopVisiable(this.wizardForms[curIndex],false);
-            setTimeout(() => {
-                this.setPopVisiable(this.wizardForms[curIndex-1],true);
-                this.formLoad(this.wizardForms[curIndex-1]);
-            }, 0);
-        }
-        if(Object.is(mode,"NEXT") && (curIndex < (this.wizardForms.length - 1) && this.historyForms.includes(this.wizardForms[curIndex+1]))){
-            this.setPopVisiable(this.wizardForms[curIndex],false);
-            setTimeout(() => {
-                this.setPopVisiable(this.wizardForms[curIndex+1],true);
-                this.formLoad(this.wizardForms[curIndex+1]);
-            }, 0);
-        }
-    }
-
-    /**
-     * 打开链接
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public handleOpen(name:string){
-        this.handleClose(name);
-        this.drawerOpenStatus.isOpen = true;
-        this.drawerOpenStatus.formName = name;
-    }
-
-    /**
-     * 关闭
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public handleClose(name:string){
-        this.setPopVisiable(name,false);
-    }
-
-    /**
-     * 获取下一步向导表单
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public getNextForm(name:string) {
-        let index = this.wizardForms.indexOf(name);
-        if(index >= 0) {
-            if(this.wizardForms[index + 1]) {
-                return this.wizardForms[index + 1];
-            }
-        }
-        return undefined;
-    }
-
-
-    /**
-     * 上一步
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public onClickPrev(name:string) {
-        const length = this.historyForms.length;
-        if(length > 0) {
-            this.curState = 'PREV';
-            let curIndex:number = this.wizardForms.indexOf(name);
-            this.setPopVisiable(name,false);
-            setTimeout(() => {
-                this.setPopVisiable(this.historyForms[curIndex - 1],true);
-                this.formLoad(this.historyForms[curIndex - 1]);
-            }, 1);
-        }
-    }
-
-    /**
-     * 下一步
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public onClickNext(name:string) {
-        if(name) {
-            if(this.$refs && this.$refs[name]){
-                let form: any = (this.$refs[name] as any).ctrl;
-                if(form.formValidateStatus()) {
-                    this.curState = 'NEXT';
-                    this.wizardState.next({ tag: name, action: 'save', data: this.formParam });
-                } else {
-                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickNext');
-                }
-            }
-        }
-
-    }
-
-    /**
-     * 完成
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public onClickFinish(name:string) {
-        if(name) {
-            if(this.$refs && this.$refs[name]){
-                let form: any = (this.$refs[name] as any).ctrl;
-                if(form.formValidateStatus()) {
-                    this.curState = 'FINISH';
-                    this.wizardState.next({ tag: name, action: 'save', data: this.formParam });
-                } else {
-                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickFinish');
-                }
-            }
-        }
-    }
-
-    public getStepForm(step: IPSDEWizardStep) {
-        const editForms: Array<IPSDEEditForm> = this.controlInstance.getPSDEEditForms() || [];
-        let stepForm: any;
-        if (editForms.length > 0) {
-            stepForm = editForms.find((form: IPSDEEditForm) => {
-                const wizardForm: IPSDEWizardForm | null = (form as IPSDEWizardEditForm)?.getPSDEWizardForm();
-                if (wizardForm) {
-                    const wizardStep: string | undefined = wizardForm.getPSDEWizardStep()?.codeName;
-                    if (wizardStep && wizardStep == step.codeName) {
-                        return true;
-                    }
-                }
-                return false;
-            });
-        }
-        return stepForm ? stepForm.name : "";
-    }
-
-    /**
-     * 设置popover是否显示
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public setPopVisiable(name:string,isVisiable:boolean){
-        this.stepVisiable[name] = isVisiable;
-        const refFrom = (this.$refs[name+'_popover'] as any);
-        if (refFrom) {
-            refFrom.showPopper = isVisiable;
-            this.curShow = isVisiable?name:"";
-        } 
-    }
-
-    /**
-     * 是否显示
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public isVisiable(name:string,type: string) {
-        const actions: Array<string> = this.stepActions[name];
-        if(actions && actions.indexOf(type) !== -1 && Object.is(name,this.activeForm)) {
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-    /**
-     * 抽屉状态改变
-     *
-     * @memberof StateWizardPanelControlBase
-     */
-    public onVisibleChange(value:any){
-        if(!value){
-            this.drawerOpenStatus.isOpen = false;
-        }
-    }
-
-    /**
-     * 部件事件
-     * @param ctrl 部件 
-     * @param action  行为
-     * @param data 数据
-     * 
-     * @memberof StateWizardPanelControlBase
-     */
-    public onCtrlEvent(controlname: string, action: string, data: any) {
-        if (Object.is(action, "save")) {
-            this.wizardpanelFormsave(data, controlname);
-        } else if (Object.is(action, "load")) {
-            this.wizardpanelFormload(data, controlname);
-        }
-    }
-    
 }

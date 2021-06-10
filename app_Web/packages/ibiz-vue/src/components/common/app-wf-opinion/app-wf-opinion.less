@@ -18,7 +18,8 @@
             }
             >.icon-container {
                 line-height: 20px;
-                padding: 10px 12px 10px 0px;
+                // padding: 10px 12px 10px 0px;
+                padding: 10px 0px;
                 .icon {
                     cursor: pointer;
                 }
@@ -57,9 +58,12 @@
                 >.navbar-items {
                     display: flex;
                     flex-direction: column;
-                    padding: 0px 8px;
+                    margin: 6px;
+                    height: 100%;
+                    //需要搜索框时恢复注释
+                    // padding: 0px 8px;
+                    // height: calc(100% - 42px);
                     overflow: auto;
-                    height: calc(100% - 42px);
                     .filter-item {
                         height: 28px;
                         font-size: 10px;

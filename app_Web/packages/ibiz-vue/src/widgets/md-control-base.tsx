@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { CodeListServiceBase, debounce, ModelTool } from 'ibiz-core'
+import { CodeListServiceBase, debounce, MDControlInterface, ModelTool } from 'ibiz-core'
 import { MainControlBase } from './main-control-base';
 import { GlobalService } from 'ibiz-service';
 import { AppCenterService, AppViewLogicService } from '../app-service';
@@ -13,7 +13,7 @@ import { IPSAppDataEntity, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, 
  * @class MDControlBase
  * @extends {MainControlBase}
  */
-export class MDControlBase extends MainControlBase {
+export class MDControlBase extends MainControlBase implements MDControlInterface{
     /**
      * 代码表服务对象
      *
@@ -61,7 +61,7 @@ export class MDControlBase extends MainControlBase {
      *
      * @protected
      * @type {[]}
-     * @memberof DataViewControlBase
+     * @memberof MDControlBase
      */
      public quickToolbarModels: Array<any> = [];
 
@@ -70,7 +70,7 @@ export class MDControlBase extends MainControlBase {
       *
       * @protected
       * @type {[]}
-      * @memberof DataViewControlBase
+      * @memberof MDControlBase
       */
      public batchToolbarModels: Array<any> = [];
 
@@ -114,7 +114,6 @@ export class MDControlBase extends MainControlBase {
      */
     public isNoSort: boolean = false;
 
-
     /**
      * 分页条数
      *
@@ -135,7 +134,7 @@ export class MDControlBase extends MainControlBase {
      * 是否单选
      *
      * @type {boolean}
-     * @memberof GridControlBase
+     * @memberof MDControlBase
      */
     public isSingleSelect?: boolean;
 
@@ -147,7 +146,6 @@ export class MDControlBase extends MainControlBase {
      */
     public isSelectFirstDefault: boolean = false;
 
-
     /**
      * 排序方向
      *
@@ -155,7 +153,6 @@ export class MDControlBase extends MainControlBase {
      * @memberof MDControlBase
      */
     public minorSortDir: string = "";
-
 
     /**
      * 排序字段
@@ -213,11 +210,29 @@ export class MDControlBase extends MainControlBase {
     public loaddraftAction: string = "";
 
     /**
+     * 获取视图样式
+     *
+     * @readonly
+     * @memberof MDControlBase
+     */
+    get viewStyle(){
+        const parentModel: any = this.controlInstance?.getParentPSModelObject?.();
+        if (parentModel && parentModel.viewStyle) {
+            return parentModel.viewStyle;
+        } else {
+            if (parentModel && parentModel.controlType) {
+                return parentModel.getParentPSModelObject?.()?.viewStyle || 'DEFAULT';
+            }
+            return 'DEFAULT';
+        }
+    }
+
+    /**
      * 监听静态参数变化
      *
      * @param {*} newVal
      * @param {*} oldVal
-     * @memberof ListControlBase
+     * @memberof MDControlBase
      */
     public onStaticPropsChange(newVal: any, oldVal: any) {
         this.isSingleSelect = newVal.isSingleSelect !== false;
@@ -228,7 +243,7 @@ export class MDControlBase extends MainControlBase {
     /**
      * 部件模型数据初始化
      *
-     * @memberof MEditViewPanelControlBase
+     * @memberof MDControlBase
      */
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
@@ -253,63 +268,9 @@ export class MDControlBase extends MainControlBase {
     }
 
     /**
-     * 多数据部件初始化
-     *
-     * @memberof MDControlBase
-     */
-    public ctrlInit() {
-        super.ctrlInit();
-        let _this: any = this;
-        // 全局刷新通知
-        if (AppCenterService.getMessageCenter()) {
-            _this.appStateEvent = AppCenterService.getMessageCenter().subscribe(({ name, action, data }: { name: string, action: string, data: any }) => {
-                if (!_this.appDeCodeName || !Object.is(name, _this.appDeCodeName)) {
-                    return;
-                }
-                if (Object.is(action, 'appRefresh')) {
-                    _this.refresh(data);
-                }
-            })
-        }
-        _this.codeListService = new CodeListServiceBase({ $store: _this.$store });
-    }
-
-    /**
-     * 执行destroyed后的逻辑
-     *
-     * @memberof MDControlBase
-     */
-    public ctrlDestroyed() {
-        super.ctrlDestroyed();
-        if (this.appStateEvent) {
-            this.appStateEvent.unsubscribe();
-        }
-    }
-
-    /**
-     * 获取多项数据
-     *
-     * @returns {any[]}
-     * @memberof MDControlBase
-     */
-    public getDatas(): any[] {
-        return this.selections;
-    }
-
-    /**
-     * 获取单项树
-     *
-     * @returns {*}
-     * @memberof MDControlBase
-     */
-    public getData(): any {
-        return this.selections[0];
-    }
-    
-    /**
      * 初始化工具栏模型
      *
-     * @memberof DataViewControlBase
+     * @memberof MDControlBase
      */
      public initToolBarModels() {
         const getModelData = (_item: IPSDEToolbarItem) => {
@@ -350,6 +311,78 @@ export class MDControlBase extends MainControlBase {
             });
             this.batchToolbarModels = targetViewToolbarItems;
         }
+    }
+
+    /**
+     * 多数据部件初始化
+     *
+     * @memberof MDControlBase
+     */
+    public ctrlInit() {
+        super.ctrlInit();
+        let _this: any = this;
+        // 全局刷新通知
+        if (AppCenterService.getMessageCenter()) {
+            _this.appStateEvent = AppCenterService.getMessageCenter().subscribe(({ name, action, data }: { name: string, action: string, data: any }) => {
+                if (!_this.appDeCodeName || !Object.is(name, _this.appDeCodeName)) {
+                    return;
+                }
+                if (Object.is(action, 'appRefresh')) {
+                    _this.refresh(data);
+                }
+            })
+        }
+        _this.codeListService = new CodeListServiceBase({ $store: _this.$store });
+    }
+
+    /**
+     * 执行destroyed后的逻辑
+     *
+     * @memberof MDControlBase
+     */
+    public ctrlDestroyed() {
+        super.ctrlDestroyed();
+        if (this.appStateEvent) {
+            this.appStateEvent.unsubscribe();
+        }
+    }
+
+    /**
+     * 部件工具栏点击
+     *
+     * @param ctrl 部件
+     * @param data 工具栏回传数据
+     * @param $event 事件源对象
+     * @memberof MDControlBase
+     */
+    public handleItemClick(ctrl: string, data: any, $event: any) {
+        AppViewLogicService.getInstance().executeViewLogic(
+            this.getViewLogicTag(this.controlInstance.name, ctrl, data.tag),
+            $event,
+            this,
+            undefined,
+            this.controlInstance.getPSAppViewLogics() as Array<any>,
+        );
+    }
+
+    /**
+     * 获取多项数据
+     *
+     * @returns {any[]}
+     * @memberof MDControlBase
+     */
+    public getDatas(): any[] {
+        return this.selections;
+    }
+
+    /**
+     * 获取单项数据
+     *
+     * @returns {*}
+     * @memberof MDControlBase
+     */
+    public getData(): any {
+        return this.selections[0];
     }
 
    /**
@@ -397,24 +430,6 @@ export class MDControlBase extends MainControlBase {
     }
 
     /**
-     * 获取视图样式
-     *
-     * @readonly
-     * @memberof GridControlBase
-     */
-    get viewStyle(){
-        const parentModel: any = this.controlInstance?.getParentPSModelObject?.();
-        if (parentModel && parentModel.viewStyle) {
-            return parentModel.viewStyle;
-        } else {
-            if (parentModel && parentModel.controlType) {
-                return parentModel.getParentPSModelObject?.()?.viewStyle || 'DEFAULT';
-            }
-            return 'DEFAULT';
-        }
-    }
-
-    /**
      * 绘制批处理工具栏
      *
      * @return {*} 
@@ -434,21 +449,4 @@ export class MDControlBase extends MainControlBase {
         </span>
     }
 
-    /**
-     * 部件工具栏点击
-     *
-     * @param ctrl 部件
-     * @param data 工具栏回传数据
-     * @param $event 事件源对象
-     * @memberof MDControlBase
-     */
-     public handleItemClick(ctrl: string, data: any, $event: any) {
-        AppViewLogicService.getInstance().executeViewLogic(
-            this.getViewLogicTag(this.controlInstance.name, ctrl, data.tag),
-            $event,
-            this,
-            undefined,
-            this.controlInstance.getPSAppViewLogics() as Array<any>,
-        );
-    }
 }

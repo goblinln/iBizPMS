@@ -1,5 +1,5 @@
 import { Subject, Subscription } from 'rxjs';
-import { ModelTool, Verify, AppErrorCode, EntityFieldErrorCode } from 'ibiz-core';
+import { ModelTool, Verify, AppErrorCode, EntityFieldErrorCode, FormControlInterface } from 'ibiz-core';
 import { MainControlBase } from './main-control-base';
 import { IPSDEEditFormItem, IPSDEForm } from '@ibiz/dynamic-model-api';
 
@@ -10,7 +10,7 @@ import { IPSDEEditFormItem, IPSDEForm } from '@ibiz/dynamic-model-api';
  * @class FormControlBase
  * @extends {MainControlBase}
  */
-export class FormControlBase extends MainControlBase {
+export class FormControlBase extends MainControlBase implements FormControlInterface{
 
     /**
      * 表单数据对象
@@ -122,7 +122,7 @@ export class FormControlBase extends MainControlBase {
     }
 
     /**
-     * 获取单项树
+     * 获取单项数据
      *
      * @returns {*}
      * @memberof FormControlBase

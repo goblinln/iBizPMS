@@ -1,4 +1,4 @@
-import { ViewTool, Verify } from 'ibiz-core';
+import { ViewTool, Verify, PanelControlInterface } from 'ibiz-core';
 import { MDControlBase } from "./md-control-base";
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
 import { IPSPanel, IPSPanelField, IPSPanelItem, IPSPanelItemGroupLogic, IPSPanelItemSingleLogic, IPSSysPanelButton, IPSSysPanelContainer, IPSSysPanelField } from '@ibiz/dynamic-model-api';
@@ -10,7 +10,7 @@ import { IPSPanel, IPSPanelField, IPSPanelItem, IPSPanelItemGroupLogic, IPSPanel
  * @class PanelControlBase
  * @extends {MDControlBase}
  */
-export class PanelControlBase extends MDControlBase {
+export class PanelControlBase extends MDControlBase implements PanelControlInterface{
 
     /**
      * 值规则对象
@@ -68,29 +68,6 @@ export class PanelControlBase extends MDControlBase {
     public allPanelItemGroupLogic: any[] = [];
 
     /**
-     * 接口实现
-     *
-     * @returns {any[]}
-     * @memberof PanelControlBase
-     */
-    public getDatas(): any[] {
-        if (!this.panelData) {
-            return [];
-        }
-        return [this.panelData];
-    }
-
-    /**
-     * 接口实现
-     *
-     * @returns
-     * @memberof PanelControlBase
-     */
-    public getData() {
-        return this.panelData;
-    }
-
-    /**
      * 面板数据对象
      *
      * @type {*}
@@ -99,9 +76,41 @@ export class PanelControlBase extends MDControlBase {
     public inputData?: any;
 
     /**
+     * 监听部件动态参数变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof PanelControlBase
+     */
+     public onDynamicPropsChange(newVal: any, oldVal: any) {
+        super.onDynamicPropsChange(newVal, oldVal);
+        this.inputData = newVal?.inputData;
+    }
+
+    /**
+     * 监听部件动态参数变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof PanelControlBase
+     */
+    public onStaticPropsChange(newVal: any, oldVal: any) {
+        super.onStaticPropsChange(newVal, oldVal);
+        this.transformData = newVal?.transformData || this.transformData;
+        this.opendata = newVal?.opendata || this.opendata;
+        this.newdata = newVal?.newdata || this.newdata;
+        this.remove = newVal?.remove || this.remove;
+        this.refresh = newVal?.refresh || this.refresh;
+        // 初始化面板详情模型集合
+        this.detailsModel = {};
+        this.allPanelItemGroupLogic = [];
+        this.initDetailsModel(this.controlInstance.getRootPSPanelItems());
+    }
+
+    /**
      * 部件模型初始化
      *
-     * @type {*}
+     * @param {*} [args]
      * @memberof PanelControlBase
      */
     public async ctrlModelInit(args?: any) {
@@ -114,6 +123,7 @@ export class PanelControlBase extends MDControlBase {
     /**
      * 初始化值规则
      *
+     * @param {(IPSPanelItem[] | null)} panelItems 面板项
      * @memberof PanelControlBase
      */
     public initRules(panelItems: IPSPanelItem[] | null) {
@@ -138,8 +148,169 @@ export class PanelControlBase extends MDControlBase {
     }
 
     /**
+     * 面板部件初始化
+     *
+     * @memberof MDControlBase
+     */
+    public ctrlInit() {
+        super.ctrlInit();
+        // 面板不需要应用全局刷新
+        if (this.appStateEvent) {
+            this.appStateEvent.unsubscribe();
+        }
+        this.onInputDataChange(this.inputData, undefined);
+    }
+
+    /**
+     * 初始化表单成员模型
+     *
+     * @param {(IPSPanelItem[] | null)} panelItems 面板项
+     * @memberof PanelControlBase
+     */
+    public initDetailsModel(panelItems: IPSPanelItem[] | null) {
+        if (panelItems && panelItems?.length > 0) {
+            panelItems?.forEach((panelItem: IPSPanelItem) => {
+                let detailModel: any = {
+                    panel: this,
+                    disabled: false,
+                    name: panelItem.name,
+                    caption: panelItem.caption,
+                    itemType: panelItem.itemType,
+                    visible: !panelItem?.getPSPanelItemGroupLogics?.(),
+                };
+                switch (panelItem.itemType) {
+                    case 'BUTTON':
+                        const panelButtomItem = panelItem as IPSSysPanelButton
+                        Object.assign(detailModel, {
+                            uiaction: {
+                                type: panelButtomItem.getPSUIAction()?.uIActionType,
+                                tag: panelButtomItem.getPSUIAction()?.uIActionTag,
+                                actiontarget: panelButtomItem.getPSUIAction()?.actionTarget,
+                                noprivdisplaymode: panelButtomItem.getPSUIAction()?.uIActionMode,
+                                dataaccaction: panelButtomItem.getPSUIAction()?.dataAccessAction,
+                                visible: true,
+                                disabled: false
+                            }
+                        });
+                        break;
+                    case 'TABPANEL':
+                        Object.assign(detailModel, {
+                            tabPages: [
+                                // todo
+                            ]
+                        })
+                        break;
+                }
+                this.$set(this.detailsModel, panelItem.name, detailModel);
+                if (Object.is(panelItem.itemType, 'CONTAINER')) {
+                    this.initDetailsModel((panelItem as IPSSysPanelContainer)?.getPSPanelItems?.());
+                }
+                if (panelItem.getPSPanelItemGroupLogics()) {
+                    this.allPanelItemGroupLogic.push({ name: panelItem.name, panelItemGroupLogic: panelItem.getPSPanelItemGroupLogics() })
+                }
+            })
+        }
+    }
+
+    /**
+     * 打开编辑数据视图
+     *
+     * @param {any[]} args
+     * @param {any[]} [fullargs]
+     * @param {*} [params]
+     * @param {*} [$event]
+     * @param {*} [xData]
+     * @memberof PanelControlBase
+     */
+    public opendata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
+        this.$throw(this.$t('app.warn.unopendata'),'opendata');
+    }
+
+    /**
+     * 打开新建数据视图
+     *
+     * @param {any[]} args
+     * @param {any[]} [fullargs]
+     * @param {*} [params]
+     * @param {*} [$event]
+     * @param {*} [xData]
+     * @memberof PanelControlBase
+     */
+    public newdata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
+        this.$throw(this.$t('app.warn.unnewdata'),'newdata');
+    }
+
+    /**
+     * 删除
+     *
+     * @param {any[]} datas
+     * @returns {Promise<any>}
+     * @memberof PanelControlBase
+     */
+    public async remove(datas: any[]): Promise<any> {
+        this.$throw(this.$t('app.warn.unremove'),'remove');
+    }
+
+    /**
+     * 刷新
+     *
+     * @param {*} [args]
+     * @memberof PanelControlBase
+     */
+    public refresh(args?: any) {
+        this.$throw(this.$t('app.warn.unrefresh'),'refresh');
+    }
+
+    /**
+     * 设置面板编辑项值变更
+     *
+     * @param data 面板数据
+     * @param {{ name: string, value: any }} $event
+     * @returns {void}
+     * @memberof PanelControlBase
+     */
+    public onPanelItemValueChange(data: any, $event: { name: string; value: any }): void {
+        if (!$event) {
+            return;
+        }
+        if (!$event.name || Object.is($event.name, '') || !data.hasOwnProperty($event.name)) {
+            return;
+        }
+        data[$event.name] = $event.value;
+        this.panelEditItemChange(data, $event.name, $event.value);
+    }
+
+    /**
+     * 面板编辑项值变化
+     *
+     * @public
+     * @param data 面板数据
+     * @param property 编辑项名
+     * @param value 编辑项值
+     * @returns {void}
+     * @memberof PanelControlBase
+     */
+    public panelEditItemChange(data: any, property: string, value: any) {
+        // 面板数据变化事件
+        if (this.getDataItems().length > 0) {
+            let modelitem = this.getDataItems().find((item: any) => {
+                return item.name === property;
+            });
+            if (modelitem) {
+                this.ctrlEvent({
+                    controlname: this.controlInstance.controlType,
+                    action: 'panelDataChange',
+                    data: { [modelitem.prop]: value },
+                });
+            }
+        }
+    }
+
+    /**
      * 分页切换事件
      *
+     * @param {string} name 分页名
+     * @param {*} $event 回调对象
      * @memberof PanelControlBase
      */
     public handleTabPanelClick(name: string, $event: any) {
@@ -149,6 +320,9 @@ export class PanelControlBase extends MDControlBase {
     /**
      * 按钮点击事件
      * 
+     * @param {string} controlName 部件名称
+     * @param {*} data 数据
+     * @param {*} $event 事件源
      * @memberof PanelControlBase
      */
     public buttonClick(controlName: string, data: any, $event: any) {
@@ -236,11 +410,11 @@ export class PanelControlBase extends MDControlBase {
     }
 
     /**
-  * 获取name找到对应field
-  *
-  * @returns {any[]}
-  * @memberof AppPanelModel
-  */
+     * 获取name找到对应field
+     *
+     * @returns {any[]}
+     * @memberof AppPanelModel
+     */
     public findField(arr: Array<IPSPanelItem> | null, name: string): any {
         let _result = null;
         if (!arr) {
@@ -339,92 +513,6 @@ export class PanelControlBase extends MDControlBase {
     }
 
     /**
-     * 打开编辑数据视图
-     *
-     * @type {any}
-     * @memberof PanelControlBase
-     */
-    public opendata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$throw(this.$t('app.warn.unopendata'),'opendata');
-    }
-
-    /**
-     * 打开新建数据视图
-     *
-     * @type {any}
-     * @memberof PanelControlBase
-     */
-    public newdata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$throw(this.$t('app.warn.unnewdata'),'newdata');
-    }
-
-    /**
-     * 删除
-     *
-     * @param {any[]} datas
-     * @returns {Promise<any>}
-     * @memberof PanelControlBase
-     */
-    public async remove(datas: any[]): Promise<any> {
-        this.$throw(this.$t('app.warn.unremove'),'remove');
-    }
-
-    /**
-     * 刷新
-     *
-     * @param {*} [args]
-     * @memberof PanelControlBase
-     */
-    public refresh(args?: any) {
-        this.$throw(this.$t('app.warn.unrefresh'),'refresh');
-    }
-
-    /**
-     * 设置面板编辑项值变更
-     *
-     * @param data 面板数据
-     * @param {{ name: string, value: any }} $event
-     * @returns {void}
-     * @memberof PanelControlBase
-     */
-    public onPanelItemValueChange(data: any, $event: { name: string; value: any }): void {
-        if (!$event) {
-            return;
-        }
-        if (!$event.name || Object.is($event.name, '') || !data.hasOwnProperty($event.name)) {
-            return;
-        }
-        data[$event.name] = $event.value;
-        this.panelEditItemChange(data, $event.name, $event.value);
-    }
-
-    /**
-     * 面板编辑项值变化
-     *
-     * @public
-     * @param data 面板数据
-     * @param property 编辑项名
-     * @param value 编辑项值
-     * @returns {void}
-     * @memberof PanelControlBase
-     */
-    public panelEditItemChange(data: any, property: string, value: any) {
-        // 面板数据变化事件
-        if (this.getDataItems().length > 0) {
-            let modelitem = this.getDataItems().find((item: any) => {
-                return item.name === property;
-            });
-            if (modelitem) {
-                this.ctrlEvent({
-                    controlname: this.controlInstance.controlType,
-                    action: 'panelDataChange',
-                    data: { [modelitem.prop]: value },
-                });
-            }
-        }
-    }
-
-    /**
      * 计算面板按钮权限状态
      *
      * @param {*} data
@@ -478,46 +566,11 @@ export class PanelControlBase extends MDControlBase {
     }
 
     /**
-     * 监听部件动态参数变化
-     *
-     * @param {*} newVal
-     * @param {*} oldVal
-     * @memberof PanelControlBase
-     */
-    public onDynamicPropsChange(newVal: any, oldVal: any) {
-        super.onDynamicPropsChange(newVal, oldVal);
-        this.inputData = newVal?.inputData;
-    }
-
-    /**
-     * 监听部件动态参数变化
-     *
-     * @param {*} newVal
-     * @param {*} oldVal
-     * @memberof PanelControlBase
-     */
-    public onStaticPropsChange(newVal: any, oldVal: any) {
-        super.onStaticPropsChange(newVal, oldVal);
-        this.transformData = newVal?.transformData || this.transformData;
-        this.opendata = newVal?.opendata || this.opendata;
-        this.newdata = newVal?.newdata || this.newdata;
-        this.remove = newVal?.remove || this.remove;
-        this.refresh = newVal?.refresh || this.refresh;
-        // 初始化面板详情模型集合
-        this.detailsModel = {};
-        this.allPanelItemGroupLogic = [];
-        this.initDetailsModel(this.controlInstance.getRootPSPanelItems());
-    }
-
-
-    /**
      * 设置已经绘制完成状态
      *
      * @memberof ControlBase
      */
-    public setIsMounted(name: string = 'self') {
-
-    }
+    public setIsMounted(name: string = 'self') { }
 
     /**
      * 监控数据对象
@@ -527,68 +580,27 @@ export class PanelControlBase extends MDControlBase {
      * @memberof PanelControlBase
      */
     public onInputDataChange(newVal: any, oldVal: any) { }
-
+    
     /**
-     * 面板部件初始化
+     * 获取多项数据
      *
-     * @memberof MDControlBase
+     * @returns {any[]}
+     * @memberof PanelControlBase
      */
-    public ctrlInit() {
-        super.ctrlInit();
-        // 面板不需要应用全局刷新
-        if (this.appStateEvent) {
-            this.appStateEvent.unsubscribe();
+     public getDatas(): any[] {
+        if (!this.panelData) {
+            return [];
         }
-        this.onInputDataChange(this.inputData, undefined);
+        return [this.panelData];
     }
 
     /**
-     * 初始化表单成员模型
+     * 获取单项数据
      *
+     * @returns
      * @memberof PanelControlBase
      */
-    public initDetailsModel(panelItems: IPSPanelItem[] | null) {
-        if (panelItems && panelItems?.length > 0) {
-            panelItems?.forEach((panelItem: IPSPanelItem) => {
-                let detailModel: any = {
-                    panel: this,
-                    disabled: false,
-                    name: panelItem.name,
-                    caption: panelItem.caption,
-                    itemType: panelItem.itemType,
-                    visible: !panelItem?.getPSPanelItemGroupLogics?.(),
-                };
-                switch (panelItem.itemType) {
-                    case 'BUTTON':
-                        const panelButtomItem = panelItem as IPSSysPanelButton
-                        Object.assign(detailModel, {
-                            uiaction: {
-                                type: panelButtomItem.getPSUIAction()?.uIActionType,
-                                tag: panelButtomItem.getPSUIAction()?.uIActionTag,
-                                actiontarget: panelButtomItem.getPSUIAction()?.actionTarget,
-                                noprivdisplaymode: panelButtomItem.getPSUIAction()?.uIActionMode,
-                                dataaccaction: panelButtomItem.getPSUIAction()?.dataAccessAction,
-                                visible: true,
-                                disabled: false
-                            }
-                        });
-                        break;
-                    case 'TABPANEL':
-                        Object.assign(detailModel, {
-                            tabPages: [
-                                // todo
-                            ]
-                        })
-                        break;
-                }
-                this.$set(this.detailsModel, panelItem.name, detailModel);
-                if (Object.is(panelItem.itemType, 'CONTAINER')) {
-                    this.initDetailsModel((panelItem as IPSSysPanelContainer)?.getPSPanelItems?.());
-                }
-                if (panelItem.getPSPanelItemGroupLogics()) {
-                    this.allPanelItemGroupLogic.push({ name: panelItem.name, panelItemGroupLogic: panelItem.getPSPanelItemGroupLogics() })
-                }
-            })
-        }
+    public getData() {
+        return this.panelData;
     }
 }

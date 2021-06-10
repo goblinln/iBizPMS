@@ -1,9 +1,11 @@
+import { MDControlInterface } from 'ibiz-core';
+
 /**
  * 表格基类接口
  *
  * @interface GridControlInterface
  */
-export interface GridControlInterface {
+export interface GridControlInterface extends MDControlInterface{
 
     /**
      * 表格数据加载

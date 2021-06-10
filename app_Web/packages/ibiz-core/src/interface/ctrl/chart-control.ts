@@ -1,9 +1,11 @@
+import { MDControlInterface } from 'ibiz-core';
+
 /**
  * 图表基类接口
  *
  * @interface ChartControlInterface
  */
-export interface ChartControlInterface {
+export interface ChartControlInterface extends MDControlInterface {
 
     /**
      * 刷新
