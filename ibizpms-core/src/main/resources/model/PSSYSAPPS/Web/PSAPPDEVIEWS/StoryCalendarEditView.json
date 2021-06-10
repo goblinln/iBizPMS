@@ -895,10 +895,12 @@
                   "glyph" : "xf002@FontAwesome",
                   "cssClass" : "fa fa-search"
                 },
+                "refreshMode" : 1,
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
                 "uIActionTag" : "ReviewStoryDash",
                 "uIActionType" : "DEUIACTION",
+                "reloadData" : true,
                 "id" : "ReviewStoryDash@Story"
               },
               "tooltip" : "评审",
@@ -940,10 +942,12 @@
                   "glyph" : "xf0d0@FontAwesome",
                   "cssClass" : "fa fa-magic"
                 },
+                "refreshMode" : 1,
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
                 "uIActionTag" : "ActiviteDash",
                 "uIActionType" : "DEUIACTION",
+                "reloadData" : true,
                 "id" : "ActiviteDash@Story"
               },
               "tooltip" : "激活",
@@ -1033,10 +1037,12 @@
                   "glyph" : "xf0ec@FontAwesome",
                   "cssClass" : "fa fa-exchange"
                 },
+                "refreshMode" : 1,
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
                 "uIActionTag" : "ChangeStoryDetailDash",
                 "uIActionType" : "DEUIACTION",
+                "reloadData" : true,
                 "id" : "ChangeStoryDetailDash@Story"
               },
               "tooltip" : "变更",
