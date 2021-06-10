@@ -35,6 +35,13 @@ import { AppServiceBase, removeSessionStorage } from 'ibiz-core';
 import { clearCookie, getCookie } from 'qx-util';
 @Component({})
 export default class AppUser extends Vue {
+
+    /**
+     * 视图样式类型
+     *
+     * @type {any}
+     * @memberof AppUser
+     */ 
     @Prop() public viewStyle!: string;
 
     /**

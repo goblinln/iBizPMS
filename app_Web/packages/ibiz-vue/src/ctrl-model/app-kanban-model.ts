@@ -1,4 +1,4 @@
-import { IPSAppDERS, IPSDEDataViewDataItem, IPSDEKanban } from '@ibiz/dynamic-model-api';
+import { IPSAppDEField, IPSAppDERS, IPSDEDataViewDataItem, IPSDEKanban } from '@ibiz/dynamic-model-api';
 import { DataTypes, ModelTool } from 'ibiz-core';
 
 /**
@@ -91,10 +91,14 @@ export class AppKanbanModel {
                     let obj: any = {};
                     if (minorAppDERSs.getMajorPSAppDataEntity()) {
                         const majorAppDataEntity: any = minorAppDERSs.getMajorPSAppDataEntity();
-                        obj.name = majorAppDataEntity?.codeName.toLowerCase();
-                        if (majorAppDataEntity?.getPSDER1N()) {
-                            obj.prop = majorAppDataEntity.getPSDER1N()?.pickupDEFName.toLowerCase();
-                        }
+                        if (majorAppDataEntity) {
+                            obj.name = majorAppDataEntity?.codeName?.toLowerCase();
+                            if (minorAppDERSs?.getParentPSAppDEField()) {
+                              obj.prop = minorAppDERSs.getParentPSAppDEField()?.codeName.toLowerCase();
+                            } else {
+                              obj.prop = (ModelTool.getAppEntityKeyField(majorAppDataEntity) as IPSAppDEField)?.codeName || '';
+                            }
+                        }                   
                     }
                     modelArray.push(obj);
                 });

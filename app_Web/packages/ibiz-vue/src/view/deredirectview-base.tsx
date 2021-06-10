@@ -39,14 +39,28 @@ export class DeRedirectViewBase extends MainViewBase {
   public async executeRedirectLogic() {
     let tempContext: any = Util.deepCopy(this.context);
     let tempViewParams: any = Util.deepCopy(this.viewparams);
-    this.appUIService.getRDAppView(this.context,this.context[this.appDeCodeName.toLowerCase()], { enableWorkflow: this.viewInstance?.enableWorkflow }).then(async (result: any) => {
+    let localParams: any = {};
+    if (this.viewparams && this.viewparams.srfwf) {
+      localParams = { srfwf: this.viewparams.srfwf.toLowerCase() };
+    } else {
+      localParams = { enableWorkflow: this.viewInstance?.enableWorkflow };
+    }
+    this.appUIService.getRDAppView(this.context, this.context[this.appDeCodeName.toLowerCase()], localParams).then(async (result: any) => {
       if (!result) {
         return;
       }
-      let targetOpenViewRef: IPSAppViewRef | null | undefined = (this.viewInstance.getRedirectPSAppViewRefs() as IPSAppViewRef[]).find((item: any) => {
-        return item.name === result.param.split(":")[0];
-      })
-      if(!targetOpenViewRef){
+      let targetOpenViewRef: IPSAppViewRef | null | undefined = null;
+      if (this.viewparams && this.viewparams.srfwf) {
+        targetOpenViewRef = (this.viewInstance.getRedirectPSAppViewRefs() as IPSAppViewRef[]).find((item: any) => {
+          return item.name === `${result.param.split(":")[0]}:${this.viewparams.srfwf.toUpperCase()}`;
+        })
+      }
+      if (!targetOpenViewRef) {
+        targetOpenViewRef = (this.viewInstance.getRedirectPSAppViewRefs() as IPSAppViewRef[]).find((item: any) => {
+          return item.name === result.param.split(":")[0];
+        })
+      }
+      if (!targetOpenViewRef) {
         return;
       }
       // 存在动态实例
@@ -63,7 +77,7 @@ export class DeRedirectViewBase extends MainViewBase {
       }
       if (targetOpenViewRef.getRefPSAppView()) {
         let targetOpenView: IPSAppView | null = targetOpenViewRef.getRefPSAppView();
-        if(!targetOpenView){
+        if (!targetOpenView) {
           return;
         }
         await targetOpenView.fill(true);
@@ -78,7 +92,7 @@ export class DeRedirectViewBase extends MainViewBase {
           if (targetOpenView.getPSAppDataEntity()) {
             parameters = [
               { pathName: Util.srfpluralize((targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName).toLowerCase(), parameterName: (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase() },
-              { pathName: "views", parameterName: ((targetOpenView  as IPSAppDEView).getPSDEViewCodeName() as string).toLowerCase() },
+              { pathName: "views", parameterName: ((targetOpenView as IPSAppDEView).getPSDEViewCodeName() as string).toLowerCase() },
             ];
           } else {
             parameters = [
@@ -109,7 +123,7 @@ export class DeRedirectViewBase extends MainViewBase {
     }
     const routePath = ViewTool.buildUpRoutePath(this.$route, tempContext, deResParameters, parameters, args, data);
     this.closeRedirectView(args);
-    this.$router.replace({ path: routePath }).catch((error:any) =>{
+    this.$router.replace({ path: routePath }).catch((error: any) => {
       LogUtil.log("重定向跳转......");
     })
   }
@@ -119,7 +133,7 @@ export class DeRedirectViewBase extends MainViewBase {
    *
    * @memberof DeRedirectViewBase
    */
-   public closeRedirectView(args: Array<any>) {
+  public closeRedirectView(args: Array<any>) {
     let view: any = this;
     if (view.viewdata) {
       view.$emit('view-event', { action: 'viewdataschange', data: Array.isArray(args) ? args : [args] });

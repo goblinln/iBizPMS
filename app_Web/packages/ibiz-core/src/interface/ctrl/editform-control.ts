@@ -1,21 +1,12 @@
 import { IPSDEFDCatGroupLogic } from "@ibiz/dynamic-model-api";
+import { FormControlInterface } from "./form-control";
 
 /**
  * 编辑表单基类接口
  *
  * @interface EditFormControlInterface
  */
-export interface EditFormControlInterface {
-
-
-    /**
-     * 加载草稿
-     *
-     * @param {*} opt 额外参数
-     * @memberof EditFormControlInterface
-     */
-    loadDraft(opt: any): void;
-
+export interface EditFormControlInterface extends FormControlInterface {
 
     /**
      * 自动保存
@@ -78,19 +69,6 @@ export interface EditFormControlInterface {
      * @memberof EditFormControlInterface
      */
     refresh(args: any): void;
-
-
-    /**
-     * 表单项更新
-     *
-     * @param {string} mode
-     * @param {*} data
-     * @param {string[]} updateDetails
-     * @param {boolean} showloading
-     * @memberof EditFormControlInterface
-     */
-    updateFormItems(mode: string, data: any, updateDetails: string[], showloading: boolean): void;
-
 
     /**
      * 面板行为
@@ -189,39 +167,12 @@ export interface EditFormControlInterface {
 
 
     /**
-     * 新建默认值
-     *
-     * @memberof EditFormControlInterface
-     */
-    createDefault(): void;
-
-
-    /**
      * 更新默认值
      *
      * @memberof EditFormControlInterface
      */
     updateDefault(): void;
 
-
-
-    /**
-     * 重置表单项值
-     *
-     * @param {{ name: string }} { name } 名称
-     * @memberof EditFormControlInterface
-     */
-    resetFormData({ name }: { name: string }): void;
-
-
-
-    /**
-     * 表单逻辑
-     *
-     * @param {{ name: string }} { name } 名称
-     * @memberof EditFormControlInterface
-     */
-    formLogic({ name }: { name: string }): void;
 
     /**
      * 校验动态逻辑结果
@@ -243,48 +194,5 @@ export interface EditFormControlInterface {
      * @memberof EditFormControlInterface
      */
     handleActionClick(event: any, formDetail: any, actionDetal: any): void;
-
-
-    /**
-     * 重置草稿表单状态
-     *
-     * @memberof EditFormControlInterface
-     */
-    resetDraftFormStates(): void;
-
-
-    /**
-     * 重置校验结果
-     *
-     * @memberof EditFormControlInterface
-     */
-    resetValidates(): void;
-
-
-    /**
-     * 表单校验状态
-     *
-     * @return {*}  {boolean}
-     * @memberof EditFormControlInterface
-     */
-    formValidateStatus(): boolean;
-
-
-    /**
-     * 表单项值变更
-     *
-     * @param {{ name: string, value: any }} $event
-     * @memberof EditFormControlInterface
-     */
-    onFormItemValueChange($event: { name: string, value: any }): void;
-
-
-    /**
-     * 分组界面行为事件 
-     *
-     * @param {*} $event 事件对象
-     * @memberof EditFormControlInterface
-     */
-    groupUIActionClick($event: any): void;
 
 }

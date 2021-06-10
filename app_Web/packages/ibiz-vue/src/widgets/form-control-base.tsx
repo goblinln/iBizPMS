@@ -135,7 +135,7 @@ export class FormControlBase extends MainControlBase {
      * 重置表单项值
      *
      * @public
-     * @param {{ name: string, newVal: any, oldVal: any }} { name, newVal, oldVal }
+     * @param {{ name: string, newVal: any, oldVal: any }} { name, newVal, oldVal } 名称,新值，旧值
      * @memberof FormControlBase
      */
     public resetFormData({ name, newVal, oldVal }: { name: string, newVal: any, oldVal: any }): void { }
@@ -144,7 +144,7 @@ export class FormControlBase extends MainControlBase {
      * 表单逻辑
      *
      * @public
-     * @param {{ name: string, newVal: any, oldVal: any }} { name, newVal, oldVal }
+     * @param {{ name: string, newVal: any, oldVal: any }} { name, newVal, oldVal } 名称,新值，旧值
      * @memberof FormControlBase
      */
     public async formLogic({ name, newVal, oldVal }: { name: string, newVal: any, oldVal: any }) { }
@@ -153,7 +153,7 @@ export class FormControlBase extends MainControlBase {
      * 表单值变化
      *
      * @public
-     * @param {{ name: string, newVal: any, oldVal: any }} { name, newVal, oldVal }
+     * @param {{ name: string, newVal: any, oldVal: any }} { name, newVal, oldVal } 名称,新值，旧值
      * @returns {void}
      * @memberof FormControlBase
      */
@@ -164,8 +164,8 @@ export class FormControlBase extends MainControlBase {
      * 表单加载完成
      *
      * @public
-     * @param {*} [data={}]
-     * @param {string} [action]
+     * @param {*} [data={}] 表单数据
+     * @param {string} [action] 行为标识
      * @memberof FormControlBase
      */
     public onFormLoad(data: any = {}, action: string): void { }
@@ -173,8 +173,8 @@ export class FormControlBase extends MainControlBase {
     /**
      * 值填充
      *
-     * @param {*} [_datas={}]
-     * @param {string} [action]
+     * @param {*} [_datas={}] 表单数据
+     * @param {string} [action] 行为标识
      * @memberof FormControlBase
      */
     public fillForm(_datas: any = {}, action: string): void {
@@ -196,7 +196,7 @@ export class FormControlBase extends MainControlBase {
      * 设置表单项是否启用
      *
      * @public
-     * @param {*} data
+     * @param {*} data 表单数据
      * @memberof FormControlBase
      */
     public setFormEnableCond(data: any): void {
@@ -246,7 +246,7 @@ export class FormControlBase extends MainControlBase {
     /**
      * 填充校验结果 （后台）
      *
-     * @param {any[]} fieldErrors
+     * @param {any[]} fieldErrors 校验数组
      * @memberof FormControlBase
      */
     public fillValidates(fieldErrors: any[]): void {
@@ -279,7 +279,7 @@ export class FormControlBase extends MainControlBase {
     /**
      * 表单项值变更
      *
-     * @param {{ name: string, value: any }} $event
+     * @param {{ name: string, value: any }} $event 名称，值 
      * @returns {void}
      * @memberof FormControlBase
      */
@@ -296,8 +296,8 @@ export class FormControlBase extends MainControlBase {
     /**
      * 校验编辑器基础规则后续行为
      *
-     * @param {string} name
-     * @param {*} value
+     * @param {string} name 名称
+     * @param {*} value 值
      * @returns {void}
      * @memberof FormControlBase
      */
@@ -320,8 +320,8 @@ export class FormControlBase extends MainControlBase {
     /**
      * 设置数据项值
      *
-     * @param {string} name
-     * @param {*} value
+     * @param {string} name 名称
+     * @param {*} value 值
      * @returns {void}
      * @memberof FormControlBase
      */
@@ -388,7 +388,7 @@ export class FormControlBase extends MainControlBase {
     /**
      * 表单自动加载
      *
-     * @param {*} [arg={}]
+     * @param {*} [arg={}] 加载参数
      * @returns {void}
      * @memberof FormControlBase
      */
@@ -410,7 +410,7 @@ export class FormControlBase extends MainControlBase {
      * 加载
      *
      * @public
-     * @param {*} [opt={}]
+     * @param {*} [opt={}] 加载参数
      * @memberof FormControlBase
      */
     public load(opt: any = {}): void {

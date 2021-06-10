@@ -26,7 +26,7 @@ export class UIServiceBase {
      * @type {Array<string>}
      * @memberof UIServiceBase
      */
-    protected InWorkflowArray: Array<string> = ['todo', 'toread', 'done'];
+    protected InWorkflowArray: Array<string> = ['todo', 'toread'];
 
     /**
      * 应用上下文
