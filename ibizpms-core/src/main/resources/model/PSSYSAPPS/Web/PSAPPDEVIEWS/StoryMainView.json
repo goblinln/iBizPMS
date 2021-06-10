@@ -7472,10 +7472,12 @@
                     "glyph" : "xf0ec@FontAwesome",
                     "cssClass" : "fa fa-exchange"
                   },
+                  "refreshMode" : 1,
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
                   "uIActionTag" : "ChangeStoryDetailDash",
                   "uIActionType" : "DEUIACTION",
+                  "reloadData" : true,
                   "id" : "ChangeStoryDetailDash@Story"
                 },
                 "addSeparator" : false,
@@ -7517,10 +7519,12 @@
                     "glyph" : "xf002@FontAwesome",
                     "cssClass" : "fa fa-search"
                   },
+                  "refreshMode" : 1,
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
                   "uIActionTag" : "ReviewStoryDash",
                   "uIActionType" : "DEUIACTION",
+                  "reloadData" : true,
                   "id" : "ReviewStoryDash@Story"
                 },
                 "addSeparator" : false,
@@ -7653,10 +7657,12 @@
                   "getPSSysImage" : {
                     "cssClass" : "iconfont studio-icon-subnets"
                   },
+                  "refreshMode" : 1,
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
                   "uIActionTag" : "SubStoryCz",
                   "uIActionType" : "DEUIACTION",
+                  "reloadData" : true,
                   "id" : "SubStoryCz@Story"
                 },
                 "addSeparator" : false,
