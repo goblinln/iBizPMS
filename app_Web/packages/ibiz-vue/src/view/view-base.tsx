@@ -591,6 +591,7 @@ export class ViewBase extends Vue implements ViewInterface {
             const navHistory: AppNavHistory = AppServiceBase.getInstance().getAppNavDataService();
             if (navHistory) {
                 navHistory.setViewTag(this.viewtag, _this.$route);
+                navHistory.setCaption({ tag: this.viewtag, caption: this.model.srfCaption, info: '' });
             }
         }
         if (_this.navDataService) {

@@ -189,6 +189,22 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * LinkBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductReleaseService
+     */
+    async LinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productrelease) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkbug`, _data);
+        }
+    this.log.warn([`[ProductRelease]>>>[LinkBug函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * LinkBugbyLeftBug
      *
      * @param {*} [_context={}]
@@ -330,6 +346,24 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
             return this.http.post(`/products/${_context.product}/productreleases/activatebatch`,_data);
         }
         this.log.warn([`[ProductRelease]>>>[ActivateBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
+     * LinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductReleaseServiceBase
+     */
+    public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productreleases/linkbugbatch`,_data);
+        }
+        this.log.warn([`[ProductRelease]>>>[LinkBugBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 

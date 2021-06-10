@@ -1,5 +1,5 @@
 import { IPSAppDEPickupView, IPSDEPickupViewPanel, IPSDETreeGridExParam, IPSTreeExpBar } from '@ibiz/dynamic-model-api';
-import { ModelTool, debounce, MPickupView2Engine } from 'ibiz-core';
+import { ModelTool, debounce, MPickupView2Engine, MPickUpView2Interface } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 
@@ -10,7 +10,7 @@ import { MainViewBase } from './mainview-base';
  * @class MPickUpViewBase
  * @extends {MainViewBase}
  */
-export class MPickUpView2Base extends MainViewBase {
+export class MPickUpView2Base extends MainViewBase implements MPickUpView2Interface {
 
     /**
      * 视图实例
@@ -38,6 +38,46 @@ export class MPickUpView2Base extends MainViewBase {
     public engine: MPickupView2Engine = new MPickupView2Engine();
 
     /**
+     * 是否显示按钮
+     *
+     * @type {boolean}
+     * @memberof MPickUpViewBase
+     */
+    public isShowButton: boolean = true;
+
+    /**
+     * 选中数据的字符串
+     *
+     * @type {string}
+     * @memberof MPickUpViewBase
+     */
+    public selectedData: string = "";
+
+    /**
+     * 是否初始化已选中项
+     *
+     * @type {any[]}
+     * @memberof MPickUpViewBase
+     */
+    public isInitSelected: boolean = false;
+
+    /**
+     * 视图选中数据
+     *
+     * @type {any[]}
+     * @memberof MPickUpViewBase
+     */
+    public viewSelections: any[] = [];
+
+    /**
+     * 是否单选
+     *
+     * @type {boolean}
+     * @memberof MPickUpViewBase
+     */
+    public isSingleSelect: boolean = false;
+
+    /**
      * 监听部件动态参数变化
      *
      * @param {*} newVal
@@ -45,8 +85,8 @@ export class MPickUpView2Base extends MainViewBase {
      * @memberof MPickUpViewBase
      */
     public onDynamicPropsChange(newVal: any, oldVal: any) {
-        super.onDynamicPropsChange(newVal,oldVal);
-        if(this.viewparams?.selectedData){
+        super.onDynamicPropsChange(newVal, oldVal);
+        if (this.viewparams?.selectedData) {
             this.selectedData = JSON.stringify(this.viewparams.selectedData);
             this.viewSelections = this.viewparams.selectedData;
         }
@@ -61,7 +101,7 @@ export class MPickUpView2Base extends MainViewBase {
      */
     public onStaticPropsChange(newVal: any, oldVal: any) {
         this.isShowButton = newVal?.isShowButton !== false;
-        super.onStaticPropsChange(newVal,oldVal);
+        super.onStaticPropsChange(newVal, oldVal);
     }
 
     /**
@@ -84,7 +124,7 @@ export class MPickUpView2Base extends MainViewBase {
             majorPSDEField: this.appDeMajorFieldName.toLowerCase(),
         });
         this.engine.init(engineOpts);
-    }  
+    }
 
     /**
      *  视图初始化
@@ -92,10 +132,10 @@ export class MPickUpView2Base extends MainViewBase {
      * @memberof MPickUpViewBase
      */
     public async viewMounted() {
-      super.viewMounted();      
-      if (this.viewparams?.selectedData) {
-          this.engine.onCtrlEvent('pickupviewpanel', 'selectionchange', this.viewparams.selectedData);
-      }
+        super.viewMounted();
+        if (this.viewparams?.selectedData) {
+            this.engine.onCtrlEvent('pickupviewpanel', 'selectionchange', this.viewparams.selectedData);
+        }
     }
 
     /**
@@ -106,7 +146,7 @@ export class MPickUpView2Base extends MainViewBase {
     public async viewModelInit() {
         this.viewInstance = (this.staticProps?.modeldata) as IPSAppDEPickupView;
         await super.viewModelInit();
-        this.pickUpViewPanelInstance = ModelTool.findPSControlByType("PICKUPVIEWPANEL",this.viewInstance.getPSControls());
+        this.pickUpViewPanelInstance = ModelTool.findPSControlByType("PICKUPVIEWPANEL", this.viewInstance.getPSControls());
         this.treeExpbarIntance = ModelTool.findPSControlByType('TREEEXPBAR', this.viewInstance.getPSControls());
     }
 
@@ -116,20 +156,20 @@ export class MPickUpView2Base extends MainViewBase {
      * @memberof MPickUpViewBase
      */
     public renderMainContent() {
-      return [this.renderBodyMessage(),
-                  <div class="translate-contant">
-                    <div class="center" style={{width : !this.isShowButton ? '100%' : ''}}>
-                      {this.renderTreeExpBar()}
-                    </div>
-                    {this.isShowButton && <div class="translate-buttons">
-                      {this.renderButtons()}
-                    </div>}
-                    {this.isShowButton && <div class="right">
-                      {this.renderMpickerSelect()}
-                    </div>}
-                  </div>,
-              this.isShowButton && this.renderFooter(),
-            ]
+        return [this.renderBodyMessage(),
+        <div class="translate-contant">
+            <div class="center" style={{ width: !this.isShowButton ? '100%' : '' }}>
+                {this.renderTreeExpBar()}
+            </div>
+            {this.isShowButton && <div class="translate-buttons">
+                {this.renderButtons()}
+            </div>}
+            {this.isShowButton && <div class="right">
+                {this.renderMpickerSelect()}
+            </div>}
+        </div>,
+        this.isShowButton && this.renderFooter(),
+        ]
     }
 
     /**
@@ -140,19 +180,19 @@ export class MPickUpView2Base extends MainViewBase {
         const { viewStyle } = this.viewInstance;
         const style2 =
             <template slot="footer">
-            {this.isShowButton && <div style={{ 'textAlign': 'right' }}>
-                <i-button type="primary"  disabled={this.viewSelections.length > 0 ? false : true}  on-click={(...params: any[]) => debounce(this.onClickOk,params,this)}>{this.containerModel?.view_okbtn?.text}</i-button>
+                {this.isShowButton && <div style={{ 'textAlign': 'right' }}>
+                    <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => debounce(this.onClickOk, params, this)}>{this.containerModel?.view_okbtn?.text}</i-button>
                     &nbsp;&nbsp;
-                <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
-            </div>}
-          </template>
+                <i-button on-click={(...params: any[]) => debounce(this.onClickCancel, params, this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
+                </div>}
+            </template>
         const defaultStyle =
             <card dis-hover={true} bordered={false} class="footer">
-              <row style={{ 'textAlign': 'right' }}>
-                  <i-button type="primary"  disabled={this.viewSelections.length > 0 ? false : true}  on-click={(...params: any[]) => debounce(this.onClickOk,params,this)}>{this.containerModel?.view_okbtn?.text}</i-button>
+                <row style={{ 'textAlign': 'right' }}>
+                    <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => debounce(this.onClickOk, params, this)}>{this.containerModel?.view_okbtn?.text}</i-button>
                       &nbsp;&nbsp;
-                  <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
-              </row>
+                  <i-button on-click={(...params: any[]) => debounce(this.onClickCancel, params, this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
+                </row>
             </card>
         return viewStyle === 'STYLE2' ? style2 : defaultStyle;
     }
@@ -161,26 +201,26 @@ export class MPickUpView2Base extends MainViewBase {
      * 渲染按钮
      * 
      * @memberof MPickUpViewBase
-     */    
-    public renderButtons(){
-        return  (
+     */
+    public renderButtons() {
+        return (
             <div class="buttons">
                 <i-button type="primary" title={this.containerModel?.view_rightbtn.text}
                     disabled={this.containerModel?.view_rightbtn.disabled}
-                    on-click={(...params: any[]) => debounce(this.onCLickRight,params,this)}>
+                    on-click={(...params: any[]) => debounce(this.onCLickRight, params, this)}>
                     <i class="el-icon-arrow-right"></i>
                 </i-button>
                 <i-button type="primary" title={this.containerModel?.view_leftbtn.text}
                     disabled={this.containerModel?.view_leftbtn.disabled}
-                    on-click={(...params: any[]) => debounce(this.onCLickLeft,params,this)}>
+                    on-click={(...params: any[]) => debounce(this.onCLickLeft, params, this)}>
                     <i class="el-icon-arrow-left"></i>
                 </i-button>
                 <i-button type="primary" title={this.containerModel?.view_allrightbtn.text}
-                    on-click={(...params: any[]) => debounce(this.onCLickAllRight,params,this)}>
+                    on-click={(...params: any[]) => debounce(this.onCLickAllRight, params, this)}>
                     <i class="el-icon-d-arrow-right"></i>
                 </i-button>
                 <i-button type="primary" title={this.containerModel?.view_allleftbtn.text}
-                    on-click={(...params: any[]) => debounce(this.onCLickAllLeft,params,this)}>
+                    on-click={(...params: any[]) => debounce(this.onCLickAllLeft, params, this)}>
                     <i class="el-icon-d-arrow-left"></i>
                 </i-button>
             </div>
@@ -191,27 +231,27 @@ export class MPickUpView2Base extends MainViewBase {
      * 渲染多数据选择
      * 
      * @memberof MPickUpViewBase
-     */     
-    public renderMpickerSelect(){
+     */
+    public renderMpickerSelect() {
         return <div class="mpicker-select">
-            {this.viewSelections.map((item:any,index:number)=>{
-                return <div key={index} class={{ 'select': item._select, 'picker-item': true }} on-click={()=>debounce(this.selectionsClick,[item],this)} on-dblclick={()=>debounce(this.selectionsDBLClick,[item],this)}>
+            {this.viewSelections.map((item: any, index: number) => {
+                return <div key={index} class={{ 'select': item._select, 'picker-item': true }} on-click={() => debounce(this.selectionsClick, [item], this)} on-dblclick={() => debounce(this.selectionsDBLClick, [item], this)}>
                     <span>{item.srfmajortext}</span>
                 </div>
             })}
         </div>
-    } 
+    }
 
     /**
      * 渲染选择视图面板
      * 
      * @memberof MPickUpViewBase
-     */    
-    public renderControlContent(){
+     */
+    public renderControlContent() {
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.pickUpViewPanelInstance);
         return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.pickUpViewPanelInstance?.name, on: targetCtrlEvent });
     }
-    
+
     public renderTreeExpBar() {
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.treeExpbarIntance);
         Object.assign(targetCtrlParam.staticProps, { pickupviewpanel: this.pickUpViewPanelInstance })
@@ -225,57 +265,19 @@ export class MPickUpView2Base extends MainViewBase {
      * @returns
      * @memberof MPickUpViewBase
      */
-    public computeTargetCtrlData(controlInstance:any) {
+    public computeTargetCtrlData(controlInstance: any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
-        Object.assign(targetCtrlParam.dynamicProps,{
+        Object.assign(targetCtrlParam.dynamicProps, {
             selectedData: this.selectedData,
         })
-        Object.assign(targetCtrlParam.staticProps,{
+        Object.assign(targetCtrlParam.staticProps, {
             isSingleSelect: false,
             isShowButton: this.isShowButton,
         })
         return { targetCtrlName, targetCtrlParam, targetCtrlEvent }
     }
 
-    /**
-     * 是否显示按钮
-     *
-     * @type {boolean}
-     * @memberof MPickUpViewBase
-     */
-    public isShowButton: boolean = true;
-    
-    /**
-     * 选中数据的字符串
-     *
-     * @type {string}
-     * @memberof MPickUpViewBase
-     */
-    public selectedData: string = "";
 
-    /**
-     * 是否初始化已选中项
-     *
-     * @type {any[]}
-     * @memberof MPickUpViewBase
-     */
-    public isInitSelected:boolean = false;
-    
-    /**
-     * 视图选中数据
-     *
-     * @type {any[]}
-     * @memberof MPickUpViewBase
-     */
-    public viewSelections:any[] = [];
-    
-    /**
-     * 是否单选
-     *
-     * @type {boolean}
-     * @memberof MPickUpViewBase
-     */
-    public isSingleSelect: boolean = false;
 
     /**
      * 选中数据单击
@@ -283,7 +285,7 @@ export class MPickUpView2Base extends MainViewBase {
      * @param {*} item
      * @memberof MPickUpViewBase
      */
-    public selectionsClick(item:any):void {
+    public selectionsClick(item: any): void {
         item._select = !item._select;
         const removeSelect: boolean = this.viewSelections.some((selection: any) => selection._select);
         this.containerModel.view_leftbtn.disabled = !removeSelect;
@@ -295,7 +297,7 @@ export class MPickUpView2Base extends MainViewBase {
      * @param {*} item
      * @memberof MPickUpViewBase
      */
-    public selectionsDBLClick(item:any):void {
+    public selectionsDBLClick(item: any): void {
         const index: number = this.viewSelections.findIndex((selection: any) => Object.is(selection.srfkey, item.srfkey));
         if (index !== -1) {
             this.viewSelections.splice(index, 1);
@@ -310,7 +312,7 @@ export class MPickUpView2Base extends MainViewBase {
      *
      * @memberof MPickUpViewBase
      */
-    public onCLickLeft():void {
+    public onCLickLeft(): void {
         const _selectiions = [...JSON.parse(JSON.stringify(this.viewSelections))];
         _selectiions.forEach((item: any) => {
             if (!item._select) {
@@ -331,23 +333,23 @@ export class MPickUpView2Base extends MainViewBase {
      *
      * @memberof MPickUpViewBase
      */
-    public onCLickRight():void {
+    public onCLickRight(): void {
         Object.values(this.containerModel).forEach((model: any) => {
             if (!Object.is(model.type, 'PICKUPVIEWPANEL')) {
                 return;
             }
-            let newSelections:any[] = [];
+            let newSelections: any[] = [];
             model.selections.forEach((item: any) => {
                 const index: number = this.viewSelections.findIndex((selection: any) => Object.is(item.srfkey, selection.srfkey));
                 if (index === -1) {
                     let _item: any = { ...JSON.parse(JSON.stringify(item)) };
                     Object.assign(_item, { _select: false })
                     newSelections.push(_item);
-                }else{
+                } else {
                     newSelections.push(this.viewSelections[index]);
                 }
             });
-            this.viewSelections = this.removeDuplicates([...newSelections,...this.viewSelections]);
+            this.viewSelections = this.removeDuplicates([...newSelections, ...this.viewSelections]);
         });
     }
 
@@ -356,7 +358,7 @@ export class MPickUpView2Base extends MainViewBase {
      *
      * @memberof MPickUpViewBase
      */
-    public removeDuplicates(data:any):Array<any> {
+    public removeDuplicates(data: any): Array<any> {
         const uniqueSet = new Set(data);
         return [...uniqueSet];
     }
@@ -366,7 +368,7 @@ export class MPickUpView2Base extends MainViewBase {
      *
      * @memberof MPickUpViewBase
      */
-    public onCLickAllLeft():void {
+    public onCLickAllLeft(): void {
         if (this.Environment && this.Environment.isPreviewMode) {
             return;
         }
@@ -381,7 +383,7 @@ export class MPickUpView2Base extends MainViewBase {
      *
      * @memberof MPickUpViewBase
      */
-    public onCLickAllRight():void {
+    public onCLickAllRight(): void {
         if (this.Environment && this.Environment.isPreviewMode) {
             return;
         }
@@ -389,11 +391,11 @@ export class MPickUpView2Base extends MainViewBase {
             if (!Object.is(model.type, 'PICKUPVIEWPANEL')) {
                 return;
             }
-            if(model.datas.length>0){
-                model.datas.forEach((data:any,index:any)=>{
-                    if(!data.srfmajortext){
+            if (model.datas.length > 0) {
+                model.datas.forEach((data: any, index: any) => {
+                    if (!data.srfmajortext) {
                         let fieldCodeName = this.appDeMajorFieldName.toLowerCase();
-                        Object.assign(data,{srfmajortext: data[fieldCodeName]});
+                        Object.assign(data, { srfmajortext: data[fieldCodeName] });
                     }
                 })
             }
@@ -427,6 +429,6 @@ export class MPickUpView2Base extends MainViewBase {
     public onClickCancel(): void {
         this.$emit('view-event', { viewName: this.viewInstance?.name, action: 'viewdataschange', data: null });
         this.$emit('view-event', { viewName: this.viewInstance?.name, action: 'close', data: null });
-    }    
+    }
 
 }

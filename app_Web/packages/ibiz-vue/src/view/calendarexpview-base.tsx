@@ -1,8 +1,17 @@
 import { IPSAppDECalendarExplorerView, IPSCalendarExpBar } from '@ibiz/dynamic-model-api';
-import { CalendarExpViewEngine, ModelTool } from 'ibiz-core';
+import { CalendarExpViewEngine, CalendarExpViewInterface, ModelTool } from 'ibiz-core';
 import { ExpViewBase } from './expview-base';
 
-export class CalendarExpViewBase extends ExpViewBase {
+
+/**
+ * 日历导航视图基类
+ *
+ * @export
+ * @class CalendarExpViewBase
+ * @extends {ExpViewBase}
+ * @implements {CalendarExpViewInterface}
+ */
+export class CalendarExpViewBase extends ExpViewBase implements CalendarExpViewInterface {
 
     /**
      * 视图实例

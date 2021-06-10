@@ -1,8 +1,17 @@
 import { IPSAppDEPickupView, IPSDEPickupViewPanel, IPSTreeExpBar } from '@ibiz/dynamic-model-api';
-import { ModelTool, PickupView2Engine } from 'ibiz-core';
+import { ModelTool, PickupView2Engine, PickUpView2Interface } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
-export class PickupView2Base extends MainViewBase {
+
+/**
+ * 实体选择视图(左右关系)
+ *
+ * @export
+ * @class PickupView2Base
+ * @extends {MainViewBase}
+ * @implements {PickUpView2Interface}
+ */
+export class PickupView2Base extends MainViewBase implements PickUpView2Interface {
 
     /**
      * 视图实例

@@ -1,5 +1,5 @@
 import { IPSAppDEDataViewExplorerView, IPSDataViewExpBar } from '@ibiz/dynamic-model-api';
-import { DataViewExpViewEngine, ModelTool} from 'ibiz-core';
+import { DataExpViewInterface, DataViewExpViewEngine, ModelTool} from 'ibiz-core';
 import { ExpViewBase } from './expview-base';
 
 /**
@@ -8,8 +8,9 @@ import { ExpViewBase } from './expview-base';
  * @export
  * @class DataViewExpBase
  * @extends {ExpViewBase}
+ * @implements {DataExpViewInterface}
  */
-export class DataViewExpBase extends ExpViewBase {
+export class DataViewExpBase extends ExpViewBase implements DataExpViewInterface {
     /**
      * 视图实例
      * 

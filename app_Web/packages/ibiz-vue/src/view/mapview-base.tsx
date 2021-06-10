@@ -1,7 +1,6 @@
 import { IPSAppDataEntity, IPSAppDEField, IPSAppDEMapView, IPSSysMap } from '@ibiz/dynamic-model-api';
-import { MapViewEngine, ModelTool } from 'ibiz-core';
+import { MapViewEngine, MapViewInterface, ModelTool } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
-
 
 /**
  * 地图视图基类
@@ -9,8 +8,9 @@ import { MDViewBase } from './mdview-base';
  * @export
  * @class MapViewBase
  * @extends {MDViewBase}
+ * @implements {MapViewInterface}
  */
-export class MapViewBase extends MDViewBase {
+export class MapViewBase extends MDViewBase implements MapViewInterface{
 
     /**
      * 视图实例

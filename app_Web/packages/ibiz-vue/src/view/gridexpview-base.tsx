@@ -1,8 +1,17 @@
 import { IPSAppDEGridExplorerView, IPSGridExpBar } from '@ibiz/dynamic-model-api';
-import { GridExpViewEngine, ModelTool } from 'ibiz-core';
+import { GridExpViewEngine, GridExpViewInterface, ModelTool } from 'ibiz-core';
 import { ExpViewBase } from './expview-base';
 
-export class GridExpViewBase extends ExpViewBase {
+
+/**
+ * 表格导航视图基类
+ *
+ * @export
+ * @class GridExpViewBase
+ * @extends {ExpViewBase}
+ * @implements {GridExpViewInterface}
+ */
+export class GridExpViewBase extends ExpViewBase implements GridExpViewInterface {
 
     /**
      * 视图实例

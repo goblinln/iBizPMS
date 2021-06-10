@@ -1,15 +1,16 @@
 import { IPSAppDEPickupView, IPSDEPickupViewPanel } from '@ibiz/dynamic-model-api';
-import { PickupViewEngine, ModelTool, debounce } from 'ibiz-core';
+import { PickupViewEngine, ModelTool, debounce, PickUpViewInterface } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 /**
  * 数据选择视图基类
  *
  * @export
- * @class ChartViewBase
- * @extends {MDViewBase}
+ * @class PickupViewBase
+ * @extends {MainViewBase}
+ * @implements {PickUpViewInterface}
  */
-export class PickupViewBase extends MainViewBase {
+export class PickupViewBase extends MainViewBase implements PickUpViewInterface {
 
     /**
      * 视图实例

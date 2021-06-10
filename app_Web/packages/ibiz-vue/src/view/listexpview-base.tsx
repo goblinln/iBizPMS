@@ -1,7 +1,6 @@
 import { IPSAppDEListExplorerView, IPSListExpBar } from '@ibiz/dynamic-model-api';
-import { ListExpViewEngine, ModelTool } from 'ibiz-core';
+import { ListExpViewEngine, ListExpViewInterface, ModelTool } from 'ibiz-core';
 import { ExpViewBase } from './expview-base';
-
 
 /**
  * 列表导航视图基类
@@ -9,8 +8,9 @@ import { ExpViewBase } from './expview-base';
  * @export
  * @class ListExpViewBase
  * @extends {ExpViewBase}
+ * @implements {ListExpViewInterface}
  */
-export class ListExpViewBase extends ExpViewBase {
+export class ListExpViewBase extends ExpViewBase implements ListExpViewInterface {
 
     /**
      * 视图实例

@@ -1,8 +1,17 @@
 import { MDViewBase } from './mdview-base';
-import { ModelTool } from 'ibiz-core';
+import { IndexPickupDataViewInterface, ModelTool } from 'ibiz-core';
 import { IPSAppDEDataView, IPSDEDataView } from '@ibiz/dynamic-model-api';
 
-export class IndexPickupDataViewBase extends MDViewBase {
+
+/**
+ * 索引关系选择视图基类
+ *
+ * @export
+ * @class IndexPickupDataViewBase
+ * @extends {MDViewBase}
+ * @implements {IndexPickupDataViewInterface}
+ */
+export class IndexPickupDataViewBase extends MDViewBase implements IndexPickupDataViewInterface {
 
     /**
      * 实体索引关系选择数据视图（部件视图）

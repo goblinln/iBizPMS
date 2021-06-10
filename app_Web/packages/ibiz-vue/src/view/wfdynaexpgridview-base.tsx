@@ -1,5 +1,5 @@
 import { IPSAppDEWFDynaExpGridView, IPSDEGrid, IPSDESearchForm } from '@ibiz/dynamic-model-api';
-import { WFDynaExpGridViewEngine, Util, ModelTool, debounce } from 'ibiz-core';
+import { WFDynaExpGridViewEngine, Util, ModelTool, debounce, WFDynaExpGridInterface } from 'ibiz-core';
 import { GlobalService } from 'ibiz-service';
 import { MainViewBase } from './mainview-base';
 
@@ -8,9 +8,10 @@ import { MainViewBase } from './mainview-base';
  *
  * @export
  * @class WfDynaExpGridViewBase
- * @extends {ExpViewBase}
+ * @extends {MainViewBase}
+ * @implements {WFDynaExpGridInterface}
  */
-export class WfDynaExpGridViewBase extends MainViewBase {
+export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGridInterface {
 
     /**
      * 视图实例
@@ -41,6 +42,72 @@ export class WfDynaExpGridViewBase extends MainViewBase {
      * @memberof WfDynaExpGridViewBase
      */
     public engine: WFDynaExpGridViewEngine = new WFDynaExpGridViewEngine;
+
+
+    /**
+     * 分割宽度
+     *
+     * @type {number}
+     * @memberof WfDynaExpGridViewBase
+     */
+    public split: number = 0.2;
+
+    /**
+     * 视图引用数据
+     * 
+     * @memberof WfDynaExpGridViewBase
+     */
+    public viewRefData: any = {}
+
+    /**
+     * 树导航栏数据
+     *
+     * @type {any}
+     * @memberof WfDynaExpGridViewBase
+     */
+    public wfStepModel: Array<any> = [];
+
+    /**
+     * 是否展开搜索表单
+     *
+     * @type {any}
+     * @memberof  WfDynaExpGridViewBase
+     */
+    public isExpandSearchForm: boolean = true;
+
+    /**
+     * 是否单选
+     *
+     * @type {any}
+     * @memberof  WfDynaExpGridViewBase
+     */
+    public isSingleSelect: boolean = false;
+
+    /**
+     * 工具栏模型数据
+     * 
+     * @memberof WfDynaExpGridViewBase
+     */
+    public linkModel: Array<any> = [];
+
+    /**
+     * 左侧树的默认配置
+     *
+     * @type {any}
+     * @memberof  WfDynaExpGridViewBase
+     */
+    public defaultProps: any = {
+        children: 'children',
+        label: 'userTaskName'
+    };
+
+    /**
+     * 左侧树当前选中节点
+     *
+     * @type {any}
+     * @memberof  WfDynaExpGridViewBase
+     */
+    public curSelectedNode: any;
 
     /**
      * 引擎初始化
@@ -80,10 +147,10 @@ export class WfDynaExpGridViewBase extends MainViewBase {
      */
     public async viewModelInit() {
         await super.viewModelInit();
-        this.gridInstance = ModelTool.findPSControlByName('grid',this.viewInstance.getPSControls()) as IPSDEGrid;
-        this.searchFormInstance = ModelTool.findPSControlByName('searchform',this.viewInstance.getPSControls()) as IPSDESearchForm;
+        this.gridInstance = ModelTool.findPSControlByName('grid', this.viewInstance.getPSControls()) as IPSDEGrid;
+        this.searchFormInstance = ModelTool.findPSControlByName('searchform', this.viewInstance.getPSControls()) as IPSDESearchForm;
         this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
-        this.viewRefData = await  ModelTool.loadedAppViewRef(this.viewInstance);
+        this.viewRefData = await ModelTool.loadedAppViewRef(this.viewInstance);
     }
 
     /**
@@ -96,7 +163,7 @@ export class WfDynaExpGridViewBase extends MainViewBase {
             {
                 this.linkModel.map((linkItem: any, index: number) => {
                     return <tooltip transfer={true} max-width={600} key="index">
-                        <i-button disabled={linkItem.disabled} on-click={($event: any) => { debounce(this.dynamic_toolbar_click,[linkItem, $event],this) }} loading={this.viewLoadingService.isLoading}>
+                        <i-button disabled={linkItem.disabled} on-click={($event: any) => { debounce(this.dynamic_toolbar_click, [linkItem, $event], this) }} loading={this.viewLoadingService.isLoading}>
                             <span class='caption'>{linkItem.sequenceFlowName}</span>
                         </i-button>
                         <div slot='content'>{linkItem.sequenceFlowName}</div>
@@ -115,7 +182,7 @@ export class WfDynaExpGridViewBase extends MainViewBase {
         const { codeName } = this.viewInstance;
         return <split id={codeName.toLowerCase()} v-model={this.split} mode="horizontal">
             <div slot='left'>
-                <el-tree ref="tree" data={this.wfStepModel} node-key="userTaskId" highlight-current={true} props={this.defaultProps} on-node-click={(...params: any[]) => debounce(this.handleNodeClick,params,this)} scopedSlots={{
+                <el-tree ref="tree" data={this.wfStepModel} node-key="userTaskId" highlight-current={true} props={this.defaultProps} on-node-click={(...params: any[]) => debounce(this.handleNodeClick, params, this)} scopedSlots={{
                     default: ({ node, data }: any) => {
                         return <span class="custom-tree-node">
                             <span class="tree-node-label">{data.userTaskName}</span>
@@ -186,71 +253,6 @@ export class WfDynaExpGridViewBase extends MainViewBase {
 
 
     /**
-     * 分割宽度
-     *
-     * @type {number}
-     * @memberof WfDynaExpGridViewBase
-     */
-    public split: number = 0.2;
-
-    /**
-     * 视图引用数据
-     * 
-     * @memberof WfDynaExpGridViewBase
-     */
-    public viewRefData: any = {}
-
-    /**
-     * 树导航栏数据
-     *
-     * @type {any}
-     * @memberof WfDynaExpGridViewBase
-     */
-    public wfStepModel: Array<any> = [];
-
-    /**
-     * 是否展开搜索表单
-     *
-     * @type {any}
-     * @memberof  WfDynaExpGridViewBase
-     */
-    public isExpandSearchForm: boolean = true;
-
-    /**
-     * 是否单选
-     *
-     * @type {any}
-     * @memberof  WfDynaExpGridViewBase
-     */
-    public isSingleSelect: boolean = false;
-
-    /**
-     * 工具栏模型数据
-     * 
-     * @memberof WfDynaExpGridViewBase
-     */
-    public linkModel: Array<any> = [];
-
-    /**
-     * 左侧树的默认配置
-     *
-     * @type {any}
-     * @memberof  WfDynaExpGridViewBase
-     */
-    public defaultProps: any = {
-        children: 'children',
-        label: 'userTaskName'
-    };
-
-    /**
-     * 左侧树当前选中节点
-     *
-     * @type {any}
-     * @memberof  WfDynaExpGridViewBase
-     */
-    public curSelectedNode: any;
-
-    /**
      * 获取树导航栏数据
      *
      * @memberof  WfDynaExpGridViewBase
@@ -278,15 +280,15 @@ export class WfDynaExpGridViewBase extends MainViewBase {
                     resolve(response.data);
                 }
             }).catch((response: any) => {
-                this.$throw(response,'getWFStepModel');
+                this.$throw(response, 'getWFStepModel');
             });
         })
     }
 
-
     /**
      * 获取工具栏按钮
-     * 
+     *
+     * @param {*} data 请求参数
      * @memberof WfDynaExpGridViewBase
      */
     public getWFLinkModel(data: any) {
@@ -300,13 +302,15 @@ export class WfDynaExpGridViewBase extends MainViewBase {
                 }
             }
         }).catch((response: any) => {
-            this.$throw(response,'getWFLinkModel');
+            this.$throw(response, 'getWFLinkModel');
         });
     }
 
     /**
      * 工具栏点击事件
      * 
+     * @param {*} linkItem 点击对象
+     * @param {*} $event 事件源
      * @memberof WfDynaExpGridViewBase
      */
     public dynamic_toolbar_click(linkItem: any, $event: any) {
@@ -328,10 +332,10 @@ export class WfDynaExpGridViewBase extends MainViewBase {
             });
         }
         if (linkItem && linkItem.sequenceflowview) {
-            const targetView:any = this.viewRefData.find((item:any) =>{
+            const targetView: any = this.viewRefData.find((item: any) => {
                 return item.name === `WFACTION@${linkItem.sequenceflowview}`;
             })
-            if(targetView){
+            if (targetView) {
                 let tempContext: any = Util.deepCopy(this.context);
                 let tempViewParam: any = { actionView: linkItem.sequenceflowview, actionForm: linkItem.sequenceflowform };
                 const appmodal = this.$appmodal.openModal({ viewname: Util.srfFilePath2(targetView.codeName), title: this.$tl(targetView.getCapPSLanguageRes()?.lanResTag, targetView.caption), height: targetView.height, width: targetView.width }, tempContext, tempViewParam);
@@ -354,7 +358,7 @@ export class WfDynaExpGridViewBase extends MainViewBase {
     /**
      * 左侧树选中节点
      *
-     * @type {any}
+     * @param {*} data 选择数据
      * @memberof WfDynaExpGridViewBase
      */
     public handleNodeClick(data: any) {

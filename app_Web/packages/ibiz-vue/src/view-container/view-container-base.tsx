@@ -2,7 +2,7 @@ import Vue from 'vue';
 import qs from 'qs';
 import { DynamicInstanceConfig, IPSAppView } from '@ibiz/dynamic-model-api';
 import { AppServiceBase, GetModelService, SandboxInstance, Util } from 'ibiz-core';
-import { AppComponentService } from '../app-service';
+import { AppComponentService, AppNavHistory } from '../app-service';
 import { CommunicationService } from '@ibiz/model-location';
 
 /**
@@ -197,6 +197,7 @@ export class ViewContainerBase extends Vue {
         // 视图壳加载视图数据
         await this.modeldata?.fill?.(true);
         this.initViewContext({ modeldata: this.modeldata });
+        this.initViewMateInfo(this.modeldata);
         this.viewContainerName = AppComponentService.getViewComponents(
             this.modeldata?.viewType,
             this.modeldata?.viewStyle,
@@ -208,7 +209,7 @@ export class ViewContainerBase extends Vue {
     /**
      * 初始化动态视图上下文环境参数
      *
-     * @type {Array<*>}
+     * @type {*} opts
      * @memberof ViewContainerBase
      */
     public initViewContext(opts: any) {
@@ -224,6 +225,50 @@ export class ViewContainerBase extends Vue {
             delete temp.viewModelData;
         }
         this.viewContext = temp;
+    }
+
+    /**
+     * 初始化视图容器元数据
+     *
+     * @type {*} opts
+     * @memberof ViewContainerBase
+     */
+    public initViewMateInfo(opts: any) {
+        if (!this.dynamicProps || !this.dynamicProps.viewdata) {
+            const initNavData: Function = () => {
+                if (this.$route.meta && !this.$route.meta.ignoreAddPage) {
+                    let navHistory: AppNavHistory = AppServiceBase.getInstance().getAppNavDataService();
+                    if (!navHistory) {
+                        AppServiceBase.getInstance().setAppNavDataService(new AppNavHistory);
+                        navHistory = AppServiceBase.getInstance().getAppNavDataService();
+                    }
+                    navHistory.add(this.$route);
+                }
+            }
+            // 设置路由meta数据
+            let activedView: any = this.$route.meta.parameters.find((item: any) => {
+                return item.pathName === 'views';
+            });
+            if (Object.is(activedView.parameterName, 'view') && Object.is(activedView.pathName, 'views')) {
+                this.$route.meta.captionTag = opts.getCapPSLanguageRes()?.lanResTag;
+                this.$route.meta.caption = opts?.caption;
+                this.$route.meta.imgPath = opts?.getPSSysImage()?.imagePath;
+                this.$route.meta.iconCls = opts?.getPSSysImage()?.cssClass;
+                if (opts.accUserMode && ((opts.accUserMode == 1) || (opts.accUserMode == 3))) {
+                    this.$route.meta.requireAuth = false;
+                } else {
+                    this.$route.meta.requireAuth = true;
+                }
+                this.$store.commit("setCurPageCaption", {
+                    route: this.$route,
+                    caption: this.$route.meta.caption,
+                    info: '',
+                });
+                initNavData();
+            } else {
+                initNavData();
+            }
+        }
     }
 
     /**
@@ -256,13 +301,39 @@ export class ViewContainerBase extends Vue {
                 let activedView: any = this.$route.meta.parameters.find((item: any) => {
                     return item.pathName === 'views';
                 });
-                if (activedView && activedView.parameterName) {
-                    const path = (await GetModelService(this.context)).getPSAppViewPath(`${resource}${activedView.parameterName}`);
+                let localActivedView: any = Util.deepCopy(activedView);
+                if (Object.is(localActivedView.parameterName, 'view') && Object.is(localActivedView.pathName, 'views')) {
+                    localActivedView.parameterName = this.parseUrlDynamicParam().view;
+                }
+                if (localActivedView && localActivedView.parameterName) {
+                    const path = (await GetModelService(this.context)).getPSAppViewPath(`${resource}${localActivedView.parameterName}`);
                     if (path) {
                         this.dynaModelFilePath = path;
                     }
                 }
             }
         }
+    }
+
+    /**
+     * 解析路由动态参数
+     *
+     * @memberof ViewContainerBase
+     */
+    public parseUrlDynamicParam(): any {
+        const path = (this.$route.matched[this.$route.matched.length - 1]).path;
+        const keys: Array<any> = [];
+        const curReg = this.$pathToRegExp.pathToRegexp(path, keys);
+        const matchArray = curReg.exec(this.$route.path);
+        let tempValue: Object = {};
+        keys.forEach((item: any, index: number) => {
+            if (matchArray[index + 1]) {
+                Object.defineProperty(tempValue, item.name, {
+                    enumerable: true,
+                    value: decodeURIComponent(matchArray[index + 1])
+                });
+            }
+        });
+        return tempValue;
     }
 }

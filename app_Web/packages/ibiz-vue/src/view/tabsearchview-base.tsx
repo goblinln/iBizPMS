@@ -1,5 +1,5 @@
 import { IPSAppCounterRef, IPSDETabViewPanel, IPSTabExpPanel, IPSSysImage, IPSAppDETabSearchView } from '@ibiz/dynamic-model-api';
-import { ModelTool, TabSearchViewEngine, Util } from 'ibiz-core';
+import { ModelTool, TabSearchViewEngine, TabSearchViewInterface, Util } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 
 /**
@@ -7,9 +7,10 @@ import { MDViewBase } from './mdview-base';
  *
  * @export
  * @class TabSearchViewBase
- * @extends {MainViewBase}
+ * @extends {MDViewBase}
+ * @implements {TabSearchViewInterface}
  */
-export class TabSearchViewBase extends MDViewBase {
+export class TabSearchViewBase extends MDViewBase implements TabSearchViewInterface{
 
     /**
      * 视图实例

@@ -36,8 +36,8 @@ export interface MainViewInterface extends ViewInterface {
      * @param {*} data 数据
      * @param {*} xData 数据部件实例
      * @param {*} $event 事件源
-     * @param {*} deResParameters 
-     * @param {*} parameters
+     * @param {*} deResParameters 关系实体参数对象
+     * @param {*} parameters 当前应用视图参数对象
      * @param {*} args 额外参数
      * @param {Function} callback 回调
      * @memberof MainViewInterface

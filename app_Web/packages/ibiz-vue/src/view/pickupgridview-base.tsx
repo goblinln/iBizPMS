@@ -1,5 +1,5 @@
 import { MDViewBase } from './mdview-base';
-import { ModelTool, PickupGridViewEngine } from 'ibiz-core';
+import { ModelTool, PickupGridViewEngine, PickUpGridViewInterface } from 'ibiz-core';
 import { IPSAppDEGridView, IPSDEGrid } from '@ibiz/dynamic-model-api';
 
 /**
@@ -8,8 +8,9 @@ import { IPSAppDEGridView, IPSDEGrid } from '@ibiz/dynamic-model-api';
  * @export
  * @class PickupGridViewBase
  * @extends {MDViewBase}
+ * @implements {PickUpGridViewInterface}
  */
-export class PickupGridViewBase extends MDViewBase {
+export class PickupGridViewBase extends MDViewBase implements PickUpGridViewInterface {
 
     /**
      * 选中数据字符串

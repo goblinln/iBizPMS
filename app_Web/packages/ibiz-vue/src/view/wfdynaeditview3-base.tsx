@@ -1,5 +1,5 @@
 import { IPSAppDEWFDynaEditView, IPSAppView, IPSDEDRTab, IPSDEDRTabPage, IPSDEForm, IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { WFDynaEditViewEngine, Util, ModelTool, GetModelService, AppModelService, LogUtil, debounce } from 'ibiz-core';
+import { WFDynaEditViewEngine, Util, ModelTool, GetModelService, AppModelService, LogUtil, debounce, WFDynaEdit3ViewInterface } from 'ibiz-core';
 import { AppCenterService } from '../app-service';
 import { MainViewBase } from './mainview-base';
 
@@ -9,8 +9,9 @@ import { MainViewBase } from './mainview-base';
  * @export
  * @class WFDynaEditView3Base
  * @extends {MainViewBase}
+ * @implements {WFDynaEdit3ViewInterface}
  */
-export class WFDynaEditView3Base extends MainViewBase {
+export class WFDynaEditView3Base extends MainViewBase implements WFDynaEdit3ViewInterface {
 
     /**
      * 视图引擎

@@ -1,8 +1,16 @@
 import { IPSAppDEPickupView, IPSDEPickupViewPanel } from '@ibiz/dynamic-model-api';
-import { PickupView3Engine, Util } from 'ibiz-core';
+import { PickupView3Engine, PickUpView3Interface, Util } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
-export class PickupView3Base extends MainViewBase {
+/**
+ * 应用实体数据选择视图（分页关系）
+ *
+ * @export
+ * @class PickupView3Base
+ * @extends {MainViewBase}
+ * @implements {PickUpView3Interface}
+ */
+export class PickupView3Base extends MainViewBase implements PickUpView3Interface {
 
     /**
      * 视图实例对象

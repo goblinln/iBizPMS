@@ -1,14 +1,17 @@
 import { IPSAppDECustomView } from '@ibiz/dynamic-model-api';
+import { CustomViewInterface } from 'ibiz-core';
 import { MainViewBase } from "./mainview-base";
+
 
 /**
  * 自定义视图基类
  *
  * @export
  * @class CustomViewBase
- * @extends {MDViewBase}
+ * @extends {MainViewBase}
+ * @implements {CustomViewInterface}
  */
-export class CustomViewBase extends MainViewBase {
+export class CustomViewBase extends MainViewBase implements CustomViewInterface {
 
     /**
      * 视图实例

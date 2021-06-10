@@ -1,5 +1,5 @@
 import { IPSAppDEWizardView, IPSDEWizardPanel } from '@ibiz/dynamic-model-api';
-import { ModelTool, WizardViewEngine } from 'ibiz-core';
+import { ModelTool, WizardViewEngine, WizardViewInterface } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 
 /**
@@ -8,8 +8,9 @@ import { MDViewBase } from './mdview-base';
  * @export
  * @class WizardViewBase
  * @extends {MDViewBase}
+ * @implements {WizardViewInterface}
  */
-export class WizardViewBase extends MDViewBase {
+export class WizardViewBase extends MDViewBase implements WizardViewInterface {
 
     /**
      * 向导视图模型实例

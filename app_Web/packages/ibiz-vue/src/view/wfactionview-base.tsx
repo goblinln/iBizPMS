@@ -1,8 +1,17 @@
 import { IPSAppDEWFActionView, IPSDEForm } from '@ibiz/dynamic-model-api';
-import { ModelTool, WFActionViewEngine } from 'ibiz-core';
+import { ModelTool, WFActionViewEngine, WFActionViewInterface } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
-export class WFActionViewBase extends MainViewBase {
+
+/**
+ * 工作流操作视图基类
+ *
+ * @export
+ * @class WFActionViewBase
+ * @extends {MainViewBase}
+ * @implements {WFActionViewInterface}
+ */
+export class WFActionViewBase extends MainViewBase implements WFActionViewInterface {
     
     /**
      * 视图实例

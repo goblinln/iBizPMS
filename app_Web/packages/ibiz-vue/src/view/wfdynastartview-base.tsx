@@ -1,8 +1,16 @@
 import { IPSAppDEWFDynaStartView, IPSDEForm } from '@ibiz/dynamic-model-api';
-import { ModelTool } from 'ibiz-core';
+import { ModelTool, WFDynaStartViewInterface } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
-export class WFDynaStartViewBase extends MainViewBase {
+/**
+ * 工作流启动视图
+ *
+ * @export
+ * @class WFDynaStartViewBase
+ * @extends {MainViewBase}
+ * @implements {WFDynaStartViewInterface}
+ */
+export class WFDynaStartViewBase extends MainViewBase implements WFDynaStartViewInterface {
 
     /**
      * 视图实例

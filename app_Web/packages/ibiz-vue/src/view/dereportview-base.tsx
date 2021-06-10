@@ -1,4 +1,4 @@
-import { ModelTool, ReportViewEngine } from 'ibiz-core';
+import { ModelTool, ReportViewEngine, ReportViewInterface } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 import { IPSAppDEReportView, IPSDEReportPanel } from '@ibiz/dynamic-model-api';
 
@@ -7,9 +7,10 @@ import { IPSAppDEReportView, IPSDEReportPanel } from '@ibiz/dynamic-model-api';
  *
  * @export
  * @class DeReportViewBase
- * @extends {MainViewBase}
+ * @extends {MDViewBase}
+ * @implements {ReportViewInterface}
  */
-export class DeReportViewBase extends MDViewBase {
+export class DeReportViewBase extends MDViewBase implements ReportViewInterface {
 
     /**
      * 视图实例

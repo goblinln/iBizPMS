@@ -1,8 +1,16 @@
 import { MDViewBase } from './mdview-base';
-import { ModelTool } from 'ibiz-core';
+import { FormPickupDataViewInterface, ModelTool } from 'ibiz-core';
 import { IPSAppDEDataView, IPSDEDataView } from '@ibiz/dynamic-model-api';
 
-export class FormPickupDataViewBase extends MDViewBase {
+/**
+ * 表单数据选择视图
+ *
+ * @export
+ * @class FormPickupDataViewBase
+ * @extends {MDViewBase}
+ * @implements {FormPickupDataViewInterface}
+ */
+export class FormPickupDataViewBase extends MDViewBase implements FormPickupDataViewInterface{
 
     /**
      * 表单数据选择视图实例对象

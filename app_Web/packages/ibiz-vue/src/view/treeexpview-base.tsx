@@ -1,5 +1,5 @@
 import { IPSAppDETreeExplorerView, IPSTreeExpBar } from '@ibiz/dynamic-model-api';
-import { TreeExpViewEngine, ModelTool } from 'ibiz-core';
+import { TreeExpViewEngine, ModelTool, TreeExpViewInterface } from 'ibiz-core';
 import { ExpViewBase } from './expview-base';
 
 /**
@@ -8,8 +8,9 @@ import { ExpViewBase } from './expview-base';
  * @export
  * @class TreeExpViewBase
  * @extends {ExpViewBase}
+ * @implements {TreeExpViewInterface}
  */
-export class TreeExpViewBase extends ExpViewBase {
+export class TreeExpViewBase extends ExpViewBase implements TreeExpViewInterface {
     /**
      * 视图实例
      *

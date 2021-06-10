@@ -1,3 +1,4 @@
+import { WFStepTraceViewInterface } from 'ibiz-core';
 import { ViewBase } from './view-base';
 
 /**
@@ -6,8 +7,9 @@ import { ViewBase } from './view-base';
  * @export
  * @class WfStepTraceViewBase
  * @extends {ViewBase}
+ * @implements {WFStepTraceViewInterface}
  */
-export class WfStepTraceViewBase extends ViewBase {
+export class WfStepTraceViewBase extends ViewBase implements WFStepTraceViewInterface {
 
     /**
       * 初始化流程跟踪视图实例

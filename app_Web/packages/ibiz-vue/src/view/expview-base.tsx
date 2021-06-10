@@ -1,4 +1,5 @@
 import { IPSExpBar } from '@ibiz/dynamic-model-api';
+import { ExpViewInterface } from 'ibiz-core/src/interface/view/exp-view';
 import { MainViewBase } from './mainview-base';
 
 /**
@@ -7,8 +8,9 @@ import { MainViewBase } from './mainview-base';
  * @export
  * @class ExpViewBase
  * @extends {MainViewBase}
+ * @implements {ExpViewInterface}
  */
-export class ExpViewBase extends MainViewBase {
+export class ExpViewBase extends MainViewBase implements ExpViewInterface {
     /**
      * 视图唯一标识
      *

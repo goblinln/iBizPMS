@@ -1,6 +1,6 @@
 
 import { DynamicInstanceConfig, IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppView, IPSAppViewRef } from "@ibiz/dynamic-model-api";
-import { GetModelService, LogUtil, Util, ViewTool } from "ibiz-core";
+import { GetModelService, LogUtil, RedirectViewInterface, Util, ViewTool } from "ibiz-core";
 import { MainViewBase } from "./mainview-base";
 
 /**
@@ -10,7 +10,7 @@ import { MainViewBase } from "./mainview-base";
  * @class DeRedirectViewBase
  * @extends {MDViewBase}
  */
-export class DeRedirectViewBase extends MainViewBase {
+export class DeRedirectViewBase extends MainViewBase implements RedirectViewInterface {
 
   /**
    * 视图实例

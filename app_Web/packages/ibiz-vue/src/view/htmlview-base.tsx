@@ -1,15 +1,16 @@
-import { StringUtil } from 'ibiz-core';
+import { HTMLViewInterface, StringUtil } from 'ibiz-core';
 import { IPSAppDEHtmlView } from '@ibiz/dynamic-model-api';
 import { MainViewBase } from './mainview-base';
 
 /**
- * 实体html视图基类
+ *  实体html视图基类
  *
  * @export
  * @class HtmlViewBase
  * @extends {MainViewBase}
+ * @implements {HTMLViewInterface}
  */
-export class HtmlViewBase extends MainViewBase {
+export class HtmlViewBase extends MainViewBase implements HTMLViewInterface {
     /**
      * 视图实例
      *

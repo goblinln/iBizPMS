@@ -1,5 +1,5 @@
 import { IPSAppPortalView, IPSDEDashboard } from '@ibiz/dynamic-model-api';
-import { ModelTool } from 'ibiz-core';
+import { ModelTool, PortalViewInterface } from 'ibiz-core';
 import { ViewBase } from './view-base';
 
 /**
@@ -7,9 +7,10 @@ import { ViewBase } from './view-base';
  *
  * @export
  * @class PortalViewBase
- * @extends {MainViewBase}
+ * @extends {ViewBase}
+ * @implements {PortalViewInterface}
  */
-export class PortalViewBase extends ViewBase {
+export class PortalViewBase extends ViewBase implements PortalViewInterface {
 
     /**
      * 数据视图视图实例

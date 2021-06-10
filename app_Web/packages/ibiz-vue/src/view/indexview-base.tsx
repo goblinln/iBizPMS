@@ -1,5 +1,5 @@
 import { IPSAppIndexView,IPSAppMenu } from '@ibiz/dynamic-model-api';
-import { ModelTool, ViewTool } from 'ibiz-core';
+import { IndexViewInterface, ModelTool, ViewTool } from 'ibiz-core';
 import { AppFuncService } from '../app-service';
 import { ViewBase } from "./view-base";
 
@@ -9,8 +9,9 @@ import { ViewBase } from "./view-base";
  * @export
  * @class IndexViewBase
  * @extends {ViewBase}
+ * @implements {IndexViewInterface}
  */
-export class IndexViewBase extends ViewBase {
+export class IndexViewBase extends ViewBase implements IndexViewInterface {
 
     /**
      * 是否支持应用切换
