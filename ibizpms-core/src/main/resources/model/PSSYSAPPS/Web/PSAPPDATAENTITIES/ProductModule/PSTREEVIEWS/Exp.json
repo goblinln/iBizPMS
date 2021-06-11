@@ -1014,19 +1014,14 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
-      "key" : "MODULE",
-      "name" : "MODULE",
+      "key" : "PRODUCTMODULE",
+      "name" : "PRODUCTMODULE",
       "value" : "null",
       "rawValue" : true
     }, {
-      "key" : "MODULENAME",
-      "name" : "MODULENAME",
-      "value" : "name",
-      "rawValue" : false
-    }, {
-      "key" : "BRANCH",
-      "name" : "BRANCH",
-      "value" : "branch",
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "product",
       "rawValue" : false
     } ],
     "getPSNavigateParams" : [ {
@@ -1038,6 +1033,11 @@
       "key" : "modulename",
       "name" : "modulename",
       "value" : "name",
+      "rawValue" : false
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
       "rawValue" : false
     }, {
       "key" : "branch",
@@ -1143,20 +1143,15 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
-      "key" : "MODULE",
-      "name" : "MODULE",
+      "key" : "PRODUCTMODULE",
+      "name" : "PRODUCTMODULE",
       "value" : "null",
       "rawValue" : true
     }, {
-      "key" : "MODULENAME",
-      "name" : "MODULENAME",
-      "value" : "name",
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "product",
       "rawValue" : false
-    }, {
-      "key" : "BRANCH",
-      "name" : "BRANCH",
-      "value" : "0",
-      "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
       "key" : "srfparentkey",
@@ -1167,6 +1162,11 @@
       "key" : "modulename",
       "name" : "modulename",
       "value" : "name",
+      "rawValue" : false
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
       "rawValue" : false
     }, {
       "key" : "branch",
@@ -1272,20 +1272,15 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
-      "key" : "MODULE",
-      "name" : "MODULE",
+      "key" : "PRODUCTMODULE",
+      "name" : "PRODUCTMODULE",
       "value" : "null",
       "rawValue" : true
     }, {
-      "key" : "MODULENAME",
-      "name" : "MODULENAME",
-      "value" : "name",
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "product",
       "rawValue" : false
-    }, {
-      "key" : "BRANCH",
-      "name" : "BRANCH",
-      "value" : "0",
-      "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
       "key" : "srfparentkey",
@@ -1296,6 +1291,11 @@
       "key" : "modulename",
       "name" : "modulename",
       "value" : "name",
+      "rawValue" : false
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
       "rawValue" : false
     }, {
       "key" : "branch",
