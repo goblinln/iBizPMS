@@ -222,9 +222,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
                 }
                 if (Object.is('filter', action)) {
                     this.srfnodefilter = data.srfnodefilter;
-                    if (this.$refs && this.$refs[this.name]) {
-                        (this.$refs[this.name] as any).filter(data.srfnodefilter);
-                    }
+                    this.refresh_all();
                 }
                 if (Object.is('refresh_parent', action)) {
                     this.refresh_parent();
