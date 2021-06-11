@@ -96,13 +96,7 @@ public class SysTodo implements Serializable {
     @JsonProperty("processdate")
     @ApiModelProperty("处理时间")
     private Timestamp processdate;
-    /**
-     * 参数03
-     */
-    @JSONField(name = "param03")
-    @JsonProperty("param03")
-    @ApiModelProperty("参数03")
-    private String param03;
+
     /**
      * 标题
      */
