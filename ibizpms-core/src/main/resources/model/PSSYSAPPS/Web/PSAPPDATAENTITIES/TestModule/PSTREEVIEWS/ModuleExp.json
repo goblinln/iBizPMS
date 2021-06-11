@@ -962,6 +962,47 @@
       "modelid" : "65fdc4625872bb6609539d201e199124",
       "modeltype" : "PSDETOOLBAR"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    }, {
+      "key" : "TESTMODULE",
+      "name" : "TESTMODULE",
+      "rawValue" : true
+    }, {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "test",
+      "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "test",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "test",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "test",
+      "rawValue" : true
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -1219,6 +1260,47 @@
       "modelid" : "65fdc4625872bb6609539d201e199124",
       "modeltype" : "PSDETOOLBAR"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    }, {
+      "key" : "TESTMODULE",
+      "name" : "TESTMODULE",
+      "rawValue" : true
+    }, {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "test",
+      "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "test",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "test",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "test",
+      "rawValue" : true
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -1362,6 +1444,47 @@
       "modelid" : "65fdc4625872bb6609539d201e199124",
       "modeltype" : "PSDETOOLBAR"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    }, {
+      "key" : "TESTMODULE",
+      "name" : "TESTMODULE",
+      "rawValue" : true
+    }, {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "test",
+      "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "test",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "test",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "test",
+      "rawValue" : true
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"

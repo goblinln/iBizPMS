@@ -826,6 +826,29 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
+      "id" : "ProjectModule"
+    },
+    "name" : "所有模块 - 项目根模块（动态）",
+    "getPSNavigateParams" : [ {
+      "key" : "n_type_eq",
+      "name" : "n_type_eq",
+      "value" : "task",
+      "rawValue" : true
+    }, {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "0",
+      "rawValue" : true
+    } ],
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ALL"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
       "id" : "ROOTMODULE"
     },
     "name" : "平台（动态） - 产品根模块（动态）",
@@ -1111,29 +1134,6 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ROOT"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ProjectModule"
-    },
-    "name" : "所有模块 - 项目根模块（动态）",
-    "getPSNavigateParams" : [ {
-      "key" : "n_type_eq",
-      "name" : "n_type_eq",
-      "value" : "task",
-      "rawValue" : true
-    }, {
-      "key" : "n_parent_eq",
-      "name" : "n_parent_eq",
-      "value" : "0",
-      "rawValue" : true
-    } ],
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ALL"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -1775,6 +1775,47 @@
       "modelid" : "953b0c8e02c322a4539a06797e056aae",
       "modeltype" : "PSDETOOLBAR"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "PROJECTMODULE",
+      "name" : "PROJECTMODULE",
+      "rawValue" : true
+    }, {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PROJECT",
+      "rawValue" : true
+    }, {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "project",
+      "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "project",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "project",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "project",
+      "rawValue" : true
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PROJECT",
+      "rawValue" : true
+    } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -2227,6 +2268,47 @@
       "modelid" : "953b0c8e02c322a4539a06797e056aae",
       "modeltype" : "PSDETOOLBAR"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "PROJECTMODULE",
+      "name" : "PROJECTMODULE",
+      "rawValue" : true
+    }, {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PROJECT",
+      "rawValue" : true
+    }, {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "project",
+      "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "project",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "project",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "project",
+      "rawValue" : true
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PROJECT",
+      "rawValue" : true
+    } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"

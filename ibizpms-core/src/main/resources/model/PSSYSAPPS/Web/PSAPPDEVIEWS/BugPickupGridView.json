@@ -18,6 +18,12 @@
       "paramType" : "CTRL"
     } ]
   } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "n_plan_noteq",
+    "name" : "n_plan_noteq",
+    "value" : "srfparentkey",
+    "rawValue" : false
+  } ],
   "getPSControls" : [ {
     "aggMode" : "NONE",
     "codeName" : "PickupGird",

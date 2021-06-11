@@ -63,6 +63,11 @@
         "name" : "n_parent_gtandeq",
         "value" : "0",
         "rawValue" : true
+      }, {
+        "key" : "n_plan_noteq",
+        "name" : "n_plan_noteq",
+        "value" : "srfparentkey",
+        "rawValue" : false
       } ],
       "getPSControls" : [ {
         "aggMode" : "NONE",
