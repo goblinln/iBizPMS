@@ -1,14 +1,17 @@
 package cn.ibizlab.pms.standardapi.rest;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.math.BigInteger;
-import java.util.HashMap;
 import lombok.extern.slf4j.Slf4j;
 import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.dataentity.print.IDEPrintRuntime;
+import net.ibizsys.runtime.util.Errors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +40,7 @@ import cn.ibizlab.pms.util.annotation.VersionCheck;
 import cn.ibizlab.pms.core.report.runtime.IbzReportRoleConfigRuntime;
 
 @Slf4j
-@Api(tags = {"汇报角色配置" })
+@Api(tags = {"汇报角色配置"})
 @RestController("StandardAPI-reportroleconfig")
 @RequestMapping("")
 public class ReportRoleConfigResource {
@@ -132,6 +135,48 @@ public class ReportRoleConfigResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+    @ApiOperation(value = "生成汇报角色配置报表", tags = {"汇报角色配置"}, notes = "生成汇报角色配置报表")
+    @RequestMapping(method = RequestMethod.GET, value = "/reportroleconfigs/report/{report_id}.{type}")
+    public void report(@PathVariable("report_id") String report_id, @PathVariable("type") String type, IbzReportRoleConfigSearchContext context, HttpServletResponse response) {
+        try {
+            ibzreportroleconfigRuntime.outputReport(report_id, response.getOutputStream(), context, type, true);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", ibzreportroleconfigRuntime.getDEReportRuntime(report_id).getPSDEReport().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("生成报表[%s]发生错误：%s", report_id, e.getMessage()), Errors.INTERNALERROR, ibzreportroleconfigRuntime);
+        }
+    }
+
+    @ApiOperation(value = "打印汇报角色配置", tags = {"汇报角色配置"}, notes = "打印汇报角色配置")
+    @RequestMapping(method = RequestMethod.GET, value = "/reportroleconfigs/{reportroleconfig_ids}/print/{print_id}.{type}")
+    public void print(@PathVariable("reportroleconfig_ids") Set<String> reportroleconfig_ids, @PathVariable("print_id") String print_id, @PathVariable("type") String type, HttpServletResponse response) {
+        IDEPrintRuntime printRuntime = ibzreportroleconfigRuntime.getDEPrintRuntime(print_id);
+        try {
+            List<IbzReportRoleConfig> domains = new ArrayList<>();
+            for (String reportroleconfig_id : reportroleconfig_ids) {
+                domains.add(ibzreportroleconfigService.get( reportroleconfig_id));
+            }
+            printRuntime.output(response.getOutputStream(), domains.toArray(new IbzReportRoleConfig[domains.size()]), type);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", ibzreportroleconfigRuntime.getDEPrintRuntime(print_id).getPSDEPrint().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("打印数据[%s]发生错误：%s", reportroleconfig_ids, e.getMessage()), Errors.INTERNALERROR, ibzreportroleconfigRuntime);
+        }
+    }
+
+    private String getContentType(String ext) {
+        if ("pdf".equalsIgnoreCase(ext)) {
+            return "application/pdf";
+        } else if ("html".equalsIgnoreCase(ext)) {
+            return "text/html";
+        } else if ("xls".equalsIgnoreCase(ext)) {
+            return "application/vnd.ms-excel";
+        }
+        throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
+    }
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/reportroleconfigs/{reportroleconfig_id}/{action}")

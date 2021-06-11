@@ -1,9 +1,12 @@
 package cn.ibizlab.pms.core.runtime;
 
+import cn.ibizlab.pms.core.runtime.print.SystemDataEntityPrintRuntime;
+import cn.ibizlab.pms.core.runtime.report.SystemDataEntityReportRuntime;
 import cn.ibizlab.pms.util.domain.EntityMP;
 import cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import cn.ibizlab.pms.util.filter.ScopeUtils;
 
+import java.io.OutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.*;
@@ -31,17 +34,23 @@ import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCode;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCodeCond;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
+import net.ibizsys.model.dataentity.print.IPSDEPrint;
 import net.ibizsys.model.dataentity.priv.IPSDEOPPriv;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRole;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRoleOPPriv;
+import net.ibizsys.model.dataentity.report.IPSDEReport;
 import net.ibizsys.model.dataentity.wf.IPSDEWF;
+import net.ibizsys.runtime.DynaInstModes;
 import net.ibizsys.runtime.IDynaInstRuntime;
 import net.ibizsys.runtime.ISystemUtilRuntime;
 import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.dataentity.IDynaInstDataEntityRuntime;
 import net.ibizsys.runtime.dataentity.action.CheckKeyStates;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import net.ibizsys.runtime.ISystemRuntime;
 import net.ibizsys.runtime.dataentity.IDataEntityRuntime;
+import net.ibizsys.runtime.dataentity.print.IDEPrintRuntime;
+import net.ibizsys.runtime.dataentity.report.IDEReportRuntime;
 import net.ibizsys.runtime.security.DataAccessActions;
 import net.ibizsys.runtime.security.DataRanges;
 import net.ibizsys.runtime.security.IUserContext;
@@ -105,12 +114,12 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     protected Map<String, Integer> allOPPrivs = new HashMap<>();
 
     /**
-    * 工作流（排除属性）
-    */
+     * 工作流（排除属性）
+     */
     private final static String EXCLUDEFIELDS = "1";
     /**
-    * 工作流（包含属性）
-    */
+     * 工作流（包含属性）
+     */
     private final static String INCLUDEFIELDS = "2";
 
     @Autowired
@@ -460,6 +469,16 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     abstract public SearchContextBase createSearchContext();
+
+    @Override
+    public IDEReportRuntime createDEReportRuntime(IPSDEReport iPSDEReport) {
+        return new SystemDataEntityReportRuntime();
+    }
+
+    @Override
+    public IDEPrintRuntime createDEPrintRuntime(IPSDEPrint iPSDEPrint) {
+        return new SystemDataEntityPrintRuntime();
+    }
 
     /**
      * 判断是否含有统一资源标识
@@ -1126,6 +1145,44 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             throw new BadRequestException("工作流数据权限检查发生异常"+e);
         }
         return dto;
+    }
+
+    @Override
+    protected void onOutputReport(String strReportId, OutputStream outputStream, ISearchContextBase iSearchContextBase, String strType, boolean bTestPriv) throws Exception {
+        /**
+         * 计算动态实例实体运行时
+         */
+        IDynaInstDataEntityRuntime iDynaInstDataEntityRuntime = null;
+        IDynaInstRuntime iDynaInstRuntime = null;
+        if (this.getDynaInstMode() != DynaInstModes.DISABLE) {
+            String strDynainstid = getDynaInstId(null);
+            if (org.springframework.util.StringUtils.hasLength(strDynainstid)) {
+                iDynaInstRuntime = this.getSystemRuntime().getDynaInstRuntime(strDynainstid);
+                // 设置当前会话的动态实例运行时
+                ActionSessionManager.getCurrentSession().setDynaInstRuntime(iDynaInstRuntime);
+                if (iDynaInstRuntime != null) {
+                    iDynaInstDataEntityRuntime = iDynaInstRuntime.getDynaInstDataEntityRuntime(this.getId());
+                }
+            }
+        }
+        IDEReportRuntime iDEReportRuntime = null;
+        if (iDynaInstDataEntityRuntime != null) {
+            iDEReportRuntime = iDynaInstDataEntityRuntime.getDEReportRuntime(strReportId);
+        } else {
+            iDEReportRuntime = this.getDEReportRuntime(strReportId);
+        }
+
+        if(!this.getUserContext().isSuperuser()) {
+            if (bTestPriv) {
+                if (iDEReportRuntime.getPSDEReport().getPSSysUniRes() != null) {
+                    if (!this.testUnires(iDEReportRuntime.getPSDEReport().getPSSysUniRes().getResCode()))
+                        throw new DataEntityRuntimeException("无报表权限", Errors.INTERNALERROR, this);
+                }
+            }
+        }
+
+        iDEReportRuntime.output(outputStream, iSearchContextBase, strType);
+
     }
 
 }

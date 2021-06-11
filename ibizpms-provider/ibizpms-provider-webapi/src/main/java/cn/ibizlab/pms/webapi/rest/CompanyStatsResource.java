@@ -1,14 +1,17 @@
 package cn.ibizlab.pms.webapi.rest;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.math.BigInteger;
-import java.util.HashMap;
 import lombok.extern.slf4j.Slf4j;
 import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.dataentity.print.IDEPrintRuntime;
+import net.ibizsys.runtime.util.Errors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +40,7 @@ import cn.ibizlab.pms.util.annotation.VersionCheck;
 import cn.ibizlab.pms.core.ibiz.runtime.CompanyStatsRuntime;
 
 @Slf4j
-@Api(tags = {"公司动态汇总" })
+@Api(tags = {"公司动态汇总"})
 @RestController("WebApi-companystats")
 @RequestMapping("")
 public class CompanyStatsResource {
@@ -162,6 +165,48 @@ public class CompanyStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+    @ApiOperation(value = "生成公司动态汇总报表", tags = {"公司动态汇总"}, notes = "生成公司动态汇总报表")
+    @RequestMapping(method = RequestMethod.GET, value = "/companystats/report/{report_id}.{type}")
+    public void report(@PathVariable("report_id") String report_id, @PathVariable("type") String type, CompanyStatsSearchContext context, HttpServletResponse response) {
+        try {
+            companystatsRuntime.outputReport(report_id, response.getOutputStream(), context, type, true);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", companystatsRuntime.getDEReportRuntime(report_id).getPSDEReport().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("生成报表[%s]发生错误：%s", report_id, e.getMessage()), Errors.INTERNALERROR, companystatsRuntime);
+        }
+    }
+
+    @ApiOperation(value = "打印公司动态汇总", tags = {"公司动态汇总"}, notes = "打印公司动态汇总")
+    @RequestMapping(method = RequestMethod.GET, value = "/companystats/{companystats_ids}/print/{print_id}.{type}")
+    public void print(@PathVariable("companystats_ids") Set<Long> companystats_ids, @PathVariable("print_id") String print_id, @PathVariable("type") String type, HttpServletResponse response) {
+        IDEPrintRuntime printRuntime = companystatsRuntime.getDEPrintRuntime(print_id);
+        try {
+            List<CompanyStats> domains = new ArrayList<>();
+            for (Long companystats_id : companystats_ids) {
+                domains.add(companystatsService.get( companystats_id));
+            }
+            printRuntime.output(response.getOutputStream(), domains.toArray(new CompanyStats[domains.size()]), type);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", companystatsRuntime.getDEPrintRuntime(print_id).getPSDEPrint().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("打印数据[%s]发生错误：%s", companystats_ids, e.getMessage()), Errors.INTERNALERROR, companystatsRuntime);
+        }
+    }
+
+    private String getContentType(String ext) {
+        if ("pdf".equalsIgnoreCase(ext)) {
+            return "application/pdf";
+        } else if ("html".equalsIgnoreCase(ext)) {
+            return "text/html";
+        } else if ("xls".equalsIgnoreCase(ext)) {
+            return "application/vnd.ms-excel";
+        }
+        throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
+    }
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/companystats/{companystats_id}/{action}")

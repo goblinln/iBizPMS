@@ -1,14 +1,17 @@
 package cn.ibizlab.pms.standardapi.rest;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.math.BigInteger;
-import java.util.HashMap;
 import lombok.extern.slf4j.Slf4j;
 import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.dataentity.print.IDEPrintRuntime;
+import net.ibizsys.runtime.util.Errors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +40,7 @@ import cn.ibizlab.pms.util.annotation.VersionCheck;
 import cn.ibizlab.pms.core.zentao.runtime.CaseRuntime;
 
 @Slf4j
-@Api(tags = {"测试用例" })
+@Api(tags = {"测试用例"})
 @RestController("StandardAPI-accounttestcase")
 @RequestMapping("")
 public class AccountTestCaseResource {
@@ -99,6 +102,48 @@ public class AccountTestCaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+    @ApiOperation(value = "生成测试用例报表", tags = {"测试用例"}, notes = "生成测试用例报表")
+    @RequestMapping(method = RequestMethod.GET, value = "/accounttestcases/report/{report_id}.{type}")
+    public void report(@PathVariable("report_id") String report_id, @PathVariable("type") String type, CaseSearchContext context, HttpServletResponse response) {
+        try {
+            caseRuntime.outputReport(report_id, response.getOutputStream(), context, type, true);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", caseRuntime.getDEReportRuntime(report_id).getPSDEReport().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("生成报表[%s]发生错误：%s", report_id, e.getMessage()), Errors.INTERNALERROR, caseRuntime);
+        }
+    }
+
+    @ApiOperation(value = "打印测试用例", tags = {"测试用例"}, notes = "打印测试用例")
+    @RequestMapping(method = RequestMethod.GET, value = "/accounttestcases/{accounttestcase_ids}/print/{print_id}.{type}")
+    public void print(@PathVariable("accounttestcase_ids") Set<Long> accounttestcase_ids, @PathVariable("print_id") String print_id, @PathVariable("type") String type, HttpServletResponse response) {
+        IDEPrintRuntime printRuntime = caseRuntime.getDEPrintRuntime(print_id);
+        try {
+            List<Case> domains = new ArrayList<>();
+            for (Long accounttestcase_id : accounttestcase_ids) {
+                domains.add(caseService.get( accounttestcase_id));
+            }
+            printRuntime.output(response.getOutputStream(), domains.toArray(new Case[domains.size()]), type);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", caseRuntime.getDEPrintRuntime(print_id).getPSDEPrint().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("打印数据[%s]发生错误：%s", accounttestcase_ids, e.getMessage()), Errors.INTERNALERROR, caseRuntime);
+        }
+    }
+
+    private String getContentType(String ext) {
+        if ("pdf".equalsIgnoreCase(ext)) {
+            return "application/pdf";
+        } else if ("html".equalsIgnoreCase(ext)) {
+            return "text/html";
+        } else if ("xls".equalsIgnoreCase(ext)) {
+            return "application/vnd.ms-excel";
+        }
+        throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
+    }
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/accounttestcases/{accounttestcase_id}/{action}")

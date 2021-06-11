@@ -1,14 +1,17 @@
 package cn.ibizlab.pms.webapi.rest;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.math.BigInteger;
-import java.util.HashMap;
 import lombok.extern.slf4j.Slf4j;
 import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.dataentity.print.IDEPrintRuntime;
+import net.ibizsys.runtime.util.Errors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +46,7 @@ import cn.ibizlab.pms.core.zentao.domain.TaskEstimate;
 import cn.ibizlab.pms.core.zentao.service.ITaskEstimateService;
 
 @Slf4j
-@Api(tags = {"任务" })
+@Api(tags = {"任务"})
 @RestController("WebApi-task")
 @RequestMapping("")
 public class TaskResource {
@@ -1167,6 +1170,48 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(domains.getContent());
 	}
+
+    @ApiOperation(value = "生成任务报表", tags = {"任务"}, notes = "生成任务报表")
+    @RequestMapping(method = RequestMethod.GET, value = "/tasks/report/{report_id}.{type}")
+    public void report(@PathVariable("report_id") String report_id, @PathVariable("type") String type, TaskSearchContext context, HttpServletResponse response) {
+        try {
+            taskRuntime.outputReport(report_id, response.getOutputStream(), context, type, true);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", taskRuntime.getDEReportRuntime(report_id).getPSDEReport().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("生成报表[%s]发生错误：%s", report_id, e.getMessage()), Errors.INTERNALERROR, taskRuntime);
+        }
+    }
+
+    @ApiOperation(value = "打印任务", tags = {"任务"}, notes = "打印任务")
+    @RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_ids}/print/{print_id}.{type}")
+    public void print(@PathVariable("task_ids") Set<Long> task_ids, @PathVariable("print_id") String print_id, @PathVariable("type") String type, HttpServletResponse response) {
+        IDEPrintRuntime printRuntime = taskRuntime.getDEPrintRuntime(print_id);
+        try {
+            List<Task> domains = new ArrayList<>();
+            for (Long task_id : task_ids) {
+                domains.add(taskService.get( task_id));
+            }
+            printRuntime.output(response.getOutputStream(), domains.toArray(new Task[domains.size()]), type);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", taskRuntime.getDEPrintRuntime(print_id).getPSDEPrint().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("打印数据[%s]发生错误：%s", task_ids, e.getMessage()), Errors.INTERNALERROR, taskRuntime);
+        }
+    }
+
+    private String getContentType(String ext) {
+        if ("pdf".equalsIgnoreCase(ext)) {
+            return "application/pdf";
+        } else if ("html".equalsIgnoreCase(ext)) {
+            return "text/html";
+        } else if ("xls".equalsIgnoreCase(ext)) {
+            return "application/vnd.ms-excel";
+        }
+        throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
+    }
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/{action}")

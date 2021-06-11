@@ -1,14 +1,17 @@
 package cn.ibizlab.pms.webapi.rest;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.math.BigInteger;
-import java.util.HashMap;
 import lombok.extern.slf4j.Slf4j;
 import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.dataentity.print.IDEPrintRuntime;
+import net.ibizsys.runtime.util.Errors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +40,7 @@ import cn.ibizlab.pms.util.annotation.VersionCheck;
 import cn.ibizlab.pms.core.report.runtime.IbzWeeklyRuntime;
 
 @Slf4j
-@Api(tags = {"周报" })
+@Api(tags = {"周报"})
 @RestController("WebApi-ibzweekly")
 @RequestMapping("")
 public class IbzWeeklyResource {
@@ -293,6 +296,48 @@ public class IbzWeeklyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+    @ApiOperation(value = "生成周报报表", tags = {"周报"}, notes = "生成周报报表")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/report/{report_id}.{type}")
+    public void report(@PathVariable("report_id") String report_id, @PathVariable("type") String type, IbzWeeklySearchContext context, HttpServletResponse response) {
+        try {
+            ibzweeklyRuntime.outputReport(report_id, response.getOutputStream(), context, type, true);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", ibzweeklyRuntime.getDEReportRuntime(report_id).getPSDEReport().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("生成报表[%s]发生错误：%s", report_id, e.getMessage()), Errors.INTERNALERROR, ibzweeklyRuntime);
+        }
+    }
+
+    @ApiOperation(value = "打印周报", tags = {"周报"}, notes = "打印周报")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/{ibzweekly_ids}/print/{print_id}.{type}")
+    public void print(@PathVariable("ibzweekly_ids") Set<Long> ibzweekly_ids, @PathVariable("print_id") String print_id, @PathVariable("type") String type, HttpServletResponse response) {
+        IDEPrintRuntime printRuntime = ibzweeklyRuntime.getDEPrintRuntime(print_id);
+        try {
+            List<IbzWeekly> domains = new ArrayList<>();
+            for (Long ibzweekly_id : ibzweekly_ids) {
+                domains.add(ibzweeklyService.get( ibzweekly_id));
+            }
+            printRuntime.output(response.getOutputStream(), domains.toArray(new IbzWeekly[domains.size()]), type);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", ibzweeklyRuntime.getDEPrintRuntime(print_id).getPSDEPrint().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("打印数据[%s]发生错误：%s", ibzweekly_ids, e.getMessage()), Errors.INTERNALERROR, ibzweeklyRuntime);
+        }
+    }
+
+    private String getContentType(String ext) {
+        if ("pdf".equalsIgnoreCase(ext)) {
+            return "application/pdf";
+        } else if ("html".equalsIgnoreCase(ext)) {
+            return "text/html";
+        } else if ("xls".equalsIgnoreCase(ext)) {
+            return "application/vnd.ms-excel";
+        }
+        throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
+    }
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/{action}")

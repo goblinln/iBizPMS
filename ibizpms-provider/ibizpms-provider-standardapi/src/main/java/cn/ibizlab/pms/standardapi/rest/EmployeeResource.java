@@ -1,14 +1,17 @@
 package cn.ibizlab.pms.standardapi.rest;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.math.BigInteger;
-import java.util.HashMap;
 import lombok.extern.slf4j.Slf4j;
 import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.dataentity.print.IDEPrintRuntime;
+import net.ibizsys.runtime.util.Errors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +39,7 @@ import cn.ibizlab.pms.core.ou.filter.SysEmployeeSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
 
 @Slf4j
-@Api(tags = {"人员" })
+@Api(tags = {"人员"})
 @RestController("StandardAPI-employee")
 @RequestMapping("")
 public class EmployeeResource {
@@ -134,6 +137,27 @@ public class EmployeeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+    @ApiOperation(value = "生成人员报表", tags = {"人员"}, notes = "生成人员报表")
+    @RequestMapping(method = RequestMethod.GET, value = "/employees/report/{report_id}.{type}")
+    public void report(@PathVariable("report_id") String report_id, @PathVariable("type") String type, SysEmployeeSearchContext context, HttpServletResponse response) {
+    }
+
+    @ApiOperation(value = "打印人员", tags = {"人员"}, notes = "打印人员")
+    @RequestMapping(method = RequestMethod.GET, value = "/employees/{employee_ids}/print/{print_id}.{type}")
+    public void print(@PathVariable("employee_ids") Set<String> employee_ids, @PathVariable("print_id") String print_id, @PathVariable("type") String type, HttpServletResponse response) {
+    }
+
+    private String getContentType(String ext) {
+        if ("pdf".equalsIgnoreCase(ext)) {
+            return "application/pdf";
+        } else if ("html".equalsIgnoreCase(ext)) {
+            return "text/html";
+        } else if ("xls".equalsIgnoreCase(ext)) {
+            return "application/vnd.ms-excel";
+        }
+        throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
+    }
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/employees/{employee_id}/{action}")

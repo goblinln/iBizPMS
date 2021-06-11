@@ -403,11 +403,13 @@ export class NewDynamicTimeLine extends AppListBase {
      * @memberof NewDynamicTimeLine
      */
     public render(): any {
-        if (!this.controlIsLoaded || this.items.length == 0){
+        if (!this.controlIsLoaded){
             return null;
         }
         return <div class={['app-list', this.items.length > 0 ? '' : 'app-list-empty']}>
-            {this.renderActionTimeline()}
+            {this.items.length > 0 
+            ? this.renderActionTimeline()
+            : this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
         </div>
     }
 

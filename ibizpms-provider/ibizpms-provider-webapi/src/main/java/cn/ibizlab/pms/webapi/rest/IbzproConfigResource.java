@@ -1,14 +1,17 @@
 package cn.ibizlab.pms.webapi.rest;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.math.BigInteger;
-import java.util.HashMap;
 import lombok.extern.slf4j.Slf4j;
 import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.dataentity.print.IDEPrintRuntime;
+import net.ibizsys.runtime.util.Errors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +40,7 @@ import cn.ibizlab.pms.util.annotation.VersionCheck;
 import cn.ibizlab.pms.core.ibizpro.runtime.IbzproConfigRuntime;
 
 @Slf4j
-@Api(tags = {"系统配置表" })
+@Api(tags = {"系统配置表"})
 @RestController("WebApi-ibzproconfig")
 @RequestMapping("")
 public class IbzproConfigResource {
@@ -166,6 +169,48 @@ public class IbzproConfigResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+    @ApiOperation(value = "生成系统配置表报表", tags = {"系统配置表"}, notes = "生成系统配置表报表")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibzproconfigs/report/{report_id}.{type}")
+    public void report(@PathVariable("report_id") String report_id, @PathVariable("type") String type, IbzproConfigSearchContext context, HttpServletResponse response) {
+        try {
+            ibzproconfigRuntime.outputReport(report_id, response.getOutputStream(), context, type, true);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", ibzproconfigRuntime.getDEReportRuntime(report_id).getPSDEReport().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("生成报表[%s]发生错误：%s", report_id, e.getMessage()), Errors.INTERNALERROR, ibzproconfigRuntime);
+        }
+    }
+
+    @ApiOperation(value = "打印系统配置表", tags = {"系统配置表"}, notes = "打印系统配置表")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibzproconfigs/{ibzproconfig_ids}/print/{print_id}.{type}")
+    public void print(@PathVariable("ibzproconfig_ids") Set<String> ibzproconfig_ids, @PathVariable("print_id") String print_id, @PathVariable("type") String type, HttpServletResponse response) {
+        IDEPrintRuntime printRuntime = ibzproconfigRuntime.getDEPrintRuntime(print_id);
+        try {
+            List<IbzproConfig> domains = new ArrayList<>();
+            for (String ibzproconfig_id : ibzproconfig_ids) {
+                domains.add(ibzproconfigService.get( ibzproconfig_id));
+            }
+            printRuntime.output(response.getOutputStream(), domains.toArray(new IbzproConfig[domains.size()]), type);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", ibzproconfigRuntime.getDEPrintRuntime(print_id).getPSDEPrint().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("打印数据[%s]发生错误：%s", ibzproconfig_ids, e.getMessage()), Errors.INTERNALERROR, ibzproconfigRuntime);
+        }
+    }
+
+    private String getContentType(String ext) {
+        if ("pdf".equalsIgnoreCase(ext)) {
+            return "application/pdf";
+        } else if ("html".equalsIgnoreCase(ext)) {
+            return "text/html";
+        } else if ("xls".equalsIgnoreCase(ext)) {
+            return "application/vnd.ms-excel";
+        }
+        throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
+    }
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/{ibzproconfig_id}/{action}")

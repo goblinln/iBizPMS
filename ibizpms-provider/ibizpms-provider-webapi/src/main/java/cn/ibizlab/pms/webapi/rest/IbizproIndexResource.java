@@ -1,14 +1,17 @@
 package cn.ibizlab.pms.webapi.rest;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.math.BigInteger;
-import java.util.HashMap;
 import lombok.extern.slf4j.Slf4j;
 import com.alibaba.fastjson.JSONObject;
+
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.dataentity.print.IDEPrintRuntime;
+import net.ibizsys.runtime.util.Errors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +40,7 @@ import cn.ibizlab.pms.util.annotation.VersionCheck;
 import cn.ibizlab.pms.core.ibizpro.runtime.IbizproIndexRuntime;
 
 @Slf4j
-@Api(tags = {"索引检索" })
+@Api(tags = {"索引检索"})
 @RestController("WebApi-ibizproindex")
 @RequestMapping("")
 public class IbizproIndexResource {
@@ -177,6 +180,48 @@ public class IbizproIndexResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+    @ApiOperation(value = "生成索引检索报表", tags = {"索引检索"}, notes = "生成索引检索报表")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizproindices/report/{report_id}.{type}")
+    public void report(@PathVariable("report_id") String report_id, @PathVariable("type") String type, IbizproIndexSearchContext context, HttpServletResponse response) {
+        try {
+            ibizproindexRuntime.outputReport(report_id, response.getOutputStream(), context, type, true);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", ibizproindexRuntime.getDEReportRuntime(report_id).getPSDEReport().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("生成报表[%s]发生错误：%s", report_id, e.getMessage()), Errors.INTERNALERROR, ibizproindexRuntime);
+        }
+    }
+
+    @ApiOperation(value = "打印索引检索", tags = {"索引检索"}, notes = "打印索引检索")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizproindices/{ibizproindex_ids}/print/{print_id}.{type}")
+    public void print(@PathVariable("ibizproindex_ids") Set<Long> ibizproindex_ids, @PathVariable("print_id") String print_id, @PathVariable("type") String type, HttpServletResponse response) {
+        IDEPrintRuntime printRuntime = ibizproindexRuntime.getDEPrintRuntime(print_id);
+        try {
+            List<IbizproIndex> domains = new ArrayList<>();
+            for (Long ibizproindex_id : ibizproindex_ids) {
+                domains.add(ibizproindexService.get( ibizproindex_id));
+            }
+            printRuntime.output(response.getOutputStream(), domains.toArray(new IbizproIndex[domains.size()]), type);
+            response.setHeader("Content-Disposition", String.format("inline;filename=%1$s.%2$s", ibizproindexRuntime.getDEPrintRuntime(print_id).getPSDEPrint().getName(), type));
+            response.setContentType(getContentType(type));
+            response.setCharacterEncoding("utf-8");
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("打印数据[%s]发生错误：%s", ibizproindex_ids, e.getMessage()), Errors.INTERNALERROR, ibizproindexRuntime);
+        }
+    }
+
+    private String getContentType(String ext) {
+        if ("pdf".equalsIgnoreCase(ext)) {
+            return "application/pdf";
+        } else if ("html".equalsIgnoreCase(ext)) {
+            return "text/html";
+        } else if ("xls".equalsIgnoreCase(ext)) {
+            return "application/vnd.ms-excel";
+        }
+        throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
+    }
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/{ibizproindex_id}/{action}")
