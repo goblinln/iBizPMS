@@ -149,7 +149,7 @@ export class DirectoryTree extends AppDefaultTree {
 			const response = await this.service.getNodes(tempContext,params)
 			this.onControlResponse('load', response);
 			if (!response || response.status !== 200) {
-				this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: response.info });
+				this.$throw(this.$t('app.commonwords.wrong'),'load');
 				return;
 			}
 			const _items = response.data;

@@ -101,7 +101,7 @@ export class PivotTable extends AppDefaultGrid {
             this.onControlResponse('load', response);
             if (!response.status || response.status !== 200) {
                 if (response.errorMessage) {
-                    this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: response.errorMessage });
+                    this.$throw(this.$t('app.commonwords.wrong'),'load');
                 }
                 return;
             }
@@ -163,7 +163,7 @@ export class PivotTable extends AppDefaultGrid {
             if (response && response.status === 401) {
                 return;
             }
-            this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: response.errorMessage });
+            this.$throw(this.$t('app.commonwords.wrong'),'load');
         });
     }
 
