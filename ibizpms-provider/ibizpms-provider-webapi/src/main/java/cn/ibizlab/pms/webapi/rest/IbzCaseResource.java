@@ -256,6 +256,10 @@ public class IbzCaseResource {
     @ApiOperation(value = "根据用例库更新测试用例", tags = {"测试用例" },  notes = "根据用例库更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
     public ResponseEntity<IbzCaseDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzCaseDTO ibzcasedto) {
+        IbzCase testget = ibzcaseService.get(ibzcase_id);
+        if (testget.getLib() != ibzlib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         IbzCase domain = ibzcaseMapping.toDomain(ibzcasedto);
         domain.setLib(ibzlib_id);
         domain.setId(ibzcase_id);

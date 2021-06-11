@@ -306,6 +306,10 @@ public class ProjectTeamResource {
     @ApiOperation(value = "根据项目更新项目团队", tags = {"项目团队" },  notes = "根据项目更新项目团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id, @RequestBody ProjectTeamDTO projectteamdto) {
+        ProjectTeam testget = projectteamService.get(projectteam_id);
+        if (testget.getRoot() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);
         domain.setRoot(project_id);
         domain.setId(projectteam_id);

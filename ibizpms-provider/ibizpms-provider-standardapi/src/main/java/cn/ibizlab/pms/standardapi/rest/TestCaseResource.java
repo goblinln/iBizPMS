@@ -106,6 +106,10 @@ public class TestCaseResource {
     @ApiOperation(value = "根据产品更新测试用例", tags = {"测试用例" },  notes = "根据产品更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/testcases/{testcase_id}")
     public ResponseEntity<TestCaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
+        Case testget = caseService.get(testcase_id);
+        if (testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         Case domain = testcaseMapping.toDomain(testcasedto);
         domain.setProduct(product_id);
         domain.setId(testcase_id);

@@ -102,6 +102,10 @@ public class IbzLibCaseStepsResource {
     @ApiOperation(value = "根据测试用例更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例更新用例库用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> updateByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
+        IbzLibCaseSteps testget = ibzlibcasestepsService.get(ibzlibcasesteps_id);
+        if (testget.getIbizcase() != ibzcase_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         IbzLibCaseSteps domain = ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto);
         domain.setIbizcase(ibzcase_id);
         domain.setId(ibzlibcasesteps_id);
@@ -204,6 +208,10 @@ public class IbzLibCaseStepsResource {
     @ApiOperation(value = "根据用例库测试用例更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例更新用例库用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> updateByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
+        IbzLibCaseSteps testget = ibzlibcasestepsService.get(ibzlibcasesteps_id);
+        if (testget.getIbizcase() != ibzcase_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         IbzLibCaseSteps domain = ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto);
         domain.setIbizcase(ibzcase_id);
         domain.setId(ibzlibcasesteps_id);

@@ -304,6 +304,10 @@ public class TestSuiteResource {
     @ApiOperation(value = "根据产品更新测试套件", tags = {"测试套件" },  notes = "根据产品更新测试套件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testsuites/{testsuite_id}")
     public ResponseEntity<TestSuiteDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
+        TestSuite testget = testsuiteService.get(testsuite_id);
+        if (testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
         domain.setProduct(product_id);
         domain.setId(testsuite_id);

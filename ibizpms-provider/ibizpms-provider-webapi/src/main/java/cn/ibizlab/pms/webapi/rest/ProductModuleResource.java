@@ -324,6 +324,10 @@ public class ProductModuleResource {
     @ApiOperation(value = "根据产品更新需求模块", tags = {"需求模块" },  notes = "根据产品更新需求模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productmodules/{productmodule_id}")
     public ResponseEntity<ProductModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
+        ProductModule testget = productmoduleService.get(productmodule_id);
+        if (testget.getRoot() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
         domain.setRoot(product_id);
         domain.setId(productmodule_id);

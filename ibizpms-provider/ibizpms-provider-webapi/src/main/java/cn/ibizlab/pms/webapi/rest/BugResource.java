@@ -1004,6 +1004,10 @@ public class BugResource {
     @ApiOperation(value = "根据产品更新Bug", tags = {"Bug" },  notes = "根据产品更新Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+        Bug testget = bugService.get(bug_id);
+        if (testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
         domain.setId(bug_id);

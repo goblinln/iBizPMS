@@ -306,6 +306,10 @@ public class PRODUCTTEAMResource {
     @ApiOperation(value = "根据产品更新产品团队", tags = {"产品团队" },  notes = "根据产品更新产品团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productteams/{productteam_id}")
     public ResponseEntity<PRODUCTTEAMDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id, @RequestBody PRODUCTTEAMDTO productteamdto) {
+        PRODUCTTEAM testget = productteamService.get(productteam_id);
+        if (testget.getRoot() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
         domain.setRoot(product_id);
         domain.setId(productteam_id);

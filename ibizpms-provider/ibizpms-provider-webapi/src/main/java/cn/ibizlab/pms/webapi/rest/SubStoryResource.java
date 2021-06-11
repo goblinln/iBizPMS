@@ -1183,6 +1183,10 @@ public class SubStoryResource {
     @ApiOperation(value = "根据需求更新需求", tags = {"需求" },  notes = "根据需求更新需求")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/substories/{substory_id}")
     public ResponseEntity<SubStoryDTO> updateByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
+        Story testget = storyService.get(substory_id);
+        if (testget.getParent() != story_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
         domain.setId(substory_id);
@@ -2240,6 +2244,10 @@ public class SubStoryResource {
     @ApiOperation(value = "根据产品需求更新需求", tags = {"需求" },  notes = "根据产品需求更新需求")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
     public ResponseEntity<SubStoryDTO> updateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
+        Story testget = storyService.get(substory_id);
+        if (testget.getParent() != story_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         Story domain = substoryMapping.toDomain(substorydto);
         domain.setParent(story_id);
         domain.setId(substory_id);

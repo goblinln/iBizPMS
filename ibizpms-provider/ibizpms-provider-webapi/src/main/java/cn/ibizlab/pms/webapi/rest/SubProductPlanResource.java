@@ -100,6 +100,10 @@ public class SubProductPlanResource {
     @ApiOperation(value = "根据产品计划更新产品计划", tags = {"产品计划" },  notes = "根据产品计划更新产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<SubProductPlanDTO> updateByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
+        ProductPlan testget = productplanService.get(subproductplan_id);
+        if (testget.getParent() != productplan_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
         domain.setId(subproductplan_id);
@@ -606,6 +610,10 @@ public class SubProductPlanResource {
     @ApiOperation(value = "根据产品产品计划更新产品计划", tags = {"产品计划" },  notes = "根据产品产品计划更新产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<SubProductPlanDTO> updateByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
+        ProductPlan testget = productplanService.get(subproductplan_id);
+        if (testget.getParent() != productplan_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
         domain.setParent(productplan_id);
         domain.setId(subproductplan_id);

@@ -100,6 +100,10 @@ public class TaskTeamResource {
     @ApiOperation(value = "根据任务更新任务团队", tags = {"任务团队" },  notes = "根据任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
+        TaskTeam testget = taskteamService.get(taskteam_id);
+        if (testget.getRoot() != task_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
         domain.setRoot(task_id);
         domain.setId(taskteam_id);
@@ -197,6 +201,10 @@ public class TaskTeamResource {
     @ApiOperation(value = "根据项目任务更新任务团队", tags = {"任务团队" },  notes = "根据项目任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
+        TaskTeam testget = taskteamService.get(taskteam_id);
+        if (testget.getRoot() != task_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
         domain.setRoot(task_id);
         domain.setId(taskteam_id);

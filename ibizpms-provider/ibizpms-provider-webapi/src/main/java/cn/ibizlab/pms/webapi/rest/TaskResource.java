@@ -1277,6 +1277,10 @@ public class TaskResource {
     @ApiOperation(value = "根据项目更新任务", tags = {"任务" },  notes = "根据项目更新任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task testget = taskService.get(task_id);
+        if (testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         Task domain = taskMapping.toDomain(taskdto);
         domain.setProject(project_id);
         domain.setId(task_id);

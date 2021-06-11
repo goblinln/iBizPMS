@@ -274,6 +274,10 @@ public class BurnResource {
     @ApiOperation(value = "根据项目更新burn", tags = {"burn" },  notes = "根据项目更新burn")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/burns/{burn_id}")
     public ResponseEntity<BurnDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
+        Burn testget = burnService.get(burn_id);
+        if (testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         Burn domain = burnMapping.toDomain(burndto);
         domain.setProject(project_id);
         domain.setId(burn_id);

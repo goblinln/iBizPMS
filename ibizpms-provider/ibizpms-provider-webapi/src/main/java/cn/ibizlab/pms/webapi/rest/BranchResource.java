@@ -270,6 +270,10 @@ public class BranchResource {
     @ApiOperation(value = "根据产品更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品更新产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/branches/{branch_id}")
     public ResponseEntity<BranchDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
+        Branch testget = branchService.get(branch_id);
+        if (testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         Branch domain = branchMapping.toDomain(branchdto);
         domain.setProduct(product_id);
         domain.setId(branch_id);

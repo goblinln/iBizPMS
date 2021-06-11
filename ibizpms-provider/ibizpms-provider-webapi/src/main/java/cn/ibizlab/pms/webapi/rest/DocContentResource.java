@@ -260,6 +260,10 @@ public class DocContentResource {
     @ApiOperation(value = "根据文档更新文档内容", tags = {"文档内容" },  notes = "根据文档更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> updateByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
+        DocContent testget = doccontentService.get(doccontent_id);
+        if (testget.getDoc() != doc_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocContent domain = doccontentMapping.toDomain(doccontentdto);
         domain.setDoc(doc_id);
         domain.setId(doccontent_id);
@@ -370,6 +374,10 @@ public class DocContentResource {
     @ApiOperation(value = "根据文档库文档更新文档内容", tags = {"文档内容" },  notes = "根据文档库文档更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> updateByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
+        DocContent testget = doccontentService.get(doccontent_id);
+        if (testget.getDoc() != doc_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocContent domain = doccontentMapping.toDomain(doccontentdto);
         domain.setDoc(doc_id);
         domain.setId(doccontent_id);
@@ -481,6 +489,10 @@ public class DocContentResource {
     @ApiOperation(value = "根据产品文档库文档更新文档内容", tags = {"文档内容" },  notes = "根据产品文档库文档更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> updateByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
+        DocContent testget = doccontentService.get(doccontent_id);
+        if (testget.getDoc() != doc_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocContent domain = doccontentMapping.toDomain(doccontentdto);
         domain.setDoc(doc_id);
         domain.setId(doccontent_id);
@@ -592,6 +604,10 @@ public class DocContentResource {
     @ApiOperation(value = "根据项目文档库文档更新文档内容", tags = {"文档内容" },  notes = "根据项目文档库文档更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> updateByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
+        DocContent testget = doccontentService.get(doccontent_id);
+        if (testget.getDoc() != doc_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocContent domain = doccontentMapping.toDomain(doccontentdto);
         domain.setDoc(doc_id);
         domain.setId(doccontent_id);

@@ -260,6 +260,10 @@ public class IbzLibModuleResource {
     @ApiOperation(value = "根据用例库更新用例库模块", tags = {"用例库模块" },  notes = "根据用例库更新用例库模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<IbzLibModuleDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
+        IbzLibModule testget = ibzlibmoduleService.get(ibzlibmodule_id);
+        if (testget.getRoot() != ibzlib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         IbzLibModule domain = ibzlibmoduleMapping.toDomain(ibzlibmoduledto);
         domain.setRoot(ibzlib_id);
         domain.setId(ibzlibmodule_id);

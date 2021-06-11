@@ -251,6 +251,10 @@ public class TestRunResource {
     @ApiOperation(value = "根据测试版本更新测试运行", tags = {"测试运行" },  notes = "根据测试版本更新测试运行")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> updateByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
+        TestRun testget = testrunService.get(testrun_id);
+        if (testget.getTask() != testtask_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestRun domain = testrunMapping.toDomain(testrundto);
         domain.setTask(testtask_id);
         domain.setId(testrun_id);
@@ -353,6 +357,10 @@ public class TestRunResource {
     @ApiOperation(value = "根据产品测试版本更新测试运行", tags = {"测试运行" },  notes = "根据产品测试版本更新测试运行")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> updateByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
+        TestRun testget = testrunService.get(testrun_id);
+        if (testget.getTask() != testtask_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestRun domain = testrunMapping.toDomain(testrundto);
         domain.setTask(testtask_id);
         domain.setId(testrun_id);
@@ -455,6 +463,10 @@ public class TestRunResource {
     @ApiOperation(value = "根据项目测试版本更新测试运行", tags = {"测试运行" },  notes = "根据项目测试版本更新测试运行")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> updateByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
+        TestRun testget = testrunService.get(testrun_id);
+        if (testget.getTask() != testtask_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestRun domain = testrunMapping.toDomain(testrundto);
         domain.setTask(testtask_id);
         domain.setId(testrun_id);

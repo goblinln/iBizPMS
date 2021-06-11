@@ -100,6 +100,10 @@ public class DocLibModuleResource {
     @ApiOperation(value = "根据文档库更新文档库分类", tags = {"文档库分类" },  notes = "根据文档库更新文档库分类")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> updateByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
+        DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
+        if (testget.getRoot() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
         domain.setRoot(doclib_id);
         domain.setId(doclibmodule_id);
@@ -246,6 +250,10 @@ public class DocLibModuleResource {
     @ApiOperation(value = "根据产品文档库更新文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库更新文档库分类")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> updateByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
+        DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
+        if (testget.getRoot() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
         domain.setRoot(doclib_id);
         domain.setId(doclibmodule_id);
@@ -392,6 +400,10 @@ public class DocLibModuleResource {
     @ApiOperation(value = "根据项目文档库更新文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库更新文档库分类")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> updateByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
+        DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
+        if (testget.getRoot() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
         domain.setRoot(doclib_id);
         domain.setId(doclibmodule_id);
@@ -539,6 +551,10 @@ public class DocLibModuleResource {
     @ApiOperation(value = "根据产品项目文档库更新文档库分类", tags = {"文档库分类" },  notes = "根据产品项目文档库更新文档库分类")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> updateByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
+        DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
+        if (testget.getRoot() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
         domain.setRoot(doclib_id);
         domain.setId(doclibmodule_id);

@@ -100,6 +100,10 @@ public class TestReportResource {
     @ApiOperation(value = "根据项目更新测试报告", tags = {"测试报告" },  notes = "根据项目更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport testget = testreportService.get(testreport_id);
+        if (testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
@@ -248,6 +252,10 @@ public class TestReportResource {
     @ApiOperation(value = "根据产品更新测试报告", tags = {"测试报告" },  notes = "根据产品更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport testget = testreportService.get(testreport_id);
+        if (testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
         domain.setId(testreport_id);
@@ -397,6 +405,10 @@ public class TestReportResource {
     @ApiOperation(value = "根据产品项目更新测试报告", tags = {"测试报告" },  notes = "根据产品项目更新测试报告")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> updateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport testget = testreportService.get(testreport_id);
+        if (testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);

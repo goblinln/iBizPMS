@@ -101,6 +101,10 @@ public class ProjectProductResource {
     @ApiOperation(value = "根据产品更新项目产品", tags = {"项目产品" },  notes = "根据产品更新项目产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id, @RequestBody ProjectProductDTO projectproductdto) {
+        ProjectProduct testget = projectproductService.get(projectproduct_id);
+        if (testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
         domain.setProduct(product_id);
         domain.setId(projectproduct_id);
@@ -211,6 +215,10 @@ public class ProjectProductResource {
     @ApiOperation(value = "根据项目更新项目产品", tags = {"项目产品" },  notes = "根据项目更新项目产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id, @RequestBody ProjectProductDTO projectproductdto) {
+        ProjectProduct testget = projectproductService.get(projectproduct_id);
+        if (testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
         domain.setProject(project_id);
         domain.setId(projectproduct_id);

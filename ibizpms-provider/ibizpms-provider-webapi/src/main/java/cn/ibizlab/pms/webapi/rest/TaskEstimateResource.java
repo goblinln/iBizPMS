@@ -359,6 +359,10 @@ public class TaskEstimateResource {
     @ApiOperation(value = "根据任务更新任务预计", tags = {"任务预计" },  notes = "根据任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
+        TaskEstimate testget = taskestimateService.get(taskestimate_id);
+        if (testget.getTask() != task_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
         domain.setId(taskestimate_id);
@@ -570,6 +574,10 @@ public class TaskEstimateResource {
     @ApiOperation(value = "根据项目任务更新任务预计", tags = {"任务预计" },  notes = "根据项目任务更新任务预计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
+        TaskEstimate testget = taskestimateService.get(taskestimate_id);
+        if (testget.getTask() != task_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
         domain.setId(taskestimate_id);
