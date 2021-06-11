@@ -25,14 +25,14 @@
     } ]
   } ],
   "getPSAppViewLogics" : [ {
-    "eventArg" : "deuiaction1",
+    "eventArg" : "deuiaction1_create",
     "eventNames" : "CLICK",
     "logicTrigger" : "CTRLEVENT",
     "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction1_click",
+    "name" : "toolbar_deuiaction1_create_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
-      "id" : "toolbar_deuiaction1"
+      "id" : "toolbar_deuiaction1_create"
     },
     "getPSViewCtrlName" : "toolbar"
   }, {
@@ -47,36 +47,14 @@
     },
     "getPSViewCtrlName" : "toolbar"
   }, {
-    "eventArg" : "deuiaction2",
+    "eventArg" : "deuiaction3",
     "eventNames" : "CLICK",
     "logicTrigger" : "CTRLEVENT",
     "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction2_click",
+    "name" : "toolbar_deuiaction3_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
-      "id" : "toolbar_deuiaction2"
-    },
-    "getPSViewCtrlName" : "toolbar"
-  }, {
-    "eventArg" : "deuiaction5",
-    "eventNames" : "CLICK",
-    "logicTrigger" : "CTRLEVENT",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction5_click",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "toolbar_deuiaction5"
-    },
-    "getPSViewCtrlName" : "toolbar"
-  }, {
-    "eventArg" : "deuiaction7",
-    "eventNames" : "CLICK",
-    "logicTrigger" : "CTRLEVENT",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction7_click",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "toolbar_deuiaction7"
+      "id" : "toolbar_deuiaction3"
     },
     "getPSViewCtrlName" : "toolbar"
   }, {
@@ -151,36 +129,26 @@
     }
   } ],
   "getPSAppViewUIActions" : [ {
-    "name" : "toolbar_deuiaction1",
+    "name" : "toolbar_deuiaction1_create",
     "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+      },
       "modelref" : true,
-      "id" : "New"
+      "id" : "Create@Task"
     },
+    "uIActionTarget" : "NONE",
     "xDataControlName" : "grid"
   }, {
     "name" : "toolbar_deuiaction4",
-    "getPSUIAction" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "uIActionTarget" : "MULTIKEY",
-    "xDataControlName" : "grid"
-  }, {
-    "name" : "toolbar_deuiaction2",
-    "getPSUIAction" : {
-      "modelref" : true,
-      "id" : "Refresh"
-    },
-    "xDataControlName" : "grid"
-  }, {
-    "name" : "toolbar_deuiaction5",
     "getPSUIAction" : {
       "modelref" : true,
       "id" : "ExportExcel"
     },
     "xDataControlName" : "grid"
   }, {
-    "name" : "toolbar_deuiaction7",
+    "name" : "toolbar_deuiaction3",
     "getPSUIAction" : {
       "modelref" : true,
       "id" : "ToggleFilter"
@@ -191,7 +159,7 @@
     "codeName" : "MainGridView_ByModuletoolbar",
     "controlType" : "TOOLBAR",
     "hookEventNames" : [ "CLICK" ],
-    "logicName" : "表格界面（新建、删除、刷新、导出）",
+    "logicName" : "表格界面（新建、编辑、导出、过滤）",
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -201,133 +169,51 @@
       "id" : "TOOLBAR"
     },
     "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.NEW"
-      },
       "caption" : "新建",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
+      "name" : "deuiaction1_create",
       "noPrivDisplayMode" : 2,
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "toolbar_deuiaction1"
+        "id" : "toolbar_deuiaction1_create"
       },
       "getPSSysImage" : {
         "glyph" : "xf067@FontAwesome",
         "cssClass" : "fa fa-plus"
       },
       "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.NEW"
-        },
+        "actionTarget" : "NONE",
         "caption" : "新建",
-        "codeName" : "New",
-        "fullCodeName" : "New",
-        "name" : "表格界面_新建操作",
+        "codeName" : "Create",
+        "dataAccessAction" : "CREATE",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Task_Create",
+        "name" : "新建任务",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+        },
         "getPSSysImage" : {
-          "glyph" : "xf0f6@FontAwesome",
-          "cssClass" : "fa fa-file-text-o"
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
         },
+        "refreshMode" : 1,
         "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.NEW"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "New",
-        "uIActionType" : "DEUIACTION"
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "Create",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "Create@Task"
       },
       "tooltip" : "新建",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.NEW"
-      },
       "showCaption" : true,
       "showIcon" : true
-    }, {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.REMOVE"
-      },
-      "caption" : "删除",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction4",
-      "noPrivDisplayMode" : 1,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction4"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf00d@FontAwesome",
-        "cssClass" : "fa fa-remove"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "MULTIKEY",
-        "noPrivDisplayMode" : 1,
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.REMOVE"
-        },
-        "caption" : "删除",
-        "codeName" : "Remove",
-        "dataAccessAction" : "DELETE",
-        "fullCodeName" : "Remove",
-        "name" : "表格界面_删除操作",
-        "getPSSysImage" : {
-          "glyph" : "xf00d@FontAwesome",
-          "cssClass" : "fa fa-remove"
-        },
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "Remove",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "删除",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "itemType" : "SEPERATOR",
-      "name" : "seperator1",
-      "spanMode" : false
-    }, {
-      "caption" : "刷新",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf021@FontAwesome",
-        "cssClass" : "fa fa-refresh"
-      },
-      "getPSUIAction" : {
-        "caption" : "刷新",
-        "codeName" : "Refresh",
-        "fullCodeName" : "Refresh",
-        "name" : "表格界面_刷新操作",
-        "getPSSysImage" : {
-          "glyph" : "xf021@FontAwesome",
-          "cssClass" : "fa fa-refresh"
-        },
-        "timeout" : 60000,
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "Refresh",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "刷新",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "itemType" : "SEPERATOR",
-      "name" : "seperator3",
-      "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
         "lanResTag" : "TBB.TEXT.*.EXPORT"
@@ -335,11 +221,11 @@
       "caption" : "导出",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
-      "name" : "deuiaction5",
+      "name" : "deuiaction4",
       "noPrivDisplayMode" : 2,
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "toolbar_deuiaction5"
+        "id" : "toolbar_deuiaction4"
       },
       "getPSSysImage" : {
         "glyph" : "xf1c3@FontAwesome",
@@ -372,21 +258,17 @@
       "showCaption" : true,
       "showIcon" : true
     }, {
-      "itemType" : "SEPERATOR",
-      "name" : "seperator4",
-      "spanMode" : false
-    }, {
       "getCapPSLanguageRes" : {
         "lanResTag" : "TBB.TEXT.*.FILTER"
       },
       "caption" : "过滤",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
-      "name" : "deuiaction7",
+      "name" : "deuiaction3",
       "noPrivDisplayMode" : 2,
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "toolbar_deuiaction7"
+        "id" : "toolbar_deuiaction3"
       },
       "getPSSysImage" : {
         "glyph" : "xf0b0@FontAwesome",
@@ -421,7 +303,7 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "fabf7f1d3c7e790a7cde8db06d1ff66f",
+    "modelid" : "30a5aa4ea0197d410cf0945f043ca78b",
     "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
