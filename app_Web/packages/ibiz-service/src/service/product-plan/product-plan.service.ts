@@ -1,4 +1,4 @@
-import { Http } from 'ibiz-core';
+import { Http, HttpResponse } from 'ibiz-core';
 import { ProductPlanBaseService } from './product-plan-base.service';
 
 /**
@@ -106,6 +106,35 @@ export class ProductPlanService extends ProductPlanBaseService {
             end: `${year}-${month < 10 ? ('0' + month) : month}-${day < 10 ? ('0' + day) : day}`
         });
         return res;
+    }
+
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (Object.is(_context.productplan,"null")) {
+          this.GetDraft(_context, _data);
+          return;
+        }
+        if (_context.product && _context.project && _context.productplan) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}`);
+            return res;
+        }
+        if (_context.project && _context.productplan) {
+            const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}`);
+            return res;
+        }
+        if (_context.product && _context.productplan) {
+            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}`);
+            return res;
+        }
+    this.log.warn([`[ProductPlan]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
 }
