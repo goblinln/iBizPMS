@@ -1474,29 +1474,36 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             LogUtil.warn(this.$t('app.dataview.useless'));
             this.items.forEach((item: any, index: number) => {
                 Object.assign(item, {
-                    groupById: index + 1,
+                    groupById: Util.createUUID(),
                     group: ""
                 });
                 otherItems.push(item);
             })
-        }
-        allGroup.forEach((group: any, index: number) => {
-            let children: Array<any> = [];
-            this.items.forEach((item: any, _index: number) => {
+        } else {
+            // 其他
+            this.items.forEach((item: any, index: number) => {
                 Object.assign(item, {
-                    groupById: Number((index + 1) * 3 + (_index + 1) * 2),
+                    groupById: Util.createUUID(),
                     group: ""
                 });
-                const field = allGroupField && allGroupField.length > 0 ? group.label : group.value;
-                if (Object.is(item[this.groupAppField], field)) {
-                    children.push(item);
-                } else {
+                const i = allGroup.findIndex((group: any)=> !Object.is(allGroupField && allGroupField.length > 0 ? group.label : group.value, item[this.groupAppField]));
+                if(i < 0){
                     otherItems.push(item);
                 }
+            });
+            // 分组
+            allGroup.forEach((group: any, index: number) => {
+                let children: Array<any> = [];
+                this.items.forEach((item: any, _index: number) => {
+                    const field = allGroupField && allGroupField.length > 0 ? group.label : group.value;
+                    if (Object.is(item[this.groupAppField], field)) {
+                        children.push(item);
+                    }
+                })
+                const tree = this.initTree(group.label, index, children);
+                groupTree.push(tree);
             })
-            const tree = this.initTree(group.label, index, children);
-            groupTree.push(tree);
-        })
+        }
         if (otherItems.length > 0) {
             otherItems = [...new Set(otherItems)];
             const tree = this.initTree(this.$t('app.commonwords.other'), allGroup.length + 1, otherItems);
@@ -1534,7 +1541,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             let children: Array<any> = [];
             this.items.forEach((item: any, itemIndex: number) => {
                 if (Object.is(group, item[this.groupAppField])) {
-                    item.groupById = Number((groupIndex + 1) * 100 + (itemIndex + 1) * 1);
+                    item.groupById = Util.createUUID();
                     item.group = '';
                     children.push(item);
                 }
@@ -1561,7 +1568,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      */
     public initTree(group: any, groupIndex: number, children: Array<any>) {
         let tree: any = {
-            groupById: Number((groupIndex + 1) * 100),
+            groupById: Util.createUUID(),
             group: group,
             children: children,
         }
