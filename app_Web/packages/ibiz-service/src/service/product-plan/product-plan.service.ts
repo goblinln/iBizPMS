@@ -118,7 +118,8 @@ export class ProductPlanService extends ProductPlanBaseService {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (Object.is(_context.productplan,"null")) {
-          return this.GetDraft(_context, _data);
+          this.GetDraft(_context, _data);
+          return;
         }
         if (_context.product && _context.project && _context.productplan) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}`);
