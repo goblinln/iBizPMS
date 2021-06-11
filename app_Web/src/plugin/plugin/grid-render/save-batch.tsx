@@ -106,9 +106,9 @@ export class SaveBatch extends AppGridBase {
     public async save() {
         if (!await this.validateAll()) {
             if(this.errorMessages && this.errorMessages.length > 0) {
-                this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: this.errorMessages[0] });
+                this.$throw(this.errorMessages[0],'save');
             } else {
-                this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: (this.$t('app.commonwords.rulesexception') as string) });
+                this.$throw((this.$t('app.commonwords.rulesexception') as string),'save');
             }
             return [];
         }
@@ -127,19 +127,12 @@ export class SaveBatch extends AppGridBase {
         post.then((response:any) =>{
 			this.onControlResponse('saveBatch', response);
             if (response && response.status === 200) {
-                this.$Notice.success({ 
-                    title: (this.$t('app.commonwords.savesuccess') as string),
-                    duration: 3
-                });
+                this.$success(this.$t('app.commonwords.savesuccess'),'save');
                 this.closeView(response.data);
             }
         }).catch((error: any) =>{
 			this.onControlResponse('saveBatch', error);
-            this.$Notice.error({
-                title: (this.$t('app.commonwords.wrong') as string),
-                desc: error.data.message,
-                duration: 3
-            });
+            this.$throw(error.data.message,'save');
             console.error(error);
         })
     }

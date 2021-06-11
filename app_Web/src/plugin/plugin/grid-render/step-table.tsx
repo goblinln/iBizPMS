@@ -27,7 +27,7 @@ export class StepTable extends AppDefaultGrid {
      */
     public add({ row, index }: { row: any, index: number }, func: Function) {
         if(!this.loaddraftAction){
-            this.$Notice.error({ title: '错误', desc: 'CaseStepMainGridView9_EditMode视图表格loaddraftAction参数未配置' });
+            this.$throw('CaseStepMainGridView9_EditMode视图表格loaddraftAction参数未配置','add');
             return;
         }
         let _this = this;
@@ -40,7 +40,7 @@ export class StepTable extends AppDefaultGrid {
 			this.onControlResponse('create', response);
             if (!response.status || response.status !== 200) {
                 if (response.errorMessage) {
-                    this.$Notice.error({ title: '错误', desc: response.errorMessage });
+                    this.$throw(response.errorMessage,'add');
                 }
                 return;
             }
@@ -64,7 +64,7 @@ export class StepTable extends AppDefaultGrid {
                 return;
             }
             if (!response || !response.status || !response.data) {
-                this.$Notice.error({ title: '错误', desc: '系统异常' });
+                this.$throw('系统异常','add');
                 return;
             }
         });

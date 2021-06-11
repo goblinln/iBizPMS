@@ -437,10 +437,7 @@ export class TreeGrid extends AppDefaultGrid {
         post.then((response: any) => {
 			this.onControlResponse('exportExcel', response);
             if (!response || response.status !== 200) {
-                this.$Notice.error({
-                    title: '',
-                    desc: (this.$t('app.gridpage.exportFail') as string) + ',' + response.info,
-                });
+                this.$throw((this.$t('app.gridpage.exportFail') as string) + ',' + response.info,'exportExcel');
                 return;
             }
             try {
@@ -463,7 +460,7 @@ export class TreeGrid extends AppDefaultGrid {
             if (response && response.status === 401) {
                 return;
             }
-            this.$Notice.error({ title: '', desc: this.$t('app.gridpage.exportFail') as string });
+            this.$throw(this.$t('app.gridpage.exportFail'),'exportExcel');
         });
     }
 

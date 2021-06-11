@@ -221,7 +221,7 @@ export class AuthGuard {
             } catch (error) {
                 return null;
             }
-        }, { lang: handleLocaleMap(i18n.locale) });
+        }, { lang: Environment?.isEnableMultiLan ? handleLocaleMap(i18n.locale) : '' });
         AppServiceBase.getInstance().setAppModelDataObject(service.app);
         AppCenterService.getInstance(router.app.$store);
     }
