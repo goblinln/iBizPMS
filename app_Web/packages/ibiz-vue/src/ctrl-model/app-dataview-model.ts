@@ -1,4 +1,4 @@
-import { IPSDEDataView, IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
+import { IPSDEDataView, IPSAppDataEntity, IPSAppDEField, IPSDESearchForm, IPSDEFormItem, IPSAppDEDataView } from '@ibiz/dynamic-model-api';
 import { ModelTool } from 'ibiz-core';
 export class AppDataViewModel {
 
@@ -74,6 +74,16 @@ export class AppDataViewModel {
         }
         //TODO   关联主实体的主键
 
+        const searchFormInstance: IPSDESearchForm = ModelTool.findPSControlByType("SEARCHFORM", (this.$DataViewInstance.getParentPSModelObject() as IPSAppDEDataView).getPSControls() || []);
+        if(searchFormInstance) {
+          (searchFormInstance.getPSDEFormItems?.() || []).forEach((formItem: IPSDEFormItem)=>{
+              let temp: any = { name: formItem.id, prop: formItem.id };
+              if(formItem.getPSAppDEField?.()){
+                  temp.dataType = 'QUERYPARAM';
+              }
+              modelArray.push(temp);
+          });
+        }
         // 界面主键标识
         modelArray.push({
             name: (appDataEntity as IPSAppDataEntity).codeName.toLowerCase(),

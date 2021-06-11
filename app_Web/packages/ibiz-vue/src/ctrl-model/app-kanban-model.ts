@@ -1,4 +1,4 @@
-import { IPSAppDEField, IPSAppDERS, IPSDEDataViewDataItem, IPSDEKanban } from '@ibiz/dynamic-model-api';
+import { IPSAppDEField, IPSAppDEKanbanView, IPSAppDERS, IPSDEDataViewDataItem, IPSDEFormItem, IPSDEKanban, IPSDESearchForm } from '@ibiz/dynamic-model-api';
 import { DataTypes, ModelTool } from 'ibiz-core';
 
 /**
@@ -104,7 +104,16 @@ export class AppKanbanModel {
                 });
             }
         }
-
+        const searchFormInstance: IPSDESearchForm = ModelTool.findPSControlByType("SEARCHFORM", (this.KanbanInstance.getParentPSModelObject() as IPSAppDEKanbanView).getPSControls() || []);
+        if(searchFormInstance) {
+          (searchFormInstance.getPSDEFormItems?.() || []).forEach((formItem: IPSDEFormItem)=>{
+              let temp: any = { name: formItem.id, prop: formItem.id };
+              if(formItem.getPSAppDEField?.()){
+                  temp.dataType = 'QUERYPARAM';
+              }
+              modelArray.push(temp);
+          });
+        }
         // 界面主键标识
         modelArray.push({
             name: this.KanbanInstance.getPSAppDataEntity()?.codeName.toLowerCase(),

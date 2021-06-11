@@ -1063,16 +1063,24 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
             },
             "getPSNavigateContexts" : [ {
+              "key" : "PARENT",
+              "name" : "PARENT",
+              "value" : "id",
+              "rawValue" : false
+            }, {
               "key" : "PRODUCTPLAN",
               "name" : "PRODUCTPLAN",
-              "value" : "null",
               "rawValue" : true
             } ],
             "getPSNavigateParams" : [ {
               "key" : "productplan",
               "name" : "productplan",
-              "value" : "null",
               "rawValue" : true
+            }, {
+              "key" : "parent",
+              "name" : "parent",
+              "value" : "id",
+              "rawValue" : false
             } ],
             "getPSSysImage" : {
               "glyph" : "xf0e8@FontAwesome",

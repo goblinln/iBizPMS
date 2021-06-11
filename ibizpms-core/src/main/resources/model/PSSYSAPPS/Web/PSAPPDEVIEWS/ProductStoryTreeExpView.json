@@ -1189,7 +1189,6 @@
         "getPSNavigateContexts" : [ {
           "key" : "PRODUCTMODULE",
           "name" : "PRODUCTMODULE",
-          "value" : "null",
           "rawValue" : true
         }, {
           "key" : "SRFPARENTKEY",
@@ -1318,7 +1317,6 @@
         "getPSNavigateContexts" : [ {
           "key" : "PRODUCTMODULE",
           "name" : "PRODUCTMODULE",
-          "value" : "null",
           "rawValue" : true
         }, {
           "key" : "SRFPARENTKEY",
@@ -1447,7 +1445,6 @@
         "getPSNavigateContexts" : [ {
           "key" : "PRODUCTMODULE",
           "name" : "PRODUCTMODULE",
-          "value" : "null",
           "rawValue" : true
         }, {
           "key" : "SRFPARENTKEY",
