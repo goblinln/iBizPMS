@@ -651,7 +651,13 @@ export class DirectoryTree extends AppDefaultTree {
                         [
                             Object.is(this.mode,'chart') ? this.renderChartMode() : this.renderListMode(),
                             this.renderPagination()
-                        ] : this.renderNoData()
+                        ] : 
+					  			  <div style="height: calc(100% - 30px);display: flex;justify-content: center;align-items: center;">
+                            {
+                                this.isControlLoaded ? 
+                                this.renderEmptyDataTip() : this.renderLoadDataTip()
+                            }
+                        </div>
                     }
             </div>
         );
