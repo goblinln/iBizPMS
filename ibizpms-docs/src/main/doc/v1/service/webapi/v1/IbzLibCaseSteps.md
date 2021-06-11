@@ -41,44 +41,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新用例库用例步骤
+### 根据获取用例库用例步骤
 #### 访问路径
 /ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibzcase_id | Long | 测试用例主键ID |
 | 2 | ibzlibcasesteps_id | Long | 用例库用例步骤主键ID |
-| 3 | ibzlibcasestepsdto | [IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO) | 用例库用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO)：用例库用例步骤实体传输对象 |
-
-### 根据批量更新用例库用例步骤
-#### 访问路径
-/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | ibzcase_id | Long | 测试用例主键ID |
-| 2 | ibzlibcasestepsdtos | List<[IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO)> | 用例库用例步骤实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除用例库用例步骤
 #### 访问路径
@@ -118,24 +98,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取用例库用例步骤
+### 根据更新用例库用例步骤
 #### 访问路径
 /ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibzcase_id | Long | 测试用例主键ID |
 | 2 | ibzlibcasesteps_id | Long | 用例库用例步骤主键ID |
+| 3 | ibzlibcasestepsdto | [IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO) | 用例库用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO)：用例库用例步骤实体传输对象 |
+
+### 根据批量更新用例库用例步骤
+#### 访问路径
+/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | ibzcase_id | Long | 测试用例主键ID |
+| 2 | ibzlibcasestepsdtos | List<[IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO)> | 用例库用例步骤实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查用例库用例步骤
 #### 访问路径
@@ -270,44 +270,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新用例库用例步骤
+### 根据获取用例库用例步骤
 #### 访问路径
 /ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibzlib_id | Long | 用例库主键ID |/r/n| 2 | ibzcase_id | Long | 测试用例主键ID |
 | 3 | ibzlibcasesteps_id | Long | 用例库用例步骤主键ID |
-| 4 | ibzlibcasestepsdto | [IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO) | 用例库用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO)：用例库用例步骤实体传输对象 |
-
-### 根据批量更新用例库用例步骤
-#### 访问路径
-/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | ibzlib_id | Long | 用例库主键ID |/r/n| 2 | ibzcase_id | Long | 测试用例主键ID |
-| 3 | ibzlibcasestepsdtos | List<[IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO)> | 用例库用例步骤实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除用例库用例步骤
 #### 访问路径
@@ -347,24 +327,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取用例库用例步骤
+### 根据更新用例库用例步骤
 #### 访问路径
 /ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibzlib_id | Long | 用例库主键ID |/r/n| 2 | ibzcase_id | Long | 测试用例主键ID |
 | 3 | ibzlibcasesteps_id | Long | 用例库用例步骤主键ID |
+| 4 | ibzlibcasestepsdto | [IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO) | 用例库用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO)：用例库用例步骤实体传输对象 |
+
+### 根据批量更新用例库用例步骤
+#### 访问路径
+/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | ibzlib_id | Long | 用例库主键ID |/r/n| 2 | ibzcase_id | Long | 测试用例主键ID |
+| 3 | ibzlibcasestepsdtos | List<[IbzLibCaseStepsDTO](#IbzLibCaseStepsDTO)> | 用例库用例步骤实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查用例库用例步骤
 #### 访问路径

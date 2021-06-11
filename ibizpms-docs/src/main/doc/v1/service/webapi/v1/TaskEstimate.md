@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新任务预计
+### 获取任务预计
 #### 访问路径
 /taskestimates/{taskestimate_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | taskestimate_id | Long | 任务预计主键ID |
-| 2 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
-
-### 批量更新任务预计
-#### 访问路径
-/taskestimates/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除任务预计
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取任务预计
+### 更新任务预计
 #### 访问路径
 /taskestimates/{taskestimate_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | taskestimate_id | Long | 任务预计主键ID |
+| 2 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
+
+### 批量更新任务预计
+#### 访问路径
+/taskestimates/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查任务预计
 #### 访问路径
@@ -275,6 +275,42 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 获取所有人员
+#### 访问路径
+/taskestimates/fetchallaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 查询所有人员
+#### 访问路径
+/taskestimates/searchallaccounts
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 获取DEFAULT
 #### 访问路径
 /taskestimates/fetchdefault
@@ -332,6 +368,42 @@ GET
 ### 查询DEFAULT1
 #### 访问路径
 /taskestimates/searchdefaults
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 获取我管辖的所有人员
+#### 访问路径
+/taskestimates/fetchmyaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 查询我管辖的所有人员
+#### 访问路径
+/taskestimates/searchmyaccounts
 
 #### 请求方法
 POST
@@ -493,44 +565,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务预计
+### 根据获取任务预计
 #### 访问路径
 /tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | task_id | Long | 任务主键ID |
 | 2 | taskestimate_id | Long | 任务预计主键ID |
-| 3 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
-
-### 根据批量更新任务预计
-#### 访问路径
-/tasks/{task_id}/taskestimates/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | task_id | Long | 任务主键ID |
-| 2 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务预计
 #### 访问路径
@@ -570,24 +622,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务预计
+### 根据更新任务预计
 #### 访问路径
 /tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | task_id | Long | 任务主键ID |
 | 2 | taskestimate_id | Long | 任务预计主键ID |
+| 3 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
+
+### 根据批量更新任务预计
+#### 访问路径
+/tasks/{task_id}/taskestimates/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | task_id | Long | 任务主键ID |
+| 2 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查任务预计
 #### 访问路径
@@ -742,6 +814,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取所有人员
+#### 访问路径
+/tasks/{task_id}/taskestimates/fetchallaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | task_id | Long | 任务主键ID |
+| 2 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询所有人员
+#### 访问路径
+/tasks/{task_id}/taskestimates/searchallaccounts
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | task_id | Long | 任务主键ID |
+| 2 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取DEFAULT
 #### 访问路径
 /tasks/{task_id}/taskestimates/fetchdefault
@@ -802,6 +912,44 @@ GET
 ### 根据查询DEFAULT1
 #### 访问路径
 /tasks/{task_id}/taskestimates/searchdefaults
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | task_id | Long | 任务主键ID |
+| 2 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我管辖的所有人员
+#### 访问路径
+/tasks/{task_id}/taskestimates/fetchmyaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | task_id | Long | 任务主键ID |
+| 2 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询我管辖的所有人员
+#### 访问路径
+/tasks/{task_id}/taskestimates/searchmyaccounts
 
 #### 请求方法
 POST
@@ -970,44 +1118,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务预计
+### 根据获取任务预计
 #### 访问路径
 /projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | taskestimate_id | Long | 任务预计主键ID |
-| 4 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
-
-### 根据批量更新任务预计
-#### 访问路径
-/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
-| 3 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务预计
 #### 访问路径
@@ -1047,24 +1175,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务预计
+### 根据更新任务预计
 #### 访问路径
 /projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | taskestimate_id | Long | 任务预计主键ID |
+| 4 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
+
+### 根据批量更新任务预计
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查任务预计
 #### 访问路径
@@ -1219,6 +1367,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取所有人员
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchallaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询所有人员
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchallaccounts
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取DEFAULT
 #### 访问路径
 /projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefault
@@ -1279,6 +1465,44 @@ GET
 ### 根据查询DEFAULT1
 #### 访问路径
 /projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchdefaults
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我管辖的所有人员
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchmyaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询我管辖的所有人员
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchmyaccounts
 
 #### 请求方法
 POST
@@ -1447,44 +1671,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务预计
+### 根据获取任务预计
 #### 访问路径
 /productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | taskestimate_id | Long | 任务预计主键ID |
-| 4 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
-
-### 根据批量更新任务预计
-#### 访问路径
-/productplans/{productplan_id}/tasks/{task_id}/taskestimates/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
-| 3 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务预计
 #### 访问路径
@@ -1524,24 +1728,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务预计
+### 根据更新任务预计
 #### 访问路径
 /productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | taskestimate_id | Long | 任务预计主键ID |
+| 4 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
+
+### 根据批量更新任务预计
+#### 访问路径
+/productplans/{productplan_id}/tasks/{task_id}/taskestimates/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查任务预计
 #### 访问路径
@@ -1696,6 +1920,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取所有人员
+#### 访问路径
+/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchallaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询所有人员
+#### 访问路径
+/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchallaccounts
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取DEFAULT
 #### 访问路径
 /productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefault
@@ -1756,6 +2018,44 @@ GET
 ### 根据查询DEFAULT1
 #### 访问路径
 /productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchdefaults
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我管辖的所有人员
+#### 访问路径
+/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchmyaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询我管辖的所有人员
+#### 访问路径
+/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchmyaccounts
 
 #### 请求方法
 POST
@@ -1924,44 +2224,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务预计
+### 根据获取任务预计
 #### 访问路径
 /stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | taskestimate_id | Long | 任务预计主键ID |
-| 4 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
-
-### 根据批量更新任务预计
-#### 访问路径
-/stories/{story_id}/tasks/{task_id}/taskestimates/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
-| 3 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务预计
 #### 访问路径
@@ -2001,24 +2281,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务预计
+### 根据更新任务预计
 #### 访问路径
 /stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | taskestimate_id | Long | 任务预计主键ID |
+| 4 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
+
+### 根据批量更新任务预计
+#### 访问路径
+/stories/{story_id}/tasks/{task_id}/taskestimates/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查任务预计
 #### 访问路径
@@ -2173,6 +2473,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取所有人员
+#### 访问路径
+/stories/{story_id}/tasks/{task_id}/taskestimates/fetchallaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询所有人员
+#### 访问路径
+/stories/{story_id}/tasks/{task_id}/taskestimates/searchallaccounts
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取DEFAULT
 #### 访问路径
 /stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefault
@@ -2233,6 +2571,44 @@ GET
 ### 根据查询DEFAULT1
 #### 访问路径
 /stories/{story_id}/tasks/{task_id}/taskestimates/searchdefaults
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我管辖的所有人员
+#### 访问路径
+/stories/{story_id}/tasks/{task_id}/taskestimates/fetchmyaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询我管辖的所有人员
+#### 访问路径
+/stories/{story_id}/tasks/{task_id}/taskestimates/searchmyaccounts
 
 #### 请求方法
 POST
@@ -2401,44 +2777,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务预计
+### 根据获取任务预计
 #### 访问路径
 /projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | taskestimate_id | Long | 任务预计主键ID |
-| 4 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
-
-### 根据批量更新任务预计
-#### 访问路径
-/projects/{project_id}/tasks/{task_id}/taskestimates/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
-| 3 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务预计
 #### 访问路径
@@ -2478,24 +2834,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务预计
+### 根据更新任务预计
 #### 访问路径
 /projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | taskestimate_id | Long | 任务预计主键ID |
+| 4 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
+
+### 根据批量更新任务预计
+#### 访问路径
+/projects/{project_id}/tasks/{task_id}/taskestimates/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查任务预计
 #### 访问路径
@@ -2650,6 +3026,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取所有人员
+#### 访问路径
+/projects/{project_id}/tasks/{task_id}/taskestimates/fetchallaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询所有人员
+#### 访问路径
+/projects/{project_id}/tasks/{task_id}/taskestimates/searchallaccounts
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取DEFAULT
 #### 访问路径
 /projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefault
@@ -2710,6 +3124,44 @@ GET
 ### 根据查询DEFAULT1
 #### 访问路径
 /projects/{project_id}/tasks/{task_id}/taskestimates/searchdefaults
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我管辖的所有人员
+#### 访问路径
+/projects/{project_id}/tasks/{task_id}/taskestimates/fetchmyaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询我管辖的所有人员
+#### 访问路径
+/projects/{project_id}/tasks/{task_id}/taskestimates/searchmyaccounts
 
 #### 请求方法
 POST
@@ -2878,44 +3330,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务预计
+### 根据获取任务预计
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | taskestimate_id | Long | 任务预计主键ID |
-| 5 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
-
-### 根据批量更新任务预计
-#### 访问路径
-/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
-| 4 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务预计
 #### 访问路径
@@ -2955,24 +3387,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务预计
+### 根据更新任务预计
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | taskestimate_id | Long | 任务预计主键ID |
+| 5 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
+
+### 根据批量更新任务预计
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查任务预计
 #### 访问路径
@@ -3127,6 +3579,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取所有人员
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchallaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询所有人员
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchallaccounts
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取DEFAULT
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchdefault
@@ -3187,6 +3677,44 @@ GET
 ### 根据查询DEFAULT1
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchdefaults
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我管辖的所有人员
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/fetchmyaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询我管辖的所有人员
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskestimates/searchmyaccounts
 
 #### 请求方法
 POST
@@ -3355,44 +3883,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务预计
+### 根据获取任务预计
 #### 访问路径
 /products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | taskestimate_id | Long | 任务预计主键ID |
-| 5 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
-
-### 根据批量更新任务预计
-#### 访问路径
-/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
-| 4 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务预计
 #### 访问路径
@@ -3432,24 +3940,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务预计
+### 根据更新任务预计
 #### 访问路径
 /products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | taskestimate_id | Long | 任务预计主键ID |
+| 5 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
+
+### 根据批量更新任务预计
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查任务预计
 #### 访问路径
@@ -3604,6 +4132,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取所有人员
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchallaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询所有人员
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/searchallaccounts
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取DEFAULT
 #### 访问路径
 /products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchdefault
@@ -3664,6 +4230,44 @@ GET
 ### 根据查询DEFAULT1
 #### 访问路径
 /products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/searchdefaults
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我管辖的所有人员
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/fetchmyaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询我管辖的所有人员
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskestimates/searchmyaccounts
 
 #### 请求方法
 POST
@@ -3832,44 +4436,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务预计
+### 根据获取任务预计
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | taskestimate_id | Long | 任务预计主键ID |
-| 5 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
-
-### 根据批量更新任务预计
-#### 访问路径
-/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
-| 4 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务预计
 #### 访问路径
@@ -3909,24 +4493,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务预计
+### 根据更新任务预计
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/{taskestimate_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | taskestimate_id | Long | 任务预计主键ID |
+| 5 | taskestimatedto | [TaskEstimateDTO](#TaskEstimateDTO) | 任务预计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TaskEstimateDTO](#TaskEstimateDTO)：任务预计实体传输对象 |
+
+### 根据批量更新任务预计
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | taskestimatedtos | List<[TaskEstimateDTO](#TaskEstimateDTO)> | 任务预计实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查任务预计
 #### 访问路径
@@ -4081,6 +4685,44 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 根据获取所有人员
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchallaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询所有人员
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchallaccounts
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 根据获取DEFAULT
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchdefault
@@ -4141,6 +4783,44 @@ GET
 ### 根据查询DEFAULT1
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchdefaults
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取我管辖的所有人员
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/fetchmyaccounts
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | context | [TaskEstimateSearchContext](#TaskEstimateSearchContext) | 任务预计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[TaskEstimateDTO](#TaskEstimateDTO)>：任务预计实体传输对象列表 |
+
+### 根据查询我管辖的所有人员
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskestimates/searchmyaccounts
 
 #### 请求方法
 POST

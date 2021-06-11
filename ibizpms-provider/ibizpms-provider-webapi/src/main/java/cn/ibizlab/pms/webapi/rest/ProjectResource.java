@@ -71,23 +71,13 @@ public class ProjectResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.projectService.get(#project_id),'pms-Project-Update')")
-    @ApiOperation(value = "更新项目", tags = {"项目" },  notes = "更新项目")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}")
-    public ResponseEntity<ProjectDTO> update(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-		Project domain  = projectMapping.toDomain(projectdto);
-        domain .setId(project_id);
-		projectService.update(domain );
-		ProjectDTO dto = projectMapping.toDto(domain);
+    @PostAuthorize("hasPermission(this.projectMapping.toDomain(returnObject.body),'pms-Project-Get')")
+    @ApiOperation(value = "获取项目", tags = {"项目" },  notes = "获取项目")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}")
+    public ResponseEntity<ProjectDTO> get(@PathVariable("project_id") Long project_id) {
+        Project domain = projectService.get(project_id);
+        ProjectDTO dto = projectMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("hasPermission(this.projectService.getProjectByEntities(this.projectMapping.toDomain(#projectdtos)),'pms-Project-Update')")
-    @ApiOperation(value = "批量更新项目", tags = {"项目" },  notes = "批量更新项目")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProjectDTO> projectdtos) {
-        projectService.updateBatch(projectMapping.toDomain(projectdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasPermission(this.projectService.get(#project_id),'pms-Project-Remove')")
@@ -105,20 +95,23 @@ public class ProjectResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.projectMapping.toDomain(returnObject.body),'pms-Project-Get')")
-    @ApiOperation(value = "获取项目", tags = {"项目" },  notes = "获取项目")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}")
-    public ResponseEntity<ProjectDTO> get(@PathVariable("project_id") Long project_id) {
-        Project domain = projectService.get(project_id);
-        ProjectDTO dto = projectMapping.toDto(domain);
+    @PreAuthorize("hasPermission(this.projectService.get(#project_id),'pms-Project-Update')")
+    @ApiOperation(value = "更新项目", tags = {"项目" },  notes = "更新项目")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}")
+    public ResponseEntity<ProjectDTO> update(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+		Project domain  = projectMapping.toDomain(projectdto);
+        domain .setId(project_id);
+		projectService.update(domain );
+		ProjectDTO dto = projectMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取项目草稿", tags = {"项目" },  notes = "获取项目草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/getdraft")
-    public ResponseEntity<ProjectDTO> getDraft(ProjectDTO dto) {
-        Project domain = projectMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
+    @PreAuthorize("hasPermission(this.projectService.getProjectByEntities(this.projectMapping.toDomain(#projectdtos)),'pms-Project-Update')")
+    @ApiOperation(value = "批量更新项目", tags = {"项目" },  notes = "批量更新项目")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/batch")
+    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProjectDTO> projectdtos) {
+        projectService.updateBatch(projectMapping.toDomain(projectdtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Project-Activate-all')")
@@ -193,6 +186,13 @@ public class ProjectResource {
         List<Project> domains = projectMapping.toDomain(projectdtos);
         boolean result = projectService.closeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取项目草稿", tags = {"项目" },  notes = "获取项目草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/getdraft")
+    public ResponseEntity<ProjectDTO> getDraft(ProjectDTO dto) {
+        Project domain = projectMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Project-LinkStory-all')")

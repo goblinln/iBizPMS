@@ -65,6 +65,30 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Get-all')")
+    @ApiOperation(value = "获取测试结果", tags = {"测试结果" },  notes = "获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> get(@PathVariable("testresult_id") Long testresult_id) {
+        TestResult domain = testresultService.get(testresult_id);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
+    @ApiOperation(value = "删除测试结果", tags = {"测试结果" },  notes = "删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/{testresult_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("testresult_id") Long testresult_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
+    @ApiOperation(value = "批量删除测试结果", tags = {"测试结果" },  notes = "批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Update-all')")
     @ApiOperation(value = "更新测试结果", tags = {"测试结果" },  notes = "更新测试结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testresults/{testresult_id}")
@@ -84,28 +108,10 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
-    @ApiOperation(value = "删除测试结果", tags = {"测试结果" },  notes = "删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/{testresult_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("testresult_id") Long testresult_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
-    @ApiOperation(value = "批量删除测试结果", tags = {"测试结果" },  notes = "批量删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        testresultService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Get-all')")
-    @ApiOperation(value = "获取测试结果", tags = {"测试结果" },  notes = "获取测试结果")
-	@RequestMapping(method = RequestMethod.GET, value = "/testresults/{testresult_id}")
-    public ResponseEntity<TestResultDTO> get(@PathVariable("testresult_id") Long testresult_id) {
-        TestResult domain = testresultService.get(testresult_id);
-        TestResultDTO dto = testresultMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查测试结果", tags = {"测试结果" },  notes = "检查测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testresults/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody TestResultDTO testresultdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @ApiOperation(value = "获取测试结果草稿", tags = {"测试结果" },  notes = "获取测试结果草稿")
@@ -113,12 +119,6 @@ public class TestResultResource {
     public ResponseEntity<TestResultDTO> getDraft(TestResultDTO dto) {
         TestResult domain = testresultMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查测试结果", tags = {"测试结果" },  notes = "检查测试结果")
-	@RequestMapping(method = RequestMethod.POST, value = "/testresults/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody TestResultDTO testresultdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Save-all')")
@@ -207,6 +207,30 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Get-all')")
+    @ApiOperation(value = "根据测试用例获取测试结果", tags = {"测试结果" },  notes = "根据测试用例获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> getByCase(@PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
+        TestResult domain = testresultService.get(testresult_id);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
+    @ApiOperation(value = "根据测试用例删除测试结果", tags = {"测试结果" },  notes = "根据测试用例删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}/testresults/{testresult_id}")
+    public ResponseEntity<Boolean> removeByCase(@PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
+    @ApiOperation(value = "根据测试用例批量删除测试结果", tags = {"测试结果" },  notes = "根据测试用例批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}/testresults/batch")
+    public ResponseEntity<Boolean> removeBatchByCase(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Update-all')")
     @ApiOperation(value = "根据测试用例更新测试结果", tags = {"测试结果" },  notes = "根据测试用例更新测试结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}/testresults/{testresult_id}")
@@ -231,28 +255,10 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
-    @ApiOperation(value = "根据测试用例删除测试结果", tags = {"测试结果" },  notes = "根据测试用例删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}/testresults/{testresult_id}")
-    public ResponseEntity<Boolean> removeByCase(@PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
-    @ApiOperation(value = "根据测试用例批量删除测试结果", tags = {"测试结果" },  notes = "根据测试用例批量删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}/testresults/batch")
-    public ResponseEntity<Boolean> removeBatchByCase(@RequestBody List<Long> ids) {
-        testresultService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Get-all')")
-    @ApiOperation(value = "根据测试用例获取测试结果", tags = {"测试结果" },  notes = "根据测试用例获取测试结果")
-	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/testresults/{testresult_id}")
-    public ResponseEntity<TestResultDTO> getByCase(@PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
-        TestResult domain = testresultService.get(testresult_id);
-        TestResultDTO dto = testresultMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "根据测试用例检查测试结果", tags = {"测试结果" },  notes = "根据测试用例检查测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/testresults/checkkey")
+    public ResponseEntity<Boolean> checkKeyByCase(@PathVariable("case_id") Long case_id, @RequestBody TestResultDTO testresultdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @ApiOperation(value = "根据测试用例获取测试结果草稿", tags = {"测试结果" },  notes = "根据测试用例获取测试结果草稿")
@@ -261,12 +267,6 @@ public class TestResultResource {
         TestResult domain = testresultMapping.toDomain(dto);
         domain.setIbizcase(case_id);
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "根据测试用例检查测试结果", tags = {"测试结果" },  notes = "根据测试用例检查测试结果")
-	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/testresults/checkkey")
-    public ResponseEntity<Boolean> checkKeyByCase(@PathVariable("case_id") Long case_id, @RequestBody TestResultDTO testresultdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Save-all')")
@@ -360,6 +360,30 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Get-all')")
+    @ApiOperation(value = "根据产品测试用例获取测试结果", tags = {"测试结果" },  notes = "根据产品测试用例获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> getByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
+        TestResult domain = testresultService.get(testresult_id);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
+    @ApiOperation(value = "根据产品测试用例删除测试结果", tags = {"测试结果" },  notes = "根据产品测试用例删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}/testresults/{testresult_id}")
+    public ResponseEntity<Boolean> removeByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
+    @ApiOperation(value = "根据产品测试用例批量删除测试结果", tags = {"测试结果" },  notes = "根据产品测试用例批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}/testresults/batch")
+    public ResponseEntity<Boolean> removeBatchByProductCase(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Update-all')")
     @ApiOperation(value = "根据产品测试用例更新测试结果", tags = {"测试结果" },  notes = "根据产品测试用例更新测试结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/testresults/{testresult_id}")
@@ -384,28 +408,10 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
-    @ApiOperation(value = "根据产品测试用例删除测试结果", tags = {"测试结果" },  notes = "根据产品测试用例删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}/testresults/{testresult_id}")
-    public ResponseEntity<Boolean> removeByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
-    @ApiOperation(value = "根据产品测试用例批量删除测试结果", tags = {"测试结果" },  notes = "根据产品测试用例批量删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}/testresults/batch")
-    public ResponseEntity<Boolean> removeBatchByProductCase(@RequestBody List<Long> ids) {
-        testresultService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Get-all')")
-    @ApiOperation(value = "根据产品测试用例获取测试结果", tags = {"测试结果" },  notes = "根据产品测试用例获取测试结果")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/testresults/{testresult_id}")
-    public ResponseEntity<TestResultDTO> getByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
-        TestResult domain = testresultService.get(testresult_id);
-        TestResultDTO dto = testresultMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "根据产品测试用例检查测试结果", tags = {"测试结果" },  notes = "根据产品测试用例检查测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/testresults/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody TestResultDTO testresultdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @ApiOperation(value = "根据产品测试用例获取测试结果草稿", tags = {"测试结果" },  notes = "根据产品测试用例获取测试结果草稿")
@@ -414,12 +420,6 @@ public class TestResultResource {
         TestResult domain = testresultMapping.toDomain(dto);
         domain.setIbizcase(case_id);
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "根据产品测试用例检查测试结果", tags = {"测试结果" },  notes = "根据产品测试用例检查测试结果")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/testresults/checkkey")
-    public ResponseEntity<Boolean> checkKeyByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody TestResultDTO testresultdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Save-all')")
@@ -513,6 +513,30 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Get-all')")
+    @ApiOperation(value = "根据需求测试用例获取测试结果", tags = {"测试结果" },  notes = "根据需求测试用例获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/cases/{case_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> getByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
+        TestResult domain = testresultService.get(testresult_id);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
+    @ApiOperation(value = "根据需求测试用例删除测试结果", tags = {"测试结果" },  notes = "根据需求测试用例删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/cases/{case_id}/testresults/{testresult_id}")
+    public ResponseEntity<Boolean> removeByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
+    @ApiOperation(value = "根据需求测试用例批量删除测试结果", tags = {"测试结果" },  notes = "根据需求测试用例批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/cases/{case_id}/testresults/batch")
+    public ResponseEntity<Boolean> removeBatchByStoryCase(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Update-all')")
     @ApiOperation(value = "根据需求测试用例更新测试结果", tags = {"测试结果" },  notes = "根据需求测试用例更新测试结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/cases/{case_id}/testresults/{testresult_id}")
@@ -537,28 +561,10 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
-    @ApiOperation(value = "根据需求测试用例删除测试结果", tags = {"测试结果" },  notes = "根据需求测试用例删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/cases/{case_id}/testresults/{testresult_id}")
-    public ResponseEntity<Boolean> removeByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
-    @ApiOperation(value = "根据需求测试用例批量删除测试结果", tags = {"测试结果" },  notes = "根据需求测试用例批量删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/cases/{case_id}/testresults/batch")
-    public ResponseEntity<Boolean> removeBatchByStoryCase(@RequestBody List<Long> ids) {
-        testresultService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Get-all')")
-    @ApiOperation(value = "根据需求测试用例获取测试结果", tags = {"测试结果" },  notes = "根据需求测试用例获取测试结果")
-	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/cases/{case_id}/testresults/{testresult_id}")
-    public ResponseEntity<TestResultDTO> getByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
-        TestResult domain = testresultService.get(testresult_id);
-        TestResultDTO dto = testresultMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "根据需求测试用例检查测试结果", tags = {"测试结果" },  notes = "根据需求测试用例检查测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/cases/{case_id}/testresults/checkkey")
+    public ResponseEntity<Boolean> checkKeyByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody TestResultDTO testresultdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @ApiOperation(value = "根据需求测试用例获取测试结果草稿", tags = {"测试结果" },  notes = "根据需求测试用例获取测试结果草稿")
@@ -567,12 +573,6 @@ public class TestResultResource {
         TestResult domain = testresultMapping.toDomain(dto);
         domain.setIbizcase(case_id);
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "根据需求测试用例检查测试结果", tags = {"测试结果" },  notes = "根据需求测试用例检查测试结果")
-	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/cases/{case_id}/testresults/checkkey")
-    public ResponseEntity<Boolean> checkKeyByStoryCase(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody TestResultDTO testresultdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Save-all')")
@@ -666,6 +666,30 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Get-all')")
+    @ApiOperation(value = "根据产品需求测试用例获取测试结果", tags = {"测试结果" },  notes = "根据产品需求测试用例获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> getByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
+        TestResult domain = testresultService.get(testresult_id);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
+    @ApiOperation(value = "根据产品需求测试用例删除测试结果", tags = {"测试结果" },  notes = "根据产品需求测试用例删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/{testresult_id}")
+    public ResponseEntity<Boolean> removeByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
+    @ApiOperation(value = "根据产品需求测试用例批量删除测试结果", tags = {"测试结果" },  notes = "根据产品需求测试用例批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/batch")
+    public ResponseEntity<Boolean> removeBatchByProductStoryCase(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Update-all')")
     @ApiOperation(value = "根据产品需求测试用例更新测试结果", tags = {"测试结果" },  notes = "根据产品需求测试用例更新测试结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/{testresult_id}")
@@ -690,28 +714,10 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
-    @ApiOperation(value = "根据产品需求测试用例删除测试结果", tags = {"测试结果" },  notes = "根据产品需求测试用例删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/{testresult_id}")
-    public ResponseEntity<Boolean> removeByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Remove-all')")
-    @ApiOperation(value = "根据产品需求测试用例批量删除测试结果", tags = {"测试结果" },  notes = "根据产品需求测试用例批量删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/batch")
-    public ResponseEntity<Boolean> removeBatchByProductStoryCase(@RequestBody List<Long> ids) {
-        testresultService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Get-all')")
-    @ApiOperation(value = "根据产品需求测试用例获取测试结果", tags = {"测试结果" },  notes = "根据产品需求测试用例获取测试结果")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/{testresult_id}")
-    public ResponseEntity<TestResultDTO> getByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id) {
-        TestResult domain = testresultService.get(testresult_id);
-        TestResultDTO dto = testresultMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "根据产品需求测试用例检查测试结果", tags = {"测试结果" },  notes = "根据产品需求测试用例检查测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody TestResultDTO testresultdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @ApiOperation(value = "根据产品需求测试用例获取测试结果草稿", tags = {"测试结果" },  notes = "根据产品需求测试用例获取测试结果草稿")
@@ -720,12 +726,6 @@ public class TestResultResource {
         TestResult domain = testresultMapping.toDomain(dto);
         domain.setIbizcase(case_id);
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "根据产品需求测试用例检查测试结果", tags = {"测试结果" },  notes = "根据产品需求测试用例检查测试结果")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/testresults/checkkey")
-    public ResponseEntity<Boolean> checkKeyByProductStoryCase(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody TestResultDTO testresultdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestResult-Save-all')")

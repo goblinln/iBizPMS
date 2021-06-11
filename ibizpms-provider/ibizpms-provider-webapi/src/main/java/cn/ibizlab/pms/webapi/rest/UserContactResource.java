@@ -65,6 +65,30 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-UserContact-Get-all')")
+    @ApiOperation(value = "获取用户联系方式", tags = {"用户联系方式" },  notes = "获取用户联系方式")
+	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/{usercontact_id}")
+    public ResponseEntity<UserContactDTO> get(@PathVariable("usercontact_id") Long usercontact_id) {
+        UserContact domain = usercontactService.get(usercontact_id);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-UserContact-Remove-all')")
+    @ApiOperation(value = "删除用户联系方式", tags = {"用户联系方式" },  notes = "删除用户联系方式")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/{usercontact_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("usercontact_id") Long usercontact_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-UserContact-Remove-all')")
+    @ApiOperation(value = "批量删除用户联系方式", tags = {"用户联系方式" },  notes = "批量删除用户联系方式")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        usercontactService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-UserContact-Update-all')")
     @ApiOperation(value = "更新用户联系方式", tags = {"用户联系方式" },  notes = "更新用户联系方式")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usercontacts/{usercontact_id}")
@@ -84,28 +108,10 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-UserContact-Remove-all')")
-    @ApiOperation(value = "删除用户联系方式", tags = {"用户联系方式" },  notes = "删除用户联系方式")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/{usercontact_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("usercontact_id") Long usercontact_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-UserContact-Remove-all')")
-    @ApiOperation(value = "批量删除用户联系方式", tags = {"用户联系方式" },  notes = "批量删除用户联系方式")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        usercontactService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-UserContact-Get-all')")
-    @ApiOperation(value = "获取用户联系方式", tags = {"用户联系方式" },  notes = "获取用户联系方式")
-	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/{usercontact_id}")
-    public ResponseEntity<UserContactDTO> get(@PathVariable("usercontact_id") Long usercontact_id) {
-        UserContact domain = usercontactService.get(usercontact_id);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查用户联系方式", tags = {"用户联系方式" },  notes = "检查用户联系方式")
+	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody UserContactDTO usercontactdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(usercontactService.checkKey(usercontactMapping.toDomain(usercontactdto)));
     }
 
     @ApiOperation(value = "获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "获取用户联系方式草稿")
@@ -113,12 +119,6 @@ public class UserContactResource {
     public ResponseEntity<UserContactDTO> getDraft(UserContactDTO dto) {
         UserContact domain = usercontactMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查用户联系方式", tags = {"用户联系方式" },  notes = "检查用户联系方式")
-	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody UserContactDTO usercontactdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(usercontactService.checkKey(usercontactMapping.toDomain(usercontactdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-UserContact-Save-all')")

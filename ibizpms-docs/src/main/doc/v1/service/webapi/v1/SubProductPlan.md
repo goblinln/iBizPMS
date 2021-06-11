@@ -41,44 +41,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新产品计划
+### 根据获取产品计划
 #### 访问路径
 /productplans/{productplan_id}/subproductplans/{subproductplan_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | productplan_id | Long | 产品计划主键ID |
 | 2 | subproductplan_id | Long | 产品计划主键ID |
-| 3 | subproductplandto | [SubProductPlanDTO](#SubProductPlanDTO) | 产品计划实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubProductPlanDTO](#SubProductPlanDTO)：产品计划实体传输对象 |
-
-### 根据批量更新产品计划
-#### 访问路径
-/productplans/{productplan_id}/subproductplans/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | productplan_id | Long | 产品计划主键ID |
-| 2 | subproductplandtos | List<[SubProductPlanDTO](#SubProductPlanDTO)> | 产品计划实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除产品计划
 #### 访问路径
@@ -118,24 +98,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取产品计划
+### 根据更新产品计划
 #### 访问路径
 /productplans/{productplan_id}/subproductplans/{subproductplan_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | productplan_id | Long | 产品计划主键ID |
 | 2 | subproductplan_id | Long | 产品计划主键ID |
+| 3 | subproductplandto | [SubProductPlanDTO](#SubProductPlanDTO) | 产品计划实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubProductPlanDTO](#SubProductPlanDTO)：产品计划实体传输对象 |
+
+### 根据批量更新产品计划
+#### 访问路径
+/productplans/{productplan_id}/subproductplans/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |
+| 2 | subproductplandtos | List<[SubProductPlanDTO](#SubProductPlanDTO)> | 产品计划实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 批量解除关联Bug
 #### 访问路径
@@ -952,44 +952,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新产品计划
+### 根据获取产品计划
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
 | 3 | subproductplan_id | Long | 产品计划主键ID |
-| 4 | subproductplandto | [SubProductPlanDTO](#SubProductPlanDTO) | 产品计划实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubProductPlanDTO](#SubProductPlanDTO)：产品计划实体传输对象 |
-
-### 根据批量更新产品计划
-#### 访问路径
-/products/{product_id}/productplans/{productplan_id}/subproductplans/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
-| 3 | subproductplandtos | List<[SubProductPlanDTO](#SubProductPlanDTO)> | 产品计划实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除产品计划
 #### 访问路径
@@ -1029,24 +1009,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取产品计划
+### 根据更新产品计划
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
 | 3 | subproductplan_id | Long | 产品计划主键ID |
+| 4 | subproductplandto | [SubProductPlanDTO](#SubProductPlanDTO) | 产品计划实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubProductPlanDTO](#SubProductPlanDTO)：产品计划实体传输对象 |
+
+### 根据批量更新产品计划
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/subproductplans/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |
+| 3 | subproductplandtos | List<[SubProductPlanDTO](#SubProductPlanDTO)> | 产品计划实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 批量解除关联Bug
 #### 访问路径

@@ -16815,10 +16815,10 @@ SELECT YEAR
 	t21.`name` AS projectname,
 	t1.account,
 	t1.date,
-	ROUND( sum( t1.consumed ), 2 ) AS consumed,
-	ROUND( sum( t1.EVALUATIONCOST ), 2 ) AS EVALUATIONCOST,
-	ROUND( sum( t1.INPUTCOST ), 2 ) AS INPUTCOST,
-	ROUND( sum( t1.EVALUATIONTIME ), 2 ) AS EVALUATIONTIME
+	IFNULL( ROUND( sum( t1.consumed ), 2 ), 0 ) AS consumed,
+	IFNULL( ROUND( sum( t1.EVALUATIONCOST ), 2 ), 0 ) AS EVALUATIONCOST,
+	IFNULL( ROUND( sum( t1.INPUTCOST ), 2 ), 0 ) AS INPUTCOST,
+	IFNULL( ROUND( sum( t1.EVALUATIONTIME ), 2 ), 0 ) AS EVALUATIONTIME
 FROM
 	`zt_taskestimate` t1
 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
@@ -21354,6 +21354,22 @@ WHERE
 ```sql
 select t1.`YEAR`,concat(t1.`year`, '年') as yearname from (select DISTINCT year( t1.date ) AS `year` from zt_taskestimate t1 where t1.date <> '0000-00-00' ) t1
 ```
+### 所有人员(AllAccounts)<div id="TaskEstimate_AllAccounts"></div>
+```sql
+SELECT
+	t1.`ACCOUNT`,
+	t1.`DATE`,
+	t1.`ID`,
+	t11.`PROJECT`,
+	t21.`NAME` AS `PROJECTNAME`,
+	t1.`TASK`,
+	t11.`NAME` AS `TASKNAME`,
+	t21.pm 
+FROM
+	`zt_TASKESTIMATE` t1
+	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
+	LEFT JOIN `zt_PROJECT` t21 ON t11.`PROJECT` = t21.`ID` GROUP BY t1.account
+```
 ### DEFAULT(DEFAULT)<div id="TaskEstimate_Default"></div>
 ```sql
 SELECT
@@ -21408,6 +21424,25 @@ LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
 
 WHERE ( 1<>1 ) 
+
+```
+### 我管辖的所有人员(MyAccounts)<div id="TaskEstimate_MyAccounts"></div>
+```sql
+SELECT
+	t1.`ACCOUNT`,
+	t1.`DATE`,
+	t1.`ID`,
+	t11.`PROJECT`,
+	t21.`NAME` AS `PROJECTNAME`,
+	t1.`TASK`,
+	t11.`NAME` AS `TASKNAME`,
+	t21.pm 
+FROM
+	`zt_TASKESTIMATE` t1
+	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
+	LEFT JOIN `zt_PROJECT` t21 ON t11.`PROJECT` = t21.`ID`
+
+WHERE t21.pm = #{srf.sessioncontext.srfloginname} GROUP BY t1.account 
 
 ```
 ### 日志月（项目）(ProjectActionMonth)<div id="TaskEstimate_ProjectActionMonth"></div>

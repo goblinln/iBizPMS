@@ -65,6 +65,30 @@ public class IbzAgentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibzagentMapping.toDomain(returnObject.body),'pms-IbzAgent-Get')")
+    @ApiOperation(value = "获取代理", tags = {"代理" },  notes = "获取代理")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzagents/{ibzagent_id}")
+    public ResponseEntity<IbzAgentDTO> get(@PathVariable("ibzagent_id") Long ibzagent_id) {
+        IbzAgent domain = ibzagentService.get(ibzagent_id);
+        IbzAgentDTO dto = ibzagentMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibzagentService.get(#ibzagent_id),'pms-IbzAgent-Remove')")
+    @ApiOperation(value = "删除代理", tags = {"代理" },  notes = "删除代理")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/{ibzagent_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzagent_id") Long ibzagent_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzagentService.remove(ibzagent_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibzagentService.getIbzagentByIds(#ids),'pms-IbzAgent-Remove')")
+    @ApiOperation(value = "批量删除代理", tags = {"代理" },  notes = "批量删除代理")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzagentService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibzagent" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibzagentService.get(#ibzagent_id),'pms-IbzAgent-Update')")
     @ApiOperation(value = "更新代理", tags = {"代理" },  notes = "更新代理")
@@ -85,28 +109,10 @@ public class IbzAgentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibzagentService.get(#ibzagent_id),'pms-IbzAgent-Remove')")
-    @ApiOperation(value = "删除代理", tags = {"代理" },  notes = "删除代理")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/{ibzagent_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzagent_id") Long ibzagent_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzagentService.remove(ibzagent_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibzagentService.getIbzagentByIds(#ids),'pms-IbzAgent-Remove')")
-    @ApiOperation(value = "批量删除代理", tags = {"代理" },  notes = "批量删除代理")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzagentService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibzagentMapping.toDomain(returnObject.body),'pms-IbzAgent-Get')")
-    @ApiOperation(value = "获取代理", tags = {"代理" },  notes = "获取代理")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzagents/{ibzagent_id}")
-    public ResponseEntity<IbzAgentDTO> get(@PathVariable("ibzagent_id") Long ibzagent_id) {
-        IbzAgent domain = ibzagentService.get(ibzagent_id);
-        IbzAgentDTO dto = ibzagentMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查代理", tags = {"代理" },  notes = "检查代理")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbzAgentDTO ibzagentdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzagentService.checkKey(ibzagentMapping.toDomain(ibzagentdto)));
     }
 
     @ApiOperation(value = "获取代理草稿", tags = {"代理" },  notes = "获取代理草稿")
@@ -114,12 +120,6 @@ public class IbzAgentResource {
     public ResponseEntity<IbzAgentDTO> getDraft(IbzAgentDTO dto) {
         IbzAgent domain = ibzagentMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibzagentMapping.toDto(ibzagentService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查代理", tags = {"代理" },  notes = "检查代理")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbzAgentDTO ibzagentdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibzagentService.checkKey(ibzagentMapping.toDomain(ibzagentdto)));
     }
 
     @PreAuthorize("hasPermission(this.ibzagentMapping.toDomain(#ibzagentdto),'pms-IbzAgent-Save')")

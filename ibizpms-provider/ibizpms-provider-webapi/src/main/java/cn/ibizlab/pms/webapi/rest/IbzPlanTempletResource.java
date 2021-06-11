@@ -71,6 +71,30 @@ public class IbzPlanTempletResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibzplantempletMapping.toDomain(returnObject.body),'pms-IbzPlanTemplet-Get')")
+    @ApiOperation(value = "获取计划模板", tags = {"计划模板" },  notes = "获取计划模板")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/{ibzplantemplet_id}")
+    public ResponseEntity<IbzPlanTempletDTO> get(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id) {
+        IbzPlanTemplet domain = ibzplantempletService.get(ibzplantemplet_id);
+        IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibzplantempletService.get(#ibzplantemplet_id),'pms-IbzPlanTemplet-Remove')")
+    @ApiOperation(value = "删除计划模板", tags = {"计划模板" },  notes = "删除计划模板")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/{ibzplantemplet_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.remove(ibzplantemplet_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibzplantempletService.getIbzplantempletByIds(#ids),'pms-IbzPlanTemplet-Remove')")
+    @ApiOperation(value = "批量删除计划模板", tags = {"计划模板" },  notes = "批量删除计划模板")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibzplantempletService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibzplantemplet" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibzplantempletService.get(#ibzplantemplet_id),'pms-IbzPlanTemplet-Update')")
     @ApiOperation(value = "更新计划模板", tags = {"计划模板" },  notes = "更新计划模板")
@@ -91,28 +115,10 @@ public class IbzPlanTempletResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibzplantempletService.get(#ibzplantemplet_id),'pms-IbzPlanTemplet-Remove')")
-    @ApiOperation(value = "删除计划模板", tags = {"计划模板" },  notes = "删除计划模板")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/{ibzplantemplet_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.remove(ibzplantemplet_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibzplantempletService.getIbzplantempletByIds(#ids),'pms-IbzPlanTemplet-Remove')")
-    @ApiOperation(value = "批量删除计划模板", tags = {"计划模板" },  notes = "批量删除计划模板")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibzplantempletService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibzplantempletMapping.toDomain(returnObject.body),'pms-IbzPlanTemplet-Get')")
-    @ApiOperation(value = "获取计划模板", tags = {"计划模板" },  notes = "获取计划模板")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/{ibzplantemplet_id}")
-    public ResponseEntity<IbzPlanTempletDTO> get(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id) {
-        IbzPlanTemplet domain = ibzplantempletService.get(ibzplantemplet_id);
-        IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查计划模板", tags = {"计划模板" },  notes = "检查计划模板")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbzPlanTempletDTO ibzplantempletdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.checkKey(ibzplantempletMapping.toDomain(ibzplantempletdto)));
     }
 
     @ApiOperation(value = "获取计划模板草稿", tags = {"计划模板" },  notes = "获取计划模板草稿")
@@ -120,12 +126,6 @@ public class IbzPlanTempletResource {
     public ResponseEntity<IbzPlanTempletDTO> getDraft(IbzPlanTempletDTO dto) {
         IbzPlanTemplet domain = ibzplantempletMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletMapping.toDto(ibzplantempletService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查计划模板", tags = {"计划模板" },  notes = "检查计划模板")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbzPlanTempletDTO ibzplantempletdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.checkKey(ibzplantempletMapping.toDomain(ibzplantempletdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzPlanTemplet-GetPlan-all')")

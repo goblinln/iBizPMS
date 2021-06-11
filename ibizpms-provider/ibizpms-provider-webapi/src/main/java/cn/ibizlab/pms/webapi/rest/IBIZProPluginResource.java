@@ -65,6 +65,30 @@ public class IBIZProPluginResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibizpropluginMapping.toDomain(returnObject.body),'pms-IBIZProPlugin-Get')")
+    @ApiOperation(value = "获取系统插件", tags = {"系统插件" },  notes = "获取系统插件")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/{ibizproplugin_id}")
+    public ResponseEntity<IBIZProPluginDTO> get(@PathVariable("ibizproplugin_id") String ibizproplugin_id) {
+        IBIZProPlugin domain = ibizpropluginService.get(ibizproplugin_id);
+        IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibizpropluginService.get(#ibizproplugin_id),'pms-IBIZProPlugin-Remove')")
+    @ApiOperation(value = "删除系统插件", tags = {"系统插件" },  notes = "删除系统插件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/{ibizproplugin_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibizproplugin_id") String ibizproplugin_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibizpropluginService.remove(ibizproplugin_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibizpropluginService.getIbizpropluginByIds(#ids),'pms-IBIZProPlugin-Remove')")
+    @ApiOperation(value = "批量删除系统插件", tags = {"系统插件" },  notes = "批量删除系统插件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibizpropluginService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibizproplugin" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibizpropluginService.get(#ibizproplugin_id),'pms-IBIZProPlugin-Update')")
     @ApiOperation(value = "更新系统插件", tags = {"系统插件" },  notes = "更新系统插件")
@@ -85,28 +109,10 @@ public class IBIZProPluginResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibizpropluginService.get(#ibizproplugin_id),'pms-IBIZProPlugin-Remove')")
-    @ApiOperation(value = "删除系统插件", tags = {"系统插件" },  notes = "删除系统插件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/{ibizproplugin_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibizproplugin_id") String ibizproplugin_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibizpropluginService.remove(ibizproplugin_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibizpropluginService.getIbizpropluginByIds(#ids),'pms-IBIZProPlugin-Remove')")
-    @ApiOperation(value = "批量删除系统插件", tags = {"系统插件" },  notes = "批量删除系统插件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizpropluginService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibizpropluginMapping.toDomain(returnObject.body),'pms-IBIZProPlugin-Get')")
-    @ApiOperation(value = "获取系统插件", tags = {"系统插件" },  notes = "获取系统插件")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/{ibizproplugin_id}")
-    public ResponseEntity<IBIZProPluginDTO> get(@PathVariable("ibizproplugin_id") String ibizproplugin_id) {
-        IBIZProPlugin domain = ibizpropluginService.get(ibizproplugin_id);
-        IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查系统插件", tags = {"系统插件" },  notes = "检查系统插件")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProPluginDTO ibizproplugindto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizpropluginService.checkKey(ibizpropluginMapping.toDomain(ibizproplugindto)));
     }
 
     @ApiOperation(value = "获取系统插件草稿", tags = {"系统插件" },  notes = "获取系统插件草稿")
@@ -114,12 +120,6 @@ public class IBIZProPluginResource {
     public ResponseEntity<IBIZProPluginDTO> getDraft(IBIZProPluginDTO dto) {
         IBIZProPlugin domain = ibizpropluginMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizpropluginMapping.toDto(ibizpropluginService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查系统插件", tags = {"系统插件" },  notes = "检查系统插件")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProPluginDTO ibizproplugindto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizpropluginService.checkKey(ibizpropluginMapping.toDomain(ibizproplugindto)));
     }
 
     @PreAuthorize("hasPermission(this.ibizpropluginMapping.toDomain(#ibizproplugindto),'pms-IBIZProPlugin-Save')")

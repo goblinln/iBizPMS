@@ -65,6 +65,30 @@ public class IbizproProjectMonthlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibizproprojectmonthlyMapping.toDomain(returnObject.body),'pms-IbizproProjectMonthly-Get')")
+    @ApiOperation(value = "获取项目月报", tags = {"项目月报" },  notes = "获取项目月报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}")
+    public ResponseEntity<IbizproProjectMonthlyDTO> get(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id) {
+        IbizproProjectMonthly domain = ibizproprojectmonthlyService.get(ibizproprojectmonthly_id);
+        IbizproProjectMonthlyDTO dto = ibizproprojectmonthlyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibizproprojectmonthlyService.get(#ibizproprojectmonthly_id),'pms-IbizproProjectMonthly-Remove')")
+    @ApiOperation(value = "删除项目月报", tags = {"项目月报" },  notes = "删除项目月报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlyService.remove(ibizproprojectmonthly_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibizproprojectmonthlyService.getIbizproprojectmonthlyByIds(#ids),'pms-IbizproProjectMonthly-Remove')")
+    @ApiOperation(value = "批量删除项目月报", tags = {"项目月报" },  notes = "批量删除项目月报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectmonthlies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibizproprojectmonthlyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibizproprojectmonthly" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibizproprojectmonthlyService.get(#ibizproprojectmonthly_id),'pms-IbizproProjectMonthly-Update')")
     @ApiOperation(value = "更新项目月报", tags = {"项目月报" },  notes = "更新项目月报")
@@ -85,28 +109,10 @@ public class IbizproProjectMonthlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproprojectmonthlyService.get(#ibizproprojectmonthly_id),'pms-IbizproProjectMonthly-Remove')")
-    @ApiOperation(value = "删除项目月报", tags = {"项目月报" },  notes = "删除项目月报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlyService.remove(ibizproprojectmonthly_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibizproprojectmonthlyService.getIbizproprojectmonthlyByIds(#ids),'pms-IbizproProjectMonthly-Remove')")
-    @ApiOperation(value = "批量删除项目月报", tags = {"项目月报" },  notes = "批量删除项目月报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectmonthlies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizproprojectmonthlyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibizproprojectmonthlyMapping.toDomain(returnObject.body),'pms-IbizproProjectMonthly-Get')")
-    @ApiOperation(value = "获取项目月报", tags = {"项目月报" },  notes = "获取项目月报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}")
-    public ResponseEntity<IbizproProjectMonthlyDTO> get(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id) {
-        IbizproProjectMonthly domain = ibizproprojectmonthlyService.get(ibizproprojectmonthly_id);
-        IbizproProjectMonthlyDTO dto = ibizproprojectmonthlyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查项目月报", tags = {"项目月报" },  notes = "检查项目月报")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectMonthlyDTO ibizproprojectmonthlydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlyService.checkKey(ibizproprojectmonthlyMapping.toDomain(ibizproprojectmonthlydto)));
     }
 
     @ApiOperation(value = "获取项目月报草稿", tags = {"项目月报" },  notes = "获取项目月报草稿")
@@ -114,12 +120,6 @@ public class IbizproProjectMonthlyResource {
     public ResponseEntity<IbizproProjectMonthlyDTO> getDraft(IbizproProjectMonthlyDTO dto) {
         IbizproProjectMonthly domain = ibizproprojectmonthlyMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlyMapping.toDto(ibizproprojectmonthlyService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查项目月报", tags = {"项目月报" },  notes = "检查项目月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectMonthlyDTO ibizproprojectmonthlydto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizproprojectmonthlyService.checkKey(ibizproprojectmonthlyMapping.toDomain(ibizproprojectmonthlydto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbizproProjectMonthly-ManualCreateMonthly-all')")

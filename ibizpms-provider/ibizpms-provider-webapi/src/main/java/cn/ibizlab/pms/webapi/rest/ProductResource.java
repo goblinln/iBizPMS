@@ -65,23 +65,13 @@ public class ProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.productService.get(#product_id),'pms-Product-Update')")
-    @ApiOperation(value = "更新产品", tags = {"产品" },  notes = "更新产品")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}")
-    public ResponseEntity<ProductDTO> update(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
-		Product domain  = productMapping.toDomain(productdto);
-        domain .setId(product_id);
-		productService.update(domain );
-		ProductDTO dto = productMapping.toDto(domain);
+    @PostAuthorize("hasPermission(this.productMapping.toDomain(returnObject.body),'pms-Product-Get')")
+    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
+    public ResponseEntity<ProductDTO> get(@PathVariable("product_id") Long product_id) {
+        Product domain = productService.get(product_id);
+        ProductDTO dto = productMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("hasPermission(this.productService.getProductByEntities(this.productMapping.toDomain(#productdtos)),'pms-Product-Update')")
-    @ApiOperation(value = "批量更新产品", tags = {"产品" },  notes = "批量更新产品")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProductDTO> productdtos) {
-        productService.updateBatch(productMapping.toDomain(productdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasPermission(this.productService.get(#product_id),'pms-Product-Remove')")
@@ -99,20 +89,23 @@ public class ProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.productMapping.toDomain(returnObject.body),'pms-Product-Get')")
-    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
-    public ResponseEntity<ProductDTO> get(@PathVariable("product_id") Long product_id) {
-        Product domain = productService.get(product_id);
-        ProductDTO dto = productMapping.toDto(domain);
+    @PreAuthorize("hasPermission(this.productService.get(#product_id),'pms-Product-Update')")
+    @ApiOperation(value = "更新产品", tags = {"产品" },  notes = "更新产品")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}")
+    public ResponseEntity<ProductDTO> update(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
+		Product domain  = productMapping.toDomain(productdto);
+        domain .setId(product_id);
+		productService.update(domain );
+		ProductDTO dto = productMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取产品草稿", tags = {"产品" },  notes = "获取产品草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/getdraft")
-    public ResponseEntity<ProductDTO> getDraft(ProductDTO dto) {
-        Product domain = productMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
+    @PreAuthorize("hasPermission(this.productService.getProductByEntities(this.productMapping.toDomain(#productdtos)),'pms-Product-Update')")
+    @ApiOperation(value = "批量更新产品", tags = {"产品" },  notes = "批量更新产品")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/batch")
+    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProductDTO> productdtos) {
+        productService.updateBatch(productMapping.toDomain(productdtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Product-CancelProductTop-all')")
@@ -149,6 +142,13 @@ public class ProductResource {
         List<Product> domains = productMapping.toDomain(productdtos);
         boolean result = productService.closeBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取产品草稿", tags = {"产品" },  notes = "获取产品草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/getdraft")
+    public ResponseEntity<ProductDTO> getDraft(ProductDTO dto) {
+        Product domain = productMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Product-MobProductCounter-all')")

@@ -65,23 +65,13 @@ public class DocResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Doc-Update-all')")
-    @ApiOperation(value = "更新文档", tags = {"文档" },  notes = "更新文档")
-	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}")
-    public ResponseEntity<DocDTO> update(@PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
-		Doc domain  = docMapping.toDomain(docdto);
-        domain .setId(doc_id);
-		docService.update(domain );
-		DocDTO dto = docMapping.toDto(domain);
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Doc-Get-all')")
+    @ApiOperation(value = "获取文档", tags = {"文档" },  notes = "获取文档")
+	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}")
+    public ResponseEntity<DocDTO> get(@PathVariable("doc_id") Long doc_id) {
+        Doc domain = docService.get(doc_id);
+        DocDTO dto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Doc-Update-all')")
-    @ApiOperation(value = "批量更新文档", tags = {"文档" },  notes = "批量更新文档")
-	@RequestMapping(method = RequestMethod.PUT, value = "/docs/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<DocDTO> docdtos) {
-        docService.updateBatch(docMapping.toDomain(docdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Doc-Remove-all')")
@@ -99,20 +89,23 @@ public class DocResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Doc-Get-all')")
-    @ApiOperation(value = "获取文档", tags = {"文档" },  notes = "获取文档")
-	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}")
-    public ResponseEntity<DocDTO> get(@PathVariable("doc_id") Long doc_id) {
-        Doc domain = docService.get(doc_id);
-        DocDTO dto = docMapping.toDto(domain);
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Doc-Update-all')")
+    @ApiOperation(value = "更新文档", tags = {"文档" },  notes = "更新文档")
+	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}")
+    public ResponseEntity<DocDTO> update(@PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
+		Doc domain  = docMapping.toDomain(docdto);
+        domain .setId(doc_id);
+		docService.update(domain );
+		DocDTO dto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取文档草稿", tags = {"文档" },  notes = "获取文档草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/docs/getdraft")
-    public ResponseEntity<DocDTO> getDraft(DocDTO dto) {
-        Doc domain = docMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Doc-Update-all')")
+    @ApiOperation(value = "批量更新文档", tags = {"文档" },  notes = "批量更新文档")
+	@RequestMapping(method = RequestMethod.PUT, value = "/docs/batch")
+    public ResponseEntity<Boolean> updateBatch(@RequestBody List<DocDTO> docdtos) {
+        docService.updateBatch(docMapping.toDomain(docdtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Doc-ByVersionUpdateContext-all')")
@@ -176,6 +169,13 @@ public class DocResource {
         List<Doc> domains = docMapping.toDomain(docdtos);
         boolean result = docService.getDocStatusBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取文档草稿", tags = {"文档" },  notes = "获取文档草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/docs/getdraft")
+    public ResponseEntity<DocDTO> getDraft(DocDTO dto) {
+        Doc domain = docMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Doc-OnlyCollectDoc-all')")

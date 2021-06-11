@@ -77,6 +77,30 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
+    @ApiOperation(value = "获取任务", tags = {"任务" },  notes = "获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> get(@PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "删除任务", tags = {"任务" },  notes = "删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("task_id") Long task_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "批量删除任务", tags = {"任务" },  notes = "批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Update-all')")
     @ApiOperation(value = "更新任务", tags = {"任务" },  notes = "更新任务")
@@ -95,37 +119,6 @@ public class TaskResource {
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<TaskDTO> taskdtos) {
         taskService.updateBatch(taskMapping.toDomain(taskdtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "删除任务", tags = {"任务" },  notes = "删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("task_id") Long task_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "批量删除任务", tags = {"任务" },  notes = "批量删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        taskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
-    @ApiOperation(value = "获取任务", tags = {"任务" },  notes = "获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> get(@PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "获取任务草稿", tags = {"任务" },  notes = "获取任务草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraft(TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Activate-all')")
@@ -303,6 +296,13 @@ public class TaskResource {
         List<Task> domains = taskMapping.toDomain(taskdtos);
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取任务草稿", tags = {"任务" },  notes = "获取任务草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraft(TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-GetNextTeamUser-all')")
@@ -1616,6 +1616,30 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
+    @ApiOperation(value = "根据任务模块获取任务", tags = {"任务" },  notes = "根据任务模块获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据任务模块删除任务", tags = {"任务" },  notes = "根据任务模块删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}")
+    public ResponseEntity<Boolean> removeByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据任务模块批量删除任务", tags = {"任务" },  notes = "根据任务模块批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/{projectmodule_id}/tasks/batch")
+    public ResponseEntity<Boolean> removeBatchByProjectModule(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Update-all')")
     @ApiOperation(value = "根据任务模块更新任务", tags = {"任务" },  notes = "根据任务模块更新任务")
@@ -1639,38 +1663,6 @@ public class TaskResource {
         }
         taskService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据任务模块删除任务", tags = {"任务" },  notes = "根据任务模块删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}")
-    public ResponseEntity<Boolean> removeByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据任务模块批量删除任务", tags = {"任务" },  notes = "根据任务模块批量删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projectmodules/{projectmodule_id}/tasks/batch")
-    public ResponseEntity<Boolean> removeBatchByProjectModule(@RequestBody List<Long> ids) {
-        taskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
-    @ApiOperation(value = "根据任务模块获取任务", tags = {"任务" },  notes = "根据任务模块获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据任务模块获取任务草稿", tags = {"任务" },  notes = "根据任务模块获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projectmodules/{projectmodule_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
-        domain.setModule(projectmodule_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Activate-all')")
@@ -1832,6 +1824,14 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据任务模块获取任务草稿", tags = {"任务" },  notes = "根据任务模块获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projectmodules/{projectmodule_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setModule(projectmodule_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-GetNextTeamUser-all')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/getnextteamuser")
@@ -3155,6 +3155,30 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
+    @ApiOperation(value = "根据产品计划获取任务", tags = {"任务" },  notes = "根据产品计划获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据产品计划删除任务", tags = {"任务" },  notes = "根据产品计划删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/tasks/{task_id}")
+    public ResponseEntity<Boolean> removeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据产品计划批量删除任务", tags = {"任务" },  notes = "根据产品计划批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/tasks/batch")
+    public ResponseEntity<Boolean> removeBatchByProductPlan(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Update-all')")
     @ApiOperation(value = "根据产品计划更新任务", tags = {"任务" },  notes = "根据产品计划更新任务")
@@ -3178,38 +3202,6 @@ public class TaskResource {
         }
         taskService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据产品计划删除任务", tags = {"任务" },  notes = "根据产品计划删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/tasks/{task_id}")
-    public ResponseEntity<Boolean> removeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据产品计划批量删除任务", tags = {"任务" },  notes = "根据产品计划批量删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/tasks/batch")
-    public ResponseEntity<Boolean> removeBatchByProductPlan(@RequestBody List<Long> ids) {
-        taskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
-    @ApiOperation(value = "根据产品计划获取任务", tags = {"任务" },  notes = "根据产品计划获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据产品计划获取任务草稿", tags = {"任务" },  notes = "根据产品计划获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftByProductPlan(@PathVariable("productplan_id") Long productplan_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
-        domain.setPlan(productplan_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Activate-all')")
@@ -3371,6 +3363,14 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据产品计划获取任务草稿", tags = {"任务" },  notes = "根据产品计划获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftByProductPlan(@PathVariable("productplan_id") Long productplan_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setPlan(productplan_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-GetNextTeamUser-all')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/getnextteamuser")
@@ -4694,6 +4694,30 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
+    @ApiOperation(value = "根据需求获取任务", tags = {"任务" },  notes = "根据需求获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据需求删除任务", tags = {"任务" },  notes = "根据需求删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/tasks/{task_id}")
+    public ResponseEntity<Boolean> removeByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据需求批量删除任务", tags = {"任务" },  notes = "根据需求批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/tasks/batch")
+    public ResponseEntity<Boolean> removeBatchByStory(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Update-all')")
     @ApiOperation(value = "根据需求更新任务", tags = {"任务" },  notes = "根据需求更新任务")
@@ -4717,38 +4741,6 @@ public class TaskResource {
         }
         taskService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据需求删除任务", tags = {"任务" },  notes = "根据需求删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/tasks/{task_id}")
-    public ResponseEntity<Boolean> removeByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据需求批量删除任务", tags = {"任务" },  notes = "根据需求批量删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/tasks/batch")
-    public ResponseEntity<Boolean> removeBatchByStory(@RequestBody List<Long> ids) {
-        taskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
-    @ApiOperation(value = "根据需求获取任务", tags = {"任务" },  notes = "根据需求获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据需求获取任务草稿", tags = {"任务" },  notes = "根据需求获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftByStory(@PathVariable("story_id") Long story_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
-        domain.setStory(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Activate-all')")
@@ -4910,6 +4902,14 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据需求获取任务草稿", tags = {"任务" },  notes = "根据需求获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftByStory(@PathVariable("story_id") Long story_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setStory(story_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-GetNextTeamUser-all')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/getnextteamuser")
@@ -6233,6 +6233,30 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
+    @ApiOperation(value = "根据项目获取任务", tags = {"任务" },  notes = "根据项目获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据项目删除任务", tags = {"任务" },  notes = "根据项目删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据项目批量删除任务", tags = {"任务" },  notes = "根据项目批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/batch")
+    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Update-all')")
     @ApiOperation(value = "根据项目更新任务", tags = {"任务" },  notes = "根据项目更新任务")
@@ -6256,38 +6280,6 @@ public class TaskResource {
         }
         taskService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据项目删除任务", tags = {"任务" },  notes = "根据项目删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据项目批量删除任务", tags = {"任务" },  notes = "根据项目批量删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        taskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
-    @ApiOperation(value = "根据项目获取任务", tags = {"任务" },  notes = "根据项目获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据项目获取任务草稿", tags = {"任务" },  notes = "根据项目获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
-        domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Activate-all')")
@@ -6449,6 +6441,14 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据项目获取任务草稿", tags = {"任务" },  notes = "根据项目获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-GetNextTeamUser-all')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/getnextteamuser")
@@ -7772,6 +7772,30 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
+    @ApiOperation(value = "根据产品产品计划获取任务", tags = {"任务" },  notes = "根据产品产品计划获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据产品产品计划删除任务", tags = {"任务" },  notes = "根据产品产品计划删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}")
+    public ResponseEntity<Boolean> removeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据产品产品计划批量删除任务", tags = {"任务" },  notes = "根据产品产品计划批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/tasks/batch")
+    public ResponseEntity<Boolean> removeBatchByProductProductPlan(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Update-all')")
     @ApiOperation(value = "根据产品产品计划更新任务", tags = {"任务" },  notes = "根据产品产品计划更新任务")
@@ -7795,38 +7819,6 @@ public class TaskResource {
         }
         taskService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据产品产品计划删除任务", tags = {"任务" },  notes = "根据产品产品计划删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}")
-    public ResponseEntity<Boolean> removeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据产品产品计划批量删除任务", tags = {"任务" },  notes = "根据产品产品计划批量删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/tasks/batch")
-    public ResponseEntity<Boolean> removeBatchByProductProductPlan(@RequestBody List<Long> ids) {
-        taskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
-    @ApiOperation(value = "根据产品产品计划获取任务", tags = {"任务" },  notes = "根据产品产品计划获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据产品产品计划获取任务草稿", tags = {"任务" },  notes = "根据产品产品计划获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
-        domain.setPlan(productplan_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Activate-all')")
@@ -7988,6 +7980,14 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据产品产品计划获取任务草稿", tags = {"任务" },  notes = "根据产品产品计划获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setPlan(productplan_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-GetNextTeamUser-all')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/getnextteamuser")
@@ -9311,6 +9311,30 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
+    @ApiOperation(value = "根据产品需求获取任务", tags = {"任务" },  notes = "根据产品需求获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据产品需求删除任务", tags = {"任务" },  notes = "根据产品需求删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}")
+    public ResponseEntity<Boolean> removeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据产品需求批量删除任务", tags = {"任务" },  notes = "根据产品需求批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/tasks/batch")
+    public ResponseEntity<Boolean> removeBatchByProductStory(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Update-all')")
     @ApiOperation(value = "根据产品需求更新任务", tags = {"任务" },  notes = "根据产品需求更新任务")
@@ -9334,38 +9358,6 @@ public class TaskResource {
         }
         taskService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据产品需求删除任务", tags = {"任务" },  notes = "根据产品需求删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}")
-    public ResponseEntity<Boolean> removeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据产品需求批量删除任务", tags = {"任务" },  notes = "根据产品需求批量删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/tasks/batch")
-    public ResponseEntity<Boolean> removeBatchByProductStory(@RequestBody List<Long> ids) {
-        taskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
-    @ApiOperation(value = "根据产品需求获取任务", tags = {"任务" },  notes = "根据产品需求获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据产品需求获取任务草稿", tags = {"任务" },  notes = "根据产品需求获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
-        domain.setStory(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Activate-all')")
@@ -9527,6 +9519,14 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据产品需求获取任务草稿", tags = {"任务" },  notes = "根据产品需求获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setStory(story_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-GetNextTeamUser-all')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/getnextteamuser")
@@ -10850,6 +10850,30 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
+    @ApiOperation(value = "根据项目任务模块获取任务", tags = {"任务" },  notes = "根据项目任务模块获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据项目任务模块删除任务", tags = {"任务" },  notes = "根据项目任务模块删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}")
+    public ResponseEntity<Boolean> removeByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
+    @ApiOperation(value = "根据项目任务模块批量删除任务", tags = {"任务" },  notes = "根据项目任务模块批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/batch")
+    public ResponseEntity<Boolean> removeBatchByProjectProjectModule(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Update-all')")
     @ApiOperation(value = "根据项目任务模块更新任务", tags = {"任务" },  notes = "根据项目任务模块更新任务")
@@ -10873,38 +10897,6 @@ public class TaskResource {
         }
         taskService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据项目任务模块删除任务", tags = {"任务" },  notes = "根据项目任务模块删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}")
-    public ResponseEntity<Boolean> removeByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Remove-all')")
-    @ApiOperation(value = "根据项目任务模块批量删除任务", tags = {"任务" },  notes = "根据项目任务模块批量删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/batch")
-    public ResponseEntity<Boolean> removeBatchByProjectProjectModule(@RequestBody List<Long> ids) {
-        taskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Get-all')")
-    @ApiOperation(value = "根据项目任务模块获取任务", tags = {"任务" },  notes = "根据项目任务模块获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据项目任务模块获取任务草稿", tags = {"任务" },  notes = "根据项目任务模块获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
-        domain.setModule(projectmodule_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-Activate-all')")
@@ -11066,6 +11058,14 @@ public class TaskResource {
         boolean result = taskService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据项目任务模块获取任务草稿", tags = {"任务" },  notes = "根据项目任务模块获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setModule(projectmodule_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-GetNextTeamUser-all')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/getnextteamuser")

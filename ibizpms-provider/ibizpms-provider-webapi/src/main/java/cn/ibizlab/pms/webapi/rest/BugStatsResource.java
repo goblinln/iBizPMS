@@ -65,6 +65,30 @@ public class BugStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-BugStats-Get-all')")
+    @ApiOperation(value = "获取Bug统计", tags = {"Bug统计" },  notes = "获取Bug统计")
+	@RequestMapping(method = RequestMethod.GET, value = "/bugstats/{bugstats_id}")
+    public ResponseEntity<BugStatsDTO> get(@PathVariable("bugstats_id") Long bugstats_id) {
+        BugStats domain = bugstatsService.get(bugstats_id);
+        BugStatsDTO dto = bugstatsMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-BugStats-Remove-all')")
+    @ApiOperation(value = "删除Bug统计", tags = {"Bug统计" },  notes = "删除Bug统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/{bugstats_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("bugstats_id") Long bugstats_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(bugstatsService.remove(bugstats_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-BugStats-Remove-all')")
+    @ApiOperation(value = "批量删除Bug统计", tags = {"Bug统计" },  notes = "批量删除Bug统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        bugstatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-BugStats-Update-all')")
     @ApiOperation(value = "更新Bug统计", tags = {"Bug统计" },  notes = "更新Bug统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/bugstats/{bugstats_id}")
@@ -84,28 +108,10 @@ public class BugStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-BugStats-Remove-all')")
-    @ApiOperation(value = "删除Bug统计", tags = {"Bug统计" },  notes = "删除Bug统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/{bugstats_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("bugstats_id") Long bugstats_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(bugstatsService.remove(bugstats_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-BugStats-Remove-all')")
-    @ApiOperation(value = "批量删除Bug统计", tags = {"Bug统计" },  notes = "批量删除Bug统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        bugstatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-BugStats-Get-all')")
-    @ApiOperation(value = "获取Bug统计", tags = {"Bug统计" },  notes = "获取Bug统计")
-	@RequestMapping(method = RequestMethod.GET, value = "/bugstats/{bugstats_id}")
-    public ResponseEntity<BugStatsDTO> get(@PathVariable("bugstats_id") Long bugstats_id) {
-        BugStats domain = bugstatsService.get(bugstats_id);
-        BugStatsDTO dto = bugstatsMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查Bug统计", tags = {"Bug统计" },  notes = "检查Bug统计")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody BugStatsDTO bugstatsdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(bugstatsService.checkKey(bugstatsMapping.toDomain(bugstatsdto)));
     }
 
     @ApiOperation(value = "获取Bug统计草稿", tags = {"Bug统计" },  notes = "获取Bug统计草稿")
@@ -113,12 +119,6 @@ public class BugStatsResource {
     public ResponseEntity<BugStatsDTO> getDraft(BugStatsDTO dto) {
         BugStats domain = bugstatsMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(bugstatsMapping.toDto(bugstatsService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查Bug统计", tags = {"Bug统计" },  notes = "检查Bug统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody BugStatsDTO bugstatsdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(bugstatsService.checkKey(bugstatsMapping.toDomain(bugstatsdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-BugStats-Save-all')")

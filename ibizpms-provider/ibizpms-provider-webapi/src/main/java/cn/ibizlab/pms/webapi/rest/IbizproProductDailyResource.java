@@ -65,6 +65,30 @@ public class IbizproProductDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibizproproductdailyMapping.toDomain(returnObject.body),'pms-IbizproProductDaily-Get')")
+    @ApiOperation(value = "获取产品日报", tags = {"产品日报" },  notes = "获取产品日报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductdailies/{ibizproproductdaily_id}")
+    public ResponseEntity<IbizproProductDailyDTO> get(@PathVariable("ibizproproductdaily_id") Long ibizproproductdaily_id) {
+        IbizproProductDaily domain = ibizproproductdailyService.get(ibizproproductdaily_id);
+        IbizproProductDailyDTO dto = ibizproproductdailyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibizproproductdailyService.get(#ibizproproductdaily_id),'pms-IbizproProductDaily-Remove')")
+    @ApiOperation(value = "删除产品日报", tags = {"产品日报" },  notes = "删除产品日报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductdailies/{ibizproproductdaily_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibizproproductdaily_id") Long ibizproproductdaily_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyService.remove(ibizproproductdaily_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibizproproductdailyService.getIbizproproductdailyByIds(#ids),'pms-IbizproProductDaily-Remove')")
+    @ApiOperation(value = "批量删除产品日报", tags = {"产品日报" },  notes = "批量删除产品日报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductdailies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibizproproductdailyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibizproproductdaily" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibizproproductdailyService.get(#ibizproproductdaily_id),'pms-IbizproProductDaily-Update')")
     @ApiOperation(value = "更新产品日报", tags = {"产品日报" },  notes = "更新产品日报")
@@ -85,28 +109,10 @@ public class IbizproProductDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproproductdailyService.get(#ibizproproductdaily_id),'pms-IbizproProductDaily-Remove')")
-    @ApiOperation(value = "删除产品日报", tags = {"产品日报" },  notes = "删除产品日报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductdailies/{ibizproproductdaily_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibizproproductdaily_id") Long ibizproproductdaily_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyService.remove(ibizproproductdaily_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibizproproductdailyService.getIbizproproductdailyByIds(#ids),'pms-IbizproProductDaily-Remove')")
-    @ApiOperation(value = "批量删除产品日报", tags = {"产品日报" },  notes = "批量删除产品日报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductdailies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibizproproductdailyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibizproproductdailyMapping.toDomain(returnObject.body),'pms-IbizproProductDaily-Get')")
-    @ApiOperation(value = "获取产品日报", tags = {"产品日报" },  notes = "获取产品日报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductdailies/{ibizproproductdaily_id}")
-    public ResponseEntity<IbizproProductDailyDTO> get(@PathVariable("ibizproproductdaily_id") Long ibizproproductdaily_id) {
-        IbizproProductDaily domain = ibizproproductdailyService.get(ibizproproductdaily_id);
-        IbizproProductDailyDTO dto = ibizproproductdailyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查产品日报", tags = {"产品日报" },  notes = "检查产品日报")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductdailies/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProductDailyDTO ibizproproductdailydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyService.checkKey(ibizproproductdailyMapping.toDomain(ibizproproductdailydto)));
     }
 
     @ApiOperation(value = "获取产品日报草稿", tags = {"产品日报" },  notes = "获取产品日报草稿")
@@ -114,12 +120,6 @@ public class IbizproProductDailyResource {
     public ResponseEntity<IbizproProductDailyDTO> getDraft(IbizproProductDailyDTO dto) {
         IbizproProductDaily domain = ibizproproductdailyMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyMapping.toDto(ibizproproductdailyService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查产品日报", tags = {"产品日报" },  notes = "检查产品日报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductdailies/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProductDailyDTO ibizproproductdailydto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyService.checkKey(ibizproproductdailyMapping.toDomain(ibizproproductdailydto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbizproProductDaily-ManualCreateDaily-all')")

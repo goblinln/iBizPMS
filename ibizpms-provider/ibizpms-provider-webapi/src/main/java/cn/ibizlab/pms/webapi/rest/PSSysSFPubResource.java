@@ -65,6 +65,30 @@ public class PSSysSFPubResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.pssyssfpubMapping.toDomain(returnObject.body),'pms-PSSysSFPub-Get')")
+    @ApiOperation(value = "获取后台服务架构", tags = {"后台服务架构" },  notes = "获取后台服务架构")
+	@RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/{pssyssfpub_id}")
+    public ResponseEntity<PSSysSFPubDTO> get(@PathVariable("pssyssfpub_id") String pssyssfpub_id) {
+        PSSysSFPub domain = pssyssfpubService.get(pssyssfpub_id);
+        PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.pssyssfpubService.get(#pssyssfpub_id),'pms-PSSysSFPub-Remove')")
+    @ApiOperation(value = "删除后台服务架构", tags = {"后台服务架构" },  notes = "删除后台服务架构")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/{pssyssfpub_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("pssyssfpub_id") String pssyssfpub_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubService.remove(pssyssfpub_id));
+    }
+
+    @PreAuthorize("hasPermission(this.pssyssfpubService.getPssyssfpubByIds(#ids),'pms-PSSysSFPub-Remove')")
+    @ApiOperation(value = "批量删除后台服务架构", tags = {"后台服务架构" },  notes = "批量删除后台服务架构")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        pssyssfpubService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "pssyssfpub" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.pssyssfpubService.get(#pssyssfpub_id),'pms-PSSysSFPub-Update')")
     @ApiOperation(value = "更新后台服务架构", tags = {"后台服务架构" },  notes = "更新后台服务架构")
@@ -85,28 +109,10 @@ public class PSSysSFPubResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.pssyssfpubService.get(#pssyssfpub_id),'pms-PSSysSFPub-Remove')")
-    @ApiOperation(value = "删除后台服务架构", tags = {"后台服务架构" },  notes = "删除后台服务架构")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/{pssyssfpub_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("pssyssfpub_id") String pssyssfpub_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubService.remove(pssyssfpub_id));
-    }
-
-    @PreAuthorize("hasPermission(this.pssyssfpubService.getPssyssfpubByIds(#ids),'pms-PSSysSFPub-Remove')")
-    @ApiOperation(value = "批量删除后台服务架构", tags = {"后台服务架构" },  notes = "批量删除后台服务架构")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        pssyssfpubService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.pssyssfpubMapping.toDomain(returnObject.body),'pms-PSSysSFPub-Get')")
-    @ApiOperation(value = "获取后台服务架构", tags = {"后台服务架构" },  notes = "获取后台服务架构")
-	@RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/{pssyssfpub_id}")
-    public ResponseEntity<PSSysSFPubDTO> get(@PathVariable("pssyssfpub_id") String pssyssfpub_id) {
-        PSSysSFPub domain = pssyssfpubService.get(pssyssfpub_id);
-        PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查后台服务架构", tags = {"后台服务架构" },  notes = "检查后台服务架构")
+	@RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody PSSysSFPubDTO pssyssfpubdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(pssyssfpubService.checkKey(pssyssfpubMapping.toDomain(pssyssfpubdto)));
     }
 
     @ApiOperation(value = "获取后台服务架构草稿", tags = {"后台服务架构" },  notes = "获取后台服务架构草稿")
@@ -114,12 +120,6 @@ public class PSSysSFPubResource {
     public ResponseEntity<PSSysSFPubDTO> getDraft(PSSysSFPubDTO dto) {
         PSSysSFPub domain = pssyssfpubMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubMapping.toDto(pssyssfpubService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查后台服务架构", tags = {"后台服务架构" },  notes = "检查后台服务架构")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody PSSysSFPubDTO pssyssfpubdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(pssyssfpubService.checkKey(pssyssfpubMapping.toDomain(pssyssfpubdto)));
     }
 
     @PreAuthorize("hasPermission(this.pssyssfpubMapping.toDomain(#pssyssfpubdto),'pms-PSSysSFPub-Save')")

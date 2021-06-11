@@ -65,6 +65,30 @@ public class IbizproProjectWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibizproprojectweeklyMapping.toDomain(returnObject.body),'pms-IbizproProjectWeekly-Get')")
+    @ApiOperation(value = "获取项目周报", tags = {"项目周报" },  notes = "获取项目周报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectweeklies/{ibizproprojectweekly_id}")
+    public ResponseEntity<IbizproProjectWeeklyDTO> get(@PathVariable("ibizproprojectweekly_id") String ibizproprojectweekly_id) {
+        IbizproProjectWeekly domain = ibizproprojectweeklyService.get(ibizproprojectweekly_id);
+        IbizproProjectWeeklyDTO dto = ibizproprojectweeklyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibizproprojectweeklyService.get(#ibizproprojectweekly_id),'pms-IbizproProjectWeekly-Remove')")
+    @ApiOperation(value = "删除项目周报", tags = {"项目周报" },  notes = "删除项目周报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectweeklies/{ibizproprojectweekly_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectweekly_id") String ibizproprojectweekly_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyService.remove(ibizproprojectweekly_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibizproprojectweeklyService.getIbizproprojectweeklyByIds(#ids),'pms-IbizproProjectWeekly-Remove')")
+    @ApiOperation(value = "批量删除项目周报", tags = {"项目周报" },  notes = "批量删除项目周报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectweeklies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibizproprojectweeklyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibizproprojectweekly" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibizproprojectweeklyService.get(#ibizproprojectweekly_id),'pms-IbizproProjectWeekly-Update')")
     @ApiOperation(value = "更新项目周报", tags = {"项目周报" },  notes = "更新项目周报")
@@ -85,28 +109,10 @@ public class IbizproProjectWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproprojectweeklyService.get(#ibizproprojectweekly_id),'pms-IbizproProjectWeekly-Remove')")
-    @ApiOperation(value = "删除项目周报", tags = {"项目周报" },  notes = "删除项目周报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectweeklies/{ibizproprojectweekly_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectweekly_id") String ibizproprojectweekly_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyService.remove(ibizproprojectweekly_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibizproprojectweeklyService.getIbizproprojectweeklyByIds(#ids),'pms-IbizproProjectWeekly-Remove')")
-    @ApiOperation(value = "批量删除项目周报", tags = {"项目周报" },  notes = "批量删除项目周报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectweeklies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizproprojectweeklyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibizproprojectweeklyMapping.toDomain(returnObject.body),'pms-IbizproProjectWeekly-Get')")
-    @ApiOperation(value = "获取项目周报", tags = {"项目周报" },  notes = "获取项目周报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectweeklies/{ibizproprojectweekly_id}")
-    public ResponseEntity<IbizproProjectWeeklyDTO> get(@PathVariable("ibizproprojectweekly_id") String ibizproprojectweekly_id) {
-        IbizproProjectWeekly domain = ibizproprojectweeklyService.get(ibizproprojectweekly_id);
-        IbizproProjectWeeklyDTO dto = ibizproprojectweeklyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查项目周报", tags = {"项目周报" },  notes = "检查项目周报")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyService.checkKey(ibizproprojectweeklyMapping.toDomain(ibizproprojectweeklydto)));
     }
 
     @ApiOperation(value = "获取项目周报草稿", tags = {"项目周报" },  notes = "获取项目周报草稿")
@@ -114,12 +120,6 @@ public class IbizproProjectWeeklyResource {
     public ResponseEntity<IbizproProjectWeeklyDTO> getDraft(IbizproProjectWeeklyDTO dto) {
         IbizproProjectWeekly domain = ibizproprojectweeklyMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyMapping.toDto(ibizproprojectweeklyService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查项目周报", tags = {"项目周报" },  notes = "检查项目周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklyService.checkKey(ibizproprojectweeklyMapping.toDomain(ibizproprojectweeklydto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbizproProjectWeekly-PushSumProjectWeekly-all')")

@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新需求描述
+### 获取需求描述
 #### 访问路径
 /storyspecs/{storyspec_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | storyspec_id | String | 需求描述主键ID |
-| 2 | storyspecdto | [StorySpecDTO](#StorySpecDTO) | 需求描述实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [StorySpecDTO](#StorySpecDTO)：需求描述实体传输对象 |
-
-### 批量更新需求描述
-#### 访问路径
-/storyspecs/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | storyspecdtos | List<[StorySpecDTO](#StorySpecDTO)> | 需求描述实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除需求描述
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取需求描述
+### 更新需求描述
 #### 访问路径
 /storyspecs/{storyspec_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | storyspec_id | String | 需求描述主键ID |
+| 2 | storyspecdto | [StorySpecDTO](#StorySpecDTO) | 需求描述实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [StorySpecDTO](#StorySpecDTO)：需求描述实体传输对象 |
+
+### 批量更新需求描述
+#### 访问路径
+/storyspecs/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | storyspecdtos | List<[StorySpecDTO](#StorySpecDTO)> | 需求描述实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查需求描述
 #### 访问路径
@@ -294,44 +294,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新需求描述
+### 根据获取需求描述
 #### 访问路径
 /stories/{story_id}/storyspecs/{storyspec_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | story_id | Long | 需求主键ID |
 | 2 | storyspec_id | String | 需求描述主键ID |
-| 3 | storyspecdto | [StorySpecDTO](#StorySpecDTO) | 需求描述实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [StorySpecDTO](#StorySpecDTO)：需求描述实体传输对象 |
-
-### 根据批量更新需求描述
-#### 访问路径
-/stories/{story_id}/storyspecs/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | story_id | Long | 需求主键ID |
-| 2 | storyspecdtos | List<[StorySpecDTO](#StorySpecDTO)> | 需求描述实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除需求描述
 #### 访问路径
@@ -371,24 +351,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取需求描述
+### 根据更新需求描述
 #### 访问路径
 /stories/{story_id}/storyspecs/{storyspec_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | story_id | Long | 需求主键ID |
 | 2 | storyspec_id | String | 需求描述主键ID |
+| 3 | storyspecdto | [StorySpecDTO](#StorySpecDTO) | 需求描述实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [StorySpecDTO](#StorySpecDTO)：需求描述实体传输对象 |
+
+### 根据批量更新需求描述
+#### 访问路径
+/stories/{story_id}/storyspecs/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |
+| 2 | storyspecdtos | List<[StorySpecDTO](#StorySpecDTO)> | 需求描述实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查需求描述
 #### 访问路径
@@ -561,44 +561,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新需求描述
+### 根据获取需求描述
 #### 访问路径
 /products/{product_id}/stories/{story_id}/storyspecs/{storyspec_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
 | 3 | storyspec_id | String | 需求描述主键ID |
-| 4 | storyspecdto | [StorySpecDTO](#StorySpecDTO) | 需求描述实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [StorySpecDTO](#StorySpecDTO)：需求描述实体传输对象 |
-
-### 根据批量更新需求描述
-#### 访问路径
-/products/{product_id}/stories/{story_id}/storyspecs/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
-| 3 | storyspecdtos | List<[StorySpecDTO](#StorySpecDTO)> | 需求描述实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除需求描述
 #### 访问路径
@@ -638,24 +618,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取需求描述
+### 根据更新需求描述
 #### 访问路径
 /products/{product_id}/stories/{story_id}/storyspecs/{storyspec_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
 | 3 | storyspec_id | String | 需求描述主键ID |
+| 4 | storyspecdto | [StorySpecDTO](#StorySpecDTO) | 需求描述实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [StorySpecDTO](#StorySpecDTO)：需求描述实体传输对象 |
+
+### 根据批量更新需求描述
+#### 访问路径
+/products/{product_id}/stories/{story_id}/storyspecs/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
+| 3 | storyspecdtos | List<[StorySpecDTO](#StorySpecDTO)> | 需求描述实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查需求描述
 #### 访问路径

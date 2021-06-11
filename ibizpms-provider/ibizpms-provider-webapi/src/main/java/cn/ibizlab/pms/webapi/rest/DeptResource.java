@@ -65,6 +65,30 @@ public class DeptResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Dept-Get-all')")
+    @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
+	@RequestMapping(method = RequestMethod.GET, value = "/depts/{dept_id}")
+    public ResponseEntity<DeptDTO> get(@PathVariable("dept_id") Long dept_id) {
+        Dept domain = deptService.get(dept_id);
+        DeptDTO dto = deptMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Dept-Remove-all')")
+    @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/{dept_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("dept_id") Long dept_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(deptService.remove(dept_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Dept-Remove-all')")
+    @ApiOperation(value = "批量删除部门", tags = {"部门" },  notes = "批量删除部门")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        deptService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Dept-Update-all')")
     @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
 	@RequestMapping(method = RequestMethod.PUT, value = "/depts/{dept_id}")
@@ -84,28 +108,10 @@ public class DeptResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Dept-Remove-all')")
-    @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/{dept_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("dept_id") Long dept_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(deptService.remove(dept_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Dept-Remove-all')")
-    @ApiOperation(value = "批量删除部门", tags = {"部门" },  notes = "批量删除部门")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        deptService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Dept-Get-all')")
-    @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
-	@RequestMapping(method = RequestMethod.GET, value = "/depts/{dept_id}")
-    public ResponseEntity<DeptDTO> get(@PathVariable("dept_id") Long dept_id) {
-        Dept domain = deptService.get(dept_id);
-        DeptDTO dto = deptMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查部门", tags = {"部门" },  notes = "检查部门")
+	@RequestMapping(method = RequestMethod.POST, value = "/depts/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody DeptDTO deptdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(deptService.checkKey(deptMapping.toDomain(deptdto)));
     }
 
     @ApiOperation(value = "获取部门草稿", tags = {"部门" },  notes = "获取部门草稿")
@@ -113,12 +119,6 @@ public class DeptResource {
     public ResponseEntity<DeptDTO> getDraft(DeptDTO dto) {
         Dept domain = deptMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(deptMapping.toDto(deptService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查部门", tags = {"部门" },  notes = "检查部门")
-	@RequestMapping(method = RequestMethod.POST, value = "/depts/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody DeptDTO deptdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(deptService.checkKey(deptMapping.toDomain(deptdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Dept-Save-all')")

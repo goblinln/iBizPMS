@@ -65,6 +65,30 @@ public class UserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-User-Get-all')")
+    @ApiOperation(value = "获取用户", tags = {"用户" },  notes = "获取用户")
+	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}")
+    public ResponseEntity<UserDTO> get(@PathVariable("user_id") Long user_id) {
+        User domain = userService.get(user_id);
+        UserDTO dto = userMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-User-Remove-all')")
+    @ApiOperation(value = "删除用户", tags = {"用户" },  notes = "删除用户")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/users/{user_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("user_id") Long user_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(userService.remove(user_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-User-Remove-all')")
+    @ApiOperation(value = "批量删除用户", tags = {"用户" },  notes = "批量删除用户")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/users/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        userService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-User-Update-all')")
     @ApiOperation(value = "更新用户", tags = {"用户" },  notes = "更新用户")
 	@RequestMapping(method = RequestMethod.PUT, value = "/users/{user_id}")
@@ -84,37 +108,6 @@ public class UserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-User-Remove-all')")
-    @ApiOperation(value = "删除用户", tags = {"用户" },  notes = "删除用户")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/users/{user_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("user_id") Long user_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(userService.remove(user_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-User-Remove-all')")
-    @ApiOperation(value = "批量删除用户", tags = {"用户" },  notes = "批量删除用户")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/users/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        userService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-User-Get-all')")
-    @ApiOperation(value = "获取用户", tags = {"用户" },  notes = "获取用户")
-	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}")
-    public ResponseEntity<UserDTO> get(@PathVariable("user_id") Long user_id) {
-        User domain = userService.get(user_id);
-        UserDTO dto = userMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "获取用户草稿", tags = {"用户" },  notes = "获取用户草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/users/getdraft")
-    public ResponseEntity<UserDTO> getDraft(UserDTO dto) {
-        User domain = userMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(userMapping.toDto(userService.getDraft(domain)));
-    }
-
     @ApiOperation(value = "检查用户", tags = {"用户" },  notes = "检查用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserDTO userdto) {
@@ -130,6 +123,13 @@ public class UserResource {
         domain = userService.getByCommiter(domain);
         userdto = userMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
+    }
+
+    @ApiOperation(value = "获取用户草稿", tags = {"用户" },  notes = "获取用户草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/users/getdraft")
+    public ResponseEntity<UserDTO> getDraft(UserDTO dto) {
+        User domain = userMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(userMapping.toDto(userService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-User-Save-all')")

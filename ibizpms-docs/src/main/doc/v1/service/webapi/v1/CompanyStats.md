@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新公司动态汇总
+### 获取公司动态汇总
 #### 访问路径
 /companystats/{companystats_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | companystats_id | Long | 公司动态汇总主键ID |
-| 2 | companystatsdto | [CompanyStatsDTO](#CompanyStatsDTO) | 公司动态汇总实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CompanyStatsDTO](#CompanyStatsDTO)：公司动态汇总实体传输对象 |
-
-### 批量更新公司动态汇总
-#### 访问路径
-/companystats/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | companystatsdtos | List<[CompanyStatsDTO](#CompanyStatsDTO)> | 公司动态汇总实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除公司动态汇总
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取公司动态汇总
+### 更新公司动态汇总
 #### 访问路径
 /companystats/{companystats_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | companystats_id | Long | 公司动态汇总主键ID |
+| 2 | companystatsdto | [CompanyStatsDTO](#CompanyStatsDTO) | 公司动态汇总实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CompanyStatsDTO](#CompanyStatsDTO)：公司动态汇总实体传输对象 |
+
+### 批量更新公司动态汇总
+#### 访问路径
+/companystats/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | companystatsdtos | List<[CompanyStatsDTO](#CompanyStatsDTO)> | 公司动态汇总实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查公司动态汇总
 #### 访问路径

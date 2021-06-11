@@ -65,6 +65,30 @@ public class IbzWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibzweeklyMapping.toDomain(returnObject.body),'pms-IbzWeekly-Get')")
+    @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/{ibzweekly_id}")
+    public ResponseEntity<IbzWeeklyDTO> get(@PathVariable("ibzweekly_id") Long ibzweekly_id) {
+        IbzWeekly domain = ibzweeklyService.get(ibzweekly_id);
+        IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibzweeklyService.get(#ibzweekly_id),'pms-IbzWeekly-Remove')")
+    @ApiOperation(value = "删除周报", tags = {"周报" },  notes = "删除周报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/{ibzweekly_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzweekly_id") Long ibzweekly_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyService.remove(ibzweekly_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibzweeklyService.getIbzweeklyByIds(#ids),'pms-IbzWeekly-Remove')")
+    @ApiOperation(value = "批量删除周报", tags = {"周报" },  notes = "批量删除周报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzweeklyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibzweekly" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibzweeklyService.get(#ibzweekly_id),'pms-IbzWeekly-Update')")
     @ApiOperation(value = "更新周报", tags = {"周报" },  notes = "更新周报")
@@ -83,37 +107,6 @@ public class IbzWeeklyResource {
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzWeeklyDTO> ibzweeklydtos) {
         ibzweeklyService.updateBatch(ibzweeklyMapping.toDomain(ibzweeklydtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasPermission(this.ibzweeklyService.get(#ibzweekly_id),'pms-IbzWeekly-Remove')")
-    @ApiOperation(value = "删除周报", tags = {"周报" },  notes = "删除周报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/{ibzweekly_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzweekly_id") Long ibzweekly_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyService.remove(ibzweekly_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibzweeklyService.getIbzweeklyByIds(#ids),'pms-IbzWeekly-Remove')")
-    @ApiOperation(value = "批量删除周报", tags = {"周报" },  notes = "批量删除周报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzweeklyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibzweeklyMapping.toDomain(returnObject.body),'pms-IbzWeekly-Get')")
-    @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/{ibzweekly_id}")
-    public ResponseEntity<IbzWeeklyDTO> get(@PathVariable("ibzweekly_id") Long ibzweekly_id) {
-        IbzWeekly domain = ibzweeklyService.get(ibzweekly_id);
-        IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "获取周报草稿", tags = {"周报" },  notes = "获取周报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/getdraft")
-    public ResponseEntity<IbzWeeklyDTO> getDraft(IbzWeeklyDTO dto) {
-        IbzWeekly domain = ibzweeklyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyMapping.toDto(ibzweeklyService.getDraft(domain)));
     }
 
     @ApiOperation(value = "检查周报", tags = {"周报" },  notes = "检查周报")
@@ -177,6 +170,13 @@ public class IbzWeeklyResource {
         List<IbzWeekly> domains = ibzweeklyMapping.toDomain(ibzweeklydtos);
         boolean result = ibzweeklyService.editGetLastWeekTaskAndComTaskBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取周报草稿", tags = {"周报" },  notes = "获取周报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/getdraft")
+    public ResponseEntity<IbzWeeklyDTO> getDraft(IbzWeeklyDTO dto) {
+        IbzWeekly domain = ibzweeklyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyMapping.toDto(ibzweeklyService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzWeekly-HaveRead-all')")

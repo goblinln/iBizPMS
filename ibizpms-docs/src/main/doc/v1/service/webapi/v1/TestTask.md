@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新测试版本
+### 获取测试版本
 #### 访问路径
 /testtasks/{testtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | testtask_id | Long | 测试版本主键ID |
-| 2 | testtaskdto | [TestTaskDTO](#TestTaskDTO) | 测试版本实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TestTaskDTO](#TestTaskDTO)：测试版本实体传输对象 |
-
-### 批量更新测试版本
-#### 访问路径
-/testtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | testtaskdtos | List<[TestTaskDTO](#TestTaskDTO)> | 测试版本实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除测试版本
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取测试版本
+### 更新测试版本
 #### 访问路径
 /testtasks/{testtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | testtask_id | Long | 测试版本主键ID |
+| 2 | testtaskdto | [TestTaskDTO](#TestTaskDTO) | 测试版本实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TestTaskDTO](#TestTaskDTO)：测试版本实体传输对象 |
+
+### 批量更新测试版本
+#### 访问路径
+/testtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | testtaskdtos | List<[TestTaskDTO](#TestTaskDTO)> | 测试版本实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -427,44 +427,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新测试版本
+### 根据获取测试版本
 #### 访问路径
 /products/{product_id}/testtasks/{testtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |
 | 2 | testtask_id | Long | 测试版本主键ID |
-| 3 | testtaskdto | [TestTaskDTO](#TestTaskDTO) | 测试版本实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TestTaskDTO](#TestTaskDTO)：测试版本实体传输对象 |
-
-### 根据批量更新测试版本
-#### 访问路径
-/products/{product_id}/testtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |
-| 2 | testtaskdtos | List<[TestTaskDTO](#TestTaskDTO)> | 测试版本实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除测试版本
 #### 访问路径
@@ -504,24 +484,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取测试版本
+### 根据更新测试版本
 #### 访问路径
 /products/{product_id}/testtasks/{testtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |
 | 2 | testtask_id | Long | 测试版本主键ID |
+| 3 | testtaskdto | [TestTaskDTO](#TestTaskDTO) | 测试版本实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TestTaskDTO](#TestTaskDTO)：测试版本实体传输对象 |
+
+### 根据批量更新测试版本
+#### 访问路径
+/products/{product_id}/testtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |
+| 2 | testtaskdtos | List<[TestTaskDTO](#TestTaskDTO)> | 测试版本实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -834,44 +834,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新测试版本
+### 根据获取测试版本
 #### 访问路径
 /projects/{project_id}/testtasks/{testtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |
 | 2 | testtask_id | Long | 测试版本主键ID |
-| 3 | testtaskdto | [TestTaskDTO](#TestTaskDTO) | 测试版本实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TestTaskDTO](#TestTaskDTO)：测试版本实体传输对象 |
-
-### 根据批量更新测试版本
-#### 访问路径
-/projects/{project_id}/testtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | project_id | Long | 项目主键ID |
-| 2 | testtaskdtos | List<[TestTaskDTO](#TestTaskDTO)> | 测试版本实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除测试版本
 #### 访问路径
@@ -911,24 +891,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取测试版本
+### 根据更新测试版本
 #### 访问路径
 /projects/{project_id}/testtasks/{testtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |
 | 2 | testtask_id | Long | 测试版本主键ID |
+| 3 | testtaskdto | [TestTaskDTO](#TestTaskDTO) | 测试版本实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TestTaskDTO](#TestTaskDTO)：测试版本实体传输对象 |
+
+### 根据批量更新测试版本
+#### 访问路径
+/projects/{project_id}/testtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | testtaskdtos | List<[TestTaskDTO](#TestTaskDTO)> | 测试版本实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径

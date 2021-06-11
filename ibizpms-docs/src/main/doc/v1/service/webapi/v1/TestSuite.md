@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新测试套件
+### 获取测试套件
 #### 访问路径
 /testsuites/{testsuite_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | testsuite_id | Long | 测试套件主键ID |
-| 2 | testsuitedto | [TestSuiteDTO](#TestSuiteDTO) | 测试套件实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TestSuiteDTO](#TestSuiteDTO)：测试套件实体传输对象 |
-
-### 批量更新测试套件
-#### 访问路径
-/testsuites/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | testsuitedtos | List<[TestSuiteDTO](#TestSuiteDTO)> | 测试套件实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除测试套件
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取测试套件
+### 更新测试套件
 #### 访问路径
 /testsuites/{testsuite_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | testsuite_id | Long | 测试套件主键ID |
+| 2 | testsuitedto | [TestSuiteDTO](#TestSuiteDTO) | 测试套件实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TestSuiteDTO](#TestSuiteDTO)：测试套件实体传输对象 |
+
+### 批量更新测试套件
+#### 访问路径
+/testsuites/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | testsuitedtos | List<[TestSuiteDTO](#TestSuiteDTO)> | 测试套件实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查测试套件
 #### 访问路径
@@ -313,44 +313,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新测试套件
+### 根据获取测试套件
 #### 访问路径
 /products/{product_id}/testsuites/{testsuite_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |
 | 2 | testsuite_id | Long | 测试套件主键ID |
-| 3 | testsuitedto | [TestSuiteDTO](#TestSuiteDTO) | 测试套件实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TestSuiteDTO](#TestSuiteDTO)：测试套件实体传输对象 |
-
-### 根据批量更新测试套件
-#### 访问路径
-/products/{product_id}/testsuites/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |
-| 2 | testsuitedtos | List<[TestSuiteDTO](#TestSuiteDTO)> | 测试套件实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除测试套件
 #### 访问路径
@@ -390,24 +370,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取测试套件
+### 根据更新测试套件
 #### 访问路径
 /products/{product_id}/testsuites/{testsuite_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |
 | 2 | testsuite_id | Long | 测试套件主键ID |
+| 3 | testsuitedto | [TestSuiteDTO](#TestSuiteDTO) | 测试套件实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [TestSuiteDTO](#TestSuiteDTO)：测试套件实体传输对象 |
+
+### 根据批量更新测试套件
+#### 访问路径
+/products/{product_id}/testsuites/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |
+| 2 | testsuitedtos | List<[TestSuiteDTO](#TestSuiteDTO)> | 测试套件实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查测试套件
 #### 访问路径

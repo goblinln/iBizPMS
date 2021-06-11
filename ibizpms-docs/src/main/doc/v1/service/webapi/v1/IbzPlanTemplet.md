@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新计划模板
+### 获取计划模板
 #### 访问路径
 /ibzplantemplets/{ibzplantemplet_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibzplantemplet_id | String | 计划模板主键ID |
-| 2 | ibzplantempletdto | [IbzPlanTempletDTO](#IbzPlanTempletDTO) | 计划模板实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IbzPlanTempletDTO](#IbzPlanTempletDTO)：计划模板实体传输对象 |
-
-### 批量更新计划模板
-#### 访问路径
-/ibzplantemplets/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | ibzplantempletdtos | List<[IbzPlanTempletDTO](#IbzPlanTempletDTO)> | 计划模板实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除计划模板
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取计划模板
+### 更新计划模板
 #### 访问路径
 /ibzplantemplets/{ibzplantemplet_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibzplantemplet_id | String | 计划模板主键ID |
+| 2 | ibzplantempletdto | [IbzPlanTempletDTO](#IbzPlanTempletDTO) | 计划模板实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IbzPlanTempletDTO](#IbzPlanTempletDTO)：计划模板实体传输对象 |
+
+### 批量更新计划模板
+#### 访问路径
+/ibzplantemplets/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | ibzplantempletdtos | List<[IbzPlanTempletDTO](#IbzPlanTempletDTO)> | 计划模板实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查计划模板
 #### 访问路径

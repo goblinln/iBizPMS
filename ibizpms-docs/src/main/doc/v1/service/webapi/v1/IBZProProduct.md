@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新平台产品
+### 获取平台产品
 #### 访问路径
 /ibzproproducts/{ibzproproduct_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibzproproduct_id | Long | 平台产品主键ID |
-| 2 | ibzproproductdto | [IBZProProductDTO](#IBZProProductDTO) | 平台产品实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IBZProProductDTO](#IBZProProductDTO)：平台产品实体传输对象 |
-
-### 批量更新平台产品
-#### 访问路径
-/ibzproproducts/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | ibzproproductdtos | List<[IBZProProductDTO](#IBZProProductDTO)> | 平台产品实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除平台产品
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取平台产品
+### 更新平台产品
 #### 访问路径
 /ibzproproducts/{ibzproproduct_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibzproproduct_id | Long | 平台产品主键ID |
+| 2 | ibzproproductdto | [IBZProProductDTO](#IBZProProductDTO) | 平台产品实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IBZProProductDTO](#IBZProProductDTO)：平台产品实体传输对象 |
+
+### 批量更新平台产品
+#### 访问路径
+/ibzproproducts/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | ibzproproductdtos | List<[IBZProProductDTO](#IBZProProductDTO)> | 平台产品实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查平台产品
 #### 访问路径

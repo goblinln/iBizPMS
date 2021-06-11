@@ -65,6 +65,30 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CaseStats-Get-all')")
+    @ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" },  notes = "获取测试用例统计")
+	@RequestMapping(method = RequestMethod.GET, value = "/casestats/{casestats_id}")
+    public ResponseEntity<CaseStatsDTO> get(@PathVariable("casestats_id") Long casestats_id) {
+        CaseStats domain = casestatsService.get(casestats_id);
+        CaseStatsDTO dto = casestatsMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CaseStats-Remove-all')")
+    @ApiOperation(value = "删除测试用例统计", tags = {"测试用例统计" },  notes = "删除测试用例统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/{casestats_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("casestats_id") Long casestats_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(casestatsService.remove(casestats_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CaseStats-Remove-all')")
+    @ApiOperation(value = "批量删除测试用例统计", tags = {"测试用例统计" },  notes = "批量删除测试用例统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        casestatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CaseStats-Update-all')")
     @ApiOperation(value = "更新测试用例统计", tags = {"测试用例统计" },  notes = "更新测试用例统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casestats/{casestats_id}")
@@ -84,28 +108,10 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CaseStats-Remove-all')")
-    @ApiOperation(value = "删除测试用例统计", tags = {"测试用例统计" },  notes = "删除测试用例统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/{casestats_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("casestats_id") Long casestats_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(casestatsService.remove(casestats_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CaseStats-Remove-all')")
-    @ApiOperation(value = "批量删除测试用例统计", tags = {"测试用例统计" },  notes = "批量删除测试用例统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        casestatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CaseStats-Get-all')")
-    @ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" },  notes = "获取测试用例统计")
-	@RequestMapping(method = RequestMethod.GET, value = "/casestats/{casestats_id}")
-    public ResponseEntity<CaseStatsDTO> get(@PathVariable("casestats_id") Long casestats_id) {
-        CaseStats domain = casestatsService.get(casestats_id);
-        CaseStatsDTO dto = casestatsMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查测试用例统计", tags = {"测试用例统计" },  notes = "检查测试用例统计")
+	@RequestMapping(method = RequestMethod.POST, value = "/casestats/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody CaseStatsDTO casestatsdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(casestatsService.checkKey(casestatsMapping.toDomain(casestatsdto)));
     }
 
     @ApiOperation(value = "获取测试用例统计草稿", tags = {"测试用例统计" },  notes = "获取测试用例统计草稿")
@@ -113,12 +119,6 @@ public class CaseStatsResource {
     public ResponseEntity<CaseStatsDTO> getDraft(CaseStatsDTO dto) {
         CaseStats domain = casestatsMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(casestatsMapping.toDto(casestatsService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查测试用例统计", tags = {"测试用例统计" },  notes = "检查测试用例统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/casestats/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody CaseStatsDTO casestatsdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(casestatsService.checkKey(casestatsMapping.toDomain(casestatsdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-CaseStats-Save-all')")

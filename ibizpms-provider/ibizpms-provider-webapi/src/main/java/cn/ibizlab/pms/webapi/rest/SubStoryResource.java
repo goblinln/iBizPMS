@@ -65,6 +65,30 @@ public class SubStoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.substoryMapping.toDomain(returnObject.body),'pms-Story-Get')")
+    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/substories/{substory_id}")
+    public ResponseEntity<SubStoryDTO> get(@PathVariable("substory_id") Long substory_id) {
+        Story domain = storyService.get(substory_id);
+        SubStoryDTO dto = substoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.storyService.get(#substory_id),'pms-Story-Remove')")
+    @ApiOperation(value = "删除需求", tags = {"需求" },  notes = "删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/substories/{substory_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("substory_id") Long substory_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
+    }
+
+    @PreAuthorize("hasPermission(this.storyService.getStoryByIds(#ids),'pms-Story-Remove')")
+    @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/substories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
     @PreAuthorize("hasPermission(this.storyService.get(#substory_id),'pms-Story-Update')")
     @ApiOperation(value = "更新需求", tags = {"需求" },  notes = "更新需求")
@@ -83,37 +107,6 @@ public class SubStoryResource {
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SubStoryDTO> substorydtos) {
         storyService.updateBatch(substoryMapping.toDomain(substorydtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasPermission(this.storyService.get(#substory_id),'pms-Story-Remove')")
-    @ApiOperation(value = "删除需求", tags = {"需求" },  notes = "删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/substories/{substory_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("substory_id") Long substory_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
-    }
-
-    @PreAuthorize("hasPermission(this.storyService.getStoryByIds(#ids),'pms-Story-Remove')")
-    @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/substories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        storyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.substoryMapping.toDomain(returnObject.body),'pms-Story-Get')")
-    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/substories/{substory_id}")
-    public ResponseEntity<SubStoryDTO> get(@PathVariable("substory_id") Long substory_id) {
-        Story domain = storyService.get(substory_id);
-        SubStoryDTO dto = substoryMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "获取需求草稿", tags = {"需求" },  notes = "获取需求草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/substories/getdraft")
-    public ResponseEntity<SubStoryDTO> getDraft(SubStoryDTO dto) {
-        Story domain = substoryMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Story-Activate-all')")
@@ -473,6 +466,13 @@ public class SubStoryResource {
         List<Story> domains = substoryMapping.toDomain(substorydtos);
         boolean result = storyService.createTasksBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取需求草稿", tags = {"需求" },  notes = "获取需求草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/substories/getdraft")
+    public ResponseEntity<SubStoryDTO> getDraft(SubStoryDTO dto) {
+        Story domain = substoryMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Story-GetStorySpec-all')")
@@ -1459,6 +1459,30 @@ public class SubStoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.substoryMapping.toDomain(returnObject.body),'pms-Story-Get')")
+    @ApiOperation(value = "根据需求获取需求", tags = {"需求" },  notes = "根据需求获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/{substory_id}")
+    public ResponseEntity<SubStoryDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
+        Story domain = storyService.get(substory_id);
+        SubStoryDTO dto = substoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.storyService.get(#substory_id),'pms-Story-Remove')")
+    @ApiOperation(value = "根据需求删除需求", tags = {"需求" },  notes = "根据需求删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/substories/{substory_id}")
+    public ResponseEntity<Boolean> removeByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
+    }
+
+    @PreAuthorize("hasPermission(this.storyService.getStoryByIds(#ids),'pms-Story-Remove')")
+    @ApiOperation(value = "根据需求批量删除需求", tags = {"需求" },  notes = "根据需求批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/substories/batch")
+    public ResponseEntity<Boolean> removeBatchByStory(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
     @PreAuthorize("hasPermission(this.storyService.get(#substory_id),'pms-Story-Update')")
     @ApiOperation(value = "根据需求更新需求", tags = {"需求" },  notes = "根据需求更新需求")
@@ -1482,38 +1506,6 @@ public class SubStoryResource {
         }
         storyService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasPermission(this.storyService.get(#substory_id),'pms-Story-Remove')")
-    @ApiOperation(value = "根据需求删除需求", tags = {"需求" },  notes = "根据需求删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/substories/{substory_id}")
-    public ResponseEntity<Boolean> removeByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
-    }
-
-    @PreAuthorize("hasPermission(this.storyService.getStoryByIds(#ids),'pms-Story-Remove')")
-    @ApiOperation(value = "根据需求批量删除需求", tags = {"需求" },  notes = "根据需求批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/substories/batch")
-    public ResponseEntity<Boolean> removeBatchByStory(@RequestBody List<Long> ids) {
-        storyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.substoryMapping.toDomain(returnObject.body),'pms-Story-Get')")
-    @ApiOperation(value = "根据需求获取需求", tags = {"需求" },  notes = "根据需求获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/{substory_id}")
-    public ResponseEntity<SubStoryDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
-        Story domain = storyService.get(substory_id);
-        SubStoryDTO dto = substoryMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据需求获取需求草稿", tags = {"需求" },  notes = "根据需求获取需求草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/getdraft")
-    public ResponseEntity<SubStoryDTO> getDraftByStory(@PathVariable("story_id") Long story_id, SubStoryDTO dto) {
-        Story domain = substoryMapping.toDomain(dto);
-        domain.setParent(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Story-Activate-all')")
@@ -1838,6 +1830,14 @@ public class SubStoryResource {
         boolean result = storyService.createTasksBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据需求获取需求草稿", tags = {"需求" },  notes = "根据需求获取需求草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/getdraft")
+    public ResponseEntity<SubStoryDTO> getDraftByStory(@PathVariable("story_id") Long story_id, SubStoryDTO dto) {
+        Story domain = substoryMapping.toDomain(dto);
+        domain.setParent(story_id);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Story-GetStorySpec-all')")
     @ApiOperation(value = "根据需求需求", tags = {"需求" },  notes = "根据需求需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/{substory_id}/getstoryspec")
@@ -2816,6 +2816,30 @@ public class SubStoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.substoryMapping.toDomain(returnObject.body),'pms-Story-Get')")
+    @ApiOperation(value = "根据产品需求获取需求", tags = {"需求" },  notes = "根据产品需求获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
+    public ResponseEntity<SubStoryDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
+        Story domain = storyService.get(substory_id);
+        SubStoryDTO dto = substoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.storyService.get(#substory_id),'pms-Story-Remove')")
+    @ApiOperation(value = "根据产品需求删除需求", tags = {"需求" },  notes = "根据产品需求删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
+    public ResponseEntity<Boolean> removeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
+    }
+
+    @PreAuthorize("hasPermission(this.storyService.getStoryByIds(#ids),'pms-Story-Remove')")
+    @ApiOperation(value = "根据产品需求批量删除需求", tags = {"需求" },  notes = "根据产品需求批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/substories/batch")
+    public ResponseEntity<Boolean> removeBatchByProductStory(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
     @PreAuthorize("hasPermission(this.storyService.get(#substory_id),'pms-Story-Update')")
     @ApiOperation(value = "根据产品需求更新需求", tags = {"需求" },  notes = "根据产品需求更新需求")
@@ -2839,38 +2863,6 @@ public class SubStoryResource {
         }
         storyService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasPermission(this.storyService.get(#substory_id),'pms-Story-Remove')")
-    @ApiOperation(value = "根据产品需求删除需求", tags = {"需求" },  notes = "根据产品需求删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
-    public ResponseEntity<Boolean> removeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
-    }
-
-    @PreAuthorize("hasPermission(this.storyService.getStoryByIds(#ids),'pms-Story-Remove')")
-    @ApiOperation(value = "根据产品需求批量删除需求", tags = {"需求" },  notes = "根据产品需求批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/substories/batch")
-    public ResponseEntity<Boolean> removeBatchByProductStory(@RequestBody List<Long> ids) {
-        storyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.substoryMapping.toDomain(returnObject.body),'pms-Story-Get')")
-    @ApiOperation(value = "根据产品需求获取需求", tags = {"需求" },  notes = "根据产品需求获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
-    public ResponseEntity<SubStoryDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
-        Story domain = storyService.get(substory_id);
-        SubStoryDTO dto = substoryMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据产品需求获取需求草稿", tags = {"需求" },  notes = "根据产品需求获取需求草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/getdraft")
-    public ResponseEntity<SubStoryDTO> getDraftByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, SubStoryDTO dto) {
-        Story domain = substoryMapping.toDomain(dto);
-        domain.setParent(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Story-Activate-all')")
@@ -3195,6 +3187,14 @@ public class SubStoryResource {
         boolean result = storyService.createTasksBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据产品需求获取需求草稿", tags = {"需求" },  notes = "根据产品需求获取需求草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/getdraft")
+    public ResponseEntity<SubStoryDTO> getDraftByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, SubStoryDTO dto) {
+        Story domain = substoryMapping.toDomain(dto);
+        domain.setParent(story_id);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Story-GetStorySpec-all')")
     @ApiOperation(value = "根据产品需求需求", tags = {"需求" },  notes = "根据产品需求需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/getstoryspec")

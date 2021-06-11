@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新需求
+### 获取需求
 #### 访问路径
 /substories/{substory_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | substory_id | Long | 需求主键ID |
-| 2 | substorydto | [SubStoryDTO](#SubStoryDTO) | 需求实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubStoryDTO](#SubStoryDTO)：需求实体传输对象 |
-
-### 批量更新需求
-#### 访问路径
-/substories/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | substorydtos | List<[SubStoryDTO](#SubStoryDTO)> | 需求实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除需求
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取需求
+### 更新需求
 #### 访问路径
 /substories/{substory_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | substory_id | Long | 需求主键ID |
+| 2 | substorydto | [SubStoryDTO](#SubStoryDTO) | 需求实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubStoryDTO](#SubStoryDTO)：需求实体传输对象 |
+
+### 批量更新需求
+#### 访问路径
+/substories/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | substorydtos | List<[SubStoryDTO](#SubStoryDTO)> | 需求实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -1935,44 +1935,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新需求
+### 根据获取需求
 #### 访问路径
 /stories/{story_id}/substories/{substory_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | story_id | Long | 需求主键ID |
 | 2 | substory_id | Long | 需求主键ID |
-| 3 | substorydto | [SubStoryDTO](#SubStoryDTO) | 需求实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubStoryDTO](#SubStoryDTO)：需求实体传输对象 |
-
-### 根据批量更新需求
-#### 访问路径
-/stories/{story_id}/substories/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | story_id | Long | 需求主键ID |
-| 2 | substorydtos | List<[SubStoryDTO](#SubStoryDTO)> | 需求实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除需求
 #### 访问路径
@@ -2012,24 +1992,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取需求
+### 根据更新需求
 #### 访问路径
 /stories/{story_id}/substories/{substory_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | story_id | Long | 需求主键ID |
 | 2 | substory_id | Long | 需求主键ID |
+| 3 | substorydto | [SubStoryDTO](#SubStoryDTO) | 需求实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubStoryDTO](#SubStoryDTO)：需求实体传输对象 |
+
+### 根据批量更新需求
+#### 访问路径
+/stories/{story_id}/substories/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |
+| 2 | substorydtos | List<[SubStoryDTO](#SubStoryDTO)> | 需求实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -3932,44 +3932,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新需求
+### 根据获取需求
 #### 访问路径
 /products/{product_id}/stories/{story_id}/substories/{substory_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
 | 3 | substory_id | Long | 需求主键ID |
-| 4 | substorydto | [SubStoryDTO](#SubStoryDTO) | 需求实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubStoryDTO](#SubStoryDTO)：需求实体传输对象 |
-
-### 根据批量更新需求
-#### 访问路径
-/products/{product_id}/stories/{story_id}/substories/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
-| 3 | substorydtos | List<[SubStoryDTO](#SubStoryDTO)> | 需求实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除需求
 #### 访问路径
@@ -4009,24 +3989,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取需求
+### 根据更新需求
 #### 访问路径
 /products/{product_id}/stories/{story_id}/substories/{substory_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
 | 3 | substory_id | Long | 需求主键ID |
+| 4 | substorydto | [SubStoryDTO](#SubStoryDTO) | 需求实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubStoryDTO](#SubStoryDTO)：需求实体传输对象 |
+
+### 根据批量更新需求
+#### 访问路径
+/products/{product_id}/stories/{story_id}/substories/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |
+| 3 | substorydtos | List<[SubStoryDTO](#SubStoryDTO)> | 需求实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径

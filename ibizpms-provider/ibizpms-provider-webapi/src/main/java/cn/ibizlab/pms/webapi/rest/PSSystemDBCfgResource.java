@@ -65,6 +65,30 @@ public class PSSystemDBCfgResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(returnObject.body),'pms-PSSystemDBCfg-Get')")
+    @ApiOperation(value = "获取系统数据库", tags = {"系统数据库" },  notes = "获取系统数据库")
+	@RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
+    public ResponseEntity<PSSystemDBCfgDTO> get(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
+        PSSystemDBCfg domain = pssystemdbcfgService.get(pssystemdbcfg_id);
+        PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.pssystemdbcfgService.get(#pssystemdbcfg_id),'pms-PSSystemDBCfg-Remove')")
+    @ApiOperation(value = "删除系统数据库", tags = {"系统数据库" },  notes = "删除系统数据库")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.remove(pssystemdbcfg_id));
+    }
+
+    @PreAuthorize("hasPermission(this.pssystemdbcfgService.getPssystemdbcfgByIds(#ids),'pms-PSSystemDBCfg-Remove')")
+    @ApiOperation(value = "批量删除系统数据库", tags = {"系统数据库" },  notes = "批量删除系统数据库")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        pssystemdbcfgService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "pssystemdbcfg" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.pssystemdbcfgService.get(#pssystemdbcfg_id),'pms-PSSystemDBCfg-Update')")
     @ApiOperation(value = "更新系统数据库", tags = {"系统数据库" },  notes = "更新系统数据库")
@@ -85,28 +109,10 @@ public class PSSystemDBCfgResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.pssystemdbcfgService.get(#pssystemdbcfg_id),'pms-PSSystemDBCfg-Remove')")
-    @ApiOperation(value = "删除系统数据库", tags = {"系统数据库" },  notes = "删除系统数据库")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.remove(pssystemdbcfg_id));
-    }
-
-    @PreAuthorize("hasPermission(this.pssystemdbcfgService.getPssystemdbcfgByIds(#ids),'pms-PSSystemDBCfg-Remove')")
-    @ApiOperation(value = "批量删除系统数据库", tags = {"系统数据库" },  notes = "批量删除系统数据库")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        pssystemdbcfgService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(returnObject.body),'pms-PSSystemDBCfg-Get')")
-    @ApiOperation(value = "获取系统数据库", tags = {"系统数据库" },  notes = "获取系统数据库")
-	@RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
-    public ResponseEntity<PSSystemDBCfgDTO> get(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
-        PSSystemDBCfg domain = pssystemdbcfgService.get(pssystemdbcfg_id);
-        PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查系统数据库", tags = {"系统数据库" },  notes = "检查系统数据库")
+	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.checkKey(pssystemdbcfgMapping.toDomain(pssystemdbcfgdto)));
     }
 
     @ApiOperation(value = "获取系统数据库草稿", tags = {"系统数据库" },  notes = "获取系统数据库草稿")
@@ -114,12 +120,6 @@ public class PSSystemDBCfgResource {
     public ResponseEntity<PSSystemDBCfgDTO> getDraft(PSSystemDBCfgDTO dto) {
         PSSystemDBCfg domain = pssystemdbcfgMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgMapping.toDto(pssystemdbcfgService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查系统数据库", tags = {"系统数据库" },  notes = "检查系统数据库")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.checkKey(pssystemdbcfgMapping.toDomain(pssystemdbcfgdto)));
     }
 
     @PreAuthorize("hasPermission(this.pssystemdbcfgMapping.toDomain(#pssystemdbcfgdto),'pms-PSSystemDBCfg-Save')")

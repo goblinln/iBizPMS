@@ -65,6 +65,30 @@ public class IBIZProMessageResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProMessage-Get-all')")
+    @ApiOperation(value = "获取消息", tags = {"消息" },  notes = "获取消息")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/{ibizpromessage_id}")
+    public ResponseEntity<IBIZProMessageDTO> get(@PathVariable("ibizpromessage_id") String ibizpromessage_id) {
+        IBIZProMessage domain = ibizpromessageService.get(ibizpromessage_id);
+        IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProMessage-Remove-all')")
+    @ApiOperation(value = "删除消息", tags = {"消息" },  notes = "删除消息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/{ibizpromessage_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibizpromessage_id") String ibizpromessage_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.remove(ibizpromessage_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProMessage-Remove-all')")
+    @ApiOperation(value = "批量删除消息", tags = {"消息" },  notes = "批量删除消息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibizpromessageService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProMessage-Update-all')")
     @ApiOperation(value = "更新消息", tags = {"消息" },  notes = "更新消息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/{ibizpromessage_id}")
@@ -84,28 +108,10 @@ public class IBIZProMessageResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProMessage-Remove-all')")
-    @ApiOperation(value = "删除消息", tags = {"消息" },  notes = "删除消息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/{ibizpromessage_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibizpromessage_id") String ibizpromessage_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.remove(ibizpromessage_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProMessage-Remove-all')")
-    @ApiOperation(value = "批量删除消息", tags = {"消息" },  notes = "批量删除消息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizpromessageService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProMessage-Get-all')")
-    @ApiOperation(value = "获取消息", tags = {"消息" },  notes = "获取消息")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/{ibizpromessage_id}")
-    public ResponseEntity<IBIZProMessageDTO> get(@PathVariable("ibizpromessage_id") String ibizpromessage_id) {
-        IBIZProMessage domain = ibizpromessageService.get(ibizpromessage_id);
-        IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查消息", tags = {"消息" },  notes = "检查消息")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProMessageDTO ibizpromessagedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.checkKey(ibizpromessageMapping.toDomain(ibizpromessagedto)));
     }
 
     @ApiOperation(value = "获取消息草稿", tags = {"消息" },  notes = "获取消息草稿")
@@ -113,12 +119,6 @@ public class IBIZProMessageResource {
     public ResponseEntity<IBIZProMessageDTO> getDraft(IBIZProMessageDTO dto) {
         IBIZProMessage domain = ibizpromessageMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageMapping.toDto(ibizpromessageService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查消息", tags = {"消息" },  notes = "检查消息")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProMessageDTO ibizpromessagedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.checkKey(ibizpromessageMapping.toDomain(ibizpromessagedto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IBIZProMessage-MarkDone-all')")

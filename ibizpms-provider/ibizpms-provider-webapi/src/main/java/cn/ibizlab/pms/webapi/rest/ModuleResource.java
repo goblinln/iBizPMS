@@ -65,23 +65,13 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.moduleService.get(#module_id),'pms-Module-Update')")
-    @ApiOperation(value = "更新模块", tags = {"模块" },  notes = "更新模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/modules/{module_id}")
-    public ResponseEntity<ModuleDTO> update(@PathVariable("module_id") Long module_id, @RequestBody ModuleDTO moduledto) {
-		Module domain  = moduleMapping.toDomain(moduledto);
-        domain .setId(module_id);
-		moduleService.update(domain );
-		ModuleDTO dto = moduleMapping.toDto(domain);
+    @PostAuthorize("hasPermission(this.moduleMapping.toDomain(returnObject.body),'pms-Module-Get')")
+    @ApiOperation(value = "获取模块", tags = {"模块" },  notes = "获取模块")
+	@RequestMapping(method = RequestMethod.GET, value = "/modules/{module_id}")
+    public ResponseEntity<ModuleDTO> get(@PathVariable("module_id") Long module_id) {
+        Module domain = moduleService.get(module_id);
+        ModuleDTO dto = moduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("hasPermission(this.moduleService.getModuleByEntities(this.moduleMapping.toDomain(#moduledtos)),'pms-Module-Update')")
-    @ApiOperation(value = "批量更新模块", tags = {"模块" },  notes = "批量更新模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/modules/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ModuleDTO> moduledtos) {
-        moduleService.updateBatch(moduleMapping.toDomain(moduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasPermission(this.moduleService.get(#module_id),'pms-Module-Remove')")
@@ -99,20 +89,23 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.moduleMapping.toDomain(returnObject.body),'pms-Module-Get')")
-    @ApiOperation(value = "获取模块", tags = {"模块" },  notes = "获取模块")
-	@RequestMapping(method = RequestMethod.GET, value = "/modules/{module_id}")
-    public ResponseEntity<ModuleDTO> get(@PathVariable("module_id") Long module_id) {
-        Module domain = moduleService.get(module_id);
-        ModuleDTO dto = moduleMapping.toDto(domain);
+    @PreAuthorize("hasPermission(this.moduleService.get(#module_id),'pms-Module-Update')")
+    @ApiOperation(value = "更新模块", tags = {"模块" },  notes = "更新模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/modules/{module_id}")
+    public ResponseEntity<ModuleDTO> update(@PathVariable("module_id") Long module_id, @RequestBody ModuleDTO moduledto) {
+		Module domain  = moduleMapping.toDomain(moduledto);
+        domain .setId(module_id);
+		moduleService.update(domain );
+		ModuleDTO dto = moduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取模块草稿", tags = {"模块" },  notes = "获取模块草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/modules/getdraft")
-    public ResponseEntity<ModuleDTO> getDraft(ModuleDTO dto) {
-        Module domain = moduleMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(moduleMapping.toDto(moduleService.getDraft(domain)));
+    @PreAuthorize("hasPermission(this.moduleService.getModuleByEntities(this.moduleMapping.toDomain(#moduledtos)),'pms-Module-Update')")
+    @ApiOperation(value = "批量更新模块", tags = {"模块" },  notes = "批量更新模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/modules/batch")
+    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ModuleDTO> moduledtos) {
+        moduleService.updateBatch(moduleMapping.toDomain(moduledtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @ApiOperation(value = "检查模块", tags = {"模块" },  notes = "检查模块")
@@ -138,6 +131,13 @@ public class ModuleResource {
         List<Module> domains = moduleMapping.toDomain(moduledtos);
         boolean result = moduleService.fixBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取模块草稿", tags = {"模块" },  notes = "获取模块草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/modules/getdraft")
+    public ResponseEntity<ModuleDTO> getDraft(ModuleDTO dto) {
+        Module domain = moduleMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(moduleMapping.toDto(moduleService.getDraft(domain)));
     }
 
     @PreAuthorize("hasPermission(this.moduleMapping.toDomain(#moduledto),'pms-Module-Save')")

@@ -65,6 +65,30 @@ public class SysUpdateLogResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(returnObject.body),'pms-SysUpdateLog-Get')")
+    @ApiOperation(value = "获取更新日志", tags = {"更新日志" },  notes = "获取更新日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/{sysupdatelog_id}")
+    public ResponseEntity<SysUpdateLogDTO> get(@PathVariable("sysupdatelog_id") String sysupdatelog_id) {
+        SysUpdateLog domain = sysupdatelogService.get(sysupdatelog_id);
+        SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.sysupdatelogService.get(#sysupdatelog_id),'pms-SysUpdateLog-Remove')")
+    @ApiOperation(value = "删除更新日志", tags = {"更新日志" },  notes = "删除更新日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/{sysupdatelog_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("sysupdatelog_id") String sysupdatelog_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.remove(sysupdatelog_id));
+    }
+
+    @PreAuthorize("hasPermission(this.sysupdatelogService.getSysupdatelogByIds(#ids),'pms-SysUpdateLog-Remove')")
+    @ApiOperation(value = "批量删除更新日志", tags = {"更新日志" },  notes = "批量删除更新日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        sysupdatelogService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "sysupdatelog" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.sysupdatelogService.get(#sysupdatelog_id),'pms-SysUpdateLog-Update')")
     @ApiOperation(value = "更新更新日志", tags = {"更新日志" },  notes = "更新更新日志")
@@ -85,28 +109,10 @@ public class SysUpdateLogResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.sysupdatelogService.get(#sysupdatelog_id),'pms-SysUpdateLog-Remove')")
-    @ApiOperation(value = "删除更新日志", tags = {"更新日志" },  notes = "删除更新日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/{sysupdatelog_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("sysupdatelog_id") String sysupdatelog_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.remove(sysupdatelog_id));
-    }
-
-    @PreAuthorize("hasPermission(this.sysupdatelogService.getSysupdatelogByIds(#ids),'pms-SysUpdateLog-Remove')")
-    @ApiOperation(value = "批量删除更新日志", tags = {"更新日志" },  notes = "批量删除更新日志")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        sysupdatelogService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.sysupdatelogMapping.toDomain(returnObject.body),'pms-SysUpdateLog-Get')")
-    @ApiOperation(value = "获取更新日志", tags = {"更新日志" },  notes = "获取更新日志")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/{sysupdatelog_id}")
-    public ResponseEntity<SysUpdateLogDTO> get(@PathVariable("sysupdatelog_id") String sysupdatelog_id) {
-        SysUpdateLog domain = sysupdatelogService.get(sysupdatelog_id);
-        SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查更新日志", tags = {"更新日志" },  notes = "检查更新日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody SysUpdateLogDTO sysupdatelogdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.checkKey(sysupdatelogMapping.toDomain(sysupdatelogdto)));
     }
 
     @ApiOperation(value = "获取更新日志草稿", tags = {"更新日志" },  notes = "获取更新日志草稿")
@@ -114,12 +120,6 @@ public class SysUpdateLogResource {
     public ResponseEntity<SysUpdateLogDTO> getDraft(SysUpdateLogDTO dto) {
         SysUpdateLog domain = sysupdatelogMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogMapping.toDto(sysupdatelogService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查更新日志", tags = {"更新日志" },  notes = "检查更新日志")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody SysUpdateLogDTO sysupdatelogdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.checkKey(sysupdatelogMapping.toDomain(sysupdatelogdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysUpdateLog-GetLastUpdateInfo-all')")

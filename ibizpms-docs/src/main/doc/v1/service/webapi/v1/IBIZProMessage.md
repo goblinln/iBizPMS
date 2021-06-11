@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新消息
+### 获取消息
 #### 访问路径
 /ibizpromessages/{ibizpromessage_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibizpromessage_id | String | 消息主键ID |
-| 2 | ibizpromessagedto | [IBIZProMessageDTO](#IBIZProMessageDTO) | 消息实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IBIZProMessageDTO](#IBIZProMessageDTO)：消息实体传输对象 |
-
-### 批量更新消息
-#### 访问路径
-/ibizpromessages/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | ibizpromessagedtos | List<[IBIZProMessageDTO](#IBIZProMessageDTO)> | 消息实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除消息
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取消息
+### 更新消息
 #### 访问路径
 /ibizpromessages/{ibizpromessage_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibizpromessage_id | String | 消息主键ID |
+| 2 | ibizpromessagedto | [IBIZProMessageDTO](#IBIZProMessageDTO) | 消息实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IBIZProMessageDTO](#IBIZProMessageDTO)：消息实体传输对象 |
+
+### 批量更新消息
+#### 访问路径
+/ibizpromessages/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | ibizpromessagedtos | List<[IBIZProMessageDTO](#IBIZProMessageDTO)> | 消息实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查消息
 #### 访问路径

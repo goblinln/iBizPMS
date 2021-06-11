@@ -3,9 +3,9 @@
 产品生命周期
 
 ## 接口清单
-### 获取RoadMapYear
+### 获取GetRoadmap
 #### 访问路径
-/productlives/fetchroadmapyear
+/productlives/fetchgetroadmap
 
 #### 请求方法
 GET
@@ -21,9 +21,9 @@ GET
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | List<[ProductLifeDTO](#ProductLifeDTO)>：产品生命周期实体传输对象列表 |
 
-### 查询RoadMapYear
+### 查询GetRoadmap
 #### 访问路径
-/productlives/searchroadmapyear
+/productlives/searchgetroadmap
 
 #### 请求方法
 POST
@@ -75,9 +75,9 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[ProductLifeDTO](#ProductLifeDTO)>：产品生命周期实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
-### 获取GetRoadmap
+### 获取RoadMapYear
 #### 访问路径
-/productlives/fetchgetroadmap
+/productlives/fetchroadmapyear
 
 #### 请求方法
 GET
@@ -93,9 +93,9 @@ GET
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | List<[ProductLifeDTO](#ProductLifeDTO)>：产品生命周期实体传输对象列表 |
 
-### 查询GetRoadmap
+### 查询RoadMapYear
 #### 访问路径
-/productlives/searchgetroadmap
+/productlives/searchroadmapyear
 
 #### 请求方法
 POST

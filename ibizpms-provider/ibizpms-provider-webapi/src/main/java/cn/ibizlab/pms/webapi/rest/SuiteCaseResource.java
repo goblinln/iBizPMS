@@ -65,6 +65,30 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SuiteCase-Get-all')")
+    @ApiOperation(value = "获取套件用例", tags = {"套件用例" },  notes = "获取套件用例")
+	@RequestMapping(method = RequestMethod.GET, value = "/suitecases/{suitecase_id}")
+    public ResponseEntity<SuiteCaseDTO> get(@PathVariable("suitecase_id") String suitecase_id) {
+        SuiteCase domain = suitecaseService.get(suitecase_id);
+        SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SuiteCase-Remove-all')")
+    @ApiOperation(value = "删除套件用例", tags = {"套件用例" },  notes = "删除套件用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/{suitecase_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("suitecase_id") String suitecase_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(suitecaseService.remove(suitecase_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SuiteCase-Remove-all')")
+    @ApiOperation(value = "批量删除套件用例", tags = {"套件用例" },  notes = "批量删除套件用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        suitecaseService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SuiteCase-Update-all')")
     @ApiOperation(value = "更新套件用例", tags = {"套件用例" },  notes = "更新套件用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/suitecases/{suitecase_id}")
@@ -84,28 +108,10 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SuiteCase-Remove-all')")
-    @ApiOperation(value = "删除套件用例", tags = {"套件用例" },  notes = "删除套件用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/{suitecase_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("suitecase_id") String suitecase_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(suitecaseService.remove(suitecase_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SuiteCase-Remove-all')")
-    @ApiOperation(value = "批量删除套件用例", tags = {"套件用例" },  notes = "批量删除套件用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        suitecaseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SuiteCase-Get-all')")
-    @ApiOperation(value = "获取套件用例", tags = {"套件用例" },  notes = "获取套件用例")
-	@RequestMapping(method = RequestMethod.GET, value = "/suitecases/{suitecase_id}")
-    public ResponseEntity<SuiteCaseDTO> get(@PathVariable("suitecase_id") String suitecase_id) {
-        SuiteCase domain = suitecaseService.get(suitecase_id);
-        SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查套件用例", tags = {"套件用例" },  notes = "检查套件用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody SuiteCaseDTO suitecasedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(suitecaseService.checkKey(suitecaseMapping.toDomain(suitecasedto)));
     }
 
     @ApiOperation(value = "获取套件用例草稿", tags = {"套件用例" },  notes = "获取套件用例草稿")
@@ -113,12 +119,6 @@ public class SuiteCaseResource {
     public ResponseEntity<SuiteCaseDTO> getDraft(SuiteCaseDTO dto) {
         SuiteCase domain = suitecaseMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(suitecaseMapping.toDto(suitecaseService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查套件用例", tags = {"套件用例" },  notes = "检查套件用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody SuiteCaseDTO suitecasedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(suitecaseService.checkKey(suitecaseMapping.toDomain(suitecasedto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SuiteCase-Save-all')")

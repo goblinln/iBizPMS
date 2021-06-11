@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新任务模块
+### 获取任务模块
 #### 访问路径
 /projectmodules/{projectmodule_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | projectmodule_id | Long | 任务模块主键ID |
-| 2 | projectmoduledto | [ProjectModuleDTO](#ProjectModuleDTO) | 任务模块实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [ProjectModuleDTO](#ProjectModuleDTO)：任务模块实体传输对象 |
-
-### 批量更新任务模块
-#### 访问路径
-/projectmodules/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | projectmoduledtos | List<[ProjectModuleDTO](#ProjectModuleDTO)> | 任务模块实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除任务模块
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取任务模块
+### 更新任务模块
 #### 访问路径
 /projectmodules/{projectmodule_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | projectmodule_id | Long | 任务模块主键ID |
+| 2 | projectmoduledto | [ProjectModuleDTO](#ProjectModuleDTO) | 任务模块实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [ProjectModuleDTO](#ProjectModuleDTO)：任务模块实体传输对象 |
+
+### 批量更新任务模块
+#### 访问路径
+/projectmodules/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmoduledtos | List<[ProjectModuleDTO](#ProjectModuleDTO)> | 任务模块实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查任务模块
 #### 访问路径
@@ -512,44 +512,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务模块
+### 根据获取任务模块
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |
 | 2 | projectmodule_id | Long | 任务模块主键ID |
-| 3 | projectmoduledto | [ProjectModuleDTO](#ProjectModuleDTO) | 任务模块实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [ProjectModuleDTO](#ProjectModuleDTO)：任务模块实体传输对象 |
-
-### 根据批量更新任务模块
-#### 访问路径
-/projects/{project_id}/projectmodules/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | project_id | Long | 项目主键ID |
-| 2 | projectmoduledtos | List<[ProjectModuleDTO](#ProjectModuleDTO)> | 任务模块实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务模块
 #### 访问路径
@@ -589,24 +569,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务模块
+### 根据更新任务模块
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |
 | 2 | projectmodule_id | Long | 任务模块主键ID |
+| 3 | projectmoduledto | [ProjectModuleDTO](#ProjectModuleDTO) | 任务模块实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [ProjectModuleDTO](#ProjectModuleDTO)：任务模块实体传输对象 |
+
+### 根据批量更新任务模块
+#### 访问路径
+/projects/{project_id}/projectmodules/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | projectmoduledtos | List<[ProjectModuleDTO](#ProjectModuleDTO)> | 任务模块实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查任务模块
 #### 访问路径

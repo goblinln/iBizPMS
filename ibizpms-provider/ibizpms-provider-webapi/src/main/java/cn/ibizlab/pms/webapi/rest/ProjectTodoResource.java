@@ -65,23 +65,13 @@ public class ProjectTodoResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Update-all')")
-    @ApiOperation(value = "更新项目其他活动", tags = {"项目其他活动" },  notes = "更新项目其他活动")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projecttodos/{projecttodo_id}")
-    public ResponseEntity<ProjectTodoDTO> update(@PathVariable("projecttodo_id") Long projecttodo_id, @RequestBody ProjectTodoDTO projecttododto) {
-		ProjectTodo domain  = projecttodoMapping.toDomain(projecttododto);
-        domain .setId(projecttodo_id);
-		projecttodoService.update(domain );
-		ProjectTodoDTO dto = projecttodoMapping.toDto(domain);
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Get-all')")
+    @ApiOperation(value = "获取项目其他活动", tags = {"项目其他活动" },  notes = "获取项目其他活动")
+	@RequestMapping(method = RequestMethod.GET, value = "/projecttodos/{projecttodo_id}")
+    public ResponseEntity<ProjectTodoDTO> get(@PathVariable("projecttodo_id") Long projecttodo_id) {
+        ProjectTodo domain = projecttodoService.get(projecttodo_id);
+        ProjectTodoDTO dto = projecttodoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Update-all')")
-    @ApiOperation(value = "批量更新项目其他活动", tags = {"项目其他活动" },  notes = "批量更新项目其他活动")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projecttodos/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProjectTodoDTO> projecttododtos) {
-        projecttodoService.updateBatch(projecttodoMapping.toDomain(projecttododtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Remove-all')")
@@ -99,20 +89,23 @@ public class ProjectTodoResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Get-all')")
-    @ApiOperation(value = "获取项目其他活动", tags = {"项目其他活动" },  notes = "获取项目其他活动")
-	@RequestMapping(method = RequestMethod.GET, value = "/projecttodos/{projecttodo_id}")
-    public ResponseEntity<ProjectTodoDTO> get(@PathVariable("projecttodo_id") Long projecttodo_id) {
-        ProjectTodo domain = projecttodoService.get(projecttodo_id);
-        ProjectTodoDTO dto = projecttodoMapping.toDto(domain);
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Update-all')")
+    @ApiOperation(value = "更新项目其他活动", tags = {"项目其他活动" },  notes = "更新项目其他活动")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projecttodos/{projecttodo_id}")
+    public ResponseEntity<ProjectTodoDTO> update(@PathVariable("projecttodo_id") Long projecttodo_id, @RequestBody ProjectTodoDTO projecttododto) {
+		ProjectTodo domain  = projecttodoMapping.toDomain(projecttododto);
+        domain .setId(projecttodo_id);
+		projecttodoService.update(domain );
+		ProjectTodoDTO dto = projecttodoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取项目其他活动草稿", tags = {"项目其他活动" },  notes = "获取项目其他活动草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/projecttodos/getdraft")
-    public ResponseEntity<ProjectTodoDTO> getDraft(ProjectTodoDTO dto) {
-        ProjectTodo domain = projecttodoMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(projecttodoMapping.toDto(projecttodoService.getDraft(domain)));
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Update-all')")
+    @ApiOperation(value = "批量更新项目其他活动", tags = {"项目其他活动" },  notes = "批量更新项目其他活动")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projecttodos/batch")
+    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProjectTodoDTO> projecttododtos) {
+        projecttodoService.updateBatch(projecttodoMapping.toDomain(projecttododtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Activate-all')")
@@ -214,6 +207,13 @@ public class ProjectTodoResource {
         List<ProjectTodo> domains = projecttodoMapping.toDomain(projecttododtos);
         boolean result = projecttodoService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取项目其他活动草稿", tags = {"项目其他活动" },  notes = "获取项目其他活动草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/projecttodos/getdraft")
+    public ResponseEntity<ProjectTodoDTO> getDraft(ProjectTodoDTO dto) {
+        ProjectTodo domain = projecttodoMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(projecttodoMapping.toDto(projecttodoService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Save-all')")
@@ -318,6 +318,30 @@ public class ProjectTodoResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Get-all')")
+    @ApiOperation(value = "根据项目获取项目其他活动", tags = {"项目其他活动" },  notes = "根据项目获取项目其他活动")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttodos/{projecttodo_id}")
+    public ResponseEntity<ProjectTodoDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttodo_id") Long projecttodo_id) {
+        ProjectTodo domain = projecttodoService.get(projecttodo_id);
+        ProjectTodoDTO dto = projecttodoMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Remove-all')")
+    @ApiOperation(value = "根据项目删除项目其他活动", tags = {"项目其他活动" },  notes = "根据项目删除项目其他活动")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projecttodos/{projecttodo_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttodo_id") Long projecttodo_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(projecttodoService.remove(projecttodo_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Remove-all')")
+    @ApiOperation(value = "根据项目批量删除项目其他活动", tags = {"项目其他活动" },  notes = "根据项目批量删除项目其他活动")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projecttodos/batch")
+    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
+        projecttodoService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Update-all')")
     @ApiOperation(value = "根据项目更新项目其他活动", tags = {"项目其他活动" },  notes = "根据项目更新项目其他活动")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projecttodos/{projecttodo_id}")
@@ -340,38 +364,6 @@ public class ProjectTodoResource {
         }
         projecttodoService.updateBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Remove-all')")
-    @ApiOperation(value = "根据项目删除项目其他活动", tags = {"项目其他活动" },  notes = "根据项目删除项目其他活动")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projecttodos/{projecttodo_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttodo_id") Long projecttodo_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(projecttodoService.remove(projecttodo_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Remove-all')")
-    @ApiOperation(value = "根据项目批量删除项目其他活动", tags = {"项目其他活动" },  notes = "根据项目批量删除项目其他活动")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projecttodos/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        projecttodoService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Get-all')")
-    @ApiOperation(value = "根据项目获取项目其他活动", tags = {"项目其他活动" },  notes = "根据项目获取项目其他活动")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttodos/{projecttodo_id}")
-    public ResponseEntity<ProjectTodoDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projecttodo_id") Long projecttodo_id) {
-        ProjectTodo domain = projecttodoService.get(projecttodo_id);
-        ProjectTodoDTO dto = projecttodoMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "根据项目获取项目其他活动草稿", tags = {"项目其他活动" },  notes = "根据项目获取项目其他活动草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttodos/getdraft")
-    public ResponseEntity<ProjectTodoDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectTodoDTO dto) {
-        ProjectTodo domain = projecttodoMapping.toDomain(dto);
-        domain.setIdvalue(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projecttodoMapping.toDto(projecttodoService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Activate-all')")
@@ -465,6 +457,14 @@ public class ProjectTodoResource {
         boolean result = projecttodoService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据项目获取项目其他活动草稿", tags = {"项目其他活动" },  notes = "根据项目获取项目其他活动草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projecttodos/getdraft")
+    public ResponseEntity<ProjectTodoDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectTodoDTO dto) {
+        ProjectTodo domain = projecttodoMapping.toDomain(dto);
+        domain.setIdvalue(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(projecttodoMapping.toDto(projecttodoService.getDraft(domain)));
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectTodo-Save-all')")
     @ApiOperation(value = "根据项目保存项目其他活动", tags = {"项目其他活动" },  notes = "根据项目保存项目其他活动")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projecttodos/save")

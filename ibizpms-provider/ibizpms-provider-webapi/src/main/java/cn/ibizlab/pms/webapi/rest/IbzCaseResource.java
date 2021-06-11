@@ -71,6 +71,30 @@ public class IbzCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Get-all')")
+    @ApiOperation(value = "获取测试用例", tags = {"测试用例" },  notes = "获取测试用例")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzcases/{ibzcase_id}")
+    public ResponseEntity<IbzCaseDTO> get(@PathVariable("ibzcase_id") Long ibzcase_id) {
+        IbzCase domain = ibzcaseService.get(ibzcase_id);
+        IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Remove-all')")
+    @ApiOperation(value = "删除测试用例", tags = {"测试用例" },  notes = "删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/{ibzcase_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzcase_id") Long ibzcase_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.remove(ibzcase_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Remove-all')")
+    @ApiOperation(value = "批量删除测试用例", tags = {"测试用例" },  notes = "批量删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzcaseService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Update-all')")
     @ApiOperation(value = "更新测试用例", tags = {"测试用例" },  notes = "更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/{ibzcase_id}")
@@ -90,28 +114,10 @@ public class IbzCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Remove-all')")
-    @ApiOperation(value = "删除测试用例", tags = {"测试用例" },  notes = "删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/{ibzcase_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzcase_id") Long ibzcase_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.remove(ibzcase_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Remove-all')")
-    @ApiOperation(value = "批量删除测试用例", tags = {"测试用例" },  notes = "批量删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzcaseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Get-all')")
-    @ApiOperation(value = "获取测试用例", tags = {"测试用例" },  notes = "获取测试用例")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzcases/{ibzcase_id}")
-    public ResponseEntity<IbzCaseDTO> get(@PathVariable("ibzcase_id") Long ibzcase_id) {
-        IbzCase domain = ibzcaseService.get(ibzcase_id);
-        IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查测试用例", tags = {"测试用例" },  notes = "检查测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbzCaseDTO ibzcasedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.checkKey(ibzcaseMapping.toDomain(ibzcasedto)));
     }
 
     @ApiOperation(value = "获取测试用例草稿", tags = {"测试用例" },  notes = "获取测试用例草稿")
@@ -119,12 +125,6 @@ public class IbzCaseResource {
     public ResponseEntity<IbzCaseDTO> getDraft(IbzCaseDTO dto) {
         IbzCase domain = ibzcaseMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibzcaseMapping.toDto(ibzcaseService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查测试用例", tags = {"测试用例" },  notes = "检查测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbzCaseDTO ibzcasedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.checkKey(ibzcaseMapping.toDomain(ibzcasedto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Save-all')")
@@ -191,6 +191,30 @@ public class IbzCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Get-all')")
+    @ApiOperation(value = "根据用例库获取测试用例", tags = {"测试用例" },  notes = "根据用例库获取测试用例")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
+    public ResponseEntity<IbzCaseDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {
+        IbzCase domain = ibzcaseService.get(ibzcase_id);
+        IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Remove-all')")
+    @ApiOperation(value = "根据用例库删除测试用例", tags = {"测试用例" },  notes = "根据用例库删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
+    public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.remove(ibzcase_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Remove-all')")
+    @ApiOperation(value = "根据用例库批量删除测试用例", tags = {"测试用例" },  notes = "根据用例库批量删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/batch")
+    public ResponseEntity<Boolean> removeBatchByIbzLib(@RequestBody List<Long> ids) {
+        ibzcaseService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Update-all')")
     @ApiOperation(value = "根据用例库更新测试用例", tags = {"测试用例" },  notes = "根据用例库更新测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
@@ -215,28 +239,10 @@ public class IbzCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Remove-all')")
-    @ApiOperation(value = "根据用例库删除测试用例", tags = {"测试用例" },  notes = "根据用例库删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
-    public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.remove(ibzcase_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Remove-all')")
-    @ApiOperation(value = "根据用例库批量删除测试用例", tags = {"测试用例" },  notes = "根据用例库批量删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/batch")
-    public ResponseEntity<Boolean> removeBatchByIbzLib(@RequestBody List<Long> ids) {
-        ibzcaseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Get-all')")
-    @ApiOperation(value = "根据用例库获取测试用例", tags = {"测试用例" },  notes = "根据用例库获取测试用例")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
-    public ResponseEntity<IbzCaseDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {
-        IbzCase domain = ibzcaseService.get(ibzcase_id);
-        IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "根据用例库检查测试用例", tags = {"测试用例" },  notes = "根据用例库检查测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/checkkey")
+    public ResponseEntity<Boolean> checkKeyByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzCaseDTO ibzcasedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.checkKey(ibzcaseMapping.toDomain(ibzcasedto)));
     }
 
     @ApiOperation(value = "根据用例库获取测试用例草稿", tags = {"测试用例" },  notes = "根据用例库获取测试用例草稿")
@@ -245,12 +251,6 @@ public class IbzCaseResource {
         IbzCase domain = ibzcaseMapping.toDomain(dto);
         domain.setLib(ibzlib_id);
         return ResponseEntity.status(HttpStatus.OK).body(ibzcaseMapping.toDto(ibzcaseService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "根据用例库检查测试用例", tags = {"测试用例" },  notes = "根据用例库检查测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/checkkey")
-    public ResponseEntity<Boolean> checkKeyByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzCaseDTO ibzcasedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.checkKey(ibzcaseMapping.toDomain(ibzcasedto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzCase-Save-all')")

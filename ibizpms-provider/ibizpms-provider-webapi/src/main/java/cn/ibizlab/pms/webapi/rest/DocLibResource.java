@@ -65,23 +65,13 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.doclibService.get(#doclib_id),'pms-DocLib-Update')")
-    @ApiOperation(value = "更新文档库", tags = {"文档库" },  notes = "更新文档库")
-	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}")
-    public ResponseEntity<DocLibDTO> update(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
-		DocLib domain  = doclibMapping.toDomain(doclibdto);
-        domain .setId(doclib_id);
-		doclibService.update(domain );
-		DocLibDTO dto = doclibMapping.toDto(domain);
+    @PostAuthorize("hasPermission(this.doclibMapping.toDomain(returnObject.body),'pms-DocLib-Get')")
+    @ApiOperation(value = "获取文档库", tags = {"文档库" },  notes = "获取文档库")
+	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}")
+    public ResponseEntity<DocLibDTO> get(@PathVariable("doclib_id") Long doclib_id) {
+        DocLib domain = doclibService.get(doclib_id);
+        DocLibDTO dto = doclibMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("hasPermission(this.doclibService.getDoclibByEntities(this.doclibMapping.toDomain(#doclibdtos)),'pms-DocLib-Update')")
-    @ApiOperation(value = "批量更新文档库", tags = {"文档库" },  notes = "批量更新文档库")
-	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<DocLibDTO> doclibdtos) {
-        doclibService.updateBatch(doclibMapping.toDomain(doclibdtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasPermission(this.doclibService.get(#doclib_id),'pms-DocLib-Remove')")
@@ -99,20 +89,23 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.doclibMapping.toDomain(returnObject.body),'pms-DocLib-Get')")
-    @ApiOperation(value = "获取文档库", tags = {"文档库" },  notes = "获取文档库")
-	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}")
-    public ResponseEntity<DocLibDTO> get(@PathVariable("doclib_id") Long doclib_id) {
-        DocLib domain = doclibService.get(doclib_id);
-        DocLibDTO dto = doclibMapping.toDto(domain);
+    @PreAuthorize("hasPermission(this.doclibService.get(#doclib_id),'pms-DocLib-Update')")
+    @ApiOperation(value = "更新文档库", tags = {"文档库" },  notes = "更新文档库")
+	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}")
+    public ResponseEntity<DocLibDTO> update(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
+		DocLib domain  = doclibMapping.toDomain(doclibdto);
+        domain .setId(doclib_id);
+		doclibService.update(domain );
+		DocLibDTO dto = doclibMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取文档库草稿", tags = {"文档库" },  notes = "获取文档库草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/getdraft")
-    public ResponseEntity<DocLibDTO> getDraft(DocLibDTO dto) {
-        DocLib domain = doclibMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(doclibMapping.toDto(doclibService.getDraft(domain)));
+    @PreAuthorize("hasPermission(this.doclibService.getDoclibByEntities(this.doclibMapping.toDomain(#doclibdtos)),'pms-DocLib-Update')")
+    @ApiOperation(value = "批量更新文档库", tags = {"文档库" },  notes = "批量更新文档库")
+	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/batch")
+    public ResponseEntity<Boolean> updateBatch(@RequestBody List<DocLibDTO> doclibdtos) {
+        doclibService.updateBatch(doclibMapping.toDomain(doclibdtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @ApiOperation(value = "检查文档库", tags = {"文档库" },  notes = "检查文档库")
@@ -138,6 +131,13 @@ public class DocLibResource {
         List<DocLib> domains = doclibMapping.toDomain(doclibdtos);
         boolean result = doclibService.collectBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取文档库草稿", tags = {"文档库" },  notes = "获取文档库草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/getdraft")
+    public ResponseEntity<DocLibDTO> getDraft(DocLibDTO dto) {
+        DocLib domain = doclibMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(doclibMapping.toDto(doclibService.getDraft(domain)));
     }
 
     @PreAuthorize("hasPermission(this.doclibMapping.toDomain(#doclibdto),'pms-DocLib-Save')")

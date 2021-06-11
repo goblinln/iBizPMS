@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新文档内容
+### 获取文档内容
 #### 访问路径
 /doccontents/{doccontent_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | doccontent_id | Long | 文档内容主键ID |
-| 2 | doccontentdto | [DocContentDTO](#DocContentDTO) | 文档内容实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [DocContentDTO](#DocContentDTO)：文档内容实体传输对象 |
-
-### 批量更新文档内容
-#### 访问路径
-/doccontents/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | doccontentdtos | List<[DocContentDTO](#DocContentDTO)> | 文档内容实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除文档内容
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取文档内容
+### 更新文档内容
 #### 访问路径
 /doccontents/{doccontent_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | doccontent_id | Long | 文档内容主键ID |
+| 2 | doccontentdto | [DocContentDTO](#DocContentDTO) | 文档内容实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [DocContentDTO](#DocContentDTO)：文档内容实体传输对象 |
+
+### 批量更新文档内容
+#### 访问路径
+/doccontents/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | doccontentdtos | List<[DocContentDTO](#DocContentDTO)> | 文档内容实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查文档内容
 #### 访问路径
@@ -294,44 +294,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新文档内容
+### 根据获取文档内容
 #### 访问路径
 /docs/{doc_id}/doccontents/{doccontent_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | doc_id | Long | 文档主键ID |
 | 2 | doccontent_id | Long | 文档内容主键ID |
-| 3 | doccontentdto | [DocContentDTO](#DocContentDTO) | 文档内容实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [DocContentDTO](#DocContentDTO)：文档内容实体传输对象 |
-
-### 根据批量更新文档内容
-#### 访问路径
-/docs/{doc_id}/doccontents/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | doc_id | Long | 文档主键ID |
-| 2 | doccontentdtos | List<[DocContentDTO](#DocContentDTO)> | 文档内容实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除文档内容
 #### 访问路径
@@ -371,24 +351,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取文档内容
+### 根据更新文档内容
 #### 访问路径
 /docs/{doc_id}/doccontents/{doccontent_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | doc_id | Long | 文档主键ID |
 | 2 | doccontent_id | Long | 文档内容主键ID |
+| 3 | doccontentdto | [DocContentDTO](#DocContentDTO) | 文档内容实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [DocContentDTO](#DocContentDTO)：文档内容实体传输对象 |
+
+### 根据批量更新文档内容
+#### 访问路径
+/docs/{doc_id}/doccontents/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | doc_id | Long | 文档主键ID |
+| 2 | doccontentdtos | List<[DocContentDTO](#DocContentDTO)> | 文档内容实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查文档内容
 #### 访问路径

@@ -65,6 +65,30 @@ public class ProjectStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectStats-Get-all')")
+    @ApiOperation(value = "获取项目统计", tags = {"项目统计" },  notes = "获取项目统计")
+	@RequestMapping(method = RequestMethod.GET, value = "/projectstats/{projectstats_id}")
+    public ResponseEntity<ProjectStatsDTO> get(@PathVariable("projectstats_id") Long projectstats_id) {
+        ProjectStats domain = projectstatsService.get(projectstats_id);
+        ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectStats-Remove-all')")
+    @ApiOperation(value = "删除项目统计", tags = {"项目统计" },  notes = "删除项目统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/{projectstats_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("projectstats_id") Long projectstats_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(projectstatsService.remove(projectstats_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectStats-Remove-all')")
+    @ApiOperation(value = "批量删除项目统计", tags = {"项目统计" },  notes = "批量删除项目统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        projectstatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectStats-Update-all')")
     @ApiOperation(value = "更新项目统计", tags = {"项目统计" },  notes = "更新项目统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectstats/{projectstats_id}")
@@ -84,28 +108,10 @@ public class ProjectStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectStats-Remove-all')")
-    @ApiOperation(value = "删除项目统计", tags = {"项目统计" },  notes = "删除项目统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/{projectstats_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("projectstats_id") Long projectstats_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(projectstatsService.remove(projectstats_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectStats-Remove-all')")
-    @ApiOperation(value = "批量删除项目统计", tags = {"项目统计" },  notes = "批量删除项目统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        projectstatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectStats-Get-all')")
-    @ApiOperation(value = "获取项目统计", tags = {"项目统计" },  notes = "获取项目统计")
-	@RequestMapping(method = RequestMethod.GET, value = "/projectstats/{projectstats_id}")
-    public ResponseEntity<ProjectStatsDTO> get(@PathVariable("projectstats_id") Long projectstats_id) {
-        ProjectStats domain = projectstatsService.get(projectstats_id);
-        ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查项目统计", tags = {"项目统计" },  notes = "检查项目统计")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody ProjectStatsDTO projectstatsdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(projectstatsService.checkKey(projectstatsMapping.toDomain(projectstatsdto)));
     }
 
     @ApiOperation(value = "获取项目统计草稿", tags = {"项目统计" },  notes = "获取项目统计草稿")
@@ -113,12 +119,6 @@ public class ProjectStatsResource {
     public ResponseEntity<ProjectStatsDTO> getDraft(ProjectStatsDTO dto) {
         ProjectStats domain = projectstatsMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(projectstatsMapping.toDto(projectstatsService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查项目统计", tags = {"项目统计" },  notes = "检查项目统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody ProjectStatsDTO projectstatsdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(projectstatsService.checkKey(projectstatsMapping.toDomain(projectstatsdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProjectStats-ProjectQualitySum-all')")

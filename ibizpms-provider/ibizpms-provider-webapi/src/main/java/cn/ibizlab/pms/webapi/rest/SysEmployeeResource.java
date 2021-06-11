@@ -65,6 +65,30 @@ public class SysEmployeeResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.sysemployeeMapping.toDomain(returnObject.body),'pms-SysEmployee-Get')")
+    @ApiOperation(value = "获取人员", tags = {"人员" },  notes = "获取人员")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysemployees/{sysemployee_id}")
+    public ResponseEntity<SysEmployeeDTO> get(@PathVariable("sysemployee_id") String sysemployee_id) {
+        SysEmployee domain = sysemployeeService.get(sysemployee_id);
+        SysEmployeeDTO dto = sysemployeeMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.sysemployeeService.get(#sysemployee_id),'pms-SysEmployee-Remove')")
+    @ApiOperation(value = "删除人员", tags = {"人员" },  notes = "删除人员")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysemployees/{sysemployee_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("sysemployee_id") String sysemployee_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(sysemployeeService.remove(sysemployee_id));
+    }
+
+    @PreAuthorize("hasPermission(this.sysemployeeService.getSysemployeeByIds(#ids),'pms-SysEmployee-Remove')")
+    @ApiOperation(value = "批量删除人员", tags = {"人员" },  notes = "批量删除人员")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysemployees/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        sysemployeeService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "sysemployee" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.sysemployeeService.get(#sysemployee_id),'pms-SysEmployee-Update')")
     @ApiOperation(value = "更新人员", tags = {"人员" },  notes = "更新人员")
@@ -85,28 +109,10 @@ public class SysEmployeeResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.sysemployeeService.get(#sysemployee_id),'pms-SysEmployee-Remove')")
-    @ApiOperation(value = "删除人员", tags = {"人员" },  notes = "删除人员")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysemployees/{sysemployee_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("sysemployee_id") String sysemployee_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(sysemployeeService.remove(sysemployee_id));
-    }
-
-    @PreAuthorize("hasPermission(this.sysemployeeService.getSysemployeeByIds(#ids),'pms-SysEmployee-Remove')")
-    @ApiOperation(value = "批量删除人员", tags = {"人员" },  notes = "批量删除人员")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysemployees/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        sysemployeeService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.sysemployeeMapping.toDomain(returnObject.body),'pms-SysEmployee-Get')")
-    @ApiOperation(value = "获取人员", tags = {"人员" },  notes = "获取人员")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysemployees/{sysemployee_id}")
-    public ResponseEntity<SysEmployeeDTO> get(@PathVariable("sysemployee_id") String sysemployee_id) {
-        SysEmployee domain = sysemployeeService.get(sysemployee_id);
-        SysEmployeeDTO dto = sysemployeeMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查人员", tags = {"人员" },  notes = "检查人员")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysemployees/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody SysEmployeeDTO sysemployeedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(sysemployeeService.checkKey(sysemployeeMapping.toDomain(sysemployeedto)));
     }
 
     @ApiOperation(value = "获取人员草稿", tags = {"人员" },  notes = "获取人员草稿")
@@ -114,12 +120,6 @@ public class SysEmployeeResource {
     public ResponseEntity<SysEmployeeDTO> getDraft(SysEmployeeDTO dto) {
         SysEmployee domain = sysemployeeMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(sysemployeeMapping.toDto(sysemployeeService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查人员", tags = {"人员" },  notes = "检查人员")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysemployees/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody SysEmployeeDTO sysemployeedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(sysemployeeService.checkKey(sysemployeeMapping.toDomain(sysemployeedto)));
     }
 
     @PreAuthorize("hasPermission(this.sysemployeeMapping.toDomain(#sysemployeedto),'pms-SysEmployee-Save')")

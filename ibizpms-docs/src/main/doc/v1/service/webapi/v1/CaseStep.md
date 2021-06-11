@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新用例步骤
+### 获取用例步骤
 #### 访问路径
 /casesteps/{casestep_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | casestep_id | Long | 用例步骤主键ID |
-| 2 | casestepdto | [CaseStepDTO](#CaseStepDTO) | 用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CaseStepDTO](#CaseStepDTO)：用例步骤实体传输对象 |
-
-### 批量更新用例步骤
-#### 访问路径
-/casesteps/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | casestepdtos | List<[CaseStepDTO](#CaseStepDTO)> | 用例步骤实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除用例步骤
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取用例步骤
+### 更新用例步骤
 #### 访问路径
 /casesteps/{casestep_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | casestep_id | Long | 用例步骤主键ID |
+| 2 | casestepdto | [CaseStepDTO](#CaseStepDTO) | 用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CaseStepDTO](#CaseStepDTO)：用例步骤实体传输对象 |
+
+### 批量更新用例步骤
+#### 访问路径
+/casesteps/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | casestepdtos | List<[CaseStepDTO](#CaseStepDTO)> | 用例步骤实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查用例步骤
 #### 访问路径
@@ -438,44 +438,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新用例步骤
+### 根据获取用例步骤
 #### 访问路径
 /cases/{case_id}/casesteps/{casestep_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | case_id | Long | 测试用例主键ID |
 | 2 | casestep_id | Long | 用例步骤主键ID |
-| 3 | casestepdto | [CaseStepDTO](#CaseStepDTO) | 用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CaseStepDTO](#CaseStepDTO)：用例步骤实体传输对象 |
-
-### 根据批量更新用例步骤
-#### 访问路径
-/cases/{case_id}/casesteps/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | case_id | Long | 测试用例主键ID |
-| 2 | casestepdtos | List<[CaseStepDTO](#CaseStepDTO)> | 用例步骤实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除用例步骤
 #### 访问路径
@@ -515,24 +495,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取用例步骤
+### 根据更新用例步骤
 #### 访问路径
 /cases/{case_id}/casesteps/{casestep_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | case_id | Long | 测试用例主键ID |
 | 2 | casestep_id | Long | 用例步骤主键ID |
+| 3 | casestepdto | [CaseStepDTO](#CaseStepDTO) | 用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CaseStepDTO](#CaseStepDTO)：用例步骤实体传输对象 |
+
+### 根据批量更新用例步骤
+#### 访问路径
+/cases/{case_id}/casesteps/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | case_id | Long | 测试用例主键ID |
+| 2 | casestepdtos | List<[CaseStepDTO](#CaseStepDTO)> | 用例步骤实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查用例步骤
 #### 访问路径
@@ -857,44 +857,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新用例步骤
+### 根据获取用例步骤
 #### 访问路径
 /products/{product_id}/cases/{case_id}/casesteps/{casestep_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | case_id | Long | 测试用例主键ID |
 | 3 | casestep_id | Long | 用例步骤主键ID |
-| 4 | casestepdto | [CaseStepDTO](#CaseStepDTO) | 用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CaseStepDTO](#CaseStepDTO)：用例步骤实体传输对象 |
-
-### 根据批量更新用例步骤
-#### 访问路径
-/products/{product_id}/cases/{case_id}/casesteps/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |/r/n| 2 | case_id | Long | 测试用例主键ID |
-| 3 | casestepdtos | List<[CaseStepDTO](#CaseStepDTO)> | 用例步骤实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除用例步骤
 #### 访问路径
@@ -934,24 +914,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取用例步骤
+### 根据更新用例步骤
 #### 访问路径
 /products/{product_id}/cases/{case_id}/casesteps/{casestep_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | case_id | Long | 测试用例主键ID |
 | 3 | casestep_id | Long | 用例步骤主键ID |
+| 4 | casestepdto | [CaseStepDTO](#CaseStepDTO) | 用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CaseStepDTO](#CaseStepDTO)：用例步骤实体传输对象 |
+
+### 根据批量更新用例步骤
+#### 访问路径
+/products/{product_id}/cases/{case_id}/casesteps/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | case_id | Long | 测试用例主键ID |
+| 3 | casestepdtos | List<[CaseStepDTO](#CaseStepDTO)> | 用例步骤实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查用例步骤
 #### 访问路径
@@ -1276,44 +1276,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新用例步骤
+### 根据获取用例步骤
 #### 访问路径
 /stories/{story_id}/cases/{case_id}/casesteps/{casestep_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | story_id | Long | 需求主键ID |/r/n| 2 | case_id | Long | 测试用例主键ID |
 | 3 | casestep_id | Long | 用例步骤主键ID |
-| 4 | casestepdto | [CaseStepDTO](#CaseStepDTO) | 用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CaseStepDTO](#CaseStepDTO)：用例步骤实体传输对象 |
-
-### 根据批量更新用例步骤
-#### 访问路径
-/stories/{story_id}/cases/{case_id}/casesteps/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | story_id | Long | 需求主键ID |/r/n| 2 | case_id | Long | 测试用例主键ID |
-| 3 | casestepdtos | List<[CaseStepDTO](#CaseStepDTO)> | 用例步骤实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除用例步骤
 #### 访问路径
@@ -1353,24 +1333,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取用例步骤
+### 根据更新用例步骤
 #### 访问路径
 /stories/{story_id}/cases/{case_id}/casesteps/{casestep_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | story_id | Long | 需求主键ID |/r/n| 2 | case_id | Long | 测试用例主键ID |
 | 3 | casestep_id | Long | 用例步骤主键ID |
+| 4 | casestepdto | [CaseStepDTO](#CaseStepDTO) | 用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CaseStepDTO](#CaseStepDTO)：用例步骤实体传输对象 |
+
+### 根据批量更新用例步骤
+#### 访问路径
+/stories/{story_id}/cases/{case_id}/casesteps/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |/r/n| 2 | case_id | Long | 测试用例主键ID |
+| 3 | casestepdtos | List<[CaseStepDTO](#CaseStepDTO)> | 用例步骤实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查用例步骤
 #### 访问路径
@@ -1695,44 +1695,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新用例步骤
+### 根据获取用例步骤
 #### 访问路径
 /products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/{casestep_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | case_id | Long | 测试用例主键ID |
 | 4 | casestep_id | Long | 用例步骤主键ID |
-| 5 | casestepdto | [CaseStepDTO](#CaseStepDTO) | 用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CaseStepDTO](#CaseStepDTO)：用例步骤实体传输对象 |
-
-### 根据批量更新用例步骤
-#### 访问路径
-/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | case_id | Long | 测试用例主键ID |
-| 4 | casestepdtos | List<[CaseStepDTO](#CaseStepDTO)> | 用例步骤实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除用例步骤
 #### 访问路径
@@ -1772,24 +1752,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取用例步骤
+### 根据更新用例步骤
 #### 访问路径
 /products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/{casestep_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | case_id | Long | 测试用例主键ID |
 | 4 | casestep_id | Long | 用例步骤主键ID |
+| 5 | casestepdto | [CaseStepDTO](#CaseStepDTO) | 用例步骤实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [CaseStepDTO](#CaseStepDTO)：用例步骤实体传输对象 |
+
+### 根据批量更新用例步骤
+#### 访问路径
+/products/{product_id}/stories/{story_id}/cases/{case_id}/casesteps/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | case_id | Long | 测试用例主键ID |
+| 4 | casestepdtos | List<[CaseStepDTO](#CaseStepDTO)> | 用例步骤实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据检查用例步骤
 #### 访问路径

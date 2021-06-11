@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新任务
+### 获取任务
 #### 访问路径
 /subtasks/{subtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | subtask_id | Long | 任务主键ID |
-| 2 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
-
-### 批量更新任务
-#### 访问路径
-/subtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除任务
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取任务
+### 更新任务
 #### 访问路径
 /subtasks/{subtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | subtask_id | Long | 任务主键ID |
+| 2 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
+
+### 批量更新任务
+#### 访问路径
+/subtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -2302,44 +2302,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务
+### 根据获取任务
 #### 访问路径
 /tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | task_id | Long | 任务主键ID |
 | 2 | subtask_id | Long | 任务主键ID |
-| 3 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
-
-### 根据批量更新任务
-#### 访问路径
-/tasks/{task_id}/subtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | task_id | Long | 任务主键ID |
-| 2 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务
 #### 访问路径
@@ -2379,24 +2359,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务
+### 根据更新任务
 #### 访问路径
 /tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | task_id | Long | 任务主键ID |
 | 2 | subtask_id | Long | 任务主键ID |
+| 3 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
+
+### 根据批量更新任务
+#### 访问路径
+/tasks/{task_id}/subtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | task_id | Long | 任务主键ID |
+| 2 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -4687,44 +4687,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务
+### 根据获取任务
 #### 访问路径
 /projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | subtask_id | Long | 任务主键ID |
-| 4 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
-
-### 根据批量更新任务
-#### 访问路径
-/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
-| 3 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务
 #### 访问路径
@@ -4764,24 +4744,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务
+### 根据更新任务
 #### 访问路径
 /projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | subtask_id | Long | 任务主键ID |
+| 4 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
+
+### 根据批量更新任务
+#### 访问路径
+/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | projectmodule_id | Long | 任务模块主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -7072,44 +7072,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务
+### 根据获取任务
 #### 访问路径
 /productplans/{productplan_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | subtask_id | Long | 任务主键ID |
-| 4 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
-
-### 根据批量更新任务
-#### 访问路径
-/productplans/{productplan_id}/tasks/{task_id}/subtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
-| 3 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务
 #### 访问路径
@@ -7149,24 +7129,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务
+### 根据更新任务
 #### 访问路径
 /productplans/{productplan_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | subtask_id | Long | 任务主键ID |
+| 4 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
+
+### 根据批量更新任务
+#### 访问路径
+/productplans/{productplan_id}/tasks/{task_id}/subtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | productplan_id | Long | 产品计划主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -9457,44 +9457,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务
+### 根据获取任务
 #### 访问路径
 /stories/{story_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | subtask_id | Long | 任务主键ID |
-| 4 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
-
-### 根据批量更新任务
-#### 访问路径
-/stories/{story_id}/tasks/{task_id}/subtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
-| 3 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务
 #### 访问路径
@@ -9534,24 +9514,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务
+### 根据更新任务
 #### 访问路径
 /stories/{story_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | subtask_id | Long | 任务主键ID |
+| 4 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
+
+### 根据批量更新任务
+#### 访问路径
+/stories/{story_id}/tasks/{task_id}/subtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | story_id | Long | 需求主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -11842,44 +11842,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务
+### 根据获取任务
 #### 访问路径
 /projects/{project_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | subtask_id | Long | 任务主键ID |
-| 4 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
-
-### 根据批量更新任务
-#### 访问路径
-/projects/{project_id}/tasks/{task_id}/subtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
-| 3 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务
 #### 访问路径
@@ -11919,24 +11899,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务
+### 根据更新任务
 #### 访问路径
 /projects/{project_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
 | 3 | subtask_id | Long | 任务主键ID |
+| 4 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
+
+### 根据批量更新任务
+#### 访问路径
+/projects/{project_id}/tasks/{task_id}/subtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | task_id | Long | 任务主键ID |
+| 3 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -14227,44 +14227,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务
+### 根据获取任务
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | subtask_id | Long | 任务主键ID |
-| 5 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
-
-### 根据批量更新任务
-#### 访问路径
-/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
-| 4 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务
 #### 访问路径
@@ -14304,24 +14284,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务
+### 根据更新任务
 #### 访问路径
 /products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | subtask_id | Long | 任务主键ID |
+| 5 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
+
+### 根据批量更新任务
+#### 访问路径
+/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | productplan_id | Long | 产品计划主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -16612,44 +16612,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务
+### 根据获取任务
 #### 访问路径
 /products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | subtask_id | Long | 任务主键ID |
-| 5 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
-
-### 根据批量更新任务
-#### 访问路径
-/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
-| 4 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务
 #### 访问路径
@@ -16689,24 +16669,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务
+### 根据更新任务
 #### 访问路径
 /products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | subtask_id | Long | 任务主键ID |
+| 5 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
+
+### 根据批量更新任务
+#### 访问路径
+/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |/r/n| 2 | story_id | Long | 需求主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径
@@ -18997,44 +18997,24 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据更新任务
+### 根据获取任务
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | subtask_id | Long | 任务主键ID |
-| 5 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
-
-### 根据批量更新任务
-#### 访问路径
-/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
-| 4 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 根据删除任务
 #### 访问路径
@@ -19074,24 +19054,44 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 根据获取任务
+### 根据更新任务
 #### 访问路径
 /projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/{subtask_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
 | 4 | subtask_id | Long | 任务主键ID |
+| 5 | subtaskdto | [SubTaskDTO](#SubTaskDTO) | 任务实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SubTaskDTO](#SubTaskDTO)：任务实体传输对象 |
+
+### 根据批量更新任务
+#### 访问路径
+/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |/r/n| 2 | projectmodule_id | Long | 任务模块主键ID |/r/n| 3 | task_id | Long | 任务主键ID |
+| 4 | subtaskdtos | List<[SubTaskDTO](#SubTaskDTO)> | 任务实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 激活
 #### 访问路径

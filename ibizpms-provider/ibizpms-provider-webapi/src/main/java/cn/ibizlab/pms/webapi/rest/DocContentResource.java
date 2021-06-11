@@ -65,6 +65,30 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Get-all')")
+    @ApiOperation(value = "获取文档内容", tags = {"文档内容" },  notes = "获取文档内容")
+	@RequestMapping(method = RequestMethod.GET, value = "/doccontents/{doccontent_id}")
+    public ResponseEntity<DocContentDTO> get(@PathVariable("doccontent_id") Long doccontent_id) {
+        DocContent domain = doccontentService.get(doccontent_id);
+        DocContentDTO dto = doccontentMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Remove-all')")
+    @ApiOperation(value = "删除文档内容", tags = {"文档内容" },  notes = "删除文档内容")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/doccontents/{doccontent_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("doccontent_id") Long doccontent_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Remove-all')")
+    @ApiOperation(value = "批量删除文档内容", tags = {"文档内容" },  notes = "批量删除文档内容")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/doccontents/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        doccontentService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Update-all')")
     @ApiOperation(value = "更新文档内容", tags = {"文档内容" },  notes = "更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/doccontents/{doccontent_id}")
@@ -84,28 +108,10 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Remove-all')")
-    @ApiOperation(value = "删除文档内容", tags = {"文档内容" },  notes = "删除文档内容")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/doccontents/{doccontent_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("doccontent_id") Long doccontent_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Remove-all')")
-    @ApiOperation(value = "批量删除文档内容", tags = {"文档内容" },  notes = "批量删除文档内容")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/doccontents/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        doccontentService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Get-all')")
-    @ApiOperation(value = "获取文档内容", tags = {"文档内容" },  notes = "获取文档内容")
-	@RequestMapping(method = RequestMethod.GET, value = "/doccontents/{doccontent_id}")
-    public ResponseEntity<DocContentDTO> get(@PathVariable("doccontent_id") Long doccontent_id) {
-        DocContent domain = doccontentService.get(doccontent_id);
-        DocContentDTO dto = doccontentMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查文档内容", tags = {"文档内容" },  notes = "检查文档内容")
+	@RequestMapping(method = RequestMethod.POST, value = "/doccontents/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody DocContentDTO doccontentdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
     @ApiOperation(value = "获取文档内容草稿", tags = {"文档内容" },  notes = "获取文档内容草稿")
@@ -113,12 +119,6 @@ public class DocContentResource {
     public ResponseEntity<DocContentDTO> getDraft(DocContentDTO dto) {
         DocContent domain = doccontentMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(doccontentMapping.toDto(doccontentService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查文档内容", tags = {"文档内容" },  notes = "检查文档内容")
-	@RequestMapping(method = RequestMethod.POST, value = "/doccontents/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody DocContentDTO doccontentdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Save-all')")
@@ -207,6 +207,30 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Get-all')")
+    @ApiOperation(value = "根据文档获取文档内容", tags = {"文档内容" },  notes = "根据文档获取文档内容")
+	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
+    public ResponseEntity<DocContentDTO> getByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
+        DocContent domain = doccontentService.get(doccontent_id);
+        DocContentDTO dto = doccontentMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Remove-all')")
+    @ApiOperation(value = "根据文档删除文档内容", tags = {"文档内容" },  notes = "根据文档删除文档内容")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
+    public ResponseEntity<Boolean> removeByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Remove-all')")
+    @ApiOperation(value = "根据文档批量删除文档内容", tags = {"文档内容" },  notes = "根据文档批量删除文档内容")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/doccontents/batch")
+    public ResponseEntity<Boolean> removeBatchByDoc(@RequestBody List<Long> ids) {
+        doccontentService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Update-all')")
     @ApiOperation(value = "根据文档更新文档内容", tags = {"文档内容" },  notes = "根据文档更新文档内容")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
@@ -231,28 +255,10 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Remove-all')")
-    @ApiOperation(value = "根据文档删除文档内容", tags = {"文档内容" },  notes = "根据文档删除文档内容")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
-    public ResponseEntity<Boolean> removeByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Remove-all')")
-    @ApiOperation(value = "根据文档批量删除文档内容", tags = {"文档内容" },  notes = "根据文档批量删除文档内容")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/doccontents/batch")
-    public ResponseEntity<Boolean> removeBatchByDoc(@RequestBody List<Long> ids) {
-        doccontentService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Get-all')")
-    @ApiOperation(value = "根据文档获取文档内容", tags = {"文档内容" },  notes = "根据文档获取文档内容")
-	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
-    public ResponseEntity<DocContentDTO> getByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
-        DocContent domain = doccontentService.get(doccontent_id);
-        DocContentDTO dto = doccontentMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "根据文档检查文档内容", tags = {"文档内容" },  notes = "根据文档检查文档内容")
+	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/doccontents/checkkey")
+    public ResponseEntity<Boolean> checkKeyByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
     @ApiOperation(value = "根据文档获取文档内容草稿", tags = {"文档内容" },  notes = "根据文档获取文档内容草稿")
@@ -261,12 +267,6 @@ public class DocContentResource {
         DocContent domain = doccontentMapping.toDomain(dto);
         domain.setDoc(doc_id);
         return ResponseEntity.status(HttpStatus.OK).body(doccontentMapping.toDto(doccontentService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "根据文档检查文档内容", tags = {"文档内容" },  notes = "根据文档检查文档内容")
-	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/doccontents/checkkey")
-    public ResponseEntity<Boolean> checkKeyByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocContent-Save-all')")

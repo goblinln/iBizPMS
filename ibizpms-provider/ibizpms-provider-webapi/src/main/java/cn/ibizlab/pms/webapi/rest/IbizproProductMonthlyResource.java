@@ -65,6 +65,30 @@ public class IbizproProductMonthlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibizproproductmonthlyMapping.toDomain(returnObject.body),'pms-IbizproProductMonthly-Get')")
+    @ApiOperation(value = "获取产品月报", tags = {"产品月报" },  notes = "获取产品月报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}")
+    public ResponseEntity<IbizproProductMonthlyDTO> get(@PathVariable("ibizproproductmonthly_id") Long ibizproproductmonthly_id) {
+        IbizproProductMonthly domain = ibizproproductmonthlyService.get(ibizproproductmonthly_id);
+        IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibizproproductmonthlyService.get(#ibizproproductmonthly_id),'pms-IbizproProductMonthly-Remove')")
+    @ApiOperation(value = "删除产品月报", tags = {"产品月报" },  notes = "删除产品月报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibizproproductmonthly_id") Long ibizproproductmonthly_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyService.remove(ibizproproductmonthly_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibizproproductmonthlyService.getIbizproproductmonthlyByIds(#ids),'pms-IbizproProductMonthly-Remove')")
+    @ApiOperation(value = "批量删除产品月报", tags = {"产品月报" },  notes = "批量删除产品月报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductmonthlies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibizproproductmonthlyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibizproproductmonthly" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibizproproductmonthlyService.get(#ibizproproductmonthly_id),'pms-IbizproProductMonthly-Update')")
     @ApiOperation(value = "更新产品月报", tags = {"产品月报" },  notes = "更新产品月报")
@@ -85,28 +109,10 @@ public class IbizproProductMonthlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproproductmonthlyService.get(#ibizproproductmonthly_id),'pms-IbizproProductMonthly-Remove')")
-    @ApiOperation(value = "删除产品月报", tags = {"产品月报" },  notes = "删除产品月报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibizproproductmonthly_id") Long ibizproproductmonthly_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyService.remove(ibizproproductmonthly_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibizproproductmonthlyService.getIbizproproductmonthlyByIds(#ids),'pms-IbizproProductMonthly-Remove')")
-    @ApiOperation(value = "批量删除产品月报", tags = {"产品月报" },  notes = "批量删除产品月报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductmonthlies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibizproproductmonthlyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibizproproductmonthlyMapping.toDomain(returnObject.body),'pms-IbizproProductMonthly-Get')")
-    @ApiOperation(value = "获取产品月报", tags = {"产品月报" },  notes = "获取产品月报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}")
-    public ResponseEntity<IbizproProductMonthlyDTO> get(@PathVariable("ibizproproductmonthly_id") Long ibizproproductmonthly_id) {
-        IbizproProductMonthly domain = ibizproproductmonthlyService.get(ibizproproductmonthly_id);
-        IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查产品月报", tags = {"产品月报" },  notes = "检查产品月报")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProductMonthlyDTO ibizproproductmonthlydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyService.checkKey(ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto)));
     }
 
     @ApiOperation(value = "获取产品月报草稿", tags = {"产品月报" },  notes = "获取产品月报草稿")
@@ -114,12 +120,6 @@ public class IbizproProductMonthlyResource {
     public ResponseEntity<IbizproProductMonthlyDTO> getDraft(IbizproProductMonthlyDTO dto) {
         IbizproProductMonthly domain = ibizproproductmonthlyMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyMapping.toDto(ibizproproductmonthlyService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查产品月报", tags = {"产品月报" },  notes = "检查产品月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProductMonthlyDTO ibizproproductmonthlydto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyService.checkKey(ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbizproProductMonthly-ManualCreateMonthly-all')")

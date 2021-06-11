@@ -65,6 +65,30 @@ public class IbzDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibzdailyMapping.toDomain(returnObject.body),'pms-IbzDaily-Get')")
+    @ApiOperation(value = "获取日报", tags = {"日报" },  notes = "获取日报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/{ibzdaily_id}")
+    public ResponseEntity<IbzDailyDTO> get(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
+        IbzDaily domain = ibzdailyService.get(ibzdaily_id);
+        IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibzdailyService.get(#ibzdaily_id),'pms-IbzDaily-Remove')")
+    @ApiOperation(value = "删除日报", tags = {"日报" },  notes = "删除日报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailies/{ibzdaily_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyService.remove(ibzdaily_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibzdailyService.getIbzdailyByIds(#ids),'pms-IbzDaily-Remove')")
+    @ApiOperation(value = "批量删除日报", tags = {"日报" },  notes = "批量删除日报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzdailyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibzdaily" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibzdailyService.get(#ibzdaily_id),'pms-IbzDaily-Update')")
     @ApiOperation(value = "更新日报", tags = {"日报" },  notes = "更新日报")
@@ -83,37 +107,6 @@ public class IbzDailyResource {
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzDailyDTO> ibzdailydtos) {
         ibzdailyService.updateBatch(ibzdailyMapping.toDomain(ibzdailydtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasPermission(this.ibzdailyService.get(#ibzdaily_id),'pms-IbzDaily-Remove')")
-    @ApiOperation(value = "删除日报", tags = {"日报" },  notes = "删除日报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailies/{ibzdaily_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyService.remove(ibzdaily_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibzdailyService.getIbzdailyByIds(#ids),'pms-IbzDaily-Remove')")
-    @ApiOperation(value = "批量删除日报", tags = {"日报" },  notes = "批量删除日报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzdailyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibzdailyMapping.toDomain(returnObject.body),'pms-IbzDaily-Get')")
-    @ApiOperation(value = "获取日报", tags = {"日报" },  notes = "获取日报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/{ibzdaily_id}")
-    public ResponseEntity<IbzDailyDTO> get(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
-        IbzDaily domain = ibzdailyService.get(ibzdaily_id);
-        IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "获取日报草稿", tags = {"日报" },  notes = "获取日报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/getdraft")
-    public ResponseEntity<IbzDailyDTO> getDraft(IbzDailyDTO dto) {
-        IbzDaily domain = ibzdailyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzdailyMapping.toDto(ibzdailyService.getDraft(domain)));
     }
 
     @ApiOperation(value = "检查日报", tags = {"日报" },  notes = "检查日报")
@@ -139,6 +132,13 @@ public class IbzDailyResource {
         List<IbzDaily> domains = ibzdailyMapping.toDomain(ibzdailydtos);
         boolean result = ibzdailyService.createUserDailyBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取日报草稿", tags = {"日报" },  notes = "获取日报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/getdraft")
+    public ResponseEntity<IbzDailyDTO> getDraft(IbzDailyDTO dto) {
+        IbzDaily domain = ibzdailyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzdailyMapping.toDto(ibzdailyService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzDaily-GetYeaterdayDailyPlansTaskEdit-all')")

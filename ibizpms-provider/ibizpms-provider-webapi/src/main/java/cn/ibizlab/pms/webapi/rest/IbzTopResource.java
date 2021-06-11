@@ -65,6 +65,30 @@ public class IbzTopResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibztopMapping.toDomain(returnObject.body),'pms-IbzTop-Get')")
+    @ApiOperation(value = "获取置顶", tags = {"置顶" },  notes = "获取置顶")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibztops/{ibztop_id}")
+    public ResponseEntity<IbzTopDTO> get(@PathVariable("ibztop_id") String ibztop_id) {
+        IbzTop domain = ibztopService.get(ibztop_id);
+        IbzTopDTO dto = ibztopMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibztopService.get(#ibztop_id),'pms-IbzTop-Remove')")
+    @ApiOperation(value = "删除置顶", tags = {"置顶" },  notes = "删除置顶")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/{ibztop_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibztop_id") String ibztop_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibztopService.remove(ibztop_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibztopService.getIbztopByIds(#ids),'pms-IbzTop-Remove')")
+    @ApiOperation(value = "批量删除置顶", tags = {"置顶" },  notes = "批量删除置顶")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibztopService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibztop" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibztopService.get(#ibztop_id),'pms-IbzTop-Update')")
     @ApiOperation(value = "更新置顶", tags = {"置顶" },  notes = "更新置顶")
@@ -85,28 +109,10 @@ public class IbzTopResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibztopService.get(#ibztop_id),'pms-IbzTop-Remove')")
-    @ApiOperation(value = "删除置顶", tags = {"置顶" },  notes = "删除置顶")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/{ibztop_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibztop_id") String ibztop_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibztopService.remove(ibztop_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibztopService.getIbztopByIds(#ids),'pms-IbzTop-Remove')")
-    @ApiOperation(value = "批量删除置顶", tags = {"置顶" },  notes = "批量删除置顶")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibztopService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibztopMapping.toDomain(returnObject.body),'pms-IbzTop-Get')")
-    @ApiOperation(value = "获取置顶", tags = {"置顶" },  notes = "获取置顶")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibztops/{ibztop_id}")
-    public ResponseEntity<IbzTopDTO> get(@PathVariable("ibztop_id") String ibztop_id) {
-        IbzTop domain = ibztopService.get(ibztop_id);
-        IbzTopDTO dto = ibztopMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查置顶", tags = {"置顶" },  notes = "检查置顶")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbzTopDTO ibztopdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibztopService.checkKey(ibztopMapping.toDomain(ibztopdto)));
     }
 
     @ApiOperation(value = "获取置顶草稿", tags = {"置顶" },  notes = "获取置顶草稿")
@@ -114,12 +120,6 @@ public class IbzTopResource {
     public ResponseEntity<IbzTopDTO> getDraft(IbzTopDTO dto) {
         IbzTop domain = ibztopMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibztopMapping.toDto(ibztopService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查置顶", tags = {"置顶" },  notes = "检查置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbzTopDTO ibztopdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibztopService.checkKey(ibztopMapping.toDomain(ibztopdto)));
     }
 
     @PreAuthorize("hasPermission(this.ibztopMapping.toDomain(#ibztopdto),'pms-IbzTop-Save')")

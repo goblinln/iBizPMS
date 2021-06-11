@@ -63,6 +63,27 @@ public class ProductLineResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "获取产品线", tags = {"产品线" },  notes = "获取产品线")
+	@RequestMapping(method = RequestMethod.GET, value = "/productlines/{productline_id}")
+    public ResponseEntity<ProductLineDTO> get(@PathVariable("productline_id") String productline_id) {
+        ProductLine domain = productlineService.get(productline_id);
+        ProductLineDTO dto = productlineMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "删除产品线", tags = {"产品线" },  notes = "删除产品线")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/{productline_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("productline_id") String productline_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(productlineService.remove(productline_id));
+    }
+
+    @ApiOperation(value = "批量删除产品线", tags = {"产品线" },  notes = "批量删除产品线")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        productlineService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "productline" , versionfield = "updatedate")
     @ApiOperation(value = "更新产品线", tags = {"产品线" },  notes = "更新产品线")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productlines/{productline_id}")
@@ -81,25 +102,10 @@ public class ProductLineResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "删除产品线", tags = {"产品线" },  notes = "删除产品线")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/{productline_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("productline_id") String productline_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(productlineService.remove(productline_id));
-    }
-
-    @ApiOperation(value = "批量删除产品线", tags = {"产品线" },  notes = "批量删除产品线")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        productlineService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @ApiOperation(value = "获取产品线", tags = {"产品线" },  notes = "获取产品线")
-	@RequestMapping(method = RequestMethod.GET, value = "/productlines/{productline_id}")
-    public ResponseEntity<ProductLineDTO> get(@PathVariable("productline_id") String productline_id) {
-        ProductLine domain = productlineService.get(productline_id);
-        ProductLineDTO dto = productlineMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查产品线", tags = {"产品线" },  notes = "检查产品线")
+	@RequestMapping(method = RequestMethod.POST, value = "/productlines/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody ProductLineDTO productlinedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(productlineService.checkKey(productlineMapping.toDomain(productlinedto)));
     }
 
     @ApiOperation(value = "获取产品线草稿", tags = {"产品线" },  notes = "获取产品线草稿")
@@ -107,12 +113,6 @@ public class ProductLineResource {
     public ResponseEntity<ProductLineDTO> getDraft(ProductLineDTO dto) {
         ProductLine domain = productlineMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(productlineMapping.toDto(productlineService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查产品线", tags = {"产品线" },  notes = "检查产品线")
-	@RequestMapping(method = RequestMethod.POST, value = "/productlines/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody ProductLineDTO productlinedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(productlineService.checkKey(productlineMapping.toDomain(productlinedto)));
     }
 
     @ApiOperation(value = "保存产品线", tags = {"产品线" },  notes = "保存产品线")

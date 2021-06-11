@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新组成员
+### 获取组成员
 #### 访问路径
 /systeammembers/{systeammember_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | systeammember_id | String | 组成员主键ID |
-| 2 | systeammemberdto | [SysTeamMemberDTO](#SysTeamMemberDTO) | 组成员实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SysTeamMemberDTO](#SysTeamMemberDTO)：组成员实体传输对象 |
-
-### 批量更新组成员
-#### 访问路径
-/systeammembers/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | systeammemberdtos | List<[SysTeamMemberDTO](#SysTeamMemberDTO)> | 组成员实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除组成员
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取组成员
+### 更新组成员
 #### 访问路径
 /systeammembers/{systeammember_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | systeammember_id | String | 组成员主键ID |
+| 2 | systeammemberdto | [SysTeamMemberDTO](#SysTeamMemberDTO) | 组成员实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [SysTeamMemberDTO](#SysTeamMemberDTO)：组成员实体传输对象 |
+
+### 批量更新组成员
+#### 访问路径
+/systeammembers/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | systeammemberdtos | List<[SysTeamMemberDTO](#SysTeamMemberDTO)> | 组成员实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查组成员
 #### 访问路径

@@ -65,6 +65,30 @@ public class ProductSumResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductSum-Get-all')")
+    @ApiOperation(value = "获取产品汇总表", tags = {"产品汇总表" },  notes = "获取产品汇总表")
+	@RequestMapping(method = RequestMethod.GET, value = "/productsums/{productsum_id}")
+    public ResponseEntity<ProductSumDTO> get(@PathVariable("productsum_id") Long productsum_id) {
+        ProductSum domain = productsumService.get(productsum_id);
+        ProductSumDTO dto = productsumMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductSum-Remove-all')")
+    @ApiOperation(value = "删除产品汇总表", tags = {"产品汇总表" },  notes = "删除产品汇总表")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productsums/{productsum_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("productsum_id") Long productsum_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(productsumService.remove(productsum_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductSum-Remove-all')")
+    @ApiOperation(value = "批量删除产品汇总表", tags = {"产品汇总表" },  notes = "批量删除产品汇总表")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productsums/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        productsumService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductSum-Update-all')")
     @ApiOperation(value = "更新产品汇总表", tags = {"产品汇总表" },  notes = "更新产品汇总表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productsums/{productsum_id}")
@@ -84,28 +108,10 @@ public class ProductSumResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductSum-Remove-all')")
-    @ApiOperation(value = "删除产品汇总表", tags = {"产品汇总表" },  notes = "删除产品汇总表")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productsums/{productsum_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("productsum_id") Long productsum_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(productsumService.remove(productsum_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductSum-Remove-all')")
-    @ApiOperation(value = "批量删除产品汇总表", tags = {"产品汇总表" },  notes = "批量删除产品汇总表")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productsums/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        productsumService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductSum-Get-all')")
-    @ApiOperation(value = "获取产品汇总表", tags = {"产品汇总表" },  notes = "获取产品汇总表")
-	@RequestMapping(method = RequestMethod.GET, value = "/productsums/{productsum_id}")
-    public ResponseEntity<ProductSumDTO> get(@PathVariable("productsum_id") Long productsum_id) {
-        ProductSum domain = productsumService.get(productsum_id);
-        ProductSumDTO dto = productsumMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查产品汇总表", tags = {"产品汇总表" },  notes = "检查产品汇总表")
+	@RequestMapping(method = RequestMethod.POST, value = "/productsums/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody ProductSumDTO productsumdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(productsumService.checkKey(productsumMapping.toDomain(productsumdto)));
     }
 
     @ApiOperation(value = "获取产品汇总表草稿", tags = {"产品汇总表" },  notes = "获取产品汇总表草稿")
@@ -113,12 +119,6 @@ public class ProductSumResource {
     public ResponseEntity<ProductSumDTO> getDraft(ProductSumDTO dto) {
         ProductSum domain = productsumMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(productsumMapping.toDto(productsumService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查产品汇总表", tags = {"产品汇总表" },  notes = "检查产品汇总表")
-	@RequestMapping(method = RequestMethod.POST, value = "/productsums/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody ProductSumDTO productsumdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(productsumService.checkKey(productsumMapping.toDomain(productsumdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductSum-Save-all')")

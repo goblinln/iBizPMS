@@ -50,8 +50,10 @@ public interface ITaskEstimateService extends IService<TaskEstimate> {
     void saveBatch(List<TaskEstimate> list);
     Page<TaskEstimate> searchActionMonth(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchActionYear(TaskEstimateSearchContext context);
+    Page<TaskEstimate> searchAllAccounts(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchDefault(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchDefaults(TaskEstimateSearchContext context);
+    Page<TaskEstimate> searchMyAccounts(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchProjectActionMonth(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchProjectActionYear(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchProjectTaskEstimate(TaskEstimateSearchContext context);

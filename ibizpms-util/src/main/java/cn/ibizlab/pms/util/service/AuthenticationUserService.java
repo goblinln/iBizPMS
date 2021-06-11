@@ -20,6 +20,10 @@ public interface AuthenticationUserService extends UserDetailsService {
         return null ;
     }
 
+    @Cacheable(value = "ibzuaa_users", key = "#p0+':'+#p1+':getByUsername:'+#p2")
+    default AuthenticationUser loadUserByUsername(String srfsystem,String srforgid, String username){
+        return null ;
+    }
 
     @Cacheable( value="ibzuaa_users", key = "'getByUsername:'+#p0")
     AuthenticationUser loadUserByLogin(String username,String password);
@@ -27,5 +31,9 @@ public interface AuthenticationUserService extends UserDetailsService {
     @CacheEvict( value="ibzuaa_users", key = "'glob:*:getByUsername:'+#p0")
     default void resetByUsername(String username){}
 
+    @CacheEvict(value = "ibzuaa_users", key = "'glob:*:getByUsername:'+#p2")
+    default void resetByUsername(String srfsystem,String srforgid, String username){
+
+    }
 
 }

@@ -65,6 +65,30 @@ public class IbzMonthlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibzmonthlyMapping.toDomain(returnObject.body),'pms-IbzMonthly-Get')")
+    @ApiOperation(value = "获取月报", tags = {"月报" },  notes = "获取月报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzmonthlies/{ibzmonthly_id}")
+    public ResponseEntity<IbzMonthlyDTO> get(@PathVariable("ibzmonthly_id") Long ibzmonthly_id) {
+        IbzMonthly domain = ibzmonthlyService.get(ibzmonthly_id);
+        IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibzmonthlyService.get(#ibzmonthly_id),'pms-IbzMonthly-Remove')")
+    @ApiOperation(value = "删除月报", tags = {"月报" },  notes = "删除月报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzmonthlies/{ibzmonthly_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzmonthly_id") Long ibzmonthly_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlyService.remove(ibzmonthly_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibzmonthlyService.getIbzmonthlyByIds(#ids),'pms-IbzMonthly-Remove')")
+    @ApiOperation(value = "批量删除月报", tags = {"月报" },  notes = "批量删除月报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzmonthlies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzmonthlyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibzmonthly" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibzmonthlyService.get(#ibzmonthly_id),'pms-IbzMonthly-Update')")
     @ApiOperation(value = "更新月报", tags = {"月报" },  notes = "更新月报")
@@ -83,37 +107,6 @@ public class IbzMonthlyResource {
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbzMonthlyDTO> ibzmonthlydtos) {
         ibzmonthlyService.updateBatch(ibzmonthlyMapping.toDomain(ibzmonthlydtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasPermission(this.ibzmonthlyService.get(#ibzmonthly_id),'pms-IbzMonthly-Remove')")
-    @ApiOperation(value = "删除月报", tags = {"月报" },  notes = "删除月报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzmonthlies/{ibzmonthly_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzmonthly_id") Long ibzmonthly_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlyService.remove(ibzmonthly_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibzmonthlyService.getIbzmonthlyByIds(#ids),'pms-IbzMonthly-Remove')")
-    @ApiOperation(value = "批量删除月报", tags = {"月报" },  notes = "批量删除月报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzmonthlies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzmonthlyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibzmonthlyMapping.toDomain(returnObject.body),'pms-IbzMonthly-Get')")
-    @ApiOperation(value = "获取月报", tags = {"月报" },  notes = "获取月报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzmonthlies/{ibzmonthly_id}")
-    public ResponseEntity<IbzMonthlyDTO> get(@PathVariable("ibzmonthly_id") Long ibzmonthly_id) {
-        IbzMonthly domain = ibzmonthlyService.get(ibzmonthly_id);
-        IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @ApiOperation(value = "获取月报草稿", tags = {"月报" },  notes = "获取月报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzmonthlies/getdraft")
-    public ResponseEntity<IbzMonthlyDTO> getDraft(IbzMonthlyDTO dto) {
-        IbzMonthly domain = ibzmonthlyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlyMapping.toDto(ibzmonthlyService.getDraft(domain)));
     }
 
     @ApiOperation(value = "检查月报", tags = {"月报" },  notes = "检查月报")
@@ -177,6 +170,13 @@ public class IbzMonthlyResource {
         List<IbzMonthly> domains = ibzmonthlyMapping.toDomain(ibzmonthlydtos);
         boolean result = ibzmonthlyService.editGetCompleteTaskBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取月报草稿", tags = {"月报" },  notes = "获取月报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzmonthlies/getdraft")
+    public ResponseEntity<IbzMonthlyDTO> getDraft(IbzMonthlyDTO dto) {
+        IbzMonthly domain = ibzmonthlyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlyMapping.toDto(ibzmonthlyService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-IbzMonthly-HaveRead-all')")

@@ -65,6 +65,30 @@ public class IbizproProductWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.ibizproproductweeklyMapping.toDomain(returnObject.body),'pms-IbizproProductWeekly-Get')")
+    @ApiOperation(value = "获取产品周报", tags = {"产品周报" },  notes = "获取产品周报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductweeklies/{ibizproproductweekly_id}")
+    public ResponseEntity<IbizproProductWeeklyDTO> get(@PathVariable("ibizproproductweekly_id") Long ibizproproductweekly_id) {
+        IbizproProductWeekly domain = ibizproproductweeklyService.get(ibizproproductweekly_id);
+        IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.ibizproproductweeklyService.get(#ibizproproductweekly_id),'pms-IbizproProductWeekly-Remove')")
+    @ApiOperation(value = "删除产品周报", tags = {"产品周报" },  notes = "删除产品周报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductweeklies/{ibizproproductweekly_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibizproproductweekly_id") Long ibizproproductweekly_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyService.remove(ibizproproductweekly_id));
+    }
+
+    @PreAuthorize("hasPermission(this.ibizproproductweeklyService.getIbizproproductweeklyByIds(#ids),'pms-IbizproProductWeekly-Remove')")
+    @ApiOperation(value = "批量删除产品周报", tags = {"产品周报" },  notes = "批量删除产品周报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductweeklies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibizproproductweeklyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibizproproductweekly" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.ibizproproductweeklyService.get(#ibizproproductweekly_id),'pms-IbizproProductWeekly-Update')")
     @ApiOperation(value = "更新产品周报", tags = {"产品周报" },  notes = "更新产品周报")
@@ -85,28 +109,10 @@ public class IbizproProductWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.ibizproproductweeklyService.get(#ibizproproductweekly_id),'pms-IbizproProductWeekly-Remove')")
-    @ApiOperation(value = "删除产品周报", tags = {"产品周报" },  notes = "删除产品周报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductweeklies/{ibizproproductweekly_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibizproproductweekly_id") Long ibizproproductweekly_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyService.remove(ibizproproductweekly_id));
-    }
-
-    @PreAuthorize("hasPermission(this.ibizproproductweeklyService.getIbizproproductweeklyByIds(#ids),'pms-IbizproProductWeekly-Remove')")
-    @ApiOperation(value = "批量删除产品周报", tags = {"产品周报" },  notes = "批量删除产品周报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductweeklies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibizproproductweeklyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.ibizproproductweeklyMapping.toDomain(returnObject.body),'pms-IbizproProductWeekly-Get')")
-    @ApiOperation(value = "获取产品周报", tags = {"产品周报" },  notes = "获取产品周报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductweeklies/{ibizproproductweekly_id}")
-    public ResponseEntity<IbizproProductWeeklyDTO> get(@PathVariable("ibizproproductweekly_id") Long ibizproproductweekly_id) {
-        IbizproProductWeekly domain = ibizproproductweeklyService.get(ibizproproductweekly_id);
-        IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查产品周报", tags = {"产品周报" },  notes = "检查产品周报")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProductWeeklyDTO ibizproproductweeklydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyService.checkKey(ibizproproductweeklyMapping.toDomain(ibizproproductweeklydto)));
     }
 
     @ApiOperation(value = "获取产品周报草稿", tags = {"产品周报" },  notes = "获取产品周报草稿")
@@ -114,12 +120,6 @@ public class IbizproProductWeeklyResource {
     public ResponseEntity<IbizproProductWeeklyDTO> getDraft(IbizproProductWeeklyDTO dto) {
         IbizproProductWeekly domain = ibizproproductweeklyMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyMapping.toDto(ibizproproductweeklyService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查产品周报", tags = {"产品周报" },  notes = "检查产品周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductweeklies/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProductWeeklyDTO ibizproproductweeklydto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklyService.checkKey(ibizproproductweeklyMapping.toDomain(ibizproproductweeklydto)));
     }
 
     @PreAuthorize("hasPermission(this.ibizproproductweeklyMapping.toDomain(#ibizproproductweeklydto),'pms-IbizproProductWeekly-Save')")

@@ -65,23 +65,13 @@ public class TodoResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Todo-Update-all')")
-    @ApiOperation(value = "更新待办", tags = {"待办" },  notes = "更新待办")
-	@RequestMapping(method = RequestMethod.PUT, value = "/todos/{todo_id}")
-    public ResponseEntity<TodoDTO> update(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
-		Todo domain  = todoMapping.toDomain(tododto);
-        domain .setId(todo_id);
-		todoService.update(domain );
-		TodoDTO dto = todoMapping.toDto(domain);
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Todo-Get-all')")
+    @ApiOperation(value = "获取待办", tags = {"待办" },  notes = "获取待办")
+	@RequestMapping(method = RequestMethod.GET, value = "/todos/{todo_id}")
+    public ResponseEntity<TodoDTO> get(@PathVariable("todo_id") Long todo_id) {
+        Todo domain = todoService.get(todo_id);
+        TodoDTO dto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Todo-Update-all')")
-    @ApiOperation(value = "批量更新待办", tags = {"待办" },  notes = "批量更新待办")
-	@RequestMapping(method = RequestMethod.PUT, value = "/todos/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<TodoDTO> tododtos) {
-        todoService.updateBatch(todoMapping.toDomain(tododtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Todo-Remove-all')")
@@ -99,20 +89,23 @@ public class TodoResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Todo-Get-all')")
-    @ApiOperation(value = "获取待办", tags = {"待办" },  notes = "获取待办")
-	@RequestMapping(method = RequestMethod.GET, value = "/todos/{todo_id}")
-    public ResponseEntity<TodoDTO> get(@PathVariable("todo_id") Long todo_id) {
-        Todo domain = todoService.get(todo_id);
-        TodoDTO dto = todoMapping.toDto(domain);
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Todo-Update-all')")
+    @ApiOperation(value = "更新待办", tags = {"待办" },  notes = "更新待办")
+	@RequestMapping(method = RequestMethod.PUT, value = "/todos/{todo_id}")
+    public ResponseEntity<TodoDTO> update(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
+		Todo domain  = todoMapping.toDomain(tododto);
+        domain .setId(todo_id);
+		todoService.update(domain );
+		TodoDTO dto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取待办草稿", tags = {"待办" },  notes = "获取待办草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/todos/getdraft")
-    public ResponseEntity<TodoDTO> getDraft(TodoDTO dto) {
-        Todo domain = todoMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Todo-Update-all')")
+    @ApiOperation(value = "批量更新待办", tags = {"待办" },  notes = "批量更新待办")
+	@RequestMapping(method = RequestMethod.PUT, value = "/todos/batch")
+    public ResponseEntity<Boolean> updateBatch(@RequestBody List<TodoDTO> tododtos) {
+        todoService.updateBatch(todoMapping.toDomain(tododtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Todo-Activate-all')")
@@ -214,6 +207,13 @@ public class TodoResource {
         List<Todo> domains = todoMapping.toDomain(tododtos);
         boolean result = todoService.finishBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取待办草稿", tags = {"待办" },  notes = "获取待办草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/todos/getdraft")
+    public ResponseEntity<TodoDTO> getDraft(TodoDTO dto) {
+        Todo domain = todoMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Todo-Save-all')")

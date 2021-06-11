@@ -65,6 +65,30 @@ public class PSSysAppResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PostAuthorize("hasPermission(this.pssysappMapping.toDomain(returnObject.body),'pms-PSSysApp-Get')")
+    @ApiOperation(value = "获取系统应用", tags = {"系统应用" },  notes = "获取系统应用")
+	@RequestMapping(method = RequestMethod.GET, value = "/pssysapps/{pssysapp_id}")
+    public ResponseEntity<PSSysAppDTO> get(@PathVariable("pssysapp_id") String pssysapp_id) {
+        PSSysApp domain = pssysappService.get(pssysapp_id);
+        PSSysAppDTO dto = pssysappMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasPermission(this.pssysappService.get(#pssysapp_id),'pms-PSSysApp-Remove')")
+    @ApiOperation(value = "删除系统应用", tags = {"系统应用" },  notes = "删除系统应用")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/{pssysapp_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("pssysapp_id") String pssysapp_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(pssysappService.remove(pssysapp_id));
+    }
+
+    @PreAuthorize("hasPermission(this.pssysappService.getPssysappByIds(#ids),'pms-PSSysApp-Remove')")
+    @ApiOperation(value = "批量删除系统应用", tags = {"系统应用" },  notes = "批量删除系统应用")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        pssysappService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "pssysapp" , versionfield = "updatedate")
     @PreAuthorize("hasPermission(this.pssysappService.get(#pssysapp_id),'pms-PSSysApp-Update')")
     @ApiOperation(value = "更新系统应用", tags = {"系统应用" },  notes = "更新系统应用")
@@ -85,28 +109,10 @@ public class PSSysAppResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasPermission(this.pssysappService.get(#pssysapp_id),'pms-PSSysApp-Remove')")
-    @ApiOperation(value = "删除系统应用", tags = {"系统应用" },  notes = "删除系统应用")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/{pssysapp_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("pssysapp_id") String pssysapp_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(pssysappService.remove(pssysapp_id));
-    }
-
-    @PreAuthorize("hasPermission(this.pssysappService.getPssysappByIds(#ids),'pms-PSSysApp-Remove')")
-    @ApiOperation(value = "批量删除系统应用", tags = {"系统应用" },  notes = "批量删除系统应用")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        pssysappService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PostAuthorize("hasPermission(this.pssysappMapping.toDomain(returnObject.body),'pms-PSSysApp-Get')")
-    @ApiOperation(value = "获取系统应用", tags = {"系统应用" },  notes = "获取系统应用")
-	@RequestMapping(method = RequestMethod.GET, value = "/pssysapps/{pssysapp_id}")
-    public ResponseEntity<PSSysAppDTO> get(@PathVariable("pssysapp_id") String pssysapp_id) {
-        PSSysApp domain = pssysappService.get(pssysapp_id);
-        PSSysAppDTO dto = pssysappMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查系统应用", tags = {"系统应用" },  notes = "检查系统应用")
+	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody PSSysAppDTO pssysappdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(pssysappService.checkKey(pssysappMapping.toDomain(pssysappdto)));
     }
 
     @ApiOperation(value = "获取系统应用草稿", tags = {"系统应用" },  notes = "获取系统应用草稿")
@@ -114,12 +120,6 @@ public class PSSysAppResource {
     public ResponseEntity<PSSysAppDTO> getDraft(PSSysAppDTO dto) {
         PSSysApp domain = pssysappMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(pssysappMapping.toDto(pssysappService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查系统应用", tags = {"系统应用" },  notes = "检查系统应用")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssysapps/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody PSSysAppDTO pssysappdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(pssysappService.checkKey(pssysappMapping.toDomain(pssysappdto)));
     }
 
     @PreAuthorize("hasPermission(this.pssysappMapping.toDomain(#pssysappdto),'pms-PSSysApp-Save')")

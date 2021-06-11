@@ -65,23 +65,13 @@ public class DocLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocLibModule-Update-all')")
-    @ApiOperation(value = "更新文档库分类", tags = {"文档库分类" },  notes = "更新文档库分类")
-	@RequestMapping(method = RequestMethod.PUT, value = "/doclibmodules/{doclibmodule_id}")
-    public ResponseEntity<DocLibModuleDTO> update(@PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
-		DocLibModule domain  = doclibmoduleMapping.toDomain(doclibmoduledto);
-        domain .setId(doclibmodule_id);
-		doclibmoduleService.update(domain );
-		DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocLibModule-Get-all')")
+    @ApiOperation(value = "获取文档库分类", tags = {"文档库分类" },  notes = "获取文档库分类")
+	@RequestMapping(method = RequestMethod.GET, value = "/doclibmodules/{doclibmodule_id}")
+    public ResponseEntity<DocLibModuleDTO> get(@PathVariable("doclibmodule_id") Long doclibmodule_id) {
+        DocLibModule domain = doclibmoduleService.get(doclibmodule_id);
+        DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocLibModule-Update-all')")
-    @ApiOperation(value = "批量更新文档库分类", tags = {"文档库分类" },  notes = "批量更新文档库分类")
-	@RequestMapping(method = RequestMethod.PUT, value = "/doclibmodules/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
-        doclibmoduleService.updateBatch(doclibmoduleMapping.toDomain(doclibmoduledtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocLibModule-Remove-all')")
@@ -99,20 +89,23 @@ public class DocLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocLibModule-Get-all')")
-    @ApiOperation(value = "获取文档库分类", tags = {"文档库分类" },  notes = "获取文档库分类")
-	@RequestMapping(method = RequestMethod.GET, value = "/doclibmodules/{doclibmodule_id}")
-    public ResponseEntity<DocLibModuleDTO> get(@PathVariable("doclibmodule_id") Long doclibmodule_id) {
-        DocLibModule domain = doclibmoduleService.get(doclibmodule_id);
-        DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocLibModule-Update-all')")
+    @ApiOperation(value = "更新文档库分类", tags = {"文档库分类" },  notes = "更新文档库分类")
+	@RequestMapping(method = RequestMethod.PUT, value = "/doclibmodules/{doclibmodule_id}")
+    public ResponseEntity<DocLibModuleDTO> update(@PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
+		DocLibModule domain  = doclibmoduleMapping.toDomain(doclibmoduledto);
+        domain .setId(doclibmodule_id);
+		doclibmoduleService.update(domain );
+		DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取文档库分类草稿", tags = {"文档库分类" },  notes = "获取文档库分类草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/doclibmodules/getdraft")
-    public ResponseEntity<DocLibModuleDTO> getDraft(DocLibModuleDTO dto) {
-        DocLibModule domain = doclibmoduleMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleMapping.toDto(doclibmoduleService.getDraft(domain)));
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocLibModule-Update-all')")
+    @ApiOperation(value = "批量更新文档库分类", tags = {"文档库分类" },  notes = "批量更新文档库分类")
+	@RequestMapping(method = RequestMethod.PUT, value = "/doclibmodules/batch")
+    public ResponseEntity<Boolean> updateBatch(@RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
+        doclibmoduleService.updateBatch(doclibmoduleMapping.toDomain(doclibmoduledtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @ApiOperation(value = "检查文档库分类", tags = {"文档库分类" },  notes = "检查文档库分类")
@@ -171,6 +164,13 @@ public class DocLibModuleResource {
         domain = doclibmoduleService.fix(domain);
         doclibmoduledto = doclibmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
+    }
+
+    @ApiOperation(value = "获取文档库分类草稿", tags = {"文档库分类" },  notes = "获取文档库分类草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/doclibmodules/getdraft")
+    public ResponseEntity<DocLibModuleDTO> getDraft(DocLibModuleDTO dto) {
+        DocLibModule domain = doclibmoduleMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleMapping.toDto(doclibmoduleService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-DocLibModule-Save-all')")

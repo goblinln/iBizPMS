@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新关键字
+### 获取关键字
 #### 访问路径
 /ibizprokeywords/{ibizprokeyword_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibizprokeyword_id | String | 关键字主键ID |
-| 2 | ibizprokeyworddto | [IBIZProKeywordDTO](#IBIZProKeywordDTO) | 关键字实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IBIZProKeywordDTO](#IBIZProKeywordDTO)：关键字实体传输对象 |
-
-### 批量更新关键字
-#### 访问路径
-/ibizprokeywords/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | ibizprokeyworddtos | List<[IBIZProKeywordDTO](#IBIZProKeywordDTO)> | 关键字实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除关键字
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取关键字
+### 更新关键字
 #### 访问路径
 /ibizprokeywords/{ibizprokeyword_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | ibizprokeyword_id | String | 关键字主键ID |
+| 2 | ibizprokeyworddto | [IBIZProKeywordDTO](#IBIZProKeywordDTO) | 关键字实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IBIZProKeywordDTO](#IBIZProKeywordDTO)：关键字实体传输对象 |
+
+### 批量更新关键字
+#### 访问路径
+/ibizprokeywords/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | ibizprokeyworddtos | List<[IBIZProKeywordDTO](#IBIZProKeywordDTO)> | 关键字实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查关键字
 #### 访问路径

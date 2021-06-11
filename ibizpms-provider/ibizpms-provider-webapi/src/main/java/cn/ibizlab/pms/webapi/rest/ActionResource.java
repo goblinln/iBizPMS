@@ -65,23 +65,13 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Action-Update-all')")
-    @ApiOperation(value = "更新系统日志", tags = {"系统日志" },  notes = "更新系统日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/actions/{action_id}")
-    public ResponseEntity<ActionDTO> update(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
-		Action domain  = actionMapping.toDomain(actiondto);
-        domain .setId(action_id);
-		actionService.update(domain );
-		ActionDTO dto = actionMapping.toDto(domain);
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Action-Get-all')")
+    @ApiOperation(value = "获取系统日志", tags = {"系统日志" },  notes = "获取系统日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/actions/{action_id}")
+    public ResponseEntity<ActionDTO> get(@PathVariable("action_id") Long action_id) {
+        Action domain = actionService.get(action_id);
+        ActionDTO dto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Action-Update-all')")
-    @ApiOperation(value = "批量更新系统日志", tags = {"系统日志" },  notes = "批量更新系统日志")
-	@RequestMapping(method = RequestMethod.PUT, value = "/actions/batch")
-    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ActionDTO> actiondtos) {
-        actionService.updateBatch(actionMapping.toDomain(actiondtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Action-Remove-all')")
@@ -99,20 +89,23 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Action-Get-all')")
-    @ApiOperation(value = "获取系统日志", tags = {"系统日志" },  notes = "获取系统日志")
-	@RequestMapping(method = RequestMethod.GET, value = "/actions/{action_id}")
-    public ResponseEntity<ActionDTO> get(@PathVariable("action_id") Long action_id) {
-        Action domain = actionService.get(action_id);
-        ActionDTO dto = actionMapping.toDto(domain);
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Action-Update-all')")
+    @ApiOperation(value = "更新系统日志", tags = {"系统日志" },  notes = "更新系统日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/actions/{action_id}")
+    public ResponseEntity<ActionDTO> update(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+		Action domain  = actionMapping.toDomain(actiondto);
+        domain .setId(action_id);
+		actionService.update(domain );
+		ActionDTO dto = actionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取系统日志草稿", tags = {"系统日志" },  notes = "获取系统日志草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraft(ActionDTO dto) {
-        Action domain = actionMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Action-Update-all')")
+    @ApiOperation(value = "批量更新系统日志", tags = {"系统日志" },  notes = "批量更新系统日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/actions/batch")
+    public ResponseEntity<Boolean> updateBatch(@RequestBody List<ActionDTO> actiondtos) {
+        actionService.updateBatch(actionMapping.toDomain(actiondtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @ApiOperation(value = "检查系统日志", tags = {"系统日志" },  notes = "检查系统日志")
@@ -149,6 +142,13 @@ public class ActionResource {
         List<Action> domains = actionMapping.toDomain(actiondtos);
         boolean result = actionService.editCommentBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "获取系统日志草稿", tags = {"系统日志" },  notes = "获取系统日志草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraft(ActionDTO dto) {
+        Action domain = actionMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Action-ManagePmsEe-all')")

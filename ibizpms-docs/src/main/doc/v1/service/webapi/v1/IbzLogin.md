@@ -3,12 +3,12 @@
 实体
 
 ## 接口清单
-### 获取ZT账户登录信息
+### ZT登录
 #### 访问路径
-/ibzlogins/{ibzlogin_id}/getuser
+/ibzlogins/{ibzlogin_id}/ztlogin
 
 #### 请求方法
-GET
+POST
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
@@ -22,12 +22,12 @@ GET
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [IbzLoginDTO](#IbzLoginDTO)：实体实体传输对象 |
 
-### ZT登录
+### 获取ZT账户登录信息
 #### 访问路径
-/ibzlogins/{ibzlogin_id}/ztlogin
+/ibzlogins/{ibzlogin_id}/getuser
 
 #### 请求方法
-POST
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |

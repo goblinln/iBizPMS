@@ -65,6 +65,30 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Get-all')")
+    @ApiOperation(value = "获取测试套件", tags = {"测试套件" },  notes = "获取测试套件")
+	@RequestMapping(method = RequestMethod.GET, value = "/testsuites/{testsuite_id}")
+    public ResponseEntity<TestSuiteDTO> get(@PathVariable("testsuite_id") Long testsuite_id) {
+        TestSuite domain = testsuiteService.get(testsuite_id);
+        TestSuiteDTO dto = testsuiteMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Remove-all')")
+    @ApiOperation(value = "删除测试套件", tags = {"测试套件" },  notes = "删除测试套件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/{testsuite_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("testsuite_id") Long testsuite_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.remove(testsuite_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Remove-all')")
+    @ApiOperation(value = "批量删除测试套件", tags = {"测试套件" },  notes = "批量删除测试套件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        testsuiteService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "testsuite" , versionfield = "lastediteddate")
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Update-all')")
     @ApiOperation(value = "更新测试套件", tags = {"测试套件" },  notes = "更新测试套件")
@@ -85,28 +109,10 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Remove-all')")
-    @ApiOperation(value = "删除测试套件", tags = {"测试套件" },  notes = "删除测试套件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/{testsuite_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("testsuite_id") Long testsuite_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.remove(testsuite_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Remove-all')")
-    @ApiOperation(value = "批量删除测试套件", tags = {"测试套件" },  notes = "批量删除测试套件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        testsuiteService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Get-all')")
-    @ApiOperation(value = "获取测试套件", tags = {"测试套件" },  notes = "获取测试套件")
-	@RequestMapping(method = RequestMethod.GET, value = "/testsuites/{testsuite_id}")
-    public ResponseEntity<TestSuiteDTO> get(@PathVariable("testsuite_id") Long testsuite_id) {
-        TestSuite domain = testsuiteService.get(testsuite_id);
-        TestSuiteDTO dto = testsuiteMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查测试套件", tags = {"测试套件" },  notes = "检查测试套件")
+	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody TestSuiteDTO testsuitedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
     @ApiOperation(value = "获取测试套件草稿", tags = {"测试套件" },  notes = "获取测试套件草稿")
@@ -114,12 +120,6 @@ public class TestSuiteResource {
     public ResponseEntity<TestSuiteDTO> getDraft(TestSuiteDTO dto) {
         TestSuite domain = testsuiteMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(testsuiteService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查测试套件", tags = {"测试套件" },  notes = "检查测试套件")
-	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody TestSuiteDTO testsuitedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-MobTestSuiteCount-all')")
@@ -219,6 +219,30 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Get-all')")
+    @ApiOperation(value = "根据产品获取测试套件", tags = {"测试套件" },  notes = "根据产品获取测试套件")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testsuites/{testsuite_id}")
+    public ResponseEntity<TestSuiteDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
+        TestSuite domain = testsuiteService.get(testsuite_id);
+        TestSuiteDTO dto = testsuiteMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Remove-all')")
+    @ApiOperation(value = "根据产品删除测试套件", tags = {"测试套件" },  notes = "根据产品删除测试套件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testsuites/{testsuite_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.remove(testsuite_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Remove-all')")
+    @ApiOperation(value = "根据产品批量删除测试套件", tags = {"测试套件" },  notes = "根据产品批量删除测试套件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testsuites/batch")
+    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
+        testsuiteService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "testsuite" , versionfield = "lastediteddate")
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Update-all')")
     @ApiOperation(value = "根据产品更新测试套件", tags = {"测试套件" },  notes = "根据产品更新测试套件")
@@ -244,28 +268,10 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Remove-all')")
-    @ApiOperation(value = "根据产品删除测试套件", tags = {"测试套件" },  notes = "根据产品删除测试套件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testsuites/{testsuite_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.remove(testsuite_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Remove-all')")
-    @ApiOperation(value = "根据产品批量删除测试套件", tags = {"测试套件" },  notes = "根据产品批量删除测试套件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testsuites/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        testsuiteService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-Get-all')")
-    @ApiOperation(value = "根据产品获取测试套件", tags = {"测试套件" },  notes = "根据产品获取测试套件")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testsuites/{testsuite_id}")
-    public ResponseEntity<TestSuiteDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
-        TestSuite domain = testsuiteService.get(testsuite_id);
-        TestSuiteDTO dto = testsuiteMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "根据产品检查测试套件", tags = {"测试套件" },  notes = "根据产品检查测试套件")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
     @ApiOperation(value = "根据产品获取测试套件草稿", tags = {"测试套件" },  notes = "根据产品获取测试套件草稿")
@@ -274,12 +280,6 @@ public class TestSuiteResource {
         TestSuite domain = testsuiteMapping.toDomain(dto);
         domain.setProduct(product_id);
         return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(testsuiteService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "根据产品检查测试套件", tags = {"测试套件" },  notes = "根据产品检查测试套件")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/checkkey")
-    public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TestSuite-MobTestSuiteCount-all')")

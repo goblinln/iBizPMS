@@ -39,42 +39,23 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 更新用户工时统计
+### 获取用户工时统计
 #### 访问路径
 /accounttaskestimates/{accounttaskestimate_id}
 
 #### 请求方法
-PUT
+GET
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | accounttaskestimate_id | String | 用户工时统计主键ID |
-| 2 | accounttaskestimatedto | [AccountTaskestimateDTO](#AccountTaskestimateDTO) | 用户工时统计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [AccountTaskestimateDTO](#AccountTaskestimateDTO)：用户工时统计实体传输对象 |
-
-### 批量更新用户工时统计
-#### 访问路径
-/accounttaskestimates/batch
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | accounttaskestimatedtos | List<[AccountTaskestimateDTO](#AccountTaskestimateDTO)> | 用户工时统计实体传输对象列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 删除用户工时统计
 #### 访问路径
@@ -112,23 +93,42 @@ DELETE
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
-### 获取用户工时统计
+### 更新用户工时统计
 #### 访问路径
 /accounttaskestimates/{accounttaskestimate_id}
 
 #### 请求方法
-GET
+PUT
 
 #### 参数说明
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | accounttaskestimate_id | String | 用户工时统计主键ID |
+| 2 | accounttaskestimatedto | [AccountTaskestimateDTO](#AccountTaskestimateDTO) | 用户工时统计实体传输对象 |
 
 #### 返回说明
 | 项目 | 说明 |
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | [AccountTaskestimateDTO](#AccountTaskestimateDTO)：用户工时统计实体传输对象 |
+
+### 批量更新用户工时统计
+#### 访问路径
+/accounttaskestimates/batch
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | accounttaskestimatedtos | List<[AccountTaskestimateDTO](#AccountTaskestimateDTO)> | 用户工时统计实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
 
 ### 检查用户工时统计
 #### 访问路径

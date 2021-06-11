@@ -3,25 +3,6 @@
 测试报告
 
 ## 接口清单
-### 根据测试单获取相应信息
-#### 访问路径
-/testreports/{testreport_id}/getinfotesttask
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | testreport_id | Long | 测试报告主键ID |
-| 2 | testreportdto | [TestReportDTO](#TestReportDTO) | 测试报告实体传输对象 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
-
 ### 新建测试报告
 #### 访问路径
 /testreports
@@ -51,6 +32,60 @@ POST
 | 序号 | 参数名 | 参数类型 | 说明 |
 | ---- | ---- | ---- | ---- |
 | 1 | testreportdtos | List<[TestReportDTO](#TestReportDTO)> | 测试报告实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 获取测试报告
+#### 访问路径
+/testreports/{testreport_id}
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | testreport_id | Long | 测试报告主键ID |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
+
+### 删除测试报告
+#### 访问路径
+/testreports/{testreport_id}
+
+#### 请求方法
+DELETE
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | testreport_id | Long | 测试报告主键ID |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 批量删除测试报告
+#### 访问路径
+/testreports/batch
+
+#### 请求方法
+DELETE
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | ids | List<Long> | 测试报告主键ID列表 |
 
 #### 返回说明
 | 项目 | 说明 |
@@ -94,60 +129,6 @@ PUT
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
-
-### 删除测试报告
-#### 访问路径
-/testreports/{testreport_id}
-
-#### 请求方法
-DELETE
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | testreport_id | Long | 测试报告主键ID |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
-
-### 批量删除测试报告
-#### 访问路径
-/testreports/batch
-
-#### 请求方法
-DELETE
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | ids | List<Long> | 测试报告主键ID列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
-
-### 获取测试报告
-#### 访问路径
-/testreports/{testreport_id}
-
-#### 请求方法
-GET
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | testreport_id | Long | 测试报告主键ID |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
 
 ### 检查测试报告
 #### 访问路径
@@ -336,6 +317,25 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
+### 根据测试单获取相应信息
+#### 访问路径
+/testreports/{testreport_id}/getinfotesttask
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | testreport_id | Long | 测试报告主键ID |
+| 2 | testreportdto | [TestReportDTO](#TestReportDTO) | 测试报告实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
+
 ### 获取DEFAULT
 #### 访问路径
 /testreports/fetchdefault
@@ -372,26 +372,6 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TestReportDTO](#TestReportDTO)>：测试报告实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
-### 根据测试单获取相应信息
-#### 访问路径
-/products/{product_id}/testreports/{testreport_id}/getinfotesttask
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |
-| 2 | testreport_id | Long | 测试报告主键ID |
-| 3 | testreportdto | [TestReportDTO](#TestReportDTO) | 测试报告实体传输对象 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
-
 ### 根据建立测试报告
 #### 访问路径
 /products/{product_id}/testreports
@@ -423,6 +403,63 @@ POST
 | ---- | ---- | ---- | ---- |
 | 1 | product_id | Long | 产品主键ID |
 | 2 | testreportdtos | List<[TestReportDTO](#TestReportDTO)> | 测试报告实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 根据获取测试报告
+#### 访问路径
+/products/{product_id}/testreports/{testreport_id}
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |
+| 2 | testreport_id | Long | 测试报告主键ID |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
+
+### 根据删除测试报告
+#### 访问路径
+/products/{product_id}/testreports/{testreport_id}
+
+#### 请求方法
+DELETE
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |
+| 2 | testreport_id | Long | 测试报告主键ID |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 根据批量删除测试报告
+#### 访问路径
+/products/{product_id}/testreports/batch
+
+#### 请求方法
+DELETE
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |
+| 2 | ids | List<Long> | 测试报告主键ID列表 |
 
 #### 返回说明
 | 项目 | 说明 |
@@ -468,63 +505,6 @@ PUT
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
-
-### 根据删除测试报告
-#### 访问路径
-/products/{product_id}/testreports/{testreport_id}
-
-#### 请求方法
-DELETE
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |
-| 2 | testreport_id | Long | 测试报告主键ID |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
-
-### 根据批量删除测试报告
-#### 访问路径
-/products/{product_id}/testreports/batch
-
-#### 请求方法
-DELETE
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |
-| 2 | ids | List<Long> | 测试报告主键ID列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
-
-### 根据获取测试报告
-#### 访问路径
-/products/{product_id}/testreports/{testreport_id}
-
-#### 请求方法
-GET
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | product_id | Long | 产品主键ID |
-| 2 | testreport_id | Long | 测试报告主键ID |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
 
 ### 根据检查测试报告
 #### 访问路径
@@ -723,6 +703,26 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
 
+### 根据测试单获取相应信息
+#### 访问路径
+/products/{product_id}/testreports/{testreport_id}/getinfotesttask
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | product_id | Long | 产品主键ID |
+| 2 | testreport_id | Long | 测试报告主键ID |
+| 3 | testreportdto | [TestReportDTO](#TestReportDTO) | 测试报告实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
+
 ### 根据获取DEFAULT
 #### 访问路径
 /products/{product_id}/testreports/fetchdefault
@@ -761,26 +761,6 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[TestReportDTO](#TestReportDTO)>：测试报告实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
-### 根据测试单获取相应信息
-#### 访问路径
-/projects/{project_id}/testreports/{testreport_id}/getinfotesttask
-
-#### 请求方法
-PUT
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | project_id | Long | 项目主键ID |
-| 2 | testreport_id | Long | 测试报告主键ID |
-| 3 | testreportdto | [TestReportDTO](#TestReportDTO) | 测试报告实体传输对象 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
-
 ### 根据建立测试报告
 #### 访问路径
 /projects/{project_id}/testreports
@@ -812,6 +792,63 @@ POST
 | ---- | ---- | ---- | ---- |
 | 1 | project_id | Long | 项目主键ID |
 | 2 | testreportdtos | List<[TestReportDTO](#TestReportDTO)> | 测试报告实体传输对象列表 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 根据获取测试报告
+#### 访问路径
+/projects/{project_id}/testreports/{testreport_id}
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | testreport_id | Long | 测试报告主键ID |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
+
+### 根据删除测试报告
+#### 访问路径
+/projects/{project_id}/testreports/{testreport_id}
+
+#### 请求方法
+DELETE
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | testreport_id | Long | 测试报告主键ID |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | true：处理成功。false：处理失败。 |
+
+### 根据批量删除测试报告
+#### 访问路径
+/projects/{project_id}/testreports/batch
+
+#### 请求方法
+DELETE
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | ids | List<Long> | 测试报告主键ID列表 |
 
 #### 返回说明
 | 项目 | 说明 |
@@ -857,63 +894,6 @@ PUT
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
-
-### 根据删除测试报告
-#### 访问路径
-/projects/{project_id}/testreports/{testreport_id}
-
-#### 请求方法
-DELETE
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | project_id | Long | 项目主键ID |
-| 2 | testreport_id | Long | 测试报告主键ID |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
-
-### 根据批量删除测试报告
-#### 访问路径
-/projects/{project_id}/testreports/batch
-
-#### 请求方法
-DELETE
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | project_id | Long | 项目主键ID |
-| 2 | ids | List<Long> | 测试报告主键ID列表 |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | true：处理成功。false：处理失败。 |
-
-### 根据获取测试报告
-#### 访问路径
-/projects/{project_id}/testreports/{testreport_id}
-
-#### 请求方法
-GET
-
-#### 参数说明
-| 序号 | 参数名 | 参数类型 | 说明 |
-| ---- | ---- | ---- | ---- |
-| 1 | project_id | Long | 项目主键ID |
-| 2 | testreport_id | Long | 测试报告主键ID |
-
-#### 返回说明
-| 项目 | 说明 |
-| ---- | ---- |
-| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
-| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
 
 ### 根据检查测试报告
 #### 访问路径
@@ -1111,6 +1091,26 @@ POST
 | ---- | ---- |
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | true：处理成功。false：处理失败。 |
+
+### 根据测试单获取相应信息
+#### 访问路径
+/projects/{project_id}/testreports/{testreport_id}/getinfotesttask
+
+#### 请求方法
+PUT
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | testreport_id | Long | 测试报告主键ID |
+| 3 | testreportdto | [TestReportDTO](#TestReportDTO) | 测试报告实体传输对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | [TestReportDTO](#TestReportDTO)：测试报告实体传输对象 |
 
 ### 根据获取DEFAULT
 #### 访问路径

@@ -65,6 +65,30 @@ public class TaskStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TaskStats-Get-all')")
+    @ApiOperation(value = "获取任务统计", tags = {"任务统计" },  notes = "获取任务统计")
+	@RequestMapping(method = RequestMethod.GET, value = "/taskstats/{taskstats_id}")
+    public ResponseEntity<TaskStatsDTO> get(@PathVariable("taskstats_id") Long taskstats_id) {
+        TaskStats domain = taskstatsService.get(taskstats_id);
+        TaskStatsDTO dto = taskstatsMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TaskStats-Remove-all')")
+    @ApiOperation(value = "删除任务统计", tags = {"任务统计" },  notes = "删除任务统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/{taskstats_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("taskstats_id") Long taskstats_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(taskstatsService.remove(taskstats_id));
+    }
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TaskStats-Remove-all')")
+    @ApiOperation(value = "批量删除任务统计", tags = {"任务统计" },  notes = "批量删除任务统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        taskstatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TaskStats-Update-all')")
     @ApiOperation(value = "更新任务统计", tags = {"任务统计" },  notes = "更新任务统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskstats/{taskstats_id}")
@@ -84,28 +108,10 @@ public class TaskStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TaskStats-Remove-all')")
-    @ApiOperation(value = "删除任务统计", tags = {"任务统计" },  notes = "删除任务统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/{taskstats_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("taskstats_id") Long taskstats_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(taskstatsService.remove(taskstats_id));
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TaskStats-Remove-all')")
-    @ApiOperation(value = "批量删除任务统计", tags = {"任务统计" },  notes = "批量删除任务统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        taskstatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TaskStats-Get-all')")
-    @ApiOperation(value = "获取任务统计", tags = {"任务统计" },  notes = "获取任务统计")
-	@RequestMapping(method = RequestMethod.GET, value = "/taskstats/{taskstats_id}")
-    public ResponseEntity<TaskStatsDTO> get(@PathVariable("taskstats_id") Long taskstats_id) {
-        TaskStats domain = taskstatsService.get(taskstats_id);
-        TaskStatsDTO dto = taskstatsMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "检查任务统计", tags = {"任务统计" },  notes = "检查任务统计")
+	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody TaskStatsDTO taskstatsdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(taskstatsService.checkKey(taskstatsMapping.toDomain(taskstatsdto)));
     }
 
     @ApiOperation(value = "获取任务统计草稿", tags = {"任务统计" },  notes = "获取任务统计草稿")
@@ -113,12 +119,6 @@ public class TaskStatsResource {
     public ResponseEntity<TaskStatsDTO> getDraft(TaskStatsDTO dto) {
         TaskStats domain = taskstatsMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(taskstatsMapping.toDto(taskstatsService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查任务统计", tags = {"任务统计" },  notes = "检查任务统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody TaskStatsDTO taskstatsdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(taskstatsService.checkKey(taskstatsMapping.toDomain(taskstatsdto)));
     }
 
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-TaskStats-Save-all')")
