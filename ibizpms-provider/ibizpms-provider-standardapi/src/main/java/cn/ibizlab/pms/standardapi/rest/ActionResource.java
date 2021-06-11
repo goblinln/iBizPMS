@@ -2384,6 +2384,136 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品发布建立系统日志", tags = {"系统日志" },  notes = "根据产品发布建立系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productreleases/{release_id}/actions")
+    public ResponseEntity<ActionDTO> createByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        domain.setObjectid(release_id);domain.setObjecttype("release");
+		actionService.create(domain);
+        ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivs = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', #action_id, 'READ')")
+    @ApiOperation(value = "根据产品发布获取系统日志", tags = {"系统日志" },  notes = "根据产品发布获取系统日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productreleases/{release_id}/actions/{action_id}")
+    public ResponseEntity<ActionDTO> getByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @PathVariable("action_id") Long action_id) {
+        Action domain = actionService.get(action_id);
+        ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivs = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @VersionCheck(entity = "action" , versionfield = "updatedate")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'UPDATE', #action_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品发布更新系统日志", tags = {"系统日志" },  notes = "根据产品发布更新系统日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productreleases/{release_id}/actions/{action_id}")
+    public ResponseEntity<ActionDTO> updateByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        domain.setObjectid(release_id);domain.setObjecttype("release");
+        domain.setId(action_id);
+		actionService.update(domain);
+        ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivs = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品发布获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品发布获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productreleases/{release_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, ActionDTO dto) {
+        Action domain = actionMapping.toDomain(dto);
+        domain.setObjectid(release_id);domain.setObjecttype("release");
+        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品发布获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品发布获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(release_id);context.setN_objecttype_eq("release");
+        Page<Action> domains = actionService.searchAccount(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品发布获取Type", tags = {"系统日志" } ,notes = "根据产品发布获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(release_id);context.setN_objecttype_eq("release");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品发布获取我的数据", tags = {"系统日志" } ,notes = "根据产品发布获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/actions/fetchmy")
+	public ResponseEntity<List<ActionDTO>> fetchMyByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(release_id);context.setN_objecttype_eq("release");
+        Page<Action> domains = actionService.searchMy(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品发布获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品发布获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(release_id);context.setN_objecttype_eq("release");
+        Page<Action> domains = actionService.searchMyTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品发布获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品发布获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(release_id);context.setN_objecttype_eq("release");
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品发布获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品发布获取项目动态(项目相关所有)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/actions/fetchproject")
+	public ResponseEntity<List<ActionDTO>> fetchProjectByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(release_id);context.setN_objecttype_eq("release");
+        Page<Action> domains = actionService.searchProjectTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品需求建立系统日志", tags = {"系统日志" },  notes = "根据产品需求建立系统日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/actions")
     public ResponseEntity<ActionDTO> createByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody ActionDTO actiondto) {

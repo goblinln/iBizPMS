@@ -2081,6 +2081,52 @@
                 "enableUpdateDataRS" : false
               } ], [ {
                 "actionRSMode" : 1,
+                "codeName" : "ProductReleases",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
+                },
+                "name" : "PRODUCT__PRODUCT_RELEASE",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "PRODUCT_RELEASE__ACTION",
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              } ], [ {
+                "actionRSMode" : 1,
                 "codeName" : "ProductPlans",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
