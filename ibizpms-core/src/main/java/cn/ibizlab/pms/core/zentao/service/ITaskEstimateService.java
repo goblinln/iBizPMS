@@ -51,6 +51,7 @@ public interface ITaskEstimateService extends IService<TaskEstimate> {
     Page<TaskEstimate> searchActionMonth(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchActionYear(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchAllAccounts(TaskEstimateSearchContext context);
+    Page<TaskEstimate> searchAllProjects(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchDefault(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchDefaults(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchMyAccounts(TaskEstimateSearchContext context);

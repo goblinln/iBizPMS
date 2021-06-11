@@ -22,6 +22,7 @@ public interface TaskEstimateMapper extends BaseMapper<TaskEstimate> {
     Page<TaskEstimate> searchActionMonth(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
     Page<TaskEstimate> searchActionYear(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
     Page<TaskEstimate> searchAllAccounts(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
+    Page<TaskEstimate> searchAllProjects(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
     Page<TaskEstimate> searchDefault(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
     Page<TaskEstimate> searchDefaults(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
     Page<TaskEstimate> searchMyAccounts(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);

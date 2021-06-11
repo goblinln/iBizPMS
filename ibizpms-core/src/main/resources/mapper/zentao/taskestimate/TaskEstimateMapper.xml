@@ -56,6 +56,15 @@
 		 order by `account`  asc  
      </select>
 
+    <!--数据集合[AllProjects]-->
+	 <select id="searchAllProjects"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateSearchContext"  resultMap="TaskEstimateResultMap">
+         select t1.* from (
+                <include refid="AllProjects" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateSearchContext"  resultMap="TaskEstimateResultMap">
          select t1.* from (
@@ -126,6 +135,11 @@
     <!--数据查询[AllAccounts]-->
     <sql id="AllAccounts" databaseId="mysql">
 		<![CDATA[ SELECT 	t1.`ACCOUNT`, 	t1.`DATE`, 	t1.`ID`, 	t11.`PROJECT`, 	t21.`NAME` AS `PROJECTNAME`, 	t1.`TASK`, 	t11.`NAME` AS `TASKNAME`, 	t21.pm  FROM 	`zt_TASKESTIMATE` t1 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID` 	LEFT JOIN `zt_PROJECT` t21 ON t11.`PROJECT` = t21.`ID` GROUP BY t1.account
+			]]>
+    </sql>
+    <!--数据查询[AllProjects]-->
+    <sql id="AllProjects" databaseId="mysql">
+		<![CDATA[ SELECT t3.ID,t3.`name` FROM `zt_taskestimate` t1 LEFT JOIN zt_task t2 ON t1.task = t2.id LEFT JOIN zt_project t3 ON t2.project = t3.ID GROUP BY t2.project
 			]]>
     </sql>
     <!--数据查询[Default]-->

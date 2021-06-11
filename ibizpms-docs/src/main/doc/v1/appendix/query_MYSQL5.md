@@ -21370,6 +21370,10 @@ FROM
 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 	LEFT JOIN `zt_PROJECT` t21 ON t11.`PROJECT` = t21.`ID` GROUP BY t1.account
 ```
+### 所有项目(AllProjects)<div id="TaskEstimate_AllProjects"></div>
+```sql
+SELECT t3.ID,t3.`name` FROM `zt_taskestimate` t1 LEFT JOIN zt_task t2 ON t1.task = t2.id LEFT JOIN zt_project t3 ON t2.project = t3.ID GROUP BY t2.project
+```
 ### DEFAULT(DEFAULT)<div id="TaskEstimate_Default"></div>
 ```sql
 SELECT
