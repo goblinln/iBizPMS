@@ -21372,7 +21372,7 @@ FROM
 ```
 ### 所有项目(AllProjects)<div id="TaskEstimate_AllProjects"></div>
 ```sql
-SELECT t3.ID AS project,t3.`name` as projectname FROM `zt_taskestimate` t1 LEFT JOIN zt_task t2 ON t1.task = t2.id LEFT JOIN zt_project t3 ON t2.project = t3.ID WHERE t3.ID IS NOT null GROUP  BY t2.project
+SELECT t1.account,t1.ID,t1.task,t2.`name` ,t3.ID AS project,t3.`name` as projectname FROM `zt_taskestimate` t1 LEFT JOIN zt_task t2 ON t1.task = t2.id LEFT JOIN zt_project t3 ON t2.project = t3.ID WHERE t3.ID IS NOT null GROUP  BY t2.project
 ```
 ### DEFAULT(DEFAULT)<div id="TaskEstimate_Default"></div>
 ```sql
@@ -21528,7 +21528,7 @@ FROM
 	LEFT JOIN `zt_PROJECT` t21 ON t11.`PROJECT` = t21.`ID` 
 
 WHERE  t11.project is not null 
- t1.account = #{srf.datacontext.account}  GROUP BY t11.project 
+ t1.account = #{srf.sessioncontext.account}  GROUP BY t11.project 
 
 ```
 ### 默认（全部数据）(VIEW)<div id="TaskEstimate_View"></div>
