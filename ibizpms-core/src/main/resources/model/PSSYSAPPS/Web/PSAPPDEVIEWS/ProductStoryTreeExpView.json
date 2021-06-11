@@ -1187,6 +1187,11 @@
           "modeltype" : "PSDETOOLBAR"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "MODULE",
+          "name" : "MODULE",
+          "value" : "null",
+          "rawValue" : true
+        }, {
           "key" : "MODULENAME",
           "name" : "MODULENAME",
           "value" : "name",
@@ -1311,6 +1316,11 @@
           "modeltype" : "PSDETOOLBAR"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "MODULE",
+          "name" : "MODULE",
+          "value" : "null",
+          "rawValue" : true
+        }, {
           "key" : "MODULENAME",
           "name" : "MODULENAME",
           "value" : "name",
@@ -1435,6 +1445,11 @@
           "modeltype" : "PSDETOOLBAR"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "MODULE",
+          "name" : "MODULE",
+          "value" : "null",
+          "rawValue" : true
+        }, {
           "key" : "MODULENAME",
           "name" : "MODULENAME",
           "value" : "name",
