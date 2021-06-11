@@ -1157,6 +1157,9 @@ public class SubStoryResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/{substory_id}")
     public ResponseEntity<SubStoryDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
         Story domain = storyService.get(substory_id);
+        if (domain == null || domain.getParent() != story_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         SubStoryDTO dto = substoryMapping.toDto(domain);
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -1167,6 +1170,10 @@ public class SubStoryResource {
     @ApiOperation(value = "根据需求删除需求", tags = {"需求" },  notes = "根据需求删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/substories/{substory_id}")
     public ResponseEntity<Boolean> removeByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
+        Story testget = storyService.get(substory_id);
+        if (testget == null || testget.getParent() != story_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
     }
 
@@ -1184,7 +1191,7 @@ public class SubStoryResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/substories/{substory_id}")
     public ResponseEntity<SubStoryDTO> updateByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story testget = storyService.get(substory_id);
-        if (testget.getParent() != story_id) {
+        if (testget == null || testget.getParent() != story_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Story domain = substoryMapping.toDomain(substorydto);
@@ -2218,6 +2225,9 @@ public class SubStoryResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
     public ResponseEntity<SubStoryDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
         Story domain = storyService.get(substory_id);
+        if (domain == null || domain.getParent() != story_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         SubStoryDTO dto = substoryMapping.toDto(domain);
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -2228,6 +2238,10 @@ public class SubStoryResource {
     @ApiOperation(value = "根据产品需求删除需求", tags = {"需求" },  notes = "根据产品需求删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
     public ResponseEntity<Boolean> removeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
+        Story testget = storyService.get(substory_id);
+        if (testget == null || testget.getParent() != story_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
     }
 
@@ -2245,7 +2259,7 @@ public class SubStoryResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
     public ResponseEntity<SubStoryDTO> updateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
         Story testget = storyService.get(substory_id);
-        if (testget.getParent() != story_id) {
+        if (testget == null || testget.getParent() != story_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Story domain = substoryMapping.toDomain(substorydto);

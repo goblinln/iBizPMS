@@ -249,6 +249,9 @@ public class BurnResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/burns/{burn_id}")
     public ResponseEntity<BurnDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id) {
         Burn domain = burnService.get(burn_id);
+        if (domain == null || domain.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         BurnDTO dto = burnMapping.toDto(domain);
         Map<String, Integer> opprivs = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -259,6 +262,10 @@ public class BurnResource {
     @ApiOperation(value = "根据项目删除burn", tags = {"burn" },  notes = "根据项目删除burn")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/burns/{burn_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id) {
+        Burn testget = burnService.get(burn_id);
+        if (testget == null || testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(burnService.remove(burn_id));
     }
 
@@ -275,7 +282,7 @@ public class BurnResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/burns/{burn_id}")
     public ResponseEntity<BurnDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
         Burn testget = burnService.get(burn_id);
-        if (testget.getProject() != project_id) {
+        if (testget == null || testget.getProject() != project_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Burn domain = burnMapping.toDomain(burndto);

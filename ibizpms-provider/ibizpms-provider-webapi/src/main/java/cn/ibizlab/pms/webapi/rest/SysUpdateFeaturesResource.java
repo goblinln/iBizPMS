@@ -224,6 +224,9 @@ public class SysUpdateFeaturesResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<SysUpdateFeaturesDTO> getBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
         SysUpdateFeatures domain = sysupdatefeaturesService.get(sysupdatefeatures_id);
+        if (domain == null || !(sysupdatelog_id.equals(domain.getSysupdatelogid())) ) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
         Map<String, Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());    
         dto.setSrfopprivs(opprivs);
@@ -234,6 +237,10 @@ public class SysUpdateFeaturesResource {
     @ApiOperation(value = "根据更新日志删除系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志删除系统更新功能")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<Boolean> removeBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
+        SysUpdateFeatures testget = sysupdatefeaturesService.get(sysupdatefeatures_id);
+        if (testget == null || !(sysupdatelog_id.equals(testget.getSysupdatelogid())) ) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.remove(sysupdatefeatures_id));
     }
 
@@ -251,7 +258,7 @@ public class SysUpdateFeaturesResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<SysUpdateFeaturesDTO> updateBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id, @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
         SysUpdateFeatures testget = sysupdatefeaturesService.get(sysupdatefeatures_id);
-        if (testget.getSysupdatelogid() != sysupdatelog_id) {
+        if (testget == null || !(sysupdatelog_id.equals(testget.getSysupdatelogid())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         SysUpdateFeatures domain = sysupdatefeaturesMapping.toDomain(sysupdatefeaturesdto);

@@ -80,6 +80,9 @@ public class TestCaseResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/{testcase_id}")
     public ResponseEntity<TestCaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id) {
         Case domain = caseService.get(testcase_id);
+        if (domain == null || domain.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestCaseDTO dto = testcaseMapping.toDto(domain);
         Map<String, Integer> opprivs = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -90,6 +93,10 @@ public class TestCaseResource {
     @ApiOperation(value = "根据产品删除测试用例", tags = {"测试用例" },  notes = "根据产品删除测试用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/{testcase_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id) {
+        Case testget = caseService.get(testcase_id);
+        if (testget == null || testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(caseService.remove(testcase_id));
     }
 
@@ -107,7 +114,7 @@ public class TestCaseResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/testcases/{testcase_id}")
     public ResponseEntity<TestCaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
         Case testget = caseService.get(testcase_id);
-        if (testget.getProduct() != product_id) {
+        if (testget == null || testget.getProduct() != product_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Case domain = testcaseMapping.toDomain(testcasedto);

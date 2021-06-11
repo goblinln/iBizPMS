@@ -231,6 +231,9 @@ public class IbzCaseResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
     public ResponseEntity<IbzCaseDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {
         IbzCase domain = ibzcaseService.get(ibzcase_id);
+        if (domain == null || domain.getLib() != ibzlib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
         Map<String, Integer> opprivs = ibzcaseRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -241,6 +244,10 @@ public class IbzCaseResource {
     @ApiOperation(value = "根据用例库删除测试用例", tags = {"测试用例" },  notes = "根据用例库删除测试用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
     public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {
+        IbzCase testget = ibzcaseService.get(ibzcase_id);
+        if (testget == null || testget.getLib() != ibzlib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.remove(ibzcase_id));
     }
 
@@ -257,7 +264,7 @@ public class IbzCaseResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
     public ResponseEntity<IbzCaseDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzCaseDTO ibzcasedto) {
         IbzCase testget = ibzcaseService.get(ibzcase_id);
-        if (testget.getLib() != ibzlib_id) {
+        if (testget == null || testget.getLib() != ibzlib_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         IbzCase domain = ibzcaseMapping.toDomain(ibzcasedto);

@@ -245,6 +245,9 @@ public class BranchResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/branches/{branch_id}")
     public ResponseEntity<BranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
         Branch domain = branchService.get(branch_id);
+        if (domain == null || domain.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         BranchDTO dto = branchMapping.toDto(domain);
         Map<String, Integer> opprivs = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -255,6 +258,10 @@ public class BranchResource {
     @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/branches/{branch_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
+        Branch testget = branchService.get(branch_id);
+        if (testget == null || testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
     }
 
@@ -271,7 +278,7 @@ public class BranchResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/branches/{branch_id}")
     public ResponseEntity<BranchDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
         Branch testget = branchService.get(branch_id);
-        if (testget.getProduct() != product_id) {
+        if (testget == null || testget.getProduct() != product_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Branch domain = branchMapping.toDomain(branchdto);

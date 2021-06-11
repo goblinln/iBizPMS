@@ -75,6 +75,9 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
         TestTask domain = testtaskService.get(testtask_id);
+        if (domain == null || domain.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestTaskDTO dto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -85,6 +88,10 @@ public class TestTaskResource {
     @ApiOperation(value = "根据产品删除测试版本", tags = {"测试版本" },  notes = "根据产品删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
+        TestTask testget = testtaskService.get(testtask_id);
+        if (testget == null || testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
@@ -102,7 +109,7 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask testget = testtaskService.get(testtask_id);
-        if (testget.getProduct() != product_id) {
+        if (testget == null || testget.getProduct() != product_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
@@ -255,6 +262,9 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
         TestTask domain = testtaskService.get(testtask_id);
+        if (domain == null || domain.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestTaskDTO dto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -265,6 +275,10 @@ public class TestTaskResource {
     @ApiOperation(value = "根据项目删除测试版本", tags = {"测试版本" },  notes = "根据项目删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
+        TestTask testget = testtaskService.get(testtask_id);
+        if (testget == null || testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
@@ -282,7 +296,7 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask testget = testtaskService.get(testtask_id);
-        if (testget.getProject() != project_id) {
+        if (testget == null || testget.getProject() != project_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
@@ -436,6 +450,9 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
         TestTask domain = testtaskService.get(testtask_id);
+        if (domain == null || domain.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestTaskDTO dto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -446,6 +463,10 @@ public class TestTaskResource {
     @ApiOperation(value = "根据产品项目删除测试版本", tags = {"测试版本" },  notes = "根据产品项目删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
+        TestTask testget = testtaskService.get(testtask_id);
+        if (testget == null || testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
@@ -463,7 +484,7 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask testget = testtaskService.get(testtask_id);
-        if (testget.getProject() != project_id) {
+        if (testget == null || testget.getProject() != project_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestTask domain = testtaskMapping.toDomain(testtaskdto);

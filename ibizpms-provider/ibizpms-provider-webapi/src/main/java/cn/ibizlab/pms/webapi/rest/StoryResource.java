@@ -1157,6 +1157,9 @@ public class StoryResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}")
     public ResponseEntity<StoryDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
         Story domain = storyService.get(story_id);
+        if (domain == null || domain.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         StoryDTO dto = storyMapping.toDto(domain);
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -1167,6 +1170,10 @@ public class StoryResource {
     @ApiOperation(value = "根据产品删除需求", tags = {"需求" },  notes = "根据产品删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
+        Story testget = storyService.get(story_id);
+        if (testget == null || testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
     }
 
@@ -1184,7 +1191,7 @@ public class StoryResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}")
     public ResponseEntity<StoryDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story testget = storyService.get(story_id);
-        if (testget.getProduct() != product_id) {
+        if (testget == null || testget.getProduct() != product_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Story domain = storyMapping.toDomain(storydto);

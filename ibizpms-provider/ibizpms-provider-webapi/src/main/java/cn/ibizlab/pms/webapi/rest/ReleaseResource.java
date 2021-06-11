@@ -399,6 +399,9 @@ public class ReleaseResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<ReleaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id) {
         Release domain = releaseService.get(release_id);
+        if (domain == null || domain.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         ReleaseDTO dto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivs = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -409,6 +412,10 @@ public class ReleaseResource {
     @ApiOperation(value = "根据产品删除发布", tags = {"发布" },  notes = "根据产品删除发布")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id) {
+        Release testget = releaseService.get(release_id);
+        if (testget == null || testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(releaseService.remove(release_id));
     }
 
@@ -425,7 +432,7 @@ public class ReleaseResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/releases/{release_id}")
     public ResponseEntity<ReleaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
         Release testget = releaseService.get(release_id);
-        if (testget.getProduct() != product_id) {
+        if (testget == null || testget.getProduct() != product_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Release domain = releaseMapping.toDomain(releasedto);

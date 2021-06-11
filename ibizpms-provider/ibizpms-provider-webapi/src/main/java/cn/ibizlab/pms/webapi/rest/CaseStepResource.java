@@ -283,6 +283,9 @@ public class CaseStepResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/casesteps/{casestep_id}")
     public ResponseEntity<CaseStepDTO> getByCase(@PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id) {
         CaseStep domain = casestepService.get(casestep_id);
+        if (domain == null || domain.getIbizcase() != case_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         CaseStepDTO dto = casestepMapping.toDto(domain);
         Map<String, Integer> opprivs = casestepRuntime.getOPPrivs("ZT_CASE", case_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -293,6 +296,10 @@ public class CaseStepResource {
     @ApiOperation(value = "根据测试用例删除用例步骤", tags = {"用例步骤" },  notes = "根据测试用例删除用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}/casesteps/{casestep_id}")
     public ResponseEntity<Boolean> removeByCase(@PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id) {
+        CaseStep testget = casestepService.get(casestep_id);
+        if (testget == null || testget.getIbizcase() != case_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
     }
 
@@ -309,7 +316,7 @@ public class CaseStepResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}/casesteps/{casestep_id}")
     public ResponseEntity<CaseStepDTO> updateByCase(@PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep testget = casestepService.get(casestep_id);
-        if (testget.getIbizcase() != case_id) {
+        if (testget == null || testget.getIbizcase() != case_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         CaseStep domain = casestepMapping.toDomain(casestepdto);
@@ -449,6 +456,9 @@ public class CaseStepResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/casesteps/{casestep_id}")
     public ResponseEntity<CaseStepDTO> getByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id) {
         CaseStep domain = casestepService.get(casestep_id);
+        if (domain == null || domain.getIbizcase() != case_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         CaseStepDTO dto = casestepMapping.toDto(domain);
         Map<String, Integer> opprivs = casestepRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -459,6 +469,10 @@ public class CaseStepResource {
     @ApiOperation(value = "根据产品测试用例删除用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例删除用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}/casesteps/{casestep_id}")
     public ResponseEntity<Boolean> removeByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id) {
+        CaseStep testget = casestepService.get(casestep_id);
+        if (testget == null || testget.getIbizcase() != case_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
     }
 
@@ -475,7 +489,7 @@ public class CaseStepResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/casesteps/{casestep_id}")
     public ResponseEntity<CaseStepDTO> updateByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
         CaseStep testget = casestepService.get(casestep_id);
-        if (testget.getIbizcase() != case_id) {
+        if (testget == null || testget.getIbizcase() != case_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         CaseStep domain = casestepMapping.toDomain(casestepdto);

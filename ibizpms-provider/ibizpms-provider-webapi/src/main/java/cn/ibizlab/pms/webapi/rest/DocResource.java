@@ -439,6 +439,9 @@ public class DocResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> getByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
         Doc domain = docService.get(doc_id);
+        if (domain == null || domain.getLib() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocDTO dto = docMapping.toDto(domain);
         Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -449,6 +452,10 @@ public class DocResource {
     @ApiOperation(value = "根据文档库删除文档", tags = {"文档" },  notes = "根据文档库删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<Boolean> removeByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
+        Doc testget = docService.get(doc_id);
+        if (testget == null || testget.getLib() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
@@ -465,7 +472,7 @@ public class DocResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> updateByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc testget = docService.get(doc_id);
-        if (testget.getLib() != doclib_id) {
+        if (testget == null || testget.getLib() != doclib_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Doc domain = docMapping.toDomain(docdto);
@@ -767,6 +774,9 @@ public class DocResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> getByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
         Doc domain = docService.get(doc_id);
+        if (domain == null || domain.getLib() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocDTO dto = docMapping.toDto(domain);
         Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -777,6 +787,10 @@ public class DocResource {
     @ApiOperation(value = "根据产品文档库删除文档", tags = {"文档" },  notes = "根据产品文档库删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<Boolean> removeByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
+        Doc testget = docService.get(doc_id);
+        if (testget == null || testget.getLib() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
@@ -793,7 +807,7 @@ public class DocResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> updateByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc testget = docService.get(doc_id);
-        if (testget.getLib() != doclib_id) {
+        if (testget == null || testget.getLib() != doclib_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Doc domain = docMapping.toDomain(docdto);
@@ -1095,6 +1109,9 @@ public class DocResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> getByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
         Doc domain = docService.get(doc_id);
+        if (domain == null || domain.getLib() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocDTO dto = docMapping.toDto(domain);
         Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -1105,6 +1122,10 @@ public class DocResource {
     @ApiOperation(value = "根据项目文档库删除文档", tags = {"文档" },  notes = "根据项目文档库删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<Boolean> removeByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
+        Doc testget = docService.get(doc_id);
+        if (testget == null || testget.getLib() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(docService.remove(doc_id));
     }
 
@@ -1121,7 +1142,7 @@ public class DocResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}")
     public ResponseEntity<DocDTO> updateByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
         Doc testget = docService.get(doc_id);
-        if (testget.getLib() != doclib_id) {
+        if (testget == null || testget.getLib() != doclib_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Doc domain = docMapping.toDomain(docdto);

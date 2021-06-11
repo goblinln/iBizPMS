@@ -75,6 +75,9 @@ public class TestReportResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id) {
         TestReport domain = testreportService.get(testreport_id);
+        if (domain == null || domain.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestReportDTO dto = testreportMapping.toDto(domain);
         Map<String, Integer> opprivs = testreportRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -85,6 +88,10 @@ public class TestReportResource {
     @ApiOperation(value = "根据项目删除测试报告", tags = {"测试报告" },  notes = "根据项目删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id) {
+        TestReport testget = testreportService.get(testreport_id);
+        if (testget == null || testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(testreportService.remove(testreport_id));
     }
 
@@ -101,7 +108,7 @@ public class TestReportResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport testget = testreportService.get(testreport_id);
-        if (testget.getProject() != project_id) {
+        if (testget == null || testget.getProject() != project_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -227,6 +234,9 @@ public class TestReportResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id) {
         TestReport domain = testreportService.get(testreport_id);
+        if (domain == null || domain.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestReportDTO dto = testreportMapping.toDto(domain);
         Map<String, Integer> opprivs = testreportRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -237,6 +247,10 @@ public class TestReportResource {
     @ApiOperation(value = "根据产品删除测试报告", tags = {"测试报告" },  notes = "根据产品删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testreports/{testreport_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id) {
+        TestReport testget = testreportService.get(testreport_id);
+        if (testget == null || testget.getProduct() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(testreportService.remove(testreport_id));
     }
 
@@ -253,7 +267,7 @@ public class TestReportResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport testget = testreportService.get(testreport_id);
-        if (testget.getProduct() != product_id) {
+        if (testget == null || testget.getProduct() != product_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestReport domain = testreportMapping.toDomain(testreportdto);
@@ -380,6 +394,9 @@ public class TestReportResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> getByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id) {
         TestReport domain = testreportService.get(testreport_id);
+        if (domain == null || domain.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TestReportDTO dto = testreportMapping.toDto(domain);
         Map<String, Integer> opprivs = testreportRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -390,6 +407,10 @@ public class TestReportResource {
     @ApiOperation(value = "根据产品项目删除测试报告", tags = {"测试报告" },  notes = "根据产品项目删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<Boolean> removeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id) {
+        TestReport testget = testreportService.get(testreport_id);
+        if (testget == null || testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(testreportService.remove(testreport_id));
     }
 
@@ -406,7 +427,7 @@ public class TestReportResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}")
     public ResponseEntity<TestReportDTO> updateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport testget = testreportService.get(testreport_id);
-        if (testget.getProject() != project_id) {
+        if (testget == null || testget.getProject() != project_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestReport domain = testreportMapping.toDomain(testreportdto);

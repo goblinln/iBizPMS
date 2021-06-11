@@ -77,6 +77,9 @@ public class IbzLibCaseStepsResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> getByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
         IbzLibCaseSteps domain = ibzlibcasestepsService.get(ibzlibcasesteps_id);
+        if (domain == null || domain.getIbizcase() != ibzcase_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
         Map<String, Integer> opprivs = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -87,6 +90,10 @@ public class IbzLibCaseStepsResource {
     @ApiOperation(value = "根据测试用例删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例删除用例库用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<Boolean> removeByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
+        IbzLibCaseSteps testget = ibzlibcasestepsService.get(ibzlibcasesteps_id);
+        if (testget == null || testget.getIbizcase() != ibzcase_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.remove(ibzlibcasesteps_id));
     }
 
@@ -103,7 +110,7 @@ public class IbzLibCaseStepsResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> updateByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
         IbzLibCaseSteps testget = ibzlibcasestepsService.get(ibzlibcasesteps_id);
-        if (testget.getIbizcase() != ibzcase_id) {
+        if (testget == null || testget.getIbizcase() != ibzcase_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         IbzLibCaseSteps domain = ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto);
@@ -183,6 +190,9 @@ public class IbzLibCaseStepsResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> getByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
         IbzLibCaseSteps domain = ibzlibcasestepsService.get(ibzlibcasesteps_id);
+        if (domain == null || domain.getIbizcase() != ibzcase_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
         Map<String, Integer> opprivs = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -193,6 +203,10 @@ public class IbzLibCaseStepsResource {
     @ApiOperation(value = "根据用例库测试用例删除用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例删除用例库用例步骤")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<Boolean> removeByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
+        IbzLibCaseSteps testget = ibzlibcasestepsService.get(ibzlibcasesteps_id);
+        if (testget == null || testget.getIbizcase() != ibzcase_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(ibzlibcasestepsService.remove(ibzlibcasesteps_id));
     }
 
@@ -209,7 +223,7 @@ public class IbzLibCaseStepsResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
     public ResponseEntity<IbzLibCaseStepsDTO> updateByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id, @RequestBody IbzLibCaseStepsDTO ibzlibcasestepsdto) {
         IbzLibCaseSteps testget = ibzlibcasestepsService.get(ibzlibcasesteps_id);
-        if (testget.getIbizcase() != ibzcase_id) {
+        if (testget == null || testget.getIbizcase() != ibzcase_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         IbzLibCaseSteps domain = ibzlibcasestepsMapping.toDomain(ibzlibcasestepsdto);

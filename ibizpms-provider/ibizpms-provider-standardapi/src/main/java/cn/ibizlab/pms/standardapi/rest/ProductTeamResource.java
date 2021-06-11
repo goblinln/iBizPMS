@@ -75,6 +75,9 @@ public class ProductTeamResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productteams/{productteam_id}")
     public ResponseEntity<ProductTeamDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id) {
         PRODUCTTEAM domain = productteamService.get(productteam_id);
+        if (domain == null || domain.getRoot() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         ProductTeamDTO dto = productteamMapping.toDto(domain);
         Map<String, Integer> opprivs = productteamRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -85,6 +88,10 @@ public class ProductTeamResource {
     @ApiOperation(value = "根据产品删除产品团队", tags = {"产品团队" },  notes = "根据产品删除产品团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productteams/{productteam_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id) {
+        PRODUCTTEAM testget = productteamService.get(productteam_id);
+        if (testget == null || testget.getRoot() != product_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(productteamService.remove(productteam_id));
     }
 
@@ -101,7 +108,7 @@ public class ProductTeamResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productteams/{productteam_id}")
     public ResponseEntity<ProductTeamDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id, @RequestBody ProductTeamDTO productteamdto) {
         PRODUCTTEAM testget = productteamService.get(productteam_id);
-        if (testget.getRoot() != product_id) {
+        if (testget == null || testget.getRoot() != product_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);

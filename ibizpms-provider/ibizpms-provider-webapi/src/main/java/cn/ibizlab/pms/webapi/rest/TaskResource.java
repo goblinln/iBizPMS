@@ -1251,6 +1251,9 @@ public class TaskResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
         Task domain = taskService.get(task_id);
+        if (domain == null || domain.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         TaskDTO dto = taskMapping.toDto(domain);
         Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -1261,6 +1264,10 @@ public class TaskResource {
     @ApiOperation(value = "根据项目删除任务", tags = {"任务" },  notes = "根据项目删除任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
+        Task testget = taskService.get(task_id);
+        if (testget == null || testget.getProject() != project_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
     }
 
@@ -1278,7 +1285,7 @@ public class TaskResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task testget = taskService.get(task_id);
-        if (testget.getProject() != project_id) {
+        if (testget == null || testget.getProject() != project_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Task domain = taskMapping.toDomain(taskdto);

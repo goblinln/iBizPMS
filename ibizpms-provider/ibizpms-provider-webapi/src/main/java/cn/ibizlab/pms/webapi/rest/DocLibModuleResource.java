@@ -397,6 +397,9 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> getByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
         DocLibModule domain = doclibmoduleService.get(doclibmodule_id);
+        if (domain == null || domain.getRoot() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
         Map<String, Integer> opprivs = doclibmoduleRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -407,6 +410,10 @@ public class DocLibModuleResource {
     @ApiOperation(value = "根据文档库删除文档库分类", tags = {"文档库分类" },  notes = "根据文档库删除文档库分类")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<Boolean> removeByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
+        DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
+        if (testget == null || testget.getRoot() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
     }
 
@@ -423,7 +430,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> updateByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
-        if (testget.getRoot() != doclib_id) {
+        if (testget == null || testget.getRoot() != doclib_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -687,6 +694,9 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> getByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
         DocLibModule domain = doclibmoduleService.get(doclibmodule_id);
+        if (domain == null || domain.getRoot() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
         Map<String, Integer> opprivs = doclibmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -697,6 +707,10 @@ public class DocLibModuleResource {
     @ApiOperation(value = "根据产品文档库删除文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库删除文档库分类")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<Boolean> removeByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
+        DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
+        if (testget == null || testget.getRoot() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
     }
 
@@ -713,7 +727,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> updateByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
-        if (testget.getRoot() != doclib_id) {
+        if (testget == null || testget.getRoot() != doclib_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -977,6 +991,9 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> getByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
         DocLibModule domain = doclibmoduleService.get(doclibmodule_id);
+        if (domain == null || domain.getRoot() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
         DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
         Map<String, Integer> opprivs = doclibmoduleRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
@@ -987,6 +1004,10 @@ public class DocLibModuleResource {
     @ApiOperation(value = "根据项目文档库删除文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库删除文档库分类")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<Boolean> removeByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
+        DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
+        if (testget == null || testget.getRoot() != doclib_id) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
 		return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
     }
 
@@ -1003,7 +1024,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> updateByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
-        if (testget.getRoot() != doclib_id) {
+        if (testget == null || testget.getRoot() != doclib_id) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
