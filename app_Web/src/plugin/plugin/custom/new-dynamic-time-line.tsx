@@ -117,7 +117,7 @@ export class NewDynamicTimeLine extends AppListBase {
      */
     public load(opt: any = {}): void {
         if (!this.fetchAction) {
-            this.$Notice.error({ title: '错误', desc: '视图列表fetchAction参数未配置' });
+            this.$throw(`${this.$t('app.commonwords.wrong')},${this.$t('app.list.notconfig.fetchaction')}`,'load');
             return;
         }
         const arg: any = { ...opt };
@@ -155,7 +155,7 @@ export class NewDynamicTimeLine extends AppListBase {
             this.onControlResponse('load', response);
             if (!response || response.status !== 200) {
                 if (response.errorMessage) {
-                    this.$Notice.error({ title: '错误', desc: response.errorMessage });
+                    this.$throw(this.$t(response.errorMessage),'load');
                 }
                 return;
             }
@@ -197,7 +197,7 @@ export class NewDynamicTimeLine extends AppListBase {
                 if (response && response.status === 401) {
                     return;
                 }
-                this.$Notice.error({ title: '错误', desc: response.errorMessage });
+                this.$throw(this.$t(response.errorMessage),'load');
             }
         );
     }

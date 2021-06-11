@@ -922,7 +922,7 @@
             "getPSNavigateParams" : [ {
               "key" : "id",
               "name" : "id",
-              "value" : "id",
+              "value" : "srfparentkey",
               "rawValue" : false
             } ],
             "getPSSysImage" : {

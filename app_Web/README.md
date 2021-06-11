@@ -111,13 +111,15 @@ $ yarn build
 ## 成果物结构
 
 ```
-|─ ─ app
+|─ ─ app_Web
 ​    |─ ─ public                                 public文件夹
 ​        |─ ─ assets                             静态文件夹
         |─ ─ favicon.ico                        图标
 ​    |─ ─ src                                    工程文件夹
         |─ ─ assets                             静态资源
+        |─ ─ codelist                           动态代码表服务
         |─ ─ components                         基础组件，主要包含编辑器组件和其他全局使用的组件
+        |─ ─ counter                            计数器服务
         |─ ─ engine                             引擎文件，主要封装了内置视图的内置逻辑
         |─ ─ environments                       环境文件
 ​        |─ ─ interface                          接口文件
@@ -150,6 +152,7 @@ $ yarn build
                 |─ ─ YYY-ui-logic-base.ts       应用实体界面处理逻辑文件
                 |─ ─ YYY-ui-logic.ts            自定义应用实体界面处理逻辑文件
         |─ ─ utils                              工具类文件
+        |─ ─ utilservice                        应用功能服务
         |─ ─ widgets                            部件文件夹
             |─ ─ appde                          应用实体名称
 ​                |─ ─  XXX                       部件名称
@@ -164,10 +167,6 @@ $ yarn build
         ​|─ ─ package.json                       依赖管理文件
 ​        |─ ─ vue.config.js                      vue cli 配置
 ```
-
-## 更新日志
-
-每个版本的详细更改都记录在[发行说明](CHANGELOG.md)中。
 
 ## 如何贡献
 
