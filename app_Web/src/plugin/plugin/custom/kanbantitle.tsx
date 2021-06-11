@@ -1,7 +1,6 @@
 
 
 import { IPSDEKanban, IPSUIActionGroupDetail } from "@ibiz/dynamic-model-api";
-import Vue from 'vue';
 
 /**
  * 看板标题颜色插件（自定义）插件类
@@ -73,7 +72,7 @@ export class Kanbantitle {
      */
     public onDragEnd(group: any,parentContainer: any){
         this.isRender = false;
-        this.$nextTick(()=> {
+        parentContainer.$nextTick(()=> {
           this.isRender = true;
           parentContainer.$forceUpdate();
         })
