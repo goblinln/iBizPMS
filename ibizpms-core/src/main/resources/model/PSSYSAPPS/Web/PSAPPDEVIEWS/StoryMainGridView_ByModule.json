@@ -25,25 +25,25 @@
     } ]
   } ],
   "getPSAppViewLogics" : [ {
-    "eventArg" : "deuiaction1",
+    "eventArg" : "deuiaction1_create",
     "eventNames" : "CLICK",
     "logicTrigger" : "CTRLEVENT",
     "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction1_click",
+    "name" : "toolbar_deuiaction1_create_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
-      "id" : "toolbar_deuiaction1"
+      "id" : "toolbar_deuiaction1_create"
     },
     "getPSViewCtrlName" : "toolbar"
   }, {
-    "eventArg" : "deuiaction2",
+    "eventArg" : "deuiaction4",
     "eventNames" : "CLICK",
     "logicTrigger" : "CTRLEVENT",
     "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction2_click",
+    "name" : "toolbar_deuiaction4_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
-      "id" : "toolbar_deuiaction2"
+      "id" : "toolbar_deuiaction4"
     },
     "getPSViewCtrlName" : "toolbar"
   }, {
@@ -135,19 +135,23 @@
     }
   } ],
   "getPSAppViewUIActions" : [ {
-    "name" : "toolbar_deuiaction1",
+    "name" : "toolbar_deuiaction1_create",
     "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+      },
       "modelref" : true,
-      "id" : "New"
+      "id" : "Create@Story"
     },
+    "uIActionTarget" : "NONE",
     "xDataControlName" : "grid"
   }, {
-    "name" : "toolbar_deuiaction2",
+    "name" : "toolbar_deuiaction4",
     "getPSUIAction" : {
       "modelref" : true,
-      "id" : "Edit"
+      "id" : "ExportExcel"
     },
-    "uIActionTarget" : "SINGLEKEY",
     "xDataControlName" : "grid"
   }, {
     "name" : "toolbar_deuiaction3",
@@ -161,7 +165,7 @@
     "codeName" : "MainGridView_ByModuletoolbar",
     "controlType" : "TOOLBAR",
     "hookEventNames" : [ "CLICK" ],
-    "logicName" : "表格界面（新建、编辑）",
+    "logicName" : "表格界面（新建、编辑、导出、过滤）",
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -171,100 +175,94 @@
       "id" : "TOOLBAR"
     },
     "getPSDEToolbarItems" : [ {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.NEW"
-      },
-      "caption" : "新建",
+      "caption" : "新建需求",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
+      "name" : "deuiaction1_create",
       "noPrivDisplayMode" : 2,
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "toolbar_deuiaction1"
+        "id" : "toolbar_deuiaction1_create"
       },
       "getPSSysImage" : {
-        "glyph" : "xf0f6@FontAwesome",
-        "cssClass" : "fa fa-file-text-o"
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
       },
       "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.NEW"
+        "actionTarget" : "NONE",
+        "caption" : "新建需求",
+        "codeName" : "Create",
+        "dataAccessAction" : "CREATE",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+          "viewType" : "DEEDITVIEW"
         },
-        "caption" : "新建",
-        "codeName" : "New",
-        "fullCodeName" : "New",
-        "name" : "表格界面_新建操作",
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Story_Create",
+        "name" : "新建需求",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        },
         "getPSSysImage" : {
-          "glyph" : "xf0f6@FontAwesome",
-          "cssClass" : "fa fa-file-text-o"
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
         },
+        "refreshMode" : 1,
         "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.NEW"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "New",
-        "uIActionType" : "DEUIACTION"
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "Create",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "Create@Story"
       },
-      "tooltip" : "新建",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.NEW"
-      },
+      "tooltip" : "新建需求",
       "showCaption" : true,
       "showIcon" : true
     }, {
-      "itemType" : "SEPERATOR",
-      "name" : "seperator1",
-      "spanMode" : false
-    }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EDIT"
+        "lanResTag" : "TBB.TEXT.*.EXPORT"
       },
-      "caption" : "编辑",
+      "caption" : "导出",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
+      "name" : "deuiaction4",
       "noPrivDisplayMode" : 2,
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "toolbar_deuiaction2"
+        "id" : "toolbar_deuiaction4"
       },
       "getPSSysImage" : {
-        "glyph" : "xf044@FontAwesome",
-        "cssClass" : "fa fa-edit"
+        "glyph" : "xf1c3@FontAwesome",
+        "cssClass" : "fa fa-file-excel-o"
       },
       "getPSUIAction" : {
-        "actionTarget" : "SINGLEKEY",
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EDIT"
+          "lanResTag" : "TBB.TEXT.*.EXPORT"
         },
-        "caption" : "编辑",
-        "codeName" : "Edit",
-        "fullCodeName" : "Edit",
-        "name" : "表格界面_编辑操作",
+        "caption" : "导出",
+        "codeName" : "ExportExcel",
+        "fullCodeName" : "ExportExcel",
+        "name" : "表格界面_导出操作（Excel）",
         "getPSSysImage" : {
-          "glyph" : "xf044@FontAwesome",
-          "cssClass" : "fa fa-edit"
+          "glyph" : "xf1c3@FontAwesome",
+          "cssClass" : "fa fa-file-excel-o"
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+          "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
         },
         "uIActionMode" : "SYS",
-        "uIActionTag" : "Edit",
+        "uIActionTag" : "ExportExcel",
         "uIActionType" : "DEUIACTION"
       },
-      "tooltip" : "编辑",
+      "tooltip" : "导出",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+        "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
       },
       "showCaption" : true,
       "showIcon" : true
-    }, {
-      "itemType" : "SEPERATOR",
-      "name" : "seperator2",
-      "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
         "lanResTag" : "TBB.TEXT.*.FILTER"
@@ -311,7 +309,7 @@
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "d62b035e8b320c4dd1cbc91d319449f5",
+    "modelid" : "30a5aa4ea0197d410cf0945f043ca78b",
     "modeltype" : "PSDETOOLBAR"
   }, {
     "aggMode" : "NONE",
