@@ -1014,11 +1014,6 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
-      "key" : "MODULE",
-      "name" : "MODULE",
-      "value" : "srfparentkey",
-      "rawValue" : false
-    }, {
       "key" : "MODULENAME",
       "name" : "MODULENAME",
       "value" : "name",
@@ -1030,14 +1025,14 @@
       "rawValue" : false
     } ],
     "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "product",
+      "rawValue" : false
+    }, {
       "key" : "modulename",
       "name" : "modulename",
       "value" : "name",
-      "rawValue" : false
-    }, {
-      "key" : "module",
-      "name" : "module",
-      "value" : "srfparentkey",
       "rawValue" : false
     }, {
       "key" : "branch",
@@ -1143,11 +1138,6 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
-      "key" : "MODULE",
-      "name" : "MODULE",
-      "value" : "srfparentkey",
-      "rawValue" : false
-    }, {
       "key" : "MODULENAME",
       "name" : "MODULENAME",
       "value" : "name",
@@ -1159,14 +1149,14 @@
       "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "product",
+      "rawValue" : false
+    }, {
       "key" : "modulename",
       "name" : "modulename",
       "value" : "name",
-      "rawValue" : false
-    }, {
-      "key" : "module",
-      "name" : "module",
-      "value" : "srfparentkey",
       "rawValue" : false
     }, {
       "key" : "branch",
@@ -1272,11 +1262,6 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
-      "key" : "MODULE",
-      "name" : "MODULE",
-      "value" : "srfparentkey",
-      "rawValue" : false
-    }, {
       "key" : "MODULENAME",
       "name" : "MODULENAME",
       "value" : "name",
@@ -1288,14 +1273,14 @@
       "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "product",
+      "rawValue" : false
+    }, {
       "key" : "modulename",
       "name" : "modulename",
       "value" : "name",
-      "rawValue" : false
-    }, {
-      "key" : "module",
-      "name" : "module",
-      "value" : "srfparentkey",
       "rawValue" : false
     }, {
       "key" : "branch",
