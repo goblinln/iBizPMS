@@ -14,6 +14,7 @@
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
 import { CodeListService } from 'ibiz-service';
 import { LogUtil, Util } from 'ibiz-core';
+import { Subject } from 'rxjs';
 
 @Component({})
 export default class AppRadioGroup extends Vue {
@@ -162,6 +163,22 @@ export default class AppRadioGroup extends Vue {
     @Prop() name?: string;
 
     /**
+     * 编辑器状态
+     *
+     * @type {Subject<any>}
+     * @memberof AppRadioGroup
+     */
+    @Prop() public contextState?: Subject<any>;
+
+    /**
+     * 编辑器状态事件
+     *
+     * @type {*}
+     * @memberof AppRadioGroup
+     */
+    public contextStateEvents: any;
+
+    /**
      * 是否禁用
      *
      * @readonly
@@ -206,11 +223,30 @@ export default class AppRadioGroup extends Vue {
     }
 
     /**
-     * vue  生命周期
+     * vue生命周期 -- created
      *
      * @memberof AppRadioGroup
      */
     public created() {
+        this.handleData();
+    }
+
+    /**
+     * vue生命周期 -- mounted
+     *
+     * @memberof AppRadioGroup
+     */
+    public mounted() {
+        if (this.contextState) {
+            this.contextStateEvents = this.contextState.subscribe(({ type, data }: any) => {
+                if (type == 'load') {
+                    this.handleData();
+                }
+            })
+        }
+    }
+
+    public handleData() {
         if (this.tag && this.codelistType) {
             // 公共参数处理
             let data: any = {};

@@ -75,6 +75,7 @@ export default class CheckboxEditor extends EditorBase {
                 context: this.context,
                 data: this.contextData,
                 viewparams: this.viewparams,
+                contextState: this.contextState,
                 ...this.customProps,
             },
             on: { change: this.handleChange },
