@@ -142,7 +142,7 @@ export default class CombFormItem extends Vue {
                 this.valItems = JSON.parse(this.value);
                 this.listenerProperty();
             } catch (error) {
-                this.$Notice.error({desc: '数据格式有误！'});
+                this.$throw((this.$t('app.commonwords.wrongdataformat') as any),'setValItems');
             }
         }
     }
