@@ -1014,6 +1014,11 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    }, {
       "key" : "PRODUCTMODULE",
       "name" : "PRODUCTMODULE",
       "rawValue" : true
@@ -1022,17 +1027,27 @@
       "name" : "SRFPARENTKEY",
       "value" : "product",
       "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "product",
+      "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
+      "key" : "modulename",
+      "name" : "modulename",
+      "value" : "name",
+      "rawValue" : false
+    }, {
       "key" : "srfparentkey",
       "name" : "srfparentkey",
       "value" : "product",
       "rawValue" : false
     }, {
-      "key" : "modulename",
-      "name" : "modulename",
-      "value" : "name",
-      "rawValue" : false
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "product",
+      "rawValue" : true
     }, {
       "key" : "module",
       "name" : "module",
@@ -1043,6 +1058,11 @@
       "name" : "branch",
       "value" : "branch",
       "rawValue" : false
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
     } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
@@ -1142,6 +1162,11 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    }, {
       "key" : "PRODUCTMODULE",
       "name" : "PRODUCTMODULE",
       "rawValue" : true
@@ -1150,17 +1175,27 @@
       "name" : "SRFPARENTKEY",
       "value" : "product",
       "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "product",
+      "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
+      "key" : "modulename",
+      "name" : "modulename",
+      "value" : "name",
+      "rawValue" : false
+    }, {
       "key" : "srfparentkey",
       "name" : "srfparentkey",
       "value" : "product",
       "rawValue" : false
     }, {
-      "key" : "modulename",
-      "name" : "modulename",
-      "value" : "name",
-      "rawValue" : false
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "product",
+      "rawValue" : true
     }, {
       "key" : "module",
       "name" : "module",
@@ -1170,6 +1205,11 @@
       "key" : "branch",
       "name" : "branch",
       "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PRODUCT",
       "rawValue" : true
     } ],
     "getTextPSAppDEField" : {
@@ -1270,6 +1310,11 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    }, {
       "key" : "PRODUCTMODULE",
       "name" : "PRODUCTMODULE",
       "rawValue" : true
@@ -1278,17 +1323,27 @@
       "name" : "SRFPARENTKEY",
       "value" : "product",
       "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "product",
+      "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
+      "key" : "modulename",
+      "name" : "modulename",
+      "value" : "name",
+      "rawValue" : false
+    }, {
       "key" : "srfparentkey",
       "name" : "srfparentkey",
       "value" : "product",
       "rawValue" : false
     }, {
-      "key" : "modulename",
-      "name" : "modulename",
-      "value" : "name",
-      "rawValue" : false
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "product",
+      "rawValue" : true
     }, {
       "key" : "module",
       "name" : "module",
@@ -1298,6 +1353,11 @@
       "key" : "branch",
       "name" : "branch",
       "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PRODUCT",
       "rawValue" : true
     } ],
     "getTextPSAppDEField" : {
