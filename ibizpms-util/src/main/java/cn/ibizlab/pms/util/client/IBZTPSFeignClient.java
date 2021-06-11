@@ -70,6 +70,9 @@ public interface IBZTPSFeignClient {
     @RequestMapping(method = RequestMethod.POST, value = "/todo/wftask/{taskId}/reassign")
     DataObj reassignTask(@PathVariable String taskId, @RequestBody DataObj dataObj);
 
+    @RequestMapping(method = RequestMethod.GET , value ="/todo/{id}/markread/{userId}")
+    DataObj markRead(@PathVariable String id, @PathVariable String userId);
+
     @RequestMapping(method = RequestMethod.GET , value ="/todo/wftask/{taskId}/markread/{userId}")
     DataObj markReadTask(@PathVariable String taskId, @PathVariable String userId);
 

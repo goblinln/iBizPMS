@@ -2,6 +2,17 @@
   "codeName" : "PMSSysAdmin",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/PMSSysAdmin.json",
   "name" : "PMS系统管理员",
+  "getPSSysUserRoleDatas" : [ {
+    "name" : "PMS系统管理员-ZT_TODO[待办维护（我的待办）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain_MyTodo.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  } ],
   "roleTag" : "PMSSysAdmin",
   "roleType" : "CUSTOM",
   "globalRole" : true

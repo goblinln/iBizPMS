@@ -110,6 +110,11 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
     }
 
     @Override
+    public DataObj markReadTask(String taskId, String userId) {
+        return null;
+    }
+
+    @Override
     public DataObj markReadSendCopyTask(String taskId, String userId) {
         return null;
     }

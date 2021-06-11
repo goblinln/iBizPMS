@@ -3,6 +3,17 @@
   "defaultUser" : "ACCESSUSER",
   "dynaModelFilePath" : "PSSYSOPPRIVS/AccessUser.json",
   "name" : "PMS普通用户",
+  "getPSSysUserRoleDatas" : [ {
+    "name" : "PMS普通用户-ZT_TODO[待办维护（我的待办）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain_MyTodo.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  } ],
   "getPSSysUserRoleReses" : [ {
     "name" : "null-左侧_测试资源",
     "getPSSysUniRes" : {
