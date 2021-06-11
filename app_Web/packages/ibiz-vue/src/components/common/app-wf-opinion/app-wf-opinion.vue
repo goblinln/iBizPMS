@@ -1,7 +1,7 @@
 <template>
     <div :class="['app-wf-opinion', isShow ? 'is-show' : '']" ref='wf-opinion'>
         <el-button v-popover:popover type="primary" size="small" @click="click">意见</el-button>
-        <el-popover ref="popover" popper-class="wf-opinion-popover" :value="isShow" :width="width" :visible-arrow="false" placement="left" trigger="manual">
+        <el-popover ref="popover" popper-class="wf-opinion-popover" v-model="isShow" :width="width" :visible-arrow="false" placement="left">
             <div v-show="isShow" ref="wf-opinion-container" class="wf-opinion-container" :style="{ 'height': containerHeight + 'px' }">
                 <div class="header">
                     <span class="title">意见</span>
@@ -319,7 +319,7 @@ export default class AppWFOpinion extends Vue {
      * @memberof AppWFOpinion
      */
     public click() {
-        this.isShow = true;
+        // this.isShow = true;
         this.initData();
         this.computePosition();
         // this.scrollToContainer();

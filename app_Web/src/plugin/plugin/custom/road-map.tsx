@@ -248,14 +248,14 @@ export class RoadMap extends AppListBase {
         arg.viewparams.year = opt.year;
         const context = { ...(this.context || {}) };
         try {
-			this.onControlRequset('FetchGetRoadmapS', context, arg);
-            const res = await this.service.search('FetchGetRoadmapS', context, arg, this.showBusyIndicator);
-			this.onControlResponse('FetchGetRoadmapS', res);
+			this.onControlRequset('FetchRoadmap', context, arg);
+            const res = await this.service.search('FetchRoadmap', context, arg, this.showBusyIndicator);
+			this.onControlResponse('FetchRoadmap', res);
             if (res && res.status === 200) {
                 opt.items = res.data;
             }
         } catch (error) {
-			this.onControlResponse('FetchGetRoadmapS', error);
+			this.onControlResponse('FetchRoadmap', error);
             console.log(error)
          }
     }

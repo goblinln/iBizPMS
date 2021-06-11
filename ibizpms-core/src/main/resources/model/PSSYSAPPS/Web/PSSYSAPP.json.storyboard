@@ -11551,55 +11551,6 @@
     "psappsbitemrsname" : "表格界面_搜索栏",
     "rstype" : "UIACTION"
   }, {
-    "cpsappsbitemname" : "测试用例表格视图（关联用例）",
-    "psappsbitemrsid" : "4694befa37ca7f9fa998c4851bd157e0",
-    "ppsappsbitemname" : "测试单表格视图",
-    "memo" : "TODO：关联用例",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "c03264eb218edca1f3782a0a1a1a7a40",
-    "cpsappsbitemid" : "dd3a6f6ef7c3c82b7f1c1e71f0794cb7",
-    "psappsbitemrsname" : "关联用例",
-    "rstype" : "UIACTION"
-  }, {
-    "cpsappsbitemname" : "测试报告编辑视图",
-    "psappsbitemrsid" : "7e86e464f5a2f351d13d380e7aad7518",
-    "ppsappsbitemname" : "测试单表格视图",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "c03264eb218edca1f3782a0a1a1a7a40",
-    "cpsappsbitemid" : "f2fbe0c41471d794234127834a712528",
-    "psappsbitemrsname" : "测试报告（单）",
-    "rstype" : "UIACTION"
-  }, {
-    "cpsappsbitemname" : "测试版本数据看板视图",
-    "psappsbitemrsid" : "89df3f4ef3394276894248c67bb31024",
-    "ppsappsbitemname" : "测试单表格视图",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "c03264eb218edca1f3782a0a1a1a7a40",
-    "cpsappsbitemid" : "f64d1b1d72163252dfbf7e363537f51a",
-    "psappsbitemrsname" : "打开概况视图",
-    "rstype" : "UIACTION"
-  }, {
-    "cpsappsbitemname" : "测试单编辑视图",
-    "psappsbitemrsid" : "19975e276675ba3fc77ad7d48395798f",
-    "ppsappsbitemname" : "测试单表格视图",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "c03264eb218edca1f3782a0a1a1a7a40",
-    "cpsappsbitemid" : "15c155edd79f11553d70c6d3fc5a1b2e",
-    "psappsbitemrsname" : "编辑",
-    "rstype" : "UIACTION"
-  }, {
-    "psappsbitemrsid" : "6e634bd239ebbba6bc8e1e2b30b37a85",
-    "ppsappsbitemname" : "测试单表格视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
-    "ppsappsbitemid" : "c03264eb218edca1f3782a0a1a1a7a40",
-    "psappsbitemrsname" : "删除",
-    "rstype" : "UIACTION"
-  }, {
     "psappsbitemrsid" : "189b542a5f79acbca5abf27d752522f3",
     "ppsappsbitemname" : "测试单编辑视图",
     "rstag" : "SYS",
@@ -11641,55 +11592,6 @@
     "rstag2" : "系统预定义",
     "ppsappsbitemid" : "44e17c7618bea68bff0c947b84d1397a",
     "psappsbitemrsname" : "表格界面_搜索栏",
-    "rstype" : "UIACTION"
-  }, {
-    "cpsappsbitemname" : "测试用例表格视图（关联用例）",
-    "psappsbitemrsid" : "b2d41b2ecdc3b604ccf61ae0b518093e",
-    "ppsappsbitemname" : "测试单表格视图",
-    "memo" : "TODO：关联用例",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "44e17c7618bea68bff0c947b84d1397a",
-    "cpsappsbitemid" : "dd3a6f6ef7c3c82b7f1c1e71f0794cb7",
-    "psappsbitemrsname" : "关联用例",
-    "rstype" : "UIACTION"
-  }, {
-    "cpsappsbitemname" : "测试报告编辑视图",
-    "psappsbitemrsid" : "44afaa96d490382a8bef67aa1fb12490",
-    "ppsappsbitemname" : "测试单表格视图",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "44e17c7618bea68bff0c947b84d1397a",
-    "cpsappsbitemid" : "f2fbe0c41471d794234127834a712528",
-    "psappsbitemrsname" : "测试报告（单）",
-    "rstype" : "UIACTION"
-  }, {
-    "cpsappsbitemname" : "测试版本数据看板视图",
-    "psappsbitemrsid" : "f725ecc78808c8030acdf22d2c20b651",
-    "ppsappsbitemname" : "测试单表格视图",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "44e17c7618bea68bff0c947b84d1397a",
-    "cpsappsbitemid" : "f64d1b1d72163252dfbf7e363537f51a",
-    "psappsbitemrsname" : "打开概况视图",
-    "rstype" : "UIACTION"
-  }, {
-    "cpsappsbitemname" : "测试单编辑视图",
-    "psappsbitemrsid" : "2304204d4b4babdd2fffdf7076291351",
-    "ppsappsbitemname" : "测试单表格视图",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "44e17c7618bea68bff0c947b84d1397a",
-    "cpsappsbitemid" : "15c155edd79f11553d70c6d3fc5a1b2e",
-    "psappsbitemrsname" : "编辑",
-    "rstype" : "UIACTION"
-  }, {
-    "psappsbitemrsid" : "4ba3c00a372a8b24a53cffd8c4781d94",
-    "ppsappsbitemname" : "测试单表格视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
-    "ppsappsbitemid" : "44e17c7618bea68bff0c947b84d1397a",
-    "psappsbitemrsname" : "删除",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "测试单编辑视图",

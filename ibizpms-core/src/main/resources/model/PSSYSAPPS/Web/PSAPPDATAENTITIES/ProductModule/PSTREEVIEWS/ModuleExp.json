@@ -1183,16 +1183,55 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    }, {
+      "key" : "PRODUCTMODULE",
+      "name" : "PRODUCTMODULE",
+      "rawValue" : true
+    }, {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "product",
+      "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "product",
+      "rawValue" : true
+    }, {
       "key" : "BRANCH",
       "name" : "BRANCH",
       "value" : "branch",
       "rawValue" : false
     } ],
     "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "product",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "product",
+      "rawValue" : true
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
+      "rawValue" : false
+    }, {
       "key" : "branch",
       "name" : "branch",
       "value" : "branch",
       "rawValue" : false
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
     } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
@@ -1338,16 +1377,55 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    }, {
+      "key" : "PRODUCTMODULE",
+      "name" : "PRODUCTMODULE",
+      "rawValue" : true
+    }, {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "product",
+      "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "product",
+      "rawValue" : true
+    }, {
       "key" : "BRANCH",
       "name" : "BRANCH",
       "value" : "branch",
       "rawValue" : false
     } ],
     "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "product",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "product",
+      "rawValue" : true
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
+      "rawValue" : false
+    }, {
       "key" : "branch",
       "name" : "branch",
       "value" : "branch",
       "rawValue" : false
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
     } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
@@ -1603,16 +1681,55 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTDEMAPNAME",
+      "name" : "SRFPARENTDEMAPNAME",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
+    }, {
+      "key" : "PRODUCTMODULE",
+      "name" : "PRODUCTMODULE",
+      "rawValue" : true
+    }, {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "product",
+      "rawValue" : false
+    }, {
+      "key" : "SRFPARENTDENAME",
+      "name" : "SRFPARENTDENAME",
+      "value" : "product",
+      "rawValue" : true
+    }, {
       "key" : "BRANCH",
       "name" : "BRANCH",
       "value" : "branch",
       "rawValue" : false
     } ],
     "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "product",
+      "rawValue" : false
+    }, {
+      "key" : "srfparentdename",
+      "name" : "srfparentdename",
+      "value" : "product",
+      "rawValue" : true
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfkey",
+      "rawValue" : false
+    }, {
       "key" : "branch",
       "name" : "branch",
       "value" : "branch",
       "rawValue" : false
+    }, {
+      "key" : "srfparentdemapname",
+      "name" : "srfparentdemapname",
+      "value" : "ZT_PRODUCT",
+      "rawValue" : true
     } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",

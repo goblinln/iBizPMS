@@ -430,6 +430,14 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
     }
 
     /**
+     * 拖拽结束
+     * 
+     */
+     public onDragEnd(){
+        this.$forceUpdate();
+    }
+    
+    /**
      * 拖拽变化
      *
      * @param {*} evt 拖住对象

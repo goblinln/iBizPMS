@@ -188,7 +188,7 @@ export class AppKanbanBase extends KanbanControlBase {
                         {this.controlInstance.getGroupPSUIActionGroup() ? this.renderGroupAction(this.controlInstance.getGroupPSUIActionGroup(), group) : null}
                     </div>
                     {group.items.length > 0 ?
-                        <draggable list={group.items} group={this.controlInstance?.name} class="dataview-group-items" on-change={($event: any) => this.onDragChange($event, group.value)}>
+                        <draggable list={group.items} group={this.controlInstance?.name} class="dataview-group-items" on-change={($event: any) => this.onDragChange($event, group.value)} on-end={()=> this.onDragEnd()}>
                             {
                                 group.items.map((item: any) => {
                                     return (
