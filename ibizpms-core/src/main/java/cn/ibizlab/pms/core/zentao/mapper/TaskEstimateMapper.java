@@ -29,6 +29,7 @@ public interface TaskEstimateMapper extends BaseMapper<TaskEstimate> {
     Page<TaskEstimate> searchProjectActionMonth(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
     Page<TaskEstimate> searchProjectActionYear(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
     Page<TaskEstimate> searchProjectTaskEstimate(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
+    Page<TaskEstimate> searchSomeoneJoinAllPros(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
     @Override
     TaskEstimate selectById(Serializable id);
     @Override

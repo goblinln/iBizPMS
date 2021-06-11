@@ -21372,7 +21372,7 @@ FROM
 ```
 ### 所有项目(AllProjects)<div id="TaskEstimate_AllProjects"></div>
 ```sql
-SELECT t3.ID,t3.`name` FROM `zt_taskestimate` t1 LEFT JOIN zt_task t2 ON t1.task = t2.id LEFT JOIN zt_project t3 ON t2.project = t3.ID GROUP BY t2.project
+SELECT t3.ID AS project,t3.`name` as projectname FROM `zt_taskestimate` t1 LEFT JOIN zt_task t2 ON t1.task = t2.id LEFT JOIN zt_project t3 ON t2.project = t3.ID WHERE t3.ID IS NOT null GROUP  BY t2.project
 ```
 ### DEFAULT(DEFAULT)<div id="TaskEstimate_Default"></div>
 ```sql
@@ -21509,6 +21509,26 @@ LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
 
 WHERE ( t11.`PROJECT` = ${srfwebcontext('project','{"defname":"PROJECT","dename":"ZT_TASKESTIMATE"}')}  AND  t11.`DELETED` = '0' ) 
+
+```
+### 人员参与的所有项目(SomeoneJoinAllPros)<div id="TaskEstimate_SomeoneJoinAllPros"></div>
+```sql
+SELECT
+	t1.`ACCOUNT`,
+	t1.`DATE`,
+	t1.`ID`,
+	t11.`PROJECT`,
+	t21.`NAME` AS `PROJECTNAME`,
+	t1.`TASK`,
+	t11.`NAME` AS `TASKNAME`,
+	t21.pm 
+FROM
+	`zt_TASKESTIMATE` t1
+	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
+	LEFT JOIN `zt_PROJECT` t21 ON t11.`PROJECT` = t21.`ID` 
+
+WHERE  t11.project is not null 
+ t1.account = #{srf.datacontext.account}  GROUP BY t11.project 
 
 ```
 ### 默认（全部数据）(VIEW)<div id="TaskEstimate_View"></div>
