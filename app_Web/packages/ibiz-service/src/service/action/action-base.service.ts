@@ -388,6 +388,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions`, _data);
         }
+        if (_context.product && _context.productrelease && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions`, _data);
+        }
         if (_context.product && _context.productplan && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -676,6 +686,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`);
             return res;
         }
+        if (_context.product && _context.productrelease && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/${_context.action}`);
+            return res;
+        }
         if (_context.product && _context.productplan && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}`);
             return res;
@@ -904,6 +918,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/getdraft`, _data);
             return res;
         }
+        if (_context.product && _context.productrelease && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/getdraft`, _data);
+            return res;
+        }
         if (_context.product && _context.productplan && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -1120,6 +1140,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`, _data);
         }
+        if (_context.product && _context.productrelease && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/${_context.action}`, _data);
+        }
         if (_context.product && _context.productplan && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}`, _data);
@@ -1276,6 +1300,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchaccount`, _data);
         }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchaccount`, _data);
+        }
         if (_context.product && _context.productplan && true) {
             return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
         }
@@ -1413,6 +1440,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchmain`, _data);
         }
         if (_context.product && _context.productplan && true) {
             return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmain`, _data);
@@ -1552,6 +1582,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmy`, _data);
         }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchmy`, _data);
+        }
         if (_context.product && _context.productplan && true) {
             return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmy`, _data);
         }
@@ -1689,6 +1722,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchmytrends`, _data);
         }
         if (_context.product && _context.productplan && true) {
             return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
@@ -1828,6 +1864,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
         }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchproduct`, _data);
+        }
         if (_context.product && _context.productplan && true) {
             return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
         }
@@ -1965,6 +2004,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchproject`, _data);
         }
         if (_context.product && _context.productplan && true) {
             return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproject`, _data);

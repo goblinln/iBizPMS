@@ -34,39 +34,20 @@
       "id" : "toolbar_deuiaction1"
     },
     "getPSViewCtrlName" : "toolbar"
-  }, {
-    "eventArg" : "deuiaction2",
-    "eventNames" : "CLICK",
-    "logicTrigger" : "CTRLEVENT",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction2_click",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "toolbar_deuiaction2"
-    },
-    "getPSViewCtrlName" : "toolbar"
   } ],
   "getPSAppViewUIActions" : [ {
     "name" : "toolbar_deuiaction1",
     "getPSUIAction" : {
       "modelref" : true,
-      "id" : "Save"
+      "id" : "SaveAndExit"
     },
-    "xDataControlName" : "form"
-  }, {
-    "name" : "toolbar_deuiaction2",
-    "getPSUIAction" : {
-      "modelref" : true,
-      "id" : "RemoveAndExit"
-    },
-    "uIActionTarget" : "SINGLEKEY",
     "xDataControlName" : "form"
   } ],
   "getPSControls" : [ {
     "codeName" : "EditViewtoolbar",
     "controlType" : "TOOLBAR",
     "hookEventNames" : [ "CLICK" ],
-    "logicName" : "编辑界面（保存、删除）",
+    "logicName" : "编辑界面（保存并关闭）",
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -77,9 +58,9 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.SAVE"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
       },
-      "caption" : "保存",
+      "caption" : "保存并关闭",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
       "name" : "deuiaction1",
@@ -89,83 +70,35 @@
         "id" : "toolbar_deuiaction1"
       },
       "getPSSysImage" : {
-        "glyph" : "xf0c7@FontAwesome",
-        "cssClass" : "fa fa-save"
+        "cssClass" : "sx-tb-saveandclose"
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.SAVE"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
         },
-        "caption" : "保存",
-        "codeName" : "Save",
-        "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
-        "fullCodeName" : "Save",
-        "name" : "编辑界面_保存操作",
+        "caption" : "保存并关闭",
+        "codeName" : "SaveAndExit",
+        "fullCodeName" : "SaveAndExit",
+        "name" : "编辑界面_保存并退出操作",
         "getPSSysImage" : {
-          "glyph" : "xf0c7@FontAwesome",
-          "cssClass" : "fa fa-save"
+          "cssClass" : "sx-tb-saveandclose"
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
         },
         "uIActionMode" : "SYS",
-        "uIActionTag" : "Save",
+        "uIActionTag" : "SaveAndExit",
         "uIActionType" : "DEUIACTION"
       },
-      "tooltip" : "保存",
+      "tooltip" : "保存并关闭",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.SAVE"
-      },
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
-      },
-      "caption" : "删除",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction2",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction2"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf00d@FontAwesome",
-        "cssClass" : "fa fa-remove"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "SINGLEKEY",
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
-        },
-        "caption" : "删除",
-        "codeName" : "RemoveAndExit",
-        "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
-        "fullCodeName" : "RemoveAndExit",
-        "name" : "编辑界面_删除并退出操作",
-        "getPSSysImage" : {
-          "glyph" : "xf00d@FontAwesome",
-          "cssClass" : "fa fa-remove"
-        },
-        "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
-        },
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "RemoveAndExit",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "删除",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
       },
       "showCaption" : true,
       "showIcon" : true
     } ],
-    "modelid" : "7d038957bdbf1d4015a004ec9cc3c876",
+    "modelid" : "41ec2a0b8e2256c9eee112003a6acd60",
     "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "Main",

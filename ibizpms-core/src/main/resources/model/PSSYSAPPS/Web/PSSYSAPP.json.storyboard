@@ -12447,20 +12447,12 @@
     "psappsbitemrsname" : "表格界面_删除操作",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "7d765ee535a134c27c82e6b468407e7a",
+    "psappsbitemrsid" : "b6ada5da4290b4ccb413f9a1f6f30c72",
     "ppsappsbitemname" : "usercontact编辑视图",
     "rstag" : "SYS",
     "rstag2" : "系统预定义",
     "ppsappsbitemid" : "18037b40ae2c75a1d816720015c7348e",
-    "psappsbitemrsname" : "编辑界面_保存操作",
-    "rstype" : "UIACTION"
-  }, {
-    "psappsbitemrsid" : "dec9f970b09439d07395f488f8aea4f5",
-    "ppsappsbitemname" : "usercontact编辑视图",
-    "rstag" : "SYS",
-    "rstag2" : "系统预定义",
-    "ppsappsbitemid" : "18037b40ae2c75a1d816720015c7348e",
-    "psappsbitemrsname" : "编辑界面_删除并退出操作",
+    "psappsbitemrsname" : "编辑界面_保存并退出操作",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "usercontact编辑视图",

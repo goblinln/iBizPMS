@@ -22,7 +22,70 @@ spec:
         image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-web:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 33011
+        env:
+        - name: SPRING_CLOUD_NACOS_DISCOVERY_IP
+          value: "172.16.240.110"      
+        - name: SERVER_PORT
+          value: "33011"
+        - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR
+          value: "172.16.240.110:8850"
+        - name: SPRING_REDIS_HOST
+          value: "172.16.240.110"
+        - name: SPRING_REDIS_PORT
+          value: "6381"
+        - name: SPRING_REDIS_DATABASE
+          value: "0"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "a_A_23e8aa361"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "b7989eb@"
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://172.16.180.232:3306/a_A_23e8aa361?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true"
+        - name: SPRING_DATASOURCE_DRIVER-CLASS-NAME
+          value: "com.mysql.jdbc.Driver"
+        - name: SPRING_DATASOURCE_DEFAULTSCHEMA
+          value: "a_A_23e8aa361"
+        - name: REMOTEDYNAPATH
+          value: "/dynamodel"      
+        - name: IBIZ_REF_SERVICE_IBZUAA-API
+          value: "ibizrt4ebsx-rt4ebsx"      
+        - name: ZUUL_ROUTES_DYNAMODEL_STRIPPREFIX
+          value: "true"      
+        - name: BDYNAMIC
+          value: "true"      
+        - name: ZUUL_ROUTES_IBZEMP_SERVICEID
+          value: "ibizpms-standardapi"      
+        - name: ZUUL_ROUTES_DYNAMODEL_PATH
+          value: "/dynamodel/**"      
+        - name: ZUUL_ROUTES_DYNAMODEL_URL
+          value: "http://172.16.170.145"      
+        - name: SERVER_SERVLET_CONTEXTPATH
+          value: "/pms"      
+        - name: NACOS
+          value: "172.16.240.110:8850"      
+        - name: IBIZ_REF_SERVICE_OU
+          value: "ibizrt4ebsx-rt4ebsx"      
+        - name: IBIZ_REF_SERVICE_DICT
+          value: "ibizrt4ebsx-rt4ebsx"      
+        - name: IBIZ_REF_SERVICE_IBZOU-API
+          value: "ibizrt4ebsx-rt4ebsx"      
+        - name: SEATA_REGISTRY_NACOS_SERVER-ADDR
+          value: "172.16.240.110:8850"      
+        - name: CAS
+          value: "https://passport.ibizlab.cn"      
+        - name: IBIZ_REF_SERVICE_LITE
+          value: "ibizrt4ebsx-rt4ebsx"      
+        - name: SEATA_ENABLED
+          value: "true"      
+        - name: IBIZ_CACHELEVEL
+          value: "L2"      
+        - name: IBIZ_REF_SERVICE_UAA
+          value: "ibizrt4ebsx-rt4ebsx"      
+        - name: IBIZ_REF_SERVICE_WF
+          value: "ibizrt4ebsx-rt4ebsx"      
+        - name: IBIZ_REF_SERVICE_DISK
+          value: "ibizrt4ebsx-rt4ebsx"      
 
 ---
 apiVersion: v1
@@ -35,9 +98,9 @@ spec:
   type: NodePort
   ports:
   - name: http
-    port: 8080
-    targetPort: 8080
-    nodePort: 8080
+    port: 33011
+    targetPort: 33011
+    nodePort: 33011
     protocol: TCP
   selector:
     app: ibizpms-app-web

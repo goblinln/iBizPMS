@@ -99,14 +99,14 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
+    "key" : "TEST",
+    "name" : "TEST",
+    "value" : "product",
+    "rawValue" : false
+  }, {
     "key" : "PROJECT",
     "name" : "PROJECT",
     "value" : "project",
-    "rawValue" : false
-  }, {
-    "key" : "PRODUCT",
-    "name" : "PRODUCT",
-    "value" : "product",
     "rawValue" : false
   }, {
     "key" : "SRFPARENTKEY",

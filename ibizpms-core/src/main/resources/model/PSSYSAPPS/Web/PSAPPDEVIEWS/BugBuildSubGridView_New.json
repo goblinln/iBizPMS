@@ -109,7 +109,18 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "TEST",
+    "name" : "TEST",
+    "value" : "product",
+    "rawValue" : false
+  } ],
   "getPSAppViewNavParams" : [ {
+    "key" : "product",
+    "name" : "product",
+    "value" : "product",
+    "rawValue" : false
+  }, {
     "key" : "type",
     "name" : "type",
     "value" : "BuildOpenBugs",

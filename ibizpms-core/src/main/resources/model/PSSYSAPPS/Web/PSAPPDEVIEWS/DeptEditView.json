@@ -171,7 +171,6 @@
         },
         "caption" : "保存",
         "codeName" : "Save",
-        "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "fullCodeName" : "Save",
         "name" : "编辑界面_保存操作",
         "getPSSysImage" : {
@@ -299,7 +298,7 @@
         },
         "caption" : "删除",
         "codeName" : "RemoveAndExit",
-        "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
+        "dataAccessAction" : "DELETE",
         "fullCodeName" : "RemoveAndExit",
         "name" : "编辑界面_删除并退出操作",
         "getPSSysImage" : {
