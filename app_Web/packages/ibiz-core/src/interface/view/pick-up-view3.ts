@@ -6,14 +6,14 @@ import { MainViewInterface } from "./main-view";
  *
  * @interface MainViewInterface
  */
-export interface PickUpView3Interface extends MainViewInterface {
+export interface PickupView3Interface extends MainViewInterface {
 
 
     /**
      * 分页点击
      *
      * @param {*} event
-     * @memberof PickUpView3Interface
+     * @memberof PickupView3Interface
      */
     tabPanelClick(event: any): void;
 
@@ -21,7 +21,7 @@ export interface PickUpView3Interface extends MainViewInterface {
     /**
      * 确认
      *
-     * @memberof PickUpView3Interface
+     * @memberof PickupView3Interface
      */
     onClickOk(): void;
 
@@ -29,7 +29,7 @@ export interface PickUpView3Interface extends MainViewInterface {
     /**
      * 取消
      *
-     * @memberof PickUpView3Interface
+     * @memberof PickupView3Interface
      */
     onClickCancel(): void;
 }

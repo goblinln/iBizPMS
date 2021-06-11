@@ -6,12 +6,12 @@ import { MainViewInterface } from "./main-view";
  *
  * @interface MainViewInterface
  */
-export interface PickUpView2Interface extends MainViewInterface {
+export interface PickupView2Interface extends MainViewInterface {
 
     /**
      * 确认
      *
-     * @memberof PickUpView2Interface
+     * @memberof PickupView2Interface
      */
     onClickOk(): void;
 
@@ -19,7 +19,7 @@ export interface PickUpView2Interface extends MainViewInterface {
     /**
      * 取消
      *
-     * @memberof PickUpView2Interface
+     * @memberof PickupView2Interface
      */
     onClickCancel(): void;
 }

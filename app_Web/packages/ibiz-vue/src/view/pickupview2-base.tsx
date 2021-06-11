@@ -1,5 +1,5 @@
 import { IPSAppDEPickupView, IPSDEPickupViewPanel, IPSTreeExpBar } from '@ibiz/dynamic-model-api';
-import { ModelTool, PickupView2Engine, PickUpView2Interface } from 'ibiz-core';
+import { ModelTool, PickupView2Engine, PickupView2Interface } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 
@@ -9,9 +9,9 @@ import { MainViewBase } from './mainview-base';
  * @export
  * @class PickupView2Base
  * @extends {MainViewBase}
- * @implements {PickUpView2Interface}
+ * @implements {PickupView2Interface}
  */
-export class PickupView2Base extends MainViewBase implements PickUpView2Interface {
+export class PickupView2Base extends MainViewBase implements PickupView2Interface {
 
     /**
      * 视图实例

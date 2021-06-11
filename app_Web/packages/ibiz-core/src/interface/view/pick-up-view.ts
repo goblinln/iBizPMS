@@ -7,12 +7,12 @@ import { MainViewInterface } from "./main-view";
  * @interface PickUpTreeViewInterface
  * @extends {MDViewInterface}
  */
-export interface PickUpViewInterface extends MainViewInterface {
+export interface PickupViewInterface extends MainViewInterface {
 
     /**
      * 确认
      *
-     * @memberof PickUpViewInterface
+     * @memberof PickupViewInterface
      */
     onClickOk(): void;
 
@@ -20,7 +20,7 @@ export interface PickUpViewInterface extends MainViewInterface {
     /**
      * 取消
      *
-     * @memberof PickUpViewInterface
+     * @memberof PickupViewInterface
      */
     onClickCancel(): void;
 }

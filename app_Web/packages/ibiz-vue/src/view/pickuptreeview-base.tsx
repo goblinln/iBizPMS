@@ -1,5 +1,5 @@
 import { IPSAppDETreeView, IPSDETree } from '@ibiz/dynamic-model-api';
-import { ModelTool, PickupTreeViewEngine, PickUpTreeViewInterface } from 'ibiz-core';
+import { ModelTool, PickupTreeViewEngine, PickupTreeViewInterface } from 'ibiz-core';
 import { MDViewBase } from './mdview-base';
 
 
@@ -9,9 +9,9 @@ import { MDViewBase } from './mdview-base';
  * @export
  * @class PickupTreeViewBase
  * @extends {MDViewBase}
- * @implements {PickUpTreeViewInterface}
+ * @implements {PickupTreeViewInterface}
  */
-export class PickupTreeViewBase extends MDViewBase implements PickUpTreeViewInterface {
+export class PickupTreeViewBase extends MDViewBase implements PickupTreeViewInterface {
 
     /**
      * 选中数据字符串
