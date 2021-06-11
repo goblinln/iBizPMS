@@ -79,6 +79,8 @@ export const Environment = {
     casUrl: 'http://passportcs.ibizlab.cn',
     // Debug栏模型配置工具地址
     dynamicConfigToolUrl: 'http://172.16.170.145/dynamictool/debug-bar/?origin=',
+    // 应用是否支持多语言
+    isEnableMultiLan:false,
 };
 // 挂载外部配置文件
 if ((window as any).Environment) {
