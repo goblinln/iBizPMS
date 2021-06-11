@@ -295,6 +295,13 @@
         "codeName" : "Title"
       }
     }, {
+      "id" : "oldtitle",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "OLDTITLE",
+        "codeName" : "Oldtitle"
+      }
+    }, {
       "id" : "begin",
       "dataType" : 5,
       "getPSAppDEField" : {
@@ -455,6 +462,7 @@
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
+              "colLG" : 16,
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
@@ -485,10 +493,57 @@
               "name" : "title"
             },
             "getPSLayoutPos" : {
+              "colLG" : 16,
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : false,
+            "emptyCaption" : false,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "上一次计划名称",
+            "codeName" : "oldtitle",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 120,
+            "name" : "oldtitle",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "OLDTITLE",
+              "codeName" : "Oldtitle"
+            },
+            "getPSDEFDGroupLogics" : [ {
+              "groupOP" : "AND",
+              "logicCat" : "PANELVISIBLE",
+              "logicType" : "GROUP",
+              "name" : "表单成员[oldtitle][面板显示]逻辑",
+              "getPSDEFDLogics" : [ {
+                "condOP" : "ISNOTNULL",
+                "dEFDName" : "oldtitle",
+                "logicType" : "SINGLE",
+                "name" : "oldtitle 值不为空(NotNil)"
+              } ],
+              "relatedDetailNames" : [ "oldtitle" ],
+              "notMode" : false
+            } ],
+            "getPSEditor" : {
+              "editorType" : "SPAN",
+              "name" : "oldtitle",
+              "editable" : false,
+              "enableLinkView" : false
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 8,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
             "emptyCaption" : false,
             "hidden" : false,
             "inputTipClosable" : false,

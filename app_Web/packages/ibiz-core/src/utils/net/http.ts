@@ -38,7 +38,7 @@ export class Http {
      *
      * @memberof Http
      */
-    private constructor() {}
+    private constructor() { }
 
     /**
      * 网络请求对象
@@ -76,6 +76,7 @@ export class Http {
      */
     public post(url: string, params: any = {}, isloading?: boolean): Promise<any> {
         params = this.handleRequestData(params);
+        url = this.handleAppParam(url, params);
         return new Promise((resolve: any, reject: any) => {
             axios({
                 method: 'post',
@@ -137,11 +138,11 @@ export class Http {
      * @returns {Promise<any>}
      * @memberof Http
      */
-     public getModel(url: string,  headers:any ={}): Promise<any> {
+    public getModel(url: string, headers: any = {}): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             axios
-                .get(url,{
-                    headers:headers
+                .get(url, {
+                    headers: headers
                 })
                 .then((response: any) => {
                     this.doResponseResult(response, resolve);
@@ -160,9 +161,10 @@ export class Http {
      * @returns {Promise<any>}
      * @memberof Http
      */
-    public delete(url: string, isloading?: boolean, data?: any): Promise<any> {
+    public delete(url: string, isloading?: boolean, params?: any): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
-            if (!data) {
+            url = this.handleAppParam(url, params);
+            if (!params) {
                 axios
                     .delete(url)
                     .then((response: any) => {
@@ -173,7 +175,7 @@ export class Http {
                     });
             } else {
                 axios
-                    .delete(url, { data: data })
+                    .delete(url, { data: params })
                     .then((response: any) => {
                         this.doResponseResult(response, resolve);
                     })
@@ -194,11 +196,12 @@ export class Http {
      * @returns {Promise<any>}
      * @memberof Http
      */
-    public put(url: string, data: any, isloading?: boolean): Promise<any> {
-        data = this.handleRequestData(data);
+    public put(url: string, params: any, isloading?: boolean): Promise<any> {
+        params = this.handleRequestData(params);
+        url = this.handleAppParam(url, params);
         return new Promise((resolve: any, reject: any) => {
             axios
-                .put(url, data)
+                .put(url, params)
                 .then((response: any) => {
                     this.doResponseResult(response, resolve);
                 })
@@ -239,5 +242,29 @@ export class Http {
             delete data.srfsessionid;
         }
         return data;
+    }
+
+    /**
+     * 处理系统级数据（以srf开始的字段）
+     *
+     * @private
+     * @param url 原始路径
+     * @param params 原始参数
+     * @memberof Http
+     */
+    private handleAppParam(url: string, params: any): string {
+        if (params && (Object.keys(params).length > 0)) {
+            let tempParam: any = {};
+            Object.keys(params).forEach((item: string) => {
+                if (item.startsWith('srf')) {
+                    tempParam[item] = params[item];
+                }
+            });
+            if (tempParam && (Object.keys(tempParam).length > 0)) {
+                url += `?${qs.stringify(tempParam)}`;
+            }
+            return url;
+        }
+        return url;
     }
 }

@@ -7,8 +7,6 @@ import {
     IPSSysPFPlugin,
     IPSUIActionGroupDetail,
     IPSAppDEGridView,
-    IPSDEToolbar,
-    IPSLanguageRes,
 } from '@ibiz/dynamic-model-api';
 import { debounce, ModelTool, Util } from 'ibiz-core';
 import { Prop, Watch, Emit } from 'vue-property-decorator';
@@ -673,8 +671,8 @@ export class AppGridBase extends GridControlBase {
         }
         const { controlClassNames } = this.renderOptions;
         return (
-            <div class={{ ...controlClassNames, grid: true }} style='height:100%'>
-                <i-form style='height:100%;display:flex;flex-direction: column;justify-content: space-between'>
+            <div class={{ ...controlClassNames, grid: true }}>
+                <i-form>
                     {this.items?.length > 0 ? this.renderGridContent(h) : <div class="app-grid-empty-content">
                       {this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
                     </div>}

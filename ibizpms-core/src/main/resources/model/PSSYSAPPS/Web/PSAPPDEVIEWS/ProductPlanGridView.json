@@ -1073,6 +1073,10 @@
               "rawValue" : true
             } ],
             "getPSNavigateParams" : [ {
+              "key" : "title",
+              "name" : "title",
+              "rawValue" : true
+            }, {
               "key" : "productplan",
               "name" : "productplan",
               "rawValue" : true
