@@ -115,6 +115,7 @@ export default class DropdownListEditor extends EditorBase {
                 data: this.contextData,
                 context: this.context,
                 viewparams: this.viewparams,
+                formState: this.contextState,
                 ...this.customProps,
             },
             on: { change: this.handleChange },

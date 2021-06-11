@@ -1,6 +1,8 @@
 import axios from 'axios';
 import qs from 'qs';
 import { Subject } from 'rxjs';
+import { Util } from '../util/util';
+
 /**
  * Http net 对象
  * 调用 getInstance() 获取实例
@@ -256,10 +258,14 @@ export class Http {
         if (params && (Object.keys(params).length > 0)) {
             let tempParam: any = {};
             Object.keys(params).forEach((item: string) => {
-                if (item.startsWith('srf')) {
+                if (item.startsWith('srf') && !Util.isEmpty(params[item])) {
                     tempParam[item] = params[item];
                 }
             });
+            // 过滤前端标识属性
+            if (tempParam && Object.is(tempParam['srfinsttag'], '__srfstdinst__')) {
+                delete tempParam['srfinsttag'];
+            }
             if (tempParam && (Object.keys(tempParam).length > 0)) {
                 url += `?${qs.stringify(tempParam)}`;
             }
