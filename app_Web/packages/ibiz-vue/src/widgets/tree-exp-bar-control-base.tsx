@@ -185,13 +185,6 @@ export class TreeExpBarControlBase extends ExpBarControlBase implements TreeExpB
         if (arg.srfappctx) {
             Object.assign(tempContext, JSON.parse(JSON.stringify(arg.srfappctx)));
         }
-        // 计算导航上下文
-        if (arg && arg.navigateContext && Object.keys(arg.navigateContext).length > 0) {
-            let tempData: any = arg.curData ? JSON.parse(JSON.stringify(arg.curData)) : {};
-            Object.assign(tempData, arg);
-            let _context = this.$util.computedNavData(tempData, tempContext, tempViewparam, arg.navigateContext);
-            Object.assign(tempContext, _context);
-        }
         if (arg.srfparentdename) {
             Object.assign(tempContext, { srfparentdename: arg.srfparentdename });
         }
@@ -200,6 +193,13 @@ export class TreeExpBarControlBase extends ExpBarControlBase implements TreeExpB
         }
         if (arg.srfparentkey) {
             Object.assign(tempContext, { srfparentkey: arg.srfparentkey });
+        }
+        // 计算导航上下文
+        if (arg && arg.navigateContext && Object.keys(arg.navigateContext).length > 0) {
+            let tempData: any = arg.curData ? JSON.parse(JSON.stringify(arg.curData)) : {};
+            Object.assign(tempData, arg);
+            let _context = this.$util.computedNavData(tempData, tempContext, tempViewparam, arg.navigateContext);
+            Object.assign(tempContext, _context);
         }
         // 计算导航参数
         if (arg && arg.navigateParams && Object.keys(arg.navigateParams).length > 0) {

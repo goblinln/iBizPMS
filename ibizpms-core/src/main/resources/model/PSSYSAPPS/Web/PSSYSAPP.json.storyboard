@@ -6980,12 +6980,12 @@
     "psappsbitemrsname" : "表格界面_保存行",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "9ab3cd5bb9000a1215b0b0cb583e3ba4",
+    "psappsbitemrsid" : "c475519c7b95295cab6cd4a95d965d7e",
     "ppsappsbitemname" : "产品模块表格视图",
-    "rstag" : "SYS",
-    "rstag2" : "系统预定义",
+    "rstag" : "BACKEND",
+    "rstag2" : "后台调用",
     "ppsappsbitemid" : "d5c1ac1ccdc2920d777614d10878aa6b",
-    "psappsbitemrsname" : "表格界面_删除操作",
+    "psappsbitemrsname" : "删除",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "产品模块表格视图",
@@ -7031,12 +7031,12 @@
     "psappsbitemrsname" : "表格界面_保存行",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "cf4e3a0e9f523614bcd0415796a40827",
+    "psappsbitemrsid" : "672ab194cc0cccead1d330f7d0c69de4",
     "ppsappsbitemname" : "产品模块表格视图",
-    "rstag" : "SYS",
-    "rstag2" : "系统预定义",
+    "rstag" : "BACKEND",
+    "rstag2" : "后台调用",
     "ppsappsbitemid" : "104bbfd0e51b305e4489bcd15e6889cd",
-    "psappsbitemrsname" : "表格界面_删除操作",
+    "psappsbitemrsname" : "删除",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "产品模块表格视图",

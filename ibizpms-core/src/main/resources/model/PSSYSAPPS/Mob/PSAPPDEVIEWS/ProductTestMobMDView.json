@@ -439,7 +439,7 @@
         "groupExtractMode" : "ITEM",
         "itemType" : "DEUIACTION",
         "name" : "deuiaction1",
-        "noPrivDisplayMode" : 2,
+        "noPrivDisplayMode" : 1,
         "getPSAppViewUIAction" : {
           "modelref" : true,
           "id" : "mdctrl_batchtoolbar_deuiaction1"
@@ -449,11 +449,13 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "MULTIKEY",
+          "noPrivDisplayMode" : 1,
           "getCapPSLanguageRes" : {
             "lanResTag" : "TBB.TEXT.*.REMOVE"
           },
           "caption" : "删除",
           "codeName" : "Remove",
+          "dataAccessAction" : "DELETE",
           "fullCodeName" : "Remove",
           "name" : "表格界面_删除操作",
           "getPSSysImage" : {

@@ -230,19 +230,23 @@
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
-      "name" : "grid_uagridcolumn1_u8447967_click",
+      "name" : "grid_uagridcolumn1_ue30c339_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "表格界面_删除操作"
+        "id" : "删除"
       }
     } ],
     "getPSAppViewUIActions" : [ {
-      "name" : "表格界面_删除操作",
+      "name" : "删除",
       "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+        },
         "modelref" : true,
-        "id" : "Remove"
+        "id" : "RemoveModule@ProductModule"
       },
-      "uIActionTarget" : "MULTIKEY",
+      "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "grid"
     } ],
     "getPSControlHandler" : {
@@ -419,27 +423,36 @@
         "name" : "行编辑默认操作列",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
-          "name" : "u8447967",
+          "name" : "ue30c339",
           "getPSUIAction" : {
-            "actionTarget" : "MULTIKEY",
-            "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.REMOVE"
-            },
+            "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "删除",
-            "codeName" : "Remove",
-            "fullCodeName" : "Remove",
-            "name" : "表格界面_删除操作",
+            "codeName" : "RemoveModule",
+            "confirmMsg" : "该模块及其子模块都会被删除，您确定删除吗？",
+            "dataAccessAction" : "DELETE",
+            "fullCodeName" : "ProductModule_RemoveModule",
+            "name" : "删除",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+            },
             "getPSSysImage" : {
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-remove"
             },
+            "refreshMode" : 1,
             "timeout" : 60000,
-            "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
-            },
-            "uIActionMode" : "SYS",
-            "uIActionTag" : "Remove",
-            "uIActionType" : "DEUIACTION"
+            "uIActionMode" : "BACKEND",
+            "uIActionTag" : "RemoveModule",
+            "uIActionType" : "DEUIACTION",
+            "enableConfirm" : true,
+            "reloadData" : true,
+            "id" : "RemoveModule@ProductModule"
           },
           "addSeparator" : false,
           "showCaption" : false,

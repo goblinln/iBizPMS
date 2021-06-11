@@ -577,6 +577,35 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
+    "caption" : "删除",
+    "codeName" : "RemoveModule",
+    "confirmMsg" : "该模块及其子模块都会被删除，您确定删除吗？",
+    "dataAccessAction" : "DELETE",
+    "fullCodeName" : "ProductModule_RemoveModule",
+    "name" : "删除",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf00d@FontAwesome",
+      "cssClass" : "fa fa-remove"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "RemoveModule",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "RemoveModule@ProductModule"
+  }, {
     "actionTarget" : "NONE",
     "caption" : "修复",
     "codeName" : "Fix",
