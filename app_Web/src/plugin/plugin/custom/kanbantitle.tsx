@@ -1,6 +1,7 @@
 
 
 import { IPSDEKanban, IPSUIActionGroupDetail } from "@ibiz/dynamic-model-api";
+import Vue from 'vue';
 
 /**
  * 看板标题颜色插件（自定义）插件类
@@ -12,6 +13,9 @@ import { IPSDEKanban, IPSUIActionGroupDetail } from "@ibiz/dynamic-model-api";
 export class Kanbantitle {
 
  renderCtrlItem(h: any, ctrlItemModel: IPSDEKanban, parentContainer: any, group: any) {
+   			if (!this.isRender) {
+          return;
+        }
         const { groupWidth } = ctrlItemModel;
         return <div class="dataview-group-content" style={groupWidth ? { width: groupWidth + 'px' } : { flexGrow: 1 }}>
             <div class={["dataview-group-header", ctrlItemModel.getGroupPSSysCss()?.cssName]} style={this.getHeaderStyle(group)}>
@@ -38,7 +42,7 @@ export class Kanbantitle {
                         </poptip> : null
                 }
             </div>
-            <draggable list={group.items} group={ctrlItemModel.name} class="dataview-group-items" on-change={($event: any) => parentContainer.onDragChange($event, group.value)}>
+            <draggable list={group.items} group={ctrlItemModel.name} class="dataview-group-items" on-change={($event: any) => this.onDragStart($event,group,parentContainer)} on-end={()=>{this.onDragEnd(group,parentContainer)}}>
                 {
                     group.items.map((item: any) => {
                         return (
@@ -50,6 +54,29 @@ export class Kanbantitle {
                 }
             </draggable>
         </div >
+    }
+	
+	public isRender: boolean = true;
+
+     /**
+     * 拖拽结束
+     * 
+     */
+    public onDragStart($event: any,group: any,parentContainer: any) {
+      parentContainer.$forceUpdate();
+      parentContainer.onDragChange($event, group.value);
+    }
+
+    /**
+     * 拖拽结束
+     * 
+     */
+    public onDragEnd(group: any,parentContainer: any){
+        this.isRender = false;
+        this.$nextTick(()=> {
+          this.isRender = true;
+          parentContainer.$forceUpdate();
+        })
     }
 
     public getHeaderStyle(group: any) {
