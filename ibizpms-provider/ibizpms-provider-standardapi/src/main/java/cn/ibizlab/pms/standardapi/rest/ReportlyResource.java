@@ -105,8 +105,8 @@ public class ReportlyResource {
 
     @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
     @ApiOperation(value = "已读", tags = {"汇报" },  notes = "已读")
-	@RequestMapping(method = RequestMethod.POST, value = "/reportlies/{reportly_id}/haveread")
-    public ResponseEntity<ReportlyDTO> haveRead(@PathVariable("reportly_id") Long reportly_id, @RequestBody ReportlyDTO reportlydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/reportlies/{reportly_id}/read")
+    public ResponseEntity<ReportlyDTO> read(@PathVariable("reportly_id") Long reportly_id, @RequestBody ReportlyDTO reportlydto) {
         IbzReportly domain = reportlyMapping.toDomain(reportlydto);
         domain.setIbzreportlyid(reportly_id);
         domain = ibzreportlyService.haveRead(domain);

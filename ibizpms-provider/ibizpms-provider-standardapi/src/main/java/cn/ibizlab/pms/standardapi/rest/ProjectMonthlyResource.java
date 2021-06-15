@@ -101,8 +101,8 @@ public class ProjectMonthlyResource {
 
     @PreAuthorize("test('IBIZPRO_PROJECTMONTHLY', #projectmonthly_id, 'NONE')")
     @ApiOperation(value = "手动生成项目月报", tags = {"项目月报" },  notes = "手动生成项目月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectmonthlies/{projectmonthly_id}/manualcreatemonthly")
-    public ResponseEntity<ProjectMonthlyDTO> manualCreateMonthly(@PathVariable("projectmonthly_id") String projectmonthly_id, @RequestBody ProjectMonthlyDTO projectmonthlydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projectmonthlies/{projectmonthly_id}/autocreate")
+    public ResponseEntity<ProjectMonthlyDTO> autoCreate(@PathVariable("projectmonthly_id") String projectmonthly_id, @RequestBody ProjectMonthlyDTO projectmonthlydto) {
         IbizproProjectMonthly domain = projectmonthlyMapping.toDomain(projectmonthlydto);
         domain.setIbizproprojectmonthlyid(projectmonthly_id);
         domain = ibizproprojectmonthlyService.manualCreateMonthly(domain);

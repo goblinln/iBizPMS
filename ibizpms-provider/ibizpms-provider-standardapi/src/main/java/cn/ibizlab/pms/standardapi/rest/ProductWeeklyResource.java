@@ -105,8 +105,8 @@ public class ProductWeeklyResource {
 
     @PreAuthorize("test('IBIZPRO_PRODUCTWEEKLY', #productweekly_id, 'NONE')")
     @ApiOperation(value = "统计产品周报", tags = {"产品周报" },  notes = "统计产品周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/productweeklies/{productweekly_id}/sumproductweekly")
-    public ResponseEntity<ProductWeeklyDTO> sumProductWeekly(@PathVariable("productweekly_id") Long productweekly_id, @RequestBody ProductWeeklyDTO productweeklydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/productweeklies/{productweekly_id}/summary")
+    public ResponseEntity<ProductWeeklyDTO> summary(@PathVariable("productweekly_id") Long productweekly_id, @RequestBody ProductWeeklyDTO productweeklydto) {
         IbizproProductWeekly domain = productweeklyMapping.toDomain(productweeklydto);
         domain.setIbizproProductweeklyid(productweekly_id);
         domain = ibizproproductweeklyService.sumProductWeekly(domain);

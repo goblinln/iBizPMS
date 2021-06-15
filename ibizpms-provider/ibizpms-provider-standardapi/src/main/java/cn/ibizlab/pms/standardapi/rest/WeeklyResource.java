@@ -97,8 +97,8 @@ public class WeeklyResource {
 
     @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
     @ApiOperation(value = "定时生成每周周报", tags = {"周报" },  notes = "定时生成每周周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/weeklies/{weekly_id}/createeveryweekreport")
-    public ResponseEntity<WeeklyDTO> createEveryWeekReport(@PathVariable("weekly_id") Long weekly_id, @RequestBody WeeklyDTO weeklydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/weeklies/{weekly_id}/autocreate")
+    public ResponseEntity<WeeklyDTO> autoCreate(@PathVariable("weekly_id") Long weekly_id, @RequestBody WeeklyDTO weeklydto) {
         IbzWeekly domain = weeklyMapping.toDomain(weeklydto);
         domain.setIbzweeklyid(weekly_id);
         domain = ibzweeklyService.createEveryWeekReport(domain);
@@ -119,8 +119,8 @@ public class WeeklyResource {
 
     @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
     @ApiOperation(value = "定时推送待阅提醒用户周报提交", tags = {"周报" },  notes = "定时推送待阅提醒用户周报提交")
-	@RequestMapping(method = RequestMethod.POST, value = "/weeklies/{weekly_id}/pushuserweekly")
-    public ResponseEntity<WeeklyDTO> pushUserWeekly(@PathVariable("weekly_id") Long weekly_id, @RequestBody WeeklyDTO weeklydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/weeklies/{weekly_id}/notice")
+    public ResponseEntity<WeeklyDTO> notice(@PathVariable("weekly_id") Long weekly_id, @RequestBody WeeklyDTO weeklydto) {
         IbzWeekly domain = weeklyMapping.toDomain(weeklydto);
         domain.setIbzweeklyid(weekly_id);
         domain = ibzweeklyService.pushUserWeekly(domain);
@@ -133,8 +133,8 @@ public class WeeklyResource {
 
     @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
     @ApiOperation(value = "已读", tags = {"周报" },  notes = "已读")
-	@RequestMapping(method = RequestMethod.POST, value = "/weeklies/{weekly_id}/haveread")
-    public ResponseEntity<WeeklyDTO> haveRead(@PathVariable("weekly_id") Long weekly_id, @RequestBody WeeklyDTO weeklydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/weeklies/{weekly_id}/read")
+    public ResponseEntity<WeeklyDTO> read(@PathVariable("weekly_id") Long weekly_id, @RequestBody WeeklyDTO weeklydto) {
         IbzWeekly domain = weeklyMapping.toDomain(weeklydto);
         domain.setIbzweeklyid(weekly_id);
         domain = ibzweeklyService.haveRead(domain);

@@ -68,8 +68,8 @@ public class TestResource {
 
     @PreAuthorize("test('ZT_PRODUCT', #test_id, 'READ')")
     @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/cancelproducttop")
-    public ResponseEntity<TestDTO> cancelProductTop(@PathVariable("test_id") Long test_id, @RequestBody TestDTO testdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/canceltesttop")
+    public ResponseEntity<TestDTO> cancelTestTop(@PathVariable("test_id") Long test_id, @RequestBody TestDTO testdto) {
         Product domain = testMapping.toDomain(testdto);
         domain.setId(test_id);
         domain = productService.cancelProductTop(domain);
@@ -82,8 +82,8 @@ public class TestResource {
 
     @PreAuthorize("test('ZT_PRODUCT', #test_id, 'READ')")
     @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/producttop")
-    public ResponseEntity<TestDTO> productTop(@PathVariable("test_id") Long test_id, @RequestBody TestDTO testdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/testtop")
+    public ResponseEntity<TestDTO> testTop(@PathVariable("test_id") Long test_id, @RequestBody TestDTO testdto) {
         Product domain = testMapping.toDomain(testdto);
         domain.setId(test_id);
         domain = productService.productTop(domain);

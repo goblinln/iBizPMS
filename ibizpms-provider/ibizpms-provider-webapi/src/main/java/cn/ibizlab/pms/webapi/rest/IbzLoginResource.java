@@ -71,8 +71,8 @@ public class IbzLoginResource {
 
     @PreAuthorize("test('IBZ_LOGIN', #ibzlogin_id, 'READ')")
     @ApiOperation(value = "获取ZT账户登录信息", tags = {"实体" },  notes = "获取ZT账户登录信息")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzlogins/{ibzlogin_id}/getuser")
-    public ResponseEntity<IbzLoginDTO> getUser(@PathVariable("ibzlogin_id") Long ibzlogin_id, IbzLoginDTO ibzlogindto) {
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzlogins/{ibzlogin_id}/ztusersloginname")
+    public ResponseEntity<IbzLoginDTO> ztusersloginname(@PathVariable("ibzlogin_id") Long ibzlogin_id, IbzLoginDTO ibzlogindto) {
         IbiLogin domain = ibzloginMapping.toDomain(ibzlogindto);
         domain.setId(ibzlogin_id);
         domain = ibiloginService.getUser(domain);

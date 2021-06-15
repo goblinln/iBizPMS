@@ -101,8 +101,8 @@ public class ProductDailyResource {
 
     @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'DENY')")
     @ApiOperation(value = "手动生成产品日报", tags = {"产品日报" },  notes = "手动生成产品日报")
-	@RequestMapping(method = RequestMethod.POST, value = "/productdailies/{productdaily_id}/manualcreatedaily")
-    public ResponseEntity<ProductDailyDTO> manualCreateDaily(@PathVariable("productdaily_id") Long productdaily_id, @RequestBody ProductDailyDTO productdailydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/productdailies/{productdaily_id}/autocreate")
+    public ResponseEntity<ProductDailyDTO> autoCreate(@PathVariable("productdaily_id") Long productdaily_id, @RequestBody ProductDailyDTO productdailydto) {
         IbizproProductDaily domain = productdailyMapping.toDomain(productdailydto);
         domain.setIbizproproductdailyid(productdaily_id);
         domain = ibizproproductdailyService.manualCreateDaily(domain);

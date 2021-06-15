@@ -673,19 +673,14 @@
           "value" : "doclib",
           "rawValue" : false
         }, {
-          "key" : "SRFPARENT",
-          "name" : "SRFPARENT",
-          "value" : "doclibmodule",
-          "rawValue" : false
-        }, {
           "key" : "PRODUCT",
           "name" : "PRODUCT",
           "value" : "product",
           "rawValue" : false
         }, {
-          "key" : "DOCLIB",
-          "name" : "DOCLIB",
-          "value" : "root",
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "id",
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
@@ -694,14 +689,14 @@
           "value" : "product",
           "rawValue" : false
         }, {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "id",
+          "rawValue" : false
+        }, {
           "key" : "project",
           "name" : "project",
           "value" : "project",
-          "rawValue" : false
-        }, {
-          "key" : "srfparent",
-          "name" : "srfparent",
-          "value" : "doclibmodule",
           "rawValue" : false
         }, {
           "key" : "srfroot",
@@ -1386,19 +1381,14 @@
           "value" : "doclib",
           "rawValue" : false
         }, {
-          "key" : "SRFPARENT",
-          "name" : "SRFPARENT",
-          "value" : "doclibmodule",
-          "rawValue" : false
-        }, {
           "key" : "PRODUCT",
           "name" : "PRODUCT",
           "value" : "product",
           "rawValue" : false
         }, {
-          "key" : "DOCLIB",
-          "name" : "DOCLIB",
-          "value" : "root",
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "id",
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
@@ -1407,14 +1397,14 @@
           "value" : "product",
           "rawValue" : false
         }, {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "id",
+          "rawValue" : false
+        }, {
           "key" : "project",
           "name" : "project",
           "value" : "project",
-          "rawValue" : false
-        }, {
-          "key" : "srfparent",
-          "name" : "srfparent",
-          "value" : "doclibmodule",
           "rawValue" : false
         }, {
           "key" : "srfroot",
@@ -2232,19 +2222,14 @@
             "value" : "doclib",
             "rawValue" : false
           }, {
-            "key" : "SRFPARENT",
-            "name" : "SRFPARENT",
-            "value" : "doclibmodule",
-            "rawValue" : false
-          }, {
             "key" : "PRODUCT",
             "name" : "PRODUCT",
             "value" : "product",
             "rawValue" : false
           }, {
-            "key" : "DOCLIB",
-            "name" : "DOCLIB",
-            "value" : "root",
+            "key" : "SRFPARENTKEY",
+            "name" : "SRFPARENTKEY",
+            "value" : "id",
             "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
@@ -2253,14 +2238,14 @@
             "value" : "product",
             "rawValue" : false
           }, {
+            "key" : "srfparentkey",
+            "name" : "srfparentkey",
+            "value" : "id",
+            "rawValue" : false
+          }, {
             "key" : "project",
             "name" : "project",
             "value" : "project",
-            "rawValue" : false
-          }, {
-            "key" : "srfparent",
-            "name" : "srfparent",
-            "value" : "doclibmodule",
             "rawValue" : false
           }, {
             "key" : "srfroot",
@@ -2816,19 +2801,14 @@
             "value" : "doclib",
             "rawValue" : false
           }, {
-            "key" : "SRFPARENT",
-            "name" : "SRFPARENT",
-            "value" : "doclibmodule",
-            "rawValue" : false
-          }, {
             "key" : "PRODUCT",
             "name" : "PRODUCT",
             "value" : "product",
             "rawValue" : false
           }, {
-            "key" : "DOCLIB",
-            "name" : "DOCLIB",
-            "value" : "root",
+            "key" : "SRFPARENTKEY",
+            "name" : "SRFPARENTKEY",
+            "value" : "id",
             "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
@@ -2837,14 +2817,14 @@
             "value" : "product",
             "rawValue" : false
           }, {
+            "key" : "srfparentkey",
+            "name" : "srfparentkey",
+            "value" : "id",
+            "rawValue" : false
+          }, {
             "key" : "project",
             "name" : "project",
             "value" : "project",
-            "rawValue" : false
-          }, {
-            "key" : "srfparent",
-            "name" : "srfparent",
-            "value" : "doclibmodule",
             "rawValue" : false
           }, {
             "key" : "srfroot",

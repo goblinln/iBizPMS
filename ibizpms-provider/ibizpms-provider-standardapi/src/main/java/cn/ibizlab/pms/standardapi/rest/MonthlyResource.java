@@ -97,8 +97,8 @@ public class MonthlyResource {
 
     @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
     @ApiOperation(value = "定时生成用户月报", tags = {"月报" },  notes = "定时生成用户月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/createusermonthly")
-    public ResponseEntity<MonthlyDTO> createUserMonthly(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/autocreate")
+    public ResponseEntity<MonthlyDTO> autoCreate(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
         IbzMonthly domain = monthlyMapping.toDomain(monthlydto);
         domain.setIbzmonthlyid(monthly_id);
         domain = ibzmonthlyService.createUserMonthly(domain);
@@ -119,8 +119,8 @@ public class MonthlyResource {
 
     @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
     @ApiOperation(value = "定时推送待阅提醒用户月报", tags = {"月报" },  notes = "定时推送待阅提醒用户月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/pushusermonthly")
-    public ResponseEntity<MonthlyDTO> pushUserMonthly(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/notice")
+    public ResponseEntity<MonthlyDTO> notice(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
         IbzMonthly domain = monthlyMapping.toDomain(monthlydto);
         domain.setIbzmonthlyid(monthly_id);
         domain = ibzmonthlyService.pushUserMonthly(domain);
@@ -133,8 +133,8 @@ public class MonthlyResource {
 
     @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
     @ApiOperation(value = "已读", tags = {"月报" },  notes = "已读")
-	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/haveread")
-    public ResponseEntity<MonthlyDTO> haveRead(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/read")
+    public ResponseEntity<MonthlyDTO> read(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
         IbzMonthly domain = monthlyMapping.toDomain(monthlydto);
         domain.setIbzmonthlyid(monthly_id);
         domain = ibzmonthlyService.haveRead(domain);

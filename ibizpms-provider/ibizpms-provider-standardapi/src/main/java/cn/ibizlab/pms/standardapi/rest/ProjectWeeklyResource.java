@@ -105,8 +105,8 @@ public class ProjectWeeklyResource {
 
     @PreAuthorize("test('IBZPRO_PROJECTWEEKLY', #projectweekly_id, 'NONE')")
     @ApiOperation(value = "定时推送项目周报", tags = {"项目周报" },  notes = "定时推送项目周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectweeklies/{projectweekly_id}/pushsumprojectweekly")
-    public ResponseEntity<ProjectWeeklyDTO> pushSumProjectWeekly(@PathVariable("projectweekly_id") String projectweekly_id, @RequestBody ProjectWeeklyDTO projectweeklydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projectweeklies/{projectweekly_id}/summary")
+    public ResponseEntity<ProjectWeeklyDTO> summary(@PathVariable("projectweekly_id") String projectweekly_id, @RequestBody ProjectWeeklyDTO projectweeklydto) {
         IbizproProjectWeekly domain = projectweeklyMapping.toDomain(projectweeklydto);
         domain.setProjectweeklyid(projectweekly_id);
         domain = ibizproprojectweeklyService.pushSumProjectWeekly(domain);

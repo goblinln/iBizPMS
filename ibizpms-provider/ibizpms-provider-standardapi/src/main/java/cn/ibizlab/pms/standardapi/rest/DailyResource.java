@@ -97,8 +97,8 @@ public class DailyResource {
 
     @PreAuthorize("test('IBZ_DAILY', #daily_id, 'NONE')")
     @ApiOperation(value = "定时生成用户日报", tags = {"日报" },  notes = "定时生成用户日报")
-	@RequestMapping(method = RequestMethod.POST, value = "/dailies/{daily_id}/createuserdaily")
-    public ResponseEntity<DailyDTO> createUserDaily(@PathVariable("daily_id") Long daily_id, @RequestBody DailyDTO dailydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/dailies/{daily_id}/autocreate")
+    public ResponseEntity<DailyDTO> autoCreate(@PathVariable("daily_id") Long daily_id, @RequestBody DailyDTO dailydto) {
         IbzDaily domain = dailyMapping.toDomain(dailydto);
         domain.setIbzdailyid(daily_id);
         domain = ibzdailyService.createUserDaily(domain);
@@ -119,8 +119,8 @@ public class DailyResource {
 
     @PreAuthorize("test('IBZ_DAILY', #daily_id, 'NONE')")
     @ApiOperation(value = "定时推送待阅提醒用户日报", tags = {"日报" },  notes = "定时推送待阅提醒用户日报")
-	@RequestMapping(method = RequestMethod.POST, value = "/dailies/{daily_id}/pushuserdaily")
-    public ResponseEntity<DailyDTO> pushUserDaily(@PathVariable("daily_id") Long daily_id, @RequestBody DailyDTO dailydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/dailies/{daily_id}/notice")
+    public ResponseEntity<DailyDTO> notice(@PathVariable("daily_id") Long daily_id, @RequestBody DailyDTO dailydto) {
         IbzDaily domain = dailyMapping.toDomain(dailydto);
         domain.setIbzdailyid(daily_id);
         domain = ibzdailyService.pushUserDaily(domain);
@@ -133,8 +133,8 @@ public class DailyResource {
 
     @PreAuthorize("test('IBZ_DAILY', #daily_id, 'NONE')")
     @ApiOperation(value = "已读", tags = {"日报" },  notes = "已读")
-	@RequestMapping(method = RequestMethod.POST, value = "/dailies/{daily_id}/haveread")
-    public ResponseEntity<DailyDTO> haveRead(@PathVariable("daily_id") Long daily_id, @RequestBody DailyDTO dailydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/dailies/{daily_id}/read")
+    public ResponseEntity<DailyDTO> read(@PathVariable("daily_id") Long daily_id, @RequestBody DailyDTO dailydto) {
         IbzDaily domain = dailyMapping.toDomain(dailydto);
         domain.setIbzdailyid(daily_id);
         domain = ibzdailyService.haveRead(domain);

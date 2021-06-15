@@ -206,8 +206,8 @@ public class StoryResource {
 
     @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', #story_id, 'READ')")
     @ApiOperation(value = "根据产品获取需求描述", tags = {"需求" },  notes = "根据产品获取需求描述")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/getstoryspecs")
-    public ResponseEntity<StoryDTO> getStorySpecsByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/getbyversion")
+    public ResponseEntity<StoryDTO> getByVersionByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
         domain.setId(story_id);
@@ -229,8 +229,8 @@ public class StoryResource {
 
     @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'PLANLINK')")
     @ApiOperation(value = "根据产品计划解除关联需求", tags = {"需求" },  notes = "根据产品计划解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/unlinkstory")
-    public ResponseEntity<StoryDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/planunlinkstory")
+    public ResponseEntity<StoryDTO> planUnlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
         domain.setId(story_id);
@@ -503,8 +503,8 @@ public class StoryResource {
 
     @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', #story_id, 'READ')")
     @ApiOperation(value = "根据项目获取需求描述", tags = {"需求" },  notes = "根据项目获取需求描述")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/getstoryspecs")
-    public ResponseEntity<StoryDTO> getStorySpecsByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/getbyversion")
+    public ResponseEntity<StoryDTO> getByVersionByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         
         domain.setId(story_id);
@@ -526,8 +526,8 @@ public class StoryResource {
 
     @PreAuthorize("quickTest('ZT_STORY', 'PLANLINK')")
     @ApiOperation(value = "根据项目计划解除关联需求", tags = {"需求" },  notes = "根据项目计划解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/unlinkstory")
-    public ResponseEntity<StoryDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/planunlinkstory")
+    public ResponseEntity<StoryDTO> planUnlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         
         domain.setId(story_id);
@@ -801,8 +801,8 @@ public class StoryResource {
 
     @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', #story_id, 'READ')")
     @ApiOperation(value = "根据产品项目获取需求描述", tags = {"需求" },  notes = "根据产品项目获取需求描述")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/stories/{story_id}/getstoryspecs")
-    public ResponseEntity<StoryDTO> getStorySpecsByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/stories/{story_id}/getbyversion")
+    public ResponseEntity<StoryDTO> getByVersionByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         
         domain.setId(story_id);
@@ -824,8 +824,8 @@ public class StoryResource {
 
     @PreAuthorize("quickTest('ZT_STORY', 'PLANLINK')")
     @ApiOperation(value = "根据产品项目计划解除关联需求", tags = {"需求" },  notes = "根据产品项目计划解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/stories/{story_id}/unlinkstory")
-    public ResponseEntity<StoryDTO> unlinkStoryByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/stories/{story_id}/planunlinkstory")
+    public ResponseEntity<StoryDTO> planUnlinkStoryByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         
         domain.setId(story_id);

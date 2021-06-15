@@ -218,8 +218,8 @@ public class BugResource {
 
     @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'PLANLINK')")
     @ApiOperation(value = "根据项目解除关联Bug", tags = {"Bug" },  notes = "根据项目解除关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/unlinkbug")
-    public ResponseEntity<BugDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/planunlinkbug")
+    public ResponseEntity<BugDTO> planUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
         domain.setId(bug_id);
@@ -232,8 +232,8 @@ public class BugResource {
 
     @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'RELEASELINK')")
     @ApiOperation(value = "根据项目解除关联Bug", tags = {"Bug" },  notes = "根据项目解除关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/releaseunlinkbug")
-    public ResponseEntity<BugDTO> releaseUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/relaseunlinkbug")
+    public ResponseEntity<BugDTO> relaseUnlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
         domain.setId(bug_id);
@@ -460,8 +460,8 @@ public class BugResource {
 
     @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'PLANLINK')")
     @ApiOperation(value = "根据产品解除关联Bug", tags = {"Bug" },  notes = "根据产品解除关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/unlinkbug")
-    public ResponseEntity<BugDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/planunlinkbug")
+    public ResponseEntity<BugDTO> planUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
         domain.setId(bug_id);
@@ -474,8 +474,8 @@ public class BugResource {
 
     @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'RELEASELINK')")
     @ApiOperation(value = "根据产品解除关联Bug", tags = {"Bug" },  notes = "根据产品解除关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/releaseunlinkbug")
-    public ResponseEntity<BugDTO> releaseUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/relaseunlinkbug")
+    public ResponseEntity<BugDTO> relaseUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProduct(product_id);
         domain.setId(bug_id);
@@ -703,8 +703,8 @@ public class BugResource {
 
     @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'PLANLINK')")
     @ApiOperation(value = "根据产品项目解除关联Bug", tags = {"Bug" },  notes = "根据产品项目解除关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/unlinkbug")
-    public ResponseEntity<BugDTO> unlinkBugByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/planunlinkbug")
+    public ResponseEntity<BugDTO> planUnlinkBugByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
         domain.setId(bug_id);
@@ -717,8 +717,8 @@ public class BugResource {
 
     @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'RELEASELINK')")
     @ApiOperation(value = "根据产品项目解除关联Bug", tags = {"Bug" },  notes = "根据产品项目解除关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/releaseunlinkbug")
-    public ResponseEntity<BugDTO> releaseUnlinkBugByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}/relaseunlinkbug")
+    public ResponseEntity<BugDTO> relaseUnlinkBugByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug domain = bugMapping.toDomain(bugdto);
         domain.setProject(project_id);
         domain.setId(bug_id);

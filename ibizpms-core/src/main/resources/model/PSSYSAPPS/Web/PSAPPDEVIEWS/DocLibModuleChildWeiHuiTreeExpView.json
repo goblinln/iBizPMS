@@ -43,35 +43,35 @@
       "editMode" : true
     }
   } ],
-  "getPSAppViewNavContexts" : [ {
-    "key" : "SRFPARENTDEMAPNAME",
-    "name" : "SRFPARENTDEMAPNAME",
-    "value" : "ZT_PRODUCT",
+  "getPSAppViewNavParams" : [ {
+    "key" : "srfparentkey",
+    "name" : "srfparentkey",
+    "value" : "doclibmodule",
+    "rawValue" : false
+  }, {
+    "key" : "srfparentdename",
+    "name" : "srfparentdename",
+    "value" : "DocLibModule",
     "rawValue" : true
   }, {
-    "key" : "MODULETYPE",
-    "name" : "MODULETYPE",
+    "key" : "moduletype",
+    "name" : "moduletype",
     "value" : "doc",
     "rawValue" : true
   }, {
-    "key" : "SRFROOT",
-    "name" : "SRFROOT",
+    "key" : "srfparent",
+    "name" : "srfparent",
+    "value" : "doclibmodule",
+    "rawValue" : false
+  }, {
+    "key" : "srfroot",
+    "name" : "srfroot",
     "value" : "srfroot",
     "rawValue" : false
   }, {
-    "key" : "SRFPARENT",
-    "name" : "SRFPARENT",
-    "value" : "doclibmodule",
-    "rawValue" : false
-  }, {
-    "key" : "SRFPARENTKEY",
-    "name" : "SRFPARENTKEY",
-    "value" : "doclibmodule",
-    "rawValue" : false
-  }, {
-    "key" : "SRFPARENTDENAME",
-    "name" : "SRFPARENTDENAME",
-    "value" : "DocLibModule",
+    "key" : "srfparentdemapname",
+    "name" : "srfparentdemapname",
+    "value" : "ZT_PRODUCT",
     "rawValue" : true
   } ],
   "getPSControls" : [ {
@@ -444,7 +444,7 @@
         "nodeType" : "ChileModule",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchChildModuleByParent"
+          "id" : "FetchAllDir"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -592,7 +592,7 @@
         "nodeType" : "Module",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchChildModuleByRealParent"
+          "id" : "FetchAllDir"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

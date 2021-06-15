@@ -249,7 +249,7 @@
     "nodeType" : "ChileModule",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchChildModuleByParent"
+      "id" : "FetchAllDir"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -397,7 +397,7 @@
     "nodeType" : "Module",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchChildModuleByRealParent"
+      "id" : "FetchAllDir"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

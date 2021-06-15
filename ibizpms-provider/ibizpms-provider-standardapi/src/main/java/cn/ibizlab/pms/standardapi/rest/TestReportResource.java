@@ -133,8 +133,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据项目根据起始时间获取概况信息", tags = {"测试报告" },  notes = "根据项目根据起始时间获取概况信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotaskovbytime")
-    public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/initprojectduringreport")
+    public ResponseEntity<TestReportDTO> initProjectDuringReportByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
@@ -147,8 +147,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskproject")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/initprojectreport")
+    public ResponseEntity<TestReportDTO> initProjectReportByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
@@ -161,8 +161,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（单测试）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）（单测试）")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskr")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskRByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/inittesttaskreport")
+    public ResponseEntity<TestReportDTO> initTestTaskReportByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
@@ -175,8 +175,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（测试）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）（测试）")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttasks")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskSByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/inittesttaskreportmulti")
+    public ResponseEntity<TestReportDTO> initTestTaskReportMultiByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
@@ -189,8 +189,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据项目根据测试报告获取基本信息", tags = {"测试报告" },  notes = "根据项目根据测试报告获取基本信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/gettestreportbasicinfo")
-    public ResponseEntity<TestReportDTO> getTestReportBasicInfoByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/loadtestreportbasic")
+    public ResponseEntity<TestReportDTO> loadTestReportBasicByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
@@ -292,8 +292,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品根据起始时间获取概况信息", tags = {"测试报告" },  notes = "根据产品根据起始时间获取概况信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/getinfotaskovbytime")
-    public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/initprojectduringreport")
+    public ResponseEntity<TestReportDTO> initProjectDuringReportByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
         domain.setId(testreport_id);
@@ -306,8 +306,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/getinfotesttaskproject")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/initprojectreport")
+    public ResponseEntity<TestReportDTO> initProjectReportByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
         domain.setId(testreport_id);
@@ -320,8 +320,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（单测试）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）（单测试）")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/getinfotesttaskr")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskRByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/inittesttaskreport")
+    public ResponseEntity<TestReportDTO> initTestTaskReportByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
         domain.setId(testreport_id);
@@ -334,8 +334,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（测试）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）（测试）")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/getinfotesttasks")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskSByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/inittesttaskreportmulti")
+    public ResponseEntity<TestReportDTO> initTestTaskReportMultiByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
         domain.setId(testreport_id);
@@ -348,8 +348,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品根据测试报告获取基本信息", tags = {"测试报告" },  notes = "根据产品根据测试报告获取基本信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/gettestreportbasicinfo")
-    public ResponseEntity<TestReportDTO> getTestReportBasicInfoByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/loadtestreportbasic")
+    public ResponseEntity<TestReportDTO> loadTestReportBasicByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
         domain.setId(testreport_id);
@@ -452,8 +452,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品项目根据起始时间获取概况信息", tags = {"测试报告" },  notes = "根据产品项目根据起始时间获取概况信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/getinfotaskovbytime")
-    public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/initprojectduringreport")
+    public ResponseEntity<TestReportDTO> initProjectDuringReportByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
@@ -466,8 +466,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品项目根据测试单获取相应信息（项目报告）", tags = {"测试报告" },  notes = "根据产品项目根据测试单获取相应信息（项目报告）")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskproject")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/initprojectreport")
+    public ResponseEntity<TestReportDTO> initProjectReportByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
@@ -480,8 +480,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品项目根据测试单获取相应信息（项目报告）（单测试）", tags = {"测试报告" },  notes = "根据产品项目根据测试单获取相应信息（项目报告）（单测试）")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskr")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskRByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/inittesttaskreport")
+    public ResponseEntity<TestReportDTO> initTestTaskReportByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
@@ -494,8 +494,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品项目根据测试单获取相应信息（项目报告）（测试）", tags = {"测试报告" },  notes = "根据产品项目根据测试单获取相应信息（项目报告）（测试）")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/getinfotesttasks")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskSByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/inittesttaskreportmulti")
+    public ResponseEntity<TestReportDTO> initTestTaskReportMultiByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
@@ -508,8 +508,8 @@ public class TestReportResource {
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品项目根据测试报告获取基本信息", tags = {"测试报告" },  notes = "根据产品项目根据测试报告获取基本信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/gettestreportbasicinfo")
-    public ResponseEntity<TestReportDTO> getTestReportBasicInfoByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/testreports/{testreport_id}/loadtestreportbasic")
+    public ResponseEntity<TestReportDTO> loadTestReportBasicByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
         TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
         domain.setId(testreport_id);
