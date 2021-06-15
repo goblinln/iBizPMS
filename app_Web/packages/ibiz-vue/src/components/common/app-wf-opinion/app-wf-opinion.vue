@@ -1,7 +1,7 @@
 <template>
     <div :class="['app-wf-opinion', isShow ? 'is-show' : '']" ref='wf-opinion'>
         <el-button v-popover:popover type="primary" size="small" @click="click">意见</el-button>
-        <el-popover ref="popover" popper-class="wf-opinion-popover" v-model="isShow" :width="width" :visible-arrow="false" placement="left">
+        <el-popover ref="popover" popper-class="wf-opinion-popover" v-model="isShow" :width="width" :visible-arrow="false" trigger="manual" placement="left">
             <div v-show="isShow" ref="wf-opinion-container" class="wf-opinion-container" :style="{ 'height': containerHeight + 'px' }">
                 <div class="header">
                     <span class="title">意见</span>
@@ -151,6 +151,10 @@ export default class AppWFOpinion extends Vue {
      */
     public width: number = 700;
 
+    public options = {
+        'append-to-body': false
+    }
+
     /**
      * 获取输入框绑定值
      * 
@@ -178,7 +182,11 @@ export default class AppWFOpinion extends Vue {
      * @memberof AppWFOpinion
      */
     get rules() {
-        return [...this.parentContainer.rules?.[this.name]] || [];
+        if (this.parentContainer) {
+            return [...this.parentContainer.rules?.[this.name]] || [];
+        } else {
+            return [];
+        }
     }
 
     /**
@@ -188,7 +196,11 @@ export default class AppWFOpinion extends Vue {
      * @memberof AppWFOpinion
      */
     get error() {
-        return this.parentContainer.detailsModel?.[this.name]?.error;
+        if (this.parentContainer) {
+            return this.parentContainer.detailsModel?.[this.name]?.error || "";
+        } else {
+            return "";
+        }
     }
 
     /**
@@ -319,7 +331,7 @@ export default class AppWFOpinion extends Vue {
      * @memberof AppWFOpinion
      */
     public click() {
-        // this.isShow = true;
+        this.isShow = true;
         this.initData();
         this.computePosition();
         // this.scrollToContainer();
