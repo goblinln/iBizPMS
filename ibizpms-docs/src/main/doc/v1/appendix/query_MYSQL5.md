@@ -193,7 +193,7 @@ GROUP BY
 	t1.account,
 	t1.date
 WHERE t1.account = #{srf.datacontext.account} 
-t1.date =  #{srf.datacontext.dayname} 
+t1.dayname =  #{srf.datacontext.dayname} 
 
 ```
 ### 数据查询(DEFAULT)<div id="AccountTaskestimate_Default"></div>
@@ -14586,8 +14586,8 @@ FROM
 	zt_project t1 
 
 WHERE t1.id IN ( SELECT t1.root FROM zt_team t1 WHERE t1.type = 'project' 
-AND t1.account = #{srf.datacontext.account} ) 
-	OR t1.pm = #{srf.datacontext.account} 
+AND t1.account = IFNULL(#{srf.datacontext.account},#{srf.sessioncontext.srfloginname}) ) 
+	OR t1.pm =IFNULL(#{srf.datacontext.account},#{srf.sessioncontext.srfloginname}) 
 
 ```
 ### 当前计划项目(CurPlanProject)<div id="Project_CurPlanProject"></div>
