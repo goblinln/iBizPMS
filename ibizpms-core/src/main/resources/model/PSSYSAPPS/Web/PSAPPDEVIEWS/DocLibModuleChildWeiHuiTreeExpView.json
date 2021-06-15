@@ -545,6 +545,11 @@
           "modeltype" : "PSDETOOLBAR"
         },
         "getPSNavigateParams" : [ {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "srfparent",
+          "rawValue" : false
+        }, {
           "key" : "tree",
           "name" : "tree",
           "value" : "root",
