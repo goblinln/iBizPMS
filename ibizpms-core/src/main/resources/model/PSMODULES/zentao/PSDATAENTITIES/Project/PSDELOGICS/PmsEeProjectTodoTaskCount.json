@@ -35,6 +35,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(*) as temp  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and taskspecies = 'temp' and (\nt1.assignedTo = ? \n)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -67,6 +69,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(*) as cycle  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and t1.taskspecies = 'cycle'\nand (\nt1.assignedTo = ? \n)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall4",
@@ -87,6 +91,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(*) as all from zt_task t1 where t1.deleted = '0'  and t1.project in (?)  and (\nt1.assignedTo = ? \n)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
@@ -136,6 +142,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(*) as plan from zt_task t1 where t1.deleted = '0' and  t1.project in (?) and t1.taskspecies = 'plan'\nand (\nt1.assignedTo = ? \n)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

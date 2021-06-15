@@ -40,6 +40,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select t.id as build,case when (select t1.`name` from zt_release t1 where t1.build = t.id and t1.deleted = '0' ORDER BY t1.date desc LIMIT 0,1) is null then t.`name` else (select t1.`name` from zt_release t1 where t1.build = t.id and t1.deleted = '0' ORDER BY t1.date desc LIMIT 0,1) end as buildname from zt_build t where t.project = ? and t.product = ? and t.id =? and t.deleted = '0' LIMIT 0,1",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
@@ -118,6 +120,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select t.product,t1.`name` as productname from zt_projectproduct t left join zt_product t1 on t1.id = t.product where t.project = ? LIMIT 0,1",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

@@ -386,6 +386,14 @@
     "codeName" : "Account",
     "logicName" : "指定用户数据",
     "name" : "Account",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -403,7 +411,44 @@
     } ],
     "codeName" : "BugSelectableProjectList",
     "logicName" : "Bug表单中可选的项目列表",
-    "name" : "BugSelectableProjectList"
+    "name" : "BugSelectableProjectList",
+    "getPSDEDQMain" : {
+      "getChildPSDEDQJoins" : [ {
+        "getJoinPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
+        },
+        "joinType" : "1NLEFTOUT",
+        "name" : "ZT_PROJECTPRODUCT* [左外联接 1:N](DER1N_ZT_PROJECTPRODUCT_ZT_PROJECT_PROJECT)",
+        "getPSDEDQGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "连接条件",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "OR",
+            "condType" : "GROUP",
+            "name" : "OR",
+            "getPSDEDQConditions" : [ {
+              "condType" : "CUSTOM",
+              "name" : "自定义条件"
+            }, {
+              "condOp" : "EQ",
+              "condType" : "SINGLE",
+              "condValue" : "product",
+              "name" : "PRODUCT 等于(=) 网页请求上下文(product)",
+              "getPSVARTypeId" : "WEBCONTEXT",
+              "ignoreEmpty" : false
+            } ]
+          } ]
+        }
+      } ],
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -417,6 +462,14 @@
     "codeName" : "CurDefaultQuery",
     "logicName" : "默认查询",
     "name" : "CurDefaultQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -431,6 +484,14 @@
     "codeName" : "CurDefaultQueryExp",
     "logicName" : "默认查询（项目导航）",
     "name" : "CurDefaultQueryExp",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -448,7 +509,36 @@
     } ],
     "codeName" : "CurPlanProject",
     "logicName" : "当前计划项目",
-    "name" : "CurPlanProject"
+    "name" : "CurPlanProject",
+    "getPSDEDQMain" : {
+      "getChildPSDEDQJoins" : [ {
+        "getJoinPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
+        },
+        "joinType" : "1NLEFTOUT",
+        "name" : "ZT_PROJECTPRODUCT* [左外联接 1:N](DER1N_ZT_PROJECTPRODUCT_ZT_PROJECT_PROJECT)",
+        "getPSDEDQGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "连接条件",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "plan",
+            "name" : "PLAN 等于(=) 网页请求上下文(plan)",
+            "getPSVARTypeId" : "WEBCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        }
+      } ],
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -465,7 +555,36 @@
     } ],
     "codeName" : "CurProduct",
     "logicName" : "当前项目",
-    "name" : "CurProduct"
+    "name" : "CurProduct",
+    "getPSDEDQMain" : {
+      "getChildPSDEDQJoins" : [ {
+        "getJoinPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
+        },
+        "joinType" : "1N",
+        "name" : "ZT_PROJECTPRODUCT* [存在1:N（EXISTS (SELECT)）](DER1N_ZT_PROJECTPRODUCT_ZT_PROJECT_PROJECT)",
+        "getPSDEDQGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "连接条件",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "n_product_eq",
+            "name" : "PRODUCT 等于(=) 数据上下文(n_product_eq)",
+            "getPSVARTypeId" : "DATACONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        }
+      } ],
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -474,6 +593,14 @@
     "codeName" : "CurUser",
     "logicName" : "当前用户项目",
     "name" : "CurUser",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true,
     "privQuery" : true
   }, {
@@ -484,6 +611,14 @@
     "codeName" : "CurUserSa",
     "logicName" : "当前用户项目（企业版）",
     "name" : "CurUserSa",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true,
     "privQuery" : true
   }, {
@@ -499,6 +634,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -517,6 +660,23 @@
     "codeName" : "DeveloperQuery",
     "logicName" : "参与者（启用权限）",
     "name" : "DeveloperQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "?"
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -526,6 +686,14 @@
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -535,6 +703,14 @@
     "codeName" : "InvolvedProject",
     "logicName" : "参与项目(年度总结)",
     "name" : "InvolvedProject",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -544,6 +720,14 @@
     "codeName" : "InvolvedProjectStoryTaskBug",
     "logicName" : "参与项目完成需求任务bug",
     "name" : "InvolvedProjectStoryTaskBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -562,6 +746,14 @@
     "codeName" : "My",
     "logicName" : "我的数据",
     "name" : "My",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -580,6 +772,48 @@
     "codeName" : "MyProject",
     "logicName" : "我的项目",
     "name" : "MyProject",
+    "getPSDEDQMain" : {
+      "getChildPSDEDQJoins" : [ {
+        "alias" : "IBZ_PROJECTTEAM",
+        "getJoinPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
+        },
+        "joinType" : "1N",
+        "name" : "IBZ_PROJECTTEAM* [存在1:N（EXISTS (SELECT)）](DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT)",
+        "getPSDEDQGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "连接条件",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "ACCOUNT 等于(=) 网页请求上下文(srfloginname)",
+            "getPSVARTypeId" : "WEBCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        }
+      } ],
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "0",
+          "name" : "DELETED 等于(=) (0)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -598,6 +832,73 @@
     "codeName" : "OpenByQuery",
     "logicName" : "创建者或更新者（启用权限）",
     "name" : "OpenByQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "private",
+          "name" : "ACL 等于(=) (private)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "PM 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "RD 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "PO 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "QD 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -616,6 +917,26 @@
     "codeName" : "OpenQuery",
     "logicName" : "公开（启用权限）",
     "name" : "OpenQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "open",
+          "name" : "ACL 等于(=) (open)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -638,6 +959,14 @@
     "codeName" : "ProjectTeam",
     "logicName" : "项目团队",
     "name" : "ProjectTeam",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -652,6 +981,14 @@
     "codeName" : "StoryProject",
     "logicName" : "需求影响项目",
     "name" : "StoryProject",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -670,6 +1007,14 @@
     "codeName" : "UnDoneProject",
     "logicName" : "未完成项目",
     "name" : "UnDoneProject",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -683,7 +1028,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PROJECT"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
@@ -4579,6 +4932,7 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "delete from T_IBZ_TOP  where type = 'project' and objectid = ? and account = ?",
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -4649,6 +5003,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t1.id) as BUGCNT from zt_bug t1 where t1.deleted = '0' and t1.project = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -4680,6 +5036,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t1.id) as STORYCNT from zt_story t1 where t1.deleted = '0' and t1.id in (select t.story from zt_projectstory t where t.project = ?)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall5",
@@ -4699,6 +5057,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t1.id) as TEAMCNT from zt_team t1 where t1.root = ? and t1.type = 'project'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -4730,6 +5090,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t1.id) as BUILDCNT from zt_build t1 where t1.deleted = '0' and t1.project = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -4778,6 +5140,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t1.id) as TASKCNT from zt_task t1 where t1.deleted = '0' and t1.project = ? and `STATUS` in('doing','wait','pause')",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -4857,6 +5221,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select count(*) as plan from zt_task t1 where t1.deleted = '0' and  t1.project in (?) and t1.taskspecies = 'plan'\nand (\nt1.assignedTo = ? or t1.openedBy = ?  or FIND_IN_SET(?, t1.finishedList) or t1.closedBy =? or t1.finishedBy = ? or t1.canceledBy = ?\n)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -4914,6 +5280,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select count(*) as temp  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and taskspecies = 'temp' and (\nt1.assignedTo = ? or t1.openedBy = ?  or FIND_IN_SET(?, t1.finishedList) or t1.closedBy =? or t1.finishedBy = ? or t1.canceledBy = ?\n)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -4959,6 +5327,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select count(*) as all from zt_task t1 where t1.deleted = '0'  and t1.project in (?)  and (\nt1.assignedTo = ? or t1.openedBy = ?  or FIND_IN_SET(?, t1.finishedList) or t1.closedBy =? or t1.finishedBy = ? or t1.canceledBy = ?\n)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -5016,6 +5386,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select count(*) as cycle  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and t1.taskspecies = 'cycle'\nand (\nt1.assignedTo = ? or t1.openedBy = ?  or FIND_IN_SET(?, t1.finishedList) or t1.closedBy =? or t1.finishedBy = ? or t1.canceledBy = ?\n)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -5087,6 +5459,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select count(*) as temp  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and taskspecies = 'temp' and (\nt1.assignedTo = ? \n)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -5119,6 +5493,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select count(*) as cycle  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and t1.taskspecies = 'cycle'\nand (\nt1.assignedTo = ? \n)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -5139,6 +5515,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select count(*) as all from zt_task t1 where t1.deleted = '0'  and t1.project in (?)  and (\nt1.assignedTo = ? \n)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -5188,6 +5566,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select count(*) as plan from zt_task t1 where t1.deleted = '0' and  t1.project in (?) and t1.taskspecies = 'plan'\nand (\nt1.assignedTo = ? \n)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -5258,6 +5638,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as YSTARTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'doing' and t.project = ?\nand t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall10",
@@ -5289,6 +5671,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as UNCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` in( 'wait','cancel','doing') and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -5320,6 +5704,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as UNCLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` <> 'closed' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall7",
@@ -5351,6 +5737,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as CLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'closed' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -5387,6 +5775,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as ASSTOMYTASKCNT from zt_task t where t.deleted = '0' and t.assignedTo = ? and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall5",
@@ -5418,6 +5808,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as ALLTASKCNT from zt_task t where t.deleted = '0'  and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall3",
@@ -5449,6 +5841,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as YCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'done' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall6",
@@ -5480,6 +5874,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as CANCELTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'cancel' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall9",
@@ -5511,6 +5907,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as UNSTARTTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'wait' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -5547,6 +5945,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as MYCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`finishedby` = ? and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall11",
@@ -5566,6 +5966,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as STORYCHANGECNT from zt_task t left join zt_story t21 on t.story = t21.id where t.deleted = '0'  and t.project = ? and t.storyVersion < t21.version and t21.`status` <> 'changed' and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -5667,6 +6069,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select (case when max(t1.`objectorder`) >= 16000000  then max(t1.`objectorder`) + 1 else 16000000 end) as `objectorder` from T_IBZ_TOP t1 where t1.type = 'project' and t1.account= ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -5772,6 +6176,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select COUNT(1) as ISTOP from t_ibz_top t where t.OBJECTID = ? and  t.type = 'project'  and t.ACCOUNT = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -5813,6 +6219,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select concat('[', GROUP_CONCAT(t1.srfarray),']') as srfarray  from ( select JSON_OBJECT('products', cast(t1.product as char), 'branchs', cast(t1.branch as char),'plans',cast(t1.plan as char)) as srfarray,project from zt_projectproduct t1 left join zt_product t2 on t2.id = t1.product where t1.project = ? and t2.deleted = '0') t1 GROUP BY t1.project",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",

@@ -408,14 +408,7 @@
       "name" : "ACTION",
       "codeName" : "Action"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ],
   "name" : "ZT_HISTORY",
   "getPSDEName" : "ZT_HISTORY",

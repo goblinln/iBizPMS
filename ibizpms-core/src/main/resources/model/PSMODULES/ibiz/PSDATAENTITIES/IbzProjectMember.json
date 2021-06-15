@@ -71,6 +71,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMEMBER"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -85,6 +93,29 @@
     "codeName" : "DeveloperQuery",
     "logicName" : "参与者（启用权限）",
     "name" : "DeveloperQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMEMBER",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "?"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "private",
+          "name" : "ACL 等于(=) (private)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -99,6 +130,87 @@
     "codeName" : "OpenByQuery",
     "logicName" : "当前创建或修改者（启用权限）",
     "name" : "OpenByQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMEMBER",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "PM 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "RD 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "QD 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "PO 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "CANCELEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "private",
+          "name" : "ACL 等于(=) (private)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -113,6 +225,26 @@
     "codeName" : "OpenQuery",
     "logicName" : "公开（启动权限）",
     "name" : "OpenQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMEMBER",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "open",
+          "name" : "ACL 等于(=) (open)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -121,7 +253,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMEMBER"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

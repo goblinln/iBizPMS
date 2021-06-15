@@ -57,6 +57,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "update t_sys_update_log set LATESTUPDATE = 0 where LATESTUPDATE = 1 and UPDATEBRANCH = ? and SYS_UPDATE_LOGID <> ? and ? = '1'",
+    "ignoreResetDstLogicParam" : false,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

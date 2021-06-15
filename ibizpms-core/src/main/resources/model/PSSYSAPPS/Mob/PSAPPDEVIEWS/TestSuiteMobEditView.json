@@ -874,14 +874,7 @@
                   "name" : "LIB",
                   "codeName" : "Lib"
                 },
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               }, {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
@@ -895,14 +888,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "name" : "文档日志",
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
@@ -916,14 +902,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "name" : "测试套件日志",
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
@@ -937,14 +916,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "name" : "汇报日志",
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
@@ -958,14 +930,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "name" : "月报日志",
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
@@ -979,14 +944,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "name" : "日报日志",
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
@@ -1000,14 +958,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "name" : "文档日志",
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
@@ -1021,14 +972,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "name" : "文档库日志",
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
@@ -1042,14 +986,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "name" : "待办日志",
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
@@ -1063,14 +1000,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "name" : "周报日志",
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               } ] ]
             },
             "getPSLayoutPos" : {

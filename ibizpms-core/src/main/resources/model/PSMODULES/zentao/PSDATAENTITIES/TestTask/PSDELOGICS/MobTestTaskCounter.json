@@ -48,6 +48,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "SELECT count(1) CASECNT FROM `zt_case` t1 LEFT JOIN zt_testrun t41 ON t1.id = t41.`case` WHERE t41.`TASK` = ? AND t1.DELETED = '0' AND t1.product = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

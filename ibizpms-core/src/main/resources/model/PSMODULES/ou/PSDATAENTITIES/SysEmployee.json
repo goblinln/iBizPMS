@@ -71,6 +71,14 @@
     "codeName" : "BugUser",
     "logicName" : "Bug用户",
     "name" : "BugUser",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -79,7 +87,15 @@
     } ],
     "codeName" : "ContActList",
     "logicName" : "联系人用户",
-    "name" : "ContActList"
+    "name" : "ContActList",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZEMP"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -88,6 +104,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZEMP"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -101,7 +125,24 @@
     } ],
     "codeName" : "ProductTeamM",
     "logicName" : "产品团队管理",
-    "name" : "ProductTeamM"
+    "name" : "ProductTeamM",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZEMP",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -114,7 +155,24 @@
     } ],
     "codeName" : "ProjectTeamM",
     "logicName" : "项目团队管理",
-    "name" : "ProjectTeamM"
+    "name" : "ProjectTeamM",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -127,7 +185,24 @@
     } ],
     "codeName" : "ProjectTeamMProduct",
     "logicName" : "项目团队管理",
-    "name" : "ProjectTeamMProduct"
+    "name" : "ProjectTeamMProduct",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZEMP",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -136,6 +211,14 @@
     "codeName" : "ProjectTeamTaskUserTemp",
     "logicName" : "项目团队成员(临时)",
     "name" : "ProjectTeamTaskUserTemp",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZEMP"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -145,6 +228,14 @@
     "codeName" : "ProjectTeamUser",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUser",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -154,6 +245,14 @@
     "codeName" : "ProjectTeamUserTask",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUserTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -162,7 +261,15 @@
     } ],
     "codeName" : "ProjectteamPk",
     "logicName" : "项目团队成员选择",
-    "name" : "ProjectteamPk"
+    "name" : "ProjectteamPk",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZEMP"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -170,7 +277,15 @@
     } ],
     "codeName" : "StoryProductTeamPK",
     "logicName" : "产品团队成员选择",
-    "name" : "StoryProductTeamChoice"
+    "name" : "StoryProductTeamChoice",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZEMP"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -179,6 +294,14 @@
     "codeName" : "TaskMTeam",
     "logicName" : "任务多人团队",
     "name" : "TaskMTeam",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZEMP"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -188,6 +311,14 @@
     "codeName" : "TaskTeam",
     "logicName" : "任务团队",
     "name" : "TASKTEAM",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -196,7 +327,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZEMP"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "BugUser",

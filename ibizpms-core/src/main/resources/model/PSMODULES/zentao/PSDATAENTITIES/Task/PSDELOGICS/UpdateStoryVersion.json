@@ -105,6 +105,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select version as STORYVERSION from zt_story where id = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",

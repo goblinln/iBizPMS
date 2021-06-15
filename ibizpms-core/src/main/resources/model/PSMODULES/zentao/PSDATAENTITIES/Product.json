@@ -136,6 +136,14 @@
     "codeName" : "Account",
     "logicName" : "指定用户数据",
     "name" : "Account",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -153,7 +161,35 @@
     } ],
     "codeName" : "AllList",
     "logicName" : "全部产品",
-    "name" : "AllList"
+    "name" : "AllList",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "NOTEQ",
+            "condType" : "SINGLE",
+            "condValue" : "closed",
+            "name" : "STATUS 不等于(<>) (closed)",
+            "ignoreEmpty" : false
+          }, {
+            "condType" : "CUSTOM",
+            "name" : "自定义条件"
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -167,6 +203,14 @@
     "codeName" : "AllProduct",
     "logicName" : "所有产品",
     "name" : "AllProduct",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -176,6 +220,14 @@
     "codeName" : "CheckNameOrCode",
     "logicName" : "校验产品名称或产品代号是否已经存在",
     "name" : "CheckNameOrCode",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -190,6 +242,14 @@
     "codeName" : "CurDefault",
     "logicName" : "默认查询",
     "name" : "CurDefault",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -207,7 +267,36 @@
     } ],
     "codeName" : "CurProject",
     "logicName" : "当前项目",
-    "name" : "CURPROJECT"
+    "name" : "CURPROJECT",
+    "getPSDEDQMain" : {
+      "getChildPSDEDQJoins" : [ {
+        "getJoinPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
+        },
+        "joinType" : "1N",
+        "name" : "ZT_PROJECTPRODUCT* [存在1:N（EXISTS (SELECT)）](DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCT_PRODUCT)",
+        "getPSDEDQGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "连接条件",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfparentkey",
+            "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+            "getPSVARTypeId" : "DATACONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        }
+      } ],
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -216,6 +305,34 @@
     "codeName" : "CurUer",
     "logicName" : "当前用户",
     "name" : "CurUer",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "open",
+            "name" : "ACL 等于(=) (open)",
+            "ignoreEmpty" : false
+          }, {
+            "condType" : "CUSTOM",
+            "name" : "自定义条件"
+          } ]
+        } ]
+      }
+    },
     "customCode" : true,
     "privQuery" : true
   }, {
@@ -231,6 +348,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -249,6 +374,23 @@
     "codeName" : "DeveloperQuery",
     "logicName" : "参与者（启用权限）",
     "name" : "DeveloperQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "?"
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -258,6 +400,14 @@
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -267,6 +417,14 @@
     "codeName" : "My",
     "logicName" : "我的数据",
     "name" : "My",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -285,6 +443,26 @@
     "codeName" : "OpenQuery",
     "logicName" : "公开查询（启用权限）",
     "name" : "OpenQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "open",
+          "name" : "ACL 等于(=) (open)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -303,6 +481,71 @@
     "codeName" : "ProductManagerQuery",
     "logicName" : "创建者或更新者（启用权限）",
     "name" : "ProductManagerQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "AND",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "private",
+            "name" : "ACL 等于(=) (private)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "OR",
+            "condType" : "GROUP",
+            "name" : "OR",
+            "getPSDEDQConditions" : [ {
+              "condOp" : "EQ",
+              "condType" : "SINGLE",
+              "condValue" : "srfloginname",
+              "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+              "getPSVARTypeId" : "SESSIONCONTEXT",
+              "ignoreEmpty" : false
+            }, {
+              "condOp" : "EQ",
+              "condType" : "SINGLE",
+              "condValue" : "srfloginname",
+              "name" : "CREATEDBY 等于(=) 用户上下文(srfloginname)",
+              "getPSVARTypeId" : "SESSIONCONTEXT",
+              "ignoreEmpty" : false
+            }, {
+              "condOp" : "EQ",
+              "condType" : "SINGLE",
+              "condValue" : "srfloginname",
+              "name" : "QD 等于(=) 用户上下文(srfloginname)",
+              "getPSVARTypeId" : "SESSIONCONTEXT",
+              "ignoreEmpty" : false
+            }, {
+              "condOp" : "EQ",
+              "condType" : "SINGLE",
+              "condValue" : "srfloginname",
+              "name" : "RD 等于(=) 用户上下文(srfloginname)",
+              "getPSVARTypeId" : "SESSIONCONTEXT",
+              "ignoreEmpty" : false
+            }, {
+              "condOp" : "EQ",
+              "condType" : "SINGLE",
+              "condValue" : "srfloginname",
+              "name" : "PO 等于(=) 用户上下文(srfloginname)",
+              "getPSVARTypeId" : "SESSIONCONTEXT",
+              "ignoreEmpty" : false
+            } ]
+          } ]
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -312,6 +555,14 @@
     "codeName" : "ProductPM",
     "logicName" : "产品总览",
     "name" : "ProductPM",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -334,6 +585,14 @@
     "codeName" : "ProductTeam",
     "logicName" : "产品团队",
     "name" : "ProductTeam",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -348,7 +607,15 @@
     "codeName" : "Simple",
     "dEFGroupType" : "BASEFIELDS",
     "logicName" : "基础属性查询",
-    "name" : "SIMPLE"
+    "name" : "SIMPLE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -365,7 +632,36 @@
     } ],
     "codeName" : "StoryCurProject",
     "logicName" : "当前项目",
-    "name" : "StoryCURPROJECT"
+    "name" : "StoryCURPROJECT",
+    "getPSDEDQMain" : {
+      "getChildPSDEDQJoins" : [ {
+        "getJoinPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
+        },
+        "joinType" : "1N",
+        "name" : "ZT_PROJECTPRODUCT* [存在1:N（EXISTS (SELECT)）](DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCT_PRODUCT)",
+        "getPSDEDQGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "连接条件",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "project",
+            "name" : "PROJECT 等于(=) 数据上下文(project)",
+            "getPSVARTypeId" : "DATACONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        }
+      } ],
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -378,7 +674,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCT"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
@@ -3248,6 +3552,7 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "delete from T_IBZ_TOP  where type = 'product' and objectid = ? and account = ?",
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -3301,6 +3606,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t1.id) as PRODUCTPLANCNT from zt_productplan t1 where t1.deleted = '0' and t1.product = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -3320,6 +3627,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t1.id) as RELEASECNT from zt_release t1 where t1.deleted = '0' and t1.product = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -3351,6 +3660,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as RELATEDBUGCNT from zt_bug t where t.deleted = '0'  AND t.product = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -3399,6 +3710,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as DRAFTSTORYCNT from zt_story t where t.deleted = '0'  AND t.product = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -3462,6 +3775,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select count(t1.id) as TESTSUITECNT from ZT_TESTSUITE t1 where t1.deleted = '0' and ( t1.`TYPE` = 'public' OR ( t1.`TYPE` = 'private' AND t1.`ADDEDBY` = ? ) ) and t1.product = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -3493,6 +3808,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t1.id) as CASECNT from zt_case t1 where t1.deleted = '0' and t1.product = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -3524,6 +3841,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as RELATEDBUGCNT from zt_bug t where t.deleted = '0'  AND t.product = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall3",
@@ -3555,6 +3874,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t1.id) as TESTTASKCNT from ZT_TESTTASK t1 where t1.deleted = '0' and t1.product = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -3604,6 +3925,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select (case when max(t1.`objectorder`) >= 16000000  then max(t1.`objectorder`) + 1 else 16000000 end) as `objectorder` from T_IBZ_TOP t1 where t1.type = 'product' and t1.account= ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -3744,6 +4067,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select COUNT(1) as ISTOP from t_ibz_top t where t.OBJECTID = ? and  t.type = 'product'  and t.ACCOUNT = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",

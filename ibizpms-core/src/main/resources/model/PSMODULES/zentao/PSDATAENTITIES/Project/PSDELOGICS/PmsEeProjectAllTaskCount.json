@@ -60,6 +60,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(*) as plan from zt_task t1 where t1.deleted = '0' and  t1.project in (?) and t1.taskspecies = 'plan'\nand (\nt1.assignedTo = ? or t1.openedBy = ?  or FIND_IN_SET(?, t1.finishedList) or t1.closedBy =? or t1.finishedBy = ? or t1.canceledBy = ?\n)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
@@ -117,6 +119,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(*) as temp  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and taskspecies = 'temp' and (\nt1.assignedTo = ? or t1.openedBy = ?  or FIND_IN_SET(?, t1.finishedList) or t1.closedBy =? or t1.finishedBy = ? or t1.canceledBy = ?\n)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall4",
@@ -162,6 +166,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(*) as all from zt_task t1 where t1.deleted = '0'  and t1.project in (?)  and (\nt1.assignedTo = ? or t1.openedBy = ?  or FIND_IN_SET(?, t1.finishedList) or t1.closedBy =? or t1.finishedBy = ? or t1.canceledBy = ?\n)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -219,6 +225,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(*) as cycle  from zt_task t1 where t1.deleted = '0' and t1.project in (?) and t1.taskspecies = 'cycle'\nand (\nt1.assignedTo = ? or t1.openedBy = ?  or FIND_IN_SET(?, t1.finishedList) or t1.closedBy =? or t1.finishedBy = ? or t1.canceledBy = ?\n)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",

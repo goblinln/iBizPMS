@@ -714,14 +714,7 @@
       "name" : "ROOT",
       "codeName" : "Root"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ],
   "name" : "IBZ_PROJECTMODULE",
   "getPSDEName" : "IBZ_PROJECTMODULE",

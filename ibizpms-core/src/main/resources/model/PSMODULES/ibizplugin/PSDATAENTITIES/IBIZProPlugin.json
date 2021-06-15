@@ -71,6 +71,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProPlugin.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_PLUGIN"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -79,7 +87,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProPlugin.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_PLUGIN"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

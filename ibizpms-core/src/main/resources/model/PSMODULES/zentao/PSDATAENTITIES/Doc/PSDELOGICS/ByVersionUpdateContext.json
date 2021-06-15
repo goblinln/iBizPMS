@@ -31,6 +31,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select t.`content` as content from zt_doccontent t where t.`version` = ? and t.`doc` = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",

@@ -44,6 +44,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(1) as Assigntomebugcnt from zt_bug t where t.deleted = '0' and t.product = ? and t.assignedTo = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

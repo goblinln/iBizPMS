@@ -22,6 +22,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select t.product,t1.`name` as productname from zt_projectproduct t left join zt_product t1 on t1.id = t.product where t.project = ? LIMIT 0,1",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",

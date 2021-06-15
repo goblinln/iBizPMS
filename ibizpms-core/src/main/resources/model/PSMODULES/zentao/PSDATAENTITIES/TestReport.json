@@ -167,6 +167,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTREPORT"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -180,7 +188,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTREPORT"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -1820,6 +1836,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as bugcnt\nFROM `zt_bug` t1 \nwhere t1.OPENEDBUILD = (select build from  zt_testtask  where id = ?)  and t1.openedDate > (select `begin` from  zt_testtask   where id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall11",
@@ -1869,6 +1887,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as effective\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t  where t.id = ?)  and t1.openedDate > (select tt.`begin` from  zt_testtask tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?\n) and t1.`status` in ('resolved','closed') and t1.resolution in ('fixed','postponed')",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall3",
@@ -1900,6 +1920,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as casecnt\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nLEFT JOIN zt_testtask t21 on t11.task = t21.id\nWHERE  t1.`DELETED` = '0' and t21.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall5",
@@ -1949,6 +1971,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as failcase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nleft join zt_testresult t21 on t21.run = t11.id\nLEFT JOIN zt_testtask t31 on t31.id = t11.task\nWHERE  t1.`DELETED` = '0'  and t21.date > (SELECT `BEGIN` from zt_testtask where id =  ? ) and t21.date < (SELECT CONCAT(DATE_FORMAT(`end`,'%Y-%m-%d'),' 23:59:59') from zt_testtask where id = ? ) and t31.id = ?  and t21.caseResult = 'fail') t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall15",
@@ -1980,6 +2004,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select case when t.members is null then '' else t.members  end as members from (SELECT  GROUP_CONCAT(DISTINCT t1.lastRunner) as members from zt_testrun t1  LEFT JOIN zt_testtask t21 on t21.id = t1.task where t21.id = ?) t\n",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -2046,6 +2072,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as resolvedcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t where t.id = ?)   and t1.openedDate > (select tt.`begin` from  zt_testtask tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?\n)  and t1.`status` in ('resolved','closed')",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -2095,6 +2123,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as rencase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nINNER join zt_testresult t21 on t21.run = t11.id\nLEFT JOIN zt_testtask t31 on t31.id = t11.task\nWHERE  t1.`DELETED` = '0' and t21.date > (SELECT `BEGIN` from zt_testtask where id = ?) and t21.date < (SELECT CONCAT(DATE_FORMAT(`end`,'%Y-%m-%d'),' 23:59:59') from zt_testtask where id = ?) and t31.id =  ? ) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall9",
@@ -2144,6 +2174,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as casebugcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select tt.build from zt_testtask tt where tt.id = ?)   and t1.openedDate > (select tt.`begin` from zt_testtask tt where tt.id = ? and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?\n)\n)  and t1.`case` > 0",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall14",
@@ -2364,6 +2396,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select CONCAT_WS('','本页共 ',?,' 个需求，预计 ',case when ? is null then 0 else ? end,' 个工时，用例覆盖率 ',CONCAT(ROUND(?/(case when ?= 0 or ? is null then 1 else ? end) * 100, 0)),'%。<br>','共测试了1个版本。共有',?,'个用例，共执行',?,'个用例，产生了',?,'个结果，失败的用例有',?,'个。<br>','共发现',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"影响版本在测试轮次内，并且创建时间在测试时间范围内产生的Bug数。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>，遗留',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"Bug状态是激活，或Bug的解决时间在测试结束时间之后。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>。 用例执行产生',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"测试时间范围内，用例执行失败后创建的Bug。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>。 有效Bug率（方案为已解决或延期 / 状态为已解决或已关闭）：',CONCAT(ROUND(?/(case when ? = 0 or ? is null then 1 else ? end) * 100, 2), '%'),'，用例发现Bug率（用例创建的Bug / 发现Bug数）：',CONCAT(ROUND(?/(case when ? = 0 or ? is null then 1 else ? end)* 100, 2) , '%')) as OVERVIEWS from dual",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall10",
@@ -2413,6 +2447,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) testresultcnt from zt_testresult t1 \nINNER JOIN zt_case t31 on t31.id = t1.`case`\ninner join zt_testrun t11 on t1.run = t11.id and t1.`case` = t11.`case`\nINNER JOIN zt_testtask t41 on t41.id = t11.task\nwhere t41.id = ?  and t31.deleted = '0' and t1.date >  ? and t1.date <  ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall7",
@@ -2444,6 +2480,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\ncount(1) as casecnts\nFROM `zt_story` t1 \nLEFT JOIN zt_build t21 on FIND_IN_SET(t1.id,t21.stories)\nLEFT JOIN zt_testtask t31 on t31.build = t21.id\nWHERE t1.`DELETED` = '0'  and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed'))) and EXISTS(select 1 from zt_case t where t.deleted = '0' and t1.id = t.story) and t31.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -2475,6 +2513,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as storycnt, sum(t1.ESTIMATE) as storyestimate,GROUP_CONCAT(DISTINCT t1.id ORDER BY t1.id asc) as stories\nFROM `zt_story` t1 \nLEFT JOIN zt_build t11 on FIND_IN_SET(t1.id,t11.stories)\nLEFT JOIN zt_testtask t21 on t21.build = t11.id\nWHERE t1.`DELETED` = '0' and t21.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall8",
@@ -2533,6 +2573,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as ylbugcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t  where t.id = ?)   and t1.openedDate > (select tt.`begin` from  zt_testtask tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testtask tt  where tt.id = ?\n) and (t1.`status` = 'active' or t1.resolvedDate > (select tt.`end` from zt_testtask tt where tt.id = ?))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -2564,6 +2606,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select CONCAT_WS(' ',DATE_FORMAT(now(),'%Y-%m-%d'),concat('TESTTASK#',t.id),t.`name`,'测试报告') as TITLE,t.`begin`,t.`end`,t.project,t.build as builds,(select GROUP_CONCAT(DISTINCT tt.`case` order by tt.`case` asc Separator ',') from zt_testrun tt where tt.task = t.id GROUP BY tt.task) as cases,t.id as objectID,'TESTTASK' as objectType,t.`OWNER` as `OWNER` from zt_testtask t where t.deleted = '0' and t.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall6",
@@ -2595,6 +2639,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as storycnts\nFROM `zt_story` t1 \nLEFT JOIN zt_build t21 on FIND_IN_SET(t1.id,t21.stories)\nLEFT JOIN zt_testtask t31 on t31.build = t21.id\nWHERE t1.`DELETED` = '0' and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed'))) and t31.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall16",
@@ -2614,6 +2660,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select name  as projectname from zt_project where id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -2701,6 +2749,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as rencase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nINNER join zt_testresult t21 on t21.run = t11.id\nWHERE  t1.`DELETED` = '0' \n AND FIND_IN_SET ( t1.ID, ?) and FIND_IN_SET(t11.task ,?) \nand t21.date > ? and t21.date < (SELECT CONCAT(DATE_FORMAT(?,'%Y-%m-%d'),' 23:59:59') )  ) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -2732,6 +2782,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as storycnt, sum(t1.ESTIMATE) as storyestimate,GROUP_CONCAT(DISTINCT t1.id ORDER BY t1.id asc) as stories\nFROM `zt_story` t1 \nLEFT JOIN zt_build t11 on FIND_IN_SET(t1.id,t11.stories)\nLEFT JOIN zt_testtask t21 on t21.build = t11.id\nWHERE t1.`DELETED` = '0' and t21.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall9",
@@ -2790,6 +2842,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) testresultcnt from zt_testresult t1 \nINNER JOIN zt_case t31 on t31.id = t1.`case`\ninner join zt_testrun t11 on t1.run = t11.id and t1.`case` = t11.`case`\nwhere   t31.deleted = '0' and t1.date >  ? and t1.date <  ?  and find_in_set(t11.case,?) and find_in_set(t11.task,?)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall11",
@@ -2839,6 +2893,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as resolvedcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t where t.id = ?)   and t1.openedDate > ? and t1.openedDate < (select CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59') \n)  and t1.`status` in ('resolved','closed')",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall13",
@@ -3047,6 +3103,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select CONCAT_WS('','本页共 ',?,' 个需求，预计 ',case when ? is null then 0 else ? end,' 个工时，用例覆盖率 ',CONCAT(ROUND(?/(case when ?= 0 or ? is null then 1 else ? end) * 100, 0)),'%。<br>','共测试了1个版本。共有',?,'个用例，共执行',?,'个用例，产生了',?,'个结果，失败的用例有',?,'个。<br>','共发现',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"影响版本在测试轮次内，并且创建时间在测试时间范围内产生的Bug数。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>，遗留',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"Bug状态是激活，或Bug的解决时间在测试结束时间之后。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>。 用例执行产生',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"测试时间范围内，用例执行失败后创建的Bug。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>。 有效Bug率（方案为已解决或延期 / 状态为已解决或已关闭）：',CONCAT(ROUND(?/(case when ? = 0 or ? is null then 1 else ? end) * 100, 2), '%'),'，用例发现Bug率（用例创建的Bug / 发现Bug数）：',CONCAT(ROUND(?/(case when ? = 0 or ? is null then 1 else ? end)* 100, 2) , '%')) as OVERVIEWS from dual",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall5",
@@ -3078,6 +3136,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as storycnts\nFROM `zt_story` t1 \nLEFT JOIN zt_build t21 on FIND_IN_SET(t1.id,t21.stories)\nLEFT JOIN zt_testtask t31 on t31.build = t21.id\nWHERE t1.`DELETED` = '0' and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed'))) and t31.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall6",
@@ -3109,6 +3169,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\ncount(1) as casecnts\nFROM `zt_story` t1 \nLEFT JOIN zt_build t21 on FIND_IN_SET(t1.id,t21.stories)\nLEFT JOIN zt_testtask t31 on t31.build = t21.id\nWHERE t1.`DELETED` = '0'  and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed'))) and EXISTS(select 1 from zt_case t where t.deleted = '0' and t1.id = t.story) and t31.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall8",
@@ -3158,6 +3220,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as casebugcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select tt.build from zt_testtask tt where tt.id = ?)   and t1.openedDate > ? and t1.openedDate < (select CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59') )  and t1.`case` > 0",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -3233,6 +3297,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as failcase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nleft join zt_testresult t21 on t21.run = t11.id\nLEFT JOIN zt_testtask t31 on t31.id = t11.task\nWHERE  t1.`DELETED` = '0'  \nAND FIND_IN_SET ( t1.ID, ?) and FIND_IN_SET(t11.task , ?)  and t21.date > ? \nand t21.date < (SELECT CONCAT(DATE_FORMAT(?,'%Y-%m-%d'),' 23:59:59') )   and t21.caseResult = 'fail') t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall10",
@@ -3282,6 +3348,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as effective\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t  where t.id = ?)  and t1.openedDate > ? and t1.openedDate < (select CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59') \n) and t1.`status` in ('resolved','closed') and t1.resolution in ('fixed','postponed')",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -3322,6 +3390,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as casecnt from ( SELECT\nDISTINCT t1.*\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nWHERE  t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, ?) and FIND_IN_SET(t11.task ,?) )t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall12",
@@ -3371,6 +3441,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as bugcnt\nFROM `zt_bug` t1 \nwhere t1.OPENEDBUILD = (select build from  zt_testtask  where id = ?)  and t1.openedDate > ?\n and t1.openedDate < (select CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59') )",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall7",
@@ -3429,6 +3501,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as ylbugcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t  where t.id = ?)   and t1.openedDate > ? and t1.openedDate < (select CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59') \n) and (t1.`status` = 'active' or t1.resolvedDate > ?)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -3491,6 +3565,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as casecnt from ( SELECT\nDISTINCT t1.*\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nWHERE  t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, ?) and FIND_IN_SET(t11.task ,?) )t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -3539,6 +3615,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as buildcnt from zt_build t where FIND_IN_SET(t.id,?)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall3",
@@ -3597,6 +3675,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as rencase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nINNER join zt_testresult t21 on t21.run = t11.id\nWHERE  t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, ?) and FIND_IN_SET(t11.task ,?) and t21.date >   ? and t21.date <  ? ) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall5",
@@ -3655,6 +3735,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) testresultcnt from zt_testresult t1 \nINNER JOIN zt_case t31 on t31.id = t1.`case`\ninner join zt_testrun t11 on t1.run = t11.id and t1.`case` = t11.`case`\nwhere FIND_IN_SET(t11.task, ?) and FIND_IN_SET(t11.`case`,?) and t31.deleted = '0' and t1.date >   ?  and t1.date <  CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59')",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall7",
@@ -3713,6 +3795,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as \tresolvedcnt from (\nSELECT\nDISTINCT t1.*\nFROM `zt_bug` t1 \n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)\nwhere  t1.openedDate > ? and t1.openedDate < CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59') and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0 and FIND_IN_SET('trunk',t1.openedBuild) = 0 and  t1.`status` in ('resolved','closed')) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall6",
@@ -3771,6 +3855,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as\teffective from (\nSELECT\nDISTINCT t1.*\nFROM `zt_bug` t1 \n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)\nwhere  t1.openedDate > ? and t1.openedDate < CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59') and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0 and t1.`status` in ('resolved','closed') and t1.resolution in ('fixed','postponed')) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall14",
@@ -3802,6 +3888,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\ncount(1) as casecnts\nFROM `zt_story` t1 \nWHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, ?) and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed'))) and EXISTS(select 1 from zt_case t where t.deleted = '0' and t1.id = t.story)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall8",
@@ -3860,6 +3948,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as \tbugcnt from (\nSELECT\nDISTINCT t1.*\nFROM `zt_bug` t1 \n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)\nwhere  t1.openedDate > ? and t1.openedDate < CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59') and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall9",
@@ -4113,6 +4203,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select CONCAT_WS('','本页共 ',?,' 个需求，预计 ',case when ? is null then 0 else ? end,' 个工时，用例覆盖率 ',CONCAT(ROUND(?/(case when ?= 0 or ? is null then 1 else ? end) * 100, 0)),'%。<br>','共测试了',?,'个版本。共有',?,'个用例，共执行',?,'个用例，产生了',?,'个结果，失败的用例有',?,'个。<br>','共发现',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"影响版本在测试轮次内，并且创建时间在测试时间范围内产生的Bug数。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>，遗留',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"Bug状态是激活，或Bug的解决时间在测试结束时间之后。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>。 用例执行产生',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"测试时间范围内，用例执行失败后创建的Bug。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>。 有效Bug率（方案为已解决或延期 / 状态为已解决或已关闭）：',CONCAT(case when ? = 0 or ? is null then 0 else ROUND(?/(case when ? = 0 or ? is null then 1 else ? end) * 100, 2) end, '%'),'，用例发现Bug率（用例创建的Bug / 发现Bug数）：',CONCAT(case when ? = 0 or ? is null then 0 else ROUND(?/(case when ? = 0 or ? is null then 1 else ? end)* 100, 2)  end, '%')) as OVERVIEWS from dual",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall11",
@@ -4171,6 +4263,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as \tcasebugcnt from (\nSELECT\nDISTINCT t1.*\nFROM `zt_bug` t1 \n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)\nwhere  t1.openedDate > ? and t1.openedDate <CONCAT(DATE_FORMAT(?,'%Y-%m-%d'),' 23:59:59') and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0 and t1.`case` > 0) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -4229,6 +4323,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as failcase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nleft join zt_testresult t21 on t21.run = t11.id\nWHERE  t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, ?) and FIND_IN_SET(t11.task , ?) and t21.caseResult = 'fail' and t21.date >  ? and t21.date <  ? ) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall10",
@@ -4296,6 +4392,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as \tylbugcnt from (\nSELECT\nDISTINCT t1.*\nFROM `zt_bug` t1 \n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)\nwhere  t1.openedDate > ? and t1.openedDate < CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59') and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0 and  (t1.`status` = 'active' or t1.resolvedDate > CONCAT( DATE_FORMAT( ?, '%Y-%m-%d'),' 23:59:59'))) t\n",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall13",
@@ -4327,6 +4425,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as storycnts\nFROM `zt_story` t1 \nWHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID,?) and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed')))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -4358,6 +4458,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as storycnt, sum(t1.ESTIMATE) as storyestimate\nFROM `zt_story` t1 \nWHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, ?)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -4420,6 +4522,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select case when GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) is null then '' else GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) end as cases,case when GROUP_CONCAT(DISTINCT t1.lastRunner) is null then '' else GROUP_CONCAT(DISTINCT t1.lastRunner) end  as MEMBERS\tfrom (select t1.*,? as project from zt_testrun t1 left join zt_case t11 on t1.`case` = t11.id where t11.deleted = '0' and FIND_IN_SET(t1.task,(select GROUP_CONCAT(t1.id) as tasks from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project))) t1 GROUP BY t1.project\n",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -4451,6 +4555,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select GROUP_CONCAT(t1.id) as tasks,GROUP_CONCAT(DISTINCT t1.build) as builds  from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall5",
@@ -4518,6 +4624,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select GROUP_CONCAT(t1.id) as bugs from zt_bug t1 where t1.deleted = '0' and t1.product = ? and t1.RESOLUTION in('fixed','postponed') and t1.openedDate < ? and (FIND_IN_SET(t1.id,(select GROUP_CONCAT(t2.bugs) from zt_build t2 where t2.id in (select build from zt_testtask t3 where t3.deleted = '0' and t3.project = ?) ORDER BY t2.product)) or (t1.resolvedBuild = 'trunk' and t1.resolvedDate >= ? and t1.resolvedDate <= CONCAT(?,' 23:59:59'))) GROUP BY t1.product",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall3",
@@ -4549,6 +4657,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select  t1.`begin`,t1.`end` , CONCAT_WS( ' ', DATE_FORMAT( now( ), '%Y-%m-%d' ), concat( 'PROJECT#', t1.id ), t1.`name`, '测试报告' ) AS TITLE,t1.name as projectname from zt_project t1 where t1.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -4597,6 +4707,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select t.product  from (select DISTINCT t.product from zt_testtask t where t.deleted = '0' and FIND_IN_SET(t.id,(select GROUP_CONCAT(t1.id) as tasks from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project))) t  LIMIT 0,1",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall6",
@@ -4628,6 +4740,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as productcnt from ( select DISTINCT t.product from zt_testtask t where t.deleted = '0' and FIND_IN_SET(t.id,(select GROUP_CONCAT(t1.id) as tasks from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project))) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -4718,6 +4832,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select GROUP_CONCAT(t1.id) as stories from ( select DISTINCT t1.* from zt_story t1 \nleft join zt_build t11 on FIND_IN_SET(t1.id,t11.stories)\nwhere t1.deleted = '0' and  FIND_IN_SET(t11.id,(select GROUP_CONCAT(DISTINCT t1.build) as builds  from zt_testtask t1 where t1.project = ? and t1.deleted = '0' GROUP BY t1.project )) ) t1 GROUP BY t1.product",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -4820,6 +4936,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select case when GROUP_CONCAT(t1.id) is null then '' else GROUP_CONCAT(t1.id) end as stories from ( select DISTINCT t1.* from zt_story t1 \nleft join zt_build t11 on FIND_IN_SET(t1.id,t11.stories)\nwhere t1.deleted = '0' and  FIND_IN_SET(t11.id,?) ) t1 GROUP BY t1.product",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -4851,6 +4969,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select case when GROUP_CONCAT(DISTINCT t1.build) is null then '' else GROUP_CONCAT(DISTINCT t1.build) end as builds  from zt_testtask t1 where FIND_IN_SET(t1.id, ?) and t1.deleted = '0' GROUP BY t1.project",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -4899,6 +5019,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select t.product,t.project,tt.`name` as productname,ttt.`name` as projectname,t.`OWNER` as `OWNER` from zt_testtask t left join zt_product tt on t.product = tt.id left join zt_project ttt on t.project = ttt.id where t.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -4983,6 +5105,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select GROUP_CONCAT(t1.id) as bugs from zt_bug t1 where t1.deleted = '0' and t1.product = ? and t1.RESOLUTION in('fixed','postponed') and t1.openedDate < ? and (FIND_IN_SET(t1.id,(select GROUP_CONCAT(t2.bugs) from zt_build t2 where t2.id in (select build from zt_testtask t3 where t3.deleted = '0' and FIND_IN_SET(t3.id,?)) ORDER BY t2.product)) or (t1.resolvedBuild = 'trunk' and t1.resolvedDate >= ? and t1.resolvedDate <= CONCAT(?,' 23:59:59'))) GROUP BY t1.product",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall3",
@@ -5014,6 +5138,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select CONCAT_WS(' ',DATE_FORMAT(now(),'%Y-%m-%d'),concat('TESTTASK#',t.id),t.`name`,'测试报告') as TITLE,t.`begin`,t.`end`,t.project,t.build as builds,(select GROUP_CONCAT(DISTINCT tt.`case` order by tt.`case` asc Separator ',') from zt_testrun tt where tt.task = t.id GROUP BY tt.task) as cases,t.id as objectID,'TESTTASK' as objectType from zt_testtask t where t.deleted = '0' and t.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -5054,6 +5180,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select case when GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) is null then '' else GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) end as cases,case when GROUP_CONCAT(DISTINCT t1.lastRunner) is null then '' else GROUP_CONCAT(DISTINCT t1.lastRunner) end  as MEMBERS\tfrom (select t1.*,? as project from zt_testrun t1 left join zt_case t11 on t1.`case` = t11.id where t11.deleted = '0' and FIND_IN_SET(t1.task, ?)) t1 GROUP BY t1.project",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -5114,6 +5242,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select case when GROUP_CONCAT(t1.id) is null then '' else GROUP_CONCAT(t1.id) end as stories from ( select DISTINCT t1.* from zt_story t1 \nleft join zt_build t11 on FIND_IN_SET(t1.id,t11.stories)\nwhere t1.deleted = '0' and  FIND_IN_SET(t11.id,?) ) t1 GROUP BY t1.product",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Prepareparam1",
@@ -5187,6 +5317,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select t.product  from (select DISTINCT t.product from zt_testtask t where t.deleted = '0' and FIND_IN_SET(t.id,?)) t  LIMIT 0,1",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall5",
@@ -5254,6 +5386,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select GROUP_CONCAT(t1.id) as bugs from zt_bug t1 where t1.deleted = '0' and t1.product = ? and t1.RESOLUTION in('fixed','postponed') and t1.openedDate < ? and (FIND_IN_SET(t1.id,(select GROUP_CONCAT(t2.bugs) from zt_build t2 where t2.id in (select build from zt_testtask t3 where t3.deleted = '0' and FIND_IN_SET(t3.id,?)) ORDER BY t2.product)) or (t1.resolvedBuild = 'trunk' and t1.resolvedDate >= ? and t1.resolvedDate <= CONCAT(?,' 23:59:59'))) GROUP BY t1.product",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall3",
@@ -5285,6 +5419,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select  t1.`begin`,t1.`end` , CONCAT_WS( ' ', DATE_FORMAT( now( ), '%Y-%m-%d' ), concat( 'PROJECT#', t1.id ), t1.`name`, '测试报告' ) AS TITLE,t1.name as projectname from zt_project t1 where t1.id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall6",
@@ -5316,6 +5452,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as productcnt from ( select DISTINCT t.product from zt_testtask t where t.deleted = '0' and FIND_IN_SET(t.id,?)) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -5390,6 +5528,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select case when GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) is null then '' else GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) end as cases,case when GROUP_CONCAT(DISTINCT t1.lastRunner) is null then '' else GROUP_CONCAT(DISTINCT t1.lastRunner) end  as MEMBERS\tfrom (select t1.*,? as project from zt_testrun t1 left join zt_case t11 on t1.`case` = t11.id where t11.deleted = '0' and FIND_IN_SET(t1.task, ?)) t1 GROUP BY t1.project",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -5421,6 +5561,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select case when GROUP_CONCAT(DISTINCT t1.build) is null then '' else GROUP_CONCAT(DISTINCT t1.build) end as builds  from zt_testtask t1 where FIND_IN_SET(t1.id, ?) and t1.deleted = '0' GROUP BY t1.project",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -5481,6 +5623,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\ncount(1) as casecnts\nFROM `zt_story` t1 \nWHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_TESTREPORT WHERE ID= ?)) and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed'))) and EXISTS(select 1 from zt_case t where t.deleted = '0' and t1.id = t.story)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall11",
@@ -5530,6 +5674,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as casebugcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t inner join zt_testreport tt on t.id = tt.tasks where tt.id = ?)   and t1.openedDate > (select tt.`begin` from zt_testreport tt where tt.id = ? and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id = ?\n)\n)  and t1.`case` > 0",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -5561,6 +5707,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as storycnt, sum(t1.ESTIMATE) as storyestimate,GROUP_CONCAT(DISTINCT t1.id ORDER BY t1.id asc) as stories\nFROM `zt_story` t1 \nWHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_TESTREPORT WHERE ID= ?))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall3",
@@ -5619,6 +5767,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as rencase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nINNER join zt_testresult t21 on t21.run = t11.id\nWHERE  t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT cases FROM ZT_TESTREPORT WHERE ID= ?)) and t11.task = (SELECT tasks FROM ZT_TESTREPORT WHERE ID= ?) and t21.date >   (SELECT `BEGIN` FROM ZT_TESTREPORT WHERE ID= ?) and t21.date <  (SELECT CONCAT( DATE_FORMAT( `end`, '%Y-%m-%d'),' 23:59:59') FROM ZT_TESTREPORT WHERE ID= ?) ) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -5659,6 +5809,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as casecnt\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nWHERE  t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT cases FROM ZT_TESTREPORT WHERE ID= ?)) and t11.task = (SELECT tasks FROM ZT_TESTREPORT WHERE ID= ?)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall12",
@@ -5690,6 +5842,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as storycnts\nFROM `zt_story` t1 \nWHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_TESTREPORT WHERE ID= ?)) and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed')))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall5",
@@ -5721,6 +5875,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) testresultcnt from zt_testresult t1 \nINNER JOIN zt_case t31 on t31.id = t1.`case`\ninner join zt_testrun t11 on t1.run = t11.id and t1.`case` = t11.`case`\ninner join zt_testreport t21 on t11.task = t21.tasks\nwhere t21.id = ? and FIND_IN_SET(t11.`case`,t21.cases) and t31.deleted = '0' and t1.date >   t21.`begin` and t1.date <  CONCAT( DATE_FORMAT( t21.`end`, '%Y-%m-%d'),' 23:59:59')",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -5779,6 +5935,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as failcase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nleft join zt_testresult t21 on t21.run = t11.id\nWHERE  t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT cases FROM ZT_TESTREPORT WHERE ID= ?)) and t11.task = (SELECT tasks FROM ZT_TESTREPORT WHERE ID= ?) and t21.caseResult = 'fail' and t21.date >   (SELECT `BEGIN` FROM ZT_TESTREPORT WHERE ID= ?) and t21.date <  (SELECT CONCAT( DATE_FORMAT( `end`, '%Y-%m-%d'),' 23:59:59') FROM ZT_TESTREPORT WHERE ID= ?)) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall9",
@@ -5987,6 +6145,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select CONCAT_WS('','本页共 ',?,' 个需求，预计 ',case when ? is null then 0 else ? end,' 个工时，用例覆盖率 ',CONCAT(ROUND(?/(case when ?= 0 or ? is null then 1 else ? end) * 100, 0)),'%。<br>','共测试了1个版本。共有',?,'个用例，共执行',?,'个用例，产生了',?,'个结果，失败的用例有',?,'个。<br>','共发现',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"影响版本在测试轮次内，并且创建时间在测试时间范围内产生的Bug数。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>，遗留',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"Bug状态是激活，或Bug的解决时间在测试结束时间之后。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>。 用例执行产生',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"测试时间范围内，用例执行失败后创建的Bug。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>。 有效Bug率（方案为已解决或延期 / 状态为已解决或已关闭）：',CONCAT(ROUND(?/(case when ? = 0 or ? is null then 1 else ? end) * 100, 2), '%'),'，用例发现Bug率（用例创建的Bug / 发现Bug数）：',CONCAT(ROUND(?/(case when ? = 0 or ? is null then 1 else ? end)* 100, 2) , '%')) as OVERVIEWS from dual",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall6",
@@ -6036,6 +6196,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as effective\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t inner join zt_testreport tt on t.id = tt.tasks where tt.id = ?)  and t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id = ?\n) and t1.`status` in ('resolved','closed') and t1.resolution in ('fixed','postponed')",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall7",
@@ -6085,6 +6247,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as resolvedcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t inner join zt_testreport tt on t.id = tt.tasks where tt.id = ?)   and t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id = ?\n)  and t1.`status` in ('resolved','closed')",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall8",
@@ -6134,6 +6298,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as bugcnt\nFROM `zt_bug` t1 \nwhere t1.OPENEDBUILD = (select t.build from zt_testtask t inner join zt_testreport tt on t.id = tt.tasks where tt.id = ?)  and t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id = ?\n)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -6209,6 +6375,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as ylbugcnt\nFROM `zt_bug` t1 \nwhere  t1.OPENEDBUILD = (select t.build from zt_testtask t inner join zt_testreport tt on t.id = tt.tasks where tt.id = ?)   and t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT( DATE_FORMAT( tt.`end`, '%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id = ?\n) and (t1.`status` = 'active' or t1.resolvedDate > (select tt.`end` from zt_testreport tt where tt.id = ?))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -6291,6 +6459,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) testresultcnt from zt_testresult t1 \nINNER JOIN zt_case t31 on t31.id = t1.`case`\ninner join zt_testrun t11 on t1.run = t11.id and t1.`case` = t11.`case`\ninner join zt_testreport t21 on FIND_IN_SET(t11.task, t21.tasks)\nwhere t21.id = ? and FIND_IN_SET(t11.`case`,t21.cases) and t31.deleted = '0' and t1.date >   t21.`begin` and t1.date <  CONCAT( DATE_FORMAT( t21.`end`, '%Y-%m-%d'),' 23:59:59')",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall6",
@@ -6349,6 +6519,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as\teffective from (\nSELECT\nDISTINCT t1.*\nFROM `zt_bug` t1 \n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)\nwhere  t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT(DATE_FORMAT(tt.`end`,'%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id = ?\n) and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0 and t1.`status` in ('resolved','closed') and t1.resolution in ('fixed','postponed')) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -6407,6 +6579,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as failcase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nleft join zt_testresult t21 on t21.run = t11.id\nWHERE  t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT cases FROM ZT_TESTREPORT WHERE ID= ?)) and FIND_IN_SET(t11.task , (SELECT tasks FROM ZT_TESTREPORT WHERE ID= ?)) and t21.caseResult = 'fail' and t21.date >   (SELECT `BEGIN` FROM ZT_TESTREPORT WHERE ID= ?) and t21.date <  (SELECT CONCAT( DATE_FORMAT( `end`, '%Y-%m-%d'),' 23:59:59') FROM ZT_TESTREPORT WHERE ID= ?)) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall12",
@@ -6438,6 +6612,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as buildcnt from zt_build t where FIND_IN_SET(t.id,(select tt.builds from zt_testreport tt where tt.id = ?))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -6478,6 +6654,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as casecnt from ( SELECT\nDISTINCT t1.*\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nWHERE  t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT cases FROM ZT_TESTREPORT WHERE ID= ?)) and FIND_IN_SET(t11.task ,(SELECT tasks FROM ZT_TESTREPORT WHERE ID= ?)) )t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall9",
@@ -6695,6 +6873,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select CONCAT_WS('','本页共 ',?,' 个需求，预计 ',case when ? is null then 0 else ? end,' 个工时，用例覆盖率 ',CONCAT(ROUND(?/(case when ?= 0 or ? is null then 1 else ? end) * 100, 0)),'%。<br>','共测试了',?,'个版本。共有',?,'个用例，共执行',?,'个用例，产生了',?,'个结果，失败的用例有',?,'个。<br>','共发现',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"影响版本在测试轮次内，并且创建时间在测试时间范围内产生的Bug数。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>，遗留',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"Bug状态是激活，或Bug的解决时间在测试结束时间之后。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>。 用例执行产生',?,'个Bug<a data-toggle=\"tooltip\" class=\"text-warning\" title=\"测试时间范围内，用例执行失败后创建的Bug。\" style=\"vertical-align: middle;padding: 2px;\"><i class=\"fa fa-question-circle\" style=\" color: #ff9800;\"></i></a>。 有效Bug率（方案为已解决或延期 / 状态为已解决或已关闭）：',CONCAT(ROUND(?/(case when ? = 0 or ? is null then 1 else ? end) * 100, 2), '%'),'，用例发现Bug率（用例创建的Bug / 发现Bug数）：',CONCAT(ROUND(?/(case when ? = 0 or ? is null then 1 else ? end)* 100, 2) , '%')) as OVERVIEWS from dual",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall13",
@@ -6726,6 +6906,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as storycnts\nFROM `zt_story` t1 \nWHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_TESTREPORT WHERE ID= ?)) and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed')))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -6757,6 +6939,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\nCOUNT(1) as storycnt, sum(t1.ESTIMATE) as storyestimate,GROUP_CONCAT(DISTINCT t1.id ORDER BY t1.id asc) as stories\nFROM `zt_story` t1 \nWHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_TESTREPORT WHERE ID= ?))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -6805,6 +6989,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT\ncount(1) as casecnts\nFROM `zt_story` t1 \nWHERE t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT STORIES FROM ZT_TESTREPORT WHERE ID= ?)) and (t1.`status` <> 'closed' or (t1.`status` = 'closed' and t1.closedReason in ('done','postponed'))) and EXISTS(select 1 from zt_case t where t.deleted = '0' and t1.id = t.story)",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall8",
@@ -6863,6 +7049,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as \tbugcnt from (\nSELECT\nDISTINCT t1.*\nFROM `zt_bug` t1 \n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)\nwhere  t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT(DATE_FORMAT(tt.`end`,'%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id = ?\n) and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall3",
@@ -6921,6 +7109,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select COUNT(1) as rencase from (SELECT\nDISTINCT t1.id\nFROM `zt_case` t1 \nleft join zt_testrun t11 on t1.id = t11.`case`\nINNER join zt_testresult t21 on t21.run = t11.id\nWHERE  t1.`DELETED` = '0' AND FIND_IN_SET ( t1.ID, (SELECT cases FROM ZT_TESTREPORT WHERE ID= ?)) and FIND_IN_SET(t11.task , (SELECT tasks FROM ZT_TESTREPORT WHERE ID= ?)) and t21.date >   (SELECT `BEGIN` FROM ZT_TESTREPORT WHERE ID= ?) and t21.date <  (SELECT CONCAT( DATE_FORMAT( `end`, '%Y-%m-%d'),' 23:59:59') FROM ZT_TESTREPORT WHERE ID= ?) ) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall11",
@@ -6979,6 +7169,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as \tcasebugcnt from (\nSELECT\nDISTINCT t1.*\nFROM `zt_bug` t1 \n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)\nwhere  t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT(DATE_FORMAT(tt.`end`,'%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id = ?\n) and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0 and t1.`case` > 0) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -7075,6 +7267,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as \tylbugcnt from (\nSELECT\nDISTINCT t1.*\nFROM `zt_bug` t1 \n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)\nwhere  t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT(DATE_FORMAT(tt.`end`,'%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id = ?\n) and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0 and  (t1.`status` = 'active' or t1.resolvedDate > (select CONCAT(DATE_FORMAT(tt.`end`,'%Y-%m-%d'),' 23:59:59') from zt_testreport tt where tt.id = ?))) t\n",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall7",
@@ -7133,6 +7327,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as \tresolvedcnt from (\nSELECT\nDISTINCT t1.*\nFROM `zt_bug` t1 \n\tINNER JOIN (select tt.id from zt_build tt where tt.deleted = '0' and tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) t71 on FIND_IN_SET(t71.id,t1.openedBuild)\nwhere  t1.openedDate > (select tt.`begin` from  zt_testreport tt  where tt.id = ?\n) and t1.openedDate < (select CONCAT(DATE_FORMAT(tt.`end`,'%Y-%m-%d'),' 23:59:59') from  zt_testreport tt  where tt.id = ?\n) and not EXISTS(select 1 from zt_build t where FIND_IN_SET(t.id,t1.openedBuild) and FIND_IN_SET(t.id,(select GROUP_CONCAT(tt.id) from (select tt.* from zt_build tt where  tt.id in (\n\tselect t1.build from zt_testtask t1 where FIND_IN_SET(t1.id,?))) tt GROUP BY tt.product)) = 0) and FIND_IN_SET('trunk',t1.openedBuild) = 0 and FIND_IN_SET('trunk',t1.openedBuild) = 0 and  t1.`status` in ('resolved','closed')) t",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {

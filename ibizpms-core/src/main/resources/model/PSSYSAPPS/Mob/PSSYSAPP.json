@@ -5552,14 +5552,7 @@
             "name" : "LIB",
             "codeName" : "Lib"
           },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         }, {
           "actionRSMode" : 1,
           "codeName" : "Actions",
@@ -5573,14 +5566,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "文档日志",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Actions",
@@ -5594,14 +5580,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "测试套件日志",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Actions",
@@ -5615,14 +5594,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "汇报日志",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Actions",
@@ -5636,14 +5608,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "月报日志",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Actions",
@@ -5657,14 +5622,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "日报日志",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Actions",
@@ -5678,14 +5636,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "文档日志",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Actions",
@@ -5699,14 +5650,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "文档库日志",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Actions",
@@ -5720,14 +5664,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "待办日志",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Actions",
@@ -5741,14 +5678,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "name" : "周报日志",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ] ]
       },
       "portletType" : "VIEW",
@@ -6829,14 +6759,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
           },
           "name" : "PRODUCT__PROJECT",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         }, {
           "actionRSMode" : 1,
           "codeName" : "Tasks",
@@ -6854,14 +6777,7 @@
             "name" : "PROJECT",
             "codeName" : "Project"
           },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Tasks",
@@ -6879,14 +6795,7 @@
             "name" : "PROJECT",
             "codeName" : "Project"
           },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ] ]
       },
       "portletType" : "VIEW",
@@ -7675,14 +7584,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
           },
           "name" : "PRODUCT__PROJECT",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         }, {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -7696,14 +7598,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
           },
           "name" : "PROJECT__STORY",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -7717,14 +7612,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
           },
           "name" : "PROJECT__STORY",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -7742,14 +7630,7 @@
             "name" : "PRODUCT",
             "codeName" : "Product"
           },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ] ]
       },
       "portletType" : "VIEW",
@@ -9813,14 +9694,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
           },
           "name" : "PRODUCT__PROJECT",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         }, {
           "actionRSMode" : 1,
           "codeName" : "Bugs",
@@ -9838,14 +9712,7 @@
             "name" : "PROJECT",
             "codeName" : "Project"
           },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Bugs",
@@ -9863,14 +9730,7 @@
             "name" : "PRODUCT",
             "codeName" : "Product"
           },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Bugs",
@@ -9888,14 +9748,7 @@
             "name" : "PROJECT",
             "codeName" : "Project"
           },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ] ]
       },
       "portletType" : "VIEW",
@@ -11315,14 +11168,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
           },
           "name" : "PRODUCT__PROJECT",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         }, {
           "actionRSMode" : 1,
           "codeName" : "Tasks",
@@ -11340,14 +11186,7 @@
             "name" : "PROJECT",
             "codeName" : "Project"
           },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Tasks",
@@ -11365,14 +11204,7 @@
             "name" : "PROJECT",
             "codeName" : "Project"
           },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ] ]
       },
       "portletType" : "VIEW",
@@ -12391,14 +12223,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
           },
           "name" : "PRODUCT__PROJECT",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         }, {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -12412,14 +12237,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
           },
           "name" : "PROJECT__STORY",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -12433,14 +12251,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
           },
           "name" : "PROJECT__STORY",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ], [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -12458,14 +12269,7 @@
             "name" : "PRODUCT",
             "codeName" : "Product"
           },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
+          "rSMode" : 2
         } ] ]
       },
       "portletType" : "VIEW",
@@ -17715,14 +17519,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
         },
         "name" : "PRODUCT__PROJECT",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ] ]
     }, {
       "accUserMode" : 0,
@@ -21220,14 +21017,7 @@
           "name" : "LIB",
           "codeName" : "Lib"
         },
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       }, {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -21241,14 +21031,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "文档日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ], [ {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -21262,14 +21045,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "测试套件日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ], [ {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -21283,14 +21059,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "汇报日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ], [ {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -21304,14 +21073,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "月报日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ], [ {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -21325,14 +21087,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "日报日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ], [ {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -21346,14 +21101,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "文档日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ], [ {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -21367,14 +21115,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "文档库日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ], [ {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -21388,14 +21129,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "待办日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ], [ {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -21409,14 +21143,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "周报日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ] ]
     } ],
     "getPSAppDataEntities" : [ {
@@ -23403,14 +23130,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "周报日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       }, {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -23424,14 +23144,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "待办日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       }, {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -23445,14 +23158,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "文档库日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       }, {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -23466,14 +23172,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "文档日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       }, {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -23487,14 +23186,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "日报日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       }, {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -23508,14 +23200,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "月报日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       }, {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -23529,14 +23214,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "汇报日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       }, {
         "actionRSMode" : 1,
         "codeName" : "Actions",
@@ -23550,14 +23228,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "name" : "测试套件日志",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ],
       "name" : "ZT_ACTION",
       "getPSDEName" : "ZT_ACTION",
@@ -26104,6 +25775,7 @@
             "srcFieldName" : "srfloginname",
             "srcValueType" : "SESSION"
           } ],
+          "sql" : "delete from T_IBZ_TOP  where type = 'product' and objectid = ? and account = ?",
           "parallelOutput" : true
         } ],
         "getPSDELogicParams" : [ {
@@ -26156,6 +25828,8 @@
             "srcFieldName" : "srfloginname",
             "srcValueType" : "SESSION"
           } ],
+          "sql" : "select (case when max(t1.`objectorder`) >= 16000000  then max(t1.`objectorder`) + 1 else 16000000 end) as `objectorder` from T_IBZ_TOP t1 where t1.type = 'product' and t1.account= ?",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Deaction1",
@@ -28500,6 +28174,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as YSTARTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'doing' and t.project = ?\nand t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Rawsqlcall10",
@@ -28531,6 +28207,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as UNCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` in( 'wait','cancel','doing') and t.project = ? and t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Rawsqlcall1",
@@ -28562,6 +28240,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as UNCLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` <> 'closed' and t.project = ? and t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Rawsqlcall7",
@@ -28593,6 +28273,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as CLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'closed' and t.project = ? and t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Rawsqlcall2",
@@ -28629,6 +28311,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as ASSTOMYTASKCNT from zt_task t where t.deleted = '0' and t.assignedTo = ? and t.project = ? and t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Rawsqlcall5",
@@ -28660,6 +28344,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as ALLTASKCNT from zt_task t where t.deleted = '0'  and t.project = ? and t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Rawsqlcall3",
@@ -28691,6 +28377,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as YCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'done' and t.project = ? and t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Rawsqlcall6",
@@ -28722,6 +28410,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as CANCELTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'cancel' and t.project = ? and t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Rawsqlcall9",
@@ -28753,6 +28443,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as UNSTARTTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'wait' and t.project = ? and t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Rawsqlcall4",
@@ -28789,6 +28481,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as MYCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`finishedby` = ? and t.project = ? and t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         }, {
           "codeName" : "Rawsqlcall11",
@@ -28808,6 +28502,8 @@
             },
             "srcValueType" : "SRCDLPARAM"
           } ],
+          "sql" : "select count(t.id) as STORYCHANGECNT from zt_task t left join zt_story t21 on t.story = t21.id where t.deleted = '0'  and t.project = ? and t.storyVersion < t21.version and t21.`status` <> 'changed' and t.parent <= '0'",
+          "fillDstLogicParam" : true,
           "parallelOutput" : true
         } ],
         "getPSDELogicParams" : [ {
@@ -31149,14 +30845,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
         },
         "name" : "PRODUCT__PROJECT",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
+        "rSMode" : 2
       } ],
       "name" : "ZT_PROJECT",
       "getPSDEName" : "ZT_PROJECT",

@@ -71,6 +71,14 @@
     "codeName" : "BugCountInResolution",
     "logicName" : "Bug在每个解决方案的Bug数",
     "name" : "BugCountInResolution",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_BUGSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -80,6 +88,14 @@
     "codeName" : "BugResolvedBy",
     "logicName" : "Bug完成表",
     "name" : "BugResolvedBy",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_BUGSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -89,6 +105,14 @@
     "codeName" : "BugResolvedGird",
     "logicName" : "bug解决汇总表",
     "name" : "BugResolvedGird",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_BUGSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -98,6 +122,14 @@
     "codeName" : "BugassignedTo",
     "logicName" : "Bug指派表",
     "name" : "BugassignedTo",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_BUGSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -107,6 +139,14 @@
     "codeName" : "Default",
     "logicName" : "Bug创建表",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_BUGSTATS"
+    },
     "customCode" : true,
     "defaultMode" : true
   }, {
@@ -117,6 +157,14 @@
     "codeName" : "ProductBugResolutionStats",
     "logicName" : "产品Bug解决方案汇总",
     "name" : "ProductBugResolutionStats",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_BUGSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -126,6 +174,14 @@
     "codeName" : "ProductBugStatusSum",
     "logicName" : "产品Bug状态汇总",
     "name" : "ProductBugStatusSum",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_BUGSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -135,6 +191,14 @@
     "codeName" : "ProductCreateBug",
     "logicName" : "产品创建bug占比",
     "name" : "ProductCreateBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_BUGSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -144,6 +208,14 @@
     "codeName" : "ProjectBugStatusCount",
     "logicName" : "项目bug状态统计",
     "name" : "ProjectBugStatusCount",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_BUGSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -152,7 +224,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_BUGSTATS"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "BugCountInResolution",

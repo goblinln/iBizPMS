@@ -40,6 +40,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "SELECT COUNT(1) as weeklycnt FROM `t_ibz_weekly` t1 where (t1.REPORTTO = ? or FIND_IN_SET(?,t1.mailto)) and not EXISTS(select 1 from zt_action t11 where t11.OBJECTID = t1.ibz_weeklyid and t11.objectType = 'weekly' and t11.actor = ? and t11.action = 'read') and t1.ISSUBMIT = '1'",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall4",
@@ -65,6 +67,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "SELECT\n\tCOUNT( 1 ) AS reportlycnt \nFROM\n\t`t_ibz_reportly` t1 \nWHERE\n\t(\n\t\tt1.REPORTTO = ? \n\tOR FIND_IN_SET(?, t1.mailto )) \n\tAND NOT EXISTS (\n\tSELECT\n\t\t1 \n\tFROM\n\t\tzt_action t11 \n\tWHERE\n\t\tt11.OBJECTID = t1.IBZ_REPORTLYID\n\t\tAND t11.objectType = 'reportly' \n\t\tAND t11.actor = ? \n\t\tAND t11.action = 'read' \n\t) \n\tAND t1.ISSUBMIT = '1'",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
@@ -119,6 +123,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "SELECT COUNT(1) as dailycnt FROM `t_ibz_daily` t1 where (t1.REPORTTO = ? or FIND_IN_SET(?,t1.mailto)) and not EXISTS(select 1 from zt_action t11 where t11.OBJECTID = t1.ibz_dailyid and t11.objectType = 'daily' and t11.actor = ? and t11.action = 'read') and t1.ISSUBMIT = '1'",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -156,6 +162,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "SELECT\n\tCOUNT( 1 ) AS monthlycnt \nFROM\n\t`t_ibz_monthly` t1 \nWHERE\n\t(\n\t\tt1.REPORTTO = ? \n\tOR FIND_IN_SET(?, t1.mailto )) \n\tAND NOT EXISTS (\n\tSELECT\n\t\t1 \n\tFROM\n\t\tzt_action t11 \n\tWHERE\n\t\tt11.OBJECTID = t1.ibz_monthlyid \n\t\tAND t11.objectType = 'monthly' \n\t\tAND t11.actor = ? \n\t\tAND t11.action = 'read' \n\t) \n\tAND t1.ISSUBMIT = '1'",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

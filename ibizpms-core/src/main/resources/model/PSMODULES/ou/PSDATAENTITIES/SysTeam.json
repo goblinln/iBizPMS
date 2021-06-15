@@ -71,6 +71,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "SYS_TEAM"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -79,7 +87,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "SYS_TEAM"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

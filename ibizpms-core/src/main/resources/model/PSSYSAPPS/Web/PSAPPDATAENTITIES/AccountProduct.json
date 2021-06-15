@@ -674,6 +674,7 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "delete from T_IBZ_TOP  where type = 'product' and objectid = ? and account = ?",
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -726,6 +727,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select (case when max(t1.`objectorder`) >= 16000000  then max(t1.`objectorder`) + 1 else 16000000 end) as `objectorder` from T_IBZ_TOP t1 where t1.type = 'product' and t1.account= ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -1558,14 +1561,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProduct.json"
     },
     "name" : "ACCOUNT__PRODUCT",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ],
   "name" : "ACCOUNTPRODUCT",
   "getPSDEName" : "ZT_PRODUCT",

@@ -418,14 +418,7 @@
       "name" : "STORY",
       "codeName" : "Story"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ],
   "name" : "ZT_STORYSPEC",
   "getPSDEName" : "ZT_STORYSPEC",

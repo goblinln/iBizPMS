@@ -587,13 +587,6 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
     },
     "name" : "ACCOUNT__TASK",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ] ]
 }

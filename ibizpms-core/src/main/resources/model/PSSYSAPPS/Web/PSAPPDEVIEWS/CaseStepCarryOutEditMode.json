@@ -621,14 +621,7 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "caseSteps",
@@ -647,13 +640,6 @@
       "codeName" : "IBizCase"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "tempDataOrder" : 10
   } ] ]
 }

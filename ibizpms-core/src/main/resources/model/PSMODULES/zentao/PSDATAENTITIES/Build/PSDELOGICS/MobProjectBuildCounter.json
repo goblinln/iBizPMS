@@ -51,6 +51,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as stories  from zt_story t1 where t1.deleted = '0' and  FIND_IN_SET(t1.id,(select stories from zt_build where id = ?))",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall3",
@@ -70,6 +72,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as createbugcnt from zt_bug t1 where t1.deleted = '0' and Find_IN_SET(?,(select openedbuild from zt_bug where id = t1.id))",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -101,6 +105,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as bugs from zt_bug t1 where  t1.deleted = '0'  and FIND_IN_SET(t1.id,(select bugs from zt_build where id = ?))\n",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

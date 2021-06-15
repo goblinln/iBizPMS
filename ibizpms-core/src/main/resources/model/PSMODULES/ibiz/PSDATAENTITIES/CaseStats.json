@@ -71,6 +71,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_CASESTATS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -85,6 +93,14 @@
     "codeName" : "TestCaseStats",
     "logicName" : "测试用例统计",
     "name" : "TestCaseStats",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_CASESTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -93,7 +109,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_CASESTATS"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

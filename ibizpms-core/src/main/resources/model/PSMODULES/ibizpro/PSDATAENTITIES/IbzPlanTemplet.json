@@ -196,7 +196,39 @@
     } ],
     "codeName" : "CurUserTemplet",
     "logicName" : "CurUserTemplet",
-    "name" : "CurUserTemplet"
+    "name" : "CurUserTemplet",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PLANTEMPLET",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "open",
+            "name" : "ACL 等于(=) (open)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "CREATEMANNAME 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -205,6 +237,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PLANTEMPLET"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -213,7 +253,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PLANTEMPLET"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurUserTemplet",

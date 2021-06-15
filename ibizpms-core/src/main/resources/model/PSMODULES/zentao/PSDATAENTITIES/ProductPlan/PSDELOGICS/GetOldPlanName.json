@@ -111,6 +111,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select concat('(上次计划: ', t.`TITLE`, ')')  as oldtitle from zt_productplan t where t.product = ? and ((t.parent = ? and ? is not null and ? <> 0) or ((? is null or ? = 0) and t.parent <= 0)) order by t.id desc LIMIT 0,1",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

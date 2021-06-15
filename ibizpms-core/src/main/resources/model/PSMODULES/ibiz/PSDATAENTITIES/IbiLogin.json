@@ -64,6 +64,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_LOGIN"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -72,7 +80,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_LOGIN"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

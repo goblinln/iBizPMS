@@ -40,6 +40,7 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "delete from T_IBZ_TOP  where type = 'product' and objectid = ? and account = ?",
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

@@ -198,6 +198,14 @@
     "codeName" : "ActionMonth",
     "logicName" : "日志月",
     "name" : "ActionMonth",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "TASKESTIMATESTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -207,6 +215,14 @@
     "codeName" : "ActionYear",
     "logicName" : "日志年",
     "name" : "ActionYear",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "TASKESTIMATESTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -216,6 +232,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASKESTIMATE"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -229,7 +253,24 @@
     } ],
     "codeName" : "Defaults",
     "logicName" : "DEFAULT1",
-    "name" : "DEFAULT1"
+    "name" : "DEFAULT1",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASKESTIMATE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -243,6 +284,14 @@
     "codeName" : "ProjectActionMonth",
     "logicName" : "日志月（项目）",
     "name" : "ProjectActionMonth",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASKESTIMATE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -257,6 +306,14 @@
     "codeName" : "ProjectActionYear",
     "logicName" : "日志年（项目）",
     "name" : "ProjectActionYear",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASKESTIMATE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -270,7 +327,34 @@
     } ],
     "codeName" : "ProjectTaskEstimate",
     "logicName" : "项目日志",
-    "name" : "ProjectTaskEstimate"
+    "name" : "ProjectTaskEstimate",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASKESTIMATE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "project",
+          "name" : "PROJECT 等于(=) 网页请求上下文(project)",
+          "getPSVARTypeId" : "WEBCONTEXT",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "0",
+          "name" : "DELETED 等于(=) (0)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -278,7 +362,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASKESTIMATE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ActionMonth",

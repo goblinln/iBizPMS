@@ -71,6 +71,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTLINE"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -79,7 +87,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTLINE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

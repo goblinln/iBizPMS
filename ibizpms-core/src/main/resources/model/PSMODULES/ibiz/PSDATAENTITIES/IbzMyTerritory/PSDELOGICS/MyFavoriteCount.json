@@ -35,6 +35,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(t1.id) AS MYFAVORITETASKS from zt_task t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'task' and t.account = ?)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
@@ -62,6 +64,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(t1.id) AS MYFAVORITESTORYS from zt_story t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'story' and t.account = ?)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -89,6 +93,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(t1.id) AS MYFAVORITEBUGS from zt_bug t1 where t1.deleted = '0' and t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'bug' and t.account = ?)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

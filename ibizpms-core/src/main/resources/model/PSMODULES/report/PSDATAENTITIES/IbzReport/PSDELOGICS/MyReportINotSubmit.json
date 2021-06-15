@@ -18,6 +18,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(1) as reportlycnt from `t_ibz_reportly` t1 where t1.issubmit = '0' and t1.account = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -45,6 +47,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(1) as weeklycnt from `t_ibz_weekly` t1 where t1.issubmit = '0' and t1.account = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "MyUnReadCnt",
@@ -97,6 +101,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "SELECT\nCOUNT(1) \nas myunreadreportcnt\nfrom\n(\nSELECT\n\tt1.`ACCOUNT`,\n\tt1.`CREATEDATE`,\n\tt1.`CREATEMAN`,\n\tt1.`CREATEMANNAME`,\n\tDATE_FORMAT( t1.DATE, '%Y-%m-%d' ) AS `DATE`,\n\tt1.`IBZ_DAILYID`,\n\tt1.`IBZ_DAILYNAME`,\n\tt1.`ISSUBMIT`,\n\tt1.`MAILTO`,\n\t( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`,\n\tt1.`REPORTTO`,\n\tDATE_FORMAT( t1.SUBMITTIME, '%H:%i' ) AS `SUBMITTIME`,\n\tt1.`TODAYTASK`,\n\tt1.`TOMORROWPLANSTASK`,\n\tt1.`UPDATEDATE`,\n\tt1.`UPDATEMAN`,\n\tt1.`UPDATEMANNAME`,\n\tCONCAT_WS( '', '今日工作：', CASE WHEN t1.WORKTODAY IS NULL THEN '无' ELSE t1.WORKTODAY END ) AS WORKTODAY,\n\tt1.`COMMENT`,\n\tCONCAT_WS( '', '明日计划：', CASE WHEN t1.PLANSTOMORROW IS NULL THEN '无' ELSE t1.PLANSTOMORROW END ) AS PLANSTOMORROW,\n\t'daily' AS type \nFROM\n\t`T_IBZ_DAILY` t1\n\tLEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_DAILYID \n\tAND t11.objectType = 'daily' \n\tAND t11.action = 'read' \n\tAND t11.actor = ? \nWHERE\n\tt1.ISSUBMIT = '1'   UNION\nSELECT\n\tt1.`ACCOUNT`,\n\tt1.`CREATEDATE`,\n\tt1.`CREATEMAN`,\n\tt1.`CREATEMANNAME`,\n\tDATE_FORMAT( t1.DATE, '%Y-%m-%d' ) AS `DATE`,\n\tt1.`IBZ_WEEKLYID` AS IBZ_DAILYID,\n\tt1.`IBZ_WEEKLYNAME` AS IBZ_DAILYNAME,\n\tt1.`ISSUBMIT`,\n\tt1.`MAILTO`,\n\t( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`,\n\tt1.`REPORTTO`,\n\tDATE_FORMAT( t1.SUBMITTIME, '%H:%i' ) AS `SUBMITTIME`,\n\tt1.`THISWEEKTASK` AS TODAYTASK,\n\tt1.`NEXTWEEKTASK` AS TOMORROWPLANSTASK,\n\tt1.`UPDATEDATE`,\n\tt1.`UPDATEMAN`,\n\tt1.`UPDATEMANNAME`,\n\tCONCAT_WS( '', '本周工作：', CASE WHEN t1.WORKTHISWEEK IS NULL THEN '无' ELSE t1.WORKTHISWEEK END ) AS WORKTODAY,\n\tt1.`COMMENT`,\n\tCONCAT_WS( '', '下周计划：', CASE WHEN t1.PLANNEXTWEEK IS NULL THEN '无' ELSE t1.PLANNEXTWEEK END ) AS PLANSTOMORROW,\n\t'weekly' AS type \nFROM\n\t`T_IBZ_WEEKLY` t1\n\tLEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_WEEKLYID \n\tAND t11.objectType = 'weekly' \n\tAND t11.action = 'read' \n\tAND t11.actor = ? \nWHERE\n\tt1.ISSUBMIT = '1'   UNION\nSELECT\n\tt1.`ACCOUNT`,\n\tt1.`CREATEDATE`,\n\tt1.`CREATEMAN`,\n\tt1.`CREATEMANNAME`,\n\tDATE_FORMAT( t1.DATE, '%Y-%m-%d' ) AS `DATE`,\n\tt1.`IBZ_MONTHLYID` AS IBZ_DAILYID,\n\tt1.`IBZ_MONTHLYNAME` AS IBZ_DAILYNAME,\n\tt1.`ISSUBMIT`,\n\tt1.`MAILTO`,\n\t( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`,\n\tt1.`REPORTTO`,\n\tDATE_FORMAT( t1.SUBMITTIME, '%H:%i' ) AS `SUBMITTIME`,\n\tt1.`THISMONTHTASK` AS TODAYTASK,\n\tt1.`NEXTMONTHPLANSTASK` AS TOMORROWPLANSTASK,\n\tt1.`UPDATEDATE`,\n\tt1.`UPDATEMAN`,\n\tt1.`UPDATEMANNAME`,\n\tCONCAT_WS( '', '本月工作：', CASE WHEN t1.WORKTHISMONTH IS NULL THEN '无' ELSE t1.WORKTHISMONTH END ) AS WORKTODAY,\n\tt1.`COMMENT`,\n\tCONCAT_WS( '', '下月计划：', CASE WHEN t1.PLANSNEXTMONTH IS NULL THEN '无' ELSE t1.PLANSNEXTMONTH END ) AS PLANSTOMORROW,\n\t'monthly' AS type \nFROM\n\t`T_IBZ_MONTHLY` t1\n\tLEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_MONTHLYID \n\tAND t11.objectType = 'monthly' \n\tAND t11.action = 'read' \n\tAND t11.actor =? \nWHERE\n\tt1.ISSUBMIT = '1' \nUNION\nSELECT\nt1.`ACCOUNT`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nnull as `CREATEMANNAME`,\nDATE_FORMAT(t1.DATE,'%Y-%m-%d') as `DATE`,\nt1.`IBZ_REPORTLYID` as IBZ_DAILYID,\nt1.`IBZ_REPORTLYNAME` as IBZ_DAILYNAME,\nt1.`ISSUBMIT`,\nt1.`MAILTO`,\n(case when t11.id is not null then '1' else '0' end ) as `REPORTSTATUS`,\nt1.`REPORTTO`,\nDATE_FORMAT(t1.SUBMITTIME,'%H:%i') as `SUBMITTIME`,\nnull as TODAYTASK,\nnull as TOMORROWPLANSTASK,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nnull as `UPDATEMANNAME`,\nCONCAT_WS('','工作内容：',case when t1.CONTENT is null then '无' else t1.CONTENT end) as WORKTODAY,\nnull as `COMMENT`,\nnull as PLANSTOMORROW,\n'reportly' as type \nFROM `T_IBZ_REPORTLY` t1 \nleft join zt_action t11 on t11.objectID = t1.IBZ_REPORTLYID and t11.objectType = 'reportly' and t11.action = 'read' and t11.actor = ?\nwhere t1.ISSUBMIT = '1'\n\t) t1\nWHERE\n        t1.REPORTSTATUS='0'\nAND \n(FIND_IN_SET( ? , t1.MAILTO) or t1.REPORTTO=?)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall3",
@@ -124,6 +130,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(1) as monthlycnt from `t_ibz_monthly` t1 where t1.issubmit = '0' and t1.account = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
@@ -151,6 +159,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "SELECT COUNT(1) as dailycnt FROM `t_ibz_daily` t1 where (t1.ACCOUNT = ? ) and t1.ISSUBMIT = '0'",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",

@@ -95,6 +95,14 @@
     "codeName" : "BugUser",
     "logicName" : "Bug用户",
     "name" : "BugUser",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -109,6 +117,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -126,7 +142,50 @@
     } ],
     "codeName" : "GetByLogin",
     "logicName" : "账户获取登录名",
-    "name" : "getByLogin"
+    "name" : "getByLogin",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "account",
+            "name" : "ACCOUNT 等于(=) (account)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "mobile",
+            "name" : "MOBILE 等于(=) (mobile)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "email",
+            "name" : "EMAIL 等于(=) (email)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "commiter",
+            "name" : "COMMITER 等于(=) (commiter)",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -143,7 +202,24 @@
     } ],
     "codeName" : "ProjectTeamM",
     "logicName" : "项目团队管理",
-    "name" : "ProjectTeamM"
+    "name" : "ProjectTeamM",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -165,6 +241,14 @@
     "codeName" : "ProjectTeamUser",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUser",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -187,6 +271,14 @@
     "codeName" : "ProjectTeamUserTask",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUserTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -205,6 +297,14 @@
     "codeName" : "TaskTeam",
     "logicName" : "TASKTEAM",
     "name" : "TASKTEAM",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -218,7 +318,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/User.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_USER"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "BugUser",

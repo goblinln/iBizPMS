@@ -109,6 +109,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "SELECT t1.`ASSIGNEDTO`, t1.`CASE`, t1.`ID`, t1.`LASTRUNDATE`, t1.`LASTRUNNER`, t1.`LASTRUNRESULT`, t1.`STATUS`, t1.`TASK`, t1.`VERSION` FROM `zt_testrun` t1  where t1.`CASE` = ? AND t1.`task` = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

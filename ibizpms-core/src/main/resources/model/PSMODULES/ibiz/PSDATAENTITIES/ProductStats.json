@@ -104,6 +104,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSTATS"
+    },
     "customCode" : true,
     "defaultMode" : true
   }, {
@@ -127,6 +135,26 @@
     "codeName" : "NoOpenProduct",
     "logicName" : "未关闭产品",
     "name" : "NoOpenProduct",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSTATS",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "normal",
+          "name" : "STATUS 等于(=) (normal)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -136,6 +164,14 @@
     "codeName" : "ProdctQuantiGird",
     "logicName" : "产品质量表",
     "name" : "ProdctQuantiGird",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -145,6 +181,14 @@
     "codeName" : "ProductInputTable",
     "logicName" : "产品投入表",
     "name" : "ProductInputTable",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -154,6 +198,14 @@
     "codeName" : "Productcompletionstatistics",
     "logicName" : "产品完成统计表",
     "name" : "Productcompletionstatistics",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -167,7 +219,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSTATS"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -1701,6 +1761,8 @@
         "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
+      "sql" : "select count(1) as Assigntomebugcnt from zt_bug t where t.deleted = '0' and t.product = ? and t.assignedTo = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {

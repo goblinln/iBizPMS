@@ -115,6 +115,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select t1.project,t11.`name` as projectname,t21.plan,t31.`TITLE` as PLANNAME,t21.module,t41.`name` as MODULENAME  from zt_projectstory t1 inner join zt_project t11 on t1.project = t11.id INNER JOIN zt_story t21 on t1.story = t21.id left join zt_productplan t31 on t21.plan = t31.id left join zt_module t41 on t21.module = t41.id  where t1.story = ? LIMIT 0,1",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -134,6 +136,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select t1.project,t11.`name` as projectname from zt_projectproduct t1 inner join zt_project t11 on t1.project = t11.id left join zt_productplan t21 on t21.product = t1.product where t21.id = ? LIMIT 0,1",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",

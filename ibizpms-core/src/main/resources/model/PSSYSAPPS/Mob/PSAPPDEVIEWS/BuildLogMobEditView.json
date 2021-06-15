@@ -618,14 +618,7 @@
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
               },
               "name" : "PRODUCT__PROJECT",
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
+              "rSMode" : 2
             }, {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -639,14 +632,7 @@
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
               },
               "name" : "PROJECT__STORY",
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
+              "rSMode" : 2
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -660,14 +646,7 @@
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
               },
               "name" : "PROJECT__STORY",
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
+              "rSMode" : 2
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -685,14 +664,7 @@
                 "name" : "PRODUCT",
                 "codeName" : "Product"
               },
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
+              "rSMode" : 2
             } ] ]
           },
           "getPSLayoutPos" : {
@@ -1206,14 +1178,7 @@
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
               },
               "name" : "PRODUCT__PROJECT",
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
+              "rSMode" : 2
             }, {
               "actionRSMode" : 1,
               "codeName" : "Bugs",
@@ -1231,14 +1196,7 @@
                 "name" : "PROJECT",
                 "codeName" : "Project"
               },
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
+              "rSMode" : 2
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Bugs",
@@ -1256,14 +1214,7 @@
                 "name" : "PRODUCT",
                 "codeName" : "Product"
               },
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
+              "rSMode" : 2
             } ], [ {
               "actionRSMode" : 1,
               "codeName" : "Bugs",
@@ -1281,14 +1232,7 @@
                 "name" : "PROJECT",
                 "codeName" : "Project"
               },
-              "rSMode" : 2,
-              "enableCreateDataRS" : false,
-              "enableDEAction" : true,
-              "enableDEDataSet" : true,
-              "enableGetDataRS" : false,
-              "enableSelect" : true,
-              "enableSelectDataRS" : false,
-              "enableUpdateDataRS" : false
+              "rSMode" : 2
             } ] ]
           },
           "getPSLayoutPos" : {
@@ -1384,14 +1328,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
     "name" : "PRODUCT__PROJECT",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Builds",
@@ -1409,14 +1346,7 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",
@@ -1434,14 +1364,7 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",
@@ -1459,13 +1382,6 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ] ]
 }

@@ -90,6 +90,14 @@
     "codeName" : "BugModule",
     "logicName" : "BugModule",
     "name" : "BugModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_MODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -108,6 +116,14 @@
     "codeName" : "BugModuleCodeList",
     "logicName" : "数据查询",
     "name" : "BugModuleCodeList",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_MODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -122,6 +138,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_MODULE"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -140,6 +164,33 @@
     "codeName" : "DocModule",
     "logicName" : "文档目录查询",
     "name" : "DocModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_MODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "doc",
+          "name" : "TYPE 等于(=) (doc)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "product",
+          "name" : "ROOT 等于(=) 数据上下文(product)",
+          "getPSVARTypeId" : "DATACONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -158,6 +209,26 @@
     "codeName" : "Line",
     "logicName" : "产品线",
     "name" : "Line",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_MODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "line",
+          "name" : "TYPE 等于(=) (line)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -175,7 +246,41 @@
     } ],
     "codeName" : "StoryModule",
     "logicName" : "需求模块",
-    "name" : "StoryModule"
+    "name" : "StoryModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_MODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "product",
+          "name" : "ROOT 等于(=) 网页请求上下文(product)",
+          "getPSVARTypeId" : "WEBCONTEXT",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "story",
+          "name" : "TYPE 等于(=) (story)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "branch",
+          "name" : "BRANCH 等于(=) 数据上下文(branch)",
+          "getPSVARTypeId" : "DATACONTEXT",
+          "ignoreEmpty" : true
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -192,7 +297,34 @@
     } ],
     "codeName" : "TaskModule",
     "logicName" : "任务模块",
-    "name" : "TaskModule"
+    "name" : "TaskModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_MODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "project",
+          "name" : "ROOT 等于(=) 数据上下文(project)",
+          "getPSVARTypeId" : "DATACONTEXT",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "task",
+          "name" : "TYPE 等于(=) (task)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -205,7 +337,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_MODULE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "BugModule",

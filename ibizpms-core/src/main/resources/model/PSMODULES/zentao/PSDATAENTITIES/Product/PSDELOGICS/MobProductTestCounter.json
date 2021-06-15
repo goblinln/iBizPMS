@@ -44,6 +44,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(t1.id) as TESTSUITECNT from ZT_TESTSUITE t1 where t1.deleted = '0' and ( t1.`TYPE` = 'public' OR ( t1.`TYPE` = 'private' AND t1.`ADDEDBY` = ? ) ) and t1.product = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -75,6 +77,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(t1.id) as CASECNT from zt_case t1 where t1.deleted = '0' and t1.product = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
@@ -106,6 +110,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as RELATEDBUGCNT from zt_bug t where t.deleted = '0'  AND t.product = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall3",
@@ -137,6 +143,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(t1.id) as TESTTASKCNT from ZT_TESTTASK t1 where t1.deleted = '0' and t1.product = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

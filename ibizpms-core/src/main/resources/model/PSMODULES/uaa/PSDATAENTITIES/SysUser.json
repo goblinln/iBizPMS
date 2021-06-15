@@ -78,6 +78,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "SYS_USER"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -87,6 +95,14 @@
     "codeName" : "MyWork",
     "logicName" : "我的工作",
     "name" : "MyWork",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_MYTERRITORY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -96,6 +112,14 @@
     "codeName" : "PersonInfo",
     "logicName" : "个人信息-个人贡献",
     "name" : "PersonInfo",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_MYTERRITORY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -104,7 +128,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/uaa/PSDATAENTITIES/SysUser.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "SYS_USER"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

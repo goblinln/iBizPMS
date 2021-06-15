@@ -30,6 +30,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(t1.id) AS MYSTORYS from zt_story t1 where t1.deleted = '0' and t1.assignedTo = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall4",
@@ -45,6 +47,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(t1.id) as MYTODOCNT from zt_todo t1 where t1.cycle = '0' and t1.account = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
@@ -89,6 +93,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(t1.id) AS MYBUGS from zt_bug t1 where t1.deleted = '0' and t1.assignedTo = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall3",
@@ -116,6 +122,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select count(t1.id) AS MYTASKS from zt_task t1 where t1.deleted = '0' and t1.assignedTo = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

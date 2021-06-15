@@ -90,6 +90,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "SYS_UPDATE_LOG"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -98,7 +106,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "SYS_UPDATE_LOG"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -659,6 +675,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "update t_sys_update_log set LATESTUPDATE = 0 where LATESTUPDATE = 1 and UPDATEBRANCH = ? and SYS_UPDATE_LOGID <> ? and ? = '1'",
+      "ignoreResetDstLogicParam" : false,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {

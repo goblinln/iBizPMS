@@ -43,6 +43,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select t1.* from zt_storyspec t1 where t1.story = ? and t1.version = ? order by t1.version desc limit 0,1",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Deaction1",

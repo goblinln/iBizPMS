@@ -39,6 +39,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(t1.case) as CASECNT from ZT_SUITECASE t1 where t1.suite = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

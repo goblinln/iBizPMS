@@ -680,7 +680,7 @@
         }, {
           "key" : "SRFPARENTKEY",
           "name" : "SRFPARENTKEY",
-          "value" : "id",
+          "value" : "doclibmodule",
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
@@ -691,7 +691,7 @@
         }, {
           "key" : "srfparentkey",
           "name" : "srfparentkey",
-          "value" : "id",
+          "value" : "doclibmodule",
           "rawValue" : false
         }, {
           "key" : "project",
@@ -1388,7 +1388,7 @@
         }, {
           "key" : "SRFPARENTKEY",
           "name" : "SRFPARENTKEY",
-          "value" : "id",
+          "value" : "doclibmodule",
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
@@ -1399,7 +1399,7 @@
         }, {
           "key" : "srfparentkey",
           "name" : "srfparentkey",
-          "value" : "id",
+          "value" : "doclibmodule",
           "rawValue" : false
         }, {
           "key" : "project",
@@ -2229,7 +2229,7 @@
           }, {
             "key" : "SRFPARENTKEY",
             "name" : "SRFPARENTKEY",
-            "value" : "id",
+            "value" : "doclibmodule",
             "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
@@ -2240,7 +2240,7 @@
           }, {
             "key" : "srfparentkey",
             "name" : "srfparentkey",
-            "value" : "id",
+            "value" : "doclibmodule",
             "rawValue" : false
           }, {
             "key" : "project",
@@ -2808,7 +2808,7 @@
           }, {
             "key" : "SRFPARENTKEY",
             "name" : "SRFPARENTKEY",
-            "value" : "id",
+            "value" : "doclibmodule",
             "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
@@ -2819,7 +2819,7 @@
           }, {
             "key" : "srfparentkey",
             "name" : "srfparentkey",
-            "value" : "id",
+            "value" : "doclibmodule",
             "rawValue" : false
           }, {
             "key" : "project",

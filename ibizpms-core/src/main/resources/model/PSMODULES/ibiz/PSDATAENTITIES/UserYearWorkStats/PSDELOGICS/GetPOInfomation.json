@@ -43,6 +43,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as `yearplancnt` from zt_productplan t left join zt_action t2 on t2.objectID = t.id and t2.objectType = 'productplan' where LEFT(t2.date, 4) = ? and t2.actor = ? and t2.action = 'opened' and t.product <> 0",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall4",
@@ -71,6 +73,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as `YEARVISITS` from zt_action t where t.actor = ? and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = ?\n",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
@@ -174,6 +178,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as YEARPRODUCTCNT from zt_product t where ((YEAR(t.createddate) = ? and (t.createdBy =? or t.po = ? or t.QD =? or t.RD =? )) or t.id in(select t.product from zt_productplan t left join zt_action t2 on t2.objectID = t.id and t2.objectType = 'productplan' where LEFT(t2.date, 4) = ? and t2.actor = ? and t2.action = 'opened' and t.product <> 0) or t.id in (select t.product from zt_story t where t.product > 0 and t.openedBy = ? and DATE_FORMAT(t.openedDate,'%Y') = ? ))",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
@@ -231,6 +237,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as `yearstorycnt` from zt_story t where t.product > 0 and t.openedBy = ? and DATE_FORMAT(t.openedDate,'%Y') = ?\n",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

@@ -1724,14 +1724,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
     "name" : "PRODUCT__PROJECT",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Tasks",
@@ -1749,14 +1742,7 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Tasks",
@@ -1774,13 +1760,6 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ] ]
 }

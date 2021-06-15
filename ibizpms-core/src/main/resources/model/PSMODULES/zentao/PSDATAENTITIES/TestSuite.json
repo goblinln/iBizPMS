@@ -104,6 +104,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTSUITE"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -121,7 +129,57 @@
     } ],
     "codeName" : "PublicTestSuite",
     "logicName" : "公开套件",
-    "name" : "PublicTestSuite"
+    "name" : "PublicTestSuite",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTSUITE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "public",
+            "name" : "TYPE 等于(=) (public)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "AND",
+            "condType" : "GROUP",
+            "name" : "AND",
+            "getPSDEDQConditions" : [ {
+              "condOp" : "EQ",
+              "condType" : "SINGLE",
+              "condValue" : "private",
+              "name" : "TYPE 等于(=) (private)",
+              "ignoreEmpty" : false
+            }, {
+              "condOp" : "EQ",
+              "condType" : "SINGLE",
+              "condValue" : "srfloginname",
+              "name" : "ADDEDBY 等于(=) 用户上下文(srfloginname)",
+              "getPSVARTypeId" : "SESSIONCONTEXT",
+              "ignoreEmpty" : false
+            } ]
+          } ]
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfparentkey",
+          "name" : "PRODUCT 等于(=) 网页请求上下文(srfparentkey)",
+          "getPSVARTypeId" : "WEBCONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -134,7 +192,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTSUITE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -965,6 +1031,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t1.case) as CASECNT from ZT_SUITECASE t1 where t1.suite = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {

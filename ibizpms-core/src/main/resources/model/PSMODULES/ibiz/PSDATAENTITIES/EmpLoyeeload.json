@@ -78,6 +78,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_EMPLOYEELOAD"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -87,6 +95,14 @@
     "codeName" : "GETWOERKLOAD",
     "logicName" : "获取员工负载表",
     "name" : "GETWOERKLOAD",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_EMPLOYEELOAD"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -95,7 +111,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_EMPLOYEELOAD"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

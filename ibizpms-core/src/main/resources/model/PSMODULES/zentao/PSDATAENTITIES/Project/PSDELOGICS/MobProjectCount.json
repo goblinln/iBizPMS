@@ -34,6 +34,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(t1.id) as BUGCNT from zt_bug t1 where t1.deleted = '0' and t1.project = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
@@ -65,6 +67,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(t1.id) as STORYCNT from zt_story t1 where t1.deleted = '0' and t1.id in (select t.story from zt_projectstory t where t.project = ?)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall5",
@@ -84,6 +88,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(t1.id) as TEAMCNT from zt_team t1 where t1.root = ? and t1.type = 'project'",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall4",
@@ -115,6 +121,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(t1.id) as BUILDCNT from zt_build t1 where t1.deleted = '0' and t1.project = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
@@ -163,6 +171,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(t1.id) as TASKCNT from zt_task t1 where t1.deleted = '0' and t1.project = ? and `STATUS` in('doing','wait','pause')",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

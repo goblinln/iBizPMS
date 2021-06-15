@@ -496,14 +496,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "name" : "PRODUCT__PROJECT",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Bugs",
@@ -521,14 +514,7 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Bugs",
@@ -546,14 +532,7 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Bugs",
@@ -571,13 +550,6 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ] ]
 }

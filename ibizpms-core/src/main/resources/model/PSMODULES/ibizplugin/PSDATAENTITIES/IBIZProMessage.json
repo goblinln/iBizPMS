@@ -92,6 +92,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_MESSAGE"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -101,6 +109,14 @@
     "codeName" : "UserAllMessages",
     "logicName" : "用户全部消息",
     "name" : "UserAllMessages",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_MESSAGE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -110,6 +126,14 @@
     "codeName" : "UserUnreadMessages",
     "logicName" : "用户未读信息",
     "name" : "UserUnreadMessages",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_MESSAGE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -118,7 +142,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_MESSAGE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

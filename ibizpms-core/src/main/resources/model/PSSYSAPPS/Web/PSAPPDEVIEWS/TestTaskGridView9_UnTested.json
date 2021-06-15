@@ -543,13 +543,6 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
     },
     "name" : "ACCOUNT__TEST_TASK",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ] ]
 }

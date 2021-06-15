@@ -475,14 +475,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
     "name" : "PRODUCT__PROJECT",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Tasks",
@@ -500,14 +493,7 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "taskEstimates",
@@ -526,14 +512,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "tempDataOrder" : 10
   } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Tasks",
@@ -551,14 +530,7 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "taskEstimates",
@@ -577,13 +549,6 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "tempDataOrder" : 10
   } ] ]
 }

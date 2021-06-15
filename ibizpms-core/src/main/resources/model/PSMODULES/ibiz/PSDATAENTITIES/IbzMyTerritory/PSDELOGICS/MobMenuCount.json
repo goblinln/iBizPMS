@@ -79,6 +79,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select ((case when ? is null then 0 else ? end )+ (case when ? is null then 0 else ? end ) + (case when ? is null then 0 else ? end )) as MYFAVORITES from dual",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Deaction2",
@@ -160,6 +162,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "SELECT\n\tcount( t1.id ) as PROJECTS\nFROM\n\tzt_project t1 \nWHERE\n\tt1.deleted = '0' \n\tAND (\n\tt1.acl = 'open' \n\tOR t1.OPENEDBY = ? \n\tOR t1.pm = ? \n\tOR t1.PO = ? \n\tOR t1.RD =?\tOR t1.QD = ?\n\tOR (\n\tt1.acl = 'private' \n\tAND t1.id IN ( SELECT t3.root FROM zt_team t3 WHERE t3.account = ? AND t3.type = 'project' ) \n\t) \n\t)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall4",
@@ -242,6 +246,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select ((case when ? is null then 0 else ? end )+ (case when ? is null then 0 else ? end ) + (case when ? is null then 0 else ? end ) + (case when ? is null then 0 else ? end )) as MYTERRITORYCNT from dual",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
@@ -306,6 +312,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "SELECT\n\t\tcount( t1.id ) AS PRODUCTS \n\tFROM\n\t\tzt_product t1 \n\tWHERE\n\t\tt1.deleted = '0' \n\t\tAND (\n\t\t\tt1.acl = 'open' \n\t\t\tOR t1.CREATEDBY =?\n\t\t\tOR t1.PO = ?\n\t\t\tOR t1.RD = ? \n\t\t\tOR t1.QD = ? \n\t\t\tOR t1.id IN (\n\t\t\tSELECT\n\t\t\t\tt.product \n\t\t\tFROM\n\t\t\t\tzt_projectproduct t \n\t\t\tWHERE\n\t\t\t\tt.project IN ( SELECT t3.root FROM zt_team t3 WHERE t3.account = ? AND t3.type = 'project' ) \n\t\t\t) \n\t)",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Deaction1",

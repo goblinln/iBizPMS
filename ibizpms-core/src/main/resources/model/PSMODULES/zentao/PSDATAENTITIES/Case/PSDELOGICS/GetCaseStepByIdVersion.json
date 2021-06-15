@@ -48,6 +48,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select concat('[', GROUP_CONCAT(t1.casestep),']') as casestep from (SELECT JSON_OBJECT('case', t1.`CASE`,'desc', t1.`DESC`,'expect', t1.`EXPECT`,'id', t1.`ID`,'parent', t1.`PARENT`,'type', t1.`TYPE`,'version', t1.`VERSION`) as casestep,t1.`case`,t1.version  FROM `zt_casestep` t1) t1 where t1.`case` = ? and t1.version =? GROUP BY t1.`case`,t1.version",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

@@ -23,6 +23,7 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "delete from T_IBZ_FAVORITES where type = 'bug' and account = ? and objectid = ?",
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",

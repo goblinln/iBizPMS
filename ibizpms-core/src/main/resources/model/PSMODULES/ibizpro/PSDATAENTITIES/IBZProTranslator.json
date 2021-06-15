@@ -71,6 +71,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProTranslator.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZPRO_TRANSLATOR"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -80,7 +88,15 @@
     "codeName" : "Simple",
     "dEFGroupType" : "BASEFIELDS",
     "logicName" : "基础属性查询",
-    "name" : "SIMPLE"
+    "name" : "SIMPLE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProTranslator.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZPRO_TRANSLATOR"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -88,7 +104,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProTranslator.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZPRO_TRANSLATOR"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

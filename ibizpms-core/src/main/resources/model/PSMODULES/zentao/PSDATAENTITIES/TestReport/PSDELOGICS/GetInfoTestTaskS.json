@@ -34,6 +34,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select case when GROUP_CONCAT(t1.id) is null then '' else GROUP_CONCAT(t1.id) end as stories from ( select DISTINCT t1.* from zt_story t1 \nleft join zt_build t11 on FIND_IN_SET(t1.id,t11.stories)\nwhere t1.deleted = '0' and  FIND_IN_SET(t11.id,?) ) t1 GROUP BY t1.product",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
@@ -107,6 +109,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select t.product  from (select DISTINCT t.product from zt_testtask t where t.deleted = '0' and FIND_IN_SET(t.id,?)) t  LIMIT 0,1",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall5",
@@ -174,6 +178,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select GROUP_CONCAT(t1.id) as bugs from zt_bug t1 where t1.deleted = '0' and t1.product = ? and t1.RESOLUTION in('fixed','postponed') and t1.openedDate < ? and (FIND_IN_SET(t1.id,(select GROUP_CONCAT(t2.bugs) from zt_build t2 where t2.id in (select build from zt_testtask t3 where t3.deleted = '0' and FIND_IN_SET(t3.id,?)) ORDER BY t2.product)) or (t1.resolvedBuild = 'trunk' and t1.resolvedDate >= ? and t1.resolvedDate <= CONCAT(?,' 23:59:59'))) GROUP BY t1.product",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall3",
@@ -205,6 +211,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select  t1.`begin`,t1.`end` , CONCAT_WS( ' ', DATE_FORMAT( now( ), '%Y-%m-%d' ), concat( 'PROJECT#', t1.id ), t1.`name`, '测试报告' ) AS TITLE,t1.name as projectname from zt_project t1 where t1.id = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall6",
@@ -236,6 +244,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select COUNT(1) as productcnt from ( select DISTINCT t.product from zt_testtask t where t.deleted = '0' and FIND_IN_SET(t.id,?)) t",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Deaction1",
@@ -310,6 +320,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select case when GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) is null then '' else GROUP_CONCAT(DISTINCT t1.`case` order by t1.`case` asc) end as cases,case when GROUP_CONCAT(DISTINCT t1.lastRunner) is null then '' else GROUP_CONCAT(DISTINCT t1.lastRunner) end  as MEMBERS\tfrom (select t1.*,? as project from zt_testrun t1 left join zt_case t11 on t1.`case` = t11.id where t11.deleted = '0' and FIND_IN_SET(t1.task, ?)) t1 GROUP BY t1.project",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -341,6 +353,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select case when GROUP_CONCAT(DISTINCT t1.build) is null then '' else GROUP_CONCAT(DISTINCT t1.build) end as builds  from zt_testtask t1 where FIND_IN_SET(t1.id, ?) and t1.deleted = '0' GROUP BY t1.project",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

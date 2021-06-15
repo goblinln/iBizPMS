@@ -31,6 +31,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as `YEARVISITS` from zt_action t where t.actor = ? and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = ?\n",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -71,6 +73,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1)  as `YEARBUGCNT` from zt_bug t where t.product > 0 and t.openedBy = ?  and DATE_FORMAT(t.openedDate,'%Y') = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall3",
@@ -111,6 +115,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as `YEARCASECNT` from zt_case t where t.product > 0 and t.openedBy = ? and DATE_FORMAT(t.openedDate,'%Y') = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
@@ -168,6 +174,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1)  as `YEARACTIONCNT` from zt_action t where t.actor = ?  and DATE_FORMAT(t.date,'%Y') = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

@@ -12,6 +12,8 @@
     },
     "logicNodeType" : "RAWSQLCALL",
     "name" : "设置查询类型",
+    "sql" : "select 'module' as `DOCQTYPE` from dual",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
@@ -48,6 +50,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select ( CASE WHEN FIND_IN_SET( ?, ?) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` from dual",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",

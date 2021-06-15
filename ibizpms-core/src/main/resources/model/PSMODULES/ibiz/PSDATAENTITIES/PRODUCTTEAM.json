@@ -85,6 +85,26 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTTEAM",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "product",
+          "name" : "TYPE 等于(=) (product)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -99,6 +119,14 @@
     "codeName" : "ProductTeamInfo",
     "logicName" : "产品团队成员信息",
     "name" : "ProductTeamInfo",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTTEAM"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -112,7 +140,34 @@
     } ],
     "codeName" : "ProjectApp",
     "logicName" : "项目立项",
-    "name" : "ProjectApp"
+    "name" : "ProjectApp",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTTEAM",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "product",
+          "name" : "ROOT 等于(=) 网页请求上下文(product)",
+          "getPSVARTypeId" : "WEBCONTEXT",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "product",
+          "name" : "TYPE 等于(=) (product)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -126,6 +181,14 @@
     "codeName" : "RowEditDefaultProductTeam",
     "logicName" : "产品团队管理（废弃）",
     "name" : "RowEditDefaultProductTeam",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTTEAM"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -135,6 +198,14 @@
     "codeName" : "SpecifyTeam",
     "logicName" : "指定团队部门",
     "name" : "SpecifyTeam",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTTEAM"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -143,7 +214,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTTEAM"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -1508,6 +1587,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select t11.`name` as role,null as id from zt_user t1 left JOIN zt_group t11 on t1.role = t11.role where t1.account = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",

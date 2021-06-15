@@ -71,6 +71,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSUM"
+    },
     "customCode" : true,
     "defaultMode" : true
   }, {
@@ -81,6 +89,14 @@
     "codeName" : "ProductBugcnt_QA",
     "logicName" : "产品创建bug数_测试人员",
     "name" : "ProductBugcnt_QA",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSUM"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -90,6 +106,14 @@
     "codeName" : "ProductCreateStory",
     "logicName" : "产品创建需求占比",
     "name" : "ProductCreateStory",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSUM"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -99,6 +123,14 @@
     "codeName" : "ProductPlancntAndStorycnt_PO",
     "logicName" : "产品计划数和需求数_产品经理",
     "name" : "ProductPlancntAndStorycnt_PO",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSUM"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -108,6 +140,14 @@
     "codeName" : "ProductStoryHoursSum",
     "logicName" : "产品需求工时汇总",
     "name" : "ProductStoryHoursSum",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSUM"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -117,6 +157,14 @@
     "codeName" : "ProductStorySum",
     "logicName" : "产品需求汇总查询",
     "name" : "ProductStorySum",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSUM"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -126,6 +174,14 @@
     "codeName" : "ProductSumBugType",
     "logicName" : "产品Bug类型统计",
     "name" : "ProductSumBugType",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSUM"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -134,7 +190,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductSum.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTSUM"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

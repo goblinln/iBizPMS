@@ -106,6 +106,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_FILE"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -124,6 +132,14 @@
     "codeName" : "DocLibFile",
     "logicName" : "文件库查询",
     "name" : "DocLibFile",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_FILE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -142,6 +158,27 @@
     "codeName" : "MySubmitFile",
     "logicName" : "我提交的文件（权限）",
     "name" : "MySubmitFile",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_FILE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "name" : "ADDEDBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -160,6 +197,14 @@
     "codeName" : "ProductDocLibFile",
     "logicName" : "文件库查询",
     "name" : "ProductDocLibFile",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_FILE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -177,7 +222,41 @@
     } ],
     "codeName" : "Type",
     "logicName" : "动态(根据类型过滤)",
-    "name" : "Type"
+    "name" : "Type",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_FILE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfparentkey",
+          "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
+          "getPSVARTypeId" : "DATACONTEXT",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "objecttype",
+          "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
+          "getPSVARTypeId" : "DATACONTEXT",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "NOTEQ",
+          "condType" : "SINGLE",
+          "condValue" : "editor",
+          "name" : "EXTRA 不等于(<>) (editor)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -195,6 +274,14 @@
     "codeName" : "TypeNotBySrfparentkey",
     "logicName" : "查询附件",
     "name" : "TypeNotBySrfparentkey",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_FILE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -208,7 +295,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_FILE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

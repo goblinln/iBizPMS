@@ -403,6 +403,14 @@
     "codeName" : "Account",
     "logicName" : "指定用户数据",
     "name" : "Account",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -421,6 +429,27 @@
     "codeName" : "AssignedToMyBug",
     "logicName" : "指派给我Bug",
     "name" : "AssignedToMyBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -447,6 +476,27 @@
     "codeName" : "AssignedToMyBugPc",
     "logicName" : "指派给我Bug（PC）",
     "name" : "AssignedToMyBugPc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -461,6 +511,14 @@
     "codeName" : "BuildBugs",
     "logicName" : "版本关联Bug（已解决）",
     "name" : "BuildBugs",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -479,6 +537,39 @@
     "codeName" : "BuildLinkResolvedBugs",
     "logicName" : "版本可关联的已解决的Bugs集合",
     "name" : "buildLinkResolvedBugs",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "NOTEQ",
+          "condType" : "SINGLE",
+          "condValue" : "closed",
+          "name" : "STATUS 不等于(<>) (closed)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfparentkey",
+          "name" : "PROJECT 等于(=) 网页请求上下文(srfparentkey)",
+          "getPSVARTypeId" : "WEBCONTEXT",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "resolved",
+          "name" : "STATUS 等于(=) (resolved)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -493,6 +584,14 @@
     "codeName" : "BuildOpenBugs",
     "logicName" : "版本关联Bug（已解决）",
     "name" : "BuildOpenBugs",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -511,6 +610,23 @@
     "codeName" : "BuildProduceBug",
     "logicName" : "Build产生的Bug",
     "name" : "BuildProduceBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -529,6 +645,23 @@
     "codeName" : "BuildProduceBugModule",
     "logicName" : "Build产生的Bug-模块分布",
     "name" : "BuildProduceBugModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -547,6 +680,23 @@
     "codeName" : "BuildProduceBugModule_Project",
     "logicName" : "Build产生的Bug-模块分布(项目)",
     "name" : "BuildProduceBugModule_Project",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -565,6 +715,23 @@
     "codeName" : "BuildProduceBugOpenedBy",
     "logicName" : "Build产生的Bug-创建者分布",
     "name" : "BuildProduceBugOpenedBy",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -587,6 +754,26 @@
     "codeName" : "BuildProduceBugOpenedBy_Project",
     "logicName" : "Build产生的Bug-创建者分布(项目)",
     "name" : "BuildProduceBugOpenedBy_Project",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        }, {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -605,6 +792,26 @@
     "codeName" : "BuildProduceBugRES",
     "logicName" : "Build产生的Bug（已解决）",
     "name" : "BuildProduceBugRES",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        }, {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -627,6 +834,23 @@
     "codeName" : "BuildProduceBugRESOLVEDBY",
     "logicName" : "Build产生的Bug-解决者分布",
     "name" : "BuildProduceBugRESOLVEDBY",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -649,6 +873,26 @@
     "codeName" : "BuildProduceBugRESOLVEDBY_Project",
     "logicName" : "Build产生的Bug-解决者分布(项目)",
     "name" : "BuildProduceBugRESOLVEDBY_Project",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        }, {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -671,6 +915,23 @@
     "codeName" : "BuildProduceBugResolution_Project",
     "logicName" : "Build产生的Bug-解决方案分布(项目)",
     "name" : "BuildProduceBugResolution_Project",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -689,6 +950,23 @@
     "codeName" : "BuildProduceBugSeverity_Project",
     "logicName" : "Build产生的Bug-严重程度分布(项目)",
     "name" : "BuildProduceBugSeverity_Project",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -707,6 +985,23 @@
     "codeName" : "BuildProduceBugStatus_Project",
     "logicName" : "Build产生的Bug-状态分布(项目)",
     "name" : "BuildProduceBugStatus_Project",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -725,6 +1020,23 @@
     "codeName" : "BuildProduceBugType_Project",
     "logicName" : "Build产生的Bug-类型分布(项目)",
     "name" : "BuildProduceBugType_Project",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -743,6 +1055,30 @@
     "codeName" : "CurUserResolve",
     "logicName" : "当前用户解决的Bug",
     "name" : "CurUserResolve",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "name" : "RESOLVEDBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT",
+          "ignoreEmpty" : false
+        }, {
+          "condType" : "CUSTOM",
+          "name" : "当前年度"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -757,6 +1093,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true,
     "defaultMode" : true
   }, {
@@ -767,6 +1111,14 @@
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -789,6 +1141,14 @@
     "codeName" : "My",
     "logicName" : "我的数据",
     "name" : "My",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -803,6 +1163,14 @@
     "codeName" : "MyAgentBug",
     "logicName" : "我代理的Bug",
     "name" : "MyAgentBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -821,6 +1189,27 @@
     "codeName" : "MyCreate",
     "logicName" : "我创建的（权限）",
     "name" : "MyCreate",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -839,6 +1228,53 @@
     "codeName" : "MyCreateOrPartake",
     "logicName" : "我创建或参与（权限）",
     "name" : "MyCreateOrPartake",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "RESOLVEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "LASTEDITEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -857,6 +1293,30 @@
     "codeName" : "MyCurOpenedBug",
     "logicName" : "累计创建的Bug数",
     "name" : "MyCurOpenedBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -875,6 +1335,14 @@
     "codeName" : "MyFavorites",
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -893,6 +1361,23 @@
     "codeName" : "MyReProduct",
     "logicName" : "我相关的产品（权限）",
     "name" : "MyReProduct",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "?"
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -919,6 +1404,14 @@
     "codeName" : "NotCurPlanLinkBug",
     "logicName" : "计划关联bug(去除已关联)",
     "name" : "NotCurPlanLinkBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -933,6 +1426,14 @@
     "codeName" : "ReleaseBugs",
     "logicName" : "发布关联Bug（已解决）",
     "name" : "ReleaseBugs",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -947,6 +1448,14 @@
     "codeName" : "ReleaseLeftBugs",
     "logicName" : "发布关联Bug（未解决）",
     "name" : "ReleaseLeftBugs",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -965,6 +1474,27 @@
     "codeName" : "ReleaseLinkableLeftBug",
     "logicName" : "发布可关联的bug（遗留）",
     "name" : "ReleaseLinkableLeftBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "product",
+          "name" : "PRODUCT 等于(=) 数据上下文(product)",
+          "getPSVARTypeId" : "DATACONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -983,6 +1513,27 @@
     "codeName" : "ReleaseLinkableResolvedBug",
     "logicName" : "发布可关联的bug（已解决）",
     "name" : "ReleaseLinkableResolvedBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "product",
+          "name" : "PRODUCT 等于(=) 数据上下文(product)",
+          "getPSVARTypeId" : "DATACONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -997,6 +1548,14 @@
     "codeName" : "ReportBugs",
     "logicName" : "发布关联Bug（未解决）",
     "name" : "ReportBugs",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1015,6 +1574,26 @@
     "codeName" : "SelectBugByBuild",
     "logicName" : "版本关联bug(遗留得bug)",
     "name" : "SelectBugByBuild",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        }, {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1033,6 +1612,14 @@
     "codeName" : "SelectBugsByProject",
     "logicName" : "查询遗留得bug(项目)",
     "name" : "SelectBugsByProject",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1047,7 +1634,15 @@
     "codeName" : "Simple",
     "dEFGroupType" : "BASEFIELDS",
     "logicName" : "基础属性查询",
-    "name" : "SIMPLE"
+    "name" : "SIMPLE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -1064,7 +1659,24 @@
     } ],
     "codeName" : "StoryFormBug",
     "logicName" : "需求来源Bug",
-    "name" : "StoryFormBug"
+    "name" : "StoryFormBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -1082,6 +1694,14 @@
     "codeName" : "TaskBug",
     "logicName" : "任务相关bug",
     "name" : "TaskBug",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1095,7 +1715,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BUG"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
@@ -5968,6 +6596,7 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "delete from T_IBZ_FAVORITES where type = 'bug' and account = ? and objectid = ?",
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -6282,6 +6911,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select t.product,t1.`name` as productname from zt_projectproduct t left join zt_product t1 on t1.id = t.product where t.project = ? LIMIT 0,1",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -6356,6 +6987,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select version as STORYVERSION from zt_story where id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",

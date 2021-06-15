@@ -165,6 +165,14 @@
     "codeName" : "AllDoclibModule_Custom",
     "logicName" : "数据查询",
     "name" : "AllDoclibModule_Custom",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -187,6 +195,14 @@
     "codeName" : "ChildModuleByParent",
     "logicName" : "子模块目录",
     "name" : "ChildModuleByParent",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -209,6 +225,14 @@
     "codeName" : "ChildModuleByRealParent",
     "logicName" : "文档库分类子模块",
     "name" : "ChildModuleByRealParent",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -223,6 +247,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -241,6 +273,14 @@
     "codeName" : "DefaultDoclib",
     "logicName" : "数据查询",
     "name" : "AllDoclibModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -259,6 +299,14 @@
     "codeName" : "MyFavourites",
     "logicName" : "我的收藏",
     "name" : "MyFavourites",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -281,6 +329,14 @@
     "codeName" : "ParentModule",
     "logicName" : "父模块",
     "name" : "ParentModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -299,6 +355,14 @@
     "codeName" : "RootModuleMuLu",
     "logicName" : "所有根模块目录",
     "name" : "RootModuleMuLu",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -321,6 +385,14 @@
     "codeName" : "RootModuleMuLuByRoot",
     "logicName" : "根模块目录动态",
     "name" : "RootModuleMuLuByRoot",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -343,6 +415,14 @@
     "codeName" : "RootModuleMuLuBysrfparentkey",
     "logicName" : "根模块目录动态",
     "name" : "RootModuleMuLuBysrfparentkey",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -356,7 +436,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DOCLIBMODULE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "AllDocLibModule_Custom",
@@ -1721,6 +1809,8 @@
       },
       "logicNodeType" : "RAWSQLCALL",
       "name" : "设置查询类型",
+      "sql" : "select 'module' as `DOCQTYPE` from dual",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -1757,6 +1847,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select ( CASE WHEN FIND_IN_SET( ?, ?) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` from dual",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -1944,6 +2036,7 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "delete from T_IBZ_FAVORITES where type = ? and account = ? and objectid = ?",
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",

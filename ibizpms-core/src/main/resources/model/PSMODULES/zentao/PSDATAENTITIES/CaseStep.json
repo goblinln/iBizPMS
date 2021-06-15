@@ -190,6 +190,43 @@
     "codeName" : "CurTest",
     "logicName" : "当前测试步骤",
     "name" : "CurTest",
+    "getPSDEDQMain" : {
+      "getChildPSDEDQJoins" : [ {
+        "getChildPSDEDQJoins" : [ {
+          "getJoinPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
+          },
+          "joinType" : "1NLEFTOUT",
+          "name" : "ZT_TESTRESULT* [左外联接 1:N](DER1N_ZT_TESTRESULT_ZT_CASE_CASE)",
+          "getPSDEDQGroupCondition" : {
+            "condOp" : "AND",
+            "condType" : "GROUP",
+            "name" : "连接条件",
+            "getPSDEDQConditions" : [ {
+              "condOp" : "EQ",
+              "condType" : "SINGLE",
+              "condValue" : "srfparentkey",
+              "name" : "ID 等于(=) 网页请求上下文(srfparentkey)",
+              "getPSVARTypeId" : "WEBCONTEXT",
+              "ignoreEmpty" : false
+            } ]
+          }
+        } ],
+        "getJoinPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+        },
+        "joinType" : "N1RIGHT",
+        "name" : "ZT_CASE [右联接N:1](DER1N_ZT_CASESTEP_ZT_CASE_CASE)"
+      } ],
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_CASESTEP"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -199,6 +236,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_CASESTEP"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -207,7 +252,15 @@
     } ],
     "codeName" : "Default1",
     "logicName" : "DEFAULT1",
-    "name" : "DEFAULT1"
+    "name" : "DEFAULT1",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_CASESTEP"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -216,6 +269,14 @@
     "codeName" : "Mob",
     "logicName" : "Mob",
     "name" : "Mob",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_CASESTEP"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -225,6 +286,14 @@
     "codeName" : "Version",
     "logicName" : "版本",
     "name" : "Version",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_CASESTEP"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -234,6 +303,14 @@
     "codeName" : "Versions",
     "logicName" : "版本1",
     "name" : "Versions",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_CASESTEP"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -242,7 +319,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_CASESTEP"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurTest",

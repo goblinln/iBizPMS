@@ -1116,14 +1116,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
-    "tempDataOrder" : 10,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "tempDataOrder" : 10
   } ],
   "name" : "ZT_TASKESTIMATE",
   "getPSDEName" : "ZT_TASKESTIMATE",

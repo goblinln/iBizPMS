@@ -91,6 +91,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    },
     "customCode" : true,
     "defaultMode" : true
   }, {
@@ -114,6 +122,26 @@
     "codeName" : "NoOpenProduct",
     "logicName" : "未关闭产品",
     "name" : "NOOpenProduct",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "NOTEQ",
+          "condType" : "SINGLE",
+          "condValue" : "closed",
+          "name" : "STATUS 不等于(<>) (closed)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -123,6 +151,14 @@
     "codeName" : "ProjectBugType",
     "logicName" : "项目bug类型",
     "name" : "ProjectBugType",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -137,6 +173,14 @@
     "codeName" : "ProjectInputStats",
     "logicName" : "项目投入统计",
     "name" : "ProjectInputStats",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -146,6 +190,14 @@
     "codeName" : "ProjectProgress",
     "logicName" : "项目进度",
     "name" : "ProjectProgress",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -155,6 +207,14 @@
     "codeName" : "ProjectQuality",
     "logicName" : "项目质量表查询",
     "name" : "ProjectQuality",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -164,6 +224,14 @@
     "codeName" : "ProjectStoryStageStats",
     "logicName" : "项目需求阶段统计",
     "name" : "ProjectStoryStageStats",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -173,6 +241,14 @@
     "codeName" : "ProjectStoryStatusStats",
     "logicName" : "项目需求状态统计",
     "name" : "ProjectStoryStatusStats",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -182,6 +258,14 @@
     "codeName" : "ProjectTaskCountByTaskStatus",
     "logicName" : "项目任务统计(任务状态)",
     "name" : "ProjectTaskCountByTaskStatus",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -191,6 +275,14 @@
     "codeName" : "ProjectTaskCountByType",
     "logicName" : "项目任务类型统计",
     "name" : "ProjectTaskCountByType",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -200,6 +292,14 @@
     "codeName" : "TaskTime",
     "logicName" : "任务工时消耗剩余查询",
     "name" : "TASKTIME",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -213,7 +313,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTSTATS"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -3079,6 +3187,8 @@
       },
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取聚合数",
+      "sql" : "select sum(t1.bugcnt) as bugcnt, sum(t1.completetaskcnt) as completetaskcnt, sum(t1.completestorycnt) as completestorycnt, sum(t1.storycnt) as storycnt, sum(t1.FINISHBUGCNT) as FINISHBUGCNT, sum(t1.taskcnt) as taskcnt, sum(t1.bugstory) as bugstory, sum(t1.bugtask) as bugtask, sum(t1.IMPORTANTBUGCNT) as IMPORTANTBUGCNT, CONCAT(round(IFNULL((sum(t1.IMPORTANTBUGCNT)/sum(t1.bugcnt)),0),2)*100,'%')  as SERIOUSBUGPROPORTION from (SELECT t1.bugcnt,t1.completetaskcnt,t1.completestorycnt,t1.name,t1.storycnt,t1.FINISHBUGCNT,t1.taskcnt,t1.bugstory,t1.bugtask,IFNULL(t4.IMPORTANTBUGCNT,0) as IMPORTANTBUGCNT ,CONCAT(round(IFNULL((IMPORTANTBUGCNT/t1.bugcnt),0),2)*100,'%')  as SERIOUSBUGPROPORTION from (\nSELECT\n\tt1.*,\n\tIFNULL( t3.bugtask, 0 ) AS bugtask \nFROM\n\t(\nSELECT\n\tt1.*,\n\tIFNULL( t22.bugstory, 0 ) AS bugstory \nFROM\n\t(\nSELECT\n\t( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `BUGCNT`,\n\tt1.`DELETED`,\n\tt1.`END`,\n\t( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND `STATUS` <> 'active' AND DELETED = '0' ) AS `FINISHBUGCNT`,\n\t(SELECT count(1) from zt_task where PROJECT = t1.`ID` AND `STATUS`='done' AND DELETED = '0')as completetaskcnt,\n\t(SELECT count( 1 ) FROM (SELECT t1.project,t1.story from zt_projectstory t1 left join zt_story t2 on t1.story = t2.id where t2.stage in ('verified','released','closed') and t2.deleted='0'\n)t2 WHERE t1.id = t2.project) as completestorycnt,\n\tt1.`ID`,\n\tt1.`NAME`,\n\tt1.`STATUS`,\n\t(\nSELECT\n\tCOUNT( 1 ) \nFROM\n\tZT_STORY\n\tLEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY \nWHERE\n\tPROJECT = t1.`ID` \n\tAND DELETED = '0' \n\t) AS `STORYCNT`,\n\t( SELECT COUNT( 1 ) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `TASKCNT` \nFROM\n\t`zt_project` t1\n\tLEFT JOIN t_ibz_top t2 ON t1.id = t2.OBJECTID \n\tAND t2.type = 'project' \n\tAND t2.ACCOUNT = 'csd123_123' \nWHERE\n\tt1.DELETED = '0' \n\tAND (\n\t(\n\tt1.acl = 'private' \n\tAND t1.id IN ( SELECT t3.root FROM zt_team t3 WHERE t3.account = 'csd123_123' AND t3.type = 'project' ) \n\t) \n\tOR t1.acl = 'open' \n\t) \n\t) t1\n\tLEFT JOIN (\nSELECT\n\tt1.project,\n\tcount( 1 ) AS bugstory \nFROM\n\t(\nSELECT\n\tt1.project,\n\tt1.story,\n\tt2.title \nFROM\n\tzt_bug t1\n\tLEFT JOIN zt_story t2 ON t1.story = t2.id\n\tLEFT JOIN zt_project t22 ON t1.project = t22.id \nWHERE\n\tt1.deleted = '0' \n\tAND t1.project <> '0' \n\tAND t1.story <> '0' \n\tAND t22.deleted = '0' \n\t) t1 \nGROUP BY\n\tt1.project \n\t) t22 ON t1.id = t22.project \n\t) t1\n\tLEFT JOIN (\nSELECT\n\tt1.project,\n\tcount( 1 ) AS bugtask \nFROM\n\t(\nSELECT\n\tt1.project,\n\tt1.task,\n\tt1.title,\n\tt2.NAME \nFROM\n\tzt_bug t1\n\tLEFT JOIN zt_task t2 ON t1.task = t2.id\n\tLEFT JOIN zt_project t22 ON t1.project = t22.id \nWHERE\n\tt1.deleted = '0' \n\tAND t1.project <> '0' \n\tAND t1.task <> '0' \n\tAND t22.deleted = '0' \n\t) t1 \nGROUP BY\n\tt1.project \n\t) t3 ON t1.id = t3.project\n\t)t1 Left join (SELECT t1.project, count(1) as IMPORTANTBUGCNT from zt_bug t1 where t1.severity <=3 and t1.deleted='0' and t1.project <> '0' GROUP BY t1.project)t4 on t1.id=t4.project) t1",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",

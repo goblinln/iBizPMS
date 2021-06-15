@@ -22,6 +22,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as LEFTBUGS from zt_bug t1 where t1.deleted = '0'  and    FIND_IN_SET(t1.id,(select leftbugs from zt_release where id = ?))",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
@@ -53,6 +55,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as stories from zt_story t1 where t1.deleted = '0'  and  FIND_IN_SET(t1.id,(select stories from zt_release where id = ?))",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -84,6 +88,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as bugs from zt_bug t1 where  t1.deleted = '0'  and   FIND_IN_SET(t1.id,(select bugs from zt_release where id = ?))",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",

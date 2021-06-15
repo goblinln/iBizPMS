@@ -776,7 +776,7 @@
     }, {
       "key" : "SRFPARENTKEY",
       "name" : "SRFPARENTKEY",
-      "value" : "id",
+      "value" : "doclibmodule",
       "rawValue" : false
     } ],
     "getPSNavigateParams" : [ {
@@ -787,7 +787,7 @@
     }, {
       "key" : "srfparentkey",
       "name" : "srfparentkey",
-      "value" : "id",
+      "value" : "doclibmodule",
       "rawValue" : false
     }, {
       "key" : "project",
@@ -1117,14 +1117,7 @@
       "name" : "ROOT",
       "codeName" : "Root"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ],
   "name" : "IBZ_DOCLIBMODULE",
   "getPSDEName" : "IBZ_DOCLIBMODULE",

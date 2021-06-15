@@ -91,6 +91,46 @@
     "codeName" : "CurProduct",
     "logicName" : "CurProduct",
     "name" : "CurProduct",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BRANCH",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "product",
+            "name" : "PRODUCT 等于(=) 网页请求上下文(product)",
+            "getPSVARTypeId" : "WEBCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "product",
+            "name" : "PRODUCT 等于(=) 数据上下文(product)",
+            "getPSVARTypeId" : "DATACONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "products",
+            "name" : "PRODUCT 等于(=) 数据上下文(products)",
+            "getPSVARTypeId" : "DATACONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -105,6 +145,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BRANCH"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -114,6 +162,39 @@
     "codeName" : "DefaultBranch",
     "logicName" : "DefaultBranch",
     "name" : "DefaultBranch",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BRANCH",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "product",
+            "name" : "PRODUCT 等于(=) 网页请求上下文(product)",
+            "getPSVARTypeId" : "WEBCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "product",
+            "name" : "PRODUCT 等于(=) 数据上下文(product)",
+            "getPSVARTypeId" : "DATACONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -127,7 +208,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BRANCH"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurProduct",

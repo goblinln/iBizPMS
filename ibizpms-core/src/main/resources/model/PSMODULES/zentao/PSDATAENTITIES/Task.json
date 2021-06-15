@@ -519,6 +519,14 @@
     "codeName" : "Account",
     "logicName" : "指定用户数据",
     "name" : "Account",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -541,6 +549,14 @@
     "codeName" : "AssignedToMyTask",
     "logicName" : "指派给我任务",
     "name" : "AssignedToMyTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -571,6 +587,14 @@
     "codeName" : "AssignedToMyTaskPc",
     "logicName" : "指派给我任务（PC）",
     "name" : "AssignedToMyTaskPc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -589,6 +613,14 @@
     "codeName" : "BugTask",
     "logicName" : "Bug相关任务",
     "name" : "BugTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -611,6 +643,14 @@
     "codeName" : "ByModule",
     "logicName" : "通过模块查询",
     "name" : "ByModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -625,6 +665,14 @@
     "codeName" : "ChildDefault",
     "logicName" : "数据查询（子任务）",
     "name" : "ChildDefault",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -643,6 +691,14 @@
     "codeName" : "ChildDefaultMore",
     "logicName" : "子任务（更多）",
     "name" : "ChildDefaultMore",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -661,6 +717,14 @@
     "codeName" : "ChildTask",
     "logicName" : "子任务",
     "name" : "ChildTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -670,6 +734,14 @@
     "codeName" : "ChildTaskTree",
     "logicName" : "子任务（树）",
     "name" : "ChildTaskTree",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -688,6 +760,14 @@
     "codeName" : "CurFinishTask",
     "logicName" : "用户年度完成任务",
     "name" : "CurFinishTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -706,6 +786,14 @@
     "codeName" : "CurProjectTaskQuery",
     "logicName" : "当前项目任务",
     "name" : "CurProjectTaskQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -720,6 +808,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true,
     "defaultMode" : true
   }, {
@@ -735,6 +831,14 @@
     "codeName" : "DefaultRow",
     "logicName" : "DefaultRow",
     "name" : "DefaultRow",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -744,6 +848,14 @@
     "codeName" : "ESBulk",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -762,6 +874,70 @@
     "codeName" : "MultipleTaskAction",
     "logicName" : "多人任务（权限）",
     "name" : "MultipleTaskAction",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "LASTEDITEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "FINISHEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "CANCELEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        }, {
+          "condType" : "CUSTOM",
+          "name" : "?"
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -784,6 +960,14 @@
     "codeName" : "My",
     "logicName" : "我的数据",
     "name" : "My",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -798,6 +982,14 @@
     "codeName" : "MyAgentTask",
     "logicName" : "我代理的任务",
     "name" : "MyAgentTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -820,6 +1012,14 @@
     "codeName" : "MyAllTask",
     "logicName" : "我相关的任务",
     "name" : "MyAllTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -842,6 +1042,14 @@
     "codeName" : "MyCompleteTask",
     "logicName" : "我完成的任务（汇报）",
     "name" : "MyCompleteTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -860,6 +1068,14 @@
     "codeName" : "MyCompleteTaskMobDaily",
     "logicName" : "我完成的任务（移动端日报）",
     "name" : "MyCompleteTaskMobDaily",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -878,6 +1094,14 @@
     "codeName" : "MyCompleteTaskMobMonthly",
     "logicName" : "我完成的任务（移动端月报）",
     "name" : "MyCompleteTaskMobMonthly",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -896,6 +1120,14 @@
     "codeName" : "MyCompleteTaskMonthlyZS",
     "logicName" : "我完成的任务（月报展示）",
     "name" : "MyCompleteTaskMonthlyZS",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -914,6 +1146,14 @@
     "codeName" : "MyCompleteTaskZS",
     "logicName" : "我完成的任务（汇报）",
     "name" : "MyCompleteTaskZS",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -932,6 +1172,27 @@
     "codeName" : "MyCreate",
     "logicName" : "我创建的（权限）",
     "name" : "MyCreate",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -950,6 +1211,67 @@
     "codeName" : "MyCreateOrPartake",
     "logicName" : "我创建或参与（权限）",
     "name" : "MyCreateOrPartake",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "LASTEDITEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "FINISHEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "CANCELEDBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -968,6 +1290,14 @@
     "codeName" : "MyFavorites",
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -986,6 +1316,14 @@
     "codeName" : "MyPlansTaskMobMonthly",
     "logicName" : "我计划参与的任务（移动端月报）",
     "name" : "MyPlansTaskMobMonthly",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1004,6 +1342,23 @@
     "codeName" : "MyReProject",
     "logicName" : "我相关项目（权限）",
     "name" : "MyReProject",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "?"
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1022,6 +1377,14 @@
     "codeName" : "MyTomorrowPlanTask",
     "logicName" : "我计划参与的任务（汇报）",
     "name" : "MyTomorrowPlanTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1040,6 +1403,14 @@
     "codeName" : "MyTomorrowPlanTaskMobDaily",
     "logicName" : "我计划参与的任务（汇报）",
     "name" : "MyTomorrowPlanTaskMobDaily",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1058,6 +1429,14 @@
     "codeName" : "NextWeekCompleteTaskMobZS",
     "logicName" : "移动端下周计划参与(汇报)",
     "name" : "NextWeekCompleteTaskMobZS",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1076,6 +1455,14 @@
     "codeName" : "NextWeekCompleteTaskZS",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "NextWeekCompleteTaskZS",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1094,6 +1481,14 @@
     "codeName" : "NextWeekPlanCompleteTask",
     "logicName" : "下周计划完成任务(汇报)",
     "name" : "NextWeekPlanCompleteTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1112,6 +1507,14 @@
     "codeName" : "PlanTask",
     "logicName" : "相关任务（计划）",
     "name" : "PlanTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1130,6 +1533,14 @@
     "codeName" : "ProjectAppTask",
     "logicName" : "项目任务（项目立项）",
     "name" : "ProjectAppTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1148,6 +1559,14 @@
     "codeName" : "ProjectTask",
     "logicName" : "项目任务",
     "name" : "ProjectTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1166,6 +1585,14 @@
     "codeName" : "RootTask",
     "logicName" : "根任务",
     "name" : "RootTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1180,7 +1607,15 @@
     "codeName" : "Simple",
     "dEFGroupType" : "BASEFIELDS",
     "logicName" : "基础属性查询",
-    "name" : "SIMPLE"
+    "name" : "SIMPLE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -1197,7 +1632,41 @@
     } ],
     "codeName" : "TaskLinkPlan",
     "logicName" : "关联计划（当前项目未关联）",
-    "name" : "TaskLinkPlan"
+    "name" : "TaskLinkPlan",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        }, {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "NOTEQ",
+            "condType" : "SINGLE",
+            "condValue" : "productplan",
+            "name" : "PLAN 不等于(<>) 网页请求上下文(productplan)",
+            "getPSVARTypeId" : "WEBCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "ISNULL",
+            "condType" : "SINGLE",
+            "name" : "PLAN 值为空(Nil)",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -1219,6 +1688,14 @@
     "codeName" : "ThisMonthCompleteTaskChoice",
     "logicName" : "我本月完成的任务（下拉列表框）",
     "name" : "ThisMonthCompleteTaskChoice",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1237,6 +1714,14 @@
     "codeName" : "ThisWeekCompleteTask",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "ThisWeekCompleteTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1259,6 +1744,14 @@
     "codeName" : "ThisWeekCompleteTaskChoice",
     "logicName" : "本周已完成任务(下拉框选择)",
     "name" : "ThisWeekCompleteTaskChoice",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1277,6 +1770,14 @@
     "codeName" : "ThisWeekCompleteTaskMobZS",
     "logicName" : "移动端本周已完成任务(汇报)",
     "name" : "ThisWeekCompleteTaskMobZS",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1295,6 +1796,14 @@
     "codeName" : "ThisWeekCompleteTaskZS",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "ThisWeekCompleteTaskZS",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1309,6 +1818,14 @@
     "codeName" : "TodoListTask",
     "logicName" : "todo列表查询",
     "name" : "TodoListTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1323,6 +1840,14 @@
     "codeName" : "TypeGroup",
     "logicName" : "任务类型分组",
     "name" : "TypeGroup",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1341,6 +1866,14 @@
     "codeName" : "TypeGroupPlan",
     "logicName" : "任务类型分组（计划）",
     "name" : "TypeGroupPlan",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -1354,7 +1887,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TASK"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
@@ -6760,6 +7301,7 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "delete from T_IBZ_FAVORITES where type = 'task' and account = ? and objectid = ?",
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -7000,6 +7542,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select version as STORYVERSION from zt_story where id = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Prepareparam1",
@@ -7150,6 +7694,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select t1.project,t11.`name` as projectname,t21.plan,t31.`TITLE` as PLANNAME,t21.module,t41.`name` as MODULENAME  from zt_projectstory t1 inner join zt_project t11 on t1.project = t11.id INNER JOIN zt_story t21 on t1.story = t21.id left join zt_productplan t31 on t21.plan = t31.id left join zt_module t41 on t21.module = t41.id  where t1.story = ? LIMIT 0,1",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -7169,6 +7715,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select t1.project,t11.`name` as projectname from zt_projectproduct t1 inner join zt_project t11 on t1.project = t11.id left join zt_productplan t21 on t21.product = t1.product where t21.id = ? LIMIT 0,1",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Prepareparam1",
@@ -7215,6 +7763,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select GROUP_CONCAT(tt.account separator ';') as USERNAMES from zt_team tt where tt.type = 'project' and tt.root = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -7294,6 +7844,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select GROUP_CONCAT(tt.account separator ';') as USERNAMES from zt_team tt where tt.type = 'task' and tt.root = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -7352,6 +7904,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select GROUP_CONCAT(tt.account separator ';') as USERNAMES from zt_team tt where tt.type = 'project' and tt.root = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {

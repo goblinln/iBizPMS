@@ -43,6 +43,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select IFNULL(sum(t.consumed),0) as `YEARESTIMATECNT` from zt_taskestimate t where t.ACCOUNT = ? and DATE_FORMAT(t.date,'%Y') = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall4",
@@ -71,6 +73,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1) as `YEARVISITS` from zt_action t where t.actor = ? and t.action = 'login' and DATE_FORMAT(t.date,'%Y') = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall1",
@@ -111,6 +115,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select count(1)  as `YEARACTIONCNT` from zt_action t where t.actor = ?  and DATE_FORMAT(t.date,'%Y') = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Rawsqlcall2",
@@ -151,6 +157,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select COUNT(1) as `YEARLOGCNT` from zt_taskestimate t where t.ACCOUNT = ? and DATE_FORMAT(t.date,'%Y') = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",

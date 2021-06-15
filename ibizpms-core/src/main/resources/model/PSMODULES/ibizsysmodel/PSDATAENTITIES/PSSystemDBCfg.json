@@ -70,7 +70,15 @@
     } ],
     "codeName" : "Build",
     "logicName" : "版本",
-    "name" : "Build"
+    "name" : "Build",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PSSYSTEMDBCFG"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -79,6 +87,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PSSYSTEMDBCFG"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -87,7 +103,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizsysmodel/PSDATAENTITIES/PSSystemDBCfg.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PSSYSTEMDBCFG"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Build",

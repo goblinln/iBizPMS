@@ -64,6 +64,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select t.`name` as `NAMe` from ( select t.TITLE AS `name`, t.id,'bug' as type from zt_bug t union\nselect t.TITLE AS `name`,t.id,'story' as type from zt_story t union\nselect t.`name`,t.id,'task' as type from zt_task t ) t where t.id = ? and t.type = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

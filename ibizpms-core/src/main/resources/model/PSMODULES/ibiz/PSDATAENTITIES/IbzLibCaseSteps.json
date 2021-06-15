@@ -185,6 +185,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_LIBCASESTEPS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -193,7 +201,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_LIBCASESTEPS"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

@@ -143,6 +143,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_WEEKLY"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -152,6 +160,14 @@
     "codeName" : "MyNotSubmit",
     "logicName" : "我的周报",
     "name" : "MyNotSubmit",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_WEEKLY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -170,6 +186,14 @@
     "codeName" : "MyWeekly",
     "logicName" : "我收到的周报",
     "name" : "MyWeekly",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_WEEKLY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -184,6 +208,14 @@
     "codeName" : "ProductTeamMemberWeekly",
     "logicName" : "产品团队成员周报",
     "name" : "ProductTeamMemberWeekly",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_WEEKLY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -198,6 +230,14 @@
     "codeName" : "ProjectWeekly",
     "logicName" : "项目周报",
     "name" : "ProjectWeekly",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_WEEKLY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -206,7 +246,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_WEEKLY"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

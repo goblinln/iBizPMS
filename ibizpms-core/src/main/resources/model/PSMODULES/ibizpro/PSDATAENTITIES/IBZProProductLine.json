@@ -82,6 +82,26 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZPRO_PRODUCTLINE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "line",
+          "name" : "TYPE 等于(=) (line)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -100,7 +120,27 @@
     "codeName" : "Simple",
     "dEFGroupType" : "BASEFIELDS",
     "logicName" : "基础属性查询",
-    "name" : "SIMPLE"
+    "name" : "SIMPLE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZPRO_PRODUCTLINE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "line",
+          "name" : "TYPE 等于(=) (line)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -113,7 +153,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZPRO_PRODUCTLINE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

@@ -132,6 +132,14 @@
     "codeName" : "ChildDocLibDoc",
     "logicName" : "文档库文档（子库）",
     "name" : "ChildDocLibDoc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -146,6 +154,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    },
     "customCode" : true,
     "defaultMode" : true
   }, {
@@ -165,6 +181,14 @@
     "codeName" : "DocLibAndDoc",
     "logicName" : "文档库文档",
     "name" : "DocLibAndDoc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -183,6 +207,14 @@
     "codeName" : "DocLibDoc",
     "logicName" : "文档库文档",
     "name" : "DocLibDoc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -201,6 +233,14 @@
     "codeName" : "DocModuleDoc",
     "logicName" : "文档库分类文档",
     "name" : "DocModuleDoc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -215,6 +255,14 @@
     "codeName" : "DocStatus",
     "logicName" : "文档统计",
     "name" : "DocStatus",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -228,7 +276,15 @@
     } ],
     "codeName" : "LastedModify",
     "logicName" : "最新更新（与我相关）",
-    "name" : "LastedModify"
+    "name" : "LastedModify",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -245,7 +301,28 @@
     } ],
     "codeName" : "ModuleDocChild",
     "logicName" : "文件夹文档（子目录）",
-    "name" : "ModuleDocChild"
+    "name" : "ModuleDocChild",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfparentkey",
+          "name" : "MODULE 等于(=) 网页请求上下文(srfparentkey)",
+          "getPSVARTypeId" : "WEBCONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -263,6 +340,46 @@
     "codeName" : "MyCreateOrUpdateDoc",
     "logicName" : "我创建或更新文档（权限）",
     "name" : "MyCreateOrUpdateDoc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginnane",
+            "name" : "ADDEDBY 等于(=) 用户上下文(srfloginnane)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginnane",
+            "name" : "EDITEDBY 等于(=) 用户上下文(srfloginnane)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginnane",
+            "name" : "UPDATEBY 等于(=) 用户上下文(srfloginnane)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    },
     "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -272,6 +389,14 @@
     "codeName" : "MyFavourite",
     "logicName" : "我的收藏",
     "name" : "MYFAVOURITE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -290,6 +415,14 @@
     "codeName" : "MyFavouritesOnlyDoc",
     "logicName" : "我的收藏",
     "name" : "MyFavouritesOnlyDoc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -308,6 +441,14 @@
     "codeName" : "NotRootDoc",
     "logicName" : "子目录文档",
     "name" : "NotRootDoc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -330,6 +471,14 @@
     "codeName" : "RootDoc",
     "logicName" : "根目录文档",
     "name" : "RootDoc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -343,7 +492,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOC"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ChildDocLibDoc",
@@ -2427,6 +2584,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select t.`content` as content from zt_doccontent t where t.`version` = ? and t.`doc` = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -2490,6 +2649,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select  ( CASE WHEN FIND_IN_SET( ?, ?) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` from dual",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",

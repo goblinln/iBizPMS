@@ -102,6 +102,26 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_LIBMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "caselib",
+          "name" : "TYPE 等于(=) (caselib)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -115,7 +135,43 @@
     } ],
     "codeName" : "Root_NoBranch",
     "logicName" : "无枝叶",
-    "name" : "Root_NoBranch"
+    "name" : "Root_NoBranch",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_LIBMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "caselib",
+          "name" : "TYPE 等于(=) (caselib)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "ISNULL",
+            "condType" : "SINGLE",
+            "name" : "PARENT 值为空(Nil)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "0",
+            "name" : "PARENT 等于(=) (0)",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -123,7 +179,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_LIBMODULE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

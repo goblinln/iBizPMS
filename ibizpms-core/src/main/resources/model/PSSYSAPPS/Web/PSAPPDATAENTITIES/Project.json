@@ -1284,6 +1284,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as YSTARTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'doing' and t.project = ?\nand t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall10",
@@ -1315,6 +1317,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as UNCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` in( 'wait','cancel','doing') and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -1346,6 +1350,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as UNCLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` <> 'closed' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall7",
@@ -1377,6 +1383,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as CLOSETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'closed' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -1413,6 +1421,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as ASSTOMYTASKCNT from zt_task t where t.deleted = '0' and t.assignedTo = ? and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall5",
@@ -1444,6 +1454,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as ALLTASKCNT from zt_task t where t.deleted = '0'  and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall3",
@@ -1475,6 +1487,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as YCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'done' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall6",
@@ -1506,6 +1520,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as CANCELTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'cancel' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall9",
@@ -1537,6 +1553,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as UNSTARTTASKCNT from zt_task t where t.deleted = '0' and t.`status` = 'wait' and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall4",
@@ -1573,6 +1591,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as MYCOMPLETETASKCNT from zt_task t where t.deleted = '0' and t.`finishedby` = ? and t.project = ? and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall11",
@@ -1592,6 +1612,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(t.id) as STORYCHANGECNT from zt_task t left join zt_story t21 on t.story = t21.id where t.deleted = '0'  and t.project = ? and t.storyVersion < t21.version and t21.`status` <> 'changed' and t.parent <= '0'",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -4013,14 +4035,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "name" : "PRODUCT__PROJECT",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ],
   "name" : "ZT_PROJECT",
   "getPSDEName" : "ZT_PROJECT",

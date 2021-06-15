@@ -127,6 +127,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DAILY"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -141,6 +149,14 @@
     "codeName" : "MyAllDaily",
     "logicName" : "我的日报（已提交和未提交）",
     "name" : "MyAllDaily",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DAILY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -159,6 +175,14 @@
     "codeName" : "MyDaily",
     "logicName" : "我收到的日报",
     "name" : "MyDaily",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DAILY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -168,6 +192,14 @@
     "codeName" : "MyNotSubmit",
     "logicName" : "我的日报",
     "name" : "MyNotSubmit",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DAILY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -182,6 +214,14 @@
     "codeName" : "MySubmitDaily",
     "logicName" : "我提交的日报",
     "name" : "MySubmitDaily",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DAILY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -191,6 +231,14 @@
     "codeName" : "ProductDaily",
     "logicName" : "产品日报",
     "name" : "ProductDaily",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DAILY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -204,7 +252,33 @@
     } ],
     "codeName" : "ProjectDaily",
     "logicName" : "项目日报",
-    "name" : "ProjectDaily"
+    "name" : "ProjectDaily",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DAILY",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "1",
+          "name" : "ISSUBMIT 等于(=) (1)",
+          "ignoreEmpty" : false
+        }, {
+          "condType" : "CUSTOM",
+          "name" : "当前项目团队"
+        }, {
+          "condType" : "CUSTOM",
+          "name" : "项目日报日期"
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -212,7 +286,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_DAILY"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

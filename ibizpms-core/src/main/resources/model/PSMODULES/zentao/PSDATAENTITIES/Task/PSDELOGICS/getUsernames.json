@@ -22,6 +22,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select GROUP_CONCAT(tt.account separator ';') as USERNAMES from zt_team tt where tt.type = 'project' and tt.root = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
@@ -101,6 +103,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select GROUP_CONCAT(tt.account separator ';') as USERNAMES from zt_team tt where tt.type = 'task' and tt.root = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

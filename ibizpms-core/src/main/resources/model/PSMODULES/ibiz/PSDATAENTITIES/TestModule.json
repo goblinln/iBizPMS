@@ -134,6 +134,26 @@
     "codeName" : "ByPath",
     "logicName" : "BYPATH",
     "name" : "BYPATH",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_TESTMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "bug",
+          "name" : "TYPE 等于(=) (bug)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -152,6 +172,32 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_TESTMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "story",
+          "name" : "TYPE 等于(=) (story)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "0",
+          "name" : "DELETED 等于(=) (0)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -174,6 +220,14 @@
     "codeName" : "ParentModule",
     "logicName" : "父模块",
     "name" : "ParentModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -191,7 +245,43 @@
     } ],
     "codeName" : "Root",
     "logicName" : "根模块",
-    "name" : "ROOT"
+    "name" : "ROOT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_TESTMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "story",
+          "name" : "TYPE 等于(=) (story)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "ISNULL",
+            "condType" : "SINGLE",
+            "name" : "PARENT 值为空(Nil)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "0",
+            "name" : "PARENT 等于(=) (0)",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -208,7 +298,49 @@
     } ],
     "codeName" : "Root_NoBranch",
     "logicName" : "根模块_无分支",
-    "name" : "Root_NoBranch"
+    "name" : "Root_NoBranch",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_TESTMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "story",
+          "name" : "TYPE 等于(=) (story)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "0",
+          "name" : "BRANCH 等于(=) (0)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "ISNULL",
+            "condType" : "SINGLE",
+            "name" : "PARENT 值为空(Nil)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "0",
+            "name" : "PARENT 等于(=) (0)",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -222,6 +354,32 @@
     "codeName" : "TestModule",
     "logicName" : "TestModule",
     "name" : "TestModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_TESTMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "story",
+          "name" : "TYPE 等于(=) (story)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "0",
+          "name" : "DELETED 等于(=) (0)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -235,7 +393,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_TESTMODULE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ByPath",

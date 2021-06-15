@@ -265,6 +265,14 @@
     "codeName" : "ChildPlan",
     "logicName" : "子计划",
     "name" : "ChildPlan",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -283,6 +291,14 @@
     "codeName" : "CurProductPlan",
     "logicName" : "当前产品计划",
     "name" : "CurProductPlan",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -297,6 +313,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -314,7 +338,32 @@
     } ],
     "codeName" : "DefaultParent",
     "logicName" : "默认查询",
-    "name" : "DefaultParent"
+    "name" : "DefaultParent",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "LTANDEQ",
+            "condType" : "SINGLE",
+            "condValue" : "0",
+            "name" : "PARENT 小于等于(<=) (0)",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -331,7 +380,40 @@
     } ],
     "codeName" : "GetList",
     "logicName" : "获取产品计划列表",
-    "name" : "GetList"
+    "name" : "GetList",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "product",
+            "name" : "PRODUCT 等于(=) 数据上下文(product)",
+            "getPSVARTypeId" : "DATACONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "products",
+            "name" : "PRODUCT 等于(=) 数据上下文(products)",
+            "getPSVARTypeId" : "DATACONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -340,6 +422,14 @@
     "codeName" : "PlanCodeList",
     "logicName" : "计划（代码表）",
     "name" : "PlanCodeList",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -358,6 +448,14 @@
     "codeName" : "PlanTasks",
     "logicName" : "项目计划任务（项目管理-项目计划）",
     "name" : "PlanTasks",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PMS_PRODUCTPLAN"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -372,6 +470,14 @@
     "codeName" : "ProductQuery",
     "logicName" : "产品默认查询",
     "name" : "ProductQuery",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -389,7 +495,28 @@
     } ],
     "codeName" : "ProjectApp",
     "logicName" : "项目立项",
-    "name" : "ProjectApp"
+    "name" : "ProjectApp",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "product",
+          "name" : "PRODUCT 等于(=) 网页请求上下文(product)",
+          "getPSVARTypeId" : "WEBCONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -407,6 +534,35 @@
     "codeName" : "ProjectPlan",
     "logicName" : "项目计划列表",
     "name" : "ProjectPlan",
+    "getPSDEDQMain" : {
+      "getChildPSDEDQJoins" : [ {
+        "getJoinPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct.json"
+        },
+        "joinType" : "1NLEFTOUT",
+        "name" : "ZT_PROJECTPRODUCT* [左外联接 1:N](DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCTPLAN_PLAN)",
+        "getPSDEDQGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "连接条件",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfparentkey",
+            "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
+            "getPSVARTypeId" : "DATACONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        }
+      } ],
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -425,6 +581,14 @@
     "codeName" : "RootPlan",
     "logicName" : "根计划",
     "name" : "RootPlan",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -442,7 +606,24 @@
     } ],
     "codeName" : "TaskPlan",
     "logicName" : "任务计划",
-    "name" : "TaskPlan"
+    "name" : "TaskPlan",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -455,7 +636,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_PRODUCTPLAN"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ChildPlan",
@@ -2716,6 +2905,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select concat('(上次计划: ', t.`TITLE`, ')')  as oldtitle from zt_productplan t where t.product = ? and ((t.parent = ? and ? is not null and ? <> 0) or ((? is null or ? = 0) and t.parent <= 0)) order by t.id desc LIMIT 0,1",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -2774,6 +2965,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as bugcnt from zt_bug where deleted = '0' and plan = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -2805,6 +2998,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as storycnt from zt_story t1 where t1.deleted = '0' and t1.plan = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {

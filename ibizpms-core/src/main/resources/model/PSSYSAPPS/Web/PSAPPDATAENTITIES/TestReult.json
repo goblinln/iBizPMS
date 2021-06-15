@@ -587,14 +587,7 @@
       "name" : "CASE",
       "codeName" : "IBizCase"
     },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ],
   "name" : "ZT_TESTRESULT",
   "getPSDEName" : "ZT_TESTRESULT",

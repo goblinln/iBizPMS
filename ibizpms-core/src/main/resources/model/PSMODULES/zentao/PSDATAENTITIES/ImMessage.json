@@ -76,6 +76,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ImMessage.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_IM_MESSAGE"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -89,7 +97,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ImMessage.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_IM_MESSAGE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

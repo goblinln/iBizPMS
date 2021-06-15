@@ -80,6 +80,14 @@
     "codeName" : "AccountDetail",
     "logicName" : "用户月工时详情",
     "name" : "AccountDetail",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PROJECTTASKESTIMATE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -94,6 +102,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PROJECTTASKESTIMATE"
+    },
     "customCode" : true,
     "defaultMode" : true
   }, {
@@ -103,7 +119,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/ProjectTaskestimate.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PROJECTTASKESTIMATE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "AccountDetail",

@@ -71,6 +71,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProjectUserTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_PROJECTUSERTASK"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -85,6 +93,14 @@
     "codeName" : "ProjectDailyTask",
     "logicName" : "项目日报任务",
     "name" : "ProjectDailyTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProjectUserTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_PROJECTUSERTASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -99,6 +115,14 @@
     "codeName" : "ProjectMonthlyTask",
     "logicName" : "项目月报任务",
     "name" : "ProjectMonthlyTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProjectUserTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_PROJECTUSERTASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -113,6 +137,14 @@
     "codeName" : "ProjectWeeklyTask",
     "logicName" : "项目周报任务",
     "name" : "ProjectWeeklyTask",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProjectUserTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_PROJECTUSERTASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -121,7 +153,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproProjectUserTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBIZPRO_PROJECTUSERTASK"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

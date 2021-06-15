@@ -178,6 +178,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_RELEASE"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -195,7 +203,35 @@
     } ],
     "codeName" : "GetList",
     "logicName" : "获取产品发布",
-    "name" : "GetList"
+    "name" : "GetList",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_RELEASE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "product",
+          "name" : "PRODUCT 等于(=) 数据上下文(product)",
+          "getPSVARTypeId" : "DATACONTEXT",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "status",
+          "name" : "STATUS 等于(=) 数据上下文(status)",
+          "getPSVARTypeId" : "DATACONTEXT",
+          "ignoreEmpty" : true
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -212,7 +248,24 @@
     } ],
     "codeName" : "ReportRelease",
     "logicName" : "测试报告关联发布",
-    "name" : "ReportRelease"
+    "name" : "ReportRelease",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_RELEASE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condType" : "CUSTOM",
+          "name" : "自定义条件"
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -225,7 +278,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_RELEASE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
@@ -1927,6 +1988,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as LEFTBUGS from zt_bug t1 where t1.deleted = '0'  and    FIND_IN_SET(t1.id,(select leftbugs from zt_release where id = ?))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall1",
@@ -1958,6 +2021,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as stories from zt_story t1 where t1.deleted = '0'  and  FIND_IN_SET(t1.id,(select stories from zt_release where id = ?))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Rawsqlcall2",
@@ -1989,6 +2054,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select count(1) as bugs from zt_bug t1 where  t1.deleted = '0'  and   FIND_IN_SET(t1.id,(select bugs from zt_release where id = ?))",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",

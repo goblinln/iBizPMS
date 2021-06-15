@@ -917,14 +917,7 @@
               "name" : "PLANTEMPLETID",
               "codeName" : "Plantempletid"
             },
-            "rSMode" : 2,
-            "enableCreateDataRS" : false,
-            "enableDEAction" : true,
-            "enableDEDataSet" : true,
-            "enableGetDataRS" : false,
-            "enableSelect" : true,
-            "enableSelectDataRS" : false,
-            "enableUpdateDataRS" : false
+            "rSMode" : 2
           } ] ]
         },
         "getPSLayoutPos" : {

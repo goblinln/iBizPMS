@@ -181,6 +181,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select CONCAT_WS('',?,'年工作内容统计一览表 —— ',?) as Title from dual",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

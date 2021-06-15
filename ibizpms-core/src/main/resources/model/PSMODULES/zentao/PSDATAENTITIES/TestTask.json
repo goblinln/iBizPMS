@@ -160,7 +160,15 @@
     } ],
     "codeName" : "Account",
     "logicName" : "指定用户数据",
-    "name" : "Account"
+    "name" : "Account",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTTASK"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -174,6 +182,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTTASK"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -191,7 +207,47 @@
     } ],
     "codeName" : "My",
     "logicName" : "我的数据",
-    "name" : "My"
+    "name" : "My",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTTASK",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "OWNER 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "CREATEBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "srfloginname",
+            "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
+            "getPSVARTypeId" : "SESSIONCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -205,6 +261,14 @@
     "codeName" : "MyTestTaskPc",
     "logicName" : "我的测试单",
     "name" : "MyTestTaskPc",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTTASK"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -219,7 +283,15 @@
     "codeName" : "Simple",
     "dEFGroupType" : "BASEFIELDS",
     "logicName" : "基础属性查询",
-    "name" : "SIMPLE"
+    "name" : "SIMPLE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTTASK"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -232,7 +304,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTTASK"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
@@ -2218,6 +2298,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select t.id as build,case when (select t1.`name` from zt_release t1 where t1.build = t.id and t1.deleted = '0' ORDER BY t1.date desc LIMIT 0,1) is null then t.`name` else (select t1.`name` from zt_release t1 where t1.build = t.id and t1.deleted = '0' ORDER BY t1.date desc LIMIT 0,1) end as buildname from zt_build t where t.project = ? and t.product = ? and t.id =? and t.deleted = '0' LIMIT 0,1",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
@@ -2296,6 +2378,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "select t.product,t1.`name` as productname from zt_projectproduct t left join zt_product t1 on t1.id = t.product where t.project = ? LIMIT 0,1",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
@@ -2363,6 +2447,8 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "sql" : "SELECT count(1) CASECNT FROM `zt_case` t1 LEFT JOIN zt_testrun t41 ON t1.id = t41.`case` WHERE t41.`TASK` = ? AND t1.DELETED = '0' AND t1.product = ?",
+      "fillDstLogicParam" : true,
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {

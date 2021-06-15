@@ -71,6 +71,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_TASKSTATS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -80,6 +88,14 @@
     "codeName" : "TaskFinishHuiZong",
     "logicName" : "任务完成汇总表",
     "name" : "TaskFinishHuiZong",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_TASKSTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -89,6 +105,14 @@
     "codeName" : "UserFinishTaskSum",
     "logicName" : "用户完成任务统计",
     "name" : "UserFinishTaskSum",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_MYTERRITORY"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -97,7 +121,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_TASKSTATS"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

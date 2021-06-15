@@ -71,6 +71,14 @@
     "codeName" : "ActionMonth",
     "logicName" : "日志月",
     "name" : "ActionMonth",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "TASKESTIMATESTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -80,6 +88,14 @@
     "codeName" : "ActionYear",
     "logicName" : "日志年",
     "name" : "ActionYear",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "TASKESTIMATESTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -89,6 +105,14 @@
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "TASKESTIMATESTATS"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -98,6 +122,14 @@
     "codeName" : "TaskEstimateStatsSum",
     "logicName" : "任务工时统计",
     "name" : "TaskEstimateStatsSum",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "TASKESTIMATESTATS"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -106,7 +138,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimateStats.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "TASKESTIMATESTATS"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ActionMonth",

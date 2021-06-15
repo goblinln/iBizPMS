@@ -807,14 +807,7 @@
                   "name" : "PRODUCT",
                   "codeName" : "Product"
                 },
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               }, {
                 "actionRSMode" : 1,
                 "codeName" : "TestReults",
@@ -832,14 +825,7 @@
                   "name" : "CASE",
                   "codeName" : "IBizCase"
                 },
-                "rSMode" : 2,
-                "enableCreateDataRS" : false,
-                "enableDEAction" : true,
-                "enableDEDataSet" : true,
-                "enableGetDataRS" : false,
-                "enableSelect" : true,
-                "enableSelectDataRS" : false,
-                "enableUpdateDataRS" : false
+                "rSMode" : 2
               } ] ]
             },
             "getPSLayoutPos" : {

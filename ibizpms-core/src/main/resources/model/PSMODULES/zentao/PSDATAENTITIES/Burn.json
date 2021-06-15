@@ -78,6 +78,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BURN"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -87,6 +95,14 @@
     "codeName" : "Estimate",
     "logicName" : "燃尽图预计（含周末）",
     "name" : "ESTIMATEANDLEFT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BURN"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -95,7 +111,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_BURN"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",

@@ -132,6 +132,14 @@
     "codeName" : "ByPath",
     "logicName" : "BYPATH",
     "name" : "BYPATH",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -150,6 +158,26 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "task",
+          "name" : "TYPE 等于(=) (task)",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -172,6 +200,14 @@
     "codeName" : "ParentModule",
     "logicName" : "父模块",
     "name" : "ParentModule",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMODULE"
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -189,7 +225,43 @@
     } ],
     "codeName" : "Root",
     "logicName" : "根需求模块",
-    "name" : "ROOT"
+    "name" : "ROOT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "story",
+          "name" : "TYPE 等于(=) (story)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "ISNULL",
+            "condType" : "SINGLE",
+            "name" : "PARENT 值为空(Nil)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "0",
+            "name" : "PARENT 等于(=) (0)",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -206,7 +278,49 @@
     } ],
     "codeName" : "Root_NoBranch",
     "logicName" : "根需求模块_无分支",
-    "name" : "Root_NoBranch"
+    "name" : "Root_NoBranch",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PRODUCTMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "story",
+          "name" : "TYPE 等于(=) (story)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "0",
+          "name" : "BRANCH 等于(=) (0)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "ISNULL",
+            "condType" : "SINGLE",
+            "name" : "PARENT 值为空(Nil)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "0",
+            "name" : "PARENT 等于(=) (0)",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -223,7 +337,43 @@
     } ],
     "codeName" : "Root_Task",
     "logicName" : "根任务模块",
-    "name" : "ROOT_TASK"
+    "name" : "ROOT_TASK",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "task",
+          "name" : "TYPE 等于(=) (task)",
+          "ignoreEmpty" : false
+        }, {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "ISNULL",
+            "condType" : "SINGLE",
+            "name" : "PARENT 值为空(Nil)",
+            "ignoreEmpty" : false
+          }, {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "0",
+            "name" : "PARENT 等于(=) (0)",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -237,6 +387,32 @@
     "codeName" : "TaskModules",
     "logicName" : "任务模块",
     "name" : "TaskModules",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMODULE",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "OR",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "project",
+            "name" : "ROOT 等于(=) 网页请求上下文(project)",
+            "getPSVARTypeId" : "WEBCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        } ]
+      }
+    },
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -250,7 +426,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "IBZ_PROJECTMODULE"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ByPath",

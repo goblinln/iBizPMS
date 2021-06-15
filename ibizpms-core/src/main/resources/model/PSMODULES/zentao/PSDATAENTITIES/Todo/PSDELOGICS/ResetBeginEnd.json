@@ -66,6 +66,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select (case when ? = '2030-01-01' then null else ? end) as `BEGIN`,(case when ? = '2030-01-01' then null else ? end) as `END` from dual",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

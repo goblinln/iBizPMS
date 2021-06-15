@@ -947,14 +947,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "BUG__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -968,14 +961,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "BUILD__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -989,14 +975,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "DAILY__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1010,14 +989,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "DOC_LIB__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1031,14 +1003,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "DOC__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1052,14 +1017,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "MONTHLY__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1073,14 +1031,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "PRODUCT_PLAN__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1094,14 +1045,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "PRODUCT_RELEASE__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1115,14 +1059,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "PRODUCT__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1136,14 +1073,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "PROJECT__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1157,14 +1087,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "REPORTLY",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1178,14 +1101,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "STORY__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1199,14 +1115,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TASK__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1220,14 +1129,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_CASE_LIB__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1241,14 +1143,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_CASE_STEP__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1262,14 +1157,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_CASE__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1283,14 +1171,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_REPORT__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1304,14 +1185,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_RESULT__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1325,14 +1199,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_SUITE__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1346,14 +1213,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TEST_TASK__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1367,14 +1227,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "TODO__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   }, {
     "actionRSMode" : 1,
     "codeName" : "Files",
@@ -1388,14 +1241,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
     },
     "name" : "WEEKLY__FILE",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
+    "rSMode" : 2
   } ],
   "name" : "ZT_FILE",
   "getPSDEName" : "ZT_FILE",

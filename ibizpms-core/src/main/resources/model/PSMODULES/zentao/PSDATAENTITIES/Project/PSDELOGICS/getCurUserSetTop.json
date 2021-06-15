@@ -44,6 +44,8 @@
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
     } ],
+    "sql" : "select COUNT(1) as ISTOP from t_ibz_top t where t.OBJECTID = ? and  t.type = 'project'  and t.ACCOUNT = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {

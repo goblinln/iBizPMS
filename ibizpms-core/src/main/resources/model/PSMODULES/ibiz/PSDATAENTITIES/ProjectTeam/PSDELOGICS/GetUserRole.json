@@ -22,6 +22,8 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "sql" : "select t11.`name` as role,null as id from zt_user t1 left JOIN zt_group t11 on t1.role = t11.role where t1.account = ?",
+    "fillDstLogicParam" : true,
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",

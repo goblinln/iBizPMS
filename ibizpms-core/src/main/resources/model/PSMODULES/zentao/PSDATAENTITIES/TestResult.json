@@ -75,7 +75,36 @@
     } ],
     "codeName" : "CurTestRun",
     "logicName" : "CurTestRun",
-    "name" : "CurTestRun"
+    "name" : "CurTestRun",
+    "getPSDEDQMain" : {
+      "getChildPSDEDQJoins" : [ {
+        "getJoinPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
+        },
+        "joinType" : "N1RIGHT",
+        "name" : "ZT_TESTRUN* [右联接N:1](DER1N_ZT_TESTRESULT_ZT_TESTRUN_RUN)",
+        "getPSDEDQGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "连接条件",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "task",
+            "name" : "TASK 等于(=) 网页请求上下文(task)",
+            "getPSVARTypeId" : "WEBCONTEXT",
+            "ignoreEmpty" : false
+          } ]
+        }
+      } ],
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTRESULT"
+    }
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -84,6 +113,14 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTRESULT"
+    },
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -92,7 +129,15 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
-    "name" : "VIEW"
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_TESTRESULT"
+    }
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurTestRun",
