@@ -44,6 +44,11 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
+    "key" : "SRFPARENTDEMAPNAME",
+    "name" : "SRFPARENTDEMAPNAME",
+    "value" : "IBZ_DOCLIBMODULE",
+    "rawValue" : true
+  }, {
     "key" : "MODULETYPE",
     "name" : "MODULETYPE",
     "value" : "doc",
@@ -58,6 +63,11 @@
     "name" : "SRFPARENT",
     "value" : "srfparent",
     "rawValue" : false
+  }, {
+    "key" : "SRFPARENTDENAME",
+    "name" : "SRFPARENTDENAME",
+    "value" : "DocLibModule",
+    "rawValue" : true
   } ],
   "getPSControls" : [ {
     "codeName" : "ChildWeiHuiTreeExpViewtreeexpbar",
