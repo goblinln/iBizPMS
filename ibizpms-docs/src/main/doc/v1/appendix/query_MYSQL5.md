@@ -21427,6 +21427,10 @@ WHERE
 	t1.date <> '0000-00-00'  and t1.account = #{srf.datacontext.account}
 	)t1
 ```
+### 日志日（项目）(ActionDateByProject)<div id="TaskEstimate_ActionDateByProject"></div>
+```sql
+SELECT t1.`year`,t1.month, CONCAT( t1.`YEAR`, RIGHT ( 100+ t1.`MONTH`, 2 ),RIGHT ( 100+ t1.`day`, 2 )) as `dayname`, CONCAT( t1.`YEAR`,'-', RIGHT ( 100+ t1.`MONTH`, 2 ),'-',RIGHT ( 100+ t1.`day`, 2 )) AS day from ( SELECT DISTINCT Year (t1.date) as `year`, MONTH ( t1.date ) AS `MONTH` , DAY(t1.date) as `day` FROM zt_taskestimate t1 WHERE t1.date <> '0000-00-00' and t1.account = #{srf.datacontext.projectname} )t1
+```
 ### 日志月(ActionMonth)<div id="TaskEstimate_ActionMonth"></div>
 ```sql
 SELECT

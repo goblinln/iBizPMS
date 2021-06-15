@@ -110,6 +110,7 @@ hide members
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |ActionDate|日志日([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ActionDate))|否|&nbsp;|
+|ActionDateByProject|日志日（项目）([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ActionDateByProject))|否|&nbsp;|
 |ActionMonth|日志月([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ActionMonth))|否|&nbsp;|
 |ActionYear|日志年([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ActionYear))|否|&nbsp;|
 |AllAccounts|所有人员([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_AllAccounts))|否|&nbsp;|
@@ -128,6 +129,7 @@ hide members
 | 集合编号 | 集合名称   |  包含查询  | 默认集合 |   备注|
 | --------  | --------   | -------- | --------   | ----- |
 |ActionDate|日志日|ActionDate|否|&nbsp;|
+|ActionDateByProject|日志日（项目）|ActionDateByProject|否|&nbsp;|
 |ActionMonth|日志月|ActionMonth|否|&nbsp;|
 |ActionYear|日志年|ActionYear|否|&nbsp;|
 |AllAccounts|所有人员|AllAccounts|否|&nbsp;|
