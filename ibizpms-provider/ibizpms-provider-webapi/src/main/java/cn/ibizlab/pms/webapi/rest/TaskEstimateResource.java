@@ -334,7 +334,7 @@ public class TaskEstimateResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
         TaskEstimate domain = taskestimateService.get(taskestimate_id);
-        if (domain == null || domain.getTask() != task_id) {
+        if (domain == null || !(task_id.equals(domain.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
@@ -348,7 +348,7 @@ public class TaskEstimateResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> removeByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
         TaskEstimate testget = taskestimateService.get(taskestimate_id);
-        if (testget == null || testget.getTask() != task_id) {
+        if (testget == null || !(task_id.equals(testget.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
@@ -367,7 +367,7 @@ public class TaskEstimateResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate testget = taskestimateService.get(taskestimate_id);
-        if (testget == null || testget.getTask() != task_id) {
+        if (testget == null || !(task_id.equals(testget.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
@@ -556,7 +556,7 @@ public class TaskEstimateResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
         TaskEstimate domain = taskestimateService.get(taskestimate_id);
-        if (domain == null || domain.getTask() != task_id) {
+        if (domain == null || !(task_id.equals(domain.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
@@ -570,7 +570,7 @@ public class TaskEstimateResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<Boolean> removeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
         TaskEstimate testget = taskestimateService.get(taskestimate_id);
-        if (testget == null || testget.getTask() != task_id) {
+        if (testget == null || !(task_id.equals(testget.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
@@ -589,7 +589,7 @@ public class TaskEstimateResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
     public ResponseEntity<TaskEstimateDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate testget = taskestimateService.get(taskestimate_id);
-        if (testget == null || testget.getTask() != task_id) {
+        if (testget == null || !(task_id.equals(testget.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);

@@ -281,7 +281,7 @@ public class ProjectTeamResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
         ProjectTeam domain = projectteamService.get(projectteam_id);
-        if (domain == null || domain.getRoot() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
@@ -295,7 +295,7 @@ public class ProjectTeamResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
         ProjectTeam testget = projectteamService.get(projectteam_id);
-        if (testget == null || testget.getRoot() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
@@ -314,7 +314,7 @@ public class ProjectTeamResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id, @RequestBody ProjectTeamDTO projectteamdto) {
         ProjectTeam testget = projectteamService.get(projectteam_id);
-        if (testget == null || testget.getRoot() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProjectTeam domain = projectteamMapping.toDomain(projectteamdto);

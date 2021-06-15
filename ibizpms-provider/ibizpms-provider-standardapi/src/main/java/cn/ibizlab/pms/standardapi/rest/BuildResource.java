@@ -75,7 +75,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
         Build domain = buildService.get(build_id);
-        if (domain == null || domain.getProduct() != product_id) {
+        if (domain == null || !(product_id.equals(domain.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         BuildDTO dto = buildMapping.toDto(domain);
@@ -89,7 +89,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
         Build testget = buildService.get(build_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(build_id));
@@ -109,7 +109,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build testget = buildService.get(build_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Build domain = buildMapping.toDomain(builddto);
@@ -206,7 +206,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
         Build domain = buildService.get(build_id);
-        if (domain == null || domain.getProject() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         BuildDTO dto = buildMapping.toDto(domain);
@@ -220,7 +220,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
         Build testget = buildService.get(build_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(build_id));
@@ -240,7 +240,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build testget = buildService.get(build_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Build domain = buildMapping.toDomain(builddto);
@@ -338,7 +338,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> getByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
         Build domain = buildService.get(build_id);
-        if (domain == null || domain.getProject() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         BuildDTO dto = buildMapping.toDto(domain);
@@ -352,7 +352,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
         Build testget = buildService.get(build_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(build_id));
@@ -372,7 +372,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> updateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build testget = buildService.get(build_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Build domain = buildMapping.toDomain(builddto);

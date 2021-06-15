@@ -235,7 +235,7 @@ public class IbzLibModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<IbzLibModuleDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
         IbzLibModule domain = ibzlibmoduleService.get(ibzlibmodule_id);
-        if (domain == null || domain.getRoot() != ibzlib_id) {
+        if (domain == null || !(ibzlib_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
@@ -249,7 +249,7 @@ public class IbzLibModuleResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
         IbzLibModule testget = ibzlibmoduleService.get(ibzlibmodule_id);
-        if (testget == null || testget.getRoot() != ibzlib_id) {
+        if (testget == null || !(ibzlib_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.remove(ibzlibmodule_id));
@@ -268,7 +268,7 @@ public class IbzLibModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/{ibzlibmodule_id}")
     public ResponseEntity<IbzLibModuleDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
         IbzLibModule testget = ibzlibmoduleService.get(ibzlibmodule_id);
-        if (testget == null || testget.getRoot() != ibzlib_id) {
+        if (testget == null || !(ibzlib_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         IbzLibModule domain = ibzlibmoduleMapping.toDomain(ibzlibmoduledto);

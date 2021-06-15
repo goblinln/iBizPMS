@@ -370,7 +370,7 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
         TestTask domain = testtaskService.get(testtask_id);
-        if (domain == null || domain.getProduct() != product_id) {
+        if (domain == null || !(product_id.equals(domain.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestTaskDTO dto = testtaskMapping.toDto(domain);
@@ -384,7 +384,7 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
         TestTask testget = testtaskService.get(testtask_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
@@ -404,7 +404,7 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask testget = testtaskService.get(testtask_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
@@ -628,7 +628,7 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
         TestTask domain = testtaskService.get(testtask_id);
-        if (domain == null || domain.getProject() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestTaskDTO dto = testtaskMapping.toDto(domain);
@@ -642,7 +642,7 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
         TestTask testget = testtaskService.get(testtask_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
@@ -662,7 +662,7 @@ public class TestTaskResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask testget = testtaskService.get(testtask_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestTask domain = testtaskMapping.toDomain(testtaskdto);

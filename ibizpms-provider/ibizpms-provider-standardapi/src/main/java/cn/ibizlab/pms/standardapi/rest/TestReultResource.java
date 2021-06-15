@@ -62,7 +62,7 @@ public class TestReultResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/{case_id}/testreults/{testreult_id}")
     public ResponseEntity<TestReultDTO> getByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testreult_id") Long testreult_id) {
         TestResult domain = testresultService.get(testreult_id);
-        if (domain == null || domain.getIbizcase() != case_id) {
+        if (domain == null || !(case_id.equals(domain.getIbizcase())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestReultDTO dto = testreultMapping.toDto(domain);

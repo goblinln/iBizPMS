@@ -75,7 +75,7 @@ public class ProjectProductResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id) {
         ProjectProduct domain = projectproductService.get(projectproduct_id);
-        if (domain == null || domain.getProduct() != product_id) {
+        if (domain == null || !(product_id.equals(domain.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
@@ -89,7 +89,7 @@ public class ProjectProductResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id) {
         ProjectProduct testget = projectproductService.get(projectproduct_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(projectproductService.remove(projectproduct_id));
@@ -109,7 +109,7 @@ public class ProjectProductResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id, @RequestBody ProjectProductDTO projectproductdto) {
         ProjectProduct testget = projectproductService.get(projectproduct_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
@@ -196,7 +196,7 @@ public class ProjectProductResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id) {
         ProjectProduct domain = projectproductService.get(projectproduct_id);
-        if (domain == null || domain.getProject() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
@@ -210,7 +210,7 @@ public class ProjectProductResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id) {
         ProjectProduct testget = projectproductService.get(projectproduct_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(projectproductService.remove(projectproduct_id));
@@ -230,7 +230,7 @@ public class ProjectProductResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id, @RequestBody ProjectProductDTO projectproductdto) {
         ProjectProduct testget = projectproductService.get(projectproduct_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);

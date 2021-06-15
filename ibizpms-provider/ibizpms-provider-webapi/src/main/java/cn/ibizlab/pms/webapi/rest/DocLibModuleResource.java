@@ -397,7 +397,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> getByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
         DocLibModule domain = doclibmoduleService.get(doclibmodule_id);
-        if (domain == null || domain.getRoot() != doclib_id) {
+        if (domain == null || !(doclib_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
@@ -411,7 +411,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<Boolean> removeByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
         DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
-        if (testget == null || testget.getRoot() != doclib_id) {
+        if (testget == null || !(doclib_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
@@ -430,7 +430,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> updateByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
-        if (testget == null || testget.getRoot() != doclib_id) {
+        if (testget == null || !(doclib_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -694,7 +694,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> getByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
         DocLibModule domain = doclibmoduleService.get(doclibmodule_id);
-        if (domain == null || domain.getRoot() != doclib_id) {
+        if (domain == null || !(doclib_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
@@ -708,7 +708,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<Boolean> removeByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
         DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
-        if (testget == null || testget.getRoot() != doclib_id) {
+        if (testget == null || !(doclib_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
@@ -727,7 +727,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> updateByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
-        if (testget == null || testget.getRoot() != doclib_id) {
+        if (testget == null || !(doclib_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);
@@ -991,7 +991,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> getByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
         DocLibModule domain = doclibmoduleService.get(doclibmodule_id);
-        if (domain == null || domain.getRoot() != doclib_id) {
+        if (domain == null || !(doclib_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
@@ -1005,7 +1005,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<Boolean> removeByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id) {
         DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
-        if (testget == null || testget.getRoot() != doclib_id) {
+        if (testget == null || !(doclib_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(doclibmoduleService.remove(doclibmodule_id));
@@ -1024,7 +1024,7 @@ public class DocLibModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}")
     public ResponseEntity<DocLibModuleDTO> updateByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
         DocLibModule testget = doclibmoduleService.get(doclibmodule_id);
-        if (testget == null || testget.getRoot() != doclib_id) {
+        if (testget == null || !(doclib_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocLibModule domain = doclibmoduleMapping.toDomain(doclibmoduledto);

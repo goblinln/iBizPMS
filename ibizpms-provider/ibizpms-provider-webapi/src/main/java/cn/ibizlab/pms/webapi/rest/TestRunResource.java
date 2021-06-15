@@ -226,7 +226,7 @@ public class TestRunResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> getByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
         TestRun domain = testrunService.get(testrun_id);
-        if (domain == null || domain.getTask() != testtask_id) {
+        if (domain == null || !(testtask_id.equals(domain.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestRunDTO dto = testrunMapping.toDto(domain);
@@ -240,7 +240,7 @@ public class TestRunResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<Boolean> removeByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
         TestRun testget = testrunService.get(testrun_id);
-        if (testget == null || testget.getTask() != testtask_id) {
+        if (testget == null || !(testtask_id.equals(testget.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(testrunService.remove(testrun_id));
@@ -259,7 +259,7 @@ public class TestRunResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> updateByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun testget = testrunService.get(testrun_id);
-        if (testget == null || testget.getTask() != testtask_id) {
+        if (testget == null || !(testtask_id.equals(testget.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -339,7 +339,7 @@ public class TestRunResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> getByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
         TestRun domain = testrunService.get(testrun_id);
-        if (domain == null || domain.getTask() != testtask_id) {
+        if (domain == null || !(testtask_id.equals(domain.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestRunDTO dto = testrunMapping.toDto(domain);
@@ -353,7 +353,7 @@ public class TestRunResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<Boolean> removeByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
         TestRun testget = testrunService.get(testrun_id);
-        if (testget == null || testget.getTask() != testtask_id) {
+        if (testget == null || !(testtask_id.equals(testget.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(testrunService.remove(testrun_id));
@@ -372,7 +372,7 @@ public class TestRunResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> updateByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun testget = testrunService.get(testrun_id);
-        if (testget == null || testget.getTask() != testtask_id) {
+        if (testget == null || !(testtask_id.equals(testget.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestRun domain = testrunMapping.toDomain(testrundto);
@@ -452,7 +452,7 @@ public class TestRunResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> getByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
         TestRun domain = testrunService.get(testrun_id);
-        if (domain == null || domain.getTask() != testtask_id) {
+        if (domain == null || !(testtask_id.equals(domain.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestRunDTO dto = testrunMapping.toDto(domain);
@@ -466,7 +466,7 @@ public class TestRunResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<Boolean> removeByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
         TestRun testget = testrunService.get(testrun_id);
-        if (testget == null || testget.getTask() != testtask_id) {
+        if (testget == null || !(testtask_id.equals(testget.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(testrunService.remove(testrun_id));
@@ -485,7 +485,7 @@ public class TestRunResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/{testrun_id}")
     public ResponseEntity<TestRunDTO> updateByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id, @RequestBody TestRunDTO testrundto) {
         TestRun testget = testrunService.get(testrun_id);
-        if (testget == null || testget.getTask() != testtask_id) {
+        if (testget == null || !(testtask_id.equals(testget.getTask())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestRun domain = testrunMapping.toDomain(testrundto);

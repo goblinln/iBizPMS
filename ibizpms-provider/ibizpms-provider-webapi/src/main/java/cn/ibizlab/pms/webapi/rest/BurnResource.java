@@ -249,7 +249,7 @@ public class BurnResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/burns/{burn_id}")
     public ResponseEntity<BurnDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id) {
         Burn domain = burnService.get(burn_id);
-        if (domain == null || domain.getProject() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         BurnDTO dto = burnMapping.toDto(domain);
@@ -263,7 +263,7 @@ public class BurnResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/burns/{burn_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id) {
         Burn testget = burnService.get(burn_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(burnService.remove(burn_id));
@@ -282,7 +282,7 @@ public class BurnResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/burns/{burn_id}")
     public ResponseEntity<BurnDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
         Burn testget = burnService.get(burn_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Burn domain = burnMapping.toDomain(burndto);

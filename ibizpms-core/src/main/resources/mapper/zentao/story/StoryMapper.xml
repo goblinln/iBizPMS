@@ -990,7 +990,7 @@
 
     <!--数据查询[ReleaseLinkableStories]-->
     <sql id="ReleaseLinkableStories" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`ASSIGNEDTO`,	 	t1.`ESTIMATE`, 	t1.`ID`, 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`, 	t1.`PLAN`, 	t1.`PRI`, 	t1.`PRODUCT`, 	t1.`STAGE`, 	t1.`STATUS`, 	t1.`TITLE`	, t1.STORYSN FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 	LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID 	LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID ]]>
+		<![CDATA[ SELECT 	t1.`ASSIGNEDTO`,	 	t1.`ESTIMATE`, 	t1.`ID`, 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`, 	t1.`PLAN`, 	t1.`PRI`, 	t1.`PRODUCT`, 	t1.`STAGE`, 	t1.`STATUS`, 	t1.`TITLE`	,         t1.STORYSN,         (select GROUP_CONCAT(t.title)  from zt_productplan t where t.`deleted` = '0' and t.id = t1.`plan`) as `Planname` FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 	LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID 	LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>

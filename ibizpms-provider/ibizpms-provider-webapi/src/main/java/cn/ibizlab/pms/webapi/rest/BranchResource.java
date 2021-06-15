@@ -245,7 +245,7 @@ public class BranchResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/branches/{branch_id}")
     public ResponseEntity<BranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
         Branch domain = branchService.get(branch_id);
-        if (domain == null || domain.getProduct() != product_id) {
+        if (domain == null || !(product_id.equals(domain.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         BranchDTO dto = branchMapping.toDto(domain);
@@ -259,7 +259,7 @@ public class BranchResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/branches/{branch_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
         Branch testget = branchService.get(branch_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
@@ -278,7 +278,7 @@ public class BranchResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/branches/{branch_id}")
     public ResponseEntity<BranchDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
         Branch testget = branchService.get(branch_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Branch domain = branchMapping.toDomain(branchdto);

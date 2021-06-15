@@ -77,7 +77,7 @@ public class TestCaseLibModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
     public ResponseEntity<TestCaseLibModuleDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("testcaselibmodule_id") Long testcaselibmodule_id) {
         IbzLibModule domain = ibzlibmoduleService.get(testcaselibmodule_id);
-        if (domain == null || domain.getRoot() != ibzlib_id) {
+        if (domain == null || !(ibzlib_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestCaseLibModuleDTO dto = testcaselibmoduleMapping.toDto(domain);
@@ -91,7 +91,7 @@ public class TestCaseLibModuleResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
     public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("testcaselibmodule_id") Long testcaselibmodule_id) {
         IbzLibModule testget = ibzlibmoduleService.get(testcaselibmodule_id);
-        if (testget == null || testget.getRoot() != ibzlib_id) {
+        if (testget == null || !(ibzlib_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.remove(testcaselibmodule_id));
@@ -110,7 +110,7 @@ public class TestCaseLibModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
     public ResponseEntity<TestCaseLibModuleDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("testcaselibmodule_id") Long testcaselibmodule_id, @RequestBody TestCaseLibModuleDTO testcaselibmoduledto) {
         IbzLibModule testget = ibzlibmoduleService.get(testcaselibmodule_id);
-        if (testget == null || testget.getRoot() != ibzlib_id) {
+        if (testget == null || !(ibzlib_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         IbzLibModule domain = testcaselibmoduleMapping.toDomain(testcaselibmoduledto);

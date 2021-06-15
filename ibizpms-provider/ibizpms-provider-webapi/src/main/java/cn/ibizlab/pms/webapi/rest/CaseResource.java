@@ -766,7 +766,7 @@ public class CaseResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}")
     public ResponseEntity<CaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id) {
         Case domain = caseService.get(case_id);
-        if (domain == null || domain.getProduct() != product_id) {
+        if (domain == null || !(product_id.equals(domain.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         CaseDTO dto = caseMapping.toDto(domain);
@@ -780,7 +780,7 @@ public class CaseResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id) {
         Case testget = caseService.get(case_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(caseService.remove(case_id));
@@ -800,7 +800,7 @@ public class CaseResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}")
     public ResponseEntity<CaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
         Case testget = caseService.get(case_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Case domain = caseMapping.toDomain(casedto);

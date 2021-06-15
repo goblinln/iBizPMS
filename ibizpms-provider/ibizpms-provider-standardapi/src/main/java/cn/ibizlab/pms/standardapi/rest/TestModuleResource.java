@@ -75,7 +75,7 @@ public class TestModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<TestModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
         TestModule domain = testmoduleService.get(testmodule_id);
-        if (domain == null || domain.getRoot() != product_id) {
+        if (domain == null || !(product_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestModuleDTO dto = testmoduleMapping.toDto(domain);
@@ -89,7 +89,7 @@ public class TestModuleResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
         TestModule testget = testmoduleService.get(testmodule_id);
-        if (testget == null || testget.getRoot() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(testmoduleService.remove(testmodule_id));
@@ -108,7 +108,7 @@ public class TestModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<TestModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
         TestModule testget = testmoduleService.get(testmodule_id);
-        if (testget == null || testget.getRoot() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TestModule domain = testmoduleMapping.toDomain(testmoduledto);

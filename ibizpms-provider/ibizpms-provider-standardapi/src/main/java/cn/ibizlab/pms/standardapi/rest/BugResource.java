@@ -75,7 +75,7 @@ public class BugResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
         Bug domain = bugService.get(bug_id);
-        if (domain == null || domain.getProject() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         BugDTO dto = bugMapping.toDto(domain);
@@ -89,7 +89,7 @@ public class BugResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
         Bug testget = bugService.get(bug_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(bug_id));
@@ -109,7 +109,7 @@ public class BugResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug testget = bugService.get(bug_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Bug domain = bugMapping.toDomain(bugdto);
@@ -317,7 +317,7 @@ public class BugResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id) {
         Bug domain = bugService.get(bug_id);
-        if (domain == null || domain.getProduct() != product_id) {
+        if (domain == null || !(product_id.equals(domain.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         BugDTO dto = bugMapping.toDto(domain);
@@ -331,7 +331,7 @@ public class BugResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/bugs/{bug_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id) {
         Bug testget = bugService.get(bug_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(bug_id));
@@ -351,7 +351,7 @@ public class BugResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug testget = bugService.get(bug_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Bug domain = bugMapping.toDomain(bugdto);
@@ -560,7 +560,7 @@ public class BugResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> getByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
         Bug domain = bugService.get(bug_id);
-        if (domain == null || domain.getProject() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         BugDTO dto = bugMapping.toDto(domain);
@@ -574,7 +574,7 @@ public class BugResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<Boolean> removeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
         Bug testget = bugService.get(bug_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(bug_id));
@@ -594,7 +594,7 @@ public class BugResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
         Bug testget = bugService.get(bug_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Bug domain = bugMapping.toDomain(bugdto);

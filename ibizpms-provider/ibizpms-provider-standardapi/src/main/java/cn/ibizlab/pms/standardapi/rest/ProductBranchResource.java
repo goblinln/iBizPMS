@@ -75,7 +75,7 @@ public class ProductBranchResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbranches/{productbranch_id}")
     public ResponseEntity<ProductBranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
         Branch domain = branchService.get(productbranch_id);
-        if (domain == null || domain.getProduct() != product_id) {
+        if (domain == null || !(product_id.equals(domain.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProductBranchDTO dto = productbranchMapping.toDto(domain);
@@ -89,7 +89,7 @@ public class ProductBranchResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbranches/{productbranch_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
         Branch testget = branchService.get(productbranch_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(productbranch_id));
@@ -108,7 +108,7 @@ public class ProductBranchResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productbranches/{productbranch_id}")
     public ResponseEntity<ProductBranchDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id, @RequestBody ProductBranchDTO productbranchdto) {
         Branch testget = branchService.get(productbranch_id);
-        if (testget == null || testget.getProduct() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getProduct())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Branch domain = productbranchMapping.toDomain(productbranchdto);

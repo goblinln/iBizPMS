@@ -86,7 +86,7 @@ public class TaskResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
         Task domain = taskService.get(task_id);
-        if (domain == null || domain.getProject() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TaskDTO dto = taskMapping.toDto(domain);
@@ -100,7 +100,7 @@ public class TaskResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
         Task testget = taskService.get(task_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
@@ -120,7 +120,7 @@ public class TaskResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task testget = taskService.get(task_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Task domain = taskMapping.toDomain(taskdto);
@@ -380,7 +380,7 @@ public class TaskResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> getByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
         Task domain = taskService.get(task_id);
-        if (domain == null || domain.getProject() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TaskDTO dto = taskMapping.toDto(domain);
@@ -394,7 +394,7 @@ public class TaskResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<Boolean> removeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
         Task testget = taskService.get(task_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
@@ -414,7 +414,7 @@ public class TaskResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/tasks/{task_id}")
     public ResponseEntity<TaskDTO> updateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task testget = taskService.get(task_id);
-        if (testget == null || testget.getProject() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getProject())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         Task domain = taskMapping.toDomain(taskdto);

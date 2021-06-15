@@ -75,7 +75,7 @@ public class ProductModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/{productmodule_id}")
     public ResponseEntity<ProductModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
         ProductModule domain = productmoduleService.get(productmodule_id);
-        if (domain == null || domain.getRoot() != product_id) {
+        if (domain == null || !(product_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
@@ -89,7 +89,7 @@ public class ProductModuleResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productmodules/{productmodule_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
         ProductModule testget = productmoduleService.get(productmodule_id);
-        if (testget == null || testget.getRoot() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(productmoduleService.remove(productmodule_id));
@@ -108,7 +108,7 @@ public class ProductModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productmodules/{productmodule_id}")
     public ResponseEntity<ProductModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
         ProductModule testget = productmoduleService.get(productmodule_id);
-        if (testget == null || testget.getRoot() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProductModule domain = productmoduleMapping.toDomain(productmoduledto);

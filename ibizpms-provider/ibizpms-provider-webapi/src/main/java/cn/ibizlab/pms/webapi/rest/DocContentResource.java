@@ -235,7 +235,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> getByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent domain = doccontentService.get(doccontent_id);
-        if (domain == null || domain.getDoc() != doc_id) {
+        if (domain == null || !(doc_id.equals(domain.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocContentDTO dto = doccontentMapping.toDto(domain);
@@ -249,7 +249,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<Boolean> removeByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent testget = doccontentService.get(doccontent_id);
-        if (testget == null || testget.getDoc() != doc_id) {
+        if (testget == null || !(doc_id.equals(testget.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
@@ -268,7 +268,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> updateByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
         DocContent testget = doccontentService.get(doccontent_id);
-        if (testget == null || testget.getDoc() != doc_id) {
+        if (testget == null || !(doc_id.equals(testget.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocContent domain = doccontentMapping.toDomain(doccontentdto);
@@ -356,7 +356,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> getByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent domain = doccontentService.get(doccontent_id);
-        if (domain == null || domain.getDoc() != doc_id) {
+        if (domain == null || !(doc_id.equals(domain.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocContentDTO dto = doccontentMapping.toDto(domain);
@@ -370,7 +370,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<Boolean> removeByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent testget = doccontentService.get(doccontent_id);
-        if (testget == null || testget.getDoc() != doc_id) {
+        if (testget == null || !(doc_id.equals(testget.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
@@ -389,7 +389,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> updateByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
         DocContent testget = doccontentService.get(doccontent_id);
-        if (testget == null || testget.getDoc() != doc_id) {
+        if (testget == null || !(doc_id.equals(testget.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocContent domain = doccontentMapping.toDomain(doccontentdto);
@@ -478,7 +478,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> getByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent domain = doccontentService.get(doccontent_id);
-        if (domain == null || domain.getDoc() != doc_id) {
+        if (domain == null || !(doc_id.equals(domain.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocContentDTO dto = doccontentMapping.toDto(domain);
@@ -492,7 +492,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<Boolean> removeByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent testget = doccontentService.get(doccontent_id);
-        if (testget == null || testget.getDoc() != doc_id) {
+        if (testget == null || !(doc_id.equals(testget.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
@@ -511,7 +511,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> updateByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
         DocContent testget = doccontentService.get(doccontent_id);
-        if (testget == null || testget.getDoc() != doc_id) {
+        if (testget == null || !(doc_id.equals(testget.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocContent domain = doccontentMapping.toDomain(doccontentdto);
@@ -600,7 +600,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> getByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent domain = doccontentService.get(doccontent_id);
-        if (domain == null || domain.getDoc() != doc_id) {
+        if (domain == null || !(doc_id.equals(domain.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocContentDTO dto = doccontentMapping.toDto(domain);
@@ -614,7 +614,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<Boolean> removeByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent testget = doccontentService.get(doccontent_id);
-        if (testget == null || testget.getDoc() != doc_id) {
+        if (testget == null || !(doc_id.equals(testget.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(doccontentService.remove(doccontent_id));
@@ -633,7 +633,7 @@ public class DocContentResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/{doccontent_id}")
     public ResponseEntity<DocContentDTO> updateByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id, @RequestBody DocContentDTO doccontentdto) {
         DocContent testget = doccontentService.get(doccontent_id);
-        if (testget == null || testget.getDoc() != doc_id) {
+        if (testget == null || !(doc_id.equals(testget.getDoc())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         DocContent domain = doccontentMapping.toDomain(doccontentdto);

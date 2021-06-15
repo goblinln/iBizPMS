@@ -75,7 +75,7 @@ public class TaskTeamResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
         TaskTeam domain = taskteamService.get(taskteam_id);
-        if (domain == null || domain.getRoot() != task_id) {
+        if (domain == null || !(task_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
@@ -89,7 +89,7 @@ public class TaskTeamResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
         TaskTeam testget = taskteamService.get(taskteam_id);
-        if (testget == null || testget.getRoot() != task_id) {
+        if (testget == null || !(task_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(taskteamService.remove(taskteam_id));
@@ -108,7 +108,7 @@ public class TaskTeamResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
         TaskTeam testget = taskteamService.get(taskteam_id);
-        if (testget == null || testget.getRoot() != task_id) {
+        if (testget == null || !(task_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
@@ -183,7 +183,7 @@ public class TaskTeamResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
         TaskTeam domain = taskteamService.get(taskteam_id);
-        if (domain == null || domain.getRoot() != task_id) {
+        if (domain == null || !(task_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
@@ -197,7 +197,7 @@ public class TaskTeamResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
         TaskTeam testget = taskteamService.get(taskteam_id);
-        if (testget == null || testget.getRoot() != task_id) {
+        if (testget == null || !(task_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(taskteamService.remove(taskteam_id));
@@ -216,7 +216,7 @@ public class TaskTeamResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
         TaskTeam testget = taskteamService.get(taskteam_id);
-        if (testget == null || testget.getRoot() != task_id) {
+        if (testget == null || !(task_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         TaskTeam domain = taskteamMapping.toDomain(taskteamdto);

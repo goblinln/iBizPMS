@@ -75,7 +75,7 @@ public class SubProductPlanResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<SubProductPlanDTO> getByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
         ProductPlan domain = productplanService.get(subproductplan_id);
-        if (domain == null || domain.getParent() != productplan_id) {
+        if (domain == null || !(productplan_id.equals(domain.getParent())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
@@ -89,7 +89,7 @@ public class SubProductPlanResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<Boolean> removeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
         ProductPlan testget = productplanService.get(subproductplan_id);
-        if (testget == null || testget.getParent() != productplan_id) {
+        if (testget == null || !(productplan_id.equals(testget.getParent())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(subproductplan_id));
@@ -108,7 +108,7 @@ public class SubProductPlanResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<SubProductPlanDTO> updateByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan testget = productplanService.get(subproductplan_id);
-        if (testget == null || testget.getParent() != productplan_id) {
+        if (testget == null || !(productplan_id.equals(testget.getParent())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
@@ -592,7 +592,7 @@ public class SubProductPlanResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<SubProductPlanDTO> getByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
         ProductPlan domain = productplanService.get(subproductplan_id);
-        if (domain == null || domain.getParent() != productplan_id) {
+        if (domain == null || !(productplan_id.equals(domain.getParent())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
@@ -606,7 +606,7 @@ public class SubProductPlanResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<Boolean> removeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
         ProductPlan testget = productplanService.get(subproductplan_id);
-        if (testget == null || testget.getParent() != productplan_id) {
+        if (testget == null || !(productplan_id.equals(testget.getParent())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(subproductplan_id));
@@ -625,7 +625,7 @@ public class SubProductPlanResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
     public ResponseEntity<SubProductPlanDTO> updateByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
         ProductPlan testget = productplanService.get(subproductplan_id);
-        if (testget == null || testget.getParent() != productplan_id) {
+        if (testget == null || !(productplan_id.equals(testget.getParent())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);

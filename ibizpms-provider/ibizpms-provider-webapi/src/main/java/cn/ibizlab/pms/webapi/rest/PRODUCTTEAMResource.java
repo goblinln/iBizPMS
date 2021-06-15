@@ -281,7 +281,7 @@ public class PRODUCTTEAMResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productteams/{productteam_id}")
     public ResponseEntity<PRODUCTTEAMDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id) {
         PRODUCTTEAM domain = productteamService.get(productteam_id);
-        if (domain == null || domain.getRoot() != product_id) {
+        if (domain == null || !(product_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
@@ -295,7 +295,7 @@ public class PRODUCTTEAMResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productteams/{productteam_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id) {
         PRODUCTTEAM testget = productteamService.get(productteam_id);
-        if (testget == null || testget.getRoot() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(productteamService.remove(productteam_id));
@@ -314,7 +314,7 @@ public class PRODUCTTEAMResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productteams/{productteam_id}")
     public ResponseEntity<PRODUCTTEAMDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id, @RequestBody PRODUCTTEAMDTO productteamdto) {
         PRODUCTTEAM testget = productteamService.get(productteam_id);
-        if (testget == null || testget.getRoot() != product_id) {
+        if (testget == null || !(product_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);

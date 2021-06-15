@@ -231,7 +231,7 @@ public class IbzCaseResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
     public ResponseEntity<IbzCaseDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {
         IbzCase domain = ibzcaseService.get(ibzcase_id);
-        if (domain == null || domain.getLib() != ibzlib_id) {
+        if (domain == null || !(ibzlib_id.equals(domain.getLib())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
@@ -245,7 +245,7 @@ public class IbzCaseResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
     public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {
         IbzCase testget = ibzcaseService.get(ibzcase_id);
-        if (testget == null || testget.getLib() != ibzlib_id) {
+        if (testget == null || !(ibzlib_id.equals(testget.getLib())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.remove(ibzcase_id));
@@ -264,7 +264,7 @@ public class IbzCaseResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}")
     public ResponseEntity<IbzCaseDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @RequestBody IbzCaseDTO ibzcasedto) {
         IbzCase testget = ibzcaseService.get(ibzcase_id);
-        if (testget == null || testget.getLib() != ibzlib_id) {
+        if (testget == null || !(ibzlib_id.equals(testget.getLib())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         IbzCase domain = ibzcaseMapping.toDomain(ibzcasedto);

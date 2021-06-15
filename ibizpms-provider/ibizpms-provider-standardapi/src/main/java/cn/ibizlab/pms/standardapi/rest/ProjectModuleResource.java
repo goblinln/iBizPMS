@@ -75,7 +75,7 @@ public class ProjectModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
     public ResponseEntity<ProjectModuleDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id) {
         ProjectModule domain = projectmoduleService.get(projectmodule_id);
-        if (domain == null || domain.getRoot() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
@@ -89,7 +89,7 @@ public class ProjectModuleResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id) {
         ProjectModule testget = projectmoduleService.get(projectmodule_id);
-        if (testget == null || testget.getRoot() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.remove(projectmodule_id));
@@ -108,7 +108,7 @@ public class ProjectModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
     public ResponseEntity<ProjectModuleDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule testget = projectmoduleService.get(projectmodule_id);
-        if (testget == null || testget.getRoot() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
@@ -176,7 +176,7 @@ public class ProjectModuleResource {
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/projectmodules/{projectmodule_id}")
     public ResponseEntity<ProjectModuleDTO> getByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id) {
         ProjectModule domain = projectmoduleService.get(projectmodule_id);
-        if (domain == null || domain.getRoot() != project_id) {
+        if (domain == null || !(project_id.equals(domain.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
@@ -190,7 +190,7 @@ public class ProjectModuleResource {
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projects/{project_id}/projectmodules/{projectmodule_id}")
     public ResponseEntity<Boolean> removeByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id) {
         ProjectModule testget = projectmoduleService.get(projectmodule_id);
-        if (testget == null || testget.getRoot() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
 		return ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.remove(projectmodule_id));
@@ -209,7 +209,7 @@ public class ProjectModuleResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projects/{project_id}/projectmodules/{projectmodule_id}")
     public ResponseEntity<ProjectModuleDTO> updateByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule testget = projectmoduleService.get(projectmodule_id);
-        if (testget == null || testget.getRoot() != project_id) {
+        if (testget == null || !(project_id.equals(testget.getRoot())) ) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
