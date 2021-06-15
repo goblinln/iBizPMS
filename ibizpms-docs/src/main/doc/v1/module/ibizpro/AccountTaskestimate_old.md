@@ -261,6 +261,7 @@
 | --------  | --------   | -------- | --------   | ----- |
 |AllAccountEstimate|所有用户工时|AllAccountEstimate|否|&nbsp;|
 |CurDaySum|用户日工时统计|CurDaySum|否|&nbsp;|
+|CurDaySunByProject|用户当日工时（项目）|CurDaySunByProject|否|&nbsp;|
 |DEFAULT|数据集|DEFAULT|是|&nbsp;|
 
 ## 查询模式

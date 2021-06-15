@@ -256,6 +256,42 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[AccountTaskestimateDTO](#AccountTaskestimateDTO)>：用户工时统计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 获取用户当日工时（项目）
+#### 访问路径
+/accounttaskestimates/fetchcurdaysunbyproject
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [AccountTaskestimateSearchContext](#AccountTaskestimateSearchContext) | 用户工时统计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[AccountTaskestimateDTO](#AccountTaskestimateDTO)>：用户工时统计实体传输对象列表 |
+
+### 查询用户当日工时（项目）
+#### 访问路径
+/accounttaskestimates/searchcurdaysunbyproject
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [AccountTaskestimateSearchContext](#AccountTaskestimateSearchContext) | 用户工时统计查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[AccountTaskestimateDTO](#AccountTaskestimateDTO)>：用户工时统计实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 获取数据集
 #### 访问路径
 /accounttaskestimates/fetchdefault

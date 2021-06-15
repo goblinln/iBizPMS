@@ -48,6 +48,7 @@ public interface IAccountTaskestimateService extends IService<AccountTaskestimat
     void saveBatch(List<AccountTaskestimate> list);
     Page<AccountTaskestimate> searchAllAccountEstimate(AccountTaskestimateSearchContext context);
     Page<AccountTaskestimate> searchCurDaySum(AccountTaskestimateSearchContext context);
+    Page<AccountTaskestimate> searchCurDaySunByProject(AccountTaskestimateSearchContext context);
     Page<AccountTaskestimate> searchDefault(AccountTaskestimateSearchContext context);
     /**
      *自定义查询SQL

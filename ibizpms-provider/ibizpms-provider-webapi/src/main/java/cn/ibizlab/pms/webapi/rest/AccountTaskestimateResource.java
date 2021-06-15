@@ -182,6 +182,28 @@ public class AccountTaskestimateResource {
                 .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchCurDaySunByProject-all')")
+	@ApiOperation(value = "获取用户当日工时（项目）", tags = {"用户工时统计" } ,notes = "获取用户当日工时（项目）")
+    @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchcurdaysunbyproject")
+	public ResponseEntity<List<AccountTaskestimateDTO>> fetchCurDaySunByProject(AccountTaskestimateSearchContext context) {
+        Page<AccountTaskestimate> domains = accounttaskestimateService.searchCurDaySunByProject(context) ;
+        List<AccountTaskestimateDTO> list = accounttaskestimateMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchCurDaySunByProject-all')")
+	@ApiOperation(value = "查询用户当日工时（项目）", tags = {"用户工时统计" } ,notes = "查询用户当日工时（项目）")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttaskestimates/searchcurdaysunbyproject")
+	public ResponseEntity<Page<AccountTaskestimateDTO>> searchCurDaySunByProject(@RequestBody AccountTaskestimateSearchContext context) {
+        Page<AccountTaskestimate> domains = accounttaskestimateService.searchCurDaySunByProject(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"用户工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchdefault")

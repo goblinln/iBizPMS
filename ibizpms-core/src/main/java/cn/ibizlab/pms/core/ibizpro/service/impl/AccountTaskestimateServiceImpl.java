@@ -199,6 +199,15 @@ public class AccountTaskestimateServiceImpl extends ServiceImpl<AccountTaskestim
     }
 
     /**
+     * 查询集合 用户当日工时（项目）
+     */
+    @Override
+    public Page<AccountTaskestimate> searchCurDaySunByProject(AccountTaskestimateSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<AccountTaskestimate> pages=baseMapper.searchCurDaySunByProject(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<AccountTaskestimate>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 数据集
      */
     @Override

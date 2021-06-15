@@ -34,6 +34,15 @@
          <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
+    <!--数据集合[CurDaySunByProject]-->
+	 <select id="searchCurDaySunByProject"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.AccountTaskestimateSearchContext"  resultMap="AccountTaskestimateResultMap">
+         select t1.* from (
+                <include refid="CurDaySunByProject" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.AccountTaskestimateSearchContext"  resultMap="AccountTaskestimateResultMap">
          select t1.* from (
