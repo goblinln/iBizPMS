@@ -119,6 +119,11 @@
     "name" : "type",
     "value" : "ReleaseStories",
     "rawValue" : true
+  }, {
+    "key" : "release",
+    "name" : "release",
+    "value" : "srfparentkey",
+    "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
