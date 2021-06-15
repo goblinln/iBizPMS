@@ -59,5 +59,6 @@
   } ],
   "roleTag" : "AccessUser",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "LEFT_CASE_MENU", "TOP_DOC_MENU", "PRODUCTLEFT", "TOP_MYPLACE_MENU", "LEFT_PROJECT_MENU", "TOP_MYFAVOURITE_MENU" ]
+  "uniResTags" : [ "LEFT_CASE_MENU", "TOP_DOC_MENU", "PRODUCTLEFT", "TOP_MYPLACE_MENU", "LEFT_PROJECT_MENU", "TOP_MYFAVOURITE_MENU" ],
+  "globalRole" : true
 }

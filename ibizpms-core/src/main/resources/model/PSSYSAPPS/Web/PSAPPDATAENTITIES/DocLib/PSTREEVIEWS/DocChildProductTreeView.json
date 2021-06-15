@@ -709,6 +709,12 @@
       "id" : "ChildModule"
     },
     "name" : "默认根节点 - 子目录文档库分类",
+    "getPSNavigateParams" : [ {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    } ],
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ROOT"
