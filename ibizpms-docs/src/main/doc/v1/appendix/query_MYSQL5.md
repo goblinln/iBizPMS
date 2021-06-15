@@ -197,6 +197,15 @@ WHERE t1.account = #{srf.datacontext.account}
 t1.dayname =  #{srf.datacontext.dayname} 
 
 ```
+### 用户当日工时（项目）(CurDaySunByProject)<div id="AccountTaskestimate_CurDaySunByProject"></div>
+```sql
+SELECT
+t1.`DATE`,
+t1.`EVALUATIONCOST`,
+t1.`INPUTCOST`
+FROM `zt_taskestimate` t1 
+
+```
 ### 数据查询(DEFAULT)<div id="AccountTaskestimate_Default"></div>
 ```sql
 SELECT T1.* FROM (SELECT

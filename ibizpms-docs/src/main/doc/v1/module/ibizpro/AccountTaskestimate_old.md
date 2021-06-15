@@ -251,6 +251,7 @@
 | --------  | --------   | --------   | ----- |
 |AllAccountEstimate|所有用户工时([MYSQL5](../../appendix/query_MYSQL5.md#AccountTaskestimate_AllAccountEstimate))|否|&nbsp;|
 |CurDaySum|用户日工时统计([MYSQL5](../../appendix/query_MYSQL5.md#AccountTaskestimate_CurDaySum))|否|&nbsp;|
+|CurDaySunByProject|用户当日工时（项目）([MYSQL5](../../appendix/query_MYSQL5.md#AccountTaskestimate_CurDaySunByProject))|否|&nbsp;|
 |DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#AccountTaskestimate_Default))|是|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#AccountTaskestimate_View))|否|&nbsp;|
 
