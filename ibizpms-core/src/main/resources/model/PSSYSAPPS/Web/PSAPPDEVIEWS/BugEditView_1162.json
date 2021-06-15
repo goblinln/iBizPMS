@@ -984,11 +984,12 @@
             },
             "getPSEditor" : {
               "editorParams" : {
-                "SRFNAVCTX.bugproject" : "%project%",
+                "SRFNAVCTX.project" : "%project%",
                 "SRFNAVPARAM.bugproduct" : "%product%",
+                "SRFNAVPARAM.type" : "BugProductOrProjectBuild",
                 "valFormat" : "{0: '/'}",
                 "SRFNAVPARAM.bugproject" : "%project%",
-                "SRFNAVCTX.bugproduct" : "%product%"
+                "SRFNAVCTX.product" : "%product%"
               },
               "editorType" : "MDROPDOWNLIST",
               "name" : "openedbuild",
@@ -997,14 +998,14 @@
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductBuild.json"
               },
               "getPSNavigateContexts" : [ {
-                "key" : "BUGPRODUCT",
-                "name" : "BUGPRODUCT",
-                "value" : "product",
+                "key" : "PROJECT",
+                "name" : "PROJECT",
+                "value" : "project",
                 "rawValue" : false
               }, {
-                "key" : "BUGPROJECT",
-                "name" : "BUGPROJECT",
-                "value" : "project",
+                "key" : "PRODUCT",
+                "name" : "PRODUCT",
+                "value" : "product",
                 "rawValue" : false
               } ],
               "getPSNavigateParams" : [ {
@@ -1012,6 +1013,11 @@
                 "name" : "bugproject",
                 "value" : "project",
                 "rawValue" : false
+              }, {
+                "key" : "type",
+                "name" : "type",
+                "value" : "BugProductOrProjectBuild",
+                "rawValue" : true
               }, {
                 "key" : "bugproduct",
                 "name" : "bugproduct",
