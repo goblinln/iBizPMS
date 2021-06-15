@@ -4,7 +4,7 @@ import { WizardPanelControlBase } from '../../../widgets';
 import { IPSDEEditForm, IPSDEWizard, IPSDEWizardEditForm, IPSDEWizardStep, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
 export class AppWizardPanelBase extends WizardPanelControlBase {
-    
+
     /**
      * 部件动态参数
      *
@@ -26,12 +26,12 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
      * @param {*} oldVal
      * @memberof AppWizardPanelBase
      */
-    @Watch('dynamicProps',{
+    @Watch('dynamicProps', {
         immediate: true,
     })
     public onDynamicPropsChange(newVal: any, oldVal: any) {
-        if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-           super.onDynamicPropsChange(newVal,oldVal);
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onDynamicPropsChange(newVal, oldVal);
         }
     }
 
@@ -46,8 +46,8 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
         immediate: true,
     })
     public onStaticPropsChange(newVal: any, oldVal: any) {
-        if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-            super.onStaticPropsChange(newVal,oldVal);
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onStaticPropsChange(newVal, oldVal);
         }
     }
 
@@ -56,7 +56,7 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
      *
      * @memberof AppWizardPanelBase
      */
-    public destroyed(){
+    public destroyed() {
         this.ctrlDestroyed();
     }
 
@@ -67,7 +67,7 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
      * @memberof AppWizardPanelBase
      */
     @Emit('ctrl-event')
-    public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void {}
+    public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void { }
 
     /**
      * 绘制步骤标题栏
@@ -98,7 +98,7 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
             return;
         }
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(form);
-        Object.assign(targetCtrlParam.staticProps,{viewState: this.wizardState});
+        Object.assign(targetCtrlParam.staticProps, { viewState: this.wizardState });
         return this.$createElement(targetCtrlName, { key: Util.createUUID(), props: targetCtrlParam, ref: form.name, on: targetCtrlEvent });
     }
 
@@ -111,15 +111,15 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
         const wizard = this.controlInstance.getPSDEWizard() as IPSDEWizard;
         const finishCaption = wizard.finishCaption ? wizard.finishCaption : this.$t('app.wizardpanel.complete');
         const nextCaption = wizard.nextCaption ? wizard.nextCaption : this.$t('app.wizardpanel.next');
-        const prevCaption =  wizard.prevCaption ? wizard.prevCaption : this.$t('app.wizardpanel.back');
+        const prevCaption = wizard.prevCaption ? wizard.prevCaption : this.$t('app.wizardpanel.back');
         const prev = this.$tl((wizard.getPrevCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, prevCaption);
         const next = this.$tl((wizard.getNextCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, nextCaption);
         const finish = this.$tl((wizard.getFinishCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, finishCaption);
         return (
             <footer class="app-wizard-footer">
-                {!this.isHidden('PREV') ? <i-button on-click={(...params: any[]) => debounce(this.onClickPrev,params,this)} type="primary">{prev}</i-button> : null}
-                {!this.isHidden('NEXT') ? <i-button on-click={(...params: any[]) => debounce(this.onClickNext,params,this)} type="primary">{next}</i-button> : null}
-                {!this.isHidden('FINISH') ? <i-button on-click={(...params: any[]) => debounce(this.onClickFinish,params,this)} type="primary">{finish}</i-button> : null}
+                {!this.isHidden('PREV') ? <i-button on-click={(...params: any[]) => debounce(this.onClickPrev, params, this)} type="primary">{prev}</i-button> : null}
+                {!this.isHidden('NEXT') ? <i-button on-click={(...params: any[]) => debounce(this.onClickNext, params, this)} type="primary">{next}</i-button> : null}
+                {!this.isHidden('FINISH') ? <i-button on-click={(...params: any[]) => debounce(this.onClickFinish, params, this)} type="primary">{finish}</i-button> : null}
             </footer>
         );
     }
@@ -130,19 +130,19 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
      * @memberof AppWizardPanelBase
      */
     public render() {
-        if(!this.controlIsLoaded || !this.activeForm){
+        if (!this.controlIsLoaded || !this.activeForm) {
             return null;
         }
         const editForms: Array<IPSDEEditForm> = this.controlInstance.getPSDEEditForms() || [];
         const controlClassNames = this.renderOptions.controlClassNames;
         return (
             <layout class={{ 'app-wizard': true, ...controlClassNames }}>
-                {this.renderStepsTitle()}
+                {(this.controlInstance.wizardStyle && (this.controlInstance.wizardStyle == 'STYLE2')) ? null : this.renderStepsTitle()}
                 <i-content class="app-wizard-content">
-                    {editForms.length > 0 ? 
-                    editForms.map((editForm: IPSDEEditForm) => {
-                        return this.renderStepForm(editForm as IPSDEWizardEditForm);
-                    }) : null}
+                    {editForms.length > 0 ?
+                        editForms.map((editForm: IPSDEEditForm) => {
+                            return this.renderStepForm(editForm as IPSDEWizardEditForm);
+                        }) : null}
                 </i-content>
                 {this.renderStepsFooter()}
             </layout>

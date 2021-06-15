@@ -5,7 +5,7 @@ import { AppCenterService } from '../app-service';
 import { AppWizardPanelService } from '../ctrl-service';
 import { MainControlBase } from './main-control-base';
 
-export class WizardPanelControlBase extends MainControlBase implements WizardPanelControlInterface{
+export class WizardPanelControlBase extends MainControlBase implements WizardPanelControlInterface {
 
     /**
      * 向导面板部件实例
@@ -55,7 +55,6 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
      */
     public stepActions: any = {};
 
-
     /**
      * 向导表单集合
      *
@@ -78,14 +77,6 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
      * @memberof WizardPanelControlBase
      */
     public activeForm: string = '';
-
-    /**
-     * 状态属性
-     *
-     * @type {string}
-     * @memberof WizardPanelControlBase
-     */
-    public stateField: string = '';
 
     /**
      * 步骤标识集合
@@ -112,7 +103,6 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit(args);
         await this.ctrlModelFill();
-        this.stateField = (this.controlInstance.getStatePSAppDEField() as IPSAppDEField)?.codeName?.toLowerCase();
         this.initAction = (this.controlInstance.getInitPSControlAction() as IPSControlAction)?.getPSAppDEMethod()?.codeName || 'Get';
         this.finishAction = (this.controlInstance.getFinishPSControlAction() as IPSControlAction)?.getPSAppDEMethod()?.codeName || 'Update';
         if (!(this.Environment && this.Environment.isPreviewMode)) {
@@ -149,7 +139,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
     public ctrlInit() {
         super.ctrlInit();
         this.regFormActions();
-        if (this.activeForm && !this.stateField) {
+        if (this.activeForm) {
             this.historyForms.push(this.activeForm);
         }
         if (this.viewState) {
@@ -195,12 +185,9 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
                     return form.name === formName;
                 }) as IPSDEWizardEditForm;
                 const action = {
-                    //TODO YY IPSDEWizardEditForm 缺少getLoadPSControlAction getSavePSControlAction
-                    loadAction: 'Get',
-                    // loadAction: editForm?.getLoadPSControlAction() || 'Get',
-                    preAction: editForm?.getGoBackPSControlAction() || 'Get',
-                    // saveAction: editForm?.getSavePSControlAction() || "Update",
-                    saveAction: 'Update',
+                    loadAction: editForm?.getGetPSControlAction()?.actionName || 'Get',
+                    preAction: editForm?.getGoBackPSControlAction()?.actionName,
+                    saveAction: editForm?.getUpdatePSControlAction()?.actionName || "Update",
                     actions: stepForm.getStepActions() || [],
                 }
                 this.regFormAction(formName, action, this.getStepTag(wizard.getPSDEWizardSteps() || [], stepForm?.getPSDEWizardStep()?.stepTag as string));
@@ -214,27 +201,17 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
      * @memberof WizardPanelControlBase
      */
     public onClickPrev() {
-        if (!this.stateField) {
-            const length = this.historyForms.length;
-            if (length > 1) {
-                this.curState = 'PREV';
+        const length = this.historyForms.length;
+        if (length > 1) {
+            this.curState = 'PREV';
+            if (this.stepActions[this.activeForm].preAction) {
+                this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].preAction, emitAction: 'save', data: this.formParam } });
+            } else {
                 this.activeForm = this.historyForms[length - 1];
                 setTimeout(() => {
                     this.formLoad(this.formParam);
                 }, 1);
                 this.historyForms.splice(length - 1, 1);
-            }
-        } else {
-            if (this.activeForm) {
-                if (this.$refs && this.$refs[this.activeForm] && (this.$refs[this.activeForm] as any).ctrl) {
-                    let form: any = (this.$refs[this.activeForm] as any).ctrl;
-                    this.curState = 'PREV';
-                    if (!this.stepActions[this.activeForm].preAction) {
-                        this.$throw((this.$t('app.wizardpanel.preactionmessage') as string),'onClickPrev');
-                        return;
-                    }
-                    this.viewState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].preAction, emitAction: 'save', data: this.formParam } });
-                }
             }
         }
     }
@@ -255,7 +232,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
                     this.curState = 'NEXT';
                     this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].saveAction, emitAction: 'save', data: this.formParam } });
                 } else {
-                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickNext');
+                    this.$throw((this.$t('app.commonwords.rulesexception') as string), 'onClickNext');
                 }
             }
         }
@@ -274,7 +251,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
                     this.curState = 'FINISH';
                     this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].saveAction, emitAction: 'save', data: this.formParam } });
                 } else {
-                    this.$throw((this.$t('app.commonwords.rulesexception') as string),'onClickFinish');
+                    this.$throw((this.$t('app.commonwords.rulesexception') as string), 'onClickFinish');
                 }
             }
         }
@@ -304,25 +281,22 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
         Object.assign(this.formParam, args);
         if (Object.is(this.curState, 'NEXT')) {
             this.historyForms.push(name);
-            if (!this.stateField) {
-                if (this.getNextForm()) {
-                    this.activeForm = this.getNextForm();
-                    setTimeout(() => {
-                        this.formLoad(this.formParam);
-                    }, 1);
-                } else {
-                    this.doFinish();
-                }
+            if (this.getNextForm()) {
+                this.activeForm = this.getNextForm();
+                setTimeout(() => {
+                    this.formLoad(this.formParam);
+                }, 1);
             } else {
-                setTimeout(() => {
-                    this.formLoad(this.formParam);
-                }, 1);
+                this.doFinish();
             }
-        } else if (Object.is(this.curState, 'PREV')) {
-            if (this.stateField) {
+        } else if (this.curState, 'PREV') {
+            const length = this.historyForms.length;
+            if (length > 1) {
+                this.activeForm = this.historyForms[length - 1];
                 setTimeout(() => {
                     this.formLoad(this.formParam);
                 }, 1);
+                this.historyForms.splice(length - 1, 1);
             }
         } else if (Object.is(this.curState, 'FINISH')) {
             this.doFinish();
@@ -364,7 +338,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
     public doInit(opt: any = {}) {
         const arg: any = { ...opt };
         Object.assign(arg, { viewparams: this.viewparams });
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
         this.onControlRequset('doInit', tempContext, arg);
         const post: Promise<any> = this.service.init(this.initAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
@@ -378,7 +352,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
             }
         }).catch((response: any) => {
             this.onControlResponse('doInit', response);
-            this.$throw(response,'doInit');
+            this.$throw(response, 'doInit');
         })
     }
 
@@ -388,27 +362,8 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
      * @memberof WizardPanelControlBase
      */
     public formLoad(data: any) {
-        if (this.stateField) this.computedActiveForm(data);
         if (this.activeForm) {
             this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].loadAction, emitAction: 'load', data: this.formParam } });
-        }
-    }
-
-    /**
-     * 根据状态获取当前激活表单
-     *
-     * @memberof WizardPanelControlBase
-     */
-    public computedActiveForm(data: any) {
-        if (data && data[this.stateField]) {
-            if (Object.keys(this.stepTags).length > 0) {
-                Object.keys(this.stepTags).forEach((name: string) => {
-                    if (this.stepTags[name] === data[this.stateField]) {
-                        this.activeForm = name;
-                        return;
-                    }
-                })
-            }
         }
     }
 
@@ -421,7 +376,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
         let arg: any = {};
         Object.assign(arg, this.formParam);
         Object.assign(arg, { viewparams: this.viewparams });
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
         this.onControlRequset('doFinish', tempContext, arg);
         const post: Promise<any> = this.service.finish(this.finishAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
@@ -437,7 +392,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
             }
         }).catch((response: any) => {
             this.onControlResponse('doFinish', response);
-            this.$throw(response,'doFinish');
+            this.$throw(response, 'doFinish');
         });
     }
 
@@ -447,15 +402,19 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
      * @memberof WizardPanelControlBase
      */
     public getNextForm() {
-        let index = this.wizardForms.indexOf(this.activeForm);
-        if (index >= 0) {
-            if (this.wizardForms[index + 1]) {
-                return this.wizardForms[index + 1];
+        if (this.formParam && this.formParam['srfnextform']) {
+            return `${this.controlInstance.name}_form_${this.formParam['srfnextform']}`;
+        } else {
+            let index = this.wizardForms.indexOf(this.activeForm);
+            if (index >= 0) {
+                if (this.wizardForms[index + 1]) {
+                    return this.wizardForms[index + 1];
+                }
             }
+            return undefined;
         }
-        return undefined;
     }
-    
+
     /**
      * 是否隐藏
      *

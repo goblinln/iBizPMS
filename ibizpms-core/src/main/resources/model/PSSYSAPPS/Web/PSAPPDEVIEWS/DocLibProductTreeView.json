@@ -1998,6 +1998,12 @@
         "value" : "doclib",
         "rawValue" : false
       } ],
+      "getPSNavigateParams" : [ {
+        "key" : "doclib",
+        "name" : "doclib",
+        "value" : "doclib",
+        "rawValue" : false
+      } ],
       "parentFilter" : "parent",
       "getParentPSAppDEField" : {
         "name" : "PARENT",
@@ -2047,7 +2053,13 @@
       "getPSNavigateContexts" : [ {
         "key" : "DOCLIB",
         "name" : "DOCLIB",
-        "value" : "doclib",
+        "value" : "srfparentkey",
+        "rawValue" : false
+      } ],
+      "getPSNavigateParams" : [ {
+        "key" : "doclib",
+        "name" : "doclib",
+        "value" : "srfparentkey",
         "rawValue" : false
       } ],
       "parentFilter" : "root",
@@ -2099,6 +2111,12 @@
       "getPSNavigateContexts" : [ {
         "key" : "DOCLIB",
         "name" : "DOCLIB",
+        "value" : "doclib",
+        "rawValue" : false
+      } ],
+      "getPSNavigateParams" : [ {
+        "key" : "doclib",
+        "name" : "doclib",
         "value" : "doclib",
         "rawValue" : false
       } ],

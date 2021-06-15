@@ -231,6 +231,24 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
     },
+    "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "grid_uagridcolumn1_u9764db6_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "表格界面_删除操作"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "表格界面_删除操作",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "uIActionTarget" : "MULTIKEY",
+      "xDataControlName" : "grid"
+    } ],
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
         "actionName" : "Update",
@@ -354,8 +372,58 @@
       "widthUnit" : "PX",
       "enableRowEdit" : true,
       "enableSort" : true
+    }, {
+      "align" : "CENTER",
+      "caption" : "操作",
+      "codeName" : "uagridcolumn1",
+      "columnType" : "UAGRIDCOLUMN",
+      "name" : "uagridcolumn1",
+      "noPrivDisplayMode" : 1,
+      "getPSDEUIActionGroup" : {
+        "name" : "删除",
+        "getPSUIActionGroupDetails" : [ {
+          "detailType" : "DEUIACTION",
+          "name" : "u9764db6",
+          "getPSUIAction" : {
+            "actionTarget" : "MULTIKEY",
+            "noPrivDisplayMode" : 1,
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.REMOVE"
+            },
+            "caption" : "删除",
+            "codeName" : "Remove",
+            "dataAccessAction" : "DELETE",
+            "fullCodeName" : "Remove",
+            "name" : "表格界面_删除操作",
+            "getPSSysImage" : {
+              "glyph" : "xf00d@FontAwesome",
+              "cssClass" : "fa fa-remove"
+            },
+            "timeout" : 60000,
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+            },
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "Remove",
+            "uIActionType" : "DEUIACTION"
+          },
+          "addSeparator" : false,
+          "showCaption" : false,
+          "showIcon" : true
+        } ]
+      },
+      "width" : 60,
+      "widthUnit" : "PX",
+      "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
+      "dataType" : 1,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
       "dataType" : 25,
       "name" : "short",
       "getPSAppDEField" : {
@@ -393,6 +461,21 @@
       }
     } ],
     "getPSDEGridEditItems" : [ {
+      "caption" : "id",
+      "codeName" : "id",
+      "enableCond" : 0,
+      "ignoreInput" : 0,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "id"
+      },
+      "allowEmpty" : true
+    }, {
       "caption" : "简称",
       "codeName" : "short",
       "enableCond" : 3,

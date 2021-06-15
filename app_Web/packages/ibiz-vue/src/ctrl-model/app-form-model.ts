@@ -40,6 +40,11 @@ export class AppFormModel {
                 dataType: 'TEXT',
             },
             {
+                name: 'srfnextform',
+                prop: 'srfnextform',
+                dataType: 'TEXT',
+            },
+            {
                 name: 'srfactionparam',
                 prop: 'srfactionparam',
                 dataType: 'TEXT',

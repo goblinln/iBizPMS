@@ -287,7 +287,18 @@
       "modelid" : "022f0111597cba0a05a1d53d48a8cb04",
       "modeltype" : "PSDETOOLBAR"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "SRFPARENTKEY",
+      "name" : "SRFPARENTKEY",
+      "value" : "0",
+      "rawValue" : true
+    } ],
     "getPSNavigateParams" : [ {
+      "key" : "srfparentkey",
+      "name" : "srfparentkey",
+      "value" : "0",
+      "rawValue" : true
+    }, {
       "key" : "n_root_eq",
       "name" : "n_root_eq",
       "value" : "srfroot",

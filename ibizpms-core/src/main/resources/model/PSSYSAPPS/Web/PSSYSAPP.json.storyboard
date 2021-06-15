@@ -6265,6 +6265,14 @@
     "psappsbitemrsname" : "表格界面_保存行",
     "rstype" : "UIACTION"
   }, {
+    "psappsbitemrsid" : "ce5b20bd7dd237a855d0d4da2c8d9a7d",
+    "ppsappsbitemname" : "生产线表格视图",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "8a63b5d75b568be70992ebf49b619d1c",
+    "psappsbitemrsname" : "表格界面_删除操作",
+    "rstype" : "UIACTION"
+  }, {
     "psappsbitemrsid" : "cad8db3f21e37e28db740ac76f0f29b7",
     "ppsappsbitemname" : "生产线表格视图",
     "rstag" : "NEWDATA",
