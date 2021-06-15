@@ -784,7 +784,7 @@
 
 
     <!--输出实体[IBZ_DOCLIBMODULE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_doclibmodule-23-21">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_doclibmodule-24-21">
         <createTable tableName="zt_module">
                 <column name="MDEPTID" remarks="" type="VARCHAR(100)">
                 </column>
