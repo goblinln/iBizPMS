@@ -401,7 +401,8 @@ POST
 | 102 | fiveevaluationtime | Double | 允许 | 五号评估工时 |
 | 103 | fourconsumed | Double | 允许 | 四号工时 |
 | 104 | sixteenconsumed | Double | 允许 | 十六号工时 |
-| 105 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 105 | dayname | String | 允许 | 天（显示） |
+| 106 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### AccountTaskestimateSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

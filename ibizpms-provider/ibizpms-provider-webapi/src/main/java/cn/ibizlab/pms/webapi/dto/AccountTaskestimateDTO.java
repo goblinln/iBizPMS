@@ -975,6 +975,16 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @ApiModelProperty("十六号工时")
     private Double sixteenconsumed;
 
+    /**
+     * 属性 [DAYNAME]
+     *
+     */
+    @JSONField(name = "dayname")
+    @JsonProperty("dayname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("天（显示）")
+    private String dayname;
+
 
     /**
      * 设置 [DATE]

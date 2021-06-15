@@ -880,6 +880,14 @@ public class AccountTaskestimate extends EntityMP implements Serializable {
     @JsonProperty("sixteenconsumed")
     @ApiModelProperty("十六号工时")
     private Double sixteenconsumed;
+    /**
+     * 天（显示）
+     */
+    @TableField(exist = false)
+    @JSONField(name = "dayname")
+    @JsonProperty("dayname")
+    @ApiModelProperty("天（显示）")
+    private String dayname;
 
 
 

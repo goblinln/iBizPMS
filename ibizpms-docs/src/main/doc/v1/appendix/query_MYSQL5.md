@@ -145,6 +145,7 @@ SELECT YEAR
 	( t1.date ) AS `year`,
 	RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
 	RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`,
+	CONCAT(year(t1.date),RIGHT ( 100 + MONTH ( t1.date ), 2 ),RIGHT ( 100 + DAY ( t1.date ), 2 )) as dayname ,
 	t11.project,
 	t21.`name` AS projectname,
 	t1.account,
@@ -171,6 +172,7 @@ SELECT YEAR
 	( t1.date ) AS `year`,
 	RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
 	RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`,
+	CONCAT(year(t1.date),RIGHT ( 100 + MONTH ( t1.date ), 2 ),RIGHT ( 100 + DAY ( t1.date ), 2 )) as dayname ,
 	t1.idvalue AS project,
 	t11.`name` AS projectname,
 	t1.account,
@@ -191,7 +193,7 @@ GROUP BY
 	t1.account,
 	t1.date
 WHERE t1.account = #{srf.datacontext.account} 
-t1.date =  #{srf.datacontext.srfparentkey} 
+t1.date =  #{srf.datacontext.dayname} 
 
 ```
 ### 数据查询(DEFAULT)<div id="AccountTaskestimate_Default"></div>

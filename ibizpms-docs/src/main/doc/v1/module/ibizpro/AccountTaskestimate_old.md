@@ -113,6 +113,7 @@
 |五号评估工时|FIVEEVALUATIONTIME|FLOAT|&nbsp;|
 |四号工时|FOURONSUMED|FLOAT|&nbsp;|
 |十六号工时|SIXTEENCONSUMED|FLOAT|&nbsp;|
+|天（显示）|DAYNAME|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -221,6 +222,7 @@
 |五号评估工时|默认规则|默认规则|
 |四号工时|默认规则|默认规则|
 |十六号工时|默认规则|默认规则|
+|天（显示）|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 
