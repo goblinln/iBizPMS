@@ -64,6 +64,11 @@
     "value" : "srfparent",
     "rawValue" : false
   }, {
+    "key" : "SRFPARENTKEY",
+    "name" : "SRFPARENTKEY",
+    "value" : "doclibmodule",
+    "rawValue" : false
+  }, {
     "key" : "SRFPARENTDENAME",
     "name" : "SRFPARENTDENAME",
     "value" : "DocLibModule",

@@ -167,6 +167,13 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
     public errorMessages: Array<any> = [];
 
     /**
+     * 保存时的显示处理提示
+     * 
+     * @memberof  EditFormControlBase
+     */
+    public showResultInfo: boolean = true;
+
+    /**
      * 监听静态参数变化
      *
      * @param {*} newVal
@@ -437,6 +444,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
             Object.assign(arg, this.context);
             Object.assign(arg, data);
             Object.assign(arg, { srfmajortext: data[this.majorMessageItemName] });
+            this.showResultInfo = showResultInfo;
             if (isStateNext && this.drCount > 0) {
                 this.drcounter = this.drCount;
                 this.drsaveopt = opt;
@@ -917,7 +925,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
         let _this = this;
         this.drcounter--;
         if (this.drcounter === 0) {
-            this.save(this.drsaveopt, true, false).then((res) => {
+            this.save(this.drsaveopt, this.showResultInfo, false).then((res) => {
                 this.saveState(res);
                 this.drsaveopt = {};
                 if (Object.is(_this.currentAction, "saveAndNew")) {
