@@ -99,6 +99,7 @@
       "id" : "treeexpbar"
     },
     "getPSControlParam" : {
+      "width" : 250.0,
       "autoLoad" : true,
       "showBusyIndicator" : true,
       "id" : "TREEEXPBAR"
@@ -619,6 +620,7 @@
       "modelid" : "79533934b210571ef8b0945194a91cbf",
       "modeltype" : "PSDETREEVIEW"
     } ],
+    "width" : 250.0,
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : false,
@@ -644,7 +646,7 @@
   "title" : "文档库分类树导航视图",
   "viewStyle" : "STYLE2",
   "viewType" : "DETREEEXPVIEW",
-  "width" : 800,
+  "width" : 900,
   "enableDP" : true,
   "enableFilter" : false,
   "enableQuickSearch" : true,
