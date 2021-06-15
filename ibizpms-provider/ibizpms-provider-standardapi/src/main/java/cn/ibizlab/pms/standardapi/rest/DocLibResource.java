@@ -443,7 +443,7 @@ public class DocLibResource {
     }
 
 
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doclib_id, 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', #doclib_id, 'READ')")
     @ApiOperation(value = "根据项目获取文档库", tags = {"文档库" },  notes = "根据项目获取文档库")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}")
     public ResponseEntity<DocLibDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id) {
@@ -532,7 +532,7 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取自定义文档库", tags = {"文档库" } ,notes = "根据项目获取自定义文档库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/fetchbycustom")
 	public ResponseEntity<List<DocLibDTO>> fetchByCustomByProject(@PathVariable("project_id") Long project_id,@RequestBody DocLibSearchContext context) {
@@ -545,7 +545,7 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取产品文档库", tags = {"文档库" } ,notes = "根据项目获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/fetchbyproduct")
 	public ResponseEntity<List<DocLibDTO>> fetchByProductByProject(@PathVariable("project_id") Long project_id,@RequestBody DocLibSearchContext context) {
@@ -558,7 +558,7 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取项目文件库", tags = {"文档库" } ,notes = "根据项目获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/fetchbyproject")
 	public ResponseEntity<List<DocLibDTO>> fetchByProjectByProject(@PathVariable("project_id") Long project_id,@RequestBody DocLibSearchContext context) {
@@ -571,7 +571,7 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"文档库" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/fetchdefault")
 	public ResponseEntity<List<DocLibDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody DocLibSearchContext context) {
@@ -584,7 +584,7 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取我的收藏", tags = {"文档库" } ,notes = "根据项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/fetchmyfavourites")
 	public ResponseEntity<List<DocLibDTO>> fetchMyFavouritesByProject(@PathVariable("project_id") Long project_id,@RequestBody DocLibSearchContext context) {
@@ -613,7 +613,7 @@ public class DocLibResource {
     }
 
 
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doclib_id, 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', #doclib_id, 'READ')")
     @ApiOperation(value = "根据产品项目获取文档库", tags = {"文档库" },  notes = "根据产品项目获取文档库")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}")
     public ResponseEntity<DocLibDTO> getByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id) {
@@ -702,7 +702,7 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目获取自定义文档库", tags = {"文档库" } ,notes = "根据产品项目获取自定义文档库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/fetchbycustom")
 	public ResponseEntity<List<DocLibDTO>> fetchByCustomByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody DocLibSearchContext context) {
@@ -715,7 +715,7 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目获取产品文档库", tags = {"文档库" } ,notes = "根据产品项目获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/fetchbyproduct")
 	public ResponseEntity<List<DocLibDTO>> fetchByProductByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody DocLibSearchContext context) {
@@ -728,7 +728,7 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目获取项目文件库", tags = {"文档库" } ,notes = "根据产品项目获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/fetchbyproject")
 	public ResponseEntity<List<DocLibDTO>> fetchByProjectByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody DocLibSearchContext context) {
@@ -741,7 +741,7 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目获取DEFAULT", tags = {"文档库" } ,notes = "根据产品项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/fetchdefault")
 	public ResponseEntity<List<DocLibDTO>> fetchDefaultByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody DocLibSearchContext context) {
@@ -754,7 +754,7 @@ public class DocLibResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目获取我的收藏", tags = {"文档库" } ,notes = "根据产品项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/fetchmyfavourites")
 	public ResponseEntity<List<DocLibDTO>> fetchMyFavouritesByProductProject(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id,@RequestBody DocLibSearchContext context) {

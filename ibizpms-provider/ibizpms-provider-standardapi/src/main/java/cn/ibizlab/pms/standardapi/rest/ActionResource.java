@@ -2790,7 +2790,7 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #action_id, 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', #action_id, 'READ')")
     @ApiOperation(value = "根据项目文档库获取系统日志", tags = {"系统日志" },  notes = "根据项目文档库获取系统日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> getByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id) {
@@ -2826,7 +2826,7 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目文档库获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchaccount")
 	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -2839,7 +2839,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库获取Type", tags = {"系统日志" } ,notes = "根据项目文档库获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchmain")
 	public ResponseEntity<List<ActionDTO>> fetchMainByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -2852,7 +2852,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库获取我的数据", tags = {"系统日志" } ,notes = "根据项目文档库获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchmy")
 	public ResponseEntity<List<ActionDTO>> fetchMyByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -2865,7 +2865,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目文档库获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchmytrends")
 	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -2878,7 +2878,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目文档库获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchproduct")
 	public ResponseEntity<List<ActionDTO>> fetchProductByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -2891,7 +2891,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目文档库获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchproject")
 	public ResponseEntity<List<ActionDTO>> fetchProjectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -4352,7 +4352,7 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #action_id, 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', #action_id, 'READ')")
     @ApiOperation(value = "根据产品项目文档库获取系统日志", tags = {"系统日志" },  notes = "根据产品项目文档库获取系统日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> getByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id) {
@@ -4388,7 +4388,7 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品项目文档库获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/actions/fetchaccount")
 	public ResponseEntity<List<ActionDTO>> fetchAccountByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -4401,7 +4401,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库获取Type", tags = {"系统日志" } ,notes = "根据产品项目文档库获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/actions/fetchmain")
 	public ResponseEntity<List<ActionDTO>> fetchMainByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -4414,7 +4414,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库获取我的数据", tags = {"系统日志" } ,notes = "根据产品项目文档库获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/actions/fetchmy")
 	public ResponseEntity<List<ActionDTO>> fetchMyByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -4427,7 +4427,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品项目文档库获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/actions/fetchmytrends")
 	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -4440,7 +4440,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品项目文档库获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/actions/fetchproduct")
 	public ResponseEntity<List<ActionDTO>> fetchProductByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -4453,7 +4453,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品项目文档库获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/actions/fetchproject")
 	public ResponseEntity<List<ActionDTO>> fetchProjectByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
@@ -5400,7 +5400,7 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #action_id, 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', #action_id, 'READ')")
     @ApiOperation(value = "根据项目文档库文档获取系统日志", tags = {"系统日志" },  notes = "根据项目文档库文档获取系统日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> getByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id) {
@@ -5436,7 +5436,7 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目文档库文档获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchaccount")
 	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5449,7 +5449,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取Type", tags = {"系统日志" } ,notes = "根据项目文档库文档获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmain")
 	public ResponseEntity<List<ActionDTO>> fetchMainByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5462,7 +5462,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取我的数据", tags = {"系统日志" } ,notes = "根据项目文档库文档获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmy")
 	public ResponseEntity<List<ActionDTO>> fetchMyByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5475,7 +5475,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目文档库文档获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmytrends")
 	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5488,7 +5488,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目文档库文档获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproduct")
 	public ResponseEntity<List<ActionDTO>> fetchProductByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5501,7 +5501,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目文档库文档获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproject")
 	public ResponseEntity<List<ActionDTO>> fetchProjectByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5532,7 +5532,7 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #action_id, 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', #action_id, 'READ')")
     @ApiOperation(value = "根据产品项目文档库文档获取系统日志", tags = {"系统日志" },  notes = "根据产品项目文档库文档获取系统日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}")
     public ResponseEntity<ActionDTO> getByProductProjectDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id) {
@@ -5568,7 +5568,7 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品项目文档库文档获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchaccount")
 	public ResponseEntity<List<ActionDTO>> fetchAccountByProductProjectDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5581,7 +5581,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库文档获取Type", tags = {"系统日志" } ,notes = "根据产品项目文档库文档获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmain")
 	public ResponseEntity<List<ActionDTO>> fetchMainByProductProjectDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5594,7 +5594,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库文档获取我的数据", tags = {"系统日志" } ,notes = "根据产品项目文档库文档获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmy")
 	public ResponseEntity<List<ActionDTO>> fetchMyByProductProjectDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5607,7 +5607,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品项目文档库文档获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmytrends")
 	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductProjectDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5620,7 +5620,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品项目文档库文档获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproduct")
 	public ResponseEntity<List<ActionDTO>> fetchProductByProductProjectDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
@@ -5633,7 +5633,7 @@ public class ActionResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库文档获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品项目文档库文档获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproject")
 	public ResponseEntity<List<ActionDTO>> fetchProjectByProductProjectDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {

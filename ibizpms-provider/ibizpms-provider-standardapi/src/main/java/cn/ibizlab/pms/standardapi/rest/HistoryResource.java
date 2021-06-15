@@ -383,7 +383,7 @@ public class HistoryResource {
 
 
 
-    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProjectDocLibAction(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -577,7 +577,7 @@ public class HistoryResource {
 
 
 
-    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目文档库系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectDocLibAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -713,7 +713,7 @@ public class HistoryResource {
 
 
 
-    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目文档库文档系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProjectDocLibDocAction(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
@@ -731,7 +731,7 @@ public class HistoryResource {
 
 
 
-    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_HISTORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库文档系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据产品项目文档库文档系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProductProjectDocLibDocAction(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {

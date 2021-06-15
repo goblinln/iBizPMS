@@ -1181,7 +1181,7 @@
   }, {
     "logicName" : "Project_Read",
     "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "DOCLIBMANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDERS/DER1N_ZT_DOCLIB_ZT_PROJECT_PROJECT.json"

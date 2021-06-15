@@ -1338,7 +1338,7 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/files/fetchproduct")
 	public ResponseEntity<List<FileDTO>> fetchProductByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
@@ -1351,7 +1351,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/files/fetchproject")
 	public ResponseEntity<List<FileDTO>> fetchProjectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
@@ -1364,7 +1364,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库获取动态(根据类型过滤)", tags = {"附件" } ,notes = "根据项目文档库获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/files/fetchtype")
 	public ResponseEntity<List<FileDTO>> fetchTypeByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
@@ -2012,7 +2012,7 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库获取文件库查询", tags = {"附件" } ,notes = "根据产品项目文档库获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/files/fetchproduct")
 	public ResponseEntity<List<FileDTO>> fetchProductByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
@@ -2025,7 +2025,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库获取文件库查询", tags = {"附件" } ,notes = "根据产品项目文档库获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/files/fetchproject")
 	public ResponseEntity<List<FileDTO>> fetchProjectByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
@@ -2038,7 +2038,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库获取动态(根据类型过滤)", tags = {"附件" } ,notes = "根据产品项目文档库获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/files/fetchtype")
 	public ResponseEntity<List<FileDTO>> fetchTypeByProductProjectDocLib(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
@@ -2468,7 +2468,7 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库文档获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproduct")
 	public ResponseEntity<List<FileDTO>> fetchProductByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
@@ -2481,7 +2481,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库文档获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproject")
 	public ResponseEntity<List<FileDTO>> fetchProjectByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
@@ -2494,7 +2494,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取动态(根据类型过滤)", tags = {"附件" } ,notes = "根据项目文档库文档获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchtype")
 	public ResponseEntity<List<FileDTO>> fetchTypeByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
@@ -2640,7 +2640,7 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据产品项目文档库文档获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproduct")
 	public ResponseEntity<List<FileDTO>> fetchProductByProductProjectDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
@@ -2653,7 +2653,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据产品项目文档库文档获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproject")
 	public ResponseEntity<List<FileDTO>> fetchProjectByProductProjectDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
@@ -2666,7 +2666,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+    @PreAuthorize("test('ZT_FILE', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品项目文档库文档获取动态(根据类型过滤)", tags = {"附件" } ,notes = "根据产品项目文档库文档获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchtype")
 	public ResponseEntity<List<FileDTO>> fetchTypeByProductProjectDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {

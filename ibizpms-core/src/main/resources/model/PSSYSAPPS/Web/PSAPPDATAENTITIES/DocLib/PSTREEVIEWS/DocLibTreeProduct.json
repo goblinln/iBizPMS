@@ -1936,6 +1936,12 @@
       "id" : "DocLibModule"
     },
     "name" : "文档库 - 文档分类",
+    "getPSNavigateContexts" : [ {
+      "key" : "DOCLIB",
+      "name" : "DOCLIB",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    } ],
     "parentFilter" : "root",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
