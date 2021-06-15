@@ -44,6 +44,11 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
+    "key" : "SRFPARENTDEMAPNAME",
+    "name" : "SRFPARENTDEMAPNAME",
+    "value" : "ZT_PRODUCT",
+    "rawValue" : true
+  }, {
     "key" : "MODULETYPE",
     "name" : "MODULETYPE",
     "value" : "doc",
