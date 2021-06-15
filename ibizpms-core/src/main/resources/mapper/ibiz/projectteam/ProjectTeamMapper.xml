@@ -82,8 +82,8 @@
     </sql>
     <!--数据查询[ProjectAllMembers]-->
     <sql id="ProjectAllMembers" databaseId="mysql">
-		<![CDATA[ select * FROM zt_team
-					 WHERE 	t1.root = #{srf.datacontext.project} AND type = 'project'
+		<![CDATA[ select * FROM zt_team t11 LEFT JOIN zt_project t21 ON t11.root = t21.ID
+					 WHERE 	t21.`name` = #{srf.datacontext.projectname} AND t11.type = 'project'
 			]]>
     </sql>
     <!--数据查询[ProjectTeamPm]-->

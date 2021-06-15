@@ -17473,8 +17473,8 @@ WHERE ( t1.`TYPE` = 'project' )
 ```
 ### 项目所有成员(ProjectAllMembers)<div id="ProjectTeam_ProjectAllMembers"></div>
 ```sql
-select * FROM zt_team
-WHERE t1.root = #{srf.datacontext.project} AND type = 'project' 
+select * FROM zt_team t11 LEFT JOIN zt_project t21 ON t11.root = t21.ID
+WHERE t21.`name` = #{srf.datacontext.projectname} AND t11.type = 'project' 
 
 ```
 ### 项目成员（项目经理）(ProjectTeamPm)<div id="ProjectTeam_ProjectTeamPm"></div>
