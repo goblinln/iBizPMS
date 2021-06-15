@@ -254,4 +254,15 @@ public class BuildExService extends BuildServiceImpl {
 
         return new PageImpl<>(builds, context.getPageable(), builds.size());
     }
+
+    @Override
+    public Page<Build> searchDefault(BuildSearchContext context) {
+        Map<String,Object> params = context.getParams();
+        if(params.get("type") != null) {
+            if ("BugProductOrProjectBuild".equals(params.get("type"))) {
+                return this.searchBugProductOrProjectBuild(context);
+            }
+        }
+        return super.searchDefault(context);
+    }
 }
