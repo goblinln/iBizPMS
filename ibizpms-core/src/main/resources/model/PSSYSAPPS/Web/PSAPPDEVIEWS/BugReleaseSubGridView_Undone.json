@@ -109,6 +109,11 @@
     "name" : "type",
     "value" : "ReleaseLeftBugs",
     "rawValue" : true
+  }, {
+    "key" : "release",
+    "name" : "release",
+    "value" : "srfparentkey",
+    "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",

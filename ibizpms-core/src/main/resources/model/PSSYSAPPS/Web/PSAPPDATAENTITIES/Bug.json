@@ -2888,9 +2888,10 @@
     "id" : "CloseBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "移除bug",
     "codeName" : "releaseUnlinkBug",
-    "dataAccessAction" : "RESOLVE",
+    "dataAccessAction" : "RELEASELINK",
     "fullCodeName" : "Bug_releaseUnlinkBug",
     "name" : "移除解决bug（发布）",
     "getPSAppDEMethod" : {

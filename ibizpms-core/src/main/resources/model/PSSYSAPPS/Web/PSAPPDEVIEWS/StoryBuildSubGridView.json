@@ -120,6 +120,11 @@
     "value" : "project",
     "rawValue" : false
   }, {
+    "key" : "build",
+    "name" : "build",
+    "value" : "srfparentkey",
+    "rawValue" : false
+  }, {
     "key" : "type",
     "name" : "type",
     "value" : "BuildStories",

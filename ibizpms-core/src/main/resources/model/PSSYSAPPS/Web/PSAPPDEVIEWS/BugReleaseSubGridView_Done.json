@@ -109,6 +109,11 @@
     "name" : "type",
     "value" : "ReleaseBugs",
     "rawValue" : true
+  }, {
+    "key" : "release",
+    "name" : "release",
+    "value" : "srfparentkey",
+    "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
@@ -577,9 +582,10 @@
           "name" : "u876f801",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "移除bug",
             "codeName" : "releaseUnlinkBug",
-            "dataAccessAction" : "RESOLVE",
+            "dataAccessAction" : "RELEASELINK",
             "fullCodeName" : "Bug_releaseUnlinkBug",
             "name" : "移除解决bug（发布）",
             "getPSAppDEMethod" : {

@@ -46,6 +46,11 @@
     "name" : "root",
     "value" : "srfroot",
     "rawValue" : false
+  }, {
+    "key" : "parent",
+    "name" : "parent",
+    "value" : "srfparentkey",
+    "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
@@ -565,6 +570,8 @@
     }, {
       "caption" : "id",
       "codeName" : "parent",
+      "createDV" : "parent",
+      "createDVT" : "CONTEXT",
       "enableCond" : 3,
       "ignoreInput" : 0,
       "name" : "parent",

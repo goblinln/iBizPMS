@@ -2641,9 +2641,10 @@
     "id" : "MobMainEdit@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "移除bug",
     "codeName" : "releaseUnlinkBug",
-    "dataAccessAction" : "RESOLVE",
+    "dataAccessAction" : "RELEASELINK",
     "fullCodeName" : "Bug_releaseUnlinkBug",
     "name" : "移除解决bug（发布）",
     "getPSAppDEMethod" : {
@@ -2892,6 +2893,7 @@
     "caption" : "解除关联",
     "codeName" : "unlinkBug_buildMob",
     "confirmMsg" : "您确认移除该Bug吗？",
+    "dataAccessAction" : "BUILDLINK",
     "fullCodeName" : "Bug_unlinkBug_buildMob",
     "name" : "解除关联（版本-bug）（移动端）",
     "getPSAppDEMethod" : {

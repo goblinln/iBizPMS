@@ -732,6 +732,7 @@
           "caption" : "解除关联",
           "codeName" : "unlinkBug_buildMob",
           "confirmMsg" : "您确认移除该Bug吗？",
+          "dataAccessAction" : "BUILDLINK",
           "fullCodeName" : "Bug_unlinkBug_buildMob",
           "name" : "解除关联（版本-bug）（移动端）",
           "getPSAppDEMethod" : {
