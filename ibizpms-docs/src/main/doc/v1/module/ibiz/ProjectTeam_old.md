@@ -126,6 +126,7 @@ hide footbox
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#ProjectTeam_Default))|是|&nbsp;|
+|ProjectAllMembers|项目所有成员([MYSQL5](../../appendix/query_MYSQL5.md#ProjectTeam_ProjectAllMembers))|否|&nbsp;|
 |ProjectTeamPm|项目成员（项目经理）([MYSQL5](../../appendix/query_MYSQL5.md#ProjectTeam_ProjectTeamPm))|否|&nbsp;|
 |RowEditDefault|行编辑查询([MYSQL5](../../appendix/query_MYSQL5.md#ProjectTeam_RowEditDefault))|否|&nbsp;|
 |TaskCntEstimateConsumedLeft|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#ProjectTeam_TaskCntEstimateConsumedLeft))|否|&nbsp;|

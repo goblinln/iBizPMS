@@ -160,6 +160,28 @@ public class AccountTaskestimateResource {
                 .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchCurDaySum-all')")
+	@ApiOperation(value = "获取用户日工时统计", tags = {"用户工时统计" } ,notes = "获取用户日工时统计")
+    @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchcurdaysum")
+	public ResponseEntity<List<AccountTaskestimateDTO>> fetchCurDaySum(AccountTaskestimateSearchContext context) {
+        Page<AccountTaskestimate> domains = accounttaskestimateService.searchCurDaySum(context) ;
+        List<AccountTaskestimateDTO> list = accounttaskestimateMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchCurDaySum-all')")
+	@ApiOperation(value = "查询用户日工时统计", tags = {"用户工时统计" } ,notes = "查询用户日工时统计")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttaskestimates/searchcurdaysum")
+	public ResponseEntity<Page<AccountTaskestimateDTO>> searchCurDaySum(@RequestBody AccountTaskestimateSearchContext context) {
+        Page<AccountTaskestimate> domains = accounttaskestimateService.searchCurDaySum(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"用户工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchdefault")

@@ -4,7 +4,7 @@
 
 
     <!--输出实体[ACCOUNTTASKESTIMATE]数据结构 -->
-    <changeSet author="zentao" id="tab-accounttaskestimate-5-1">
+    <changeSet author="zentao" id="tab-accounttaskestimate-7-1">
         <createTable tableName="zt_taskestimate">
                 <column name="`DATE`" remarks="" type="DATETIME">
                 </column>
@@ -3281,7 +3281,7 @@
     </changeSet>
         <!--输出实体[PROJECTTASKESTIMATE]外键关系 -->
         <!--输出实体[IBZ_PROJECTTEAM]外键关系 -->
-    <changeSet author="zentao" id="fk-ibz_projectteam-1-211">
+    <changeSet author="zentao" id="fk-ibz_projectteam-2-211">
        <addForeignKeyConstraint baseColumnNames="ROOT" baseTableName="zt_team" constraintName="DER1N_IBZ_PROJECTTEAM_ZT_PROJE" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_project" validate="true"/>
     </changeSet>
         <!--输出实体[PROJECTTODO]外键关系 -->
