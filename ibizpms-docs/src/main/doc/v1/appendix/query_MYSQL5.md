@@ -21413,8 +21413,8 @@ WHERE t1.DELETED = '0'
 ```sql
 SELECT 
 t1.`year`,t1.month,
-CONCAT( t1.`YEAR`, RIGHT ( 100+ t1.`MONTH`, 2 ),RIGHT ( 100+ t1.`day`, 2 )) as `day`,
-CONCAT( t1.`YEAR`,'-', RIGHT ( 100+ t1.`MONTH`, 2 ),'-',RIGHT ( 100+ t1.`day`, 2 )) AS dayname
+CONCAT( t1.`YEAR`, RIGHT ( 100+ t1.`MONTH`, 2 ),RIGHT ( 100+ t1.`day`, 2 )) as `dayname`,
+CONCAT( t1.`YEAR`,'-', RIGHT ( 100+ t1.`MONTH`, 2 ),'-',RIGHT ( 100+ t1.`day`, 2 )) AS day
 from (
 	
 SELECT DISTINCT Year 
