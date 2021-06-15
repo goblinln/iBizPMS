@@ -141,6 +141,7 @@ GROUP BY
 ```
 ### 用户日工时统计(CurDaySum)<div id="AccountTaskestimate_CurDaySum"></div>
 ```sql
+SELECT t1.* from (
 SELECT YEAR
 	( t1.date ) AS `year`,
 	RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
@@ -191,7 +192,7 @@ GROUP BY
 	t1.idvalue,
 	t11.`name`,
 	t1.account,
-	t1.date
+	t1.date )t1
 WHERE t1.account = #{srf.datacontext.account} 
 t1.dayname =  #{srf.datacontext.dayname} 
 
