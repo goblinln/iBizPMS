@@ -14520,6 +14520,19 @@ WHERE ( ( ${srfwebcontext('product','{"defname":"PRODUCT","dename":"ZT_PROJECTPR
 t1.DELETED = '0' 
 
 ```
+### 当前人的所有项目(CurPersonalProjects)<div id="Project_CurPersonalProjects"></div>
+```sql
+SELECT
+	t1.id,
+	t1.NAME  
+FROM
+	zt_project t1 
+
+WHERE t1.id IN ( SELECT t1.root FROM zt_team t1 WHERE t1.type = 'project' 
+AND t1.account = #{srf.datacontext.account} ) 
+	OR t1.pm = #{srf.datacontext.account} 
+
+```
 ### 当前计划项目(CurPlanProject)<div id="Project_CurPlanProject"></div>
 ```sql
 SELECT
@@ -21373,6 +21386,9 @@ FROM
 ### 所有项目(AllProjects)<div id="TaskEstimate_AllProjects"></div>
 ```sql
 SELECT t1.account,t1.ID,t1.task,t2.`name` ,t3.ID AS project,t3.`name` as projectname FROM `zt_taskestimate` t1 LEFT JOIN zt_task t2 ON t1.task = t2.id LEFT JOIN zt_project t3 ON t2.project = t3.ID WHERE t3.ID IS NOT null GROUP  BY t2.project
+WHERE t3.pm= #{srf.sessioncontext.srfloginname} 
+ t3.ID IS NOT null GROUP BY t2.project 
+
 ```
 ### DEFAULT(DEFAULT)<div id="TaskEstimate_Default"></div>
 ```sql

@@ -423,6 +423,7 @@ hide footbox
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
 |BugSelectableProjectList|Bug表单中可选的项目列表([MYSQL5](../../appendix/query_MYSQL5.md#Project_BugSelectableProjectList))|否|&nbsp;Bug表单中可选的项目列表、与产品选择做关联，使用网页上下文传递参数（产品标识）。|
+|CurPersonalProjects|当前人的所有项目([MYSQL5](../../appendix/query_MYSQL5.md#Project_CurPersonalProjects))|否|&nbsp;|
 |CurPlanProject|当前计划项目([MYSQL5](../../appendix/query_MYSQL5.md#Project_CurPlanProject))|否|&nbsp;|
 |CurProduct|当前项目([MYSQL5](../../appendix/query_MYSQL5.md#Project_CurProduct))|否|&nbsp;|
 |CurUser|当前用户项目([MYSQL5](../../appendix/query_MYSQL5.md#Project_CurUser))|否|&nbsp;|
@@ -443,6 +444,7 @@ hide footbox
 | 集合编号 | 集合名称   |  包含查询  | 默认集合 |   备注|
 | --------  | --------   | -------- | --------   | ----- |
 |BugProject|BugProject|BugSelectableProjectList|否|&nbsp;|
+|CurPersonalProjects|当前人的所有项目|CurPersonalProjects|否|&nbsp;|
 |CurPlanProject|当前计划项目|CurPlanProject|否|&nbsp;|
 |CurProduct|当前项目|CurProduct|否|&nbsp;|
 |CurUser|当前用户项目|CurUser|否|&nbsp;|
