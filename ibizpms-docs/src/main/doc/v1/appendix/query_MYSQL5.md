@@ -21424,7 +21424,7 @@ DAY(t1.date) as `day`
 FROM
 	zt_taskestimate t1 
 WHERE
-	t1.date <> '0000-00-00' 
+	t1.date <> '0000-00-00'  and t1.account = #{srf.datacontext.account}
 	)t1
 ```
 ### 日志月(ActionMonth)<div id="TaskEstimate_ActionMonth"></div>
