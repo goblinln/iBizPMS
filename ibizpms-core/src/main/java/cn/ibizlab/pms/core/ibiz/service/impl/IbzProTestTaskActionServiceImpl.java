@@ -317,13 +317,6 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
     }
 
 
-    /**
-     * 获取searchContext
-     * @return
-     */
-    public IbzProTestTaskActionSearchContext getSearchContext(){
-        return new IbzProTestTaskActionSearchContext();
-    }
     public IIbzProTestTaskActionService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }

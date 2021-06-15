@@ -3906,7 +3906,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "BIGINT",
-    "dupCheckMode" : "ALL",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "Bug编号",

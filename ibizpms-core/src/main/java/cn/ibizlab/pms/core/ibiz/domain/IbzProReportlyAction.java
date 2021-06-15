@@ -106,7 +106,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     /**
      * id
      */
-    @DEField(isKeyField = true, dupCheck = DupCheck.ALL)
+    @DEField(isKeyField = true)
     @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")

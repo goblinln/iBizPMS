@@ -486,13 +486,6 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     }
 
 
-    /**
-     * 获取searchContext
-     * @return
-     */
-    public ActionSearchContext getSearchContext(){
-        return new ActionSearchContext();
-    }
     public IActionService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }

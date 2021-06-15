@@ -1189,13 +1189,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     }
 
 
-    /**
-     * 获取searchContext
-     * @return
-     */
-    public BugSearchContext getSearchContext(){
-        return new BugSearchContext();
-    }
     public IBugService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }

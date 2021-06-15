@@ -479,7 +479,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * Bug编号
      */
-    @DEField(isKeyField = true, dupCheck = DupCheck.ALL)
+    @DEField(isKeyField = true)
     @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")

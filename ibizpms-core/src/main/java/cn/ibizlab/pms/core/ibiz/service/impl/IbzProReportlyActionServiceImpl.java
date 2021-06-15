@@ -317,13 +317,6 @@ public class IbzProReportlyActionServiceImpl extends ServiceImpl<IbzProReportlyA
     }
 
 
-    /**
-     * 获取searchContext
-     * @return
-     */
-    public IbzProReportlyActionSearchContext getSearchContext(){
-        return new IbzProReportlyActionSearchContext();
-    }
     public IIbzProReportlyActionService getProxyService() {
         return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
