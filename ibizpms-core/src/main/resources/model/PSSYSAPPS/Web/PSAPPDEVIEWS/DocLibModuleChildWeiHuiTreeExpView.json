@@ -61,7 +61,7 @@
   }, {
     "key" : "SRFPARENT",
     "name" : "SRFPARENT",
-    "value" : "srfparent",
+    "value" : "doclibmodule",
     "rawValue" : false
   }, {
     "key" : "SRFPARENTKEY",
