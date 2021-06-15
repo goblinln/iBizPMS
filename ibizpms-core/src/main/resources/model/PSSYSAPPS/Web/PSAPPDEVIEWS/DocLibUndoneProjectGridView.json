@@ -468,6 +468,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "维护分类",
             "codeName" : "WeiHuFenLei",
+            "dataAccessAction" : "MANAGE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleTreeExpView.json",
