@@ -276,6 +276,26 @@ public class TaskEstimateDTO extends DTOBase implements Serializable {
     @ApiModelProperty("任务")
     private Long task;
 
+    /**
+     * 属性 [DAY]
+     *
+     */
+    @JSONField(name = "day")
+    @JsonProperty("day")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("天")
+    private String day;
+
+    /**
+     * 属性 [DAYNAME]
+     *
+     */
+    @JSONField(name = "dayname")
+    @JsonProperty("dayname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("天（显示）")
+    private String dayname;
+
 
     /**
      * 设置 [MONTHNAME]

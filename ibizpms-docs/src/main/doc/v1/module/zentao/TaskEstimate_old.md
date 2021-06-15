@@ -37,6 +37,8 @@ hide members
 |任务删除标识|DELETED|PICKUPDATA|&nbsp;|
 |项目|PROJECT|PICKUPDATA|&nbsp;|
 |任务|TASK|PICKUP|&nbsp;|
+|天|DAY|TEXT|&nbsp;|
+|天（显示）|DAYNAME|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -68,6 +70,8 @@ hide members
 |任务删除标识|默认规则|内容长度必须小于等于[1]|
 |项目|默认规则|默认规则|
 |任务|默认规则|默认规则|
+|天|默认规则|内容长度必须小于等于[100]|
+|天（显示）|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 
@@ -105,6 +109,7 @@ hide members
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
+|ActionDate|日志日([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ActionDate))|否|&nbsp;|
 |ActionMonth|日志月([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ActionMonth))|否|&nbsp;|
 |ActionYear|日志年([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ActionYear))|否|&nbsp;|
 |AllAccounts|所有人员([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_AllAccounts))|否|&nbsp;|
@@ -122,6 +127,7 @@ hide members
 
 | 集合编号 | 集合名称   |  包含查询  | 默认集合 |   备注|
 | --------  | --------   | -------- | --------   | ----- |
+|ActionDate|日志日|ActionDate|否|&nbsp;|
 |ActionMonth|日志月|ActionMonth|否|&nbsp;|
 |ActionYear|日志年|ActionYear|否|&nbsp;|
 |AllAccounts|所有人员|AllAccounts|否|&nbsp;|

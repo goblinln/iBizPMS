@@ -21345,6 +21345,24 @@ WHERE t1.DELETED = '0'
 
 # **任务预计**(ZT_TASKESTIMATE)
 
+### 日志日(ActionDate)<div id="TaskEstimate_ActionDate"></div>
+```sql
+SELECT 
+t1.`year`,t1.month,
+CONCAT( t1.`YEAR`, RIGHT ( 100+ t1.`MONTH`, 2 ),RIGHT ( 100+ t1.`day`, 2 )) as `day`,
+CONCAT( t1.`YEAR`,'-', RIGHT ( 100+ t1.`MONTH`, 2 ),'-',RIGHT ( 100+ t1.`day`, 2 )) AS dayname
+from (
+	
+SELECT DISTINCT Year 
+(t1.date) as `year`,
+MONTH ( t1.date ) AS `MONTH` ,
+DAY(t1.date) as `day` 
+FROM
+	zt_taskestimate t1 
+WHERE
+	t1.date <> '0000-00-00' 
+	)t1
+```
 ### 日志月(ActionMonth)<div id="TaskEstimate_ActionMonth"></div>
 ```sql
 SELECT
@@ -21385,9 +21403,9 @@ FROM
 ```
 ### 所有项目(AllProjects)<div id="TaskEstimate_AllProjects"></div>
 ```sql
-SELECT t1.account,t1.ID,t1.task,t2.`name` ,t3.ID AS project,t3.`name` as projectname FROM `zt_taskestimate` t1 LEFT JOIN zt_task t2 ON t1.task = t2.id LEFT JOIN zt_project t3 ON t2.project = t3.ID WHERE t3.ID IS NOT null GROUP  BY t2.project
-WHERE t3.pm= #{srf.sessioncontext.srfloginname} 
- t3.ID IS NOT null GROUP BY t2.project 
+SELECT t11.account,t11.ID,t11.task,t21.`name` ,t31.ID AS project,t31.`name` as projectname FROM `zt_taskestimate` t11 LEFT JOIN zt_task t21 ON t11.task = t21.id LEFT JOIN zt_project t31 ON t21.project = t31.ID
+WHERE t31.pm= #{srf.sessioncontext.srfloginname} 
+ t31.ID IS NOT null GROUP BY t21.project 
 
 ```
 ### DEFAULT(DEFAULT)<div id="TaskEstimate_Default"></div>

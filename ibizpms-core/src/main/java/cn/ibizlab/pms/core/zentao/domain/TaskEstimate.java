@@ -255,6 +255,22 @@ public class TaskEstimate extends EntityMP implements Serializable {
     @JsonProperty("task")
     @ApiModelProperty("任务")
     private Long task;
+    /**
+     * 天
+     */
+    @TableField(exist = false)
+    @JSONField(name = "day")
+    @JsonProperty("day")
+    @ApiModelProperty("天")
+    private String day;
+    /**
+     * 天（显示）
+     */
+    @TableField(exist = false)
+    @JSONField(name = "dayname")
+    @JsonProperty("dayname")
+    @ApiModelProperty("天（显示）")
+    private String dayname;
 
     /**
      * 
