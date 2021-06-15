@@ -73,6 +73,11 @@ public class DocLibModuleSearchContext extends QueryWrapperContext<DocLibModule>
         this.n_parent_eq = n_parent_eq;
     }
                 
+	private Long n_parent_ltandeq;//[id]
+	public void setN_parent_ltandeq(Long n_parent_ltandeq) {
+        this.n_parent_ltandeq = n_parent_ltandeq;
+    }
+                
 	private Long n_root_eq;//[编号]
 	public void setN_root_eq(Long n_root_eq) {
         this.n_root_eq = n_root_eq;

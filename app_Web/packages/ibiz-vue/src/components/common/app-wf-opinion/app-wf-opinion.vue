@@ -227,6 +227,35 @@ export default class AppWFOpinion extends Vue {
         window.addEventListener('resize', () => {
             this.computePosition();
         })
+        this.watchDisplay();
+    }
+
+    /**
+     * 监听父容器显示变化，实现悬浮框显示状态切换
+     * 
+     * @memberof AppWFOpinion
+     */
+    public watchDisplay() {
+        if (!this.parentContainer || !this.parentContainer.$el) {
+            return;
+        }
+        let MutationObserver: any = window.MutationObserver;
+        let element: any = this.parentContainer.$el.parentNode;
+        let observer = new MutationObserver((mutations: any) => {
+            mutations.forEach((mutation: any) => {
+                if (mutation.type == "attributes") {
+                    if (mutation.target.style.display == 'none' && mutation.target.style.visibility == 'hidden') {
+                        this.isShow = false;
+                    } else {
+                        this.isShow = true;
+                    }
+                }
+            });
+        });
+        observer.observe(element, {
+            attributes: true,
+            attributeFilter: ['style']
+        });
     }
 
     /**

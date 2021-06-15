@@ -1614,6 +1614,11 @@
       "name" : "N_PARENT_EQ",
       "stdDataType" : 1,
       "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PARENT_LTANDEQ",
+      "name" : "N_PARENT_LTANDEQ",
+      "stdDataType" : 1,
+      "valueOP" : "LTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

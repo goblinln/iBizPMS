@@ -347,6 +347,17 @@
           "id" : "Module"
         },
         "name" : "所有分类 - 子目录",
+        "getPSNavigateParams" : [ {
+          "key" : "tree",
+          "name" : "tree",
+          "value" : "root",
+          "rawValue" : true
+        }, {
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
+          "value" : "srfparent",
+          "rawValue" : false
+        } ],
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "AllModule"
@@ -539,6 +550,11 @@
           "modeltype" : "PSDETOOLBAR"
         },
         "getPSNavigateParams" : [ {
+          "key" : "tree",
+          "name" : "tree",
+          "value" : "root",
+          "rawValue" : true
+        }, {
           "key" : "n_root_eq",
           "name" : "n_root_eq",
           "value" : "srfroot",
