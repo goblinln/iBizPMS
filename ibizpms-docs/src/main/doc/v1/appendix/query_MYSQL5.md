@@ -14587,8 +14587,8 @@ FROM
 	zt_project t1 
 
 WHERE t1.id IN ( SELECT t1.root FROM zt_team t1 WHERE t1.type = 'project' 
-AND t1.account = IFNULL(#{srf.datacontext.account},#{srf.sessioncontext.srfloginname}) ) 
-	OR t1.pm =IFNULL(#{srf.datacontext.account},#{srf.sessioncontext.srfloginname}) 
+AND t1.account =#{srf.datacontext.account} ) 
+	OR t1.pm =#{srf.datacontext.account} 
 
 ```
 ### 当前计划项目(CurPlanProject)<div id="Project_CurPlanProject"></div>
