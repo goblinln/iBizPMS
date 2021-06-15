@@ -799,6 +799,12 @@
         "id" : "ChildModule"
       },
       "name" : "默认根节点 - 文档库分类根模块",
+      "getPSNavigateParams" : [ {
+        "key" : "n_parent_eq",
+        "name" : "n_parent_eq",
+        "value" : "srfparentkey",
+        "rawValue" : false
+      } ],
       "getParentPSDETreeNode" : {
         "modelref" : true,
         "id" : "ROOT"
@@ -887,7 +893,7 @@
       "nodeType" : "Doc",
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchModuleDocChild"
+        "id" : "FetchRootDoc"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -1188,7 +1194,7 @@
       "nodeType" : "ChildModule",
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchChildModuleByParent"
+        "id" : "FetchAllDir"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,

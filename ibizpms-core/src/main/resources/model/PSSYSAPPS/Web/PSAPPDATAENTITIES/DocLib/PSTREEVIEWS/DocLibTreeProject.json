@@ -1890,6 +1890,18 @@
       "id" : "ChildDocLibModule"
     },
     "name" : "文档库分类根模块 - 文档库分类和文档",
+    "getPSNavigateContexts" : [ {
+      "key" : "DOCLIB",
+      "name" : "DOCLIB",
+      "value" : "doclib",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "doclib",
+      "name" : "doclib",
+      "value" : "doclib",
+      "rawValue" : false
+    } ],
     "parentFilter" : "parent",
     "getParentPSAppDEField" : {
       "name" : "PARENT",
@@ -1936,6 +1948,18 @@
       "id" : "DocLibModule"
     },
     "name" : "文档库 - 文档库分类",
+    "getPSNavigateContexts" : [ {
+      "key" : "DOCLIB",
+      "name" : "DOCLIB",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "doclib",
+      "name" : "doclib",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    } ],
     "parentFilter" : "root",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
@@ -1982,6 +2006,18 @@
       "id" : "ChildDocLibModule"
     },
     "name" : "文档库分类和文档 - 文档库分类和文档",
+    "getPSNavigateContexts" : [ {
+      "key" : "DOCLIB",
+      "name" : "DOCLIB",
+      "value" : "doclib",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "doclib",
+      "name" : "doclib",
+      "value" : "doclib",
+      "rawValue" : false
+    } ],
     "parentFilter" : "parent",
     "getParentPSAppDEField" : {
       "name" : "PARENT",
