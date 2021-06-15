@@ -211,6 +211,7 @@ export class ControlBase extends Vue implements ControlInterface {
         const { controlType, codeName } = this.controlInstance;
         // 部件类名
         const controlClassNames: any = {
+            'control-container':true,
             [controlType?.toLowerCase()]: true,
             [Util.srfFilePath2(codeName)]: true,
         };
