@@ -21605,30 +21605,30 @@ WHERE t21.pm = #{srf.sessioncontext.srfloginname} GROUP BY t1.account
 ```
 ### 日志日（我的）(MyActionDate)<div id="TaskEstimate_MyActionDate"></div>
 ```sql
-SELECT
-t1.`ACCOUNT`,
-t1.`CONSUMED`,
-t1.`DATE`,
-t1.`date` AS `DATES`,
-t11.`DELETED`,
-t1.`EVALUATIONCOST`,
-t1.`EVALUATIONSTATUS`,
-t1.`EVALUATIONTIME`,
-t1.`FILES`,
-t1.`ID`,
-t1.`INPUTCOST`,
-t1.`LEFT`,
-t1.`MONTHNAME`,
-t11.`PROJECT`,
-t21.`NAME` AS `PROJECTNAME`,
-t1.`TASK`,
-t11.`NAME` AS `TASKNAME`,
-t11.`TASKSPECIES`,
-t11.`TYPE`
-FROM `zt_taskestimate` t1 
-LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID` 
-LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
-
+	SELECT
+		t1.`year`,
+		t1.MONTH,
+		CONCAT( t1.`YEAR`, RIGHT ( 100+ t1.`MONTH`, 2 ), RIGHT ( 100+ t1.`day`, 2 ) ) AS `dayname`,
+		CONCAT(
+			t1.`YEAR`,
+			'-',
+			RIGHT ( 100+ t1.`MONTH`, 2 ),
+			'-',
+			RIGHT ( 100+ t1.`day`, 2 ) 
+		) AS DAY 
+	FROM
+		(
+		SELECT DISTINCT YEAR
+			( t1.date ) AS `year`,
+			MONTH ( t1.date ) AS `MONTH`,
+			DAY ( t1.date ) AS `day` 
+		FROM
+			zt_taskestimate t1
+			LEFT JOIN zt_task t2 ON t1.task = t2.ID 
+		WHERE
+			t1.date <> '0000-00-00' 
+		AND t2.project =  #{srf.sessioncontext.srfloginname} 
+	) t1
 ```
 ### 日志月（项目）(ProjectActionMonth)<div id="TaskEstimate_ProjectActionMonth"></div>
 ```sql
