@@ -227,7 +227,10 @@
           "condType" : "SINGLE",
           "condValue" : "project",
           "name" : "TYPE 等于(=) (project)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },
@@ -305,7 +308,10 @@
           "condType" : "SINGLE",
           "condValue" : "project",
           "name" : "TYPE 等于(=) (project)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     }
@@ -360,7 +366,10 @@
           "condType" : "SINGLE",
           "condValue" : "project",
           "name" : "TYPE 等于(=) (project)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     }

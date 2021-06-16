@@ -118,7 +118,10 @@
           "condType" : "SINGLE",
           "condValue" : "caselib",
           "name" : "TYPE 等于(=) (caselib)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },
@@ -152,7 +155,10 @@
           "condType" : "SINGLE",
           "condValue" : "caselib",
           "name" : "TYPE 等于(=) (caselib)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         }, {
           "condOp" : "OR",
           "condType" : "GROUP",
@@ -161,13 +167,19 @@
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
             "name" : "PARENT 值为空(Nil)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
             "name" : "PARENT 等于(=) (0)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           } ]
         } ]
       }

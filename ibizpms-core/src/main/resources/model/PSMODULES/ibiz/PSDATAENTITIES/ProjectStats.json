@@ -138,7 +138,10 @@
           "condType" : "SINGLE",
           "condValue" : "closed",
           "name" : "STATUS 不等于(<>) (closed)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "STATUS",
+            "codeName" : "Status"
+          }
         } ]
       }
     },

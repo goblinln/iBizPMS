@@ -894,43 +894,61 @@
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "OPENEDBY",
+              "codeName" : "OpenedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "LASTEDITEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "LASTEDITEDBY",
+              "codeName" : "LastEditedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "CLOSEDBY",
+              "codeName" : "ClosedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "FINISHEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "FINISHEDBY",
+              "codeName" : "FinishedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "CANCELEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "CANCELEDBY",
+              "codeName" : "CanceledBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ASSIGNEDTO",
+              "codeName" : "AssignedTo"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           } ]
         }, {
           "condType" : "CUSTOM",
@@ -1188,8 +1206,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "OPENEDBY",
+            "codeName" : "OpenedBy"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     },
@@ -1231,43 +1252,61 @@
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "OPENEDBY",
+              "codeName" : "OpenedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "LASTEDITEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "LASTEDITEDBY",
+              "codeName" : "LastEditedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "CLOSEDBY",
+              "codeName" : "ClosedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "FINISHEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "FINISHEDBY",
+              "codeName" : "FinishedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "CANCELEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "CANCELEDBY",
+              "codeName" : "CanceledBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ASSIGNEDTO",
+              "codeName" : "AssignedTo"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           } ]
         } ]
       }
@@ -1656,13 +1695,19 @@
             "condType" : "SINGLE",
             "condValue" : "productplan",
             "name" : "PLAN 不等于(<>) 网页请求上下文(productplan)",
-            "getPSVARTypeId" : "WEBCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PLAN",
+              "codeName" : "Plan"
+            },
+            "getPSVARTypeId" : "WEBCONTEXT"
           }, {
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
             "name" : "PLAN 值为空(Nil)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PLAN",
+              "codeName" : "Plan"
+            }
           } ]
         } ]
       }

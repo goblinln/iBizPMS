@@ -121,22 +121,31 @@
             "condType" : "SINGLE",
             "condValue" : "1",
             "name" : "PUBLIC 等于(=) (1)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PUBLIC",
+              "codeName" : "IBizPublic"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "account",
             "name" : "ACCOUNT 等于(=) 网页请求上下文(account)",
-            "getPSVARTypeId" : "WEBCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ACCOUNT",
+              "codeName" : "Account"
+            },
+            "getPSVARTypeId" : "WEBCONTEXT"
           } ]
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "type",
           "name" : "TYPE 等于(=) 网页请求上下文(type)",
-          "getPSVARTypeId" : "WEBCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          },
+          "getPSVARTypeId" : "WEBCONTEXT"
         } ]
       }
     },
@@ -170,8 +179,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ACCOUNT",
+            "codeName" : "Account"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     }
@@ -204,8 +216,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ACCOUNT",
+            "codeName" : "Account"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     }
@@ -242,14 +257,20 @@
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ACCOUNT",
+              "codeName" : "Account"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "1",
             "name" : "PUBLIC 等于(=) (1)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PUBLIC",
+              "codeName" : "IBizPublic"
+            }
           } ]
         } ]
       }

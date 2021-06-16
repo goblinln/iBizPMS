@@ -218,15 +218,21 @@
           "condType" : "SINGLE",
           "condValue" : "srfparentkey",
           "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "OBJECTID",
+            "codeName" : "ObjectID"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "objecttype",
           "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "OBJECTTYPE",
+            "codeName" : "ObjectType"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         } ]
       }
     },
@@ -277,8 +283,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "ACTOR 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ACTOR",
+            "codeName" : "Actor"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     },
@@ -400,15 +409,21 @@
           "condType" : "SINGLE",
           "condValue" : "srfparentkey",
           "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "OBJECTID",
+            "codeName" : "ObjectID"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "objecttype",
           "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "OBJECTTYPE",
+            "codeName" : "ObjectType"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         } ]
       }
     },

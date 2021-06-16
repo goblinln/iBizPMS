@@ -174,7 +174,10 @@
           "condType" : "SINGLE",
           "condValue" : "task",
           "name" : "TYPE 等于(=) (task)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },
@@ -242,7 +245,10 @@
           "condType" : "SINGLE",
           "condValue" : "story",
           "name" : "TYPE 等于(=) (story)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         }, {
           "condOp" : "OR",
           "condType" : "GROUP",
@@ -251,13 +257,19 @@
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
             "name" : "PARENT 值为空(Nil)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
             "name" : "PARENT 等于(=) (0)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           } ]
         } ]
       }
@@ -295,13 +307,19 @@
           "condType" : "SINGLE",
           "condValue" : "story",
           "name" : "TYPE 等于(=) (story)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "0",
           "name" : "BRANCH 等于(=) (0)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "BRANCH",
+            "codeName" : "Branch"
+          }
         }, {
           "condOp" : "OR",
           "condType" : "GROUP",
@@ -310,13 +328,19 @@
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
             "name" : "PARENT 值为空(Nil)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
             "name" : "PARENT 等于(=) (0)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           } ]
         } ]
       }
@@ -354,7 +378,10 @@
           "condType" : "SINGLE",
           "condValue" : "task",
           "name" : "TYPE 等于(=) (task)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         }, {
           "condOp" : "OR",
           "condType" : "GROUP",
@@ -363,13 +390,19 @@
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
             "name" : "PARENT 值为空(Nil)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
             "name" : "PARENT 等于(=) (0)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           } ]
         } ]
       }
@@ -407,8 +440,11 @@
             "condType" : "SINGLE",
             "condValue" : "project",
             "name" : "ROOT 等于(=) 网页请求上下文(project)",
-            "getPSVARTypeId" : "WEBCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ROOT",
+              "codeName" : "Root"
+            },
+            "getPSVARTypeId" : "WEBCONTEXT"
           } ]
         } ]
       }

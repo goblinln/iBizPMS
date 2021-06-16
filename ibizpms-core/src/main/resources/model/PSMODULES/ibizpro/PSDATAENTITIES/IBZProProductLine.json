@@ -98,7 +98,10 @@
           "condType" : "SINGLE",
           "condValue" : "line",
           "name" : "TYPE 等于(=) (line)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },
@@ -137,7 +140,10 @@
           "condType" : "SINGLE",
           "condValue" : "line",
           "name" : "TYPE 等于(=) (line)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     }

@@ -206,7 +206,10 @@
           "condType" : "SINGLE",
           "condValue" : "task",
           "name" : "TYPE 等于(=) (task)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },

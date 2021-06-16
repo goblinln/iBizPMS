@@ -359,7 +359,10 @@
             "condType" : "SINGLE",
             "condValue" : "0",
             "name" : "PARENT 小于等于(<=) (0)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           } ]
         } ]
       }
@@ -401,15 +404,21 @@
             "condType" : "SINGLE",
             "condValue" : "product",
             "name" : "PRODUCT 等于(=) 数据上下文(product)",
-            "getPSVARTypeId" : "DATACONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PRODUCT",
+              "codeName" : "Product"
+            },
+            "getPSVARTypeId" : "DATACONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "products",
             "name" : "PRODUCT 等于(=) 数据上下文(products)",
-            "getPSVARTypeId" : "DATACONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PRODUCT",
+              "codeName" : "Product"
+            },
+            "getPSVARTypeId" : "DATACONTEXT"
           } ]
         } ]
       }
@@ -512,8 +521,11 @@
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "PRODUCT 等于(=) 网页请求上下文(product)",
-          "getPSVARTypeId" : "WEBCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
+          },
+          "getPSVARTypeId" : "WEBCONTEXT"
         } ]
       }
     }
@@ -551,8 +563,11 @@
             "condType" : "SINGLE",
             "condValue" : "srfparentkey",
             "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
-            "getPSVARTypeId" : "DATACONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PROJECT",
+              "codeName" : "Project"
+            },
+            "getPSVARTypeId" : "DATACONTEXT"
           } ]
         }
       } ],

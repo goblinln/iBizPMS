@@ -95,7 +95,10 @@
           "condType" : "SINGLE",
           "condValue" : "library",
           "name" : "TYPE 等于(=) (library)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },

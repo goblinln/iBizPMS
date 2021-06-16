@@ -112,7 +112,10 @@
           "condType" : "SINGLE",
           "condValue" : "private",
           "name" : "ACL 等于(=) (private)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ACL",
+            "codeName" : "Acl"
+          }
         } ]
       }
     },
@@ -150,64 +153,91 @@
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "OPENEDBY",
+              "codeName" : "OpenedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "PM 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PM",
+              "codeName" : "PM"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "RD 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "RD",
+              "codeName" : "RD"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "QD 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "QD",
+              "codeName" : "QD"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "PO 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PO",
+              "codeName" : "PO"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "CANCELEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "CANCELEDBY",
+              "codeName" : "CanceledBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "CLOSEDBY",
+              "codeName" : "ClosedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "UPDATEBY",
+              "codeName" : "UpdateBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           } ]
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "private",
           "name" : "ACL 等于(=) (private)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ACL",
+            "codeName" : "Acl"
+          }
         } ]
       }
     },
@@ -241,7 +271,10 @@
           "condType" : "SINGLE",
           "condValue" : "open",
           "name" : "ACL 等于(=) (open)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ACL",
+            "codeName" : "Acl"
+          }
         } ]
       }
     },

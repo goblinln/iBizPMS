@@ -208,8 +208,11 @@
               "condType" : "SINGLE",
               "condValue" : "srfparentkey",
               "name" : "ID 等于(=) 网页请求上下文(srfparentkey)",
-              "getPSVARTypeId" : "WEBCONTEXT",
-              "ignoreEmpty" : false
+              "getPSDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
+              },
+              "getPSVARTypeId" : "WEBCONTEXT"
             } ]
           }
         } ],

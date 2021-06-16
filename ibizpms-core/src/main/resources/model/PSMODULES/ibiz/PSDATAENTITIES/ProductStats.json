@@ -151,7 +151,10 @@
           "condType" : "SINGLE",
           "condValue" : "normal",
           "name" : "STATUS 等于(=) (normal)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "STATUS",
+            "codeName" : "Status"
+          }
         } ]
       }
     },

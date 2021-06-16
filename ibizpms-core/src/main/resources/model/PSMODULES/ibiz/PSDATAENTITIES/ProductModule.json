@@ -144,7 +144,10 @@
           "condType" : "SINGLE",
           "condValue" : "story",
           "name" : "TYPE 等于(=) (story)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },
@@ -182,7 +185,10 @@
           "condType" : "SINGLE",
           "condValue" : "story",
           "name" : "TYPE 等于(=) (story)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },
@@ -250,7 +256,10 @@
           "condType" : "SINGLE",
           "condValue" : "story",
           "name" : "TYPE 等于(=) (story)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         }, {
           "condOp" : "OR",
           "condType" : "GROUP",
@@ -259,20 +268,29 @@
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
             "name" : "PARENT 值为空(Nil)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
             "name" : "PARENT 等于(=) (0)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           } ]
         }, {
           "condOp" : "NOTEQ",
           "condType" : "SINGLE",
           "condValue" : "0",
           "name" : "BRANCH 不等于(<>) (0)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "BRANCH",
+            "codeName" : "Branch"
+          }
         } ]
       }
     }
@@ -309,13 +327,19 @@
           "condType" : "SINGLE",
           "condValue" : "story",
           "name" : "TYPE 等于(=) (story)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "0",
           "name" : "BRANCH 等于(=) (0)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "BRANCH",
+            "codeName" : "Branch"
+          }
         }, {
           "condOp" : "OR",
           "condType" : "GROUP",
@@ -324,13 +348,19 @@
             "condOp" : "ISNULL",
             "condType" : "SINGLE",
             "name" : "PARENT 值为空(Nil)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
             "name" : "PARENT 等于(=) (0)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           } ]
         } ]
       }
@@ -368,7 +398,10 @@
           "condType" : "SINGLE",
           "condValue" : "story",
           "name" : "TYPE 等于(=) (story)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },
@@ -406,7 +439,10 @@
           "condType" : "SINGLE",
           "condValue" : "story",
           "name" : "TYPE 等于(=) (story)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     }

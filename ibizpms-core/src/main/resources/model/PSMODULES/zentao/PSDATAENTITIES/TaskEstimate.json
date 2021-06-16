@@ -344,14 +344,20 @@
           "condType" : "SINGLE",
           "condValue" : "project",
           "name" : "PROJECT 等于(=) 网页请求上下文(project)",
-          "getPSVARTypeId" : "WEBCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PROJECT",
+            "codeName" : "Project"
+          },
+          "getPSVARTypeId" : "WEBCONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "0",
           "name" : "DELETED 等于(=) (0)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "DELETED",
+            "codeName" : "Deleted"
+          }
         } ]
       }
     }

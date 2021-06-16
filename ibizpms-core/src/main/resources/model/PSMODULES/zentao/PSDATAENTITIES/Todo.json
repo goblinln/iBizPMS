@@ -252,36 +252,51 @@
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "ASSIGNEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ASSIGNEDBY",
+              "codeName" : "AssignedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "FINISHEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "FINISHEDBY",
+              "codeName" : "FinishedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "UPDATEBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "UPDATEBY",
+              "codeName" : "UpdateBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "CLOSEDBY",
+              "codeName" : "ClosedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ACCOUNT",
+              "codeName" : "Account"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           } ]
         } ]
       }

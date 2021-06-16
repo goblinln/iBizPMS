@@ -217,14 +217,20 @@
             "condType" : "SINGLE",
             "condValue" : "open",
             "name" : "ACL 等于(=) (open)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ACL",
+              "codeName" : "Acl"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "CREATEMANNAME 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "CREATEMANNAME",
+              "codeName" : "CreateManName"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           } ]
         } ]
       }

@@ -174,8 +174,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "ADDEDBY 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ADDEDBY",
+            "codeName" : "AddedBy"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     },
@@ -239,21 +242,30 @@
           "condType" : "SINGLE",
           "condValue" : "srfparentkey",
           "name" : "OBJECTID 等于(=) 数据上下文(srfparentkey)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "OBJECTID",
+            "codeName" : "ObjectID"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "objecttype",
           "name" : "OBJECTTYPE 等于(=) 数据上下文(objecttype)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "OBJECTTYPE",
+            "codeName" : "ObjectType"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         }, {
           "condOp" : "NOTEQ",
           "condType" : "SINGLE",
           "condValue" : "editor",
           "name" : "EXTRA 不等于(<>) (editor)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "EXTRA",
+            "codeName" : "Extra"
+          }
         } ]
       }
     }

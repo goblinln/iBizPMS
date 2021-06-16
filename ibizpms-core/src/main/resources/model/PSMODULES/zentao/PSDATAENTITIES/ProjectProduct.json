@@ -113,7 +113,10 @@
           "condType" : "SINGLE",
           "condValue" : "0",
           "name" : "PLAN 不等于(<>) (0)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PLAN",
+            "codeName" : "Plan"
+          }
         } ]
       }
     },

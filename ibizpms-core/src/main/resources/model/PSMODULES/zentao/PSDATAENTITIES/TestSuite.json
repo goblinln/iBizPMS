@@ -150,7 +150,10 @@
             "condType" : "SINGLE",
             "condValue" : "public",
             "name" : "TYPE 等于(=) (public)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "TYPE",
+              "codeName" : "Type"
+            }
           }, {
             "condOp" : "AND",
             "condType" : "GROUP",
@@ -160,14 +163,20 @@
               "condType" : "SINGLE",
               "condValue" : "private",
               "name" : "TYPE 等于(=) (private)",
-              "ignoreEmpty" : false
+              "getPSDEField" : {
+                "name" : "TYPE",
+                "codeName" : "Type"
+              }
             }, {
               "condOp" : "EQ",
               "condType" : "SINGLE",
               "condValue" : "srfloginname",
               "name" : "ADDEDBY 等于(=) 用户上下文(srfloginname)",
-              "getPSVARTypeId" : "SESSIONCONTEXT",
-              "ignoreEmpty" : false
+              "getPSDEField" : {
+                "name" : "ADDEDBY",
+                "codeName" : "AddedBy"
+              },
+              "getPSVARTypeId" : "SESSIONCONTEXT"
             } ]
           } ]
         }, {
@@ -175,8 +184,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfparentkey",
           "name" : "PRODUCT 等于(=) 网页请求上下文(srfparentkey)",
-          "getPSVARTypeId" : "WEBCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
+          },
+          "getPSVARTypeId" : "WEBCONTEXT"
         } ]
       }
     }

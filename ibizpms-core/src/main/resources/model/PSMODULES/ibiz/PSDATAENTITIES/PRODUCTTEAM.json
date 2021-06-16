@@ -101,7 +101,10 @@
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "TYPE 等于(=) (product)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },
@@ -157,14 +160,20 @@
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "ROOT 等于(=) 网页请求上下文(product)",
-          "getPSVARTypeId" : "WEBCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ROOT",
+            "codeName" : "Root"
+          },
+          "getPSVARTypeId" : "WEBCONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "TYPE 等于(=) (product)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     }

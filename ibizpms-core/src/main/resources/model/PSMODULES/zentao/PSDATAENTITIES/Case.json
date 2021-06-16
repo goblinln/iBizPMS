@@ -440,8 +440,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "OPENEDBY",
+            "codeName" : "OpenedBy"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     }
@@ -479,8 +482,11 @@
             "condType" : "SINGLE",
             "condValue" : "srfparentkey",
             "name" : "SUITE 等于(=) 数据上下文(srfparentkey)",
-            "getPSVARTypeId" : "DATACONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "SUITE",
+              "codeName" : "Suite"
+            },
+            "getPSVARTypeId" : "DATACONTEXT"
           } ]
         }
       } ],
@@ -525,8 +531,11 @@
             "condType" : "SINGLE",
             "condValue" : "testtask",
             "name" : "TASK 等于(=) 数据上下文(testtask)",
-            "getPSVARTypeId" : "DATACONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
+            },
+            "getPSVARTypeId" : "DATACONTEXT"
           } ]
         }
       } ],
@@ -737,22 +746,31 @@
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "OPENEDBY",
+              "codeName" : "OpenedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "REVIEWEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "REVIEWEDBY",
+              "codeName" : "ReviewedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "LASTEDITEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "LASTEDITEDBY",
+              "codeName" : "LastEditedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           } ]
         } ]
       }
@@ -865,8 +883,11 @@
             "condType" : "SINGLE",
             "condValue" : "id",
             "name" : "TASK 等于(=) 网页请求上下文(id)",
-            "getPSVARTypeId" : "WEBCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
+            },
+            "getPSVARTypeId" : "WEBCONTEXT"
           } ]
         }
       } ],
@@ -916,8 +937,11 @@
             "condType" : "SINGLE",
             "condValue" : "id",
             "name" : "TASK 等于(=) 网页请求上下文(id)",
-            "getPSVARTypeId" : "WEBCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
+            },
+            "getPSVARTypeId" : "WEBCONTEXT"
           } ]
         }
       } ],
@@ -967,8 +991,11 @@
             "condType" : "SINGLE",
             "condValue" : "id",
             "name" : "TASK 等于(=) 网页请求上下文(id)",
-            "getPSVARTypeId" : "WEBCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
+            },
+            "getPSVARTypeId" : "WEBCONTEXT"
           } ]
         }
       } ],

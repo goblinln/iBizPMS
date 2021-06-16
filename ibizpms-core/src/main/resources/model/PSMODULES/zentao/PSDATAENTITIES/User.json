@@ -163,25 +163,37 @@
             "condType" : "SINGLE",
             "condValue" : "account",
             "name" : "ACCOUNT 等于(=) (account)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ACCOUNT",
+              "codeName" : "Account"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "mobile",
             "name" : "MOBILE 等于(=) (mobile)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "MOBILE",
+              "codeName" : "Mobile"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "email",
             "name" : "EMAIL 等于(=) (email)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "EMAIL",
+              "codeName" : "Email"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "commiter",
             "name" : "COMMITER 等于(=) (commiter)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "COMMITER",
+              "codeName" : "Commiter"
+            }
           } ]
         } ]
       }

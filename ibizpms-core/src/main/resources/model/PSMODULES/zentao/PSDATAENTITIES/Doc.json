@@ -318,8 +318,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfparentkey",
           "name" : "MODULE 等于(=) 网页请求上下文(srfparentkey)",
-          "getPSVARTypeId" : "WEBCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "MODULE",
+            "codeName" : "Module"
+          },
+          "getPSVARTypeId" : "WEBCONTEXT"
         } ]
       }
     }
@@ -360,22 +363,31 @@
             "condType" : "SINGLE",
             "condValue" : "srfloginnane",
             "name" : "ADDEDBY 等于(=) 用户上下文(srfloginnane)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ADDEDBY",
+              "codeName" : "AddedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginnane",
             "name" : "EDITEDBY 等于(=) 用户上下文(srfloginnane)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "EDITEDBY",
+              "codeName" : "EditedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginnane",
             "name" : "UPDATEBY 等于(=) 用户上下文(srfloginnane)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "UPDATEBY",
+              "codeName" : "UpdateBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           } ]
         } ]
       }

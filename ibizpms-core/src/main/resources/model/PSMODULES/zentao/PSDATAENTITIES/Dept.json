@@ -109,7 +109,10 @@
           "condType" : "SINGLE",
           "condValue" : "0",
           "name" : "PARENT 等于(=) (0)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          }
         } ]
       }
     }

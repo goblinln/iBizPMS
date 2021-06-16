@@ -287,7 +287,10 @@
           "condType" : "SINGLE",
           "condValue" : "1",
           "name" : "ISSUBMIT 等于(=) (1)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ISSUBMIT",
+            "codeName" : "Issubmit"
+          }
         }, {
           "condType" : "CUSTOM",
           "name" : "当前月"

@@ -180,14 +180,20 @@
           "condType" : "SINGLE",
           "condValue" : "doc",
           "name" : "TYPE 等于(=) (doc)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "ROOT 等于(=) 数据上下文(product)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ROOT",
+            "codeName" : "Root"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         } ]
       }
     },
@@ -225,7 +231,10 @@
           "condType" : "SINGLE",
           "condValue" : "line",
           "name" : "TYPE 等于(=) (line)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     },
@@ -263,19 +272,29 @@
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "ROOT 等于(=) 网页请求上下文(product)",
-          "getPSVARTypeId" : "WEBCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ROOT",
+            "codeName" : "Root"
+          },
+          "getPSVARTypeId" : "WEBCONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "story",
           "name" : "TYPE 等于(=) (story)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "branch",
           "name" : "BRANCH 等于(=) 数据上下文(branch)",
+          "getPSDEField" : {
+            "name" : "BRANCH",
+            "codeName" : "Branch"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         } ]
@@ -314,14 +333,20 @@
           "condType" : "SINGLE",
           "condValue" : "project",
           "name" : "ROOT 等于(=) 数据上下文(project)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ROOT",
+            "codeName" : "Root"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "task",
           "name" : "TYPE 等于(=) (task)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "TYPE",
+            "codeName" : "Type"
+          }
         } ]
       }
     }

@@ -93,8 +93,11 @@
             "condType" : "SINGLE",
             "condValue" : "task",
             "name" : "TASK 等于(=) 网页请求上下文(task)",
-            "getPSVARTypeId" : "WEBCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "TASK",
+              "codeName" : "Task"
+            },
+            "getPSVARTypeId" : "WEBCONTEXT"
           } ]
         }
       } ],

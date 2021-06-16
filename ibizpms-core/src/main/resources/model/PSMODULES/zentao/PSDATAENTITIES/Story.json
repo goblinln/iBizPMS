@@ -471,8 +471,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ASSIGNEDTO",
+            "codeName" : "AssignedTo"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     },
@@ -514,8 +517,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ASSIGNEDTO",
+            "codeName" : "AssignedTo"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     },
@@ -596,8 +602,11 @@
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "PRODUCT 等于(=) 数据上下文(product)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         } ]
       }
     },
@@ -661,13 +670,20 @@
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "PRODUCT 等于(=) 数据上下文(product)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "branch",
           "name" : "BRANCH 等于(=) 数据上下文(branch)",
+          "getPSDEField" : {
+            "name" : "BRANCH",
+            "codeName" : "Branch"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         }, {
@@ -675,6 +691,10 @@
           "condType" : "SINGLE",
           "condValue" : "nodeid",
           "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+          "getPSDEField" : {
+            "name" : "MODULE",
+            "codeName" : "Module"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         } ]
@@ -832,13 +852,20 @@
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "PRODUCT 等于(=) 数据上下文(product)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "branch",
           "name" : "BRANCH 等于(=) 数据上下文(branch)",
+          "getPSDEField" : {
+            "name" : "BRANCH",
+            "codeName" : "Branch"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         }, {
@@ -846,6 +873,10 @@
           "condType" : "SINGLE",
           "condValue" : "nodeid",
           "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+          "getPSDEField" : {
+            "name" : "MODULE",
+            "codeName" : "Module"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         } ]
@@ -936,8 +967,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "OPENEDBY",
+            "codeName" : "OpenedBy"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     },
@@ -979,36 +1013,51 @@
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "LASTEDITEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "LASTEDITEDBY",
+              "codeName" : "LastEditedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "CLOSEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "CLOSEDBY",
+              "codeName" : "ClosedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "REVIEWEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "REVIEWEDBY",
+              "codeName" : "ReviewedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "OPENEDBY",
+              "codeName" : "OpenedBy"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "srfloginname",
             "name" : "ASSIGNEDTO 等于(=) 用户上下文(srfloginname)",
-            "getPSVARTypeId" : "SESSIONCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "ASSIGNEDTO",
+              "codeName" : "AssignedTo"
+            },
+            "getPSVARTypeId" : "SESSIONCONTEXT"
           } ]
         } ]
       }
@@ -1050,8 +1099,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "OPENEDBY 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "OPENEDBY",
+            "codeName" : "OpenedBy"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     }
@@ -1191,13 +1243,19 @@
             "condType" : "SINGLE",
             "condValue" : "-1",
             "name" : "PARENT 等于(=) (-1)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
             "name" : "PARENT 等于(=) (0)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           } ]
         } ]
       }
@@ -1244,13 +1302,19 @@
             "condType" : "SINGLE",
             "condValue" : "-1",
             "name" : "PARENT 等于(=) (-1)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           }, {
             "condOp" : "EQ",
             "condType" : "SINGLE",
             "condValue" : "0",
             "name" : "PARENT 等于(=) (0)",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PARENT",
+              "codeName" : "Parent"
+            }
           } ]
         } ]
       }
@@ -1299,8 +1363,11 @@
               "condType" : "SINGLE",
               "condValue" : "project",
               "name" : "PROJECT 等于(=) 网页请求上下文(project)",
-              "getPSVARTypeId" : "WEBCONTEXT",
-              "ignoreEmpty" : false
+              "getPSDEField" : {
+                "name" : "PROJECT",
+                "codeName" : "Project"
+              },
+              "getPSVARTypeId" : "WEBCONTEXT"
             }, {
               "condType" : "CUSTOM",
               "name" : "项目关联计划及子计划需求"
@@ -1329,8 +1396,11 @@
             "condType" : "SINGLE",
             "condValue" : "project",
             "name" : "PROJECT 等于(=) 网页请求上下文(project)",
-            "getPSVARTypeId" : "WEBCONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PROJECT",
+              "codeName" : "Project"
+            },
+            "getPSVARTypeId" : "WEBCONTEXT"
           } ]
         }
       } ],
@@ -1349,7 +1419,10 @@
           "condType" : "SINGLE",
           "condValue" : "draft,closed",
           "name" : "STATUS 值不在范围中(NotIn) (draft,closed)",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "STATUS",
+            "codeName" : "Status"
+          }
         } ]
       }
     }
@@ -1387,8 +1460,11 @@
             "condType" : "SINGLE",
             "condValue" : "srfparentkey",
             "name" : "PROJECT 等于(=) 数据上下文(srfparentkey)",
-            "getPSVARTypeId" : "DATACONTEXT",
-            "ignoreEmpty" : false
+            "getPSDEField" : {
+              "name" : "PROJECT",
+              "codeName" : "Project"
+            },
+            "getPSVARTypeId" : "DATACONTEXT"
           } ]
         }
       } ],
@@ -1455,13 +1531,20 @@
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "PRODUCT 等于(=) 数据上下文(product)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "branch",
           "name" : "BRANCH 等于(=) 数据上下文(branch)",
+          "getPSDEField" : {
+            "name" : "BRANCH",
+            "codeName" : "Branch"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         }, {
@@ -1469,6 +1552,10 @@
           "condType" : "SINGLE",
           "condValue" : "nodeid",
           "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+          "getPSDEField" : {
+            "name" : "MODULE",
+            "codeName" : "Module"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         } ]
@@ -1548,13 +1635,20 @@
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "PRODUCT 等于(=) 数据上下文(product)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "branch",
           "name" : "BRANCH 等于(=) 数据上下文(branch)",
+          "getPSDEField" : {
+            "name" : "BRANCH",
+            "codeName" : "Branch"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         }, {
@@ -1562,6 +1656,10 @@
           "condType" : "SINGLE",
           "condValue" : "nodeid",
           "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+          "getPSDEField" : {
+            "name" : "MODULE",
+            "codeName" : "Module"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         } ]
@@ -1597,13 +1695,20 @@
           "condType" : "SINGLE",
           "condValue" : "product",
           "name" : "PRODUCT 等于(=) 数据上下文(product)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         }, {
           "condOp" : "EQ",
           "condType" : "SINGLE",
           "condValue" : "branch",
           "name" : "BRANCH 等于(=) 数据上下文(branch)",
+          "getPSDEField" : {
+            "name" : "BRANCH",
+            "codeName" : "Branch"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         }, {
@@ -1611,6 +1716,10 @@
           "condType" : "SINGLE",
           "condValue" : "nodeid",
           "name" : "MODULE 等于(=) 数据上下文(nodeid)",
+          "getPSDEField" : {
+            "name" : "MODULE",
+            "codeName" : "Module"
+          },
           "getPSVARTypeId" : "DATACONTEXT",
           "ignoreEmpty" : true
         } ]

@@ -92,8 +92,11 @@
           "condType" : "SINGLE",
           "condValue" : "account",
           "name" : "ACCOUNT 等于(=) 数据上下文(account)",
-          "getPSVARTypeId" : "DATACONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ACCOUNT",
+            "codeName" : "Account"
+          },
+          "getPSVARTypeId" : "DATACONTEXT"
         } ]
       }
     }
@@ -126,8 +129,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ACCOUNT",
+            "codeName" : "Account"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     },
@@ -178,8 +184,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ACCOUNT",
+            "codeName" : "Account"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     }
@@ -212,8 +221,11 @@
           "condType" : "SINGLE",
           "condValue" : "srfloginname",
           "name" : "ACCOUNT 等于(=) 用户上下文(srfloginname)",
-          "getPSVARTypeId" : "SESSIONCONTEXT",
-          "ignoreEmpty" : false
+          "getPSDEField" : {
+            "name" : "ACCOUNT",
+            "codeName" : "Account"
+          },
+          "getPSVARTypeId" : "SESSIONCONTEXT"
         } ]
       }
     }
