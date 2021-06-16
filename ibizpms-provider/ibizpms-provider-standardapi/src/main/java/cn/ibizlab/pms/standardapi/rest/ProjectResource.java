@@ -163,6 +163,20 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
     }
 
+    @PreAuthorize("test('ZT_PROJECT', #project_id, 'LINKSTORY')")
+    @ApiOperation(value = "项目关联需求-按计划关联", tags = {"项目" },  notes = "项目关联需求-按计划关联")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/importplanstories")
+    public ResponseEntity<ProjectDTO> importPlanStories(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.importPlanStories(domain);
+        projectdto = projectMapping.toDto(domain);
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+
+
     @PreAuthorize("quickTest('ZT_PROJECT', 'DENY')")
     @ApiOperation(value = "关联产品", tags = {"项目" },  notes = "关联产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkproduct")
@@ -440,6 +454,20 @@ public class ProjectResource {
         Project domain = projectMapping.toDomain(dto);
         
         return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_PROJECT', #project_id, 'LINKSTORY')")
+    @ApiOperation(value = "根据产品项目关联需求-按计划关联", tags = {"项目" },  notes = "根据产品项目关联需求-按计划关联")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/importplanstories")
+    public ResponseEntity<ProjectDTO> importPlanStoriesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        
+        domain.setId(project_id);
+        domain = projectService.importPlanStories(domain) ;
+        projectdto = projectMapping.toDto(domain);
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());    
+        projectdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
     @PreAuthorize("quickTest('ZT_PROJECT', 'DENY')")

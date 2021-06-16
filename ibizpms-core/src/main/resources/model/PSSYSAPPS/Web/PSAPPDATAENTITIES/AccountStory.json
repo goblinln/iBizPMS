@@ -373,7 +373,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "PROJECTLINK"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -1987,7 +1987,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "PROJECTLINK"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false

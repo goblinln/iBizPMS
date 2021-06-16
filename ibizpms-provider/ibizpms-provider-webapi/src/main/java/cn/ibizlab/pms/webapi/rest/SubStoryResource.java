@@ -430,7 +430,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("test('ZT_STORY', #substory_id, 'MANAGE')")
+    @PreAuthorize("test('ZT_STORY', #substory_id, 'PROJECTLINK')")
     @ApiOperation(value = "项目关联需求-按计划关联", tags = {"需求" },  notes = "项目关联需求-按计划关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/importplanstories")
     public ResponseEntity<SubStoryDTO> importPlanStories(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -1515,7 +1515,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
-    @PreAuthorize("quickTest('ZT_STORY', 'MANAGE')")
+    @PreAuthorize("quickTest('ZT_STORY', 'PROJECTLINK')")
     @ApiOperation(value = "根据需求项目关联需求-按计划关联", tags = {"需求" },  notes = "根据需求项目关联需求-按计划关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/{substory_id}/importplanstories")
     public ResponseEntity<SubStoryDTO> importPlanStoriesByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -2583,7 +2583,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
-    @PreAuthorize("quickTest('ZT_STORY', 'MANAGE')")
+    @PreAuthorize("quickTest('ZT_STORY', 'PROJECTLINK')")
     @ApiOperation(value = "根据产品需求项目关联需求-按计划关联", tags = {"需求" },  notes = "根据产品需求项目关联需求-按计划关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/importplanstories")
     public ResponseEntity<SubStoryDTO> importPlanStoriesByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {

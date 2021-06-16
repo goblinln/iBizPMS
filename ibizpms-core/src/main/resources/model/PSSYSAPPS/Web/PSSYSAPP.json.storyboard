@@ -184,20 +184,20 @@
     "psappsbitemid" : "4cd22567da2b04aaa102ed5a1d46b4af",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IbzWeeklyEditViewEdit",
-    "psappsbitemname" : "实体2编辑视图",
-    "itemtag2" : "745a1f0416a835e2e6eac4eeed05c8ce",
-    "psappviewid" : "0551f0f5f821e55d9ba9e4e4ed97aae8",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditViewEdit.json",
-    "psappsbitemid" : "f44c5474e2cb996e353c6bd2fe074c67",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BugStatsProductBugStatusGridView",
     "psappsbitemname" : "Bug统计表格视图",
     "itemtag2" : "f5f339348d1ffa557c402ef31c4423f9",
     "psappviewid" : "bb58aa381b47b6ad9eec3a694ad6f7d1",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsProductBugStatusGridView.json",
     "psappsbitemid" : "f4425f2a959cdea91d2468956dafd03c",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzWeeklyEditViewEdit",
+    "psappsbitemname" : "实体2编辑视图",
+    "itemtag2" : "745a1f0416a835e2e6eac4eeed05c8ce",
+    "psappviewid" : "0551f0f5f821e55d9ba9e4e4ed97aae8",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditViewEdit.json",
+    "psappsbitemid" : "f44c5474e2cb996e353c6bd2fe074c67",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "CaseMainEditView",
@@ -1134,6 +1134,14 @@
     "psappviewid" : "8263c5b2f9a9e0cbbbdf2f72e194a5a8",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCurProjectWGridView.json",
     "psappsbitemid" : "9173d9372f0be9f64955f214579a2f02",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectPlanLinkStoryOptionView",
+    "psappsbitemname" : "按照计划关联",
+    "itemtag2" : "ED11B13E-0723-478F-8554-7DB6E5FC70E5",
+    "psappviewid" : "3b63c37fef39a2dfb574a36ceb392f11",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPlanLinkStoryOptionView.json",
+    "psappsbitemid" : "c32b4f1a36eec7c20c920f9183493cf3",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "StoryGridView9_Related",
@@ -2981,20 +2989,20 @@
     "psappsbitemid" : "b665e7fb7eb1671177671e54b89dbf65",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TaskStoryNewEditView",
-    "psappsbitemname" : "任务编辑视图",
-    "itemtag2" : "870fcb8acebd3d6cac12ee1382dfa0b9",
-    "psappviewid" : "52a6a2a4e6961e9fe8c7f07df59309d0",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryNewEditView.json",
-    "psappsbitemid" : "656ecfc3053e95c5ff8f8665d926e011",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TestTaskMainDashboardView",
     "psappsbitemname" : "测试版本数据看板视图",
     "itemtag2" : "e613f159f656bcab063c9ab64a9e8b02",
     "psappviewid" : "55a8c0becc39a06b6b107d1bb4dbdcb9",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",
     "psappsbitemid" : "f64d1b1d72163252dfbf7e363537f51a",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskStoryNewEditView",
+    "psappsbitemname" : "任务编辑视图",
+    "itemtag2" : "870fcb8acebd3d6cac12ee1382dfa0b9",
+    "psappviewid" : "52a6a2a4e6961e9fe8c7f07df59309d0",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryNewEditView.json",
+    "psappsbitemid" : "656ecfc3053e95c5ff8f8665d926e011",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IbizproIndexListView",
@@ -9080,12 +9088,12 @@
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "按照计划关联",
-    "psappsbitemrsid" : "9338e33724fdc4bcec54436b60d58dcc",
+    "psappsbitemrsid" : "2db629ad45f2427e02f07456b7cbc7cd",
     "ppsappsbitemname" : "story表格视图",
     "rstag" : "FRONT",
     "rstag2" : "前台调用",
     "ppsappsbitemid" : "ea4121d9c3dd2ec065e9e07f61039187",
-    "cpsappsbitemid" : "ba0e6ea6e018a2a960074bf5145ea4d0",
+    "cpsappsbitemid" : "c32b4f1a36eec7c20c920f9183493cf3",
     "psappsbitemrsname" : "按照计划关联",
     "rstype" : "UIACTION"
   }, {
@@ -9385,12 +9393,12 @@
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "按照计划关联",
-    "psappsbitemrsid" : "8a0bbc678deee873c9e4095c558f4a8d",
+    "psappsbitemrsid" : "282d783d606714621c90c4934d171f3b",
     "ppsappsbitemname" : "story表格视图",
     "rstag" : "FRONT",
     "rstag2" : "前台调用",
     "ppsappsbitemid" : "9173d9372f0be9f64955f214579a2f02",
-    "cpsappsbitemid" : "ba0e6ea6e018a2a960074bf5145ea4d0",
+    "cpsappsbitemid" : "c32b4f1a36eec7c20c920f9183493cf3",
     "psappsbitemrsname" : "按照计划关联",
     "rstype" : "UIACTION"
   }, {

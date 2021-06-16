@@ -62,13 +62,13 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "Update",
+        "actionName" : "importPlanStories",
         "actionType" : "DEACTION",
         "dataAccessAction" : "UPDATE",
         "name" : "update",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "Update"
+          "id" : "ImportPlanStories"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

@@ -430,7 +430,7 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("test('ZT_STORY', #story_id, 'MANAGE')")
+    @PreAuthorize("test('ZT_STORY', #story_id, 'PROJECTLINK')")
     @ApiOperation(value = "项目关联需求-按计划关联", tags = {"需求" },  notes = "项目关联需求-按计划关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/importplanstories")
     public ResponseEntity<StoryDTO> importPlanStories(@PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -1515,7 +1515,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'MANAGE')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'PROJECTLINK')")
     @ApiOperation(value = "根据产品项目关联需求-按计划关联", tags = {"需求" },  notes = "根据产品项目关联需求-按计划关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/importplanstories")
     public ResponseEntity<StoryDTO> importPlanStoriesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {

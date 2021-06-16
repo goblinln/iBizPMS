@@ -244,6 +244,23 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "codeName" : "ImportPlanStories",
+    "methodType" : "DEACTION",
+    "name" : "importPlanStories",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "LINKSTORY"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ImportPlanStories"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "LinkProduct",
     "methodType" : "DEACTION",
     "name" : "LinkProduct",
@@ -1850,6 +1867,23 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "codeName" : "ImportPlanStories",
+    "methodType" : "DEACTION",
+    "name" : "importPlanStories",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "LINKSTORY"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ImportPlanStories"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "LinkProduct",
     "methodType" : "DEACTION",
     "name" : "LinkProduct",
@@ -2721,6 +2755,38 @@
     "uIActionType" : "DEUIACTION",
     "reloadData" : true,
     "id" : "ProjectStartMob@Project"
+  }, {
+    "actionTarget" : "NONE",
+    "caption" : "按照计划关联",
+    "codeName" : "ProjecPlanLink",
+    "frontPSAppView" : "无法获取指定应用视图，标识为[14cc9f3ab15e2a170161b0997e604d48]，请确认实体视图[ZT_PROJECT][项目实体选项操作视图（按照计划关联）]已经添加到应用[iBiz软件生产管理（Mob）]中",
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Project_ProjecPlanLink",
+    "name" : "按照计划关联",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "PROJECT",
+      "name" : "PROJECT",
+      "value" : "project",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "project",
+      "name" : "project",
+      "value" : "project",
+      "rawValue" : false
+    } ],
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "ProjecPlanLink",
+    "uIActionType" : "DEUIACTION",
+    "globalUIAction" : true,
+    "reloadData" : true,
+    "id" : "ProjecPlanLink@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "详情",

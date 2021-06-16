@@ -294,6 +294,21 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return res;
     }
     /**
+     * ImportPlanStories
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async ImportPlanStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/importplanstories`, _data);
+        }
+        return this.http.post(`/projects/${_context.project}/importplanstories`, _data);
+    }
+    /**
      * LinkProduct
      *
      * @param {*} [_context={}]
@@ -491,6 +506,24 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/projects/closebatch`,_data);
+    }
+
+    /**
+     * ImportPlanStoriesBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectServiceBase
+     */
+    public async ImportPlanStoriesBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/projects/importplanstoriesbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/projects/importplanstoriesbatch`,_data);
     }
 
     /**

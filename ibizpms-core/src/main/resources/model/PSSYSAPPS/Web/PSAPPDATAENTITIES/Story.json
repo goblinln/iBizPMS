@@ -410,7 +410,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "PROJECTLINK"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2120,7 +2120,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "PROJECTLINK"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -4019,6 +4019,42 @@
     "reloadData" : true,
     "id" : "Create@Story"
   }, {
+    "actionTarget" : "NONE",
+    "caption" : "按照计划关联",
+    "codeName" : "ProjecPlanLink",
+    "dataAccessAction" : "PROJECTLINK",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Story_ProjecPlanLink",
+    "name" : "按照计划关联",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "PROJECT",
+      "name" : "PROJECT",
+      "value" : "project",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "project",
+      "name" : "project",
+      "value" : "project",
+      "rawValue" : false
+    } ],
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "ProjecPlanLink",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "ProjecPlanLink@Story"
+  }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "删除",
     "codeName" : "delete",
@@ -4055,42 +4091,6 @@
     "closePopupView" : true,
     "enableConfirm" : true,
     "id" : "delete@Story"
-  }, {
-    "actionTarget" : "NONE",
-    "caption" : "按照计划关联",
-    "codeName" : "ProjecPlanLink",
-    "dataAccessAction" : "PROJECTLINK",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
-      "viewType" : "DEOPTVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Story_ProjecPlanLink",
-    "name" : "按照计划关联",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "PROJECT",
-      "name" : "PROJECT",
-      "value" : "project",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "project",
-      "name" : "project",
-      "value" : "project",
-      "rawValue" : false
-    } ],
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "ProjecPlanLink",
-    "uIActionType" : "DEUIACTION",
-    "reloadData" : true,
-    "id" : "ProjecPlanLink@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消收藏",

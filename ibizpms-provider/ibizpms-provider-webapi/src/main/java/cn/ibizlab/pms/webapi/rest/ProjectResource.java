@@ -189,7 +189,7 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
     }
 
-    @PreAuthorize("quickTest('ZT_PROJECT', 'DENY')")
+    @PreAuthorize("test('ZT_PROJECT', #project_id, 'LINKSTORY')")
     @ApiOperation(value = "项目关联需求-按计划关联", tags = {"项目" },  notes = "项目关联需求-按计划关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/importplanstories")
     public ResponseEntity<ProjectDTO> importPlanStories(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {

@@ -196,10 +196,10 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
       "modelref" : true,
-      "id" : "ProjecPlanLink@Story"
+      "id" : "ProjecPlanLink@Project"
     },
     "uIActionTarget" : "NONE",
     "xDataControlName" : "grid"
@@ -229,7 +229,7 @@
     "codeName" : "CurProjectGridViewtoolbar",
     "controlType" : "TOOLBAR",
     "hookEventNames" : [ "CLICK" ],
-    "logicName" : "项目需求工具栏_3728",
+    "logicName" : "项目需求工具栏",
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -383,18 +383,17 @@
         "actionTarget" : "NONE",
         "caption" : "按照计划关联",
         "codeName" : "ProjecPlanLink",
-        "dataAccessAction" : "PROJECTLINK",
         "getFrontPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPlanLinkStoryOptionView.json",
           "viewType" : "DEOPTVIEW"
         },
         "frontProcessType" : "WIZARD",
-        "fullCodeName" : "Story_ProjecPlanLink",
+        "fullCodeName" : "Project_ProjecPlanLink",
         "name" : "按照计划关联",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "PROJECT",
@@ -413,8 +412,9 @@
         "uIActionMode" : "FRONT",
         "uIActionTag" : "ProjecPlanLink",
         "uIActionType" : "DEUIACTION",
+        "globalUIAction" : true,
         "reloadData" : true,
-        "id" : "ProjecPlanLink@Story"
+        "id" : "ProjecPlanLink@Project"
       },
       "tooltip" : "按照计划关联",
       "showCaption" : true,
