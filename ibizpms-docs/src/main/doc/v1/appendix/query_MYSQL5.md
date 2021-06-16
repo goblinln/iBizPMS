@@ -199,11 +199,60 @@ t1.dayname =  #{srf.datacontext.dayname}
 ```
 ### 用户当日工时（项目）(CurDaySunByProject)<div id="AccountTaskestimate_CurDaySunByProject"></div>
 ```sql
-SELECT
-t1.`DATE`,
-t1.`EVALUATIONCOST`,
-t1.`INPUTCOST`
-FROM `zt_taskestimate` t1 
+SELECT t1.* from (
+SELECT YEAR
+	( t1.date ) AS `year`,
+	RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
+	RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`,
+	CONCAT(year(t1.date),RIGHT ( 100 + MONTH ( t1.date ), 2 ),RIGHT ( 100 + DAY ( t1.date ), 2 )) as dayname ,
+	t11.project,
+	t21.`name` AS projectname,
+	t1.account,
+	t1.date,
+	IFNULL( ROUND( sum( t1.consumed ), 2 ), 0 ) AS consumed,
+	IFNULL( ROUND( sum( t1.EVALUATIONCOST ), 2 ), 0 ) AS EVALUATIONCOST,
+	IFNULL( ROUND( sum( t1.INPUTCOST ), 2 ), 0 ) AS INPUTCOST,
+	IFNULL( ROUND( sum( t1.EVALUATIONTIME ), 2 ), 0 ) AS EVALUATIONTIME 
+FROM
+	`zt_taskestimate` t1
+	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
+	LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
+WHERE
+	t11.project IS NOT NULL 
+	AND t11.project <> '0' 
+	AND t1.date <> '0000-00-00' 
+	AND t11.deleted = '0' 
+GROUP BY
+	t11.project,
+	t21.`name`,
+	t1.account,
+	t1.date UNION
+SELECT YEAR
+	( t1.date ) AS `year`,
+	RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
+	RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`,
+	CONCAT(year(t1.date),RIGHT ( 100 + MONTH ( t1.date ), 2 ),RIGHT ( 100 + DAY ( t1.date ), 2 )) as dayname ,
+	t1.idvalue AS project,
+	t11.`name` AS projectname,
+	t1.account,
+	t1.date,
+	IFNULL( ROUND( sum( t1.consumed ), 2 ), 0 ) AS consumed,
+	0.00 AS EVALUATIONCOST,
+	0.00 AS INPUTCOST,
+	0.00 AS EVALUATIONTIME 
+FROM
+	zt_todo t1
+	LEFT JOIN zt_project t11 ON t11.id = t1.idvalue 
+WHERE
+	t1.type = 'custom' 
+	AND t1.idvalue > 0 
+GROUP BY
+	t1.idvalue,
+	t11.`name`,
+	t1.account,
+	t1.date )t1
+WHERE t11.project = #{srf.datacontext.project } 
+t1.dayname =  #{srf.datacontext.dayname} 
 
 ```
 ### 数据查询(DEFAULT)<div id="AccountTaskestimate_Default"></div>
@@ -348,11 +397,10 @@ WHERE t1.account =#{srf.webcontext.account}
 ```
 ### 我的工时统计(MyDaySum)<div id="AccountTaskestimate_MyDaySum"></div>
 ```sql
-SELECT
-t1.`DATE`,
-t1.`EVALUATIONCOST`,
-t1.`INPUTCOST`
-FROM `zt_taskestimate` t1 
+SELECT t1.* from ( SELECT YEAR ( t1.date ) AS `year`, RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`, RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`, CONCAT(year(t1.date),RIGHT ( 100 + MONTH ( t1.date ), 2 ),RIGHT ( 100 + DAY ( t1.date ), 2 )) as dayname , t11.project, t21.`name` AS projectname, t1.account, t1.date, IFNULL( ROUND( sum( t1.consumed ), 2 ), 0 ) AS consumed, IFNULL( ROUND( sum( t1.EVALUATIONCOST ), 2 ), 0 ) AS EVALUATIONCOST, IFNULL( ROUND( sum( t1.INPUTCOST ), 2 ), 0 ) AS INPUTCOST, IFNULL( ROUND( sum( t1.EVALUATIONTIME ), 2 ), 0 ) AS EVALUATIONTIME FROM `zt_taskestimate` t1 LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID` LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` WHERE t11.project IS NOT NULL AND t11.project <> '0' AND t1.date <> '0000-00-00' AND t11.deleted = '0' GROUP BY t11.project, t21.`name`, t1.account, t1.date UNION SELECT YEAR ( t1.date ) AS `year`, RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`, RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`, CONCAT(year(t1.date),RIGHT ( 100 + MONTH ( t1.date ), 2 ),RIGHT ( 100 + DAY ( t1.date ), 2 )) as dayname , t1.idvalue AS project, t11.`name` AS projectname, t1.account, t1.date, IFNULL( ROUND( sum( t1.consumed ), 2 ), 0 ) AS consumed, 0.00 AS EVALUATIONCOST, 0.00 AS INPUTCOST, 0.00 AS EVALUATIONTIME FROM zt_todo t1 LEFT JOIN zt_project t11 ON t11.id = t1.idvalue WHERE t1.type = 'custom' AND t1.idvalue > 0 GROUP BY t1.idvalue, t11.`name`, t1.account, t1.date )t1
+
+WHERE t1.account =  #{srf.sessioncontext.srfloginname} 
+t1.dayname =  #{srf.datacontext.dayname} 
 
 ```
 ### 默认（全部数据）(VIEW)<div id="AccountTaskestimate_View"></div>
