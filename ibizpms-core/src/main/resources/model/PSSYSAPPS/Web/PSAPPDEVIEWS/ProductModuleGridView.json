@@ -62,6 +62,11 @@
     "name" : "root",
     "value" : "product",
     "rawValue" : false
+  }, {
+    "key" : "branch",
+    "name" : "branch",
+    "value" : "branch",
+    "rawValue" : false
   } ],
   "getPSAppViewUIActions" : [ {
     "name" : "toolbar_deuiaction2",
@@ -609,6 +614,8 @@
     }, {
       "caption" : "平台",
       "codeName" : "branch",
+      "createDV" : "branch",
+      "createDVT" : "CONTEXT",
       "enableCond" : 3,
       "ignoreInput" : 0,
       "name" : "branch",

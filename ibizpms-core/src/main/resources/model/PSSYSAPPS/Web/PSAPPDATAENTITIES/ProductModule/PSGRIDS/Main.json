@@ -362,6 +362,8 @@
   }, {
     "caption" : "平台",
     "codeName" : "branch",
+    "createDV" : "branch",
+    "createDVT" : "CONTEXT",
     "enableCond" : 3,
     "ignoreInput" : 0,
     "name" : "branch",
