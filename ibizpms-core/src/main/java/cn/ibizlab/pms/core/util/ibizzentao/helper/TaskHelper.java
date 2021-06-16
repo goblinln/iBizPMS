@@ -80,6 +80,10 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
     IProductPlanService productPlanService;
     @Autowired
     ProductPlanHelper productPlanHelper;
+    @Autowired
+            IActionService iActionService;
+    @Autowired
+            IHistoryService iHistoryService;
 
     String[] diffAttrs = {"desc"};
     List<String> ignore = Arrays.asList("totalwh", "totalleft", "totalconsumed", "totalestimate");
@@ -1726,6 +1730,11 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         if (newTask.getAssignedto() != null) {
             newTask.setAssigneddate(new Timestamp(now.getTime()));
         }
+        String assignedtopks = newTask.getAssignedtopk();
+        String[] accounts = assignedtopks.split(",");
+        if (accounts.length == 1){
+            newTask.setAssignedto(accounts[0]);
+        }
         calendar.setTime(today);
         if (beforeDays != null) {
             calendar.add(Calendar.DATE, beforeDays);
@@ -1819,6 +1828,17 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             this.baseMapper.insert(newTask);
             actionHelper.create(StaticDict.Action__object_type.TASK.getValue(), newTask.getId(), StaticDict.Action__type.OPENED.getValue(),
                     "", "", newTask.getOpenedby(), true);
+           if (accounts.length >1){
+               for (int i = 1; i <= accounts.length - 1; i++) {
+                   newTask.setId(null);
+                   Task otherTask = new Task();
+                   CachedBeanCopier.copy(newTask,otherTask);
+                   otherTask.setAssignedto(accounts[i]);
+                   this.create(otherTask);
+                   actionHelper.create(StaticDict.Action__object_type.TASK.getValue(), otherTask.getId(), StaticDict.Action__type.OPENED.getValue(),
+                           "", "", otherTask.getOpenedby(), true);
+               }
+           }
         }
 
         return et;
@@ -1955,6 +1975,19 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             newTask.setStatus(StaticDict.Task__status.DOING.getValue());
             newTask.setFinishedby("");
             newTask.setFinisheddate(null);
+            List<Action> actions = iActionService.list(new QueryWrapper<Action>().eq("objectType", StaticDict.Action__object_type.TASK.getValue()).eq("action", StaticDict.Action__type.ASSIGNED.getValue()).eq("objectId", et.getId()).last(" order by id desc"));
+            if (actions.size()>0){
+                Action action = actions.get(0);
+                List<History> historyList = iHistoryService.list(new QueryWrapper<History>().eq("action", action.getId()).last(" and field in ('assignedTo' ,'assignedDate')"));
+                for (History history : historyList) {
+                    if ("assignedTo".equals(history.getField())){
+                        newTask.setAssignedto(history.getOld());
+                    }
+                    if ("assignedDate".equals(history.getField())){
+                        newTask.setAssigneddate(Timestamp.valueOf(history.getOld()));
+                    }
+                }
+            }
             super.internalUpdate(newTask);
         }
         if (et.getParent()>0){
@@ -1977,6 +2010,19 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             newTask.setStatus(StaticDict.Task__status.DOING.getValue());
             newTask.setFinishedby("");
             newTask.setFinisheddate(null);
+            List<Action> actions = iActionService.list(new QueryWrapper<Action>().eq("objectType", StaticDict.Action__object_type.TASK.getValue()).eq("action", StaticDict.Action__type.ASSIGNED.getValue()).eq("objectId", et.getId()).last(" order by id desc"));
+            if (actions.size()>0){
+                Action action = actions.get(0);
+                List<History> historyList = iHistoryService.list(new QueryWrapper<History>().eq("action", action.getId()).last(" and field in ('assignedTo' ,'assignedDate')"));
+                for (History history : historyList) {
+                    if ("assignedTo".equals(history.getField())){
+                        newTask.setAssignedto(history.getOld());
+                    }
+                    if ("assignedDate".equals(history.getField())){
+                        newTask.setAssigneddate(Timestamp.valueOf(history.getOld()));
+                    }
+                }
+            }
             super.internalUpdate(newTask);
             List<Action> actionList = actionHelper.list(new QueryWrapper<Action>().eq("objectID", et.getId()).eq("actor", AuthenticationUser.getAuthenticationUser().getUsername()).eq("action",StaticDict.Action__type.FINISHED.getValue()).orderByDesc("date"));
             if (actionList.size()>0){
@@ -2007,6 +2053,19 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             newTask.setStatus(StaticDict.Task__status.DOING.getValue());
             newTask.setFinishedby("");
             newTask.setFinisheddate(null);
+            List<Action> actions = iActionService.list(new QueryWrapper<Action>().eq("objectType", StaticDict.Action__object_type.TASK.getValue()).eq("action", StaticDict.Action__type.ASSIGNED.getValue()).eq("objectId", et.getId()).last(" order by id desc"));
+            if (actions.size()>0){
+                Action action = actions.get(0);
+                List<History> historyList = iHistoryService.list(new QueryWrapper<History>().eq("action", action.getId()).last(" and field in ('assignedTo' ,'assignedDate')"));
+                for (History history : historyList) {
+                    if ("assignedTo".equals(history.getField())){
+                        newTask.setAssignedto(history.getOld());
+                    }
+                    if ("assignedDate".equals(history.getField())){
+                        newTask.setAssigneddate(Timestamp.valueOf(history.getOld()));
+                    }
+                }
+            }
             super.internalUpdate(newTask);
             List<Action> actionList = actionHelper.list(new QueryWrapper<Action>().eq("objectID", et.getId()).eq("actor", AuthenticationUser.getAuthenticationUser().getUsername()).eq("action",StaticDict.Action__type.FINISHED.getValue()).orderByDesc("date"));
             if (actionList.size()>0){
