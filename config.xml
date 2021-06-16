@@ -37,6 +37,12 @@
 	  git clone -b dev $para2 pms/
       export NODE_OPTIONS=--max-old-space-size=4096
       cd pms/
+      mvn clean package -Pwebapi
+      mvn install -Pwebapi
+      cd ibizpms-provider/ibizpms-provider-webapi
+      mvn -Pwebapi docker:build
+      mvn -Pwebapi docker:push
+      docker -H $para1 stack deploy --compose-file=src/main/docker/ibizpms-provider-webapi.yaml iBizEE --with-registry-auth      
       </command>
     </hudson.tasks.Shell>
   </builders>
