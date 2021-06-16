@@ -768,6 +768,14 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("ordernum")
     @ApiModelProperty("排序")
     private Integer ordernum;
+    /**
+     * 指派给
+     */
+    @TableField(exist = false)
+    @JSONField(name = "assignedtopk")
+    @JsonProperty("assignedtopk")
+    @ApiModelProperty("指派给")
+    private String assignedtopk;
 
     /**
      * 

@@ -110,6 +110,7 @@ hide members
 |父任务|PARENT|PICKUP|&nbsp;|
 |来源Bug|FROMBUG|PICKUP|&nbsp;|
 |排序|ORDERNUM|INT|&nbsp;|
+|指派给|ASSIGNEDTOPK|TEXT|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -208,6 +209,7 @@ hide members
 |父任务|默认规则|默认规则|
 |来源Bug|默认规则|默认规则|
 |排序|默认规则|默认规则|
+|指派给|默认规则|内容长度必须小于等于[100]|
 
 ## 状态控制
 
@@ -503,6 +505,7 @@ hide footbox
 |MyCompleteTaskZS|我完成的任务（汇报）([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyCompleteTaskZS))|否|&nbsp;|
 |MyFavorites|我的收藏([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyFavorites))|否|&nbsp;|
 |MyPlansTaskMobMonthly|我计划参与的任务（移动端月报）([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyPlansTaskMobMonthly))|否|&nbsp;|
+|MyProjectTask|我的任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyProjectTask))|否|&nbsp;|
 |MyTomorrowPlanTask|我计划参与的任务（汇报）([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyTomorrowPlanTask))|否|&nbsp;|
 |MyTomorrowPlanTaskMobDaily|我计划参与的任务（汇报）([MYSQL5](../../appendix/query_MYSQL5.md#Task_MyTomorrowPlanTaskMobDaily))|否|&nbsp;|
 |NextWeekCompleteTaskMobZS|移动端下周计划参与(汇报)([MYSQL5](../../appendix/query_MYSQL5.md#Task_NextWeekCompleteTaskMobZS))|否|&nbsp;|
@@ -553,6 +556,7 @@ hide footbox
 |MyCompleteTaskZS|我完成的任务（汇报）|MyCompleteTaskZS|否|&nbsp;|
 |MyFavorites|我的收藏|MyFavorites|否|&nbsp;|
 |MyPlansTaskMobMonthly|我计划参与的任务（移动端月报）|MyPlansTaskMobMonthly|否|&nbsp;|
+|MyProjectTask|我的任务|MyProjectTask|否|&nbsp;|
 |MyTomorrowPlanTask|我计划参与的任务（汇报）|MyTomorrowPlanTask|否|&nbsp;|
 |MyTomorrowPlanTaskMobDaily|我计划参与的任务（汇报）|MyTomorrowPlanTaskMobDaily|否|&nbsp;|
 |NextWeekCompleteTaskMobZS|移动端下周计划参与(汇报)|NextWeekCompleteTaskMobZS|否|&nbsp;|

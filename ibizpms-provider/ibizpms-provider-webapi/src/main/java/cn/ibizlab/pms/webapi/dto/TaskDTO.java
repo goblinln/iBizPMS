@@ -857,6 +857,16 @@ public class TaskDTO extends DTOBase implements Serializable {
     @ApiModelProperty("排序")
     private Integer ordernum;
 
+    /**
+     * 属性 [ASSIGNEDTOPK]
+     *
+     */
+    @JSONField(name = "assignedtopk")
+    @JsonProperty("assignedtopk")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("指派给")
+    private String assignedtopk;
+
 
     /**
      * 设置 [CANCELEDBY]
