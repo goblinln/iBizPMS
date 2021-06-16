@@ -118,6 +118,7 @@ hide members
 |DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_Default))|是|&nbsp;|
 |DEFAULT1|DEFAULT1([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_Defaults))|否|&nbsp;|
 |MyAccounts|我管辖的所有人员([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_MyAccounts))|否|&nbsp;|
+|MyActionDate|日志日（我的）([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_MyActionDate))|否|&nbsp;|
 |ProjectActionMonth|日志月（项目）([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ProjectActionMonth))|否|&nbsp;|
 |ProjectActionYear|日志年（项目）([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ProjectActionYear))|否|&nbsp;|
 |ProjectTaskEstimate|项目日志([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ProjectTaskEstimate))|否|&nbsp;|
@@ -137,6 +138,7 @@ hide members
 |DEFAULT|DEFAULT|DEFAULT|是|&nbsp;|
 |DEFAULT1|DEFAULT1|DEFAULT1|否|&nbsp;|
 |MyAccounts|我管辖的所有人员|MyAccounts|否|&nbsp;|
+|MyActionDate|日志日（我的）|MyActionDate|否|&nbsp;|
 |ProjectActionMonth|日志月（项目）|ProjectActionMonth|否|&nbsp;|
 |ProjectActionYear|日志年（项目）|ProjectActionYear|否|&nbsp;|
 |ProjectTaskEstimate|项目日志|ProjectTaskEstimate|否|&nbsp;|
