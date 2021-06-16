@@ -651,14 +651,15 @@
           },
           "getPSEditor" : {
             "editorParams" : {
-              "SRFNAVCTX.project" : "%project%",
-              "SRFNAVPARAM.allmodules" : "%allmodules%",
-              "AC" : "TRUE",
-              "SRFNAVPARAM.type" : "TaskModules",
-              "SRFNAVCTX.allmodules" : "%allmodules%",
-              "SRFNAVPARAM.project" : "%project%",
               "valFormat" : "{0: '/'}",
-              "PICKUPVIEW" : "TRUE"
+              "SRFNAVPARAM.project" : "%project%",
+              "AC" : "TRUE",
+              "SRFNAVCTX.allmodules" : "%allmodules%",
+              "SRFNAVCTX.project" : "%project%",
+              "SRFNAVPARAM.sort" : "path,asc",
+              "SRFNAVPARAM.allmodules" : "%allmodules%",
+              "PICKUPVIEW" : "TRUE",
+              "SRFNAVPARAM.type" : "TaskModules"
             },
             "editorType" : "PICKER",
             "handlerType" : "PickupText",
@@ -691,6 +692,11 @@
               "name" : "project",
               "value" : "project",
               "rawValue" : false
+            }, {
+              "key" : "sort",
+              "name" : "sort",
+              "value" : "path,asc",
+              "rawValue" : true
             }, {
               "key" : "allmodules",
               "name" : "allmodules",

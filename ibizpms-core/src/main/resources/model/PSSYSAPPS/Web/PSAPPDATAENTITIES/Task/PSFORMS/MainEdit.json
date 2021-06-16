@@ -2767,6 +2767,7 @@
               "SRFNAVCTX.allmodules" : "%allmodules%",
               "SRFNAVPARAM.module" : "%module%",
               "SRFNAVCTX.project" : "%project%",
+              "SRFNAVPARAM.sort" : "path,asc",
               "SRFNAVPARAM.allmodules" : "%allmodules%",
               "PICKUPVIEW" : "TRUE",
               "SRFNAVPARAM.type" : "TaskModules"
@@ -2812,6 +2813,11 @@
               "name" : "module",
               "value" : "module",
               "rawValue" : false
+            }, {
+              "key" : "sort",
+              "name" : "sort",
+              "value" : "path,asc",
+              "rawValue" : true
             }, {
               "key" : "allmodules",
               "name" : "allmodules",

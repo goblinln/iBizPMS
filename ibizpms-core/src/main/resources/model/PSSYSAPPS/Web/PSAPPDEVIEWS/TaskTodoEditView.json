@@ -506,6 +506,7 @@
           "getPSEditor" : {
             "editorParams" : {
               "SRFNAVCTX.project" : "%project%",
+              "SRFNAVPARAM.sort" : "path,asc",
               "SRFNAVPARAM.allmodules" : "%allmodules%",
               "AC" : "TRUE",
               "SRFNAVPARAM.type" : "TaskModules",
@@ -544,6 +545,11 @@
               "name" : "project",
               "value" : "project",
               "rawValue" : false
+            }, {
+              "key" : "sort",
+              "name" : "sort",
+              "value" : "path,asc",
+              "rawValue" : true
             }, {
               "key" : "allmodules",
               "name" : "allmodules",

@@ -680,6 +680,7 @@
             "editorParams" : {
               "SRFNAVPARAM.n_branch_eq" : "%branch%",
               "SRFNAVPARAM.product" : "%product%",
+              "SRFNAVPARAM.sort" : "path,asc",
               "AC" : "TRUE",
               "SRFNAVPARAM.type" : "StoryModule",
               "valFormat" : "{0: '/'}",
@@ -712,6 +713,11 @@
               "name" : "product",
               "value" : "product",
               "rawValue" : false
+            }, {
+              "key" : "sort",
+              "name" : "sort",
+              "value" : "path,asc",
+              "rawValue" : true
             }, {
               "key" : "n_branch_eq",
               "name" : "n_branch_eq",

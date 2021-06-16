@@ -3254,6 +3254,7 @@
             "getPSEditor" : {
               "editorParams" : {
                 "SRFNAVCTX.n_root_eq" : "%product%",
+                "SRFNAVPARAM.sort" : "path,asc",
                 "AC" : "TRUE",
                 "SRFNAVPARAM.type" : "TestModule",
                 "valFormat" : "{0: '/'}",
@@ -3282,6 +3283,11 @@
                 "rawValue" : false
               } ],
               "getPSNavigateParams" : [ {
+                "key" : "sort",
+                "name" : "sort",
+                "value" : "path,asc",
+                "rawValue" : true
+              }, {
                 "key" : "n_root_eq",
                 "name" : "n_root_eq",
                 "value" : "product",

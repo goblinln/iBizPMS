@@ -2775,6 +2775,7 @@
                 "AC" : "TRUE",
                 "SRFNAVPARAM.product" : "%product%",
                 "SRFNAVCTX.product" : "%product%",
+                "SRFNAVPARAM.sort" : "path,asc",
                 "SRFNAVCTX.N_ROOT_EQ" : "%product%",
                 "PICKUPVIEW" : "TRUE",
                 "SRFNAVCTX.branch" : "%branch%",
@@ -2821,6 +2822,11 @@
                 "name" : "product",
                 "value" : "product",
                 "rawValue" : false
+              }, {
+                "key" : "sort",
+                "name" : "sort",
+                "value" : "path,asc",
+                "rawValue" : true
               }, {
                 "key" : "branch",
                 "name" : "branch",
