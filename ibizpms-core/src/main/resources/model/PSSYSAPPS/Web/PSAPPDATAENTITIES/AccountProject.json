@@ -2561,6 +2561,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "importPlanStories",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "projectTop",
       "getPSDEAction" : {
         "modelref" : true,
@@ -2693,6 +2700,13 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
       },
       "allowMode" : true
+    }, {
+      "name" : "importPlanStories",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
+      },
+      "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "CLOSE",
@@ -2782,6 +2796,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "importPlanStories",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
       },
       "allowMode" : true
     }, {
@@ -2909,6 +2930,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Close.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "importPlanStories",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
       },
       "allowMode" : true
     }, {
@@ -3064,6 +3092,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "importPlanStories",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
       },
       "allowMode" : true
     } ],
@@ -3234,6 +3269,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkStory.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "importPlanStories",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
       },
       "allowMode" : true
     }, {
