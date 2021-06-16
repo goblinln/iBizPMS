@@ -23,18 +23,6 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "RootDept"
-    },
-    "name" : "所有部门 - 根部门",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "AllDept"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "AllDept"
     },
     "name" : "默认根节点 - 所有部门",
@@ -86,6 +74,18 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "SubDept"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "RootDept"
+    },
+    "name" : "所有部门 - 根部门",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "AllDept"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

@@ -32,19 +32,19 @@
                                 ]]>
                             </conditionExpression>
                     </sequenceFlow>
-                    <sequenceFlow id="gateway-deaction1_deaction3" sourceRef="gateway-deaction1" targetRef="deaction3">
-                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-                                            $useryearworkstatsgetinfodefault:UserYearWorkStats();
-                                    eval($useryearworkstatsgetinfodefault==useryearworkstatsgetinfodefault);
-                                eval((RuleUtils.test($useryearworkstatsgetinfodefault.get("judgerole"),"EQ","qa")))
-                                ]]>
-                            </conditionExpression>
-                    </sequenceFlow>
                     <sequenceFlow id="gateway-deaction1_deaction2" sourceRef="gateway-deaction1" targetRef="deaction2">
                             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
                                             $useryearworkstatsgetinfodefault:UserYearWorkStats();
                                     eval($useryearworkstatsgetinfodefault==useryearworkstatsgetinfodefault);
                                 eval((RuleUtils.test($useryearworkstatsgetinfodefault.get("judgerole"),"EQ","dev")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-deaction1_deaction3" sourceRef="gateway-deaction1" targetRef="deaction3">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $useryearworkstatsgetinfodefault:UserYearWorkStats();
+                                    eval($useryearworkstatsgetinfodefault==useryearworkstatsgetinfodefault);
+                                eval((RuleUtils.test($useryearworkstatsgetinfodefault.get("judgerole"),"EQ","qa")))
                                 ]]>
                             </conditionExpression>
                     </sequenceFlow>

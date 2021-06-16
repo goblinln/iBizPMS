@@ -196,7 +196,7 @@
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchDefault"
+        "id" : "FetchCurDefault"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -245,7 +245,7 @@
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchDefault"
+        "id" : "FetchCurDefault"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -294,7 +294,7 @@
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchDefault"
+        "id" : "FetchCurDefaultQuery"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -343,7 +343,7 @@
       },
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchDefault"
+        "id" : "FetchCurDefaultQuery"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,

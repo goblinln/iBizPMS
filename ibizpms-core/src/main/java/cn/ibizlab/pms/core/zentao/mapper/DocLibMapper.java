@@ -26,6 +26,7 @@ public interface DocLibMapper extends BaseMapper<DocLib> {
     List<DocLib> selectByProjectNotFiles(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     List<DocLib> selectCurDocLib(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     List<DocLib> selectDefault(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectMyCreateDocLib(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     List<DocLib> selectMyFavourites(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     List<DocLib> selectRootModuleMuLu(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     List<DocLib> selectSimple(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
@@ -38,6 +39,7 @@ public interface DocLibMapper extends BaseMapper<DocLib> {
     Page<DocLib> searchByProjectNotFiles(IPage page, @Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     Page<DocLib> searchCurDocLib(IPage page, @Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     Page<DocLib> searchDefault(IPage page, @Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    Page<DocLib> searchMyCreateDocLib(IPage page, @Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     Page<DocLib> searchMyFavourites(IPage page, @Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     Page<DocLib> searchRootModuleMuLu(IPage page, @Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     @Override

@@ -943,6 +943,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "EditDocLib",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -1179,6 +1180,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -1652,6 +1654,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -1965,31 +1968,6 @@
     "getPSDETreeNodeRSs" : [ {
       "getChildPSDETreeNode" : {
         "modelref" : true,
-        "id" : "File"
-      },
-      "name" : "附件库 - 附件",
-      "parentFilter" : "product",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "Files"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "docLib"
-      },
-      "name" : "默认根节点 - 文档库",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "ROOT"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
         "id" : "ChildDocLibModule"
       },
       "name" : "文档分类跟模块 - 文档库子模块",
@@ -2158,6 +2136,31 @@
       "getParentPSDETreeNode" : {
         "modelref" : true,
         "id" : "ChildDocLibModule"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "File"
+      },
+      "name" : "附件库 - 附件",
+      "parentFilter" : "product",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "Files"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "docLib"
+      },
+      "name" : "默认根节点 - 文档库",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -2596,6 +2599,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "EditDocLib",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -3317,6 +3321,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -3595,6 +3600,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",

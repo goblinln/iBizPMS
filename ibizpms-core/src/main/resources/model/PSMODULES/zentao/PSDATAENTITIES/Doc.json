@@ -3067,7 +3067,7 @@
   }, {
     "logicName" : "文档库-收藏",
     "mapPSDEName" : "ZT_DOCLIB",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
@@ -3116,7 +3116,7 @@
   }, {
     "logicName" : "文档库-仅收藏文档",
     "mapPSDEName" : "ZT_DOCLIB",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
@@ -3129,7 +3129,7 @@
   }, {
     "logicName" : "文档库-仅取消收藏文档",
     "mapPSDEName" : "ZT_DOCLIB",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
@@ -3158,7 +3158,7 @@
   }, {
     "logicName" : "文档库-取消收藏",
     "mapPSDEName" : "ZT_DOCLIB",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
@@ -3411,7 +3411,7 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_MODULE_MODULE.json",
     "getMajorPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
     },
     "masterOrder" : -1,
     "masterRS" : 0,

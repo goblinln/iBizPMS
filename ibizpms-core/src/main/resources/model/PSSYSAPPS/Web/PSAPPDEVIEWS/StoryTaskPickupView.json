@@ -636,7 +636,7 @@
         "modeltype" : "PSDEFORM_SEARCHFORM"
       } ],
       "getPSDEViewCodeName" : "TaskPickupGridView",
-      "getPSDEViewId" : "3EA3B871-157E-402C-AEF4-2B2FF15896FD",
+      "getPSDEViewId" : "f6359cf5fb9b623fba64587ab44e92cc",
       "getPSSysImage" : {
         "glyph" : "xf006@FontAwesome",
         "cssClass" : "fa fa-star-o"
@@ -668,7 +668,7 @@
       "pickupMode" : true,
       "rowEditDefault" : false,
       "showCaptionBar" : false,
-      "modelid" : "c72343b4d40e73d6e2f274cb0e595dae",
+      "modelid" : "9c41047e3b640417d08325a978d6b4e3",
       "modeltype" : "PSAPPDEVIEW",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
@@ -743,7 +743,7 @@
     }
   } ],
   "getPSDEViewCodeName" : "TaskPickupView",
-  "getPSDEViewId" : "16DAB58E-8E46-43FE-8859-EFB181876EE0",
+  "getPSDEViewId" : "bbabe9ca66b1145e5253716f3f7a71ad",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -766,7 +766,7 @@
   "viewType" : "DEPICKUPVIEW",
   "enableDP" : true,
   "showCaptionBar" : false,
-  "modelid" : "b4b44862d4d581f41c051c64a5526c8b",
+  "modelid" : "9d59206a3380dbc8455f7de777ec1bfb",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,

@@ -48,6 +48,7 @@ public interface IDocLibService extends IService<DocLib> {
     List<DocLib> selectByProjectNotFiles(DocLibSearchContext context);
     List<DocLib> selectCurDocLib(DocLibSearchContext context);
     List<DocLib> selectDefault(DocLibSearchContext context);
+    List<DocLib> selectMyCreateDocLib(DocLibSearchContext context);
     List<DocLib> selectMyFavourites(DocLibSearchContext context);
     List<DocLib> selectRootModuleMuLu(DocLibSearchContext context);
     List<DocLib> selectSimple(DocLibSearchContext context);
@@ -60,6 +61,7 @@ public interface IDocLibService extends IService<DocLib> {
     Page<DocLib> searchByProjectNotFiles(DocLibSearchContext context);
     Page<DocLib> searchCurDocLib(DocLibSearchContext context);
     Page<DocLib> searchDefault(DocLibSearchContext context);
+    Page<DocLib> searchMyCreateDocLib(DocLibSearchContext context);
     Page<DocLib> searchMyFavourites(DocLibSearchContext context);
     Page<DocLib> searchRootModuleMuLu(DocLibSearchContext context);
     List<DocLib> selectByProduct(Long id);

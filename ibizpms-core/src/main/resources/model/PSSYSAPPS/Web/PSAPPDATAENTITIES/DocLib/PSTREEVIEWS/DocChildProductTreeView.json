@@ -496,6 +496,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "Edit",
+        "dataAccessAction" : "UPDATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -708,24 +709,6 @@
       "modelref" : true,
       "id" : "ChildModule"
     },
-    "name" : "默认根节点 - 子目录文档库分类",
-    "getPSNavigateParams" : [ {
-      "key" : "n_parent_eq",
-      "name" : "n_parent_eq",
-      "value" : "srfparentkey",
-      "rawValue" : false
-    } ],
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ChildModule"
-    },
     "name" : "子目录文档库分类 - 子目录文档库分类",
     "parentFilter" : "parent",
     "getParentPSAppDEField" : {
@@ -764,6 +747,24 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ChildModule"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ChildModule"
+    },
+    "name" : "默认根节点 - 子目录文档库分类",
+    "getPSNavigateParams" : [ {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    } ],
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -1140,6 +1141,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",

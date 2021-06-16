@@ -390,6 +390,7 @@
         "getPSEditor" : {
           "editorParams" : {
             "AC" : "TRUE",
+            "SRFNAVPARAM.type" : "CurDocLib",
             "TRIGGER" : "TRUE",
             "PICKUPVIEW" : "FALSE"
           },
@@ -402,12 +403,18 @@
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
-            "id" : "FetchCurDocLib"
+            "id" : "FetchDefault"
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
+          "getPSNavigateParams" : [ {
+            "key" : "type",
+            "name" : "type",
+            "value" : "CurDocLib",
+            "rawValue" : true
+          } ],
           "valueItemName" : "lib",
           "dropDownView" : false,
           "enableAC" : true,
@@ -483,6 +490,18 @@
           "editorType" : "PICKEREX_TRIGGER",
           "handlerType" : "PickupText",
           "name" : "modulename",
+          "getPSAppDEACMode" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "getPSAppDEDataSet" : {
+            "modelref" : true,
+            "id" : "FetchAllDir"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
+          },
           "getPSNavigateContexts" : [ {
             "key" : "DOCLIB",
             "name" : "DOCLIB",

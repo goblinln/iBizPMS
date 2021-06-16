@@ -60,7 +60,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     protected cn.ibizlab.pms.core.zentao.service.IDocLibService doclibService;
     @Autowired
     @Lazy
-    protected cn.ibizlab.pms.core.zentao.service.IModuleService moduleService;
+    protected cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService doclibmoduleService;
     @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IProductService productService;
@@ -530,9 +530,9 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         }
         //实体关系[DER1N_ZT_DOC_ZT_MODULE_MODULE]
         if(!ObjectUtils.isEmpty(et.getModule())){
-            cn.ibizlab.pms.core.zentao.domain.Module ztModule=et.getZtModule();
+            cn.ibizlab.pms.core.ibiz.domain.DocLibModule ztModule=et.getZtModule();
             if(ObjectUtils.isEmpty(ztModule)){
-                cn.ibizlab.pms.core.zentao.domain.Module majorEntity=moduleService.get(et.getModule());
+                cn.ibizlab.pms.core.ibiz.domain.DocLibModule majorEntity=doclibmoduleService.get(et.getModule());
                 et.setZtModule(majorEntity);
                 ztModule=majorEntity;
             }

@@ -642,6 +642,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -1149,7 +1150,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchCurDocLib"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -1198,7 +1199,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchCurDocLib"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -1241,6 +1242,18 @@
         },
         "editorType" : "PICKEREX_TRIGGER",
         "name" : "modulenameeq",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchAllDir"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
+        },
         "dropDownView" : false,
         "enableAC" : true,
         "enableLinkView" : false,
@@ -1278,6 +1291,18 @@
         },
         "editorType" : "PICKEREX_TRIGGER",
         "name" : "modulenamelike",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchAllDir"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
+        },
         "dropDownView" : false,
         "enableAC" : true,
         "enableLinkView" : false,

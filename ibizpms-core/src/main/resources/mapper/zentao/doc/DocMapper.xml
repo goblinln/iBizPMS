@@ -104,7 +104,7 @@
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztDoclib" javaType="cn.ibizlab.pms.core.zentao.domain.DocLib" column="lib" select="cn.ibizlab.pms.core.zentao.mapper.DocLibMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
-		<association property="ztModule" javaType="cn.ibizlab.pms.core.zentao.domain.Module" column="module" select="cn.ibizlab.pms.core.zentao.mapper.ModuleMapper.selectById" fetchType="lazy"></association>
+		<association property="ztModule" javaType="cn.ibizlab.pms.core.ibiz.domain.DocLibModule" column="module" select="cn.ibizlab.pms.core.ibiz.mapper.DocLibModuleMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztProduct" javaType="cn.ibizlab.pms.core.zentao.domain.Product" column="product" select="cn.ibizlab.pms.core.zentao.mapper.ProductMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->

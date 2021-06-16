@@ -76,22 +76,7 @@
           "viewType" : "DEPORTALVIEW"
         }
       },
-      "getOpenDataPSAppViews" : [ {
-        "refMode" : "WAIT1",
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-          "viewType" : "DEPORTALVIEW"
-        }
-      } ],
       "getPSAppUILogicRefViews" : [ {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-          "viewType" : "DEPORTALVIEW"
-        }
-      }, {
-        "refMode" : "WAIT1",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
@@ -102,17 +87,14 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "n_parent_gtandeq",
+    "name" : "n_parent_gtandeq",
+    "value" : "0",
+    "rawValue" : true
+  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
-    "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "需求数据看板视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-      "viewType" : "DEPORTALVIEW"
-    }
-  }, {
-    "name" : "EDITDATA:WAIT1",
     "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "需求数据看板视图",
     "getRefPSAppView" : {

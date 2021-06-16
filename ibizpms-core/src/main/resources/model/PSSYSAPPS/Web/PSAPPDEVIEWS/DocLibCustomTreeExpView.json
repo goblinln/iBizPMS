@@ -305,6 +305,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "EditCustomDocLib",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -491,6 +492,63 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
+          "id" : "DocLibModule"
+        },
+        "name" : "文档库模块 - 文档库模块",
+        "getParentPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "getParentPSDER1N" : {
+          "codeName" : "PDocLibModule",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
+          "logicName" : "父模块",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+          },
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+          },
+          "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
+          "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "MODULENAME",
+            "codeName" : "Modulename"
+          },
+          "pickupDEFName" : "PARENT",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "DocLibModule"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
+        },
+        "name" : "默认根节点 - 所有文档库",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
           "id" : "DocRoot"
         },
         "name" : "文档库 - 根模块",
@@ -575,63 +633,6 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "DocRoot"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ALL"
-        },
-        "name" : "默认根节点 - 所有文档库",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOT"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "DocLibModule"
-        },
-        "name" : "文档库模块 - 文档库模块",
-        "getParentPSAppDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
-        },
-        "getParentPSDER1N" : {
-          "codeName" : "PDocLibModule",
-          "dERType" : "DER1N",
-          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
-          "logicName" : "父模块",
-          "getMajorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-          },
-          "masterOrder" : -1,
-          "masterRS" : 0,
-          "getMinorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-          },
-          "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
-          "orderValue" : 100,
-          "getPSPickupDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
-          },
-          "getPSPickupTextDEField" : {
-            "name" : "MODULENAME",
-            "codeName" : "Modulename"
-          },
-          "pickupDEFName" : "PARENT",
-          "removeActionType" : -1,
-          "removeOrder" : 0
-        },
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "DocLibModule"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -749,6 +750,7 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "编辑",
               "codeName" : "EditCustomDocLib",
+              "dataAccessAction" : "UPDATE",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",

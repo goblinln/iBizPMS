@@ -793,6 +793,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -1266,6 +1267,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -1593,18 +1595,6 @@
     }, {
       "getChildPSDETreeNode" : {
         "modelref" : true,
-        "id" : "DocLibDoc"
-      },
-      "name" : "默认根节点 - 文档",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "ROOT"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
         "id" : "ModuleDoc"
       },
       "name" : "文档库子目录 - 分类下文档",
@@ -1612,6 +1602,18 @@
       "getParentPSDETreeNode" : {
         "modelref" : true,
         "id" : "ChildModule"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "DocLibDoc"
+      },
+      "name" : "默认根节点 - 文档",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -1941,6 +1943,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -2519,6 +2522,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",

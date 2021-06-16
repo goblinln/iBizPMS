@@ -260,6 +260,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "Edit",
+        "dataAccessAction" : "UPDATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -708,10 +709,10 @@
       "modelref" : true,
       "id" : "Module"
     },
-    "name" : "默认根节点 - 文档分类",
+    "name" : "文档分类 - 文档分类",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ROOT"
+      "id" : "Module"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -720,10 +721,10 @@
       "modelref" : true,
       "id" : "Module"
     },
-    "name" : "文档分类 - 文档分类",
+    "name" : "默认根节点 - 文档分类",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "Module"
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -800,6 +801,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",

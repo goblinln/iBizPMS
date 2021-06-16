@@ -2444,6 +2444,20 @@
     "major_field":0
     },
     {
+    "fieldname":"REALORDER" ,
+    "codename":"Realorder",
+    "field_logic_name":"实际排序",
+    "entity_name":"ZT_BRANCH",
+    "field_type":"INT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"INT",
+    "expression":"t1.`ORDER`",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
     "fieldname":"PRODUCT" ,
     "codename":"Product",
     "field_logic_name":"所属产品",
@@ -2457,20 +2471,6 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
-    "fieldname":"REALORDER" ,
-    "codename":"Realorder",
-    "field_logic_name":"实际排序",
-    "entity_name":"ZT_BRANCH",
-    "field_type":"INT",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"INT",
-    "expression":"t1.`ORDER`",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8543,7 +8543,7 @@
     "codename":"Modulename",
     "field_logic_name":"模块分类",
     "entity_name":"ZT_DOC",
-    "ref_de":"ZT_MODULE",
+    "ref_de":"IBZ_DOCLIBMODULE",
     "ref_field_name":"NAME",
     "relation_name":"DER1N_ZT_DOC_ZT_MODULE_MODULE",
     "relation_codename":"Zt_module",
@@ -8615,7 +8615,7 @@
     "codename":"Module",
     "field_logic_name":"所属分类",
     "entity_name":"ZT_DOC",
-    "ref_de":"ZT_MODULE",
+    "ref_de":"IBZ_DOCLIBMODULE",
     "ref_field_name":"ID",
     "relation_name":"DER1N_ZT_DOC_ZT_MODULE_MODULE",
     "relation_codename":"Zt_module",
@@ -8660,7 +8660,7 @@
      "relation_type":"DER1N",
      "code_name":"Zt_module",
      "entity_name":"ZT_DOC",
-     "ref_entity_name":"ZT_MODULE"
+     "ref_entity_name":"IBZ_DOCLIBMODULE"
     },
     {"name":"DER1N_ZT_DOC_ZT_PRODUCT_PRODUCT",
      "relation_type":"DER1N",
@@ -9788,6 +9788,12 @@
      "relation_type":"DER1N",
      "code_name":"PDocLibModule",
      "entity_name":"IBZ_DOCLIBMODULE",
+     "ref_entity_name":"IBZ_DOCLIBMODULE"
+    },
+    {"name":"DER1N_ZT_DOC_ZT_MODULE_MODULE",
+     "relation_type":"DER1N",
+     "code_name":"Zt_module",
+     "entity_name":"ZT_DOC",
      "ref_entity_name":"IBZ_DOCLIBMODULE"
     }
     ],
@@ -24624,12 +24630,6 @@
      "relation_type":"DER1N",
      "code_name":"ZTModule",
      "entity_name":"IBZ_CASESTATS",
-     "ref_entity_name":"ZT_MODULE"
-    },
-    {"name":"DER1N_ZT_DOC_ZT_MODULE_MODULE",
-     "relation_type":"DER1N",
-     "code_name":"Zt_module",
-     "entity_name":"ZT_DOC",
      "ref_entity_name":"ZT_MODULE"
     },
     {"name":"DER1N__ZT_MODULE__ZT_MODULE__PARENT",

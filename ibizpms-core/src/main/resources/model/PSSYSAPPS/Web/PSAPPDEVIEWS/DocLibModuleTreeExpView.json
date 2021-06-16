@@ -312,6 +312,18 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
+          "id" : "RootModule"
+        },
+        "name" : "所有分类 - 跟目录",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALLmodule"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
           "id" : "ChildModule"
         },
         "name" : "bb - bb",
@@ -363,18 +375,6 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ROOT"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "RootModule"
-        },
-        "name" : "所有分类 - 跟目录",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ALLmodule"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

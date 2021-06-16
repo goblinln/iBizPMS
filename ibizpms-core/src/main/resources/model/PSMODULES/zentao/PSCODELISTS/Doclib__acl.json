@@ -8,10 +8,6 @@
     "codeName" : "Default",
     "text" : "默认",
     "value" : "default"
-  }, {
-    "codeName" : "Custom",
-    "text" : "自定义",
-    "value" : "custom"
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",

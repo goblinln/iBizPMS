@@ -275,18 +275,6 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "DocLib"
-        },
-        "name" : "所有文档库 - 文档库",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ALL"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
           "id" : "DocLibModule"
         },
         "name" : "文档库 - 根模块",
@@ -326,18 +314,6 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "DocLib"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ALL"
-        },
-        "name" : "默认根节点 - 所有文档库",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ROOT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -389,6 +365,18 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
+          "id" : "DocLib"
+        },
+        "name" : "所有文档库 - 文档库",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
           "id" : "ChildDocLibModule"
         },
         "name" : "文档库模块 - 文档库模块",
@@ -428,6 +416,18 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ChildDocLibModule"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
+        },
+        "name" : "默认根节点 - 所有文档库",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

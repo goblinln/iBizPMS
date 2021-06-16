@@ -1077,7 +1077,7 @@
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "文档库-收藏",
     "mapPSDEName" : "ZT_DOCLIB",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
@@ -1145,7 +1145,7 @@
   }, {
     "logicName" : "文档库-取消收藏",
     "mapPSDEName" : "ZT_DOCLIB",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"

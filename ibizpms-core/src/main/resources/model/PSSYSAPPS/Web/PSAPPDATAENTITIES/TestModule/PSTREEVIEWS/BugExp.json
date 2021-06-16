@@ -67,6 +67,41 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
+      "id" : "ALL"
+    },
+    "name" : "null - null",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOTMODULE"
+    },
+    "name" : "null - null",
+    "getPSNavigateParams" : [ {
+      "key" : "n_type_eq",
+      "name" : "n_type_eq",
+      "value" : "story",
+      "rawValue" : true
+    }, {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "0",
+      "rawValue" : true
+    } ],
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ALL"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
       "id" : "MODULE"
     },
     "name" : "null - null",
@@ -105,41 +140,6 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "MODULE"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ALL"
-    },
-    "name" : "null - null",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOTMODULE"
-    },
-    "name" : "null - null",
-    "getPSNavigateParams" : [ {
-      "key" : "n_type_eq",
-      "name" : "n_type_eq",
-      "value" : "story",
-      "rawValue" : true
-    }, {
-      "key" : "n_parent_eq",
-      "name" : "n_parent_eq",
-      "value" : "0",
-      "rawValue" : true
-    } ],
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ALL"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

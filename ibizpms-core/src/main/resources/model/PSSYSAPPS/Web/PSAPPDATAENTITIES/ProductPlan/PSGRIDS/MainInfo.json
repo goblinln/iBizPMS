@@ -31,7 +31,7 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
-    "name" : "grid_actions_u54b2dce_click",
+    "name" : "grid_actions_u8b7760b_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "关联需求（计划）"
@@ -39,7 +39,7 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
-    "name" : "grid_actions_u02b47f0_click",
+    "name" : "grid_actions_u21b4f17_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "关联Bug（计划）"
@@ -374,7 +374,7 @@
         "showIcon" : true
       }, {
         "detailType" : "DEUIACTION",
-        "name" : "u54b2dce",
+        "name" : "u8b7760b",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
           "noPrivDisplayMode" : 1,
@@ -421,7 +421,7 @@
         "showIcon" : true
       }, {
         "detailType" : "DEUIACTION",
-        "name" : "u02b47f0",
+        "name" : "u21b4f17",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
           "noPrivDisplayMode" : 1,

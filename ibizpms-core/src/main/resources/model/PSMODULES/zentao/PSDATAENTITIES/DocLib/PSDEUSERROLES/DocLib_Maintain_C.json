@@ -1,0 +1,54 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Maintain_C.json",
+  "name" : "文档库维护（我创建的）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyCreateDocLib"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "UPDATE",
+    "name" : "UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_product__UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "UNCOLLECT",
+    "name" : "UNCOLLECT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNCOLLECT"
+    }
+  }, {
+    "dataAccessAction" : "MANAGE",
+    "name" : "MANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_project__MANAGE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_project__DELETE"
+    }
+  }, {
+    "dataAccessAction" : "COLLECT",
+    "name" : "COLLECT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_product__COLLECT"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "roleTag" : "DocLib_Maintain_C",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}

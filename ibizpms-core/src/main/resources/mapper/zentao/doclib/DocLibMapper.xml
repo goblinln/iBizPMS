@@ -154,6 +154,13 @@
          )t1
      </select>
 
+    <!--数据集合[MyCreateDocLib]-->
+	 <select id="searchMyCreateDocLib"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext"  resultMap="DocLibResultMap">
+         select t1.* from (
+                <include refid="MyCreateDocLib" />
+         )t1
+     </select>
+
     <!--数据集合[MyFavourites]-->
 	 <select id="searchMyFavourites"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext"  resultMap="DocLibResultMap">
          select t1.* from (
@@ -289,6 +296,24 @@
 	
 	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="Default" />
+	</select>
+
+    <!--数据查询[MyCreateDocLib]-->
+    <sql id="MyCreateDocLib" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACL`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPTNAME`, t1.`DOCLIBSN`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, t1.`MAIN`, t1.`MDEPTID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) AS `MODULECNT`, t1.`NAME`, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') AS `OPENEDDATE`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.`UPDATEBY`, t1.`UPDATEMANNAME` FROM `zt_doclib` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND ( t1.`CREATEBY` =  #{srf.sessioncontext.srfloginname} ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMyCreateDocLib"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+		<include refid="MyCreateDocLib" />
 	</select>
 
     <!--数据查询[MyFavourites]-->

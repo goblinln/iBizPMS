@@ -314,6 +314,9 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     public List<DocLib> selectDefault(DocLibSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
     }
+    public List<DocLib> selectMyCreateDocLib(DocLibSearchContext context){
+        return baseMapper.selectMyCreateDocLib(context, context.getSelectCond());
+    }
     public List<DocLib> selectMyFavourites(DocLibSearchContext context){
         return baseMapper.selectMyFavourites(context, context.getSelectCond());
     }
@@ -388,6 +391,15 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     @Override
     public Page<DocLib> searchDefault(DocLibSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<DocLib> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<DocLib>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我创建的文档库（权限）
+     */
+    @Override
+    public Page<DocLib> searchMyCreateDocLib(DocLibSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<DocLib> pages=baseMapper.searchMyCreateDocLib(context.getPages(),context,context.getSelectCond());
         return new PageImpl<DocLib>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

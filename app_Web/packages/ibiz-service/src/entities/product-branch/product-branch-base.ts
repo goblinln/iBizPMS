@@ -78,13 +78,13 @@ export abstract class ProductBranchBase extends EntityBase implements IProductBr
      */
     deptname?: any;
     /**
-     * 所属产品
-     */
-    product?: any;
-    /**
      * 实际排序
      */
     realorder?: any;
+    /**
+     * 所属产品
+     */
+    product?: any;
 
     /**
      * 重置实体数据

@@ -134,6 +134,14 @@ public class ProductBranchDTO extends DTOBase implements Serializable {
     @ApiModelProperty("归属部门名")
     private String deptname;
     /**
+     * 属性 [REALORDER]
+     *
+     */
+    @JSONField(name = "realorder")
+    @JsonProperty("realorder")
+    @ApiModelProperty("实际排序")
+    private Integer realorder;
+    /**
      * 属性 [PRODUCT]
      *
      */
@@ -142,14 +150,6 @@ public class ProductBranchDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("所属产品")
     private Long product;
-    /**
-     * 属性 [REALORDER]
-     *
-     */
-    @JSONField(name = "realorder")
-    @JsonProperty("realorder")
-    @ApiModelProperty("实际排序")
-    private Integer realorder;
 
     /**
      * 设置 [NAME]

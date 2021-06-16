@@ -47,9 +47,9 @@ export interface IDocLib extends IEntityBase {
     /**
      * 权限
      *
-     * @type {('default' | 'custom')} default: 默认, custom: 自定义
+     * @type {('default')} default: 默认
      */
-    acl?: 'default' | 'custom';
+    acl?: 'default';
     /**
      * Root
      */

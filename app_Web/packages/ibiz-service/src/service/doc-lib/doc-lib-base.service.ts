@@ -162,6 +162,18 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return this.condCache.get('default');
     }
 
+    protected getMyCreateDocLibCond() {
+        if (!this.condCache.has('myCreateDocLib')) {
+            const strCond: any[] = ['AND', ['EQ', 'CREATEBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myCreateDocLib', cond);
+            }
+        }
+        return this.condCache.get('myCreateDocLib');
+    }
+
     protected getMyFavouritesCond() {
         return this.condCache.get('myFavourites');
     }

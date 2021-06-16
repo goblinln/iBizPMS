@@ -12,8 +12,7 @@ public class StaticDict {
      */
     @Getter
     public enum Doclib__acl {
-        DEFAULT("default","默认"),
-        CUSTOM("custom","自定义");
+        DEFAULT("default","默认");
 
         private String value;
         private String text;

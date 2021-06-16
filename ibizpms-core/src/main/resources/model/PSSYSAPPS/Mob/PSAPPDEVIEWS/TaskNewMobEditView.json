@@ -163,6 +163,55 @@
       "checkMode" : 3,
       "name" : "表单项值规则",
       "getPSDEFValueRule" : {
+        "codeName" : "ValueRule",
+        "name" : "截至日期必须大于等于预计开始",
+        "getPSDEFVRGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "默认组",
+          "getPSDEFVRConditions" : [ {
+            "condOp" : "OR",
+            "condType" : "GROUP",
+            "name" : "[条件组]OR",
+            "getPSDEFVRConditions" : [ {
+              "condOp" : "ISNULL",
+              "condType" : "SIMPLE",
+              "dEFName" : "ESTSTARTED",
+              "name" : "[常规条件] 值为空(Nil)"
+            }, {
+              "condOp" : "ISNULL",
+              "condType" : "SIMPLE",
+              "dEFName" : "DEADLINE",
+              "name" : "[常规条件] 值为空(Nil)"
+            }, {
+              "condOp" : "GTANDEQ",
+              "condType" : "SIMPLE",
+              "dEFName" : "DEADLINE",
+              "name" : "[常规条件] 大于等于(>=) 数据对象属性(ESTSTARTED)",
+              "paramType" : "ENTITYFIELD",
+              "paramValue" : "ESTSTARTED",
+              "ruleInfo" : "截至日期必须大于等于预计开始"
+            } ],
+            "ruleInfo" : "截至日期必须大于等于预计开始"
+          } ],
+          "ruleInfo" : "截至日期必须大于等于预计开始"
+        },
+        "getPSDEField" : {
+          "name" : "DEADLINE",
+          "codeName" : "Deadline"
+        },
+        "ruleInfo" : "截至日期必须大于等于预计开始",
+        "checkDefault" : false,
+        "defaultMode" : false,
+        "enableBackend" : true,
+        "enableFront" : true
+      },
+      "getPSDEFormItemName" : "deadline",
+      "valueRuleType" : "DEFVALUERULE"
+    }, {
+      "checkMode" : 3,
+      "name" : "表单项值规则",
+      "getPSDEFValueRule" : {
         "codeName" : "ValueRule2",
         "name" : "预计消耗大于等于0",
         "getPSDEFVRGroupCondition" : {
@@ -224,55 +273,6 @@
         "enableFront" : true
       },
       "getPSDEFormItemName" : "name",
-      "valueRuleType" : "DEFVALUERULE"
-    }, {
-      "checkMode" : 3,
-      "name" : "表单项值规则",
-      "getPSDEFValueRule" : {
-        "codeName" : "ValueRule",
-        "name" : "截至日期必须大于等于预计开始",
-        "getPSDEFVRGroupCondition" : {
-          "condOp" : "AND",
-          "condType" : "GROUP",
-          "name" : "默认组",
-          "getPSDEFVRConditions" : [ {
-            "condOp" : "OR",
-            "condType" : "GROUP",
-            "name" : "[条件组]OR",
-            "getPSDEFVRConditions" : [ {
-              "condOp" : "ISNULL",
-              "condType" : "SIMPLE",
-              "dEFName" : "ESTSTARTED",
-              "name" : "[常规条件] 值为空(Nil)"
-            }, {
-              "condOp" : "ISNULL",
-              "condType" : "SIMPLE",
-              "dEFName" : "DEADLINE",
-              "name" : "[常规条件] 值为空(Nil)"
-            }, {
-              "condOp" : "GTANDEQ",
-              "condType" : "SIMPLE",
-              "dEFName" : "DEADLINE",
-              "name" : "[常规条件] 大于等于(>=) 数据对象属性(ESTSTARTED)",
-              "paramType" : "ENTITYFIELD",
-              "paramValue" : "ESTSTARTED",
-              "ruleInfo" : "截至日期必须大于等于预计开始"
-            } ],
-            "ruleInfo" : "截至日期必须大于等于预计开始"
-          } ],
-          "ruleInfo" : "截至日期必须大于等于预计开始"
-        },
-        "getPSDEField" : {
-          "name" : "DEADLINE",
-          "codeName" : "Deadline"
-        },
-        "ruleInfo" : "截至日期必须大于等于预计开始",
-        "checkDefault" : false,
-        "defaultMode" : false,
-        "enableBackend" : true,
-        "enableFront" : true
-      },
-      "getPSDEFormItemName" : "deadline",
       "valueRuleType" : "DEFVALUERULE"
     } ],
     "getPSDEFormItems" : [ {

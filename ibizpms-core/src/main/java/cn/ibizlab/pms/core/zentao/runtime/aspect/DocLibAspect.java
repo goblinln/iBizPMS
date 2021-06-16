@@ -79,6 +79,9 @@ public class DocLibAspect {
         else if (action.equals("searchDefault")) {
             return getDataEntityRuntime().aroundDataSet("DEFAULT", point);
         }
+        else if (action.equals("searchMyCreateDocLib")) {
+            return getDataEntityRuntime().aroundDataSet("MyCreateDocLib", point);
+        }
         else if (action.equals("searchMyFavourites")) {
             return getDataEntityRuntime().aroundDataSet("MyFavourites", point);
         }

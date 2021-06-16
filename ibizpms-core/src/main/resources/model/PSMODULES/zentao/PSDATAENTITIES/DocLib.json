@@ -332,6 +332,45 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`CREATEBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CREATEBY\",\"dename\":\"ZT_DOCLIB\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyCreateDocLib",
+    "logicName" : "我创建的文档库（权限）",
+    "name" : "MyCreateDocLib",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "ZT_DOCLIB",
+      "getPSDEDQGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "连接条件",
+        "getPSDEDQConditions" : [ {
+          "condOp" : "EQ",
+          "condType" : "SINGLE",
+          "condValue" : "srfloginname",
+          "name" : "CREATEBY 等于(=) 用户上下文(srfloginname)",
+          "getPSVARTypeId" : "SESSIONCONTEXT",
+          "ignoreEmpty" : false
+        } ]
+      }
+    },
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
         "customCond" : "t1.deleted = '0'",
         "name" : "查询条件"
       }, {
@@ -491,6 +530,16 @@
       "id" : "Default"
     } ],
     "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "MyCreateDocLib",
+    "logicName" : "我创建的文档库（权限）",
+    "name" : "MyCreateDocLib",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCreateDocLib"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -2495,6 +2544,59 @@
     } ],
     "roleTag" : "DocLib_Maintain",
     "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Maintain_C.json",
+    "name" : "文档库维护（我创建的）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateDocLib"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "Zt_product__UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "UNCOLLECT",
+      "name" : "UNCOLLECT",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UNCOLLECT"
+      }
+    }, {
+      "dataAccessAction" : "MANAGE",
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "Zt_project__MANAGE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "Zt_project__DELETE"
+      }
+    }, {
+      "dataAccessAction" : "COLLECT",
+      "name" : "COLLECT",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "Zt_product__COLLECT"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "DocLib_Maintain_C",
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Manage.json",

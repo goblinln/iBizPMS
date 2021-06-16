@@ -60,7 +60,7 @@
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
-    "name" : "grid_uagridcolumn1_u9764db6_click",
+    "name" : "grid_uagridcolumn1_u8bdda1c_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "表格界面_删除操作"
@@ -122,7 +122,7 @@
       "name" : "删除",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",
-        "name" : "u9764db6",
+        "name" : "u8bdda1c",
         "getPSUIAction" : {
           "actionTarget" : "MULTIKEY",
           "noPrivDisplayMode" : 1,
@@ -156,13 +156,6 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
     "dataType" : 25,
     "name" : "short",
     "getPSAppDEField" : {
@@ -200,21 +193,6 @@
     }
   } ],
   "getPSDEGridEditItems" : [ {
-    "caption" : "id",
-    "codeName" : "id",
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "getPSEditor" : {
-      "editorType" : "TEXTBOX",
-      "name" : "id"
-    },
-    "allowEmpty" : true
-  }, {
     "caption" : "简称",
     "codeName" : "short",
     "enableCond" : 3,

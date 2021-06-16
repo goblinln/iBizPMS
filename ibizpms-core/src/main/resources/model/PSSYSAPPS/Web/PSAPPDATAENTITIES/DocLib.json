@@ -270,6 +270,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyCreateDocLib",
+    "methodType" : "FETCH",
+    "name" : "MyCreateDocLib",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateDocLib"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyFavourites",
     "methodType" : "FETCH",
     "name" : "FetchMyFavourites",
@@ -700,6 +709,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyCreateDocLib",
+    "methodType" : "FETCH",
+    "name" : "MyCreateDocLib",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateDocLib"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyFavourites",
     "methodType" : "FETCH",
     "name" : "FetchMyFavourites",
@@ -823,6 +841,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "EditDocLib",
+    "dataAccessAction" : "UPDATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -1030,6 +1049,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "EditProjectDoclib",
+    "dataAccessAction" : "UPDATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -1136,6 +1156,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "EditCustomDocLib",
+    "dataAccessAction" : "UPDATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",

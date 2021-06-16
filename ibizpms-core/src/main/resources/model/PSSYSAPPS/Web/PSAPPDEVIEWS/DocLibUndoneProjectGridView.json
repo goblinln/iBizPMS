@@ -430,6 +430,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "EditProjectDoclib",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -916,7 +917,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchDefault"
+          "id" : "FetchCurDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -965,7 +966,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchDefault"
+          "id" : "FetchCurDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -1014,7 +1015,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchDefault"
+          "id" : "FetchCurDefaultQuery"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -1063,7 +1064,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchDefault"
+          "id" : "FetchCurDefaultQuery"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

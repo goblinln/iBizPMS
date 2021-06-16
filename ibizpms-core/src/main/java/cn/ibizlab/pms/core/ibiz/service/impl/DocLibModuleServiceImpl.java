@@ -56,6 +56,9 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     protected cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService doclibmoduleService = this;
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.zentao.service.IDocService docService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IDocLibService doclibService;
 
     protected int batchSize = 500;

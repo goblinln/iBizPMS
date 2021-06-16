@@ -35,36 +35,56 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ProjectTeam"
+      "id" : "IBZEMP"
     },
-    "name" : "项目团队 - 项目",
+    "name" : "部门 - 人员",
+    "getParentPSAppDEField" : {
+      "name" : "MDEPTID",
+      "codeName" : "MdeptId"
+    },
+    "getParentPSDER1N" : {
+      "codeName" : "MainDept",
+      "dERType" : "DER1N",
+      "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_DEPT_MDEPTID.json",
+      "getMajorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
+      },
+      "masterOrder" : -1,
+      "masterRS" : 0,
+      "getMinorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
+      },
+      "name" : "DER1N_IBZEMP_SYS_DEPT_MDEPTID",
+      "orderValue" : 100,
+      "getPSPickupDEField" : {
+        "name" : "MDEPTID",
+        "codeName" : "MdeptId"
+      },
+      "getPSPickupTextDEField" : {
+        "name" : "MDEPTNAME",
+        "codeName" : "MDeptName"
+      },
+      "pickupDEFName" : "MDEPTID",
+      "removeActionType" : 2,
+      "removeOrder" : 0
+    },
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "project"
+      "id" : "Depart"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "OrgEmp"
+      "id" : "UserContact"
     },
-    "name" : "默认根节点 - 组织机构",
+    "name" : "联系人 - 联系列表",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ROOT"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "SysTeam"
-    },
-    "name" : "组 - 团队",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Team"
+      "id" : "ConcatList"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -77,63 +97,6 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "UserContact"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Teammember"
-    },
-    "name" : "岗位（动态） - 组员",
-    "getParentPSAppDEField" : {
-      "name" : "POSTID",
-      "codeName" : "PostId"
-    },
-    "getParentPSDER1N" : {
-      "codeName" : "Post",
-      "dERType" : "DER1N",
-      "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json"
-      },
-      "masterOrder" : -1,
-      "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
-      },
-      "name" : "DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID",
-      "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "POSTID",
-        "codeName" : "PostId"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "POSTNAME",
-        "codeName" : "PostName"
-      },
-      "pickupDEFName" : "POSTID",
-      "removeActionType" : -1,
-      "removeOrder" : 0
-    },
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "SysPost"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ProjectEmp"
-    },
-    "name" : "项目 - 项目人员",
-    "parentFilter" : "project",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ProjectTeam"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -184,12 +147,81 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "UserContact"
+      "id" : "Teammember"
     },
-    "name" : "联系人 - 联系列表",
+    "name" : "岗位（动态） - 组员",
+    "getParentPSAppDEField" : {
+      "name" : "POSTID",
+      "codeName" : "PostId"
+    },
+    "getParentPSDER1N" : {
+      "codeName" : "Post",
+      "dERType" : "DER1N",
+      "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json",
+      "getMajorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json"
+      },
+      "masterOrder" : -1,
+      "masterRS" : 0,
+      "getMinorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
+      },
+      "name" : "DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID",
+      "orderValue" : 100,
+      "getPSPickupDEField" : {
+        "name" : "POSTID",
+        "codeName" : "PostId"
+      },
+      "getPSPickupTextDEField" : {
+        "name" : "POSTNAME",
+        "codeName" : "PostName"
+      },
+      "pickupDEFName" : "POSTID",
+      "removeActionType" : -1,
+      "removeOrder" : 0
+    },
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ConcatList"
+      "id" : "SysPost"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "SysPost"
+    },
+    "name" : "岗位 - 岗位（动态）",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "post"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "OrgEmp"
+    },
+    "name" : "默认根节点 - 组织机构",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ProjectEmp"
+    },
+    "name" : "项目 - 项目人员",
+    "parentFilter" : "project",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ProjectTeam"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -243,68 +275,24 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "IBZEMP"
+      "id" : "SysTeam"
     },
-    "name" : "部门 - 人员",
-    "getParentPSAppDEField" : {
-      "name" : "MDEPTID",
-      "codeName" : "MdeptId"
-    },
-    "getParentPSDER1N" : {
-      "codeName" : "MainDept",
-      "dERType" : "DER1N",
-      "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_DEPT_MDEPTID.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
-      },
-      "masterOrder" : -1,
-      "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
-      },
-      "name" : "DER1N_IBZEMP_SYS_DEPT_MDEPTID",
-      "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "MDEPTID",
-        "codeName" : "MdeptId"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "MDEPTNAME",
-        "codeName" : "MDeptName"
-      },
-      "pickupDEFName" : "MDEPTID",
-      "removeActionType" : 2,
-      "removeOrder" : 0
-    },
+    "name" : "组 - 团队",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "Depart"
+      "id" : "Team"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "SysPost"
+      "id" : "ProjectTeam"
     },
-    "name" : "岗位 - 岗位（动态）",
+    "name" : "项目团队 - 项目",
     "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "post"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
       "modelref" : true,
       "id" : "project"
-    },
-    "name" : "默认根节点 - 项目团队",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -349,6 +337,18 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "Org"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "project"
+    },
+    "name" : "默认根节点 - 项目团队",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

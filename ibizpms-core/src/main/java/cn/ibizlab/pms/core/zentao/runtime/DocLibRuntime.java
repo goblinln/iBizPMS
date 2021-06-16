@@ -133,6 +133,8 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             return doclibService.searchCurDocLib(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return doclibService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCreateDocLib"))
+            return doclibService.searchMyCreateDocLib(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavourites"))
             return doclibService.searchMyFavourites(searchContext);    
         if (iPSDEDataSet.getName().equals("RootModuleMuLu"))
@@ -157,6 +159,8 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             return doclibService.selectCurDocLib(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return doclibService.selectDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MyCreateDocLib"))
+            return doclibService.selectMyCreateDocLib(searchContext);
         if (iPSDataQuery.getName().equals("MyFavourites"))
             return doclibService.selectMyFavourites(searchContext);
         if (iPSDataQuery.getName().equals("RootModuleMuLu"))

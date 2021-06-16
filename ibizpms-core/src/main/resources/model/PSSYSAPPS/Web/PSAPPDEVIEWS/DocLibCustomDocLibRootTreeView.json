@@ -799,6 +799,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -1036,6 +1037,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -1528,6 +1530,18 @@
     }, {
       "getChildPSDETreeNode" : {
         "modelref" : true,
+        "id" : "RootModule"
+      },
+      "name" : "默认根节点 - 根目录",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
         "id" : "Doc"
       },
       "name" : "根目录 - 文档",
@@ -1541,12 +1555,13 @@
     }, {
       "getChildPSDETreeNode" : {
         "modelref" : true,
-        "id" : "RootModule"
+        "id" : "Doc"
       },
-      "name" : "默认根节点 - 根目录",
+      "name" : "子目录 - 文档",
+      "parentFilter" : "module",
       "getParentPSDETreeNode" : {
         "modelref" : true,
-        "id" : "ROOT"
+        "id" : "ChildModule"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -1593,19 +1608,6 @@
       "getParentPSDETreeNode" : {
         "modelref" : true,
         "id" : "RootModule"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "Doc"
-      },
-      "name" : "子目录 - 文档",
-      "parentFilter" : "module",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "ChildModule"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -1670,6 +1672,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -2501,6 +2504,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",

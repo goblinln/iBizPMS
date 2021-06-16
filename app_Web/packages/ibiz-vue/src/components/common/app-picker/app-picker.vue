@@ -530,16 +530,14 @@ export default class AppPicker extends Vue {
             _param.selectedData = [{srfkey: this.data[this.valueitem], srfmajortext: this.curvalue }];
         }
         // 判断打开方式
-        if (view.placement && !Util.isEmpty(view.placement)) {
-            if (Object.is(view.placement, 'POPOVER')) {
-                this.openPopOver($event, view, _context, _param);
-            } else {
-                this.openDrawer(view, _context, _param);
-            }
+        view.placement = view.placement || '';
+        if (view.placement === 'POPOVER') {
+            this.openPopOver($event, view, _context, _param);
+        } else if (view.placement.indexOf('DRAWER') !== -1) {
+            this.openDrawer(view, _context, _param);
         } else {
             this.openPopupModal(view, _context, _param);
         }
-        
     }
 
     /**

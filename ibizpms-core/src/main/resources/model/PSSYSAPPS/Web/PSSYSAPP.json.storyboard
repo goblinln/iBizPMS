@@ -6767,15 +6767,6 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "需求数据看板视图",
-    "psappsbitemrsid" : "0308b02cf230335f76486ac39c642723",
-    "ppsappsbitemname" : "需求看板视图",
-    "rstag" : "EDITDATA:WAIT1",
-    "ppsappsbitemid" : "9ef896a5f44d1d557d302cbc9903d318",
-    "cpsappsbitemid" : "49d180b79e583c15948ac861644a9c4f",
-    "psappsbitemrsname" : "EDITDATA:WAIT1",
-    "rstype" : "APPVIEWREF"
-  }, {
-    "cpsappsbitemname" : "需求数据看板视图",
     "psappsbitemrsid" : "4ad0bce417b0adc480af370aa2769871",
     "ppsappsbitemname" : "需求看板视图",
     "rstag" : "EDITDATA",

@@ -649,6 +649,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -886,6 +887,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "EditDocLib",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -1594,6 +1596,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -1863,6 +1866,52 @@
         "modelref" : true,
         "id" : "Module"
       },
+      "name" : "根目录 - 文档分类",
+      "parentFilter" : "parent",
+      "getParentPSAppDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "getParentPSDER1N" : {
+        "codeName" : "PDocLibModule",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
+        "logicName" : "父模块",
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+        },
+        "masterOrder" : -1,
+        "masterRS" : 0,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+        },
+        "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
+        "orderValue" : 100,
+        "getPSPickupDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "getPSPickupTextDEField" : {
+          "name" : "MODULENAME",
+          "codeName" : "Modulename"
+        },
+        "pickupDEFName" : "PARENT",
+        "removeActionType" : -1,
+        "removeOrder" : 0
+      },
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "RootModule"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "Module"
+      },
       "name" : "文档分类 - 文档分类",
       "parentFilter" : "parent",
       "getParentPSAppDEField" : {
@@ -1907,43 +1956,23 @@
     }, {
       "getChildPSDETreeNode" : {
         "modelref" : true,
+        "id" : "ModuleDoc"
+      },
+      "name" : "文档分类 - 分类文档",
+      "parentFilter" : "module",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
         "id" : "Module"
       },
-      "name" : "根目录 - 文档分类",
-      "parentFilter" : "parent",
-      "getParentPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ModuleDoc"
       },
-      "getParentPSDER1N" : {
-        "codeName" : "PDocLibModule",
-        "dERType" : "DER1N",
-        "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
-        "logicName" : "父模块",
-        "getMajorPSDataEntity" : {
-          "modelref" : true,
-          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-        },
-        "masterOrder" : -1,
-        "masterRS" : 0,
-        "getMinorPSDataEntity" : {
-          "modelref" : true,
-          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-        },
-        "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
-        "orderValue" : 100,
-        "getPSPickupDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
-        },
-        "getPSPickupTextDEField" : {
-          "name" : "MODULENAME",
-          "codeName" : "Modulename"
-        },
-        "pickupDEFName" : "PARENT",
-        "removeActionType" : -1,
-        "removeOrder" : 0
-      },
+      "name" : "根目录 - 分类文档",
+      "parentFilter" : "module",
       "getParentPSDETreeNode" : {
         "modelref" : true,
         "id" : "RootModule"
@@ -1996,32 +2025,6 @@
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "ModuleDoc"
-      },
-      "name" : "根目录 - 分类文档",
-      "parentFilter" : "module",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "RootModule"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "ModuleDoc"
-      },
-      "name" : "文档分类 - 分类文档",
-      "parentFilter" : "module",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "Module"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
     } ],
     "getPSDETreeNodes" : [ {
       "counterMode" : 0,
@@ -2071,6 +2074,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "EditDocLib",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -2648,6 +2652,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -3202,6 +3207,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",

@@ -1022,7 +1022,7 @@
     "dename":"DocLib",
     "delogicname":"文档库",
     "sysmoudle":{"id":"ZENTAO","name":"基础管理模块"},
-    "dedataset":[{"id":"ByCustom" , "name":"自定义文档库"},{"id":"ByProduct" , "name":"产品文档库"},{"id":"ByProductNotFiles" , "name":"产品文档库"},{"id":"ByProject" , "name":"项目文件库"},{"id":"ByProjectNotFiles" , "name":"项目文件库"},{"id":"CurDocLib" , "name":"所属文档库"},{"id":"Default" , "name":"DEFAULT"},{"id":"MyFavourites" , "name":"我的收藏"},{"id":"RootModuleMuLu" , "name":"根目录"}],
+    "dedataset":[{"id":"ByCustom" , "name":"自定义文档库"},{"id":"ByProduct" , "name":"产品文档库"},{"id":"ByProductNotFiles" , "name":"产品文档库"},{"id":"ByProject" , "name":"项目文件库"},{"id":"ByProjectNotFiles" , "name":"项目文件库"},{"id":"CurDocLib" , "name":"所属文档库"},{"id":"Default" , "name":"DEFAULT"},{"id":"MyCreateDocLib" , "name":"我创建的文档库（权限）"},{"id":"MyFavourites" , "name":"我的收藏"},{"id":"RootModuleMuLu" , "name":"根目录"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Collect" , "name":"收藏" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"UnCollect" , "name":"取消收藏" , "type":"USERCUSTOM" }],
     "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
     }

@@ -406,7 +406,7 @@ public class Doc extends EntityMP implements Serializable {
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.pms.core.zentao.domain.Module ztModule;
+    private cn.ibizlab.pms.core.ibiz.domain.DocLibModule ztModule;
 
     /**
      * 

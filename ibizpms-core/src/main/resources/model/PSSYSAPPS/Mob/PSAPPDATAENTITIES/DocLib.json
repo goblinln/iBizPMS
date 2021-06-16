@@ -286,6 +286,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyCreateDocLib",
+    "methodType" : "FETCH",
+    "name" : "MyCreateDocLib",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateDocLib"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyFavourites",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -735,6 +744,15 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreateDocLib",
+    "methodType" : "FETCH",
+    "name" : "MyCreateDocLib",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateDocLib"
     },
     "builtinMethod" : false
   }, {

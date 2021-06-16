@@ -23,29 +23,6 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "LibRoot"
-    },
-    "name" : "所有模块 - 根模块",
-    "getPSNavigateParams" : [ {
-      "key" : "n_type_eq",
-      "name" : "n_type_eq",
-      "value" : "caselib",
-      "rawValue" : true
-    }, {
-      "key" : "n_parent_eq",
-      "name" : "n_parent_eq",
-      "value" : "0",
-      "rawValue" : true
-    } ],
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ALL"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "ALL"
     },
     "name" : "默认根节点 - 所有模块",
@@ -64,6 +41,29 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "LibRoot"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "LibRoot"
+    },
+    "name" : "所有模块 - 根模块",
+    "getPSNavigateParams" : [ {
+      "key" : "n_type_eq",
+      "name" : "n_type_eq",
+      "value" : "caselib",
+      "rawValue" : true
+    }, {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "0",
+      "rawValue" : true
+    } ],
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ALL"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

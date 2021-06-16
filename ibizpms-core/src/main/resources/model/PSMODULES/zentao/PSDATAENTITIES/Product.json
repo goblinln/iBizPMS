@@ -4941,18 +4941,18 @@
       "id" : "OpenQuery"
     },
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "CLOSE",
-      "name" : "CLOSE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CLOSE"
-      }
-    }, {
       "dataAccessAction" : "MANAGE",
       "name" : "Product_Manage_Open_MANAGE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "MANAGE"
+      }
+    }, {
+      "dataAccessAction" : "CLOSE",
+      "name" : "CLOSE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CLOSE"
       }
     } ],
     "roleTag" : "Product_Manage_Open",

@@ -289,7 +289,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
             } else {
                 this.doFinish();
             }
-        } else if (this.curState, 'PREV') {
+        } else if (Object.is(this.curState, 'PREV')) {
             const length = this.historyForms.length;
             if (length > 1) {
                 this.activeForm = this.historyForms[length - 1];

@@ -23,19 +23,6 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ChildDoclibModule"
-    },
-    "name" : "子文档库模块 - 子文档库模块",
-    "parentFilter" : "parent",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ChildDoclibModule"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "Project"
     },
     "name" : "所有项目 - 项目",
@@ -55,6 +42,19 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "RootDoclibModule"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ChildDoclibModule"
+    },
+    "name" : "子文档库模块 - 子文档库模块",
+    "parentFilter" : "parent",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ChildDoclibModule"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

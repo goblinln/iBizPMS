@@ -2551,6 +2551,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "编辑",
                   "codeName" : "Edit",
+                  "dataAccessAction" : "UPDATE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -3832,6 +3833,14 @@
                   "name" : "PROJECT",
                   "codeName" : "Project"
                 }
+              }, {
+                "id" : "module",
+                "hidden" : true,
+                "dataType" : 1,
+                "getPSAppDEField" : {
+                  "name" : "MODULE",
+                  "codeName" : "Module"
+                }
               } ],
               "getPSDEFormPages" : [ {
                 "caption" : "基本信息",
@@ -4054,17 +4063,47 @@
                   },
                   "getPSEditor" : {
                     "editorParams" : {
-                      "valFormat" : "{0: '/'}"
+                      "EDITABLE" : "FALSE",
+                      "LINKVIEW" : "TRUE",
+                      "AC" : "FALSE",
+                      "valFormat" : "{0: '/'}",
+                      "TRIGGER" : "FALSE",
+                      "PICKUPVIEW" : "FALSE"
                     },
-                    "editorType" : "SPAN",
+                    "editorType" : "PICKEREX_LINKONLY",
+                    "getLinkPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleRedirectView.json",
+                      "viewType" : "DEREDIRECTVIEW"
+                    },
                     "name" : "modulename",
+                    "getPSAppDEACMode" : {
+                      "modelref" : true,
+                      "id" : "Default"
+                    },
+                    "getPSAppDEDataSet" : {
+                      "modelref" : true,
+                      "id" : "FetchAllDir"
+                    },
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
+                    },
+                    "valueItemName" : "module",
+                    "dropDownView" : false,
                     "editable" : false,
-                    "enableLinkView" : false
+                    "enableAC" : false,
+                    "enableLinkView" : true,
+                    "enablePickupView" : false,
+                    "forceSelection" : true,
+                    "showTrigger" : false,
+                    "singleSelect" : true
                   },
                   "getPSLayoutPos" : {
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "valueItemName" : "module",
                   "allowEmpty" : true,
                   "emptyCaption" : false,
                   "hidden" : false,

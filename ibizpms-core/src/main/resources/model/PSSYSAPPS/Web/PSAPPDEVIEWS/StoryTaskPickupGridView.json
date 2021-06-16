@@ -614,7 +614,7 @@
     "modeltype" : "PSDEFORM_SEARCHFORM"
   } ],
   "getPSDEViewCodeName" : "TaskPickupGridView",
-  "getPSDEViewId" : "3EA3B871-157E-402C-AEF4-2B2FF15896FD",
+  "getPSDEViewId" : "f6359cf5fb9b623fba64587ab44e92cc",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -646,7 +646,7 @@
   "pickupMode" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : false,
-  "modelid" : "c72343b4d40e73d6e2f274cb0e595dae",
+  "modelid" : "9c41047e3b640417d08325a978d6b4e3",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,

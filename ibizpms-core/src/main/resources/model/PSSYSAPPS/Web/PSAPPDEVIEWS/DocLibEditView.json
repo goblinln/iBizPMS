@@ -336,7 +336,7 @@
           "dataType" : 25,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",
-          "enableCond" : 3,
+          "enableCond" : 1,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
@@ -370,7 +370,7 @@
           "dataType" : 25,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",
-          "enableCond" : 3,
+          "enableCond" : 1,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
@@ -423,7 +423,7 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchDefault"
+              "id" : "FetchCurDefaultQuery"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -459,7 +459,7 @@
           "dataType" : 25,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",
-          "enableCond" : 3,
+          "enableCond" : 1,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 100,
@@ -512,7 +512,7 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchDefault"
+              "id" : "FetchCurDefault"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,

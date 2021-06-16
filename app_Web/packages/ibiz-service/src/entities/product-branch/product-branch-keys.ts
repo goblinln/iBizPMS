@@ -10,6 +10,6 @@ export default [
     'org',
     'branchsn',
     'deptname',
-    'product',
     'realorder',
+    'product',
 ];
