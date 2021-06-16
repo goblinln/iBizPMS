@@ -1321,6 +1321,28 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "获取项目成员任务", tags = {"任务" } ,notes = "获取项目成员任务")
+    @RequestMapping(method= RequestMethod.GET , value="/subtasks/fetchprojectmembertask")
+	public ResponseEntity<List<SubTaskDTO>> fetchProjectMemberTask(TaskSearchContext context) {
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+        List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "查询项目成员任务", tags = {"任务" } ,notes = "查询项目成员任务")
+    @RequestMapping(method= RequestMethod.POST , value="/subtasks/searchprojectmembertask")
+	public ResponseEntity<Page<SubTaskDTO>> searchProjectMemberTask(@RequestBody TaskSearchContext context) {
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectTask-all')")
 	@ApiOperation(value = "获取项目任务", tags = {"任务" } ,notes = "获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchprojecttask")
@@ -2847,6 +2869,29 @@ public class SubTaskResource {
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectAppTaskByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据任务获取项目成员任务", tags = {"任务" } ,notes = "根据任务获取项目成员任务")
+    @RequestMapping(method= RequestMethod.GET , value="/tasks/{task_id}/subtasks/fetchprojectmembertask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskProjectMemberTaskByTask(@PathVariable("task_id") Long task_id,TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+        List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据任务查询项目成员任务", tags = {"任务" } ,notes = "根据任务查询项目成员任务")
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/searchprojectmembertask")
+	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectMemberTaskByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
@@ -4389,6 +4434,29 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据任务模块任务获取项目成员任务", tags = {"任务" } ,notes = "根据任务模块任务获取项目成员任务")
+    @RequestMapping(method= RequestMethod.GET , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchprojectmembertask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskProjectMemberTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+        List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据任务模块任务查询项目成员任务", tags = {"任务" } ,notes = "根据任务模块任务查询项目成员任务")
+    @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/searchprojectmembertask")
+	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectMemberTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectTask-all')")
 	@ApiOperation(value = "根据任务模块任务获取项目任务", tags = {"任务" } ,notes = "根据任务模块任务获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchprojecttask")
@@ -5925,6 +5993,29 @@ public class SubTaskResource {
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectAppTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据产品计划任务获取项目成员任务", tags = {"任务" } ,notes = "根据产品计划任务获取项目成员任务")
+    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchprojectmembertask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskProjectMemberTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+        List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据产品计划任务查询项目成员任务", tags = {"任务" } ,notes = "根据产品计划任务查询项目成员任务")
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/searchprojectmembertask")
+	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectMemberTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
@@ -7467,6 +7558,29 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据需求任务获取项目成员任务", tags = {"任务" } ,notes = "根据需求任务获取项目成员任务")
+    @RequestMapping(method= RequestMethod.GET , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchprojectmembertask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskProjectMemberTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+        List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据需求任务查询项目成员任务", tags = {"任务" } ,notes = "根据需求任务查询项目成员任务")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/searchprojectmembertask")
+	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectMemberTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectTask-all')")
 	@ApiOperation(value = "根据需求任务获取项目任务", tags = {"任务" } ,notes = "根据需求任务获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchprojecttask")
@@ -9003,6 +9117,29 @@ public class SubTaskResource {
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectAppTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据项目任务获取项目成员任务", tags = {"任务" } ,notes = "根据项目任务获取项目成员任务")
+    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchprojectmembertask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskProjectMemberTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+        List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据项目任务查询项目成员任务", tags = {"任务" } ,notes = "根据项目任务查询项目成员任务")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/searchprojectmembertask")
+	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectMemberTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
@@ -10545,6 +10682,29 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据产品产品计划任务获取项目成员任务", tags = {"任务" } ,notes = "根据产品产品计划任务获取项目成员任务")
+    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchprojectmembertask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskProjectMemberTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+        List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据产品产品计划任务查询项目成员任务", tags = {"任务" } ,notes = "根据产品产品计划任务查询项目成员任务")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/searchprojectmembertask")
+	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectMemberTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectTask-all')")
 	@ApiOperation(value = "根据产品产品计划任务获取项目任务", tags = {"任务" } ,notes = "根据产品产品计划任务获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchprojecttask")
@@ -12084,6 +12244,29 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据产品需求任务获取项目成员任务", tags = {"任务" } ,notes = "根据产品需求任务获取项目成员任务")
+    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchprojectmembertask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskProjectMemberTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+        List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据产品需求任务查询项目成员任务", tags = {"任务" } ,notes = "根据产品需求任务查询项目成员任务")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/searchprojectmembertask")
+	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectMemberTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectTask-all')")
 	@ApiOperation(value = "根据产品需求任务获取项目任务", tags = {"任务" } ,notes = "根据产品需求任务获取项目任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchprojecttask")
@@ -13620,6 +13803,29 @@ public class SubTaskResource {
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectAppTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
         context.setN_parent_eq(task_id);
         Page<Task> domains = taskService.searchProjectAppTask(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据项目任务模块任务获取项目成员任务", tags = {"任务" } ,notes = "根据项目任务模块任务获取项目成员任务")
+    @RequestMapping(method= RequestMethod.GET , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchprojectmembertask")
+	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskProjectMemberTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
+        List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Task-searchProjectMemberTask-all')")
+	@ApiOperation(value = "根据项目任务模块任务查询项目成员任务", tags = {"任务" } ,notes = "根据项目任务模块任务查询项目成员任务")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/searchprojectmembertask")
+	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskProjectMemberTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
+        context.setN_parent_eq(task_id);
+        Page<Task> domains = taskService.searchProjectMemberTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

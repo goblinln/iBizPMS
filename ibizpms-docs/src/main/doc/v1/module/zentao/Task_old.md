@@ -510,6 +510,7 @@ hide footbox
 |NextWeekPlanCompleteTask|下周计划完成任务(汇报)([MYSQL5](../../appendix/query_MYSQL5.md#Task_NextWeekPlanCompleteTask))|否|&nbsp;|
 |PlanTask|相关任务（计划）([MYSQL5](../../appendix/query_MYSQL5.md#Task_PlanTask))|否|&nbsp;|
 |ProjectAppTask|项目任务（项目立项）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ProjectAppTask))|否|&nbsp;|
+|ProjectMemberTask|项目成员任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_ProjectMemberTask))|否|&nbsp;|
 |ProjectTask|项目任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_ProjectTask))|否|&nbsp;|
 |ProjectTaskEE|项目任务（聚微）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ProjectTaskEE))|否|&nbsp;|
 |RootTask|根任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_RootTask))|否|&nbsp;|
@@ -559,6 +560,7 @@ hide footbox
 |NextWeekPlanCompleteTask|下周计划完成任务(汇报)|NextWeekPlanCompleteTask|否|&nbsp;|
 |PlanTask|相关任务（计划）|PlanTask|否|&nbsp;|
 |ProjectAppTask|项目任务（项目立项）|ProjectAppTask|否|&nbsp;|
+|ProjectMemberTask|项目成员任务|ProjectMemberTask|否|&nbsp;|
 |ProjectTask|项目任务|ProjectTask|否|&nbsp;|
 |ProjectTaskEE|项目任务（聚微）|ProjectTaskEE|否|&nbsp;|
 |RootTask|根任务|RootTask|否|&nbsp;|

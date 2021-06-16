@@ -50,6 +50,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     Page<Task> searchNextWeekPlanCompleteTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchPlanTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchProjectAppTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    Page<Task> searchProjectMemberTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchProjectTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchProjectTaskEE(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchRootTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
