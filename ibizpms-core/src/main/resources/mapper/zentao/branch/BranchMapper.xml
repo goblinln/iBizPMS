@@ -80,7 +80,7 @@
 
     <!--数据查询[CurProduct]-->
     <sql id="CurProduct" databaseId="mysql">
-		<![CDATA[ select t1.* from (select '0' as `DELETED`,0 as `ID`,'所有平台' AS `NAME`, 0 as `order`, 0 as `REALORDER`,(case when #{srf.webcontext.product} is not null then #{srf.webcontext.product} else #{srf.webcontext.products} end  ) as product from dual union all SELECT t1.`DELETED`, t1.`ID`, t1.`NAME`, t1.`ORDER`, t1.`order` as `REALORDER`,t1.`PRODUCT` FROM `zt_branch` t1) t1 ]]>
+		<![CDATA[ select t1.* from (select '0' as `DELETED`,0 as `ID`,'所有平台' AS `NAME`, -1000 as `order`, -1000 as `REALORDER`,(case when #{srf.webcontext.product} is not null then #{srf.webcontext.product} else #{srf.webcontext.products} end  ) as product from dual union all SELECT t1.`DELETED`, t1.`ID`, t1.`NAME`, t1.`ORDER`, t1.`order` as `REALORDER`,t1.`PRODUCT` FROM `zt_branch` t1) t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
