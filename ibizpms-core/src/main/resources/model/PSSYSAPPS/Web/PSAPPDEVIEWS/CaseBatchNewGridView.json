@@ -624,6 +624,7 @@
         "editorParams" : {
           "SRFNAVCTX.n_root_eq" : "%product%",
           "AC" : "TRUE",
+          "SRFNAVPARAM.type" : "TestModule",
           "SRFNAVPARAM.n_root_eq" : "%product%",
           "PICKUPVIEW" : "TRUE"
         },
@@ -653,6 +654,11 @@
           "name" : "n_root_eq",
           "value" : "product",
           "rawValue" : false
+        }, {
+          "key" : "type",
+          "name" : "type",
+          "value" : "TestModule",
+          "rawValue" : true
         } ],
         "getPickupPSAppView" : {
           "modelref" : true,
