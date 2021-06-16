@@ -233,7 +233,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "LINKSTORY"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -407,7 +407,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "LINKSTORY"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -1769,7 +1769,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "LINKSTORY"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -1943,7 +1943,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "LINKSTORY"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -3504,6 +3504,9 @@
   }, {
     "logicName" : "组群管理",
     "name" : "GROUPMANAGE"
+  }, {
+    "logicName" : "关联需求",
+    "name" : "LINKSTORY"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"

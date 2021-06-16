@@ -217,7 +217,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("test('ZT_PROJECT', #project_id, 'MANAGE')")
+    @PreAuthorize("test('ZT_PROJECT', #project_id, 'LINKSTORY')")
     @ApiOperation(value = "关联需求", tags = {"项目" },  notes = "关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkstory")
     public ResponseEntity<ProjectDTO> linkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -398,7 +398,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("test('ZT_PROJECT', #project_id, 'MANAGE')")
+    @PreAuthorize("test('ZT_PROJECT', #project_id, 'LINKSTORY')")
     @ApiOperation(value = "解除关联需求", tags = {"项目" },  notes = "解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkstory")
     public ResponseEntity<ProjectDTO> unlinkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {

@@ -2768,7 +2768,8 @@
               "SRFNAVPARAM.module" : "%module%",
               "SRFNAVCTX.project" : "%project%",
               "SRFNAVPARAM.allmodules" : "%allmodules%",
-              "PICKUPVIEW" : "TRUE"
+              "PICKUPVIEW" : "TRUE",
+              "SRFNAVPARAM.type" : "TaskModules"
             },
             "editorType" : "PICKER",
             "handlerType" : "PickupText",
@@ -2816,6 +2817,11 @@
               "name" : "allmodules",
               "value" : "allmodules",
               "rawValue" : false
+            }, {
+              "key" : "type",
+              "name" : "type",
+              "value" : "TaskModules",
+              "rawValue" : true
             } ],
             "getPickupPSAppView" : {
               "modelref" : true,

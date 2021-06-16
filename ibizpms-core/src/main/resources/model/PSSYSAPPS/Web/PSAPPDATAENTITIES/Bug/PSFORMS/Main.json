@@ -496,7 +496,8 @@
               "SRFNAVCTX.product" : "%product%",
               "SRFNAVCTX.N_ROOT_EQ" : "%product%",
               "PICKUPVIEW" : "TRUE",
-              "SRFNAVCTX.branch" : "%branch%"
+              "SRFNAVCTX.branch" : "%branch%",
+              "SRFNAVPARAM.type" : "TestModule"
             },
             "editorType" : "PICKER",
             "handlerType" : "PickupText",
@@ -554,6 +555,11 @@
               "name" : "n_branch_eq",
               "value" : "branch",
               "rawValue" : false
+            }, {
+              "key" : "type",
+              "name" : "type",
+              "value" : "TestModule",
+              "rawValue" : true
             } ],
             "getPickupPSAppView" : {
               "modelref" : true,

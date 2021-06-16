@@ -7309,6 +7309,9 @@
     "logicName" : "组群管理",
     "name" : "GROUPMANAGE"
   }, {
+    "logicName" : "关联需求",
+    "name" : "LINKSTORY"
+  }, {
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
@@ -8035,6 +8038,13 @@
       "id" : "DeveloperQuery"
     },
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "LINKSTORY",
+      "name" : "LINKSTORY",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "LINKSTORY"
+      }
+    }, {
       "dataAccessAction" : "STORYMANAGE",
       "name" : "STORYMANAGE",
       "getPSDEOPPriv" : {
@@ -8054,6 +8064,13 @@
       "id" : "OpenQuery"
     },
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "LINKSTORY",
+      "name" : "LINKSTORY",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "LINKSTORY"
+      }
+    }, {
       "dataAccessAction" : "STORYMANAGE",
       "name" : "STORYMANAGE",
       "getPSDEOPPriv" : {
@@ -8078,6 +8095,13 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "STORYMANAGE"
+      }
+    }, {
+      "dataAccessAction" : "LINKSTORY",
+      "name" : "LINKSTORY",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "LINKSTORY"
       }
     } ],
     "roleTag" : "Project_StoryManage_OpenBy",

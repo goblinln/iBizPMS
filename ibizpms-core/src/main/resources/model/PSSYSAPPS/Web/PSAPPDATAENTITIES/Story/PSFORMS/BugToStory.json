@@ -505,6 +505,7 @@
           "editorParams" : {
             "SRFNAVPARAM.product" : "%product%",
             "AC" : "TRUE",
+            "SRFNAVPARAM.type" : "StoryModule",
             "valFormat" : "{0: '/'}",
             "SRFNAVCTX.product" : "%product%",
             "PICKUPVIEW" : "TRUE"
@@ -535,6 +536,11 @@
             "name" : "product",
             "value" : "product",
             "rawValue" : false
+          }, {
+            "key" : "type",
+            "name" : "type",
+            "value" : "StoryModule",
+            "rawValue" : true
           } ],
           "getPickupPSAppView" : {
             "modelref" : true,

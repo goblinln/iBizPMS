@@ -654,6 +654,7 @@
               "SRFNAVCTX.project" : "%project%",
               "SRFNAVPARAM.allmodules" : "%allmodules%",
               "AC" : "TRUE",
+              "SRFNAVPARAM.type" : "TaskModules",
               "SRFNAVCTX.allmodules" : "%allmodules%",
               "SRFNAVPARAM.project" : "%project%",
               "valFormat" : "{0: '/'}",
@@ -695,6 +696,11 @@
               "name" : "allmodules",
               "value" : "allmodules",
               "rawValue" : false
+            }, {
+              "key" : "type",
+              "name" : "type",
+              "value" : "TaskModules",
+              "rawValue" : true
             } ],
             "getPickupPSAppView" : {
               "modelref" : true,

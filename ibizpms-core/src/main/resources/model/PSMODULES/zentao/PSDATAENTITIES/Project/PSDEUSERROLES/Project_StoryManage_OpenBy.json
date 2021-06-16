@@ -12,6 +12,13 @@
       "modelref" : true,
       "id" : "STORYMANAGE"
     }
+  }, {
+    "dataAccessAction" : "LINKSTORY",
+    "name" : "LINKSTORY",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "LINKSTORY"
+    }
   } ],
   "roleTag" : "Project_StoryManage_OpenBy",
   "userCat" : "CAT1",

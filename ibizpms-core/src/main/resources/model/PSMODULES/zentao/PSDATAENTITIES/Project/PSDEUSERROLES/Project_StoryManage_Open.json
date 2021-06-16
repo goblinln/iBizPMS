@@ -6,6 +6,13 @@
     "id" : "OpenQuery"
   },
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "LINKSTORY",
+    "name" : "LINKSTORY",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "LINKSTORY"
+    }
+  }, {
     "dataAccessAction" : "STORYMANAGE",
     "name" : "STORYMANAGE",
     "getPSDEOPPriv" : {

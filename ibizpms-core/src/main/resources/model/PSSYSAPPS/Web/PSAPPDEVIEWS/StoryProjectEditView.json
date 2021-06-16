@@ -674,6 +674,7 @@
               "SRFNAVPARAM.n_branch_eq" : "%branch%",
               "SRFNAVPARAM.product" : "%product%",
               "AC" : "TRUE",
+              "SRFNAVPARAM.type" : "StoryModule",
               "valFormat" : "{0: '/'}",
               "SRFNAVCTX.product" : "%product%",
               "PICKUPVIEW" : "TRUE"
@@ -709,6 +710,11 @@
               "name" : "n_branch_eq",
               "value" : "branch",
               "rawValue" : false
+            }, {
+              "key" : "type",
+              "name" : "type",
+              "value" : "StoryModule",
+              "rawValue" : true
             } ],
             "getPickupPSAppView" : {
               "modelref" : true,

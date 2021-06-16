@@ -330,6 +330,7 @@
         "actionTarget" : "NONE",
         "caption" : "关联需求",
         "codeName" : "projectLinkStories",
+        "dataAccessAction" : "LINKSTORY",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",

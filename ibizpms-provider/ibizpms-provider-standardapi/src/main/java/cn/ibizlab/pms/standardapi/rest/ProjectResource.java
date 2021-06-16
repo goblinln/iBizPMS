@@ -177,7 +177,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("test('ZT_PROJECT', #project_id, 'MANAGE')")
+    @PreAuthorize("test('ZT_PROJECT', #project_id, 'LINKSTORY')")
     @ApiOperation(value = "关联需求", tags = {"项目" },  notes = "关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkstory")
     public ResponseEntity<ProjectDTO> linkStory(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -456,7 +456,7 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
-    @PreAuthorize("test('ZT_PROJECT', #project_id, 'MANAGE')")
+    @PreAuthorize("test('ZT_PROJECT', #project_id, 'LINKSTORY')")
     @ApiOperation(value = "根据产品关联需求", tags = {"项目" },  notes = "根据产品关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projects/{project_id}/linkstory")
     public ResponseEntity<ProjectDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {

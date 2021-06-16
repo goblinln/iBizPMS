@@ -266,7 +266,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "LINKSTORY"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -475,7 +475,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "LINKSTORY"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -1872,7 +1872,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "LINKSTORY"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2081,7 +2081,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "LINKSTORY"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2661,6 +2661,7 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "projectLinkStories",
+    "dataAccessAction" : "LINKSTORY",
     "frontPSAppView" : "无法获取指定应用视图，标识为[0f77d6eb94feef2c2184619a48d890b3]，请确认实体视图[ZT_STORY][项目下属需求实体数据多项选择视图]已经添加到应用[iBiz软件生产管理（Mob）]中",
     "fullCodeName" : "Project_projectLinkStories",
     "name" : "关联需求（项目—需求）",
@@ -3928,6 +3929,9 @@
   }, {
     "logicName" : "组群管理",
     "name" : "GROUPMANAGE"
+  }, {
+    "logicName" : "关联需求",
+    "name" : "LINKSTORY"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
