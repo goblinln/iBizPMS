@@ -251,7 +251,7 @@ GROUP BY
 	t11.`name`,
 	t1.account,
 	t1.date )t1
-WHERE t11.project = #{srf.datacontext.project } 
+WHERE t1.project = #{srf.datacontext.project } 
 t1.dayname =  #{srf.datacontext.dayname} 
 
 ```
