@@ -1,9 +1,11 @@
 package cn.ibizlab.pms.core.extensions.service;
 
+import cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext;
 import cn.ibizlab.pms.core.ibiz.service.impl.DocLibModuleServiceImpl;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.ibiz.domain.DocLibModule;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -20,6 +22,17 @@ public class DocLibModuleExService extends DocLibModuleServiceImpl {
     @Override
     protected Class currentModelClass() {
         return com.baomidou.mybatisplus.core.toolkit.ReflectionKit.getSuperClassGenericType(this.getClass().getSuperclass(), 1);
+    }
+
+    @Override
+    public Page<DocLibModule> searchAllDoclibModule(DocLibModuleSearchContext context) {
+        Map<String,Object> params = context.getParams();
+        if(params.get("srfparent") != null && "0".equals(params.get("srfparent"))) {
+            context.setN_parent_ltandeq(0L);
+        }else if(params.get("srfparent") != null && context.getN_parent_eq() == null) {
+            context.setN_parent_eq(Long.parseLong(params.get("srfparent").toString()));
+        }
+        return super.searchAllDoclibModule(context);
     }
 
     /**

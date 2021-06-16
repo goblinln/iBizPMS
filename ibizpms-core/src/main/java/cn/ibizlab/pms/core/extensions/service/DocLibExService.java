@@ -3,6 +3,7 @@ package cn.ibizlab.pms.core.extensions.service;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ChangeUtil;
 import cn.ibizlab.pms.core.zentao.domain.Action;
 import cn.ibizlab.pms.core.zentao.domain.History;
+import cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext;
 import cn.ibizlab.pms.core.zentao.service.IActionService;
 import cn.ibizlab.pms.core.zentao.service.impl.DocLibServiceImpl;
 import cn.ibizlab.pms.util.dict.StaticDict;
@@ -12,6 +13,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.zentao.domain.DocLib;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -91,6 +93,17 @@ public class DocLibExService extends DocLibServiceImpl {
         ActionHelper.createHis(et.getId(),StaticDict.Action__object_type.DOCLIB.getValue(),null,StaticDict.Action__type.CREATED.getValue(),
                 "","",null,iActionService);
         return flag;
+    }
+
+    @Override
+    public Page<DocLib> searchDefault(DocLibSearchContext context) {
+        Map<String,Object> params = context.getParams();
+        if(params.get("type") != null) {
+            if ("CurDocLib".equals(params.get("type"))) {
+                return this.searchCurDocLib(context);
+            }
+        }
+        return super.searchDefault(context);
     }
 
     @Override
