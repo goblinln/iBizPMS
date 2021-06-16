@@ -273,6 +273,9 @@ export default class WorkInfoModel {
       {
         name: 'ordernum',
       },
+      {
+        name: 'assignedtopk',
+      },
     ]
   }
 

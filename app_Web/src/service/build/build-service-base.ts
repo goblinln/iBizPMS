@@ -41,7 +41,7 @@ export default class BuildServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,19 +49,22 @@ export default class BuildServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof BuildServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && context.build){
-            let res:any = await Http.getInstance().get(`/projects/${context.project}/builds/${context.build}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/builds/${context.build}/checkkey`,data,isloading);
             
             return res;
         }
         if(context.product && context.build){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/builds/${context.build}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/builds/${context.build}/checkkey`,data,isloading);
             
             return res;
         }
-            let res:any = await Http.getInstance().get(`/builds/${context.build}/select`,isloading);
-            
+            let res:any = await Http.getInstance().post(`/builds/${context.build}/checkkey`,data,isloading);
             return res;
     }
 
@@ -115,59 +118,6 @@ export default class BuildServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/builds`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BuildServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.build){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/projects/${context.project}/builds/${context.build}`,data,isloading);
-            
-            return res;
-        }
-        if(context.product && context.build){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/builds/${context.build}`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/builds/${context.build}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BuildServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.build){
-            let res:any = await Http.getInstance().delete(`/projects/${context.project}/builds/${context.build}`,isloading);
-            return res;
-        }
-        if(context.product && context.build){
-            let res:any = await Http.getInstance().delete(`/products/${context.product}/builds/${context.build}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/builds/${context.build}`,isloading);
-            return res;
     }
 
     /**
@@ -233,34 +183,6 @@ export default class BuildServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BuildServiceBase
-     */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.build){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/projects/${context.project}/builds/${context.build}/checkkey`,data,isloading);
-            
-            return res;
-        }
-        if(context.product && context.build){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/products/${context.product}/builds/${context.build}/checkkey`,data,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().post(`/builds/${context.build}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
      * LinkStory接口方法
      *
      * @param {*} [context={}]
@@ -308,6 +230,18 @@ export default class BuildServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/builds/linkstorybatch`,tempData,isloading);
+    }
+
+    /**
+     * MentionTest接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BuildServiceBase
+     */
+    public async MentionTest(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**
@@ -389,6 +323,28 @@ export default class BuildServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BuildServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.build){
+            let res:any = await Http.getInstance().delete(`/projects/${context.project}/builds/${context.build}`,isloading);
+            return res;
+        }
+        if(context.product && context.build){
+            let res:any = await Http.getInstance().delete(`/products/${context.product}/builds/${context.build}`,isloading);
+            return res;
+        }
+            let res:any = await Http.getInstance().delete(`/builds/${context.build}`,isloading);
+            return res;
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -415,6 +371,37 @@ export default class BuildServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/builds/${context.build}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BuildServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.build){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/projects/${context.project}/builds/${context.build}`,data,isloading);
+            
+            return res;
+        }
+        if(context.product && context.build){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/builds/${context.build}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/builds/${context.build}`,data,isloading);
             
             return res;
     }
@@ -702,7 +689,7 @@ export default class BuildServiceBase extends EntityService {
     }
 
     /**
-     * MentionTest接口方法
+     * Select接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -710,6 +697,19 @@ export default class BuildServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof BuildServiceBase
      */
-    public async MentionTest(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.build){
+            let res:any = await Http.getInstance().get(`/projects/${context.project}/builds/${context.build}/select`,isloading);
+            
+            return res;
+        }
+        if(context.product && context.build){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/builds/${context.build}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/builds/${context.build}/select`,isloading);
+            
+            return res;
     }
 }

@@ -41,7 +41,7 @@ export default class UserYearWorkStatsServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,8 @@ export default class UserYearWorkStatsServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof UserYearWorkStatsServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/useryearworkstats/${context.useryearworkstats}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/useryearworkstats/${context.useryearworkstats}/checkkey`,data,isloading);
             return res;
     }
 
@@ -80,37 +79,6 @@ export default class UserYearWorkStatsServiceBase extends EntityService {
     }
 
     /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof UserYearWorkStatsServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/useryearworkstats/${context.useryearworkstats}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof UserYearWorkStatsServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/useryearworkstats/${context.useryearworkstats}`,isloading);
-            return res;
-    }
-
-    /**
      * Get接口方法
      *
      * @param {*} [context={}]
@@ -121,6 +89,21 @@ export default class UserYearWorkStatsServiceBase extends EntityService {
      */
     public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
             let res:any = await Http.getInstance().get(`/useryearworkstats/${context.useryearworkstats}`,isloading);
+            
+            return res;
+    }
+
+    /**
+     * GetDevInfomation接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof UserYearWorkStatsServiceBase
+     */
+    public async GetDevInfomation(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/useryearworkstats/${context.useryearworkstats}/getdevinfomation`,isloading);
             
             return res;
     }
@@ -142,35 +125,6 @@ export default class UserYearWorkStatsServiceBase extends EntityService {
         res.data.useryearworkstats = data.useryearworkstats;
         
         return res;
-    }
-
-    /**
-     * CheckKey接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof UserYearWorkStatsServiceBase
-     */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/useryearworkstats/${context.useryearworkstats}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
-     * GetDevInfomation接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof UserYearWorkStatsServiceBase
-     */
-    public async GetDevInfomation(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/useryearworkstats/${context.useryearworkstats}/getdevinfomation`,isloading);
-            
-            return res;
     }
 
     /**
@@ -232,6 +186,20 @@ export default class UserYearWorkStatsServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof UserYearWorkStatsServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/useryearworkstats/${context.useryearworkstats}`,isloading);
+            return res;
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -244,6 +212,23 @@ export default class UserYearWorkStatsServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/useryearworkstats/${context.useryearworkstats}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof UserYearWorkStatsServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/useryearworkstats/${context.useryearworkstats}`,data,isloading);
             
             return res;
     }
@@ -390,5 +375,20 @@ export default class UserYearWorkStatsServiceBase extends EntityService {
     public async searchMonthOpenedStory(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/useryearworkstats/searchmonthopenedstory`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof UserYearWorkStatsServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/useryearworkstats/${context.useryearworkstats}/select`,isloading);
+            
+            return res;
     }
 }

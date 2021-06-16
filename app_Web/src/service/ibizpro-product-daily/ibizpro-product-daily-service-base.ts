@@ -41,7 +41,7 @@ export default class IbizproProductDailyServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,8 @@ export default class IbizproProductDailyServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbizproProductDailyServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/ibizproproductdailies/${context.ibizproproductdaily}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/ibizproproductdailies/${context.ibizproproductdaily}/checkkey`,data,isloading);
             return res;
     }
 
@@ -77,37 +76,6 @@ export default class IbizproProductDailyServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/ibizproproductdailies`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbizproProductDailyServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/ibizproproductdailies/${context.ibizproproductdaily}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbizproProductDailyServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/ibizproproductdailies/${context.ibizproproductdaily}`,isloading);
-            return res;
     }
 
     /**
@@ -145,20 +113,6 @@ export default class IbizproProductDailyServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbizproProductDailyServiceBase
-     */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/ibizproproductdailies/${context.ibizproproductdaily}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
      * ManualCreateDaily接口方法
      *
      * @param {*} [context={}]
@@ -184,6 +138,20 @@ export default class IbizproProductDailyServiceBase extends EntityService {
     public async ManualCreateDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/ibizproproductdailies/manualcreatedailybatch`,tempData,isloading);
+    }
+
+    /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbizproProductDailyServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/ibizproproductdailies/${context.ibizproproductdaily}`,isloading);
+            return res;
     }
 
     /**
@@ -229,6 +197,23 @@ export default class IbizproProductDailyServiceBase extends EntityService {
     public async StatsProductDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/ibizproproductdailies/statsproductdailybatch`,tempData,isloading);
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbizproProductDailyServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/ibizproproductdailies/${context.ibizproproductdaily}`,data,isloading);
+            
+            return res;
     }
 
     /**
@@ -287,5 +272,20 @@ export default class IbizproProductDailyServiceBase extends EntityService {
     public async searchProductDaily(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/ibizproproductdailies/searchproductdaily`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbizproProductDailyServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/ibizproproductdailies/${context.ibizproproductdaily}/select`,isloading);
+            
+            return res;
     }
 }

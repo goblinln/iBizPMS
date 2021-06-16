@@ -41,111 +41,6 @@ export default class DocServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocServiceBase
-     */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/docs/${context.doc}/select`,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Create接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocServiceBase
-     */
-    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-        if(!data.srffrontuf || data.srffrontuf !== "1"){
-            data[this.APPDEKEY] = null;
-        }
-        if(data.srffrontuf){
-            delete data.srffrontuf;
-        }
-        let tempContext:any = JSON.parse(JSON.stringify(context));
-        let res:any = await Http.getInstance().post(`/docs`,data,isloading);
-        this.tempStorage.setItem(tempContext.srfsessionkey+'_doccontents',JSON.stringify(res.data.doccontents?res.data.doccontents:[]));
-        
-        return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/docs/${context.doc}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/docs/${context.doc}`,isloading);
-            return res;
-    }
-
-    /**
-     * Get接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocServiceBase
-     */
-    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/docs/${context.doc}`,isloading);
-            
-            return res;
-    }
-
-    /**
-     * GetDraft接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocServiceBase
-     */
-    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        if(tempData.doc) delete tempData.doc;
-        if(tempData.id) delete tempData.id;
-        let res:any = await  Http.getInstance().get(`/docs/getdraft`,tempData,isloading);
-        res.data.doc = data.doc;
-        
-        return res;
-    }
-
-    /**
      * ByVersionUpdateContext接口方法
      *
      * @param {*} [context={}]
@@ -216,6 +111,46 @@ export default class DocServiceBase extends EntityService {
     }
 
     /**
+     * Create接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocServiceBase
+     */
+    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+        if(!data.srffrontuf || data.srffrontuf !== "1"){
+            data[this.APPDEKEY] = null;
+        }
+        if(data.srffrontuf){
+            delete data.srffrontuf;
+        }
+        let tempContext:any = JSON.parse(JSON.stringify(context));
+        let res:any = await Http.getInstance().post(`/docs`,data,isloading);
+        this.tempStorage.setItem(tempContext.srfsessionkey+'_doccontents',JSON.stringify(res.data.doccontents?res.data.doccontents:[]));
+        
+        return res;
+    }
+
+    /**
+     * Get接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocServiceBase
+     */
+    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/docs/${context.doc}`,isloading);
+            
+            return res;
+    }
+
+    /**
      * GetDocStatus接口方法
      *
      * @param {*} [context={}]
@@ -241,6 +176,25 @@ export default class DocServiceBase extends EntityService {
     public async GetDocStatusBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/docs/getdocstatusbatch`,tempData,isloading);
+    }
+
+    /**
+     * GetDraft接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocServiceBase
+     */
+    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        if(tempData.doc) delete tempData.doc;
+        if(tempData.id) delete tempData.id;
+        let res:any = await  Http.getInstance().get(`/docs/getdraft`,tempData,isloading);
+        res.data.doc = data.doc;
+        
+        return res;
     }
 
     /**
@@ -300,6 +254,20 @@ export default class DocServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/docs/${context.doc}`,isloading);
+            return res;
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -342,6 +310,23 @@ export default class DocServiceBase extends EntityService {
     public async UnCollectBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/docs/uncollectbatch`,tempData,isloading);
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/docs/${context.doc}`,data,isloading);
+            
+            return res;
     }
 
     /**
@@ -661,5 +646,20 @@ export default class DocServiceBase extends EntityService {
     public async searchRootDoc(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/docs/searchrootdoc`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/docs/${context.doc}/select`,isloading);
+            
+            return res;
     }
 }

@@ -41,7 +41,7 @@ export default class TestRunServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,24 +49,29 @@ export default class TestRunServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof TestRunServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && context.testtask && context.testrun){
-            let res:any = await Http.getInstance().get(`/projects/${context.project}/testtasks/${context.testtask}/testruns/${context.testrun}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/testtasks/${context.testtask}/testruns/${context.testrun}/checkkey`,data,isloading);
             
             return res;
         }
         if(context.product && context.testtask && context.testrun){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/testtasks/${context.testtask}/testruns/${context.testrun}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/testtasks/${context.testtask}/testruns/${context.testrun}/checkkey`,data,isloading);
             
             return res;
         }
         if(context.testtask && context.testrun){
-            let res:any = await Http.getInstance().get(`/testtasks/${context.testtask}/testruns/${context.testrun}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/testtasks/${context.testtask}/testruns/${context.testrun}/checkkey`,data,isloading);
             
             return res;
         }
-            let res:any = await Http.getInstance().get(`/testruns/${context.testrun}/select`,isloading);
-            
+            let res:any = await Http.getInstance().post(`/testruns/${context.testrun}/checkkey`,data,isloading);
             return res;
     }
 
@@ -134,70 +139,6 @@ export default class TestRunServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/testruns`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TestRunServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.testtask && context.testrun){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/projects/${context.project}/testtasks/${context.testtask}/testruns/${context.testrun}`,data,isloading);
-            
-            return res;
-        }
-        if(context.product && context.testtask && context.testrun){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/testtasks/${context.testtask}/testruns/${context.testrun}`,data,isloading);
-            
-            return res;
-        }
-        if(context.testtask && context.testrun){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/testtasks/${context.testtask}/testruns/${context.testrun}`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/testruns/${context.testrun}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TestRunServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.testtask && context.testrun){
-            let res:any = await Http.getInstance().delete(`/projects/${context.project}/testtasks/${context.testtask}/testruns/${context.testrun}`,isloading);
-            return res;
-        }
-        if(context.product && context.testtask && context.testrun){
-            let res:any = await Http.getInstance().delete(`/products/${context.product}/testtasks/${context.testtask}/testruns/${context.testrun}`,isloading);
-            return res;
-        }
-        if(context.testtask && context.testrun){
-            let res:any = await Http.getInstance().delete(`/testtasks/${context.testtask}/testruns/${context.testrun}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/testruns/${context.testrun}`,isloading);
-            return res;
     }
 
     /**
@@ -277,7 +218,7 @@ export default class TestRunServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -285,29 +226,20 @@ export default class TestRunServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof TestRunServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && context.testtask && context.testrun){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/projects/${context.project}/testtasks/${context.testtask}/testruns/${context.testrun}/checkkey`,data,isloading);
-            
+            let res:any = await Http.getInstance().delete(`/projects/${context.project}/testtasks/${context.testtask}/testruns/${context.testrun}`,isloading);
             return res;
         }
         if(context.product && context.testtask && context.testrun){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/products/${context.product}/testtasks/${context.testtask}/testruns/${context.testrun}/checkkey`,data,isloading);
-            
+            let res:any = await Http.getInstance().delete(`/products/${context.product}/testtasks/${context.testtask}/testruns/${context.testrun}`,isloading);
             return res;
         }
         if(context.testtask && context.testrun){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/testtasks/${context.testtask}/testruns/${context.testrun}/checkkey`,data,isloading);
-            
+            let res:any = await Http.getInstance().delete(`/testtasks/${context.testtask}/testruns/${context.testrun}`,isloading);
             return res;
         }
-            let res:any = await Http.getInstance().post(`/testruns/${context.testrun}/checkkey`,data,isloading);
+            let res:any = await Http.getInstance().delete(`/testruns/${context.testrun}`,isloading);
             return res;
     }
 
@@ -345,6 +277,44 @@ export default class TestRunServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/testruns/${context.testrun}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestRunServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.testtask && context.testrun){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/projects/${context.project}/testtasks/${context.testtask}/testruns/${context.testrun}`,data,isloading);
+            
+            return res;
+        }
+        if(context.product && context.testtask && context.testrun){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/testtasks/${context.testtask}/testruns/${context.testrun}`,data,isloading);
+            
+            return res;
+        }
+        if(context.testtask && context.testrun){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/testtasks/${context.testtask}/testruns/${context.testrun}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/testruns/${context.testrun}`,data,isloading);
             
             return res;
     }
@@ -403,5 +373,35 @@ export default class TestRunServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/testruns/searchdefault`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestRunServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.testtask && context.testrun){
+            let res:any = await Http.getInstance().get(`/projects/${context.project}/testtasks/${context.testtask}/testruns/${context.testrun}/select`,isloading);
+            
+            return res;
+        }
+        if(context.product && context.testtask && context.testrun){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/testtasks/${context.testtask}/testruns/${context.testrun}/select`,isloading);
+            
+            return res;
+        }
+        if(context.testtask && context.testrun){
+            let res:any = await Http.getInstance().get(`/testtasks/${context.testtask}/testruns/${context.testrun}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/testruns/${context.testrun}/select`,isloading);
+            
+            return res;
     }
 }

@@ -41,7 +41,7 @@ export default class IbzLibServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,8 @@ export default class IbzLibServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzLibServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/ibzlibs/${context.ibzlib}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/ibzlibs/${context.ibzlib}/checkkey`,data,isloading);
             return res;
     }
 
@@ -98,54 +97,6 @@ export default class IbzLibServiceBase extends EntityService {
     }
 
     /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzLibServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        let ibzcasesData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzcases'),'undefined')){
-            ibzcasesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzcases') as any);
-            if(ibzcasesData && ibzcasesData.length && ibzcasesData.length > 0 && Environment.isStudioSystem === false){
-                ibzcasesData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.ibzcases = ibzcasesData;
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/ibzlibs/${context.ibzlib}`,data,isloading);
-                        this.tempStorage.setItem(context.srfsessionkey+'_ibzcases',JSON.stringify(res.data.ibzcases?res.data.ibzcases:[]));
-
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzLibServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/ibzlibs/${context.ibzlib}`,isloading);
-            return res;
-    }
-
-    /**
      * Get接口方法
      *
      * @param {*} [context={}]
@@ -182,7 +133,7 @@ export default class IbzLibServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -190,8 +141,8 @@ export default class IbzLibServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzLibServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/ibzlibs/${context.ibzlib}/checkkey`,data,isloading);
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/ibzlibs/${context.ibzlib}`,isloading);
             return res;
     }
 
@@ -230,6 +181,40 @@ export default class IbzLibServiceBase extends EntityService {
     }
 
     /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzLibServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        let ibzcasesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzcases'),'undefined')){
+            ibzcasesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzcases') as any);
+            if(ibzcasesData && ibzcasesData.length && ibzcasesData.length > 0 && Environment.isStudioSystem === false){
+                ibzcasesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibzcases = ibzcasesData;
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/ibzlibs/${context.ibzlib}`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibzcases',JSON.stringify(res.data.ibzcases?res.data.ibzcases:[]));
+
+            return res;
+    }
+
+    /**
      * FetchDefault接口方法
      *
      * @param {*} [context={}]
@@ -256,5 +241,20 @@ export default class IbzLibServiceBase extends EntityService {
     public async searchDefault(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/ibzlibs/searchdefault`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzLibServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/ibzlibs/${context.ibzlib}/select`,isloading);
+            
+            return res;
     }
 }

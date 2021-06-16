@@ -693,4 +693,12 @@ export interface Task {
      * @memberof Task
      */
     ordernum?: any;
+
+    /**
+     * 指派给
+     *
+     * @returns {*}
+     * @memberof Task
+     */
+    assignedtopk?: any;
 }

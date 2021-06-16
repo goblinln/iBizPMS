@@ -273,6 +273,9 @@ export default class ToolbarModel {
       {
         name: 'ordernum',
       },
+      {
+        name: 'assignedtopk',
+      },
     ]
   }
 

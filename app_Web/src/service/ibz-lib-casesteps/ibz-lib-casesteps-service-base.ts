@@ -41,7 +41,7 @@ export default class IbzLibCasestepsServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,14 +49,18 @@ export default class IbzLibCasestepsServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzLibCasestepsServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.ibzlib && context.ibzcase && context.ibzlibcasesteps){
-            let res:any = await Http.getInstance().get(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}/checkkey`,data,isloading);
             
             return res;
         }
         if(context.ibzcase && context.ibzlibcasesteps){
-            let res:any = await Http.getInstance().get(`/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}/checkkey`,data,isloading);
             
             return res;
         }
@@ -98,52 +102,6 @@ export default class IbzLibCasestepsServiceBase extends EntityService {
             let tempContext:any = JSON.parse(JSON.stringify(context));
             let res:any = await Http.getInstance().post(`/ibzcases/${context.ibzcase}/ibzlibcasesteps`,data,isloading);
             
-            return res;
-        }
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzLibCasestepsServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.ibzlib && context.ibzcase && context.ibzlibcasesteps){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}`,data,isloading);
-            
-            return res;
-        }
-        if(context.ibzcase && context.ibzlibcasesteps){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}`,data,isloading);
-            
-            return res;
-        }
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzLibCasestepsServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.ibzlib && context.ibzcase && context.ibzlibcasesteps){
-            let res:any = await Http.getInstance().delete(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}`,isloading);
-            return res;
-        }
-        if(context.ibzcase && context.ibzlibcasesteps){
-            let res:any = await Http.getInstance().delete(`/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}`,isloading);
             return res;
         }
     }
@@ -201,7 +159,7 @@ export default class IbzLibCasestepsServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -209,19 +167,13 @@ export default class IbzLibCasestepsServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzLibCasestepsServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.ibzlib && context.ibzcase && context.ibzlibcasesteps){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}/checkkey`,data,isloading);
-            
+            let res:any = await Http.getInstance().delete(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}`,isloading);
             return res;
         }
         if(context.ibzcase && context.ibzlibcasesteps){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}/checkkey`,data,isloading);
-            
+            let res:any = await Http.getInstance().delete(`/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}`,isloading);
             return res;
         }
     }
@@ -247,6 +199,32 @@ export default class IbzLibCasestepsServiceBase extends EntityService {
             let masterData:any = {};
             Object.assign(data,masterData);
             let res:any = await Http.getInstance().post(`/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}/save`,data,isloading);
+            
+            return res;
+        }
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzLibCasestepsServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.ibzlib && context.ibzcase && context.ibzlibcasesteps){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}`,data,isloading);
+            
+            return res;
+        }
+        if(context.ibzcase && context.ibzlibcasesteps){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}`,data,isloading);
             
             return res;
         }
@@ -314,6 +292,28 @@ export default class IbzLibCasestepsServiceBase extends EntityService {
             } 
         }else{
             return {"status":200,"data":[]};
+        }
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzLibCasestepsServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.ibzlib && context.ibzcase && context.ibzlibcasesteps){
+            let res:any = await Http.getInstance().get(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}/select`,isloading);
+            
+            return res;
+        }
+        if(context.ibzcase && context.ibzlibcasesteps){
+            let res:any = await Http.getInstance().get(`/ibzcases/${context.ibzcase}/ibzlibcasesteps/${context.ibzlibcasesteps}/select`,isloading);
+            
+            return res;
         }
     }
 }

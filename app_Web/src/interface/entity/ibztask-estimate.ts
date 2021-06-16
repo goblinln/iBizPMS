@@ -205,4 +205,20 @@ export interface IBZTaskEstimate {
      * @memberof IBZTaskEstimate
      */
     task?: any;
+
+    /**
+     * 天
+     *
+     * @returns {*}
+     * @memberof IBZTaskEstimate
+     */
+    day?: any;
+
+    /**
+     * 天（显示）
+     *
+     * @returns {*}
+     * @memberof IBZTaskEstimate
+     */
+    dayname?: any;
 }

@@ -43,7 +43,7 @@ export default class ProductServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CancelProductTop接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -51,10 +51,51 @@ export default class ProductServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ProductServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/products/${context.product}/select`,isloading);
-            
+    public async CancelProductTop(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/products/${context.product}/cancelproducttop`,data,isloading);
             return res;
+    }
+
+    /**
+     * CheckKey接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductServiceBase
+     */
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/products/${context.product}/checkkey`,data,isloading);
+            return res;
+    }
+
+    /**
+     * Close接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductServiceBase
+     */
+    public async Close(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/products/${context.product}/close`,data,isloading);
+            return res;
+    }
+
+    /**
+     * CloseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductServiceBase
+     */
+    public async CloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/products/closebatch`,tempData,isloading);
     }
 
     /**
@@ -112,54 +153,6 @@ export default class ProductServiceBase extends EntityService {
     }
 
     /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        let casesData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_cases'),'undefined')){
-            casesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_cases') as any);
-            if(casesData && casesData.length && casesData.length > 0 && Environment.isStudioSystem === false){
-                casesData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.cases = casesData;
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/products/${context.product}`,data,isloading);
-                        this.tempStorage.setItem(context.srfsessionkey+'_cases',JSON.stringify(res.data.cases?res.data.cases:[]));
-
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/products/${context.product}`,isloading);
-            return res;
-    }
-
-    /**
      * Get接口方法
      *
      * @param {*} [context={}]
@@ -193,62 +186,6 @@ export default class ProductServiceBase extends EntityService {
                     this.tempStorage.setItem(context.srfsessionkey+'_cases',JSON.stringify(res.data.cases?res.data.cases:[]));
 
         return res;
-    }
-
-    /**
-     * CancelProductTop接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductServiceBase
-     */
-    public async CancelProductTop(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/products/${context.product}/cancelproducttop`,data,isloading);
-            return res;
-    }
-
-    /**
-     * CheckKey接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductServiceBase
-     */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/products/${context.product}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
-     * Close接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductServiceBase
-     */
-    public async Close(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/products/${context.product}/close`,data,isloading);
-            return res;
-    }
-
-    /**
-     * CloseBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductServiceBase
-     */
-    public async CloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/products/closebatch`,tempData,isloading);
     }
 
     /**
@@ -294,6 +231,32 @@ export default class ProductServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/products/${context.product}`,isloading);
+            return res;
+    }
+
+    /**
+     * ReturnEdit接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductServiceBase
+     */
+    public async ReturnEdit(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -325,6 +288,52 @@ export default class ProductServiceBase extends EntityService {
                         this.tempStorage.setItem(context.srfsessionkey+'_cases',JSON.stringify(res.data.cases?res.data.cases:[]));
 
             return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        let casesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_cases'),'undefined')){
+            casesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_cases') as any);
+            if(casesData && casesData.length && casesData.length > 0 && Environment.isStudioSystem === false){
+                casesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.cases = casesData;
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/products/${context.product}`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_cases',JSON.stringify(res.data.cases?res.data.cases:[]));
+
+            return res;
+    }
+
+    /**
+     * WizardCreate接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductServiceBase
+     */
+    public async WizardCreate(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**
@@ -618,7 +627,7 @@ export default class ProductServiceBase extends EntityService {
     }
 
     /**
-     * ReturnEdit接口方法
+     * Select接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -626,18 +635,9 @@ export default class ProductServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ProductServiceBase
      */
-    public async ReturnEdit(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-    }
-
-    /**
-     * WizardCreate接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductServiceBase
-     */
-    public async WizardCreate(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/products/${context.product}/select`,isloading);
+            
+            return res;
     }
 }

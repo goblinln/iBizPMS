@@ -41,166 +41,6 @@ export default class SubProductPlanServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubProductPlanServiceBase
-     */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.productplan && context.subproductplan){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/subproductplans/${context.subproductplan}/select`,isloading);
-            
-            return res;
-        }
-        if(context.productplan && context.subproductplan){
-            let res:any = await Http.getInstance().get(`/productplans/${context.productplan}/subproductplans/${context.subproductplan}/select`,isloading);
-            
-            return res;
-        }
-    }
-
-    /**
-     * Create接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubProductPlanServiceBase
-     */
-    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.productplan && true){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            if(!data.srffrontuf || data.srffrontuf !== "1"){
-                data[this.APPDEKEY] = null;
-            }
-            if(data.srffrontuf){
-                delete data.srffrontuf;
-            }
-            let tempContext:any = JSON.parse(JSON.stringify(context));
-            let res:any = await Http.getInstance().post(`/products/${context.product}/productplans/${context.productplan}/subproductplans`,data,isloading);
-            
-            return res;
-        }
-        if(context.productplan && true){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            if(!data.srffrontuf || data.srffrontuf !== "1"){
-                data[this.APPDEKEY] = null;
-            }
-            if(data.srffrontuf){
-                delete data.srffrontuf;
-            }
-            let tempContext:any = JSON.parse(JSON.stringify(context));
-            let res:any = await Http.getInstance().post(`/productplans/${context.productplan}/subproductplans`,data,isloading);
-            
-            return res;
-        }
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubProductPlanServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.productplan && context.subproductplan){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,data,isloading);
-            
-            return res;
-        }
-        if(context.productplan && context.subproductplan){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,data,isloading);
-            
-            return res;
-        }
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubProductPlanServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.productplan && context.subproductplan){
-            let res:any = await Http.getInstance().delete(`/products/${context.product}/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,isloading);
-            return res;
-        }
-        if(context.productplan && context.subproductplan){
-            let res:any = await Http.getInstance().delete(`/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,isloading);
-            return res;
-        }
-    }
-
-    /**
-     * Get接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubProductPlanServiceBase
-     */
-    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.productplan && context.subproductplan){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,isloading);
-            
-            return res;
-        }
-        if(context.productplan && context.subproductplan){
-            let res:any = await Http.getInstance().get(`/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,isloading);
-            
-            return res;
-        }
-    }
-
-    /**
-     * GetDraft接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubProductPlanServiceBase
-     */
-    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.productplan && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            if(tempData.subproductplan) delete tempData.subproductplan;
-            if(tempData.id) delete tempData.id;
-            let res:any = await Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/subproductplans/getdraft`,tempData,isloading);
-            res.data.subproductplan = data.subproductplan;
-            
-            return res;
-        }
-        if(context.productplan && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            if(tempData.subproductplan) delete tempData.subproductplan;
-            if(tempData.id) delete tempData.id;
-            let res:any = await Http.getInstance().get(`/productplans/${context.productplan}/subproductplans/getdraft`,tempData,isloading);
-            res.data.subproductplan = data.subproductplan;
-            
-            return res;
-        }
-    }
-
-    /**
      * BatchUnlinkBug接口方法
      *
      * @param {*} [context={}]
@@ -313,6 +153,46 @@ export default class SubProductPlanServiceBase extends EntityService {
             let masterData:any = {};
             Object.assign(data,masterData);
             let res:any = await Http.getInstance().post(`/productplans/${context.productplan}/subproductplans/${context.subproductplan}/checkkey`,data,isloading);
+            
+            return res;
+        }
+    }
+
+    /**
+     * Create接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubProductPlanServiceBase
+     */
+    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.productplan && true){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            if(!data.srffrontuf || data.srffrontuf !== "1"){
+                data[this.APPDEKEY] = null;
+            }
+            if(data.srffrontuf){
+                delete data.srffrontuf;
+            }
+            let tempContext:any = JSON.parse(JSON.stringify(context));
+            let res:any = await Http.getInstance().post(`/products/${context.product}/productplans/${context.productplan}/subproductplans`,data,isloading);
+            
+            return res;
+        }
+        if(context.productplan && true){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            if(!data.srffrontuf || data.srffrontuf !== "1"){
+                data[this.APPDEKEY] = null;
+            }
+            if(data.srffrontuf){
+                delete data.srffrontuf;
+            }
+            let tempContext:any = JSON.parse(JSON.stringify(context));
+            let res:any = await Http.getInstance().post(`/productplans/${context.productplan}/subproductplans`,data,isloading);
             
             return res;
         }
@@ -641,6 +521,58 @@ export default class SubProductPlanServiceBase extends EntityService {
     }
 
     /**
+     * Get接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubProductPlanServiceBase
+     */
+    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.productplan && context.subproductplan){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,isloading);
+            
+            return res;
+        }
+        if(context.productplan && context.subproductplan){
+            let res:any = await Http.getInstance().get(`/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,isloading);
+            
+            return res;
+        }
+    }
+
+    /**
+     * GetDraft接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubProductPlanServiceBase
+     */
+    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            if(tempData.subproductplan) delete tempData.subproductplan;
+            if(tempData.id) delete tempData.id;
+            let res:any = await Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/subproductplans/getdraft`,tempData,isloading);
+            res.data.subproductplan = data.subproductplan;
+            
+            return res;
+        }
+        if(context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            if(tempData.subproductplan) delete tempData.subproductplan;
+            if(tempData.id) delete tempData.id;
+            let res:any = await Http.getInstance().get(`/productplans/${context.productplan}/subproductplans/getdraft`,tempData,isloading);
+            res.data.subproductplan = data.subproductplan;
+            
+            return res;
+        }
+    }
+
+    /**
      * GetOldPlanName接口方法
      *
      * @param {*} [context={}]
@@ -663,6 +595,24 @@ export default class SubProductPlanServiceBase extends EntityService {
             let res:any = await Http.getInstance().post(`/productplans/${context.productplan}/subproductplans/${context.subproductplan}/getoldplanname`,data,isloading);
             
             return res;
+        }
+    }
+
+    /**
+     * GetPlanEnd接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubProductPlanServiceBase
+     */
+    public async GetPlanEnd(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.productplan &&  true){
+            return await Http.getInstance().post(`products/${context.product}/productplans/${context.productplan}/subproductplans/getplanend`,data,isloading);
+        }
+        if(context.productplan &&  true){
+            return await Http.getInstance().post(`productplans/${context.productplan}/subproductplans/getplanend`,data,isloading);
         }
     }
 
@@ -877,6 +827,26 @@ export default class SubProductPlanServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubProductPlanServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.productplan && context.subproductplan){
+            let res:any = await Http.getInstance().delete(`/products/${context.product}/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,isloading);
+            return res;
+        }
+        if(context.productplan && context.subproductplan){
+            let res:any = await Http.getInstance().delete(`/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,isloading);
+            return res;
+        }
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -991,6 +961,32 @@ export default class SubProductPlanServiceBase extends EntityService {
         if(context.productplan && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
             return await Http.getInstance().post(`/productplans/${context.productplan}/subproductplans/unlinkstorybatch`,tempData,isloading);
+        }
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubProductPlanServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.productplan && context.subproductplan){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,data,isloading);
+            
+            return res;
+        }
+        if(context.productplan && context.subproductplan){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/productplans/${context.productplan}/subproductplans/${context.subproductplan}`,data,isloading);
+            
+            return res;
         }
     }
 
@@ -1415,7 +1411,7 @@ export default class SubProductPlanServiceBase extends EntityService {
     }
 
     /**
-     * GetPlanEnd接口方法
+     * Select接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -1423,12 +1419,16 @@ export default class SubProductPlanServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async GetPlanEnd(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.productplan &&  true){
-            return await Http.getInstance().post(`products/${context.product}/productplans/${context.productplan}/subproductplans/getplanend`,data,isloading);
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.productplan && context.subproductplan){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/subproductplans/${context.subproductplan}/select`,isloading);
+            
+            return res;
         }
-        if(context.productplan &&  true){
-            return await Http.getInstance().post(`productplans/${context.productplan}/subproductplans/getplanend`,data,isloading);
+        if(context.productplan && context.subproductplan){
+            let res:any = await Http.getInstance().get(`/productplans/${context.productplan}/subproductplans/${context.subproductplan}/select`,isloading);
+            
+            return res;
         }
     }
 }

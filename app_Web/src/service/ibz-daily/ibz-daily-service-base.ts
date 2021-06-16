@@ -41,7 +41,7 @@ export default class IbzDailyServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,8 @@ export default class IbzDailyServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzDailyServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/ibzdailies/${context.ibzdaily}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/ibzdailies/${context.ibzdaily}/checkkey`,data,isloading);
             return res;
     }
 
@@ -80,7 +79,7 @@ export default class IbzDailyServiceBase extends EntityService {
     }
 
     /**
-     * Update接口方法
+     * CreateUserDaily接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -88,16 +87,13 @@ export default class IbzDailyServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzDailyServiceBase
      */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/ibzdailies/${context.ibzdaily}`,data,isloading);
-            
+    public async CreateUserDaily(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/ibzdailies/${context.ibzdaily}/createuserdaily`,data,isloading);
             return res;
     }
 
     /**
-     * Remove接口方法
+     * CreateUserDailyBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -105,9 +101,9 @@ export default class IbzDailyServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzDailyServiceBase
      */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/ibzdailies/${context.ibzdaily}`,isloading);
-            return res;
+    public async CreateUserDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/ibzdailies/createuserdailybatch`,tempData,isloading);
     }
 
     /**
@@ -142,48 +138,6 @@ export default class IbzDailyServiceBase extends EntityService {
         res.data.ibzdaily = data.ibzdaily;
         
         return res;
-    }
-
-    /**
-     * CheckKey接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzDailyServiceBase
-     */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/ibzdailies/${context.ibzdaily}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
-     * CreateUserDaily接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzDailyServiceBase
-     */
-    public async CreateUserDaily(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/ibzdailies/${context.ibzdaily}/createuserdaily`,data,isloading);
-            return res;
-    }
-
-    /**
-     * CreateUserDailyBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzDailyServiceBase
-     */
-    public async CreateUserDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzdailies/createuserdailybatch`,tempData,isloading);
     }
 
     /**
@@ -327,6 +281,20 @@ export default class IbzDailyServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzDailyServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/ibzdailies/${context.ibzdaily}`,isloading);
+            return res;
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -369,6 +337,23 @@ export default class IbzDailyServiceBase extends EntityService {
     public async SubmitBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/ibzdailies/submitbatch`,tempData,isloading);
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzDailyServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/ibzdailies/${context.ibzdaily}`,data,isloading);
+            
+            return res;
     }
 
     /**
@@ -572,5 +557,20 @@ export default class IbzDailyServiceBase extends EntityService {
     public async searchProjectDaily(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/ibzdailies/searchprojectdaily`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzDailyServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/ibzdailies/${context.ibzdaily}/select`,isloading);
+            
+            return res;
     }
 }

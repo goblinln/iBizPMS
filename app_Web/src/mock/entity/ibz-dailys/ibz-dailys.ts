@@ -86,17 +86,17 @@ mock.onDelete(new RegExp(/^\/ibzdailies\/batch$/)).reply((config: any) => {
     return [status, {}];
 });
 
-
-// Select
-mock.onGet(new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})\/select$/)).reply((config: any) => {
-    console.groupCollapsed("实体:ibzdaily 方法: Select");
+        
+// CheckKey
+mock.onPost(new RegExp(/^\/ibzdailies\/?([a-zA-Z0-9\-\;]{0,35})\/checkkey$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzdaily 方法: CheckKey");
     console.table({url:config.url, method: config.method, data:config.data});
     let status = MockAdapter.mockStatus(config);
     if (status !== 200) {
         return [status, null];
     }    
     const paramArray:Array<any> = ['ibzdailyid'];
-    const matchArray:any = new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})\/select$/).exec(config.url);
+    const matchArray:any = new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})\/checkkey$/).exec(config.url);
     let tempValue: any = {};
     if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
         paramArray.forEach((item: any, index: number) => {
@@ -106,13 +106,23 @@ mock.onGet(new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})\/select$/)).reply(
             });
         });
     }
-    let items = mockDatas ? mockDatas : [];
-    let _items = items.find((item: any) => Object.is(item.ibzdailyid, tempValue.ibzdailyid));
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzdailyid, tempValue.ibzdailyid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzdailyid'] == tempValue['ibzdailyid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
     console.groupCollapsed("response数据  status: "+status+" data: ");
-    console.table(_items);
+    console.table(data);
     console.groupEnd();
     console.groupEnd();
-    return [status, _items];
+    return [status, data];
 });
         
 // Create
@@ -141,16 +151,16 @@ mock.onPost(new RegExp(/^\/ibzdailies\/?([a-zA-Z0-9\-\;]{0,35})$/)).reply((confi
     return [status, mockDatas[0]];
 });
         
-// Update
-mock.onPut(new RegExp(/^\/ibzdailies\/?([a-zA-Z0-9\-\;]{0,35})$/)).reply((config: any) => {
-    console.groupCollapsed("实体:ibzdaily 方法: Update");
+// CreateUserDaily
+mock.onPost(new RegExp(/^\/ibzdailies\/?([a-zA-Z0-9\-\;]{0,35})\/createuserdaily$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzdaily 方法: CreateUserDaily");
     console.table({url:config.url, method: config.method, data:config.data});
     let status = MockAdapter.mockStatus(config);
     if (status !== 200) {
         return [status, null];
     }    
     const paramArray:Array<any> = ['ibzdailyid'];
-    const matchArray:any = new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})$/).exec(config.url);
+    const matchArray:any = new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})\/createuserdaily$/).exec(config.url);
     let tempValue: any = {};
     if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
         paramArray.forEach((item: any, index: number) => {
@@ -193,82 +203,6 @@ mock.onGet(new RegExp(/^\/ibzdailies\/getdraft$/)).reply((config: any) => {
     console.groupEnd();
     console.groupEnd();
     return [status, {}];
-});
-        
-// CheckKey
-mock.onPost(new RegExp(/^\/ibzdailies\/?([a-zA-Z0-9\-\;]{0,35})\/checkkey$/)).reply((config: any) => {
-    console.groupCollapsed("实体:ibzdaily 方法: CheckKey");
-    console.table({url:config.url, method: config.method, data:config.data});
-    let status = MockAdapter.mockStatus(config);
-    if (status !== 200) {
-        return [status, null];
-    }    
-    const paramArray:Array<any> = ['ibzdailyid'];
-    const matchArray:any = new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})\/checkkey$/).exec(config.url);
-    let tempValue: any = {};
-    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
-        paramArray.forEach((item: any, index: number) => {
-            Object.defineProperty(tempValue, item, {
-                enumerable: true,
-                value: matchArray[index + 1]
-            });
-        });
-    }
-    //let items = mockDatas ? mockDatas : [];
-    //let _items = items.find((item: any) => Object.is(item.ibzdailyid, tempValue.ibzdailyid));
-      let data = JSON.parse(config.data);
-    mockDatas.forEach((item)=>{
-        if(item['ibzdailyid'] == tempValue['ibzdailyid'] ){
-            for(let value in data){
-              if(item.hasOwnProperty(value)){
-                  item[value] = data[value];
-              }
-            }
-        }
-    })
-    console.groupCollapsed("response数据  status: "+status+" data: ");
-    console.table(data);
-    console.groupEnd();
-    console.groupEnd();
-    return [status, data];
-});
-        
-// CreateUserDaily
-mock.onPost(new RegExp(/^\/ibzdailies\/?([a-zA-Z0-9\-\;]{0,35})\/createuserdaily$/)).reply((config: any) => {
-    console.groupCollapsed("实体:ibzdaily 方法: CreateUserDaily");
-    console.table({url:config.url, method: config.method, data:config.data});
-    let status = MockAdapter.mockStatus(config);
-    if (status !== 200) {
-        return [status, null];
-    }    
-    const paramArray:Array<any> = ['ibzdailyid'];
-    const matchArray:any = new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})\/createuserdaily$/).exec(config.url);
-    let tempValue: any = {};
-    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
-        paramArray.forEach((item: any, index: number) => {
-            Object.defineProperty(tempValue, item, {
-                enumerable: true,
-                value: matchArray[index + 1]
-            });
-        });
-    }
-    //let items = mockDatas ? mockDatas : [];
-    //let _items = items.find((item: any) => Object.is(item.ibzdailyid, tempValue.ibzdailyid));
-      let data = JSON.parse(config.data);
-    mockDatas.forEach((item)=>{
-        if(item['ibzdailyid'] == tempValue['ibzdailyid'] ){
-            for(let value in data){
-              if(item.hasOwnProperty(value)){
-                  item[value] = data[value];
-              }
-            }
-        }
-    })
-    console.groupCollapsed("response数据  status: "+status+" data: ");
-    console.table(data);
-    console.groupEnd();
-    console.groupEnd();
-    return [status, data];
 });
         
 // GetYeaterdayDailyPlansTaskEdit
@@ -509,6 +443,44 @@ mock.onPut(new RegExp(/^\/ibzdailies\/?([a-zA-Z0-9\-\;]{0,35})\/submit$/)).reply
     }    
     const paramArray:Array<any> = ['ibzdailyid'];
     const matchArray:any = new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})\/submit$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    //let items = mockDatas ? mockDatas : [];
+    //let _items = items.find((item: any) => Object.is(item.ibzdailyid, tempValue.ibzdailyid));
+      let data = JSON.parse(config.data);
+    mockDatas.forEach((item)=>{
+        if(item['ibzdailyid'] == tempValue['ibzdailyid'] ){
+            for(let value in data){
+              if(item.hasOwnProperty(value)){
+                  item[value] = data[value];
+              }
+            }
+        }
+    })
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(data);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, data];
+});
+        
+// Update
+mock.onPut(new RegExp(/^\/ibzdailies\/?([a-zA-Z0-9\-\;]{0,35})$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzdaily 方法: Update");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzdailyid'];
+    const matchArray:any = new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})$/).exec(config.url);
     let tempValue: any = {};
     if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
         paramArray.forEach((item: any, index: number) => {
@@ -852,10 +824,38 @@ mock.onGet(new RegExp(/^\/ibzdailies\/fetchprojectdaily(\?[\w-./?%&=,]*)*$/)).re
 // URI参数传递情况未实现
 // URI参数传递情况未实现
 
+// Select
+mock.onGet(new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})\/select$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzdaily 方法: Select");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzdailyid'];
+    const matchArray:any = new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})\/select$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    let items = mockDatas ? mockDatas : [];
+    let _items = items.find((item: any) => Object.is(item.ibzdailyid, tempValue.ibzdailyid));
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(_items);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, _items];
+});
 
-// Remove
-mock.onDelete(new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})$/)).reply((config: any) => {
-    console.groupCollapsed("实体:ibzdaily 方法: Remove");
+
+// Get
+mock.onGet(new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzdaily 方法: Get");
     console.table({url:config.url, method: config.method, data:config.data});
     let status = MockAdapter.mockStatus(config);
     if (status !== 200) {
@@ -881,9 +881,9 @@ mock.onDelete(new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})$/)).reply((conf
     return [status, _items?_items:{}];
 });
 
-// Get
-mock.onGet(new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})$/)).reply((config: any) => {
-    console.groupCollapsed("实体:ibzdaily 方法: Get");
+// Remove
+mock.onDelete(new RegExp(/^\/ibzdailies\/([a-zA-Z0-9\-\;]{1,35})$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzdaily 方法: Remove");
     console.table({url:config.url, method: config.method, data:config.data});
     let status = MockAdapter.mockStatus(config);
     if (status !== 200) {

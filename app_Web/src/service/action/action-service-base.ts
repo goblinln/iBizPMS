@@ -41,7 +41,7 @@ export default class ActionServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,22 @@ export default class ActionServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ActionServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/actions/${context.action}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/actions/${context.action}/checkkey`,data,isloading);
+            return res;
+    }
+
+    /**
+     * Comment接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ActionServiceBase
+     */
+    public async Comment(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/actions/${context.action}/comment`,data,isloading);
             return res;
     }
 
@@ -81,7 +94,7 @@ export default class ActionServiceBase extends EntityService {
     }
 
     /**
-     * Update接口方法
+     * EditComment接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -89,16 +102,13 @@ export default class ActionServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ActionServiceBase
      */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/actions/${context.action}`,data,isloading);
-            
+    public async EditComment(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/actions/${context.action}/editcomment`,data,isloading);
             return res;
     }
 
     /**
-     * Remove接口方法
+     * EditCommentBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -106,9 +116,9 @@ export default class ActionServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ActionServiceBase
      */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/actions/${context.action}`,isloading);
-            return res;
+    public async EditCommentBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/actions/editcommentbatch`,tempData,isloading);
     }
 
     /**
@@ -146,62 +156,6 @@ export default class ActionServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ActionServiceBase
-     */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/actions/${context.action}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
-     * Comment接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ActionServiceBase
-     */
-    public async Comment(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/actions/${context.action}/comment`,data,isloading);
-            return res;
-    }
-
-    /**
-     * EditComment接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ActionServiceBase
-     */
-    public async EditComment(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/actions/${context.action}/editcomment`,data,isloading);
-            return res;
-    }
-
-    /**
-     * EditCommentBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ActionServiceBase
-     */
-    public async EditCommentBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/actions/editcommentbatch`,tempData,isloading);
-    }
-
-    /**
      * ManagePmsEe接口方法
      *
      * @param {*} [context={}]
@@ -230,6 +184,20 @@ export default class ActionServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ActionServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/actions/${context.action}`,isloading);
+            return res;
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -242,6 +210,23 @@ export default class ActionServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/actions/${context.action}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ActionServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/actions/${context.action}`,data,isloading);
             
             return res;
     }
@@ -447,5 +432,20 @@ export default class ActionServiceBase extends EntityService {
     public async searchType(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/actions/searchtype`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ActionServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/actions/${context.action}/select`,isloading);
+            
+            return res;
     }
 }

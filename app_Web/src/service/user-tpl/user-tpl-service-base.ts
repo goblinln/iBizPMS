@@ -41,7 +41,7 @@ export default class UserTplServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,8 @@ export default class UserTplServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof UserTplServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/usertpls/${context.usertpl}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/usertpls/${context.usertpl}/checkkey`,data,isloading);
             return res;
     }
 
@@ -77,37 +76,6 @@ export default class UserTplServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/usertpls`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof UserTplServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/usertpls/${context.usertpl}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof UserTplServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/usertpls/${context.usertpl}`,isloading);
-            return res;
     }
 
     /**
@@ -145,7 +113,7 @@ export default class UserTplServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -153,8 +121,8 @@ export default class UserTplServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof UserTplServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/usertpls/${context.usertpl}/checkkey`,data,isloading);
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/usertpls/${context.usertpl}`,isloading);
             return res;
     }
 
@@ -171,6 +139,23 @@ export default class UserTplServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/usertpls/${context.usertpl}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof UserTplServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/usertpls/${context.usertpl}`,data,isloading);
             
             return res;
     }
@@ -231,5 +216,20 @@ export default class UserTplServiceBase extends EntityService {
     public async searchMyUserTpl(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/usertpls/searchmyusertpl`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof UserTplServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/usertpls/${context.usertpl}/select`,isloading);
+            
+            return res;
     }
 }

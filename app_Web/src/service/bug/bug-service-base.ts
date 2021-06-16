@@ -42,286 +42,6 @@ export default class BugServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BugServiceBase
-     */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && context.bug){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/bugs/${context.bug}/select`,isloading);
-            
-            return res;
-        }
-        if(context.project && context.bug){
-            let res:any = await Http.getInstance().get(`/projects/${context.project}/bugs/${context.bug}/select`,isloading);
-            
-            return res;
-        }
-        if(context.story && context.bug){
-            let res:any = await Http.getInstance().get(`/stories/${context.story}/bugs/${context.bug}/select`,isloading);
-            
-            return res;
-        }
-        if(context.product && context.bug){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/bugs/${context.bug}/select`,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().get(`/bugs/${context.bug}/select`,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Create接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BugServiceBase
-     */
-    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            if(!data.srffrontuf || data.srffrontuf !== "1"){
-                data[this.APPDEKEY] = null;
-            }
-            if(data.srffrontuf){
-                delete data.srffrontuf;
-            }
-            let tempContext:any = JSON.parse(JSON.stringify(context));
-            let res:any = await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/bugs`,data,isloading);
-            
-            return res;
-        }
-        if(context.project && true){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            if(!data.srffrontuf || data.srffrontuf !== "1"){
-                data[this.APPDEKEY] = null;
-            }
-            if(data.srffrontuf){
-                delete data.srffrontuf;
-            }
-            let tempContext:any = JSON.parse(JSON.stringify(context));
-            let res:any = await Http.getInstance().post(`/projects/${context.project}/bugs`,data,isloading);
-            
-            return res;
-        }
-        if(context.story && true){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            if(!data.srffrontuf || data.srffrontuf !== "1"){
-                data[this.APPDEKEY] = null;
-            }
-            if(data.srffrontuf){
-                delete data.srffrontuf;
-            }
-            let tempContext:any = JSON.parse(JSON.stringify(context));
-            let res:any = await Http.getInstance().post(`/stories/${context.story}/bugs`,data,isloading);
-            
-            return res;
-        }
-        if(context.product && true){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            if(!data.srffrontuf || data.srffrontuf !== "1"){
-                data[this.APPDEKEY] = null;
-            }
-            if(data.srffrontuf){
-                delete data.srffrontuf;
-            }
-            let tempContext:any = JSON.parse(JSON.stringify(context));
-            let res:any = await Http.getInstance().post(`/products/${context.product}/bugs`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-        if(!data.srffrontuf || data.srffrontuf !== "1"){
-            data[this.APPDEKEY] = null;
-        }
-        if(data.srffrontuf){
-            delete data.srffrontuf;
-        }
-        let tempContext:any = JSON.parse(JSON.stringify(context));
-        let res:any = await Http.getInstance().post(`/bugs`,data,isloading);
-        
-        return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BugServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && context.bug){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/stories/${context.story}/bugs/${context.bug}`,data,isloading);
-            
-            return res;
-        }
-        if(context.project && context.bug){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/projects/${context.project}/bugs/${context.bug}`,data,isloading);
-            
-            return res;
-        }
-        if(context.story && context.bug){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/stories/${context.story}/bugs/${context.bug}`,data,isloading);
-            
-            return res;
-        }
-        if(context.product && context.bug){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/bugs/${context.bug}`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/bugs/${context.bug}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BugServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && context.bug){
-            let res:any = await Http.getInstance().delete(`/products/${context.product}/stories/${context.story}/bugs/${context.bug}`,isloading);
-            return res;
-        }
-        if(context.project && context.bug){
-            let res:any = await Http.getInstance().delete(`/projects/${context.project}/bugs/${context.bug}`,isloading);
-            return res;
-        }
-        if(context.story && context.bug){
-            let res:any = await Http.getInstance().delete(`/stories/${context.story}/bugs/${context.bug}`,isloading);
-            return res;
-        }
-        if(context.product && context.bug){
-            let res:any = await Http.getInstance().delete(`/products/${context.product}/bugs/${context.bug}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/bugs/${context.bug}`,isloading);
-            return res;
-    }
-
-    /**
-     * Get接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BugServiceBase
-     */
-    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && context.bug){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/bugs/${context.bug}`,isloading);
-            
-            return res;
-        }
-        if(context.project && context.bug){
-            let res:any = await Http.getInstance().get(`/projects/${context.project}/bugs/${context.bug}`,isloading);
-            
-            return res;
-        }
-        if(context.story && context.bug){
-            let res:any = await Http.getInstance().get(`/stories/${context.story}/bugs/${context.bug}`,isloading);
-            
-            return res;
-        }
-        if(context.product && context.bug){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/bugs/${context.bug}`,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().get(`/bugs/${context.bug}`,isloading);
-            
-            return res;
-    }
-
-    /**
-     * GetDraft接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BugServiceBase
-     */
-    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            if(tempData.bug) delete tempData.bug;
-            if(tempData.id) delete tempData.id;
-            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/bugs/getdraft`,tempData,isloading);
-            res.data.bug = data.bug;
-            
-            return res;
-        }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            if(tempData.bug) delete tempData.bug;
-            if(tempData.id) delete tempData.id;
-            let res:any = await Http.getInstance().get(`/projects/${context.project}/bugs/getdraft`,tempData,isloading);
-            res.data.bug = data.bug;
-            
-            return res;
-        }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            if(tempData.bug) delete tempData.bug;
-            if(tempData.id) delete tempData.id;
-            let res:any = await Http.getInstance().get(`/stories/${context.story}/bugs/getdraft`,tempData,isloading);
-            res.data.bug = data.bug;
-            
-            return res;
-        }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            if(tempData.bug) delete tempData.bug;
-            if(tempData.id) delete tempData.id;
-            let res:any = await Http.getInstance().get(`/products/${context.product}/bugs/getdraft`,tempData,isloading);
-            res.data.bug = data.bug;
-            
-            return res;
-        }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        if(tempData.bug) delete tempData.bug;
-        if(tempData.id) delete tempData.id;
-        let res:any = await  Http.getInstance().get(`/bugs/getdraft`,tempData,isloading);
-        res.data.bug = data.bug;
-        
-        return res;
-    }
-
-    /**
      * Activate接口方法
      *
      * @param {*} [context={}]
@@ -1024,6 +744,191 @@ export default class BugServiceBase extends EntityService {
     }
 
     /**
+     * Create接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && true){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            if(!data.srffrontuf || data.srffrontuf !== "1"){
+                data[this.APPDEKEY] = null;
+            }
+            if(data.srffrontuf){
+                delete data.srffrontuf;
+            }
+            let tempContext:any = JSON.parse(JSON.stringify(context));
+            let res:any = await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/bugs`,data,isloading);
+            
+            return res;
+        }
+        if(context.project && true){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            if(!data.srffrontuf || data.srffrontuf !== "1"){
+                data[this.APPDEKEY] = null;
+            }
+            if(data.srffrontuf){
+                delete data.srffrontuf;
+            }
+            let tempContext:any = JSON.parse(JSON.stringify(context));
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/bugs`,data,isloading);
+            
+            return res;
+        }
+        if(context.story && true){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            if(!data.srffrontuf || data.srffrontuf !== "1"){
+                data[this.APPDEKEY] = null;
+            }
+            if(data.srffrontuf){
+                delete data.srffrontuf;
+            }
+            let tempContext:any = JSON.parse(JSON.stringify(context));
+            let res:any = await Http.getInstance().post(`/stories/${context.story}/bugs`,data,isloading);
+            
+            return res;
+        }
+        if(context.product && true){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            if(!data.srffrontuf || data.srffrontuf !== "1"){
+                data[this.APPDEKEY] = null;
+            }
+            if(data.srffrontuf){
+                delete data.srffrontuf;
+            }
+            let tempContext:any = JSON.parse(JSON.stringify(context));
+            let res:any = await Http.getInstance().post(`/products/${context.product}/bugs`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+        if(!data.srffrontuf || data.srffrontuf !== "1"){
+            data[this.APPDEKEY] = null;
+        }
+        if(data.srffrontuf){
+            delete data.srffrontuf;
+        }
+        let tempContext:any = JSON.parse(JSON.stringify(context));
+        let res:any = await Http.getInstance().post(`/bugs`,data,isloading);
+        
+        return res;
+    }
+
+    /**
+     * Get接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && context.bug){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/bugs/${context.bug}`,isloading);
+            
+            return res;
+        }
+        if(context.project && context.bug){
+            let res:any = await Http.getInstance().get(`/projects/${context.project}/bugs/${context.bug}`,isloading);
+            
+            return res;
+        }
+        if(context.story && context.bug){
+            let res:any = await Http.getInstance().get(`/stories/${context.story}/bugs/${context.bug}`,isloading);
+            
+            return res;
+        }
+        if(context.product && context.bug){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/bugs/${context.bug}`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/bugs/${context.bug}`,isloading);
+            
+            return res;
+    }
+
+    /**
+     * GetDraft接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            if(tempData.bug) delete tempData.bug;
+            if(tempData.id) delete tempData.id;
+            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/bugs/getdraft`,tempData,isloading);
+            res.data.bug = data.bug;
+            
+            return res;
+        }
+        if(context.project && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            if(tempData.bug) delete tempData.bug;
+            if(tempData.id) delete tempData.id;
+            let res:any = await Http.getInstance().get(`/projects/${context.project}/bugs/getdraft`,tempData,isloading);
+            res.data.bug = data.bug;
+            
+            return res;
+        }
+        if(context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            if(tempData.bug) delete tempData.bug;
+            if(tempData.id) delete tempData.id;
+            let res:any = await Http.getInstance().get(`/stories/${context.story}/bugs/getdraft`,tempData,isloading);
+            res.data.bug = data.bug;
+            
+            return res;
+        }
+        if(context.product && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            if(tempData.bug) delete tempData.bug;
+            if(tempData.id) delete tempData.id;
+            let res:any = await Http.getInstance().get(`/products/${context.product}/bugs/getdraft`,tempData,isloading);
+            res.data.bug = data.bug;
+            
+            return res;
+        }
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        if(tempData.bug) delete tempData.bug;
+        if(tempData.id) delete tempData.id;
+        let res:any = await  Http.getInstance().get(`/bugs/getdraft`,tempData,isloading);
+        res.data.bug = data.bug;
+        
+        return res;
+    }
+
+    /**
+     * GetUserConcat接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async GetUserConcat(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let appLogic:GetCurUserConcatLogic = new GetCurUserConcatLogic({context:JSON.parse(JSON.stringify(context)),data:JSON.parse(JSON.stringify(data))});
+        const res = await appLogic.onExecute(context,data,isloading?true:false);
+        return {status:200,data:res};
+    }
+
+    /**
      * LinkBug接口方法
      *
      * @param {*} [context={}]
@@ -1456,6 +1361,36 @@ export default class BugServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && context.bug){
+            let res:any = await Http.getInstance().delete(`/products/${context.product}/stories/${context.story}/bugs/${context.bug}`,isloading);
+            return res;
+        }
+        if(context.project && context.bug){
+            let res:any = await Http.getInstance().delete(`/projects/${context.project}/bugs/${context.bug}`,isloading);
+            return res;
+        }
+        if(context.story && context.bug){
+            let res:any = await Http.getInstance().delete(`/stories/${context.story}/bugs/${context.bug}`,isloading);
+            return res;
+        }
+        if(context.product && context.bug){
+            let res:any = await Http.getInstance().delete(`/products/${context.product}/bugs/${context.bug}`,isloading);
+            return res;
+        }
+            let res:any = await Http.getInstance().delete(`/bugs/${context.bug}`,isloading);
+            return res;
+    }
+
+    /**
      * Resolve接口方法
      *
      * @param {*} [context={}]
@@ -1858,6 +1793,51 @@ export default class BugServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/bugs/unlinkbugbatch`,tempData,isloading);
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && context.bug){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/stories/${context.story}/bugs/${context.bug}`,data,isloading);
+            
+            return res;
+        }
+        if(context.project && context.bug){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/projects/${context.project}/bugs/${context.bug}`,data,isloading);
+            
+            return res;
+        }
+        if(context.story && context.bug){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/stories/${context.story}/bugs/${context.bug}`,data,isloading);
+            
+            return res;
+        }
+        if(context.product && context.bug){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/bugs/${context.bug}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/bugs/${context.bug}`,data,isloading);
+            
+            return res;
     }
 
     /**
@@ -3983,7 +3963,7 @@ export default class BugServiceBase extends EntityService {
     }
 
     /**
-     * GetUserConcat接口方法
+     * Select接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -3991,9 +3971,29 @@ export default class BugServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async GetUserConcat(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let appLogic:GetCurUserConcatLogic = new GetCurUserConcatLogic({context:JSON.parse(JSON.stringify(context)),data:JSON.parse(JSON.stringify(data))});
-        const res = await appLogic.onExecute(context,data,isloading?true:false);
-        return {status:200,data:res};
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && context.bug){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/bugs/${context.bug}/select`,isloading);
+            
+            return res;
+        }
+        if(context.project && context.bug){
+            let res:any = await Http.getInstance().get(`/projects/${context.project}/bugs/${context.bug}/select`,isloading);
+            
+            return res;
+        }
+        if(context.story && context.bug){
+            let res:any = await Http.getInstance().get(`/stories/${context.story}/bugs/${context.bug}/select`,isloading);
+            
+            return res;
+        }
+        if(context.product && context.bug){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/bugs/${context.bug}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/bugs/${context.bug}/select`,isloading);
+            
+            return res;
     }
 }

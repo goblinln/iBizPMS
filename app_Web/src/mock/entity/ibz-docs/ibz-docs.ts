@@ -86,34 +86,6 @@ mock.onDelete(new RegExp(/^\/ibzdocs\/batch$/)).reply((config: any) => {
     return [status, {}];
 });
 
-
-// Select
-mock.onGet(new RegExp(/^\/ibzdocs\/([a-zA-Z0-9\-\;]{1,35})\/select$/)).reply((config: any) => {
-    console.groupCollapsed("实体:ibzdoc 方法: Select");
-    console.table({url:config.url, method: config.method, data:config.data});
-    let status = MockAdapter.mockStatus(config);
-    if (status !== 200) {
-        return [status, null];
-    }    
-    const paramArray:Array<any> = ['ibzdocid'];
-    const matchArray:any = new RegExp(/^\/ibzdocs\/([a-zA-Z0-9\-\;]{1,35})\/select$/).exec(config.url);
-    let tempValue: any = {};
-    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
-        paramArray.forEach((item: any, index: number) => {
-            Object.defineProperty(tempValue, item, {
-                enumerable: true,
-                value: matchArray[index + 1]
-            });
-        });
-    }
-    let items = mockDatas ? mockDatas : [];
-    let _items = items.find((item: any) => Object.is(item.ibzdocid, tempValue.ibzdocid));
-    console.groupCollapsed("response数据  status: "+status+" data: ");
-    console.table(_items);
-    console.groupEnd();
-    console.groupEnd();
-    return [status, _items];
-});
 // URI参数传递情况未实现
 // URI参数传递情况未实现
 // URI参数传递情况未实现
@@ -123,7 +95,7 @@ mock.onGet(new RegExp(/^\/ibzdocs\/([a-zA-Z0-9\-\;]{1,35})\/select$/)).reply((co
 // URI参数传递情况未实现
     
 // FetchDefault
-mock.onGet(new RegExp(/^\/ibzdocs\/select$/)).reply((config: any) => {
+mock.onGet(new RegExp(/^\/ibzdocs$/)).reply((config: any) => {
     console.groupCollapsed("实体:ibzdoc 方法: FetchDefault");
     console.table({url:config.url, method: config.method, data:config.data});
     let status = MockAdapter.mockStatus(config);
@@ -138,7 +110,7 @@ mock.onGet(new RegExp(/^\/ibzdocs\/select$/)).reply((config: any) => {
 });
 
 // FetchDefault
-mock.onGet(new RegExp(/^\/ibzdocs\/select(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
+mock.onGet(new RegExp(/^\/ibzdocs(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
     console.groupCollapsed("实体:ibzdoc 方法: FetchDefault");
     console.table({url:config.url, method: config.method, data:config.data});
     if(config.url.includes('page')){
@@ -172,4 +144,32 @@ mock.onGet(new RegExp(/^\/ibzdocs\/select(\?[\w-./?%&=,]*)*$/)).reply((config: a
 // URI参数传递情况未实现
 // URI参数传递情况未实现
 // URI参数传递情况未实现
+
+// Select
+mock.onGet(new RegExp(/^\/ibzdocs\/([a-zA-Z0-9\-\;]{1,35})\/select$/)).reply((config: any) => {
+    console.groupCollapsed("实体:ibzdoc 方法: Select");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }    
+    const paramArray:Array<any> = ['ibzdocid'];
+    const matchArray:any = new RegExp(/^\/ibzdocs\/([a-zA-Z0-9\-\;]{1,35})\/select$/).exec(config.url);
+    let tempValue: any = {};
+    if(matchArray && matchArray.length >1 && paramArray && paramArray.length >0){
+        paramArray.forEach((item: any, index: number) => {
+            Object.defineProperty(tempValue, item, {
+                enumerable: true,
+                value: matchArray[index + 1]
+            });
+        });
+    }
+    let items = mockDatas ? mockDatas : [];
+    let _items = items.find((item: any) => Object.is(item.ibzdocid, tempValue.ibzdocid));
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(_items);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, _items];
+});
 

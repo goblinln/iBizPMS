@@ -273,6 +273,9 @@ export default class MainInfoModel {
       {
         name: 'ordernum',
       },
+      {
+        name: 'assignedtopk',
+      },
     ]
   }
 

@@ -41,7 +41,7 @@ export default class TestReportServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * getinfotesttask接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,47 +49,22 @@ export default class TestReportServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof TestReportServiceBase
      */
-    public async getinfotesttask(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && context.testreport){
             let masterData:any = {};
             Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/projects/${context.project}/testreports/${context.testreport}/getinfotesttask`,data,isloading);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/testreports/${context.testreport}/checkkey`,data,isloading);
             
             return res;
         }
         if(context.product && context.testreport){
             let masterData:any = {};
             Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/testreports/${context.testreport}/getinfotesttask`,data,isloading);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/testreports/${context.testreport}/checkkey`,data,isloading);
             
             return res;
         }
-            let res:any = await Http.getInstance().put(`/testreports/${context.testreport}/getinfotesttask`,data,isloading);
-            return res;
-    }
-
-    /**
-     * Select接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TestReportServiceBase
-     */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.testreport){
-            let res:any = await Http.getInstance().get(`/projects/${context.project}/testreports/${context.testreport}/select`,isloading);
-            
-            return res;
-        }
-        if(context.product && context.testreport){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/testreports/${context.testreport}/select`,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().get(`/testreports/${context.testreport}/select`,isloading);
-            
+            let res:any = await Http.getInstance().post(`/testreports/${context.testreport}/checkkey`,data,isloading);
             return res;
     }
 
@@ -143,59 +118,6 @@ export default class TestReportServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/testreports`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TestReportServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.testreport){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/projects/${context.project}/testreports/${context.testreport}`,data,isloading);
-            
-            return res;
-        }
-        if(context.product && context.testreport){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/testreports/${context.testreport}`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/testreports/${context.testreport}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TestReportServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.testreport){
-            let res:any = await Http.getInstance().delete(`/projects/${context.project}/testreports/${context.testreport}`,isloading);
-            return res;
-        }
-        if(context.product && context.testreport){
-            let res:any = await Http.getInstance().delete(`/products/${context.product}/testreports/${context.testreport}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/testreports/${context.testreport}`,isloading);
-            return res;
     }
 
     /**
@@ -258,34 +180,6 @@ export default class TestReportServiceBase extends EntityService {
         res.data.testreport = data.testreport;
         
         return res;
-    }
-
-    /**
-     * CheckKey接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TestReportServiceBase
-     */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.testreport){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/projects/${context.project}/testreports/${context.testreport}/checkkey`,data,isloading);
-            
-            return res;
-        }
-        if(context.product && context.testreport){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/products/${context.product}/testreports/${context.testreport}/checkkey`,data,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().post(`/testreports/${context.testreport}/checkkey`,data,isloading);
-            return res;
     }
 
     /**
@@ -485,6 +379,28 @@ export default class TestReportServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestReportServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.testreport){
+            let res:any = await Http.getInstance().delete(`/projects/${context.project}/testreports/${context.testreport}`,isloading);
+            return res;
+        }
+        if(context.product && context.testreport){
+            let res:any = await Http.getInstance().delete(`/products/${context.product}/testreports/${context.testreport}`,isloading);
+            return res;
+        }
+            let res:any = await Http.getInstance().delete(`/testreports/${context.testreport}`,isloading);
+            return res;
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -512,6 +428,65 @@ export default class TestReportServiceBase extends EntityService {
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/testreports/${context.testreport}/save`,data,isloading);
             
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestReportServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.testreport){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/projects/${context.project}/testreports/${context.testreport}`,data,isloading);
+            
+            return res;
+        }
+        if(context.product && context.testreport){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/testreports/${context.testreport}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/testreports/${context.testreport}`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * getinfotesttask接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestReportServiceBase
+     */
+    public async getinfotesttask(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.testreport){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/projects/${context.project}/testreports/${context.testreport}/getinfotesttask`,data,isloading);
+            
+            return res;
+        }
+        if(context.product && context.testreport){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/testreports/${context.testreport}/getinfotesttask`,data,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().put(`/testreports/${context.testreport}/getinfotesttask`,data,isloading);
             return res;
     }
 
@@ -560,5 +535,30 @@ export default class TestReportServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/testreports/searchdefault`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestReportServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.testreport){
+            let res:any = await Http.getInstance().get(`/projects/${context.project}/testreports/${context.testreport}/select`,isloading);
+            
+            return res;
+        }
+        if(context.product && context.testreport){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/testreports/${context.testreport}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/testreports/${context.testreport}/select`,isloading);
+            
+            return res;
     }
 }

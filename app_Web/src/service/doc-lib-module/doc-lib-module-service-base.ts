@@ -41,110 +41,6 @@ export default class DocLibModuleServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocLibModuleServiceBase
-     */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/doclibmodules/${context.doclibmodule}/select`,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Create接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocLibModuleServiceBase
-     */
-    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-        if(!data.srffrontuf || data.srffrontuf !== "1"){
-            data[this.APPDEKEY] = null;
-        }
-        if(data.srffrontuf){
-            delete data.srffrontuf;
-        }
-        let tempContext:any = JSON.parse(JSON.stringify(context));
-        let res:any = await Http.getInstance().post(`/doclibmodules`,data,isloading);
-        
-        return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocLibModuleServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/doclibmodules/${context.doclibmodule}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocLibModuleServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/doclibmodules/${context.doclibmodule}`,isloading);
-            return res;
-    }
-
-    /**
-     * Get接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocLibModuleServiceBase
-     */
-    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/doclibmodules/${context.doclibmodule}`,isloading);
-            
-            return res;
-    }
-
-    /**
-     * GetDraft接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocLibModuleServiceBase
-     */
-    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        if(tempData.doclibmodule) delete tempData.doclibmodule;
-        if(tempData.id) delete tempData.id;
-        let res:any = await  Http.getInstance().get(`/doclibmodules/getdraft`,tempData,isloading);
-        res.data.doclibmodule = data.doclibmodule;
-        
-        return res;
-    }
-
-    /**
      * CheckKey接口方法
      *
      * @param {*} [context={}]
@@ -187,6 +83,30 @@ export default class DocLibModuleServiceBase extends EntityService {
     }
 
     /**
+     * Create接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibModuleServiceBase
+     */
+    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+        if(!data.srffrontuf || data.srffrontuf !== "1"){
+            data[this.APPDEKEY] = null;
+        }
+        if(data.srffrontuf){
+            delete data.srffrontuf;
+        }
+        let tempContext:any = JSON.parse(JSON.stringify(context));
+        let res:any = await Http.getInstance().post(`/doclibmodules`,data,isloading);
+        
+        return res;
+    }
+
+    /**
      * DocLibModuleNFavorite接口方法
      *
      * @param {*} [context={}]
@@ -225,6 +145,54 @@ export default class DocLibModuleServiceBase extends EntityService {
      */
     public async Fix(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
             let res:any = await Http.getInstance().post(`/doclibmodules/${context.doclibmodule}/fix`,data,isloading);
+            return res;
+    }
+
+    /**
+     * Get接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibModuleServiceBase
+     */
+    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/doclibmodules/${context.doclibmodule}`,isloading);
+            
+            return res;
+    }
+
+    /**
+     * GetDraft接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibModuleServiceBase
+     */
+    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        if(tempData.doclibmodule) delete tempData.doclibmodule;
+        if(tempData.id) delete tempData.id;
+        let res:any = await  Http.getInstance().get(`/doclibmodules/getdraft`,tempData,isloading);
+        res.data.doclibmodule = data.doclibmodule;
+        
+        return res;
+    }
+
+    /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibModuleServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/doclibmodules/${context.doclibmodule}`,isloading);
             return res;
     }
 
@@ -271,6 +239,23 @@ export default class DocLibModuleServiceBase extends EntityService {
     public async UnCollectBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/doclibmodules/uncollectbatch`,tempData,isloading);
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibModuleServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/doclibmodules/${context.doclibmodule}`,data,isloading);
+            
+            return res;
     }
 
     /**
@@ -561,5 +546,20 @@ export default class DocLibModuleServiceBase extends EntityService {
     public async searchRootModuleMuLuBysrfparentkey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/doclibmodules/searchrootmodulemulubysrfparentkey`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibModuleServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/doclibmodules/${context.doclibmodule}/select`,isloading);
+            
+            return res;
     }
 }

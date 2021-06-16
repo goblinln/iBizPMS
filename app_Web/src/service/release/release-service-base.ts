@@ -41,154 +41,6 @@ export default class ReleaseServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ReleaseServiceBase
-     */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.release){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/releases/${context.release}/select`,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().get(`/releases/${context.release}/select`,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Create接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ReleaseServiceBase
-     */
-    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            if(!data.srffrontuf || data.srffrontuf !== "1"){
-                data[this.APPDEKEY] = null;
-            }
-            if(data.srffrontuf){
-                delete data.srffrontuf;
-            }
-            let tempContext:any = JSON.parse(JSON.stringify(context));
-            let res:any = await Http.getInstance().post(`/products/${context.product}/releases`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-        if(!data.srffrontuf || data.srffrontuf !== "1"){
-            data[this.APPDEKEY] = null;
-        }
-        if(data.srffrontuf){
-            delete data.srffrontuf;
-        }
-        let tempContext:any = JSON.parse(JSON.stringify(context));
-        let res:any = await Http.getInstance().post(`/releases`,data,isloading);
-        
-        return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ReleaseServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.release){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/releases/${context.release}`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/releases/${context.release}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ReleaseServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.release){
-            let res:any = await Http.getInstance().delete(`/products/${context.product}/releases/${context.release}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/releases/${context.release}`,isloading);
-            return res;
-    }
-
-    /**
-     * Get接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ReleaseServiceBase
-     */
-    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.release){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/releases/${context.release}`,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().get(`/releases/${context.release}`,isloading);
-            
-            return res;
-    }
-
-    /**
-     * GetDraft接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ReleaseServiceBase
-     */
-    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            if(tempData.release) delete tempData.release;
-            if(tempData.id) delete tempData.id;
-            let res:any = await Http.getInstance().get(`/products/${context.product}/releases/getdraft`,tempData,isloading);
-            res.data.release = data.release;
-            
-            return res;
-        }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        if(tempData.release) delete tempData.release;
-        if(tempData.id) delete tempData.id;
-        let res:any = await  Http.getInstance().get(`/releases/getdraft`,tempData,isloading);
-        res.data.release = data.release;
-        
-        return res;
-    }
-
-    /**
      * Activate接口方法
      *
      * @param {*} [context={}]
@@ -324,6 +176,92 @@ export default class ReleaseServiceBase extends EntityService {
         }
             let res:any = await Http.getInstance().post(`/releases/${context.release}/checkkey`,data,isloading);
             return res;
+    }
+
+    /**
+     * Create接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ReleaseServiceBase
+     */
+    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && true){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            if(!data.srffrontuf || data.srffrontuf !== "1"){
+                data[this.APPDEKEY] = null;
+            }
+            if(data.srffrontuf){
+                delete data.srffrontuf;
+            }
+            let tempContext:any = JSON.parse(JSON.stringify(context));
+            let res:any = await Http.getInstance().post(`/products/${context.product}/releases`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+        if(!data.srffrontuf || data.srffrontuf !== "1"){
+            data[this.APPDEKEY] = null;
+        }
+        if(data.srffrontuf){
+            delete data.srffrontuf;
+        }
+        let tempContext:any = JSON.parse(JSON.stringify(context));
+        let res:any = await Http.getInstance().post(`/releases`,data,isloading);
+        
+        return res;
+    }
+
+    /**
+     * Get接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ReleaseServiceBase
+     */
+    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.release){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/releases/${context.release}`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/releases/${context.release}`,isloading);
+            
+            return res;
+    }
+
+    /**
+     * GetDraft接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ReleaseServiceBase
+     */
+    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            if(tempData.release) delete tempData.release;
+            if(tempData.id) delete tempData.id;
+            let res:any = await Http.getInstance().get(`/products/${context.product}/releases/getdraft`,tempData,isloading);
+            res.data.release = data.release;
+            
+            return res;
+        }
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        if(tempData.release) delete tempData.release;
+        if(tempData.id) delete tempData.id;
+        let res:any = await  Http.getInstance().get(`/releases/getdraft`,tempData,isloading);
+        res.data.release = data.release;
+        
+        return res;
     }
 
     /**
@@ -543,6 +481,24 @@ export default class ReleaseServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ReleaseServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.release){
+            let res:any = await Http.getInstance().delete(`/products/${context.product}/releases/${context.release}`,isloading);
+            return res;
+        }
+            let res:any = await Http.getInstance().delete(`/releases/${context.release}`,isloading);
+            return res;
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -645,6 +601,30 @@ export default class ReleaseServiceBase extends EntityService {
     }
 
     /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ReleaseServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.release){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/releases/${context.release}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/releases/${context.release}`,data,isloading);
+            
+            return res;
+    }
+
+    /**
      * FetchDefault接口方法
      *
      * @param {*} [context={}]
@@ -718,5 +698,25 @@ export default class ReleaseServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/releases/searchreportrelease`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ReleaseServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.release){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/releases/${context.release}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/releases/${context.release}/select`,isloading);
+            
+            return res;
     }
 }

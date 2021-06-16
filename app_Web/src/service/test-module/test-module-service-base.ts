@@ -41,7 +41,7 @@ export default class TestModuleServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,14 +49,15 @@ export default class TestModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof TestModuleServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.testmodule){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/testmodules/${context.testmodule}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/testmodules/${context.testmodule}/checkkey`,data,isloading);
             
             return res;
         }
-            let res:any = await Http.getInstance().get(`/testmodules/${context.testmodule}/select`,isloading);
-            
+            let res:any = await Http.getInstance().post(`/testmodules/${context.testmodule}/checkkey`,data,isloading);
             return res;
     }
 
@@ -99,7 +100,7 @@ export default class TestModuleServiceBase extends EntityService {
     }
 
     /**
-     * Update接口方法
+     * Fix接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -107,36 +108,15 @@ export default class TestModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof TestModuleServiceBase
      */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Fix(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.testmodule){
             let masterData:any = {};
             Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/testmodules/${context.testmodule}`,data,isloading);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/testmodules/${context.testmodule}/fix`,data,isloading);
             
             return res;
         }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/testmodules/${context.testmodule}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TestModuleServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.testmodule){
-            let res:any = await Http.getInstance().delete(`/products/${context.product}/testmodules/${context.testmodule}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/testmodules/${context.testmodule}`,isloading);
+            let res:any = await Http.getInstance().post(`/testmodules/${context.testmodule}/fix`,data,isloading);
             return res;
     }
 
@@ -189,7 +169,7 @@ export default class TestModuleServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -197,36 +177,12 @@ export default class TestModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof TestModuleServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.testmodule){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/products/${context.product}/testmodules/${context.testmodule}/checkkey`,data,isloading);
-            
+            let res:any = await Http.getInstance().delete(`/products/${context.product}/testmodules/${context.testmodule}`,isloading);
             return res;
         }
-            let res:any = await Http.getInstance().post(`/testmodules/${context.testmodule}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
-     * Fix接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TestModuleServiceBase
-     */
-    public async Fix(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.testmodule){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/products/${context.product}/testmodules/${context.testmodule}/fix`,data,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().post(`/testmodules/${context.testmodule}/fix`,data,isloading);
+            let res:any = await Http.getInstance().delete(`/testmodules/${context.testmodule}`,isloading);
             return res;
     }
 
@@ -271,6 +227,30 @@ export default class TestModuleServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/testmodules/${context.testmodule}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestModuleServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.testmodule){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/testmodules/${context.testmodule}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/testmodules/${context.testmodule}`,data,isloading);
             
             return res;
     }
@@ -501,5 +481,25 @@ export default class TestModuleServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/testmodules/searchtestmodule`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestModuleServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.testmodule){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/testmodules/${context.testmodule}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/testmodules/${context.testmodule}/select`,isloading);
+            
+            return res;
     }
 }

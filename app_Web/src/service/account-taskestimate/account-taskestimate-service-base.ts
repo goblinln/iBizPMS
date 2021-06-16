@@ -41,7 +41,7 @@ export default class AccountTaskestimateServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,8 @@ export default class AccountTaskestimateServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof AccountTaskestimateServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/accounttaskestimates/${context.accounttaskestimate}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/accounttaskestimates/${context.accounttaskestimate}/checkkey`,data,isloading);
             return res;
     }
 
@@ -77,37 +76,6 @@ export default class AccountTaskestimateServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/accounttaskestimates`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof AccountTaskestimateServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/accounttaskestimates/${context.accounttaskestimate}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof AccountTaskestimateServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/accounttaskestimates/${context.accounttaskestimate}`,isloading);
-            return res;
     }
 
     /**
@@ -145,7 +113,7 @@ export default class AccountTaskestimateServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -153,8 +121,8 @@ export default class AccountTaskestimateServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof AccountTaskestimateServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/accounttaskestimates/${context.accounttaskestimate}/checkkey`,data,isloading);
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/accounttaskestimates/${context.accounttaskestimate}`,isloading);
             return res;
     }
 
@@ -171,6 +139,23 @@ export default class AccountTaskestimateServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/accounttaskestimates/${context.accounttaskestimate}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AccountTaskestimateServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/accounttaskestimates/${context.accounttaskestimate}`,data,isloading);
             
             return res;
     }
@@ -205,6 +190,64 @@ export default class AccountTaskestimateServiceBase extends EntityService {
     }
 
     /**
+     * FetchCurDaySum接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AccountTaskestimateServiceBase
+     */
+    public async FetchCurDaySum(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = await Http.getInstance().get(`/accounttaskestimates/fetchcurdaysum`,tempData,isloading);
+        return res;
+    }
+
+    /**
+     * searchCurDaySum接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AccountTaskestimateServiceBase
+     */
+    public async searchCurDaySum(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/accounttaskestimates/searchcurdaysum`,tempData,isloading);
+    }
+
+    /**
+     * FetchCurDaySunByProject接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AccountTaskestimateServiceBase
+     */
+    public async FetchCurDaySunByProject(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = await Http.getInstance().get(`/accounttaskestimates/fetchcurdaysunbyproject`,tempData,isloading);
+        return res;
+    }
+
+    /**
+     * searchCurDaySunByProject接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AccountTaskestimateServiceBase
+     */
+    public async searchCurDaySunByProject(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/accounttaskestimates/searchcurdaysunbyproject`,tempData,isloading);
+    }
+
+    /**
      * FetchDefault接口方法
      *
      * @param {*} [context={}]
@@ -231,5 +274,49 @@ export default class AccountTaskestimateServiceBase extends EntityService {
     public async searchDefault(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/accounttaskestimates/searchdefault`,tempData,isloading);
+    }
+
+    /**
+     * FetchMyDaySum接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AccountTaskestimateServiceBase
+     */
+    public async FetchMyDaySum(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = await Http.getInstance().get(`/accounttaskestimates/fetchmydaysum`,tempData,isloading);
+        return res;
+    }
+
+    /**
+     * searchMyDaySum接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AccountTaskestimateServiceBase
+     */
+    public async searchMyDaySum(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/accounttaskestimates/searchmydaysum`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof AccountTaskestimateServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/accounttaskestimates/${context.accounttaskestimate}/select`,isloading);
+            
+            return res;
     }
 }

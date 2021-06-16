@@ -41,7 +41,7 @@ export default class IbzCaseServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,14 +49,49 @@ export default class IbzCaseServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzCaseServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.ibzlib && context.ibzcase){
-            let res:any = await Http.getInstance().get(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/select`,isloading);
-            
+            let masterData:any = {};
+        let ibzlibcasesteptmpsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps'),'undefined')){
+            ibzlibcasesteptmpsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps') as any);
+            if(ibzlibcasesteptmpsData && ibzlibcasesteptmpsData.length && ibzlibcasesteptmpsData.length > 0 && Environment.isStudioSystem === false){
+                ibzlibcasesteptmpsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibzlibcasesteptmps = ibzlibcasesteptmpsData;
+        let ibzlibcasestepsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps'),'undefined')){
+            ibzlibcasestepsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps') as any);
+            if(ibzlibcasestepsData && ibzlibcasestepsData.length && ibzlibcasestepsData.length > 0 && Environment.isStudioSystem === false){
+                ibzlibcasestepsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibzlibcasesteps = ibzlibcasestepsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/checkkey`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteptmps',JSON.stringify(res.data.ibzlibcasesteptmps?res.data.ibzlibcasesteptmps:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteps',JSON.stringify(res.data.ibzlibcasesteps?res.data.ibzlibcasesteps:[]));
+
             return res;
         }
-            let res:any = await Http.getInstance().get(`/ibzcases/${context.ibzcase}/select`,isloading);
-            
+            let res:any = await Http.getInstance().post(`/ibzcases/${context.ibzcase}/checkkey`,data,isloading);
             return res;
     }
 
@@ -167,116 +202,6 @@ export default class IbzCaseServiceBase extends EntityService {
     }
 
     /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzCaseServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.ibzlib && context.ibzcase){
-            let masterData:any = {};
-        let ibzlibcasesteptmpsData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps'),'undefined')){
-            ibzlibcasesteptmpsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps') as any);
-            if(ibzlibcasesteptmpsData && ibzlibcasesteptmpsData.length && ibzlibcasesteptmpsData.length > 0 && Environment.isStudioSystem === false){
-                ibzlibcasesteptmpsData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.ibzlibcasesteptmps = ibzlibcasesteptmpsData;
-        let ibzlibcasestepsData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps'),'undefined')){
-            ibzlibcasestepsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps') as any);
-            if(ibzlibcasestepsData && ibzlibcasestepsData.length && ibzlibcasestepsData.length > 0 && Environment.isStudioSystem === false){
-                ibzlibcasestepsData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.ibzlibcasesteps = ibzlibcasestepsData;
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}`,data,isloading);
-                        this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteptmps',JSON.stringify(res.data.ibzlibcasesteptmps?res.data.ibzlibcasesteptmps:[]));
-            this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteps',JSON.stringify(res.data.ibzlibcasesteps?res.data.ibzlibcasesteps:[]));
-
-            return res;
-        }
-        let masterData:any = {};
-        let ibzlibcasesteptmpsData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps'),'undefined')){
-            ibzlibcasesteptmpsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps') as any);
-            if(ibzlibcasesteptmpsData && ibzlibcasesteptmpsData.length && ibzlibcasesteptmpsData.length > 0 && Environment.isStudioSystem === false){
-                ibzlibcasesteptmpsData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.ibzlibcasesteptmps = ibzlibcasesteptmpsData;
-        let ibzlibcasestepsData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps'),'undefined')){
-            ibzlibcasestepsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps') as any);
-            if(ibzlibcasestepsData && ibzlibcasestepsData.length && ibzlibcasestepsData.length > 0 && Environment.isStudioSystem === false){
-                ibzlibcasestepsData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.ibzlibcasesteps = ibzlibcasestepsData;
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/ibzcases/${context.ibzcase}`,data,isloading);
-                        this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteptmps',JSON.stringify(res.data.ibzlibcasesteptmps?res.data.ibzlibcasesteptmps:[]));
-            this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteps',JSON.stringify(res.data.ibzlibcasesteps?res.data.ibzlibcasesteps:[]));
-
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzCaseServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.ibzlib && context.ibzcase){
-            let res:any = await Http.getInstance().delete(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/ibzcases/${context.ibzcase}`,isloading);
-            return res;
-    }
-
-    /**
      * Get接口方法
      *
      * @param {*} [context={}]
@@ -333,7 +258,7 @@ export default class IbzCaseServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -341,49 +266,12 @@ export default class IbzCaseServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzCaseServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.ibzlib && context.ibzcase){
-            let masterData:any = {};
-        let ibzlibcasesteptmpsData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps'),'undefined')){
-            ibzlibcasesteptmpsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps') as any);
-            if(ibzlibcasesteptmpsData && ibzlibcasesteptmpsData.length && ibzlibcasesteptmpsData.length > 0 && Environment.isStudioSystem === false){
-                ibzlibcasesteptmpsData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.ibzlibcasesteptmps = ibzlibcasesteptmpsData;
-        let ibzlibcasestepsData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps'),'undefined')){
-            ibzlibcasestepsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps') as any);
-            if(ibzlibcasestepsData && ibzlibcasestepsData.length && ibzlibcasestepsData.length > 0 && Environment.isStudioSystem === false){
-                ibzlibcasestepsData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.ibzlibcasesteps = ibzlibcasestepsData;
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/checkkey`,data,isloading);
-                        this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteptmps',JSON.stringify(res.data.ibzlibcasesteptmps?res.data.ibzlibcasesteptmps:[]));
-            this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteps',JSON.stringify(res.data.ibzlibcasesteps?res.data.ibzlibcasesteps:[]));
-
+            let res:any = await Http.getInstance().delete(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}`,isloading);
             return res;
         }
-            let res:any = await Http.getInstance().post(`/ibzcases/${context.ibzcase}/checkkey`,data,isloading);
+            let res:any = await Http.getInstance().delete(`/ibzcases/${context.ibzcase}`,isloading);
             return res;
     }
 
@@ -480,6 +368,98 @@ export default class IbzCaseServiceBase extends EntityService {
     }
 
     /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzCaseServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.ibzlib && context.ibzcase){
+            let masterData:any = {};
+        let ibzlibcasesteptmpsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps'),'undefined')){
+            ibzlibcasesteptmpsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps') as any);
+            if(ibzlibcasesteptmpsData && ibzlibcasesteptmpsData.length && ibzlibcasesteptmpsData.length > 0 && Environment.isStudioSystem === false){
+                ibzlibcasesteptmpsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibzlibcasesteptmps = ibzlibcasesteptmpsData;
+        let ibzlibcasestepsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps'),'undefined')){
+            ibzlibcasestepsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps') as any);
+            if(ibzlibcasestepsData && ibzlibcasestepsData.length && ibzlibcasestepsData.length > 0 && Environment.isStudioSystem === false){
+                ibzlibcasestepsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibzlibcasesteps = ibzlibcasestepsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteptmps',JSON.stringify(res.data.ibzlibcasesteptmps?res.data.ibzlibcasesteptmps:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteps',JSON.stringify(res.data.ibzlibcasesteps?res.data.ibzlibcasesteps:[]));
+
+            return res;
+        }
+        let masterData:any = {};
+        let ibzlibcasesteptmpsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps'),'undefined')){
+            ibzlibcasesteptmpsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteptmps') as any);
+            if(ibzlibcasesteptmpsData && ibzlibcasesteptmpsData.length && ibzlibcasesteptmpsData.length > 0 && Environment.isStudioSystem === false){
+                ibzlibcasesteptmpsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibzlibcasesteptmps = ibzlibcasesteptmpsData;
+        let ibzlibcasestepsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps'),'undefined')){
+            ibzlibcasestepsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibzlibcasesteps') as any);
+            if(ibzlibcasestepsData && ibzlibcasestepsData.length && ibzlibcasestepsData.length > 0 && Environment.isStudioSystem === false){
+                ibzlibcasestepsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibzlibcasesteps = ibzlibcasestepsData;
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/ibzcases/${context.ibzcase}`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteptmps',JSON.stringify(res.data.ibzlibcasesteptmps?res.data.ibzlibcasesteptmps:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibzlibcasesteps',JSON.stringify(res.data.ibzlibcasesteps?res.data.ibzlibcasesteps:[]));
+
+            return res;
+    }
+
+    /**
      * FetchDefault接口方法
      *
      * @param {*} [context={}]
@@ -527,5 +507,25 @@ export default class IbzCaseServiceBase extends EntityService {
      * @memberof IbzCaseServiceBase
      */
     public async FetchTempDefault(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzCaseServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.ibzlib && context.ibzcase){
+            let res:any = await Http.getInstance().get(`/ibzlibs/${context.ibzlib}/ibzcases/${context.ibzcase}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/ibzcases/${context.ibzcase}/select`,isloading);
+            
+            return res;
     }
 }

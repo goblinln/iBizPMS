@@ -41,7 +41,7 @@ export default class ProjectModuleServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,14 +49,32 @@ export default class ProjectModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ProjectModuleServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && context.projectmodule){
-            let res:any = await Http.getInstance().get(`/projects/${context.project}/projectmodules/${context.projectmodule}/select`,isloading);
-            
+            let masterData:any = {};
+        let tasksData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_tasks'),'undefined')){
+            tasksData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_tasks') as any);
+            if(tasksData && tasksData.length && tasksData.length > 0 && Environment.isStudioSystem === false){
+                tasksData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.tasks = tasksData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/projectmodules/${context.projectmodule}/checkkey`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_tasks',JSON.stringify(res.data.tasks?res.data.tasks:[]));
+
             return res;
         }
-            let res:any = await Http.getInstance().get(`/projectmodules/${context.projectmodule}/select`,isloading);
-            
+            let res:any = await Http.getInstance().post(`/projectmodules/${context.projectmodule}/checkkey`,data,isloading);
             return res;
     }
 
@@ -133,7 +151,7 @@ export default class ProjectModuleServiceBase extends EntityService {
     }
 
     /**
-     * Update接口方法
+     * Fix接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -141,7 +159,7 @@ export default class ProjectModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ProjectModuleServiceBase
      */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Fix(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && context.projectmodule){
             let masterData:any = {};
         let tasksData:any = [];
@@ -161,50 +179,12 @@ export default class ProjectModuleServiceBase extends EntityService {
         }
         masterData.tasks = tasksData;
             Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/projects/${context.project}/projectmodules/${context.projectmodule}`,data,isloading);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/projectmodules/${context.projectmodule}/fix`,data,isloading);
                         this.tempStorage.setItem(context.srfsessionkey+'_tasks',JSON.stringify(res.data.tasks?res.data.tasks:[]));
 
             return res;
         }
-        let masterData:any = {};
-        let tasksData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_tasks'),'undefined')){
-            tasksData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_tasks') as any);
-            if(tasksData && tasksData.length && tasksData.length > 0 && Environment.isStudioSystem === false){
-                tasksData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.tasks = tasksData;
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/projectmodules/${context.projectmodule}`,data,isloading);
-                        this.tempStorage.setItem(context.srfsessionkey+'_tasks',JSON.stringify(res.data.tasks?res.data.tasks:[]));
-
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectModuleServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.projectmodule){
-            let res:any = await Http.getInstance().delete(`/projects/${context.project}/projectmodules/${context.projectmodule}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/projectmodules/${context.projectmodule}`,isloading);
+            let res:any = await Http.getInstance().post(`/projectmodules/${context.projectmodule}/fix`,data,isloading);
             return res;
     }
 
@@ -261,7 +241,7 @@ export default class ProjectModuleServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -269,70 +249,12 @@ export default class ProjectModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ProjectModuleServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && context.projectmodule){
-            let masterData:any = {};
-        let tasksData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_tasks'),'undefined')){
-            tasksData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_tasks') as any);
-            if(tasksData && tasksData.length && tasksData.length > 0 && Environment.isStudioSystem === false){
-                tasksData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.tasks = tasksData;
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/projects/${context.project}/projectmodules/${context.projectmodule}/checkkey`,data,isloading);
-                        this.tempStorage.setItem(context.srfsessionkey+'_tasks',JSON.stringify(res.data.tasks?res.data.tasks:[]));
-
+            let res:any = await Http.getInstance().delete(`/projects/${context.project}/projectmodules/${context.projectmodule}`,isloading);
             return res;
         }
-            let res:any = await Http.getInstance().post(`/projectmodules/${context.projectmodule}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
-     * Fix接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectModuleServiceBase
-     */
-    public async Fix(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.projectmodule){
-            let masterData:any = {};
-        let tasksData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_tasks'),'undefined')){
-            tasksData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_tasks') as any);
-            if(tasksData && tasksData.length && tasksData.length > 0 && Environment.isStudioSystem === false){
-                tasksData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.id = null;
-                            if(item.hasOwnProperty('id') && item.id) delete item.id;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.tasks = tasksData;
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/projects/${context.project}/projectmodules/${context.projectmodule}/fix`,data,isloading);
-                        this.tempStorage.setItem(context.srfsessionkey+'_tasks',JSON.stringify(res.data.tasks?res.data.tasks:[]));
-
-            return res;
-        }
-            let res:any = await Http.getInstance().post(`/projectmodules/${context.projectmodule}/fix`,data,isloading);
+            let res:any = await Http.getInstance().delete(`/projectmodules/${context.projectmodule}`,isloading);
             return res;
     }
 
@@ -427,6 +349,64 @@ export default class ProjectModuleServiceBase extends EntityService {
         masterData.tasks = tasksData;
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/projectmodules/${context.projectmodule}/save`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_tasks',JSON.stringify(res.data.tasks?res.data.tasks:[]));
+
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectModuleServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule){
+            let masterData:any = {};
+        let tasksData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_tasks'),'undefined')){
+            tasksData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_tasks') as any);
+            if(tasksData && tasksData.length && tasksData.length > 0 && Environment.isStudioSystem === false){
+                tasksData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.tasks = tasksData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/projects/${context.project}/projectmodules/${context.projectmodule}`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_tasks',JSON.stringify(res.data.tasks?res.data.tasks:[]));
+
+            return res;
+        }
+        let masterData:any = {};
+        let tasksData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_tasks'),'undefined')){
+            tasksData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_tasks') as any);
+            if(tasksData && tasksData.length && tasksData.length > 0 && Environment.isStudioSystem === false){
+                tasksData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.tasks = tasksData;
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/projectmodules/${context.projectmodule}`,data,isloading);
                         this.tempStorage.setItem(context.srfsessionkey+'_tasks',JSON.stringify(res.data.tasks?res.data.tasks:[]));
 
             return res;
@@ -696,5 +676,25 @@ export default class ProjectModuleServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/projectmodules/searchtaskmodules`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectModuleServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule){
+            let res:any = await Http.getInstance().get(`/projects/${context.project}/projectmodules/${context.projectmodule}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/projectmodules/${context.projectmodule}/select`,isloading);
+            
+            return res;
     }
 }

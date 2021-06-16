@@ -41,7 +41,7 @@ export default class IbizproProjectWeeklyServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,8 @@ export default class IbizproProjectWeeklyServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbizproProjectWeeklyServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/ibizproprojectweeklies/${context.ibizproprojectweekly}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/ibizproprojectweeklies/${context.ibizproprojectweekly}/checkkey`,data,isloading);
             return res;
     }
 
@@ -77,37 +76,6 @@ export default class IbizproProjectWeeklyServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/ibizproprojectweeklies`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbizproProjectWeeklyServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/ibizproprojectweeklies/${context.ibizproprojectweekly}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbizproProjectWeeklyServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/ibizproprojectweeklies/${context.ibizproprojectweekly}`,isloading);
-            return res;
     }
 
     /**
@@ -145,20 +113,6 @@ export default class IbizproProjectWeeklyServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbizproProjectWeeklyServiceBase
-     */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/ibizproprojectweeklies/${context.ibizproprojectweekly}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
      * PushSumProjectWeekly接口方法
      *
      * @param {*} [context={}]
@@ -187,6 +141,20 @@ export default class IbizproProjectWeeklyServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbizproProjectWeeklyServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/ibizproprojectweeklies/${context.ibizproprojectweekly}`,isloading);
+            return res;
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -199,6 +167,23 @@ export default class IbizproProjectWeeklyServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/ibizproprojectweeklies/${context.ibizproprojectweekly}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbizproProjectWeeklyServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/ibizproprojectweeklies/${context.ibizproprojectweekly}`,data,isloading);
             
             return res;
     }
@@ -230,5 +215,20 @@ export default class IbizproProjectWeeklyServiceBase extends EntityService {
     public async searchDefault(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/ibizproprojectweeklies/searchdefault`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbizproProjectWeeklyServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/ibizproprojectweeklies/${context.ibizproprojectweekly}/select`,isloading);
+            
+            return res;
     }
 }

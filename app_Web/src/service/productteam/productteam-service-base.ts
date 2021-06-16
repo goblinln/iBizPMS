@@ -41,7 +41,7 @@ export default class PRODUCTTEAMServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,14 +49,15 @@ export default class PRODUCTTEAMServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof PRODUCTTEAMServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.productteam){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/productteams/${context.productteam}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/productteams/${context.productteam}/checkkey`,data,isloading);
             
             return res;
         }
-            let res:any = await Http.getInstance().get(`/productteams/${context.productteam}/select`,isloading);
-            
+            let res:any = await Http.getInstance().post(`/productteams/${context.productteam}/checkkey`,data,isloading);
             return res;
     }
 
@@ -96,48 +97,6 @@ export default class PRODUCTTEAMServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/productteams`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof PRODUCTTEAMServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.productteam){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/productteams/${context.productteam}`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/productteams/${context.productteam}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof PRODUCTTEAMServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.productteam){
-            let res:any = await Http.getInstance().delete(`/products/${context.product}/productteams/${context.productteam}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/productteams/${context.productteam}`,isloading);
-            return res;
     }
 
     /**
@@ -189,27 +148,6 @@ export default class PRODUCTTEAMServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof PRODUCTTEAMServiceBase
-     */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.productteam){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/products/${context.product}/productteams/${context.productteam}/checkkey`,data,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().post(`/productteams/${context.productteam}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
      * ProductTeamGuoLv接口方法
      *
      * @param {*} [context={}]
@@ -249,6 +187,24 @@ export default class PRODUCTTEAMServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof PRODUCTTEAMServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.productteam){
+            let res:any = await Http.getInstance().delete(`/products/${context.product}/productteams/${context.productteam}`,isloading);
+            return res;
+        }
+            let res:any = await Http.getInstance().delete(`/productteams/${context.productteam}`,isloading);
+            return res;
+    }
+
+    /**
      * Save接口方法
      *
      * @param {*} [context={}]
@@ -268,6 +224,30 @@ export default class PRODUCTTEAMServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/productteams/${context.productteam}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof PRODUCTTEAMServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.productteam){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/productteams/${context.productteam}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/productteams/${context.productteam}`,data,isloading);
             
             return res;
     }
@@ -460,5 +440,25 @@ export default class PRODUCTTEAMServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/productteams/searchroweditdefaultproductteam`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof PRODUCTTEAMServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.productteam){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/productteams/${context.productteam}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/productteams/${context.productteam}/select`,isloading);
+            
+            return res;
     }
 }

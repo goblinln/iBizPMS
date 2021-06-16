@@ -205,4 +205,20 @@ export interface TaskEstimate {
      * @memberof TaskEstimate
      */
     task?: any;
+
+    /**
+     * 天
+     *
+     * @returns {*}
+     * @memberof TaskEstimate
+     */
+    day?: any;
+
+    /**
+     * 天（显示）
+     *
+     * @returns {*}
+     * @memberof TaskEstimate
+     */
+    dayname?: any;
 }

@@ -89,6 +89,7 @@ function getLocaleResourceBase(){
 			parent: commonLogic.appcommonhandle("父任务",null),
 			frombug: commonLogic.appcommonhandle("来源Bug",null),
 			ordernum: commonLogic.appcommonhandle("排序",null),
+			assignedtopk: commonLogic.appcommonhandle("指派给",null),
 		},
 			views: {
 				dailycompletezsgridview: {

@@ -273,6 +273,9 @@ export default class AssignToMeModel {
       {
         name: 'ordernum',
       },
+      {
+        name: 'assignedtopk',
+      },
     ]
   }
 

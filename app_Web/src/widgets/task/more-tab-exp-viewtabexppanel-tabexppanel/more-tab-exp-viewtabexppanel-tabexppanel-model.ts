@@ -273,6 +273,9 @@ export default class MoreTabExpViewtabexppanelModel {
       {
         name: 'ordernum',
       },
+      {
+        name: 'assignedtopk',
+      },
     ]
   }
 

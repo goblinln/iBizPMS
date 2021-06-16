@@ -41,7 +41,7 @@ export default class IbzPlanTempletDetailServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,7 +49,7 @@ export default class IbzPlanTempletDetailServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzPlanTempletDetailServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**
@@ -62,30 +62,6 @@ export default class IbzPlanTempletDetailServiceBase extends EntityService {
      * @memberof IbzPlanTempletDetailServiceBase
      */
     public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzPlanTempletDetailServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzPlanTempletDetailServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**
@@ -113,7 +89,7 @@ export default class IbzPlanTempletDetailServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -121,7 +97,7 @@ export default class IbzPlanTempletDetailServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzPlanTempletDetailServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**
@@ -134,6 +110,18 @@ export default class IbzPlanTempletDetailServiceBase extends EntityService {
      * @memberof IbzPlanTempletDetailServiceBase
      */
     public async Save(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzPlanTempletDetailServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**
@@ -171,5 +159,17 @@ export default class IbzPlanTempletDetailServiceBase extends EntityService {
      */
     public async FetchTempDefault(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         // FetchTempDefault ---FETCHTEMP
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzPlanTempletDetailServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 }

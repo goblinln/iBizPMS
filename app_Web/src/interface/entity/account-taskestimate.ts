@@ -837,4 +837,12 @@ export interface AccountTaskestimate {
      * @memberof AccountTaskestimate
      */
     sixteenconsumed?: any;
+
+    /**
+     * 天（显示）
+     *
+     * @returns {*}
+     * @memberof AccountTaskestimate
+     */
+    dayname?: any;
 }

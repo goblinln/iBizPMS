@@ -693,4 +693,12 @@ export interface SubTask {
      * @memberof SubTask
      */
     ordernum?: any;
+
+    /**
+     * 指派给
+     *
+     * @returns {*}
+     * @memberof SubTask
+     */
+    assignedtopk?: any;
 }

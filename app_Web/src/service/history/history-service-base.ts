@@ -41,7 +41,7 @@ export default class HistoryServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,14 +49,15 @@ export default class HistoryServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof HistoryServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.action && context.history){
-            let res:any = await Http.getInstance().get(`/actions/${context.action}/histories/${context.history}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/actions/${context.action}/histories/${context.history}/checkkey`,data,isloading);
             
             return res;
         }
-            let res:any = await Http.getInstance().get(`/histories/${context.history}/select`,isloading);
-            
+            let res:any = await Http.getInstance().post(`/histories/${context.history}/checkkey`,data,isloading);
             return res;
     }
 
@@ -96,48 +97,6 @@ export default class HistoryServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/histories`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof HistoryServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.action && context.history){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/actions/${context.action}/histories/${context.history}`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/histories/${context.history}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof HistoryServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.action && context.history){
-            let res:any = await Http.getInstance().delete(`/actions/${context.action}/histories/${context.history}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/histories/${context.history}`,isloading);
-            return res;
     }
 
     /**
@@ -189,7 +148,7 @@ export default class HistoryServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -197,15 +156,12 @@ export default class HistoryServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof HistoryServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.action && context.history){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/actions/${context.action}/histories/${context.history}/checkkey`,data,isloading);
-            
+            let res:any = await Http.getInstance().delete(`/actions/${context.action}/histories/${context.history}`,isloading);
             return res;
         }
-            let res:any = await Http.getInstance().post(`/histories/${context.history}/checkkey`,data,isloading);
+            let res:any = await Http.getInstance().delete(`/histories/${context.history}`,isloading);
             return res;
     }
 
@@ -229,6 +185,30 @@ export default class HistoryServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/histories/${context.history}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof HistoryServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.action && context.history){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/actions/${context.action}/histories/${context.history}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/histories/${context.history}`,data,isloading);
             
             return res;
     }
@@ -269,5 +249,25 @@ export default class HistoryServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/histories/searchdefault`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof HistoryServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.action && context.history){
+            let res:any = await Http.getInstance().get(`/actions/${context.action}/histories/${context.history}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/histories/${context.history}/select`,isloading);
+            
+            return res;
     }
 }

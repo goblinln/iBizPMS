@@ -273,6 +273,9 @@ export default class TreeExpViewtreeexpbarModel {
       {
         name: 'ordernum',
       },
+      {
+        name: 'assignedtopk',
+      },
     ]
   }
 

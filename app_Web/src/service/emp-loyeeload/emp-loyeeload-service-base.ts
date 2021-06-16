@@ -41,7 +41,7 @@ export default class EmpLoyeeloadServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,8 @@ export default class EmpLoyeeloadServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof EmpLoyeeloadServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/employeeloads/${context.employeeload}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/employeeloads/${context.employeeload}/checkkey`,data,isloading);
             return res;
     }
 
@@ -77,37 +76,6 @@ export default class EmpLoyeeloadServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/employeeloads`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof EmpLoyeeloadServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/employeeloads/${context.employeeload}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof EmpLoyeeloadServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/employeeloads/${context.employeeload}`,isloading);
-            return res;
     }
 
     /**
@@ -145,7 +113,7 @@ export default class EmpLoyeeloadServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -153,8 +121,8 @@ export default class EmpLoyeeloadServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof EmpLoyeeloadServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/employeeloads/${context.employeeload}/checkkey`,data,isloading);
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/employeeloads/${context.employeeload}`,isloading);
             return res;
     }
 
@@ -173,6 +141,35 @@ export default class EmpLoyeeloadServiceBase extends EntityService {
             let res:any = await  Http.getInstance().post(`/employeeloads/${context.employeeload}/save`,data,isloading);
             
             return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof EmpLoyeeloadServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/employeeloads/${context.employeeload}`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * UpdateTime接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof EmpLoyeeloadServiceBase
+     */
+    public async UpdateTime(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**
@@ -234,7 +231,7 @@ export default class EmpLoyeeloadServiceBase extends EntityService {
     }
 
     /**
-     * UpdateTime接口方法
+     * Select接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -242,6 +239,9 @@ export default class EmpLoyeeloadServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof EmpLoyeeloadServiceBase
      */
-    public async UpdateTime(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/employeeloads/${context.employeeload}/select`,isloading);
+            
+            return res;
     }
 }

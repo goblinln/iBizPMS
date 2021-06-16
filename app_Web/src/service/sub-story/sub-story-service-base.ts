@@ -42,198 +42,6 @@ export default class SubStoryServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubStoryServiceBase
-     */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && context.substory){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/substories/${context.substory}/select`,isloading);
-            
-            return res;
-        }
-        if(context.story && context.substory){
-            let res:any = await Http.getInstance().get(`/stories/${context.story}/substories/${context.substory}/select`,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().get(`/substories/${context.substory}/select`,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Create接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubStoryServiceBase
-     */
-    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            if(!data.srffrontuf || data.srffrontuf !== "1"){
-                data[this.APPDEKEY] = null;
-            }
-            if(data.srffrontuf){
-                delete data.srffrontuf;
-            }
-            let tempContext:any = JSON.parse(JSON.stringify(context));
-            let res:any = await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/substories`,data,isloading);
-            
-            return res;
-        }
-        if(context.story && true){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            if(!data.srffrontuf || data.srffrontuf !== "1"){
-                data[this.APPDEKEY] = null;
-            }
-            if(data.srffrontuf){
-                delete data.srffrontuf;
-            }
-            let tempContext:any = JSON.parse(JSON.stringify(context));
-            let res:any = await Http.getInstance().post(`/stories/${context.story}/substories`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-        if(!data.srffrontuf || data.srffrontuf !== "1"){
-            data[this.APPDEKEY] = null;
-        }
-        if(data.srffrontuf){
-            delete data.srffrontuf;
-        }
-        let tempContext:any = JSON.parse(JSON.stringify(context));
-        let res:any = await Http.getInstance().post(`/substories`,data,isloading);
-        
-        return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubStoryServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && context.substory){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/products/${context.product}/stories/${context.story}/substories/${context.substory}`,data,isloading);
-            
-            return res;
-        }
-        if(context.story && context.substory){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/stories/${context.story}/substories/${context.substory}`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/substories/${context.substory}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubStoryServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && context.substory){
-            let res:any = await Http.getInstance().delete(`/products/${context.product}/stories/${context.story}/substories/${context.substory}`,isloading);
-            return res;
-        }
-        if(context.story && context.substory){
-            let res:any = await Http.getInstance().delete(`/stories/${context.story}/substories/${context.substory}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/substories/${context.substory}`,isloading);
-            return res;
-    }
-
-    /**
-     * Get接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubStoryServiceBase
-     */
-    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && context.substory){
-            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/substories/${context.substory}`,isloading);
-            
-            return res;
-        }
-        if(context.story && context.substory){
-            let res:any = await Http.getInstance().get(`/stories/${context.story}/substories/${context.substory}`,isloading);
-            
-            return res;
-        }
-            let res:any = await Http.getInstance().get(`/substories/${context.substory}`,isloading);
-            
-            return res;
-    }
-
-    /**
-     * GetDraft接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubStoryServiceBase
-     */
-    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            if(tempData.substory) delete tempData.substory;
-            if(tempData.id) delete tempData.id;
-            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/substories/getdraft`,tempData,isloading);
-            res.data.substory = data.substory;
-            
-            return res;
-        }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            if(tempData.substory) delete tempData.substory;
-            if(tempData.id) delete tempData.id;
-            let res:any = await Http.getInstance().get(`/stories/${context.story}/substories/getdraft`,tempData,isloading);
-            res.data.substory = data.substory;
-            
-            return res;
-        }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        if(tempData.substory) delete tempData.substory;
-        if(tempData.id) delete tempData.id;
-        let res:any = await  Http.getInstance().get(`/substories/getdraft`,tempData,isloading);
-        res.data.substory = data.substory;
-        
-        return res;
-    }
-
-    /**
      * Activate接口方法
      *
      * @param {*} [context={}]
@@ -1140,6 +948,58 @@ export default class SubStoryServiceBase extends EntityService {
     }
 
     /**
+     * Create接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubStoryServiceBase
+     */
+    public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && true){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            if(!data.srffrontuf || data.srffrontuf !== "1"){
+                data[this.APPDEKEY] = null;
+            }
+            if(data.srffrontuf){
+                delete data.srffrontuf;
+            }
+            let tempContext:any = JSON.parse(JSON.stringify(context));
+            let res:any = await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/substories`,data,isloading);
+            
+            return res;
+        }
+        if(context.story && true){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            if(!data.srffrontuf || data.srffrontuf !== "1"){
+                data[this.APPDEKEY] = null;
+            }
+            if(data.srffrontuf){
+                delete data.srffrontuf;
+            }
+            let tempContext:any = JSON.parse(JSON.stringify(context));
+            let res:any = await Http.getInstance().post(`/stories/${context.story}/substories`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+        if(!data.srffrontuf || data.srffrontuf !== "1"){
+            data[this.APPDEKEY] = null;
+        }
+        if(data.srffrontuf){
+            delete data.srffrontuf;
+        }
+        let tempContext:any = JSON.parse(JSON.stringify(context));
+        let res:any = await Http.getInstance().post(`/substories`,data,isloading);
+        
+        return res;
+    }
+
+    /**
      * CreateTasks接口方法
      *
      * @param {*} [context={}]
@@ -1187,6 +1047,68 @@ export default class SubStoryServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/substories/createtasksbatch`,tempData,isloading);
+    }
+
+    /**
+     * Get接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubStoryServiceBase
+     */
+    public async Get(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && context.substory){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/substories/${context.substory}`,isloading);
+            
+            return res;
+        }
+        if(context.story && context.substory){
+            let res:any = await Http.getInstance().get(`/stories/${context.story}/substories/${context.substory}`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/substories/${context.substory}`,isloading);
+            
+            return res;
+    }
+
+    /**
+     * GetDraft接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubStoryServiceBase
+     */
+    public async GetDraft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            if(tempData.substory) delete tempData.substory;
+            if(tempData.id) delete tempData.id;
+            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/substories/getdraft`,tempData,isloading);
+            res.data.substory = data.substory;
+            
+            return res;
+        }
+        if(context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            if(tempData.substory) delete tempData.substory;
+            if(tempData.id) delete tempData.id;
+            let res:any = await Http.getInstance().get(`/stories/${context.story}/substories/getdraft`,tempData,isloading);
+            res.data.substory = data.substory;
+            
+            return res;
+        }
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        if(tempData.substory) delete tempData.substory;
+        if(tempData.id) delete tempData.id;
+        let res:any = await  Http.getInstance().get(`/substories/getdraft`,tempData,isloading);
+        res.data.substory = data.substory;
+        
+        return res;
     }
 
     /**
@@ -1262,6 +1184,33 @@ export default class SubStoryServiceBase extends EntityService {
             let res:any = await Http.getInstance().get(`/substories/${context.substory}/getstoryspecs`,isloading);
             
             return res;
+    }
+
+    /**
+     * GetTaskReStory接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubStoryServiceBase
+     */
+    public async GetTaskReStory(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
+     * GetUserConcat接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubStoryServiceBase
+     */
+    public async GetUserConcat(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let appLogic:GetCurUserConcatLogic = new GetCurUserConcatLogic({context:JSON.parse(JSON.stringify(context)),data:JSON.parse(JSON.stringify(data))});
+        const res = await appLogic.onExecute(context,data,isloading?true:false);
+        return {status:200,data:res};
     }
 
     /**
@@ -1743,6 +1692,28 @@ export default class SubStoryServiceBase extends EntityService {
     }
 
     /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubStoryServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && context.substory){
+            let res:any = await Http.getInstance().delete(`/products/${context.product}/stories/${context.story}/substories/${context.substory}`,isloading);
+            return res;
+        }
+        if(context.story && context.substory){
+            let res:any = await Http.getInstance().delete(`/stories/${context.story}/substories/${context.substory}`,isloading);
+            return res;
+        }
+            let res:any = await Http.getInstance().delete(`/substories/${context.substory}`,isloading);
+            return res;
+    }
+
+    /**
      * ResetReviewedBy接口方法
      *
      * @param {*} [context={}]
@@ -2080,6 +2051,18 @@ export default class SubStoryServiceBase extends EntityService {
     }
 
     /**
+     * ToStory接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubStoryServiceBase
+     */
+    public async ToStory(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
      * UnlinkStory接口方法
      *
      * @param {*} [context={}]
@@ -2127,6 +2110,37 @@ export default class SubStoryServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/substories/unlinkstorybatch`,tempData,isloading);
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SubStoryServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && context.substory){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/products/${context.product}/stories/${context.story}/substories/${context.substory}`,data,isloading);
+            
+            return res;
+        }
+        if(context.story && context.substory){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/stories/${context.story}/substories/${context.substory}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/substories/${context.substory}`,data,isloading);
+            
+            return res;
     }
 
     /**
@@ -3399,7 +3413,7 @@ export default class SubStoryServiceBase extends EntityService {
     }
 
     /**
-     * GetTaskReStory接口方法
+     * Select接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -3407,33 +3421,19 @@ export default class SubStoryServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async GetTaskReStory(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-    }
-
-    /**
-     * GetUserConcat接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubStoryServiceBase
-     */
-    public async GetUserConcat(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let appLogic:GetCurUserConcatLogic = new GetCurUserConcatLogic({context:JSON.parse(JSON.stringify(context)),data:JSON.parse(JSON.stringify(data))});
-        const res = await appLogic.onExecute(context,data,isloading?true:false);
-        return {status:200,data:res};
-    }
-
-    /**
-     * ToStory接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SubStoryServiceBase
-     */
-    public async ToStory(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.product && context.story && context.substory){
+            let res:any = await Http.getInstance().get(`/products/${context.product}/stories/${context.story}/substories/${context.substory}/select`,isloading);
+            
+            return res;
+        }
+        if(context.story && context.substory){
+            let res:any = await Http.getInstance().get(`/stories/${context.story}/substories/${context.substory}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/substories/${context.substory}/select`,isloading);
+            
+            return res;
     }
 }

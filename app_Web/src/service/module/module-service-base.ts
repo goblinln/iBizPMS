@@ -41,7 +41,7 @@ export default class ModuleServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,8 @@ export default class ModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ModuleServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/modules/${context.module}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/modules/${context.module}/checkkey`,data,isloading);
             return res;
     }
 
@@ -80,7 +79,7 @@ export default class ModuleServiceBase extends EntityService {
     }
 
     /**
-     * Update接口方法
+     * Fix接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -88,16 +87,13 @@ export default class ModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ModuleServiceBase
      */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/modules/${context.module}`,data,isloading);
-            
+    public async Fix(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/modules/${context.module}/fix`,data,isloading);
             return res;
     }
 
     /**
-     * Remove接口方法
+     * FixBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -105,9 +101,9 @@ export default class ModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ModuleServiceBase
      */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/modules/${context.module}`,isloading);
-            return res;
+    public async FixBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/modules/fixbatch`,tempData,isloading);
     }
 
     /**
@@ -145,7 +141,7 @@ export default class ModuleServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -153,37 +149,9 @@ export default class ModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof ModuleServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/modules/${context.module}/checkkey`,data,isloading);
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/modules/${context.module}`,isloading);
             return res;
-    }
-
-    /**
-     * Fix接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ModuleServiceBase
-     */
-    public async Fix(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/modules/${context.module}/fix`,data,isloading);
-            return res;
-    }
-
-    /**
-     * FixBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ModuleServiceBase
-     */
-    public async FixBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/modules/fixbatch`,tempData,isloading);
     }
 
     /**
@@ -199,6 +167,23 @@ export default class ModuleServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/modules/${context.module}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ModuleServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/modules/${context.module}`,data,isloading);
             
             return res;
     }
@@ -404,5 +389,20 @@ export default class ModuleServiceBase extends EntityService {
     public async searchTaskModule(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/modules/searchtaskmodule`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ModuleServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/modules/${context.module}/select`,isloading);
+            
+            return res;
     }
 }

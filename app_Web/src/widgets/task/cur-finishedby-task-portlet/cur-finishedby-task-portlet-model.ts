@@ -273,6 +273,9 @@ export default class CurFinishedbyTaskModel {
       {
         name: 'ordernum',
       },
+      {
+        name: 'assignedtopk',
+      },
     ]
   }
 

@@ -107,6 +107,7 @@ function getLocaleResourceBase(){
 			fiveevaluationtime: commonLogic.appcommonhandle("五号评估工时",null),
 			fourconsumed: commonLogic.appcommonhandle("四号工时",null),
 			sixteenconsumed: commonLogic.appcommonhandle("十六号工时",null),
+			dayname: commonLogic.appcommonhandle("天（显示）",null),
 		},
 		};
 		return data;

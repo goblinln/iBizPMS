@@ -41,7 +41,7 @@ export default class SysUpdateFeaturesServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,14 +49,15 @@ export default class SysUpdateFeaturesServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof SysUpdateFeaturesServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.sysupdatelog && context.sysupdatefeatures){
-            let res:any = await Http.getInstance().get(`/sysupdatelogs/${context.sysupdatelog}/sysupdatefeatures/${context.sysupdatefeatures}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/sysupdatelogs/${context.sysupdatelog}/sysupdatefeatures/${context.sysupdatefeatures}/checkkey`,data,isloading);
             
             return res;
         }
-            let res:any = await Http.getInstance().get(`/sysupdatefeatures/${context.sysupdatefeatures}/select`,isloading);
-            
+            let res:any = await Http.getInstance().post(`/sysupdatefeatures/${context.sysupdatefeatures}/checkkey`,data,isloading);
             return res;
     }
 
@@ -96,48 +97,6 @@ export default class SysUpdateFeaturesServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/sysupdatefeatures`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SysUpdateFeaturesServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.sysupdatelog && context.sysupdatefeatures){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/sysupdatelogs/${context.sysupdatelog}/sysupdatefeatures/${context.sysupdatefeatures}`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/sysupdatefeatures/${context.sysupdatefeatures}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof SysUpdateFeaturesServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.sysupdatelog && context.sysupdatefeatures){
-            let res:any = await Http.getInstance().delete(`/sysupdatelogs/${context.sysupdatelog}/sysupdatefeatures/${context.sysupdatefeatures}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/sysupdatefeatures/${context.sysupdatefeatures}`,isloading);
-            return res;
     }
 
     /**
@@ -189,7 +148,7 @@ export default class SysUpdateFeaturesServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -197,15 +156,12 @@ export default class SysUpdateFeaturesServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof SysUpdateFeaturesServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.sysupdatelog && context.sysupdatefeatures){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/sysupdatelogs/${context.sysupdatelog}/sysupdatefeatures/${context.sysupdatefeatures}/checkkey`,data,isloading);
-            
+            let res:any = await Http.getInstance().delete(`/sysupdatelogs/${context.sysupdatelog}/sysupdatefeatures/${context.sysupdatefeatures}`,isloading);
             return res;
         }
-            let res:any = await Http.getInstance().post(`/sysupdatefeatures/${context.sysupdatefeatures}/checkkey`,data,isloading);
+            let res:any = await Http.getInstance().delete(`/sysupdatefeatures/${context.sysupdatefeatures}`,isloading);
             return res;
     }
 
@@ -229,6 +185,30 @@ export default class SysUpdateFeaturesServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/sysupdatefeatures/${context.sysupdatefeatures}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SysUpdateFeaturesServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.sysupdatelog && context.sysupdatefeatures){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/sysupdatelogs/${context.sysupdatelog}/sysupdatefeatures/${context.sysupdatefeatures}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/sysupdatefeatures/${context.sysupdatefeatures}`,data,isloading);
             
             return res;
     }
@@ -269,5 +249,25 @@ export default class SysUpdateFeaturesServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/sysupdatefeatures/searchdefault`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof SysUpdateFeaturesServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.sysupdatelog && context.sysupdatefeatures){
+            let res:any = await Http.getInstance().get(`/sysupdatelogs/${context.sysupdatelog}/sysupdatefeatures/${context.sysupdatefeatures}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/sysupdatefeatures/${context.sysupdatefeatures}/select`,isloading);
+            
+            return res;
     }
 }

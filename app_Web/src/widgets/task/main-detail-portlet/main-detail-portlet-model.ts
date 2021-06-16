@@ -273,6 +273,9 @@ export default class MainDetailModel {
       {
         name: 'ordernum',
       },
+      {
+        name: 'assignedtopk',
+      },
     ]
   }
 

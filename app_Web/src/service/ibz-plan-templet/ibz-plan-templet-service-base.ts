@@ -41,7 +41,7 @@ export default class IbzPlanTempletServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,9 +49,8 @@ export default class IbzPlanTempletServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzPlanTempletServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().get(`/ibzplantemplets/${context.ibzplantemplet}/select`,isloading);
-            
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().post(`/ibzplantemplets/${context.ibzplantemplet}/checkkey`,data,isloading);
             return res;
     }
 
@@ -97,54 +96,6 @@ export default class IbzPlanTempletServiceBase extends EntityService {
     }
 
     /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzPlanTempletServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let masterData:any = {};
-        let plantempletdetailsData:any = [];
-        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_plantempletdetails'),'undefined')){
-            plantempletdetailsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_plantempletdetails') as any);
-            if(plantempletdetailsData && plantempletdetailsData.length && plantempletdetailsData.length > 0 && Environment.isStudioSystem === false){
-                plantempletdetailsData.forEach((item:any) => {
-                    if(item.srffrontuf){
-                        if(Object.is(item.srffrontuf,"0")){
-                            item.ibzplantempletdetailid = null;
-                            if(item.hasOwnProperty('ibzplantempletid') && item.ibzplantempletid) delete item.ibzplantempletid;
-                        }
-                        delete item.srffrontuf;
-                    }
-                });
-            }
-        }
-        masterData.plantempletdetails = plantempletdetailsData;
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/ibzplantemplets/${context.ibzplantemplet}`,data,isloading);
-                        this.tempStorage.setItem(context.srfsessionkey+'_plantempletdetails',JSON.stringify(res.data.plantempletdetails?res.data.plantempletdetails:[]));
-
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzPlanTempletServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().delete(`/ibzplantemplets/${context.ibzplantemplet}`,isloading);
-            return res;
-    }
-
-    /**
      * Get接口方法
      *
      * @param {*} [context={}]
@@ -181,20 +132,6 @@ export default class IbzPlanTempletServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzPlanTempletServiceBase
-     */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-            let res:any = await Http.getInstance().post(`/ibzplantemplets/${context.ibzplantemplet}/checkkey`,data,isloading);
-            return res;
-    }
-
-    /**
      * GetPlan接口方法
      *
      * @param {*} [context={}]
@@ -222,6 +159,20 @@ export default class IbzPlanTempletServiceBase extends EntityService {
     public async GetPlanBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/ibzplantemplets/getplanbatch`,tempData,isloading);
+    }
+
+    /**
+     * Remove接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzPlanTempletServiceBase
+     */
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().delete(`/ibzplantemplets/${context.ibzplantemplet}`,isloading);
+            return res;
     }
 
     /**
@@ -253,6 +204,40 @@ export default class IbzPlanTempletServiceBase extends EntityService {
         masterData.plantempletdetails = plantempletdetailsData;
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/ibzplantemplets/${context.ibzplantemplet}/save`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_plantempletdetails',JSON.stringify(res.data.plantempletdetails?res.data.plantempletdetails:[]));
+
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzPlanTempletServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let masterData:any = {};
+        let plantempletdetailsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_plantempletdetails'),'undefined')){
+            plantempletdetailsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_plantempletdetails') as any);
+            if(plantempletdetailsData && plantempletdetailsData.length && plantempletdetailsData.length > 0 && Environment.isStudioSystem === false){
+                plantempletdetailsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.ibzplantempletdetailid = null;
+                            if(item.hasOwnProperty('ibzplantempletid') && item.ibzplantempletid) delete item.ibzplantempletid;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.plantempletdetails = plantempletdetailsData;
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/ibzplantemplets/${context.ibzplantemplet}`,data,isloading);
                         this.tempStorage.setItem(context.srfsessionkey+'_plantempletdetails',JSON.stringify(res.data.plantempletdetails?res.data.plantempletdetails:[]));
 
             return res;
@@ -338,5 +323,20 @@ export default class IbzPlanTempletServiceBase extends EntityService {
      * @memberof IbzPlanTempletServiceBase
      */
     public async FetchTempDefault(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzPlanTempletServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+            let res:any = await Http.getInstance().get(`/ibzplantemplets/${context.ibzplantemplet}/select`,isloading);
+            
+            return res;
     }
 }

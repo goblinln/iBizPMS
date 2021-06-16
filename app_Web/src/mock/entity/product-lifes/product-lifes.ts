@@ -86,10 +86,17 @@ mock.onDelete(new RegExp(/^\/productlives\/batch$/)).reply((config: any) => {
     return [status, {}];
 });
 
+// URI参数传递情况未实现
+// URI参数传递情况未实现
+// URI参数传递情况未实现
+// URI参数传递情况未实现
+// URI参数传递情况未实现
+// URI参数传递情况未实现
+// URI参数传递情况未实现
     
-// FetchRoadMapYear
-mock.onGet(new RegExp(/^\/productlives\/fetchroadmapyear$/)).reply((config: any) => {
-    console.groupCollapsed("实体:productlife 方法: FetchRoadMapYear");
+// FetchDefault
+mock.onGet(new RegExp(/^\/productlives$/)).reply((config: any) => {
+    console.groupCollapsed("实体:productlife 方法: FetchDefault");
     console.table({url:config.url, method: config.method, data:config.data});
     let status = MockAdapter.mockStatus(config);
     if (status !== 200) {
@@ -102,9 +109,53 @@ mock.onGet(new RegExp(/^\/productlives\/fetchroadmapyear$/)).reply((config: any)
     return [status, mockDatas ? mockDatas : []];
 });
 
-// FetchRoadMapYear
-mock.onGet(new RegExp(/^\/productlives\/fetchroadmapyear(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
-    console.groupCollapsed("实体:productlife 方法: FetchRoadMapYear");
+// FetchDefault
+mock.onGet(new RegExp(/^\/productlives(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
+    console.groupCollapsed("实体:productlife 方法: FetchDefault");
+    console.table({url:config.url, method: config.method, data:config.data});
+    if(config.url.includes('page')){
+        let url = config.url.split('?')[1];
+        let params  =  qs.parse(url);
+        Object.assign(config, params);
+    }
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    let total = mockDatas.length;
+    let records: Array<any> = [];
+    if(!config.page || !config.size){
+        records = mockDatas;
+    }else{
+        if((config.page-1)*config.size < total){
+          records = mockDatas.slice(config.page,config.size);
+        }
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(records ?  records : []);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, records ?  records : []];
+});
+    
+// FetchGetRoadmap
+mock.onGet(new RegExp(/^\/productlives\/fetchgetroadmap$/)).reply((config: any) => {
+    console.groupCollapsed("实体:productlife 方法: FetchGetRoadmap");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(mockDatas);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, mockDatas ? mockDatas : []];
+});
+
+// FetchGetRoadmap
+mock.onGet(new RegExp(/^\/productlives\/fetchgetroadmap(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
+    console.groupCollapsed("实体:productlife 方法: FetchGetRoadmap");
     console.table({url:config.url, method: config.method, data:config.data});
     if(config.url.includes('page')){
         let url = config.url.split('?')[1];
@@ -175,9 +226,9 @@ mock.onGet(new RegExp(/^\/productlives\/fetchgetroadmaps(\?[\w-./?%&=,]*)*$/)).r
     return [status, records ?  records : []];
 });
     
-// FetchGetRoadmap
-mock.onGet(new RegExp(/^\/productlives\/fetchgetroadmap$/)).reply((config: any) => {
-    console.groupCollapsed("实体:productlife 方法: FetchGetRoadmap");
+// FetchRoadMapYear
+mock.onGet(new RegExp(/^\/productlives\/fetchroadmapyear$/)).reply((config: any) => {
+    console.groupCollapsed("实体:productlife 方法: FetchRoadMapYear");
     console.table({url:config.url, method: config.method, data:config.data});
     let status = MockAdapter.mockStatus(config);
     if (status !== 200) {
@@ -190,9 +241,9 @@ mock.onGet(new RegExp(/^\/productlives\/fetchgetroadmap$/)).reply((config: any) 
     return [status, mockDatas ? mockDatas : []];
 });
 
-// FetchGetRoadmap
-mock.onGet(new RegExp(/^\/productlives\/fetchgetroadmap(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
-    console.groupCollapsed("实体:productlife 方法: FetchGetRoadmap");
+// FetchRoadMapYear
+mock.onGet(new RegExp(/^\/productlives\/fetchroadmapyear(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
+    console.groupCollapsed("实体:productlife 方法: FetchRoadMapYear");
     console.table({url:config.url, method: config.method, data:config.data});
     if(config.url.includes('page')){
         let url = config.url.split('?')[1];
@@ -218,6 +269,13 @@ mock.onGet(new RegExp(/^\/productlives\/fetchgetroadmap(\?[\w-./?%&=,]*)*$/)).re
     console.groupEnd();
     return [status, records ?  records : []];
 });
+// URI参数传递情况未实现
+// URI参数传递情况未实现
+// URI参数传递情况未实现
+// URI参数传递情况未实现
+// URI参数传递情况未实现
+// URI参数传递情况未实现
+// URI参数传递情况未实现
 
 // Select
 mock.onGet(new RegExp(/^\/productlives\/([a-zA-Z0-9\-\;]{1,35})\/select$/)).reply((config: any) => {
@@ -246,62 +304,4 @@ mock.onGet(new RegExp(/^\/productlives\/([a-zA-Z0-9\-\;]{1,35})\/select$/)).repl
     console.groupEnd();
     return [status, _items];
 });
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-    
-// FetchDefault
-mock.onGet(new RegExp(/^\/productlives\/select$/)).reply((config: any) => {
-    console.groupCollapsed("实体:productlife 方法: FetchDefault");
-    console.table({url:config.url, method: config.method, data:config.data});
-    let status = MockAdapter.mockStatus(config);
-    if (status !== 200) {
-        return [status, null];
-    }
-    console.groupCollapsed("response数据  status: "+status+" data: ");
-    console.table(mockDatas);
-    console.groupEnd();
-    console.groupEnd();
-    return [status, mockDatas ? mockDatas : []];
-});
-
-// FetchDefault
-mock.onGet(new RegExp(/^\/productlives\/select(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
-    console.groupCollapsed("实体:productlife 方法: FetchDefault");
-    console.table({url:config.url, method: config.method, data:config.data});
-    if(config.url.includes('page')){
-        let url = config.url.split('?')[1];
-        let params  =  qs.parse(url);
-        Object.assign(config, params);
-    }
-    let status = MockAdapter.mockStatus(config);
-    if (status !== 200) {
-        return [status, null];
-    }
-    let total = mockDatas.length;
-    let records: Array<any> = [];
-    if(!config.page || !config.size){
-        records = mockDatas;
-    }else{
-        if((config.page-1)*config.size < total){
-          records = mockDatas.slice(config.page,config.size);
-        }
-    }
-    console.groupCollapsed("response数据  status: "+status+" data: ");
-    console.table(records ?  records : []);
-    console.groupEnd();
-    console.groupEnd();
-    return [status, records ?  records : []];
-});
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
-// URI参数传递情况未实现
 

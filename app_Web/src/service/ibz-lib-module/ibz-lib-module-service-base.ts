@@ -41,7 +41,7 @@ export default class IbzLibModuleServiceBase extends EntityService {
 // 实体接口
 
     /**
-     * Select接口方法
+     * CheckKey接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -49,14 +49,15 @@ export default class IbzLibModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzLibModuleServiceBase
      */
-    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.ibzlib && context.ibzlibmodule){
-            let res:any = await Http.getInstance().get(`/ibzlibs/${context.ibzlib}/ibzlibmodules/${context.ibzlibmodule}/select`,isloading);
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/ibzlibs/${context.ibzlib}/ibzlibmodules/${context.ibzlibmodule}/checkkey`,data,isloading);
             
             return res;
         }
-            let res:any = await Http.getInstance().get(`/ibzlibmodules/${context.ibzlibmodule}/select`,isloading);
-            
+            let res:any = await Http.getInstance().post(`/ibzlibmodules/${context.ibzlibmodule}/checkkey`,data,isloading);
             return res;
     }
 
@@ -96,48 +97,6 @@ export default class IbzLibModuleServiceBase extends EntityService {
         let res:any = await Http.getInstance().post(`/ibzlibmodules`,data,isloading);
         
         return res;
-    }
-
-    /**
-     * Update接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzLibModuleServiceBase
-     */
-    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.ibzlib && context.ibzlibmodule){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().put(`/ibzlibs/${context.ibzlib}/ibzlibmodules/${context.ibzlibmodule}`,data,isloading);
-            
-            return res;
-        }
-        let masterData:any = {};
-        Object.assign(data,masterData);
-            let res:any = await  Http.getInstance().put(`/ibzlibmodules/${context.ibzlibmodule}`,data,isloading);
-            
-            return res;
-    }
-
-    /**
-     * Remove接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IbzLibModuleServiceBase
-     */
-    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.ibzlib && context.ibzlibmodule){
-            let res:any = await Http.getInstance().delete(`/ibzlibs/${context.ibzlib}/ibzlibmodules/${context.ibzlibmodule}`,isloading);
-            return res;
-        }
-            let res:any = await Http.getInstance().delete(`/ibzlibmodules/${context.ibzlibmodule}`,isloading);
-            return res;
     }
 
     /**
@@ -189,7 +148,7 @@ export default class IbzLibModuleServiceBase extends EntityService {
     }
 
     /**
-     * CheckKey接口方法
+     * Remove接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -197,15 +156,12 @@ export default class IbzLibModuleServiceBase extends EntityService {
      * @returns {Promise<any>}
      * @memberof IbzLibModuleServiceBase
      */
-    public async CheckKey(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async Remove(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.ibzlib && context.ibzlibmodule){
-            let masterData:any = {};
-            Object.assign(data,masterData);
-            let res:any = await Http.getInstance().post(`/ibzlibs/${context.ibzlib}/ibzlibmodules/${context.ibzlibmodule}/checkkey`,data,isloading);
-            
+            let res:any = await Http.getInstance().delete(`/ibzlibs/${context.ibzlib}/ibzlibmodules/${context.ibzlibmodule}`,isloading);
             return res;
         }
-            let res:any = await Http.getInstance().post(`/ibzlibmodules/${context.ibzlibmodule}/checkkey`,data,isloading);
+            let res:any = await Http.getInstance().delete(`/ibzlibmodules/${context.ibzlibmodule}`,isloading);
             return res;
     }
 
@@ -229,6 +185,30 @@ export default class IbzLibModuleServiceBase extends EntityService {
         let masterData:any = {};
         Object.assign(data,masterData);
             let res:any = await  Http.getInstance().post(`/ibzlibmodules/${context.ibzlibmodule}/save`,data,isloading);
+            
+            return res;
+    }
+
+    /**
+     * Update接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzLibModuleServiceBase
+     */
+    public async Update(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.ibzlib && context.ibzlibmodule){
+            let masterData:any = {};
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().put(`/ibzlibs/${context.ibzlib}/ibzlibmodules/${context.ibzlibmodule}`,data,isloading);
+            
+            return res;
+        }
+        let masterData:any = {};
+        Object.assign(data,masterData);
+            let res:any = await  Http.getInstance().put(`/ibzlibmodules/${context.ibzlibmodule}`,data,isloading);
             
             return res;
     }
@@ -307,5 +287,25 @@ export default class IbzLibModuleServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         return await Http.getInstance().post(`/ibzlibmodules/searchroot_nobranch`,tempData,isloading);
+    }
+
+    /**
+     * Select接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzLibModuleServiceBase
+     */
+    public async Select(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.ibzlib && context.ibzlibmodule){
+            let res:any = await Http.getInstance().get(`/ibzlibs/${context.ibzlib}/ibzlibmodules/${context.ibzlibmodule}/select`,isloading);
+            
+            return res;
+        }
+            let res:any = await Http.getInstance().get(`/ibzlibmodules/${context.ibzlibmodule}/select`,isloading);
+            
+            return res;
     }
 }

@@ -273,6 +273,9 @@ export default class TaskTreeModel {
       {
         name: 'ordernum',
       },
+      {
+        name: 'assignedtopk',
+      },
     ]
   }
 

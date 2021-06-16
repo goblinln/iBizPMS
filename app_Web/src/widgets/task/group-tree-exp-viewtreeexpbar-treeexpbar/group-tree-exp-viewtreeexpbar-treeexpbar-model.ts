@@ -273,6 +273,9 @@ export default class GroupTreeExpViewtreeexpbarModel {
       {
         name: 'ordernum',
       },
+      {
+        name: 'assignedtopk',
+      },
     ]
   }
 
