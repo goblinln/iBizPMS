@@ -21058,7 +21058,7 @@ t1.`TASKSPECIES`,
 t1.`ORDERNUM` AS `ORDERNUM`,
 t61.`TITLE` AS `PLANNAME`  FROM `zt_task` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  LEFT JOIN zt_story t21 ON t1.STORY = t21.ID  LEFT JOIN zt_project t31 ON t1.PROJECT = t31.ID  LEFT JOIN zt_product t41 ON t21.PRODUCT = t41.ID  LEFT JOIN zt_task t51 ON t1.PARENT = t51.ID LEFT JOIN `zt_productplan` t61 ON t1.`PLAN` = t61.`ID`
 WHERE t1.DELETED = '0' 
-(( t1.`PARENT` <= 0 ) and t1.project = #{srf.datacontext.project } 
+(( t1.`PARENT` <= 0 ) and t1.project = #{srf.datacontext.project }） 
 
 ```
 ### 项目任务(ProjectTask)<div id="Task_ProjectTask"></div>
