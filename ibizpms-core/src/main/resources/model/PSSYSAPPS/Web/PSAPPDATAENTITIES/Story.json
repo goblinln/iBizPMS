@@ -3359,25 +3359,6 @@
     "reloadData" : true,
     "id" : "UnlinkStory@Story"
   }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "下载",
-    "codeName" : "BatchDownload",
-    "frontProcessType" : "OTHER",
-    "fullCodeName" : "Story_BatchDownload",
-    "name" : "下载",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSSysImage" : {
-      "cssClass" : "download"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "BatchDownload",
-    "uIActionType" : "DEUIACTION",
-    "id" : "BatchDownload@Story"
-  }, {
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "projectLinkStories",
@@ -3422,6 +3403,25 @@
     "enableConfirm" : true,
     "reloadData" : true,
     "id" : "projectLinkStories@Story"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "下载",
+    "codeName" : "BatchDownload",
+    "frontProcessType" : "OTHER",
+    "fullCodeName" : "Story_BatchDownload",
+    "name" : "下载",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSSysImage" : {
+      "cssClass" : "download"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "BatchDownload",
+    "uIActionType" : "DEUIACTION",
+    "id" : "BatchDownload@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "退出",
