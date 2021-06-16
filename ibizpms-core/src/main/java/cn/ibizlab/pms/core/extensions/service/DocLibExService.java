@@ -86,9 +86,9 @@ public class DocLibExService extends DocLibServiceImpl {
         if (StaticDict.Doclib__type.PROJECT.getValue().equals(et.getType())) {
             et.setProduct(0L);
         }
-        if (StaticDict.Doclib__acl.CUSTOM.getValue().equals(et.getAcl())) {
-            et.setUsers(AuthenticationUser.getAuthenticationUser().getUsername());
-        }
+//        if (StaticDict.Doclib__acl.CUSTOM.getValue().equals(et.getAcl())) {
+//            et.setUsers(AuthenticationUser.getAuthenticationUser().getUsername());
+//        }
         boolean flag =  super.create(et);
         ActionHelper.createHis(et.getId(),StaticDict.Action__object_type.DOCLIB.getValue(),null,StaticDict.Action__type.CREATED.getValue(),
                 "","",null,iActionService);
@@ -112,10 +112,10 @@ public class DocLibExService extends DocLibServiceImpl {
         long libId =  et.getId();
         DocLib old = new DocLib();
         CachedBeanCopier.copy(this.get(et.getId()),old);
-        if (StaticDict.Doclib__acl.CUSTOM.getValue().equals(et.getAcl())){
-            String libCreatedBy = iActionService.getOne(new QueryWrapper<Action>().eq(PARAM_OBJECT_TYPE, StaticDict.Action__object_type.DOCLIB.getValue()).eq(PARAM_OBJECT_ID,libId).eq(FIELD_ACTION, StaticDict.Action__type.CREATED.getValue())).getActor();
-            et.setUsers(libCreatedBy != null ? libCreatedBy : AuthenticationUser.getAuthenticationUser().getUsername());
-        }
+//        if (StaticDict.Doclib__acl.CUSTOM.getValue().equals(et.getAcl())){
+//            String libCreatedBy = iActionService.getOne(new QueryWrapper<Action>().eq(PARAM_OBJECT_TYPE, StaticDict.Action__object_type.DOCLIB.getValue()).eq(PARAM_OBJECT_ID,libId).eq(FIELD_ACTION, StaticDict.Action__type.CREATED.getValue())).getActor();
+//            et.setUsers(libCreatedBy != null ? libCreatedBy : AuthenticationUser.getAuthenticationUser().getUsername());
+//        }
         boolean flag =  super.update(et);
         List<History> changes = ChangeUtil.diff(old,et);
         if (changes.size() > 0) {
