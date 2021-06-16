@@ -653,12 +653,21 @@
               "codeName" : "Branchs"
             },
             "getPSEditor" : {
+              "editorParams" : {
+                "SRFNAVCTX.product" : "%products%"
+              },
               "editorType" : "DROPDOWNLIST",
               "name" : "branchs",
               "getPSAppCodeList" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json"
               },
+              "getPSNavigateContexts" : [ {
+                "key" : "PRODUCT",
+                "name" : "PRODUCT",
+                "value" : "products",
+                "rawValue" : false
+              } ],
               "singleSelect" : true
             },
             "resetItemName" : "products",
@@ -687,12 +696,21 @@
               "codeName" : "Plans"
             },
             "getPSEditor" : {
+              "editorParams" : {
+                "SRFNAVCTX.product" : "%products%"
+              },
               "editorType" : "DROPDOWNLIST",
               "name" : "plans",
               "getPSAppCodeList" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductPlan.json"
               },
+              "getPSNavigateContexts" : [ {
+                "key" : "PRODUCT",
+                "name" : "PRODUCT",
+                "value" : "products",
+                "rawValue" : false
+              } ],
               "singleSelect" : true
             },
             "resetItemName" : "products",

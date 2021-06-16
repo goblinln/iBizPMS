@@ -15,11 +15,4 @@ export interface PickUpViewPanelControlInterface extends MainControlInterface{
      */
     onViewDatasChange($event: any): void;
 
-    /**
-     * 视图加载完成
-     *
-     * @return {*} 
-     * @memberof PickUpViewPanelControlInterface
-     */
-    handleLoad(): void;
 }
