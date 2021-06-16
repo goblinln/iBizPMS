@@ -35,9 +35,9 @@ public class DocLibHelper extends ZTBaseHelper<DocLibMapper, DocLib> {
         if (StaticDict.Doclib__type.PROJECT.getValue().equals(et.getType())) {
             et.setProduct(0L);
         }
-        if (StaticDict.Doclib__acl.CUSTOM.getValue().equals(et.getAcl())) {
-            et.setUsers(AuthenticationUser.getAuthenticationUser().getUsername());
-        }
+//        if (StaticDict.Doclib__acl.CUSTOM.getValue().equals(et.getAcl())) {
+//            et.setUsers(AuthenticationUser.getAuthenticationUser().getUsername());
+//        }
         boolean flag =  super.create(et);
         actionHelper.create(StaticDict.Action__object_type.DOCLIB.getValue(),et.getId(), StaticDict.Action__type.CREATED.getValue(),"","",null,true);
         return flag;
@@ -50,10 +50,10 @@ public class DocLibHelper extends ZTBaseHelper<DocLibMapper, DocLib> {
         long libId =  et.getId();
         DocLib old = new DocLib();
         CachedBeanCopier.copy(this.get(et.getId()),old);
-        if (StaticDict.Doclib__acl.CUSTOM.getValue().equals(et.getAcl())){
-            String libCreatedBy = actionHelper.getOne(new QueryWrapper<Action>().eq(PARAM_OBJECT_TYPE, StaticDict.Action__object_type.DOCLIB.getValue()).eq(PARAM_OBJECT_ID,libId).eq(FIELD_ACTION, StaticDict.Action__type.CREATED.getValue())).getActor();
-            et.setUsers(libCreatedBy != null ? libCreatedBy : AuthenticationUser.getAuthenticationUser().getUsername());
-        }
+//        if (StaticDict.Doclib__acl.CUSTOM.getValue().equals(et.getAcl())){
+//            String libCreatedBy = actionHelper.getOne(new QueryWrapper<Action>().eq(PARAM_OBJECT_TYPE, StaticDict.Action__object_type.DOCLIB.getValue()).eq(PARAM_OBJECT_ID,libId).eq(FIELD_ACTION, StaticDict.Action__type.CREATED.getValue())).getActor();
+//            et.setUsers(libCreatedBy != null ? libCreatedBy : AuthenticationUser.getAuthenticationUser().getUsername());
+//        }
         boolean flag =  this.internalUpdate(et);
         List<History> changes = ChangeUtil.diff(old,et);
         if (changes.size() > 0) {
