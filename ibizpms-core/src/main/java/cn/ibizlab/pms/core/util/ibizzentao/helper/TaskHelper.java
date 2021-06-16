@@ -148,6 +148,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             et.setParent(-1L);
             et.setEststarted(et.getConfigbegin());
             et.setDeadline(et.getConfigend());
+            et.setAssignedto(et.getAssignedtopk());
         }
 
         fileHelper.processImgURL(et, null, null);
@@ -1730,7 +1731,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         if (newTask.getAssignedto() != null) {
             newTask.setAssigneddate(new Timestamp(now.getTime()));
         }
-        String assignedtopks = newTask.getAssignedtopk();
+        String assignedtopks = (newTask.getAssignedtopk() == null) ? newTask.getAssignedto() : newTask.getAssignedtopk();
         String[] accounts = assignedtopks.split(",");
         if (accounts.length == 1){
             newTask.setAssignedto(accounts[0]);
