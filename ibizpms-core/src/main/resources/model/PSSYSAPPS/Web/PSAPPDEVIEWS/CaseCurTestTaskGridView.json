@@ -889,6 +889,7 @@
           "name" : "ue54667e",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "转Bug",
             "codeName" : "NewBugByTestCaseResult",
             "dataAccessAction" : "TOBUG",

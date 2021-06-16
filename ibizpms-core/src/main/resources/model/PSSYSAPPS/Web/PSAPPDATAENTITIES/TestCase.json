@@ -2716,6 +2716,7 @@
     "id" : "Edits@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "转Bug",
     "codeName" : "NewBugByTestCaseResult",
     "dataAccessAction" : "TOBUG",
@@ -3113,7 +3114,6 @@
     "id" : "MainEdit@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "转Bug",
     "codeName" : "NewBugByCaseResultCz",
     "dataAccessAction" : "TOBUG",
@@ -3210,6 +3210,7 @@
     "id" : "CaseExecute@Case"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "转Bug",
     "codeName" : "NewBugByCaseResult",
     "dataAccessAction" : "TOBUG",

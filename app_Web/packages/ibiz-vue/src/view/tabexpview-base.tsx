@@ -1,5 +1,5 @@
 import { IPSAppDETabExplorerView, IPSTabExpPanel, IPSDEEditForm } from '@ibiz/dynamic-model-api';
-import { DataPanelEngine, ModelTool, TabExpViewEngine, TabExpViewInterface } from 'ibiz-core';
+import { DataPanelEngine, ModelTool, TabExpViewEngine, TabExpViewInterface, Util } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 /**
@@ -59,7 +59,12 @@ export class TabExpViewBase extends MainViewBase implements TabExpViewInterface 
     public loadModel() {
         let _this: any = this;
         if (this.context[this.appDeCodeName.toLowerCase()]) {
-            this.appEntityService?.getDataInfo(JSON.parse(JSON.stringify(this.context)), {}, false).then((response: any) => {
+            let tempContext: any = Util.deepCopy(this.context);
+            if (tempContext && tempContext.srfsessionid) {
+                tempContext.srfsessionkey = tempContext.srfsessionid;
+                delete tempContext.srfsessionid;
+            }
+            this.appEntityService?.getDataInfo(tempContext, {}, false).then((response: any) => {
                 if (!response || response.status !== 200) {
                     return;
                 }

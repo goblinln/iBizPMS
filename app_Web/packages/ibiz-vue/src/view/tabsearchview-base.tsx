@@ -64,7 +64,12 @@ export class TabSearchViewBase extends MDViewBase implements TabSearchViewInterf
     public loadModel() {
         let _this: any = this;
         if (this.context[this.appDeCodeName.toLowerCase()]) {
-            this.appEntityService?.getDataInfo(JSON.parse(JSON.stringify(this.context)), {}, false).then((response: any) => {
+            let tempContext: any = Util.deepCopy(this.context);
+            if (tempContext && tempContext.srfsessionid) {
+                tempContext.srfsessionkey = tempContext.srfsessionid;
+                delete tempContext.srfsessionid;
+            }
+            this.appEntityService?.getDataInfo(tempContext, {}, false).then((response: any) => {
                 if (!response || response.status !== 200) {
                     return;
                 }

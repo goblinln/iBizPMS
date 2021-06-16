@@ -5168,7 +5168,6 @@
                 "name" : "ua417f98",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "转Bug",
                   "codeName" : "NewBugByCaseResultCz",
                   "dataAccessAction" : "TOBUG",
