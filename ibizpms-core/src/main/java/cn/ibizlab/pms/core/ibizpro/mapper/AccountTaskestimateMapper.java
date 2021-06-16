@@ -23,6 +23,7 @@ public interface AccountTaskestimateMapper extends BaseMapper<AccountTaskestimat
     Page<AccountTaskestimate> searchCurDaySum(IPage page, @Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
     Page<AccountTaskestimate> searchCurDaySunByProject(IPage page, @Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
     Page<AccountTaskestimate> searchDefault(IPage page, @Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
+    Page<AccountTaskestimate> searchMyDaySum(IPage page, @Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
     @Override
     AccountTaskestimate selectById(Serializable id);
     @Override

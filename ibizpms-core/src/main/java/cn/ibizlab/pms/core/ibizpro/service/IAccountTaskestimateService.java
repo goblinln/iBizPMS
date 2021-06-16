@@ -50,6 +50,7 @@ public interface IAccountTaskestimateService extends IService<AccountTaskestimat
     Page<AccountTaskestimate> searchCurDaySum(AccountTaskestimateSearchContext context);
     Page<AccountTaskestimate> searchCurDaySunByProject(AccountTaskestimateSearchContext context);
     Page<AccountTaskestimate> searchDefault(AccountTaskestimateSearchContext context);
+    Page<AccountTaskestimate> searchMyDaySum(AccountTaskestimateSearchContext context);
     /**
      *自定义查询SQL
      * @param sql  select * from table where id =#{et.param}

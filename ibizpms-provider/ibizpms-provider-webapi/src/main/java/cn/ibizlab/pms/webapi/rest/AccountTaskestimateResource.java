@@ -226,6 +226,28 @@ public class AccountTaskestimateResource {
                 .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchMyDaySum-all')")
+	@ApiOperation(value = "获取我的工时统计", tags = {"用户工时统计" } ,notes = "获取我的工时统计")
+    @RequestMapping(method= RequestMethod.GET , value="/accounttaskestimates/fetchmydaysum")
+	public ResponseEntity<List<AccountTaskestimateDTO>> fetchMyDaySum(AccountTaskestimateSearchContext context) {
+        Page<AccountTaskestimate> domains = accounttaskestimateService.searchMyDaySum(context) ;
+        List<AccountTaskestimateDTO> list = accounttaskestimateMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-AccountTaskestimate-searchMyDaySum-all')")
+	@ApiOperation(value = "查询我的工时统计", tags = {"用户工时统计" } ,notes = "查询我的工时统计")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttaskestimates/searchmydaysum")
+	public ResponseEntity<Page<AccountTaskestimateDTO>> searchMyDaySum(@RequestBody AccountTaskestimateSearchContext context) {
+        Page<AccountTaskestimate> domains = accounttaskestimateService.searchMyDaySum(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(accounttaskestimateMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
 
 
 }

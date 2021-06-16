@@ -253,6 +253,7 @@
 |CurDaySum|用户日工时统计([MYSQL5](../../appendix/query_MYSQL5.md#AccountTaskestimate_CurDaySum))|否|&nbsp;|
 |CurDaySunByProject|用户当日工时（项目）([MYSQL5](../../appendix/query_MYSQL5.md#AccountTaskestimate_CurDaySunByProject))|否|&nbsp;|
 |DEFAULT|数据查询([MYSQL5](../../appendix/query_MYSQL5.md#AccountTaskestimate_Default))|是|&nbsp;|
+|MyDaySum|我的工时统计([MYSQL5](../../appendix/query_MYSQL5.md#AccountTaskestimate_MyDaySum))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#AccountTaskestimate_View))|否|&nbsp;|
 
 * **数据集合**
@@ -263,6 +264,7 @@
 |CurDaySum|用户日工时统计|CurDaySum|否|&nbsp;|
 |CurDaySunByProject|用户当日工时（项目）|CurDaySunByProject|否|&nbsp;|
 |DEFAULT|数据集|DEFAULT|是|&nbsp;|
+|MyDaySum|我的工时统计|MyDaySum|否|&nbsp;|
 
 ## 查询模式
 | 属性      |    搜索模式     |

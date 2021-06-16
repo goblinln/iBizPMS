@@ -797,7 +797,7 @@
     "dename":"AccountTaskestimate",
     "delogicname":"用户工时统计",
     "sysmoudle":{"id":"IBIZPRO","name":"iBizPro模块"},
-    "dedataset":[{"id":"AllAccountEstimate" , "name":"所有用户工时"},{"id":"CurDaySum" , "name":"用户日工时统计"},{"id":"CurDaySunByProject" , "name":"用户当日工时（项目）"},{"id":"Default" , "name":"数据集"}],
+    "dedataset":[{"id":"AllAccountEstimate" , "name":"所有用户工时"},{"id":"CurDaySum" , "name":"用户日工时统计"},{"id":"CurDaySunByProject" , "name":"用户当日工时（项目）"},{"id":"Default" , "name":"数据集"},{"id":"MyDaySum" , "name":"我的工时统计"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
     "datascope":[{"id":"all","name":"全部数据"}]
     }

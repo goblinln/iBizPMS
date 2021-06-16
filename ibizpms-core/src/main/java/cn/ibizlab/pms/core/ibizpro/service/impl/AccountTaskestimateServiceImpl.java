@@ -216,6 +216,15 @@ public class AccountTaskestimateServiceImpl extends ServiceImpl<AccountTaskestim
         return new PageImpl<AccountTaskestimate>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
+    /**
+     * 查询集合 我的工时统计
+     */
+    @Override
+    public Page<AccountTaskestimate> searchMyDaySum(AccountTaskestimateSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<AccountTaskestimate> pages=baseMapper.searchMyDaySum(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<AccountTaskestimate>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
 
 
 
