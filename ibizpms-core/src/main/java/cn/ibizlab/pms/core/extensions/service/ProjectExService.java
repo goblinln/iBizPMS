@@ -297,7 +297,22 @@ public class ProjectExService extends ProjectServiceImpl {
     @Override
     @Transactional
     public Project linkStory(Project et) {
-        if (et.getId() == null || et.get("stories") == null) {
+        if (et.getId() == null) {
+            return et;
+        }else if (et.get("stories") == null && et.get("srfactionparam") != null) {
+            if(et.get("srfactionparam") instanceof ArrayList) {
+                ArrayList<Map> list = (ArrayList) et.get("srfactionparam");
+                String stories = "";
+                for (Map data : list) {
+                    if (stories.length() > 0) {
+                        stories += ",";
+                    }
+                    stories += data.get("id");
+                }
+                et.set("stories", stories);
+            }
+        }
+        if(et.get("stories") == null) {
             return et;
         }
 
