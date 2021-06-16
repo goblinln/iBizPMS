@@ -205,6 +205,17 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
+        "getPSNavigateParams" : [ {
+          "key" : "productmodule",
+          "name" : "productmodule",
+          "value" : "module",
+          "rawValue" : false
+        }, {
+          "key" : "branch",
+          "name" : "branch",
+          "value" : "branch",
+          "rawValue" : false
+        } ],
         "getPSSysImage" : {
           "glyph" : "xf067@FontAwesome",
           "cssClass" : "fa fa-plus"

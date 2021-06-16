@@ -1714,8 +1714,8 @@
     }, {
       "key" : "BRANCH",
       "name" : "BRANCH",
-      "value" : "branch",
-      "rawValue" : false
+      "value" : "0",
+      "rawValue" : true
     } ],
     "getPSNavigateParams" : [ {
       "key" : "srfparentkey",
@@ -1735,8 +1735,8 @@
     }, {
       "key" : "branch",
       "name" : "branch",
-      "value" : "branch",
-      "rawValue" : false
+      "value" : "0",
+      "rawValue" : true
     }, {
       "key" : "srfparentdemapname",
       "name" : "srfparentdemapname",
