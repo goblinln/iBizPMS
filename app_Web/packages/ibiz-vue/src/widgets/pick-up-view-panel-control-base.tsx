@@ -156,8 +156,7 @@ export class PickUpViewPanelControlBase extends MainControlBase implements PickU
                 }
                 if (Object.is('load', action)) {
                     this.viewdata = JSON.stringify(this.context);
-                    this.viewparam = JSON.stringify(Object.assign(data, this.viewparams));
-                    this.handleLoad();
+                    this.viewparam = JSON.stringify(this.viewparams);
                     this.inited = true;
                 }
             });
@@ -198,25 +197,6 @@ export class PickUpViewPanelControlBase extends MainControlBase implements PickU
             });
         }
         this.$emit("ctrl-event", { controlname: "pickupviewpanel", action: "selectionchange", data: $event });
-    }
-
-    /**
-     * 视图加载完成
-     *
-     * @return {*} 
-     * @memberof PickUpViewPanelControlBase
-     */
-    public handleLoad() {
-        if (!this.inited || this.viewMode == 0) {
-            return;
-        }
-        const viewname = this.controlInstance.getEmbeddedPSAppDEView()?.name;
-        if (viewname && this.viewMode == 1) {
-            const viewDom: any = (this.$refs[viewname] as any)?.$children[0];
-            if (viewDom && viewDom.engine) {
-                viewDom.engine.load();
-            }
-        }
     }
     
     /**

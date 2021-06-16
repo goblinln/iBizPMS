@@ -159,7 +159,9 @@ export class TreeExpBarControlBase extends ExpBarControlBase implements TreeExpB
         let { tempContext, tempViewparam } = this.computeNavParams(arg);
         Object.assign(this.selection, { context: tempContext, viewparam: tempViewparam });
         this.calcToolbarItemState(false);
-        this.viewState.next({ tag: this.pickupViewPanelInstance?.name, action: 'load', data: tempViewparam });
+        this.$nextTick(() =>{
+            this.viewState.next({ tag: this.pickupViewPanelInstance?.name, action: 'load', data: tempViewparam });
+        })
     }
 
     /**
@@ -196,14 +198,14 @@ export class TreeExpBarControlBase extends ExpBarControlBase implements TreeExpB
         }
         // 计算导航上下文
         if (arg && arg.navigateContext && Object.keys(arg.navigateContext).length > 0) {
-            let tempData: any = arg.curData ? JSON.parse(JSON.stringify(arg.curData)) : {};
+            let tempData: any = arg.curData ? arg.curData : {};
             Object.assign(tempData, arg);
             let _context = this.$util.computedNavData(tempData, tempContext, tempViewparam, arg.navigateContext);
             Object.assign(tempContext, _context);
         }
         // 计算导航参数
         if (arg && arg.navigateParams && Object.keys(arg.navigateParams).length > 0) {
-            let tempData: any = arg.curData ? JSON.parse(JSON.stringify(arg.curData)) : {};
+            let tempData: any = arg.curData ? arg.curData : {};
             Object.assign(tempData, arg);
             let _params = this.$util.computedNavData(tempData, tempContext, tempViewparam, arg.navigateParams);
             Object.assign(tempViewparam, _params);

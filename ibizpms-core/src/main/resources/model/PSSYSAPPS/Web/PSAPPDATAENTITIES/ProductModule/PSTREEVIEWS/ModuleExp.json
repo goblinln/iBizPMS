@@ -654,6 +654,12 @@
       "id" : "MODULE"
     },
     "name" : "根模块（动态） - 非根模块（动态）",
+    "getPSNavigateParams" : [ {
+      "key" : "branch",
+      "name" : "branch",
+      "value" : "branch",
+      "rawValue" : false
+    } ],
     "getParentPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
@@ -698,6 +704,12 @@
       "id" : "MODULE"
     },
     "name" : "非根模块（动态） - 非根模块（动态）",
+    "getPSNavigateParams" : [ {
+      "key" : "branch",
+      "name" : "branch",
+      "value" : "branch",
+      "rawValue" : false
+    } ],
     "getParentPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
@@ -764,6 +776,11 @@
       "name" : "n_parent_eq",
       "value" : "0",
       "rawValue" : true
+    }, {
+      "key" : "branch",
+      "name" : "branch",
+      "value" : "srfkey",
+      "rawValue" : false
     }, {
       "key" : "n_branch_noteq",
       "name" : "n_branch_noteq",
@@ -1525,16 +1542,11 @@
       "name" : "SRFPARENTKEY",
       "value" : "0",
       "rawValue" : true
-    }, {
-      "key" : "BRANCH",
-      "name" : "BRANCH",
-      "value" : "branch",
-      "rawValue" : false
     } ],
     "getPSNavigateParams" : [ {
       "key" : "branch",
       "name" : "branch",
-      "value" : "branch",
+      "value" : "srfkey",
       "rawValue" : false
     } ],
     "getTextPSAppDEField" : {

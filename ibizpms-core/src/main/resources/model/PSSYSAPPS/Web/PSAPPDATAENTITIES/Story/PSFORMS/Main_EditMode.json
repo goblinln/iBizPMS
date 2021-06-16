@@ -5801,6 +5801,21 @@
             "name" : "PLAN",
             "codeName" : "Plan"
           },
+          "getPSDEFDGroupLogics" : [ {
+            "groupOP" : "AND",
+            "logicCat" : "ITEMENABLE",
+            "logicType" : "GROUP",
+            "name" : "表单成员[plan][表单项启用]逻辑",
+            "getPSDEFDLogics" : [ {
+              "condOP" : "NOTEQ",
+              "dEFDName" : "parent",
+              "logicType" : "SINGLE",
+              "name" : "parent 不等于(<>) (-1)",
+              "value" : "-1"
+            } ],
+            "relatedDetailNames" : [ "parent" ],
+            "notMode" : false
+          } ],
           "getPSEditor" : {
             "editorParams" : {
               "SRFNAVPARAM.product" : "%product%",

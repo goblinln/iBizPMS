@@ -101,8 +101,8 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
         }
         Object.assign(targetCtrlParam.dynamicProps, {
             selectedData: this.dynamicProps?.selectedData,
-            viewdata: JSON.stringify(this.selection?.context),
-            viewparam: JSON.stringify(this.selection?.viewparam)
+            context: this.selection?.context,
+            viewparams: this.selection?.viewparam
         })
         Object.assign(targetCtrlParam.staticProps,{
             isSingleSelect: this.staticProps?.isSingleSelect,

@@ -146,7 +146,6 @@ export class PickupView2Base extends MainViewBase implements PickupView2Interfac
 
     public setIsMounted(name: string = 'self') {
         super.setIsMounted(name);
-        console.log(this.mountedMap);
     }
 
     /**

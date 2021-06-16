@@ -103,16 +103,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     }
   }, {
-    "name" : "公司领导-ZT_DOCLIB[当前组织（读写）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/CURORG_RW.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-    }
-  }, {
     "name" : "公司领导-ZT_PRODUCT[产品查看（参与者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,

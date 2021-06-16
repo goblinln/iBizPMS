@@ -36,7 +36,6 @@ export class AppDefaultTabSearchViewLayout extends AppDefaultViewLayout {
      * @memberof AppDefaultTabSearchViewLayout
      */
     public renderContent() {
-        debugger;
         let cardClass = {
             'view-card': true,
             'view-no-caption': !this.showCaption,

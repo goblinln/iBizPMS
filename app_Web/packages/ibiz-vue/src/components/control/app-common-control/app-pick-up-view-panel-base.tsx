@@ -99,9 +99,7 @@ export class AppPickUpViewPanelBase extends PickUpViewPanelControlBase {
             dynamicProps: {
                 selectedData: this.selectedData,
                 viewparam: this.viewparam,
-                viewdata: this.viewdata,
-                viewparams: Util.deepCopy(this.viewparams),
-                context: Util.deepCopy(this.context),
+                viewdata: this.viewdata
             }
         }
         const targetViewEvent = {
