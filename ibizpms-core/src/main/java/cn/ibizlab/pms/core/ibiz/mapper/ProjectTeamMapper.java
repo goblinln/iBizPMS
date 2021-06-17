@@ -20,6 +20,7 @@ import com.alibaba.fastjson.JSONObject;
 public interface ProjectTeamMapper extends BaseMapper<ProjectTeam> {
 
     Page<ProjectTeam> searchDefault(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
+    Page<ProjectTeam> searchProjectAllMembers(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     Page<ProjectTeam> searchProjectTeamPm(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     Page<ProjectTeam> searchRowEditDefault(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     Page<ProjectTeam> searchTaskCntEstimateConsumedLeft(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);

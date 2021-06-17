@@ -3281,7 +3281,7 @@
     </changeSet>
         <!--输出实体[PROJECTTASKESTIMATE]外键关系 -->
         <!--输出实体[IBZ_PROJECTTEAM]外键关系 -->
-    <changeSet author="a_LAB01_96184aff4" id="fk-ibz_projectteam-2-211">
+    <changeSet author="a_LAB01_96184aff4" id="fk-ibz_projectteam-3-211">
        <addForeignKeyConstraint baseColumnNames="ROOT" baseTableName="zt_team" constraintName="DER1N_IBZ_PROJECTTEAM_ZT_PROJE" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_project" validate="true"/>
     </changeSet>
         <!--输出实体[PROJECTTODO]外键关系 -->

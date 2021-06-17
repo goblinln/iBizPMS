@@ -17549,9 +17549,7 @@ WHERE ( t1.`TYPE` = 'project' )
 ```
 ### 项目所有成员(ProjectAllMembers)<div id="ProjectTeam_ProjectAllMembers"></div>
 ```sql
-select * FROM zt_team t11
-WHERE t11.root = #{srf.datacontext.project} AND t11.type = 'project' 
-
+Select t1.ACCOUNT  from zt_team t1 WHERE t1.type = 'project' AND t1.root = #{srf.datacontext.account}
 ```
 ### 项目成员（项目经理）(ProjectTeamPm)<div id="ProjectTeam_ProjectTeamPm"></div>
 ```sql

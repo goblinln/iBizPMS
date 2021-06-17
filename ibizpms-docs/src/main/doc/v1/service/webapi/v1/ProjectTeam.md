@@ -239,6 +239,42 @@ POST
 | 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
 | 返回类型 | Page<[ProjectTeamDTO](#ProjectTeamDTO)>：项目团队实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
 
+### 获取项目所有成员
+#### 访问路径
+/projectteams/fetchprojectallmembers
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [ProjectTeamSearchContext](#ProjectTeamSearchContext) | 项目团队查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[ProjectTeamDTO](#ProjectTeamDTO)>：项目团队实体传输对象列表 |
+
+### 查询项目所有成员
+#### 访问路径
+/projectteams/searchprojectallmembers
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | context | [ProjectTeamSearchContext](#ProjectTeamSearchContext) | 项目团队查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[ProjectTeamDTO](#ProjectTeamDTO)>：项目团队实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
 ### 获取项目成员（项目经理）
 #### 访问路径
 /projectteams/fetchprojectteampm
@@ -580,6 +616,44 @@ GET
 ### 根据查询DEFAULT
 #### 访问路径
 /projects/{project_id}/projectteams/searchdefault
+
+#### 请求方法
+POST
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [ProjectTeamSearchContext](#ProjectTeamSearchContext) | 项目团队查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | Page<[ProjectTeamDTO](#ProjectTeamDTO)>：项目团队实体传输对象分页对象<br>分页对象为`org.springframework.data.domain.Page` |
+
+### 根据获取项目所有成员
+#### 访问路径
+/projects/{project_id}/projectteams/fetchprojectallmembers
+
+#### 请求方法
+GET
+
+#### 参数说明
+| 序号 | 参数名 | 参数类型 | 说明 |
+| ---- | ---- | ---- | ---- |
+| 1 | project_id | Long | 项目主键ID |
+| 2 | context | [ProjectTeamSearchContext](#ProjectTeamSearchContext) | 项目团队查询条件对象 |
+
+#### 返回说明
+| 项目 | 说明 |
+| ---- | ---- |
+| 返回状态 | 200：请求成功。<br>401：用户未认证。<br>500：服务异常。 |
+| 返回类型 | List<[ProjectTeamDTO](#ProjectTeamDTO)>：项目团队实体传输对象列表 |
+
+### 根据查询项目所有成员
+#### 访问路径
+/projects/{project_id}/projectteams/searchprojectallmembers
 
 #### 请求方法
 POST
