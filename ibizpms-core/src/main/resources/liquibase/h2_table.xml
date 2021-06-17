@@ -3251,7 +3251,7 @@
         <!--输出实体[IBZ_PRODUCTSTATS]外键关系 -->
         <!--输出实体[IBZ_PRODUCTSUM]外键关系 -->
         <!--输出实体[ZT_PROJECT]外键关系 -->
-    <changeSet author="zentao" id="fk-zt_project-7-201">
+    <changeSet author="zentao" id="fk-zt_project-9-201">
        <addForeignKeyConstraint baseColumnNames="PARENT" baseTableName="zt_project" constraintName="DER1N__ZT_PROJECT__ZT_PROJECT_" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_project" validate="true"/>
     </changeSet>
         <!--输出实体[IBZ_PROJECTMODULE]外键关系 -->

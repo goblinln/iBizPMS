@@ -435,6 +435,28 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Project-searchAllProject-all') and hasPermission(#context,'pms-Project-Get')")
+	@ApiOperation(value = "获取所有项目", tags = {"项目" } ,notes = "获取所有项目")
+    @RequestMapping(method= RequestMethod.GET , value="/projects/fetchallproject")
+	public ResponseEntity<List<ProjectDTO>> fetchAllProject(ProjectSearchContext context) {
+        Page<Project> domains = projectService.searchAllProject(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Project-searchAllProject-all') and hasPermission(#context,'pms-Project-Get')")
+	@ApiOperation(value = "查询所有项目", tags = {"项目" } ,notes = "查询所有项目")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchallproject")
+	public ResponseEntity<Page<ProjectDTO>> searchAllProject(@RequestBody ProjectSearchContext context) {
+        Page<Project> domains = projectService.searchAllProject(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-Project-searchBugProject-all') and hasPermission(#context,'pms-Project-Get')")
 	@ApiOperation(value = "获取BugProject", tags = {"项目" } ,notes = "获取BugProject")
     @RequestMapping(method= RequestMethod.GET , value="/projects/fetchbugproject")

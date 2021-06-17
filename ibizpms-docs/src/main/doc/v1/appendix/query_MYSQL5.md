@@ -14590,6 +14590,10 @@ FROM `zt_product` t1
 
 # **项目**(ZT_PROJECT)
 
+### 所有项目(AllProject)<div id="Project_AllProject"></div>
+```sql
+SELECT t1.id,t1.name FROM zt_project t1
+```
 ### Bug表单中可选的项目列表(BugSelectableProjectList)<div id="Project_BugSelectableProjectList"></div>
 ```sql
 SELECT
