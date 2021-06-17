@@ -84,21 +84,64 @@ public class StoryExService extends StoryServiceImpl {
 
     @Override
     public Page<Story> searchDefault(StorySearchContext context) {
+        if(StringUtils.isBlank(context.getN_id_isnull())) {
+            context.setN_id_isnull(null);
+        }
         Map<String,Object> params = context.getParams();
         if(params.get("type") != null) {
             if("ReleaseLinkableStories".equals(params.get("type"))) {
-                return super.searchReleaseLinkableStories(context);
+                return this.searchReleaseLinkableStories(context);
             }else if("projectLinkStory".equals(params.get("type"))) {
-                return super.searchProjectLinkStory(context);
+                return this.searchProjectLinkStory(context);
             }else if("buildLinkCompletedStories".equals(params.get("type"))) {
-                return super.searchBuildLinkCompletedStories(context);
+                return this.searchBuildLinkCompletedStories(context);
             }else if("BuildStories".equals(params.get("type"))) {
-                return super.searchBuildStories(context);
+                return this.searchBuildStories(context);
             }else if("ReleaseStories".equals(params.get("type"))) {
-                return super.searchReleaseStories(context);
+                return this.searchReleaseStories(context);
+            }else if("BugStory".equals(params.get("type"))) {
+                return this.searchBugStory(context);
+            }else if("CaseStory".equals(params.get("type"))) {
+                return this.searchCaseStory(context);
+            }else if("TaskRelatedStory".equals(params.get("type"))) {
+                return this.searchTaskRelatedStory(context);
             }
+
         }
         return super.searchDefault(context);
+    }
+
+    @Override
+    public Page<Story> searchBugStory(StorySearchContext context) {
+        List<Story> list = new ArrayList<>();
+        Story story = new Story();
+        story.setId(0L);
+        story.setTitle("/");
+        list.add(story);
+        list.addAll(super.searchBugStory(context).getContent());
+        return new PageImpl<Story>(list, context.getPageable(), list.size());
+    }
+
+    @Override
+    public Page<Story> searchCaseStory(StorySearchContext context) {
+        List<Story> list = new ArrayList<>();
+        Story story = new Story();
+        story.setId(0L);
+        story.setTitle("/");
+        list.add(story);
+        list.addAll(super.searchCaseStory(context).getContent());
+        return new PageImpl<Story>(list, context.getPageable(), list.size());
+    }
+
+    @Override
+    public Page<Story> searchTaskRelatedStory(StorySearchContext context) {
+        List<Story> list = new ArrayList<>();
+        Story story = new Story();
+        story.setId(0L);
+        story.setTitle("/");
+        list.add(story);
+        list.addAll(super.searchTaskRelatedStory(context).getContent());
+        return new PageImpl<Story>(list, context.getPageable(), list.size());
     }
 
     @Override

@@ -29,6 +29,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -96,6 +97,35 @@ public class TaskExService extends TaskServiceImpl {
 
     String[] diffAttrs = {"desc"};
     List<String> ignore = Arrays.asList("totalwh", "totalleft", "totalconsumed", "totalestimate");
+
+    @Override
+    public Page<Task> searchDefault(TaskSearchContext context) {
+        Map<String,Object> params = context.getParams();
+        if(StringUtils.isBlank(context.getN_id_isnull())) {
+            context.setN_id_isnull(null);
+        }
+        if(params.get("type") != null) {
+            if ("BugTask".equals(params.get("type"))) {
+                return this.searchBugTask(context);
+            }
+        }
+        return super.searchDefault(context);
+    }
+
+    @Override
+    public Page<Task> searchBugTask(TaskSearchContext context) {
+        List<Task> list = new ArrayList<>();
+        Task task = new Task();
+        task.setId(0L);
+        task.setName("/");
+        list.add(task);
+        if(context.getN_project_eq() != null && context.getN_project_eq()==0) {
+            return new PageImpl<Task>(list, context.getPageable(), list.size());
+        }else {
+            list.addAll(super.searchBugTask(context).getContent());
+        }
+        return new PageImpl<Task>(list, context.getPageable(), list.size());
+    }
 
     @Override
     @Transactional
