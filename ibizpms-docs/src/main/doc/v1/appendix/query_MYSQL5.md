@@ -17549,8 +17549,9 @@ WHERE ( t1.`TYPE` = 'project' )
 ```
 ### 项目所有成员(ProjectAllMembers)<div id="ProjectTeam_ProjectAllMembers"></div>
 ```sql
-select t11.ACCOUNT,t11.root from zt_team t11
-WHERE t11.type = 'project' AND t11.root = #{srf.datacontext.project} 
+select t11.ACCOUNT,t11.root,t21.realname as USERNAME  from zt_team t11 LEFT JOIN zt_user t21 ON t11.account = t21.account
+WHERE t11.type = 'project' AND t11.root = 1 AND t21.realname IS NOT null
+ 
 
 ```
 ### 项目成员（项目经理）(ProjectTeamPm)<div id="ProjectTeam_ProjectTeamPm"></div>
