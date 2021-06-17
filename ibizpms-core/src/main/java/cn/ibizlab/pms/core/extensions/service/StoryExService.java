@@ -1319,6 +1319,9 @@ public class StoryExService extends StoryServiceImpl {
         if(params.get("module") != null && !"0".equals(params.get("module"))) {
             context.setN_module_eq(Long.parseLong(params.get("module").toString()));
         }
+        if(StringUtils.isBlank(context.getN_id_isnull())) {
+            context.setN_id_isnull(null);
+        }
         return super.searchProjectStories(context);
     }
 }
