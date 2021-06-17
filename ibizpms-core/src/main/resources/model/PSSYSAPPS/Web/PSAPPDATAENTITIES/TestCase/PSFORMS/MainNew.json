@@ -1083,13 +1083,6 @@
                 "enableSort" : false
               } ],
               "getPSDEGridDataItems" : [ {
-                "dataType" : 1,
-                "name" : "id",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                }
-              }, {
                 "dataType" : 21,
                 "name" : "expect",
                 "getPSAppDEField" : {
