@@ -122,6 +122,7 @@ hide members
 |PersonalEstimate|人员日志([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_PersonalEstimate))|否|&nbsp;|
 |ProjectActionMonth|日志月（项目）([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ProjectActionMonth))|否|&nbsp;|
 |ProjectActionYear|日志年（项目）([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ProjectActionYear))|否|&nbsp;|
+|ProjectMemberLog|项目成员日志([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ProjectMemberLog))|否|&nbsp;|
 |ProjectTaskEstimate|项目日志([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_ProjectTaskEstimate))|否|&nbsp;|
 |SomeoneJoinAllPros|人员参与的所有项目([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_SomeoneJoinAllPros))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#TaskEstimate_View))|否|&nbsp;|
@@ -143,6 +144,7 @@ hide members
 |PersonalEstimate|人员日志|PersonalEstimate|否|&nbsp;|
 |ProjectActionMonth|日志月（项目）|ProjectActionMonth|否|&nbsp;|
 |ProjectActionYear|日志年（项目）|ProjectActionYear|否|&nbsp;|
+|ProjectMemberLog|项目成员日志|ProjectMemberLog|否|&nbsp;|
 |ProjectTaskEstimate|项目日志|ProjectTaskEstimate|否|&nbsp;|
 |SomeoneJoinAllPros|人员参与的所有项目|SomeoneJoinAllPros|否|&nbsp;|
 

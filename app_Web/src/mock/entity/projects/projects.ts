@@ -1181,6 +1181,50 @@ mock.onPut(new RegExp(/^\/projects\/?([a-zA-Z0-9\-\;]{0,35})\/updateorder$/)).re
     return [status, data];
 });
     
+// FetchAllProject
+mock.onGet(new RegExp(/^\/projects\/fetchallproject$/)).reply((config: any) => {
+    console.groupCollapsed("实体:project 方法: FetchAllProject");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(mockDatas);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, mockDatas ? mockDatas : []];
+});
+
+// FetchAllProject
+mock.onGet(new RegExp(/^\/projects\/fetchallproject(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
+    console.groupCollapsed("实体:project 方法: FetchAllProject");
+    console.table({url:config.url, method: config.method, data:config.data});
+    if(config.url.includes('page')){
+        let url = config.url.split('?')[1];
+        let params  =  qs.parse(url);
+        Object.assign(config, params);
+    }
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    let total = mockDatas.length;
+    let records: Array<any> = [];
+    if(!config.page || !config.size){
+        records = mockDatas;
+    }else{
+        if((config.page-1)*config.size < total){
+          records = mockDatas.slice(config.page,config.size);
+        }
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(records ?  records : []);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, records ?  records : []];
+});
+    
 // FetchBugProject
 mock.onGet(new RegExp(/^\/projects\/fetchbugproject$/)).reply((config: any) => {
     console.groupCollapsed("实体:project 方法: FetchBugProject");
@@ -1665,6 +1709,50 @@ mock.onGet(new RegExp(/^\/projects\/fetchinvolvedproject_storytaskbug(\?[\w-./?%
     return [status, records ?  records : []];
 });
     
+// FetchMyManageProject
+mock.onGet(new RegExp(/^\/projects\/fetchmymanageproject$/)).reply((config: any) => {
+    console.groupCollapsed("实体:project 方法: FetchMyManageProject");
+    console.table({url:config.url, method: config.method, data:config.data});
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(mockDatas);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, mockDatas ? mockDatas : []];
+});
+
+// FetchMyManageProject
+mock.onGet(new RegExp(/^\/projects\/fetchmymanageproject(\?[\w-./?%&=,]*)*$/)).reply((config: any) => {
+    console.groupCollapsed("实体:project 方法: FetchMyManageProject");
+    console.table({url:config.url, method: config.method, data:config.data});
+    if(config.url.includes('page')){
+        let url = config.url.split('?')[1];
+        let params  =  qs.parse(url);
+        Object.assign(config, params);
+    }
+    let status = MockAdapter.mockStatus(config);
+    if (status !== 200) {
+        return [status, null];
+    }
+    let total = mockDatas.length;
+    let records: Array<any> = [];
+    if(!config.page || !config.size){
+        records = mockDatas;
+    }else{
+        if((config.page-1)*config.size < total){
+          records = mockDatas.slice(config.page,config.size);
+        }
+    }
+    console.groupCollapsed("response数据  status: "+status+" data: ");
+    console.table(records ?  records : []);
+    console.groupEnd();
+    console.groupEnd();
+    return [status, records ?  records : []];
+});
+    
 // FetchMyProject
 mock.onGet(new RegExp(/^\/projects\/fetchmyproject$/)).reply((config: any) => {
     console.groupCollapsed("实体:project 方法: FetchMyProject");
@@ -1840,6 +1928,8 @@ mock.onGet(new RegExp(/^\/projects\/fetchundoneproject(\?[\w-./?%&=,]*)*$/)).rep
     console.groupEnd();
     return [status, records ?  records : []];
 });
+// URI参数传递情况未实现
+// URI参数传递情况未实现
 // URI参数传递情况未实现
 // URI参数传递情况未实现
 // URI参数传递情况未实现
