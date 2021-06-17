@@ -1568,6 +1568,7 @@
                 "SRFNAVCTX.project" : "%project%",
                 "SRFNAVPARAM.size" : "1000",
                 "AC" : "TRUE",
+                "SRFNAVPARAM.type" : "TaskBug",
                 "SRFNAVPARAM.project" : "%project%",
                 "valFormat" : "{0: '/'}",
                 "SRFNAVCTX.size" : "1000",
@@ -1625,6 +1626,11 @@
                 "name" : "n_project_eq",
                 "value" : "project",
                 "rawValue" : false
+              }, {
+                "key" : "type",
+                "name" : "type",
+                "value" : "TaskBug",
+                "rawValue" : true
               }, {
                 "key" : "size",
                 "name" : "size",

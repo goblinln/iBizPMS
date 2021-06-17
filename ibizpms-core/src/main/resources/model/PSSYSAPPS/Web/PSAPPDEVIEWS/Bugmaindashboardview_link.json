@@ -6499,7 +6499,8 @@
                         "TRIGGER" : "FALSE",
                         "EDITABLE" : "FALSE",
                         "PICKUPVIEW" : "FALSE",
-                        "LINKVIEW" : "TRUE"
+                        "LINKVIEW" : "TRUE",
+                        "SRFNAVPARAM.type" : "TaskBug"
                       },
                       "editorType" : "PICKEREX_LINKONLY",
                       "itemParamJO" : {
@@ -6557,6 +6558,11 @@
                         "name" : "n_project_eq",
                         "value" : "project",
                         "rawValue" : false
+                      }, {
+                        "key" : "type",
+                        "name" : "type",
+                        "value" : "TaskBug",
+                        "rawValue" : true
                       }, {
                         "key" : "size",
                         "name" : "size",
