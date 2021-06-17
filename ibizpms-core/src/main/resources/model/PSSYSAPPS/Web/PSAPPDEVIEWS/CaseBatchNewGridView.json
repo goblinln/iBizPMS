@@ -101,8 +101,8 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "PRODUCT",
-    "name" : "PRODUCT",
+    "key" : "TEST",
+    "name" : "TEST",
     "value" : "product",
     "rawValue" : false
   } ],
@@ -111,6 +111,11 @@
     "name" : "product",
     "value" : "product",
     "rawValue" : false
+  }, {
+    "key" : "n_id_isnull",
+    "name" : "n_id_isnull",
+    "value" : "0",
+    "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
@@ -725,11 +730,10 @@
       },
       "getPSEditor" : {
         "editorParams" : {
-          "SRFNAVCTX.n_module_eq" : "%module%",
           "SRFNAVPARAM.n_module_eq" : "%module%",
-          "SRFNAVPARAM.n_product_eq" : "%product%",
           "AC" : "TRUE",
-          "SRFNAVCTX.n_product_eq" : "%product%",
+          "SRFNAVPARAM.n_id_isnull" : "",
+          "SRFNAVCTX.product" : "%product%",
           "PICKUPVIEW" : "TRUE"
         },
         "editorType" : "PICKER",
@@ -748,26 +752,20 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
         "getPSNavigateContexts" : [ {
-          "key" : "N_PRODUCT_EQ",
-          "name" : "N_PRODUCT_EQ",
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
           "value" : "product",
-          "rawValue" : false
-        }, {
-          "key" : "N_MODULE_EQ",
-          "name" : "N_MODULE_EQ",
-          "value" : "module",
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "n_product_eq",
-          "name" : "n_product_eq",
-          "value" : "product",
-          "rawValue" : false
-        }, {
           "key" : "n_module_eq",
           "name" : "n_module_eq",
           "value" : "module",
           "rawValue" : false
+        }, {
+          "key" : "n_id_isnull",
+          "name" : "n_id_isnull",
+          "rawValue" : true
         } ],
         "getPickupPSAppView" : {
           "modelref" : true,

@@ -3918,6 +3918,11 @@
       "standardColumnName" : "`ID`"
     } ],
     "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_ISNULL",
+      "name" : "N_ID_ISNULL",
+      "stdDataType" : 1,
+      "valueOP" : "ISNULL"
+    }, {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
       "stdDataType" : 1,

@@ -48,6 +48,9 @@
 		<if test="srf.n_lastrunresult1_eq != null ">
 			<![CDATA[ AND  (case when t1.`LASTRUNRESULT` = '' or t1.`LASTRUNRESULT` is null then 'no' else t1.`LASTRUNRESULT` end) = #{srf.n_lastrunresult1_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_id_isnull != null ">
+			<![CDATA[ AND  t1.`ID` IS NULL ]]>
+        </if>
 		<if test="srf.n_id_eq != null ">
 			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
         </if>

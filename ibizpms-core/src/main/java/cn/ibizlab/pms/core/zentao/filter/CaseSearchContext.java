@@ -93,6 +93,11 @@ public class CaseSearchContext extends QueryWrapperContext<Case> {
         this.n_lastrunresult1_eq = n_lastrunresult1_eq;
     }
                 
+	private String n_id_isnull;//[用例编号]
+	public void setN_id_isnull(String n_id_isnull) {
+        this.n_id_isnull = n_id_isnull;
+    }
+                
 	private Long n_id_eq;//[用例编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;

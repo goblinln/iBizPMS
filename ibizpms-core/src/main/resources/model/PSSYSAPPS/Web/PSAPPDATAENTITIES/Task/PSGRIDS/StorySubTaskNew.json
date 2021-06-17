@@ -607,6 +607,7 @@
       "showTrigger" : true,
       "singleSelect" : true
     },
+    "resetItemName" : "modulename",
     "valueItemName" : "story",
     "allowEmpty" : true
   }, {
