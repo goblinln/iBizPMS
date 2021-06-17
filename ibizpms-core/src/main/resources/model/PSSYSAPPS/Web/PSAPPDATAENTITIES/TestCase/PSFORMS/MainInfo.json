@@ -2633,6 +2633,7 @@
             "value" : "case",
             "rawValue" : true
           } ],
+          "paramItem" : "srfkey",
           "parentDataJO" : {
             "srfparentdename" : "ZT_CASE",
             "SRFPARENTTYPE" : "CUSTOM"
