@@ -252,7 +252,12 @@ public class SysEmployeeExService extends SysEmployeeServiceImpl {
         }else {
             // 任务团队
             log.info("SysEmployeeExService：SysEmployeeExService-" + params.get("id").toString());
-            context.setN_username_in(params.get("allTeamAccount").toString().replace(",",";"));
+            if(params.get("allTeamAccount") != null) {
+                context.setN_username_in(params.get("allTeamAccount").toString().replace(",", ";"));
+            }else {
+                log.info("SysEmployeeExService：SysEmployeeExService-" + params.get("id").toString());
+                context.setN_username_in(getAccounts(StaticDict.Team__type.TASK.getValue(), params.get("id")));
+            }
         }
         return this.searchDefault(context);
     }
