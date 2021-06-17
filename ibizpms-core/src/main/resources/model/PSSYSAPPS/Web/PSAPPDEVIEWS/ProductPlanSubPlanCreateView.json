@@ -510,7 +510,6 @@
               "inputTipClosable" : false,
               "showCaption" : true
             }, {
-              "caption" : "上一次计划名称",
               "codeName" : "oldtitle",
               "dataType" : 25,
               "detailStyle" : "DEFAULT",
@@ -518,7 +517,7 @@
               "enableCond" : 3,
               "ignoreInput" : 0,
               "labelPos" : "LEFT",
-              "labelWidth" : 120,
+              "labelWidth" : 10,
               "name" : "oldtitle",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
@@ -551,7 +550,7 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
+              "emptyCaption" : true,
               "hidden" : false,
               "inputTipClosable" : false,
               "showCaption" : true

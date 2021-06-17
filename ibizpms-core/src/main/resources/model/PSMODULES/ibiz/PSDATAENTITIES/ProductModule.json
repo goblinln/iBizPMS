@@ -375,7 +375,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.`TYPE` = 'story' )",
+        "customCond" : "t1.`TYPE` = 'story'",
         "name" : "查询条件"
       } ]
     } ],
