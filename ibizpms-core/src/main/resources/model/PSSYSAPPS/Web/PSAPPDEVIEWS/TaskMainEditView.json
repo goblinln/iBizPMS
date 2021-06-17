@@ -4336,8 +4336,12 @@
                 "name" : "project",
                 "value" : "project",
                 "rawValue" : false
+              }, {
+                "key" : "multiple",
+                "name" : "multiple",
+                "value" : "multiple",
+                "rawValue" : false
               } ],
-              "paramItem" : "multiple",
               "parentDataJO" : {
                 "srfparentdefname" : "ROOT",
                 "srfparentdename" : "ZT_TASK",
@@ -4345,6 +4349,7 @@
                 "srfparentmode" : "DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT",
                 "SRFDER1NID" : "DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT"
               },
+              "refreshItems" : "multiple;project",
               "needSave" : false,
               "refreshItemsSetParamOnly" : false,
               "showCaption" : true
