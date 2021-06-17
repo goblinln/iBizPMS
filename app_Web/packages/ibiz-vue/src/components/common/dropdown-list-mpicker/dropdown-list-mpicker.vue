@@ -6,11 +6,12 @@
             multiple 
             :transfer="true"
             transfer-class-name="dropdown-list-mpicker-transfer"
-            v-model="currentVal"
+            :value="currentVal"
             :disabled="disabled"
             :clearable="true"
             :filterable="filterable"
             @on-open-change="onClick"
+            @on-select="debounce(onSelect,[$event],this)"
             :placeholder="placeholder?placeholder:$t('components.dropdownlistMpicker.placeholder')">
             <i-option v-for="(item, index) in items" :key="index" :class="item.class" :value="item.value ? item.value.toString():''" :label="item.text">
                 <Checkbox :value="(currentVal.indexOf(item.value ? item.value.toString() : '')) == -1 ? false : true">
@@ -23,9 +24,9 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop, Model } from 'vue-property-decorator';
+import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import { CodeListService } from "ibiz-service";
-import { LogUtil, Util } from 'ibiz-core';
+import { LogUtil, Util, debounce } from 'ibiz-core';
 
 @Component({
 })
@@ -46,11 +47,18 @@ export default class DropDownListMpicker extends Vue {
     public hasChildren:boolean = false;
 
     /**
+     * 防抖函数
+     * 
+     * @memberof DropDownListMpicker
+     */
+    public debounce: Function = debounce;
+
+    /**
      * 当前选中值
      * @type {any}
      * @memberof DropDownListMpicker
      */
-    @Model('change') readonly itemValue!: any;
+    @Prop() readonly itemValue!: any;
 
     /**
      * 代码表标识
@@ -161,54 +169,58 @@ export default class DropDownListMpicker extends Vue {
      * @type {*}
      * @memberof DropDownListMpicker
      */
-    public value: string = '';
+    public currentVal: any = [];
 
     /**
-     * 计算属性(当前值)
-     * @type {any}
+     * 监听选中值变化
+     * 
      * @memberof DropDownListMpicker
      */
-    set currentVal(val: any) {
-        if(this.hasChildren && val){
-            let tempVal:any = JSON.parse(val);
-            if(tempVal.length >0){
-                val = tempVal.map((item:any) =>{
-                    return item.value;
-                })
+    @Watch('itemValue',{
+        deep: true,
+        immediate: true
+    })
+    public itemValueChange(newVal: any, oldVal: any){
+        if (newVal && !Object.is(newVal,oldVal)) {
+            this.currentVal = [];
+            if(this.hasChildren){
+                if(this.itemValue){
+                    let list:Array<any> = [];
+                    let selectedvalueArray:Array<any> = [];
+                    let curSelectedValue:Array<any> = this.itemValue.split(this.valueSeparator);
+                    this.getItemList(list,this.items);
+                    if(curSelectedValue.length > 0){
+                        curSelectedValue.forEach((selectedVal:any) =>{
+                            let tempResult:any = list.find((item:any) =>{
+                                return item.value == selectedVal;
+                            })
+                            selectedvalueArray.push(tempResult);
+                        })
+                    }
+                    this.currentVal = selectedvalueArray.length > 0 ? JSON.stringify(selectedvalueArray) : null;
+                }else{
+                    this.currentVal = null;
+                }
+            } else {
+                this.currentVal = this.itemValue? this.itemValue.split(this.valueSeparator) : [];
             }
         }
-        const type: string = this.$util.typeOf(val);
-        val = Object.is(type, 'null') || Object.is(type, 'undefined') ? [] : val;
-        this.value = val.length > 0 ? val.join(this.valueSeparator) : '';
     }
 
     /**
-     * 获取值对象
-     *
+     * 设置值选中
+     * 
      * @memberof DropDownListMpicker
      */
-    get currentVal() {
-        if(this.hasChildren){
-            if(this.itemValue){
-                let list:Array<any> = [];
-                let selectedvalueArray:Array<any> = [];
-                let curSelectedValue:Array<any> = this.itemValue.split(this.valueSeparator);
-                this.getItemList(list,this.items);
-                if(curSelectedValue.length > 0){
-                    curSelectedValue.forEach((selectedVal:any) =>{
-                        let tempResult:any = list.find((item:any) =>{
-                            return item.value == selectedVal;
-                        })
-                        selectedvalueArray.push(tempResult);
-                    })
-                }
-                return selectedvalueArray.length >0?JSON.stringify(selectedvalueArray):null;
-            }else{
-                return null;
-            }
-
+    public onSelect($event: any){
+        if ($event && $event.value) {
+            const index = this.currentVal.findIndex((value: any) => Object.is($event.value, value));
+           if (index != -1) {
+               this.currentVal.splice(index, 1);
+           } else {
+               this.currentVal.push($event.value);
+           }
         }
-        return this.itemValue? this.itemValue.split(this.valueSeparator):[];
     }
 
     /**
@@ -223,20 +235,6 @@ export default class DropDownListMpicker extends Vue {
                     this.getItemList(list,item.children);
                 }
                 list.push(item);
-            })
-        }
-    }
-
-    /**
-     * 输入框添加blur事件
-     *
-     * @memberof DropDownListMpicker
-     */
-    public addSelectBlur() {
-        if (this.$el) {
-            let input = this.$el?.getElementsByClassName("ivu-select-input")[0];
-            input.addEventListener("blur",() => {
-                this.$emit('change', this.value);
             })
         }
     }
@@ -281,7 +279,6 @@ export default class DropDownListMpicker extends Vue {
         if(this.itemValue){
             this.handleCodeListItems();
         }
-        this.addSelectBlur();
     }
 
     /**
@@ -289,9 +286,7 @@ export default class DropDownListMpicker extends Vue {
      *
      * @memberof DropDownListMpicker
      */
-    public mounted() {
-        this.addSelectBlur();
-    }
+    public mounted() {}
 
     /**
      * 代码表类型和属性匹配
@@ -356,6 +351,19 @@ export default class DropDownListMpicker extends Vue {
     public onClick($event:any){
         if($event){
             this.handleCodeListItems();
+        } else {
+            // 关闭下拉列表时抛出值
+            let currentVal = this.currentVal;
+            if(this.hasChildren && currentVal){
+                let tempVal:any = JSON.parse(currentVal);
+                if(tempVal.length >0){
+                    currentVal = tempVal.map((item:any) =>{
+                        return item.value;
+                    })
+                }
+            }
+            currentVal = currentVal?.length > 0 ? currentVal.join(this.valueSeparator) : '';
+            this.$emit('change', currentVal);
         }
     }
 
