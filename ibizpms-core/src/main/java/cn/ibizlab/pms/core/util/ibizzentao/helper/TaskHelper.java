@@ -2015,10 +2015,10 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
                 Action action = actions.get(0);
                 List<History> historyList = iHistoryService.list(new QueryWrapper<History>().eq("action", action.getId()).last(" and field in ('assignedTo' ,'assignedDate')"));
                 for (History history : historyList) {
-                    if ("assignedTo".equals(history.getField())){
+                    if ("assignedTo".equalsIgnoreCase(history.getField())){
                         newTask.setAssignedto(history.getOld());
                     }
-                    if ("assignedDate".equals(history.getField())){
+                    if ("assignedDate".equalsIgnoreCase(history.getField())){
                         newTask.setAssigneddate(Timestamp.valueOf(history.getOld()));
                     }
                 }
