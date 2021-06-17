@@ -227,15 +227,16 @@
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "codeName" : "id",
+          "contentHeight" : 32.0,
+          "contentWidth" : 70.0,
           "dataType" : 1,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",
           "enableCond" : 0,
+          "height" : 32.0,
           "ignoreInput" : 0,
-          "itemHeight" : 32.0,
-          "itemWidth" : 41.0,
           "labelPos" : "LEFT",
-          "labelWidth" : 1,
+          "labelWidth" : 2,
           "name" : "id",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -243,21 +244,22 @@
             "codeName" : "Id"
           },
           "getPSEditor" : {
-            "editorHeight" : 32.0,
             "editorType" : "SPAN",
-            "editorWidth" : 40.0,
             "name" : "id",
             "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
-            "colLG" : 1,
+            "colLG" : 2,
             "colMD" : 24,
-            "layout" : "TABLE_24COL"
+            "height" : 32,
+            "layout" : "TABLE_24COL",
+            "width" : 70
           },
           "getPSSysCss" : {
             "cssName" : "panelitem-borad"
           },
+          "width" : 70.0,
           "allowEmpty" : true,
           "emptyCaption" : true,
           "hidden" : false,

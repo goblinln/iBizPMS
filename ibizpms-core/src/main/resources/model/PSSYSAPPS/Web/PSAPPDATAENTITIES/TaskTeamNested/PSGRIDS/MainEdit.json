@@ -350,8 +350,8 @@
     },
     "getPSEditor" : {
       "editorParams" : {
-        "SRFNAVCTX.project" : "%root%",
-        "SRFNAVPARAM.project" : "%root%"
+        "SRFNAVCTX.project" : "%project%",
+        "SRFNAVPARAM.project" : "%project%"
       },
       "editorStyle" : "RowEditExtend",
       "editorType" : "DROPDOWNLIST",
@@ -363,13 +363,13 @@
       "getPSNavigateContexts" : [ {
         "key" : "PROJECT",
         "name" : "PROJECT",
-        "value" : "root",
+        "value" : "project",
         "rawValue" : false
       } ],
       "getPSNavigateParams" : [ {
         "key" : "project",
         "name" : "project",
-        "value" : "root",
+        "value" : "project",
         "rawValue" : false
       } ],
       "getPSSysPFPlugin" : {
