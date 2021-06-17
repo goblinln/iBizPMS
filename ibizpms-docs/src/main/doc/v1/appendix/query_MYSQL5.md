@@ -199,62 +199,66 @@ t1.dayname =  #{srf.datacontext.dayname}
 ```
 ### 用户当日工时（项目）(CurDaySunByProject)<div id="AccountTaskestimate_CurDaySunByProject"></div>
 ```sql
-SELECT
-	t1.* 
-FROM
-	(
-	SELECT YEAR
-		( t1.date ) AS `year`,
-		RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
-		RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`,
-		CONCAT( t1.`YEAR`,'-', RIGHT ( 100+ t1.`MONTH`, 2 ),'-', RIGHT ( 100+ t1.`day`, 2 ) ) AS dayname,
-		t11.project,
-		t21.`name` AS projectname,
-		t1.account,
-		t1.date,
-		IFNULL( ROUND( sum( t1.consumed ), 2 ), 0 ) AS consumed,
-		IFNULL( ROUND( sum( t1.EVALUATIONCOST ), 2 ), 0 ) AS EVALUATIONCOST,
-		IFNULL( ROUND( sum( t1.INPUTCOST ), 2 ), 0 ) AS INPUTCOST,
-		IFNULL( ROUND( sum( t1.EVALUATIONTIME ), 2 ), 0 ) AS EVALUATIONTIME 
+	SELECT
+		t1.* 
 	FROM
-		`zt_taskestimate` t1
-		LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
-		LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
-	WHERE
-		t11.project IS NOT NULL 
-		AND t11.project <> '0' 
-		AND t1.date <> '0000-00-00' 
-		AND t11.deleted = '0' 
-	GROUP BY
-		t11.project,
-		t21.`name`,
-		t1.account,
-		t1.date UNION
-	SELECT YEAR
-		( t1.date ) AS `year`,
-		RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
-		RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`,
-		CONCAT( t1.`YEAR`,'-', RIGHT ( 100+ t1.`MONTH`, 2 ),'-', RIGHT ( 100+ t1.`day`, 2 ) ) AS dayname,
-		t1.idvalue AS project,
-		t11.`name` AS projectname,
-		t1.account,
-		t1.date,
-		IFNULL( ROUND( sum( t1.consumed ), 2 ), 0 ) AS consumed,
-		0.00 AS EVALUATIONCOST,
-		0.00 AS INPUTCOST,
-		0.00 AS EVALUATIONTIME 
-	FROM
-		zt_todo t1
-		LEFT JOIN zt_project t11 ON t11.id = t1.idvalue 
-	WHERE
-		t1.type = 'custom' 
-		AND t1.idvalue > 0 
-	GROUP BY
-		t1.idvalue,
-		t11.`name`,
-		t1.account,
-	t1.date 
-	) t1
+		(
+		SELECT YEAR
+			( t1.date ) AS `year`,
+			RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
+			RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`,
+			CONCAT(				
+				year(t1.date),'-',RIGHT ( 100 + MONTH ( t1.date ), 2 ),'-',RIGHT ( 100 + DAY ( t1.date ), 2 )
+			) AS dayname,
+			t11.project,
+			t21.`name` AS projectname,
+			t1.account,
+			t1.date,
+			IFNULL( ROUND( sum( t1.consumed ), 2 ), 0 ) AS consumed,
+			IFNULL( ROUND( sum( t1.EVALUATIONCOST ), 2 ), 0 ) AS EVALUATIONCOST,
+			IFNULL( ROUND( sum( t1.INPUTCOST ), 2 ), 0 ) AS INPUTCOST,
+			IFNULL( ROUND( sum( t1.EVALUATIONTIME ), 2 ), 0 ) AS EVALUATIONTIME 
+		FROM
+			`zt_taskestimate` t1
+			LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
+			LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
+		WHERE
+			t11.project IS NOT NULL 
+			AND t11.project <> '0' 
+			AND t1.date <> '0000-00-00' 
+			AND t11.deleted = '0' 
+		GROUP BY
+			t11.project,
+			t21.`name`,
+			t1.account,
+			t1.date UNION
+		SELECT YEAR
+			( t1.date ) AS `year`,
+			RIGHT ( 100 + MONTH ( t1.date ), 2 ) AS `month`,
+			RIGHT ( 100 + DAY ( t1.date ), 2 ) AS `day`,
+			CONCAT(
+year(t1.date),'-',RIGHT ( 100 + MONTH ( t1.date ), 2 ),'-',RIGHT ( 100 + DAY ( t1.date ), 2 ) 
+			) AS dayname,
+			t1.idvalue AS project,
+			t11.`name` AS projectname,
+			t1.account,
+			t1.date,
+			IFNULL( ROUND( sum( t1.consumed ), 2 ), 0 ) AS consumed,
+			0.00 AS EVALUATIONCOST,
+			0.00 AS INPUTCOST,
+			0.00 AS EVALUATIONTIME 
+		FROM
+			zt_todo t1
+			LEFT JOIN zt_project t11 ON t11.id = t1.idvalue 
+		WHERE
+			t1.type = 'custom' 
+			AND t1.idvalue > 0 
+		GROUP BY
+			t1.idvalue,
+			t11.`name`,
+			t1.account,
+			t1.date 
+		) t1
 WHERE t1.project = #{srf.datacontext.project } 
 t1.dayname =  #{srf.datacontext.dayname} 
 
@@ -20844,7 +20848,7 @@ WHERE t1.DELETED = '0'
 ### 指定人员任务(CurPersonTasks)<div id="Task_CurPersonTasks"></div>
 ```sql
 
-SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`CANCELEDBY`, t1.`CANCELEDDATE`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`CONSUMED`, t1.`DEADLINE`, t1.`DELETED`, ( To_Days( t1.`DEADLINE` ) - To_Days( t1.`ESTSTARTED` ) ) AS `DURATION`, t1.`ESTIMATE`, t1.`ESTSTARTED`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`FROMBUG`, t1.`ID`, ( SELECT ( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES FROM T_IBZ_FAVORITES t WHERE t.TYPE = 'task' AND t.ACCOUNT = #{srf.sessioncontext.srfloginname} AND t.OBJECTID = t1.id ) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LEFT`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, ( SELECT CASE WHEN tt.type = 'task' THEN GROUP_CONCAT( tt.NAME SEPARATOR '>' ) ELSE CONCAT_WS( '', t2.`name`, '>', GROUP_CONCAT( tt.NAME SEPARATOR '>' ) ) END AS `name` FROM zt_module tt LEFT JOIN zt_product t2 ON tt.root = t2.id WHERE FIND_IN_SET( tt.id, t11.path ) GROUP BY tt.root LIMIT 0, 1 ) AS `MODULENAME1`, ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0 END FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` ) AS `MULTIPLE`, t1.`NAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t51.`NAME` AS `PARENTNAME`, t11.`PATH`, t1.`PRI`, t21.`PRODUCT`, t41.`NAME` AS `PRODUCTNAME`, t1.`PROJECT`, t31.`NAME` AS `PROJECTNAME`, t1.`REALSTARTED`, t1.`STATUS`, t1.`STORY`, t21.`TITLE` AS `STORYNAME`, t1.`STORYVERSION`, t1.`SUBSTATUS`, t1.`TYPE`, ( CASE WHEN ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0 END FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` ) = 1 THEN '10' WHEN t1.parent = - 1 THEN '20' WHEN t1.parent = 0 THEN '30' ELSE '40' END ) AS `TASKTYPE`, ( CASE WHEN t1.storyVersion < t21.version AND t21.`status` <> 'changed' THEN 'storychange' ELSE t1.`status` END ) AS `STATUS1`, ( CASE WHEN t1.`status` = 'wait' THEN 10 WHEN t1.`status` = 'doing' THEN 20 WHEN t1.`status` = 'done' THEN 30 WHEN t1.`status` = 'closed' THEN 40 WHEN t1.`status` = 'cancel' THEN 50 ELSE 60 END ) AS statusorder, t1.`PLAN`, t1.`TASKSPECIES`, t1.`ORDERNUM` AS `ORDERNUM`, t61.`TITLE` AS `PLANNAME` FROM `zt_task` t1 LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID LEFT JOIN zt_story t21 ON t1.STORY = t21.ID LEFT JOIN zt_project t31 ON t1.PROJECT = t31.ID LEFT JOIN zt_product t41 ON t21.PRODUCT = t41.ID LEFT JOIN zt_task t51 ON t1.PARENT = t51.ID LEFT JOIN `zt_productplan` t61 ON t1.`PLAN` = t61.`ID`
+SELECT t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`CANCELEDBY`, t1.`CANCELEDDATE`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CLOSEDREASON`, t1.`COLOR`, t1.`CONSUMED`, t1.`DEADLINE`, t1.`DELETED`, ( To_Days( t1.`DEADLINE` ) - To_Days( t1.`ESTSTARTED` ) ) AS `DURATION`, t1.`ESTIMATE`, t1.`ESTSTARTED`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`FROMBUG`, t1.`ID`, ( SELECT ( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES FROM T_IBZ_FAVORITES t WHERE t.TYPE = 'task' AND t.ACCOUNT = #{srf.datacontext.account} AND t.OBJECTID = t1.id ) AS `ISFAVORITES`, ( CASE WHEN t1.parent > 0 THEN TRUE ELSE FALSE END ) AS `ISLEAF`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LEFT`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, ( SELECT CASE WHEN tt.type = 'task' THEN GROUP_CONCAT( tt.NAME SEPARATOR '>' ) ELSE CONCAT_WS( '', t2.`name`, '>', GROUP_CONCAT( tt.NAME SEPARATOR '>' ) ) END AS `name` FROM zt_module tt LEFT JOIN zt_product t2 ON tt.root = t2.id WHERE FIND_IN_SET( tt.id, t11.path ) GROUP BY tt.root LIMIT 0, 1 ) AS `MODULENAME1`, ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0 END FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` ) AS `MULTIPLE`, t1.`NAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`PARENT`, t51.`NAME` AS `PARENTNAME`, t11.`PATH`, t1.`PRI`, t21.`PRODUCT`, t41.`NAME` AS `PRODUCTNAME`, t1.`PROJECT`, t31.`NAME` AS `PROJECTNAME`, t1.`REALSTARTED`, t1.`STATUS`, t1.`STORY`, t21.`TITLE` AS `STORYNAME`, t1.`STORYVERSION`, t1.`SUBSTATUS`, t1.`TYPE`, ( CASE WHEN ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0 END FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` ) = 1 THEN '10' WHEN t1.parent = - 1 THEN '20' WHEN t1.parent = 0 THEN '30' ELSE '40' END ) AS `TASKTYPE`, ( CASE WHEN t1.storyVersion < t21.version AND t21.`status` <> 'changed' THEN 'storychange' ELSE t1.`status` END ) AS `STATUS1`, ( CASE WHEN t1.`status` = 'wait' THEN 10 WHEN t1.`status` = 'doing' THEN 20 WHEN t1.`status` = 'done' THEN 30 WHEN t1.`status` = 'closed' THEN 40 WHEN t1.`status` = 'cancel' THEN 50 ELSE 60 END ) AS statusorder, t1.`PLAN`, t1.`TASKSPECIES`, t1.`ORDERNUM` AS `ORDERNUM`, t61.`TITLE` AS `PLANNAME` FROM `zt_task` t1 LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID LEFT JOIN zt_story t21 ON t1.STORY = t21.ID LEFT JOIN zt_project t31 ON t1.PROJECT = t31.ID LEFT JOIN zt_product t41 ON t21.PRODUCT = t41.ID LEFT JOIN zt_task t51 ON t1.PARENT = t51.ID LEFT JOIN `zt_productplan` t61 ON t1.`PLAN` = t61.`ID`
 WHERE t1.DELETED = '0' 
 (t1.assignedTo = #{srf.datacontext.account} OR FIND_IN_SET( #{srf.datacontext.account}, t1.finishedList ) OR t1.finishedBy =#{srf.datacontext.account} ) 
 (t1.parent <= 0 OR ( t1.parent > 0 AND NOT EXISTS (SELECT 1 FROM zt_task t WHERE t.deleted = '0' 
@@ -21934,7 +21938,7 @@ WHERE t21.pm = #{srf.sessioncontext.srfloginname} GROUP BY t1.account
 ```sql
 SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`DATE`, t1.`date` AS `DATES`,REPLACE(t1.`date`,'-','') as dayname, t11.`DELETED`, t1.`EVALUATIONCOST`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE` FROM `zt_taskestimate` t1 LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID` LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID`
 WHERE t11.`DELETED` = '0' 
-t1.account = #{srf.sessioncontext.srfloginname} 
+t1.account = #{srf.datacontext.account} 
 
 ```
 ### 日志月（项目）(ProjectActionMonth)<div id="TaskEstimate_ProjectActionMonth"></div>
