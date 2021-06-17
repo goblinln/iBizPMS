@@ -37,6 +37,12 @@
 	  git clone -b devx $para2 ibizpms/
       export NODE_OPTIONS=--max-old-space-size=4096
       cd ibizpms/
+      mvn clean package -Pstandardapi
+      mvn install -Pstandardapi
+      cd ibizpms-provider/ibizpms-provider-standardapi
+      mvn -Pstandardapi docker:build
+      mvn -Pstandardapi docker:push
+      docker -H $para1 stack deploy --compose-file=src/main/docker/ibizpms-provider-standardapi.yaml RTX --with-registry-auth      
       </command>
     </hudson.tasks.Shell>
   </builders>
