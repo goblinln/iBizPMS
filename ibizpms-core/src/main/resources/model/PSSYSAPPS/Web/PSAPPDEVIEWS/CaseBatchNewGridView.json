@@ -727,6 +727,7 @@
           "AC" : "TRUE",
           "SRFNAVPARAM.type" : "CaseStory",
           "SRFNAVPARAM.n_id_isnull" : "",
+          "SRFNAVCTX.product" : "%test%",
           "PICKUPVIEW" : "TRUE"
         },
         "editorType" : "PICKER",
@@ -744,6 +745,12 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
+        "getPSNavigateContexts" : [ {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "test",
+          "rawValue" : false
+        } ],
         "getPSNavigateParams" : [ {
           "key" : "n_parent_gtandeq",
           "name" : "n_parent_gtandeq",
