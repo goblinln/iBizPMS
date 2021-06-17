@@ -1975,7 +1975,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             newTask.setStatus(StaticDict.Task__status.DOING.getValue());
             newTask.setFinishedby("");
             newTask.setFinisheddate(null);
-            List<Action> actions = iActionService.list(new QueryWrapper<Action>().eq("objectType", StaticDict.Action__object_type.TASK.getValue()).eq("action", StaticDict.Action__type.ASSIGNED.getValue()).eq("objectId", et.getId()).last(" order by id desc"));
+            List<Action> actions = iActionService.list(new QueryWrapper<Action>().eq("objectType", StaticDict.Action__object_type.TASK.getValue()).eq("action", StaticDict.Action__type.RECORDESTIMATE.getValue()).eq("objectId", et.getId()).last(" order by id desc"));
             if (actions.size()>0){
                 Action action = actions.get(0);
                 List<History> historyList = iHistoryService.list(new QueryWrapper<History>().eq("action", action.getId()).last(" and field in ('assignedTo' ,'assignedDate')"));
@@ -2010,7 +2010,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             newTask.setStatus(StaticDict.Task__status.DOING.getValue());
             newTask.setFinishedby("");
             newTask.setFinisheddate(null);
-            List<Action> actions = iActionService.list(new QueryWrapper<Action>().eq("objectType", StaticDict.Action__object_type.TASK.getValue()).eq("action", StaticDict.Action__type.ASSIGNED.getValue()).eq("objectId", et.getId()).last(" order by id desc"));
+            List<Action> actions = iActionService.list(new QueryWrapper<Action>().eq("objectType", StaticDict.Action__object_type.TASK.getValue()).eq("action", StaticDict.Action__type.RECORDESTIMATE.getValue()).eq("objectId", et.getId()).last(" order by id desc"));
             if (actions.size()>0){
                 Action action = actions.get(0);
                 List<History> historyList = iHistoryService.list(new QueryWrapper<History>().eq("action", action.getId()).last(" and field in ('assignedTo' ,'assignedDate')"));
@@ -2053,7 +2053,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             newTask.setStatus(StaticDict.Task__status.DOING.getValue());
             newTask.setFinishedby("");
             newTask.setFinisheddate(null);
-            List<Action> actions = iActionService.list(new QueryWrapper<Action>().eq("objectType", StaticDict.Action__object_type.TASK.getValue()).eq("action", StaticDict.Action__type.ASSIGNED.getValue()).eq("objectId", et.getId()).last(" order by id desc"));
+            List<Action> actions = iActionService.list(new QueryWrapper<Action>().eq("objectType", StaticDict.Action__object_type.TASK.getValue()).eq("action", StaticDict.Action__type.RECORDESTIMATE.getValue()).eq("objectId", et.getId()).last(" order by id desc"));
             if (actions.size()>0){
                 Action action = actions.get(0);
                 List<History> historyList = iHistoryService.list(new QueryWrapper<History>().eq("action", action.getId()).last(" and field in ('assignedTo' ,'assignedDate')"));
