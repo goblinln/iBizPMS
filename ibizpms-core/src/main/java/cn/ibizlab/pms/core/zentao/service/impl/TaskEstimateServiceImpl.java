@@ -331,6 +331,15 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
     }
 
     /**
+     * 查询集合 人员日志
+     */
+    @Override
+    public Page<TaskEstimate> searchPersonalEstimate(TaskEstimateSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TaskEstimate> pages=baseMapper.searchPersonalEstimate(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<TaskEstimate>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 日志月（项目）
      */
     @Override
