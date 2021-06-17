@@ -511,6 +511,7 @@ hide footbox
 |NextWeekCompleteTaskMobZS|移动端下周计划参与(汇报)([MYSQL5](../../appendix/query_MYSQL5.md#Task_NextWeekCompleteTaskMobZS))|否|&nbsp;|
 |NextWeekCompleteTaskZS|本周完成的任务(汇报)([MYSQL5](../../appendix/query_MYSQL5.md#Task_NextWeekCompleteTaskZS))|否|&nbsp;|
 |NextWeekPlanCompleteTask|下周计划完成任务(汇报)([MYSQL5](../../appendix/query_MYSQL5.md#Task_NextWeekPlanCompleteTask))|否|&nbsp;|
+|PersonnalTasks|人员任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_PersonnalTasks))|否|&nbsp;|
 |PlanTask|相关任务（计划）([MYSQL5](../../appendix/query_MYSQL5.md#Task_PlanTask))|否|&nbsp;|
 |ProjectAppTask|项目任务（项目立项）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ProjectAppTask))|否|&nbsp;|
 |ProjectMemberTask|项目成员任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_ProjectMemberTask))|否|&nbsp;|
@@ -562,6 +563,7 @@ hide footbox
 |NextWeekCompleteTaskMobZS|移动端下周计划参与(汇报)|NextWeekCompleteTaskMobZS|否|&nbsp;|
 |NextWeekCompleteTaskZS|本周完成的任务(汇报)|NextWeekCompleteTaskZS|否|&nbsp;|
 |NextWeekPlanCompleteTask|下周计划完成任务(汇报)|NextWeekPlanCompleteTask|否|&nbsp;|
+|PersonnalTasks|人员任务|PersonnalTasks|否|&nbsp;|
 |PlanTask|相关任务（计划）|PlanTask|否|&nbsp;|
 |ProjectAppTask|项目任务（项目立项）|ProjectAppTask|否|&nbsp;|
 |ProjectMemberTask|项目成员任务|ProjectMemberTask|否|&nbsp;|
