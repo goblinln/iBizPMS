@@ -536,13 +536,15 @@
           },
           "getPSEditor" : {
             "editorParams" : {
-              "SRFNAVCTX.n_module_eq" : "%module%",
               "SRFNAVPARAM.n_module_eq" : "%module%",
-              "SRFNAVPARAM.product" : "%product%",
-              "AC" : "TRUE",
               "valFormat" : "{0:'/'}",
+              "AC" : "TRUE",
+              "SRFNAVPARAM.product" : "%product%",
+              "SRFNAVPARAM.n_parent_gtandeq" : "0",
               "SRFNAVCTX.product" : "%product%",
-              "PICKUPVIEW" : "TRUE"
+              "PICKUPVIEW" : "TRUE",
+              "SRFNAVPARAM.type" : "CaseStory",
+              "SRFNAVCTX.n_module_eq" : "%module%"
             },
             "editorType" : "PICKER",
             "handlerType" : "PickupText",
@@ -576,10 +578,20 @@
               "value" : "product",
               "rawValue" : false
             }, {
+              "key" : "n_parent_gtandeq",
+              "name" : "n_parent_gtandeq",
+              "value" : "0",
+              "rawValue" : true
+            }, {
               "key" : "n_module_eq",
               "name" : "n_module_eq",
               "value" : "module",
               "rawValue" : false
+            }, {
+              "key" : "type",
+              "name" : "type",
+              "value" : "CaseStory",
+              "rawValue" : true
             } ],
             "getPickupPSAppView" : {
               "modelref" : true,

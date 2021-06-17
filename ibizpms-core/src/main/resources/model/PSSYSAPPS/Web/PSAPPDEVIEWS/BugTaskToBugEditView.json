@@ -1629,14 +1629,15 @@
             "getPSEditor" : {
               "contextJOString" : "{\"ZT_PRODUCT\":\"%product%\"}",
               "editorParams" : {
-                "SRFNAVCTX.n_module_eq" : "%module%",
                 "SRFNAVPARAM.n_module_eq" : "%module%",
-                "SRFNAVPARAM.product" : "%product%",
-                "AC" : "TRUE",
-                "SRFNAVPARAM.project" : "%project%",
                 "valFormat" : "{0: '/'}",
-                "SRFNAVPARAM.storytype" : "%bug%",
-                "PICKUPVIEW" : "TRUE"
+                "SRFNAVPARAM.project" : "%project%",
+                "AC" : "TRUE",
+                "SRFNAVPARAM.product" : "%product%",
+                "SRFNAVPARAM.n_parent_gtandeq" : "0",
+                "PICKUPVIEW" : "TRUE",
+                "SRFNAVPARAM.type" : "BugStory",
+                "SRFNAVCTX.n_module_eq" : "%module%"
               },
               "editorType" : "PICKER",
               "handlerType" : "PickupText",
@@ -1691,15 +1692,20 @@
                 "value" : "product",
                 "rawValue" : false
               }, {
-                "key" : "storytype",
-                "name" : "storytype",
-                "value" : "bug",
-                "rawValue" : false
+                "key" : "n_parent_gtandeq",
+                "name" : "n_parent_gtandeq",
+                "value" : "0",
+                "rawValue" : true
               }, {
                 "key" : "n_module_eq",
                 "name" : "n_module_eq",
                 "value" : "module",
                 "rawValue" : false
+              }, {
+                "key" : "type",
+                "name" : "type",
+                "value" : "BugStory",
+                "rawValue" : true
               } ],
               "paramJOString" : "{\"n_product_eq\":\"%product%\"}",
               "getPickupPSAppView" : {

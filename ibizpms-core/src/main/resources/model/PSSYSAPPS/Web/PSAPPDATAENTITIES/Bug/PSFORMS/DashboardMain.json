@@ -1322,11 +1322,12 @@
         "getPSEditor" : {
           "contextJOString" : "{\"ZT_PRODUCT\":\"%product%\"}",
           "editorParams" : {
+            "SRFNAVPARAM.n_parent_gtandeq" : "0",
             "EDITABLE" : "FALSE",
             "LINKVIEW" : "TRUE",
             "AC" : "FALSE",
+            "SRFNAVPARAM.type" : "BugStory",
             "TRIGGER" : "FALSE",
-            "SRFNAVPARAM.storytype" : "%bug%",
             "PICKUPVIEW" : "FALSE"
           },
           "editorType" : "PICKEREX_LINKONLY",
@@ -1371,10 +1372,15 @@
             "value" : "product",
             "rawValue" : false
           }, {
-            "key" : "storytype",
-            "name" : "storytype",
-            "value" : "bug",
-            "rawValue" : false
+            "key" : "n_parent_gtandeq",
+            "name" : "n_parent_gtandeq",
+            "value" : "0",
+            "rawValue" : true
+          }, {
+            "key" : "type",
+            "name" : "type",
+            "value" : "BugStory",
+            "rawValue" : true
           } ],
           "paramJOString" : "{\"n_product_eq\":\"%product%\"}",
           "valueItemName" : "story",

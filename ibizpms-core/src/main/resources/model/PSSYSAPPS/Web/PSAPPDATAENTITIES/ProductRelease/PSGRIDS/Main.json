@@ -215,12 +215,6 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "buildname",
     "excelCaption" : "版本",
-    "getLinkPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildMainTabExpView.json",
-      "viewType" : "DETABEXPVIEW"
-    },
-    "linkValueItem" : "build",
     "name" : "buildname",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
@@ -229,7 +223,6 @@
     },
     "width" : 150,
     "widthUnit" : "PX",
-    "enableLinkView" : true,
     "enableSort" : true
   }, {
     "align" : "LEFT",

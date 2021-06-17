@@ -501,9 +501,11 @@
           },
           "getPSEditor" : {
             "editorParams" : {
+              "SRFNAVPARAM.n_parent_gtandeq" : "0",
               "EDITABLE" : "FALSE",
               "LINKVIEW" : "TRUE",
               "AC" : "FALSE",
+              "SRFNAVPARAM.type" : "CaseStory",
               "TRIGGER" : "FALSE",
               "PICKUPVIEW" : "FALSE"
             },
@@ -526,6 +528,17 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
+            "getPSNavigateParams" : [ {
+              "key" : "n_parent_gtandeq",
+              "name" : "n_parent_gtandeq",
+              "value" : "0",
+              "rawValue" : true
+            }, {
+              "key" : "type",
+              "name" : "type",
+              "value" : "CaseStory",
+              "rawValue" : true
+            } ],
             "valueItemName" : "story",
             "dropDownView" : false,
             "editable" : false,
