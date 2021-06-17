@@ -854,13 +854,15 @@
       },
       "getPSEditor" : {
         "editorParams" : {
-          "SRFNAVCTX.project" : "%project%",
-          "SRFNAVCTX.n_module_eq" : "%module%",
           "SRFNAVPARAM.n_module_eq" : "%module%",
-          "AC" : "TRUE",
           "SRFNAVPARAM.project" : "%project%",
+          "AC" : "TRUE",
+          "SRFNAVCTX.project" : "%project%",
           "TRIGGER" : "TRUE",
-          "PICKUPVIEW" : "FALSE"
+          "SRFNAVCTX.srfparentkey" : "%project%",
+          "PICKUPVIEW" : "FALSE",
+          "SRFNAVPARAM.srfparentkey" : "%project%",
+          "SRFNAVCTX.n_module_eq" : "%module%"
         },
         "editorType" : "PICKEREX_TRIGGER",
         "handlerType" : "PickupText",
@@ -887,8 +889,18 @@
           "name" : "PROJECT",
           "value" : "project",
           "rawValue" : false
+        }, {
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "project",
+          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "project",
+          "rawValue" : false
+        }, {
           "key" : "project",
           "name" : "project",
           "value" : "project",

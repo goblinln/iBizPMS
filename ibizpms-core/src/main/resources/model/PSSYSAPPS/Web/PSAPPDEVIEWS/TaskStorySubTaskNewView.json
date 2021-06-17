@@ -875,13 +875,15 @@
       },
       "getPSEditor" : {
         "editorParams" : {
-          "SRFNAVCTX.project" : "%project%",
-          "SRFNAVCTX.n_module_eq" : "%module%",
           "SRFNAVPARAM.n_module_eq" : "%module%",
-          "AC" : "TRUE",
           "SRFNAVPARAM.project" : "%project%",
+          "AC" : "TRUE",
+          "SRFNAVCTX.project" : "%project%",
           "TRIGGER" : "TRUE",
-          "PICKUPVIEW" : "FALSE"
+          "SRFNAVCTX.srfparentkey" : "%project%",
+          "PICKUPVIEW" : "FALSE",
+          "SRFNAVPARAM.srfparentkey" : "%project%",
+          "SRFNAVCTX.n_module_eq" : "%module%"
         },
         "editorType" : "PICKEREX_TRIGGER",
         "handlerType" : "PickupText",
@@ -908,8 +910,18 @@
           "name" : "PROJECT",
           "value" : "project",
           "rawValue" : false
+        }, {
+          "key" : "SRFPARENTKEY",
+          "name" : "SRFPARENTKEY",
+          "value" : "project",
+          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
+          "key" : "srfparentkey",
+          "name" : "srfparentkey",
+          "value" : "project",
+          "rawValue" : false
+        }, {
           "key" : "project",
           "name" : "project",
           "value" : "project",
@@ -982,9 +994,9 @@
       "getPSEditor" : {
         "editorParams" : {
           "SRFNAVCTX.project" : "%project%",
-          "SRFNAVPARAM.allmodules" : "%allmodules%",
+          "SRFNAVPARAM.allmodules" : "1",
           "AC" : "TRUE",
-          "SRFNAVCTX.allmodules" : "%allmodules%",
+          "SRFNAVCTX.allmodules" : "1",
           "SRFNAVPARAM.project" : "%project%",
           "valFormat" : "{0: '/'}",
           "TRIGGER" : "TRUE",
@@ -1013,8 +1025,8 @@
         }, {
           "key" : "ALLMODULES",
           "name" : "ALLMODULES",
-          "value" : "allmodules",
-          "rawValue" : false
+          "value" : "1",
+          "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
           "key" : "project",
@@ -1024,8 +1036,8 @@
         }, {
           "key" : "allmodules",
           "name" : "allmodules",
-          "value" : "allmodules",
-          "rawValue" : false
+          "value" : "1",
+          "rawValue" : true
         } ],
         "valueItemName" : "module",
         "dropDownView" : false,
