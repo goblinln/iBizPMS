@@ -349,10 +349,6 @@
       "codeName" : "Account"
     },
     "getPSEditor" : {
-      "editorParams" : {
-        "SRFNAVCTX.project" : "%project%",
-        "SRFNAVPARAM.project" : "%project%"
-      },
       "editorStyle" : "RowEditExtend",
       "editorType" : "DROPDOWNLIST",
       "name" : "account",
@@ -360,18 +356,6 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
       },
-      "getPSNavigateContexts" : [ {
-        "key" : "PROJECT",
-        "name" : "PROJECT",
-        "value" : "project",
-        "rawValue" : false
-      } ],
-      "getPSNavigateParams" : [ {
-        "key" : "project",
-        "name" : "project",
-        "value" : "project",
-        "rawValue" : false
-      } ],
       "getPSSysPFPlugin" : {
         "pluginType" : "EDITOR_CUSTOMSTYLE",
         "pluginCode" : "GridRowEditExtend"
