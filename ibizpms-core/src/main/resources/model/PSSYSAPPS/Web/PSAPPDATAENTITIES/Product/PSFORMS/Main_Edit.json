@@ -142,6 +142,7 @@
     }
   }, {
     "id" : "type",
+    "hidden" : true,
     "dataType" : 25,
     "getPSAppDEField" : {
       "name" : "TYPE",
@@ -580,13 +581,8 @@
             "codeName" : "Type"
           },
           "getPSEditor" : {
-            "editorType" : "DROPDOWNLIST",
-            "name" : "type",
-            "getPSAppCodeList" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product__type.json"
-            },
-            "singleSelect" : true
+            "editorType" : "HIDDEN",
+            "name" : "type"
           },
           "getPSLayoutPos" : {
             "colLG" : 21,
@@ -595,9 +591,8 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : false,
-          "hidden" : false,
+          "hidden" : true,
           "inputTipClosable" : false,
-          "needCodeListConfig" : true,
           "showCaption" : true
         }, {
           "caption" : "排序",
