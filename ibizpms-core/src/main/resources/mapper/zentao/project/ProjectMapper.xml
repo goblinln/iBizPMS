@@ -147,6 +147,15 @@
          <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
      </select>
 
+    <!--数据集合[MyManageProject]-->
+	 <select id="searchMyManageProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext"  resultMap="ProjectResultMap">
+         select t1.* from (
+                <include refid="MyManageProject" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
     <!--数据集合[MyProject]-->
 	 <select id="searchMyProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext"  resultMap="ProjectResultMap">
          select t1.* from (
@@ -253,6 +262,12 @@
     <!--数据查询[InvolvedProjectStoryTaskBug]-->
     <sql id="InvolvedProjectStoryTaskBug" databaseId="mysql">
 		<![CDATA[ SELECT t1.*,IFNULL(t2.storycnt,0) as storycnt,IFNULL(t3.taskcnt,0) as ycompletetaskcnt,IFNULL(t4.bugcnt,0) as bugcnt from ( select  t1.id,t1.`name`  from zt_project t1 where t1.id in ( SELECT t1.id from zt_project t1 where (YEAR(t1.`begin`) <= #{srf.webcontext.curyear}  and YEAR(t1.`end`) >=#{srf.webcontext.curyear} ) and ( t1.openedBy =#{srf.sessioncontext.srfloginname} or t1.PO =#{srf.sessioncontext.srfloginname}  or t1.PM =#{srf.sessioncontext.srfloginname} or t1.QD = #{srf.sessioncontext.srfloginname}  or t1.RD = #{srf.sessioncontext.srfloginname} ) ) or t1.id in ( select t1.root from zt_team t1 where t1.type = 'project' and t1.account =#{srf.sessioncontext.srfloginname}  and  YEAR(t1.`join`) =#{srf.webcontext.curyear}  ) or t1.id in  (SELECT DISTINCT t1.project from zt_task t1 LEFT JOIN zt_action t2 on t1.id = t2.OBJECTID and t2.objectType = 'task' where t2.actor =#{srf.sessioncontext.srfloginname}  and t2.action = 'finished' and left(t2.date,4) =  #{srf.webcontext.curyear}  )  ) t1  LEFT JOIN ( SELECT count(1) as storycnt,t1.project from ( select t1.id,t1.`title`,t1.`status`,t2.project from zt_story t1 LEFT JOIN zt_projectstory t2 on t2.story = t1.id  ) t1 GROUP BY t1.project  ) t2 on t2.project = t1.id LEFT JOIN ( select  t1.project,count(1) as taskcnt from zt_task t1 where  t1.finishedBy =  #{srf.sessioncontext.srfloginname}  GROUP  BY t1.project ) t3 on t3.project = t1.id LEFT JOIN ( SELECT  t1.project,count(1) as bugcnt from zt_bug t1 where  t1.resolvedBy =  #{srf.sessioncontext.srfloginname}	 GROUP BY t1.project ) t4 on t4.project = t1.id
+			]]>
+    </sql>
+    <!--数据查询[MyManageProject]-->
+    <sql id="MyManageProject" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACL`, t1.`BEGIN`, (SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `BUGCNT`, t1.`CANCELEDBY`, t1.`CANCELEDDATE`, t1.`CATID`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CODE`, t1.`DAYS`, t1.`DELETED`, t1.`END`, t1.`ID`, t1.`ISCAT`, '0' AS `ISTOP`, t1.`MDEPTID`, t1.`NAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`OPENEDVERSION`, t1.`ORDER`, t1.`order` AS `ORDER1`, t1.`ORGID`, t1.`PARENT`, t11.`NAME` AS `PARENTNAME`, t1.`PM`, t1.`PO`, t1.`PRI`, t1.`QD`, t1.`RD`, t1.`STATGE`, t1.`STATUS`, (SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `STORYCNT`, t1.`SUBSTATUS`, t1.`SUPPROREPORT`, (SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0') AS `TASKCNT`, t1.`TEAM`, (SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALCONSUMED`, (SELECT round(SUM(ESTIMATE),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED =  '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALESTIMATE`, (select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id) AS `TOTALHOURS`, (SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1')) AS `TOTALLEFT`, ((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause')) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ))) AS `TOTALWH`, t1.`TYPE` FROM `zt_project` t1  LEFT JOIN `zt_project` t11 ON t1.`PARENT` = t11.`ID`  
+					 WHERE 	t1.DELETED = '0'
 			]]>
     </sql>
     <!--数据查询[MyProject]-->

@@ -10,7 +10,7 @@ services:
       - TZ=Asia/Shanghai
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=zentao
+      - MYSQL_DATABASE=a_LAB01_96184aff4
     ports:
       - 3306:3306
     command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8 --explicit_defaults_for_timestamp
