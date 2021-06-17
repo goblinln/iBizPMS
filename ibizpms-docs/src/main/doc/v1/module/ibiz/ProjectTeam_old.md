@@ -137,6 +137,7 @@ hide footbox
 | 集合编号 | 集合名称   |  包含查询  | 默认集合 |   备注|
 | --------  | --------   | -------- | --------   | ----- |
 |DEFAULT|DEFAULT|DEFAULT|是|&nbsp;|
+|ProjectAllMembers|项目所有成员|ProjectAllMembers|否|&nbsp;|
 |ProjectTeamPm|项目成员（项目经理）|ProjectTeamPm|否|&nbsp;|
 |RowEditDefault|行编辑查询|RowEditDefault|否|&nbsp;|
 |TaskCntEstimateConsumedLeft|数据查询|TaskCntEstimateConsumedLeft|否|&nbsp;|

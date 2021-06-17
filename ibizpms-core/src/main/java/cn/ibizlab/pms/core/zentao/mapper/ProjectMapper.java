@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProjectMapper extends BaseMapper<Project> {
 
+    Page<Project> searchAllProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchBugProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchCurPersonalProjects(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchCurPlanProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
@@ -30,6 +31,7 @@ public interface ProjectMapper extends BaseMapper<Project> {
     Page<Project> searchESBulk(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchInvolvedProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchInvolvedProject_StoryTaskBug(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    Page<Project> searchMyManageProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchMyProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchProjectTeam(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchStoryProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);

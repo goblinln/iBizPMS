@@ -41,6 +41,15 @@
 		 order by `order`  asc  
      </select>
 
+    <!--数据集合[ProjectAllMembers]-->
+	 <select id="searchProjectAllMembers"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext"  resultMap="ProjectTeamResultMap">
+         select t1.* from (
+                <include refid="ProjectAllMembers" />
+         )t1
+         <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+         <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+     </select>
+
     <!--数据集合[ProjectTeamPm]-->
 	 <select id="searchProjectTeamPm"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext"  resultMap="ProjectTeamResultMap">
          select t1.* from (
@@ -82,8 +91,8 @@
     </sql>
     <!--数据查询[ProjectAllMembers]-->
     <sql id="ProjectAllMembers" databaseId="mysql">
-		<![CDATA[ select * FROM zt_team t11
-					 WHERE 	t11.root = #{srf.datacontext.project} AND t11.type = 'project'
+		<![CDATA[ select t11.ACCOUNT,t11.root,t21.realname as USERNAME  from zt_team t11 LEFT JOIN zt_user t21 ON t11.account = t21.account
+					 WHERE 	t11.type = 'project' AND t11.root = 1 AND t21.realname IS NOT null 
 			]]>
     </sql>
     <!--数据查询[ProjectTeamPm]-->

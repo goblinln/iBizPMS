@@ -461,6 +461,15 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
 
 
     /**
+     * 查询集合 所有项目
+     */
+    @Override
+    public Page<Project> searchAllProject(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchAllProject(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 BugProject
      */
     @Override
@@ -556,6 +565,15 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     @Override
     public Page<Project> searchInvolvedProject_StoryTaskBug(ProjectSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchInvolvedProject_StoryTaskBug(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我管辖的项目
+     */
+    @Override
+    public Page<Project> searchMyManageProject(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchMyManageProject(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

@@ -14590,6 +14590,10 @@ FROM `zt_product` t1
 
 # **项目**(ZT_PROJECT)
 
+### 所有项目(AllProject)<div id="Project_AllProject"></div>
+```sql
+SELECT t1.id,t1.name FROM zt_project t1
+```
 ### Bug表单中可选的项目列表(BugSelectableProjectList)<div id="Project_BugSelectableProjectList"></div>
 ```sql
 SELECT
@@ -15390,6 +15394,12 @@ SELECT  t1.project,count(1) as bugcnt from zt_bug t1 where  t1.resolvedBy =
 #{srf.sessioncontext.srfloginname}	
 GROUP BY t1.project
 ) t4 on t4.project = t1.id
+```
+### 我管辖的项目(MyManageProject)<div id="Project_MyManageProject"></div>
+```sql
+SELECT t1.ID,t1.`NAME` from zt_project t1
+WHERE t1.PM = #{srf.sessioncontext.srfloginname} and t1.DELETED = '0' 
+
 ```
 ### 我的项目(MyProject)<div id="Project_MyProject"></div>
 ```sql
@@ -17539,8 +17549,9 @@ WHERE ( t1.`TYPE` = 'project' )
 ```
 ### 项目所有成员(ProjectAllMembers)<div id="ProjectTeam_ProjectAllMembers"></div>
 ```sql
-select * FROM zt_team t11
-WHERE t11.root = #{srf.datacontext.project} AND t11.type = 'project' 
+select t11.ACCOUNT,t11.root,t21.realname as USERNAME  from zt_team t11 LEFT JOIN zt_user t21 ON t11.account = t21.account
+WHERE t11.type = 'project' AND t11.root = 1 AND t21.realname IS NOT null
+ 
 
 ```
 ### 项目成员（项目经理）(ProjectTeamPm)<div id="ProjectTeam_ProjectTeamPm"></div>

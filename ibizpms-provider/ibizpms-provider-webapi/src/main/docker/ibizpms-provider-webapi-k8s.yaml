@@ -37,15 +37,17 @@ spec:
         - name: SPRING_REDIS_DATABASE
           value: "0"
         - name: SPRING_DATASOURCE_USERNAME
-          value: "zentao"
+          value: "a_LAB01_96184aff4"
         - name: SPRING_DATASOURCE_PASSWORD
-          value: "123456"
+          value: "f1@@c@@9"
         - name: SPRING_DATASOURCE_URL
-          value: "jdbc:mysql://172.16.180.217:3306/zentao?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=GMT%2B8"
+          value: "jdbc:mysql://172.16.186.185:3306/a_LAB01_96184aff4?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&allowMultiQueries=true&serverTimezone=GMT%2B8"
         - name: SPRING_DATASOURCE_DRIVER-CLASS-NAME
           value: "com.mysql.jdbc.Driver"
         - name: SPRING_DATASOURCE_DEFAULTSCHEMA
-          value: "zentao"
+          value: "a_LAB01_96184aff4"
+        - name: PORTMAP
+          value: "29998:29998"      
         - name: IBIZ_AUTH_LADP
           value: "true"      
         - name: JOBS_ADMINNAME
@@ -61,7 +63,7 @@ spec:
         - name: ZUUL_ROUTES_IBZEMP_SERVICEID
           value: "pms-webapi"      
         - name: JOBS_APP-PORT
-          value: "9998"      
+          value: "29998"      
         - name: JOBS_APP-IP
           value: "172.16.240.110"      
         - name: CAS

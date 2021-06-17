@@ -422,6 +422,7 @@ hide footbox
 
 | 查询编号 | 查询名称       | 默认查询 |   备注|
 | --------  | --------   | --------   | ----- |
+|AllProject|所有项目([MYSQL5](../../appendix/query_MYSQL5.md#Project_AllProject))|否|&nbsp;|
 |BugSelectableProjectList|Bug表单中可选的项目列表([MYSQL5](../../appendix/query_MYSQL5.md#Project_BugSelectableProjectList))|否|&nbsp;Bug表单中可选的项目列表、与产品选择做关联，使用网页上下文传递参数（产品标识）。|
 |CurPersonalProjects|当前人的所有项目([MYSQL5](../../appendix/query_MYSQL5.md#Project_CurPersonalProjects))|否|&nbsp;|
 |CurPlanProject|当前计划项目([MYSQL5](../../appendix/query_MYSQL5.md#Project_CurPlanProject))|否|&nbsp;|
@@ -433,6 +434,7 @@ hide footbox
 |ESBulk|ES批量的导入([MYSQL5](../../appendix/query_MYSQL5.md#Project_ESBulk))|否|&nbsp;|
 |InvolvedProject|参与项目(年度总结)([MYSQL5](../../appendix/query_MYSQL5.md#Project_InvolvedProject))|否|&nbsp;|
 |InvolvedProjectStoryTaskBug|参与项目完成需求任务bug([MYSQL5](../../appendix/query_MYSQL5.md#Project_InvolvedProjectStoryTaskBug))|否|&nbsp;|
+|MyManageProject|我管辖的项目([MYSQL5](../../appendix/query_MYSQL5.md#Project_MyManageProject))|否|&nbsp;|
 |MyProject|我的项目([MYSQL5](../../appendix/query_MYSQL5.md#Project_MyProject))|否|&nbsp;|
 |ProjectTeam|项目团队([MYSQL5](../../appendix/query_MYSQL5.md#Project_ProjectTeam))|否|&nbsp;|
 |StoryProject|需求影响项目([MYSQL5](../../appendix/query_MYSQL5.md#Project_StoryProject))|否|&nbsp;|
@@ -443,6 +445,7 @@ hide footbox
 
 | 集合编号 | 集合名称   |  包含查询  | 默认集合 |   备注|
 | --------  | --------   | -------- | --------   | ----- |
+|AllProject|所有项目|AllProject|否|&nbsp;|
 |BugProject|BugProject|BugSelectableProjectList|否|&nbsp;|
 |CurPersonalProjects|当前人的所有项目|CurPersonalProjects|否|&nbsp;|
 |CurPlanProject|当前计划项目|CurPlanProject|否|&nbsp;|
@@ -454,6 +457,7 @@ hide footbox
 |ESBulk|ES批量的导入|ESBulk|否|&nbsp;|
 |InvolvedProject|参与项目(年度总结)|InvolvedProject|否|&nbsp;|
 |InvolvedProject_StoryTaskBug|参与项目完成需求任务bug|InvolvedProjectStoryTaskBug|否|&nbsp;|
+|MyManageProject|我管辖的项目|MyManageProject|否|&nbsp;|
 |MyProject|我的项目|MyProject|否|&nbsp;|
 |ProjectTeam|项目团队|ProjectTeam|否|&nbsp;|
 |StoryProject|需求影响项目|StoryProject|否|&nbsp;|

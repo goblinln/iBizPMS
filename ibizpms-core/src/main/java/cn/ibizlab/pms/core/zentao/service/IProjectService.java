@@ -76,6 +76,7 @@ public interface IProjectService extends IService<Project> {
     boolean unlinkStoryBatch(List<Project> etList);
     Project updateOrder(Project et);
     boolean updateOrderBatch(List<Project> etList);
+    Page<Project> searchAllProject(ProjectSearchContext context);
     Page<Project> searchBugProject(ProjectSearchContext context);
     Page<Project> searchCurPersonalProjects(ProjectSearchContext context);
     Page<Project> searchCurPlanProject(ProjectSearchContext context);
@@ -87,6 +88,7 @@ public interface IProjectService extends IService<Project> {
     Page<Project> searchESBulk(ProjectSearchContext context);
     Page<Project> searchInvolvedProject(ProjectSearchContext context);
     Page<Project> searchInvolvedProject_StoryTaskBug(ProjectSearchContext context);
+    Page<Project> searchMyManageProject(ProjectSearchContext context);
     Page<Project> searchMyProject(ProjectSearchContext context);
     Page<Project> searchProjectTeam(ProjectSearchContext context);
     Page<Project> searchStoryProject(ProjectSearchContext context);
