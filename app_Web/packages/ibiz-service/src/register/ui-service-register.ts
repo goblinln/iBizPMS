@@ -60,7 +60,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('testcase', () => import('../uiservice/test-case/test-case-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysaccount', () => import('../uiservice/sys-account/sys-account-ui-service'));
         UIServiceRegister.allUIServiceMap.set('product', () => import('../uiservice/product/product-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('ibzcasestep', () => import('../uiservice/ibzcase-step/ibzcase-step-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('testcasestepnested', () => import('../uiservice/test-case-step-nested/test-case-step-nested-ui-service'));
         UIServiceRegister.allUIServiceMap.set('taskteam', () => import('../uiservice/task-team/task-team-ui-service'));
         UIServiceRegister.allUIServiceMap.set('file', () => import('../uiservice/file/file-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzagent', () => import('../uiservice/ibz-agent/ibz-agent-ui-service'));
@@ -101,7 +101,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('taskestimate', () => import('../uiservice/task-estimate/task-estimate-ui-service'));
         UIServiceRegister.allUIServiceMap.set('story', () => import('../uiservice/story/story-ui-service'));
         UIServiceRegister.allUIServiceMap.set('taskestimatestats', () => import('../uiservice/taskestimatestats/taskestimatestats-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('ibzlibcasesteptmp', () => import('../uiservice/ibz-lib-case-step-tmp/ibz-lib-case-step-tmp-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('testcaselibcasestepnested', () => import('../uiservice/test-case-lib-case-step-nested/test-case-lib-case-step-nested-ui-service'));
         UIServiceRegister.allUIServiceMap.set('todo', () => import('../uiservice/todo/todo-ui-service'));
         UIServiceRegister.allUIServiceMap.set('dynafilter', () => import('../uiservice/dyna-filter/dyna-filter-ui-service'));
         UIServiceRegister.allUIServiceMap.set('testcaselibmodule', () => import('../uiservice/test-case-lib-module/test-case-lib-module-ui-service'));

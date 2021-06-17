@@ -1,0 +1,657 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "EXPECT",
+        "codeName" : "Expect"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "EXPECT",
+      "codeName" : "Expect"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CreateTemp",
+    "methodType" : "DEACTION",
+    "name" : "CreateTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/CreateTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CreateTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "CreateTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/CreateTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraftTemp",
+    "methodType" : "DEACTION",
+    "name" : "GetDraftTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/GetDraftTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraftTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "GetDraftTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/GetDraftTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetTemp",
+    "methodType" : "DEACTION",
+    "name" : "GetTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/GetTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "GetTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/GetTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "RemoveTemp",
+    "methodType" : "DEACTION",
+    "name" : "RemoveTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/RemoveTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "RemoveTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "RemoveTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/RemoveTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/Save.json"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "UpdateTemp",
+    "methodType" : "DEACTION",
+    "name" : "UpdateTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/UpdateTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "UpdateTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "UpdateTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/UpdateTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "Reals",
+    "logicName" : "实际情况",
+    "name" : "REALS",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Expect",
+    "logicName" : "预期",
+    "name" : "EXPECT",
+    "stdDataType" : 21,
+    "stringLength" : 65535,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "Desc",
+    "logicName" : "步骤",
+    "name" : "DESC",
+    "stdDataType" : 21,
+    "stringLength" : 65535
+  }, {
+    "codeName" : "Files",
+    "logicName" : "附件",
+    "name" : "FILES",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Id",
+    "logicName" : "编号",
+    "name" : "ID",
+    "stdDataType" : 1,
+    "keyField" : true
+  }, {
+    "codeName" : "Type",
+    "logicName" : "类型",
+    "name" : "TYPE",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Version",
+    "logicName" : "版本",
+    "name" : "VERSION",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Parent",
+    "logicName" : "编号",
+    "name" : "PARENT",
+    "stdDataType" : 1
+  }, {
+    "codeName" : "IBizCase",
+    "logicName" : "用例编号",
+    "name" : "CASE",
+    "stdDataType" : 1
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CreateTemp",
+    "methodType" : "DEACTION",
+    "name" : "CreateTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/CreateTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CreateTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "CreateTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/CreateTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraftTemp",
+    "methodType" : "DEACTION",
+    "name" : "GetDraftTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/GetDraftTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraftTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "GetDraftTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/GetDraftTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetTemp",
+    "methodType" : "DEACTION",
+    "name" : "GetTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/GetTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "GetTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/GetTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "RemoveTemp",
+    "methodType" : "DEACTION",
+    "name" : "RemoveTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/RemoveTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "RemoveTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "RemoveTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/RemoveTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/Save.json"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "UpdateTemp",
+    "methodType" : "DEACTION",
+    "name" : "UpdateTemp",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/UpdateTemp.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "UpdateTempMajor",
+    "methodType" : "DEACTION",
+    "name" : "UpdateTempMajor",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDEACTIONS/UpdateTempMajor.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "tempDataMode" : 1,
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempDefault",
+    "methodType" : "FETCHTEMP",
+    "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "TestCaseLibCaseStepNested",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibCaseStepNested.json",
+  "enableUIActions" : 15,
+  "logicName" : "测试用例库测试用例步骤（嵌套）",
+  "name" : "IBZ_LIBCASESTEPSTMP",
+  "getPSDEName" : "IBZ_LIBCASESTEPS",
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDESERVICEAPIS/TestCaseLibCaseStepNested.json"
+  },
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "EXPECT",
+    "codeName" : "Expect"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : false,
+  "enableFilterActions" : true,
+  "enableTempData" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : false
+}

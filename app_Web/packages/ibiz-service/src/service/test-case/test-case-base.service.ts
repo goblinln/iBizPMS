@@ -71,9 +71,9 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
     }
 
     protected async fillMinor(_context: IContext, _data: ITestCase): Promise<any> {
-        if (_data.ibzcasesteps) {
-            await this.setMinorLocal('IBZCaseStep', _context, _data.ibzcasesteps);
-            delete _data.ibzcasesteps;
+        if (_data.testcasestepnesteds) {
+            await this.setMinorLocal('TestCaseStepNested', _context, _data.testcasestepnesteds);
+            delete _data.testcasestepnesteds;
         }
         this.addLocal(_context, _data);
         return _data;
@@ -84,9 +84,9 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         if (res.ok) {
             _data = mergeDeepLeft(_data, this.filterEntityData(res.data)) as any;
         }
-        const ibzcasestepsList = await this.getMinorLocal('IBZCaseStep', _context, { ibizcase: _data.id });
-        if (ibzcasestepsList?.length > 0) {
-            _data.ibzcasesteps = ibzcasestepsList;
+        const testcasestepnestedsList = await this.getMinorLocal('TestCaseStepNested', _context, { ibizcase: _data.id });
+        if (testcasestepnestedsList?.length > 0) {
+            _data.testcasestepnesteds = testcasestepnestedsList;
         }
         return _data;
     }
@@ -107,7 +107,7 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
             entity = result.data;
             {
                 let items: any[] = [];
-                const s = await ___ibz___.gs.getIBZCaseStepService();
+                const s = await ___ibz___.gs.getTestCaseStepNestedService();
                 items = await s.selectLocal(context, { ibizcase: oldData.id });
                 if (items) {
                     for (let i = 0; i < items.length; i++) {
@@ -115,7 +115,7 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
                         const res = await s.DeepCopyTemp({ ...context, testcase: entity.srfkey }, item);
                         if (!res.ok) {
                             throw new Error(
-                                `「TestCase(${oldData.srfkey})」关联实体「IBZCaseStep(${item.srfkey})」拷贝失败。`,
+                                `「TestCase(${oldData.srfkey})」关联实体「TestCaseStepNested(${item.srfkey})」拷贝失败。`,
                             );
                         }
                     }

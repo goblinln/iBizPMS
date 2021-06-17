@@ -92,7 +92,7 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_casestep:
-      path: /ibzcasesteps/**
+      path: /testcasestepnesteds/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     zt_taskteam:
@@ -256,7 +256,7 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
       stripPrefix: false
     ibz_libcasestepstmp:
-      path: /ibzlibcasesteptmps/**
+      path: /testcaselibcasestepnesteds/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     zt_todo:

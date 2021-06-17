@@ -73,11 +73,11 @@ export class GlobalService {
     /**
      * 测试用例步骤服务
      *
-     * @return {IBZCaseStep}
+     * @return {TestCaseStepNested}
      * @memberof GlobalService
      */
-    async getIBZCaseStepService() {
-        return (await import('./ibzcase-step/ibzcase-step.service')).default.getInstance();
+    async getTestCaseStepNestedService() {
+        return (await import('./test-case-step-nested/test-case-step-nested.service')).default.getInstance();
     }
     /**
      * 任务团队服务
@@ -442,11 +442,11 @@ export class GlobalService {
     /**
      * 测试用例库测试用例步骤（嵌套）服务
      *
-     * @return {IbzLibCaseStepTmp}
+     * @return {TestCaseLibCaseStepNested}
      * @memberof GlobalService
      */
-    async getIbzLibCaseStepTmpService() {
-        return (await import('./ibz-lib-case-step-tmp/ibz-lib-case-step-tmp.service')).default.getInstance();
+    async getTestCaseLibCaseStepNestedService() {
+        return (await import('./test-case-lib-case-step-nested/test-case-lib-case-step-nested.service')).default.getInstance();
     }
     /**
      * 待办事宜表服务

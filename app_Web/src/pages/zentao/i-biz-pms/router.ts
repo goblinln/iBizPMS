@@ -224,7 +224,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'tests/:test?/testcases/:testcase?/ibzcasesteps/:ibzcasestep?/views/:view?',
+                    path: 'tests/:test?/testcases/:testcase?/testcasestepnesteds/:testcasestepnested?/views/:view?',
                     meta: {
                         captionTag: '',
                         caption: '',
@@ -235,16 +235,16 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
                             { pathName: 'testcases', parameterName: 'testcase' },
-                            { pathName: 'ibzcasesteps', parameterName: 'ibzcasestep' },
+                            { pathName: 'testcasestepnesteds', parameterName: 'testcasestepnested' },
                             { pathName: 'views', parameterName: 'view' },
                         ],
-                        resource:'ibzcasestep',
+                        resource:'testcasestepnested',
                         requireAuth: false,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzcasesteps/:ibzcasestep?/views/:view?',
+                    path: 'testcasestepnesteds/:testcasestepnested?/views/:view?',
                     meta: {
                         captionTag: '',
                         caption: '',
@@ -253,10 +253,10 @@ const router = new Router({
                         iconCls: '',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcasesteps', parameterName: 'ibzcasestep' },
+                            { pathName: 'testcasestepnesteds', parameterName: 'testcasestepnested' },
                             { pathName: 'views', parameterName: 'view' },
                         ],
-                        resource:'ibzcasestep',
+                        resource:'testcasestepnested',
                         requireAuth: false,
                     },
                     component: AppViewShell
@@ -3120,7 +3120,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzlibcasesteptmps/:ibzlibcasesteptmp?/views/:view?',
+                    path: 'testcaselibcasestepnesteds/:testcaselibcasestepnested?/views/:view?',
                     meta: {
                         captionTag: '',
                         caption: '',
@@ -3129,10 +3129,10 @@ const router = new Router({
                         iconCls: '',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibcasesteptmps', parameterName: 'ibzlibcasesteptmp' },
+                            { pathName: 'testcaselibcasestepnesteds', parameterName: 'testcaselibcasestepnested' },
                             { pathName: 'views', parameterName: 'view' },
                         ],
-                        resource:'ibzlibcasesteptmp',
+                        resource:'testcaselibcasestepnested',
                         requireAuth: false,
                     },
                     component: AppViewShell

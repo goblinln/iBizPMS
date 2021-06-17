@@ -59,7 +59,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('testcase', () => import('../authservice/test-case/test-case-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysaccount', () => import('../authservice/sys-account/sys-account-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('product', () => import('../authservice/product/product-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('ibzcasestep', () => import('../authservice/ibzcase-step/ibzcase-step-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('testcasestepnested', () => import('../authservice/test-case-step-nested/test-case-step-nested-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('taskteam', () => import('../authservice/task-team/task-team-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('file', () => import('../authservice/file/file-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzagent', () => import('../authservice/ibz-agent/ibz-agent-auth-service'));
@@ -100,7 +100,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('taskestimate', () => import('../authservice/task-estimate/task-estimate-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('story', () => import('../authservice/story/story-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('taskestimatestats', () => import('../authservice/taskestimatestats/taskestimatestats-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('ibzlibcasesteptmp', () => import('../authservice/ibz-lib-case-step-tmp/ibz-lib-case-step-tmp-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('testcaselibcasestepnested', () => import('../authservice/test-case-lib-case-step-nested/test-case-lib-case-step-nested-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('todo', () => import('../authservice/todo/todo-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('dynafilter', () => import('../authservice/dyna-filter/dyna-filter-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testcaselibmodule', () => import('../authservice/test-case-lib-module/test-case-lib-module-auth-service'));

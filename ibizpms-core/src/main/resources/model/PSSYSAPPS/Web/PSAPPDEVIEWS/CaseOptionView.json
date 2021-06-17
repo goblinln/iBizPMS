@@ -339,7 +339,7 @@
             "name" : "CaseStepCarryOutEditMode",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
             },
             "getPSAppViewEngines" : [ {
               "engineCat" : "VIEW",
@@ -401,10 +401,10 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                 }
               },
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep/PSGRIDS/Main_RowEdit_CarryOut.json",
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested/PSGRIDS/Main_RowEdit_CarryOut.json",
               "getFetchPSControlAction" : {
                 "modelref" : true,
                 "id" : "fetch"
@@ -420,7 +420,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                 }
               },
               "getGetPSControlAction" : {
@@ -434,7 +434,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                 }
               },
               "groupMode" : "NONE",
@@ -447,7 +447,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
@@ -461,7 +461,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                   }
                 }, {
                   "actionType" : "DEDATASET",
@@ -472,7 +472,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                   }
                 }, {
                   "actionName" : "RemoveTemp",
@@ -485,7 +485,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                   }
                 }, {
                   "actionName" : "GetTemp",
@@ -498,7 +498,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                   }
                 }, {
                   "actionName" : "GetDraftTemp",
@@ -511,7 +511,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                   }
                 }, {
                   "actionName" : "CreateTemp",
@@ -524,7 +524,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                   }
                 } ],
                 "userDRAction" : "READ",
@@ -873,7 +873,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                 }
               },
               "sortMode" : "REMOTE",
@@ -888,7 +888,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
                 }
               },
               "hasWFDataItems" : false,
@@ -916,7 +916,7 @@
               "name" : "layoutpanel",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
               },
               "getPSControlParam" : { },
               "layoutPanel" : true,
@@ -964,7 +964,7 @@
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
               },
               "name" : "TEST_CASE__TEST_CASE_STEP__NESTED",
               "getParentPSAppDEField" : {
