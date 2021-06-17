@@ -1472,7 +1472,7 @@
               "SRFNAVCTX.project" : "%project%",
               "SRFNAVPARAM.size" : "1000",
               "AC" : "TRUE",
-              "SRFNAVPARAM.type" : "TaskBug",
+              "SRFNAVPARAM.type" : "BugTask",
               "SRFNAVPARAM.project" : "%project%",
               "valFormat" : "{0: '/'}",
               "SRFNAVCTX.size" : "1000",
@@ -1533,7 +1533,7 @@
             }, {
               "key" : "type",
               "name" : "type",
-              "value" : "TaskBug",
+              "value" : "BugTask",
               "rawValue" : true
             }, {
               "key" : "size",

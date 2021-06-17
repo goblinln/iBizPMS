@@ -6512,7 +6512,7 @@
                         "EDITABLE" : "FALSE",
                         "PICKUPVIEW" : "FALSE",
                         "LINKVIEW" : "TRUE",
-                        "SRFNAVPARAM.type" : "TaskBug"
+                        "SRFNAVPARAM.type" : "BugTask"
                       },
                       "editorType" : "PICKEREX_LINKONLY",
                       "itemParamJO" : {
@@ -6573,7 +6573,7 @@
                       }, {
                         "key" : "type",
                         "name" : "type",
-                        "value" : "TaskBug",
+                        "value" : "BugTask",
                         "rawValue" : true
                       }, {
                         "key" : "size",
