@@ -9304,6 +9304,7 @@
                       "EDITABLE" : "FALSE",
                       "LINKVIEW" : "TRUE",
                       "AC" : "FALSE",
+                      "SRFNAVPARAM.type" : "TaskRelatedStory",
                       "TRIGGER" : "FALSE",
                       "PICKUPVIEW" : "FALSE"
                     },
@@ -9326,6 +9327,12 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
                     },
+                    "getPSNavigateParams" : [ {
+                      "key" : "type",
+                      "name" : "type",
+                      "value" : "TaskRelatedStory",
+                      "rawValue" : true
+                    } ],
                     "placeHolder" : "暂无",
                     "valueItemName" : "story",
                     "dropDownView" : false,

@@ -3104,7 +3104,8 @@
                 "SRFNAVCTX.project" : "%project%",
                 "SRFNAVCTX.srfparentkey" : "%project%",
                 "PICKUPVIEW" : "TRUE",
-                "SRFNAVPARAM.srfparentkey" : "%project%"
+                "SRFNAVPARAM.srfparentkey" : "%project%",
+                "SRFNAVPARAM.type" : "TaskRelatedStory"
               },
               "editorType" : "PICKER",
               "handlerType" : "PickupText",
@@ -3152,6 +3153,11 @@
                 "name" : "module",
                 "value" : "module",
                 "rawValue" : false
+              }, {
+                "key" : "type",
+                "name" : "type",
+                "value" : "TaskRelatedStory",
+                "rawValue" : true
               } ],
               "getPickupPSAppView" : {
                 "modelref" : true,

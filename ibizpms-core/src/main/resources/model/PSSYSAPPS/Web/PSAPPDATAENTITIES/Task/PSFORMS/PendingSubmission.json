@@ -1452,6 +1452,7 @@
             "SRFNAVCTX.project" : "%project%",
             "SRFNAVPARAM.module" : "%module%",
             "AC" : "TRUE",
+            "SRFNAVPARAM.type" : "TaskRelatedStory",
             "SRFNAVPARAM.project" : "%project%",
             "PICKUPVIEW" : "TRUE"
           },
@@ -1491,6 +1492,11 @@
             "name" : "module",
             "value" : "module",
             "rawValue" : false
+          }, {
+            "key" : "type",
+            "name" : "type",
+            "value" : "TaskRelatedStory",
+            "rawValue" : true
           } ],
           "getPickupPSAppView" : {
             "modelref" : true,

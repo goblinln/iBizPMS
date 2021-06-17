@@ -1733,13 +1733,14 @@
           "getPSEditor" : {
             "editorParams" : {
               "SRFNAVCTX.module" : "%module%",
-              "SRFNAVCTX.project" : "%project%",
-              "SRFNAVPARAM.module" : "%module%",
-              "AC" : "TRUE",
-              "SRFNAVPARAM.project" : "%project%",
               "valFormat" : "{0: '/'}",
+              "SRFNAVPARAM.project" : "%project%",
+              "AC" : "TRUE",
+              "SRFNAVPARAM.module" : "%module%",
+              "SRFNAVCTX.project" : "%project%",
+              "PICKUPVIEW" : "TRUE",
               "SRFNAVPARAM.srfparentkey" : "%project%",
-              "PICKUPVIEW" : "TRUE"
+              "SRFNAVPARAM.type" : "TaskRelatedStory"
             },
             "editorType" : "PICKER",
             "handlerType" : "PickupText",
@@ -1782,6 +1783,11 @@
               "name" : "module",
               "value" : "module",
               "rawValue" : false
+            }, {
+              "key" : "type",
+              "name" : "type",
+              "value" : "TaskRelatedStory",
+              "rawValue" : true
             } ],
             "getPickupPSAppView" : {
               "modelref" : true,
