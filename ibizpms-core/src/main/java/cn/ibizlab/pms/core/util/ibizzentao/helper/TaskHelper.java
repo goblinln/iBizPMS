@@ -1733,9 +1733,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         }
         String assignedtopks = (newTask.getAssignedtopk() == null) ? newTask.getAssignedto() : newTask.getAssignedtopk();
         String[] accounts = assignedtopks.split(",");
-        if (accounts.length == 1){
-            newTask.setAssignedto(accounts[0]);
-        }
+        newTask.setAssignedto(accounts[0]);
         calendar.setTime(today);
         if (beforeDays != null) {
             calendar.add(Calendar.DATE, beforeDays);
@@ -1818,7 +1816,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             }
             calendar.setTimeInMillis(date.getTime());
             String name = sdf.format(calendar.getTime());
-            String title = et.getName() + "-" + name + "-" + et.getAssignedto();
+            String title = et.getName() + "-" + name + "-" + accounts[0];
             newTask.setName(title);
             List<Task> taskList = this.list(new QueryWrapper<Task>().eq("parent", et.getId()).eq("CONFIG_BEGIN",new Timestamp(date.getTime())));
             if (taskList.size() > 0){
@@ -1835,6 +1833,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
                    Task otherTask = new Task();
                    CachedBeanCopier.copy(newTask,otherTask);
                    otherTask.setAssignedto(accounts[i]);
+                   otherTask.setName(et.getName() + "-" + name + "-" + accounts[i]);
                    this.create(otherTask);
                    actionHelper.create(StaticDict.Action__object_type.TASK.getValue(), otherTask.getId(), StaticDict.Action__type.OPENED.getValue(),
                            "", "", otherTask.getOpenedby(), true);
