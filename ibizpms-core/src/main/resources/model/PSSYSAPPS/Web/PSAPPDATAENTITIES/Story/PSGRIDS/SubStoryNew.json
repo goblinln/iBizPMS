@@ -616,6 +616,7 @@
     "getPSEditor" : {
       "editorParams" : {
         "SRFNAVPARAM.product" : "%product%",
+        "SRFNAVPARAM.n_id_isnull" : "",
         "SRFNAVCTX.product" : "%product%"
       },
       "editorType" : "DROPDOWNLIST",
@@ -635,6 +636,10 @@
         "name" : "product",
         "value" : "product",
         "rawValue" : false
+      }, {
+        "key" : "n_id_isnull",
+        "name" : "n_id_isnull",
+        "rawValue" : true
       } ],
       "singleSelect" : true
     },

@@ -544,6 +544,7 @@
         "SRFNAVCTX.srfparentkey" : "%project%",
         "PICKUPVIEW" : "FALSE",
         "SRFNAVPARAM.srfparentkey" : "%project%",
+        "SRFNAVPARAM.n_id_isnull" : "",
         "SRFNAVCTX.n_module_eq" : "%module%"
       },
       "editorType" : "PICKEREX_TRIGGER",
@@ -592,6 +593,10 @@
         "name" : "n_module_eq",
         "value" : "module",
         "rawValue" : false
+      }, {
+        "key" : "n_id_isnull",
+        "name" : "n_id_isnull",
+        "rawValue" : true
       } ],
       "valueItemName" : "story",
       "dropDownView" : false,
@@ -654,14 +659,15 @@
     },
     "getPSEditor" : {
       "editorParams" : {
-        "SRFNAVCTX.project" : "%project%",
-        "SRFNAVPARAM.allmodules" : "1",
+        "valFormat" : "{0: '/'}",
+        "SRFNAVPARAM.project" : "%project%",
         "AC" : "TRUE",
         "SRFNAVCTX.allmodules" : "1",
-        "SRFNAVPARAM.project" : "%project%",
-        "valFormat" : "{0: '/'}",
+        "SRFNAVCTX.project" : "%project%",
         "TRIGGER" : "TRUE",
-        "PICKUPVIEW" : "FALSE"
+        "SRFNAVPARAM.allmodules" : "1",
+        "PICKUPVIEW" : "FALSE",
+        "SRFNAVPARAM.n_id_isnull" : ""
       },
       "editorType" : "PICKEREX_TRIGGER",
       "handlerType" : "PickupText",
@@ -698,6 +704,10 @@
         "key" : "allmodules",
         "name" : "allmodules",
         "value" : "1",
+        "rawValue" : true
+      }, {
+        "key" : "n_id_isnull",
+        "name" : "n_id_isnull",
         "rawValue" : true
       } ],
       "valueItemName" : "module",
