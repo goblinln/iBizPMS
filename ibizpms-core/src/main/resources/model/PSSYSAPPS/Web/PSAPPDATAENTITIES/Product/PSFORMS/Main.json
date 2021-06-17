@@ -476,9 +476,6 @@
             "codeName" : "button1",
             "detailStyle" : "DEFAULT",
             "detailType" : "BUTTON",
-            "getLabelPSSysCss" : {
-              "cssName" : "form-left-margin"
-            },
             "name" : "button1",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -489,6 +486,9 @@
               "colLGOffset" : 1,
               "colMD" : 24,
               "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "form-left-margin"
             },
             "getPSSysImage" : {
               "glyph" : "xf067@FontAwesome",
