@@ -1201,6 +1201,11 @@
             "name" : "PRODUCT",
             "value" : "product",
             "rawValue" : false
+          }, {
+            "key" : "DOCLIB",
+            "name" : "DOCLIB",
+            "value" : "root",
+            "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
             "key" : "product",
@@ -1436,6 +1441,11 @@
             "key" : "PRODUCT",
             "name" : "PRODUCT",
             "value" : "product",
+            "rawValue" : false
+          }, {
+            "key" : "DOCLIB",
+            "name" : "DOCLIB",
+            "value" : "root",
             "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
@@ -2452,6 +2462,11 @@
               "name" : "PRODUCT",
               "value" : "product",
               "rawValue" : false
+            }, {
+              "key" : "DOCLIB",
+              "name" : "DOCLIB",
+              "value" : "root",
+              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
               "key" : "product",
@@ -3007,6 +3022,11 @@
               "key" : "PRODUCT",
               "name" : "PRODUCT",
               "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "DOCLIB",
+              "name" : "DOCLIB",
+              "value" : "root",
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {

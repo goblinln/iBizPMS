@@ -43,6 +43,12 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "DOCLIB",
+    "name" : "DOCLIB",
+    "value" : "doclib",
+    "rawValue" : false
+  } ],
   "getPSAppViewNavParams" : [ {
     "key" : "srfparentdename",
     "name" : "srfparentdename",
