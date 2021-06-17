@@ -1,6 +1,6 @@
 
 
-import { DataTypes, Util } from "ibiz-core";
+import { DataTypes, Util, ModelTool } from "ibiz-core";
 
 /**
  * 关联表单项复合绘制插件插件类
@@ -91,11 +91,17 @@ export class Associatedform {
      * @param localParam 局部参数
      * @param scope 插槽数据
      */
-    public readerItem(formItem: any, formItems: any[], parentContainer: any, detailsInstance: any, localParam: any, scope: any){
+    public readerItem(formItem: any, formItems: any[], parentContainer: any, detailsInstance: any, _localParam: any, scope: any){
         const { item } = scope;
         const branchs: any = formItems.find((_formItem: any) =>{ return Object.is('branchs', _formItem.name) });
         const branchsCodeList = branchs?.getPSEditor()?.getPSAppCodeList?.();
         const codeList = formItem.getPSEditor()?.getPSAppCodeList?.();
+	      let localParam = _localParam;
+        let branchsLocalParam = _localParam;
+        const localContext = ModelTool.getNavigateContext(formItem.getPSEditor());
+        const branchsLocalContext = ModelTool.getNavigateContext(branchs?.getPSEditor());
+        Object.assign(localParam, ModelTool.getNavigateParams(formItem.getPSEditor()));
+        Object.assign(branchsLocalParam, ModelTool.getNavigateParams(branchs?.getPSEditor()));
         let h: any = parentContainer.$createElement;
         return h('div', 
             {
@@ -109,6 +115,7 @@ export class Associatedform {
                         context: Util.deepCopy(parentContainer.context),
                         viewparams: parentContainer.viewparams,
                         localParam: localParam,
+                        localContext: localContext,
                         disabled: parentContainer.detailsModel[detailsInstance.name].disabled,
                         valueType: DataTypes.isNumber(DataTypes.toString(item.dataType)) ? 'number' : 'string',
                         tag: codeList ? codeList.codeName : null,
@@ -129,7 +136,8 @@ export class Associatedform {
                         data: {...parentContainer.data, ...item},
                         context: Util.deepCopy(parentContainer.context),
                         viewparams: parentContainer.viewparams,
-                        localParam: localParam,
+                        localParam: branchsLocalParam,
+                        localContext: branchsLocalContext,
                         disabled: parentContainer.detailsModel[detailsInstance.name].disabled,
                         valueType: DataTypes.isNumber(DataTypes.toString(item.dataType)) ? 'number' : 'string',
                         tag: branchsCodeList ? branchsCodeList.codeName : null,
