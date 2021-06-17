@@ -130,6 +130,11 @@
     "name" : "module",
     "value" : "module",
     "rawValue" : false
+  }, {
+    "key" : "n_id_isnull",
+    "name" : "n_id_isnull",
+    "value" : "0",
+    "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",

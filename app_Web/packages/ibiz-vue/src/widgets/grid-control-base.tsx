@@ -2133,9 +2133,9 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         const editItems: Array<any> = this.controlInstance.getPSDEGridEditItems() || [];
         if (editItems && editItems.length > 0) {
             for (const item of editItems) {
-                const property = item.codeName.toLowerCase();
+                const property = item?.codeName?.toLowerCase();
                 //新建默认值(具备类型)
-                if (item.createDVT && row.hasOwnProperty(property)) {
+                if (item.createDVT && property && row.hasOwnProperty(property)) {
                     switch (item.createDVT) {
                         case "CONTEXT":
                             if (item.createDV) {
@@ -2163,7 +2163,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                             }
                             break;
                     }
-                } else if (item.createDV && row.hasOwnProperty(property)) {
+                } else if (item.createDV && property && row.hasOwnProperty(property)) {
                     row[property] = item.appDEField?.isNumber ? Number(item.createDV) : item.createDV;
                 }
             }
@@ -2179,8 +2179,8 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         const editItems: Array<any> = this.controlInstance.getPSDEGridEditItems() || [];
         if (editItems && editItems.length > 0) {
             for (const item of editItems) {
-                const property = item.codeName.toLowerCase();
-                if (item.updateDVT && row.hasOwnProperty(property)) {
+                const property = item?.codeName?.toLowerCase();
+                if (item.updateDVT && property && row.hasOwnProperty(property)) {
                     switch (item.updateDVT) {
                         case "CONTEXT":
                             if (item.updateDV) {
@@ -2208,7 +2208,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                             }
                             break;
                     }
-                } else if (item.updateDV && row.hasOwnProperty(property)) {
+                } else if (item.updateDV && property && row.hasOwnProperty(property)) {
                     row[property] = item.appDEField?.isNumber ? Number(item.updateDV) : item.updateDV;
                 }
             }

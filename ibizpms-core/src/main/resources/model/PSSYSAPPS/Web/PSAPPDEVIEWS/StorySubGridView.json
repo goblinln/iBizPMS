@@ -816,7 +816,9 @@
       "getPSEditor" : {
         "editorParams" : {
           "SRFNAVPARAM.product" : "%product%",
+          "SRFNAVPARAM.sort" : "path,asc",
           "AC" : "TRUE",
+          "SRFNAVPARAM.type" : "StoryModule",
           "valFormat" : "{0: '/'}",
           "TRIGGER" : "TRUE",
           "SRFNAVCTX.product" : "%product%",
@@ -848,6 +850,16 @@
           "name" : "product",
           "value" : "product",
           "rawValue" : false
+        }, {
+          "key" : "sort",
+          "name" : "sort",
+          "value" : "path,asc",
+          "rawValue" : true
+        }, {
+          "key" : "type",
+          "name" : "type",
+          "value" : "StoryModule",
+          "rawValue" : true
         } ],
         "valueItemName" : "module",
         "dropDownView" : false,
