@@ -15397,8 +15397,8 @@ GROUP BY t1.project
 ```
 ### 我管辖的项目(MyManageProject)<div id="Project_MyManageProject"></div>
 ```sql
-SELECT t1.ID,t1.`NAME` from zt_project t1 WHERE t1.PM = #{srf.sessioncontext.srfloginname}
-WHERE t1.DELETED = '0' 
+SELECT t1.ID,t1.`NAME` from zt_project t1
+WHERE t1.PM = #{srf.sessioncontext.srfloginname} and t1.DELETED = '0' 
 
 ```
 ### 我的项目(MyProject)<div id="Project_MyProject"></div>

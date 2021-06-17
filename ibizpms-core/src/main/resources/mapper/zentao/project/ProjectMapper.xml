@@ -266,8 +266,8 @@
     </sql>
     <!--数据查询[MyManageProject]-->
     <sql id="MyManageProject" databaseId="mysql">
-		<![CDATA[ SELECT t1.ID,t1.`NAME` from zt_project t1 WHERE t1.PM = #{srf.sessioncontext.srfloginname}
-					 WHERE 	t1.DELETED = '0'
+		<![CDATA[ SELECT t1.ID,t1.`NAME` from zt_project t1
+					 WHERE 	t1.PM = #{srf.sessioncontext.srfloginname} and t1.DELETED = '0'
 			]]>
     </sql>
     <!--数据查询[MyProject]-->
