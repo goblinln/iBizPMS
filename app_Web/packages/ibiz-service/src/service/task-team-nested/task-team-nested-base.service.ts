@@ -25,6 +25,7 @@ export class TaskTeamNestedBaseService extends EntityBaseService<ITaskTeamNested
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];
     protected selectContextParam = {
+        task: 'root',
     };
 
     newEntity(data: ITaskTeamNested): TaskTeamNested {
@@ -41,6 +42,13 @@ export class TaskTeamNestedBaseService extends EntityBaseService<ITaskTeamNested
 
     async getLocal(context: IContext, srfKey: string): Promise<ITaskTeamNested> {
         const entity = this.cache.get(context, srfKey);
+        if (entity && entity.root && entity.root !== '') {
+            const s = await ___ibz___.gs.getTaskService();
+            const data = await s.getLocal2(context, entity.root);
+            if (data) {
+                entity.root = data.id;
+            }
+        }
         return entity!;
     }
 
@@ -49,6 +57,13 @@ export class TaskTeamNestedBaseService extends EntityBaseService<ITaskTeamNested
     }
 
     async getDraftLocal(_context: IContext, entity: ITaskTeamNested = {}): Promise<ITaskTeamNested> {
+        if (_context.task && _context.task !== '') {
+            const s = await ___ibz___.gs.getTaskService();
+            const data = await s.getLocal2(_context, _context.task);
+            if (data) {
+                entity.root = data.id;
+            }
+        }
         return new TaskTeamNested(entity);
     }
 

@@ -38,6 +38,9 @@ import cn.ibizlab.pms.core.zentao.service.ITaskService;
 import cn.ibizlab.pms.core.zentao.filter.TaskSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
 import cn.ibizlab.pms.core.zentao.runtime.TaskRuntime;
+import cn.ibizlab.pms.core.ibiz.filter.TaskTeamSearchContext;
+import cn.ibizlab.pms.core.ibiz.domain.TaskTeam;
+import cn.ibizlab.pms.core.ibiz.service.ITaskTeamService;
 
 @Slf4j
 @Api(tags = {"任务"})
@@ -55,6 +58,8 @@ public class TaskResource {
     @Lazy
     public TaskMapping taskMapping;
 
+    @Autowired
+    private ITaskTeamService taskteamService;
 
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目建立任务", tags = {"任务" },  notes = "根据项目建立任务")

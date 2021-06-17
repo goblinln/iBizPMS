@@ -742,6 +742,26 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json",
   "enableUIActions" : 15,
   "logicName" : "任务团队（嵌套）",
+  "getMinorPSAppDERSs" : [ {
+    "actionRSMode" : 1,
+    "codeName" : "TaskTeams",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
+    },
+    "name" : "PROJECT_TASK_TEAM_NESTED",
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
+    "rSMode" : 2,
+    "tempDataOrder" : 10
+  } ],
   "name" : "IBZ_TASKTEAM",
   "getPSDEName" : "IBZ_TASKTEAM",
   "getPSDEServiceAPI" : {

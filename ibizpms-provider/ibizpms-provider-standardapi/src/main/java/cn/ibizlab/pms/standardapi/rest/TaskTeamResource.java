@@ -55,5 +55,36 @@ public class TaskTeamResource {
     @Lazy
     public TaskTeamMapping taskteamMapping;
 
+
+
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目任务获取DEFAULT", tags = {"任务团队" } ,notes = "根据项目任务获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskteams/fetchdefault")
+	public ResponseEntity<List<TaskTeamDTO>> fetchDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskTeamSearchContext context) {
+        context.setN_root_eq(task_id);
+        Page<TaskTeam> domains = taskteamService.searchDefault(context) ;
+        List<TaskTeamDTO> list = taskteamMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品项目任务获取DEFAULT", tags = {"任务团队" } ,notes = "根据产品项目任务获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projects/{project_id}/tasks/{task_id}/taskteams/fetchdefault")
+	public ResponseEntity<List<TaskTeamDTO>> fetchDefaultByProductProjectTask(@PathVariable("product_id") Long product_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskTeamSearchContext context) {
+        context.setN_root_eq(task_id);
+        Page<TaskTeam> domains = taskteamService.searchDefault(context) ;
+        List<TaskTeamDTO> list = taskteamMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 

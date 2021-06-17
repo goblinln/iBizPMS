@@ -1828,7 +1828,96 @@
           "rowEditDefault" : false,
           "showCaptionBar" : false,
           "modelid" : "9d6b43cf5d65cb414cbccc84237178b7",
-          "modeltype" : "PSAPPDEVIEW"
+          "modeltype" : "PSAPPDEVIEW",
+          "getPSAppDERSPaths" : [ [ {
+            "actionRSMode" : 1,
+            "codeName" : "Projects",
+            "dataRSMode" : 0,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            },
+            "getMinorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+            },
+            "name" : "PRODUCT__PROJECT",
+            "rSMode" : 2
+          }, {
+            "actionRSMode" : 1,
+            "codeName" : "Tasks",
+            "dataRSMode" : 0,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+            },
+            "getMinorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            },
+            "name" : "PROJECT__PROJECT_TASK",
+            "getParentPSAppDEField" : {
+              "name" : "PROJECT",
+              "codeName" : "Project"
+            },
+            "rSMode" : 2
+          }, {
+            "actionRSMode" : 1,
+            "codeName" : "TaskTeams",
+            "dataRSMode" : 0,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            },
+            "getMinorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeam.json"
+            },
+            "name" : "PROJECT_TASK_TEAM",
+            "getParentPSAppDEField" : {
+              "name" : "ROOT",
+              "codeName" : "Root"
+            },
+            "rSMode" : 2,
+            "tempDataOrder" : 10
+          } ], [ {
+            "actionRSMode" : 1,
+            "codeName" : "Tasks",
+            "dataRSMode" : 0,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+            },
+            "getMinorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            },
+            "name" : "PROJECT__PROJECT_TASK",
+            "getParentPSAppDEField" : {
+              "name" : "PROJECT",
+              "codeName" : "Project"
+            },
+            "rSMode" : 2
+          }, {
+            "actionRSMode" : 1,
+            "codeName" : "TaskTeams",
+            "dataRSMode" : 0,
+            "getMajorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            },
+            "getMinorPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeam.json"
+            },
+            "name" : "PROJECT_TASK_TEAM",
+            "getParentPSAppDEField" : {
+              "name" : "ROOT",
+              "codeName" : "Root"
+            },
+            "rSMode" : 2,
+            "tempDataOrder" : 10
+          } ] ]
         },
         "getPSDEFDGroupLogics" : [ {
           "groupOP" : "AND",

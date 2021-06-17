@@ -1202,6 +1202,13 @@ public class TaskDTO extends DTOBase implements Serializable {
     }
 
 
+    /**
+     *  [IBZ_API__TASK_TEAM_NESTED]
+     */
+    @JsonProperty("taskteamnesteds")
+    @JSONField(name = "taskteamnesteds")
+	private List<TaskTeamNestedDTO> taskteams ;
+
 }
 
 

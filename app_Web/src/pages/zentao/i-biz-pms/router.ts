@@ -262,6 +262,47 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/projects/:project?/tasks/:task?/taskteams/:taskteam?/views/:view?',
+                    meta: {
+                        captionTag: '',
+                        caption: '',
+                        info:'',
+                        imgPath: '',
+                        iconCls: '',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'taskteams', parameterName: 'taskteam' },
+                            { pathName: 'views', parameterName: 'view' },
+                        ],
+                        resource:'taskteam',
+                        requireAuth: false,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/taskteams/:taskteam?/views/:view?',
+                    meta: {
+                        captionTag: '',
+                        caption: '',
+                        info:'',
+                        imgPath: '',
+                        iconCls: '',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'taskteams', parameterName: 'taskteam' },
+                            { pathName: 'views', parameterName: 'view' },
+                        ],
+                        resource:'taskteam',
+                        requireAuth: false,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'taskteams/:taskteam?/views/:view?',
                     meta: {
                         captionTag: '',
@@ -5146,6 +5187,47 @@ const router = new Router({
                         requireAuth: false,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/tasks/:task?/taskteamnesteds/:taskteamnested?/views/:view?',
+                    meta: {
+                        captionTag: '',
+                        caption: '',
+                        info:'',
+                        imgPath: '',
+                        iconCls: '',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'taskteamnesteds', parameterName: 'taskteamnested' },
+                            { pathName: 'views', parameterName: 'view' },
+                        ],
+                        resource:'taskteamnested',
+                        requireAuth: false,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/taskteamnesteds/:taskteamnested?/views/:view?',
+                    meta: {
+                        captionTag: '',
+                        caption: '',
+                        info:'',
+                        imgPath: '',
+                        iconCls: '',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'taskteamnesteds', parameterName: 'taskteamnested' },
+                            { pathName: 'views', parameterName: 'view' },
+                        ],
+                        resource:'taskteamnested',
+                        requireAuth: false,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'taskteamnesteds/:taskteamnested?/views/:view?',
