@@ -4,7 +4,7 @@ services:
     image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-provider-webapi:latest
     ports:
       - "30120:30120"
-      - "9988:9988"
+      - "29998:29998"
     networks:
       - agent_network
     environment:
@@ -19,7 +19,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:mysql://172.16.186.185:3306/a_LAB01_96184aff4?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&allowMultiQueries=true&serverTimezone=GMT%2B8
       - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.jdbc.Driver
       - SPRING_DATASOURCE_DEFAULTSCHEMA=a_LAB01_96184aff4
-      - PORTMAP=9988:9988
+      - PORTMAP=29998:29998
       - IBIZ_AUTH_LADP=true
       - JOBS_ADMINNAME=admin
       - JOBS_ADMIN-ADDRESS=http://172.16.240.110:10001
@@ -27,7 +27,7 @@ services:
       - JOBS_ADMINPASSWORD=123456
       - JOBS_APP-NAME=ibzpms
       - ZUUL_ROUTES_IBZEMP_SERVICEID=pms-webapi
-      - JOBS_APP-PORT=9998
+      - JOBS_APP-PORT=29998
       - JOBS_APP-IP=172.16.240.110
       - CAS=https://passport.ibizlab.cn
     deploy:

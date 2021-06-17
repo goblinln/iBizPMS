@@ -47,7 +47,7 @@ spec:
         - name: SPRING_DATASOURCE_DEFAULTSCHEMA
           value: "a_LAB01_96184aff4"
         - name: PORTMAP
-          value: "9988:9988"      
+          value: "29998:29998"      
         - name: IBIZ_AUTH_LADP
           value: "true"      
         - name: JOBS_ADMINNAME
@@ -63,7 +63,7 @@ spec:
         - name: ZUUL_ROUTES_IBZEMP_SERVICEID
           value: "pms-webapi"      
         - name: JOBS_APP-PORT
-          value: "9998"      
+          value: "29998"      
         - name: JOBS_APP-IP
           value: "172.16.240.110"      
         - name: CAS
