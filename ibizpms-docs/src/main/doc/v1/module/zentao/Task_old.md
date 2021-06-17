@@ -492,6 +492,7 @@ hide footbox
 |ChildTask|子任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildTask))|否|&nbsp;|
 |ChildTaskTree|子任务（树）([MYSQL5](../../appendix/query_MYSQL5.md#Task_ChildTaskTree))|否|&nbsp;|
 |CurFinishTask|用户年度完成任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_CurFinishTask))|否|&nbsp;|
+|CurPersonTasks|指定人员任务([MYSQL5](../../appendix/query_MYSQL5.md#Task_CurPersonTasks))|否|&nbsp;|
 |DEFAULT|DEFAULT([MYSQL5](../../appendix/query_MYSQL5.md#Task_Default))|是|&nbsp;|
 |DefaultRow|DefaultRow([MYSQL5](../../appendix/query_MYSQL5.md#Task_DefaultRow))|否|&nbsp;|
 |ESBulk|ES批量的导入([MYSQL5](../../appendix/query_MYSQL5.md#Task_ESBulk))|否|&nbsp;|
@@ -544,6 +545,7 @@ hide footbox
 |ChildTask|子任务|ChildTask|否|&nbsp;|
 |ChildTaskTree|子任务（树）|ChildTaskTree|否|&nbsp;|
 |CurFinishTask|用户年度完成任务|CurFinishTask|否|&nbsp;|
+|CurPersonTasks|指定人员任务|CurPersonTasks|否|&nbsp;|
 |DEFAULT|DEFAULT|DEFAULT|是|&nbsp;|
 |DefaultRow|DefaultRow|DefaultRow|否|&nbsp;|
 |ESBulk|ES批量的导入|ESBulk|否|&nbsp;|
