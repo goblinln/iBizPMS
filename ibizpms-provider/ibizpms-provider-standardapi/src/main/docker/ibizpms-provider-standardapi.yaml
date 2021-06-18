@@ -3,13 +3,13 @@ services:
   ibizpms-provider-standardapi:
     image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-provider-standardapi:latest
     ports:
-      - "32011:32011"
-      - "9988:9988"
+      - "32012:32012"
+      - "19988:19988"
     networks:
       - agent_network
     environment:
       - SPRING_CLOUD_NACOS_DISCOVERY_IP=172.16.240.110
-      - SERVER_PORT=32011
+      - SERVER_PORT=32012
       - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=172.16.240.110:8850
       - SPRING_REDIS_HOST=172.16.240.110
       - SPRING_REDIS_PORT=6381
@@ -22,10 +22,10 @@ services:
       - IBIZ_AUTH_LADP=true
       - JOBS_ENABLED=true
       - ZUUL_ROUTES_DYNAMODEL_PATH=/dynamodel/**
-      - ZUUL_ROUTES_IBZEMP_SERVICEID=ibizpms-webapi
+      - ZUUL_ROUTES_IBZEMP_SERVICEID=ibizpms-standardapi
       - ZUUL_ROUTES_DYNAMODEL_URL=http://172.16.170.145
-      - PORTMAP=9988:9988
-      - JOBS_APP-PORT=9988
+      - PORTMAP=19988:19988
+      - JOBS_APP-PORT=19988
       - IBIZ_REF_SERVICE_IBZUAA-API=ibizrt4ebsx-rt4ebsx
       - IBIZ_DYNAMIC_PUBLISHPATH=http://172.16.240.51/publicpath
       - ZUUL_ROUTES_DYNAMODEL_STRIPPREFIX=true
