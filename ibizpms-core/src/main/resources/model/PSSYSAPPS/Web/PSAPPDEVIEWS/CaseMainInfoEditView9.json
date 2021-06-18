@@ -991,7 +991,6 @@
             "enableFilter" : false,
             "enableImport" : true,
             "enableRowEdit" : false,
-            "loadDefault" : false,
             "rowEditDefault" : false,
             "showCaptionBar" : true,
             "modelid" : "f69bb8c09dbc7ce369c3c3806007b1d1",
