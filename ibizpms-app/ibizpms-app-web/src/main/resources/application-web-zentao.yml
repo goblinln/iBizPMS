@@ -4,7 +4,7 @@ zuul:
       path:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
-    v7:
+    appdata:
       path: /appdata
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
