@@ -55,6 +55,7 @@ zuul:
     ibzemp:
       path: /employees/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
+      stripPrefix: false
 
 environment:
   - TZ=Asia/Shanghai
