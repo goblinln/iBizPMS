@@ -12,7 +12,7 @@ window.Environment = {
     // 实例配置地址
     configDynaPath: 'http://studio.ibizmodeling.cn/DynamicBackend/designtool/redirect',
     // 是否启用动态
-    bDynamic: true,
+    bDynamic: false,
     // 打开目标工具，可选参数：sln、mos
     debugOpenMode:'mos',
     // 配置平台地址
@@ -28,8 +28,8 @@ window.Environment = {
     // 文件上传
     UploadFile: '/ibizutilpms/ztupload',
     // 统一登录页
-    //loginUrl: 'http://ebsx.ibizee.cn/#/login',
-    loginUrl: '',
+    loginUrl: 'http://ebsx.ibizee.cn/#/login',
+    // loginUrl: '',
     portalUrl: 'http://ebsx.ibizee.cn/',
     dynamicConfigToolUrl: 'http://studio.ibizmodeling.cn/dynamictool/debug-bar/?origin=',
 }
