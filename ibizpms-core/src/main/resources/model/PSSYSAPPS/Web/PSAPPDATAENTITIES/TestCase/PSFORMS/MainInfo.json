@@ -938,6 +938,7 @@
           "value" : "version",
           "rawValue" : false
         } ],
+        "paramItem" : "srfkey",
         "parentDataJO" : {
           "srfparentdefname" : "CASE",
           "srfparentdename" : "ZT_CASE",
@@ -2633,6 +2634,7 @@
             "value" : "case",
             "rawValue" : true
           } ],
+          "paramItem" : "srfkey",
           "parentDataJO" : {
             "srfparentdename" : "ZT_CASE",
             "SRFPARENTTYPE" : "CUSTOM"

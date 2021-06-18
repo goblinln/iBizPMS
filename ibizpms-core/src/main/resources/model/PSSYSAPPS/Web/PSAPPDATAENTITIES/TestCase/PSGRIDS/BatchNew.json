@@ -410,6 +410,7 @@
       "editorParams" : {
         "SRFNAVPARAM.n_parent_gtandeq" : "0",
         "SRFNAVPARAM.n_module_eq" : "%module%",
+        "SRFNAVPARAM.product" : "%test%",
         "AC" : "TRUE",
         "SRFNAVPARAM.type" : "CaseStory",
         "SRFNAVPARAM.n_id_isnull" : "",
@@ -438,6 +439,11 @@
         "rawValue" : false
       } ],
       "getPSNavigateParams" : [ {
+        "key" : "product",
+        "name" : "product",
+        "value" : "test",
+        "rawValue" : false
+      }, {
         "key" : "n_parent_gtandeq",
         "name" : "n_parent_gtandeq",
         "value" : "0",
