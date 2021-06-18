@@ -63,6 +63,7 @@ public class SysEmployeeExService extends SysEmployeeServiceImpl {
             sysEmployee.setUsername(AuthenticationUser.getAuthenticationUser().getUsername());
             list.add(sysEmployee);
             Page<SysEmployee> page = new PageImpl<SysEmployee>(list);
+            log.error(e.getMessage());
             return page;
         }
 
