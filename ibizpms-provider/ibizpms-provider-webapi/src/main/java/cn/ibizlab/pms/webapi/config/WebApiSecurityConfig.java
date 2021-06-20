@@ -25,7 +25,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 @Profile("webapi-prod")
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebApiSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
