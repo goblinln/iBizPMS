@@ -197,12 +197,5 @@ public class SuiteCaseResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/suitecases/{suitecase_id}/{action}")
-    public ResponseEntity<SuiteCaseDTO> dynamicCall(@PathVariable("suitecase_id") String suitecase_id , @PathVariable("action") String action , @RequestBody SuiteCaseDTO suitecasedto) {
-        SuiteCase domain = suitecaseService.dynamicCall(suitecase_id, action, suitecaseMapping.toDomain(suitecasedto));
-        suitecasedto = suitecaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(suitecasedto);
-    }
 }
 

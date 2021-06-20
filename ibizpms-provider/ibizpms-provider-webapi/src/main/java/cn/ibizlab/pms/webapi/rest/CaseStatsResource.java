@@ -208,12 +208,5 @@ public class CaseStatsResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/casestats/{casestats_id}/{action}")
-    public ResponseEntity<CaseStatsDTO> dynamicCall(@PathVariable("casestats_id") Long casestats_id , @PathVariable("action") String action , @RequestBody CaseStatsDTO casestatsdto) {
-        CaseStats domain = casestatsService.dynamicCall(casestats_id, action, casestatsMapping.toDomain(casestatsdto));
-        casestatsdto = casestatsMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(casestatsdto);
-    }
 }
 

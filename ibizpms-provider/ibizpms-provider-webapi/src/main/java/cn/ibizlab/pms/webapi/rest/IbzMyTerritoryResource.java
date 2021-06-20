@@ -289,12 +289,5 @@ public class IbzMyTerritoryResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/{ibzmyterritory_id}/{action}")
-    public ResponseEntity<IbzMyTerritoryDTO> dynamicCall(@PathVariable("ibzmyterritory_id") Long ibzmyterritory_id , @PathVariable("action") String action , @RequestBody IbzMyTerritoryDTO ibzmyterritorydto) {
-        IbzMyTerritory domain = ibzmyterritoryService.dynamicCall(ibzmyterritory_id, action, ibzmyterritoryMapping.toDomain(ibzmyterritorydto));
-        ibzmyterritorydto = ibzmyterritoryMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritorydto);
-    }
 }
 

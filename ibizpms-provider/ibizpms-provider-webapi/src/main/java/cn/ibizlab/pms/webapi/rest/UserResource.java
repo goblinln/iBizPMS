@@ -303,12 +303,5 @@ public class UserResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/users/{user_id}/{action}")
-    public ResponseEntity<UserDTO> dynamicCall(@PathVariable("user_id") Long user_id , @PathVariable("action") String action , @RequestBody UserDTO userdto) {
-        User domain = userService.dynamicCall(user_id, action, userMapping.toDomain(userdto));
-        userdto = userMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(userdto);
-    }
 }
 

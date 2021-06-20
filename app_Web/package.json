@@ -24,7 +24,7 @@
         "@fullcalendar/list": "^4.4.0",
         "@fullcalendar/timegrid": "^4.4.0",
         "@fullcalendar/vue": "^4.4.0",
-        "@ibiz/drawer-vue": "^0.0.5",
+        "@ibiz/drawer-vue": "^0.0.6",
         "@popperjs/core": "^2.9.2",
         "dingtalk-jsapi": "^2.13.23",
         "async-validator": "^3.5.1",

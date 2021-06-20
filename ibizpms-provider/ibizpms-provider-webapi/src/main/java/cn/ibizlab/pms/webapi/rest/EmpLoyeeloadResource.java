@@ -208,12 +208,5 @@ public class EmpLoyeeloadResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/employeeloads/{employeeload_id}/{action}")
-    public ResponseEntity<EmpLoyeeloadDTO> dynamicCall(@PathVariable("employeeload_id") Long employeeload_id , @PathVariable("action") String action , @RequestBody EmpLoyeeloadDTO employeeloaddto) {
-        EmpLoyeeload domain = employeeloadService.dynamicCall(employeeload_id, action, employeeloadMapping.toDomain(employeeloaddto));
-        employeeloaddto = employeeloadMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(employeeloaddto);
-    }
 }
 

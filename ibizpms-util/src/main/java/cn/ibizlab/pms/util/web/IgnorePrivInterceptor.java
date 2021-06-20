@@ -26,6 +26,7 @@ public class IgnorePrivInterceptor implements RequestInterceptor {
     private String authUser;
     private String authPassword;
     private String token;
+    private  AuthenticationInfo authenticationInfo;
     private SuperLoginClient superLoginClient;
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -61,7 +62,22 @@ public class IgnorePrivInterceptor implements RequestInterceptor {
         try {
             AuthenticationInfo info = superLoginClient.login(login);
             this.token = info.getToken();
+            this.authenticationInfo = info;
             return this.token;
+        } catch (Exception e) {
+            throw new RuntimeException(String.format("忽略接口权限认证发生错误[%s]-[%s]：%s", authUser, authPassword, e.getMessage()));
+        }
+    }
+
+    public AuthenticationInfo getAuthenticationInfo() {
+        AuthorizationLogin login = new AuthorizationLogin();
+        login.setLoginname(authUser);
+        login.setPassword(authPassword);
+        try {
+            AuthenticationInfo info = superLoginClient.login(login);
+            this.token = info.getToken();
+            this.authenticationInfo = info;
+            return authenticationInfo;
         } catch (Exception e) {
             throw new RuntimeException(String.format("忽略接口权限认证发生错误[%s]-[%s]：%s", authUser, authPassword, e.getMessage()));
         }

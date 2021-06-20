@@ -113,6 +113,9 @@ export class AuthGuard {
                     tempViewParam = this.hanldeViewParam(tempViewParam.redirect);
                 }
             }
+            if (!tempViewParam.srfdcsystem && Environment.mockDcSystemId) {
+                Object.assign(tempViewParam, { srfdcsystem: Environment.mockDcSystemId });
+            }
             if (tempViewParam.srfdcsystem) {
                 AuthGuard.hooks.dcSystemBefore.callSync({ dcsystem: tempViewParam.srfdcsystem });
                 setSessionStorage('dcsystem', tempViewParam);

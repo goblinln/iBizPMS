@@ -197,13 +197,6 @@ public class TestRunResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/testruns/{testrun_id}/{action}")
-    public ResponseEntity<TestRunDTO> dynamicCall(@PathVariable("testrun_id") Long testrun_id , @PathVariable("action") String action , @RequestBody TestRunDTO testrundto) {
-        TestRun domain = testrunService.dynamicCall(testrun_id, action, testrunMapping.toDomain(testrundto));
-        testrundto = testrunMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testrundto);
-    }
 
     @PreAuthorize("quickTest('ZT_TESTRUN','CREATE')")
     @ApiOperation(value = "根据测试版本建立测试运行", tags = {"测试运行" },  notes = "根据测试版本建立测试运行")

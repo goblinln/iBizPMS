@@ -1119,13 +1119,6 @@ public class SubStoryResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/{action}")
-    public ResponseEntity<SubStoryDTO> dynamicCall(@PathVariable("substory_id") Long substory_id , @PathVariable("action") String action , @RequestBody SubStoryDTO substorydto) {
-        Story domain = storyService.dynamicCall(substory_id, action, substoryMapping.toDomain(substorydto));
-        substorydto = substoryMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(substorydto);
-    }
 
     @PreAuthorize("quickTest('ZT_STORY', 'CREATE')")
     @ApiOperation(value = "根据需求建立需求", tags = {"需求" },  notes = "根据需求建立需求")

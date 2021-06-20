@@ -197,13 +197,6 @@ public class SysUpdateFeaturesResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/{sysupdatefeatures_id}/{action}")
-    public ResponseEntity<SysUpdateFeaturesDTO> dynamicCall(@PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id , @PathVariable("action") String action , @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
-        SysUpdateFeatures domain = sysupdatefeaturesService.dynamicCall(sysupdatefeatures_id, action, sysupdatefeaturesMapping.toDomain(sysupdatefeaturesdto));
-        sysupdatefeaturesdto = sysupdatefeaturesMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesdto);
-    }
 
     @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'CREATE')")
     @ApiOperation(value = "根据更新日志建立系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志建立系统更新功能")

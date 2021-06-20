@@ -198,12 +198,5 @@ public class IbzFavoritesResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/{ibzfavorites_id}/{action}")
-    public ResponseEntity<IbzFavoritesDTO> dynamicCall(@PathVariable("ibzfavorites_id") String ibzfavorites_id , @PathVariable("action") String action , @RequestBody IbzFavoritesDTO ibzfavoritesdto) {
-        IbzFavorites domain = ibzfavoritesService.dynamicCall(ibzfavorites_id, action, ibzfavoritesMapping.toDomain(ibzfavoritesdto));
-        ibzfavoritesdto = ibzfavoritesMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesdto);
-    }
 }
 

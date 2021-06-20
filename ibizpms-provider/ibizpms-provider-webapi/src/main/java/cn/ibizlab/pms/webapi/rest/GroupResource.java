@@ -197,12 +197,5 @@ public class GroupResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/groups/{group_id}/{action}")
-    public ResponseEntity<GroupDTO> dynamicCall(@PathVariable("group_id") Long group_id , @PathVariable("action") String action , @RequestBody GroupDTO groupdto) {
-        Group domain = groupService.dynamicCall(group_id, action, groupMapping.toDomain(groupdto));
-        groupdto = groupMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(groupdto);
-    }
 }
 

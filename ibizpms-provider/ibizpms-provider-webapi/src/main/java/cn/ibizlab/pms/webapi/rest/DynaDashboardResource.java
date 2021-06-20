@@ -198,12 +198,5 @@ public class DynaDashboardResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/{dynadashboard_id}/{action}")
-    public ResponseEntity<DynaDashboardDTO> dynamicCall(@PathVariable("dynadashboard_id") String dynadashboard_id , @PathVariable("action") String action , @RequestBody DynaDashboardDTO dynadashboarddto) {
-        DynaDashboard domain = dynadashboardService.dynamicCall(dynadashboard_id, action, dynadashboardMapping.toDomain(dynadashboarddto));
-        dynadashboarddto = dynadashboardMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dynadashboarddto);
-    }
 }
 

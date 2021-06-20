@@ -272,13 +272,6 @@ public class ProductModuleResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/productmodules/{productmodule_id}/{action}")
-    public ResponseEntity<ProductModuleDTO> dynamicCall(@PathVariable("productmodule_id") Long productmodule_id , @PathVariable("action") String action , @RequestBody ProductModuleDTO productmoduledto) {
-        ProductModule domain = productmoduleService.dynamicCall(productmodule_id, action, productmoduleMapping.toDomain(productmoduledto));
-        productmoduledto = productmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
-    }
 
     @PreAuthorize("test('IBZ_PRODUCTMODULE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品建立需求模块", tags = {"需求模块" },  notes = "根据产品建立需求模块")

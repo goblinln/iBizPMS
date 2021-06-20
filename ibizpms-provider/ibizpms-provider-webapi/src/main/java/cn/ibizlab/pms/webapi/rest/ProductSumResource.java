@@ -268,12 +268,5 @@ public class ProductSumResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/productsums/{productsum_id}/{action}")
-    public ResponseEntity<ProductSumDTO> dynamicCall(@PathVariable("productsum_id") Long productsum_id , @PathVariable("action") String action , @RequestBody ProductSumDTO productsumdto) {
-        ProductSum domain = productsumService.dynamicCall(productsum_id, action, productsumMapping.toDomain(productsumdto));
-        productsumdto = productsumMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productsumdto);
-    }
 }
 

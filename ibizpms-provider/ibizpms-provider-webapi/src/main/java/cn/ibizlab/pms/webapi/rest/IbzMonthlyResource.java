@@ -349,12 +349,5 @@ public class IbzMonthlyResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/{ibzmonthly_id}/{action}")
-    public ResponseEntity<IbzMonthlyDTO> dynamicCall(@PathVariable("ibzmonthly_id") Long ibzmonthly_id , @PathVariable("action") String action , @RequestBody IbzMonthlyDTO ibzmonthlydto) {
-        IbzMonthly domain = ibzmonthlyService.dynamicCall(ibzmonthly_id, action, ibzmonthlyMapping.toDomain(ibzmonthlydto));
-        ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
-    }
 }
 

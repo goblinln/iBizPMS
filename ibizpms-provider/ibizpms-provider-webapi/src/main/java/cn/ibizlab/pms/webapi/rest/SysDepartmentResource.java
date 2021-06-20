@@ -152,12 +152,5 @@ public class SysDepartmentResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/{sysdepartment_id}/{action}")
-    public ResponseEntity<SysDepartmentDTO> dynamicCall(@PathVariable("sysdepartment_id") String sysdepartment_id , @PathVariable("action") String action , @RequestBody SysDepartmentDTO sysdepartmentdto) {
-        SysDepartment domain = sysdepartmentService.dynamicCall(sysdepartment_id, action, sysdepartmentMapping.toDomain(sysdepartmentdto));
-        sysdepartmentdto = sysdepartmentMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysdepartmentdto);
-    }
 }
 

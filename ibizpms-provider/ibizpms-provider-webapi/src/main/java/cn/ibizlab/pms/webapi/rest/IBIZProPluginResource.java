@@ -152,12 +152,5 @@ public class IBIZProPluginResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/{ibizproplugin_id}/{action}")
-    public ResponseEntity<IBIZProPluginDTO> dynamicCall(@PathVariable("ibizproplugin_id") String ibizproplugin_id , @PathVariable("action") String action , @RequestBody IBIZProPluginDTO ibizproplugindto) {
-        IBIZProPlugin domain = ibizpropluginService.dynamicCall(ibizproplugin_id, action, ibizpropluginMapping.toDomain(ibizproplugindto));
-        ibizproplugindto = ibizpropluginMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproplugindto);
-    }
 }
 

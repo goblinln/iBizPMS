@@ -198,12 +198,5 @@ public class IbzTopResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibztops/{ibztop_id}/{action}")
-    public ResponseEntity<IbzTopDTO> dynamicCall(@PathVariable("ibztop_id") String ibztop_id , @PathVariable("action") String action , @RequestBody IbzTopDTO ibztopdto) {
-        IbzTop domain = ibztopService.dynamicCall(ibztop_id, action, ibztopMapping.toDomain(ibztopdto));
-        ibztopdto = ibztopMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibztopdto);
-    }
 }
 

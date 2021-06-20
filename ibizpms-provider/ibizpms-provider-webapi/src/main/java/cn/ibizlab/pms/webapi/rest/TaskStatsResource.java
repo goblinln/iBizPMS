@@ -220,12 +220,5 @@ public class TaskStatsResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/taskstats/{taskstats_id}/{action}")
-    public ResponseEntity<TaskStatsDTO> dynamicCall(@PathVariable("taskstats_id") Long taskstats_id , @PathVariable("action") String action , @RequestBody TaskStatsDTO taskstatsdto) {
-        TaskStats domain = taskstatsService.dynamicCall(taskstats_id, action, taskstatsMapping.toDomain(taskstatsdto));
-        taskstatsdto = taskstatsMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskstatsdto);
-    }
 }
 

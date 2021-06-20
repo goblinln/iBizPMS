@@ -67,7 +67,7 @@ export default class AppOrgSector extends Vue {
    * @type {Array<any>}
    * @memberof AppOrgSector
    */
-  public isSassMode:boolean = false;
+  public isSaasMode:boolean = false;
 
   /**
    * 组件初始化数据，vue生命周期
@@ -76,7 +76,7 @@ export default class AppOrgSector extends Vue {
    */
   public created(){
     let appEnvironment = AppServiceBase.getInstance().getAppEnvironment();
-    this.isSassMode = appEnvironment.SaaSMode;
+    this.isSaasMode = appEnvironment.SaaSMode;
     this.getOrgData();
   }
 
@@ -92,7 +92,7 @@ export default class AppOrgSector extends Vue {
     let item: any = this.selectedOrgArray.find((_item: any) => {
       return _item.srforgsectorid === data;
     });
-    if(!this.isSassMode){
+    if(!this.isSaasMode){
       this.switchDepartment(data).then((response:any) =>{
           if (response.status == 200) {
             if (item.srforgsectorid && item.srforgsectorname) {
@@ -127,7 +127,7 @@ export default class AppOrgSector extends Vue {
    */
   public getOrgData(){
     let storeGetter = this.$store.getters;
-    if(!this.isSassMode){
+    if(!this.isSaasMode){
       if (storeGetter.getAppData()) {
         let _context = storeGetter.getAppData().context;
         let _srforgname = storeGetter.getAppData().context.srforgname;

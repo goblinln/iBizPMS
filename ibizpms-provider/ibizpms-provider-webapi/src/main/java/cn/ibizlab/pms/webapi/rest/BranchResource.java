@@ -218,13 +218,6 @@ public class BranchResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/branches/{branch_id}/{action}")
-    public ResponseEntity<BranchDTO> dynamicCall(@PathVariable("branch_id") Long branch_id , @PathVariable("action") String action , @RequestBody BranchDTO branchdto) {
-        Branch domain = branchService.dynamicCall(branch_id, action, branchMapping.toDomain(branchdto));
-        branchdto = branchMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(branchdto);
-    }
 
     @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品建立产品的分支和平台信息")

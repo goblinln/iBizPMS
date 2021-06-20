@@ -218,13 +218,6 @@ public class TodoResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/{action}")
-    public ResponseEntity<TodoDTO> dynamicCall(@PathVariable("todo_id") Long todo_id , @PathVariable("action") String action , @RequestBody TodoDTO tododto) {
-        Todo domain = todoService.dynamicCall(todo_id, action, todoMapping.toDomain(tododto));
-        tododto = todoMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(tododto);
-    }
 
     @PreAuthorize("quickTest('ZT_TODO','CREATE')")
     @ApiOperation(value = "根据系统用户建立待办", tags = {"待办" },  notes = "根据系统用户建立待办")

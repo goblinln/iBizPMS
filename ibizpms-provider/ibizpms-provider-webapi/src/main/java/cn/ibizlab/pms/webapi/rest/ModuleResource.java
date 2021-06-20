@@ -288,12 +288,5 @@ public class ModuleResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/modules/{module_id}/{action}")
-    public ResponseEntity<ModuleDTO> dynamicCall(@PathVariable("module_id") Long module_id , @PathVariable("action") String action , @RequestBody ModuleDTO moduledto) {
-        Module domain = moduleService.dynamicCall(module_id, action, moduleMapping.toDomain(moduledto));
-        moduledto = moduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(moduledto);
-    }
 }
 

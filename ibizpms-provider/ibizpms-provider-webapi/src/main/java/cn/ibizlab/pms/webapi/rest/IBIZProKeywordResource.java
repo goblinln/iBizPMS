@@ -151,12 +151,5 @@ public class IBIZProKeywordResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/{ibizprokeyword_id}/{action}")
-    public ResponseEntity<IBIZProKeywordDTO> dynamicCall(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id , @PathVariable("action") String action , @RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
-        IBIZProKeyword domain = ibizprokeywordService.dynamicCall(ibizprokeyword_id, action, ibizprokeywordMapping.toDomain(ibizprokeyworddto));
-        ibizprokeyworddto = ibizprokeywordMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizprokeyworddto);
-    }
 }
 

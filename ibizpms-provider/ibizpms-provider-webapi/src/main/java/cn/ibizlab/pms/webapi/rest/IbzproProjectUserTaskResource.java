@@ -232,12 +232,5 @@ public class IbzproProjectUserTaskResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}/{action}")
-    public ResponseEntity<IbzproProjectUserTaskDTO> dynamicCall(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id , @PathVariable("action") String action , @RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {
-        IbzproProjectUserTask domain = ibzproprojectusertaskService.dynamicCall(ibzproprojectusertask_id, action, ibzproprojectusertaskMapping.toDomain(ibzproprojectusertaskdto));
-        ibzproprojectusertaskdto = ibzproprojectusertaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskdto);
-    }
 }
 

@@ -178,12 +178,5 @@ public class TestCaseLibResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/testcaselibs/{testcaselib_id}/{action}")
-    public ResponseEntity<TestCaseLibDTO> dynamicCall(@PathVariable("testcaselib_id") Long testcaselib_id , @PathVariable("action") String action , @RequestBody TestCaseLibDTO testcaselibdto) {
-        IbzLib domain = ibzlibService.dynamicCall(testcaselib_id, action, testcaselibMapping.toDomain(testcaselibdto));
-        testcaselibdto = testcaselibMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testcaselibdto);
-    }
 }
 

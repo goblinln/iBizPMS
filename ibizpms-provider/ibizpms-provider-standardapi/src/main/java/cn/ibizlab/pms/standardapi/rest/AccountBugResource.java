@@ -145,13 +145,6 @@ public class AccountBugResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/accountbugs/{accountbug_id}/{action}")
-    public ResponseEntity<AccountBugDTO> dynamicCall(@PathVariable("accountbug_id") Long accountbug_id , @PathVariable("action") String action , @RequestBody AccountBugDTO accountbugdto) {
-        Bug domain = bugService.dynamicCall(accountbug_id, action, accountbugMapping.toDomain(accountbugdto));
-        accountbugdto = accountbugMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(accountbugdto);
-    }
 
     @PreAuthorize("quickTest('ZT_BUG', 'READ')")
     @ApiOperation(value = "根据系统用户获取Bug", tags = {"Bug" },  notes = "根据系统用户获取Bug")

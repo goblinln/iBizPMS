@@ -186,13 +186,6 @@ public class UserContactResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/usercontacts/{usercontact_id}/{action}")
-    public ResponseEntity<UserContactDTO> dynamicCall(@PathVariable("usercontact_id") Long usercontact_id , @PathVariable("action") String action , @RequestBody UserContactDTO usercontactdto) {
-        UserContact domain = usercontactService.dynamicCall(usercontact_id, action, usercontactMapping.toDomain(usercontactdto));
-        usercontactdto = usercontactMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(usercontactdto);
-    }
 
     @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
     @ApiOperation(value = "根据系统用户建立用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户建立用户联系方式")

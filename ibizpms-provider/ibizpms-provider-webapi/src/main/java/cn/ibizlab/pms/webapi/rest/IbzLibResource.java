@@ -198,12 +198,5 @@ public class IbzLibResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/{action}")
-    public ResponseEntity<IbzLibDTO> dynamicCall(@PathVariable("ibzlib_id") Long ibzlib_id , @PathVariable("action") String action , @RequestBody IbzLibDTO ibzlibdto) {
-        IbzLib domain = ibzlibService.dynamicCall(ibzlib_id, action, ibzlibMapping.toDomain(ibzlibdto));
-        ibzlibdto = ibzlibMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzlibdto);
-    }
 }
 

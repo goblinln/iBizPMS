@@ -172,12 +172,5 @@ public class ProductWeeklyResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/productweeklies/{productweekly_id}/{action}")
-    public ResponseEntity<ProductWeeklyDTO> dynamicCall(@PathVariable("productweekly_id") Long productweekly_id , @PathVariable("action") String action , @RequestBody ProductWeeklyDTO productweeklydto) {
-        IbizproProductWeekly domain = ibizproproductweeklyService.dynamicCall(productweekly_id, action, productweeklyMapping.toDomain(productweeklydto));
-        productweeklydto = productweeklyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productweeklydto);
-    }
 }
 

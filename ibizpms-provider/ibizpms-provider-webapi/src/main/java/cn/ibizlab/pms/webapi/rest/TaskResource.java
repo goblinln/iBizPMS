@@ -1213,13 +1213,6 @@ public class TaskResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/{action}")
-    public ResponseEntity<TaskDTO> dynamicCall(@PathVariable("task_id") Long task_id , @PathVariable("action") String action , @RequestBody TaskDTO taskdto) {
-        Task domain = taskService.dynamicCall(task_id, action, taskMapping.toDomain(taskdto));
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
 
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目建立任务", tags = {"任务" },  notes = "根据项目建立任务")

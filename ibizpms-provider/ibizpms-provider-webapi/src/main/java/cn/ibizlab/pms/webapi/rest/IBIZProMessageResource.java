@@ -206,12 +206,5 @@ public class IBIZProMessageResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/{ibizpromessage_id}/{action}")
-    public ResponseEntity<IBIZProMessageDTO> dynamicCall(@PathVariable("ibizpromessage_id") String ibizpromessage_id , @PathVariable("action") String action , @RequestBody IBIZProMessageDTO ibizpromessagedto) {
-        IBIZProMessage domain = ibizpromessageService.dynamicCall(ibizpromessage_id, action, ibizpromessageMapping.toDomain(ibizpromessagedto));
-        ibizpromessagedto = ibizpromessageMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizpromessagedto);
-    }
 }
 

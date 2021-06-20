@@ -1,3 +1,4 @@
+export * from './ui-service';
 export * from './product-plan/product-plan-ui-service';
 export * from './ibz-report-role-config/ibz-report-role-config-ui-service';
 export * from './test/test-ui-service';

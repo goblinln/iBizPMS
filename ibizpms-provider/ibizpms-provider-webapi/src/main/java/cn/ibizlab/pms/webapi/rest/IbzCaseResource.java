@@ -202,13 +202,6 @@ public class IbzCaseResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzcases/{ibzcase_id}/{action}")
-    public ResponseEntity<IbzCaseDTO> dynamicCall(@PathVariable("ibzcase_id") Long ibzcase_id , @PathVariable("action") String action , @RequestBody IbzCaseDTO ibzcasedto) {
-        IbzCase domain = ibzcaseService.dynamicCall(ibzcase_id, action, ibzcaseMapping.toDomain(ibzcasedto));
-        ibzcasedto = ibzcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzcasedto);
-    }
 
     @PreAuthorize("quickTest('IBZ_CASE','CREATE')")
     @ApiOperation(value = "根据用例库建立测试用例", tags = {"测试用例" },  notes = "根据用例库建立测试用例")

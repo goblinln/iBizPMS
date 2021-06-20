@@ -365,13 +365,6 @@ public class BuildResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/{action}")
-    public ResponseEntity<BuildDTO> dynamicCall(@PathVariable("build_id") Long build_id , @PathVariable("action") String action , @RequestBody BuildDTO builddto) {
-        Build domain = buildService.dynamicCall(build_id, action, buildMapping.toDomain(builddto));
-        builddto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(builddto);
-    }
 
     @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品建立版本", tags = {"版本" },  notes = "根据产品建立版本")

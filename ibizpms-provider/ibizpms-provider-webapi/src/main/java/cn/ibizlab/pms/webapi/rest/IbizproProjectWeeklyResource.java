@@ -207,12 +207,5 @@ public class IbizproProjectWeeklyResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies/{ibizproprojectweekly_id}/{action}")
-    public ResponseEntity<IbizproProjectWeeklyDTO> dynamicCall(@PathVariable("ibizproprojectweekly_id") String ibizproprojectweekly_id , @PathVariable("action") String action , @RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {
-        IbizproProjectWeekly domain = ibizproprojectweeklyService.dynamicCall(ibizproprojectweekly_id, action, ibizproprojectweeklyMapping.toDomain(ibizproprojectweeklydto));
-        ibizproprojectweeklydto = ibizproprojectweeklyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectweeklydto);
-    }
 }
 

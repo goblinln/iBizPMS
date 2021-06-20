@@ -363,12 +363,5 @@ public class IbzDailyResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/{action}")
-    public ResponseEntity<IbzDailyDTO> dynamicCall(@PathVariable("ibzdaily_id") Long ibzdaily_id , @PathVariable("action") String action , @RequestBody IbzDailyDTO ibzdailydto) {
-        IbzDaily domain = ibzdailyService.dynamicCall(ibzdaily_id, action, ibzdailyMapping.toDomain(ibzdailydto));
-        ibzdailydto = ibzdailyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
-    }
 }
 

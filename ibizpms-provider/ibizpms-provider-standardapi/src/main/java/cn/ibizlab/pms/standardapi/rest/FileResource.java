@@ -149,13 +149,6 @@ public class FileResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/files/{file_id}/{action}")
-    public ResponseEntity<FileDTO> dynamicCall(@PathVariable("file_id") Long file_id , @PathVariable("action") String action , @RequestBody FileDTO filedto) {
-        File domain = fileService.dynamicCall(file_id, action, fileMapping.toDomain(filedto));
-        filedto = fileMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(filedto);
-    }
 
     @PreAuthorize("quickTest('ZT_FILE', 'DELETE')")
     @ApiOperation(value = "根据日报删除附件", tags = {"附件" },  notes = "根据日报删除附件")

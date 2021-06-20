@@ -110,13 +110,6 @@ public class HistoryResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/histories/{history_id}/{action}")
-    public ResponseEntity<HistoryDTO> dynamicCall(@PathVariable("history_id") Long history_id , @PathVariable("action") String action , @RequestBody HistoryDTO historydto) {
-        History domain = historyService.dynamicCall(history_id, action, historyMapping.toDomain(historydto));
-        historydto = historyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(historydto);
-    }
 
     @PreAuthorize("test('ZT_HISTORY', 'ZT_ACTION', #action_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统日志获取DEFAULT")

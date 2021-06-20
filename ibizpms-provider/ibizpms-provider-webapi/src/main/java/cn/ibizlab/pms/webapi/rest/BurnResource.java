@@ -222,13 +222,6 @@ public class BurnResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/burns/{burn_id}/{action}")
-    public ResponseEntity<BurnDTO> dynamicCall(@PathVariable("burn_id") String burn_id , @PathVariable("action") String action , @RequestBody BurnDTO burndto) {
-        Burn domain = burnService.dynamicCall(burn_id, action, burnMapping.toDomain(burndto));
-        burndto = burnMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(burndto);
-    }
 
     @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据项目建立burn", tags = {"burn" },  notes = "根据项目建立burn")

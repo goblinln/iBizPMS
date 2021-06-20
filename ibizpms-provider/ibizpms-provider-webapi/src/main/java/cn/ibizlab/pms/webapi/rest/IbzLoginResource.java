@@ -126,12 +126,5 @@ public class IbzLoginResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzlogins/{ibzlogin_id}/{action}")
-    public ResponseEntity<IbzLoginDTO> dynamicCall(@PathVariable("ibzlogin_id") Long ibzlogin_id , @PathVariable("action") String action , @RequestBody IbzLoginDTO ibzlogindto) {
-        IbiLogin domain = ibiloginService.dynamicCall(ibzlogin_id, action, ibzloginMapping.toDomain(ibzlogindto));
-        ibzlogindto = ibzloginMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
-    }
 }
 

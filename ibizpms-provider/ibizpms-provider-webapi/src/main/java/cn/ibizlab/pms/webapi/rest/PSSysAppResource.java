@@ -163,12 +163,5 @@ public class PSSysAppResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/{pssysapp_id}/{action}")
-    public ResponseEntity<PSSysAppDTO> dynamicCall(@PathVariable("pssysapp_id") String pssysapp_id , @PathVariable("action") String action , @RequestBody PSSysAppDTO pssysappdto) {
-        PSSysApp domain = pssysappService.dynamicCall(pssysapp_id, action, pssysappMapping.toDomain(pssysappdto));
-        pssysappdto = pssysappMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(pssysappdto);
-    }
 }
 

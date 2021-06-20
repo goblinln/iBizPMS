@@ -1,3 +1,4 @@
+export * from './entity'; 
 export * from './iproduct-plan';
 export * from './iibz-report-role-config';
 export * from './itest';

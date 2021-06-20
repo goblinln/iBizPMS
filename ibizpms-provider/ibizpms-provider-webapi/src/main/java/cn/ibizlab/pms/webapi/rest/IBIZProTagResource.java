@@ -151,12 +151,5 @@ public class IBIZProTagResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/{ibizprotag_id}/{action}")
-    public ResponseEntity<IBIZProTagDTO> dynamicCall(@PathVariable("ibizprotag_id") String ibizprotag_id , @PathVariable("action") String action , @RequestBody IBIZProTagDTO ibizprotagdto) {
-        IBIZProTag domain = ibizprotagService.dynamicCall(ibizprotag_id, action, ibizprotagMapping.toDomain(ibizprotagdto));
-        ibizprotagdto = ibizprotagMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizprotagdto);
-    }
 }
 

@@ -230,12 +230,5 @@ public class IbzPlanTempletResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/{ibzplantemplet_id}/{action}")
-    public ResponseEntity<IbzPlanTempletDTO> dynamicCall(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id , @PathVariable("action") String action , @RequestBody IbzPlanTempletDTO ibzplantempletdto) {
-        IbzPlanTemplet domain = ibzplantempletService.dynamicCall(ibzplantemplet_id, action, ibzplantempletMapping.toDomain(ibzplantempletdto));
-        ibzplantempletdto = ibzplantempletMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletdto);
-    }
 }
 

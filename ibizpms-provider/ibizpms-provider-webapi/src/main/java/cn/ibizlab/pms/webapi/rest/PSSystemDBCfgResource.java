@@ -163,12 +163,5 @@ public class PSSystemDBCfgResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/{pssystemdbcfg_id}/{action}")
-    public ResponseEntity<PSSystemDBCfgDTO> dynamicCall(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id , @PathVariable("action") String action , @RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
-        PSSystemDBCfg domain = pssystemdbcfgService.dynamicCall(pssystemdbcfg_id, action, pssystemdbcfgMapping.toDomain(pssystemdbcfgdto));
-        pssystemdbcfgdto = pssystemdbcfgMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgdto);
-    }
 }
 

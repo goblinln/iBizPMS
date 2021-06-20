@@ -412,13 +412,6 @@ public class DocResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/{action}")
-    public ResponseEntity<DocDTO> dynamicCall(@PathVariable("doc_id") Long doc_id , @PathVariable("action") String action , @RequestBody DocDTO docdto) {
-        Doc domain = docService.dynamicCall(doc_id, action, docMapping.toDomain(docdto));
-        docdto = docMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(docdto);
-    }
 
     @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据文档库建立文档", tags = {"文档" },  notes = "根据文档库建立文档")

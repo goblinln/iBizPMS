@@ -186,12 +186,5 @@ public class ProductLineResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/productlines/{productline_id}/{action}")
-    public ResponseEntity<ProductLineDTO> dynamicCall(@PathVariable("productline_id") Long productline_id , @PathVariable("action") String action , @RequestBody ProductLineDTO productlinedto) {
-        IBZProProductLine domain = ibzproproductlineService.dynamicCall(productline_id, action, productlineMapping.toDomain(productlinedto));
-        productlinedto = productlineMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productlinedto);
-    }
 }
 

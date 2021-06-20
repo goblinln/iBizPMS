@@ -223,12 +223,5 @@ public class IbizproIndexResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/{ibizproindex_id}/{action}")
-    public ResponseEntity<IbizproIndexDTO> dynamicCall(@PathVariable("ibizproindex_id") Long ibizproindex_id , @PathVariable("action") String action , @RequestBody IbizproIndexDTO ibizproindexdto) {
-        IbizproIndex domain = ibizproindexService.dynamicCall(ibizproindex_id, action, ibizproindexMapping.toDomain(ibizproindexdto));
-        ibizproindexdto = ibizproindexMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibizproindexdto);
-    }
 }
 

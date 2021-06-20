@@ -211,12 +211,5 @@ public class IBZProStoryResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzprostories/{ibzprostory_id}/{action}")
-    public ResponseEntity<IBZProStoryDTO> dynamicCall(@PathVariable("ibzprostory_id") Long ibzprostory_id , @PathVariable("action") String action , @RequestBody IBZProStoryDTO ibzprostorydto) {
-        IBZProStory domain = ibzprostoryService.dynamicCall(ibzprostory_id, action, ibzprostoryMapping.toDomain(ibzprostorydto));
-        ibzprostorydto = ibzprostoryMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzprostorydto);
-    }
 }
 

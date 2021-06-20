@@ -211,12 +211,5 @@ public class SysUpdateLogResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/{action}")
-    public ResponseEntity<SysUpdateLogDTO> dynamicCall(@PathVariable("sysupdatelog_id") String sysupdatelog_id , @PathVariable("action") String action , @RequestBody SysUpdateLogDTO sysupdatelogdto) {
-        SysUpdateLog domain = sysupdatelogService.dynamicCall(sysupdatelog_id, action, sysupdatelogMapping.toDomain(sysupdatelogdto));
-        sysupdatelogdto = sysupdatelogMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogdto);
-    }
 }
 

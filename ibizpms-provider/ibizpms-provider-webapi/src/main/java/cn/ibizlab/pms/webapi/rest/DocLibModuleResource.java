@@ -370,13 +370,6 @@ public class DocLibModuleResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/{doclibmodule_id}/{action}")
-    public ResponseEntity<DocLibModuleDTO> dynamicCall(@PathVariable("doclibmodule_id") Long doclibmodule_id , @PathVariable("action") String action , @RequestBody DocLibModuleDTO doclibmoduledto) {
-        DocLibModule domain = doclibmoduleService.dynamicCall(doclibmodule_id, action, doclibmoduleMapping.toDomain(doclibmoduledto));
-        doclibmoduledto = doclibmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
-    }
 
     @PreAuthorize("test('IBZ_DOCLIBMODULE', 'ZT_DOCLIB', #doclib_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据文档库建立文档库分类", tags = {"文档库分类" },  notes = "根据文档库建立文档库分类")

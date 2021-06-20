@@ -206,13 +206,6 @@ public class IbzLibModuleResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules/{ibzlibmodule_id}/{action}")
-    public ResponseEntity<IbzLibModuleDTO> dynamicCall(@PathVariable("ibzlibmodule_id") Long ibzlibmodule_id , @PathVariable("action") String action , @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
-        IbzLibModule domain = ibzlibmoduleService.dynamicCall(ibzlibmodule_id, action, ibzlibmoduleMapping.toDomain(ibzlibmoduledto));
-        ibzlibmoduledto = ibzlibmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduledto);
-    }
 
     @PreAuthorize("quickTest('IBZ_LIBMODULE','CREATE')")
     @ApiOperation(value = "根据用例库建立用例库模块", tags = {"用例库模块" },  notes = "根据用例库建立用例库模块")

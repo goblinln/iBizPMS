@@ -151,12 +151,5 @@ public class SysTeamMemberResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/systeammembers/{systeammember_id}/{action}")
-    public ResponseEntity<SysTeamMemberDTO> dynamicCall(@PathVariable("systeammember_id") String systeammember_id , @PathVariable("action") String action , @RequestBody SysTeamMemberDTO systeammemberdto) {
-        SysTeamMember domain = systeammemberService.dynamicCall(systeammember_id, action, systeammemberMapping.toDomain(systeammemberdto));
-        systeammemberdto = systeammemberMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(systeammemberdto);
-    }
 }
 

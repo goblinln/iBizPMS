@@ -145,13 +145,6 @@ public class AccountTaskResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/accounttasks/{accounttask_id}/{action}")
-    public ResponseEntity<AccountTaskDTO> dynamicCall(@PathVariable("accounttask_id") Long accounttask_id , @PathVariable("action") String action , @RequestBody AccountTaskDTO accounttaskdto) {
-        Task domain = taskService.dynamicCall(accounttask_id, action, accounttaskMapping.toDomain(accounttaskdto));
-        accounttaskdto = accounttaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(accounttaskdto);
-    }
 
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
     @ApiOperation(value = "根据系统用户获取任务", tags = {"任务" },  notes = "根据系统用户获取任务")

@@ -151,12 +151,5 @@ public class SysPostResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/sysposts/{syspost_id}/{action}")
-    public ResponseEntity<SysPostDTO> dynamicCall(@PathVariable("syspost_id") String syspost_id , @PathVariable("action") String action , @RequestBody SysPostDTO syspostdto) {
-        SysPost domain = syspostService.dynamicCall(syspost_id, action, syspostMapping.toDomain(syspostdto));
-        syspostdto = syspostMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(syspostdto);
-    }
 }
 

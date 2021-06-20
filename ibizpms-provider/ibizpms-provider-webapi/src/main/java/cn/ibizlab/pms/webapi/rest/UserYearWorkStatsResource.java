@@ -306,12 +306,5 @@ public class UserYearWorkStatsResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/{useryearworkstats_id}/{action}")
-    public ResponseEntity<UserYearWorkStatsDTO> dynamicCall(@PathVariable("useryearworkstats_id") Long useryearworkstats_id , @PathVariable("action") String action , @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
-        UserYearWorkStats domain = useryearworkstatsService.dynamicCall(useryearworkstats_id, action, useryearworkstatsMapping.toDomain(useryearworkstatsdto));
-        useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
-    }
 }
 

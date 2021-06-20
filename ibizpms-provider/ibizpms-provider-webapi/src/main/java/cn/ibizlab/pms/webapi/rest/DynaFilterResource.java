@@ -98,12 +98,5 @@ public class DynaFilterResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/dynafilters/{dynafilter_id}/{action}")
-    public ResponseEntity<DynaFilterDTO> dynamicCall(@PathVariable("dynafilter_id") String dynafilter_id , @PathVariable("action") String action , @RequestBody DynaFilterDTO dynafilterdto) {
-        DynaFilter domain = dynafilterService.dynamicCall(dynafilter_id, action, dynafilterMapping.toDomain(dynafilterdto));
-        dynafilterdto = dynafilterMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dynafilterdto);
-    }
 }
 

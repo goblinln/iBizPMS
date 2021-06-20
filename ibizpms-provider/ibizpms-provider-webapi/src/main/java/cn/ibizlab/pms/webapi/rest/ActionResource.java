@@ -234,13 +234,6 @@ public class ActionResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/{action}")
-    public ResponseEntity<ActionDTO> dynamicCall(@PathVariable("action_id") Long action_id , @PathVariable("action") String action , @RequestBody ActionDTO actiondto) {
-        Action domain = actionService.dynamicCall(action_id, action, actionMapping.toDomain(actiondto));
-        actiondto = actionMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
-    }
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_BUG', #bug_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据Bug建立系统日志", tags = {"系统日志" },  notes = "根据Bug建立系统日志")

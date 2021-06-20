@@ -951,13 +951,6 @@ public class BugResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/{action}")
-    public ResponseEntity<BugDTO> dynamicCall(@PathVariable("bug_id") Long bug_id , @PathVariable("action") String action , @RequestBody BugDTO bugdto) {
-        Bug domain = bugService.dynamicCall(bug_id, action, bugMapping.toDomain(bugdto));
-        bugdto = bugMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(bugdto);
-    }
 
     @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品建立Bug", tags = {"Bug" },  notes = "根据产品建立Bug")

@@ -739,13 +739,6 @@ public class CaseResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/{action}")
-    public ResponseEntity<CaseDTO> dynamicCall(@PathVariable("case_id") Long case_id , @PathVariable("action") String action , @RequestBody CaseDTO casedto) {
-        Case domain = caseService.dynamicCall(case_id, action, caseMapping.toDomain(casedto));
-        casedto = caseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(casedto);
-    }
 
     @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品建立测试用例", tags = {"测试用例" },  notes = "根据产品建立测试用例")

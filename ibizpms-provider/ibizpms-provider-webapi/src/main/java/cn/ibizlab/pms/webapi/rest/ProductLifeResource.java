@@ -233,12 +233,5 @@ public class ProductLifeResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/productlives/{productlife_id}/{action}")
-    public ResponseEntity<ProductLifeDTO> dynamicCall(@PathVariable("productlife_id") String productlife_id , @PathVariable("action") String action , @RequestBody ProductLifeDTO productlifedto) {
-        ProductLife domain = productlifeService.dynamicCall(productlife_id, action, productlifeMapping.toDomain(productlifedto));
-        productlifedto = productlifeMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productlifedto);
-    }
 }
 

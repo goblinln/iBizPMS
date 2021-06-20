@@ -208,12 +208,5 @@ public class TestResultResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/testresults/{testresult_id}/{action}")
-    public ResponseEntity<TestResultDTO> dynamicCall(@PathVariable("testresult_id") Long testresult_id , @PathVariable("action") String action , @RequestBody TestResultDTO testresultdto) {
-        TestResult domain = testresultService.dynamicCall(testresult_id, action, testresultMapping.toDomain(testresultdto));
-        testresultdto = testresultMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testresultdto);
-    }
 }
 

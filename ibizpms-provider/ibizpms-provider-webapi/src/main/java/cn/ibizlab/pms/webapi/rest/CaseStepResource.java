@@ -256,13 +256,6 @@ public class CaseStepResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/casesteps/{casestep_id}/{action}")
-    public ResponseEntity<CaseStepDTO> dynamicCall(@PathVariable("casestep_id") Long casestep_id , @PathVariable("action") String action , @RequestBody CaseStepDTO casestepdto) {
-        CaseStep domain = casestepService.dynamicCall(casestep_id, action, casestepMapping.toDomain(casestepdto));
-        casestepdto = casestepMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(casestepdto);
-    }
 
     @PreAuthorize("quickTest('ZT_CASESTEP', 'CREATE')")
     @ApiOperation(value = "根据测试用例建立用例步骤", tags = {"用例步骤" },  notes = "根据测试用例建立用例步骤")

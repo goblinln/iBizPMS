@@ -65,6 +65,8 @@ export const Environment = {
     isPreviewMode: false,
     // SaaS模式
     SaaSMode: true,
+    // 仿真mockDcSystemId
+    mockDcSystemId: '',
     // 钉钉内部集成应用标识，用于钉钉应用内免登
     dingTalkAppId: '',
     // 钉钉登录应用标识，用于网页扫码登录

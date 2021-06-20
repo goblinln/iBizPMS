@@ -198,12 +198,5 @@ public class IbzReportRoleConfigResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}/{action}")
-    public ResponseEntity<IbzReportRoleConfigDTO> dynamicCall(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id , @PathVariable("action") String action , @RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {
-        IbzReportRoleConfig domain = ibzreportroleconfigService.dynamicCall(ibzreportroleconfig_id, action, ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto));
-        ibzreportroleconfigdto = ibzreportroleconfigMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigdto);
-    }
 }
 

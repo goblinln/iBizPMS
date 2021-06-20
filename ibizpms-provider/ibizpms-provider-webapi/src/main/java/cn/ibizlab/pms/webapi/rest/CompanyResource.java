@@ -197,12 +197,5 @@ public class CompanyResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/companies/{company_id}/{action}")
-    public ResponseEntity<CompanyDTO> dynamicCall(@PathVariable("company_id") Long company_id , @PathVariable("action") String action , @RequestBody CompanyDTO companydto) {
-        Company domain = companyService.dynamicCall(company_id, action, companyMapping.toDomain(companydto));
-        companydto = companyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(companydto);
-    }
 }
 

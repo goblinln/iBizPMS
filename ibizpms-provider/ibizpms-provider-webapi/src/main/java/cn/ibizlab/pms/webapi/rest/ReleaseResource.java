@@ -372,13 +372,6 @@ public class ReleaseResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/{action}")
-    public ResponseEntity<ReleaseDTO> dynamicCall(@PathVariable("release_id") Long release_id , @PathVariable("action") String action , @RequestBody ReleaseDTO releasedto) {
-        Release domain = releaseService.dynamicCall(release_id, action, releaseMapping.toDomain(releasedto));
-        releasedto = releaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(releasedto);
-    }
 
     @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品建立发布", tags = {"发布" },  notes = "根据产品建立发布")

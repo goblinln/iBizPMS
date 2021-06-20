@@ -210,12 +210,5 @@ public class AccountTaskestimateResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/accounttaskestimates/{accounttaskestimate_id}/{action}")
-    public ResponseEntity<AccountTaskestimateDTO> dynamicCall(@PathVariable("accounttaskestimate_id") String accounttaskestimate_id , @PathVariable("action") String action , @RequestBody AccountTaskestimateDTO accounttaskestimatedto) {
-        AccountTaskestimate domain = accounttaskestimateService.dynamicCall(accounttaskestimate_id, action, accounttaskestimateMapping.toDomain(accounttaskestimatedto));
-        accounttaskestimatedto = accounttaskestimateMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(accounttaskestimatedto);
-    }
 }
 

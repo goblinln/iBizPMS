@@ -152,12 +152,5 @@ public class SysUserRoleResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/{sysuserrole_id}/{action}")
-    public ResponseEntity<SysUserRoleDTO> dynamicCall(@PathVariable("sysuserrole_id") String sysuserrole_id , @PathVariable("action") String action , @RequestBody SysUserRoleDTO sysuserroledto) {
-        SysUserRole domain = sysuserroleService.dynamicCall(sysuserrole_id, action, sysuserroleMapping.toDomain(sysuserroledto));
-        sysuserroledto = sysuserroleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(sysuserroledto);
-    }
 }
 

@@ -163,12 +163,5 @@ public class PSSysSFPubResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/{pssyssfpub_id}/{action}")
-    public ResponseEntity<PSSysSFPubDTO> dynamicCall(@PathVariable("pssyssfpub_id") String pssyssfpub_id , @PathVariable("action") String action , @RequestBody PSSysSFPubDTO pssyssfpubdto) {
-        PSSysSFPub domain = pssyssfpubService.dynamicCall(pssyssfpub_id, action, pssyssfpubMapping.toDomain(pssyssfpubdto));
-        pssyssfpubdto = pssyssfpubMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubdto);
-    }
 }
 

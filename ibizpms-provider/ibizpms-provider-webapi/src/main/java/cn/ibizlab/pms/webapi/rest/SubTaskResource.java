@@ -98,13 +98,6 @@ public class SubTaskResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/subtasks/{subtask_id}/{action}")
-    public ResponseEntity<SubTaskDTO> dynamicCall(@PathVariable("subtask_id") Long subtask_id , @PathVariable("action") String action , @RequestBody SubTaskDTO subtaskdto) {
-        Task domain = taskService.dynamicCall(subtask_id, action, subtaskMapping.toDomain(subtaskdto));
-        subtaskdto = subtaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
-    }
 
 
 

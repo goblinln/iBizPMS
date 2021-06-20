@@ -133,13 +133,6 @@ public class AccountProjectResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/accountprojects/{accountproject_id}/{action}")
-    public ResponseEntity<AccountProjectDTO> dynamicCall(@PathVariable("accountproject_id") Long accountproject_id , @PathVariable("action") String action , @RequestBody AccountProjectDTO accountprojectdto) {
-        Project domain = projectService.dynamicCall(accountproject_id, action, accountprojectMapping.toDomain(accountprojectdto));
-        accountprojectdto = accountprojectMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(accountprojectdto);
-    }
 
     @PreAuthorize("quickTest('ZT_PROJECT', 'READ')")
     @ApiOperation(value = "根据系统用户获取项目", tags = {"项目" },  notes = "根据系统用户获取项目")

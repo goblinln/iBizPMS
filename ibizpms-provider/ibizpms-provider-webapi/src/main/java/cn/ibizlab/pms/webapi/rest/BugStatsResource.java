@@ -292,12 +292,5 @@ public class BugStatsResource {
         throw new RuntimeException(String.format("不支持的报表类型[%s]",ext));
     }
 
-	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
-    @RequestMapping(method = RequestMethod.POST, value = "/bugstats/{bugstats_id}/{action}")
-    public ResponseEntity<BugStatsDTO> dynamicCall(@PathVariable("bugstats_id") Long bugstats_id , @PathVariable("action") String action , @RequestBody BugStatsDTO bugstatsdto) {
-        BugStats domain = bugstatsService.dynamicCall(bugstats_id, action, bugstatsMapping.toDomain(bugstatsdto));
-        bugstatsdto = bugstatsMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(bugstatsdto);
-    }
 }
 
