@@ -9833,6 +9833,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "StoryNFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
