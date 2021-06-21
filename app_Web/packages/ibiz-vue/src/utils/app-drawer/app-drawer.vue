@@ -146,6 +146,10 @@ export default class AppDrawerCompponent extends Vue {
         document.onkeydown = (e) => {
             var keyCode = e.keyCode || e.which || e.charCode;
             if (keyCode == 27) {
+                const zIndex = this.$store.getters.getZIndex();
+                if (zIndex !== this.zIndex) {
+                    return;
+                }
                 this.isShow = false;
             }
         }
