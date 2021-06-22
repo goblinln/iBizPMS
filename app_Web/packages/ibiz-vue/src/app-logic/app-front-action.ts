@@ -246,7 +246,7 @@ export class AppFrontAction {
                 if (this.actionModel.M?.getNextPSUIAction) {
                     getPSUIActionByModelObject(this.actionModel).then((nextUIaction: any) => {
                         if (nextUIaction.getPSAppDataEntity()) {
-                            let [tag, appDeName] = (actionModel.getNextPSUIAction() as IPSAppDEUIAction).id.split('@');
+                            let [tag, appDeName] = (nextUIaction as IPSAppDEUIAction).id.split('@');
                             if (deUIService) {
                                 deUIService.excuteAction(
                                     tag,

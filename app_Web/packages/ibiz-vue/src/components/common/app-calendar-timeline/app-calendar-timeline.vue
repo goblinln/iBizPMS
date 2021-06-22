@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="container">
-            <Split v-model="split" mode="horizontal" ref="calendar-time-line">
+            <Split v-model="split" mode="horizontal" ref="calendar-time-line" @on-move-end="onMoveEnd">
                 <div slot="left" :class="['group',defaultView]">
                     <div class="group-header">
                         <div>{{title}}</div>
@@ -43,7 +43,7 @@
                 </div>
                 <div slot="right" class="main-container">
                     <div v-for="(date, index) in currentTimeQuantum" :key="index" class="time-line">
-                        <div v-if="Object.is(defaultView, 'dayview')" class="dayview">
+                        <div v-if="Object.is(defaultView, 'dayview')" class="dayview" :style="{'width': dayviewWidth + 'px'}">
                             <div class="dayview-header">
                                 <div class="date">{{date}}</div>
                             </div>
@@ -56,13 +56,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div v-else-if="Object.is(defaultView, 'weekview')" class="weekview">
+                        <div v-else-if="Object.is(defaultView, 'weekview')" class="weekview" :style="{'width': weekviewWidth + 'px'}">
                             <div class="weekviewr-header">
                                 <div class="date-header">
                                     <div class="date">{{date}}</div>
                                 </div>
                                 <div class="hours">
-                                    <div v-for="(hour,_index) in hours" :key="_index" class="hour">
+                                    <div v-for="(hour,_index) in hours" :key="_index" class="hour" :style="{'width': hourWidth + 'px'}">
                                         <div class="hour-header">
                                             <div class="title">{{hour}}</div>
                                         </div>
@@ -78,7 +78,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div v-else-if="Object.is(defaultView, 'monthview')" class="monthview">
+                        <div v-else-if="Object.is(defaultView, 'monthview')" class="monthview" :style="{'width': monthviewWidth + 'px'}">
                             <div class="monthview-header">
                                 <div class="date">{{date}}</div>
                             </div>
@@ -173,7 +173,7 @@ export default class AppClaendarTimeline extends Vue{
      */
     @Prop()
     public viewparams!: any;
-
+    
     /**
      * 分组属性
      *
@@ -338,6 +338,14 @@ export default class AppClaendarTimeline extends Vue{
     public split: number = 0.2;
 
     /**
+     * 默认左侧宽度
+     * 
+     * @type {number}
+     * @memberof AppClaendarTimeline
+     */
+    public leftWidth: number = 0;
+
+    /**
      * 默认分组名称
      *
      * @type {string}
@@ -369,6 +377,38 @@ export default class AppClaendarTimeline extends Vue{
      * @memberof AppClaendarTimeline
      */
     public selectedGotoDate: any = new Date();
+
+    /**
+     * 天视图默认宽度
+     * 
+     * @type number
+     * @memberof AppClaendarTimeline 
+     */
+    public dayviewWidth: number = 60;
+
+    /**
+     * 月视图默认宽度
+     * 
+     * @type number
+     * @memberof AppClaendarTimeline 
+     */
+    public monthviewWidth: number = 48;
+
+    /**
+     * 周视图默认宽度
+     * 
+     * @type number
+     * @memberof AppClaendarTimeline 
+     */
+    public weekviewWidth: number = 1440;
+
+    /**
+     * 周天默认宽度
+     * 
+     * @type number
+     * @memberof AppClaendarTimeline 
+     */
+    public hourWidth: number = 60;
 
     /**
      * 当天时间
@@ -414,7 +454,7 @@ export default class AppClaendarTimeline extends Vue{
     get monthWidth(){
         const startTime = this.currentMonth.start;
         const endTime = this.currentMonth.end;
-        const width = (Math.abs(endTime.diff(startTime, 'day')) + 1) * 48;
+        const width = (Math.abs(endTime.diff(startTime, 'day')) + 1) * this.monthviewWidth;
         return width;
     }
 
@@ -489,6 +529,37 @@ export default class AppClaendarTimeline extends Vue{
     }
 
     /**
+     * Vue 生命周期
+     * 
+     * @memberof AppClaendarTimeline 
+     */
+    public mounted() {
+        const splitDom: any = this.$refs["calendar-time-line"];
+        const containerWidth: number = splitDom?.$el?.offsetWidth;
+        if (this.leftWidth > 0 && containerWidth) {
+            this.split = this.leftWidth / containerWidth;
+        }
+        this.calculateWidth();
+    }
+
+    /**
+     * 计算呈现视图的动态宽度
+     * 
+     * @memberof AppClaendarTimeline 
+     */
+    public calculateWidth() {
+        const splitDom: any = this.$refs["calendar-time-line"];
+        const containerWidth: number = splitDom?.$el?.offsetWidth;
+        if (containerWidth) {
+            const rightWidth: number = (containerWidth * (1 - this.split)) - 6;
+            this.dayviewWidth = (rightWidth / 24) > 60 ? (rightWidth / 24) : 60;
+            this.weekviewWidth = (rightWidth / 7) > 1440 ? (rightWidth / 7) : 1440;
+            this.hourWidth = (this.weekviewWidth / 24) > 60 ? (this.weekviewWidth / 24) : 60;
+            this.monthviewWidth = (rightWidth / (Math.abs(this.currentMonth.end.diff(this.currentMonth.start, 'day')) + 1)) > 48 ? (rightWidth / (Math.abs(this.currentMonth.end.diff(this.currentMonth.start, 'day')) + 1)) : 48;
+        }
+    }
+
+    /**
      * 搜索日程
      * 
      * @memberof AppClaendarTimeline 
@@ -519,14 +590,7 @@ export default class AppClaendarTimeline extends Vue{
                 } else if (Object.is("GROUPCODELIST", param)) {
                     this.groupCodelist = eval('(' + ctrlParams[param] + ')');
                 } else if (Object.is("WIDTH", param)) {
-                    this.$nextTick(() => {
-                        const splitDom: any = this.$refs["calendar-time-line"];
-                        const containerWidth: number = splitDom?.$el?.offsetWidth;
-                        const ctrlWidth = parseInt(ctrlParams[param]);
-                        if (ctrlWidth && containerWidth) {
-                            this.split = ctrlWidth / containerWidth;
-                        }
-                    })
+                    this.leftWidth = parseInt(ctrlParams[param]);
                 } else if (Object.is("GROUPTITLE", param)) {
                     this.title = ctrlParams[param];
                 }
@@ -595,57 +659,58 @@ export default class AppClaendarTimeline extends Vue{
         schedule.forEach((item: any) => {
             if (moment(startTime).isSameOrBefore(item.start) && moment(item.end).isSameOrBefore(endTime)) {
                 // 开始和结束日期都在当前时间之内
-                let diffTime: number = Math.abs(startTime.diff(item.start, 'day'));
+                let startDiffTime: number = Math.abs(startTime.diff(item.start, 'day'));
+                let endDiffTime: number = Math.abs(startTime.diff(item.end, 'day'));
                 if (Object.is(this.defaultView, 'dayview')) {
-                    item.start = moment(item.start).get('hours') * 60 + moment(item.start).get('minute');
-                    item.end = moment(item.end).get('hours') * 60 + moment(item.end).get('minute');
+                    item.start = moment(item.start).get('hours') * this.dayviewWidth + (moment(item.start).get('minute') * (this.dayviewWidth/60));
+                    item.end = moment(item.end).get('hours') * this.dayviewWidth + (moment(item.end).get('minute') * (this.dayviewWidth/60));
                 } else if (Object.is(this.defaultView, 'weekview')) {
-                    item.start =  diffTime * 1440 + moment(item.start).get('hours') * 60 + moment(item.start).get('minute');
-                    item.end = diffTime * 1440 + moment(item.end).get('hours') * 60 + moment(item.end).get('minute');
+                    item.start =  startDiffTime * this.weekviewWidth + moment(item.start).get('hours') * this.hourWidth + (moment(item.start).get('minute') * (this.hourWidth/60));
+                    item.end = endDiffTime * this.weekviewWidth + moment(item.end).get('hours') * this.hourWidth + (moment(item.end).get('minute') * (this.hourWidth/60));
                 } else if (Object.is(this.defaultView, 'monthview')) {
-                    item.start =  diffTime * 48 + moment(item.start).get('hours') * 2;
-                    item.end = diffTime * 48 + moment(item.end).get('hours') * 2;
+                    item.start =  startDiffTime * this.monthviewWidth + (moment(item.start).get('hours') * (this.monthviewWidth/24));
+                    item.end = endDiffTime * this.monthviewWidth + (moment(item.end).get('hours') * (this.monthviewWidth/24));
                 }
                 date.push(item);
             } else if (moment(item.start).isBefore(startTime) && moment(endTime).isBefore(item.end)) {
                 // 开始在当前时间之前，结束在当前时间之后
                 if (Object.is(this.defaultView, 'dayview')) {
                     item.start = 0;
-                    item.end = 24 * 60;
+                    item.end = 24 * this.dayviewWidth;
                 } else if (Object.is(this.defaultView, 'weekview')) {
                     item.start = 0;
-                    item.end = 1440 * 7;
+                    item.end = 7 * this.weekviewWidth;
                 } else if (Object.is(this.defaultView, 'monthview')) {
                     item.start = 0;
-                    item.end = 48 * Math.abs(endTime.diff(startTime,'day'));
+                    item.end = Math.abs(endTime.diff(startTime,'day')) * this.monthviewWidth;
                 }
                 date.push(item);
             } else if (moment(startTime).isSameOrBefore(item.start) && moment(item.start).isSameOrBefore(endTime) && moment(endTime).isBefore(item.end)) {
                 // 开始在当前时间之内，结束在当前时间之后
-                let diffTime: number = Math.abs(startTime.diff(item.start, 'day'));
+                let startDiffTime: number = Math.abs(startTime.diff(item.start, 'day'));
                 if (Object.is(this.defaultView, 'dayview')) {
-                    item.start = moment(item.start).get('hours') * 60 + moment(item.start).get('minute');
-                    item.end = 24 * 60;
+                    item.start = moment(item.start).get('hours') * this.dayviewWidth + (moment(item.start).get('minute') * (this.dayviewWidth/60));
+                    item.end = 24 * this.dayviewWidth;
                 } else if (Object.is(this.defaultView, 'weekview')) {
-                    item.start =  diffTime * 1440 + moment(item.start).get('hours') * 60 + moment(item.start).get('minute');
-                    item.end = 1440 * 7;
+                    item.start =  startDiffTime * this.weekviewWidth + moment(item.start).get('hours') * this.hourWidth + (moment(item.start).get('minute') * (this.hourWidth/60));
+                    item.end = 7 * this.weekviewWidth;
                 } else if (Object.is(this.defaultView, 'monthview')) {
-                    item.start =  diffTime * 48 + moment(item.start).get('hours') * 2;
-                    item.end = 48 * Math.abs(endTime.diff(startTime,'day'));
+                    item.start =  startDiffTime * this.monthviewWidth + (moment(item.start).get('hours') * (this.monthviewWidth/24));
+                    item.end = Math.abs(endTime.diff(startTime,'day')) * this.monthviewWidth;
                 }
                 date.push(item);
             } else if (moment(item.start).isBefore(startTime) && moment(startTime).isSameOrBefore(item.end) && moment(item.end).isSameOrBefore(endTime)) {
                 // 开始在当前时间之前，结束在当前时间之内
-                let diffTime: number = Math.abs(startTime.diff(item.end, 'day'));
+                let endDiffTime: number = Math.abs(startTime.diff(item.end, 'day'));
                 if (Object.is(this.defaultView, 'dayview')) {
                     item.start = 0;
-                    item.end = moment(item.end).get('hours') * 60 + moment(item.end).get('minute');
+                    item.end = moment(item.end).get('hours') * this.dayviewWidth + (moment(item.end).get('minute') * (this.dayviewWidth/60));
                 } else if (Object.is(this.defaultView, 'weekview')) {
                     item.start = 0;
-                    item.end = diffTime * 1440 + moment(item.end).get('hours') * 60 + moment(item.end).get('minute');
+                    item.end = endDiffTime * this.weekviewWidth + moment(item.end).get('hours') * this.hourWidth + (moment(item.end).get('minute') * (this.hourWidth/60));
                 } else if (Object.is(this.defaultView, 'monthview')) {
                     item.start = 0;
-                    item.end = diffTime * 48 + moment(item.end).get('hours') * 2;
+                    item.end = endDiffTime * this.monthviewWidth + (moment(item.end).get('hours') * (this.monthviewWidth/24));
                 }
                 date.push(item);
             }
@@ -927,6 +992,16 @@ export default class AppClaendarTimeline extends Vue{
             return moment().isSame(this.currentTime, 'day');
         }
         return button.disabled;
+    }
+
+    /**
+     * 挡板拖拽结束重新计算
+     * 
+     *  @memberof AppClaendarTimeline
+     */
+    public onMoveEnd() {
+        this.calculateWidth();
+        this.partitionTime();
     }
 }
 </script>
