@@ -75,6 +75,7 @@
 
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_TESTMODULE_IBZ_TESTMODULE_PARENT] -->
 	 <select id="selectByParent" resultMap="TestModuleResultMap"  databaseId="mysql">
+		select * from (
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
@@ -82,9 +83,11 @@
 			</if>
 			<![CDATA[ AND t1.`PARENT`=#{id} ]]>
 		</trim>
+		 )t1
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT] -->
 	 <select id="selectByRoot" resultMap="TestModuleResultMap"  databaseId="mysql">
+		select * from (
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
@@ -92,6 +95,7 @@
 			</if>
 			<![CDATA[ AND t1.`ROOT`=#{id} ]]>
 		</trim>
+		 )t1
      </select>
 
     <!--数据集合[ByPath]-->
@@ -103,9 +107,11 @@
 
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.TestModuleSearchContext"  resultMap="TestModuleResultMap">
+	 	select * from (
          select t1.* from (
                 <include refid="Default" />
          )t1
+		 )t1
      </select>
 
     <!--数据集合[ParentModule]-->

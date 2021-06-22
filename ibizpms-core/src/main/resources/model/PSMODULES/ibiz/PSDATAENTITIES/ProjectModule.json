@@ -485,6 +485,16 @@
   }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "majorSortDir" : "ASC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
+    "minorSortDir" : "DESC",
+    "getMinorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
