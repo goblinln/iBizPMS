@@ -106,7 +106,7 @@ export class MobDeRedirectViewBase extends MainViewBase {
     const routePath = ViewTool.buildUpRoutePath(this.$route, tempContext, deResParameters, parameters, args, data);
     this.closeRedirectView(args);
     this.$router.replace({ path: routePath }).catch((error:any) =>{
-      LogUtil.log("重定向跳转......");
+      LogUtil.log(this.$t('app.log.redirection'));
     })
   }
 

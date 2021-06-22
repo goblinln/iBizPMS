@@ -35,7 +35,6 @@ export default {
     whitelist:  commonLogic.appcommonhandle("分组白名单",null),
     mobimage:  commonLogic.appcommonhandle("移动端图片",null),
     totalwh:  commonLogic.appcommonhandle("总工时",null),
-    projectteams:  commonLogic.appcommonhandle("项目团队成员",null),
     totalhours:  commonLogic.appcommonhandle("可用工时",null),
     pri:  commonLogic.appcommonhandle("优先级",null),
     end:  commonLogic.appcommonhandle("结束日期",null),
@@ -55,6 +54,7 @@ export default {
     unstarttaskcnt:  commonLogic.appcommonhandle("未开始任务数",null),
     accounts:  commonLogic.appcommonhandle("项目团队相关成员",null),
     noticeusers:  commonLogic.appcommonhandle("消息通知用户",null),
+    projectsn:  commonLogic.appcommonhandle("项目编号",null),
     statge:  commonLogic.appcommonhandle("statge",null),
     canceltaskcnt:  commonLogic.appcommonhandle("取消任务数",null),
     taskCnt:  commonLogic.appcommonhandle("任务总数",null),
@@ -84,20 +84,19 @@ export default {
     qD:  commonLogic.appcommonhandle("测试负责人",null),
     parentName:  commonLogic.appcommonhandle("parent",null),
     parent:  commonLogic.appcommonhandle("父项目",null),
-    projectsn:  commonLogic.appcommonhandle("项目编号",null),
   },
 	views: {
 		mobtabexpview: {
 			caption: commonLogic.appcommonhandle("项目",null),
+		},
+		startmobeditview: {
+			caption: commonLogic.appcommonhandle("开始",null),
 		},
 		mobmdview: {
 			caption: commonLogic.appcommonhandle("项目",null),
 		},
 		mobpickupview: {
 			caption: commonLogic.appcommonhandle("项目",null),
-		},
-		startmobeditview: {
-			caption: commonLogic.appcommonhandle("开始",null),
 		},
 		mobeditview: {
 			caption: commonLogic.appcommonhandle("项目",null),

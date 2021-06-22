@@ -56,8 +56,8 @@ Vue.prototype.$Notice = {
     success: (err: any, info: any) => {
         NoticeHandler.successHandler(err, info);
     },
-    confirm: (title: any, message: any, param?: any) => {
-        NoticeHandler.confirmHandler(title, message, param);
+    confirm: async function(title: any, message: any, param?: any) {
+        return await NoticeHandler.confirmHandler(title, message, param, this);
     }
 };
 

@@ -110,7 +110,7 @@ export class AppMobContextMenuBase extends MobContextMenuControlBase {
         return (
             <div class="context-menu-item" name={item.name} v-show={visible} on-click={() => this.itemClick({ tag: item.name })}>
                 {this.renderItemIcon(item)}
-                {item.showCaption ? item.caption : ''}
+                {item.showCaption ? this.$tl(item.getCapPSLanguageRes()?.lanResTag, item.caption) : ''}
             </div>
         )
     }

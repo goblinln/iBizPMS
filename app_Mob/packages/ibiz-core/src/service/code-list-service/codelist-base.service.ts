@@ -1,5 +1,7 @@
+import { IPSAppCodeList, IPSCodeItem } from '@ibiz/dynamic-model-api';
 import { AppServiceBase } from '../app-service/app-base.service';
 import { EntityBaseService } from '../entity-service/entity-base.service';
+import { AppModelService, GetModelService } from '../model-service/model-service';
 
 /**
  * 代码表服务基类
@@ -85,18 +87,42 @@ export class CodeListServiceBase {
      * @returns {Promise<any[]>}
      * @memberof CodeListServiceBase
      */
-    public async getDataItems(codelist:any,context?:any, data?: any, isloading?: boolean){
+    public async getDataItems(params:any){
         let dataItems:Array<any> = [];
         try{
-            if(codelist.tag && Object.is(codelist.type,"STATIC")){
-                dataItems = await this.getStaticItems(codelist.tag);
+            if(params.tag && Object.is(params.type,"STATIC")){
+                dataItems = await this.getStaticItems(params.tag, params.data, params.context);
             }else{
-                dataItems = await this.getItems(codelist.tag,codelist.context,codelist.viewparam,codelist.isloading);
+                dataItems = await this.getItems(params.tag,params.context,params.viewparam,params.isloading);
             }
         }catch(error){
             console.warn("代码表加载异常" + error);
         }
         return dataItems;
+    }
+
+    /**
+     * 获取多语言翻译方法
+     *
+     * @param {*} context 运行上下文
+     * @return {*} 
+     * @memberof CodeListServiceBase
+     */
+    public async getTranslate(context: any){
+        let appModelService: AppModelService = await GetModelService(context);
+        let i18n = AppServiceBase.getInstance().getI18n();
+        return function(key: string, value?: string){
+            if (i18n.te(key)) {
+                return i18n.t(key);
+            } else {
+                if (appModelService) {
+                    const lanResource: any = appModelService.getPSLang(key);
+                    return lanResource ? lanResource : value ? value : key;
+                } else {
+                    return value ? value : key;
+                }
+            }
+        }
     }
 
     /**
@@ -106,14 +132,74 @@ export class CodeListServiceBase {
      * @returns {Promise<any[]>}
      * @memberof CodeListServiceBase
      */
-    public getStaticItems(tag: string):Promise<any[]>{
-        return new Promise((resolve:any,reject:any) =>{
-            const codelist = this.$store.getters.getCodeList(tag);
-            if (codelist) {
-                let items: Array<any> = [...JSON.parse(JSON.stringify(codelist.items))];
-                resolve(items);
+    public async getStaticItems(tag: string, data?: any, context?: any) {
+        let codelist: IPSAppCodeList | undefined;
+        if (data) {
+            codelist = data;
+        } else {
+            let appModelService: AppModelService = await GetModelService(context);
+            if (appModelService?.app) {
+                codelist = appModelService?.app.getAllPSAppCodeLists()?.find((item: IPSAppCodeList) => {
+                    return item.codeName == tag;
+                })
             }
-        })
+        }
+        let translate = await this.getTranslate(context);
+        if (codelist && codelist.getPSCodeItems()) {
+            let items: Array<any> = this.formatStaticItems(codelist.getPSCodeItems(), undefined, codelist.codeItemValueNumber, translate);
+            return items;
+        }
+        return []
+    }
+
+    /**
+     * 格式化静态代码表
+     *
+     * @param {*} items 代码表集合
+     * @param {string} pValue 父代码项值
+     * @param {boolean} [codeItemValueNumber=false] 是否是数值项
+     * @param {*} [translate] 多语言翻译
+     * @return {*} 
+     * @memberof CodeListServiceBase
+     */
+    public formatStaticItems(items: any, pValue?: string, codeItemValueNumber: boolean = false, translate?: any) {
+        let targetArray: Array<any> = [];
+        items.forEach((element: IPSCodeItem) => {
+            const codelistItem = {
+                label: element.text,
+                text: element.text,
+                value: codeItemValueNumber ? Number(element.value) : element.value,
+                id: element.value,
+                color: element.color,
+                codename: element.codeName
+            }
+            if(translate && element?.getTextPSLanguageRes?.()?.lanResTag){
+                codelistItem.text = translate(element.getTextPSLanguageRes()?.lanResTag ,element.text)
+                codelistItem.label = translate(element.getTextPSLanguageRes()?.lanResTag ,element.text)
+            }
+            if (element.data) {
+                if ((element.data.indexOf("{") !== -1) && (element.data.indexOf("}") !== -1)) {
+                    Object.assign(codelistItem, {
+                        data: eval('(' + element.data + ')')
+                    })
+                } else {
+                    Object.assign(codelistItem, {
+                        data: element.data
+                    })
+                }
+            }
+            if (pValue) {
+                Object.assign(codelistItem, {
+                    pvalue: pValue,
+                })
+            }
+            targetArray.push(codelistItem);
+            if ((element.getPSCodeItems() || []).length > 0) {
+                const children = this.formatStaticItems(element.getPSCodeItems(), element.value, codeItemValueNumber,translate);
+                targetArray.push(...children);
+            }
+        });
+        return targetArray;
     }
 
     /**

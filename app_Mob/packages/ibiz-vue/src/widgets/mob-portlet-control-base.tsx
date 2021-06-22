@@ -1,4 +1,4 @@
-import { IPSAppDEUIAction, IPSDBAppViewPortletPart, IPSDBPortletPart, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSUIActionGroupDetail } from "@ibiz/dynamic-model-api";
+import { IPSAppDEUIAction, IPSDBAppViewPortletPart, IPSDBPortletPart, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSLanguageRes, IPSUIActionGroupDetail } from "@ibiz/dynamic-model-api";
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
 import { MainControlBase } from "./main-control-base";
 
@@ -51,7 +51,22 @@ export class MobPortletControlBase extends MainControlBase {
         let targetToolbarItems: any[] = [];
         if (toolbar && toolbar.getPSDEToolbarItems()?.length) {
             toolbar.getPSDEToolbarItems()?.forEach((item: IPSDEToolbarItem) => {
-                targetToolbarItems.push({ name: item.name, showCaption: item.showCaption, showIcon: item.showIcon, tooltip: item.tooltip, iconcls: item?.getPSSysImage()?.cssClass, icon: item.getPSSysImage?.()?.imagePath, actiontarget: (item as IPSDETBUIActionItem).uIActionTarget, caption: item.caption, disabled: false, itemType: item.itemType, visabled: true, noprivdisplaymode: (item as IPSDETBUIActionItem).noPrivDisplayMode, dataaccaction: '', uiaction: {} });
+                targetToolbarItems.push({
+                    name: item.name,
+                    showCaption: item.showCaption,
+                    showIcon: item.showIcon,
+                    tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
+                    iconcls: item?.getPSSysImage()?.cssClass,
+                    icon: item.getPSSysImage?.()?.imagePath,
+                    actiontarget: (item as IPSDETBUIActionItem).uIActionTarget,
+                    caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+                    disabled: false,
+                    itemType: item.itemType,
+                    visabled: true,
+                    noprivdisplaymode: (item as IPSDETBUIActionItem).noPrivDisplayMode,
+                    dataaccaction: "",
+                    uiaction: {},
+                });
             })
         }
         this.toolbarModels = targetToolbarItems;
@@ -82,7 +97,7 @@ export class MobPortletControlBase extends MainControlBase {
                 this.actionBarModelData.push({
                     viewlogicname: item.name,
                     icon: appUIAction?.getPSSysImage()?.cssClass,
-                    name:appUIAction?.caption,
+                    name: this.$tl((appUIAction?.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag ,appUIAction?.caption),
                     disabled: false,
                     visabled: true,
                     getNoPrivDisplayMode: appUIAction.noPrivDisplayMode ? appUIAction.noPrivDisplayMode : 6
@@ -122,40 +137,6 @@ export class MobPortletControlBase extends MainControlBase {
         }
         //初始化操作栏模型
         this.initActionBar();
-    }
-
-    public customizeTitle = '';
-
-    public editTitle() {
-        if (this.customizeTitle) {
-            return this.customizeTitle
-        }
-        return this.controlInstance.title
-    }
-
-    /**
-     * 门户名称编辑状态
-     *
-     * @memberof ${srfclassname('${ctrl.codeName}')}
-     */
-    public isEditTitle = false;
-
-    /**
-     * 定制标题
-     *
-     * @type {string}
-     * @memberof ${srfclassname('${ctrl.codeName}')}
-     */
-    public reTitleValue = "";
-
-    /**
-     * 标题变更
-     *
-     * @type {string}
-     * @memberof ${srfclassname('${ctrl.codeName}')}
-     */
-    titleChange(value: any) {
-        this.reTitleValue = value.detail.value;
     }
 
     /**

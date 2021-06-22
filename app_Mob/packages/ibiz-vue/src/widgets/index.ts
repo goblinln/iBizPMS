@@ -18,4 +18,5 @@ export { MobPickUpViewPanelControlBase } from './mob-pick-up-view-panel-control-
 export { MobContextMenuControlBase } from './mob-contextmenu-control-base';
 export { MobPanelControlBase } from './mob-panel-control-base';
 export { MobDrtabControlBase } from './mob-drtab-control-base';
+export { MobMapControlBase } from './mob-map-control-base';
 export { AppControlBase } from './app-control-base';

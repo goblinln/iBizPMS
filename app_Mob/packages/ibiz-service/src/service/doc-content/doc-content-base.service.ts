@@ -81,23 +81,6 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocContentService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && _context.doccontent) {
-            return this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}/select`);
-        }
-        if (_context.doc && _context.doccontent) {
-            return this.http.get(`/docs/${_context.doc}/doccontents/${_context.doccontent}/select`);
-        }
-        return this.http.get(`/doccontents/${_context.doccontent}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -134,43 +117,6 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/doccontents`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocContentService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && _context.doccontent) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`, _data);
-        }
-        if (_context.doc && _context.doccontent) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/docs/${_context.doc}/doccontents/${_context.doccontent}`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/doccontents/${_context.doccontent}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocContentService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && _context.doccontent) {
-            return this.http.delete(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`);
-        }
-        if (_context.doc && _context.doccontent) {
-            return this.http.delete(`/docs/${_context.doc}/doccontents/${_context.doccontent}`);
-        }
-        return this.http.delete(`/doccontents/${_context.doccontent}`);
     }
     /**
      * Get
@@ -219,6 +165,43 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocContentService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doc && _context.doccontent) {
+            return this.http.delete(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`);
+        }
+        if (_context.doc && _context.doccontent) {
+            return this.http.delete(`/docs/${_context.doc}/doccontents/${_context.doccontent}`);
+        }
+        return this.http.delete(`/doccontents/${_context.doccontent}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocContentService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doc && _context.doccontent) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}`, _data);
+        }
+        if (_context.doc && _context.doccontent) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/docs/${_context.doc}/doccontents/${_context.doccontent}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/doccontents/${_context.doccontent}`, _data);
+    }
+    /**
      * FetchCurVersion
      *
      * @param {*} [_context={}]
@@ -251,5 +234,22 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
             return this.http.post(`/docs/${_context.doc}/doccontents/fetchdefault`, _data);
         }
         return this.http.post(`/doccontents/fetchdefault`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocContentService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doc && _context.doccontent) {
+            return this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/doccontents/${_context.doccontent}/select`);
+        }
+        if (_context.doc && _context.doccontent) {
+            return this.http.get(`/docs/${_context.doc}/doccontents/${_context.doccontent}/select`);
+        }
+        return this.http.get(`/doccontents/${_context.doccontent}/select`);
     }
 }

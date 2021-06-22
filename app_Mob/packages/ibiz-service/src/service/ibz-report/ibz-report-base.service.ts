@@ -66,17 +66,6 @@ export class IbzReportBaseService extends EntityBaseService<IIbzReport> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzReportService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreports/${_context.ibzreport}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class IbzReportBaseService extends EntityBaseService<IIbzReport> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzreports`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzReportService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzreports/${_context.ibzreport}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzReportService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzreports/${_context.ibzreport}`);
     }
     /**
      * Get
@@ -155,6 +121,17 @@ export class IbzReportBaseService extends EntityBaseService<IIbzReport> {
         return this.http.post(`/ibzreports/${_context.ibzreport}/myreportinotsubmit`, _data);
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzReportService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/ibzreports/${_context.ibzreport}`);
+    }
+    /**
      * ReportIReceived
      *
      * @param {*} [_context={}]
@@ -164,6 +141,18 @@ export class IbzReportBaseService extends EntityBaseService<IIbzReport> {
      */
     async ReportIReceived(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzreports/${_context.ibzreport}/reportireceived`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzReportService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzreports/${_context.ibzreport}`, _data);
     }
     /**
      * FetchAllReport
@@ -197,5 +186,16 @@ export class IbzReportBaseService extends EntityBaseService<IIbzReport> {
      */
     async FetchMyReAllReport(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzreports/fetchmyreallreport`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzReportService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/ibzreports/${_context.ibzreport}/select`);
     }
 }

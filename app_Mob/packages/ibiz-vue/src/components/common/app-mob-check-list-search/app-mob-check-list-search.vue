@@ -4,8 +4,8 @@
     <div v-if="curValue== null || curValue==''" class="ion-select-icon"></div>
     <div class="value_text">{{value_text}}</div>
     <van-action-sheet get-container="#app" class="ibiz_sheet"   v-model="show"  @click-overlay="onOverlayClick" >
-        <van-field class="search" v-model="searchText" placeholder="请输入关键字" clearable />
-        <van-button class="selectbtn" type="info" @click="onSelect">确认</van-button>
+        <van-field class="search" v-model="searchText" :placeholder="$t('keywords')" clearable />
+        <van-button class="selectbtn" type="info" @click="onSelect">{{$t('confirm')}}</van-button>
           <div  v-for="option of cacheOptions" :class="{'select':option.selected,'sheet_item':true}" :key="option.value" @click="onSheetClick(option)">{{option.text}}</div>
     </van-action-sheet>
   </div>
@@ -16,7 +16,19 @@ import { Vue, Component, Prop, Provide, Emit, Watch } from "vue-property-decorat
 import { CodeListServiceBase } from "ibiz-core";
 
 @Component({
-    components: {}
+    components: {},
+    i18n: {
+        messages: {
+            'ZH-CN': {
+                keywords: '请输入关键字',
+                confirm: '确认',
+            },
+            'EN-US': {
+                keywords:'Please enter key words',
+                confirm: 'Confirm',
+            }
+        }
+    }
 })
 export default class AppCheckList extends Vue {
 

@@ -70,6 +70,7 @@ export class AppComponentService {
         this.viewMap.set("DEMOBWFDYNASTARTVIEW_DEFAULT", 'app-default-mob-wfdynastartview');
         this.viewMap.set("DEMOBWFDYNAEDITVIEW3_DEFAULT", 'app-default-mob-wfdynaeditview3');        
         this.viewMap.set("DEMOBREDIRECTVIEW_DEFAULT", 'app-default-mob-deredirectview');
+        this.viewMap.set("DEMAPVIEW_DEFAULT", 'app-default-mob-mapview');
         // 注册视图插件
         this.viewMap.set("UPDATELOGINDEXVIEW", 'app-view-custom-updatelogindexview');
         // 注册视图样式，无插件模式
@@ -118,7 +119,8 @@ export class AppComponentService {
         this.controlMap.set("PICKUPVIEWPANEL_DEFAULT", 'app-default-mob-pickupviewpanel');
         this.controlMap.set("SEARCHFORM_DEFAULT", 'app-default-mob-searchform');
         this.controlMap.set("PANEL_DEFAULT", 'app-default-mob-panel');
-        this.controlMap.set("DRTAB_DEFAULT", 'app-default-mob-drtab');        
+        this.controlMap.set("DRTAB_DEFAULT", 'app-default-mob-drtab');
+        this.controlMap.set("MAP_DEFAULT", 'app-default-mob-map');              
         // 临时
         this.controlMap.set("PFPlugin", 'app-default-mob-mdctrl');
         // 注册部件插件标识
@@ -126,13 +128,13 @@ export class AppComponentService {
         this.controlMap.set("MobUpdateLogInfo", 'app-list-render-mob-update-log-info');
         this.controlMap.set("mobFileList3", 'app-list-render-mob-file-list3');
         this.controlMap.set("mobItemList", 'app-list-itemrender-mob-item-list');
+        this.controlMap.set("mobAllDynamicList2", 'app-list-render-mob-all-dynamic-list2');
         this.controlMap.set("NEW", 'app-chart-render-new');
         this.controlMap.set("mobReportList2", 'app-list-render-mob-report-list2');
         this.controlMap.set("", 'app-list-render-list-renderc8da12e867');
         this.controlMap.set("mobUpdateLogList", 'app-list-render-mob-update-log-list');
         this.controlMap.set("mobDemandList2", 'app-list-itemrender-mob-demand-list2');
         this.controlMap.set("mobFileTree2", 'app-tree-render-mob-file-tree2');
-        this.controlMap.set("mobAllDynamicList2", 'app-list-render-mob-all-dynamic-list2');
         this.controlMap.set("mobHistoryList2", 'app-list-render-mob-history-list2');
         this.controlMap.set("mobProjectTeamItemList", 'app-list-itemrender-mob-project-team-item-list');
         this.controlMap.set("mobTaskTeam", 'app-list-itemrender-mob-task-team');

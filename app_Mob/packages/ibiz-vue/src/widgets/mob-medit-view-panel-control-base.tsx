@@ -27,7 +27,7 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
      * @memberof MobMeditViewPanelControlBase
      */
     public async ctrlModelInit(args?: any) {
-        await super.ctrlModelInit();
+        await super.ctrlModelInit(args);
         if (!(this.Environment?.isPreviewMode)) {
             this.service = new AppMobMEditViewPanelService(this.controlInstance);
             await this.service.initServiceParam(this.controlInstance)
@@ -148,7 +148,7 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
      * @memberof MobMeditViewPanelControlBase
      */
     public doItems(datas: any[]): void {
-        const [{ pathName, parameterName }] = this.parameters;
+        const [{ parameterName }] = this.parameters;
         datas.forEach((arg: any) => {
             let id: string = arg[parameterName] ? arg[parameterName] : this.$util.createUUID();
             let item: any = { id: id, _context: {}, viewparam: {} };
@@ -190,7 +190,7 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
      */
     public load(data: any): void {
         if (!this.fetchAction) {
-            this.$Notice.error('多表单编辑视图fetchAction行为不存在');
+            this.$Notice.error(`${this.$t('app.viewName.meditView')}fetchAction${this.$t('app.commonWords.noAction')}`);
             return;
         }
         let arg: any = {};
@@ -224,7 +224,7 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
      */
     public handleAdd() {
         if (!this.loaddraftAction) {
-            this.$Notice.error('多表单编辑视图loaddraftAction行为不存在');
+            this.$Notice.error(`${this.$t('app.viewName.meditView')}loaddraftAction${this.$t('app.commonWords.noAction')}`);
             return;
         }
         const promice: Promise<any> = this.service.loadDraft(this.loaddraftAction, JSON.parse(JSON.stringify(this.context)), { viewparams: this.viewparams }, this.showBusyIndicator);

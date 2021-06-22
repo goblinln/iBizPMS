@@ -1,4 +1,4 @@
-import { IPSAppCounterRef, IPSDETabViewPanel, IPSSysImage } from '@ibiz/dynamic-model-api';
+import { IPSAppCounterRef, IPSDEDRTabPage, IPSDETabViewPanel, IPSLanguageRes, IPSSysImage } from '@ibiz/dynamic-model-api';
 import { Util } from 'ibiz-core';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { MobDrtabControlBase } from '../../../widgets/mob-drtab-control-base';
@@ -115,7 +115,8 @@ export class AppMobDrtabBase extends MobDrtabControlBase {
             return null;
         }
         const { controlClassNames } = this.renderOptions;
-        const tabPages = this.controlInstance.M.getPSDEDRTabPages;
+        const tabPages = this.controlInstance.getPSDEDRTabPages() as IPSDEDRTabPage[];
+        const editItemCaption = this.$tl((this.controlInstance.getEditItemCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, this.controlInstance.editItemCaption);
         return (
             <div class={{ ...controlClassNames, 'drtab': true }} >
                 <van-tabs 
@@ -127,13 +128,13 @@ export class AppMobDrtabBase extends MobDrtabControlBase {
                     value={this.activiedTabViewPanel} 
                     type="card" 
                     on-click={this.tabPanelClick.bind(this)}>
-                    <van-tab index={0} name='mainform' title={this.controlInstance.M.editItemCaption?this.controlInstance.M.editItemCaption:'主表单'}>
+                    <van-tab index={0} name='mainform' title={editItemCaption}>
                         <div class='main-data'>
                             {this.$parent.$slots.mainform}
                         </div>
                     </van-tab>
                     {tabPages?.length > 0 && tabPages.map((tabPage: any,index: number)=>{
-                        return <van-tab index={index+1} name={tabPage.name} title={tabPage.caption}>
+                        return <van-tab index={index+1} name={tabPage.name} title={this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}>
                             {this.renderDrView(tabPage)}
                         </van-tab> 
                     })}

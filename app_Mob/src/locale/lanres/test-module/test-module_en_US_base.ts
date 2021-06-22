@@ -1,9 +1,15 @@
 import commonLogic from '@/locale/logic/common/common-logic';
 export default {
   fields: {
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     type:  commonLogic.appcommonhandle("类型（story）",null),
+    mdeptName:  commonLogic.appcommonhandle("归属部门名",null),
+    mdeptId:  commonLogic.appcommonhandle("部门标识",null),
     path:  commonLogic.appcommonhandle("path",null),
+    orgId:  commonLogic.appcommonhandle("组织机构标识",null),
     owner:  commonLogic.appcommonhandle("owner",null),
+    updateBy:  commonLogic.appcommonhandle("由谁更新",null),
+    createBy:  commonLogic.appcommonhandle("由谁创建",null),
     order:  commonLogic.appcommonhandle("排序值",null),
     deleted:  commonLogic.appcommonhandle("逻辑删除标志",null),
     branch:  commonLogic.appcommonhandle("branch",null),
@@ -17,11 +23,13 @@ export default {
     rootName:  commonLogic.appcommonhandle("测试",null),
     root:  commonLogic.appcommonhandle("编号",null),
     parent:  commonLogic.appcommonhandle("id",null),
-    mdeptId:  commonLogic.appcommonhandle("部门标识",null),
-    mdeptName:  commonLogic.appcommonhandle("归属部门名",null),
-    orgId:  commonLogic.appcommonhandle("组织机构标识",null),
-    createBy:  commonLogic.appcommonhandle("由谁创建",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
-    updateBy:  commonLogic.appcommonhandle("由谁更新",null),
   },
+	views: {
+		mobpickupview: {
+			caption: commonLogic.appcommonhandle("测试模块",null),
+		},
+		mobpickupmdview: {
+			caption: commonLogic.appcommonhandle("测试模块",null),
+		},
+	},
 };

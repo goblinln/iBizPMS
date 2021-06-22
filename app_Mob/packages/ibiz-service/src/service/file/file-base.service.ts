@@ -112,17 +112,6 @@ export class FileBaseService extends EntityBaseService<IFile> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof FileService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/files/${_context.file}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -139,29 +128,6 @@ export class FileBaseService extends EntityBaseService<IFile> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/files`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof FileService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/files/${_context.file}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof FileService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/files/${_context.file}`);
     }
     /**
      * Get
@@ -188,6 +154,29 @@ export class FileBaseService extends EntityBaseService<IFile> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/files/getdraft`, _data);
         return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof FileService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/files/${_context.file}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof FileService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/files/${_context.file}`, _data);
     }
     /**
      * UpdateObjectID
@@ -265,6 +254,17 @@ export class FileBaseService extends EntityBaseService<IFile> {
      */
     async FetchTypeNotBySrfparentkey(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/files/fetchtypenotbysrfparentkey`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof FileService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/files/${_context.file}/select`);
     }
 
     /**

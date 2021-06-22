@@ -92,6 +92,7 @@ export class AppMobSearchFormBase extends MobSearchFormControlBase {
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}
                 controlInstance={this.controlInstance}
+                modelService={this.modelService}
             >
                 {this.renderDetails(modelJson)}
             </app-default-mob-form-page>
@@ -173,6 +174,7 @@ export class AppMobSearchFormBase extends MobSearchFormControlBase {
                 context={Util.deepCopy(this.context)}
                 viewparams={Util.deepCopy(this.viewparams)}
                 contextState={this.formState}
+                modelService={this.modelService}
                 service={this.service}
                 ignorefieldvaluechange={this.ignorefieldvaluechange}
                 on-formItemValueChange={(value: any) => {
@@ -215,6 +217,7 @@ export class AppMobSearchFormBase extends MobSearchFormControlBase {
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}
                 controlInstance={this.controlInstance}
+                modelService={this.modelService}
             // on-groupUIActionClick={this.handleActionClick.bind(this)}
             >
                 {this.renderDetails(modelJson)}

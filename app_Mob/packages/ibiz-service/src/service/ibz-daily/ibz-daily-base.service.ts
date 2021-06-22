@@ -108,17 +108,6 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzDailyService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzdailies/${_context.ibzdaily}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -137,27 +126,15 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
         return this.http.post(`/ibzdailies`, _data);
     }
     /**
-     * Update
+     * CreateUserDaily
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IbzDailyService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzdailies/${_context.ibzdaily}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzDailyService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzdailies/${_context.ibzdaily}`);
+    async CreateUserDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzdailies/${_context.ibzdaily}/createuserdaily`, _data);
     }
     /**
      * Get
@@ -184,17 +161,6 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzdailies/getdraft`, _data);
         return res;
-    }
-    /**
-     * CreateUserDaily
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzDailyService
-     */
-    async CreateUserDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzdailies/${_context.ibzdaily}/createuserdaily`, _data);
     }
     /**
      * GetYeaterdayDailyPlansTaskEdit
@@ -252,6 +218,17 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
         return this.http.post(`/ibzdailies/${_context.ibzdaily}/pushuserdaily`, _data);
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzDailyService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/ibzdailies/${_context.ibzdaily}`);
+    }
+    /**
      * Submit
      *
      * @param {*} [_context={}]
@@ -261,6 +238,18 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.put(`/ibzdailies/${_context.ibzdaily}/submit`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzDailyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzdailies/${_context.ibzdaily}`, _data);
     }
     /**
      * FetchDefault
@@ -338,6 +327,17 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      */
     async FetchProjectDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzdailies/fetchprojectdaily`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzDailyService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/ibzdailies/${_context.ibzdaily}/select`);
     }
 
     /**

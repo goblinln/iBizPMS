@@ -33,7 +33,6 @@ export default [
     'whitelist',
     'mobimage',
     'totalwh',
-    'projectteams',
     'totalhours',
     'pri',
     'end',
@@ -53,6 +52,7 @@ export default [
     'unstarttaskcnt',
     'accounts',
     'noticeusers',
+    'projectsn',
     'statge',
     'canceltaskcnt',
     'taskcnt',
@@ -82,5 +82,4 @@ export default [
     'qd',
     'parentname',
     'parent',
-    'projectsn',
 ];

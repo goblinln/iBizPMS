@@ -118,6 +118,10 @@ export abstract class IbzTaskestimateBase extends EntityBase implements IIbzTask
      */
     deptname?: any;
     /**
+     * 任务预计编号
+     */
+    taskestimatesn?: any;
+    /**
      * 月
      */
     month?: any;
@@ -161,10 +165,6 @@ export abstract class IbzTaskestimateBase extends EntityBase implements IIbzTask
      * 任务
      */
     task?: any;
-    /**
-     * 任务预计编号
-     */
-    taskestimatesn?: any;
 
     /**
      * 重置实体数据

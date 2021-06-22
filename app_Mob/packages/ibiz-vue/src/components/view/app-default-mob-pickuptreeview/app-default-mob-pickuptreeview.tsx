@@ -1,4 +1,4 @@
-import { Component, Prop, Emit, Watch } from 'vue-property-decorator';
+import { Component, Prop, Watch } from 'vue-property-decorator';
 import { Util } from 'ibiz-core';
 import { AppLayoutService } from '../../../app-service';
 import { MobPickupTreeViewBase } from '../../../view';
@@ -83,6 +83,7 @@ export class AppDefaultMobPickUpTreeView extends MobPickupTreeViewBase {
         return h(targetViewLayoutComponent, {
             props: { viewInstance: this.viewInstance }
         }, [
+            this.renderContent(),
             this.renderMainContent(),
         ]);
     }

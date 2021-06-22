@@ -88,17 +88,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestSuiteService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/testsuites/${_context.testsuite}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -115,29 +104,6 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/testsuites`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestSuiteService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/testsuites/${_context.testsuite}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestSuiteService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/testsuites/${_context.testsuite}`);
     }
     /**
      * Get
@@ -188,6 +154,17 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
         return this.http.post(`/testsuites/${_context.testsuite}/mobtestsuitecount`, _data);
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestSuiteService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/testsuites/${_context.testsuite}`);
+    }
+    /**
      * UnlinkCase
      *
      * @param {*} [_context={}]
@@ -197,6 +174,18 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      */
     async UnlinkCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/testsuites/${_context.testsuite}/unlinkcase`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestSuiteService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/testsuites/${_context.testsuite}`, _data);
     }
     /**
      * FetchDefault
@@ -219,6 +208,17 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      */
     async FetchPublicTestSuite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/testsuites/fetchpublictestsuite`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestSuiteService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/testsuites/${_context.testsuite}/select`);
     }
 
     /**

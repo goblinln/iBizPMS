@@ -50,10 +50,11 @@ export class AppDefaultMobGroupPanel extends AppDefaultMobFormDetail {
         let layoutMode = layout?.layout || 'TABLE_24COL';
         titleBarCloseMode = Number(titleBarCloseMode) || 0;
         caption = caption || codeName;
+        let labelCaption: any = this.$tl(this.detailsInstance.getCapPSLanguageRes()?.lanResTag,caption);
         return (
             <app-form-group
                 layoutType={layoutMode}
-                caption={caption}
+                caption={labelCaption}
                 isShowCaption={showCaption}
                 uiStyle='DEFAULT'
                 titleBarCloseMode={titleBarCloseMode}

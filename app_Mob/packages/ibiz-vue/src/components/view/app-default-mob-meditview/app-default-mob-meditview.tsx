@@ -83,6 +83,7 @@ export class AppDefaultMobMeditView extends MobMeditViewBase {
         return h(targetViewLayoutComponent, {
             props: { viewInstance: this.viewInstance }
         }, [
+            this.renderContent(),
             this.renderMainContent(),
             this.renderToolBar()
         ]);

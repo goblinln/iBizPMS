@@ -3,7 +3,7 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Util } from 'ibiz-core';
 import { MobPortletControlBase } from '../../../widgets';
 import { AppViewLogicService } from '../../../app-service';
-import { IPSDBAppViewPortletPart, IPSDBCustomPortletPart, IPSDBHtmlPortletPart, IPSDBRawItemPortletPart, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSDBAppViewPortletPart, IPSDBCustomPortletPart, IPSDBHtmlPortletPart, IPSDBRawItemPortletPart, IPSLanguageRes, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 门户部件部件基类
@@ -271,15 +271,13 @@ export class AppMobPortletBase extends MobPortletControlBase {
      * @memberof AppMobPortletBase
      */
     public renderTitle() {
-        return this.editTitle() ? <ion-list-header class='app-mob-portlet__header'>
-            {this.isEditTitle ? <ion-input value={this.editTitle()} on-ionChange={this.titleChange}></ion-input> : null}
-            {!this.isEditTitle ? <span >{this.editTitle()}</span> : null}
+        let labelCaption: any = this.$tl((this.controlInstance.getTitlePSLanguageRes() as IPSLanguageRes)?.lanResTag, this.controlInstance.title);
+        return <ion-list-header class='app-mob-portlet__header'>
+            {<span >{labelCaption}</span>}
             {this.actionBarModelData && this.actionBarModelData.length > 0 ? <div class="portlet__header_right">
                 <app-mob-icon name="ellipsis-horizontal-outline" on-onClick={()=>{this.selectStatus = true}}></app-mob-icon>
             </div> : null}
-        </ion-list-header> : null
-
-
+        </ion-list-header>
     }
 
 
@@ -301,40 +299,6 @@ export class AppMobPortletBase extends MobPortletControlBase {
                 return <img src={image?.imagePath} />
             }
         }
-
-    }
-
-    /**
-     * 绘制界面行为组
-     *
-     * @returns
-     * @memberof AppMobPortletBase
-     */
-    public renderUiAction() {
-        const actionGroupDetails = this.controlInstance?.getPSUIActionGroup?.()?.getPSUIActionGroupDetails?.();
-        if (!actionGroupDetails) {
-            return
-        }
-        return <span class="portlet-action">
-            {actionGroupDetails.map((actionDetail: IPSUIActionGroupDetail) => {
-                const { showCaption } = actionDetail;
-                let uiAction = actionDetail?.getPSUIAction?.();
-                let uiactionName = uiAction?.codeName?.toLowerCase() || actionDetail.name?.toLowerCase();
-                // 显示内容
-                let contentElement = <a on-click={(e: any) => { this.handleActionClick(e, actionDetail) }} >
-                    {this.renderIcon(actionDetail)}
-                    {showCaption && (uiAction?.caption || uiAction?.name)}
-                </a>
-                if (showCaption) {
-                    return <tooltip transfer={true} max-width={600}>
-                        {contentElement}
-                        <div slot='content'>{uiAction?.caption || uiAction?.name}</div>
-                    </tooltip>
-                } else {
-                    return contentElement
-                }
-            })}
-        </span>
     }
 
     /**

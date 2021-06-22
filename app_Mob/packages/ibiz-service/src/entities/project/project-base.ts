@@ -56,9 +56,9 @@ export abstract class ProjectBase extends EntityBase implements IProject {
     /**
      * 访问控制
      *
-     * @type {('open' | 'private' | 'custom')} open: 默认设置(有项目视图权限，即可访问), private: 私有项目(只有项目团队成员才能访问), custom: 自定义白名单(团队成员和白名单的成员可以访问)
+     * @type {('open' | 'private')} open: 默认设置(有项目视图权限，即可访问), private: 私有项目(只有项目团队成员才能访问)
      */
-    acl?: 'open' | 'private' | 'custom';
+    acl?: 'open' | 'private';
     /**
      * 已删除
      */
@@ -172,10 +172,6 @@ export abstract class ProjectBase extends EntityBase implements IProject {
      */
     totalwh?: any;
     /**
-     * 项目团队成员
-     */
-    projectteams?: any;
-    /**
      * 可用工时
      */
     totalhours?: any;
@@ -255,6 +251,10 @@ export abstract class ProjectBase extends EntityBase implements IProject {
      * 消息通知用户
      */
     noticeusers?: any;
+    /**
+     * 项目编号
+     */
+    projectsn?: any;
     /**
      * statge
      *
@@ -381,10 +381,6 @@ export abstract class ProjectBase extends EntityBase implements IProject {
      * 父项目
      */
     parent?: any;
-    /**
-     * 项目编号
-     */
-    projectsn?: any;
 
     /**
      * 重置实体数据

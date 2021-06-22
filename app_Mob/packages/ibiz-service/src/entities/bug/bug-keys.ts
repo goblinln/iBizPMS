@@ -23,6 +23,7 @@ export default [
     'v2',
     'confirmed',
     'mailtoconact',
+    'updateman',
     'openedby',
     'activatedcount',
     'openeddate',
@@ -44,6 +45,7 @@ export default [
     'lines',
     'substatus',
     'bugsn',
+    'createman',
     'org',
     'buildproject',
     'id',
@@ -80,6 +82,4 @@ export default [
     'project',
     'task',
     'testtask',
-    'createman',
-    'updateman',
 ];

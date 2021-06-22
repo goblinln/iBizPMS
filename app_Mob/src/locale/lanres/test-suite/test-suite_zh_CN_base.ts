@@ -7,6 +7,7 @@ export default {
     name: "名称",
     orgname: "归属组织名",
     addeddate: "创建时间",
+    testsuitesn: "测试套件编号",
     id: "编号",
     deleted: "已删除",
     lasteditedby: "最后编辑人",
@@ -16,7 +17,6 @@ export default {
     casecnt: "用例数",
     desc: "描述",
     product: "所属产品",
-    testsuitesn: "测试套件编号",
   },
 	views: {
 		mobtabexpview: {

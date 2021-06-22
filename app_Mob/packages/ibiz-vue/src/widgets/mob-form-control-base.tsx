@@ -1098,7 +1098,7 @@ export class MobFormControlBase extends MainControlBase {
                     let editorRules = Verify.buildVerConditions(detail.getPSEditor())
                     this.rules[detail.name] = [
                         // 非空值规则
-                        { validator: (rule: any, value: any, callback: any) => { return !(this.detailsModel[detail.name].required && (value === null || value === undefined || value === "")) }, message: `${detail.caption} 必须填写` },
+                        { validator: (rule: any, value: any, callback: any) => { return !(this.detailsModel[detail.name].required && (value === null || value === undefined || value === "")) }, message: `${detail.caption} ${this.$t('app.form.rules.required')}` },
                         // 表单值规则
                         ...otherRules,
                         // 编辑器基础值规则
@@ -1227,7 +1227,7 @@ export class MobFormControlBase extends MainControlBase {
             if (response && response.status && response.data) {
                 if (response.data.errorKey) {
                     if (Object.is(response.data.errorKey, "versionCheck")) {
-                        this.$Notice.confirm((this.$t('app.formpage.saveerror') as string), (this.$t('app.formpage.savecontent') as string)).then((result:any)=>{
+                        this.$Notice.confirm.call(this,(this.$t('app.formpage.saveerror') as string), (this.$t('app.formpage.savecontent') as string)).then((result:any)=>{
                           if (result) {
                             this.refresh([]);
                           }
@@ -1327,7 +1327,7 @@ export class MobFormControlBase extends MainControlBase {
                 if (response && response.status && response.data) {
                     if (response.data.errorKey) {
                         if (Object.is(response.data.errorKey, "versionCheck")) {
-                            this.$Notice.confirm((this.$t('app.formpage.saveerror') as string), (this.$t('app.formpage.savecontent') as string)).then(() => {
+                            this.$Notice.confirm.call(this,(this.$t('app.formpage.saveerror') as string), (this.$t('app.formpage.savecontent') as string)).then(() => {
                                 this.refresh();
                             });
                         } else if (Object.is(response.data.errorKey, 'DupCheck')) {

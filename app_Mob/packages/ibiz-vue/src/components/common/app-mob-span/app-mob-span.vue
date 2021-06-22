@@ -10,6 +10,7 @@
 <script lang="ts">
 import { Vue, Component, Prop, Provide, Emit, Watch, } from "vue-property-decorator";
 import { CodeListService } from "ibiz-service";
+import { LogUtil } from "ibiz-core";
 
 @Component({
     components: {}
@@ -236,7 +237,11 @@ export default class AppSpan extends Vue {
      */
     public created() {
         if (Object.is(this.codeListType, "STATIC")) {
-            this.items = this.$store.getters.getCodeListItems(this.tag);
+            this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: null, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
+                this.items = codelistItems;
+            }).catch((error: any) => {
+                LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codeNotExist')}`);
+            })             
             this.setText();
         } else if (Object.is(this.codeListType, "DYNAMIC")) {
             this.load();

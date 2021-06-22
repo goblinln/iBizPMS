@@ -15,3 +15,4 @@ export { AppMobTabExpPanelBase } from "./app-mob-tabexppanel-base";
 export { AppMobTabViewPanelBase } from "./app-mob-tabviewpanel-base";
 export { AppMobDrtabBase } from "./app-mob-drtab-base";
 export { AppMobTreeBase } from "./app-mob-tree-base";
+export { AppMobMapBase } from "./app-mob-map-base";

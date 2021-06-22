@@ -11,6 +11,7 @@ export default [
     'title',
     'orgname',
     'updateby',
+    'filesn',
     'addeddate',
     'downloads',
     'dept',
@@ -18,5 +19,4 @@ export default [
     'deptname',
     'id',
     'extra',
-    'filesn',
 ];

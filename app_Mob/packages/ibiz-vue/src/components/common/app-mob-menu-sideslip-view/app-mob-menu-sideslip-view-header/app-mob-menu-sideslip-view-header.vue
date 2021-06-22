@@ -2,7 +2,7 @@
   <div class="app-mob-menu-sideslip-view-header">
     <div class="header">
       <img src="assets/images/logo.png" class="ibizLogo"/>
-      <div class="title">账号信息：{{srfloginname}}</div>
+      <div class="title">{{$t('Acinfo') + srfloginname}}</div>
       <div class="text">{{text}}</div>
       <van-notice-bar left-icon="volume-o" :scrollable="false">
         <van-swipe
@@ -11,9 +11,9 @@
           :autoplay="3000"
           :show-indicators="false"
         >
-          <van-swipe-item @click="toNotice">#论坛地址——{{notice1}}</van-swipe-item>
-          <van-swipe-item>#开放平台——{{notice2}}</van-swipe-item>
-          <van-swipe-item>#统一地址——{{notice3}}</van-swipe-item>
+          <van-swipe-item @click="toNotice">{{$t('Ltinfo')}}——{{notice1}}</van-swipe-item>
+          <van-swipe-item>{{$t('Kfinfo')}}——{{notice2}}</van-swipe-item>
+          <van-swipe-item>{{$t('Tyinfo')}}——{{notice3}}</van-swipe-item>
         </van-swipe>
       </van-notice-bar>
     </div>
@@ -25,7 +25,23 @@ import { Vue, Component, Prop, Emit, Model } from 'vue-property-decorator';
 import { Environment } from '@/environments/environment';
 @Component({
     components: {
-    }
+    },
+    i18n: {
+        messages: {
+            'ZH-CN': {
+                Acinfo: '账号信息：',
+                Ltinfo: '#论坛地址',
+                Kfinfo: '#开放平台',
+                Tyinfo: '#统一地址',
+            },
+            'EN-US': {
+                Acinfo:'Account information:',
+                Ltinfo:'Forum address',
+                Kfinfo:'Open platform',
+                Tyinfo:'Unified address',
+            }
+        }
+    }      
 })
 export default class AppMobMenuSideslipView extends Vue {
 

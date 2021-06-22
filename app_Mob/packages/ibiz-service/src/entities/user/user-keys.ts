@@ -17,6 +17,7 @@ export default [
     'role',
     'deleted',
     'last',
+    'usersn',
     'clientstatus',
     'skype',
     'whatsapp',
@@ -33,5 +34,4 @@ export default [
     'phone',
     'id',
     'qq',
-    'usersn',
 ];

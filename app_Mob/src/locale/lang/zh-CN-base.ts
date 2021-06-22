@@ -1,57 +1,56 @@
-import taskestimate_zh_CN from '@locale/lanres/task-estimate/task-estimate_zh_CN';
-import testcasestep_zh_CN from '@locale/lanres/test-case-step/test-case-step_zh_CN';
-import project_zh_CN from '@locale/lanres/project/project_zh_CN';
-import projectteam_zh_CN from '@locale/lanres/project-team/project-team_zh_CN';
-import productbranch_zh_CN from '@locale/lanres/product-branch/product-branch_zh_CN';
-import productrelease_zh_CN from '@locale/lanres/product-release/product-release_zh_CN';
-import testcase_zh_CN from '@locale/lanres/test-case/test-case_zh_CN';
-import projectmodule_zh_CN from '@locale/lanres/project-module/project-module_zh_CN';
-import build_zh_CN from '@locale/lanres/build/build_zh_CN';
-import bug_zh_CN from '@locale/lanres/bug/bug_zh_CN';
-import product_zh_CN from '@locale/lanres/product/product_zh_CN';
-import productplan_zh_CN from '@locale/lanres/product-plan/product-plan_zh_CN';
-import productmodule_zh_CN from '@locale/lanres/product-module/product-module_zh_CN';
-import test_zh_CN from '@locale/lanres/test/test_zh_CN';
-import task_zh_CN from '@locale/lanres/task/task_zh_CN';
-import testtask_zh_CN from '@locale/lanres/test-task/test-task_zh_CN';
-import story_zh_CN from '@locale/lanres/story/story_zh_CN';
-import productline_zh_CN from '@locale/lanres/product-line/product-line_zh_CN';
 import ibzmonthly_zh_CN from '@locale/lanres/ibz-monthly/ibz-monthly_zh_CN';
 import sysemployee_zh_CN from '@locale/lanres/sys-employee/sys-employee_zh_CN';
 import taskteam_zh_CN from '@locale/lanres/task-team/task-team_zh_CN';
 import ibzmyterritory_zh_CN from '@locale/lanres/ibz-my-territory/ibz-my-territory_zh_CN';
 import action_zh_CN from '@locale/lanres/action/action_zh_CN';
 import systeam_zh_CN from '@locale/lanres/sys-team/sys-team_zh_CN';
+import taskestimate_zh_CN from '@locale/lanres/task-estimate/task-estimate_zh_CN';
 import ibzfavorites_zh_CN from '@locale/lanres/ibz-favorites/ibz-favorites_zh_CN';
 import syspost_zh_CN from '@locale/lanres/sys-post/sys-post_zh_CN';
 import sysdepartment_zh_CN from '@locale/lanres/sys-department/sys-department_zh_CN';
+import testcasestep_zh_CN from '@locale/lanres/test-case-step/test-case-step_zh_CN';
 import ibzreportly_zh_CN from '@locale/lanres/ibz-reportly/ibz-reportly_zh_CN';
 import doccontent_zh_CN from '@locale/lanres/doc-content/doc-content_zh_CN';
 import testmodule_zh_CN from '@locale/lanres/test-module/test-module_zh_CN';
 import projectstats_zh_CN from '@locale/lanres/project-stats/project-stats_zh_CN';
 import ibztaskteam_zh_CN from '@locale/lanres/ibztaskteam/ibztaskteam_zh_CN';
 import ibztaskestimate_zh_CN from '@locale/lanres/ibz-taskestimate/ibz-taskestimate_zh_CN';
+import project_zh_CN from '@locale/lanres/project/project_zh_CN';
 import systeammember_zh_CN from '@locale/lanres/sys-team-member/sys-team-member_zh_CN';
 import testsuite_zh_CN from '@locale/lanres/test-suite/test-suite_zh_CN';
+import projectteam_zh_CN from '@locale/lanres/project-team/project-team_zh_CN';
 import file_zh_CN from '@locale/lanres/file/file_zh_CN';
+import productbranch_zh_CN from '@locale/lanres/product-branch/product-branch_zh_CN';
+import productrelease_zh_CN from '@locale/lanres/product-release/product-release_zh_CN';
+import testcase_zh_CN from '@locale/lanres/test-case/test-case_zh_CN';
+import projectmodule_zh_CN from '@locale/lanres/project-module/project-module_zh_CN';
 import ibzdaily_zh_CN from '@locale/lanres/ibz-daily/ibz-daily_zh_CN';
 import doclib_zh_CN from '@locale/lanres/doc-lib/doc-lib_zh_CN';
+import dynafilter_zh_CN from '@locale/lanres/dyna-filter/dyna-filter_zh_CN';
 import module_zh_CN from '@locale/lanres/module/module_zh_CN';
+import build_zh_CN from '@locale/lanres/build/build_zh_CN';
+import bug_zh_CN from '@locale/lanres/bug/bug_zh_CN';
+import product_zh_CN from '@locale/lanres/product/product_zh_CN';
+import productplan_zh_CN from '@locale/lanres/product-plan/product-plan_zh_CN';
 import doc_zh_CN from '@locale/lanres/doc/doc_zh_CN';
 import sysupdatelog_zh_CN from '@locale/lanres/sys-update-log/sys-update-log_zh_CN';
 import user_zh_CN from '@locale/lanres/user/user_zh_CN';
 import dynadashboard_zh_CN from '@locale/lanres/dyna-dashboard/dyna-dashboard_zh_CN';
+import productmodule_zh_CN from '@locale/lanres/product-module/product-module_zh_CN';
 import ibzreport_zh_CN from '@locale/lanres/ibz-report/ibz-report_zh_CN';
 import productstats_zh_CN from '@locale/lanres/product-stats/product-stats_zh_CN';
-import ibzdoc_zh_CN from '@locale/lanres/ibz-doc/ibz-doc_zh_CN';
 import usercontact_zh_CN from '@locale/lanres/user-contact/user-contact_zh_CN';
 import sysupdatefeatures_zh_CN from '@locale/lanres/sys-update-features/sys-update-features_zh_CN';
+import task_zh_CN from '@locale/lanres/task/task_zh_CN';
 import todo_zh_CN from '@locale/lanres/todo/todo_zh_CN';
 import sysorganization_zh_CN from '@locale/lanres/sys-organization/sys-organization_zh_CN';
 import doclibmodule_zh_CN from '@locale/lanres/doc-lib-module/doc-lib-module_zh_CN';
+import testtask_zh_CN from '@locale/lanres/test-task/test-task_zh_CN';
+import test_zh_CN from '@locale/lanres/test/test_zh_CN';
 import ibzweekly_zh_CN from '@locale/lanres/ibz-weekly/ibz-weekly_zh_CN';
 import ibzprojectteam_zh_CN from '@locale/lanres/ibzprojectteam/ibzprojectteam_zh_CN';
-import dynafilter_zh_CN from '@locale/lanres/dyna-filter/dyna-filter_zh_CN';
+import story_zh_CN from '@locale/lanres/story/story_zh_CN';
+import productline_zh_CN from '@locale/lanres/product-line/product-line_zh_CN';
 import codelist_zh_CN from '@locale/lanres/codelist/codelist_zh_CN';
 import userCustom_zh_CN from '@locale/lanres/userCustom/userCustom_zh_CN';
 import commonLogic from '@/locale/logic/common/common-logic';
@@ -79,7 +78,15 @@ export default {
             startsuccess:"启动成功",
             loadmore:"加载更多",
             nomore:"没有更多了",
-            other:"其他"
+            other:"其他",
+            filter:'过滤',
+            recentSearch:'最近搜索',
+            chooseOne:'请选择一条',
+            noAction:'行为不存在',
+            noAssign: "未指定应用功能",
+            serverException:'服务器异常',
+            yes:"是",
+            no:"否"             
         },       
         local:{
             new: "新建",
@@ -117,6 +124,9 @@ export default {
                 'number' : '值必须为数值'
             }
         },
+        portlet: {
+            noextensions: "无扩展插件",
+        },
         formpage:{
             desc1: "操作失败,未能找到当前表单项",
             desc2: "无法继续操作",
@@ -138,6 +148,9 @@ export default {
                 submitsuccess: "工作流提交成功",
             },
             updateerror: "表单项更新失败",  
+        },
+        viewName:{
+            meditView:'多表单编辑视图'
         },
         // 非实体视图
         views: {
@@ -271,7 +284,11 @@ export default {
             app_icon_menu: {
                 statusValue_open: '展开',
                 statusValue_close: '收回',
-            }
+            },
+            app_search_history: {
+                remind:'提醒',
+                clear:'是否清除搜索历史？'
+            }            
         },
 
         button: {
@@ -335,62 +352,91 @@ export default {
             choose: '选择',
             customDashboard: '自定义仪表盘',
             styleSetting: '风格设置'
+        },
+        pickupviewpanel:{
+            havechosen: '已选择:'
+        },
+        error: {
+            batchError: '批处理操作失败',
+            systemError:'错误，系统异常',
+            systemErrorRetry:'系统异常，请重试!',
+            dataError:'data数据异常',
+            loadPanelError:'加载面板模型异常',
+            unopendata: "没有opendata",
+            unnewdata: "没有newdata",
+            unremove: "没有remove",
+            unrefresh: "没有refresh",
+        },
+        warn: {
+            notSupportThisMode:'不支持该模式打开',
+            editLogicNotExist:'编辑应用界面逻辑不存在',
+            newLogicNotExist:'新建应用界面逻辑不存在',
+            addNNInBatches:'批量添加需添加N:N关系',
+            unbatchadd:'只支持批添加未实现',
+            dynaViewNotFound:'未找到流程功能操作视图',
+            markAsFailRead:'将待办任务标记为已读失败',
+            getDataWarn:'获取数据异常'
+        },
+        log: {
+            redirection:'重定向跳转......'
+        },
+        success: {
+            submitSuccess:'提交数据成功'
         }
     },
-    taskestimate: taskestimate_zh_CN,
-    testcasestep: testcasestep_zh_CN,
-    project: project_zh_CN,
-    projectteam: projectteam_zh_CN,
-    productbranch: productbranch_zh_CN,
-    productrelease: productrelease_zh_CN,
-    testcase: testcase_zh_CN,
-    projectmodule: projectmodule_zh_CN,
-    build: build_zh_CN,
-    bug: bug_zh_CN,
-    product: product_zh_CN,
-    productplan: productplan_zh_CN,
-    productmodule: productmodule_zh_CN,
-    test: test_zh_CN,
-    task: task_zh_CN,
-    testtask: testtask_zh_CN,
-    story: story_zh_CN,
-    productline: productline_zh_CN,
     ibzmonthly: ibzmonthly_zh_CN,
     sysemployee: sysemployee_zh_CN,
     taskteam: taskteam_zh_CN,
     ibzmyterritory: ibzmyterritory_zh_CN,
     action: action_zh_CN,
     systeam: systeam_zh_CN,
+    taskestimate: taskestimate_zh_CN,
     ibzfavorites: ibzfavorites_zh_CN,
     syspost: syspost_zh_CN,
     sysdepartment: sysdepartment_zh_CN,
+    testcasestep: testcasestep_zh_CN,
     ibzreportly: ibzreportly_zh_CN,
     doccontent: doccontent_zh_CN,
     testmodule: testmodule_zh_CN,
     projectstats: projectstats_zh_CN,
     ibztaskteam: ibztaskteam_zh_CN,
     ibztaskestimate: ibztaskestimate_zh_CN,
+    project: project_zh_CN,
     systeammember: systeammember_zh_CN,
     testsuite: testsuite_zh_CN,
+    projectteam: projectteam_zh_CN,
     file: file_zh_CN,
+    productbranch: productbranch_zh_CN,
+    productrelease: productrelease_zh_CN,
+    testcase: testcase_zh_CN,
+    projectmodule: projectmodule_zh_CN,
     ibzdaily: ibzdaily_zh_CN,
     doclib: doclib_zh_CN,
+    dynafilter: dynafilter_zh_CN,
     module: module_zh_CN,
+    build: build_zh_CN,
+    bug: bug_zh_CN,
+    product: product_zh_CN,
+    productplan: productplan_zh_CN,
     doc: doc_zh_CN,
     sysupdatelog: sysupdatelog_zh_CN,
     user: user_zh_CN,
     dynadashboard: dynadashboard_zh_CN,
+    productmodule: productmodule_zh_CN,
     ibzreport: ibzreport_zh_CN,
     productstats: productstats_zh_CN,
-    ibzdoc: ibzdoc_zh_CN,
     usercontact: usercontact_zh_CN,
     sysupdatefeatures: sysupdatefeatures_zh_CN,
+    task: task_zh_CN,
     todo: todo_zh_CN,
     sysorganization: sysorganization_zh_CN,
     doclibmodule: doclibmodule_zh_CN,
+    testtask: testtask_zh_CN,
+    test: test_zh_CN,
     ibzweekly: ibzweekly_zh_CN,
     ibzprojectteam: ibzprojectteam_zh_CN,
-    dynafilter: dynafilter_zh_CN,
+    story: story_zh_CN,
+    productline: productline_zh_CN,
     codelist: codelist_zh_CN,
     userCustom: userCustom_zh_CN
 };

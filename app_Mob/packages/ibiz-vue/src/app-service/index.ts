@@ -12,4 +12,5 @@ export { AppViewLogicService } from './logic-service/app-viewlogic-service';
 export { CtrlLoadingService } from './loading-service/ctrl-loading-service';
 export { AppLoadingService } from './loading-service/app-loading-service';
 export { ViewLoadingService } from './loading-service/view-loading-service';
-export * from './notice-service/app-notice-service'
+export * from './notice-service/app-notice-service';
+export * from './message-box-service/app-message-box-service'

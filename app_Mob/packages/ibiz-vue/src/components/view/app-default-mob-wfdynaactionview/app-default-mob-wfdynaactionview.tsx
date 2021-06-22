@@ -84,6 +84,7 @@ export class AppDefaultMobWFDynaActionView extends MobWFDynaActionViewBase {
             props: { viewInstance: this.viewInstance, viewparams: this.viewparams, context: this.context }
         }, [
             this.renderViewHeaderCaptionBar(),
+            this.renderContent(),
             this.renderMainContent(),
             this.renderFooter(),
         ]);

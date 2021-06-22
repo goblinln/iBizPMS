@@ -83,6 +83,7 @@ export class AppDefaultPickUpMDView extends MobPickUpMDViewBase {
         return h(targetViewLayoutComponent, {
             props: { viewInstance: this.viewInstance }
         }, [
+            this.renderContent(),
             this.renderQuickSearch(),
             this.renderMainContent(),
         ]);

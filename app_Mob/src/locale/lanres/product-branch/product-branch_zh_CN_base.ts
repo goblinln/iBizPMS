@@ -10,8 +10,9 @@ export default {
     id: "编号",
     order: "排序",
     org: "归属组织",
-    deptname: "归属部门名",
-    product: "所属产品",
     branchsn: "产品的分支和平台信息编号",
+    deptname: "归属部门名",
+    realorder: "实际排序",
+    product: "所属产品",
   },
 };

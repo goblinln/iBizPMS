@@ -80,7 +80,7 @@ export class MobMPickUpViewBase extends MainViewBase {
         return this.viewInstance.viewType === 'DEMOBMPICKUPVIEW'
         ? <div class="mpicker_buttons" slot="footer">
             <div class="demobmpickupview_button">
-              <div class="selectedCount">已选择：{this.viewSelections.length}
+              <div class="selectedCount">{`${this.$t('app.pickupviewpanel.havechosen')} ${this.viewSelections.length}`}
                   <app-mob-icon name="chevron-up-outline"></app-mob-icon>
               </div>
               <app-mob-button 
@@ -95,11 +95,11 @@ export class MobMPickUpViewBase extends MainViewBase {
                 <app-mob-button
                     class="pick-btn"
                     color="medium"
-                    text="取消"
+                    text={this.$t('app.button.cancel')}
                     on-click={() => { this.onClickCancel() }} />
                 <app-mob-button
                     class="pick-btn"
-                    text="确认"
+                    text={this.$t('app.button.confirm')}
                     disabled={this.viewSelections.length === 0}
                     on-click={() => { this.onClickOk() }} />
             </div>

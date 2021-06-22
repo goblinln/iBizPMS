@@ -241,7 +241,7 @@ export class MobWFDynaExpMdViewBase extends MDViewBase {
                     return;
                 }
                 if (!response || !response.status || !response.data) {
-                    _this.$Notice.error('系统异常');
+                    _this.$Notice.error(this.$t('app.commonWords.sysException'));
                     return;
                 }
             });
@@ -288,7 +288,7 @@ export class MobWFDynaExpMdViewBase extends MDViewBase {
                 return;
             }
             if (!response || !response.status || !response.data) {
-                this.$Notice.error('系统异常');
+                this.$Notice.error(this.$t('app.commonWords.sysException'));
                 return;
             }
         });

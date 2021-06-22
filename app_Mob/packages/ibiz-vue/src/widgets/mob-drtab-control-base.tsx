@@ -1,4 +1,5 @@
 import { MainControlBase } from "./main-control-base";
+import { IPSDEDRTab } from '@ibiz/dynamic-model-api';
 
 /**
  * 数据关系分页部件基类
@@ -9,6 +10,14 @@ import { MainControlBase } from "./main-control-base";
  */
 export class MobDrtabControlBase extends MainControlBase {
     
+    /**
+     * 部件模型实例对象
+     *
+     * @type {*}
+     * @memberof MobDrtabControlBase
+     */
+     public controlInstance!: IPSDEDRTab;    
+
     /**
      * 被激活的分页面板
      *

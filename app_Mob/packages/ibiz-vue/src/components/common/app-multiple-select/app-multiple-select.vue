@@ -20,7 +20,7 @@ import {
   Emit,
   Watch
 } from "vue-property-decorator";
-import { CodeListServiceBase } from "ibiz-core";
+import { CodeListServiceBase, LogUtil } from "ibiz-core";
 
 @Component({
   components: {}
@@ -49,7 +49,15 @@ export default class AppMultipleSelect extends Vue {
    * @type {string}
    * @memberof AppMultipleSelect
    */
-  @Prop() public type!: string;
+  @Prop() public codelistType!: string;
+
+  /**
+   * 应用上下文
+   *
+   * @type {*}
+   * @memberof AppMultipleSelect
+   */
+  @Prop({ default: {} }) protected context?: any;
 
   /**
    * 代码表项集合
@@ -153,8 +161,8 @@ export default class AppMultipleSelect extends Vue {
   }
 
   public created() {
-    if (this.tag && this.type) {
-      if (Object.is(this.type, "dynamic")) {
+    if (this.tag && this.codelistType) {
+      if (Object.is(this.codelistType, "DYNAMIC")) {
         this.codeListService
           .getItems(this.tag)
           .then((res: any) => {
@@ -164,7 +172,11 @@ export default class AppMultipleSelect extends Vue {
             this.options = [];
           });
       } else {
-        this.options = this.$store.getters.getCodeListItems(this.tag);
+        this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: null, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
+            this.options = codelistItems;
+        }).catch((error: any) => {
+            LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codeNotExist')}`);
+        })        
       }
     }
   }

@@ -85,6 +85,7 @@ export class AppDefaultMobWFDynaStartView extends MobWFDynaStartViewBase {
             props: { viewInstance: this.viewInstance, viewparams: this.viewparams, context: this.context }
         }, [
             this.renderToolBar(),
+            this.renderContent(),
             this.renderMainContent(),
             <div slot="button" dis-hover bordered={false} class='footer'>
                 <van-row style=" text-align: right ">

@@ -93,6 +93,7 @@ export class AppDefaultMobListExpView extends MobListExpViewBase {
                 props: { viewInstance: this.viewInstance }
             }, [
                 this.renderViewHeaderCaptionBar(),
+                this.renderContent(),
                 this.renderMainContent()
         ]);
     }

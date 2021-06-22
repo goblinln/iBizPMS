@@ -8,8 +8,8 @@ export default {
     listname: "标题",
     id: "id",
     updateby: "由谁更新",
+    usercontactsn: "用户联系方式编号",
     dept: "归属部门",
     account: "account",
-    usercontactsn: "用户联系方式编号",
   },
 };

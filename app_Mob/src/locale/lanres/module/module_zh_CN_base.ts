@@ -11,6 +11,7 @@ export default {
     id: "id",
     orderpk: "数据选择排序",
     createby: "由谁创建",
+    modulesn: "模块编号",
     mdeptname: "归属部门名",
     collector: "收藏者",
     updateby: "由谁更新",
@@ -22,7 +23,6 @@ export default {
     parentname: "上级模块",
     branch: "平台/分支",
     parent: "上级模块",
-    modulesn: "模块编号",
   },
 	views: {
 		mobpickupmdview: {

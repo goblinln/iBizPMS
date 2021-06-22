@@ -19,6 +19,7 @@ export default {
     role:  commonLogic.appcommonhandle("职位",null),
     deleted:  commonLogic.appcommonhandle("逻辑删除标志",null),
     last:  commonLogic.appcommonhandle("最后登录",null),
+    usersn:  commonLogic.appcommonhandle("用户编号",null),
     clientStatus:  commonLogic.appcommonhandle("clientStatus",null),
     skype:  commonLogic.appcommonhandle("skype",null),
     whatsapp:  commonLogic.appcommonhandle("whatsapp",null),
@@ -35,7 +36,6 @@ export default {
     phone:  commonLogic.appcommonhandle("电话",null),
     id:  commonLogic.appcommonhandle("ID",null),
     qq:  commonLogic.appcommonhandle("QQ",null),
-    usersn:  commonLogic.appcommonhandle("用户编号",null),
   },
 	views: {
 		mobmpickupview: {

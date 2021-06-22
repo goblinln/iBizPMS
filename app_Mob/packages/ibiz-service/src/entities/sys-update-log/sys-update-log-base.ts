@@ -60,10 +60,6 @@ export abstract class SysUpdateLogBase extends EntityBase implements ISysUpdateL
      */
     updatebranch?: 'PC' | 'MOB';
     /**
-     * 更新功能列表详情
-     */
-    updatefeatures?: any;
-    /**
      * 更新说明
      */
     updesc?: any;

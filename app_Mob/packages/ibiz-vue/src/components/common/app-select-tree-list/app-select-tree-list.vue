@@ -5,14 +5,25 @@
         <div class="index_text">{{getindexText(item.srfmajortext)}}</div>
         <div class="text">{{item.srfmajortext}}</div>
       </div>
-      <div class="delete" @click="item_delete(item)">移除</div>
+      <div class="delete" @click="item_delete(item)">{{$t('remove')}}</div>
       </div>
   </div>
 </template>
 <script lang="ts">
 import {  Vue,  Component,  Prop,  Provide,  Emit,  Watch} from "vue-property-decorator";
 
-@Component({})
+@Component({
+    i18n: {
+        messages: {
+            'ZH-CN': {
+                remove: '移除',
+            },
+            'EN-US': {
+                remove:'Remove',
+            }
+        }
+    }   
+})
 export default class AppSelectTreeList extends Vue{
 
   /**

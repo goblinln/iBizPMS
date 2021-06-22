@@ -1095,7 +1095,12 @@ export class ViewBase extends Vue {
      * 
      * @memberof ViewBase
      */
-    public renderContent() { }
+    public renderContent() {
+        const id = this.viewInstance.codeName;
+        return <ion-content ref="ionScroll" id={id} slot="content" scroll-y={this.enableControlUIAuth as string}>
+            {this.renderMainContent()}
+        </ion-content>      
+     }
 
     /**
      * 是否显示返回按钮
@@ -1128,7 +1133,7 @@ export class ViewBase extends Vue {
                 {this.isShowBackButton &&
                     <ion-button on-click={this.closeView.bind(this)}>
                         <ion-icon name="chevron-back" />
-            返回
+            {this.$t('app.button.back')}
           </ion-button>}
             </ion-buttons>
             <ion-title class="view-title">{dataInfo ? srfCaption + dataInfo : srfCaption}</ion-title>

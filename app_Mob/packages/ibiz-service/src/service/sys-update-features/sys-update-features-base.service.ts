@@ -83,20 +83,6 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysUpdateFeaturesService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysupdatelog && _context.sysupdatefeatures) {
-            return this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
-        }
-        return this.http.get(`/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -123,36 +109,6 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
             delete _data.srffrontuf;
         }
         return this.http.post(`/sysupdatefeatures`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysUpdateFeaturesService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysupdatelog && _context.sysupdatefeatures) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysUpdateFeaturesService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysupdatelog && _context.sysupdatefeatures) {
-            return this.http.delete(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`);
-        }
-        return this.http.delete(`/sysupdatefeatures/${_context.sysupdatefeatures}`);
     }
     /**
      * Get
@@ -191,6 +147,36 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysUpdateFeaturesService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysupdatelog && _context.sysupdatefeatures) {
+            return this.http.delete(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`);
+        }
+        return this.http.delete(`/sysupdatefeatures/${_context.sysupdatefeatures}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysUpdateFeaturesService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysupdatelog && _context.sysupdatefeatures) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -203,5 +189,19 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
             return this.http.post(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/fetchdefault`, _data);
         }
         return this.http.post(`/sysupdatefeatures/fetchdefault`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysUpdateFeaturesService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysupdatelog && _context.sysupdatefeatures) {
+            return this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
+        }
+        return this.http.get(`/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
     }
 }

@@ -220,14 +220,14 @@ export class MobDashboardControlBase extends MainControlBase {
                         this.isHasCustomized = true;
                         this.$forceUpdate();
                     } else {
-                        throw new Error('data数据异常')
+                        throw new Error(this.$t('app.error.dataError') as string)
                     }
                 } else {
-                    throw new Error('服务器异常')
+                    throw new Error(this.$t('app.commonWords.serverException') as string)
                 }
             }
         } catch (error) {
-            console.error("加载面板模型异常");
+            console.error(this.$t('app.error.loadPanelError'));
             console.error(error);
             this.isHasCustomized = false;
         } finally {

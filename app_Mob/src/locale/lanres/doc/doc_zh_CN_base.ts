@@ -15,6 +15,7 @@ export default {
     deleted: "已删除",
     recentupdatecnt: "最近更新数量",
     org: "归属组织",
+    docsn: "文档编号",
     type: "文档类型",
     alldoccnt: "所有文档数量",
     addeddate: "添加时间",
@@ -41,6 +42,5 @@ export default {
     project: "所属项目",
     product: "所属产品",
     module: "所属分类",
-    docsn: "文档编号",
   },
 };

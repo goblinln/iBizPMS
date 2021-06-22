@@ -50,6 +50,10 @@ export abstract class ProductModuleBase extends EntityBase implements IProductMo
      */
     name?: any;
     /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
      * branch
      */
     branch?: any;
@@ -70,9 +74,17 @@ export abstract class ProductModuleBase extends EntityBase implements IProductMo
      */
     type?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * owner
      */
     owner?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
     /**
      * 叶子模块
      */
@@ -82,9 +94,21 @@ export abstract class ProductModuleBase extends EntityBase implements IProductMo
      */
     id?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * collector
      */
     collector?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
+    /**
+     * 组织机构标识
+     */
+    orgid?: any;
     /**
      * 所属产品
      */
@@ -101,30 +125,6 @@ export abstract class ProductModuleBase extends EntityBase implements IProductMo
      * id
      */
     parent?: any;
-    /**
-     * 部门标识
-     */
-    mdeptid?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
-    /**
-     * 组织机构标识
-     */
-    orgid?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
 
     /**
      * 重置实体数据

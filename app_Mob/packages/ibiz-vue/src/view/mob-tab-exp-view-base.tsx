@@ -128,6 +128,9 @@ export class MobTabExpViewBase extends MainViewBase {
                     return;
                 }
                 const { data: _data } = response;
+                if(_data.srfopprivs){
+                    this.$store.commit('authresource/setSrfappdeData', { key: `${this.deName}-${_data[this.appDeKeyFieldName.toLowerCase()]}`, value: _data.srfopprivs });
+                }
                 const majorField = ModelTool.getAppEntityMajorField(appDataEntity);
                 if (_data[majorField?.codeName.toLowerCase() as string]) {
                     this.model.dataInfo = _data[majorField?.codeName.toLowerCase() as string];
@@ -160,8 +163,7 @@ export class MobTabExpViewBase extends MainViewBase {
                             }
                             return <ion-segment-button value={item.name} layout="icon-start">
                                 {item?.getPSSysImage()?.cssClass ? <app-mob-icon name={item.getPSSysImage()?.cssClass}></app-mob-icon> : null}
-                                {item.caption}
-
+                                {this.$tl(item.getCapPSLanguageRes()?.lanResTag,item.caption)}
                                 {viewPanelCount ? viewPanelCount > 99 ? <div class="segmentCount" color="danger">99+</div> : <div class="segmentCount" color="danger">{viewPanelCount}</div> : null}
                             </ion-segment-button>
                         })

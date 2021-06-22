@@ -25,6 +25,7 @@ export default {
     v2: "v2",
     confirmed: "是否确认",
     mailtoconact: "联系人",
+    updateman: "更新人",
     openedby: "由谁创建",
     activatedcount: "激活次数",
     openeddate: "创建日期",
@@ -46,6 +47,7 @@ export default {
     lines: "lines",
     substatus: "子状态",
     bugsn: "BUG编号",
+    createman: "建立人",
     org: "归属组织",
     buildproject: "版本项目",
     id: "Bug编号",
@@ -82,8 +84,6 @@ export default {
     project: "所属项目",
     task: "相关任务",
     testtask: "测试单",
-    createman: "建立人",
-    updateman: "更新人",
   },
 	views: {
 		usr3mobmpickupleftview: {

@@ -68,6 +68,18 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return new HttpResponse(entity);
     }
 
+    protected getAccountCond() {
+        if (!this.condCache.has('account')) {
+            const strCond: any[] = ['AND', ['EQ', 'ACCOUNT',{ type: 'DATACONTEXT', value: 'account'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('account', cond);
+            }
+        }
+        return this.condCache.get('account');
+    }
+
     protected getCurUSERCONTACTCond() {
         if (!this.condCache.has('curUSERCONTACT')) {
             const strCond: any[] = ['AND', ['EQ', 'ACCOUNT',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
@@ -82,6 +94,18 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
 
     protected getDefaultCond() {
         return this.condCache.get('default');
+    }
+
+    protected getMyCond() {
+        if (!this.condCache.has('my')) {
+            const strCond: any[] = ['AND', ['EQ', 'ACCOUNT',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('my', cond);
+            }
+        }
+        return this.condCache.get('my');
     }
 
     protected getMyUSERCONTACTCond() {
@@ -100,17 +124,6 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/usercontacts/${_context.usercontact}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -127,29 +140,6 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/usercontacts`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/usercontacts/${_context.usercontact}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/usercontacts/${_context.usercontact}`);
     }
     /**
      * Get
@@ -178,6 +168,40 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/usercontacts/${_context.usercontact}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/usercontacts/${_context.usercontact}`, _data);
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/usercontacts/fetchaccount`, _data);
+    }
+    /**
      * FetchCurUSERCONTACT
      *
      * @param {*} [_context={}]
@@ -200,6 +224,17 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.http.post(`/usercontacts/fetchdefault`, _data);
     }
     /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/usercontacts/fetchmy`, _data);
+    }
+    /**
      * FetchMyUSERCONTACT
      *
      * @param {*} [_context={}]
@@ -209,5 +244,16 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      */
     async FetchMyUSERCONTACT(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/usercontacts/fetchmyusercontact`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/usercontacts/${_context.usercontact}/select`);
     }
 }

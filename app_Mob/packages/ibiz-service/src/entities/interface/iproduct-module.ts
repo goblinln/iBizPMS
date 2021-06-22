@@ -25,6 +25,10 @@ export interface IProductModule extends IEntityBase {
      */
     name?: any;
     /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
      * branch
      */
     branch?: any;
@@ -45,9 +49,17 @@ export interface IProductModule extends IEntityBase {
      */
     type?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * owner
      */
     owner?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
     /**
      * 叶子模块
      */
@@ -57,9 +69,21 @@ export interface IProductModule extends IEntityBase {
      */
     id?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * collector
      */
     collector?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
+    /**
+     * 组织机构标识
+     */
+    orgid?: any;
     /**
      * 所属产品
      */
@@ -76,28 +100,4 @@ export interface IProductModule extends IEntityBase {
      * id
      */
     parent?: any;
-    /**
-     * 部门标识
-     */
-    mdeptid?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
-    /**
-     * 组织机构标识
-     */
-    orgid?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
 }

@@ -76,6 +76,10 @@ export abstract class ModuleBase extends EntityBase implements IModule {
      */
     createby?: any;
     /**
+     * 模块编号
+     */
+    modulesn?: any;
+    /**
      * 归属部门名
      */
     mdeptname?: any;
@@ -119,10 +123,6 @@ export abstract class ModuleBase extends EntityBase implements IModule {
      * 上级模块
      */
     parent?: any;
-    /**
-     * 模块编号
-     */
-    modulesn?: any;
 
     /**
      * 重置实体数据

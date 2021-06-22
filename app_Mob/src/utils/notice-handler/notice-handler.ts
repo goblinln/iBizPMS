@@ -104,20 +104,22 @@ export class NoticeHandler {
         AppNoticeService.getInstance().success(beforeArgs.message);
     }
 
+
     /**
-     * 确认框处理
      *
-     * @static
+     *
      * @param {*} message 提示信息
      * @param {*} [param] 配置参数
      * @param {*} [caller] 调用对象的this引用
      * @param {string} [fnName=''] 调用方法名称
+     * @param {*} xData 当前 this
+     * @return {*}  {Promise<any>}
      * @memberof NoticeHandler
      */
-    public static confirmHandler(title: any, message: any, { param, caller, fnName = '' }: { param?: any, caller?: any, fnName?: string } = {}) {
+    public static async confirmHandler(title: any, message: any, { param, caller, fnName = '' }: { param?: any, caller?: any, fnName?: string } = {}, xData:any) :Promise<any>{
         let beforeArgs = { message, param, caller, fnName, title };
         this.hooks.beforeConfirm.callSync(beforeArgs);
-        AppNoticeService.getInstance().confirm(beforeArgs.title, beforeArgs.message);
+        return AppNoticeService.getInstance().confirm(beforeArgs.title, beforeArgs.message,xData);
     }
 
     /**

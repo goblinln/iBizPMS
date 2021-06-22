@@ -9,6 +9,7 @@ export default [
     'id',
     'orderpk',
     'createby',
+    'modulesn',
     'mdeptname',
     'collector',
     'updateby',
@@ -20,5 +21,4 @@ export default [
     'parentname',
     'branch',
     'parent',
-    'modulesn',
 ];

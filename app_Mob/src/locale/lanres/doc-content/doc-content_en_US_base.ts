@@ -11,10 +11,10 @@ export default {
     title:  commonLogic.appcommonhandle("文档标题",null),
     orgName:  commonLogic.appcommonhandle("归属组织名",null),
     version:  commonLogic.appcommonhandle("版本号",null),
+    doccontentsn:  commonLogic.appcommonhandle("文档内容编号",null),
     digest:  commonLogic.appcommonhandle("文档摘要",null),
     deptName:  commonLogic.appcommonhandle("归属部门名",null),
     createBy:  commonLogic.appcommonhandle("由谁创建",null),
     doc:  commonLogic.appcommonhandle("文档",null),
-    doccontentsn:  commonLogic.appcommonhandle("文档内容编号",null),
   },
 };

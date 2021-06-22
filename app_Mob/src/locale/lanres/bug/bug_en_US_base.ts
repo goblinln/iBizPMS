@@ -25,6 +25,7 @@ export default {
     v2:  commonLogic.appcommonhandle("v2",null),
     confirmed:  commonLogic.appcommonhandle("是否确认",null),
     mailtoconact:  commonLogic.appcommonhandle("联系人",null),
+    updateMan:  commonLogic.appcommonhandle("更新人",null),
     openedBy:  commonLogic.appcommonhandle("由谁创建",null),
     activatedCount:  commonLogic.appcommonhandle("激活次数",null),
     openedDate:  commonLogic.appcommonhandle("创建日期",null),
@@ -46,6 +47,7 @@ export default {
     lines:  commonLogic.appcommonhandle("lines",null),
     subStatus:  commonLogic.appcommonhandle("子状态",null),
     bugsn:  commonLogic.appcommonhandle("BUG编号",null),
+    createMan:  commonLogic.appcommonhandle("建立人",null),
     org:  commonLogic.appcommonhandle("归属组织",null),
     buildproject:  commonLogic.appcommonhandle("版本项目",null),
     id:  commonLogic.appcommonhandle("Bug编号",null),
@@ -82,8 +84,6 @@ export default {
     project:  commonLogic.appcommonhandle("所属项目",null),
     task:  commonLogic.appcommonhandle("相关任务",null),
     testtask:  commonLogic.appcommonhandle("测试单",null),
-    createMan:  commonLogic.appcommonhandle("建立人",null),
-    updateMan:  commonLogic.appcommonhandle("更新人",null),
   },
 	views: {
 		usr3mobmpickupleftview: {

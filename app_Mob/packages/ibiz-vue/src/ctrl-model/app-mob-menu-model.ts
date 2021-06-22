@@ -71,27 +71,28 @@ export class AppMobMenuModel {
      */
     public async initAppMenuItem(menuItem: IPSAppMenuItem, application: IPSApplication, sonMenuItemArray?: Array<any>) {
         let appMenuItem: any = {};
-        if (!application.isFill) {
-            await application.fill()
+        Object.assign(appMenuItem, { authtag: `${application.codeName}-${this.MenuInstance.codeName}-${menuItem.M.name}` });
+        Object.assign(appMenuItem, { name: menuItem.M.name });
+        Object.assign(appMenuItem, { caption: menuItem.caption });
+        if((menuItem  as any)?.getCapPSLanguageRes?.()?.lanResTag){
+            Object.assign(appMenuItem, { captionTag: (menuItem  as any).getCapPSLanguageRes()?.lanResTag });
         }
-        if (menuItem.M) {
-            Object.assign(appMenuItem, { authtag: `${application.codeName}-${this.MenuInstance.codeName}-${menuItem.M.name}` });
-            Object.assign(appMenuItem, { name: menuItem.M.name });
-            Object.assign(appMenuItem, { caption: menuItem.caption });
-            Object.assign(appMenuItem, { itemType: menuItem.itemType });
-            Object.assign(appMenuItem, { counterid: menuItem.counterId });
-            Object.assign(appMenuItem, { tooltip: menuItem.tooltip });
-            Object.assign(appMenuItem, { expanded: menuItem.expanded });
-            Object.assign(appMenuItem, { seperator: menuItem.seperator });
-            Object.assign(appMenuItem, { hidden: menuItem.hidden });
-            Object.assign(appMenuItem, { hidesidebar: menuItem.hideSideBar });
-            Object.assign(appMenuItem, { opendefault: menuItem.openDefault });
-            Object.assign(appMenuItem, { getPSSysImage: menuItem.getPSSysImage() });
-            Object.assign(appMenuItem, { getPSSysCss: menuItem.getPSSysCss() });
-            Object.assign(appMenuItem, { getPSAppFunc: menuItem.getPSAppFunc() });
-            Object.assign(appMenuItem, { accessKey: menuItem.accessKey });
-            Object.assign(appMenuItem, { getPSNavigateContexts: menuItem.getPSNavigateContexts() });
+        Object.assign(appMenuItem, { itemType: menuItem.itemType });
+        Object.assign(appMenuItem, { counterid: menuItem.counterId });
+        Object.assign(appMenuItem, { tooltip: menuItem.tooltip });
+        if(menuItem?.getTooltipPSLanguageRes?.()?.lanResTag){
+            Object.assign(appMenuItem, { tooltipTag: menuItem.getTooltipPSLanguageRes()?.lanResTag });
         }
+        Object.assign(appMenuItem, { expanded: menuItem.expanded });
+        Object.assign(appMenuItem, { seperator: menuItem.seperator });
+        Object.assign(appMenuItem, { hidden: menuItem.hidden });
+        Object.assign(appMenuItem, { hidesidebar: menuItem.hideSideBar });
+        Object.assign(appMenuItem, { openDefault: menuItem.openDefault });
+        Object.assign(appMenuItem, { getPSSysImage: menuItem.getPSSysImage() });
+        Object.assign(appMenuItem, { getPSSysCss: menuItem.getPSSysCss() });
+        Object.assign(appMenuItem, { getPSAppFunc: menuItem.getPSAppFunc() });
+        Object.assign(appMenuItem, { resourcetag: menuItem.accessKey });
+        Object.assign(appMenuItem, { getPSNavigateContexts: menuItem.getPSNavigateContexts() });
         if (menuItem?.getPSAppMenuItems?.()) {
             let childMenus: Array<any> = [];
             Object.assign(appMenuItem, { getPSAppMenuItems: childMenus });

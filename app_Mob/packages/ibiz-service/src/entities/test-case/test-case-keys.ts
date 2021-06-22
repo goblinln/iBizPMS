@@ -4,10 +4,10 @@ export default [
     'color',
     'path',
     'openeddate',
+    'casesn',
     'lastrunresult',
     'modulename1',
     'linkcase',
-    'casesteps',
     'task',
     'order',
     'orgname',
@@ -62,5 +62,4 @@ export default [
     'product',
     'lib',
     'module',
-    'casesn',
 ];

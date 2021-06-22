@@ -1,13 +1,13 @@
-import { MDViewEngineBase } from './md-view-engine-base';
+import { MobMDViewEngine } from './mob-mdview-engine';
 
 /**
  * 实体移动端地图视图界面引擎
  *
  * @export
  * @class MobMapViewEngine
- * @extends {MDViewEngineBase}
+ * @extends {MobMDViewEngine}
  */
-export class MobMapViewEngine extends MDViewEngineBase {
+export class MobMapViewEngine extends MobMDViewEngine {
 
     /**
      * 地图部件

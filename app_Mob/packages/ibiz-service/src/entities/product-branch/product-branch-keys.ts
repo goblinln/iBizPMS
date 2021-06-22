@@ -8,7 +8,8 @@ export default [
     'id',
     'order',
     'org',
-    'deptname',
-    'product',
     'branchsn',
+    'deptname',
+    'realorder',
+    'product',
 ];

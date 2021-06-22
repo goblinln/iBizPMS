@@ -169,7 +169,7 @@ export class MobOptViewBase extends MainViewBase {
         if (this.dataChange) {
             const title: any = this.$t('app.tabpage.sureclosetip.title');
             const contant: any = this.$t('app.tabpage.sureclosetip.content');
-            const result = await this.$Notice.confirm(title, contant);
+            const result = await this.$Notice.confirm.call(this,title, contant);
             if (result) {
                 this.dataChange = false;
                 return true;

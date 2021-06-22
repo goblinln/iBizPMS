@@ -86,6 +86,7 @@ export class AppDefaultMobOptView extends MobOptViewBase {
             this.renderTopMessage(),
             this.renderBodyMessage(),
             this.renderToolBar(),
+            this.renderContent(),
             this.renderMainContent(),
             this.renderFooter(),
             this.renderBottomMessage()

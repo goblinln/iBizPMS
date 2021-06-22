@@ -82,11 +82,11 @@ export class MobPickUpViewBase extends MainViewBase {
                 <app-mob-button
                     class="pick-btn"
                     color="medium"
-                    text="取消"
+                    text={this.$t('app.button.cancel')}
                     on-click={() => { this.onClickCancel() }} />
                 <app-mob-button
                     class="pick-btn"
-                    text="确认"
+                    text={this.$t('app.button.confirm')}
                     disabled={this.viewSelections.length === 0}
                     on-click={() => { this.onClickOk() }} />
             </div>

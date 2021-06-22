@@ -85,6 +85,7 @@ export class AppDefaultMobTabExpView extends MobTabExpViewBase {
         }, [
             this.readerViewHeadersSegment(),
             this.renderViewHeaderCaptionBar(),
+            this.renderContent(),
             this.renderMainContent(),
             this.renderToolBar()
         ]);

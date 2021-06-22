@@ -34,13 +34,13 @@ export default {
     dept:  commonLogic.appcommonhandle("归属部门",null),
     storyCnt:  commonLogic.appcommonhandle("需求数",null),
     delta:  commonLogic.appcommonhandle("周期",null),
+    productplansn:  commonLogic.appcommonhandle("产品计划编号",null),
     finishedTaskscnt:  commonLogic.appcommonhandle("完成任务数",null),
     bugCnt:  commonLogic.appcommonhandle("bug数",null),
     parentName:  commonLogic.appcommonhandle("父计划名称",null),
     branch:  commonLogic.appcommonhandle("平台/分支",null),
     parent:  commonLogic.appcommonhandle("父计划",null),
     product:  commonLogic.appcommonhandle("产品",null),
-    productplansn:  commonLogic.appcommonhandle("产品计划编号",null),
   },
 	views: {
 		mobeditview: {

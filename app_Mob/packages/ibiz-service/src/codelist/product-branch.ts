@@ -85,6 +85,7 @@ export default class ProductBranch {
      * @memberof ProductBranch
      */
     public queryParamNames:any ={
+        sort: 'realorder,asc'
     }
 
     /**

@@ -30,6 +30,7 @@ export default {
     reviewedby: "由谁评审",
     substatus: "子状态",
     stagedby: "设置阶段者",
+    planname: "所属计划",
     openedby: "由谁创建",
     openeddate: "创建日期",
     id: "编号",
@@ -57,6 +58,7 @@ export default {
     comment: "备注",
     acllist: "acllist",
     orgname: "归属组织名",
+    storysn: "需求编号",
     verify: "验收标准",
     closedby: "由谁关闭",
     acl: "acl",
@@ -80,8 +82,6 @@ export default {
     duplicatestory: "重复需求ID",
     branch: "平台/分支",
     tobug: "转Bug",
-    storysn: "需求编号",
-    planname: "所属计划",
   },
 	views: {
 		editmobeditview: {

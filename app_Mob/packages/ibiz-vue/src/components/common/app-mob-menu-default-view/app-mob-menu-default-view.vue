@@ -31,7 +31,17 @@ import { Environment } from '@/environments/environment';
 import {ViewTool } from "ibiz-core";
 @Component({
     components: {
-    }
+    },
+    i18n: {
+        messages: {
+            'ZH-CN': {
+                set: '设置',
+            },
+            'EN-US': {
+                set:'Setting',
+            }
+        }
+    }    
 })
 export default class AppMobMenuDefaultView extends Vue {
 
@@ -142,9 +152,9 @@ export default class AppMobMenuDefaultView extends Vue {
         opendefault: false,
         resourcetag: "",
         separator: false,
-        text: "设置",
+        text: this.$t('set'),
         textcls: "",
-        tooltip: "设置",
+        tooltip: this.$t('set'),
         type: "MENUITEM",
     };
 

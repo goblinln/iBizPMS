@@ -30,6 +30,7 @@ import { AppDefaultMobWfDynaExpMDView } from './view/app-default-mob-wfdynaexpmd
 import { AppDefaultMobWFDynaStartView } from './view/app-default-mob-wfdynastartview/app-default-mob-wfdynastartview';
 import { AppDedaultMobWFDynaEditView3 } from './view/app-default-mob-wfdynaeditview3/app-default-mob-wfdynaeditview3';
 import { AppDefaultMobDeRedirectView } from './view/app-default-mob-deredirectview/app-default-mob-deredirectview';
+import { AppDefaultMobMapView } from './view/app-default-mob-mapview/app-default-mob-mapview';
 import { AppDefaultNotSupportedView } from './view/app-default-notsupportedview';
 
 // 部件组件
@@ -53,6 +54,7 @@ import { AppDefaultMobPickUpViewPanel } from './control/app-default-mob-pickupvi
 import { AppDefaultMobContextMenu } from './control/app-default-mob-contextmenu/app-default-mob-contextmenu';
 import { AppDefaultMobPanel } from './control/app-default-mob-panel/app-default-mob-panel';
 import { AppDefaultMobDrtab } from './control/app-default-mob-drtab/app-default-mob-drtab';
+import { AppDefaultMobMap } from './control/app-default-mob-map/app-default-mob-map';
 import { AppDefaultNotSupportedControl } from './control/app-default-notsupportedcontrol/app-default-notsupportedcontrol';
 
 export const ComponentsRegister = {
@@ -229,6 +231,7 @@ export const ComponentsRegister = {
         v.component('app-default-mob-wfdynastartview', AppDefaultMobWFDynaStartView);
         v.component('app-default-mob-wfdynaeditview3', AppDedaultMobWFDynaEditView3);
         v.component('app-default-mob-deredirectview', AppDefaultMobDeRedirectView);
+        v.component('app-default-mob-mapview', AppDefaultMobMapView);
         v.component('app-default-notsupportedview', AppDefaultNotSupportedView);
         // 部件组件
         v.component('app-default-mob-appmenu', AppDefaultMobAppMenu);
@@ -250,6 +253,7 @@ export const ComponentsRegister = {
         v.component('app-default-mob-contextmenu', AppDefaultMobContextMenu);
         v.component('app-default-mob-panel', AppDefaultMobPanel);
         v.component('app-default-mob-drtab', AppDefaultMobDrtab);
+        v.component('app-default-mob-map', AppDefaultMobMap);
         v.component('app-default-notsupportedcontrol', AppDefaultNotSupportedControl);
     }
 }

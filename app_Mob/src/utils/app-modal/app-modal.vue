@@ -1,4 +1,4 @@
-<template>
+<template></template>
     <div>
         <component
             :is="viewname"
@@ -236,7 +236,7 @@ export default class AppModalCompponent extends Vue {
                 this.isShow = true;
                 const title: any = this.$t('app.tabpage.sureclosetip.title');
                 const contant: any = this.$t('app.tabpage.sureclosetip.content');
-                const result = await this.$Notice.confirm(title, contant);
+                const result = await this.$Notice.confirm.call(this,title, contant);
                 if (result) {
                     this.$store.commit('viewaction/setViewDataChange', { viewtag: _viewtag, viewdatachange: false });
                     this.isShow = false;

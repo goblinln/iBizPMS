@@ -41,7 +41,17 @@ import Header from './app-mob-menu-sideslip-view-header/app-mob-menu-sideslip-vi
 @Component({
     components: {
       Header
-    }
+    },
+    i18n: {
+        messages: {
+            'ZH-CN': {
+                set: '设置',
+            },
+            'EN-US': {
+                set:'Setting',
+            }
+        }
+    }     
 })
 export default class AppMobMenuSideslipView extends Vue {
 
@@ -155,9 +165,9 @@ export default class AppMobMenuSideslipView extends Vue {
         opendefault: false,
         resourcetag: "",
         separator: false,
-        text: "设置",
+        text: this.$t('set'),
         textcls: "",
-        tooltip: "设置",
+        tooltip: this.$t('set'),
         type: "MENUITEM",
     };
 

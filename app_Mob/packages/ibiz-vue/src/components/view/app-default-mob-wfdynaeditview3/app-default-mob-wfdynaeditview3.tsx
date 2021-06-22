@@ -86,6 +86,7 @@ export class AppDedaultMobWFDynaEditView3 extends MobWFDynaEditView3Base {
          }, [
             //  this.renderCaptionInfo(),
              this.renderToolBar(),
+             this.renderContent(),
              this.renderMainContent()
          ]);
      }

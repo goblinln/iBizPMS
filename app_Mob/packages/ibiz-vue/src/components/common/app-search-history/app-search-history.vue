@@ -2,10 +2,10 @@
   <div class="app-seach-history">
         <ion-toolbar>
             <ion-searchbar style="height: 36px; padding-bottom: 0;" :placeholder="$t('app.fastsearch')" debounce="500" @ionChange="quickValueChange($event)"  @ionFocus="searchbarFocus" @ionBlur="searchbarBlur" @search="searchVal" ref="searchbar"></ion-searchbar>
-            <ion-button v-if="showfilter" class="filter-btn" size="small" slot="end"  @click="openSearchform"><ion-icon  slot="end" name="filter-outline"></ion-icon>过滤</ion-button>
+            <ion-button v-if="showfilter" class="filter-btn" size="small" slot="end"  @click="openSearchform"><ion-icon  slot="end" name="filter-outline"></ion-icon>{{$t('app.commonWords.filter')}}</ion-button>
         </ion-toolbar>
         <div class="history" v-if="hasHistory && (searchbarIsFocus || isSpeaking ) ">
-          <div class="hisText"><div>最近搜索</div> <van-icon name="delete" @click="clearHistory"/></div>
+          <div class="hisText"><div>{{$t('app.commonWords.recentSearch')}}</div> <van-icon name="delete" @click="clearHistory"/></div>
           <div class="hisItems">
             <van-tag type="primary" v-for="item in historyList" :key="item.index" round size="medium" color="#ededed" text-color="#333" @click="searchbarValueChange(item)">{{item}}</van-tag>
           </div>
@@ -285,7 +285,7 @@ export default class AppRoundList extends Vue {
      * @memberof AppSearchHistory
      */
     public async clearHistory() {
-        const result = await this.$Notice.confirm("提醒", "是否清除搜索历史？");
+        const result = await this.$Notice.confirm.call(this,this.$t('app.components.app_search_history.remind'), this.$t('app.components.app_search_history.clear'));
         if (result) {
             this.historyList = [];
             this.historyLists.historyList = [];

@@ -16,7 +16,7 @@
     <ion-content>
       <div class="drag-list">
         <div class="drag-list-item added">
-          <div class="header">已经添加的卡片</div>
+          <div class="header">{{$t('cardAdded')}}</div>
           <draggable v-model="selectedData" handle=".end" :animation="200" @end="dragEnd">
             <div class="content" v-for="item in selectedData" :key="item.componentName">
               <div class="start">
@@ -26,7 +26,7 @@
               <div class="drag-list-text">
                 <div><span v-if="item.customizeTitle">{{item.customizeTitle}}</span><span v-else>{{$t( `app.portlets.${item.portletCodeName.toLowerCase()}.caption`)}}</span></div>
                 <div v-if="item.detailText">{{item.detailText}}</div>
-                <div v-else>暂无描述</div>
+                <div v-else>>{{$t('noDescription')}}</div>
               </div>
               <div class="end">
                 <app-mob-icon name="drag-point"></app-mob-icon>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="drag-list-item add">
-          <div class="header">可添加的卡片</div>
+          <div class="header">{{$t('cardCanAdd')}}</div>
           <template v-for="item in selectData">
             <div class="content" v-if="item.componentName" :key="item.componentName">
               <div class="start">
@@ -46,7 +46,7 @@
               <div class="drag-list-text">
                 <div>{{$t( `app.portlets.${item.portletCodeName.toLowerCase()}.caption`)}}</div>
                 <div v-if="item.detailText">{{item.detailText}}</div>
-                <div v-else>暂无描述</div>
+                <div v-else>>{{$t('noDescription')}}</div>
               </div>
               <div class="end">
                 <!-- <ion-icon v-show="false" name="drag-point"></ion-icon> -->
@@ -66,8 +66,22 @@ import { Http } from "ibiz-core";
 import { UtilServiceRegister } from "ibiz-service";
 @Component({
   components: {
-    draggable,
+      draggable,
   },
+  i18n: {
+      messages: {
+          'ZH-CN': {
+              cardAdded: '已经添加的卡片',
+              noDescription: '暂无描述',
+              cardCanAdd: '可添加的卡片',
+          },
+          'EN-US': {
+              subtitle: 'Cards that have been added',
+              noDescription: 'No description',
+              cardCanAdd: 'Cards that can be added',
+          }
+      }
+  }
 })
 export default class AppCustomize extends Vue {
 

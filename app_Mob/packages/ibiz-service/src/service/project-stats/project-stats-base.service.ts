@@ -124,17 +124,6 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectStatsService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/${_context.projectstats}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -151,29 +140,6 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/projectstats`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectStatsService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projectstats/${_context.projectstats}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectStatsService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/projectstats/${_context.projectstats}`);
     }
     /**
      * Get
@@ -211,6 +177,29 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      */
     async ProjectQualitySum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/projectstats/${_context.projectstats}/projectqualitysum`, _data);
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectStatsService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/projectstats/${_context.projectstats}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectStatsService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/projectstats/${_context.projectstats}`, _data);
     }
     /**
      * FetchDefault
@@ -332,5 +321,16 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      */
     async FetchTaskTime(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/projectstats/fetchtasktime`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectStatsService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/projectstats/${_context.projectstats}/select`);
     }
 }

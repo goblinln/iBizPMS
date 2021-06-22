@@ -21,6 +21,7 @@ import { AppDefaultMobWfDynaExpMdViewLayout } from "../../components/layout/app-
 import { AppDefaultMobWFDynaEditView3Layout } from "../../components/layout/app-default-layout/app-default-mob-wfdynaeditview3-layout/app-default-mob-wfdynaeditview3-layout";
 import { AppDefaultMobWFDynaStartViewLayout } from "../../components/layout/app-default-layout/app-default-mob-wfdynastartview-layout/app-default-mob-wfdynastartview-layout";
 import { AppDefaultMobDeRedirectViewLayout } from "../../components/layout/app-default-layout/app-default-mob-deredirectview-layout/app-default-mob-deredirectview-layout";
+import { AppDefaultMobMapViewLayout } from "../../components/layout/app-default-layout/app-default-mob-mapview-layout/app-default-mob-mapview-layout";
 
 /**
  * 应用组件服务
@@ -67,6 +68,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEMOBWFDYNAEDITVIEW3-DEFAULT", AppDefaultMobWFDynaEditView3Layout);
         this.layoutMap.set("DEMOBWFDYNASTARTVIEW-DEFAULT", AppDefaultMobWFDynaStartViewLayout);
         this.layoutMap.set("DEMOBREDIRECTVIEW-DEFAULT", AppDefaultMobDeRedirectViewLayout);
+        this.layoutMap.set("DEMAPVIEW-DEFAULT", AppDefaultMobMapViewLayout);
     }
 
     /**

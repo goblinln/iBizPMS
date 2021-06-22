@@ -37,9 +37,9 @@ export class AppBackEndAction {
     public async execute(args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string, deUIService?: any) {
         const actionTarget: string | null = this.actionModel.actionTarget;
         if (this.actionModel.enableConfirm && this.actionModel.confirmMsg) {
-            let confirmResult: boolean = await actionContext.$Notice.confirm(
+            let confirmResult: boolean = await actionContext.$Notice.confirm.call(actionContext,
                 '警告',
-                this.actionModel.confirmMsg
+                actionContext.$tl(this.actionModel.getCMPSLanguageRes()?.lanResTag,this.actionModel.confirmMsg)
             );
             if (!confirmResult) {
                 return;
@@ -120,7 +120,7 @@ export class AppBackEndAction {
                             }
                             if (this.actionModel.showBusyIndicator) {
                                 if (this.actionModel.successMsg) {
-                                    actionContext.$Notice.success(this.actionModel.successMsg);
+                                    actionContext.$Notice.success(actionContext.$tl(this.actionModel.getSMPSLanguageRes()?.lanResTag,this.actionModel.confirmMsg));
                                 } else {
                                     actionContext.$Notice.success(`${this.actionModel.caption}成功！`);
                                 }

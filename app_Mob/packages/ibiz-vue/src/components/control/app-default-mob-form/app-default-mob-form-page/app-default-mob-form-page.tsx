@@ -32,7 +32,7 @@ export class AppDefaultMobFormPage extends AppDefaultMobFormDetail {
         const sysCss = this.detailsInstance.getLabelPSSysCss();
         const sysImg = this.detailsInstance.getPSSysImage();
         let labelClass = sysCss?.cssName ? 'caption ' + sysCss.cssName : 'caption';
-        let labelCaption: any = caption;
+        let labelCaption: any = this.$tl(this.detailsInstance.getCapPSLanguageRes()?.lanResTag,caption);
         let labelIcon: any;
         if (sysImg) {
             if (sysImg?.imagePath) {

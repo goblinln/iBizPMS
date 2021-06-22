@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import { CodeListServiceBase } from "ibiz-core";
+import { CodeListServiceBase, LogUtil } from "ibiz-core";
 
 @Component({
     components: {}
@@ -44,6 +44,14 @@ export default class AppMobRadio extends Vue {
      * @memberof AppMobRadio
      */
     @Prop() public codeListType!: string;
+
+    /**
+     * 应用上下文
+     *
+     * @type {*}
+     * @memberof AppMobActionsheet
+     */
+    @Prop({ default: {} }) protected context?: any;
 
     /**
      * 代码表列表项
@@ -104,7 +112,11 @@ export default class AppMobRadio extends Vue {
                 this.options = [];
             }
         } else {
-            this.options = this.$store.getters.getCodeListItems(this.tag);
+            this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: null, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
+                this.options = codelistItems;
+            }).catch((error: any) => {
+                LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codeNotExist')}`);
+            }) 
         }
     }
 }

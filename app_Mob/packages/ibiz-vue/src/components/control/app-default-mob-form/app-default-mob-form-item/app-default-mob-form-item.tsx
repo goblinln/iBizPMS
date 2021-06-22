@@ -1,7 +1,7 @@
 import { Subject } from 'rxjs';
 import { Component, Prop } from 'vue-property-decorator';
 import { AppDefaultMobFormDetail } from '../app-default-mob-form-detail/app-default-mob-form-detail';
-import { IPSDEFormItemEx } from '@ibiz/dynamic-model-api';
+import { IPSDEFormItemEx, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
 /**
  * 表单UI组件
@@ -168,10 +168,11 @@ export class AppDefaultMobFormItem extends AppDefaultMobFormDetail {
         // 设置高宽
         let contentStyle: string = '';
         contentStyle += this.runtimeModel?.visible ? '' : 'display: none;';
+        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes).lanResTag, caption);
         return (
             <app-form-item
                 name={name}
-                caption={caption}
+                caption={labelCaption}
                 isEmptyCaption={emptyCaption}
                 isShowCaption={showCaption}
                 labelWidth={labelWidth}

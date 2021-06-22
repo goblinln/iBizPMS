@@ -66,17 +66,6 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzReportlyService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreportlies/${_context.ibzreportly}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzreportlies`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzReportlyService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzreportlies/${_context.ibzreportly}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzReportlyService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzreportlies/${_context.ibzreportly}`);
     }
     /**
      * Get
@@ -155,6 +121,17 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
         return this.http.post(`/ibzreportlies/${_context.ibzreportly}/haveread`, _data);
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzReportlyService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/ibzreportlies/${_context.ibzreportly}`);
+    }
+    /**
      * Submit
      *
      * @param {*} [_context={}]
@@ -164,6 +141,18 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.put(`/ibzreportlies/${_context.ibzreportly}/submit`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzReportlyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzreportlies/${_context.ibzreportly}`, _data);
     }
     /**
      * FetchDefault
@@ -208,6 +197,17 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
      */
     async FetchMyReportlyMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzreportlies/fetchmyreportlymob`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzReportlyService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/ibzreportlies/${_context.ibzreportly}/select`);
     }
 
     /**

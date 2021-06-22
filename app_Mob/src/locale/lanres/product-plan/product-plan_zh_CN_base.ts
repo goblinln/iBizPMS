@@ -34,13 +34,13 @@ export default {
     dept: "归属部门",
     storycnt: "需求数",
     delta: "周期",
+    productplansn: "产品计划编号",
     finishedtaskscnt: "完成任务数",
     bugcnt: "bug数",
     parentname: "父计划名称",
     branch: "平台/分支",
     parent: "父计划",
     product: "产品",
-    productplansn: "产品计划编号",
   },
 	views: {
 		mobeditview: {

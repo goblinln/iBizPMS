@@ -1,7 +1,7 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Util, ViewTool } from 'ibiz-core';
 import { MobMDCtrlControlBase } from '../../../widgets';
-import { IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSUIAction, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 多数据部件基类
@@ -102,12 +102,12 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
             return <ion-item-options side="start">
                 {details && details?.map((detail: IPSUIActionGroupDetail) => {
                     if (detail.getPSUIAction()) {
-                        const uiaction = detail.getPSUIAction();
+                        const uiaction: IPSUIAction | null = detail.getPSUIAction();
                         if (uiaction && item[uiaction.codeName]?.visabled) {
                             let iconName = item[uiaction.codeName].icon ? ViewTool.setIcon(item[uiaction.codeName]?.icon) : '';
                             return <ion-item-option disabled={item[uiaction.codeName]?.disabled} color={uiaction.uIActionTag == "Remove" ? 'danger' : 'primary'} on-click={($event: any) => this.mdctrl_click($event, detail, item)}>
                                 {item[uiaction.codeName]?.icon && item[uiaction.codeName]?.isShowIcon && <ion-icon name={iconName}></ion-icon>}
-                                {item[uiaction.codeName]?.isShowCaption && <ion-label >{uiaction.caption}</ion-label>}
+                                {item[uiaction.codeName]?.isShowCaption && <ion-label >{this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag,uiaction.caption)}</ion-label>}
                             </ion-item-option>
                         }
                     }
@@ -128,12 +128,12 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
             return <ion-item-options side="end">
                 {details?.map((detail: IPSUIActionGroupDetail) => {
                     if (detail.getPSUIAction()) {
-                        const uiaction = detail.getPSUIAction();
+                        const uiaction: IPSUIAction | null = detail.getPSUIAction();
                         if (uiaction && item[uiaction.codeName]?.visabled) {
                             let iconName = item[uiaction.codeName].icon ? ViewTool.setIcon(item[uiaction.codeName]?.icon) : '';
                             return <ion-item-option disabled={item[uiaction.codeName]?.disabled} color={uiaction.uIActionTag == "Remove" ? 'danger' : 'primary'} on-click={($event: any) => this.mdctrl_click($event, detail, item)}>
                                 {item[uiaction.codeName]?.icon && item[uiaction.codeName]?.isShowIcon && <ion-icon name={iconName}></ion-icon>}
-                                {item[uiaction.codeName]?.isShowCaption && <ion-label >{uiaction.caption}</ion-label>}
+                                {item[uiaction.codeName]?.isShowCaption && <ion-label >{this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag,uiaction.caption)}</ion-label>}
                             </ion-item-option>
                         }
                     }
@@ -180,11 +180,11 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
      * @memberof AppMobMDCtrlBase
      */
     public renderMainMDCtrl() {
-        return this.items.length > 0 
-        ? <ion-list class="items" ref="ionlist">
-            { this.controlInstance.enableGroup ? this.renderHaveGroup() : this.renderNoGroup() }
-        </ion-list>
-        : !this.isFirstLoad ? <div class="no-data">暂无数据</div>:null
+        return this.items.length > 0
+            ? <ion-list class="items" ref="ionlist">
+                {this.controlInstance.enableGroup ? this.renderHaveGroup() : this.renderNoGroup()}
+            </ion-list>
+            : !this.isFirstLoad ? <div class="no-data">{this.$t('app.commonWords.noData')}</div> : null
     }
 
     /**
@@ -192,14 +192,14 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
      *
      * @returns {*}
      * @memberof AppMobMDCtrlBase
-     */    
-    public renderBottomRefresh(){
-      if (this.loadStatus && !this.allLoaded && this.isNeedLoaddingText) {
-        return <div class="loadding">
-                  <span >{this.$t('app.loadding') ? this.$t('app.loadding') : "加载中"}</span>
-                  <ion-spinner name="dots"></ion-spinner>
-               </div>
-      }
+     */
+    public renderBottomRefresh() {
+        if (this.loadStatus && !this.allLoaded && this.isNeedLoaddingText) {
+            return <div class="loadding">
+                <span >{this.$t('app.loadding') ? this.$t('app.loadding') : "加载中"}</span>
+                <ion-spinner name="dots"></ion-spinner>
+            </div>
+        }
     }
 
     /**
@@ -209,27 +209,27 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
      * @memberof AppMobMDCtrlBase
      */
     public renderHaveGroup() {
-        return this.group_data.map((obj:any)=>{
-          return <div class="item-grouped">
-            <van-collapse v-model={this.activeName} on-change={this.changeCollapse.bind(this)}>
-              {obj.items && obj.items.length > 0 && 
-              <van-collapse-item name={obj.text}>
-                <template slot="title">
-                    <div>{obj.text}(<label>{obj.items.length}</label>)</div>
-                </template>
-                {obj.items.map((item: any,index:any) => {
-                    return <ion-item-sliding ref={item?.srfkey} class="app-mob-mdctrl-item" on-ionDrag={this.ionDrag.bind(this)} on-click={() => this.item_click(item)}>
-                        {this.renderListItemAction(item)}
-                        {
-                            this.controlInstance?.getPSSysPFPlugin()?.pluginType === 'LIST_ITEMRENDER' ? this.renderPluginItem(item) : this.controlInstance?.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListContent(item, index)
-                        }
-                    </ion-item-sliding>
-                })}
-              </van-collapse-item>}
-            </van-collapse>
-          </div>
+        return this.group_data.map((obj: any) => {
+            return <div class="item-grouped">
+                <van-collapse v-model={this.activeName} on-change={this.changeCollapse.bind(this)}>
+                    {obj.items && obj.items.length > 0 &&
+                        <van-collapse-item name={obj.text}>
+                            <template slot="title">
+                                <div>{obj.text}(<label>{obj.items.length}</label>)</div>
+                            </template>
+                            {obj.items.map((item: any, index: any) => {
+                                return <ion-item-sliding ref={item?.srfkey} class="app-mob-mdctrl-item" on-ionDrag={this.ionDrag.bind(this)} on-click={() => this.item_click(item)}>
+                                    {this.renderListItemAction(item)}
+                                    {
+                                        this.controlInstance?.getPSSysPFPlugin()?.pluginType === 'LIST_ITEMRENDER' ? this.renderPluginItem(item) : this.controlInstance?.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListContent(item, index)
+                                    }
+                                </ion-item-sliding>
+                            })}
+                        </van-collapse-item>}
+                </van-collapse>
+            </div>
         })
-        
+
     }
 
     /**
@@ -240,15 +240,15 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
      */
     public renderNoGroup() {
         return this.items.length > 0
-        ? this.items.map((item: any, index) => {
-            return <ion-item-sliding ref={item?.srfkey} class="app-mob-mdctrl-item" on-ionDrag={this.ionDrag.bind(this)} on-click={() => this.item_click(item)}>
-                {this.renderListItemAction(item)}
-                {
-                    this.controlInstance.getPSSysPFPlugin()?.pluginType === 'LIST_ITEMRENDER' ? this.renderPluginItem(item) : this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListContent(item, index)
-                }
-            </ion-item-sliding>
-        })
-        : null
+            ? this.items.map((item: any, index) => {
+                return <ion-item-sliding ref={item?.srfkey} class="app-mob-mdctrl-item" on-ionDrag={this.ionDrag.bind(this)} on-click={() => this.item_click(item)}>
+                    {this.renderListItemAction(item)}
+                    {
+                        this.controlInstance.getPSSysPFPlugin()?.pluginType === 'LIST_ITEMRENDER' ? this.renderPluginItem(item) : this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListContent(item, index)
+                    }
+                </ion-item-sliding>
+            })
+            : null
     }
 
     /**
@@ -291,28 +291,28 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
      * @memberof AppMobMDCtrlBase
      */
     public renderSelectMDCtrl() {
-        return this.items.length > 0 
-        ? (!this.isSingleSelect ?
-            <ion-list class="pickUpList">
-                {this.items.map((item: any) => {
-                    return <ion-item class="app-mob-mdctrl-item">
-                        {/* todo项布局面板 */}
-                        <ion-checkbox color="secondary" checked={item.checked} value={item.srfkey} on-ionChange={($event: any) => { this.checkboxChange($event) }} slot="end"></ion-checkbox>
-                        <ion-label>{item.srfmajortext}</ion-label>
-                    </ion-item>
-                })}
-            </ion-list>
-            : <div class="pickUpList">
-                <ion-radio-group value={this.selectedValue} >
+        return this.items.length > 0
+            ? (!this.isSingleSelect ?
+                <ion-list class="pickUpList">
                     {this.items.map((item: any) => {
-                        return <ion-item class="app-mob-mdctrl-item" on-click={() => { this.onSimpleSelChange(item) }}>
+                        return <ion-item class="app-mob-mdctrl-item">
+                            {/* todo项布局面板 */}
+                            <ion-checkbox color="secondary" checked={item.checked} value={item.srfkey} on-ionChange={($event: any) => { this.checkboxChange($event) }} slot="end"></ion-checkbox>
                             <ion-label>{item.srfmajortext}</ion-label>
-                            <ion-radio checked={item.checked} slot="end" value={item.srfkey}></ion-radio>
                         </ion-item>
                     })}
-                </ion-radio-group>
-            </div>)
-        : (!this.isFirstLoad ? <div class="no-data">暂无数据</div>:null)
+                </ion-list>
+                : <div class="pickUpList">
+                    <ion-radio-group value={this.selectedValue} >
+                        {this.items.map((item: any) => {
+                            return <ion-item class="app-mob-mdctrl-item" on-click={() => { this.onSimpleSelChange(item) }}>
+                                <ion-label>{item.srfmajortext}</ion-label>
+                                <ion-radio checked={item.checked} slot="end" value={item.srfkey}></ion-radio>
+                            </ion-item>
+                        })}
+                    </ion-radio-group>
+                </div>)
+            : (!this.isFirstLoad ? <div class="no-data">{this.$t('app.commonWords.noData')}</div> : null)
     }
 
 
@@ -334,8 +334,8 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
                         this.listMode && this.listMode == "LISTEXPBAR" ?
                             this.renderListExpBar() :
                             this.listMode == "SELECT" ?
-                            this.renderSelectMDCtrl() :
-                            [this.renderMainMDCtrl(),this.renderBottomRefresh()]
+                                this.renderSelectMDCtrl() :
+                                [this.renderMainMDCtrl(), this.renderBottomRefresh()]
                     }
                 </div>
             </div>

@@ -37,6 +37,10 @@ export interface IUserContact extends IEntityBase {
      */
     updateby?: any;
     /**
+     * 用户联系方式编号
+     */
+    usercontactsn?: any;
+    /**
      * 归属部门
      */
     dept?: any;
@@ -44,8 +48,4 @@ export interface IUserContact extends IEntityBase {
      * account
      */
     account?: any;
-    /**
-     * 用户联系方式编号
-     */
-    usercontactsn?: any;
 }

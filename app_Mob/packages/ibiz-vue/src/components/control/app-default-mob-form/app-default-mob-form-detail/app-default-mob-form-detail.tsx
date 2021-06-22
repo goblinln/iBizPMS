@@ -51,6 +51,13 @@ export class AppDefaultMobFormDetail extends Vue {
     @Prop() public runtimeModel!: any;
 
     /**
+     * 模型服务对象
+     * 
+     * @memberof AppDefaultFormDetail
+     */
+    @Prop() public modelService?: any;
+
+    /**
      * 监听表单成员实例对象变化
      *
      * @type {*}

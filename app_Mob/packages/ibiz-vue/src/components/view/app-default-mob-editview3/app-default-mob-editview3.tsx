@@ -66,6 +66,7 @@ export class AppDefaultMobEditView3 extends MobEditView3Base {
             props: { viewInstance: this.viewInstance }
         }, [
             this.renderViewHeaderCaptionBar(),
+            this.renderContent(),
             this.renderMainContent(),
             this.renderToolBar()
         ]);

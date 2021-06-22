@@ -21,6 +21,10 @@ export interface IAction extends IEntityBase {
      */
     yesterday?: any;
     /**
+     * 更新时间
+     */
+    updatedate?: any;
+    /**
      * 附加值
      */
     extra?: any;
@@ -28,6 +32,10 @@ export interface IAction extends IEntityBase {
      * 文件
      */
     files?: any;
+    /**
+     * 系统日志编号
+     */
+    actionsn?: any;
     /**
      * 上月
      */
@@ -75,11 +83,19 @@ export interface IAction extends IEntityBase {
      */
     comment?: any;
     /**
+     * 更新人
+     */
+    updateman?: any;
+    /**
      * 已读
      *
      * @type {('0' | '1')} 0: 0, 1: 1
      */
     read?: '0' | '1';
+    /**
+     * 建立人
+     */
+    createman?: any;
     /**
      * 动作
      *
@@ -128,20 +144,4 @@ export interface IAction extends IEntityBase {
      * 项目
      */
     project?: any;
-    /**
-     * 系统日志编号
-     */
-    actionsn?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
-    /**
-     * 更新时间
-     */
-    updatedate?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
 }

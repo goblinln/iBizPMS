@@ -148,17 +148,6 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/${_context.sysemployee}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -175,29 +164,6 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/sysemployees`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysemployees/${_context.sysemployee}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysemployees/${_context.sysemployee}`);
     }
     /**
      * Get
@@ -224,6 +190,29 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/sysemployees/getdraft`, _data);
         return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/sysemployees/${_context.sysemployee}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/sysemployees/${_context.sysemployee}`, _data);
     }
     /**
      * FetchBugUser
@@ -367,5 +356,16 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      */
     async FetchTaskTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/sysemployees/fetchtaskteam`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/sysemployees/${_context.sysemployee}/select`);
     }
 }

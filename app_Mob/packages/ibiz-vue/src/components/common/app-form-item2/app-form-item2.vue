@@ -6,7 +6,7 @@
           <div class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated" :style="{minWidth:labelWidth+'px'}" position="floating" v-if="isShowCaption && labelWidth > 0">{{isEmptyCaption ? '' : caption}}</div>
           <div class="selectValue" @click="setHight">
               <div class="select_text" v-if="slotValue && slotValue.activeItem && slotValue.activeItem.text">{{slotValue.activeItem.text}}</div>
-              <div class="select_icon" v-if="slotValue && slotValue.options && slotValue.options.length > 6" ><span v-show="!slotValue || !slotValue.activeItem || !slotValue.activeItem.text">全部</span>
+              <div class="select_icon" v-if="slotValue && slotValue.options && slotValue.options.length > 6" ><span v-show="!slotValue || !slotValue.activeItem || !slotValue.activeItem.text">{{$t('all')}}</span>
                 <ion-icon v-if="!allDataStatus" name="chevron-down-outline"></ion-icon>
                 <ion-icon v-if="allDataStatus" name="chevron-up-outline"></ion-icon>
                 </div>
@@ -53,7 +53,18 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
-@Component({})
+@Component({
+    i18n: {
+        messages: {
+            'ZH-CN': {
+                all: '全部',
+            },
+            'EN-US': {
+                all: 'All',
+            }
+        }
+    }
+})
 export default class AppFormItem extends Vue {
     /**
      * 内容样式

@@ -59,6 +59,10 @@ export interface IFile extends IEntityBase {
      */
     updateby?: any;
     /**
+     * 附件编号
+     */
+    filesn?: any;
+    /**
      * 添加时间
      */
     addeddate?: any;
@@ -86,8 +90,4 @@ export interface IFile extends IEntityBase {
      * 备注
      */
     extra?: any;
-    /**
-     * 附件编号
-     */
-    filesn?: any;
 }

@@ -12,6 +12,7 @@ export default {
     version: "用例版本",
     id: "编号",
     desc: "步骤",
+    casestepsn: "用例步骤编号",
     expect: "预期",
     files: "附件",
     updateby: "由谁更新",
@@ -19,7 +20,6 @@ export default {
     org: "归属组织",
     ibizcase: "用例",
     parent: "分组用例步骤的组编号",
-    casestepsn: "用例步骤编号",
   },
 	views: {
 		mobmdview9: {

@@ -34,7 +34,7 @@
               </div>
           </div>
           <div class="ibiz-group-footer">
-              <van-button size="large" type="primary" @click="onOK">确定</van-button>
+              <van-button size="large" type="primary" @click="onOK">{{$t('app.button.confirm')}}</van-button>
           </div>
         </div>
     </div>
@@ -411,7 +411,7 @@ export default class AppMobGroupPicker extends Vue {
      * @memberof IbzDailyDailyCreateMobEditViewBase
      */
     protected  thirdPartyInit(){
-      this.$viewTool.setViewTitleOfThirdParty('选择');
+      this.$viewTool.setViewTitleOfThirdParty(this.$t('app.title.choose'));
       this.$viewTool.setThirdPartyEvent(this.closeView);
     }
 

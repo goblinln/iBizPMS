@@ -14,6 +14,7 @@ export default {
     testtaskcnt:  commonLogic.appcommonhandle("测试单数",null),
     testsuitecnt:  commonLogic.appcommonhandle("套件数",null),
     productPlanCnt:  commonLogic.appcommonhandle("计划总数",null),
+    productsn:  commonLogic.appcommonhandle("产品编号",null),
     id:  commonLogic.appcommonhandle("编号",null),
     deleted:  commonLogic.appcommonhandle("已删除",null),
     closedStoryCnt:  commonLogic.appcommonhandle("已关闭需求",null),
@@ -54,8 +55,7 @@ export default {
     createdDate:  commonLogic.appcommonhandle("创建日期",null),
     noticeusers:  commonLogic.appcommonhandle("消息通知用户",null),
     activeStoryCnt:  commonLogic.appcommonhandle("激活需求数",null),
-    productsn:  commonLogic.appcommonhandle("产品编号",null),
-    line:  commonLogic.appcommonhandle("id",null),
     lineName:  commonLogic.appcommonhandle("产品线",null),
+    line:  commonLogic.appcommonhandle("id",null),
   },
 };

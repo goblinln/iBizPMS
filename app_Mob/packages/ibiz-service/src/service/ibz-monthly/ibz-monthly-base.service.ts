@@ -108,17 +108,6 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzMonthlyService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -135,55 +124,6 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzmonthlies`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzMonthlyService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzmonthlies/${_context.ibzmonthly}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzMonthlyService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzmonthlies/${_context.ibzmonthly}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzMonthlyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}`);
-        return res;
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzMonthlyService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/ibzmonthlies/getdraft`, _data);
-        return res;
     }
     /**
      * CreateGetInfo
@@ -219,6 +159,32 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
         return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/editgetcompletetask`, _data);
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzMonthlyService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}`);
+        return res;
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzMonthlyService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/ibzmonthlies/getdraft`, _data);
+        return res;
+    }
+    /**
      * HaveRead
      *
      * @param {*} [_context={}]
@@ -241,6 +207,17 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
         return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/pushusermonthly`, _data);
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzMonthlyService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/ibzmonthlies/${_context.ibzmonthly}`);
+    }
+    /**
      * Submit
      *
      * @param {*} [_context={}]
@@ -250,6 +227,18 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.put(`/ibzmonthlies/${_context.ibzmonthly}/submit`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzMonthlyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzmonthlies/${_context.ibzmonthly}`, _data);
     }
     /**
      * FetchDefault
@@ -327,6 +316,17 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      */
     async FetchProjectMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzmonthlies/fetchprojectmonthly`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzMonthlyService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/select`);
     }
 
     /**

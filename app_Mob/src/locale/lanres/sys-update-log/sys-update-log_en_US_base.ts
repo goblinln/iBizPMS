@@ -7,7 +7,6 @@ export default {
     createDate:  commonLogic.appcommonhandle("建立时间",null),
     sysUpdateLogId:  commonLogic.appcommonhandle("系统更新日志标识",null),
     updatebranch:  commonLogic.appcommonhandle("更新平台",null),
-    updatefeatures:  commonLogic.appcommonhandle("更新功能列表详情",null),
     updesc:  commonLogic.appcommonhandle("更新说明",null),
     sysUpdateLogName:  commonLogic.appcommonhandle("更新名称",null),
     latestupdate:  commonLogic.appcommonhandle("最新更新",null),

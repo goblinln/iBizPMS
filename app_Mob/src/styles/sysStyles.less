@@ -72,7 +72,7 @@
 }
     
         .team-card{
-	>.view-content >.content-wrapper >.app-list >div{
+	>.view-content >.content-wrapper >.app-list >div:not(.empty-data-tip){
 		display: flex;
 		flex-wrap: wrap;
 	   height: auto !important;
@@ -484,7 +484,9 @@
         background-color: #e3e3ea;
     }
 }
-    
+    .form-left-margin {
+    margin-top: 5px;
+}
     .form-padding-top-10 {
     padding-top: 10px;
 }
@@ -501,6 +503,13 @@
   position: fixed;
   top: 12px;
   width: 1240px;
+  .ivu-col{
+     &:nth-of-type(2){
+        .editor-wrapper.editor{
+            margin-left: 0px !important;
+        }
+      }
+  }
 }
     .story-spec-drawer-portlet-title{
 	>.portlet-title{
@@ -511,6 +520,10 @@
 }
     .panelitem-20px{
   .app-color-span{
+	font-weight: 600;
+	font-size: 16px;
+  }
+  .app-span{
 	font-weight: 600;
 	font-size: 16px;
   }

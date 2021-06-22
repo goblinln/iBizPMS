@@ -33,3 +33,13 @@ export const setMenuData = (state: any, menuArray:Array<any>) => {
 export const setEnablePermissionValid = (state: any, enablepermissionvalid:boolean) => {
     state.enablePermissionValid = enablepermissionvalid;
 }
+
+/**
+ * 设置实体权限数据
+ * 
+ * @param state 
+ * @param {key:string,value:any}
+ */
+ export const setSrfappdeData = (state: any, {key,value}:{key:string,value:any}) => {
+    state.srfappdeData[key] = value;
+}

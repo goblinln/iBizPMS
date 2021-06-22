@@ -68,8 +68,16 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         return new HttpResponse(entity);
     }
 
+    protected getAccountCond() {
+        return this.condCache.get('account');
+    }
+
     protected getDefaultCond() {
         return this.condCache.get('default');
+    }
+
+    protected getMyCond() {
+        return this.condCache.get('my');
     }
 
     protected getMyCreateTodoCond() {
@@ -98,84 +106,6 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
 
     protected getViewCond() {
         return this.condCache.get('view');
-    }
-    /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TodoService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/todos/${_context.todo}/select`);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TodoService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/todos`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TodoService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/todos/${_context.todo}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TodoService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/todos/${_context.todo}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TodoService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/todos/${_context.todo}`);
-        return res;
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TodoService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/todos/getdraft`, _data);
-        return res;
     }
     /**
      * Activate
@@ -211,6 +141,24 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         return this.http.post(`/todos/${_context.todo}/close`, _data);
     }
     /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/todos`, _data);
+    }
+    /**
      * CreateCycle
      *
      * @param {*} [_context={}]
@@ -231,6 +179,43 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      */
     async Finish(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/todos/${_context.todo}/finish`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/todos/${_context.todo}`);
+        return res;
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/todos/getdraft`, _data);
+        return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/todos/${_context.todo}`);
     }
     /**
      * SendMessage
@@ -255,6 +240,40 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         return this.http.post(`/todos/${_context.todo}/sendmsgpreprocess`, _data);
     }
     /**
+     * Start
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/todos/${_context.todo}/start`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/todos/${_context.todo}`, _data);
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/todos/fetchaccount`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -264,6 +283,17 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/todos/fetchdefault`, _data);
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/todos/fetchmy`, _data);
     }
     /**
      * FetchMyTodo
@@ -297,6 +327,17 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      */
     async FetchMyUpcoming(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/todos/fetchmyupcoming`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/todos/${_context.todo}/select`);
     }
 
     /**
@@ -395,5 +436,19 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/todos/sendmsgpreprocessbatch`,_data);
+    }
+
+    /**
+     * StartBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TodoServiceBase
+     */
+    public async StartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/todos/startbatch`,_data);
     }
 }

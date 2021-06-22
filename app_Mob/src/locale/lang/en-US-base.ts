@@ -1,57 +1,56 @@
-import taskestimate_en_US from '@locale/lanres/task-estimate/task-estimate_en_US';
-import testcasestep_en_US from '@locale/lanres/test-case-step/test-case-step_en_US';
-import project_en_US from '@locale/lanres/project/project_en_US';
-import projectteam_en_US from '@locale/lanres/project-team/project-team_en_US';
-import productbranch_en_US from '@locale/lanres/product-branch/product-branch_en_US';
-import productrelease_en_US from '@locale/lanres/product-release/product-release_en_US';
-import testcase_en_US from '@locale/lanres/test-case/test-case_en_US';
-import projectmodule_en_US from '@locale/lanres/project-module/project-module_en_US';
-import build_en_US from '@locale/lanres/build/build_en_US';
-import bug_en_US from '@locale/lanres/bug/bug_en_US';
-import product_en_US from '@locale/lanres/product/product_en_US';
-import productplan_en_US from '@locale/lanres/product-plan/product-plan_en_US';
-import productmodule_en_US from '@locale/lanres/product-module/product-module_en_US';
-import test_en_US from '@locale/lanres/test/test_en_US';
-import task_en_US from '@locale/lanres/task/task_en_US';
-import testtask_en_US from '@locale/lanres/test-task/test-task_en_US';
-import story_en_US from '@locale/lanres/story/story_en_US';
-import productline_en_US from '@locale/lanres/product-line/product-line_en_US';
 import ibzmonthly_en_US from '@locale/lanres/ibz-monthly/ibz-monthly_en_US';
 import sysemployee_en_US from '@locale/lanres/sys-employee/sys-employee_en_US';
 import taskteam_en_US from '@locale/lanres/task-team/task-team_en_US';
 import ibzmyterritory_en_US from '@locale/lanres/ibz-my-territory/ibz-my-territory_en_US';
 import action_en_US from '@locale/lanres/action/action_en_US';
 import systeam_en_US from '@locale/lanres/sys-team/sys-team_en_US';
+import taskestimate_en_US from '@locale/lanres/task-estimate/task-estimate_en_US';
 import ibzfavorites_en_US from '@locale/lanres/ibz-favorites/ibz-favorites_en_US';
 import syspost_en_US from '@locale/lanres/sys-post/sys-post_en_US';
 import sysdepartment_en_US from '@locale/lanres/sys-department/sys-department_en_US';
+import testcasestep_en_US from '@locale/lanres/test-case-step/test-case-step_en_US';
 import ibzreportly_en_US from '@locale/lanres/ibz-reportly/ibz-reportly_en_US';
 import doccontent_en_US from '@locale/lanres/doc-content/doc-content_en_US';
 import testmodule_en_US from '@locale/lanres/test-module/test-module_en_US';
 import projectstats_en_US from '@locale/lanres/project-stats/project-stats_en_US';
 import ibztaskteam_en_US from '@locale/lanres/ibztaskteam/ibztaskteam_en_US';
 import ibztaskestimate_en_US from '@locale/lanres/ibz-taskestimate/ibz-taskestimate_en_US';
+import project_en_US from '@locale/lanres/project/project_en_US';
 import systeammember_en_US from '@locale/lanres/sys-team-member/sys-team-member_en_US';
 import testsuite_en_US from '@locale/lanres/test-suite/test-suite_en_US';
+import projectteam_en_US from '@locale/lanres/project-team/project-team_en_US';
 import file_en_US from '@locale/lanres/file/file_en_US';
+import productbranch_en_US from '@locale/lanres/product-branch/product-branch_en_US';
+import productrelease_en_US from '@locale/lanres/product-release/product-release_en_US';
+import testcase_en_US from '@locale/lanres/test-case/test-case_en_US';
+import projectmodule_en_US from '@locale/lanres/project-module/project-module_en_US';
 import ibzdaily_en_US from '@locale/lanres/ibz-daily/ibz-daily_en_US';
 import doclib_en_US from '@locale/lanres/doc-lib/doc-lib_en_US';
+import dynafilter_en_US from '@locale/lanres/dyna-filter/dyna-filter_en_US';
 import module_en_US from '@locale/lanres/module/module_en_US';
+import build_en_US from '@locale/lanres/build/build_en_US';
+import bug_en_US from '@locale/lanres/bug/bug_en_US';
+import product_en_US from '@locale/lanres/product/product_en_US';
+import productplan_en_US from '@locale/lanres/product-plan/product-plan_en_US';
 import doc_en_US from '@locale/lanres/doc/doc_en_US';
 import sysupdatelog_en_US from '@locale/lanres/sys-update-log/sys-update-log_en_US';
 import user_en_US from '@locale/lanres/user/user_en_US';
 import dynadashboard_en_US from '@locale/lanres/dyna-dashboard/dyna-dashboard_en_US';
+import productmodule_en_US from '@locale/lanres/product-module/product-module_en_US';
 import ibzreport_en_US from '@locale/lanres/ibz-report/ibz-report_en_US';
 import productstats_en_US from '@locale/lanres/product-stats/product-stats_en_US';
-import ibzdoc_en_US from '@locale/lanres/ibz-doc/ibz-doc_en_US';
 import usercontact_en_US from '@locale/lanres/user-contact/user-contact_en_US';
 import sysupdatefeatures_en_US from '@locale/lanres/sys-update-features/sys-update-features_en_US';
+import task_en_US from '@locale/lanres/task/task_en_US';
 import todo_en_US from '@locale/lanres/todo/todo_en_US';
 import sysorganization_en_US from '@locale/lanres/sys-organization/sys-organization_en_US';
 import doclibmodule_en_US from '@locale/lanres/doc-lib-module/doc-lib-module_en_US';
+import testtask_en_US from '@locale/lanres/test-task/test-task_en_US';
+import test_en_US from '@locale/lanres/test/test_en_US';
 import ibzweekly_en_US from '@locale/lanres/ibz-weekly/ibz-weekly_en_US';
 import ibzprojectteam_en_US from '@locale/lanres/ibzprojectteam/ibzprojectteam_en_US';
-import dynafilter_en_US from '@locale/lanres/dyna-filter/dyna-filter_en_US';
+import story_en_US from '@locale/lanres/story/story_en_US';
+import productline_en_US from '@locale/lanres/product-line/product-line_en_US';
 import userCustom_en_US from '@locale/lanres/userCustom/userCustom_en_US';
 import codelist_en_US from '@locale/lanres/codelist/codelist_en_US';
 import commonLogic from '@/locale/logic/common/common-logic';
@@ -79,7 +78,15 @@ export default {
             startsuccess:"Start successful",
             loadmore:"Load more",
             nomore:"No more",
-            other:"other"
+            other:"other",
+            filter:'filter',
+            recentSearch:'Recent search',
+            chooseOne:'Choose One',
+            noAction:'NO Action',
+            noAssign: "No application function specified",
+            serverException:'Server exception',
+            yes:"Yes",
+            no:"No"           
         },       
         local:{
             new: "New",
@@ -117,6 +124,9 @@ export default {
                 'number' : 'must be a number'
             }
         },
+        portlet: {
+            noextensions: "No Extensions",
+        },
         formpage:{
             error: "Error",
             desc1: "Operation failed, failed to find current form item",
@@ -139,6 +149,9 @@ export default {
                 submitsuccess: "Workflow submitted successfully",
             },
             updateerror: "Form item update failed", 
+        },
+        viewName:{
+            meditView:'Multi form editing view'
         },
         // 非实体视图
         views: {
@@ -272,7 +285,11 @@ export default {
             app_icon_menu: {
                 statusValue_open: 'open',
                 statusValue_close: 'close',
-            }
+            },
+            app_search_history: {
+                remind:'remind',
+                clear:'Do you want to clear the search history?'
+            }              
         },
         button: {
             cancel: 'Cancel',
@@ -332,65 +349,94 @@ export default {
             5005: 'Data deletion failed'
         },
         title: {
-            choose: '选择',
+            choose: 'Choose',
             customDashboard: 'Custom dashboard',
             styleSetting: 'Style setting'
+        },
+        pickupviewpanel:{
+            havechosen: 'Chosen:'
+        },
+        error: {
+            batchError: 'Batch operation failed',
+            systemError:'Error, system exception',
+            systemErrorRetry:'The system is abnormal, please try again!',
+            dataError:'data is abnormal',
+            loadPanelError:'Loading panel model is abnormal',
+            unopendata: "There is no opendata",
+            unnewdata: "There is no newdata",
+            unremove: "Don't remove",
+            unrefresh: "There is no refresh",
+        },
+        warn: {
+            notSupportThisMode:'Does not support this mode to open',
+            editLogicNotExist:'Edit application interface logic does not exist',
+            newLogicNotExist:'New application interface logic does not exist',
+            addNNInBatches:'Add N:N relationship when adding in batches',
+            unbatchadd:'Only supports batch addition but not implemented',
+            dynaViewNotFound:'Process function operation view not found',
+            markAsFailRead:'Failed to mark to-do task as read',
+            getDataWarn:'Get data abnormal'
+        },
+        log: {
+            redirection:'Redirection...'
+        },
+        success: {
+            submitSuccess:'Submit data successfully'
         }
     },
-    taskestimate: taskestimate_en_US,
-    testcasestep: testcasestep_en_US,
-    project: project_en_US,
-    projectteam: projectteam_en_US,
-    productbranch: productbranch_en_US,
-    productrelease: productrelease_en_US,
-    testcase: testcase_en_US,
-    projectmodule: projectmodule_en_US,
-    build: build_en_US,
-    bug: bug_en_US,
-    product: product_en_US,
-    productplan: productplan_en_US,
-    productmodule: productmodule_en_US,
-    test: test_en_US,
-    task: task_en_US,
-    testtask: testtask_en_US,
-    story: story_en_US,
-    productline: productline_en_US,
     ibzmonthly: ibzmonthly_en_US,
     sysemployee: sysemployee_en_US,
     taskteam: taskteam_en_US,
     ibzmyterritory: ibzmyterritory_en_US,
     action: action_en_US,
     systeam: systeam_en_US,
+    taskestimate: taskestimate_en_US,
     ibzfavorites: ibzfavorites_en_US,
     syspost: syspost_en_US,
     sysdepartment: sysdepartment_en_US,
+    testcasestep: testcasestep_en_US,
     ibzreportly: ibzreportly_en_US,
     doccontent: doccontent_en_US,
     testmodule: testmodule_en_US,
     projectstats: projectstats_en_US,
     ibztaskteam: ibztaskteam_en_US,
     ibztaskestimate: ibztaskestimate_en_US,
+    project: project_en_US,
     systeammember: systeammember_en_US,
     testsuite: testsuite_en_US,
+    projectteam: projectteam_en_US,
     file: file_en_US,
+    productbranch: productbranch_en_US,
+    productrelease: productrelease_en_US,
+    testcase: testcase_en_US,
+    projectmodule: projectmodule_en_US,
     ibzdaily: ibzdaily_en_US,
     doclib: doclib_en_US,
+    dynafilter: dynafilter_en_US,
     module: module_en_US,
+    build: build_en_US,
+    bug: bug_en_US,
+    product: product_en_US,
+    productplan: productplan_en_US,
     doc: doc_en_US,
     sysupdatelog: sysupdatelog_en_US,
     user: user_en_US,
     dynadashboard: dynadashboard_en_US,
+    productmodule: productmodule_en_US,
     ibzreport: ibzreport_en_US,
     productstats: productstats_en_US,
-    ibzdoc: ibzdoc_en_US,
     usercontact: usercontact_en_US,
     sysupdatefeatures: sysupdatefeatures_en_US,
+    task: task_en_US,
     todo: todo_en_US,
     sysorganization: sysorganization_en_US,
     doclibmodule: doclibmodule_en_US,
+    testtask: testtask_en_US,
+    test: test_en_US,
     ibzweekly: ibzweekly_en_US,
     ibzprojectteam: ibzprojectteam_en_US,
-    dynafilter: dynafilter_en_US,
+    story: story_en_US,
+    productline: productline_en_US,
     codelist: codelist_en_US,
     userCustom: userCustom_en_US,
 };

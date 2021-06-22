@@ -84,6 +84,7 @@ export class AppDefaultPickUpView extends MobPickUpViewBase {
             props: { viewInstance: this.viewInstance }
         }, [
             this.renderViewHeaderCaptionBar(),
+            this.renderContent(),
             this.renderMainContent(),
             this.renderFooter()
         ]);

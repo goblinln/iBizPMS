@@ -1,7 +1,7 @@
 import { CodeListServiceBase, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service';
 import { MainControlBase } from './main-control-base';
-import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSCodeItem, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSSysImage } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSCodeItem, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSLanguageRes, IPSSysImage } from '@ibiz/dynamic-model-api';
 /**
  * 导航栏部件基类
  *
@@ -240,10 +240,10 @@ export class MobExpBarControlBase extends MainControlBase {
             return;
         }
         try {
-            let res: any = await codeListService.getDataItems({ tag: quickGroupCodeList.codeName, type: quickGroupCodeList.codeListType, codeList: quickGroupCodeList });
+            let res: any = await codeListService.getDataItems({ tag: quickGroupCodeList.codeName, type: quickGroupCodeList.codeListType, codeList: quickGroupCodeList, context: this.context });
             this.quickGroupModel = [...this.handleDynamicData(JSON.parse(JSON.stringify(res)))];
         } catch (error: any) {
-            console.log(`----${quickGroupCodeList.codeName}----代码表不存在`);
+            console.log(`----${quickGroupCodeList.codeName}----${this.$t('app.commonWords.codeNotExist')}`);
         }
     }
 
@@ -313,7 +313,18 @@ export class MobExpBarControlBase extends MainControlBase {
         if (toolbar) {
             const toolbarItems: Array<IPSDEToolbarItem> = toolbar.getPSDEToolbarItems() || [];
             toolbarItems.forEach((item: IPSDEToolbarItem) => {
-                let itemModel: any = { name: item.name, showCaption: item.showCaption, showIcon: item.showIcon, tooltip: item.tooltip, iconcls: (item.getPSSysImage() as IPSSysImage)?.cssClass, icon: (item.getPSSysImage() as IPSSysImage)?.glyph, caption: item.caption, disabled: false, itemType: item.itemType, visabled: true };
+                let itemModel: any = {
+                    name: item.name,
+                    showCaption: item.showCaption,
+                    showIcon: item.showIcon,
+                    tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
+                    iconcls: (item.getPSSysImage() as IPSSysImage)?.cssClass,
+                    icon: (item.getPSSysImage() as IPSSysImage)?.glyph,
+                    caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+                    disabled: false,
+                    itemType: item.itemType,
+                    visabled: true,
+                };
                 if (item.itemType && item.itemType == "DEUIACTION") {
                     const uiAction: IPSDEUIAction = (item as IPSDETBUIActionItem).getPSUIAction() as IPSDEUIAction;
                     Object.assign(itemModel, {

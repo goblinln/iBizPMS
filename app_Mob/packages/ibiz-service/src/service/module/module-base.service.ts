@@ -132,17 +132,6 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ModuleService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/modules/${_context.module}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -161,27 +150,15 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
         return this.http.post(`/modules`, _data);
     }
     /**
-     * Update
+     * Fix
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ModuleService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/modules/${_context.module}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ModuleService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/modules/${_context.module}`);
+    async Fix(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/modules/${_context.module}/fix`, _data);
     }
     /**
      * Get
@@ -210,15 +187,27 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
         return res;
     }
     /**
-     * Fix
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ModuleService
      */
-    async Fix(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/modules/${_context.module}/fix`, _data);
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/modules/${_context.module}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ModuleService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/modules/${_context.module}`, _data);
     }
     /**
      * FetchBugModule
@@ -296,6 +285,17 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      */
     async FetchTaskModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/modules/fetchtaskmodule`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ModuleService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/modules/${_context.module}/select`);
     }
 
     /**

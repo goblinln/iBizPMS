@@ -21,3 +21,4 @@ export { MobWFDynaActionViewBase } from './mob-wf-dyna-action-view-base';
 export { MobWFDynaExpMdViewBase } from './mob-wf-dyna-exp-md-view-base';
 export { MobWFDynaStartViewBase } from './mob-wf-dyna-start-view-base';
 export { MobWFDynaEditView3Base } from './mob-wf-dyna-edit-view3-base';
+export { MobMapViewBase } from './mob-map-view-base';

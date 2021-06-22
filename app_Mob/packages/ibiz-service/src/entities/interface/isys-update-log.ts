@@ -35,10 +35,6 @@ export interface ISysUpdateLog extends IEntityBase {
      */
     updatebranch?: 'PC' | 'MOB';
     /**
-     * 更新功能列表详情
-     */
-    updatefeatures?: any;
-    /**
      * 更新说明
      */
     updesc?: any;

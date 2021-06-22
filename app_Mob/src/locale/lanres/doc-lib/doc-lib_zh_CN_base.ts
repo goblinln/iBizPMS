@@ -23,12 +23,12 @@ export default {
     modulecnt: "文件夹数",
     createby: "由谁创建",
     openeddate: "创建时间",
+    doclibsn: "文档库编号",
     order: "排序",
     productname: "所属产品",
     projectname: "所属项目",
     project: "项目库",
     product: "产品库",
-    doclibsn: "文档库编号",
   },
 	views: {
 		projectdoclibmobtreeview: {

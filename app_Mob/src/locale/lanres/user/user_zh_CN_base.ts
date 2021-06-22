@@ -19,6 +19,7 @@ export default {
     role: "职位",
     deleted: "逻辑删除标志",
     last: "最后登录",
+    usersn: "用户编号",
     clientstatus: "clientStatus",
     skype: "skype",
     whatsapp: "whatsapp",
@@ -35,7 +36,6 @@ export default {
     phone: "电话",
     id: "ID",
     qq: "QQ",
-    usersn: "用户编号",
   },
 	views: {
 		mobmpickupview: {

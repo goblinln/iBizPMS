@@ -7,7 +7,6 @@ export default {
     createdate: "建立时间",
     sysupdatelogid: "系统更新日志标识",
     updatebranch: "更新平台",
-    updatefeatures: "更新功能列表详情",
     updesc: "更新说明",
     sysupdatelogname: "更新名称",
     latestupdate: "最新更新",

@@ -90,6 +90,10 @@ export abstract class DocBase extends EntityBase implements IDoc {
      */
     org?: any;
     /**
+     * 文档编号
+     */
+    docsn?: any;
+    /**
      * 文档类型
      *
      * @type {('text' | 'url')} text: 文档, url: 链接
@@ -197,10 +201,6 @@ export abstract class DocBase extends EntityBase implements IDoc {
      * 所属分类
      */
     module?: any;
-    /**
-     * 文档编号
-     */
-    docsn?: any;
 
     /**
      * 重置实体数据

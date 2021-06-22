@@ -94,4 +94,18 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
+    /**
+     * FetchVersions
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseStepService
+     */
+    async FetchVersions(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchversions`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
 }

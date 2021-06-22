@@ -66,17 +66,6 @@ export class IbzWeeklyBaseService extends EntityBaseService<IIbzWeekly> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzWeeklyService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzweeklies/${_context.ibzweekly}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,55 +82,6 @@ export class IbzWeeklyBaseService extends EntityBaseService<IIbzWeekly> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzweeklies`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzWeeklyService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzweeklies/${_context.ibzweekly}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzWeeklyService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzweeklies/${_context.ibzweekly}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzWeeklyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}`);
-        return res;
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzWeeklyService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/ibzweeklies/getdraft`, _data);
-        return res;
     }
     /**
      * CreateEveryWeekReport
@@ -177,6 +117,32 @@ export class IbzWeeklyBaseService extends EntityBaseService<IIbzWeekly> {
         return this.http.post(`/ibzweeklies/${_context.ibzweekly}/editgetlastweektaskandcomtask`, _data);
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzWeeklyService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}`);
+        return res;
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzWeeklyService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/ibzweeklies/getdraft`, _data);
+        return res;
+    }
+    /**
      * HaveRead
      *
      * @param {*} [_context={}]
@@ -210,6 +176,17 @@ export class IbzWeeklyBaseService extends EntityBaseService<IIbzWeekly> {
         return this.http.post(`/ibzweeklies/${_context.ibzweekly}/pushuserweekly`, _data);
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzWeeklyService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/ibzweeklies/${_context.ibzweekly}`);
+    }
+    /**
      * Submit
      *
      * @param {*} [_context={}]
@@ -219,6 +196,18 @@ export class IbzWeeklyBaseService extends EntityBaseService<IIbzWeekly> {
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzweeklies/${_context.ibzweekly}/submit`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzWeeklyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzweeklies/${_context.ibzweekly}`, _data);
     }
     /**
      * FetchDefault
@@ -274,6 +263,17 @@ export class IbzWeeklyBaseService extends EntityBaseService<IIbzWeekly> {
      */
     async FetchProjectWeekly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzweeklies/fetchprojectweekly`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzWeeklyService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/ibzweeklies/${_context.ibzweekly}/select`);
     }
 
     /**

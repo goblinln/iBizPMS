@@ -18,7 +18,7 @@ import {
   Emit,
   Watch
 } from "vue-property-decorator";
-import { CodeListServiceBase } from "ibiz-core";
+import { CodeListServiceBase, LogUtil } from "ibiz-core";
 
 @Component({
   components: {}
@@ -47,7 +47,7 @@ export default class AppMobDropdownList extends Vue {
    * @type {string}
    * @memberof AppMobDropdownList
    */
-  @Prop() public type!: string;
+  @Prop() public codelistType?: string;
 
   /**
    * 代码表列表项
@@ -65,6 +65,13 @@ export default class AppMobDropdownList extends Vue {
    */
   @Prop() public value?: any;
 
+  /**
+   * 应用上下文
+   *
+   * @type {*}
+   * @memberof AppMobDropdownList
+   */
+  @Prop({ default: {} }) protected context?: any;
 
   /**
    * 禁用
@@ -84,8 +91,8 @@ export default class AppMobDropdownList extends Vue {
 
 
   public created() {
-    if (this.tag && this.type) {
-      if (Object.is(this.type, "dynamic")) {
+    if (this.tag && this.codelistType) {
+      if (Object.is(this.codelistType, "DYNAMIC")) {
         this.codeListService
           .getItems(this.tag)
           .then((res: any) => {
@@ -95,7 +102,11 @@ export default class AppMobDropdownList extends Vue {
             this.options = [];
           });
       } else {
-        this.options = this.$store.getters.getCodeListItems(this.tag);
+        this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: null, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
+            this.options = codelistItems;
+        }).catch((error: any) => {
+            LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codeNotExist')}`);
+        })        
       }
     }
   }

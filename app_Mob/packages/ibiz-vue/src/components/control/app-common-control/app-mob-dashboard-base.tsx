@@ -1,7 +1,7 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Util } from 'ibiz-core';
 import { MobDashboardControlBase } from '../../../widgets';
-import { IPSAppPortlet, IPSDBPortletPart, IPSDEDashboard } from '@ibiz/dynamic-model-api';
+import { IPSAppPortlet, IPSDBPortletPart, IPSDEDashboard, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
 /**
  * 数据看板部件基类
@@ -95,10 +95,11 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
             if (modelJson?.getPSSysCss?.()?.cssName) {
                 Object.assign(controlClassNames, { [modelJson.getPSSysCss()?.cssName as string]: true });
             }
+            let labelCaption: any = this.$tl((modelJson.getTitlePSLanguageRes() as IPSLanguageRes)?.lanResTag, modelJson.title);
             return <div class='portlet-without-title'>
             <card class={cardClass} bordered={false} dis-hover padding={cardPadding}>
                 { isShowTitle && [
-                    <p slot='title'>{modelJson.title}<span class="line"></span></p>,
+                    <p slot='title'>{labelCaption}<span class="line"></span></p>,
                     <a slot='extra'></a>
                 ]}
                 <span>

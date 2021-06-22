@@ -86,6 +86,7 @@ export class AppDefaultMobTreeView extends MobTreeViewBase {
             this.renderViewHeaderCaptionBar(),
             this.renderViewHeaderButton(),
             this.renderPullDownRefresh(),
+            this.renderContent(),
             this.renderMainContent(),
             this.renderToolBar()
         ]);

@@ -41,20 +41,29 @@ export class AppDefaultViewLayout extends Vue {
         </ion-header>
     }
 
+    /**
+     * 是否为部件视图
+     * 
+     * @memberof AppDefaultViewLayout
+     */
     get isEmbedView(){
         return this.viewInstance.viewType.indexOf('VIEW9') != -1
     }
 
     /**
-     * renderViewContent
+     * 绘制视图内容
+     * 
+     * @memberof AppDefaultViewLayout
      */
     public renderViewContent() {
-        const id = this.viewInstance.codeName;
-        return <ion-content ref="ionScroll" id={id} >
-            {this.$slots.default}
-        </ion-content>
+        return this.$slots.content;
     }
 
+    /**
+     * 绘制底部
+     * 
+     * @memberof AppDefaultViewLayout
+     */
     public renderViewFooter() {
         return <ion-footer class="view-footer">
             {this.$slots.mobbottommenu}

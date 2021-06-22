@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
-import { Util } from 'ibiz-core';
+import { LogUtil, Util } from 'ibiz-core';
 import { CodeListServiceBase } from "ibiz-core";
 @Component({})
 export default class AppSearchEditor extends Vue {
@@ -285,7 +285,11 @@ export default class AppSearchEditor extends Vue {
      */
     public mounted() {
         if (Object.is(this.codeListType, "STATIC")) {
-            this.options = this.$store.getters.getCodeListItems(this.tag);
+            this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: null, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
+                this.options = codelistItems;
+            }).catch((error: any) => {
+                LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codeNotExist')}`);
+            })
         } else {
             if (this.curValue) {
                 this.load();

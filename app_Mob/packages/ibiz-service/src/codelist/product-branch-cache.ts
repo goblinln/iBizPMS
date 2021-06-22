@@ -85,6 +85,7 @@ export default class ProductBranch_Cache {
      * @memberof ProductBranch_Cache
      */
     public queryParamNames:any ={
+        sort: 'realorder,asc'
     }
 
     /**

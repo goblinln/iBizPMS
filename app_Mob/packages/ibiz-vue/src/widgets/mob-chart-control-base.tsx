@@ -1390,7 +1390,7 @@ export class MobChartControlBase extends MDControlBase {
                 //         resolve(res);
                 //     })
                 //     .catch((error: any) => {
-                //         console.log(`----${codeListObject.codeName}----代码表不存在`);
+                //         console.log(`----${codeListObject.codeName}----${this.$t(app.commonWords.codeNotExist)}`);
                 //     });
                 const value: any = [];
                 codeListObject.getPSCodeItems()?.forEach((item: any) => {
@@ -1404,7 +1404,7 @@ export class MobChartControlBase extends MDControlBase {
                         resolve(res);
                     })
                     .catch((error: any) => {
-                        console.log(`----${codeListObject.codeName}----代码表不存在`);
+                        console.log(`----${codeListObject.codeName}----${this.$t('app.commonWords.codeNotExist')}`);
                     });
             }
         });

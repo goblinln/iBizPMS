@@ -3,7 +3,7 @@ import { ModelTool, Util, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
 import { ViewBase } from './view-base';
 import { GlobalService, UIServiceRegister } from 'ibiz-service';
-import { IPSAppDataEntity, IPSAppDEField, IPSAppDERedirectView, IPSAppDEView, IPSAppUILogicRefView, IPSAppUINewDataLogic, IPSAppUIOpenDataLogic, IPSAppView, IPSAppViewLogic, IPSAppViewNavContext, IPSAppViewNavParam, IPSAppViewRef, IPSDEToolbar, IPSNavigateContext, IPSNavigateParam } from '@ibiz/dynamic-model-api';
+import { IPSAppDataEntity, IPSAppDEField, IPSAppDERedirectView, IPSAppDEView, IPSAppUILogicRefView, IPSAppUINewDataLogic, IPSAppUIOpenDataLogic, IPSAppView, IPSAppViewLogic, IPSAppViewNavContext, IPSAppViewNavParam, IPSAppViewRef, IPSDEToolbar, IPSLanguageRes, IPSNavigateContext, IPSNavigateParam } from '@ibiz/dynamic-model-api';
 
 /**
  * 编辑视图基类
@@ -58,6 +58,16 @@ export class MainViewBase extends ViewBase {
      */
     get appDeMajorFieldName() {
         return (ModelTool.getAppEntityMajorField(this.viewInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';
+    }
+
+    /**
+     * 应用实体映射实体名称
+     *
+     * @readonly
+     * @memberof MainViewBase
+     */
+    get deName(){
+        return (this.viewInstance?.getPSAppDataEntity() as any)?.getPSDEName() || '';
     }
 
     /**
@@ -139,7 +149,7 @@ export class MainViewBase extends ViewBase {
         const viewToolBar: IPSDEToolbar = ModelTool.findPSControlByType("TOOLBAR", this.viewInstance.getPSControls());
         const initToolBarItems = (item: any, toolbarName: string, toolbarStyle: string): any => {
             const uiaction = item.getPSUIAction?.();
-            let tempModel: any = { name: item.name, toolbarName: toolbarName, toolbarStyle: toolbarStyle, showCaption: item.showCaption, caption: item.caption, disabled: false, visabled: true, itemType: item.itemType, dataaccaction: uiaction?.dataAccessAction, noprivdisplaymode: item.noPrivDisplayMode, showIcon: item.showIcon, getPSSysImage: { cssClass: item.getPSSysImage()?.cssClass, imagePath: item.getPSSysImage()?.imagePath }, uiaction: uiaction };
+            let tempModel: any = { name: item.name, toolbarName: toolbarName, toolbarStyle: toolbarStyle, showCaption: item.showCaption, caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption), disabled: false, visabled: true, itemType: item.itemType, dataaccaction: uiaction?.dataAccessAction, noprivdisplaymode: item.noPrivDisplayMode, showIcon: item.showIcon, getPSSysImage: { cssClass: item.getPSSysImage()?.cssClass, imagePath: item.getPSSysImage()?.imagePath }, uiaction: uiaction };
             return tempModel;
         }
         if (viewToolBar && viewToolBar.getPSDEToolbarItems()) {
@@ -247,7 +257,7 @@ export class MainViewBase extends ViewBase {
                 callback(result, xData);
             });
         } else {
-            this.$Notice.warning(openView.title + '不支持该模式打开');
+            this.$Notice.warning(openView.title + this.$t('app.warn.notSupportThisMode'));
         }
     }
 
@@ -264,7 +274,7 @@ export class MainViewBase extends ViewBase {
     public async opendata(args: any[], fullargs?: any, params?: any, $event?: any, xData?: any) {
         const openAppViewLogic: IPSAppViewLogic | null = this.viewInstance.findPSAppViewLogic("opendata");
         if (!openAppViewLogic || !openAppViewLogic.getPSAppUILogic()) {
-            this.$Notice.warning('编辑应用界面逻辑不存在');
+            this.$Notice.warning(this.$t('app.warn.editLogicNotExist'));
             return;
         }
         let viewOpenAppUIlogic: IPSAppUIOpenDataLogic | undefined | null = (openAppViewLogic.getPSAppUILogic() as IPSAppUIOpenDataLogic);
@@ -429,7 +439,7 @@ export class MainViewBase extends ViewBase {
     public async newdata(args: any[], fullargs?: any, params?: any, $event?: any, xData?: any) {
         const newAppViewLogic: IPSAppViewLogic | null = this.viewInstance.findPSAppViewLogic("newdata");
         if (!newAppViewLogic || !newAppViewLogic.getPSAppUILogic()) {
-            this.$Notice.warning('新建应用界面逻辑不存在');
+            this.$Notice.warning(this.$t('app.warn.newLogicNotExist'));
             return;
         }
         let viewNewAppUIlogic: IPSAppUINewDataLogic | undefined | null = (newAppViewLogic.getPSAppUILogic() as IPSAppUINewDataLogic);
@@ -497,7 +507,7 @@ export class MainViewBase extends ViewBase {
                     batchAddPSAppViews = viewNewAppUIlogic.getBatchAddPSAppViews() as IPSAppUILogicRefView[];
                 }
                 if (batchAddPSAppViews.length == 0 || !this.context.srfparentdename) {
-                    this.$Notice.warning('批量添加需添加N:N关系');
+                    this.$Notice.warning(this.$t('app.warn.addNNInBatches'));
                     return;
                 }
                 let openViewModel: IPSAppUILogicRefView | undefined = batchAddPSAppViews.find((item: IPSAppUILogicRefView) => {
@@ -538,7 +548,7 @@ export class MainViewBase extends ViewBase {
                     });
                     this.appEntityService.createBatch(JSON.parse(JSON.stringify(this.context)), requestParam, true).then((response: any) => {
                         if (!response || response.status !== 200) {
-                            this.$Notice.error('批处理操作失败');
+                            this.$Notice.error(this.$t('app.error.batchError'));
                             return;
                         }
                         if (!xData || !(xData.refresh instanceof Function)) {
@@ -548,7 +558,7 @@ export class MainViewBase extends ViewBase {
                     });
                 });
             } else if (viewNewAppUIlogic.batchAddOnly) {
-                console.warn("只支持批添加未实现");
+                console.warn(this.$t('app.warn.unbatchadd'));
             } else if (viewNewAppUIlogic.getNewDataPSAppView()) {
                 const _this: any = this;
                 const newviewRef: IPSAppUILogicRefView | null = viewNewAppUIlogic.getNewDataPSAppView();
@@ -646,7 +656,7 @@ export class MainViewBase extends ViewBase {
                     let result: any = await _this.$appdrawer.openDrawer(view, Util.getViewProps(tempContext, data));
                     callback(result, xData);
                 } else {
-                    this.$Notice.warning(`${dataview.title}不支持该模式打开`);
+                    this.$Notice.warning(`${dataview.title}${this.$t('app.warn.notSupportThisMode')}`);
                 }
             }
         } else {

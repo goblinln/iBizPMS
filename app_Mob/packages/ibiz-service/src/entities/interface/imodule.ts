@@ -51,6 +51,10 @@ export interface IModule extends IEntityBase {
      */
     createby?: any;
     /**
+     * 模块编号
+     */
+    modulesn?: any;
+    /**
      * 归属部门名
      */
     mdeptname?: any;
@@ -94,8 +98,4 @@ export interface IModule extends IEntityBase {
      * 上级模块
      */
     parent?: any;
-    /**
-     * 模块编号
-     */
-    modulesn?: any;
 }

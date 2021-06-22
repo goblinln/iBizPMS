@@ -128,6 +128,18 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return this.condCache.get('default');
     }
 
+    protected getMyCreateDocLibCond() {
+        if (!this.condCache.has('myCreateDocLib')) {
+            const strCond: any[] = ['AND', ['EQ', 'CREATEBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myCreateDocLib', cond);
+            }
+        }
+        return this.condCache.get('myCreateDocLib');
+    }
+
     protected getMyFavouritesCond() {
         return this.condCache.get('myFavourites');
     }
@@ -144,15 +156,15 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return this.condCache.get('view');
     }
     /**
-     * Select
+     * Collect
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof DocLibService
      */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doclibs/${_context.doclib}/select`);
+    async Collect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/doclibs/${_context.doclib}/collect`, _data);
     }
     /**
      * Create
@@ -171,29 +183,6 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/doclibs`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/doclibs/${_context.doclib}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/doclibs/${_context.doclib}`);
     }
     /**
      * Get
@@ -222,15 +211,15 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return res;
     }
     /**
-     * Collect
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof DocLibService
      */
-    async Collect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/doclibs/${_context.doclib}/collect`, _data);
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/doclibs/${_context.doclib}`);
     }
     /**
      * UnCollect
@@ -242,6 +231,18 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
      */
     async UnCollect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/doclibs/${_context.doclib}/uncollect`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/doclibs/${_context.doclib}`, _data);
     }
     /**
      * FetchByCustom
@@ -341,6 +342,17 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
      */
     async FetchRootModuleMuLu(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/doclibs/fetchrootmodulemulu`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/doclibs/${_context.doclib}/select`);
     }
 
     /**

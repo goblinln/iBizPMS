@@ -158,6 +158,10 @@ export abstract class StoryBase extends EntityBase implements IStory {
      */
     stagedby?: any;
     /**
+     * 所属计划
+     */
+    planname?: any;
+    /**
      * 由谁创建
      */
     openedby?: any;
@@ -276,6 +280,10 @@ export abstract class StoryBase extends EntityBase implements IStory {
      */
     orgname?: any;
     /**
+     * 需求编号
+     */
+    storysn?: any;
+    /**
      * 验收标准
      */
     verify?: any;
@@ -290,9 +298,9 @@ export abstract class StoryBase extends EntityBase implements IStory {
     /**
      * 评审结果
      *
-     * @type {('pass' | 'revert' | 'clarify' | 'reject')} pass: 确认通过, revert: 撤销变更, clarify: 有待明确, reject: 拒绝
+     * @type {('pass' | 'revert' | 'clarify')} pass: 确认通过, revert: 撤销变更, clarify: 有待明确
      */
-    result?: 'pass' | 'revert' | 'clarify' | 'reject';
+    result?: 'pass' | 'revert' | 'clarify';
     /**
      * 归属组织
      */
@@ -371,14 +379,6 @@ export abstract class StoryBase extends EntityBase implements IStory {
      * 转Bug
      */
     tobug?: any;
-    /**
-     * 需求编号
-     */
-    storysn?: any;
-    /**
-     * 所属计划
-     */
-    planname?: any;
 
     /**
      * 重置实体数据

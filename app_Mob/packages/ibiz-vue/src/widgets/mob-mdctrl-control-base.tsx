@@ -302,7 +302,7 @@ export class MobMDCtrlControlBase extends MDControlBase {
             }
         });
         if (datas.length <= 0) {
-            this.$Notice.error('请选择至少一条删除~')
+            this.$Notice.error(this.$t('app.commonWords.chooseOne'));
             return
         }
         if (datas.length < 5) {
@@ -319,7 +319,7 @@ export class MobMDCtrlControlBase extends MDControlBase {
                     this.load();
                     resolve(response);
                 } else {
-                    this.$Notice.error(response.message ? response.message : "删除失败");
+                    this.$Notice.error(response.message ? response.message :(this.$t('app.message.deleteFail') as string));
                     reject(response);
                 }
             }

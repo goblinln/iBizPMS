@@ -22,6 +22,7 @@ export default {
     inputcost: "投入成本",
     dates: "日期",
     deptname: "归属部门名",
+    taskestimatesn: "任务预计编号",
     month: "月",
     work: "work",
     evaluationdesc: "评估说明",
@@ -32,7 +33,6 @@ export default {
     deleted: "任务删除标识",
     project: "项目",
     task: "任务",
-    taskestimatesn: "任务预计编号",
   },
 	views: {
 		mobmeditview9: {

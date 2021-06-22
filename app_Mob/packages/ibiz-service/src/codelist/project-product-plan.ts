@@ -1,3 +1,4 @@
+import { ProductPlanService } from "../service";
 /**
  * 代码表--项目产品计划（动态）
  *
@@ -86,18 +87,66 @@ export default class ProjectProductPlan {
     public queryParamNames:any ={
     }
 
+    /**
+     * 产品计划应用实体服务对象
+     *
+     * @type {ProductPlanService}
+     * @memberof ProjectProductPlan
+     */
+    public productplanService: ProductPlanService = new ProductPlanService();
 
+
+    /**
+     * 处理数据
+     *
+     * @public
+     * @param {any[]} items
+     * @returns {any[]}
+     * @memberof ProjectProductPlan
+     */
+    public doItems(items: any[]): any[] {
+        let _items: any[] = [];
+        if(items && items instanceof Array && items.length >0){
+            items.forEach((item: any) => {
+                let itemdata:any = {};
+                Object.assign(itemdata,{id:item.id});
+                Object.assign(itemdata,{value:item.id});
+                Object.assign(itemdata,{text:item.title});
+                Object.assign(itemdata,{label:item.title});
+                
+                
+                
+                _items.push(itemdata);
+            });
+        }
+        return _items;
+    }
 
     /**
      * 获取数据项
      *
+     * @param {*} context
      * @param {*} data
      * @param {boolean} [isloading]
      * @returns {Promise<any>}
      * @memberof ProjectProductPlan
      */
-    public getItems(data: any={}, isloading?: boolean): Promise<any> {
-        return Promise.reject([]);
+    public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
+        return new Promise((resolve, reject) => {
+            data = this.handleQueryParam(data);
+            const promise: Promise<any> = this.productplanService.FetchProjectPlan(context, data);
+            promise.then((response: any) => {
+                if (response && response.status === 200) {
+                    const data =  response.data;
+                    resolve(this.doItems(data));
+                } else {
+                    resolve([]);
+                }
+            }).catch((response: any) => {
+                console.error(response);
+                reject(response);
+            });
+        });
     }
 
     /**

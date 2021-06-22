@@ -33,15 +33,27 @@ export interface IBuild extends IEntityBase {
      */
     createby?: any;
     /**
+     * 建立时间
+     */
+    createdate?: any;
+    /**
      * 附件
      */
     files?: any;
+    /**
+     * 版本编号
+     */
+    buildsn?: any;
     /**
      * 运行模式
      *
      * @type {('DEPLOYPKG' | 'PACKMOBAPP' | 'PACKVER' | 'PUBCODE' | 'PUBCODE2' | 'STARTMSAPI' | 'STARTMSAPP' | 'STARTMSFUNC' | 'STARTX')} DEPLOYPKG: 部署系统组件到仓库, PACKMOBAPP: 打包移动应用, PACKVER: 打包版本, PUBCODE: 代码发布, PUBCODE2: 代码发布（模板开发）, STARTMSAPI: 启动微服务, STARTMSAPP: 启动微服务应用, STARTMSFUNC: 启动微服务功能, STARTX: 启动系统
      */
     releasetype?: 'DEPLOYPKG' | 'PACKMOBAPP' | 'PACKVER' | 'PUBCODE' | 'PUBCODE2' | 'STARTMSAPI' | 'STARTMSAPP' | 'STARTMSFUNC' | 'STARTX';
+    /**
+     * 建立人
+     */
+    createman?: any;
     /**
      * 构建者（选择）
      */
@@ -56,6 +68,10 @@ export interface IBuild extends IEntityBase {
      * 归属组织
      */
     org?: any;
+    /**
+     * 更新时间
+     */
+    updatedate?: any;
     /**
      * 描述
      */
@@ -84,6 +100,10 @@ export interface IBuild extends IEntityBase {
      * 源代码地址
      */
     scmpath?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
     /**
      * 下载地址
      */
@@ -132,24 +152,4 @@ export interface IBuild extends IEntityBase {
      * 所属项目
      */
     project?: any;
-    /**
-     * 版本编号
-     */
-    buildsn?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
-    /**
-     * 建立时间
-     */
-    createdate?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
-    /**
-     * 更新时间
-     */
-    updatedate?: any;
 }

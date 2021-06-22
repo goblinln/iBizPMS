@@ -1,7 +1,7 @@
 import { Subject } from 'rxjs';
 import { Component, Prop } from 'vue-property-decorator';
 import { AppDefaultMobFormDetail } from '../app-default-mob-form-detail/app-default-mob-form-detail';
-import { IPSDEFormItemEx } from '@ibiz/dynamic-model-api';
+import { IPSDEFormItemEx, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
 /**
  * 表单UI组件
@@ -84,6 +84,13 @@ export class AppDefaultMobFormItem extends AppDefaultMobFormDetail {
      */
     @Prop() ignorefieldvaluechange?: boolean;
 
+    /**
+     * 模型服务
+     *
+     * @type {AppModelService}
+     * @memberof AppDefaultMobFormItem
+     */
+     @Prop() modelService ?: any;    
 
     /**
      * 表单项值变化事件
@@ -170,12 +177,13 @@ export class AppDefaultMobFormItem extends AppDefaultMobFormDetail {
         let contentStyle: string = '';
         contentStyle += this.runtimeModel?.visible ? '' : 'display: none;';
         const { formStyle } = this.controlInstance;
+        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             formStyle === 'MOBSEARCHBAR2' ?
                 <app-form-item2
                     name={name}
                     itemType={editorType}
-                    caption={caption}
+                    caption={labelCaption}
                     isEmptyCaption={emptyCaption}
                     isShowCaption={showCaption}
                     labelWidth={labelWidth}
@@ -196,7 +204,7 @@ export class AppDefaultMobFormItem extends AppDefaultMobFormDetail {
                 </app-form-item2> :
                 <app-form-item
                     name={name}
-                    caption={caption}
+                    caption={labelCaption}
                     isEmptyCaption={emptyCaption}
                     isShowCaption={showCaption}
                     labelWidth={labelWidth}

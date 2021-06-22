@@ -7,5 +7,9 @@ export const resourcestate: any = {
     // 菜单数据
     menuData:[],
     // 是否开启权限认证
-    enablePermissionValid: false
+    enablePermissionValid: false,
+    // 标准模型实例标识
+    srfdynainstid: "",
+    // 实体权限数据
+    srfappdeData: {}
 }

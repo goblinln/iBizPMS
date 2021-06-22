@@ -6,10 +6,10 @@
                     <template v-for="item in items">
                         <ion-col v-if="!item.hidden" :size="size" :key="item.id">
                             <ion-tab-button @click="selectItem(item.name)" :class="item.textcls?item.textcls:''">
-                                <template v-if="item.getPSSysImage.imagePath">
+                                <template v-if="item.getPSSysImage && item.getPSSysImage.imagePath">
                                     <img :src="getPicPath(item)" />
                                 </template>
-                                <template v-else-if="item.getPSSysImage.cssClass">
+                                <template v-else-if="item.getPSSysImage && item.getPSSysImage.cssClass">
                                     <ion-icon :name="getIconName(item)">
                                     </ion-icon>
                                     <!-- <svg v-else class="icon" aria-hidden="true">

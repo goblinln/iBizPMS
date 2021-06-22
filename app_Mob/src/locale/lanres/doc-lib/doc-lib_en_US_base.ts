@@ -23,12 +23,12 @@ export default {
     modulecnt:  commonLogic.appcommonhandle("文件夹数",null),
     createBy:  commonLogic.appcommonhandle("由谁创建",null),
     openedDate:  commonLogic.appcommonhandle("创建时间",null),
+    doclibsn:  commonLogic.appcommonhandle("文档库编号",null),
     order:  commonLogic.appcommonhandle("排序",null),
     productName:  commonLogic.appcommonhandle("所属产品",null),
     projectName:  commonLogic.appcommonhandle("所属项目",null),
     project:  commonLogic.appcommonhandle("项目库",null),
     product:  commonLogic.appcommonhandle("产品库",null),
-    doclibsn:  commonLogic.appcommonhandle("文档库编号",null),
   },
 	views: {
 		projectdoclibmobtreeview: {

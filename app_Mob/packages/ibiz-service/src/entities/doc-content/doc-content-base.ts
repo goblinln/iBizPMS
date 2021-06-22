@@ -76,6 +76,10 @@ export abstract class DocContentBase extends EntityBase implements IDocContent {
      */
     version?: any;
     /**
+     * 文档内容编号
+     */
+    doccontentsn?: any;
+    /**
      * 文档摘要
      */
     digest?: any;
@@ -91,10 +95,6 @@ export abstract class DocContentBase extends EntityBase implements IDocContent {
      * 文档
      */
     doc?: any;
-    /**
-     * 文档内容编号
-     */
-    doccontentsn?: any;
 
     /**
      * 重置实体数据

@@ -256,7 +256,7 @@ export class MobTreeControlBase extends MDControlBase {
                     }
                     ViewTool.calcTreeActionItemAuthState(targetData.data, this.copyActionModel, uiService);
                 } else {
-                    console.warn('获取数据异常');
+                    console.warn(this.$t('app.warn.getDataWarn'));
                 }
             }
         } catch (error) {

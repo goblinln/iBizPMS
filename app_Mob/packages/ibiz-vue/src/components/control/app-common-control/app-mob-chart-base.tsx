@@ -94,7 +94,7 @@ export class AppMobChartBase extends MobChartControlBase {
         return (
             <div class={chartClassName} >
                 {this.isNoData ?
-                    <div v-show="isNoData" class="chart-no-data"><i class="el-icon-data-analysis"></i>{'无数据'}</div> :
+                    <div v-show="isNoData" class="chart-no-data"><i class="el-icon-data-analysis"></i>{this.$t('app.commonWords.noData')}</div> :
                     <div class="app-charts" id={this.chartId} style={{ padding: '6px 0', width: width ? `${width}px` : '340px', height: height ? `${height}px` : '50vh' }}></div>}
             </div>
         )

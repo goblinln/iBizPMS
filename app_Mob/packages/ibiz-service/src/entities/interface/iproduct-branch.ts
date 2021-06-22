@@ -45,15 +45,19 @@ export interface IProductBranch extends IEntityBase {
      */
     org?: any;
     /**
+     * 产品的分支和平台信息编号
+     */
+    branchsn?: any;
+    /**
      * 归属部门名
      */
     deptname?: any;
     /**
+     * 实际排序
+     */
+    realorder?: any;
+    /**
      * 所属产品
      */
     product?: any;
-    /**
-     * 产品的分支和平台信息编号
-     */
-    branchsn?: any;
 }

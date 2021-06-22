@@ -8,8 +8,8 @@ export default {
     listName:  commonLogic.appcommonhandle("标题",null),
     id:  commonLogic.appcommonhandle("id",null),
     updateBy:  commonLogic.appcommonhandle("由谁更新",null),
+    usercontactsn:  commonLogic.appcommonhandle("用户联系方式编号",null),
     dept:  commonLogic.appcommonhandle("归属部门",null),
     account:  commonLogic.appcommonhandle("account",null),
-    usercontactsn:  commonLogic.appcommonhandle("用户联系方式编号",null),
   },
 };

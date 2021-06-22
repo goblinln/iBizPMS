@@ -85,6 +85,7 @@ export class AppDefaultMobDePortalView extends MobDashboardViewBase {
             props: { viewInstance: this.viewInstance }
         }, [
             this.renderViewHeaderCaptionBar(),
+            this.renderContent(),
             this.renderMainContent(),
             this.renderToolBar()
         ]);

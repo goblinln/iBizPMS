@@ -5,6 +5,7 @@ export default {
     marker: "里程碑",
     org: "归属组织",
     id: "ID",
+    releasesn: "发布编号",
     sqlid: "运行数据库",
     leftbugs: "遗留的Bug",
     bugs: "解决的Bug",
@@ -32,7 +33,6 @@ export default {
     product: "产品",
     build: "版本",
     branch: "平台/分支",
-    releasesn: "发布编号",
   },
 	views: {
 		mobmdview: {

@@ -81,6 +81,10 @@ export interface IUser extends IEntityBase {
      */
     last?: any;
     /**
+     * 用户编号
+     */
+    usersn?: any;
+    /**
      * clientStatus
      *
      * @type {('online' | 'away' | 'busy' | 'offline')} online: online, away: away, busy: busy, offline: offline
@@ -148,8 +152,4 @@ export interface IUser extends IEntityBase {
      * QQ
      */
     qq?: any;
-    /**
-     * 用户编号
-     */
-    usersn?: any;
 }

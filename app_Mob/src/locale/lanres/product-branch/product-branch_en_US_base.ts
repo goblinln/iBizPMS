@@ -10,8 +10,9 @@ export default {
     id:  commonLogic.appcommonhandle("编号",null),
     order:  commonLogic.appcommonhandle("排序",null),
     org:  commonLogic.appcommonhandle("归属组织",null),
-    deptName:  commonLogic.appcommonhandle("归属部门名",null),
-    product:  commonLogic.appcommonhandle("所属产品",null),
     branchsn:  commonLogic.appcommonhandle("产品的分支和平台信息编号",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
+    realorder:  commonLogic.appcommonhandle("实际排序",null),
+    product:  commonLogic.appcommonhandle("所属产品",null),
   },
 };

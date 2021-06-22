@@ -20,6 +20,7 @@ export default [
     'inputcost',
     'dates',
     'deptname',
+    'taskestimatesn',
     'month',
     'work',
     'evaluationdesc',
@@ -30,5 +31,4 @@ export default [
     'deleted',
     'project',
     'task',
-    'taskestimatesn',
 ];

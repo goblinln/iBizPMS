@@ -669,7 +669,7 @@ export class MobCalendarControlBase extends MDControlBase{
             isSetTileContent?this.setTileContent():"";
         } else {
             this.onControlResponse('load',response)
-            this.$Notice.error('系统异常，请重试!');
+            this.$Notice.error(this.$t('app.error.systemErrorRetry'));
         }
         this.show = true;
     }

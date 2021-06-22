@@ -28,7 +28,7 @@
           </ion-item>
         </template>
       </ion-list>
-      <div class="ok_button" @click="on_ok_click" >确认</div>
+      <div class="ok_button" @click="on_ok_click" >{{$t('app.button.confirm')}}</div>
     </div>
   </div>
 </ion-page>
@@ -38,6 +38,17 @@ import { Vue, Component, Prop, Watch, } from "vue-property-decorator";
 
 @Component({
     components: {},
+    i18n: {
+        messages: {
+            'ZH-CN': {
+                choose: '选择',
+
+            },
+            'EN-US': {
+                choose:'Choose',
+            }
+        }
+    }      
 })
 export default class AppTree extends Vue {
 
@@ -307,7 +318,7 @@ export default class AppTree extends Vue {
      * @memberof IbzDailyDailyCreateMobEditViewBase
      */
     protected  thirdPartyInit(){
-      this.$viewTool.setViewTitleOfThirdParty('选择');
+      this.$viewTool.setViewTitleOfThirdParty(this.$t('choose'));
       this.$viewTool.setThirdPartyEvent(this.closeView);
     }
 

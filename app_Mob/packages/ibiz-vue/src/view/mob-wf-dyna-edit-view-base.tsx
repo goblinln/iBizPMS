@@ -207,7 +207,7 @@ export class MobWFDynaEditViewBase extends MainViewBase {
                     return;
                 }
                 if (!response || !response.status || !response.data) {
-                    this.$Notice.error('错误,系统异常');
+                    this.$Notice.error(this.$t('app.error.systemError'));
                     return;
                 }
             });

@@ -19,10 +19,6 @@ export interface ITask extends IEntityBase {
      */
     configtype?: 'day' | 'week' | 'month';
     /**
-     * 项目团队成员
-     */
-    taskteams?: any;
-    /**
      * 需求状态
      */
     storystatus?: any;
@@ -103,6 +99,10 @@ export interface ITask extends IEntityBase {
      */
     replycount?: any;
     /**
+     * 建立人
+     */
+    createman?: any;
+    /**
      * 归属部门名
      */
     deptname?: any;
@@ -126,6 +126,10 @@ export interface ITask extends IEntityBase {
      * 相关需求最新版本
      */
     storyversionnew?: any;
+    /**
+     * 任务编号
+     */
+    tasksn?: any;
     /**
      * 本次消耗
      */
@@ -221,10 +225,6 @@ export interface ITask extends IEntityBase {
      */
     orgname?: any;
     /**
-     * 工时
-     */
-    ibztaskestimates?: any;
-    /**
      * 需求版本
      */
     storyversion?: any;
@@ -232,6 +232,10 @@ export interface ITask extends IEntityBase {
      * 延期
      */
     delay?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
     /**
      * 任务描述
      */
@@ -394,16 +398,4 @@ export interface ITask extends IEntityBase {
      * 来源Bug
      */
     frombug?: any;
-    /**
-     * 任务编号
-     */
-    tasksn?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
 }

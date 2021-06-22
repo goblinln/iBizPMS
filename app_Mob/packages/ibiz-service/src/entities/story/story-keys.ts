@@ -28,6 +28,7 @@ export default [
     'reviewedby',
     'substatus',
     'stagedby',
+    'planname',
     'openedby',
     'openeddate',
     'id',
@@ -55,6 +56,7 @@ export default [
     'comment',
     'acllist',
     'orgname',
+    'storysn',
     'verify',
     'closedby',
     'acl',
@@ -78,6 +80,4 @@ export default [
     'duplicatestory',
     'branch',
     'tobug',
-    'storysn',
-    'planname',
 ];

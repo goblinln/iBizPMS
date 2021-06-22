@@ -5,7 +5,6 @@ export default [
     'createdate',
     'sysupdatelogid',
     'updatebranch',
-    'updatefeatures',
     'updesc',
     'sysupdatelogname',
     'latestupdate',

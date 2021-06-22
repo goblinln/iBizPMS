@@ -13,7 +13,7 @@ export class AppNoticeService {
     /**
      * store
      */
-    public store:any = null;
+    public store: any = null;
 
     /**
      * 唯一实例
@@ -24,6 +24,7 @@ export class AppNoticeService {
      * @memberof AppNoticeService
      */
     private static readonly instance: AppNoticeService = new AppNoticeService();
+
 
     /**
      * Creates an instance of AppNoticeService.
@@ -41,7 +42,7 @@ export class AppNoticeService {
      * 
      * @memberof AppDrawer
      */
-     private initBasicData(){
+    private initBasicData() {
         this.store = store;
     }
 
@@ -98,37 +99,42 @@ export class AppNoticeService {
         return this.createToast(type, message, time);
     }
 
+
     /**
      * 确认操作
      *
-     * @param {string} message
-     * @returns {Promise<any>}
+     * @param {string} title 标题
+     * @param {string} message 信息
+     * @param {*} xData 当前this指向
+     * @return {*}  {Promise<boolean>}
      * @memberof AppNoticeService
      */
-    public async confirm(title: string, message: string): Promise<boolean> {
-      return new Promise(async (resolve, reject) => {
-          if (this.store && this.store.state && this.store.state.noticeStatus) {
-              Dialog.confirm({
-                title: title ? title : '标题',
-                message: message,
-              })
-                .then(() => {
-                    if (this.store && this.store.commit) {
-                      this.store.commit('setNoticeStatus',true);
-                    }
-                    resolve(true);
+    public async confirm(title: string, message: string, xData: any): Promise<boolean> {
+        return new Promise(async (resolve) => {
+            if (this.store && this.store.state && this.store.state.noticeStatus) {
+                Dialog.confirm({
+                    title: title ? title : '标题',
+                    message: message,
+                    confirmButtonText: xData.$t('app.commonWords.ok'),
+                    cancelButtonText: xData.$t('app.commonWords.cancel')
                 })
-                .catch(() => {
-                    if (this.store && this.store.commit) {
-                      this.store.commit('setNoticeStatus',true);
-                    }
-                    resolve(false);
-                });
-            if (this.store && this.store.commit) {
-              this.store.commit('setNoticeStatus',false);
+                    .then(() => {
+                        if (this.store && this.store.commit) {
+                            this.store.commit('setNoticeStatus', true);
+                        }
+                        resolve(true);
+                    })
+                    .catch(() => {
+                        if (this.store && this.store.commit) {
+                            this.store.commit('setNoticeStatus', true);
+                        }
+                        resolve(false);
+                    });
+                if (this.store && this.store.commit) {
+                    this.store.commit('setNoticeStatus', false);
+                }
             }
-          }
-      });
+        });
     }
 
     /**

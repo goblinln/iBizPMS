@@ -14,6 +14,7 @@ export default {
     testtaskcnt: "测试单数",
     testsuitecnt: "套件数",
     productplancnt: "计划总数",
+    productsn: "产品编号",
     id: "编号",
     deleted: "已删除",
     closedstorycnt: "已关闭需求",
@@ -54,9 +55,8 @@ export default {
     createddate: "创建日期",
     noticeusers: "消息通知用户",
     activestorycnt: "激活需求数",
-    productsn: "产品编号",
-    line: "id",
     linename: "产品线",
+    line: "id",
   },
 	views: {
 		testmobmdview: {

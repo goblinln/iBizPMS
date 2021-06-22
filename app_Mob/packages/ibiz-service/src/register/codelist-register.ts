@@ -42,7 +42,6 @@ export class CodeListRegister extends ServiceRegisterBase  {
         this.allService.set('CurStory', () => import('../codelist/cur-story'));
         this.allService.set('ProductPlan', () => import('../codelist/product-plan'));
         this.allService.set('CurCaseVersion', () => import('../codelist/cur-case-version'));
-        this.allService.set('BugModule', () => import('../codelist/bug-module'));
         this.allService.set('Product', () => import('../codelist/product'));
         this.allService.set('UserRealName', () => import('../codelist/user-real-name'));
         this.allService.set('MonthlyCompleteTaskChoice', () => import('../codelist/monthly-complete-task-choice'));

@@ -9,15 +9,27 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IIBZPROJECTTEAM extends IEntityBase {
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 角色
      */
     role?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 受限用户
      *
      * @type {('yes' | 'no')} yes: 是, no: 否
      */
     limited?: 'yes' | 'no';
+    /**
+     * 归属部门
+     */
+    dept?: any;
     /**
      * 总计可用
      */
@@ -27,9 +39,17 @@ export interface IIBZPROJECTTEAM extends IEntityBase {
      */
     username?: any;
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 可用工日
      */
     days?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * 退场时间
      */
@@ -48,6 +68,10 @@ export interface IIBZPROJECTTEAM extends IEntityBase {
      * 编号
      */
     id?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * 总计消耗
      */
@@ -88,28 +112,4 @@ export interface IIBZPROJECTTEAM extends IEntityBase {
      * 项目编号
      */
     root?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

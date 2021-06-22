@@ -16,6 +16,7 @@
 <script lang="ts">
 import { Vue, Component, Prop, Provide, Emit, Watch, } from "vue-property-decorator";
 import { CodeListService } from "ibiz-service";
+import { LogUtil } from "ibiz-core";
 
 @Component({
     components: {},
@@ -196,7 +197,11 @@ export default class AppSelect extends Vue {
      */
     public mounted() {
         if (Object.is(this.codeListType, "STATIC")) {
-            this.options = this.$store.getters.getCodeListItems(this.tag);
+            this.codeListService.getDataItems({ tag: this.tag, type: 'STATIC', data: null, context:this.context, viewparam:null }).then((codelistItems: Array<any>) => {
+                this.options = codelistItems;
+            }).catch((error: any) => {
+                LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codeNotExist')}`);
+            })   
         } else {
             this.load();
             this.$store.commit('setSelectStatus',true);

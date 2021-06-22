@@ -106,10 +106,10 @@ export class MDViewBase extends MainViewBase {
             if (!(this.quickGroupCodeList && this.quickGroupCodeList.codeName)) {
                 return;
             }
-            let res: any = await this.codeListService.getDataItems({ tag: this.quickGroupCodeList.codeName, type: this.quickGroupCodeList.codeListType, data: this.quickGroupCodeList });
+            let res: any = await this.codeListService.getDataItems({ tag: this.quickGroupCodeList.codeName, type: this.quickGroupCodeList.codeListType, data: this.quickGroupCodeList, context: this.context });
             this.quickGroupModel = this.handleDynamicData(JSON.parse(JSON.stringify(res)));
         } catch (error: any) {
-            console.log(`----${this.quickGroupCodeList.codeName}----代码表不存在`);
+            console.log(`----${this.quickGroupCodeList.codeName}----${this.$t('app.commonWords.codeNotExist')}`);
         }
     }
 
@@ -488,7 +488,7 @@ export class MDViewBase extends MainViewBase {
         return <van-popup slot="searchForm" get-container="#app" lazy-render={false} duration="0.2" v-model={this.searchformState} position="right" class="searchform" style="height: 100%; width: 85%;"  >
             <ion-header>
                 <ion-toolbar translucent>
-                    <ion-title>条件搜索</ion-title>
+                    <ion-title>{this.$t('app.searchForm.title')}</ion-title>
                 </ion-toolbar>
             </ion-header>
             <div class="searchform_content">
@@ -498,7 +498,7 @@ export class MDViewBase extends MainViewBase {
                 <div class="search-btn">
                     <app-mob-button
                         class="search-btn-item"
-                        text="重置"
+                        text={this.$t('app.searchForm.searchButton.reset')}
                         color="light"
                         shape="round"
                         size="small"
@@ -507,7 +507,7 @@ export class MDViewBase extends MainViewBase {
                         class="search-btn-item"
                         shape="round"
                         size="small"
-                        text="搜索"
+                        text={this.$t('app.searchForm.searchButton.search')}
                         on-click={() => { this.onSearch() }} />
                 </div>
             </ion-footer>

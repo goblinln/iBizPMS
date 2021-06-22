@@ -83,18 +83,19 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
+     * Collect
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof DocLibModuleService
      */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Collect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.doclib && _context.doclibmodule) {
-            return this.http.get(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/select`);
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
         }
-        return this.http.get(`/doclibmodules/${_context.doclibmodule}/select`);
+        return this.http.post(`/doclibmodules/${_context.doclibmodule}/collect`, _data);
     }
     /**
      * Create
@@ -123,87 +124,6 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/doclibmodules`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibModuleService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doclibmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/doclibmodules/${_context.doclibmodule}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibModuleService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doclibmodule) {
-            return this.http.delete(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
-        }
-        return this.http.delete(`/doclibmodules/${_context.doclibmodule}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibModuleService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doclibmodule) {
-            const res = await this.http.get(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
-            return res;
-        }
-        const res = await this.http.get(`/doclibmodules/${_context.doclibmodule}`);
-        return res;
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibModuleService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/doclibs/${_context.doclib}/doclibmodules/getdraft`, _data);
-            return res;
-        }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/doclibmodules/getdraft`, _data);
-        return res;
-    }
-    /**
-     * Collect
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibModuleService
-     */
-    async Collect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doclibmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
-        }
-        return this.http.post(`/doclibmodules/${_context.doclibmodule}/collect`, _data);
     }
     /**
      * DocLibModuleNFavorite
@@ -251,6 +171,56 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         return this.http.post(`/doclibmodules/${_context.doclibmodule}/fix`, _data);
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibModuleService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doclibmodule) {
+            const res = await this.http.get(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
+            return res;
+        }
+        const res = await this.http.get(`/doclibmodules/${_context.doclibmodule}`);
+        return res;
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibModuleService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/doclibs/${_context.doclib}/doclibmodules/getdraft`, _data);
+            return res;
+        }
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/doclibmodules/getdraft`, _data);
+        return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibModuleService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doclibmodule) {
+            return this.http.delete(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
+        }
+        return this.http.delete(`/doclibmodules/${_context.doclibmodule}`);
+    }
+    /**
      * UnCollect
      *
      * @param {*} [_context={}]
@@ -264,6 +234,22 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
             return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
         }
         return this.http.post(`/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibModuleService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doclibmodule) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/doclibmodules/${_context.doclibmodule}`, _data);
     }
     /**
      * FetchAllDocLibModule_Custom
@@ -404,6 +390,20 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
             return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchrootmodulemulubysrfparentkey`, _data);
         }
         return this.http.post(`/doclibmodules/fetchrootmodulemulubysrfparentkey`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibModuleService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && _context.doclibmodule) {
+            return this.http.get(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/select`);
+        }
+        return this.http.get(`/doclibmodules/${_context.doclibmodule}/select`);
     }
 
     /**

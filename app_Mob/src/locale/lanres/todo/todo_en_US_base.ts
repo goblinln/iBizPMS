@@ -50,17 +50,47 @@ export default {
 		mobmdview: {
 			caption: commonLogic.appcommonhandle("我的待办",null),
 		},
-		mobredirectview: {
-			caption: commonLogic.appcommonhandle("待办",null),
-		},
 		moboptionview: {
 			caption: commonLogic.appcommonhandle("待办",null),
 		},
 		moblistview: {
 			caption: commonLogic.appcommonhandle("待办",null),
 		},
+		mobredirectview: {
+			caption: commonLogic.appcommonhandle("待办",null),
+		},
 		mobeditview: {
 			caption: commonLogic.appcommonhandle("待办",null),
+		},
+	},
+	mobnew_form: {
+		details: {
+			group1: commonLogic.appcommonhandle("待办事宜表基本信息",null), 
+			formpage1: commonLogic.appcommonhandle("基本信息",null), 
+			srforikey: commonLogic.appcommonhandle("",null), 
+			srfkey: commonLogic.appcommonhandle("编号",null), 
+			srfmajortext: commonLogic.appcommonhandle("待办名称",null), 
+			srftempmode: commonLogic.appcommonhandle("",null), 
+			srfuf: commonLogic.appcommonhandle("",null), 
+			srfdeid: commonLogic.appcommonhandle("",null), 
+			srfsourcekey: commonLogic.appcommonhandle("",null), 
+			name: commonLogic.appcommonhandle("待办名称",null), 
+			pri: commonLogic.appcommonhandle("优先级",null), 
+			date: commonLogic.appcommonhandle("日期",null), 
+			begin: commonLogic.appcommonhandle("开始",null), 
+			end: commonLogic.appcommonhandle("结束",null), 
+			type: commonLogic.appcommonhandle("类型",null), 
+			bug: commonLogic.appcommonhandle("待办名称",null), 
+			idvalue: commonLogic.appcommonhandle("关联编号",null), 
+			task: commonLogic.appcommonhandle("待办名称",null), 
+			config_type: commonLogic.appcommonhandle("周期类型",null), 
+			cycle: commonLogic.appcommonhandle("周期",null), 
+			story: commonLogic.appcommonhandle("待办名称",null), 
+			private: commonLogic.appcommonhandle("私人事务",null), 
+			desc: commonLogic.appcommonhandle("描述",null), 
+			id: commonLogic.appcommonhandle("编号",null), 
+		},
+		uiactions: {
 		},
 	},
 	mobmain_form: {
@@ -114,38 +144,6 @@ export default {
 		uiactions: {
 		},
 	},
-	mobnew_form: {
-		details: {
-			group1: commonLogic.appcommonhandle("待办事宜表基本信息",null), 
-			formpage1: commonLogic.appcommonhandle("基本信息",null), 
-			srforikey: commonLogic.appcommonhandle("",null), 
-			srfkey: commonLogic.appcommonhandle("编号",null), 
-			srfmajortext: commonLogic.appcommonhandle("待办名称",null), 
-			srftempmode: commonLogic.appcommonhandle("",null), 
-			srfuf: commonLogic.appcommonhandle("",null), 
-			srfdeid: commonLogic.appcommonhandle("",null), 
-			srfsourcekey: commonLogic.appcommonhandle("",null), 
-			name: commonLogic.appcommonhandle("待办名称",null), 
-			pri: commonLogic.appcommonhandle("优先级",null), 
-			date: commonLogic.appcommonhandle("日期",null), 
-			begin: commonLogic.appcommonhandle("开始",null), 
-			end: commonLogic.appcommonhandle("结束",null), 
-			type: commonLogic.appcommonhandle("类型",null), 
-			bug: commonLogic.appcommonhandle("待办名称",null), 
-			idvalue: commonLogic.appcommonhandle("关联编号",null), 
-			task: commonLogic.appcommonhandle("待办名称",null), 
-			config_type: commonLogic.appcommonhandle("周期类型",null), 
-			cycle: commonLogic.appcommonhandle("周期",null), 
-			story: commonLogic.appcommonhandle("待办名称",null), 
-			private: commonLogic.appcommonhandle("私人事务",null), 
-			desc: commonLogic.appcommonhandle("描述",null), 
-			id: commonLogic.appcommonhandle("编号",null), 
-		},
-		uiactions: {
-		},
-	},
-	mobeditviewrighttoolbar_toolbar: {
-	},
 	newmobeditviewrighttoolbar_toolbar: {
 		tbitem1: {
 			caption: commonLogic.appcommonhandle("Save And Close",null),
@@ -157,6 +155,8 @@ export default {
 			caption: commonLogic.appcommonhandle("新建",null),
 			tip: 'deuiaction1',
 		},
+	},
+	mobeditviewrighttoolbar_toolbar: {
 	},
 	moblistviewrighttoolbar_toolbar: {
 	},

@@ -102,6 +102,7 @@ export class AppMobFormBase extends MobFormControlBase {
                 runtimeModel={this.detailsModel[modelJson.name]}
                 controlInstance={this.controlInstance}
                 style={customStyle}
+                modelService={this.modelService}
             >
                 {this.renderDetails(modelJson)}
             </app-default-mob-form-page>
@@ -187,6 +188,7 @@ export class AppMobFormBase extends MobFormControlBase {
                 viewparams={Util.deepCopy(this.viewparams)}
                 contextState={this.formState}
                 service={this.service}
+                modelService={this.modelService}
                 ignorefieldvaluechange={this.ignorefieldvaluechange}
                 on-formItemValueChange={(value: any) => {
                     this.onFormItemValueChange(value);
@@ -234,6 +236,7 @@ export class AppMobFormBase extends MobFormControlBase {
                 context={this.context}
                 viewparams={this.viewparams}
                 data={this.data}
+                modelService={this.modelService}
             >
                 {this.renderDetails(modelJson)}
             </app-default-mob-group-panel>
@@ -256,6 +259,7 @@ export class AppMobFormBase extends MobFormControlBase {
                     return this.renderFormPage(item, index);
                 });
             } else {
+               
                 return (
                     <van-tabs
                         type="card"
@@ -267,7 +271,8 @@ export class AppMobFormBase extends MobFormControlBase {
                         value={this.detailsModel[name]?.activatedPage}
                     >
                         {formPages.map((item: any, index: number) => {
-                            return <van-tab title={item.caption} class="app-form-tab" name={item.name}>
+                            const caption = this.$tl(item.getCapPSLanguageRes()?.lanResTag,item.caption);
+                            return <van-tab title={caption} class="app-form-tab" name={item.name}>
                                 {this.renderFormPage(item, index)}
                             </van-tab>
                         })}

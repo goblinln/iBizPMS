@@ -34,29 +34,29 @@ export abstract class ProductLineBase extends EntityBase implements IProductLine
         this.name = val;
     }
     /**
-     * 组织机构标识
-     */
-    orgid?: any;
-    /**
-     * 排序
-     */
-    order?: any;
-    /**
      * id
      */
     id?: any;
-    /**
-     * 简称
-     */
-    ibizshort?: any;
     /**
      * 部门标识
      */
     mdeptid?: any;
     /**
-     * 由谁创建
+     * 组织机构标识
      */
-    createby?: any;
+    orgid?: any;
+    /**
+     * 已删除
+     */
+    deleted?: any;
+    /**
+     * 产品线名称
+     */
+    name?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
     /**
      * 类型
      *
@@ -64,25 +64,25 @@ export abstract class ProductLineBase extends EntityBase implements IProductLine
      */
     type?: 'line' | 'story' | 'task' | 'doc' | 'case' | 'bug';
     /**
+     * 简称
+     */
+    ibizshort?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
+     * 排序
+     */
+    order?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
     /**
-     * 归属部门名
-     */
-    mdeptname?: any;
-    /**
      * 归属组织名
      */
     orgname?: any;
-    /**
-     * 产品线名称
-     */
-    name?: any;
-    /**
-     * 已删除
-     */
-    deleted?: any;
 
     /**
      * 重置实体数据

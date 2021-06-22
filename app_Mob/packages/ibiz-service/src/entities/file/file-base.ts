@@ -84,6 +84,10 @@ export abstract class FileBase extends EntityBase implements IFile {
      */
     updateby?: any;
     /**
+     * 附件编号
+     */
+    filesn?: any;
+    /**
      * 添加时间
      */
     addeddate?: any;
@@ -111,10 +115,6 @@ export abstract class FileBase extends EntityBase implements IFile {
      * 备注
      */
     extra?: any;
-    /**
-     * 附件编号
-     */
-    filesn?: any;
 
     /**
      * 重置实体数据

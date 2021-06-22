@@ -192,10 +192,10 @@ export const viewstate: any = {
             viewdatachange: false,
             refviews: [
                 '9a9d18d8b2bb150dbbd5cc3b796e3f0b',
-                '28739e21800f36014ab29fe3619b352a',
                 '1e4e95416f6ad3614a107303d3fe1cd3',
                 '2d2d3ed249ebc2e20719e3036a634eb3',
                 'dd80bc5b2ebbb1fa5beb4c61b76ada0f',
+                '1ddc35d9a0eb61fb471e5a295520d3fe',
                 '1c3ec51cec0f0610ade4f822908925aa',
                 '1d9d30b890d34ecfebbb4f33eb5999ad',
             ],
@@ -332,6 +332,16 @@ export const viewstate: any = {
             ],
         },
         {
+            viewtag: '19645d3ff8665c5d67cdc629dc32935f',
+            viewmodule: 'zentao',
+            viewname: 'ProjectStartMobEditView',
+            viewaction: '',
+            viewdatachange: false,
+            refviews: [
+                '1d9d30b890d34ecfebbb4f33eb5999ad',
+            ],
+        },
+        {
             viewtag: '19e1bcc5b012c2502c5ff456c4d9b6ef',
             viewmodule: 'ibiz',
             viewname: 'TodoMobMDView',
@@ -340,7 +350,6 @@ export const viewstate: any = {
             refviews: [
                 'c567e5df647ee85ff4af0b8bfcb79eae',
                 '0cc083a51ecbb27cae0fc0739903aee2',
-                '408fe78e73e857a785ba188e9468a539',
             ],
         },
         {
@@ -462,6 +471,16 @@ export const viewstate: any = {
             ],
         },
         {
+            viewtag: '1ddc35d9a0eb61fb471e5a295520d3fe',
+            viewmodule: 'ibiz',
+            viewname: 'TestModuleMobPickupView',
+            viewaction: '',
+            viewdatachange: false,
+            refviews: [
+                '958d619ef6cda3f0d7b7f484aacd3dfb',
+            ],
+        },
+        {
             viewtag: '1e4e95416f6ad3614a107303d3fe1cd3',
             viewmodule: 'ibiz',
             viewname: 'ProjectMobPickupView',
@@ -519,16 +538,6 @@ export const viewstate: any = {
             viewdatachange: false,
             refviews: [
                 '21f0361e9c1ef6861286d9c398d556b6',
-            ],
-        },
-        {
-            viewtag: '213046c819a2b121740d6f5112f595be',
-            viewmodule: 'zentao',
-            viewname: 'ProjectStartMobEditView',
-            viewaction: '',
-            viewdatachange: false,
-            refviews: [
-                '1d9d30b890d34ecfebbb4f33eb5999ad',
             ],
         },
         {
@@ -658,16 +667,6 @@ export const viewstate: any = {
             ],
         },
         {
-            viewtag: '25ae8db8702f1b4b13ff1cbd953004db',
-            viewmodule: 'zentao',
-            viewname: 'TodoMobRedirectView',
-            viewaction: '',
-            viewdatachange: false,
-            refviews: [
-                'c567e5df647ee85ff4af0b8bfcb79eae',
-            ],
-        },
-        {
             viewtag: '25b59e545253ac103213d04a9a2a72f7',
             viewmodule: 'ibiz',
             viewname: 'ProductStatsMobMDView',
@@ -767,11 +766,11 @@ export const viewstate: any = {
             viewaction: '',
             viewdatachange: false,
             refviews: [
-                '213046c819a2b121740d6f5112f595be',
                 '732fb2c47872ee18a809a65b03490dc7',
                 '329792fdb55e969f2dc042ac8489c208',
                 'b750a3b281b1c24016679b8f9c258b11',
                 '4594ea8b1581d6dc2a3dcce79f05dd4d',
+                '19645d3ff8665c5d67cdc629dc32935f',
                 '1d9d30b890d34ecfebbb4f33eb5999ad',
             ],
         },
@@ -1628,10 +1627,10 @@ export const viewstate: any = {
             viewdatachange: false,
             refviews: [
                 '9a9d18d8b2bb150dbbd5cc3b796e3f0b',
-                '28739e21800f36014ab29fe3619b352a',
                 '2d2d3ed249ebc2e20719e3036a634eb3',
                 '1e4e95416f6ad3614a107303d3fe1cd3',
                 'dd80bc5b2ebbb1fa5beb4c61b76ada0f',
+                '1ddc35d9a0eb61fb471e5a295520d3fe',
                 '1c3ec51cec0f0610ade4f822908925aa',
             ],
         },
@@ -1847,6 +1846,15 @@ export const viewstate: any = {
             refviews: [
                 '2d2d3ed249ebc2e20719e3036a634eb3',
                 '1d9d30b890d34ecfebbb4f33eb5999ad',
+            ],
+        },
+        {
+            viewtag: '958d619ef6cda3f0d7b7f484aacd3dfb',
+            viewmodule: 'ibiz',
+            viewname: 'TestModuleMobPickupMDView',
+            viewaction: '',
+            viewdatachange: false,
+            refviews: [
             ],
         },
         {
@@ -2207,6 +2215,16 @@ export const viewstate: any = {
             viewdatachange: false,
             refviews: [
                 '904b990dc0451cc9f3d7bc232fa8f6ca',
+            ],
+        },
+        {
+            viewtag: 'bff2e6aabf8c5a3b6c8467dc19c931fc',
+            viewmodule: 'zentao',
+            viewname: 'TodoMobRedirectView',
+            viewaction: '',
+            viewdatachange: false,
+            refviews: [
+                'c567e5df647ee85ff4af0b8bfcb79eae',
             ],
         },
         {

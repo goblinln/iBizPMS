@@ -1,243 +1,5 @@
  [
         {
-        "srfkey": "ActionManner",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "story_closed_willnotdo",
-                "label": "不做",
-                "text": "不做",
-                "default": false,
-                "data": "",
-                "value": "story_closed_willnotdo",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story_closed_cancel",
-                "label": "已取消",
-                "text": "已取消",
-                "default": false,
-                "data": "",
-                "value": "story_closed_cancel",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story_closed_done",
-                "label": "已完成",
-                "text": "已完成",
-                "default": false,
-                "data": "",
-                "value": "story_closed_done",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story_closed_subdivided",
-                "label": "已细分",
-                "text": "已细分",
-                "default": false,
-                "data": "",
-                "value": "story_closed_subdivided",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story_closed_postponed",
-                "label": "延期",
-                "text": "延期",
-                "default": false,
-                "data": "",
-                "value": "story_closed_postponed",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story_closed_bydesign",
-                "label": "设计如此",
-                "text": "设计如此",
-                "default": false,
-                "data": "",
-                "value": "story_closed_bydesign",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story_closed_duplicate",
-                "label": "重复",
-                "text": "重复",
-                "default": false,
-                "data": "",
-                "value": "story_closed_duplicate",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "bug_resolved_willnotfix",
-                "label": "不予解决",
-                "text": "不予解决",
-                "default": false,
-                "data": "",
-                "value": "bug_resolved_willnotfix",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "bug_resolved_external",
-                "label": "外部原因",
-                "text": "外部原因",
-                "default": false,
-                "data": "",
-                "value": "bug_resolved_external",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "bug_resolved_fixed",
-                "label": "已解决",
-                "text": "已解决",
-                "default": false,
-                "data": "",
-                "value": "bug_resolved_fixed",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "bug_resolved_postponed",
-                "label": "延期处理",
-                "text": "延期处理",
-                "default": false,
-                "data": "",
-                "value": "bug_resolved_postponed",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "bug_resolved_notrepro",
-                "label": "无法重现",
-                "text": "无法重现",
-                "default": false,
-                "data": "",
-                "value": "bug_resolved_notrepro",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "bug_resolved_bydesign",
-                "label": "设计如此",
-                "text": "设计如此",
-                "default": false,
-                "data": "",
-                "value": "bug_resolved_bydesign",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "bug_resolved_tostory",
-                "label": "转为需求",
-                "text": "转为需求",
-                "default": false,
-                "data": "",
-                "value": "bug_resolved_tostory",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "bug_resolved_duplicate",
-                "label": "重复Bug",
-                "text": "重复Bug",
-                "default": false,
-                "data": "",
-                "value": "bug_resolved_duplicate",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story_reviewed_reject",
-                "label": "拒绝",
-                "text": "拒绝",
-                "default": false,
-                "data": "",
-                "value": "story_reviewed_reject",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story_reviewed_revert",
-                "label": "撤销变更",
-                "text": "撤销变更",
-                "default": false,
-                "data": "",
-                "value": "story_reviewed_revert",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story_reviewed_clarify",
-                "label": "有待明确",
-                "text": "有待明确",
-                "default": false,
-                "data": "",
-                "value": "story_reviewed_clarify",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story_reviewed_pass",
-                "label": "确认通过",
-                "text": "确认通过",
-                "default": false,
-                "data": "",
-                "value": "story_reviewed_pass",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": " release_changestatus_terminate",
-                "label": "停止维护",
-                "text": "停止维护",
-                "default": false,
-                "data": "",
-                "value": " release_changestatus_terminate",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": " release_changestatus_normal",
-                "label": "正常",
-                "text": "正常",
-                "default": false,
-                "data": "",
-                "value": " release_changestatus_normal",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
         "srfkey": "Bug__status",
         "emptytext": "未定义",
         "codelisttype":"static",
@@ -366,6 +128,35 @@
                 "default": false,
                 "data": "",
                 "value": "bydesign",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "Action__read",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "0",
+                "label": "0",
+                "text": "0",
+                "default": false,
+                "data": "",
+                "value": "0",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "1",
+                "label": "1",
+                "text": "1",
+                "default": false,
+                "data": "",
+                "value": "1",
                 "isValueNumber":false,
                 
                 "disabled": false
@@ -712,17 +503,6 @@
                 
                 "disabled": false
             }
-            , {
-                "id": "custom",
-                "label": "自定义白名单(团队成员和白名单的成员可以访问)",
-                "text": "自定义白名单(团队成员和白名单的成员可以访问)",
-                "default": false,
-                "data": "",
-                "value": "custom",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
         ]
     }, 
     {
@@ -737,8 +517,8 @@
         "srfkey": "ProjectProductPlan",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"",
-        "appdedataset":"",
+        "appdataentity":"ProductPlan",
+        "appdedataset":"FetchProjectPlan",
         "items": []
     }, 
     {
@@ -1827,17 +1607,6 @@
                 "color": "rgba(49, 27, 146, 1)",
                 "disabled": false
             }
-            , {
-                "id": "reject",
-                "label": "拒绝",
-                "text": "拒绝",
-                "default": false,
-                "data": "",
-                "value": "reject",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
         ]
     }, 
     {
@@ -1935,40 +1704,11 @@
         ]
     }, 
     {
-        "srfkey": "Action__read",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "0",
-                "label": "0",
-                "text": "0",
-                "default": false,
-                "data": "",
-                "value": "0",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "1",
-                "label": "1",
-                "text": "1",
-                "default": false,
-                "data": "",
-                "value": "1",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
         "srfkey": "UserRealNameProductTeam",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
         "appdataentity":"SysEmployee",
-        "appdedataset":"FetchStoryProductTeamPK",
+        "appdedataset":"FetchProductTeamM",
         "items": []
     }, 
     {
@@ -2093,860 +1833,6 @@
         "codelisttype":"dynamic",
         "appdataentity":"SysEmployee",
         "appdedataset":"FetchTaskTeam",
-        "items": []
-    }, 
-    {
-        "srfkey": "TaskStatusCK",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "wait",
-                "label": "未开始",
-                "text": "未开始",
-                "default": true,
-                "data": "",
-                "value": "wait",
-                "isValueNumber":false,
-                
-                "color": "rgba(131, 138, 157, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "doing",
-                "label": "进行中",
-                "text": "进行中",
-                "default": false,
-                "data": "",
-                "value": "doing",
-                "isValueNumber":false,
-                
-                "color": "rgba(255, 93, 93, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "done",
-                "label": "已完成",
-                "text": "已完成",
-                "default": false,
-                "data": "",
-                "value": "done",
-                "isValueNumber":false,
-                
-                "color": "rgba(67, 160, 71, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "pause",
-                "label": "已暂停",
-                "text": "已暂停",
-                "default": false,
-                "data": "",
-                "value": "pause",
-                "isValueNumber":false,
-                
-                "color": "rgba(255, 152, 0, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "cancel",
-                "label": "已取消",
-                "text": "已取消",
-                "default": false,
-                "data": "",
-                "value": "cancel",
-                "isValueNumber":false,
-                
-                "color": "rgba(131, 138, 157, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "closed",
-                "label": "已关闭",
-                "text": "已关闭",
-                "default": false,
-                "data": "",
-                "value": "closed",
-                "isValueNumber":false,
-                
-                "color": "rgba(131, 138, 157, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "storychange",
-                "label": "需求变更",
-                "text": "需求变更",
-                "default": false,
-                "data": "",
-                "value": "storychange",
-                "isValueNumber":false,
-                
-                "color": "rgba(245, 8, 8, 1)",
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "ProductBranch",
-        "emptytext": "未定义",
-        "codelisttype":"dynamic",
-        "appdataentity":"ProductBranch",
-        "appdedataset":"FetchCurProduct",
-        "items": []
-    }, 
-    {
-        "srfkey": "Product__status",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "normal",
-                "label": "正常",
-                "text": "正常",
-                "default": false,
-                "data": "",
-                "value": "normal",
-                "isValueNumber":false,
-                
-                "color": "rgba(13, 255, 0, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "closed",
-                "label": "结束",
-                "text": "结束",
-                "default": false,
-                "data": "",
-                "value": "closed",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "ConfigManagementstatus",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "product_project",
-                "label": "产品 - 项目",
-                "text": "产品 - 项目",
-                "default": false,
-                "data": "",
-                "value": "product_project",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "product_iteration",
-                "label": "产品 - 迭代",
-                "text": "产品 - 迭代",
-                "default": false,
-                "data": "",
-                "value": "product_iteration",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "project_iteration",
-                "label": "项目 - 迭代",
-                "text": "项目 - 迭代",
-                "default": false,
-                "data": "",
-                "value": "project_iteration",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "product_sprint",
-                "label": "产品 - 冲刺",
-                "text": "产品 - 冲刺",
-                "default": false,
-                "data": "",
-                "value": "product_sprint",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "project_sprint",
-                "label": "项目 - 冲刺",
-                "text": "项目 - 冲刺",
-                "default": false,
-                "data": "",
-                "value": "project_sprint",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "CycleType",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "day",
-                "label": "天",
-                "text": "天",
-                "default": false,
-                "data": "",
-                "value": "day",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "week",
-                "label": "周",
-                "text": "周",
-                "default": false,
-                "data": "",
-                "value": "week",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "month",
-                "label": "月度",
-                "text": "月度",
-                "default": false,
-                "data": "",
-                "value": "month",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "CurStory",
-        "emptytext": "未定义",
-        "codelisttype":"dynamic",
-        "appdataentity":"",
-        "appdedataset":"",
-        "items": []
-    }, 
-    {
-        "srfkey": "ProductPlan",
-        "emptytext": "未定义",
-        "codelisttype":"dynamic",
-        "appdataentity":"ProductPlan",
-        "appdedataset":"FetchProductQuery",
-        "items": []
-    }, 
-    {
-        "srfkey": "Task__type",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "design",
-                "label": "设计",
-                "text": "设计",
-                "default": false,
-                "data": "",
-                "value": "design",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "devel",
-                "label": "开发",
-                "text": "开发",
-                "default": false,
-                "data": "",
-                "value": "devel",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "test",
-                "label": "测试",
-                "text": "测试",
-                "default": false,
-                "data": "",
-                "value": "test",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "study",
-                "label": "研究",
-                "text": "研究",
-                "default": false,
-                "data": "",
-                "value": "study",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "discuss",
-                "label": "讨论",
-                "text": "讨论",
-                "default": false,
-                "data": "",
-                "value": "discuss",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "ui",
-                "label": "界面",
-                "text": "界面",
-                "default": false,
-                "data": "",
-                "value": "ui",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "affair",
-                "label": "事务",
-                "text": "事务",
-                "default": false,
-                "data": "",
-                "value": "affair",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "serve",
-                "label": "服务",
-                "text": "服务",
-                "default": false,
-                "data": "",
-                "value": "serve",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "misc",
-                "label": "其他",
-                "text": "其他",
-                "default": false,
-                "data": "",
-                "value": "misc",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "Testtask__pri",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "1",
-                "label": "1",
-                "text": "1",
-                "default": false,
-                "data": "",
-                "value": 1,
-                "isValueNumber":true,
-                
-                "className":"text-red-border-color",
-                "disabled": false
-            }
-            , {
-                "id": "2",
-                "label": "2",
-                "text": "2",
-                "default": false,
-                "data": "",
-                "value": 2,
-                "isValueNumber":true,
-                
-                "className":"text-pink-border-color",
-                "disabled": false
-            }
-            , {
-                "id": "3",
-                "label": "3",
-                "text": "3",
-                "default": false,
-                "data": "",
-                "value": 3,
-                "isValueNumber":true,
-                
-                "className":"text-blue-border-color",
-                "disabled": false
-            }
-            , {
-                "id": "4",
-                "label": "4",
-                "text": "4",
-                "default": false,
-                "data": "",
-                "value": 4,
-                "isValueNumber":true,
-                
-                "className":"text-green-border-color",
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "Story__pri",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "1",
-                "label": "1",
-                "text": "1",
-                "default": false,
-                "data": "",
-                "value": 1,
-                "isValueNumber":true,
-                
-                "color": "rgba(230, 43, 43, 1)",
-                "className":"text-red-border-color",
-                "disabled": false
-            }
-            , {
-                "id": "2",
-                "label": "2",
-                "text": "2",
-                "default": false,
-                "data": "",
-                "value": 2,
-                "isValueNumber":true,
-                
-                "color": "rgba(225, 228, 33, 1)",
-                "className":"text-pink-border-color",
-                "disabled": false
-            }
-            , {
-                "id": "3",
-                "label": "3",
-                "text": "3",
-                "default": true,
-                "data": "",
-                "value": 3,
-                "isValueNumber":true,
-                
-                "color": "rgba(52, 8, 248, 1)",
-                "className":"text-blue-border-color",
-                "disabled": false
-            }
-            , {
-                "id": "4",
-                "label": "4",
-                "text": "4",
-                "default": false,
-                "data": "",
-                "value": 4,
-                "isValueNumber":true,
-                
-                "color": "rgba(80, 133, 63, 1)",
-                "className":"text-green-border-color",
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "Bug__severity_mob",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "1",
-                "label": "1",
-                "text": "1",
-                "default": false,
-                "data": "",
-                "value": 1,
-                "isValueNumber":true,
-                
-                "iconcls":"radio-button-off",
-                "color": "rgba(227, 6, 6, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "2",
-                "label": "2",
-                "text": "2",
-                "default": false,
-                "data": "",
-                "value": 2,
-                "isValueNumber":true,
-                
-                "iconcls":"radio-button-off",
-                "color": "rgba(255, 191, 0, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "3",
-                "label": "3",
-                "text": "3",
-                "default": false,
-                "data": "",
-                "value": 3,
-                "isValueNumber":true,
-                
-                "iconcls":"radio-button-off",
-                "color": "rgba(16, 174, 231, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "4",
-                "label": "4",
-                "text": "4",
-                "default": false,
-                "data": "",
-                "value": 4,
-                "isValueNumber":true,
-                
-                "iconcls":"radio-button-off",
-                "color": "rgba(49, 234, 12, 1)",
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "NeedNotReviewNew",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "1",
-                "label": "不需要评审",
-                "text": "不需要评审",
-                "default": false,
-                "data": "",
-                "value": "1",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "CurCaseVersion",
-        "emptytext": "未定义",
-        "codelisttype":"dynamic",
-        "appdataentity":"TestCaseStep",
-        "appdedataset":"FetchVersions",
-        "items": []
-    }, 
-    {
-        "srfkey": "Project__acl",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "open",
-                "label": "默认设置(有项目视图权限，即可访问)",
-                "text": "默认设置(有项目视图权限，即可访问)",
-                "default": true,
-                "data": "",
-                "value": "open",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "private",
-                "label": "私有项目(只有项目团队成员才能访问)",
-                "text": "私有项目(只有项目团队成员才能访问)",
-                "default": false,
-                "data": "",
-                "value": "private",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "custom",
-                "label": "自定义白名单(团队成员和白名单的成员可以访问)",
-                "text": "自定义白名单(团队成员和白名单的成员可以访问)",
-                "default": false,
-                "data": "",
-                "value": "custom",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "Story__type",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "requirement",
-                "label": "用户需求",
-                "text": "用户需求",
-                "default": false,
-                "data": "",
-                "value": "requirement",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story",
-                "label": "软件需求",
-                "text": "软件需求",
-                "default": true,
-                "data": "",
-                "value": "story",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "Testcase__color",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "#3da7f5",
-                "label": "#3da7f5",
-                "text": "#3da7f5",
-                "default": false,
-                "data": "",
-                "value": "#3da7f5",
-                "isValueNumber":false,
-                
-                "color": "rgba(61, 167, 245, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "#75c941",
-                "label": "#75c941",
-                "text": "#75c941",
-                "default": false,
-                "data": "",
-                "value": "#75c941",
-                "isValueNumber":false,
-                
-                "color": "rgba(117, 201, 65, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "#2dbdb2",
-                "label": "#2dbdb2",
-                "text": "#2dbdb2",
-                "default": false,
-                "data": "",
-                "value": "#2dbdb2",
-                "isValueNumber":false,
-                
-                "color": "rgba(45, 189, 178, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "#797ec9",
-                "label": "#797ec9",
-                "text": "#797ec9",
-                "default": false,
-                "data": "",
-                "value": "#797ec9",
-                "isValueNumber":false,
-                
-                "color": "rgba(121, 126, 201, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "#ffaf38",
-                "label": "#ffaf38",
-                "text": "#ffaf38",
-                "default": false,
-                "data": "",
-                "value": "#ffaf38",
-                "isValueNumber":false,
-                
-                "color": "rgba(255, 175, 56, 1)",
-                "disabled": false
-            }
-            , {
-                "id": "#ff4e3e",
-                "label": "#ff4e3e",
-                "text": "#ff4e3e",
-                "default": false,
-                "data": "",
-                "value": "#ff4e3e",
-                "isValueNumber":false,
-                
-                "color": "rgba(255, 78, 62, 1)",
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "Bug__type",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "codeerror",
-                "label": "代码错误",
-                "text": "代码错误",
-                "default": false,
-                "data": "",
-                "value": "codeerror",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "config",
-                "label": "配置相关",
-                "text": "配置相关",
-                "default": false,
-                "data": "",
-                "value": "config",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "install",
-                "label": "安装部署",
-                "text": "安装部署",
-                "default": false,
-                "data": "",
-                "value": "install",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "security",
-                "label": "安全相关",
-                "text": "安全相关",
-                "default": false,
-                "data": "",
-                "value": "security",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "performance",
-                "label": "性能问题",
-                "text": "性能问题",
-                "default": false,
-                "data": "",
-                "value": "performance",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "standard",
-                "label": "标准规范",
-                "text": "标准规范",
-                "default": false,
-                "data": "",
-                "value": "standard",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "automation",
-                "label": "测试脚本",
-                "text": "测试脚本",
-                "default": false,
-                "data": "",
-                "value": "automation",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "designdefect",
-                "label": "设计缺陷",
-                "text": "设计缺陷",
-                "default": false,
-                "data": "",
-                "value": "designdefect",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "others",
-                "label": "其他",
-                "text": "其他",
-                "default": false,
-                "data": "",
-                "value": "others",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "Team__type",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "project",
-                "label": "项目团队",
-                "text": "项目团队",
-                "default": true,
-                "data": "",
-                "value": "project",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "task",
-                "label": "任务团队",
-                "text": "任务团队",
-                "default": false,
-                "data": "",
-                "value": "task",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "product",
-                "label": "产品团队",
-                "text": "产品团队",
-                "default": false,
-                "data": "",
-                "value": "product",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "BugModule",
-        "emptytext": "未定义",
-        "codelisttype":"dynamic",
-        "appdataentity":"Module",
-        "appdedataset":"FetchBugModuleCodeList",
         "items": []
     }, 
     {
@@ -3793,6 +2679,841 @@
         ]
     }, 
     {
+        "srfkey": "TaskStatusCK",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "wait",
+                "label": "未开始",
+                "text": "未开始",
+                "default": true,
+                "data": "",
+                "value": "wait",
+                "isValueNumber":false,
+                
+                "color": "rgba(131, 138, 157, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "doing",
+                "label": "进行中",
+                "text": "进行中",
+                "default": false,
+                "data": "",
+                "value": "doing",
+                "isValueNumber":false,
+                
+                "color": "rgba(255, 93, 93, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "done",
+                "label": "已完成",
+                "text": "已完成",
+                "default": false,
+                "data": "",
+                "value": "done",
+                "isValueNumber":false,
+                
+                "color": "rgba(67, 160, 71, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "pause",
+                "label": "已暂停",
+                "text": "已暂停",
+                "default": false,
+                "data": "",
+                "value": "pause",
+                "isValueNumber":false,
+                
+                "color": "rgba(255, 152, 0, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "cancel",
+                "label": "已取消",
+                "text": "已取消",
+                "default": false,
+                "data": "",
+                "value": "cancel",
+                "isValueNumber":false,
+                
+                "color": "rgba(131, 138, 157, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "closed",
+                "label": "已关闭",
+                "text": "已关闭",
+                "default": false,
+                "data": "",
+                "value": "closed",
+                "isValueNumber":false,
+                
+                "color": "rgba(131, 138, 157, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "storychange",
+                "label": "需求变更",
+                "text": "需求变更",
+                "default": false,
+                "data": "",
+                "value": "storychange",
+                "isValueNumber":false,
+                
+                "color": "rgba(245, 8, 8, 1)",
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "ProductBranch",
+        "emptytext": "未定义",
+        "codelisttype":"dynamic",
+        "appdataentity":"ProductBranch",
+        "appdedataset":"FetchCurProduct",
+        "items": []
+    }, 
+    {
+        "srfkey": "Product__status",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "normal",
+                "label": "正常",
+                "text": "正常",
+                "default": false,
+                "data": "",
+                "value": "normal",
+                "isValueNumber":false,
+                
+                "color": "rgba(13, 255, 0, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "closed",
+                "label": "结束",
+                "text": "结束",
+                "default": false,
+                "data": "",
+                "value": "closed",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "ConfigManagementstatus",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "product_project",
+                "label": "产品 - 项目",
+                "text": "产品 - 项目",
+                "default": false,
+                "data": "",
+                "value": "product_project",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "product_iteration",
+                "label": "产品 - 迭代",
+                "text": "产品 - 迭代",
+                "default": false,
+                "data": "",
+                "value": "product_iteration",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "project_iteration",
+                "label": "项目 - 迭代",
+                "text": "项目 - 迭代",
+                "default": false,
+                "data": "",
+                "value": "project_iteration",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "product_sprint",
+                "label": "产品 - 冲刺",
+                "text": "产品 - 冲刺",
+                "default": false,
+                "data": "",
+                "value": "product_sprint",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "project_sprint",
+                "label": "项目 - 冲刺",
+                "text": "项目 - 冲刺",
+                "default": false,
+                "data": "",
+                "value": "project_sprint",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "CycleType",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "day",
+                "label": "天",
+                "text": "天",
+                "default": false,
+                "data": "",
+                "value": "day",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "week",
+                "label": "周",
+                "text": "周",
+                "default": false,
+                "data": "",
+                "value": "week",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "month",
+                "label": "月度",
+                "text": "月度",
+                "default": false,
+                "data": "",
+                "value": "month",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "CurStory",
+        "emptytext": "未定义",
+        "codelisttype":"dynamic",
+        "appdataentity":"",
+        "appdedataset":"",
+        "items": []
+    }, 
+    {
+        "srfkey": "ProductPlan",
+        "emptytext": "未定义",
+        "codelisttype":"dynamic",
+        "appdataentity":"ProductPlan",
+        "appdedataset":"FetchProductQuery",
+        "items": []
+    }, 
+    {
+        "srfkey": "Task__type",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "design",
+                "label": "设计",
+                "text": "设计",
+                "default": false,
+                "data": "",
+                "value": "design",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "devel",
+                "label": "开发",
+                "text": "开发",
+                "default": false,
+                "data": "",
+                "value": "devel",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "test",
+                "label": "测试",
+                "text": "测试",
+                "default": false,
+                "data": "",
+                "value": "test",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "study",
+                "label": "研究",
+                "text": "研究",
+                "default": false,
+                "data": "",
+                "value": "study",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "discuss",
+                "label": "讨论",
+                "text": "讨论",
+                "default": false,
+                "data": "",
+                "value": "discuss",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "ui",
+                "label": "界面",
+                "text": "界面",
+                "default": false,
+                "data": "",
+                "value": "ui",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "affair",
+                "label": "事务",
+                "text": "事务",
+                "default": false,
+                "data": "",
+                "value": "affair",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "serve",
+                "label": "服务",
+                "text": "服务",
+                "default": false,
+                "data": "",
+                "value": "serve",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "misc",
+                "label": "其他",
+                "text": "其他",
+                "default": false,
+                "data": "",
+                "value": "misc",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "Testtask__pri",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "1",
+                "label": "1",
+                "text": "1",
+                "default": false,
+                "data": "",
+                "value": 1,
+                "isValueNumber":true,
+                
+                "className":"text-red-border-color",
+                "disabled": false
+            }
+            , {
+                "id": "2",
+                "label": "2",
+                "text": "2",
+                "default": false,
+                "data": "",
+                "value": 2,
+                "isValueNumber":true,
+                
+                "className":"text-pink-border-color",
+                "disabled": false
+            }
+            , {
+                "id": "3",
+                "label": "3",
+                "text": "3",
+                "default": false,
+                "data": "",
+                "value": 3,
+                "isValueNumber":true,
+                
+                "className":"text-blue-border-color",
+                "disabled": false
+            }
+            , {
+                "id": "4",
+                "label": "4",
+                "text": "4",
+                "default": false,
+                "data": "",
+                "value": 4,
+                "isValueNumber":true,
+                
+                "className":"text-green-border-color",
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "Story__pri",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "1",
+                "label": "1",
+                "text": "1",
+                "default": false,
+                "data": "",
+                "value": 1,
+                "isValueNumber":true,
+                
+                "color": "rgba(230, 43, 43, 1)",
+                "className":"text-red-border-color",
+                "disabled": false
+            }
+            , {
+                "id": "2",
+                "label": "2",
+                "text": "2",
+                "default": false,
+                "data": "",
+                "value": 2,
+                "isValueNumber":true,
+                
+                "color": "rgba(225, 228, 33, 1)",
+                "className":"text-pink-border-color",
+                "disabled": false
+            }
+            , {
+                "id": "3",
+                "label": "3",
+                "text": "3",
+                "default": true,
+                "data": "",
+                "value": 3,
+                "isValueNumber":true,
+                
+                "color": "rgba(52, 8, 248, 1)",
+                "className":"text-blue-border-color",
+                "disabled": false
+            }
+            , {
+                "id": "4",
+                "label": "4",
+                "text": "4",
+                "default": false,
+                "data": "",
+                "value": 4,
+                "isValueNumber":true,
+                
+                "color": "rgba(80, 133, 63, 1)",
+                "className":"text-green-border-color",
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "Bug__severity_mob",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "1",
+                "label": "1",
+                "text": "1",
+                "default": false,
+                "data": "",
+                "value": 1,
+                "isValueNumber":true,
+                
+                "iconcls":"radio-button-off",
+                "color": "rgba(227, 6, 6, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "2",
+                "label": "2",
+                "text": "2",
+                "default": false,
+                "data": "",
+                "value": 2,
+                "isValueNumber":true,
+                
+                "iconcls":"radio-button-off",
+                "color": "rgba(255, 191, 0, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "3",
+                "label": "3",
+                "text": "3",
+                "default": false,
+                "data": "",
+                "value": 3,
+                "isValueNumber":true,
+                
+                "iconcls":"radio-button-off",
+                "color": "rgba(16, 174, 231, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "4",
+                "label": "4",
+                "text": "4",
+                "default": false,
+                "data": "",
+                "value": 4,
+                "isValueNumber":true,
+                
+                "iconcls":"radio-button-off",
+                "color": "rgba(49, 234, 12, 1)",
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "NeedNotReviewNew",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "1",
+                "label": "不需要评审",
+                "text": "不需要评审",
+                "default": false,
+                "data": "",
+                "value": "1",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "CurCaseVersion",
+        "emptytext": "未定义",
+        "codelisttype":"dynamic",
+        "appdataentity":"TestCaseStep",
+        "appdedataset":"FetchVersions",
+        "items": []
+    }, 
+    {
+        "srfkey": "Project__acl",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "open",
+                "label": "默认设置(有项目视图权限，即可访问)",
+                "text": "默认设置(有项目视图权限，即可访问)",
+                "default": true,
+                "data": "",
+                "value": "open",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "private",
+                "label": "私有项目(只有项目团队成员才能访问)",
+                "text": "私有项目(只有项目团队成员才能访问)",
+                "default": false,
+                "data": "",
+                "value": "private",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "Story__type",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "requirement",
+                "label": "用户需求",
+                "text": "用户需求",
+                "default": false,
+                "data": "",
+                "value": "requirement",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story",
+                "label": "软件需求",
+                "text": "软件需求",
+                "default": true,
+                "data": "",
+                "value": "story",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "Testcase__color",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "#3da7f5",
+                "label": "#3da7f5",
+                "text": "#3da7f5",
+                "default": false,
+                "data": "",
+                "value": "#3da7f5",
+                "isValueNumber":false,
+                
+                "color": "rgba(61, 167, 245, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "#75c941",
+                "label": "#75c941",
+                "text": "#75c941",
+                "default": false,
+                "data": "",
+                "value": "#75c941",
+                "isValueNumber":false,
+                
+                "color": "rgba(117, 201, 65, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "#2dbdb2",
+                "label": "#2dbdb2",
+                "text": "#2dbdb2",
+                "default": false,
+                "data": "",
+                "value": "#2dbdb2",
+                "isValueNumber":false,
+                
+                "color": "rgba(45, 189, 178, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "#797ec9",
+                "label": "#797ec9",
+                "text": "#797ec9",
+                "default": false,
+                "data": "",
+                "value": "#797ec9",
+                "isValueNumber":false,
+                
+                "color": "rgba(121, 126, 201, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "#ffaf38",
+                "label": "#ffaf38",
+                "text": "#ffaf38",
+                "default": false,
+                "data": "",
+                "value": "#ffaf38",
+                "isValueNumber":false,
+                
+                "color": "rgba(255, 175, 56, 1)",
+                "disabled": false
+            }
+            , {
+                "id": "#ff4e3e",
+                "label": "#ff4e3e",
+                "text": "#ff4e3e",
+                "default": false,
+                "data": "",
+                "value": "#ff4e3e",
+                "isValueNumber":false,
+                
+                "color": "rgba(255, 78, 62, 1)",
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "Bug__type",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "codeerror",
+                "label": "代码错误",
+                "text": "代码错误",
+                "default": false,
+                "data": "",
+                "value": "codeerror",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "config",
+                "label": "配置相关",
+                "text": "配置相关",
+                "default": false,
+                "data": "",
+                "value": "config",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "install",
+                "label": "安装部署",
+                "text": "安装部署",
+                "default": false,
+                "data": "",
+                "value": "install",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "security",
+                "label": "安全相关",
+                "text": "安全相关",
+                "default": false,
+                "data": "",
+                "value": "security",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "performance",
+                "label": "性能问题",
+                "text": "性能问题",
+                "default": false,
+                "data": "",
+                "value": "performance",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "standard",
+                "label": "标准规范",
+                "text": "标准规范",
+                "default": false,
+                "data": "",
+                "value": "standard",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "automation",
+                "label": "测试脚本",
+                "text": "测试脚本",
+                "default": false,
+                "data": "",
+                "value": "automation",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "designdefect",
+                "label": "设计缺陷",
+                "text": "设计缺陷",
+                "default": false,
+                "data": "",
+                "value": "designdefect",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "others",
+                "label": "其他",
+                "text": "其他",
+                "default": false,
+                "data": "",
+                "value": "others",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
+        "srfkey": "Team__type",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "project",
+                "label": "项目团队",
+                "text": "项目团队",
+                "default": true,
+                "data": "",
+                "value": "project",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "task",
+                "label": "任务团队",
+                "text": "任务团队",
+                "default": false,
+                "data": "",
+                "value": "task",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "product",
+                "label": "产品团队",
+                "text": "产品团队",
+                "default": false,
+                "data": "",
+                "value": "product",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
         "srfkey": "User__gender",
         "emptytext": "未定义",
         "codelisttype":"static",
@@ -3815,310 +3536,6 @@
                 "default": false,
                 "data": "",
                 "value": "m",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-        ]
-    }, 
-    {
-        "srfkey": "Action__object_type",
-        "emptytext": "未定义",
-        "codelisttype":"static",
-        "items": [
-             {
-                "id": "product",
-                "label": "产品",
-                "text": "产品",
-                "default": false,
-                "data": "",
-                "value": "product",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "story",
-                "label": "需求",
-                "text": "需求",
-                "default": false,
-                "data": "",
-                "value": "story",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "productplan",
-                "label": "计划",
-                "text": "计划",
-                "default": false,
-                "data": "",
-                "value": "productplan",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "release",
-                "label": "发布",
-                "text": "发布",
-                "default": false,
-                "data": "",
-                "value": "release",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "project",
-                "label": "项目",
-                "text": "项目",
-                "default": false,
-                "data": "",
-                "value": "project",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "task",
-                "label": "任务",
-                "text": "任务",
-                "default": false,
-                "data": "",
-                "value": "task",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "build",
-                "label": "版本",
-                "text": "版本",
-                "default": false,
-                "data": "",
-                "value": "build",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "bug",
-                "label": "Bug",
-                "text": "Bug",
-                "default": false,
-                "data": "",
-                "value": "bug",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "case",
-                "label": "用例",
-                "text": "用例",
-                "default": false,
-                "data": "",
-                "value": "case",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "caseresult",
-                "label": "用例结果",
-                "text": "用例结果",
-                "default": false,
-                "data": "",
-                "value": "caseresult",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "stepresult",
-                "label": "用例步骤",
-                "text": "用例步骤",
-                "default": false,
-                "data": "",
-                "value": "stepresult",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "testtask",
-                "label": "测试单",
-                "text": "测试单",
-                "default": false,
-                "data": "",
-                "value": "testtask",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "user",
-                "label": "用户",
-                "text": "用户",
-                "default": false,
-                "data": "",
-                "value": "user",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "doc",
-                "label": "文档",
-                "text": "文档",
-                "default": false,
-                "data": "",
-                "value": "doc",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "doclib",
-                "label": "文档库",
-                "text": "文档库",
-                "default": false,
-                "data": "",
-                "value": "doclib",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "todo",
-                "label": "待办",
-                "text": "待办",
-                "default": false,
-                "data": "",
-                "value": "todo",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "branch",
-                "label": "分支",
-                "text": "分支",
-                "default": false,
-                "data": "",
-                "value": "branch",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "module",
-                "label": "模块",
-                "text": "模块",
-                "default": false,
-                "data": "",
-                "value": "module",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "testsuite",
-                "label": "套件",
-                "text": "套件",
-                "default": false,
-                "data": "",
-                "value": "testsuite",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "caselib",
-                "label": "用例库",
-                "text": "用例库",
-                "default": false,
-                "data": "",
-                "value": "caselib",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "testreport",
-                "label": "报告",
-                "text": "报告",
-                "default": false,
-                "data": "",
-                "value": "testreport",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "entry",
-                "label": "应用",
-                "text": "应用",
-                "default": false,
-                "data": "",
-                "value": "entry",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "webhook",
-                "label": "Webhook",
-                "text": "Webhook",
-                "default": false,
-                "data": "",
-                "value": "webhook",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "daily",
-                "label": "日报",
-                "text": "日报",
-                "default": false,
-                "data": "",
-                "value": "daily",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "weekly",
-                "label": "周报",
-                "text": "周报",
-                "default": false,
-                "data": "",
-                "value": "weekly",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "monthly",
-                "label": "月报",
-                "text": "月报",
-                "default": false,
-                "data": "",
-                "value": "monthly",
-                "isValueNumber":false,
-                
-                "disabled": false
-            }
-            , {
-                "id": "reportly",
-                "label": "汇报",
-                "text": "汇报",
-                "default": false,
-                "data": "",
-                "value": "reportly",
                 "isValueNumber":false,
                 
                 "disabled": false
@@ -5905,6 +5322,310 @@
         ]
     }, 
     {
+        "srfkey": "Action__object_type",
+        "emptytext": "未定义",
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "product",
+                "label": "产品",
+                "text": "产品",
+                "default": false,
+                "data": "",
+                "value": "product",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story",
+                "label": "需求",
+                "text": "需求",
+                "default": false,
+                "data": "",
+                "value": "story",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "productplan",
+                "label": "计划",
+                "text": "计划",
+                "default": false,
+                "data": "",
+                "value": "productplan",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "release",
+                "label": "发布",
+                "text": "发布",
+                "default": false,
+                "data": "",
+                "value": "release",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "project",
+                "label": "项目",
+                "text": "项目",
+                "default": false,
+                "data": "",
+                "value": "project",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "task",
+                "label": "任务",
+                "text": "任务",
+                "default": false,
+                "data": "",
+                "value": "task",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "build",
+                "label": "版本",
+                "text": "版本",
+                "default": false,
+                "data": "",
+                "value": "build",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "bug",
+                "label": "Bug",
+                "text": "Bug",
+                "default": false,
+                "data": "",
+                "value": "bug",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "case",
+                "label": "用例",
+                "text": "用例",
+                "default": false,
+                "data": "",
+                "value": "case",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "caseresult",
+                "label": "用例结果",
+                "text": "用例结果",
+                "default": false,
+                "data": "",
+                "value": "caseresult",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "stepresult",
+                "label": "用例步骤",
+                "text": "用例步骤",
+                "default": false,
+                "data": "",
+                "value": "stepresult",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "testtask",
+                "label": "测试单",
+                "text": "测试单",
+                "default": false,
+                "data": "",
+                "value": "testtask",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "user",
+                "label": "用户",
+                "text": "用户",
+                "default": false,
+                "data": "",
+                "value": "user",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "doc",
+                "label": "文档",
+                "text": "文档",
+                "default": false,
+                "data": "",
+                "value": "doc",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "doclib",
+                "label": "文档库",
+                "text": "文档库",
+                "default": false,
+                "data": "",
+                "value": "doclib",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "todo",
+                "label": "待办",
+                "text": "待办",
+                "default": false,
+                "data": "",
+                "value": "todo",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "branch",
+                "label": "分支",
+                "text": "分支",
+                "default": false,
+                "data": "",
+                "value": "branch",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "module",
+                "label": "模块",
+                "text": "模块",
+                "default": false,
+                "data": "",
+                "value": "module",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "testsuite",
+                "label": "套件",
+                "text": "套件",
+                "default": false,
+                "data": "",
+                "value": "testsuite",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "caselib",
+                "label": "用例库",
+                "text": "用例库",
+                "default": false,
+                "data": "",
+                "value": "caselib",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "testreport",
+                "label": "报告",
+                "text": "报告",
+                "default": false,
+                "data": "",
+                "value": "testreport",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "entry",
+                "label": "应用",
+                "text": "应用",
+                "default": false,
+                "data": "",
+                "value": "entry",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "webhook",
+                "label": "Webhook",
+                "text": "Webhook",
+                "default": false,
+                "data": "",
+                "value": "webhook",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "daily",
+                "label": "日报",
+                "text": "日报",
+                "default": false,
+                "data": "",
+                "value": "daily",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "weekly",
+                "label": "周报",
+                "text": "周报",
+                "default": false,
+                "data": "",
+                "value": "weekly",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "monthly",
+                "label": "月报",
+                "text": "月报",
+                "default": false,
+                "data": "",
+                "value": "monthly",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "reportly",
+                "label": "汇报",
+                "text": "汇报",
+                "default": false,
+                "data": "",
+                "value": "reportly",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
+    }, 
+    {
         "srfkey": "Story__color",
         "emptytext": "未定义",
         "codelisttype":"static",
@@ -6043,12 +5764,242 @@
         ]
     }, 
     {
-        "srfkey": "UserRealName",
+        "srfkey": "ActionManner",
         "emptytext": "未定义",
-        "codelisttype":"dynamic",
-        "appdataentity":"SysEmployee",
-        "appdedataset":"FetchDefault",
-        "items": []
+        "codelisttype":"static",
+        "items": [
+             {
+                "id": "story_closed_willnotdo",
+                "label": "不做",
+                "text": "不做",
+                "default": false,
+                "data": "",
+                "value": "story_closed_willnotdo",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story_closed_cancel",
+                "label": "已取消",
+                "text": "已取消",
+                "default": false,
+                "data": "",
+                "value": "story_closed_cancel",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story_closed_done",
+                "label": "已完成",
+                "text": "已完成",
+                "default": false,
+                "data": "",
+                "value": "story_closed_done",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story_closed_subdivided",
+                "label": "已细分",
+                "text": "已细分",
+                "default": false,
+                "data": "",
+                "value": "story_closed_subdivided",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story_closed_postponed",
+                "label": "延期",
+                "text": "延期",
+                "default": false,
+                "data": "",
+                "value": "story_closed_postponed",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story_closed_bydesign",
+                "label": "设计如此",
+                "text": "设计如此",
+                "default": false,
+                "data": "",
+                "value": "story_closed_bydesign",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story_closed_duplicate",
+                "label": "重复",
+                "text": "重复",
+                "default": false,
+                "data": "",
+                "value": "story_closed_duplicate",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "bug_resolved_willnotfix",
+                "label": "不予解决",
+                "text": "不予解决",
+                "default": false,
+                "data": "",
+                "value": "bug_resolved_willnotfix",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "bug_resolved_external",
+                "label": "外部原因",
+                "text": "外部原因",
+                "default": false,
+                "data": "",
+                "value": "bug_resolved_external",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "bug_resolved_fixed",
+                "label": "已解决",
+                "text": "已解决",
+                "default": false,
+                "data": "",
+                "value": "bug_resolved_fixed",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "bug_resolved_postponed",
+                "label": "延期处理",
+                "text": "延期处理",
+                "default": false,
+                "data": "",
+                "value": "bug_resolved_postponed",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "bug_resolved_notrepro",
+                "label": "无法重现",
+                "text": "无法重现",
+                "default": false,
+                "data": "",
+                "value": "bug_resolved_notrepro",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "bug_resolved_bydesign",
+                "label": "设计如此",
+                "text": "设计如此",
+                "default": false,
+                "data": "",
+                "value": "bug_resolved_bydesign",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "bug_resolved_tostory",
+                "label": "转为需求",
+                "text": "转为需求",
+                "default": false,
+                "data": "",
+                "value": "bug_resolved_tostory",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "bug_resolved_duplicate",
+                "label": "重复Bug",
+                "text": "重复Bug",
+                "default": false,
+                "data": "",
+                "value": "bug_resolved_duplicate",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story_reviewed_reject",
+                "label": "拒绝",
+                "text": "拒绝",
+                "default": false,
+                "data": "",
+                "value": "story_reviewed_reject",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story_reviewed_revert",
+                "label": "撤销变更",
+                "text": "撤销变更",
+                "default": false,
+                "data": "",
+                "value": "story_reviewed_revert",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story_reviewed_clarify",
+                "label": "有待明确",
+                "text": "有待明确",
+                "default": false,
+                "data": "",
+                "value": "story_reviewed_clarify",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": "story_reviewed_pass",
+                "label": "确认通过",
+                "text": "确认通过",
+                "default": false,
+                "data": "",
+                "value": "story_reviewed_pass",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": " release_changestatus_terminate",
+                "label": "停止维护",
+                "text": "停止维护",
+                "default": false,
+                "data": "",
+                "value": " release_changestatus_terminate",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+            , {
+                "id": " release_changestatus_normal",
+                "label": "正常",
+                "text": "正常",
+                "default": false,
+                "data": "",
+                "value": " release_changestatus_normal",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
+        ]
     }, 
     {
         "srfkey": "Testcase__type",
@@ -6144,6 +6095,14 @@
                 "disabled": false
             }
         ]
+    }, 
+    {
+        "srfkey": "UserRealName",
+        "emptytext": "未定义",
+        "codelisttype":"dynamic",
+        "appdataentity":"SysEmployee",
+        "appdedataset":"FetchDefault",
+        "items": []
     }, 
     {
         "srfkey": "MobStoryQuickGroup",

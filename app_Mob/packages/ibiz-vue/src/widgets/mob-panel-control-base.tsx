@@ -128,7 +128,7 @@ export class MobPanelControlBase extends MDControlBase {
                     let editorRules: any = Verify.buildVerConditions(panelItem.getPSEditor());
                     this.rules[panelItem.name] = [
                         // 非空值规则
-                        { validator: (rule: any, value: any, callback: any) => { return !(this.detailsModel[panelItem.name].required && !value) }, message: `${panelItem.caption} 必须填写` },
+                        { validator: (rule: any, value: any, callback: any) => { return !(this.detailsModel[panelItem.name].required && !value) }, message: `${panelItem.caption} ${this.$t('app.form.rules.required')}` },
                         // 编辑器基础值规则
                         ...editorRules
                     ]
@@ -345,7 +345,7 @@ export class MobPanelControlBase extends MDControlBase {
      * @memberof MobPanelControlBase
      */
     public opendata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$Notice.error('没有opendata');
+        this.$Notice.error(this.$t('app.error.unopendata'));
     }
 
     /**
@@ -355,7 +355,7 @@ export class MobPanelControlBase extends MDControlBase {
      * @memberof MobPanelControlBase
      */
     public newdata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$Notice.error('没有newdata');
+        this.$Notice.error(this.$t('app.error.unnewdata'));
     }
 
     /**
@@ -366,7 +366,7 @@ export class MobPanelControlBase extends MDControlBase {
      * @memberof MobPanelControlBase
      */
     public async remove(datas: any[]): Promise<any> {
-        this.$Notice.error('没有remove');
+        this.$Notice.error(this.$t('app.error.unremove'));
     }
 
     /**
@@ -376,7 +376,7 @@ export class MobPanelControlBase extends MDControlBase {
      * @memberof MobPanelControlBase
      */
     public refresh(args?: any) {
-        this.$Notice.error('没有refresh');
+        this.$Notice.error(this.$t('app.error.unrefresh'));
     }
 
     /**

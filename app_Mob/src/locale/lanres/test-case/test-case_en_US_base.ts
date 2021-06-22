@@ -6,10 +6,10 @@ export default {
     color:  commonLogic.appcommonhandle("标题颜色",null),
     path:  commonLogic.appcommonhandle("path",null),
     openedDate:  commonLogic.appcommonhandle("创建日期",null),
+    casesn:  commonLogic.appcommonhandle("测试用例编号",null),
     lastRunResult:  commonLogic.appcommonhandle("结果",null),
     modulename1:  commonLogic.appcommonhandle("模块名称",null),
     linkCase:  commonLogic.appcommonhandle("相关用例",null),
-    caseSteps:  commonLogic.appcommonhandle("用例步骤集合",null),
     task:  commonLogic.appcommonhandle("属性",null),
     order:  commonLogic.appcommonhandle("排序",null),
     orgName:  commonLogic.appcommonhandle("归属组织名",null),
@@ -64,7 +64,6 @@ export default {
     product:  commonLogic.appcommonhandle("所属产品",null),
     lib:  commonLogic.appcommonhandle("所属库",null),
     module:  commonLogic.appcommonhandle("所属模块",null),
-    casesn:  commonLogic.appcommonhandle("测试用例编号",null),
   },
 	views: {
 		mobeditview: {

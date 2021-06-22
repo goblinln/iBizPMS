@@ -95,6 +95,7 @@ export class AppDefaultMobChartView extends MobChartViewBase {
             this.renderPullDownRefresh(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
+            this.renderContent(),
             this.renderMainContent()
         ]);
     }

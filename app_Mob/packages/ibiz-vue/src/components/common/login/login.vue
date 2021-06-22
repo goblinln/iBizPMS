@@ -3,7 +3,7 @@
         <ion-content fullscreen>
             <div class="app-login-contant">
                 <form class="app-login-form" :class="isloginPage?'activeFrom':''">
-                    <span class="title">登录</span>
+                    <span class="title">{{$t('login')}}</span>
                     <ion-item lines="none">
                         <ion-label position="stacked">{{$t('username')}}：</ion-label>
                         <ion-input clear-input required type="text" debounce="100" :value="username" @ionChange="($event) => username = $event.detail.value"></ion-input>
@@ -15,14 +15,14 @@
                     <div class="ion-padding button">
                         <ion-button expand="block" :disabled="isLoadding" class="ion-no-margin" @click="login('login')">{{$t('submit')}}</ion-button>
                     </div>
-                        <div class="forgetpassword" :style="!isloginPage?'display:none':''"><span @click='forgetpassword'>忘记密码?</span></div>
-                        <div class="app-register-text-contet" :style="isloginPage?'display:none':''"><span class="app-register-text">已有账户？<span class="register-button" @click="activeChange">立刻登录!</span></span></div>
+                        <div class="forgetpassword" :style="!isloginPage?'display:none':''"><span @click='forgetpassword'>{{$t('forgetPas')}}</span></div>
+                        <div class="app-register-text-contet" :style="isloginPage?'display:none':''"><span class="app-register-text">{{$t('hadAccount')}}<span class="register-button" @click="activeChange">{{$t('loginNow')}}</span></span></div>
                     <div class="visitor" v-if="isVisitorsMode">
-                        <ion-button expand="block" color="medium" size="small" fill="clear" class="ion-visitor" @click="login('visitors')">以访客身份登录</ion-button>
+                        <ion-button expand="block" color="medium" size="small" fill="clear" class="ion-visitor" @click="login('visitors')">{{$t('guestLogin')}}</ion-button>
                     </div>
                 </form>
                  <form class="app-register-form" :class="!isloginPage?'activeFrom':''">
-                    <span class="title">注册</span>
+                    <span class="title">{{$t('reg')}}</span>
                     <ion-item lines="none">
                         <ion-label position="stacked">{{$t('username')}}：</ion-label>
                         <ion-input clear-input required type="text" debounce="100" :value="username" @ionChange="($event) => username = $event.detail.value"></ion-input>
@@ -32,9 +32,9 @@
                         <ion-input clear-input required type="password" debounce="100" :value="password" @ionChange="($event) => password = $event.detail.value"></ion-input>
                     </ion-item>
                                         <div class="ion-padding button">
-                        <ion-button expand="block" :disabled="isLoadding" class="ion-no-margin" @click="register('login')">注册</ion-button>
+                        <ion-button expand="block" :disabled="isLoadding" class="ion-no-margin" @click="register('login')">{{$t('reg')}}</ion-button>
                     </div>
-                    <div class="app-register-text-contet" :style="!isloginPage?'display:none':''"><span class="app-register-text">还没有账户？<span class="register-button" @click="activeChange">立刻注册!</span></span></div>
+                    <div class="app-register-text-contet" :style="!isloginPage?'display:none':''"><span class="app-register-text">{{$t('noAccount')}}<span class="register-button" @click="activeChange">{{$t('regNow')}}</span></span></div>
                 </form>
                 <div class="thirdParty">
                     <img @click="thirdLogin('钉钉')" src="assets/aliiconfont/dingding.svg">
@@ -63,6 +63,16 @@ import { setCookie } from "qx-util";
                 passwordtipinfo: '密码为空',
                 dingdingfailed: '钉钉认证失败，请联系管理员',
                 badlogin: '登录异常',
+                login:'登录',
+                forgetPas:'忘记密码?',
+                hadAccount:'已有账户？',
+                loginNow:'立刻登录!',
+                guestLogin:'以访客身份登录',
+                reg:'注册',
+                noAccount:'还没有账户？',
+                regNow:'立刻注册!',
+                regNotSupport:'注册暂未支持,请联系管理员',
+                PasNotSupport:'暂未支持找回密码,请联系管理员',
             },
             'EN-US': {
                 username: 'User name',
@@ -72,6 +82,16 @@ import { setCookie } from "qx-util";
                 passwordtipinfo: 'Password id empty.',
                 dingdingfailed: 'Dingding authentication failed, please contact the administrator',
                 badlogin: 'Login exception',
+                login:'Login',
+                forgetPas:'Forgot password?',
+                hadAccount:'Already have an account?',
+                loginNow:'Sign in now!',
+                guestLogin:'Log in as a guest',
+                reg:'Registered',
+                noAccount:'Don’t have an account yet?',
+                regNow:'Sign up now!',
+                regNotSupport:'Registration is not yet supported, please contact the administrator',
+                PasNotSupport:'Password retrieval is not supported yet, please contact the administrator',                
             }
         }
     }
@@ -242,7 +262,7 @@ export default class Login extends Vue {
      * @memberof register
      */
     public register(){
-        this.$Notice.error(`注册暂未支持,请联系管理员`);
+        this.$Notice.error(this.$t('regNotSupport'));
     }
      /**
      * 找回密码
@@ -250,7 +270,7 @@ export default class Login extends Vue {
      * @memberof register
      */
     public forgetpassword() {
-        this.$Notice.error(`暂未支持找回密码,请联系管理员`);
+        this.$Notice.error(this.$t('PasNotSupport'));
     }
 
 }

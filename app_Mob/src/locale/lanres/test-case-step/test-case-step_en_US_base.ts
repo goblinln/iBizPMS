@@ -12,6 +12,7 @@ export default {
     version:  commonLogic.appcommonhandle("用例版本",null),
     id:  commonLogic.appcommonhandle("编号",null),
     desc:  commonLogic.appcommonhandle("步骤",null),
+    casestepsn:  commonLogic.appcommonhandle("用例步骤编号",null),
     expect:  commonLogic.appcommonhandle("预期",null),
     files:  commonLogic.appcommonhandle("附件",null),
     updateBy:  commonLogic.appcommonhandle("由谁更新",null),
@@ -19,7 +20,6 @@ export default {
     org:  commonLogic.appcommonhandle("归属组织",null),
     iBizCase:  commonLogic.appcommonhandle("用例",null),
     parent:  commonLogic.appcommonhandle("分组用例步骤的组编号",null),
-    casestepsn:  commonLogic.appcommonhandle("用例步骤编号",null),
   },
 	views: {
 		mobmdview9: {

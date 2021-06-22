@@ -182,7 +182,7 @@ export class MobWFDynaEditView3Base extends MainViewBase {
                     </van-tab>
                     {this.deDRTabPages.map((deDRTabPage: IPSDEDRTabPage) => {
                         return (
-                            <van-tab tab={tabsName} title={deDRTabPage.caption}>
+                            <van-tab tab={tabsName} title={this.$tl(deDRTabPage.getCapPSLanguageRes()?.lanResTag, deDRTabPage.caption)}>
                                 { this.$createElement('app-view-shell', {
                                     props: {
                                         staticProps: {
@@ -376,7 +376,7 @@ export class MobWFDynaEditView3Base extends MainViewBase {
             return item.name === `WFUTILACTION@${featureTag}`;
         })
         if (!targetViewRef) {
-            LogUtil.warn("未找到流程功能操作视图");
+            LogUtil.warn(this.$t('app.warn.dynaViewNotFound'));
             return;
         }
         // 准备参数
@@ -436,7 +436,7 @@ export class MobWFDynaEditView3Base extends MainViewBase {
                 this.closeView([{ ...data }]);
             }
             AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
-            this.$Notice.success(data?.message ? data.message : '提交数据成功');
+            this.$Notice.success(data?.message ? data.message : this.$t('app.success.submitSuccess'));
         }).catch((error: any) => {
             this.$Notice.error(error);
         })
@@ -451,12 +451,12 @@ export class MobWFDynaEditView3Base extends MainViewBase {
     public readTask(data: any) {
         this.appEntityService.ReadTask(this.context, data).then((response: any) => {
             if (!response || response.status !== 200) {
-                LogUtil.warn("将待办任务标记为已读失败");
+                LogUtil.warn(this.$t('app.warn.markAsFailRead'));
                 return;
             }
             AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
         }).catch((error: any) => {
-            LogUtil.warn("将待办任务标记为已读失败");
+            LogUtil.warn(this.$t('app.warn.markAsFailRead'));
         })
     }
 }

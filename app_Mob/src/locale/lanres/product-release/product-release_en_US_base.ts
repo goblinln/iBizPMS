@@ -5,6 +5,7 @@ export default {
     marker:  commonLogic.appcommonhandle("里程碑",null),
     org:  commonLogic.appcommonhandle("归属组织",null),
     id:  commonLogic.appcommonhandle("ID",null),
+    releasesn:  commonLogic.appcommonhandle("发布编号",null),
     sqlid:  commonLogic.appcommonhandle("运行数据库",null),
     leftBugs:  commonLogic.appcommonhandle("遗留的Bug",null),
     bugs:  commonLogic.appcommonhandle("解决的Bug",null),
@@ -32,7 +33,6 @@ export default {
     product:  commonLogic.appcommonhandle("产品",null),
     build:  commonLogic.appcommonhandle("版本",null),
     branch:  commonLogic.appcommonhandle("平台/分支",null),
-    releasesn:  commonLogic.appcommonhandle("发布编号",null),
   },
 	views: {
 		mobmdview: {

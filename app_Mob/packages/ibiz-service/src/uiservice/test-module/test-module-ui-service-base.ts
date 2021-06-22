@@ -80,6 +80,8 @@ export class TestModuleUIServiceBase extends UIServiceBase {
      * @memberof  TestModuleUIServiceBase
      */  
     protected initViewFuncMap(){
+        this.allViewFuncMap.set('MOBPICKUPVIEW:','MOBPICKUPVIEW');
+        this.allViewFuncMap.set(':','');
     }
 
 }

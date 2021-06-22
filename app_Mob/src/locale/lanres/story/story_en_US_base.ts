@@ -30,6 +30,7 @@ export default {
     reviewedBy:  commonLogic.appcommonhandle("由谁评审",null),
     subStatus:  commonLogic.appcommonhandle("子状态",null),
     stagedBy:  commonLogic.appcommonhandle("设置阶段者",null),
+    planname:  commonLogic.appcommonhandle("所属计划",null),
     openedBy:  commonLogic.appcommonhandle("由谁创建",null),
     openedDate:  commonLogic.appcommonhandle("创建日期",null),
     id:  commonLogic.appcommonhandle("编号",null),
@@ -57,6 +58,7 @@ export default {
     comment:  commonLogic.appcommonhandle("备注",null),
     acllist:  commonLogic.appcommonhandle("acllist",null),
     orgName:  commonLogic.appcommonhandle("归属组织名",null),
+    storysn:  commonLogic.appcommonhandle("需求编号",null),
     verify:  commonLogic.appcommonhandle("验收标准",null),
     closedBy:  commonLogic.appcommonhandle("由谁关闭",null),
     acl:  commonLogic.appcommonhandle("acl",null),
@@ -80,8 +82,6 @@ export default {
     duplicateStory:  commonLogic.appcommonhandle("重复需求ID",null),
     branch:  commonLogic.appcommonhandle("平台/分支",null),
     toBug:  commonLogic.appcommonhandle("转Bug",null),
-    storysn:  commonLogic.appcommonhandle("需求编号",null),
-    planname:  commonLogic.appcommonhandle("所属计划",null),
   },
 	views: {
 		editmobeditview: {

@@ -9,9 +9,21 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IProjectModule extends IEntityBase {
     /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 简称
      */
     ibizshort?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 叶子模块
      */
@@ -20,6 +32,10 @@ export interface IProjectModule extends IEntityBase {
      * 类型（task）
      */
     type?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * 数据选择排序
      */
@@ -37,6 +53,10 @@ export interface IProjectModule extends IEntityBase {
      */
     collector?: any;
     /**
+     * 组织机构标识
+     */
+    orgid?: any;
+    /**
      * grade
      */
     grade?: any;
@@ -52,6 +72,10 @@ export interface IProjectModule extends IEntityBase {
      * id
      */
     id?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
     /**
      * owner
      */
@@ -76,28 +100,4 @@ export interface IProjectModule extends IEntityBase {
      * id
      */
     parent?: any;
-    /**
-     * 部门标识
-     */
-    mdeptid?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
-    /**
-     * 组织机构标识
-     */
-    orgid?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
 }

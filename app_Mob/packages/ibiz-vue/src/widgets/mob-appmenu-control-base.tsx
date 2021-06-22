@@ -159,7 +159,7 @@ export class MobAppMenuControlBase extends AppControlBase {
                 AppFuncService.getInstance().executeApplication(appFunc, tempContext);
             }
         } else {
-            console.warn('未指定应用功能');
+            console.warn(this.$t('app.commonWords.noAssign'));
         }
     }
 
@@ -181,8 +181,6 @@ export class MobAppMenuControlBase extends AppControlBase {
                 _item.hidden = false;
             }
         })
-        console.log(inputMenus);
-        
     }
 
     /**
@@ -227,8 +225,21 @@ export class MobAppMenuControlBase extends AppControlBase {
         this.defPSAppView = this.dynamicProps.defPSAppView;
         this.selectTheme = this.staticProps.selectTheme;
         let _this: any = this;
-        this.authService = new AuthServiceBase({ $store: _this.$store })
-        this.handleMenusResource(this.service.getAllMenuItems())
+        this.authService = new AuthServiceBase({ $store: _this.$store });
+        this.handleMenusResource(this.service.getAllMenuItems());
+        this.calcMenuName();
+    }
+
+
+    /**
+     * 计算菜单名称
+     *
+     * @memberof MobAppMenuControlBase
+     */
+    public calcMenuName() {
+        this.menus.forEach((item:any)=>{
+            item.caption = this.$tl(item.captionTag,item.caption);
+        });
     }
 
     /**

@@ -13,6 +13,14 @@ export interface ITaskTeam extends IEntityBase {
      */
     estimate?: any;
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 用户
      */
     username?: any;
@@ -37,6 +45,14 @@ export interface ITaskTeam extends IEntityBase {
      */
     left?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
      * 总计消耗
      */
     consumed?: any;
@@ -51,6 +67,10 @@ export interface ITaskTeam extends IEntityBase {
      */
     role?: any;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 编号
      */
     id?: any;
@@ -63,6 +83,10 @@ export interface ITaskTeam extends IEntityBase {
      */
     total?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 团队类型
      *
      * @type {('project' | 'task' | 'product')} project: 项目团队, task: 任务团队, product: 产品团队
@@ -72,28 +96,4 @@ export interface ITaskTeam extends IEntityBase {
      * 编号
      */
     root?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

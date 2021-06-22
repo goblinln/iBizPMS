@@ -13,6 +13,7 @@ export default {
     title:  commonLogic.appcommonhandle("标题",null),
     orgName:  commonLogic.appcommonhandle("归属组织名",null),
     updateBy:  commonLogic.appcommonhandle("由谁更新",null),
+    filesn:  commonLogic.appcommonhandle("附件编号",null),
     addedDate:  commonLogic.appcommonhandle("添加时间",null),
     downloads:  commonLogic.appcommonhandle("下载次数",null),
     dept:  commonLogic.appcommonhandle("归属部门",null),
@@ -20,7 +21,6 @@ export default {
     deptName:  commonLogic.appcommonhandle("归属部门名",null),
     id:  commonLogic.appcommonhandle("id",null),
     extra:  commonLogic.appcommonhandle("备注",null),
-    filesn:  commonLogic.appcommonhandle("附件编号",null),
   },
 	views: {
 		mobmdview9: {

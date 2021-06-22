@@ -15,6 +15,7 @@ export default {
     deleted:  commonLogic.appcommonhandle("已删除",null),
     recentupdatecnt:  commonLogic.appcommonhandle("最近更新数量",null),
     org:  commonLogic.appcommonhandle("归属组织",null),
+    docsn:  commonLogic.appcommonhandle("文档编号",null),
     type:  commonLogic.appcommonhandle("文档类型",null),
     alldoccnt:  commonLogic.appcommonhandle("所有文档数量",null),
     addedDate:  commonLogic.appcommonhandle("添加时间",null),
@@ -41,6 +42,5 @@ export default {
     project:  commonLogic.appcommonhandle("所属项目",null),
     product:  commonLogic.appcommonhandle("所属产品",null),
     module:  commonLogic.appcommonhandle("所属分类",null),
-    docsn:  commonLogic.appcommonhandle("文档编号",null),
   },
 };

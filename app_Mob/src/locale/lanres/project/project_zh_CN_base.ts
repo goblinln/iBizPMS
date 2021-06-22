@@ -35,7 +35,6 @@ export default {
     whitelist: "分组白名单",
     mobimage: "移动端图片",
     totalwh: "总工时",
-    projectteams: "项目团队成员",
     totalhours: "可用工时",
     pri: "优先级",
     end: "结束日期",
@@ -55,6 +54,7 @@ export default {
     unstarttaskcnt: "未开始任务数",
     accounts: "项目团队相关成员",
     noticeusers: "消息通知用户",
+    projectsn: "项目编号",
     statge: "statge",
     canceltaskcnt: "取消任务数",
     taskcnt: "任务总数",
@@ -84,20 +84,19 @@ export default {
     qd: "测试负责人",
     parentname: "parent",
     parent: "父项目",
-    projectsn: "项目编号",
   },
 	views: {
 		mobtabexpview: {
 			caption: commonLogic.appcommonhandle("项目",null),
+		},
+		startmobeditview: {
+			caption: commonLogic.appcommonhandle("开始",null),
 		},
 		mobmdview: {
 			caption: commonLogic.appcommonhandle("项目",null),
 		},
 		mobpickupview: {
 			caption: commonLogic.appcommonhandle("项目",null),
-		},
-		startmobeditview: {
-			caption: commonLogic.appcommonhandle("开始",null),
 		},
 		mobeditview: {
 			caption: commonLogic.appcommonhandle("项目",null),

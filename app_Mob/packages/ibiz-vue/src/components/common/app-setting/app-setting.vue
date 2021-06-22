@@ -84,6 +84,26 @@ import i18n from '@/locale'
 import { Environment } from "@/environments/environment";
 @Component({
     components: {},
+    i18n: {
+        messages: {
+            'ZH-CN': {
+                confirmOut: '确认退出当前账号?',
+                clearCache: '清除缓存',
+                clearInfo:'清除缓存可能会导致当前登录信息失效！！！',
+                userView:'用户自定义视图未配置',
+                toCh:'已切换为中文！',
+                toEng:'已切换为英文！',
+            },
+            'EN-US': {
+                confirmOut:'Confirm to log out of the current account?',
+                clearCache: 'clear cache',
+                clearInfo:'Clearing the cache may cause the current login information to become invalid! !',
+                userView:'User-defined view is not configured',
+                toCh:'Switched to Chinese!',
+                toEng:'Switched to English!'
+            }
+        }
+    }     
 })
 export default class AppSetting extends Vue {
 
@@ -188,7 +208,7 @@ export default class AppSetting extends Vue {
      */
     public async logout() {
         const title: any = this.$t("app.tabpage.sureclosetip.title");
-        const result = await this.$Notice.confirm(title, "确认退出当前账号？");
+        const result = await this.$Notice.confirm.call(this,title, this.$t('confirmOut'));
         if (result) {
             if (this.thirdPartyName) {
                 ThirdPartyService.getInstance().close();
@@ -250,7 +270,7 @@ export default class AppSetting extends Vue {
      * @memberof AppSetting
      */
     public async clear() {
-        const result = await this.$Notice.confirm("清除缓存", "清除缓存可能会导致当前登录信息失效！！！");
+        const result = await this.$Notice.confirm.call(this,this.$t('clearCache'), this.$t('clearInfo'));
         if (result) {
             localStorage.clear();
         }
@@ -285,7 +305,7 @@ export default class AppSetting extends Vue {
                 user
             );
         } else {
-            this.$Notice.warning("用户自定义视图未配置");
+            this.$Notice.warning(this.$t('userView'));
         }
     }
 
@@ -322,9 +342,9 @@ export default class AppSetting extends Vue {
         localStorage.setItem('lanArray', JSON.stringify(this.lanArray));
         // 提示框
         if (this.lanArray[0] === "ZH-CN") {
-            this.$Notice.success('已切换为中文！');
+            this.$Notice.success(this.$t('toCh'));
         } else if (this.lanArray[0] === "EN-US") {
-            this.$Notice.success('已切换为英文！');
+            this.$Notice.success(this.$t('toEng'));
         }
         Object.keys(this.data).forEach((items: any) => {
             // 多语言处理

@@ -72,9 +72,9 @@ export abstract class DocLibBase extends EntityBase implements IDocLib {
     /**
      * 权限
      *
-     * @type {('default' | 'custom')} default: 默认, custom: 自定义
+     * @type {('default')} default: 默认
      */
-    acl?: 'default' | 'custom';
+    acl?: 'default';
     /**
      * Root
      */
@@ -128,6 +128,10 @@ export abstract class DocLibBase extends EntityBase implements IDocLib {
      */
     openeddate?: any;
     /**
+     * 文档库编号
+     */
+    doclibsn?: any;
+    /**
      * 排序
      */
     order?: any;
@@ -147,10 +151,6 @@ export abstract class DocLibBase extends EntityBase implements IDocLib {
      * 产品库
      */
     product?: any;
-    /**
-     * 文档库编号
-     */
-    doclibsn?: any;
 
     /**
      * 重置实体数据

@@ -56,6 +56,10 @@ export abstract class TestCaseBase extends EntityBase implements ITestCase {
      */
     openeddate?: any;
     /**
+     * 测试用例编号
+     */
+    casesn?: any;
+    /**
      * 结果
      *
      * @type {('n/a' | 'pass' | 'fail' | 'blocked')} n/a: 忽略, pass: 通过, fail: 失败, blocked: 阻塞
@@ -69,10 +73,6 @@ export abstract class TestCaseBase extends EntityBase implements ITestCase {
      * 相关用例
      */
     linkcase?: any;
-    /**
-     * 用例步骤集合
-     */
-    casesteps?: any;
     /**
      * 属性
      */
@@ -305,10 +305,6 @@ export abstract class TestCaseBase extends EntityBase implements ITestCase {
      * 所属模块
      */
     module?: any;
-    /**
-     * 测试用例编号
-     */
-    casesn?: any;
 
     /**
      * 重置实体数据

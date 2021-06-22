@@ -67,17 +67,6 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzMyTerritoryService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -94,29 +83,6 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzmyterritories`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzMyTerritoryService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzmyterritories/${_context.ibzmyterritory}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzMyTerritoryService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzmyterritories/${_context.ibzmyterritory}`);
     }
     /**
      * Get
@@ -179,6 +145,29 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     async MyTerritoryCount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.post(`/ibzmyterritories/myterritorycount`);
         return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzMyTerritoryService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/ibzmyterritories/${_context.ibzmyterritory}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzMyTerritoryService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzmyterritories/${_context.ibzmyterritory}`, _data);
     }
     /**
      * FetchDefault
@@ -245,5 +234,16 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      */
     async FetchWelcome(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzmyterritories/fetchwelcome`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzMyTerritoryService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}/select`);
     }
 }

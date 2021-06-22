@@ -7,6 +7,7 @@ export default {
     name:  commonLogic.appcommonhandle("名称",null),
     orgName:  commonLogic.appcommonhandle("归属组织名",null),
     addedDate:  commonLogic.appcommonhandle("创建时间",null),
+    testsuitesn:  commonLogic.appcommonhandle("测试套件编号",null),
     id:  commonLogic.appcommonhandle("编号",null),
     deleted:  commonLogic.appcommonhandle("已删除",null),
     lastEditedBy:  commonLogic.appcommonhandle("最后编辑人",null),
@@ -16,7 +17,6 @@ export default {
     casecnt:  commonLogic.appcommonhandle("用例数",null),
     desc:  commonLogic.appcommonhandle("描述",null),
     product:  commonLogic.appcommonhandle("所属产品",null),
-    testsuitesn:  commonLogic.appcommonhandle("测试套件编号",null),
   },
 	views: {
 		mobtabexpview: {

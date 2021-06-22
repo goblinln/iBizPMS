@@ -1,13 +1,13 @@
 export default [
     'dynafilterid',
-    'dynafiltername',
+    'deptid',
     'updateman',
-    'createdate',
-    'createman',
+    'formname',
     'updatedate',
     'orgid',
-    'deptid',
-    'formname',
+    'createdate',
     'dename',
+    'dynafiltername',
     'data',
+    'createman',
 ];

@@ -6,10 +6,10 @@ export default {
     color: "标题颜色",
     path: "path",
     openeddate: "创建日期",
+    casesn: "测试用例编号",
     lastrunresult: "结果",
     modulename1: "模块名称",
     linkcase: "相关用例",
-    casesteps: "用例步骤集合",
     task: "属性",
     order: "排序",
     orgname: "归属组织名",
@@ -64,7 +64,6 @@ export default {
     product: "所属产品",
     lib: "所属库",
     module: "所属模块",
-    casesn: "测试用例编号",
   },
 	views: {
 		mobeditview: {

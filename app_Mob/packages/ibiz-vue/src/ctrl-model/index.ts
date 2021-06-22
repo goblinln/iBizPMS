@@ -5,4 +5,5 @@ export { AppMobCalendarModel } from './app-mob-calendar-model';
 export { AppMobMenuModel } from './app-mob-menu-model';
 export { AppMobPanelModel } from './app-mob-panel-model';
 export { AppMobTreeModel } from './app-mob-tree-model';
+export { AppMobMapModel } from './app-mob-map-model';
 export { AppMobMEditviewPanelModel } from './app-mob-meditviewpanel-model';

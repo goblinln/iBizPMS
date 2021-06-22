@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Subscription } from 'rxjs';
-import { ControlInterface, Util } from 'ibiz-core';
+import { AppModelService, ControlInterface, GetModelService, Util } from 'ibiz-core';
 import { CounterServiceRegister } from 'ibiz-service';
 import { PluginService } from '../app-service/common-service';
 import { AppServiceBase } from 'ibiz-core';
@@ -171,6 +171,14 @@ export class AppControlBase extends Vue implements ControlInterface {
     public hasCtrlMounted: boolean = false;
 
     /**
+     * 模型服务
+     *
+     * @type {AppModelService}
+     * @memberof ControlBase
+     */
+    public modelService !: AppModelService;
+
+    /**
      * 初始化挂载状态集合
      *
      * @memberof ControlBase
@@ -219,9 +227,6 @@ export class AppControlBase extends Vue implements ControlInterface {
      * @memberof ViewBase
      */
     public initRenderOptions(opts?: any) {
-        if(!opts){
-            return;
-        }
         this.renderOptions = {};
         const { controlType, codeName, getPSSysCss } = this.controlInstance;
         // 部件类名
@@ -229,7 +234,9 @@ export class AppControlBase extends Vue implements ControlInterface {
             [controlType?.toLowerCase()]: true,
             [Util.srfFilePath2(codeName)]: true,
         };
-        Object.assign(controlClassNames, opts);
+        if (opts) {
+            Object.assign(controlClassNames, opts);
+        }
         if (getPSSysCss?.cssName) {
             Object.assign(controlClassNames, { [getPSSysCss?.cssName]: true });
         }
@@ -331,6 +338,15 @@ export class AppControlBase extends Vue implements ControlInterface {
         }
     }
 
+
+    /**
+    * 初始化模型服务
+    *
+    * @memberof ControlBase
+    */
+    public async initModelService() {
+        this.modelService = await GetModelService(this.context);
+    }
     /**
      * 设置已经绘制完成状态
      *
@@ -389,6 +405,7 @@ export class AppControlBase extends Vue implements ControlInterface {
      * @memberof AppControlBase
      */
     public async ctrlModelInit(args?: any) {
+        await this.initModelService();
         await this.ctrlModelLoad();
         this.initMountedMap();
         this.name = this.controlInstance?.name ? this.controlInstance.name : this.controlInstance?.codeName;
@@ -463,7 +480,7 @@ export class AppControlBase extends Vue implements ControlInterface {
         if (!param) {
             return;
         }
-        const appCounterRef =  param.getPSAppCounterRefs?.();
+        const appCounterRef = param.getPSAppCounterRefs?.();
         if (appCounterRef && appCounterRef.length > 0) {
             for (const counterRef of appCounterRef) {
                 const path = counterRef.getPSAppCounter()?.modelPath;

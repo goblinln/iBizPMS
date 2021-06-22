@@ -13,6 +13,7 @@ export default {
     title: "标题",
     orgname: "归属组织名",
     updateby: "由谁更新",
+    filesn: "附件编号",
     addeddate: "添加时间",
     downloads: "下载次数",
     dept: "归属部门",
@@ -20,7 +21,6 @@ export default {
     deptname: "归属部门名",
     id: "id",
     extra: "备注",
-    filesn: "附件编号",
   },
 	views: {
 		mobmdview9: {

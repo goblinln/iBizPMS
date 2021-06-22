@@ -84,6 +84,7 @@ export class AppDefaultMobWFDynaEditView extends MobWFDynaEditViewBase {
             props: { viewInstance: this.viewInstance, viewparams: this.viewparams, context: this.context }
         }, [
             this.renderViewHeaderCaptionBar(),
+            this.renderContent(),
             this.renderMainContent(),
             this.renderFooter(),
         ]);
