@@ -52,8 +52,13 @@ public class IgnorePrivInterceptor implements RequestInterceptor {
     public String getToken() {
         AuthTokenUtil authTokenUtil = SpringContextHolder.getBean(AuthTokenUtil.class);
         if (StringUtils.isNotBlank(this.token)) {
-            if (authTokenUtil.getExpirationDateFromToken(this.token).after(new Date())) {
-                return this.token;
+            try {
+                Date expirationDate = authTokenUtil.getExpirationDateFromToken(this.token);
+                if (expirationDate.after(new Date())) {
+                    return this.token;
+                }
+            } catch (Exception e) {
+                logger.error(String.format("解析忽略接口权限认证token发生错误：%s", e.getMessage()));
             }
         }
         AuthorizationLogin login = new AuthorizationLogin();
