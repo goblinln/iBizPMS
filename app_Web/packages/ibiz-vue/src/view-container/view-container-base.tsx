@@ -254,7 +254,7 @@ export class ViewContainerBase extends Vue {
                 this.$route.meta.caption = opts?.caption;
                 this.$route.meta.imgPath = opts?.getPSSysImage()?.imagePath;
                 this.$route.meta.iconCls = opts?.getPSSysImage()?.cssClass;
-                if (opts.accUserMode && ((opts.accUserMode == 1) || (opts.accUserMode == 3))) {
+                if (opts.accUserMode && ((opts.accUserMode == 0) || (opts.accUserMode == 3))) {
                     this.$route.meta.requireAuth = false;
                 } else {
                     this.$route.meta.requireAuth = true;

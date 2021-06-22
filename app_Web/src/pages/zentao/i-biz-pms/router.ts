@@ -34,7 +34,7 @@ const router = new Router({
                 parameters: [
                     { pathName: 'views', parameterName: 'ibizpms' },
                 ],
-                requireAuth: true,
+                requireAuth: false,
             },
             component: AppIndexViewShell,
             children: [

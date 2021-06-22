@@ -410,7 +410,6 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                 action: 'save',
                 data: data,
             });
-            AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
             this.$nextTick(() => {
                 this.formState.next({ type: 'save', data: data });
             });

@@ -1,6 +1,6 @@
 import qs from 'qs';
-import { GlobalHelp } from '@ibiz/dynamic-model-api';
-import { AppServiceBase, Http, getSessionStorage, setSessionStorage, AppModelService, Util } from 'ibiz-core';
+import { GlobalHelp, IPSAppView } from '@ibiz/dynamic-model-api';
+import { AppServiceBase, Http, getSessionStorage, setSessionStorage, AppModelService, Util, GetModelService } from 'ibiz-core';
 import { AppCenterService, NoticeHandler } from 'ibiz-vue';
 import { Environment } from '@/environments/environment';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api';
@@ -134,12 +134,14 @@ export class AuthGuard {
                         resolve(false);
                     }
                 }).catch(() => {
-                    resolve(false);
-                    this.doNoLogin(_router, "登录失败，请联系管理员");
+                    this.doNoLogin(_router, "登录失败，请联系管理员").then((result:any) =>{
+                        resolve(result);
+                    })
                 });
             } else {
-                resolve(false);
-                this.doNoLogin(_router, "登录失败，请联系管理员");
+                this.doNoLogin(_router, "登录失败，请联系管理员").then((result:any) =>{
+                    resolve(result);
+                })
             }
         });
     }
@@ -186,8 +188,11 @@ export class AuthGuard {
                     }
                     this.initAppService(router).then(() => resolve(true));
                 }).catch(() => {
-                    this.initAppService(router).then(() => resolve(true));
-                    this.doNoLogin(router, "登录失败，请联系管理员");
+                    this.initAppService(router).then(() => {
+                        this.doNoLogin(router, "登录失败，请联系管理员").then((result:any) =>{
+                            resolve(result);
+                        })
+                    });
                 });
             } else {
                 this.initAppService(router).then(() => resolve(true));
@@ -253,17 +258,114 @@ export class AuthGuard {
      *
      * @memberof AuthGuard
      */
-    public doNoLogin(router: any, message: string) {
-        this.clearAppData(router.app.$store);
-        if (Environment.loginUrl) {
-            window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
-        } else {
-            if (Object.is(router.currentRoute.name, 'login')) {
-                NoticeHandler.errorHandler(message);
-                return;
+    public async doNoLogin(router: any, message: string) {
+        const gotoLogin: Function = () => {
+            this.clearAppData(router.app.$store);
+            if (Environment.loginUrl) {
+                window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
+            } else {
+                if (Object.is(router.currentRoute.name, 'login')) {
+                    NoticeHandler.errorHandler(message);
+                    return;
+                }
+                router.push({ name: 'login', query: { redirect: router.currentRoute.fullPath } });
             }
-            router.push({ name: 'login', query: { redirect: router.currentRoute.fullPath } });
+            return false;
         }
+        return this.handleAccUserMode(router, gotoLogin);
+    }
+
+    /**
+     * 处理用户范围模式（0：未指定、 2：登录用户、 3：匿名用户及登录用户、 4：登录用户且拥有指定资源能力 ）
+     *
+     * @memberof AuthGuard
+     */
+     public async handleAccUserMode(router: any, gotoLogin: Function) {
+        try {
+            const activedPath: string = window.location.hash.substr(1);
+            let activedRoute: any = router.getRoutes().find((item: any) => {
+                return item.regex.test(activedPath);
+            })
+            if (activedRoute) {
+                // 跳转应用首页视图
+                if (activedRoute.redirect) {
+                    activedRoute = router.getRoutes().find((item: any) => {
+                        return item.meta.viewType === 'APPINDEX';
+                    })
+                    if (activedRoute && activedRoute.meta) {
+                        if (activedRoute.meta.requireAuth) {
+                            gotoLogin();
+                        } else {
+                            return true;
+                        }
+                    }
+                } else {
+                    // 自定义视图路径跳转
+                    const dynaModelFilePath: string = await this.computeActivedViewFilePath(activedPath, activedRoute)
+                    if (dynaModelFilePath) {
+                        const modeldata = await ((await GetModelService()).getPSAppView(dynaModelFilePath)) as IPSAppView;
+                        if ((modeldata.accUserMode === 0) || (modeldata.accUserMode === 3)) {
+                            return true;
+                        } else {
+                            gotoLogin();
+                        }
+                    } else {
+                        gotoLogin();
+                    }
+                }
+            }else{
+                gotoLogin();
+            }
+        } catch (error) {
+            gotoLogin();
+        }
+    }
+
+    /**
+     * 计算视图动态路径
+     *
+     * @memberof AuthGuard
+     */
+    public async computeActivedViewFilePath(activedPath: string, route: any) {
+        if (route && route.meta && route.meta.parameters) {
+            let resource: string = route.meta.resource ? route.meta.resource.toLowerCase() : '';
+            let activedView: any = route.meta.parameters.find((item: any) => {
+                return item.pathName === 'views';
+            });
+            let localActivedView: any = Util.deepCopy(activedView);
+            if (Object.is(localActivedView.parameterName, 'view') && Object.is(localActivedView.pathName, 'views')) {
+                localActivedView.parameterName = this.parseUrlDynamicParam(activedPath, route).view;
+            }
+            if (localActivedView && localActivedView.parameterName) {
+                const path = (await GetModelService()).getPSAppViewPath(`${resource}${localActivedView.parameterName}`);
+                console.log(path)
+                return path;
+            } else {
+                return '';
+            }
+        } else {
+            return '';
+        }
+    }
+
+    /**
+     * 解析路由动态参数
+     *
+     * @memberof AuthGuard
+     */
+    public parseUrlDynamicParam(activedPath: string, route: any): any {
+        const keys: Array<any> = route.regex.keys;
+        const matchArray = route.regex.exec(activedPath);
+        let tempValue: Object = {};
+        keys.forEach((item: any, index: number) => {
+            if (matchArray[index + 1]) {
+                Object.defineProperty(tempValue, item.name, {
+                    enumerable: true,
+                    value: decodeURIComponent(matchArray[index + 1])
+                });
+            }
+        });
+        return tempValue;
     }
 
     /**

@@ -149,7 +149,7 @@ export class Interceptors {
                 res.data.entityName = res.headers['x-ibz-params'];
             }
             if (res.status === 401) {
-                this.doNoLogin(_data.data);
+                this.doNoLogin(res, _data.data);
             }
             if (res.status === 403) {
                 if (res.data && res.data.status && Object.is(res.data.status, "FORBIDDEN")) {
@@ -174,7 +174,11 @@ export class Interceptors {
      * @param {*} [data={}]
      * @memberof Interceptors
      */
-    private doNoLogin(data: any = {}): void {
+     private doNoLogin(response: any, data: any = {}): void {
+        // 交由路由守卫自行处理
+        if(response && response.config && response.config.url && Object.is(response.config.url,'/appdata')){
+            return ;
+        }
         this.clearAppData();
         if (Environment.loginUrl) {
             window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;

@@ -45,6 +45,15 @@ export class AppCodeEditor extends Vue {
     language!: 'json' | 'javascript' | 'typescript' | 'css' | 'less' | 'sass' | 'java';
 
     /**
+     * 只读模式
+     *
+     * @type {boolean}
+     * @memberof AppCodeEditor
+     */
+    @Prop({ type: Boolean, default: false })
+    isReadOnly!: boolean;
+
+    /**
      * 当前使用语言
      *
      * @type {string}
@@ -139,6 +148,7 @@ export class AppCodeEditor extends Vue {
                 value: this.value,
                 theme: this.theme,
                 language: this.presentLanguage,
+                readOnly: this.isReadOnly,
             });
             this.registerEvent();
             window.addEventListener('resize', this.resize);
@@ -152,12 +162,14 @@ export class AppCodeEditor extends Vue {
      * @memberof AppCodeEditor
      */
     registerEvent() {
-        this.codeEditor.onDidBlurEditorText(
-            //数据发生改变
-            (event: any) => {
-                this.$emit('change', this.codeEditor.getValue());
-            },
-        );
+        if(!this.isReadOnly){
+            this.codeEditor.onDidBlurEditorText(
+                //数据发生改变
+                (event: any) => {
+                    this.$emit('change', this.codeEditor.getValue());
+                },
+            );
+        }
     }
 
     /**

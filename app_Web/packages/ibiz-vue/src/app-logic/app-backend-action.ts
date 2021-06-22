@@ -166,7 +166,8 @@ export class AppBackEndAction {
                         .then((curService: any) => {
                             // todo 后台调用实体行为类型缺失getPSDEAction.getActionMode 暂时使用多数据做批操作Batch判断
                             const methodCodeName = Object.is(actionTarget, 'MULTIKEY') ? (this.actionModel.getPSAppDEMethod() as IPSAppDEMethod)?.codeName + 'Batch' : (this.actionModel.getPSAppDEMethod() as IPSAppDEMethod)?.codeName;
-                            actionContext.viewLoadingService.isLoading = true;
+                            let viewLoadingService = actionContext.viewLoadingService?actionContext.viewLoadingService:{};
+                            viewLoadingService.isLoading = true;
                             curService[methodCodeName](
                                 context,
                                 data,
@@ -177,7 +178,7 @@ export class AppBackEndAction {
                                         actionContext.$throw(response,'AppBackEndAction');
                                         return;
                                     }
-                                    actionContext.viewLoadingService.isLoading = false;
+                                    viewLoadingService.isLoading = false;
                                     if (this.actionModel.showBusyIndicator) {
                                         if (this.actionModel.successMsg) {
                                             actionContext.$success(this.actionModel.successMsg,'AppBackEndAction');
@@ -240,7 +241,7 @@ export class AppBackEndAction {
                                     }
                                 })
                                 .catch((response: any) => {
-                                    actionContext.viewLoadingService.isLoading = false;
+                                    viewLoadingService.isLoading = false;
                                     if (response) {
                                         actionContext.$throw(response,'AppBackEndAction');
                                     }
