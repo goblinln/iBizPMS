@@ -408,7 +408,6 @@
       "expandSearchForm" : true,
       "pickupMode" : true,
       "rowEditDefault" : false,
-      "showCaptionBar" : true,
       "modelid" : "cdfb5d9a68395291bba1f291d1835f95",
       "modeltype" : "PSAPPDEVIEW",
       "getPSAppDERSPaths" : [ [ {

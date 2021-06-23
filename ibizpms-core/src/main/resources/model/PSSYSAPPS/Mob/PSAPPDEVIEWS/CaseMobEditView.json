@@ -855,7 +855,6 @@
               "enableFilter" : false,
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
-              "showCaptionBar" : true,
               "modelid" : "dc7d07ed4a46da6e9b2f2bef47d1cc53",
               "modeltype" : "PSAPPDEVIEW",
               "getPSAppDERSPaths" : [ [ {
@@ -1611,7 +1610,6 @@
   "xDataControlName" : "form",
   "enableDP" : true,
   "enablePullDownRefresh" : false,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "1651c552899f2e64895bb68456789b11",
   "modeltype" : "PSAPPDEVIEW",

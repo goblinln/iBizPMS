@@ -4,7 +4,9 @@ import { AppDefaultDataViewLayout } from "../../components/layout/app-default-la
 import { AppDefaultDePortalViewLayout } from "../../components/layout/app-default-layout/app-default-deportalview-layout/app-default-deportalview-layout";
 import { AppDefaultPortalViewLayout } from "../../components/layout/app-default-layout/app-default-portalview-layout/app-default-portalview-layout";
 import { AppDefaultEditViewLayout } from "../../components/layout/app-default-layout/app-default-editview-layout/app-default-editview-layout";
+import { AppDefaultEditView2Layout } from "../../components/layout/app-default-layout/app-default-editview2-layout/app-default-editview2-layout";
 import { AppDefaultEditView3Layout } from "../../components/layout/app-default-layout/app-default-editview3-layout/app-default-editview3-layout";
+import { AppDefaultEditView4Layout } from "../../components/layout/app-default-layout/app-default-editview4-layout/app-default-editview4-layout";
 import { AppDefaultGridViewLayout } from "../../components/layout/app-default-layout/app-default-gridview-layout/app-default-gridview-layout";
 import { AppDefaultIndexViewLayout } from "../../components/layout/app-default-layout/app-default-indexview-layout/app-default-indexview-layout";
 import { AppDefaultKanbanViewLayout } from "../../components/layout/app-default-layout/app-default-kanbanview-layout/app-default-kanbanview-layout";
@@ -106,7 +108,9 @@ export class AppLayoutService {
      */
     public static registerLayoutComponent() {
         this.layoutMap.set("DEEDITVIEW-DEFAULT", AppDefaultEditViewLayout);
+        this.layoutMap.set("DEEDITVIEW2-DEFAULT", AppDefaultEditView2Layout);
         this.layoutMap.set("DEEDITVIEW3-DEFAULT", AppDefaultEditView3Layout);
+        this.layoutMap.set("DEEDITVIEW4-DEFAULT", AppDefaultEditView4Layout);
         this.layoutMap.set("DEGRIDVIEW-DEFAULT", AppDefaultGridViewLayout);
         this.layoutMap.set("DECALENDARVIEW-DEFAULT", AppDefaultCalendarViewLayout);
         this.layoutMap.set("DECHARTVIEW-DEFAULT", AppDefaultChartViewLayout);

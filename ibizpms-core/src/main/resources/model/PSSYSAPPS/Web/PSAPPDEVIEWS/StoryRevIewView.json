@@ -4226,7 +4226,6 @@
   "viewType" : "DEOPTVIEW",
   "xDataControlName" : "form",
   "enableDP" : true,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "721471752350ebaf6b7c6019341a9960",
   "modeltype" : "PSAPPDEVIEW",

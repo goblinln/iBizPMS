@@ -942,7 +942,6 @@
   "enableDP" : true,
   "enableFilter" : false,
   "enableQuickSearch" : true,
-  "showCaptionBar" : true,
   "modelid" : "256de1139e8adce86805c471e5de2db0",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

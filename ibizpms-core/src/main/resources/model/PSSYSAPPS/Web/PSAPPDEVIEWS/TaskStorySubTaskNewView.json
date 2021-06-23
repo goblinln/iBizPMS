@@ -1322,7 +1322,6 @@
   "enableImport" : true,
   "enableRowEdit" : true,
   "rowEditDefault" : true,
-  "showCaptionBar" : true,
   "modelid" : "6a189c117bb2ba89148b30630a785736",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

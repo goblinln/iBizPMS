@@ -1217,7 +1217,6 @@
   "enablePullDownRefresh" : true,
   "enableQuickSearch" : true,
   "enableSearch" : true,
-  "showCaptionBar" : true,
   "modelid" : "f45b43f9fa239744152de494ba5706fd",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

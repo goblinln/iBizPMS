@@ -6530,7 +6530,6 @@
                 "enableImport" : true,
                 "enableRowEdit" : false,
                 "rowEditDefault" : false,
-                "showCaptionBar" : true,
                 "modelid" : "71144df81858a48d4b9bdf84990bd663",
                 "modeltype" : "PSAPPDEVIEW"
               },
@@ -8625,7 +8624,6 @@
   "viewType" : "DEEDITVIEW",
   "xDataControlName" : "form",
   "enableDP" : true,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "e9ed68625a3175f2645a2b2a793f9732",
   "modeltype" : "PSAPPDEVIEW",

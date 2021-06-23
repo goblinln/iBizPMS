@@ -753,7 +753,6 @@
                       "enableImport" : true,
                       "enableRowEdit" : false,
                       "rowEditDefault" : false,
-                      "showCaptionBar" : true,
                       "modelid" : "af3275f3703097da101b0c1a0c01024c",
                       "modeltype" : "PSAPPDEVIEW"
                     },
@@ -5787,7 +5786,6 @@
   "enableSearch" : false,
   "expandSearchForm" : true,
   "loadDefault" : true,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "1ff6245a9d7ed22dd6aa072f149abf65",
   "modeltype" : "PSAPPDEVIEW"

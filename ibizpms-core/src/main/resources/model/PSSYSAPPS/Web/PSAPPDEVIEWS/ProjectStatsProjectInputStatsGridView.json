@@ -733,7 +733,6 @@
   "enableSearch" : true,
   "expandSearchForm" : true,
   "rowEditDefault" : false,
-  "showCaptionBar" : true,
   "modelid" : "bce59928b92a1f25e057c220060a4a09",
   "modeltype" : "PSAPPDEVIEW"
 }

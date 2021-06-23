@@ -2815,7 +2815,6 @@
   "xDataControlName" : "tree",
   "enableDP" : true,
   "enableFilter" : false,
-  "showCaptionBar" : true,
   "modelid" : "0647a85a1b2f6013ccb63143973c706c",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

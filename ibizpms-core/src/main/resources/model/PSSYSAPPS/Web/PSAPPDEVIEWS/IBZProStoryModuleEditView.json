@@ -547,7 +547,6 @@
   "viewType" : "DEEDITVIEW",
   "xDataControlName" : "form",
   "enableDP" : true,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "b6cf31aeca8993a7c3e6962ad30cc6eb",
   "modeltype" : "PSAPPDEVIEW"

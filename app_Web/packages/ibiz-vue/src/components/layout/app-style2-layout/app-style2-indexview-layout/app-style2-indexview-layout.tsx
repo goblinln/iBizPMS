@@ -142,7 +142,7 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
                             <template slot="header_left">
                                 <div class="title">
                                     {this.viewInstance.enableAppSwitch ? <span class="menuicon" style="cursor: pointer;" on-click={() => this.contextMenuDragVisiable = !this.contextMenuDragVisiable}><icon type="md-menu" />&nbsp;</span> : null}
-                                    {this.model.srfCaption}
+                                    {this.showCaption ? this.model.srfCaption : null}
                                 </div>
                             </template>
                             <template slot="header_right">

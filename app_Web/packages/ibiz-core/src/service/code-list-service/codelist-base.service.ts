@@ -255,7 +255,7 @@ export class CodeListServiceBase {
         }
         return new Promise((resolve: any, reject: any) => {
             this.getService(tag).then((codelist: any) => {
-                if (Object.is(codelist.predefinedType, "RUNTIME")) {
+                if (Object.is(codelist.predefinedType, "RUNTIME") || Object.is(codelist.predefinedType, "OPERATOR")) {
                     this.getPredefinedItems(tag).then((res: any) => {
                         resolve(res);
                     })

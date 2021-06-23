@@ -1106,7 +1106,6 @@
               "enableRowEdit" : true,
               "loadDefault" : false,
               "rowEditDefault" : true,
-              "showCaptionBar" : true,
               "modelid" : "cc95ccdffa772694833ec569e8aaa025",
               "modeltype" : "PSAPPDEVIEW",
               "getPSAppDERSPaths" : [ [ {
@@ -3934,7 +3933,6 @@
   "viewType" : "DEEDITVIEW",
   "xDataControlName" : "form",
   "enableDP" : true,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "107f96ecdbdc7d13327ab0c95d68514b",
   "modeltype" : "PSAPPDEVIEW",

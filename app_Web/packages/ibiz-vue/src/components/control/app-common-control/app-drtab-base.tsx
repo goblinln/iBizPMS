@@ -86,6 +86,16 @@ export class AppDrtabBase extends DrtabControlBase {
     public renderDrView(tabPage: any){
         let viewData: any = Util.deepCopy(this.context);
         let viewParam = this.viewparams;
+        if(tabPage.disabled){
+            return;
+        }else{
+            if(tabPage.localContext){
+                Object.assign(viewData,tabPage.localContext);
+            }
+            if(tabPage.localViewParam){
+                Object.assign(viewParam,tabPage.localViewParam);
+            }
+        }
         return this.$createElement('app-view-shell', {
             props: { 
                 staticProps: {
@@ -115,20 +125,23 @@ export class AppDrtabBase extends DrtabControlBase {
             return null;
         }
         const { controlClassNames } = this.renderOptions;
-        const { codeName } = this.controlInstance
-        const tabPages = this.controlInstance.getPSDEDRTabPages();
+        const { codeName } = this.controlInstance;
         const editItemCaption = this.$tl((this.controlInstance.getEditItemCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, this.controlInstance.editItemCaption);
         return (
             <div class={{ ...controlClassNames, 'drtab': true }} >
                 <tabs animated={false} class="app-dr-tab" name={codeName} on-on-click={(...params: any[]) => debounce(this.tabPanelClick,params,this)}>
-                    <tab-pane index={0} name='mainform' tab={codeName} label={editItemCaption}>
-                        <div class='main-data'>
-                            {this.$parent.$slots.mainform}
-                        </div>
-                    </tab-pane>
-                    {tabPages?.length > 0 && tabPages.map((tabPage: any,index: number)=>{
-                        return <tab-pane index={index+1} name={tabPage.name} tab={codeName} label={this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}>
-                            {this.renderDrView(tabPage)}
+                    {this.isShowSlot ? 
+                        <tab-pane index={0} name='mainform' tab={codeName} label={editItemCaption}>
+                            <div class='main-data'>
+                                {this.$parent.$slots.mainform}
+                            </div>
+                        </tab-pane>
+                    : null}
+                    {this.drtabItems?.length > 0 && this.drtabItems.map((tabPage: any,index: number)=>{
+                        return <tab-pane index={index+1} disabled={tabPage.disabled} name={tabPage.name} tab={codeName} label={this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}>
+                            {!this.isShowSlot && tabPage.disabled ?
+                                <spin v-if="blockUI" class="app-druipart-spin" fix>{this.$t("components.appformdruipart.blockuitipinfo")}</spin>
+                            : this.renderDrView(tabPage)}
                         </tab-pane> 
                     })}
                 </tabs>

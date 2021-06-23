@@ -428,7 +428,6 @@
   "width" : 800,
   "xDataControlName" : "form",
   "enableDP" : true,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "9c4be21935530b7d0df465e3b691ce37",
   "modeltype" : "PSAPPDEVIEW"

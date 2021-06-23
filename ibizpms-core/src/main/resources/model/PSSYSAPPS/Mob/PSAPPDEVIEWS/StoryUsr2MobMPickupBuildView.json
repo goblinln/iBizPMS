@@ -530,7 +530,6 @@
       "enablePullDownRefresh" : false,
       "enableSearch" : true,
       "expandSearchForm" : true,
-      "showCaptionBar" : true,
       "modelid" : "6af8a4e62bfd66516121393f3333e331",
       "modeltype" : "PSAPPDEVIEW",
       "getPSAppDERSPaths" : [ [ {
@@ -629,7 +628,6 @@
   "viewType" : "DEMOBMPICKUPVIEW",
   "enableDP" : true,
   "enablePullDownRefresh" : false,
-  "showCaptionBar" : true,
   "modelid" : "e3a815f4adc0e3edd2cdecb5805c970e",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

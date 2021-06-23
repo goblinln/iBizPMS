@@ -201,7 +201,7 @@ export class AppTreeViewBase extends TreeControlBase {
                         load={this.load.bind(this)}
                         highlight-current={true}
                         expand-on-click-node={false}
-                        on-check={this.onCheck.bind(this)}
+                        on-check={(data:any,checkedState:any) =>{this.onCheck(data,checkedState)}}
                         on-current-change={this.selectionChange.bind(this)}
                         filter-node-method={this.filterNode.bind(this)}
                         empty-text={this.$t('app.commonwords.nodata')}

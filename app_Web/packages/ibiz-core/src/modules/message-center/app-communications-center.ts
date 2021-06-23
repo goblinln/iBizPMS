@@ -263,18 +263,18 @@ export class AppCommunicationsCenter {
      * @param {string} key
      * @memberof AccMessage
      */
-    // unsubscribe(key: string): void {
-    //     if (this.unsubscribeCache.has(key)) {
-    //         const arr: any = this.unsubscribeCache.get(key);
-    //         arr.forEach((str: string) => {
-    //             this.unsubscribe(str);
-    //         });
-    //     } else {
-    //         this.$accCentralMessage.unsubscribe(key);
-    //         this.$accSystemMessage.unsubscribe(key);
-    //         this.$accCurrentMessage.unsubscribe(key);
-    //     }
-    // }
+    unsubscribe(key: string): void {
+        if (this.unsubscribeCache.has(key)) {
+            const arr: any = this.unsubscribeCache.get(key);
+            arr.forEach((str: string) => {
+                this.unsubscribe(str);
+            });
+        } else {
+            this.$accCentralMessage.unsubscribe(key);
+            this.$accSystemMessage.unsubscribe(key);
+            this.$accCurrentMessage.unsubscribe(key);
+        }
+    }
 
     /**
      * 取消本地模式订阅
@@ -449,15 +449,15 @@ export class AppCommunicationsCenter {
      * @returns {string}
      * @memberof AppCommunicationsCenter
      */
-    // console(observer: (content: any) => void): string {
-    //     const arr: any[] = [];
-    //     arr.push(this.central.console.subscribe(observer));
-    //     arr.push(this.system.console.subscribe(observer));
-    //     arr.push(this.current.console.subscribe(observer));
-    //     const key: string = this.createUUID();
-    //     this.unsubscribeCache.set(key, arr);
-    //     return key;
-    // }
+    console(observer: (content: any) => void): string {
+        const arr: any[] = [];
+        arr.push(this.central.console.subscribe(observer));
+        arr.push(this.system.console.subscribe(observer));
+        arr.push(this.current.console.subscribe(observer));
+        const key: string = Util.createUUID();
+        this.unsubscribeCache.set(key, arr);
+        return key;
+    }
 
     /**
      * 订阅console本地消息

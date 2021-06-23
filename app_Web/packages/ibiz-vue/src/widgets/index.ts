@@ -32,3 +32,4 @@ export { WizardPanelControlBase } from './wizardpanel-control-base';
 export { StateWizardPanelControlBase } from './statewizardpanel-control-base';
 export { MapControlBase } from './map-control-base';
 export { ReportPanelControlBase } from './reportpanel-control-base';
+export { DrbarControlBase } from './drbar-control-base';

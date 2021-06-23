@@ -1,3 +1,4 @@
+import { isNilOrEmpty } from 'qx-util';
 import { isEmpty, isNil } from 'ramda';
 import { IHttpResponse } from '../../interface';
 import { HttpStatusMessage } from '../http-status-message/http-status-message';
@@ -29,22 +30,22 @@ interface IResponse {
  * @implements {IHttpResponse}
  */
 export class HttpResponse implements IHttpResponse {
-    data: any;
-    ok = true;
-    status = 200;
-    statusText?: string;
-    headers?: Headers;
-    url?: string;
+    readonly data: any;
+    readonly ok!: boolean;
+    readonly status!: number;
+    readonly statusText?: string;
+    readonly headers: Record<string, string> = {};
+    readonly url?: string;
 
     /**
      * Creates an instance of HttpResponse.
      *
      * @param {*} [data] 数据
      * @param {IResponse} [res] 结果
-     * @param {number} [_errorCode] 错误码
+     * @param {number} [errorCode] 错误码
      * @memberof HttpResponse
      */
-    constructor(data?: any, res?: IResponse, _errorCode?: number) {
+    constructor(data?: any, res?: IResponse, errorCode?: number) {
         if (res) {
             const { ok, status, url, headers } = res;
             if (!isNil(ok)) {
@@ -53,12 +54,22 @@ export class HttpResponse implements IHttpResponse {
             if (!isNil(status)) {
                 this.status = status;
             }
-            this.headers = headers;
+            if (headers) {
+                headers.forEach((val, key) => {
+                    this.headers[key] = val;
+                });
+            }
             this.url = url;
             this.statusText = (HttpStatusMessage as any)[this.status] || res.statusText;
             if (data && !isNil(data.message) && !isEmpty(data.message)) {
                 this.statusText = data.message;
             }
+        }
+        if (isNilOrEmpty(this.ok)) {
+            this.ok = true;
+        }
+        if (isNilOrEmpty(this.status)) {
+            this.status = errorCode || 200;
         }
         this.data = data;
     }

@@ -407,7 +407,6 @@
             "enableSearch" : false,
             "expandSearchForm" : false,
             "loadDefault" : true,
-            "showCaptionBar" : true,
             "modelid" : "eb0adb7cc6e13409cd3f91e0e36d7c45",
             "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {

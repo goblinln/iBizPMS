@@ -11961,7 +11961,6 @@
                     "enableImport" : true,
                     "enableRowEdit" : false,
                     "rowEditDefault" : false,
-                    "showCaptionBar" : true,
                     "modelid" : "3da1f37a9dc628fb6755d3d9c03fc112",
                     "modeltype" : "PSAPPDEVIEW",
                     "getPSAppDERSPaths" : [ [ {
@@ -12212,7 +12211,6 @@
   "enableSearch" : false,
   "expandSearchForm" : true,
   "loadDefault" : true,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "575fecad655143bbd28f17c581725a4e",
   "modeltype" : "PSAPPDEVIEW",

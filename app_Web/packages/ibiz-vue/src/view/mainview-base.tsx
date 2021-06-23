@@ -176,17 +176,18 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
         }
         const img = item.getPSSysImage();
         const css = item.getPSSysCss();
+        const uiAction = (item as any)?.getPSUIAction?.() as IPSDEUIAction;
         const tempModel: any = {
             name: item.name,
             showCaption: item.showCaption,
             caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
             tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
             disabled: false,
-            visabled: true,
+            visabled: uiAction?.dataAccessAction && this.Environment.enablePermissionValid ? false : true,
             itemType: item.itemType,
-            dataaccaction: ((item as any)?.getPSUIAction?.() as IPSDEUIAction).dataAccessAction,
-            noprivdisplaymode: ((item as any)?.getPSUIAction?.() as IPSDEUIAction).noPrivDisplayMode,
-            uiaction: (item as any)?.getPSUIAction?.(),
+            dataaccaction: uiAction?.dataAccessAction,
+            noprivdisplaymode: uiAction?.noPrivDisplayMode,
+            uiaction: uiAction,
             showIcon: item.showIcon,
             class: css ? css.cssName : '',
             getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
@@ -774,12 +775,7 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                 ) {
                     batchAddPSAppViews = viewNewAppUIlogic.getBatchAddPSAppViews() as IPSAppUILogicRefView[];
                 }
-                if (
-                    batchAddPSAppViews.length == 0 ||
-                    !this.context.srfparentdename ||
-                    !minorPSAppDERSs ||
-                    minorPSAppDERSs.length < 2
-                ) {
+                if (batchAddPSAppViews.length == 0) {
                     this.$warning(this.$t('app.warn.nton'), 'newdata');
                     return;
                 }
@@ -793,13 +789,17 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                         return item.refMode && item.refMode == this.context.srfparentdename.toUpperCase();
                     },
                 );
-                if (!openViewModel || !otherViewModel) {
+                if (!openViewModel) {
+                    this.$warning(this.$t('app.warn.nton'), 'newdata');
                     return;
                 }
                 let openView: IPSAppDEView = openViewModel.getRefPSAppView() as IPSAppDEView;
                 await openView.fill(true);
-                let otherView: IPSAppDEView = otherViewModel.getRefPSAppView() as IPSAppDEView;
-                await otherView.fill(true);
+                let otherView: IPSAppDEView;
+                if (otherViewModel) {
+                    otherView = otherViewModel.getRefPSAppView() as IPSAppDEView;
+                    await otherView.fill(true);
+                }
                 let view: any = {
                     viewname: 'app-view-shell',
                     height: openView.height,
@@ -827,12 +827,22 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                     }
                     result.datas.forEach((record: any) => {
                         let tempParam: any = {};
-                        tempParam[
-                            (getActiveField((otherView.getPSAppDataEntity() as IPSAppDataEntity).modelPath))?.codeName.toLowerCase()
-                        ] = this.context['srfparentkey'];
-                        tempParam[
-                            (getActiveField((openView.getPSAppDataEntity() as IPSAppDataEntity).modelPath))?.codeName.toLowerCase()
-                        ] = record.srfkey;
+                        if (otherView) {
+                            tempParam[
+                                (getActiveField((otherView.getPSAppDataEntity() as IPSAppDataEntity).modelPath))?.codeName.toLowerCase()
+                            ] = this.context['srfparentkey'];
+                        }
+                        if (getActiveField((openView.getPSAppDataEntity() as IPSAppDataEntity).modelPath)) {
+                            tempParam[
+                                (getActiveField((openView.getPSAppDataEntity() as IPSAppDataEntity).modelPath))?.codeName.toLowerCase()
+                            ] = record.srfkey;
+                        } else {
+                            tempParam[
+                                (ModelTool.getAppEntityKeyField(
+                                    openView?.getPSAppDataEntity() as IPSAppDataEntity,
+                                ) as IPSAppDEField)?.codeName.toLowerCase()
+                            ] = record.srfkey;
+                        }
                         requestParam.push(tempParam);
                     });
                     this.appEntityService

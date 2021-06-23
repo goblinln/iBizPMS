@@ -671,7 +671,6 @@
   "enableQuickSearch" : true,
   "enableRowEdit" : true,
   "rowEditDefault" : true,
-  "showCaptionBar" : true,
   "modelid" : "5cdd180bbc0620552e62f1dc64927d89",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

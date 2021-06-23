@@ -9435,7 +9435,6 @@
                     "enableImport" : true,
                     "enableRowEdit" : false,
                     "rowEditDefault" : false,
-                    "showCaptionBar" : true,
                     "modelid" : "78095af71f8ae9c432f8a6f3656f90b9",
                     "modeltype" : "PSAPPDEVIEW",
                     "getPSAppDERSPaths" : [ [ {
@@ -9981,7 +9980,6 @@
                     "enableImport" : true,
                     "enableRowEdit" : false,
                     "rowEditDefault" : false,
-                    "showCaptionBar" : true,
                     "modelid" : "8505c429c9deb51e3e1ef8b911fa83c2",
                     "modeltype" : "PSAPPDEVIEW",
                     "getPSAppDERSPaths" : [ [ {
@@ -10630,7 +10628,6 @@
                       "enableImport" : true,
                       "enableRowEdit" : false,
                       "rowEditDefault" : false,
-                      "showCaptionBar" : true,
                       "modelid" : "58c48ed7c9b66ea86309ed8ef86a7cc6",
                       "modeltype" : "PSAPPDEVIEW",
                       "getPSAppDERSPaths" : [ [ {
@@ -11237,7 +11234,6 @@
                       "enableImport" : true,
                       "enableRowEdit" : false,
                       "rowEditDefault" : false,
-                      "showCaptionBar" : true,
                       "modelid" : "e378b13cfdc97557168ac3f71b35fe6b",
                       "modeltype" : "PSAPPDEVIEW",
                       "getPSAppDERSPaths" : [ [ {
@@ -11778,7 +11774,6 @@
                       "enableImport" : true,
                       "enableRowEdit" : false,
                       "rowEditDefault" : false,
-                      "showCaptionBar" : true,
                       "modelid" : "578d2fd4888ee9b9a2d87ff640e786cd",
                       "modeltype" : "PSAPPDEVIEW",
                       "getPSAppDERSPaths" : [ [ {
@@ -12002,7 +11997,6 @@
   "enableSearch" : false,
   "expandSearchForm" : true,
   "loadDefault" : true,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "021e4a7269fe8ec26b9001c39df0e215",
   "modeltype" : "PSAPPDEVIEW",

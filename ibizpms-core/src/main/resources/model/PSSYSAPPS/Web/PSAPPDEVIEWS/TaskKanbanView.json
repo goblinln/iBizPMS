@@ -1821,7 +1821,6 @@
   "xDataControlName" : "kanban",
   "enableDP" : true,
   "enableFilter" : false,
-  "showCaptionBar" : true,
   "modelid" : "d617e99633b9426aa8bd3ea293f91c6c",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

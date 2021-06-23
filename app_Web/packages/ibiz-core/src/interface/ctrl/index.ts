@@ -15,6 +15,7 @@ export * from './dataview-exp-bar-control';
 export * from './calendar-exp-bar-control';
 export * from './tree-exp-bar-control';
 export * from './drtab-control';
+export * from './drbar-control';
 export * from './list-control';
 export * from './dataview-control';
 export * from './calendar-control';

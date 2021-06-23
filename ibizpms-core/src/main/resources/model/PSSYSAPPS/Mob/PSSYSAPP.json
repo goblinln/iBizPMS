@@ -16544,7 +16544,6 @@
       "xDataControlName" : "form",
       "enableDP" : true,
       "enablePullDownRefresh" : false,
-      "showCaptionBar" : true,
       "showDataInfoBar" : true,
       "modelid" : "0e7dfc85e620169defd80d3f4abbaae9",
       "modeltype" : "PSAPPDEVIEW"
@@ -17503,7 +17502,6 @@
       "enablePullDownRefresh" : true,
       "enableQuickSearch" : true,
       "enableSearch" : true,
-      "showCaptionBar" : true,
       "modelid" : "1b8475a617a67336720ec64b72c45ad5",
       "modeltype" : "PSAPPDEVIEW",
       "getPSAppDERSPaths" : [ [ {
@@ -18831,7 +18829,6 @@
       "enablePullDownRefresh" : true,
       "enableQuickSearch" : true,
       "enableSearch" : true,
-      "showCaptionBar" : true,
       "modelid" : "20185e9e81dbfc2382770db7d2a85ea8",
       "modeltype" : "PSAPPDEVIEW"
     }, {
@@ -19370,7 +19367,6 @@
       "enableDP" : true,
       "enableFilter" : false,
       "enablePullDownRefresh" : false,
-      "showCaptionBar" : true,
       "modelid" : "fe3da0b3244df9edc5967b895d385b1e",
       "modeltype" : "PSAPPDEVIEW"
     }, {
@@ -19573,7 +19569,6 @@
           "enableFilter" : false,
           "enablePullDownRefresh" : false,
           "expandSearchForm" : true,
-          "showCaptionBar" : true,
           "modelid" : "f57cc769a2f22b7b506604085fb6eb79",
           "modeltype" : "PSAPPDEVIEW"
         },
@@ -20290,7 +20285,6 @@
       "xDataControlName" : "form",
       "enableDP" : true,
       "enablePullDownRefresh" : false,
-      "showCaptionBar" : true,
       "showDataInfoBar" : true,
       "modelid" : "c47f239e594f70b036aaa6a7e6ea56e2",
       "modeltype" : "PSAPPDEVIEW"
@@ -20863,7 +20857,6 @@
       "enablePullDownRefresh" : true,
       "enableQuickSearch" : true,
       "enableSearch" : true,
-      "showCaptionBar" : true,
       "modelid" : "064a8e203568a5929ea303ec7acb2945",
       "modeltype" : "PSAPPDEVIEW"
     }, {
@@ -20997,7 +20990,6 @@
       "enableDP" : true,
       "enableFilter" : false,
       "enablePullDownRefresh" : false,
-      "showCaptionBar" : true,
       "modelid" : "d51cddc777fcf4f78f512f5b9e0538ea",
       "modeltype" : "PSAPPDEVIEW",
       "getPSAppDERSPaths" : [ [ {

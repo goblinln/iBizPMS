@@ -144,7 +144,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                             <div class="page-logo-left">
                             {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <span class="page-logo-menuicon" on-click={() => this.contextMenuDragVisiable = !this.contextMenuDragVisiable}><icon type="md-menu" />&nbsp;</span>: null}
                                 {(this.viewInstance as IPSAppIndexView).appIconPath ? <img class="page-logo-image" src={(this.viewInstance as IPSAppIndexView).appIconPath}></img> : null}
-                                <span class="page-logo-title">{this.model.srfCaption}</span>
+                                {this.showCaption ? <span class="page-logo-title">{this.model.srfCaption}</span> : null}
                                 {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <context-menu-drag viewStyle={this.viewInstance.viewStyle} contextMenuDragVisiable={this.contextMenuDragVisiable}></context-menu-drag> : null}
                             </div>
                             {!this.collapseChange ? <i class="ivu-icon el-icon-s-fold" on-click={() => this.collapseMenus()}></i> : null}
@@ -187,7 +187,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                     <div class="header-left">
                         <div class="page-logo">
                             {(this.viewInstance as IPSAppIndexView).appIconPath ? <img class="page-logo-image" src={(this.viewInstance as IPSAppIndexView).appIconPath}></img> : null}
-                            <span style="display: inline-block;margin-left: 10px;font-size: 22px;">{this.model.srfCaption}</span>
+                            {this.showCaption ? <span style="display: inline-block;margin-left: 10px;font-size: 22px;">{this.model.srfCaption}</span> : null}
                         </div>
                         <div style="margin-left: 50px;">
                             {this.$slots.default}
@@ -222,9 +222,9 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
         };
         return (
             <card class={cardClass} disHover={true} bordered={false}>
-                <div slot='title' class='header-container' key='view-header'>
-                    <span class='caption-info'>{this.model.srfCaption}</span>
-                </div>
+                {this.showCaption ?  <div slot='title' class='header-container' key='view-header'>
+                   <span class='caption-info'>{this.model.srfCaption}</span>
+                </div> : null}
                 <div class='content-container'>
                     {this.$slots.default}
                 </div>

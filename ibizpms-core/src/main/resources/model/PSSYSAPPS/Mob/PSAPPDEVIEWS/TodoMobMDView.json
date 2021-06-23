@@ -778,7 +778,6 @@
   "enableFilter" : false,
   "enablePullDownRefresh" : true,
   "enableQuickSearch" : true,
-  "showCaptionBar" : true,
   "modelid" : "19e1bcc5b012c2502c5ff456c4d9b6ef",
   "modeltype" : "PSAPPDEVIEW"
 }

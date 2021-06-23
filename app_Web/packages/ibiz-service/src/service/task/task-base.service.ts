@@ -87,6 +87,8 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         const taskteamnestedsList = await this.getMinorLocal('TaskTeamNested', _context, { root: _data.id });
         if (taskteamnestedsList?.length > 0) {
             _data.taskteamnesteds = taskteamnestedsList;
+        } else {
+           _data.taskteamnesteds = [];
         }
         return _data;
     }

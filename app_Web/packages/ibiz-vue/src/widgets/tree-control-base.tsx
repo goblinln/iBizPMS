@@ -308,8 +308,8 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
     public onCheck(data: any, checkedState: any) {
         // 处理多选数据
         if (!this.isSingleSelect) {
-            let leafNodes = checkedState.checkedNodes.filter((item: any) => item.leaf);
-            this.selectedNodes = JSON.parse(JSON.stringify(leafNodes));
+            // let leafNodes = checkedState.checkedNodes.filter((item: any) => item.leaf);
+            this.selectedNodes = JSON.parse(JSON.stringify(checkedState.checkedNodes));
             this.ctrlEvent({
                 controlname: this.name,
                 action: 'selectionchange',

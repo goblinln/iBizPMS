@@ -54,7 +54,6 @@
   "enableDP" : true,
   "enableWorkflow" : true,
   "redirectView" : true,
-  "showCaptionBar" : true,
   "modelid" : "e0e2767cf1643cbc081e08b330649e42",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

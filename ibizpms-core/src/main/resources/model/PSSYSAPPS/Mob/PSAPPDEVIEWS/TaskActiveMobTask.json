@@ -1145,7 +1145,6 @@
   "xDataControlName" : "form",
   "enableDP" : true,
   "enablePullDownRefresh" : false,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "00addf9d9e0571a8af9636029398a731",
   "modeltype" : "PSAPPDEVIEW",

@@ -500,7 +500,6 @@
   "enableQuickSearch" : true,
   "enableSearch" : true,
   "expandSearchForm" : true,
-  "showCaptionBar" : true,
   "modelid" : "10eb19b1a0612b726dd381b592a9b597",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

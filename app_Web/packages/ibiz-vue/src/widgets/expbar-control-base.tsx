@@ -797,7 +797,15 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
         if (otherClassNames) {
             Object.assign(classNames, otherClassNames);
         }
+        let viewStyle = (this.controlInstance?.getParentPSModelObject?.() as IPSAppView)?.viewStyle;        
         return [
+            viewStyle == 'DEFAULT' && this.sideBarlayout == "LEFT" 
+            ? <div slot="trigger" class="trigger">
+                <div class="user-trigger">
+                    <i class="el-icon-arrow-left"></i>
+                </div>
+            </div>
+            : null,
             <div slot={this.sideBarlayout == "LEFT" ? "left" : "top"}>
                 {showTitleBar ? this.renderTitleBar() : null}
                 <div class={{ 'container-header': true, 'no-title': !showTitleBar ? true : false }}>

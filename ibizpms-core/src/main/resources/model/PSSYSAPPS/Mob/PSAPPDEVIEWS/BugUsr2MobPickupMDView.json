@@ -400,7 +400,6 @@
   "enableFilter" : false,
   "enablePullDownRefresh" : true,
   "expandSearchForm" : true,
-  "showCaptionBar" : true,
   "modelid" : "efa54eeee717c5139dd0df145ba955dd",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

@@ -39,7 +39,7 @@ export interface IHttpResponse {
      * @type {Headers}
      * @memberof IHttpResponse
      */
-    readonly headers?: Headers;
+    readonly headers: Record<string, string>;
     /**
      * 请求地址
      *

@@ -561,7 +561,6 @@
   "enablePullDownRefresh" : false,
   "enableSearch" : true,
   "expandSearchForm" : true,
-  "showCaptionBar" : true,
   "modelid" : "4df4af1628f95a20388cf7c78fe2952c",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {

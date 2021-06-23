@@ -85,7 +85,7 @@
     }
     > .el-menu {
         border-right: 0;
-        .el-menu-item {
+        .el-submenu .el-submenu__title,.el-menu-item {
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
@@ -130,6 +130,7 @@
             height: 48px;
             font-size: 14px;
             line-height: 48px;
+            padding-right: 28px;
         }
 
         .el-menu-item .el-tooltip {
@@ -279,9 +280,6 @@
         >.el-menu .el-submenu .el-submenu__title {
             .app-menu-icon {
                 margin-left: 0px;
-            }
-            .no-icon {
-                padding-left: 22px;
             }
         }
     }

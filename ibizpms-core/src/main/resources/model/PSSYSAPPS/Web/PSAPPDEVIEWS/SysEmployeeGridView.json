@@ -1194,7 +1194,6 @@
   "enableRowEdit" : false,
   "enableSearch" : true,
   "rowEditDefault" : false,
-  "showCaptionBar" : true,
   "modelid" : "40fe6b28b9f7902341da46bb74a02d59",
   "modeltype" : "PSAPPDEVIEW"
 }

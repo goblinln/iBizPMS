@@ -4385,7 +4385,6 @@
   "enableSearch" : false,
   "expandSearchForm" : false,
   "loadDefault" : true,
-  "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "7cfc48856417e4a8740c3d82334f88c9",
   "modeltype" : "PSAPPDEVIEW",

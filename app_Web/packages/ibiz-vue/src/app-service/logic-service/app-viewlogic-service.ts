@@ -125,7 +125,7 @@ export class AppViewLogicService {
             }
         } else {
             // 界面行为数据部件与控件容器不同时，即逻辑事件在视图里时
-            if (!Object.is(viewLogic.getParentPSModelObject().name, targetViewAction.xDataControlName)) {
+            if (!Object.is(viewLogic.getParentPSModelObject().name.toLocaleLowerCase(), targetViewAction.xDataControlName.toLocaleLowerCase())) {
                 xData = _this.$refs[targetViewAction.xDataControlName.toLowerCase()].ctrl;
             } else {
                 xData = _this;

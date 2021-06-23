@@ -600,7 +600,6 @@
   "enableSearch" : true,
   "expandSearchForm" : true,
   "rowEditDefault" : false,
-  "showCaptionBar" : true,
   "modelid" : "d7afba730262987d24bf40fcd4442fb9",
   "modeltype" : "PSAPPDEVIEW"
 }

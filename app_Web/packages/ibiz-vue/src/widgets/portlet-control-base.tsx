@@ -107,7 +107,7 @@ export class PortletControlBase extends MainControlBase implements PortletContro
                         // counterService: null,
                         // counterId: null, 
                         disabled: false,
-                        visabled: true,
+                        visabled: appUIAction?.dataAccessAction && this.Environment.enablePermissionValid ? false : true,
                         getNoPrivDisplayMode: appUIAction.noPrivDisplayMode || 6
                     });
                 }

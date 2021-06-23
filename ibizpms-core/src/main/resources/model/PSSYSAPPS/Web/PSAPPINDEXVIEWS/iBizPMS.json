@@ -623,6 +623,7 @@
   "defaultPage" : true,
   "enableAppSwitch" : true,
   "enableDP" : true,
+  "showCaptionBar" : false,
   "modelid" : "09b9ef8ce803717761b940cf3fd0173f",
   "modeltype" : "PSAPPINDEXVIEW"
 }

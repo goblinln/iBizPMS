@@ -1462,6 +1462,9 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                             }
                             if (uiAction.dataAccessAction) {
                                 detailOpts.uiaction.dataaccaction = uiAction.dataAccessAction;
+                                if (this.Environment.enablePermissionValid) {
+                                    detailOpts.visible = false;
+                                }
                             }
                         }
                         detailModel = new FormButtonModel(detailOpts);

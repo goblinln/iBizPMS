@@ -338,7 +338,6 @@ export class AuthGuard {
             }
             if (localActivedView && localActivedView.parameterName) {
                 const path = (await GetModelService()).getPSAppViewPath(`${resource}${localActivedView.parameterName}`);
-                console.log(path)
                 return path;
             } else {
                 return '';

@@ -418,31 +418,52 @@
 .view-default.view-container.delistexpview,
 .view-default.view-container.dedataviewexpview,
 .view-default.view-container.decalendarexpview {
-  padding: 0 8px;
+  padding: 0;
   >.ivu-card >.ivu-card-body >.content-container  {
+    padding: 0;
+    background-color:var(--app-background-color-light);
     >.expbarcontrol {
       //水平布局
       >.ivu-split-horizontal {
+        > .ivu-split-trigger-con {
+            height: 100%;
+            width: 12px;
+            padding: 0;
+            .trigger{
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              background-color: var(--app-background-color-light);
+              cursor: e-resize;
+              .user-trigger{
+                width: 12px;
+                height: 36px;
+                background: #57A3FD;;
+                display: flex;
+                align-items: center;
+                i{
+                  color: #fff;
+                }
+              }
+            }          
+        }        
         >.left-pane {
-          padding: 0px;
-          margin: 4px 10px 12px 4px;
-          box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
+          padding: 0;
+          background-color:#fff;
           border-radius: 4px;
-          >div {
-            padding: 0 10px 10px 10px;
-          }
-          .container-header >.search-container {
-            padding-top: 10px;
+          .container-header {
+            padding: 0 15px 0 10px;
           }
         }
         >.right-pane {
-          padding: 4px 10px 12px 16px;
+          padding: 0;
+          border-radius: 4px;
+          background-color:#fff;
           >div {
-            box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
-            border-radius: 4px;
             padding: 0;
             >.view-container.view-default {
-              padding: 0 12px;
+              padding: 0 12px 0 14px;
             }
           }
         }
@@ -450,17 +471,15 @@
       //垂直布局
       >.ivu-split-vertical {
         >.top-pane {
-          box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
           border-radius: 4px;
-          margin: 0 4px 10px 4px;
+          background-color:#fff;
           >div {
             padding: 0 10px 10px 10px;
           }
         }
         >.bottom-pane {
-          box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
           border-radius: 4px;
-          margin: 16px 4px 4px 4px;
+          background-color:#fff;
           >div {
             padding: 0 10px 10px 10px;
           }

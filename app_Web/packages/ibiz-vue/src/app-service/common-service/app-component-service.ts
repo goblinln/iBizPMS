@@ -92,14 +92,18 @@ export class AppComponentService {
         this.viewMap.set("DEWFACTIONVIEW_DEFAULT", 'app-default-wfactionview');
         this.viewMap.set("DEREDIRECTVIEW_DEFAULT", 'app-default-deredirectview');
         this.viewMap.set("APPWFSTEPTRACEVIEW_DEFAULT", 'app-default-wfsteptraceview');
+        this.viewMap.set("DEEDITVIEW2_DEFAULT", 'app-default-editview2');
         this.viewMap.set("DEEDITVIEW3_DEFAULT", 'app-default-editview3');
+        this.viewMap.set("DEEDITVIEW4_DEFAULT", 'app-default-editview4');
         this.viewMap.set("DEHTMLVIEW_DEFAULT", 'app-default-htmlview');
         this.viewMap.set("DEMAPVIEW_DEFAULT", 'app-default-mapview');
         this.viewMap.set("DEREPORTVIEW_DEFAULT",'app-default-dereportview');
         // STYLE2 样式
         this.viewMap.set("APPINDEXVIEW_STYLE2", 'app-style2-indexview');
         this.viewMap.set("DEEDITVIEW_STYLE2", 'app-style2-editview');
+        this.viewMap.set("DEEDITVIEW2_STYLE2", 'app-style2-editview2');
         this.viewMap.set("DEEDITVIEW3_STYLE2", 'app-style2-editview3');
+        this.viewMap.set("DEEDITVIEW4_STYLE2", 'app-style2-editview4');
         this.viewMap.set("DEGRIDVIEW_STYLE2", 'app-style2-gridview');
         this.viewMap.set("DELISTVIEW_STYLE2", 'app-style2-listview');
         this.viewMap.set("DECHARTVIEW_STYLE2", 'app-style2-chartview');
@@ -206,6 +210,7 @@ export class AppComponentService {
         this.controlMap.set("WIZARDPANEL_DEFAULT", 'app-default-wizard-panel');
         this.controlMap.set("WIZARDPANEL_STATE", 'app-default-state-wizard-panel');
         this.controlMap.set("DRTAB_DEFAULT", 'app-default-drtab');
+        this.controlMap.set("DRBAR_DEFAULT", 'app-default-drbar');
         this.controlMap.set("MAP_DEFAULT", 'app-default-map');
         this.controlMap.set("REPORTPANEL_DEFAULT", 'app-default-report-panel');
         // 注册部件插件标识

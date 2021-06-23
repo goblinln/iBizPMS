@@ -87,6 +87,8 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         const testcasestepnestedsList = await this.getMinorLocal('TestCaseStepNested', _context, { ibizcase: _data.id });
         if (testcasestepnestedsList?.length > 0) {
             _data.testcasestepnesteds = testcasestepnestedsList;
+        } else {
+           _data.testcasestepnesteds = [];
         }
         return _data;
     }
