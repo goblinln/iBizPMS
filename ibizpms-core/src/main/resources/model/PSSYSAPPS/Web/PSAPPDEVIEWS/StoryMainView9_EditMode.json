@@ -6736,7 +6736,7 @@
               } ],
               "getPSSysPFPlugin" : {
                 "pluginType" : "EDITOR_CUSTOMSTYLE",
-                "pluginCode" : "MpickerList"
+                "pluginCode" : "MpickerListX"
               },
               "singleSelect" : false
             },
