@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="app-rate">
         <el-rate :value="currentVal" :disabled="disabled" :max="maxItem" @change="change"> </el-rate>
     </div>
 </template>

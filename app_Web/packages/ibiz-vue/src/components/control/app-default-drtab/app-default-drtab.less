@@ -19,3 +19,27 @@
       }
   }
 }
+.view-default {
+    .drtab >.app-dr-tab {
+        >.ivu-tabs-bar .ivu-tabs-nav-scroll >.ivu-tabs-nav {
+            .ivu-tabs-ink-bar {
+                color: #ccc;
+            }
+            .ivu-tabs-tab.ivu-tabs-tab-disabled {
+                cursor: no-drop;
+                color: #ccc;
+            }
+        }
+        >.ivu-tabs-content {
+            .ivu-spin.app-druipart-spin {
+                top: 50px;
+                height: calc(100% - 50px);
+            }
+        }
+    }
+    .drtab >.is-disabled.app-dr-tab {
+        >.ivu-tabs-bar .ivu-tabs-nav-scroll >.ivu-tabs-nav >.ivu-tabs-ink-bar {
+            background-color: #ccc;
+        }
+    }
+}

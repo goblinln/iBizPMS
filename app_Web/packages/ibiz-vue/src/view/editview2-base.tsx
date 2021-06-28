@@ -41,15 +41,6 @@ export class EditView2Base extends EditViewBase implements EditView2Interface {
     public selection: any = {};
 
     /**
-     * 表单数据
-     *
-     * @public
-     * @type {any}
-     * @memberof EditView2Base
-     */
-    public formData: any = {};
-
-    /**
      * 初始化编辑视图实例
      * 
      * @memberof EditView2Base

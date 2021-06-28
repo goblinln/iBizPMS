@@ -40,6 +40,7 @@
       :show-file-list = "false"
       list-type =  "picture-card"
       :file-list =  "files"
+      accept="image/*"
       :before-upload = "beforeUpload"
       :on-success = "onSuccess"
       :before-remove = "onRemove"

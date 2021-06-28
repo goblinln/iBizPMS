@@ -65,6 +65,7 @@ export default class DataPickerEditor extends EditorBase {
                 break;
             // 数据选择（无按钮）
             case 'PICKEREX_NOBUTTON':
+                this.customProps.editorType = 'nobutton';
                 this.customProps.showButton = false;
             // 数据选择
             case 'PICKER':
@@ -79,6 +80,8 @@ export default class DataPickerEditor extends EditorBase {
                 break;
             // 数据选择（下拉、数据链接）
             case 'PICKEREX_TRIGGER_LINK':
+                this.customProps.editorType = 'dropdown-link';
+                this.customProps.showButton = false;
                 this.initPickupViewParams();
                 await this.initLinkViewParams();
                 this.initAcParams();
@@ -102,11 +105,11 @@ export default class DataPickerEditor extends EditorBase {
                 break;
             // 数据选择（下拉视图）
             case 'PICKEREX_DROPDOWNVIEW':
-                this.initPickupViewParams();
+                this.customProps.pickupView = pickupAppView || undefined;
                 break;
             // 数据选择（下拉视图、数据链接）
             case 'PICKEREX_DROPDOWNVIEW_LINK':
-                this.initPickupViewParams();
+                this.customProps.pickupView = pickupAppView || undefined;
                 await this.initLinkViewParams();
                 break;
             // 数据选择（嵌入选择视图）

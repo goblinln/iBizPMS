@@ -129,7 +129,7 @@ export class AppDrtabBase extends DrtabControlBase {
         const editItemCaption = this.$tl((this.controlInstance.getEditItemCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, this.controlInstance.editItemCaption);
         return (
             <div class={{ ...controlClassNames, 'drtab': true }} >
-                <tabs animated={false} class="app-dr-tab" name={codeName} on-on-click={(...params: any[]) => debounce(this.tabPanelClick,params,this)}>
+                <tabs animated={false} class={{"app-dr-tab": true, 'is-disabled': !this.isShowSlot && this.drtabItems.length > 0 && this.drtabItems[0].disabled }} name={codeName} on-on-click={(...params: any[]) => debounce(this.tabPanelClick,params,this)}>
                     {this.isShowSlot ? 
                         <tab-pane index={0} name='mainform' tab={codeName} label={editItemCaption}>
                             <div class='main-data'>
@@ -140,7 +140,7 @@ export class AppDrtabBase extends DrtabControlBase {
                     {this.drtabItems?.length > 0 && this.drtabItems.map((tabPage: any,index: number)=>{
                         return <tab-pane index={index+1} disabled={tabPage.disabled} name={tabPage.name} tab={codeName} label={this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}>
                             {!this.isShowSlot && tabPage.disabled ?
-                                <spin v-if="blockUI" class="app-druipart-spin" fix>{this.$t("components.appformdruipart.blockuitipinfo")}</spin>
+                                <spin class="app-druipart-spin" fix>{this.$t("components.appformdruipart.blockuitipinfo")}</spin>
                             : this.renderDrView(tabPage)}
                         </tab-pane> 
                     })}

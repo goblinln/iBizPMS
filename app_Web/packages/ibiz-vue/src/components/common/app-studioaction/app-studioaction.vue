@@ -60,6 +60,11 @@ export default class AppStudioAction extends Vue {
     // 是否悬浮在此Debug栏
     isSuspension: boolean = false;
 
+    contextArr: any = [];
+    viewparamsArr: any = [];
+    foldContext: boolean = false;
+    foldViewparam: boolean = false;
+
     /**
      * 组件初始化
      *
@@ -73,6 +78,8 @@ export default class AppStudioAction extends Vue {
         if (Environment) {
             this.isDevMode = Environment.devMode;
         }
+        this.renderObjectInfo(this.context, this.contextArr);
+        this.renderObjectInfo(this.viewparams, this.viewparamsArr);
     }
 
     /**
@@ -123,6 +130,23 @@ export default class AppStudioAction extends Vue {
         ref.style.display = 'none';
     }
 
+    copyValue(value: any) {
+        if (textCopy.copy(value)) {
+            this.$message.success('拷贝成功!');
+        }
+    }
+
+    renderObjectInfo(items: any, arr: any) {
+        for (let key of Object.keys(items)) {
+            if (items[key]) {
+                arr.push({ key, value: items[key].toString() });
+            }
+        }
+        arr = arr.sort(function(a: any, b: any) {
+            return (a.key + '').localeCompare(b.key + '');
+        });
+    }
+
     /**
      * 绘制
      *
@@ -134,16 +158,100 @@ export default class AppStudioAction extends Vue {
             return (
                 <div class='app-studio-debug-bar-container'>
                     <div ref='border' class='app-studio-debug-bar-border'></div>
-                    <div class='app-studio-debug-bar' on-mouseenter={this.mouseenter} on-mouseleave={this.mouseleave}>
-                        <div class='app-studio-debug-info' title='点击拷贝视图名称' on-click={() => this.copy()}>
-                            {this.viewTitle}（{v.name}）
+                    <poptip placement='left-start' trigger='hover' transfer popper-class='app-studioaction'>
+                        <div
+                            class='app-studio-debug-bar'
+                            on-mouseenter={this.mouseenter}
+                            on-mouseleave={this.mouseleave}
+                        >
+                            <div class='app-studio-debug-info' title='点击拷贝视图名称' on-click={() => this.copy()}>
+                                {this.viewTitle}（{v.name}）
+                            </div>
+                            <div class='app-studio-debug-actions'>
+                                <i-button type='text' ghost size='small' on-click={this.openPreview}>
+                                    {this.$t('components.appstudioaction.view')}
+                                </i-button>
+                            </div>
                         </div>
-                        <div class='app-studio-debug-actions'>
-                            <i-button type='text' ghost size='small' on-click={this.openPreview}>
-                                {this.$t('components.appstudioaction.view')}
-                            </i-button>
+                        <div slot='content'>
+                            {
+                                <div class='app-studio-debug-detail-wrapper'>
+                                    <div class='app-studio-debug-detail'>
+                                        <div class='detail-item-title'>
+                                            <span
+                                                class={{ tag: true, isfold: this.foldContext }}
+                                                on-click={() => (this.foldContext = !this.foldContext)}
+                                            >
+                                                应用上下文 <icon type='ios-arrow-down' />
+                                            </span>
+                                        </div>
+                                        <div class={{ 'detail-item-wrapper': true, isfold: this.foldContext }}>
+                                            {this.contextArr && this.contextArr.length > 1
+                                                ? this.contextArr.map((item: any) => (
+                                                      <div class='detail-item'>
+                                                          <span class='key-wrapper'>
+                                                              <span
+                                                                  title={item.key}
+                                                                  class='key'
+                                                                  on-click={() => this.copyValue(item.key)}
+                                                              >
+                                                                  {item.key}
+                                                              </span>
+                                                          </span>
+                                                          <span class='value-wrapper'>
+                                                              ：
+                                                              <span
+                                                                  title={item.value}
+                                                                  class='value'
+                                                                  on-click={() => this.copyValue(item.value)}
+                                                              >
+                                                                  {item.value}
+                                                              </span>
+                                                          </span>
+                                                      </div>
+                                                  ))
+                                                : null}
+                                        </div>
+                                        <div class='detail-item-title'>
+                                            <span
+                                                class={{ tag: true, isfold: this.foldViewparam }}
+                                                on-click={() => (this.foldViewparam = !this.foldViewparam)}
+                                            >
+                                                视图参数 <icon type='ios-arrow-down' />
+                                            </span>
+                                        </div>
+                                        <div class={{ 'detail-item-wrapper': true, isfold: this.foldViewparam }}>
+                                            {this.viewparamsArr && this.viewparamsArr.length > 1
+                                                ? this.viewparamsArr.map((item: any) => (
+                                                      <div class='detail-item'>
+                                                          <span class='key-wrapper'>
+                                                              <span
+                                                                  title={item.key}
+                                                                  class='key'
+                                                                  on-click={() => this.copyValue(item.key)}
+                                                              >
+                                                                  {item.key}
+                                                              </span>
+                                                          </span>
+                                                          <span class='value-wrapper'>
+                                                              ：
+                                                              <span
+                                                                  title={item.value}
+                                                                  class='value'
+                                                                  on-click={() => this.copyValue(item.value)}
+                                                              >
+                                                                  {item.value}
+                                                              </span>
+                                                          </span>
+                                                      </div>
+                                                  ))
+                                                : null}
+                                        </div>
+                                    </div>
+                                </div>
+                            }
                         </div>
-                    </div>
+                    </poptip>
                 </div>
             );
         } else {

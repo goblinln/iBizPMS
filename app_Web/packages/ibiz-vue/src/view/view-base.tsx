@@ -605,7 +605,7 @@ export class ViewBase extends Vue implements ViewInterface {
                         if (_this.engine) {
                             _this.engine.load();
                         }
-                        this.$forceUpdate();
+                        _this.$forceUpdate();
                     }, 0);
                 }
             });
@@ -624,7 +624,11 @@ export class ViewBase extends Vue implements ViewInterface {
             _this.formDruipartStateEvent = _this.formDruipartState.subscribe(({ action }: any) => {
                 if (Object.is(action, 'save')) {
                     if (_this?.viewInstance) {
-                        if (_this.viewInstance.xDataControlName) {
+                        if (_this.viewInstance.xDataControlName && _this.$refs &&
+                            _this.$refs[_this?.viewInstance?.xDataControlName] &&
+                            (_this.$refs[_this?.viewInstance?.xDataControlName] as any).ctrl &&
+                            (_this.$refs[_this?.viewInstance?.xDataControlName] as any).ctrl.save &&
+                            (_this.$refs[_this?.viewInstance?.xDataControlName] as any).ctrl.save instanceof Function) {
                             _this.viewState.next({ tag: _this?.viewInstance?.xDataControlName, action: action, data: Object.assign(_this.viewparams, { showResultInfo: false }) });
                         } else {
                             _this.$emit('view-event', { viewName: this.viewCodeName, action: 'drdatasaved', data: {} });

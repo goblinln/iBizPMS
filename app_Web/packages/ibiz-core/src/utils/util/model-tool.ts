@@ -233,15 +233,18 @@ export class ModelTool {
      * @memberof ModelTool
      */
     public static getEditorKeyName(editor: any){
+        let appDe: IPSAppDataEntity =editor?.getPSAppDataEntity?.();
+        const appDeKeyCodeName = ModelTool.getAppEntityKeyField(appDe)?.codeName;
         if(editor?.getPSAppDEACMode?.()){
             let acMode: IPSAppDEACMode = editor.getPSAppDEACMode();
             let keyName = acMode?.getValuePSAppDEField()?.codeName;
-            if(keyName){
-                return keyName.toLowerCase();
+            if(Object.is(keyName, appDeKeyCodeName)){
+                return appDe?.codeName?.toLowerCase() || undefined;
+            } else {
+                return keyName?.toLowerCase() || undefined;
             }
         }
-        let appDe: IPSAppDataEntity =editor?.getPSAppDataEntity?.();
-        return ModelTool.getAppEntityKeyField(appDe)?.codeName.toLowerCase() || undefined;
+        return appDe?.codeName?.toLowerCase() || undefined;
     }
 
     /**
@@ -410,7 +413,7 @@ export class ModelTool {
      */
      public static getCodelistValue(items: any[], value: any, codelist: IPSAppCodeList, _this: any) {
         if (!value && value !== 0 && value !== false) {
-            return _this.$t('codelist.' + codelist.codeName + '.empty');
+            return '';
         }
         if (items) {
             let result: any = [];
@@ -467,11 +470,7 @@ export class ModelTool {
         if (arr.length !== 1) {
             return undefined;
         }
-        if (Object.is(codelist.codeListType, 'STATIC')) {
-            return _this.$t('codelist.' + codelist.codeName + '.' + arr[0].value);
-        } else {
-            return arr[0].text;
-        }
+        return arr[0].text;
     }
 
     /**

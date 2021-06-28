@@ -81,6 +81,7 @@ export class AppDePortalViewBase extends DashboardViewBase {
         }, [
             this.renderTopMessage(),
             this.renderCaptionInfo(),
+            this.renderToolBar(),
             this.renderBodyMessage(),
             this.renderMainContent(),
             this.renderBottomMessage()

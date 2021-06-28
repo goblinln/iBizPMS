@@ -91,10 +91,6 @@ export class AppEditView2Base extends EditView2Base {
             return null;
         }
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.drbarInstance);
-        Object.assign(targetCtrlParam.staticProps, {
-            formInstance: this.editFormInstance,
-            formData: this.formData
-        });
         return this.$createElement(targetCtrlName, { 
             slot: 'default',
             props: targetCtrlParam, 

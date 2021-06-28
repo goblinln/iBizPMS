@@ -2,12 +2,13 @@
   <div class="app-file-upload">
     <el-row>
       <el-col v-if="rowPreview && files.length > 0" :span="12" class="upload-col">
-          <el-button size='small' class="button-preview" icon='el-icon-view' :disabled="disabled" @click="()=>{this.dialogVisible = true;}">{{$t('components.appfileupload.preview')}}<Badge :count="files.length" type="info"></Badge></el-button>
+          <el-button size='mini' class="button-preview" icon='el-icon-view' :disabled="disabled" @click="()=>{this.dialogVisible = true;}">{{$t('components.appfileupload.preview')}}<Badge :count="files.length" type="info"></Badge></el-button>
       </el-col>
       <el-col :span="(rowPreview && files.length > 0) ? 12 : 24" class="upload-col">
         <el-upload
-          :disabled="disabled"
+          :disabled="disabled || (!this.multiple && files.length > 0)"
           :file-list="files"
+          :limit="multiple ? 1000 : 1"
           :action="uploadUrl"
           :multiple="multiple"
           :headers="headers"
@@ -19,7 +20,7 @@
           :drag="isdrag"
           :show-file-list="!rowPreview"
           >
-            <el-button v-if="!isdrag" size='small' icon='el-icon-upload' :disabled="disabled">{{$t('components.appfileupload.caption')}}</el-button>
+            <el-button v-if="!isdrag" size='mini' icon='el-icon-upload' :disabled="disabled || (!this.multiple && files.length > 0)">{{$t('components.appfileupload.caption')}}</el-button>
           <i v-if="isdrag" class="el-icon-upload"></i>
           <div v-if="isdrag" class="el-upload__text" v-html="$t('components.appfileupload.uploadtext')"></div>
         </el-upload>

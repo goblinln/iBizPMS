@@ -28,13 +28,18 @@ export class AppDefaultFormTabPanel extends AppDefaultFormDetail {
      */
     public render(): any {
         const { detailClassNames } = this.renderOptions;
-        let { codeName, caption } = this.detailsInstance;
+        let { codeName, caption, contentHeight, contentWidth } = this.detailsInstance;
+        let style = { 
+            height: contentHeight ? contentHeight + 'px' : false,
+            width: contentWidth ? contentWidth + 'px' : false,
+        };
         // 设置默认值
         let layoutmode = this.detailsInstance.getPSLayout()?.layout || 'TABLE_24COL';
         caption = caption || codeName;
         return (
             <tabs
                 v-show={this.runtimeModel.visible}
+                style={style}
                 animated={false}
                 name={codeName.toLowerCase()}
                 class={{'app-tabpanel-flex': layoutmode == 'FLEX',...detailClassNames}}

@@ -8,7 +8,7 @@ ENV TZ=Asia/Shanghai \
 
 CMD echo "The application will start in ${IBIZ_SLEEP}s..." && \
     sleep ${IBIZ_SLEEP} && \
-    java ${JAVA_OPTS} -Duser.timezone=$TZ -Djava.security.egd=file:/dev/./urandom -jar /ibizpms-provider-webapi.jar
+    java ${JAVA_OPTS} -Duser.timezone=$TZ -Djbpm.enable.multi.con=true -Djava.security.egd=file:/dev/./urandom -jar /ibizpms-provider-webapi.jar
 
 EXPOSE 8081
 

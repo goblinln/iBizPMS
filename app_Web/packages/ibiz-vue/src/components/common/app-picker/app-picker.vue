@@ -4,10 +4,10 @@
     </div>
     <div v-else-if="!Object.is(editorType, 'pickup-no-ac') && !Object.is(editorType, 'dropdown')" class='app-picker'>
         <div class='app-picker'>
-            <el-autocomplete class='text-value' :value-key="deMajorField" :disabled="disabled" v-model="curvalue" size='small'
+            <el-autocomplete ref="appAc" class='text-value' :value-key="deMajorField" :disabled="disabled" v-model="curvalue" size='small'
                 :trigger-on-focus="true" :fetch-suggestions="(query, callback) => { this.onSearch(query, callback, true) }" @select="onACSelect"
-                @input="onInput" @blur="onBlur" style='width:100%;'
-                :placeholder="placeholder">
+                @input="onInput" @blur="onBlur" @focus="onAcFocus" style='width:100%;'
+                :placeholder="placeholder" :popper-class="`app-ac-${name}`">
                 <template v-slot:default="{item}">
                     <!-- <template v-if="item.isNew">
                         <div v-if="linkview" @click="newAndEdit">{{$t('components.apppicker.newandedit')}}</div>
@@ -19,6 +19,8 @@
                 </template>
                 <template v-slot:suffix>
                     <i v-if="curvalue && !disabled" class='el-icon-circle-close' @click="onClear"></i>
+                    <i v-show="open" class='el-icon-arrow-up' @click="closeAppAc"></i> 
+                    <i v-show="!open" class='el-icon-arrow-down' @click="openAppAc"></i>
                     <i v-if="!Object.is(editorType, 'ac') && showButton" class='el-icon-search' @click="openView"></i>
                     <icon v-if="linkview" type="ios-open-outline" @click="openLinkView"/>
                 </template>
@@ -493,6 +495,17 @@ export default class AppPicker extends Vue {
      */
     public onBlur(e: any): void {
         this.curvalue = this.value;
+        window.setTimeout(() => {
+            this.closeAppAc();
+        }, 200);
+    }
+
+    /**
+     * ac获得焦点事件
+     * @param e 
+     */
+    public onAcFocus(e: any) {
+        this.openAppAc();
     }
 
     /**
@@ -915,6 +928,37 @@ export default class AppPicker extends Vue {
         const appPicker: any = this.$refs.appPicker;
         if(appPicker) {
             appPicker.blur();
+        }
+    }
+    
+    /**
+     * 打开ac
+     *
+     * @memberof AppPicker
+     */
+    public openAppAc() {
+        const acPopover: any = document.querySelector(`.app-ac-${this.name}`);
+        const appAc: any = this.$refs.appAc;
+        if (acPopover && appAc) {
+            this.open = true;
+            if (acPopover.getAttribute('is-close')) {
+                acPopover.style.display = 'block';
+            }
+            appAc.focus();
+        }
+    }
+
+    /**
+     * 关闭ac
+     *
+     * @memberof AppPicker
+     */
+    public closeAppAc() {
+        const acPopover: any = document.querySelector(`.app-ac-${this.name}`);
+        if (acPopover) {
+            this.open = false;
+            acPopover.style.display = 'none';
+            acPopover.setAttribute('is-close', true);
         }
     }
 

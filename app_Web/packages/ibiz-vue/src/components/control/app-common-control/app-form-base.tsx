@@ -246,11 +246,14 @@ export class AppFormBase extends EditFormControlBase {
      * @memberof AppFormBase
      */
     public renderIframe(modelJson: IPSDEFormIFrame, index: number): any {
-        let { contentHeight, iFrameUrl } = modelJson;
-        let iframeStyle = { height: contentHeight + 'px' };
+        let { contentHeight, iFrameUrl, contentWidth } = modelJson;
+        let iframeStyle = { 
+            height: contentHeight ? contentHeight + 'px' : false,
+            width: contentWidth ? contentWidth + 'px' : false,
+        };
         return (
             <div style={iframeStyle}>
-                <iframe src={iFrameUrl}></iframe>
+                <iframe src={iFrameUrl} style="height: 100%;width: 100%"></iframe>
             </div>
         );
     }
@@ -352,7 +355,7 @@ export class AppFormBase extends EditFormControlBase {
                 viewname={appView?.codeName}
                 localContext={Util.formatNavParam(modelJson.getPSNavigateContexts())}
                 localParam={Util.formatNavParam(modelJson.getPSNavigateParams())}
-                tempMode={appView.tempMode ? appView.tempMode : 0}
+                tempMode={appView?.tempMode ? appView?.tempMode : 0}
                 data={JSON.stringify(this.data)}
                 on-drdatasaved={($event: any) => this.drdatasaved($event)}
                 style={druipartStyle}

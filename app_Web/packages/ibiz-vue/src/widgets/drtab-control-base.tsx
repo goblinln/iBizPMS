@@ -103,24 +103,22 @@ export class DrtabControlBase extends MainControlBase implements DrtabControlInt
                 // 取消禁用
                 drtabItem.disabled = false;
                 // 设置导航参数
-                this.drtabItems.forEach((drtabItem: any) => {
-                    if (
-                        drtabItem.getPSNavigateContexts() &&
-                        (drtabItem?.getPSNavigateContexts() as IPSNavigateContext[])?.length > 0
-                    ) {
-                        const localContext = Util.formatNavParam(drtabItem.getPSNavigateContexts());
-                        let _context: any = Util.computedNavData(args, this.context, this.viewparams, localContext);
-                        drtabItem.localContext = _context;
-                    }
-                    if (
-                        drtabItem?.getPSNavigateParams() &&
-                        (drtabItem.getPSNavigateParams() as IPSNavigateParam[])?.length > 0
-                    ) {
-                        const localViewParam = Util.formatNavParam(drtabItem.getPSNavigateParams());
-                        let _param: any = Util.computedNavData(args, this.context, this.viewparams, localViewParam);
-                        drtabItem.localViewParam = _param;
-                    }
-                })
+                if (
+                    drtabItem.getPSNavigateContexts() &&
+                    (drtabItem?.getPSNavigateContexts() as IPSNavigateContext[])?.length > 0
+                ) {
+                    const localContext = Util.formatNavParam(drtabItem.getPSNavigateContexts());
+                    let _context: any = Util.computedNavData(args, this.context, this.viewparams, localContext);
+                    drtabItem.localContext = _context;
+                }
+                if (
+                    drtabItem?.getPSNavigateParams() &&
+                    (drtabItem.getPSNavigateParams() as IPSNavigateParam[])?.length > 0
+                ) {
+                    const localViewParam = Util.formatNavParam(drtabItem.getPSNavigateParams());
+                    let _param: any = Util.computedNavData(args, this.context, this.viewparams, localViewParam);
+                    drtabItem.localViewParam = _param;
+                }
             })
         }
         this.$forceUpdate();

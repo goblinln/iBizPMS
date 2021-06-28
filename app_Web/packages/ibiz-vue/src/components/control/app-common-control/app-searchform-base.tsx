@@ -306,7 +306,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
                 viewname={'app-view-shell'}
                 localContext={Util.formatNavParam(localContext)}
                 localParam={Util.formatNavParam(localParam)}
-                tempMode={appView.tempMode ? appView.tempMode : 0}
+                tempMode={appView?.tempMode ? appView?.tempMode : 0}
                 data={JSON.stringify(this.data)}
                 on-drdatasaved={($event: any)=>this.drdatasaved($event)}
                 style={druipartStyle}

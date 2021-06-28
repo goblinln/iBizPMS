@@ -1,8 +1,45 @@
-.app-studio-debug-bar {
-    position: absolute;
-    top: 20px;
-    right: 0;
+.app-studio-debug-bar-container {
+    > .ivu-poptip {
+        position: absolute;
+        top: 20px;
+        right: 0;
+        z-index: 10;
+        
+    }
+}
+.ivu-poptip-transfer.app-studioaction {
     z-index: 10;
+    .ivu-poptip-inner {
+        background-color: rgba(96, 98, 102, 0.8);
+        border-radius: 5px;
+    }
+    .ivu-poptip-arrow {
+        display: none;
+    }
+    .ivu-poptip-body {
+        padding: 0px;
+    }
+    
+        .ivu-poptip-body-content {
+            max-height: calc(100vh - 150px);
+            padding: 0;
+            overflow: auto;
+            background-color: rgba(96, 98, 102, 0.8);
+            border-radius: 5px;
+
+            &::-webkit-scrollbar {
+                width: 8px;
+                border-radius: 8px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(167, 167, 167, 0.767);
+                border-radius: 8px;
+            }
+        }
+    
+}
+.app-studio-debug-bar {
     padding: 3px 6px;
     border-radius: 5px;
     background-color: rgba(96, 98, 102, 0.8);
@@ -35,6 +72,71 @@
     left: 0;
     border: 3px solid paleturquoise;
     z-index: 1;
+}
+.app-studio-debug-detail-wrapper {
+    .app-studio-debug-detail {
+        color: #fff;
+        width: 300px;
+        z-index: 10;
+        padding: 4px 8px;
+        border-radius: 5px;
+        right: calc(100% + 10px);
+        top: 0;
+        .detail-item-title {
+            font-size: 16px;
+            height: 32px;
+            line-height: 32px;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #ccc;
+            .tag {
+                cursor: pointer;
+                &.isfold {
+                    .ivu-icon {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+        .detail-item-wrapper {
+            transition: all 1s;
+            height: auto;
+            &.isfold {
+                height: 0;
+                overflow: hidden;
+            }
+            .detail-item {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                .value,
+                .key {
+                    cursor: pointer;
+                    &:hover {
+                        color: rgb(219, 230, 255);
+                    }
+                }
+                .key-wrapper {
+                    width: 110px;
+                    height: 26px;
+                    line-height: 26px;
+                    display: inline-block;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-align: end;
+                }
+                .value-wrapper {
+                    width: calc(100% - 110px);
+                    height: 26px;
+                    line-height: 26px;
+                    display: inline-block;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
 }
 
 .view-container {

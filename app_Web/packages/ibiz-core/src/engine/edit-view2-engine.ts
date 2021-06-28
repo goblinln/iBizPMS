@@ -89,10 +89,9 @@ export class EditView2Engine extends EditViewEngine {
      */
     public onFormLoad(arg: any = {}): void {
         super.onFormLoad(arg);
-        this.view.formData = arg;
         if (this.getDRBar()) {
             const tag = this.getDRBar().name;
-            this.setViewState2({ tag: tag, action: 'state', viewdata: this.view.vieparams });
+            this.setViewState2({ tag: tag, action: 'state', viewdata: arg });
         }
     }
 
@@ -104,10 +103,9 @@ export class EditView2Engine extends EditViewEngine {
      */
     public onFormSave(arg: any = {}): void {
         super.onFormSave(arg);
-        this.view.formData = arg;
         if (this.getDRBar()) {
             const tag = this.getDRBar().name;
-            this.setViewState2({ tag: tag, action: 'state', viewdata: this.view.viewparams });
+            this.setViewState2({ tag: tag, action: 'state', viewdata: arg });
         }
     }
 

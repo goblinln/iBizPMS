@@ -595,6 +595,9 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                     if (this.appDeKeyFieldName && copyViewParams[this.appDeKeyFieldName.toLocaleLowerCase()]) {
                         delete copyViewParams[this.appDeKeyFieldName.toLocaleLowerCase()]
                     }
+                    if (this.appDeMajorFieldName && copyViewParams[this.appDeMajorFieldName.toLocaleLowerCase()]) {
+                        delete copyViewParams[this.appDeMajorFieldName.toLocaleLowerCase()]
+                    }
                     Object.assign(responseData, copyViewParams);
                 }
                 if (tempWFData && Object.keys(tempWFData).length > 0) {

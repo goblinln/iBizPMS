@@ -1,6 +1,6 @@
 <template>
   <div class="app-stepper">
-    <el-input-number :value="currentVal" :disabled="disabled" @change="onChange" :min="min" :max="max" :step="step"></el-input-number>
+    <el-input-number v-model="currentVal" :disabled="disabled" size="small" :min="min" :max="max" :step="step"></el-input-number>
   </div>
 </template>
 
@@ -62,9 +62,11 @@ export default class AppStepper extends Vue {
     }
 
     /**
-     * change
+     * 设置当前值
+     *
+     * @memberof AppStepper
      */
-    public onChange(val: any) {
+    set currentVal(val) {
         this.$emit('change', { name: this.name, value: val });
     }
 

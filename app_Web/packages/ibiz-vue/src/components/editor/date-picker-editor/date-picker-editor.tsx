@@ -105,6 +105,56 @@ export default class DatePickerEditor extends EditorBase {
     }
 
     /**
+     * 设置编辑器的自定义高宽
+     *
+     * @memberof DatePickerEditor
+     */
+    public setCustomStyle() {
+        let { editorWidth, editorHeight } = this.editorInstance;
+        this.customStyle = {};
+        if (!Util.isEmpty(editorWidth) && editorWidth != 0) {
+            this.handleEditorWidth(editorWidth);
+        }
+        if (!Util.isEmpty(editorHeight) && editorHeight != 0) {
+            this.customStyle.height = editorHeight + 'px';
+        }
+    }
+
+    /**
+     * 根据类型处理编辑器宽度
+     *
+     * @memberof DatePickerEditor
+     */
+    public handleEditorWidth(width: number) {
+        switch (this.editorInstance?.editorType) {
+            // 时间选择控件
+            case 'DATEPICKEREX':
+            case 'DATEPICKER':
+            case 'DATEPICKEREX_SECOND':
+                this.customProps.type = 'date';
+                this.customProps.format = 'yyyy-MM-dd HH:mm:ss';
+                this.customStyle.width = width == 160 ? '100%' : `${width}px`;
+                break;
+            case 'DATEPICKEREX_MINUTE':
+            case 'DATEPICKEREX_NOSECOND':
+                this.customStyle.width = width == 140 ? '100%' : `${width}px`;
+                break;
+            case 'DATEPICKEREX_HOUR':
+                this.customStyle.width = width == 120 ? '100%' : `${width}px`;
+                break;
+            case 'DATEPICKEREX_NOTIME':
+                this.customStyle.width = width == 100 ? '100%' : `${width}px`;
+                break;
+            case 'DATEPICKEREX_NODAY':
+                this.customStyle.width = width == 90 ? '100%' : `${width}px`;
+                break;
+            case 'DATEPICKEREX_NODAY_NOSECOND':
+                this.customStyle.width = width == 70 ? '100%' : `${width}px`;
+                break;
+        }
+    }
+
+    /**
      * 日期格式化
      *
      * @param date  时间

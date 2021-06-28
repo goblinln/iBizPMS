@@ -5,32 +5,35 @@
             size="small"
             :disabled="disabled"
             v-model="firstIp"
+            @focus="getFocus"
             maxlength="3" />.
-        <el-input          
+        <el-input         
             type="text" 
             size="small"
             :disabled="disabled"
             v-model="secIp"
+            @focus="getFocus"
             maxlength="3" />.
         <el-input 
             type="text"
             size="small"
             maxlength="3" 
             :disabled="disabled"
+            @focus="getFocus"
             v-model="thirdIp" />.
         <el-input 
             type="text" 
             size="small"
             maxlength="3"
             :disabled="disabled"
+            @focus="getFocus"
             v-model="forIp" />
     </div>     
 </template>
 
 <script lang='ts'>
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
-import { Subject,Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
 })
@@ -74,6 +77,14 @@ export default class AppInputIp extends Vue {
      * @memberof AppInputIp
      */
     @Model('change') public ipdata!: string;
+
+    /**
+     * 当前组件是否已获取到焦点
+     * 
+     * @type {boolean}
+     * @memberof AppInputIp
+     */
+    public activeElement: boolean = false;
 
     /**
      * 获取当前值
@@ -172,6 +183,15 @@ export default class AppInputIp extends Vue {
     }
 
     /**
+     * 输入框获取到焦点时设置该组件已获取到焦点
+     * 
+     * @memberof AppInputIp
+     */
+    public getFocus(){
+        this.activeElement = true;
+    }
+
+    /**
      * 验证格式
      * 
      * @memberof AppInputIp
@@ -181,7 +201,11 @@ export default class AppInputIp extends Vue {
         let val = newVal;
         let reg = /^(([0-9]|([1-9]\d)|(1\d\d)|(2([0-4]\d|5[0-5]))))$/g;
         if(reg.test(val)){
-            this.CurValue[index] = val; 
+            this.CurValue[index] = val;
+            if(val.length == 3 && this.activeElement && index >=0 && index <= 2){
+                const inputElement: any = this.$children;
+                inputElement[index+1]?.focus();
+            } 
         }else{
             if(flag){
                 let that:any = this;

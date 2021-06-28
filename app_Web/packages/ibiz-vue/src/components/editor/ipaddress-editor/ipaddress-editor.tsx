@@ -1,6 +1,7 @@
-import { Vue, Component, Prop, Inject } from 'vue-property-decorator';
+import { Component } from 'vue-property-decorator';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { EditorBase } from '../editor-base/editor-base';
+import { Util } from 'ibiz-core';
 
 /**
  * ip地址编辑器
@@ -21,6 +22,24 @@ export default class IpAddressEditor extends EditorBase {
      */
     public handleChange($event: any){
         this.editorChange({name: this.editorInstance.name, value: $event})
+    }
+
+    /**
+     * 设置编辑器的自定义高宽
+     *
+     * @memberof EditorBase
+     */
+     public setCustomStyle() {
+        let { editorWidth, editorHeight } = this.editorInstance;
+        this.customStyle = {
+            width: '300px',
+        };
+        if (!Util.isEmpty(editorWidth) && editorWidth != 0) {
+            this.customStyle.width = editorWidth + 'px';
+        }
+        if (!Util.isEmpty(editorHeight) && editorHeight != 0) {
+            this.customStyle.height = editorHeight + 'px';
+        }
     }
 
     /**

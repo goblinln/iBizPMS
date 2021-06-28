@@ -329,8 +329,7 @@ export class AppGridBase extends GridControlBase {
                                 disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                 class={columnClass}
                                 on-click={($event: any) => {
-                                  debounce((this.$apppopover as any).popperDestroy,[],this);
-                                  debounce(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
+                                    debounce(this.handleActionButtonClick,[row, $event, _column, uiactionDetail],this);
                                 }}
                             >
                                 {uiactionDetail.showIcon ? <menu-icon item={uiaction} /> : null}

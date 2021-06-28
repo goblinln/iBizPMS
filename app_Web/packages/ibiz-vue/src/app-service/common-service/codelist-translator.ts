@@ -174,6 +174,8 @@ export class CodeListTranslator {
                     let selected = codeListItems.find((_item:any)=> _item.value == v);
                     if(selected){
                         selectedItems.push(selected);
+                    } else {
+                        selectedItems.push({text: v});
                     }
                 })
             }

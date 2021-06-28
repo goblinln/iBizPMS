@@ -1766,33 +1766,20 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             this.stopRowClick = false;
             return;
         }
-        if (this.isSingleSelect) {
-            this.selections = [];
-        }
+        this.selections = [];
         if (this.gridRowActiveMode == 1 && !isSelectColumn) {
             this.ctrlEvent({ controlname: this.name, action: "rowclick", data: Util.deepCopy(row) });
             this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: [Util.deepCopy(row)] });
         } else if (this.gridRowActiveMode == 2 || isSelectColumn) {
-            // 已选中则删除，没选中则添加
-            const appDeCodeName = this.controlInstance.getPSAppDataEntity()?.codeName || '';
-            let selectIndex = -1;
-            if (appDeCodeName) {
-                selectIndex = this.selections.findIndex((item: any) => {
-                    return Object.is(item[appDeCodeName.toLowerCase()], row[appDeCodeName.toLowerCase()]);
-                });
-            }
-            if (Object.is(selectIndex, -1)) {
-                this.selections.push(Util.deepCopy(row));
-            } else {
-                this.selections.splice(selectIndex, 1);
-            }
+            // 只选中当前行
+            this.selections.push(Util.deepCopy(row));
             const table: any = (this.$refs as any)[this.gridRefName];
             if (table) {
+                table.clearSelection();
                 if (this.isSingleSelect) {
-                    table.clearSelection();
                     table.setCurrentRow(row);
                 } else {
-                    table.toggleRowSelection(row);
+                    table.toggleRowSelection(row, true);
                 }
             }
             this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: this.selections });
@@ -2530,4 +2517,15 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             }
         }
     }
+
+    /**
+     * 操作列按钮点击
+     *
+     * @memberof GridControlBase
+     */    
+    public handleActionButtonClick(row:any, $event:any, _column:IPSDEGridUAColumn, uiactionDetail:IPSUIActionGroupDetail){
+        (this.$apppopover as any).popperDestroy();
+        this.handleActionClick(row, $event, _column, uiactionDetail);
+    }
+
 }

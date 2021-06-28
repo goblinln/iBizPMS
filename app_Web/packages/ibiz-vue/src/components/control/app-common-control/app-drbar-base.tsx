@@ -83,23 +83,31 @@ export class AppDrbarBase extends DrbarControlBase {
      */
     public renderDrView(){
         if (this.selection && this.selection.view) {
+            let viewData: any = Util.deepCopy(this.context);
+            let viewParam: any = Util.deepCopy(this.viewparams);
+            if (this.selection.localContext) {
+                Object.assign(viewData, this.selection.localContext);
+            }
+            if (this.selection.localViewParam) {
+                Object.assign(viewParam, this.selection.localViewParam);
+            }
             return this.$createElement('app-view-shell', {
                 props: { 
                     staticProps: {
                         viewDefaultUsage: false,
-                        viewModelData: this.selection.view,
+                        viewModelData: this.selection.view.getPSAppView?.(),
                         appDeCodeName: this.appDeCodeName,
                     },
                     dynamicProps:{
-                        viewdata: JSON.stringify(this.selection.data), 
-                        viewparam: JSON.stringify(this.selection.param), 
+                        viewdata: JSON.stringify(viewData), 
+                        viewparam: JSON.stringify(viewParam), 
                     }
                 },
                 class: "viewcontainer2",
                 on: {
                 }
             })
-        } 
+        }
     }
 
     /**
@@ -114,20 +122,19 @@ export class AppDrbarBase extends DrbarControlBase {
         }
         const { controlClassNames } = this.renderOptions;
         return (
-            <layout class={{...controlClassNames, [this.controlInstance.codeName]: true}}>
+            <layout class={{...controlClassNames, 'app-dr-bar': true}}>
                 <sider width={this.width}>
                     <el-menu
                         default-openeds={this.defaultOpeneds}
                         default-active={this.items[0]?.id}
-                        on-select={(event: any) => debounce(this.onSelect, [event], this)}
-                        on-open={(event: any) => debounce(this.onOpen, [event], this)}
-                        on-close={(event: any) => debounce(this.onClose, [event], this)}>
+                        on-select={(event: any) => debounce(this.onSelect, [event], this)}>
                         <app-sider-menus menus={this.items}/>
                     </el-menu>
                 </sider>
                 <content style={{ width: `calc(100% - ${this.width + 1}px)` }}>
-                    {this.selection && Object.is(this.selection.id, this.formInstance?.name?.toLowerCase()) ?
-                        <div class="main-data"> {this.$parent.$slots.mainform} </div> : null}
+                    <div class="main-data" style={[ this.selection && Object.is(this.selection.id, this.formName) ? '' : { 'display': 'none', 'visibility': 'visible' } ]}>
+                        {this.$parent.$slots.mainform}
+                    </div>
                     {this.renderDrView()}
                 </content>
             </layout>

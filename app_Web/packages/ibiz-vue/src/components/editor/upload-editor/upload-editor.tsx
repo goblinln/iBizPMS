@@ -56,6 +56,7 @@ export default class UploadEditor extends EditorBase {
                 break;
             // 图片控件（单项）
             case 'PICTURE_ONE':
+            case 'FILEUPLOADER_ONE':
                 this.customProps.multiple = false;
                 break;
             // 图片控件（旋转）
@@ -174,6 +175,7 @@ export default class UploadEditor extends EditorBase {
             case 'FILEUPLOADER_DRAG':
             case 'PICTURE_INFO':
             case 'FILEUPLOADER_INFO':
+            case 'FILEUPLOADER_ONE':
             case 'PICTURE_ONE':
                 return this.renderUploadEditor();
             case 'PICTURE_DISKPIC':

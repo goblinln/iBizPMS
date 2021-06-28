@@ -271,6 +271,7 @@ export class AppComponentService {
         this.editorMap.set("AC_DEFAULT", 'app-autocomplete');
         this.editorMap.set("HTMLEDITOR_DEFAULT", 'app-rich-text-editor');
         this.editorMap.set("FILEUPLOADER_DEFAULT", 'app-file-upload');
+        this.editorMap.set("FILEUPLOADER_ONE_DEFAULT", "app-file-upload");
         this.editorMap.set("PICTURE_DEFAULT", 'app-image-upload');
         this.editorMap.set("PICTURE_ONE_DEFAULT", 'app-image-upload');
         this.editorMap.set("RADIOBUTTONLIST_DEFAULT", 'app-radio-group');

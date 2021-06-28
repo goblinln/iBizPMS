@@ -1,4 +1,4 @@
-import { IPSAppDEField, IPSDropDownList } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppDEField, IPSDropDownList } from '@ibiz/dynamic-model-api';
 import { ModelTool, Util } from 'ibiz-core';
 import { Component, Prop } from 'vue-property-decorator';
 import { VueLifeCycleProcessing, Watch } from '../../../decorators';
@@ -83,6 +83,7 @@ export default class DropdownListEditor extends EditorBase {
         let codeList: any= this.editorInstance?.getPSAppCodeList();
         if(codeList.isFill) {
             Object.assign(this.customProps, {
+                valueSeparator:codeList.valueSeparator,
                 tag: codeList.codeName,
                 codeList: codeList,
                 codelistType: codeList.codeListType

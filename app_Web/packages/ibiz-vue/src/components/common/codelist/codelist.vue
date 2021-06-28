@@ -313,7 +313,6 @@ export default class CodeList extends Vue {
     overflow: hidden;
     .codelist-item{
         max-height: 32px;
-        display: flex;
         > img{
             max-height: 32px;
             width: auto;
