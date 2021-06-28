@@ -6710,6 +6710,7 @@
                 "SRFNAVCTX.product" : "%product%",
                 "SRFNAVPARAM.n_id_noteq" : "%story%"
               },
+              "editorStyle" : "MpickerList",
               "editorType" : "MDROPDOWNLIST",
               "name" : "linkstories",
               "getPSAppCodeList" : {
@@ -6733,6 +6734,10 @@
                 "value" : "story",
                 "rawValue" : false
               } ],
+              "getPSSysPFPlugin" : {
+                "pluginType" : "EDITOR_CUSTOMSTYLE",
+                "pluginCode" : "MpickerList"
+              },
               "singleSelect" : false
             },
             "getPSLayoutPos" : {

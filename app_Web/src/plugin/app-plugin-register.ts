@@ -1,5 +1,6 @@
 // 注册视图插件
 // 注册编辑器插件
+import { MpickerList as MDROPDOWNLIST_MpickerList } from './editor/mdropdownlist/mpicker-list';
 import { Casedesc as TEXTBOX_Casedesc } from './editor/textbox/casedesc';
 import { Extend as HTMLEDITOR_Extend } from './editor/htmleditor/extend';
 import { PROGRESSCIRCLE as USERCONTROL_PROGRESSCIRCLE } from './editor/usercontrol/progresscircle';
@@ -31,6 +32,7 @@ export const PluginRegister = {
     install(v: any, opt: any) {
         // 注册视图插件
        // 注册编辑器插件
+        v.component('app-mdropdownlist-mpicker-list', MDROPDOWNLIST_MpickerList);
         v.component('app-textbox-casedesc', TEXTBOX_Casedesc);
         v.component('app-htmleditor-extend', HTMLEDITOR_Extend);
         v.component('app-usercontrol-progresscircle', USERCONTROL_PROGRESSCIRCLE);
