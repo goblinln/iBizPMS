@@ -812,6 +812,7 @@
               "SRFNAVPARAM.bugproject" : "%project%",
               "SRFNAVCTX.product" : "%product%"
             },
+            "editorStyle" : "MpickerList",
             "editorType" : "MDROPDOWNLIST",
             "name" : "openedbuild",
             "getPSAppCodeList" : {
@@ -845,6 +846,10 @@
               "value" : "product",
               "rawValue" : false
             } ],
+            "getPSSysPFPlugin" : {
+              "pluginType" : "EDITOR_CUSTOMSTYLE",
+              "pluginCode" : "MpickerList"
+            },
             "singleSelect" : false
           },
           "getPSLayoutPos" : {
@@ -1554,11 +1559,16 @@
             "codeName" : "Mailto"
           },
           "getPSEditor" : {
+            "editorStyle" : "MpickerList",
             "editorType" : "MDROPDOWNLIST",
             "name" : "mailto",
             "getPSAppCodeList" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+            },
+            "getPSSysPFPlugin" : {
+              "pluginType" : "EDITOR_CUSTOMSTYLE",
+              "pluginCode" : "MpickerList"
             },
             "singleSelect" : false
           },

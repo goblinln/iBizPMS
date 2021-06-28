@@ -92,7 +92,7 @@ import AppAfterTime from './common/app-after-time/app-after-time.vue';
 import AppInputIp from './common/app-input-ip/app-input-ip.vue';
 import AppColorSpan from './common/app-color-span/app-color-span.vue';
 import AppColorPicker from './common/app-color-picker/app-color-picker.vue';
-import AppRichTextEditor from './common/app-rich-text-editor/app-rich-text-editor.vue';
+// import AppRichTextEditor from './common/app-rich-text-editor/app-rich-text-editor.vue';
 import AppPortalDesign from './common/app-portal-design/app-portal-design.vue';
 import AppNotSupportedEditor from './common/app-not-supported-editor/app-not-supported-editor.vue';
 import { AppLayout } from './common/layout/app-layout/app-layout';
@@ -286,7 +286,7 @@ export const ComponentsRegister = {
         v.component('app-radio-group', AppRadioGroup);
         v.component('app-embed-picker', AppEmbedPicker);
         v.component('app-tree-picker', AppTreePicker);
-        v.component('app-rich-text-editor', AppRichTextEditor);
+        v.component('app-rich-text-editor', () => { import('./common/app-rich-text-editor/app-rich-text-editor.vue') });
         v.component('app-file-upload', AppFileUpload);
         v.component('app-image-upload', AppImageUpload);
         v.component('property-layout', PropertyLayout);
@@ -369,7 +369,7 @@ export const ComponentsRegister = {
         v.component('app-custom-theme', AppCustomTheme);
         v.component('app-wf-opinion', AppWFOpinion);
         v.component('app-grid-column', AppDefaultGridColumn);
-        v.component('draggable',draggable);
+        v.component('draggable', draggable);
 
         // 视图组件
         v.component('app-view-shell', AppViewShell);
@@ -416,8 +416,8 @@ export const ComponentsRegister = {
         v.component('app-default-wfdynastartview', AppDefaultWFDynaStartView);
         v.component('app-default-wizardview', AppDefaultWizardView);
         v.component('app-default-wfactionview', AppDefaultWFActionView);
-        v.component("app-default-deredirectview",AppDefaultDeRedirectView);
-        v.component("app-default-wfsteptraceview",AppDefaultWfStepTraceView);
+        v.component("app-default-deredirectview", AppDefaultDeRedirectView);
+        v.component("app-default-wfsteptraceview", AppDefaultWfStepTraceView);
         v.component('app-default-htmlview', AppDefaultHtmlView);
         v.component('app-default-mapview', AppDefaultMapView);
         v.component('app-default-dereportview', AppDefaultDeReportView);
@@ -460,8 +460,8 @@ export const ComponentsRegister = {
         v.component('app-style2-wfdynastartview', AppStyle2WFDynaStartView);
         v.component('app-style2-wizardview', AppStyle2WizardView);
         v.component('app-style2-wfactionview', AppStyle2WFActionView);
-        v.component("app-style2-deredirectview",AppStyle2DeRedirectView);
-        v.component("app-style2-wfsteptraceview",AppStyle2WfStepTraceView);
+        v.component("app-style2-deredirectview", AppStyle2DeRedirectView);
+        v.component("app-style2-wfsteptraceview", AppStyle2WfStepTraceView);
         v.component('app-style2-wfdynaeditview3', AppStyle2WFDynaEditView3);
         v.component('app-style2-dereportview', AppStyle2DeReportView);
         // 部件组件

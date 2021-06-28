@@ -2,7 +2,7 @@ import { ModelTool, Util } from 'ibiz-core';
 import { Component, Emit } from 'vue-property-decorator';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { EditorBase } from '../editor-base/editor-base';
-import { AppCodeEditor } from 'ibiz-plugin';
+// import { AppCodeEditor } from 'ibiz-plugin';
 
 /**
  * 文本框编辑器
@@ -50,7 +50,7 @@ export default class CodeEditor extends EditorBase {
      * @memberof TextboxEditor
      */
     public render(): any {
-        return this.$createElement(AppCodeEditor, {
+        return this.$createElement('app-code-editor', {
             props: {
                 name: this.editorInstance.name,
                 value: this.value,
