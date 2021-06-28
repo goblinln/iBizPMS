@@ -11,6 +11,7 @@ import GroupStepTable from '@components/group-step-table/group-step-table.vue';
 import DropdownListExtend from './components/dropdown-list-extend/dropdown-list-extend.vue';
 import IconCodeList from './components/icon-codelist/icon-codelist.vue';
 import CombFormItem from './components/comb-form-item/comb-form-item.vue';
+import AppMpickerList from './components/app-mpicker-list/app-mpicker-list.vue';
 export const UserComponent = {
     install(v: any, opt: any) {
         Vue.use(IBizStudioComponentsVue);
@@ -25,5 +26,6 @@ export const UserComponent = {
         v.component('dropdown-list-extend',DropdownListExtend);
         v.component('icon-codelist',IconCodeList);
         v.component('comb-form-item',CombFormItem);
+        v.component('app-mpicker-list',AppMpickerList);
     }
 };
