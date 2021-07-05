@@ -190,7 +190,9 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
                 emphasis: {},
             },
             itemStyle: {
-                normal: {},
+                normal: {
+                    areaColor: '#e0ffff',
+                },
                 emphasis: {
                     areaColor: '#F3B329',
                 },
@@ -199,7 +201,7 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
         visualMap: [
             {
                 min: 0,
-                max: this.valueMax,
+                max: 1000,
                 left: 'left',
                 seriesIndex: 0,
                 top: 'bottom',
@@ -301,6 +303,12 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
         }
         if (this.map) {
             this.map.setOption(this.initOptions);
+            // 如果是导航视图默认选中第一项
+            this.map.on('selectchanged', 'series', function (params: any) {
+                if (params.fromActionPayload?.custom) {
+                    _this.onClick(params.fromActionPayload.custom);
+                }
+            });
             // 监听地图触发的点击事件
             this.map.on('click', 'series', function (params: any) {
                 if (params.data?.value?.length > 3) {
@@ -393,9 +401,6 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
                 this.setAreaData();
                 this.handleOptions(this.items);
                 this.setOptions();
-                if (this.isSelectFirstDefault) {
-                    this.onClick(this.items[0]);
-                }
             });
         },
         (response: any) => {
@@ -415,6 +420,16 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
         }
         const options = JSON.parse(JSON.stringify(this.initOptions));
         this.map.setOption(options);
+        // 如果是导航视图默认选中第一项
+        if (this.isSelectFirstDefault) {
+            const select: any = this.items.find((item: any) => Object.is(item.itemType, this.showLegends[0]?.itemType));
+            this.map.dispatchAction({
+                type: 'select',
+                seriesId: this.showLegends[0]?.itemType,
+                dataIndex: 0,
+                custom: select,
+            });
+        }
         this.updateSize();
     }
 
