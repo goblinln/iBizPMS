@@ -42,7 +42,7 @@ public interface SysUserRoleFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/sysuserroles/{userroleid}")
     Boolean remove(@PathVariable("userroleid") String userroleid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/sysuserroles/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/sysuserroles/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

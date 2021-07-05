@@ -42,7 +42,7 @@ public interface PSSubSysSADEFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsyssades/{pssubsyssadeid}")
     Boolean remove(@PathVariable("pssubsyssadeid") String pssubsyssadeid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsyssades/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsyssades/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

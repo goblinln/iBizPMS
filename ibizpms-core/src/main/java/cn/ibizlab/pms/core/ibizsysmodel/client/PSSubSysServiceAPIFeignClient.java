@@ -42,7 +42,7 @@ public interface PSSubSysServiceAPIFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsysserviceapis/{pssubsysserviceapiid}")
     Boolean remove(@PathVariable("pssubsysserviceapiid") String pssubsysserviceapiid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsysserviceapis/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsysserviceapis/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

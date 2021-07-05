@@ -42,7 +42,7 @@ public interface SysPostFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/{postid}")
     Boolean remove(@PathVariable("postid") String postid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

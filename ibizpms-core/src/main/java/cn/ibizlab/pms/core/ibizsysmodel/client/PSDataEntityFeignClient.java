@@ -42,7 +42,7 @@ public interface PSDataEntityFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/psdataentities/{psdataentityid}")
     Boolean remove(@PathVariable("psdataentityid") String psdataentityid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/psdataentities/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/psdataentities/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

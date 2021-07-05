@@ -152,7 +152,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     /**
      * 加载系统默认角色
-     * 
+     *
      * @throws Exception
      */
     protected void loadDefaultDEUserRoles() throws Exception {
@@ -215,7 +215,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     /**
      * 加载操作标识
-     * 
+     *
      * @throws Exception
      */
     protected void loadAllOPPrivs() throws Exception {
@@ -452,7 +452,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     public void setSearchDataContext(ISearchContextBase iSearchContextBase, String strParam, Object objValue) {
         //throw new DataEntityRuntimeException("没有实现", Errors.NOTIMPL, this);
     }
-    
+
     @Override
     public int checkKeyState(Object objKey) {
         QueryWrapperContext context = (QueryWrapperContext) this.createSearchContext();
@@ -465,7 +465,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     @Override
     protected void onWFStart(Object arg0, IPSDEAction iPSDEAction, IPSDEWF iPSDEWF, IDynaInstRuntime iDynaInstRuntime, Object joinPoint) throws Throwable {
-        
+
     }
 
     abstract public SearchContextBase createSearchContext();
@@ -651,7 +651,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     /**
-     * 根据父判断时候含有Paction能力 
+     * 根据父判断时候含有Paction能力
      *
      * @param PDEName
      * @param PKey

@@ -42,7 +42,7 @@ public interface PSModuleFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/psmodules/{psmoduleid}")
     Boolean remove(@PathVariable("psmoduleid") String psmoduleid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/psmodules/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/psmodules/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

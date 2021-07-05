@@ -42,7 +42,7 @@ public interface SysTeamMemberFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/systeammembers/{teammemberid}")
     Boolean remove(@PathVariable("teammemberid") String teammemberid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/systeammembers/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/systeammembers/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

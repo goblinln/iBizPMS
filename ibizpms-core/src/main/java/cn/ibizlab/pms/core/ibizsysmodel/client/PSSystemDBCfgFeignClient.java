@@ -42,7 +42,7 @@ public interface PSSystemDBCfgFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/{pssystemdbcfgid}")
     Boolean remove(@PathVariable("pssystemdbcfgid") String pssystemdbcfgid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

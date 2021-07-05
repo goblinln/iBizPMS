@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Lazy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import cn.ibizlab.pms.util.filter.SearchContextBase;
+import net.ibizsys.runtime.dataentity.action.DEActions;
 import net.ibizsys.runtime.ISystemRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
@@ -71,10 +72,13 @@ public class WFCallbackDeamonJobHandler implements IJobsHandler {
                     }
                     List<IPSDEAction> deactions = deruntime.getPSDataEntity().getAllPSDEActions();
                     IPSDEAction exeaction = null;
-                    for(IPSDEAction deaction : deactions){
-                        if (action.equalsIgnoreCase(deaction.getCodeName())) {
-                            exeaction = deaction;
-                            break;
+                    if(!DEActions.WFSTART.equals(action) && !DEActions.WFUPDATE.equals(action)
+                            && !DEActions.WFERROR.equals(action) && !DEActions.WFFINISH.equals(action) && !DEActions.WFINIT.equals(action)){
+                        for(IPSDEAction deaction : deactions){
+                            if (action.equalsIgnoreCase(deaction.getCodeName())) {
+                                exeaction = deaction;
+                                break;
+                            }
                         }
                     }
                     if(exeaction!=null){

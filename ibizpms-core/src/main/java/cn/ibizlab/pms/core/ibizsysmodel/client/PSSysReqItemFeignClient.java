@@ -42,7 +42,7 @@ public interface PSSysReqItemFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/pssysreqitems/{pssysreqitemid}")
     Boolean remove(@PathVariable("pssysreqitemid") String pssysreqitemid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssysreqitems/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssysreqitems/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

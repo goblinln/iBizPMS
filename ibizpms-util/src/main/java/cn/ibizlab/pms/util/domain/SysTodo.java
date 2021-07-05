@@ -89,6 +89,30 @@ public class SysTodo implements Serializable {
     private String param05;
 
     /**
+     * 参数06
+     */
+    @JSONField(name = "param06")
+    @JsonProperty("param06")
+    @ApiModelProperty("param06")
+    private String param06;
+
+    /**
+     * 参数07
+     */
+    @JSONField(name = "param07")
+    @JsonProperty("param07")
+    @ApiModelProperty("param07")
+    private String param07;
+
+    /**
+     * 参数08
+     */
+    @JSONField(name = "param08")
+    @JsonProperty("param08")
+    @ApiModelProperty("param08")
+    private String param08;
+
+    /**
      * 处理时间
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")

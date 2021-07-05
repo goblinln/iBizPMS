@@ -535,7 +535,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "( t21.`PROJECT` = \t${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')}\n or t1.parent in (\tSELECT GROUP_CONCAT(t1.id)\nFROM\n\t`zt_productplan` t1\n\tLEFT JOIN zt_productplan t11 ON t1.PARENT = t11.ID\n\tLEFT JOIN zt_product t31 ON t1.product = t31.id \n\tLEFT JOIN zt_projectproduct t21 ON t31.id = t21.product and t1.id = t21.plan\n\t\n\twhere t1.deleted = '0' and ( t21.`PROJECT` = \n${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')}\n ) ) )",
+        "customCond" : "t1.DELETED = '0' and ( t21.`PROJECT` = #{srf.datacontext.srfparentkey}\n   or t1.parent in ( \tselect  t.plan from zt_projectproduct t where t.project = #{srf.datacontext.srfparentkey} and t.plan <> 0\t) \n )",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",

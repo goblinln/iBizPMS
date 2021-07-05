@@ -42,7 +42,7 @@ public interface PSDEFieldFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/psdefields/{psdefieldid}")
     Boolean remove(@PathVariable("psdefieldid") String psdefieldid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/psdefields/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/psdefields/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

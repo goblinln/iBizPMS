@@ -42,7 +42,7 @@ public interface IBIZProMessageFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/{ibizpromessageid}")
     Boolean remove(@PathVariable("ibizpromessageid") String ibizpromessageid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

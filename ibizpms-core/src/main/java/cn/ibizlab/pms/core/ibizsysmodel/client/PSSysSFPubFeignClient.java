@@ -42,7 +42,7 @@ public interface PSSysSFPubFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/{pssyssfpubid}")
     Boolean remove(@PathVariable("pssyssfpubid") String pssyssfpubid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 

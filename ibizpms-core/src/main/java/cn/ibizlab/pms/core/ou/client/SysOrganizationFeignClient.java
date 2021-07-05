@@ -42,7 +42,7 @@ public interface SysOrganizationFeignClient {
     @RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/{orgid}")
     Boolean remove(@PathVariable("orgid") String orgid);
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/batch}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/batch")
     Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
