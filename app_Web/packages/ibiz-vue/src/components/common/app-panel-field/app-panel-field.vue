@@ -99,7 +99,7 @@ export default class AppPanelField extends Vue {
    * @type {boolean}
    * @memberof AppPanelField
    */
-  public required: boolean = false;
+  @Prop({default: false}) public required!: boolean;
 
   /**
    * 值规则数组
@@ -123,13 +123,6 @@ export default class AppPanelField extends Vue {
         this.rules = [];
         const _rules: any[] = newVal;
         this.rules = [..._rules];
-        this.rules.some((rule: any) => {
-          if (rule.hasOwnProperty("required")) {
-            this.required = rule.required;
-            return true;
-          }
-          return false;
-        });
       } catch (error) {}
     }
   }

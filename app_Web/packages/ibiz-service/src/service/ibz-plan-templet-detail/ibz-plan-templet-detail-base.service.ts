@@ -18,6 +18,7 @@ export class IbzPlanTempletDetailBaseService extends EntityBaseService<IIbzPlanT
     protected APPNAME = 'Web';
     protected APPDENAME = 'IbzPlanTempletDetail';
     protected APPDENAMEPLURAL = 'IbzPlanTempletDetails';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTempletDetail.json';
     protected APPDEKEY = 'ibzplantempletdetailid';
     protected APPDETEXT = 'ibzplantempletdetailname';
     protected quickSearchFields = ['ibzplantempletdetailname',];

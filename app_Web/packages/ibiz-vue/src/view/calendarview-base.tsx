@@ -52,9 +52,6 @@ export class CalendarViewBase extends MDViewBase implements CalendarViewInterfac
      */
     public renderMainContent() {
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(this.calendarInstance);
-        Object.assign(targetCtrlParam.staticProps, {
-            isSelectFirstDefault: true
-        });
         return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.calendarInstance?.name, on: targetCtrlEvent });
     }
 

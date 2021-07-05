@@ -1,4 +1,4 @@
-import { IPSAppView, IPSDEGrid, IPSGridExpBar } from '@ibiz/dynamic-model-api';
+import { IPSAppView, IPSDEGrid, IPSDERBase, IPSGridExpBar } from '@ibiz/dynamic-model-api';
 import { GridExpBarControlInterface } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
 
@@ -31,13 +31,12 @@ export class GridExpBarControlBase extends ExpBarControlBase implements GridExpB
      * @memberof GridExpBarControlBase
      */
     public async handleXDataCtrlOptions() {
-        //TODO 导航关系
         const navPSAppView: IPSAppView = await this.$xDataControl?.getNavPSAppView()?.fill() as IPSAppView;
         if (navPSAppView) {
-            this.navViewName = navPSAppView.modelFilePath;
+            this.navViewName = navPSAppView.modelPath;
         }
         this.navFilter = this.$xDataControl?.navFilter ? this.$xDataControl.navFilter : "";
-        // this.navPSDer = this.$xDataControl?.getNavPSDER ? this.$xDataControl.navPSDer : "";
+        this.navPSDer = (this.$xDataControl?.getNavPSDER?.() as IPSDERBase) ? "n_" + (this.$xDataControl.getNavPSDER() as IPSDERBase).minorCodeName?.toLowerCase() + "_eq" : "";
     }
 
     /**
@@ -82,6 +81,19 @@ export class GridExpBarControlBase extends ExpBarControlBase implements GridExpB
         let grid: any = (this.$refs[`${this.xDataControlName?.toLowerCase()}`] as any).ctrl;
         if(grid) {
             grid.load({ query: this.searchText });
+        }
+    }
+
+    /**
+    * 部件事件处理
+    *
+    * @memberof GridExpBarControlBase
+    */
+    public onCtrlEvent(controlname: string, action: string, data: any) {
+        if (controlname && Object.is(controlname, this.$xDataControl?.name) && Object.is(action, 'selectiondata')) {
+            this.onSelectionChange(data);
+        } else {
+            super.onCtrlEvent(controlname, action, data);
         }
     }
 

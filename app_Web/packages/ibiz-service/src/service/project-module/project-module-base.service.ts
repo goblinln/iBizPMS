@@ -20,6 +20,7 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProjectModule';
     protected APPDENAMEPLURAL = 'ProjectModules';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

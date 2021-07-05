@@ -18,6 +18,7 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'IbizproIndex';
     protected APPDENAMEPLURAL = 'IbizproIndices';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json';
     protected APPDEKEY = 'indexid';
     protected APPDETEXT = 'indexname';
     protected quickSearchFields = ['indexname','indexdesc',];

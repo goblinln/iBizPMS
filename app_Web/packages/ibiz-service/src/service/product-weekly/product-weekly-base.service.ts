@@ -18,6 +18,7 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProductWeekly';
     protected APPDENAMEPLURAL = 'ProductWeeklies';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json';
     protected APPDEKEY = 'ibizpro_productweeklyid';
     protected APPDETEXT = 'ibizproproductweeklyname';
     protected quickSearchFields = ['ibizproproductweeklyname',];

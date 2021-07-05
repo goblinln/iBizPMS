@@ -4,7 +4,6 @@ import { ISubTask, SubTask } from '../../entities';
 import keys from '../../entities/sub-task/sub-task-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetUserConcatLogic } from '../../logic/entity/sub-task/get-user-concat/get-user-concat-logic';
 
 /**
  * 任务服务对象基类
@@ -21,6 +20,7 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'SubTask';
     protected APPDENAMEPLURAL = 'SubTasks';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SubTask.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['id','name',];
@@ -309,8 +309,6 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      * @memberof SubTaskService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+        return await this.executeAppDeLogic('GetUserConcat',_context,_data);
     }
 }

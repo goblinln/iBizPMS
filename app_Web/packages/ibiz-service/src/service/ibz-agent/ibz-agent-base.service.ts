@@ -18,6 +18,7 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'IbzAgent';
     protected APPDENAMEPLURAL = 'IbzAgents';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzAgent.json';
     protected APPDEKEY = 'ibzagentid';
     protected APPDETEXT = 'ibzagentname';
     protected quickSearchFields = ['ibzagentname',];

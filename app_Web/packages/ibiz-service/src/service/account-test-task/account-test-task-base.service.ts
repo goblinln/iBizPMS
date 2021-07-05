@@ -4,7 +4,6 @@ import { IAccountTestTask, AccountTestTask } from '../../entities';
 import keys from '../../entities/account-test-task/account-test-task-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetCurUserConcatLogic } from '../../logic/entity/account-test-task/get-cur-user-concat/get-cur-user-concat-logic';
 
 /**
  * 测试版本服务对象基类
@@ -21,6 +20,7 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
     protected APPNAME = 'Web';
     protected APPDENAME = 'AccountTestTask';
     protected APPDENAMEPLURAL = 'AccountTestTasks';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];
@@ -125,9 +125,7 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
      * @memberof AccountTestTaskService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetCurUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+        return await this.executeAppDeLogic('GetCurUserConcat',_context,_data);
     }
     /**
      * FetchAccount

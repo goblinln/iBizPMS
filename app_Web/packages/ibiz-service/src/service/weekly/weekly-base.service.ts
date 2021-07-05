@@ -18,6 +18,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Weekly';
     protected APPDENAMEPLURAL = 'Weeklies';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json';
     protected APPDEKEY = 'ibzweeklyid';
     protected APPDETEXT = 'ibzweeklyname';
     protected quickSearchFields = ['ibzweeklyname',];

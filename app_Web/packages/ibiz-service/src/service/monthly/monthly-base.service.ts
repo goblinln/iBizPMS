@@ -20,6 +20,7 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Monthly';
     protected APPDENAMEPLURAL = 'Monthlies';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json';
     protected APPDEKEY = 'ibzmonthlyid';
     protected APPDETEXT = 'ibzmonthlyname';
     protected quickSearchFields = ['ibzmonthlyname',];

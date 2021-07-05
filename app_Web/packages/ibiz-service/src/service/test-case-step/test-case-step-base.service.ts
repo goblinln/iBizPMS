@@ -18,6 +18,7 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'TestCaseStep';
     protected APPDENAMEPLURAL = 'TestCaseSteps';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'expect';
     protected quickSearchFields = ['expect',];

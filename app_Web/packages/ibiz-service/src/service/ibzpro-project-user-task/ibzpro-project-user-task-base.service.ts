@@ -18,6 +18,7 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
     protected APPNAME = 'Web';
     protected APPDENAME = 'IbzproProjectUserTask';
     protected APPDENAMEPLURAL = 'IbzproProjectUserTasks';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProjectUserTask.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'id';
     protected quickSearchFields = ['id',];

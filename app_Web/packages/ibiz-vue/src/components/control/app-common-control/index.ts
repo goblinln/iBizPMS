@@ -27,3 +27,4 @@ export { AppTreeGridExBase } from "./app-tree-grid-ex-base";
 export { AppTreeViewBase } from "./app-treeview-base";
 export { AppWizardPanelBase } from "./app-wizardpanel-base";
 export { AppStateWizardPanelBase } from './app-statewizard-panel-base';
+export { AppMapExpBarBase } from './app-map-exp-bar-base';

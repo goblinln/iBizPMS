@@ -18,6 +18,7 @@ export class ReportSummaryBaseService extends EntityBaseService<IReportSummary> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'ReportSummary';
     protected APPDENAMEPLURAL = 'ReportSummaries';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json';
     protected APPDEKEY = 'ibzdailyid';
     protected APPDETEXT = 'ibzdailyname';
     protected quickSearchFields = ['ibzdailyname',];

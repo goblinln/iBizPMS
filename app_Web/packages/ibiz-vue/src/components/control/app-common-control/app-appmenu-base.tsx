@@ -287,7 +287,7 @@ export class AppmenuBase extends AppMenuControlBase {
                 <el-submenu
                     key={Util.createUUID()}
                     index={menus.name}
-                    class={[menus.getPSSysCss?.cssName, { 'isCollpase': this.collapseChange && isFirst }]}
+                    class={[menus.getPSSysCss?.cssName, { 'isCollpase': this.collapseChange && isFirst }, { 'isFirst': isFirst }]}
                     popper-class={this.popperClass()}>
                     <template slot='title'>
                         {menus.getPSSysImage?.imagePath ? <img class='app-menu-icon' src={menus.getPSSysImage.imagePath} /> : null}

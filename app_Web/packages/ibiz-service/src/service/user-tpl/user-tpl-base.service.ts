@@ -20,6 +20,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'UserTpl';
     protected APPDENAMEPLURAL = 'UserTpls';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];

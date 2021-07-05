@@ -35,7 +35,8 @@ function getAppLocale(){
                 codelistwarn: "Code table value type and property type do not match, automatic cast exception, please correct code table value type and property type match",
                 yes: "yes",
                 no: "no",
-                wrongdataformat:"The data format is wrong!",                
+                wrongdataformat:"The data format is wrong!",
+                isexist:"Exist",                
             },
             local:{
                 new: "New",
@@ -184,6 +185,7 @@ function getAppLocale(){
                 undefined: "Undefined",
                 quarter: "Quarter",   
                 year: "Year",
+                noindicator: "Indicator does not exist. Cannot convert data set!"
             },
             searchform: {
                 notconfig: {

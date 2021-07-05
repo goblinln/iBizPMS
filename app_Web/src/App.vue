@@ -45,7 +45,7 @@ export default class App extends Vue {
     public initThridParam() {
         if (window.location && window.location.href.indexOf('?') > -1) {
             let tempViewParam: any = {};
-            const tempViewparam: any = window.location.href.slice(window.location.href.indexOf('?') + 1);
+            const tempViewparam: any = window.location.href.slice(window.location.href.lastIndexOf('?') + 1);
             const viewparamArray: Array<string> = decodeURIComponent(tempViewparam).split(';');
             if (viewparamArray.length > 0) {
                 viewparamArray.forEach((item: any) => {

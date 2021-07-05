@@ -20,6 +20,7 @@ export class DeptBaseService extends EntityBaseService<IDept> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Dept';
     protected APPDENAMEPLURAL = 'Depts';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Dept.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

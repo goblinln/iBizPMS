@@ -345,6 +345,7 @@ export class AppPanelBase extends PanelControlBase {
                     data={this.data}
                     value={this.data[name]}
                     itemRules={this.rules[editor.name]}
+                    required={this.detailsModel[modelJson.name]?.required}
                 >
                     {editor && (
                         <app-default-editor
@@ -355,6 +356,7 @@ export class AppPanelBase extends PanelControlBase {
                             contextData={this.data}
                             context={this.context}
                             viewparams={this.viewparams}
+                            disabled={this.detailsModel[modelJson.name]?.disabled}
                             on-change={(value: any) => {
                                 this.onPanelItemValueChange(this.data, value);
                             }}
@@ -454,41 +456,6 @@ export class AppPanelBase extends PanelControlBase {
     }
 
     /**
-     * 部件模型数据初始化
-     *
-     * @memberof AppPanelBase
-     */
-    public async ctrlModelInit(args?: any) {
-        await super.ctrlModelInit();
-        if (this.controlInstance.getRootPSPanelItems() && (this.controlInstance.getRootPSPanelItems() as any)?.length > 0) {
-            for (let i = 0; i < (this.controlInstance.getRootPSPanelItems() as any).length; i++) {
-                const item = (this.controlInstance.getRootPSPanelItems() as any)[i];
-                const getPSPanelItems = item.getPSPanelItems();
-                if (getPSPanelItems) {
-                    for (let i = 0; i < getPSPanelItems.length; i++) {
-                        const panelItems = getPSPanelItems[i]?.getPSPanelItems?.();
-                        if (Array.isArray(panelItems) && panelItems.length > 0) {
-                            for (let i = 0; i < panelItems.length; i++) {
-                                const item: IPSSysPanelField = panelItems[i];
-                                //获取面板项代码表
-                                if ((item?.getPSEditor?.() as IPSCodeListEditor)?.getPSAppCodeList?.()) {
-                                    const codeList = (item.getPSEditor() as IPSCodeListEditor)?.getPSAppCodeList();
-                                    if (codeList) {
-                                        if (codeList.isFill) {
-                                            await codeList.fill();
-                                            // item.codelist = tempCodeList;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    /**
      * 绘制面板
      *
      * @returns {*}
@@ -498,24 +465,19 @@ export class AppPanelBase extends PanelControlBase {
         if (!this.controlIsLoaded) {
             return null;
         }
-
-
         let controlClassNames = {
             'app-layoutpanel': true,
             ...this.renderOptions.controlClassNames,
         };
-
         let { width, height, layoutMode } = this.controlInstance;
-
         let controlStyle: any = {};
         controlStyle.width = width > 0 ? width : '100%';
         controlStyle.height = height > 0 ? height : '100%';
         if (layoutMode == 'FLEX') {
             controlStyle.display = 'flex';
         }
-
         return (
-            <div class="panel-container">
+            <div class="panel-container" style={{'width': '100%' }}>
                 <row class={controlClassNames} style={controlStyle}>
                     {this.renderRootPSPanelItems(this.controlInstance)}
                 </row>

@@ -4,7 +4,6 @@ import { IAccountBug, AccountBug } from '../../entities';
 import keys from '../../entities/account-bug/account-bug-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetCurUserConcatLogic } from '../../logic/entity/account-bug/get-cur-user-concat/get-cur-user-concat-logic';
 
 /**
  * Bug服务对象基类
@@ -21,6 +20,7 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'AccountBug';
     protected APPDENAMEPLURAL = 'AccountBugs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['id','title',];
@@ -445,9 +445,7 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
      * @memberof AccountBugService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetCurUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+        return await this.executeAppDeLogic('GetCurUserConcat',_context,_data);
     }
     /**
      * FetchAccount

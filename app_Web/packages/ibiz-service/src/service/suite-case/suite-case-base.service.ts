@@ -18,6 +18,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'SuiteCase';
     protected APPDENAMEPLURAL = 'SuiteCases';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SuiteCase.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'ibizcase';
     protected quickSearchFields = ['ibizcase',];

@@ -2,7 +2,6 @@ import { CodeListService } from '../app/codelist-service';
 import { EntityBaseService, IContext, HttpResponse } from 'ibiz-core';
 import { IIbzMyTerritory, IbzMyTerritory } from '../../entities';
 import keys from '../../entities/ibz-my-territory/ibz-my-territory-keys';
-import { MyTerritoryCountLogic } from '../../logic/entity/ibz-my-territory/my-territory-count/my-territory-count-logic';
 
 /**
  * 我的地盘服务对象基类
@@ -19,6 +18,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     protected APPNAME = 'Web';
     protected APPDENAME = 'IbzMyTerritory';
     protected APPDENAMEPLURAL = 'IbzMyTerritories';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'realname';
     protected quickSearchFields = ['realname',];

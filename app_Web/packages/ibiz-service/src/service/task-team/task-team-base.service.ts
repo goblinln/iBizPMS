@@ -20,6 +20,7 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'TaskTeam';
     protected APPDENAMEPLURAL = 'TaskTeams';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeam.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];

@@ -20,6 +20,7 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProductBranch';
     protected APPDENAMEPLURAL = 'ProductBranches';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductBranch.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

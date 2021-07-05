@@ -18,6 +18,7 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'SysDepartment';
     protected APPDENAMEPLURAL = 'SysDepartments';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json';
     protected APPDEKEY = 'deptid';
     protected APPDETEXT = 'deptname';
     protected quickSearchFields = ['deptname',];

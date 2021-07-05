@@ -5,7 +5,6 @@ import keys from '../../entities/task/task-keys';
 import { clone, mergeDeepLeft } from 'ramda';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetUserConcatLogic } from '../../logic/entity/task/get-user-concat/get-user-concat-logic';
 
 /**
  * 任务服务对象基类
@@ -22,6 +21,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Task';
     protected APPDENAMEPLURAL = 'Tasks';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['id','name',];
@@ -575,9 +575,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @memberof TaskService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+        return await this.executeAppDeLogic('GetUserConcat',_context,_data);
     }
     /**
      * Pause

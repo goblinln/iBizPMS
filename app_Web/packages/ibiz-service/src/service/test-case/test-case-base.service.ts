@@ -5,7 +5,6 @@ import keys from '../../entities/test-case/test-case-keys';
 import { clone, mergeDeepLeft } from 'ramda';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetCaseStepByIdVersionLogic } from '../../logic/entity/test-case/get-case-step-by-id-version/get-case-step-by-id-version-logic';
 
 /**
  * 测试用例服务对象基类
@@ -22,6 +21,7 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'TestCase';
     protected APPDENAMEPLURAL = 'TestCases';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];

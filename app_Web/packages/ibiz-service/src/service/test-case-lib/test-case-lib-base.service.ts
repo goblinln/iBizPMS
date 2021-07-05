@@ -20,6 +20,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'TestCaseLib';
     protected APPDENAMEPLURAL = 'TestCaseLibs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

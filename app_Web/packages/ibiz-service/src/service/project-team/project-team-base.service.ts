@@ -20,6 +20,7 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProjectTeam';
     protected APPDENAMEPLURAL = 'ProjectTeams';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];

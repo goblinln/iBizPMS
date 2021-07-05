@@ -18,6 +18,7 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'SysUpdateLog';
     protected APPDENAMEPLURAL = 'SysUpdateLogs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json';
     protected APPDEKEY = 'sysupdatelogid';
     protected APPDETEXT = 'sysupdatelogname';
     protected quickSearchFields = ['sysupdatelogname',];

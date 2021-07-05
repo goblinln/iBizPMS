@@ -18,6 +18,7 @@ export class IbzCaseBaseService extends EntityBaseService<IIbzCase> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'IbzCase';
     protected APPDENAMEPLURAL = 'IbzCases';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];

@@ -13,6 +13,7 @@ import { ContextMenu } from '../components/common/context-menu/context-menu';
 import { AppDefaultContextMenu } from '../components/control/app-default-contextmenu/app-default-contextmenu';
 import { AppViewLogicService } from '../app-service';
 import { IPSAppDataEntity, IPSDECalendar, IPSDECMUIActionItem, IPSDEContextMenu, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
+import moment from 'moment';
 
 /**
  * 应用日历部件基类
@@ -61,15 +62,6 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
      * @memberof CalendarControlBase
      */
     public thisRef: any = this;
-
-    /**
-     * 选中事件element元素
-     *
-     * @public
-     * @type {any[]}
-     * @memberof CalendarControlBase
-     */
-    public selectedEventElement:any;
 
     /**
      * 引用插件集合
@@ -598,6 +590,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
             // 默认选中第一项
             this.events = response.data;
             handleEvents();
+            this.scheduleSort();
         }, (response: any) => {
             this.$throw(response,'searchEvents');
         });
@@ -612,6 +605,61 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
     public onDateClick($event: any) {
         let date = $event.date;
         let datestr = $event.dateStr;
+    }
+
+    /**
+     * 时间轴点击事件
+     * 
+     * @param {*} item 项数据
+     * @memberof CalendarControlBase
+     */
+    public onTimeLineClick(item: any){
+        this.events.forEach((event: any) =>{
+            event.isSelect = false;
+        })
+        item.isSelect = !item.isSelect;
+        this.onEventClick(item, true);
+        this.$forceUpdate();
+    }
+
+    /**
+     * 处理日历日程选中样式
+     * 
+     * @param {*} item 项数据
+     * @memberof CalendarControlBase
+     */
+    public handleEventSelectStyle($event: any) {
+        const calendarApi: any = (this.$refs[this.controlInstance?.codeName] as any)?.getApi();
+        if (!calendarApi) {
+            return;
+        }
+        const findApis = (id: any) => {
+            return calendarApi.getEvents().filter((event: any) => {
+                return event.extendedProps.curdata[this.getEventKey(event.extendedProps)] === id;
+            });
+        }
+        const eventId: any = $event.event.extendedProps.curdata[this.getEventKey($event.event.extendedProps)];
+        const backId: any = this.eventid;
+        const eventApis: any[] = findApis(eventId);
+        eventApis.forEach((api: any) => {
+            const classNames: any[] = [...api.classNames];
+            if (classNames.findIndex((className: any) => { return className == 'selected-event'; }) === -1) {
+                classNames.push('selected-event')
+            }
+            api.setProp('classNames', classNames);
+        })
+        if (!Object.is(this.eventid, '') && this.eventid !== eventId) {
+            const _eventApis: any[] = findApis(backId);
+            _eventApis.forEach((api: any) => {
+                const _temp: any[] = [...api.classNames];
+                const index = _temp.findIndex((className: any) => { return className == 'selected-event'; });
+                if (index !== -1) {
+                    _temp.splice(index, 1);
+                    api.setProp('classNames', _temp);
+                }
+            })
+        }
+        this.eventid = eventId;
     }
 
     /**
@@ -639,13 +687,8 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         }
         if(JSelement){
             this.calendarClass = "calendar";
-            if(this.selectedEventElement){
-                this.selectedEventElement.classList.remove("selected-event");
-            }
-            this.selectedEventElement = JSelement;
-            this.selectedEventElement.classList.add("selected-event");
-            this.eventid = event.curdata[this.getEventKey(event)];
         }
+        this.handleEventSelectStyle($event);
         // 处理上下文数据
         let _this: any = this;
         let view: any = {};
@@ -792,7 +835,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         if(this.copyActionModel && Object.keys(this.copyActionModel).length > 0) {
             if(service['Get'] && service['Get'] instanceof Function){
                 let tempContext:any = Util.deepCopy(this.context);
-                tempContext[appEntityName] = data[appEntityName];
+                tempContext[appEntityName.toLowerCase()] = data[appEntityName.toLowerCase()];
                 let targetData = await service.Get(tempContext,{}, false);
                 ViewTool.calcTreeActionItemAuthState(targetData.data,this.copyActionModel,this.appUIService);
                 return this.copyActionModel;
@@ -811,17 +854,6 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
      * @memberof CalendarControlBase
      */
     public eventRender(info?:any,) {
-        let eventid = info.event.extendedProps.curdata[this.getEventKey(info.event.extendedProps)];
-        if (!Object.is(this.eventid,"") && eventid == this.eventid) {
-          let JSelement:any = info.el;
-          if(JSelement){
-              if(this.selectedEventElement){
-                  this.selectedEventElement.classList.remove("selected-event");
-              }
-              this.selectedEventElement = JSelement;
-              this.selectedEventElement.classList.add("selected-event");
-          }
-        }
         if(this.isSelectFirstDefault && this.isSelectFirst) {
           this.isSelectFirst = false;
           this.onEventClick(info);
@@ -886,7 +918,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
             }) as IPSSysCalendarItem;
             const contextMenu = item.getPSDEContextMenu() as IPSDEContextMenu;
             if(contextMenu && contextMenu.controlType == "CONTEXTMENU") {
-                let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(contextMenu);
+                let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(contextMenu, event);
                 targetCtrlParam.dynamicProps.contextMenuActionModel = this.copyActionModel;
                 return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: contextMenu.name, on: targetCtrlEvent });
             }
@@ -938,7 +970,9 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
      */
     public onCtrlEvent(controlname: string, action: string, data: any) {
         if(action == 'contextMenuItemClick'){
-            AppViewLogicService.getInstance().executeViewLogic(`${controlname}_${data}_click`, undefined, this, {}, this.controlInstance?.getPSAppViewLogics() || []);
+            AppViewLogicService.getInstance().executeViewLogic(`${controlname}_${data?.data}_click`, undefined, this, {}, this.controlInstance?.getPSAppViewLogics() || []);
+        }else if(action == 'panelDataChange'){
+            this.onPanelDataChange(data.item, data.data);
         }else{
             this.ctrlEvent({ controlname, action, data });
         }
@@ -1021,4 +1055,47 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         return view;
     }
 
+    /**
+     * 计算部件所需参数
+     *
+     * @param {*} controlInstance 部件模型对象
+     * @param {*} item 日历项数据
+     * @returns
+     * @memberof CalendarControlBase
+     */
+     public computeTargetCtrlData(controlInstance: any, item?: any) {
+        const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
+        Object.assign(targetCtrlParam.dynamicProps, {
+            inputData: item?.curdata,
+        })
+        Object.assign(targetCtrlParam.staticProps, {
+            transformData: this.transformData,
+            opendata: this.opendata,
+            newdata: this.newdata,
+            refresh: this.refresh,
+        })
+        targetCtrlEvent['ctrl-event'] = ({ controlname, action, data }: { controlname: string, action: string, data: any }) => {
+            this.onCtrlEvent(controlname, action, { item: item.curdata, data: data });
+        };
+        return { targetCtrlName, targetCtrlParam, targetCtrlEvent };
+    }
+    
+    /**
+     * 日程排序
+     * 
+     * @memberof CalendarControlBase
+     */
+    public scheduleSort() {
+        if (Object.is(this.calendarType, 'TIMELINE') && this.events.length > 0) {
+            this.events.sort((a: any, b: any) => {
+                const x: any = a.start;
+                const y: any = b.start;
+                return moment(x).isAfter(y) ? -1 : moment(x).isBefore(y) ? 1 : 0;
+            })
+            // 默认选中第一项
+            if (this.isSelectFirstDefault) {
+                this.onTimeLineClick(this.events[0]);
+            }
+        }
+    }
 }

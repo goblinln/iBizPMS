@@ -326,12 +326,14 @@ export class MDViewBase extends MainViewBase implements MDViewInterface {
      * @memberof MDViewBase
      */
     public renderDefaultQuickSearch(){
-        let enableFilter = this.viewInstance?.enableFilter == true;
+        const barFilters: Array<any> = this.searchBarInstance?.getPSSearchBarFilters() || [];
+        const searchformItem: Array<any> = this.searchFormInstance?.getPSDEFormItems() || [];
+        let enableFilter = this.viewInstance?.enableFilter === true && barFilters.length > 0 || searchformItem.length > 0;
         const popoverClass: string = this.searchFormInstance ? 'searchform-popover' : this.searchBarInstance ? 'searchbar-popover' : '';
         return  <template slot="quickSearch">
             <i-input class={{'app-quick-search': true, 'width-filter': enableFilter}} style='max-width: 400px;margin-top:4px;padding-left: 24px' search on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
-            {enableFilter && <el-popover placement="bottom" popper-class={popoverClass} trigger="click" visible-arrow={false} on-hide={() => this.isExpandSearchForm = !this.isExpandSearchForm}>
-                <i-button slot="reference" class={{'filter': true, 'is-expand': this.isExpandSearchForm}} icon="ios-funnel" on-click={(e:any)=>{
+            {<el-popover placement="bottom" popper-class={popoverClass} trigger="click" visible-arrow={false} on-hide={() => this.isExpandSearchForm = !this.isExpandSearchForm}>
+                <i-button slot="reference" class={{'filter': true, 'is-expand': this.isExpandSearchForm, 'hidden-searchbtn': !enableFilter}} icon="ios-funnel" on-click={(e:any)=>{
                     if (!this.isExpandSearchForm) {
                         debounce(() => (AppGlobalService.getInstance() as any).executeGlobalAction('ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined),[],this);
                     }}} />

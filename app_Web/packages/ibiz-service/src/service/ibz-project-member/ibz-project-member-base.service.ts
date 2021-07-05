@@ -20,6 +20,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
     protected APPNAME = 'Web';
     protected APPDENAME = 'IbzProjectMember';
     protected APPDENAMEPLURAL = 'IbzProjectMembers';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProjectMember.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

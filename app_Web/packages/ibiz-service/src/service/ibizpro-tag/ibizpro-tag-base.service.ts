@@ -18,6 +18,7 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'IBIZProTag';
     protected APPDENAMEPLURAL = 'IBIZProTags';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProTag.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'id';
     protected quickSearchFields = ['id',];

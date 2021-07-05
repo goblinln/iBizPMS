@@ -20,6 +20,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProjectStats';
     protected APPDENAMEPLURAL = 'ProjectStats';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStats.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

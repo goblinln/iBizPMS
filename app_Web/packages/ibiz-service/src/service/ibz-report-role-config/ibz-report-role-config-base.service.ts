@@ -18,6 +18,7 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
     protected APPNAME = 'Web';
     protected APPDENAME = 'IbzReportRoleConfig';
     protected APPDENAMEPLURAL = 'IbzReportRoleConfigs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportRoleConfig.json';
     protected APPDEKEY = 'ibzreportroleconfigid';
     protected APPDETEXT = 'ibzreportroleconfigname';
     protected quickSearchFields = ['ibzreportroleconfigname',];

@@ -18,6 +18,7 @@ export class IBIZProPluginBaseService extends EntityBaseService<IIBIZProPlugin> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'IBIZProPlugin';
     protected APPDENAMEPLURAL = 'IBIZProPlugins';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProPlugin.json';
     protected APPDEKEY = 'ibizpropluginid';
     protected APPDETEXT = 'ibizpropluginname';
     protected quickSearchFields = ['ibizpropluginname',];

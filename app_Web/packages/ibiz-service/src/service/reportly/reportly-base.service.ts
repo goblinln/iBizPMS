@@ -18,6 +18,7 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Reportly';
     protected APPDENAMEPLURAL = 'Reportlies';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Reportly.json';
     protected APPDEKEY = 'ibzreportlyid';
     protected APPDETEXT = 'ibzreportlyname';
     protected quickSearchFields = ['ibzreportlyname',];

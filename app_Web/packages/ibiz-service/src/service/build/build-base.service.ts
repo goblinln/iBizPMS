@@ -20,6 +20,7 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Build';
     protected APPDENAMEPLURAL = 'Builds';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

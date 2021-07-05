@@ -1,6 +1,6 @@
 import { Component } from 'vue-property-decorator';
 import './app-style2-indexview-layout.less';
-import { AppServiceBase } from "ibiz-core";
+import { AppServiceBase, Util } from "ibiz-core";
 import { AppLoadingService, AppNavHistory } from "../../../../app-service";
 import { AppStyle2DefaultLayout } from "../app-style2-default-layout/app-style2-default-layout";
 import { IPSAppMenu } from '@ibiz/dynamic-model-api';
@@ -36,6 +36,20 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
      * @memberof TabPageExpStyle2
      */
     protected navHistory: AppNavHistory = AppServiceBase.getInstance().getAppNavDataService();
+
+    /**
+     * 是否显示标题栏
+     *
+     * @readonly
+     * @memberof AppDefaultViewLayout
+     */
+     get showCaption(){
+      if(this.viewInstance && this.$parent && Util.isExist(this.viewInstance.showCaptionBar)){
+          return this.viewInstance.showCaptionBar && !(this.$parent as any).noViewCaption
+      }else{
+          return true;
+      }
+    }
 
     /**
      * 路由列表

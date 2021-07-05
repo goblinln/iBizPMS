@@ -20,6 +20,7 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'History';
     protected APPDENAMEPLURAL = 'Histories';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/History.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'diff';
     protected quickSearchFields = ['diff',];

@@ -18,6 +18,7 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'PSSysSFPub';
     protected APPDENAMEPLURAL = 'PSSysSFPubs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/PSSysSFPub.json';
     protected APPDEKEY = 'pssyssfpubid';
     protected APPDETEXT = 'pssyssfpubname';
     protected quickSearchFields = ['pssyssfpubname',];

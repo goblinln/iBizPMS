@@ -4,7 +4,6 @@ import { IAccountTestCase, AccountTestCase } from '../../entities';
 import keys from '../../entities/account-test-case/account-test-case-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetCaseStepByIdVersionLogic } from '../../logic/entity/account-test-case/get-case-step-by-id-version/get-case-step-by-id-version-logic';
 
 /**
  * 测试用例服务对象基类
@@ -21,6 +20,7 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
     protected APPNAME = 'Web';
     protected APPDENAME = 'AccountTestCase';
     protected APPDENAMEPLURAL = 'AccountTestCases';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];

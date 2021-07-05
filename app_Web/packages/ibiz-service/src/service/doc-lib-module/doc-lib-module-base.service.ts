@@ -18,6 +18,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'DocLibModule';
     protected APPDENAMEPLURAL = 'DocLibModules';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

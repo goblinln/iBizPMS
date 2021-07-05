@@ -455,7 +455,7 @@ export class AppGridService extends ControlServiceBase {
                     requestData[item.prop] = context[item.name];
                 }
             } else {
-                if (item && item.prop) {
+                if (item && item.prop && item.name && (data[item.name] || Object.is(data[item.name], 0))) {
                     requestData[item.prop] = data[item.name];
                 } else {
                     if (item.dataType && Object.is(item.dataType, "FORMPART")) {

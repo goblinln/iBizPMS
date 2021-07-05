@@ -48,5 +48,35 @@ export class MapViewEngine extends MDViewEngine {
         return this.map;
     }
 
+    /**
+     * 部件事件
+     *
+     * @param {string} ctrlName
+     * @param {string} eventName
+     * @param {*} args
+     * @memberof MapViewEngine
+     */
+     public onCtrlEvent(ctrlName: string, eventName: string, args: any): void {
+        if (Object.is(ctrlName, 'map')) {
+            this.MDCtrlEvent(eventName, args);
+        }
+        super.onCtrlEvent(ctrlName, eventName, args);
+    }
+
+    /**
+     * 事件处理
+     *
+     * @param {string} eventName
+     * @param {*} args
+     * @memberof MapViewEngine
+     */
+     public MDCtrlEvent(eventName: string, args: any): void {
+        if (Object.is(eventName, 'selectionchange')) {
+            // this.selectionChange(args);
+            // this.doEdit(args);
+            return;
+        }
+        super.MDCtrlEvent(eventName, args);
+    }
 
 }

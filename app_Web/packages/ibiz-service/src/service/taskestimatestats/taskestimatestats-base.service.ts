@@ -18,6 +18,7 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
     protected APPNAME = 'Web';
     protected APPDENAME = 'Taskestimatestats';
     protected APPDENAMEPLURAL = 'taskestimatestats';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/taskestimatestats.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];

@@ -20,6 +20,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProductRelease';
     protected APPDENAMEPLURAL = 'ProductReleases';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductRelease.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

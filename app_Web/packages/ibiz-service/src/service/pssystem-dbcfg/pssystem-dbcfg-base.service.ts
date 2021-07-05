@@ -18,6 +18,7 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'PSSystemDBCfg';
     protected APPDENAMEPLURAL = 'PSSystemDBCfgs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/PSSystemDBCfg.json';
     protected APPDEKEY = 'pssystemdbcfgid';
     protected APPDETEXT = 'pssystemdbcfgname';
     protected quickSearchFields = ['pssystemdbcfgname',];

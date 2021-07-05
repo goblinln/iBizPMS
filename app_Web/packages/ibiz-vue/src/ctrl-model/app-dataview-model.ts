@@ -87,7 +87,7 @@ export class AppDataViewModel {
         // 界面主键标识
         modelArray.push({
             name: (appDataEntity as IPSAppDataEntity).codeName.toLowerCase(),
-            prop: (ModelTool.getAppEntityKeyField(appDataEntity as IPSAppDataEntity) as IPSAppDEField)?.codeName,
+            prop: (ModelTool.getAppEntityKeyField(appDataEntity as IPSAppDataEntity) as IPSAppDEField)?.codeName?.toLowerCase(),
             dataType: 'FRONTKEY',
         })
         return modelArray;

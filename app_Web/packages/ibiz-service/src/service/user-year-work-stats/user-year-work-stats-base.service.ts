@@ -18,6 +18,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     protected APPNAME = 'Web';
     protected APPDENAME = 'UserYearWorkStats';
     protected APPDENAMEPLURAL = 'UserYearWorkStats';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];

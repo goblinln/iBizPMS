@@ -20,6 +20,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Todo';
     protected APPDENAMEPLURAL = 'Todos';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['id','todosn','name',];

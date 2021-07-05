@@ -18,6 +18,7 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'SysPost';
     protected APPDENAMEPLURAL = 'SysPosts';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json';
     protected APPDEKEY = 'postid';
     protected APPDETEXT = 'postname';
     protected quickSearchFields = ['postname',];

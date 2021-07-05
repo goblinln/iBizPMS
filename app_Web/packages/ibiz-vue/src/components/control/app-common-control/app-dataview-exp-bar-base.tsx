@@ -1,5 +1,5 @@
 import { Util } from 'ibiz-core';
-import { Prop, Watch } from 'vue-property-decorator';
+import { Prop, Watch, Emit  } from 'vue-property-decorator';
 import { DataViewExpBarControlBase } from '../../../widgets';
 
 /**
@@ -56,6 +56,15 @@ export class AppDataViewExpBarBase extends DataViewExpBarControlBase {
             super.onStaticPropsChange(newVal,oldVal);
         }
     }
+
+    /**
+     * 部件事件
+     * 
+     * @param 抛出参数 
+     * @memberof AppDataViewBase
+     */
+     @Emit('ctrl-event')
+     public ctrlEvent({ controlname, action, data }: { controlname: string, action: string, data: any }): void { }
 
     /**
      * 绘制数据视图导航栏

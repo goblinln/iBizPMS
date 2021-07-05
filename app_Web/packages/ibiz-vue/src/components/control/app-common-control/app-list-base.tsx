@@ -123,17 +123,15 @@ export class AppListBase extends ListControlBase {
      */
     public renderListContent(item: any, listItem: IPSDEListItem) {
         return [<div class='app-list-item-content'>
-            <div class='item-icon'>
                 {item.srficon ? (
-                    <img src={item.srficon} />
-                ) : (
-                    <img src='./assets/img/noimage.png' />
-                )}
-            </div>
+                    <div class='item-icon'>
+                        <img src={item.srficon} />
+                    </div>
+                ) : null}
             <div class='item-content-text'>
-                <span class='item-text'>{item.srfmajortext}</span>
+                <span class='item-title'>{item.srfmajortext}</span>
                 {item.srfdescription && (
-                    <span class='item-subtext'>{item.srfdescription}</span>
+                    <span class='item-description'>{item.srfdescription}</span>
                 )}
             </div>
         </div>,
@@ -153,7 +151,7 @@ export class AppListBase extends ListControlBase {
      */
     public renderHaveItems() {
         return this.items.map((item: any, index: number) => {
-            let listItem: IPSDEListItem = this.controlInstance.getPSDEListItems() && (this.controlInstance.getPSDEListItems() as any)?.length > 0 ? (this.controlInstance.getPSDEListItems() as any)[index] : null;
+            let listItem: IPSDEListItem = this.controlInstance.getPSDEListItems() && (this.controlInstance.getPSDEListItems() as any)?.length > 0 ? (this.controlInstance.getPSDEListItems() as any)[0] : null;
             return this.controlInstance.enableGroup ? this.renderHaveGroup(item, listItem) : this.renderNoGroup(item, listItem,index);
         })
     }
@@ -165,8 +163,7 @@ export class AppListBase extends ListControlBase {
      * @memberof AppListBase
      */
     public renderItemPSLayoutPanel(item: any) {
-        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(this.controlInstance.getItemPSLayoutPanel());
-        Object.assign(targetCtrlParam.dynamicProps, { inputData: item });
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(this.controlInstance.getItemPSLayoutPanel(), item);
         return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.controlInstance.getItemPSLayoutPanel()?.name, on: targetCtrlEvent });
     }
 

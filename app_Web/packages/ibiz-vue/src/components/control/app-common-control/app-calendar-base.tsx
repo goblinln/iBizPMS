@@ -168,10 +168,9 @@ export class AppCalendarBase extends CalendarControlBase{
      * @memberof AppCalendarBase
      */
      public renderItemPanel(item: any,calendarItem: any) {
-      let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(calendarItem.getPSLayoutPanel());
-      Object.assign(targetCtrlParam.dynamicProps,{ "inputData": item })
-      return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref:item.id, on: targetCtrlEvent });
-    }
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(calendarItem.getPSLayoutPanel(), item);
+        return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: item.id, on: targetCtrlEvent });
+      }
 
     /**
      * 绘制数据项
@@ -191,16 +190,16 @@ export class AppCalendarBase extends CalendarControlBase{
               timestamp={item.start}
               placement="top">
                   <context-menu
-                      contextMenuStyle={{width: '100%'}}
+                      contextMenuStyle={{width: '100%','padding-right': '12px'}}
                       data={item}
                       renderContent={this.renderContextMenu.bind(this)}>
                           <el-card
-                              native-on-click={(...params: any[]) => debounce(this.onEventClick,params,this)}
-                              class={item.className}>
+                              nativeOn-click={() => {debounce(this.onTimeLineClick, [item], this)}}
+                              class={{...item.className , 'is-select': item.isSelect ? true : false}}>
                                   {calendarItem && calendarItem.getPSLayoutPanel() ? 
                                       this.renderItemPanel(item,calendarItem) : 
                                       <div>
-                                          <h4>{item.title}</h4>
+                                          <h4 style={{'margin-bottom': '10px'}}>{item.title}</h4>
                                           <p>从 {item.start} 至 {item.end}</p>
                                       </div>}
                           </el-card>

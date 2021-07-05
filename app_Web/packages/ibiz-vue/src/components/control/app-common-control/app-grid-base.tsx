@@ -105,11 +105,11 @@ export class AppGridBase extends GridControlBase {
             data: this.items,
             border: true,
             'high-light-current-row': this.controlInstance?.singleSelect,
-            'show-header': !this.controlInstance.hideHeader,
+            'show-header': !this.controlInstance.hideHeader && !Object.is(this.controlInstance.gridStyle, 'USER'),
             'row-class-name': ({ row, rowIndex }: any) => this.getRowClassName({ row, rowIndex }),
             'cell-class-name': ({ row, column, rowIndex, columnIndex }: any) =>
                 this.getCellClassName({ row, column, rowIndex, columnIndex }),
-            'max-height': this.items?.length > 0 ? 'calc(100% - 50px)' : '100%',
+            'max-height': this.items?.length > 0 && !Object.is(this.controlInstance.gridStyle, 'USER') ? 'calc(100% - 50px)' : '100%',
             stripe: (this.controlInstance?.getParentPSModelObject?.() as IPSAppDEGridView)?.viewStyle == 'STYLE2' ? true : false,
         };
         const aggMode = this.controlInstance?.aggMode;
@@ -675,7 +675,7 @@ export class AppGridBase extends GridControlBase {
                     {this.items?.length > 0 ? this.renderGridContent(h) : <div class="app-grid-empty-content">
                       {this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
                     </div>}
-                    {this.controlInstance?.enablePagingBar ? this.renderPagingBar(h) : ''}
+                    {this.controlInstance?.enablePagingBar && !Object.is(this.controlInstance?.gridStyle, 'USER') ? this.renderPagingBar(h) : ''}
                     {this.items?.length > 0 ? this.renderColumnFilter() : null}
                 </i-form>
             </div>

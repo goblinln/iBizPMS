@@ -4,8 +4,6 @@ import { IProduct, Product } from '../../entities';
 import keys from '../../entities/product/product-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { CancelProductTopLogic } from '../../logic/entity/product/cancel-product-top/cancel-product-top-logic';
-import { ProductTopLogic } from '../../logic/entity/product/product-top/product-top-logic';
 
 /**
  * 产品服务对象基类
@@ -22,6 +20,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Product';
     protected APPDENAMEPLURAL = 'Products';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name','productsn','code',];

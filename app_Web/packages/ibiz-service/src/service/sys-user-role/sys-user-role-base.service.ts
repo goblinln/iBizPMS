@@ -18,6 +18,7 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'SysUserRole';
     protected APPDENAMEPLURAL = 'SysUserRoles';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUserRole.json';
     protected APPDEKEY = 'userroleid';
     protected APPDETEXT = 'userid';
     protected quickSearchFields = ['userid',];

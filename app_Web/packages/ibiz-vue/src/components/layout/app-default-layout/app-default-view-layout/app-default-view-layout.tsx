@@ -63,7 +63,7 @@ export class AppDefaultViewLayout extends Vue {
      * @memberof AppDefaultViewLayout
      */
     get showCaption(){
-        if(this.viewInstance && this.$parent && Util.isExist(this.viewInstance.showCaptionBar)){
+        if(this.viewInstance && this.$parent){
             return this.viewInstance.showCaptionBar && !(this.$parent as any).noViewCaption
         }else{
             return true;

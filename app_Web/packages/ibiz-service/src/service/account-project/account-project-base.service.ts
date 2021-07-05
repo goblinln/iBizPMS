@@ -4,7 +4,6 @@ import { IAccountProject, AccountProject } from '../../entities';
 import keys from '../../entities/account-project/account-project-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { ProjectTaskQCntLogic } from '../../logic/entity/account-project/project-task-qcnt/project-task-qcnt-logic';
 
 /**
  * 项目服务对象基类
@@ -21,6 +20,7 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
     protected APPNAME = 'Web';
     protected APPDENAME = 'AccountProject';
     protected APPDENAMEPLURAL = 'AccountProjects';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name','code','projectsn',];

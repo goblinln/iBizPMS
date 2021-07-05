@@ -50,6 +50,7 @@ export class AppComponentService {
         this.viewMap.set("DEGRIDVIEW_DEFAULT", 'app-default-gridview');
         this.viewMap.set("DELISTVIEW_DEFAULT", 'app-default-listview');
         this.viewMap.set("DECHARTVIEW_DEFAULT", 'app-default-chartview');
+        this.viewMap.set("DECHARTEXPVIEW_DEFAULT", 'app-default-chartexpview');
         this.viewMap.set("DEDATAVIEW_DEFAULT", 'app-default-dataviewview');
         this.viewMap.set("DECALENDARVIEW_DEFAULT", 'app-default-calendarview');
         this.viewMap.set("DEKANBANVIEW_DEFAULT", 'app-default-kanbanview');
@@ -98,6 +99,7 @@ export class AppComponentService {
         this.viewMap.set("DEHTMLVIEW_DEFAULT", 'app-default-htmlview');
         this.viewMap.set("DEMAPVIEW_DEFAULT", 'app-default-mapview');
         this.viewMap.set("DEREPORTVIEW_DEFAULT",'app-default-dereportview');
+        this.viewMap.set("DEMAPEXPVIEW_DEFAULT",'app-default-mapexpview');
         // STYLE2 样式
         this.viewMap.set("APPINDEXVIEW_STYLE2", 'app-style2-indexview');
         this.viewMap.set("DEEDITVIEW_STYLE2", 'app-style2-editview');
@@ -107,6 +109,7 @@ export class AppComponentService {
         this.viewMap.set("DEGRIDVIEW_STYLE2", 'app-style2-gridview');
         this.viewMap.set("DELISTVIEW_STYLE2", 'app-style2-listview');
         this.viewMap.set("DECHARTVIEW_STYLE2", 'app-style2-chartview');
+        this.viewMap.set("DECHARTEXPVIEW_STYLE2", 'app-style2-chartexpview');
         this.viewMap.set("DEDATAVIEW_STYLE2", 'app-style2-dataviewview');
         this.viewMap.set("DECALENDARVIEW_STYLE2", 'app-style2-calendarview');
         this.viewMap.set("DEKANBANVIEW_STYLE2", 'app-style2-kanbanview');
@@ -149,6 +152,7 @@ export class AppComponentService {
         this.viewMap.set("DEREDIRECTVIEW_STYLE2", 'app-style2-deredirectview');
         this.viewMap.set("APPWFSTEPTRACEVIEW_STYLE2", 'app-style2-wfsteptraceview');
         this.viewMap.set("DEREPORTVIEW_STYLE2",'app-style2-dereportview');
+        this.viewMap.set("DEMAPEXPVIEW_STYLE2",'app-style2-mapexpview');
         // STYLE3 样式
         this.viewMap.set("APPINDEXVIEW_STYLE3", 'app-style2-indexview');
         // STYLE4 样式
@@ -187,6 +191,7 @@ export class AppComponentService {
         this.controlMap.set("APPMENU_DEFAULT", 'app-default-appmenu');
         this.controlMap.set("CHART_DEFAULT", 'app-default-chart');
         this.controlMap.set("CHART_NEW", 'app-default-chart');
+        this.controlMap.set("CHARTEXPBAR_DEFAULT", 'app-default-chart-exp-bar');
         this.controlMap.set("DATAVIEW_DEFAULT", 'app-default-dataview');
         this.controlMap.set("PANEL_DEFAULT", 'app-default-panel');
         this.controlMap.set("CALENDAR_DEFAULT", 'app-default-calendar');
@@ -213,6 +218,7 @@ export class AppComponentService {
         this.controlMap.set("DRBAR_DEFAULT", 'app-default-drbar');
         this.controlMap.set("MAP_DEFAULT", 'app-default-map');
         this.controlMap.set("REPORTPANEL_DEFAULT", 'app-default-report-panel');
+        this.controlMap.set("MAPEXPBAR_DEFAULT", 'app-default-map-exp-bar');
         // 注册部件插件标识
         this.controlMap.set("CUSTOM_LEFTNAVLIST", 'app-custom-leftnavlist');
         this.controlMap.set("GRID_RENDER_TreeGrid", 'app-grid-render-tree-grid');

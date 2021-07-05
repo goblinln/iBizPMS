@@ -1,4 +1,4 @@
-import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSAppView, IPSCodeItem, IPSControl, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSSysImage, IPSLanguageRes } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSAppView, IPSCodeItem, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSSysImage, IPSLanguageRes, IPSSysMap, IPSDEChart } from '@ibiz/dynamic-model-api';
 import { CodeListServiceBase, debounce, ExpBarControlInterface, LogUtil, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service';
 import { MainControlBase } from './main-control-base';
@@ -23,7 +23,7 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
      *
      * @memberof ExpBarControlBase
      */
-    protected $xDataControl!: IPSDECalendar | IPSControlNavigatable | IPSDETree;
+    protected $xDataControl!: IPSDECalendar | IPSControlNavigatable | IPSDETree | IPSSysMap | IPSDEChart;
 
     /**
      * 父导航视图模型对象
@@ -435,6 +435,28 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
         }
     }
 
+
+    /**
+     * 初始化导航参数
+     * 
+     * @param params 初始化参数
+     * @memberof ExpBarControlBase
+     */
+    public initNavParam(params: any) {
+        if (params && params.length > 0) {
+            let navParams: any = {};
+            params.forEach((param: any) => {
+                const navParam = {
+                    [param.key]: param.rawValue ? param.value : "%" + param.value + "%",
+                }
+                Object.assign(navParams, navParam);
+            });
+            return navParams;
+        } else {
+            return null;
+        }
+    }
+    
     /**
      * 部件挂载
      * 

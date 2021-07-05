@@ -20,6 +20,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Employee';
     protected APPDENAMEPLURAL = 'Employees';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json';
     protected APPDEKEY = 'userid';
     protected APPDETEXT = 'personname';
     protected quickSearchFields = ['personname',];

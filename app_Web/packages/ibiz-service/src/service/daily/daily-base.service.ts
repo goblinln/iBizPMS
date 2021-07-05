@@ -20,6 +20,7 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Daily';
     protected APPDENAMEPLURAL = 'Dailies';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json';
     protected APPDEKEY = 'ibzdailyid';
     protected APPDETEXT = 'ibzdailyname';
     protected quickSearchFields = ['ibzdailyname',];

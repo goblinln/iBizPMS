@@ -20,6 +20,7 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'TaskEstimate';
     protected APPDENAMEPLURAL = 'TaskEstimates';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'id';
     protected quickSearchFields = ['id',];

@@ -18,6 +18,7 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Company';
     protected APPDENAMEPLURAL = 'Companies';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

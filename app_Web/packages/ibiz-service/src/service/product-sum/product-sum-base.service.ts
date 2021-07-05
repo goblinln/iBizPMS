@@ -18,6 +18,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProductSum';
     protected APPDENAMEPLURAL = 'ProductSums';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

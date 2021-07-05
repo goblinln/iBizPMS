@@ -1,5 +1,6 @@
 import { IPSAppDataEntity, IPSAppDEField, IPSDELogicLink, IPSDELogicLinkCond, IPSDELogicLinkGroupCond, IPSDELogicLinkSingleCond, IPSDELogicNode, IPSDELogicNodeParam, IPSDELogicParam } from "@ibiz/dynamic-model-api";
 import { Util, Verify } from "ibiz-core";
+import { LogUtil } from "../../../utils";
 import { ActionContext } from "../action-context";
 
 /**
@@ -26,22 +27,16 @@ export class AppDeLogicNodeBase {
             return;
         }
         for (let nodeParam of (logicNode.getPSDELogicNodeParams() as IPSDELogicNodeParam[])) {
-            // 缺少目标逻辑参数，目标逻辑参数属性名，源值类型任意一个时不赋值
-            if (!(nodeParam.getDstPSDELogicParam() && nodeParam.dstFieldName && nodeParam.srcValueType)) {
+            // 源逻辑参数和目标逻辑参数缺一跳过不做处理
+            if (!nodeParam.getDstPSDELogicParam() || !nodeParam.getSrcPSDELogicParam()) {
+                LogUtil.warn(`源逻辑参数和目标逻辑参数缺一跳过不做处理,[源逻辑参数]:${nodeParam.getSrcPSDELogicParam()},[目标逻辑参数]:${nodeParam.getDstPSDELogicParam()}`);
                 continue;
             }
-            // 源逻辑参数
-            let srcParam: any = actionContext.getParam((nodeParam.getSrcPSDELogicParam() as IPSDELogicParam).codeName);
-            // 元逻辑参数属性,有实体拿实体属性codeName,没有就那srcFieldName
+            // 源逻辑参数处理
+            let srcParam: any = actionContext.getParam((nodeParam.getSrcPSDELogicParam() as IPSDELogicParam)?.codeName);
             let srcFieldName = nodeParam.srcFieldName?.toLowerCase?.();
-            if (nodeParam.srcFieldName) {
-                let srcAppDataEntity: IPSAppDataEntity = (nodeParam.getSrcPSDELogicParam() as any)?.getParamPSAppDataEntity?.();
-                let deField = (srcAppDataEntity?.getAllPSAppDEFields() as IPSAppDEField[]).find((item: IPSAppDEField) => nodeParam.srcFieldName.toLocaleLowerCase() == item.codeName.toLowerCase())
-                if (deField) srcFieldName = deField.codeName?.toLowerCase();
-            }
-
-            // 目标逻辑参数
-            let dstParam: any = actionContext.getParam((nodeParam.getDstPSDELogicParam() as IPSDELogicParam).codeName);
+            // 目标逻辑参数处理
+            let dstParam: any = actionContext.getParam((nodeParam.getDstPSDELogicParam() as IPSDELogicParam)?.codeName);
             // 目标逻辑参数属性，有实体拿实体属性codeName,没有就那dstFieldName
             let dstFieldName = nodeParam.dstFieldName?.toLowerCase();
             let contextField = undefined;
@@ -130,15 +125,15 @@ export class AppDeLogicNodeBase {
                 const logicLinkSingleCond = logicLinkCond as IPSDELogicLinkSingleCond
                 let dstLogicParam = actionContext.getParam(logicLinkSingleCond?.getDstLogicParam?.()?.codeName || actionContext.defaultParamName)
                 let dstValue = dstLogicParam[logicLinkSingleCond.dstFieldName.toLowerCase()]
-                let testValue;
+                let targetValue;
                 switch (logicLinkSingleCond.paramType) {
                     case 'CURTIME':
-                        testValue = Util.dateFormat(new Date(), 'YYYY-MM-DD');
+                        targetValue = Util.dateFormat(new Date(), 'YYYY-MM-DD');
                         break;
                     default:
-                        testValue = logicLinkSingleCond.paramValue;
+                        targetValue = logicLinkSingleCond.paramValue;
                 }
-                return Verify.testCond(dstValue, logicLinkSingleCond.condOP, testValue)
+                return Verify.testCond(dstValue, logicLinkSingleCond.condOP, targetValue)
             }
         }
     }

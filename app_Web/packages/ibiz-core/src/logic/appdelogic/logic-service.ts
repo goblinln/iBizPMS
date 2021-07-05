@@ -4,6 +4,8 @@ import { LogUtil } from "../../utils";
 import { AppDeLogicBeginNode } from "./logic-node/begin-node";
 import { AppDeLogicDeActionNode } from "./logic-node/deaction-node";
 import { AppDeLogicPrepareParamNode } from "./logic-node/prepareparam-node";
+import { AppRawsfcodeNode } from "./logic-node/rawsfcode-node";
+import { AppThrowExceptionNode } from "./logic-node/throwexception-node";
 import { ActionContext } from "./action-context";
 
 /**
@@ -12,7 +14,7 @@ import { ActionContext } from "./action-context";
  * @export
  * @class AppDeLogicService
  */
-export class AppDeLogicService{
+export class AppDeLogicService {
 
     /**
      * 唯一实例
@@ -21,18 +23,18 @@ export class AppDeLogicService{
      * @static
      * @memberof AppDeLogicService
      */
-     private static readonly instance = new AppDeLogicService();
+    private static readonly instance = new AppDeLogicService();
 
-     /**
-      * 获取唯一实例
-      *
-      * @static
-      * @return {*}  {AppDeLogicService}
-      * @memberof AppDeLogicService
-      */
-     public static getInstance(): AppDeLogicService {
-         return AppDeLogicService.instance;
-     }
+    /**
+     * 获取唯一实例
+     *
+     * @static
+     * @return {*}  {AppDeLogicService}
+     * @memberof AppDeLogicService
+     */
+    public static getInstance(): AppDeLogicService {
+        return AppDeLogicService.instance;
+    }
 
     /**
      * 执行之前的初始化操作
@@ -41,9 +43,9 @@ export class AppDeLogicService{
      * @param {IParams} params
      * @memberof AppDeLogicService
      */
-    public async beforeExecute(logic: IPSAppDELogic, context: IContext, params: IParams){
+    public async beforeExecute(logic: IPSAppDELogic, context: IContext, params: IParams) {
         await logic.fill(true);
-        return new ActionContext(logic,context,params)
+        return new ActionContext(logic, context, params)
     }
 
     /**
@@ -55,10 +57,10 @@ export class AppDeLogicService{
      * @return {*} 
      * @memberof AppDeLogicService
      */
-    public async onExecute(logic: IPSAppDELogic, context: IContext, params: IParams){
+    public async onExecute(logic: IPSAppDELogic, context: IContext, params: IParams) {
         let ActionContext = await this.beforeExecute(logic, context, params);
-        let startNode = logic.getStartPSDELogicNode();
-        if(!startNode){
+        let startNode: IPSDELogicNode | null = logic.getStartPSDELogicNode();
+        if (!startNode) {
             LogUtil.warn('没有开始节点');
             return params;
         }
@@ -68,11 +70,11 @@ export class AppDeLogicService{
     /**
      * 执行处理逻辑节点
      *
-     * @param {IPSDELogicNode} logicNode 处理逻辑节点
+     * @param {*} logicNode 处理逻辑节点
      * @param {IContext} context
      * @memberof AppDeLogicService
      */
-    public async executeNode(logicNode: IPSDELogicNode, actionContext: ActionContext){
+    public async executeNode(logicNode: any, actionContext: ActionContext) {
         let result: any = { actionContext };
         switch (logicNode.logicNodeType) {
             // 开始节点
@@ -87,15 +89,27 @@ export class AppDeLogicService{
             case 'DEACTION':
                 result = await new AppDeLogicDeActionNode().executeNode(logicNode, actionContext);
                 break;
+            // 直接代码
+            case 'RAWSFCODE':
+                result = await new AppRawsfcodeNode().executeNode(logicNode, actionContext);
+                break;
+            // 抛出异常
+            case 'THROWEXCEPTION':
+                result = await new AppThrowExceptionNode().executeNode(logicNode, actionContext);
+                break;
             default:
                 console.log(`${logicNode.logicNodeType}暂未支持`);
         }
         // 有后续节点时继续递归，反之返回值。
-        if(result.nextNodes?.length > 0){
+        if (result.nextNodes?.length > 0) {
             return await this.executeNextNodes(result.nextNodes, actionContext);
-        }else{
+        } else {
             const { defaultParam } = result.actionContext;
-            return defaultParam;
+            if (defaultParam && defaultParam.exceptionInfo) {
+                return { status: 500, message: defaultParam.exceptionInfo };
+            } else {
+                return { status: 200, data: defaultParam };
+            }
         }
     }
 
@@ -106,11 +120,11 @@ export class AppDeLogicService{
      * @param {ActionContext} ActionContext
      * @memberof AppDeLogicService
      */
-    public async executeNextNodes(nextNodes: IPSDELogicNode[], actionContext: ActionContext){
+    public async executeNextNodes(nextNodes: IPSDELogicNode[], actionContext: ActionContext) {
         let result: any = { actionContext };
-        for(let nextNode of nextNodes){
+        for (let nextNode of nextNodes) {
             result = await this.executeNode(nextNode, actionContext);
-            if(result.nextNodes?.length > 0){
+            if (result.nextNodes?.length > 0) {
                 result = await this.executeNextNodes(result.nextNodes, result.actionContext);
             }
         }

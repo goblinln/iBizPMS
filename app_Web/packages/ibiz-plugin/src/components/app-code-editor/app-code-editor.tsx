@@ -283,3 +283,5 @@ export class AppCodeEditor extends Vue {
         );
     }
 }
+// 默认导出
+export default AppCodeEditor;

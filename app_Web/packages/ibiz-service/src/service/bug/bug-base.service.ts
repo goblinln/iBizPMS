@@ -4,7 +4,6 @@ import { IBug, Bug } from '../../entities';
 import keys from '../../entities/bug/bug-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetCurUserConcatLogic } from '../../logic/entity/bug/get-cur-user-concat/get-cur-user-concat-logic';
 
 /**
  * Bug服务对象基类
@@ -21,6 +20,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Bug';
     protected APPDENAMEPLURAL = 'Bugs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['id','title',];
@@ -703,9 +703,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @memberof BugService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetCurUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+        return await this.executeAppDeLogic('GetCurUserConcat',_context,_data);
     }
     /**
      * PlanUnlinkBug

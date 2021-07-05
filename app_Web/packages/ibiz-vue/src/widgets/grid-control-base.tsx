@@ -514,7 +514,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
     public onStaticPropsChange(newVal: any, oldVal: any) {
         this.isOpenEdit = newVal.isOpenEdit;
         this.actualIsOpenEdit = this.isOpenEdit;
-        this.gridRowActiveMode = newVal.gridRowActiveMode;
+        this.gridRowActiveMode = newVal.gridRowActiveMode ? newVal.gridRowActiveMode : 2;
         this.isSelectFirstDefault = newVal.isSelectFirstDefault;
         super.onStaticPropsChange(newVal, oldVal);
     }
@@ -1183,7 +1183,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                             let desc: any = this.allColumns.find((column: any) => {
                                 return Object.is(column.name, name);
                             });
-                            this.$throw((desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonwords.isExist') as string) + '!', 'save');
+                            this.$throw((desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonwords.isexist') as string) + '!', 'save');
                         } else {
                             this.$throw(errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonwords.sysexception') as string), 'save');
                         }
@@ -1196,7 +1196,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                                 let desc: any = this.allColumns.find((column: any) => {
                                     return Object.is(column.name, name);
                                 });
-                                this.$throw((desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonwords.isExist') as string) + '!', 'save');
+                                this.$throw((desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonwords.isexist') as string) + '!', 'save');
                             }
                         }
                     } else {
@@ -2524,7 +2524,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */    
     public handleActionButtonClick(row:any, $event:any, _column:IPSDEGridUAColumn, uiactionDetail:IPSUIActionGroupDetail){
-        (this.$apppopover as any).popperDestroy();
+        (this.$apppopover as any).popperDestroy2();
         this.handleActionClick(row, $event, _column, uiactionDetail);
     }
 

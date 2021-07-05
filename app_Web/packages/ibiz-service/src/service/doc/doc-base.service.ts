@@ -20,6 +20,7 @@ export class DocBaseService extends EntityBaseService<IDoc> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Doc';
     protected APPDENAMEPLURAL = 'Docs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];

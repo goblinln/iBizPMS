@@ -99,28 +99,6 @@ export class CalendarExpBarControlBase extends ExpBarControlBase implements Cale
     }
 
     /**
-     * 初始化导航参数
-     * 
-     * @param params 初始化参数
-     * @memberof CalendarExpBarControlBase
-     */
-    public initNavParam(params: any) {
-        if (params && params.length > 0) {
-            let navParams: any = {};
-            params.forEach((param: any) => {
-                const navParam = {
-                    [param.key]: param.rawValue ? param.value : "%" + param.value + "%",
-                }
-                Object.assign(navParams, navParam);
-            });
-            return navParams;
-        } else {
-            return null;
-        }
-    }
-
-
-    /**
      * split值变化事件
      *
      * @memberof CalendarExpBarControlBase

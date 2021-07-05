@@ -21,6 +21,7 @@ export class TaskTeamNestedBaseService extends EntityBaseService<ITaskTeamNested
     protected APPNAME = 'Web';
     protected APPDENAME = 'TaskTeamNested';
     protected APPDENAMEPLURAL = 'TaskTeamNesteds';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];

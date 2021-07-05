@@ -18,6 +18,7 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProjectBurn';
     protected APPDENAMEPLURAL = 'ProjectBurns';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'date';
     protected quickSearchFields = ['date',];

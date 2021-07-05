@@ -1,4 +1,4 @@
-import { IPSDataViewExpBar, IPSDEDataView } from '@ibiz/dynamic-model-api';
+import { IPSAppView, IPSDataViewExpBar, IPSDEDataView, IPSDERBase } from '@ibiz/dynamic-model-api';
 import { DataViewExpBarControlInterface } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
 /**
@@ -23,6 +23,20 @@ export class DataViewExpBarControlBase extends ExpBarControlBase implements Data
      * @memberof DataViewExpBarControlBase
      */
     protected $xDataControl!: IPSDEDataView;
+
+    /**
+     * 处理数据部件参数
+     *
+     * @memberof GridExpBarControlBase
+     */
+     public async handleXDataCtrlOptions() {
+      const navPSAppView: IPSAppView = await this.$xDataControl?.getNavPSAppView()?.fill() as IPSAppView;
+      if (navPSAppView) {
+          this.navViewName = navPSAppView.modelPath;
+      }
+      this.navFilter = this.$xDataControl?.navFilter ? this.$xDataControl.navFilter : "";
+      this.navPSDer = (this.$xDataControl?.getNavPSDER?.() as IPSDERBase) ? "n_" + (this.$xDataControl.getNavPSDER() as IPSDERBase).minorCodeName?.toLowerCase() + "_eq" : "";
+  }
 
     /**
      * 部件事件处理

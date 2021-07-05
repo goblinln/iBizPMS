@@ -310,21 +310,12 @@ export default class AppCheckBox extends Vue {
     }
 
     /**
-     * vue  生命周期
-     *
-     * @memberof AppCheckBox
-     */
-    public created() {
-        this.loadData();
-    }
-
-    /**
      * 监听表单数据变化
      * 
      * @memberof AppCheckBox
      */
-    @Watch('data',{immediate:true,deep:true})
-    onDataChange(newVal: any, oldVal: any) {
+    @Watch('codeList',{immediate:true,deep:true})
+    onCodeListChange(newVal: any, oldVal: any) {
       if(newVal){
           this.loadData();
       }

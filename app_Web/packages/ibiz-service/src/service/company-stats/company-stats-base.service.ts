@@ -18,6 +18,7 @@ export class CompanyStatsBaseService extends EntityBaseService<ICompanyStats> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'CompanyStats';
     protected APPDENAMEPLURAL = 'CompanyStats';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['comment',];

@@ -18,6 +18,7 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'TestRun';
     protected APPDENAMEPLURAL = 'TestRuns';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/TestRun.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'id';
     protected quickSearchFields = ['id',];

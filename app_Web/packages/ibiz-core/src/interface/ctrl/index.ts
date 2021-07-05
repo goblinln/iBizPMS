@@ -34,3 +34,4 @@ export * from './state-wizard-panel-control';
 export * from './tab-exp-panel-control';
 export * from './tab-view-panel-control';
 export * from './map-control';
+export * from './map-exp-bar-control';

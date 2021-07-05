@@ -1,4 +1,4 @@
-import { IPSAppDELogicNode, IPSDELogicNode, IPSDELogicParam } from '@ibiz/dynamic-model-api';
+import { IPSDEDEActionLogic,IPSDELogicParam } from '@ibiz/dynamic-model-api';
 import { AppDeLogicNodeBase } from './logic-node-base';
 import { ActionContext } from '../action-context';
 
@@ -18,15 +18,15 @@ export class AppDeLogicDeActionNode extends AppDeLogicNodeBase{
      * 执行节点
      *
      * @static
-     * @param {IPSDELogicNode} logicNode
+     * @param {IPSDEDEActionLogic} logicNode
      * @param {DeLogicContext} delogicContext
      * @memberof AppDeLogicDeActionNode
      */
-    public async executeNode(logicNode: IPSDELogicNode, actionContext: ActionContext){
+    public async executeNode(logicNode: IPSDEDEActionLogic, actionContext: ActionContext){
         this.setParam(logicNode, actionContext);
-        const dstEntity = (logicNode as IPSAppDELogicNode).getDstPSAppDataEntity();
-        const deAction = (logicNode as IPSAppDELogicNode).getDstPSAppDEAction();
-        const dstParam = actionContext.getParam(((logicNode as IPSAppDELogicNode).getDstPSDELogicParam() as IPSDELogicParam)?.codeName);
+        const dstEntity = logicNode.getDstPSAppDataEntity();
+        const deAction = logicNode.getDstPSAppDEAction();
+        const dstParam = actionContext.getParam((logicNode.getDstPSDELogicParam() as IPSDELogicParam)?.codeName);
         if(dstEntity && deAction && dstParam){
             const service = await  ___ibz___.gs.getService(dstEntity.codeName);
             const res = await service[deAction.codeName](actionContext.context, dstParam);

@@ -311,7 +311,7 @@ export default class AppRichTextEditor extends Vue {
         const url = this.downloadUrl.indexOf('../') === 0 ? this.downloadUrl.substring(3) : this.downloadUrl;
         if (newval) {
             newval = newval.replace(
-                /\{(\d+)\.(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)\}/g,
+                /\{(\w+)\.(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)\}/g,
                 `${url}/$1`
             );
             newval = await this.getImgUrlBase64(newval);
@@ -491,7 +491,7 @@ export default class AppRichTextEditor extends Vue {
                         : richtexteditor.downloadUrl;
                 let value = richtexteditor.value && richtexteditor.value.length > 0 ? richtexteditor.value : '';
                 value = value.replace(
-                    /\{(\d+)\.(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)\}/g,
+                    /\{(\w+)\.(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)\}/g,
                     `${url}/$1`
                 );
                 richtexteditor.getImgUrlBase64(value).then((newValue: any) =>{

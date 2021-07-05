@@ -18,6 +18,7 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'CaseStats';
     protected APPDENAMEPLURAL = 'CaseStats';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];

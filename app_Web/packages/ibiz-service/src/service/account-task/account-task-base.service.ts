@@ -4,7 +4,6 @@ import { IAccountTask, AccountTask } from '../../entities';
 import keys from '../../entities/account-task/account-task-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetUserConcatLogic } from '../../logic/entity/account-task/get-user-concat/get-user-concat-logic';
 
 /**
  * 任务服务对象基类
@@ -21,6 +20,7 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'AccountTask';
     protected APPDENAMEPLURAL = 'AccountTasks';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['id','name',];
@@ -325,9 +325,7 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
      * @memberof AccountTaskService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+        return await this.executeAppDeLogic('GetUserConcat',_context,_data);
     }
     /**
      * FetchAccount

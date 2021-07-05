@@ -131,7 +131,7 @@ export class AppPopover {
      * @returns {void}
      * @memberof AppPopover
      */
-    private initVueExample(customClass?: any): void {
+    private initVueExample(customClass?: any, method?: any): void {
         const self = this;
         if (!self.store || !self.i18n) {
             self.initBasicData();
@@ -158,7 +158,11 @@ export class AppPopover {
                     e.stopPropagation();
                 },
                 mouseout(e: MouseEvent) {
-                    (this.$apppopover as any).mouseOutDestory()
+                    if (method == 'openPopover2') {
+                        (this.$apppopover as any).mouseOutDestory2();
+                    } else {
+                        (this.$apppopover as any).mouseOutDestory();
+                    }
                 }
             },
             render(h: CreateElement) {
@@ -271,13 +275,12 @@ export class AppPopover {
         event.stopPropagation();
         const element: Element = event.toElement || event.srcElement;
         if (!this.vueExample) {
-            this.initVueExample(customClass);
+            this.initVueExample(customClass,'openPopover2');
         }
         this.popperDestroy();
         const zIndex = this.vueExample.$store.getters.getZIndex();
         if (zIndex) {
             this.zIndex = zIndex + 100;
-            this.vueExample.$store.commit('updateZIndex', this.zIndex);
         }
         // 是否可自动关闭
         this.isAutoClose = isAutoClose;
@@ -313,6 +316,22 @@ export class AppPopover {
     }
 
     /**
+     * 销毁popper2(带回填数据)
+     *
+     * @memberof AppPopover
+     */
+    public popperDestroy2(): void {
+        if (this.popperExample) {
+            this.popperExample.destroy();
+            if (this.zIndex !== 0) {
+                this.zIndex = 0;
+            }      
+            this.showPopper = false;
+            this.vueExample.$forceUpdate();
+        }
+    }
+
+    /**
      * 销毁popper(当鼠标移出时)
      *
      * @memberof AppPopover
@@ -320,6 +339,17 @@ export class AppPopover {
     public mouseOutDestory(): void {
         if (this.showPopper && this.isMoveOutClose) {
             this.popperDestroy();
+        }
+    }
+
+    /**
+     * 销毁popper2(当鼠标移出时)
+     *
+     * @memberof AppPopover
+     */
+    public mouseOutDestory2(): void {
+        if (this.showPopper && this.isMoveOutClose) {
+            this.popperDestroy2();
         }
     }
 

@@ -18,6 +18,7 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProductLife';
     protected APPDENAMEPLURAL = 'ProductLives';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLife.json';
     protected APPDEKEY = 'productlifeid';
     protected APPDETEXT = 'productlifename';
     protected quickSearchFields = ['productlifename',];

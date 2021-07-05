@@ -160,10 +160,10 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
                     for (let index = 0; index < ((listItem.getPSDEUIActionGroup() as IPSDEUIActionGroup).getPSUIActionGroupDetails() as any).length; index++) {
                         const uiActionDetail: IPSUIActionGroupDetail = ((listItem.getPSDEUIActionGroup() as IPSDEUIActionGroup).getPSUIActionGroupDetails() as any)[index];
                         if (uiActionDetail?.getPSUIAction()) {
-                            const uiAction: IPSUIAction = Util.deepCopy(uiActionDetail.getPSUIAction());
+                            const uiAction: IPSDEUIAction = uiActionDetail.getPSUIAction() as IPSDEUIAction;
                             if (uiAction) {
                                 const appUIAction: IPSDEUIAction = Util.deepCopy(uiAction) as IPSDEUIAction;
-                                this.actionModel[appUIAction.uIActionTag] = Object.assign(appUIAction, { disabled: false, visabled: true, getNoPrivDisplayMode: appUIAction.noPrivDisplayMode ? appUIAction.noPrivDisplayMode : 6 });
+                                this.actionModel[uiAction.uIActionTag] = Object.assign(appUIAction, { disabled: false, visabled: true, getNoPrivDisplayMode: appUIAction.noPrivDisplayMode ? appUIAction.noPrivDisplayMode : 6 });
                             }
                         }
                     }

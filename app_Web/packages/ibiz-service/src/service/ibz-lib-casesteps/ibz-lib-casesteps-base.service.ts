@@ -18,6 +18,7 @@ export class IbzLibCasestepsBaseService extends EntityBaseService<IIbzLibCaseste
     protected APPNAME = 'Web';
     protected APPDENAME = 'IbzLibCasesteps';
     protected APPDENAMEPLURAL = 'IbzLibCasesteps';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibCasesteps.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'expect';
     protected quickSearchFields = ['expect',];

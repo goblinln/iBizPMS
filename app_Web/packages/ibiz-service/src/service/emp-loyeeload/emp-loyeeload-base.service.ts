@@ -18,6 +18,7 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'EmpLoyeeload';
     protected APPDENAMEPLURAL = 'EmpLoyeeloads';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/EmpLoyeeload.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

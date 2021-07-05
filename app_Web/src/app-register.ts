@@ -11,7 +11,9 @@ import { PluginRegister } from './plugin/app-plugin-register';
 import { install } from '@ibiz/model-location';
 import { applyPolyfills, defineCustomElements } from '@ibiz/model-location/loader';
 import { Environment } from './environments/environment';
+import IBzPlugin from 'ibiz-plugin';
 
+Vue.use(IBzPlugin);
 Vue.use(ComponentsRegister);
 Vue.use(PluginRegister);
 

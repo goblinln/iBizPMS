@@ -18,6 +18,7 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'PSSysApp';
     protected APPDENAMEPLURAL = 'PSSysApps';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/PSSysApp.json';
     protected APPDEKEY = 'pssysappid';
     protected APPDETEXT = 'pssysappname';
     protected quickSearchFields = ['pssysappname',];

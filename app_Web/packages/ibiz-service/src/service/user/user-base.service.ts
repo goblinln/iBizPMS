@@ -20,6 +20,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'User';
     protected APPDENAMEPLURAL = 'Users';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/User.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'realname';
     protected quickSearchFields = ['realname',];

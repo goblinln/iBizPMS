@@ -18,6 +18,7 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
     protected APPNAME = 'Web';
     protected APPDENAME = 'IBIZProKeyword';
     protected APPDENAMEPLURAL = 'IBIZProKeywords';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProKeyword.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'id';
     protected quickSearchFields = ['id',];

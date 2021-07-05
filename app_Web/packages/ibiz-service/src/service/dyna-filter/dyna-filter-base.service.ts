@@ -18,6 +18,7 @@ export class DynaFilterBaseService extends EntityBaseService<IDynaFilter> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'DynaFilter';
     protected APPDENAMEPLURAL = 'DynaFilters';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/DynaFilter.json';
     protected APPDEKEY = 'dynafilterid';
     protected APPDETEXT = 'dynafiltername';
     protected quickSearchFields = ['dynafiltername',];

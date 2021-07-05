@@ -18,6 +18,7 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'SysAccount';
     protected APPDENAMEPLURAL = 'SysAccounts';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json';
     protected APPDEKEY = 'userid';
     protected APPDETEXT = 'personname';
     protected quickSearchFields = ['personname',];

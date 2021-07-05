@@ -18,6 +18,7 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'StorySpec';
     protected APPDENAMEPLURAL = 'StorySpecs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/StorySpec.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];

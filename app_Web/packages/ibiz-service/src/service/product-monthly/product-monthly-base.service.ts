@@ -18,6 +18,7 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProductMonthly';
     protected APPDENAMEPLURAL = 'ProductMonthlies';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json';
     protected APPDEKEY = 'ibizproproductmonthlyid';
     protected APPDETEXT = 'ibizproproductmonthlyname';
     protected quickSearchFields = ['ibizproproductmonthlyname',];

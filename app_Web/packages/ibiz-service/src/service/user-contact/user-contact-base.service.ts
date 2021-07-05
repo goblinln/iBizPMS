@@ -20,6 +20,7 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'UserContact';
     protected APPDENAMEPLURAL = 'UserContacts';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'listname';
     protected quickSearchFields = ['listname',];

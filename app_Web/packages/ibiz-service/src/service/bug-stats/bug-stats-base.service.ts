@@ -18,6 +18,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'BugStats';
     protected APPDENAMEPLURAL = 'BugStats';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];

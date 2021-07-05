@@ -89,7 +89,7 @@ export class AppPortletBase extends PortletControlBase {
             // 绘制其他部件
             let control = this.controlInstance.getPSControls()?.[0];
             let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(control);
-            return this.$createElement(targetCtrlName,{ props: targetCtrlParam, ref: control?.name, on: targetCtrlEvent })
+            return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: control?.name, on: targetCtrlEvent })
         }
     }
 
@@ -150,7 +150,7 @@ export class AppPortletBase extends PortletControlBase {
                 <view-toolbar
                     toolbarModels={this.toolbarModels}
                     on-item-click={(data: any, $event: any) => {
-                      debounce(this.handleItemClick,[data, $event],this);
+                        debounce(this.handleItemClick, [data, $event], this);
                     }}
                 ></view-toolbar>
             </div>
@@ -168,7 +168,7 @@ export class AppPortletBase extends PortletControlBase {
             viewState={this.viewState}
             uiService={this.appUIService}
             items={this.actionBarModelData}
-            on-itemClick={(...params: any[]) => debounce(this.handleItemClick,params,this)}
+            on-itemClick={(...params: any[]) => debounce(this.handleItemClick, params, this)}
         ></app-actionbar>;
     }
 
@@ -179,7 +179,7 @@ export class AppPortletBase extends PortletControlBase {
      * @memberof AppPortletBase
      */
     public renderCustom() {
-        let plugin  = (this.controlInstance as IPSDBCustomPortletPart)?.getPSSysPFPlugin?.();;
+        let plugin = (this.controlInstance as IPSDBCustomPortletPart)?.getPSSysPFPlugin?.();;
         // todo自定义绘制
         if (plugin) {
             // todo 自定义门户部件
@@ -227,8 +227,8 @@ export class AppPortletBase extends PortletControlBase {
                     viewparam: JSON.stringify(this.viewparams),
                 },
             },
-            on:{
-                'viewIsMounted': ()=>{
+            on: {
+                'viewIsMounted': () => {
                     this.setIsMounted(portletAppView?.name);
                 }
             },
@@ -276,7 +276,8 @@ export class AppPortletBase extends PortletControlBase {
         return [
             <p class='portlet-title'>
                 <span>
-                    {image && <i class={image?.cssClass} />}
+                    {image && image?.cssClass && <i class={image?.cssClass} />}
+                    {image && image?.imagePath && <img src={image?.imagePath} />}
                     {labelCaption}
                 </span>
                 {portletType != 'ACTIONBAR' && this.renderUiAction()}
@@ -326,7 +327,7 @@ export class AppPortletBase extends PortletControlBase {
                 const tooltipCaption = this.$tl(uiAction?.getTooltipPSLanguageRes()?.lanResTag, uiAction?.caption || uiAction?.name);
                 // 显示内容
                 // todo 界面行为显示this.actionModel?.[uiactionName]?.visabled 
-                let contentElement = <a on-click={(e: any) => { debounce(this.handleActionClick,[e, actionDetail],this) }} v-show={true} >
+                let contentElement = <a on-click={(e: any) => { debounce(this.handleActionClick, [e, actionDetail], this) }} v-show={true} >
                     {this.renderIcon(actionDetail)}
                     {showCaption ? caption : null}
                 </a>

@@ -3,7 +3,9 @@ import { AppMapService } from '../ctrl-service';
 import { IPSSysMap, IPSSysMapItem } from '@ibiz/dynamic-model-api';
 import { init } from 'echarts';
 import '../components/control/app-default-map/china.js'
-import { MapControlInterface } from "ibiz-core";
+import { MapControlInterface, Util } from "ibiz-core";
+import { AMapManager } from 'vue-amap';
+
 /**
  * 地图部件基类
  *
@@ -35,8 +37,49 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
      * @type {*}
      * @memberof MapControlBase
      */
-    public service !: any;
+    public service!: any;
 
+    /**
+     * 获取地址需求AMap插件对象
+     *
+     * @type {*}
+     * @memberof MapControlBase
+     */
+    public geocoder: any;
+
+
+    /**
+     * 当前 window
+     *
+     * @type {*}
+     * @memberof MapControlBase
+     */
+    public win: any;
+
+    /**
+     * AMap SDK对象
+     *
+     * @type {*}
+     * @memberof MapControlBase
+     */
+    public amapManager: any = new AMapManager();
+
+    /**
+     * 地图信息缓存
+     * 
+     * @memberof MapControlBase
+     */
+    public addressCache: Map<string, any> = new Map(); 
+
+    /**
+     * 获取选中数据
+     *
+     * @returns {any[]}
+     * @memberof GridControlBase
+     */
+     public getSelection(): any[] {
+        return this.selections;
+    }
 
     /**
       * 地图数据
@@ -55,6 +98,74 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
     public mapItems: any = {};
 
     /**
+     * 显示图例
+     * 
+     * @type {*}
+     * @memberof MapControlBase
+     */
+    public showLegends: any[] = [];
+
+    /**
+     * 显示的最大值
+     * 
+     * @type {number}
+     * @memberof MapControlBase
+     */
+    public valueMax: number = 0;
+
+    /**
+     * 区域数据
+     * 
+     *  @memberof MapControlBase
+     */
+    public areaData: any = [];
+
+    /**
+     * 区域值集合
+     * 
+     * @memberof MapControlBase
+     */
+    public getAreaValueList() {
+        return [
+            {name:'南海诸岛',value: this.calculateAreaValue('南海')},
+            {name: '北京', value: this.calculateAreaValue('北京')},
+            {name: '天津', value: this.calculateAreaValue('天津')},
+            {name: '上海', value: this.calculateAreaValue('上海')},
+            {name: '重庆', value: this.calculateAreaValue('重庆')},
+            {name: '河北', value: this.calculateAreaValue('河北')},
+            {name: '河南', value: this.calculateAreaValue('河南')},
+            {name: '云南', value: this.calculateAreaValue('云南')},
+            {name: '辽宁', value: this.calculateAreaValue('辽宁')},
+            {name: '黑龙江', value: this.calculateAreaValue('黑龙江')},
+            {name: '湖南', value: this.calculateAreaValue('湖南')},
+            {name: '安徽', value: this.calculateAreaValue('安徽')},
+            {name: '山东', value: this.calculateAreaValue('山东')},
+            {name: '新疆', value: this.calculateAreaValue('新疆')},
+            {name: '江苏', value: this.calculateAreaValue('江苏')},
+            {name: '浙江', value: this.calculateAreaValue('浙江')},
+            {name: '江西', value: this.calculateAreaValue('江西')},
+            {name: '湖北', value: this.calculateAreaValue('湖北')},
+            {name: '广西', value: this.calculateAreaValue('广西')},
+            {name: '甘肃', value: this.calculateAreaValue('甘肃')},
+            {name: '山西', value: this.calculateAreaValue('山西')},
+            {name: '内蒙古', value: this.calculateAreaValue('内蒙古')},
+            {name: '陕西', value: this.calculateAreaValue('陕西')},
+            {name: '吉林', value: this.calculateAreaValue('吉林')},
+            {name: '福建', value: this.calculateAreaValue('福建')},
+            {name: '贵州', value: this.calculateAreaValue('贵州')},
+            {name: '广东', value: this.calculateAreaValue('广东')},
+            {name: '青海', value: this.calculateAreaValue('青海')},
+            {name: '西藏', value: this.calculateAreaValue('西藏')},
+            {name: '四川', value: this.calculateAreaValue('四川')},
+            {name: '宁夏', value: this.calculateAreaValue('宁夏')},
+            {name: '海南', value: this.calculateAreaValue('海南')},
+            {name: '台湾', value: this.calculateAreaValue('台湾')},
+            {name: '香港', value: this.calculateAreaValue('香港')},
+            {name: '澳门', value: this.calculateAreaValue('澳门')},
+        ]
+    };
+
+    /**
      * 初始化配置
      *
      * @type {}
@@ -62,36 +173,51 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
      */
     public initOptions: any = {
         tooltip: {
-            trigger: 'item'
+            trigger: 'item',
         },
         legend: {
             orient: 'horizontal',
             x: 'center',
-            data: []
+            data: [],
         },
         geo: {
             map: 'china',
             zoom: 1.2,
             label: {
                 normal: {
-                    show: false
+                    show: true,
                 },
-                emphasis: {
-                    show: false
-                }
+                emphasis: {},
             },
             itemStyle: {
-                normal: {
-                    areaColor: '#4FADFD',
-                    borderColor: '#111'
-                },
+                normal: {},
                 emphasis: {
-                    areaColor: '#0CD3DB'
-                }
-            }
+                    areaColor: '#F3B329',
+                },
+            },
         },
-        visualMap: [],
-        series: []
+        visualMap: [
+            {
+                min: 0,
+                max: this.valueMax,
+                left: 'left',
+                seriesIndex: 0,
+                top: 'bottom',
+                text: ['高','低'],
+                inRange: {
+                    color: ['#e0ffff', '#006edd'],
+                },
+                show: true,
+            },
+        ],
+        series: [
+            {
+                name: '信息量',
+                type: 'map',
+                geoIndex: 0,
+                data: [],
+            }
+        ]
     }
 
     /**
@@ -118,7 +244,7 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
      * @memberof MapControlBase
      */
     public onStaticPropsChange(newVal: any, oldVal: any) {
-        this.isSelectFirstDefault = newVal.isSelectFirstDefault;
+        this.isSelectFirstDefault = newVal.isSelectFirstDefault ? true : false;
         super.onStaticPropsChange(newVal, oldVal);
     }
 
@@ -146,6 +272,7 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
         // 绑定this
         this.transformData = this.transformData.bind(this);
         this.refresh = this.refresh.bind(this);
+        this.win = window as any;
         // 初始化默认值
         if (this.viewState) {
             this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: { tag: string, action: string, data: any }) => {
@@ -167,11 +294,47 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
      */
     public ctrlMounted(): void {
         super.ctrlMounted();
+        let _this: any = this;
         let map: any = (this.$refs.map as any);
         if (map) {
             this.map = init(map);
         }
-        this.map.setOption(this.initOptions);
+        if (this.map) {
+            this.map.setOption(this.initOptions);
+            // 监听地图触发的点击事件
+            this.map.on('click', 'series', function (params: any) {
+                if (params.data?.value?.length > 3) {
+                    _this.onClick(params.data.value[3]);
+                }
+            });
+            // 图例改变过滤地图数据
+            this.map.on('legendselectchanged', function (params: any) {
+                if (params.name) {
+                    _this.showLegends.forEach((showLegend: any) => {
+                        if (Object.is(showLegend.name, params.name)) {
+                            showLegend.show = !showLegend.show;
+                        }
+                    })
+                    // 重新设置地图数据
+                    _this.valueMax = 0;
+                    const data = _this.getAreaValueList();
+                    _this.map.setOption({
+                        visualMap: {
+                            max: _this.valueMax > 0 ? _this.valueMax : 1000,
+                        },
+                        series: {
+                            data: data,
+                        }
+                    })
+                }
+            });
+        }
+        let amap: any = this.win.AMap;
+        amap.plugin(["AMap.Geocoder"], () => {
+            this.geocoder = new amap.Geocoder({
+                extensions: "all",
+            })
+        })
     }
 
     /**
@@ -184,6 +347,17 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
         this.load(args);
     }
 
+    /**
+     * 更新大小
+     * 
+     * @memberof MapControlBase
+     */
+     public updateSize(){
+        if (this.map) {
+            this.map.resize();
+        }
+    }
+    
     /**
      * 地图数据加载
      *
@@ -215,16 +389,19 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
             }
             this.$emit('load', response.data ? response.data : []);
             this.items = response.data;
-            console.log(this.items);
-            
-            this.handleOptions(response.data);
-            this.setOptions();
-        },
-            (response: any) => {
-                _this.onControlResponse('load', response);
-                this.$throw(response, 'load');
+            this.calculateAreaData().then(() => {
+                this.setAreaData();
+                this.handleOptions(this.items);
+                this.setOptions();
+                if (this.isSelectFirstDefault) {
+                    this.onClick(this.items[0]);
+                }
             });
-
+        },
+        (response: any) => {
+            _this.onControlResponse('load', response);
+            this.$throw(response, 'load');
+        });
     }
 
     /**
@@ -238,6 +415,7 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
         }
         const options = JSON.parse(JSON.stringify(this.initOptions));
         this.map.setOption(options);
+        this.updateSize();
     }
 
     /**
@@ -284,8 +462,9 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
                     let tempItem: any[] = [];
                     tempItem.push(parseFloat(jd));
                     tempItem.push(parseFloat(latitude[index]));
-                    this.handleSeriesOptions(tempItem, item, arg);
-                    item.data.push(tempItem);
+                    const data = this.handleSeriesOptions(tempItem, item, arg);
+                    item.id = item.itemType;
+                    item.data.push(data);
                 })
             }
         });
@@ -302,16 +481,38 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
      */
     public handleSeriesOptions(tempItem: any, item: any, data: any) {
         //  序列
-        tempItem.push(item.seriesDataIndex);
+        const _tempItem = [...tempItem];
+        const title = data['title'];
+        const content = data['content'];
+        _tempItem.push(content);
+        _tempItem.push(Util.deepCopy(data));
+        const _data = {
+            name: title,
+            value: _tempItem,
+        }
+        return _data;
     }
 
     /**
      * 初始化地图参数
+     * 
+     * @memberof MapControlBase
      */
     public initMapModel() {
         const mapItems: IPSSysMapItem[] | null = this.controlInstance.getPSSysMapItems();
+        this.showLegends = [];
         if (mapItems) {
             mapItems.forEach((item: IPSSysMapItem, index: number) => {
+                this.showLegends.push(
+                    {
+                        name: item.name,
+                        itemType: item.itemType?.toLowerCase(),
+                        show: true,
+                    }
+                );
+                if (Object.is('REGION', item.itemStyle)) {
+                    return
+                }
                 this.initOptions.legend.data.push(item.name);
                 this.initOptions.visualMap.push(
                     {
@@ -319,7 +520,7 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
                         left: 'left',
                         top: 'bottom',
                         splitNumber: 1,
-                        seriesIndex: index,
+                        seriesIndex: index+1,
                         pieces: [{
                             label: item.name,
                             min: index * 10,
@@ -340,20 +541,25 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
                         coordinateSystem: 'geo',
                         itemType: item.itemType?.toLowerCase(),
                         color: item.color,
+                        selectedMode: 'single',
+                        select: {
+                            itemStyle: {
+                                borderColor: item.color,
+                                borderWidth: 6,
+                            },
+                        },
                         geoIndex: 0,
-                        symbolSize: 14,
+                        symbolSize: 16,
                         label: {
-                            show: false
+                            show: true,
+                            position: 'right',
+                            formatter: '{b}',
                         },
-                        emphasis: {
-                            label: {
-                                show: false
-                            }
+                        emphasis: {},
+                        encode: {
+                            value: 2
                         },
-                        tooltip: {
-                            formatter: '{a}'
-                        },
-                        seriesDataIndex: (index + 1) * 10 - 5,
+                        tooltip: {},
                         data: []
                     }
                 );
@@ -368,18 +574,108 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
                         tips: item.getTipsPSAppDEField()?.codeName.toLowerCase(),
                         code: index
                     }
-                })
+                });
             });
         }
     }
 
     /**
-     * 获取选中数据
-     *
-     * @returns {any[]}
-     * @memberof GridControlBase
+     * 调用服务，根据经纬度获取地址信息
+     * 
+     * @param {*} lng 经度
+     * @param {*} lat 纬度
+     * @memberof MapControlBase
      */
-     public getSelection(): any[] {
-        return this.selections;
+     public getAddress(lng: any, lat: any) {
+        return new Promise((resolve, reject) => {
+            if (this.addressCache.get(lng+'-'+lat)) {
+                const address = this.addressCache.get(lng+'-'+lat);
+                resolve(address);
+            }
+            this.geocoder.getAddress([lng,lat],(status:any,result: any) => {
+                if (status === 'complete' && result.info === 'OK') {
+                    if (result && result.regeocode) {
+                        const address = result.regeocode.addressComponent;
+                        this.addressCache.set(lng+'-'+lat, address);
+                        resolve(address);
+                    }
+                }
+            })
+        });
+    }
+
+    /**
+     * 计算区域数据
+     * 
+     * @memberof MapControlBase
+     */
+    public async calculateAreaData() {
+        this.areaData = [];
+        if (this.items.length > 0) {
+            for (let item of this.items) {
+                const address: any = await this.getAddress(item.longitude, item.latitude);
+                const provinceName = address.province;
+                this.areaData.push({
+                    name: provinceName,
+                    itemType: item.itemType,
+                    data: item,
+                })
+            }
+        }
+    }
+
+    /**
+     * 计算区域数据值(项类容属性)
+     * 
+     * @param name 区域名
+     * @returns 区域值
+     * @memberof MapControlBase
+     */
+    public calculateAreaValue(name: string) {
+        const areaData: any = [];
+        this.areaData.forEach((item: any) => {
+            const showLegend = this.showLegends.find((_showLegend: any) => Object.is(_showLegend.itemType, item.itemType));
+            if (item.name.indexOf(name) > -1 && showLegend?.show) {
+                areaData.push(item.data);
+            }
+        })
+        let value: number = 0;
+        areaData.forEach((item: any) => {
+            if (Number.isFinite(Number(item.content))) {
+                value += item.content;
+            } else {
+                value += 1;
+            }
+        })
+        this.valueMax = value > this.valueMax ? value : this.valueMax;
+        return value;
+    }
+
+    /**
+     * 设置地图数据(初始化)
+     * 
+     * @memberof MapControlBase
+     */
+    public setAreaData(){
+        let series: Array<any> = this.initOptions.series;
+        if (!series || series.length == 0) {
+            return;
+        }
+        this.valueMax = 0;
+        this.initOptions.series[0].data = this.getAreaValueList();
+        this.initOptions.visualMap[0].max = this.valueMax > 0 ? this.valueMax : 1000;
+    }
+
+    /**
+     * 地图点击事件
+     * 
+     * @param $event 选中数据
+     * @memberof MapControlBase
+     */
+    public onClick($event: any){
+        this.selections = [$event];
+        if($event && (Object.keys($event).length > 0)){
+            this.$emit("ctrl-event", {controlname: this.controlInstance.name, action: "selectionchange", data: this.selections});
+        }
     }
 }

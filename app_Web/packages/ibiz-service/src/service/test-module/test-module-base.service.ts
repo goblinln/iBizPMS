@@ -20,6 +20,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'TestModule';
     protected APPDENAMEPLURAL = 'TestModules';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

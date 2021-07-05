@@ -131,6 +131,14 @@ export class ChartSeries {
     public seriesCodeList:any;
 
     /**
+     * 序列模板
+     *
+     * @type {*}
+     * @memberof ChartSeries
+     */
+    public seriesTemp:any = null;
+
+    /**
      * Creates an instance of ChartSeries.
      * ChartSeries 实例
      * 
@@ -153,6 +161,7 @@ export class ChartSeries {
         this.seriesMap = opts.seriesMap ? opts.seriesMap:null;
         this.seriesIndex = opts.seriesIndex? opts.seriesIndex:0;
         this.seriesCodeList = opts.seriesCodeList?opts.seriesCodeList:null;
+        this.seriesTemp = opts.seriesTemp ? opts.seriesTemp : null;
     }
 
     /**
@@ -303,5 +312,15 @@ export class ChartSeries {
      */
     public setSeriesCodeList(state: any): void {
         this.seriesCodeList = state;
+    }
+
+    /**
+     * 设置序列模板
+     *
+     * @param {*} state
+     * @memberof ChartSeries
+     */
+    public setSeriesTemp(state: any): void {
+        this.seriesTemp = state;
     }
 }

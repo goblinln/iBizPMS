@@ -116,6 +116,20 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
     }
 
     /**
+     * 是否显示标题栏
+     *
+     * @readonly
+     * @memberof AppDefaultViewLayout
+     */
+    get showCaption(){
+      if(this.viewInstance && this.$parent && Util.isExist(this.viewInstance.showCaptionBar)){
+          return this.viewInstance.showCaptionBar && !(this.$parent as any).noViewCaption
+      }else{
+          return true;
+      }
+    }
+
+    /**
      * 初始化
      * 
      * @memberof AppDefaultIndexViewLayout 
@@ -175,6 +189,52 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
         );
     }
 
+    /**
+     * 渲染无菜单样式
+     * 
+     * @memberof AppDefaultIndexViewLayout
+     */
+     public renderContentOnly() {
+        let contentClass = {
+            'index_content': true,
+            'index_tab_content': Object.is(this.viewInstance.viewStyle, 'DEFAULT'),
+            'index_route_content': !Object.is(this.viewInstance.viewStyle, 'DEFAULT')
+        }
+        return (
+            <layout style={{ 'font-family': this.selectFont, 'height': '100vh' }}>
+                <header class="index_header">
+                    <div class="header-left" >
+                        <div class="page-logo">
+                            <div class="page-logo-left">
+                                {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <span class="page-logo-menuicon" on-click={() => this.contextMenuDragVisiable = !this.contextMenuDragVisiable}><icon type="md-menu" />&nbsp;</span> : null}
+                                {(this.viewInstance as IPSAppIndexView).appIconPath ? <img class="page-logo-image" src={(this.viewInstance as IPSAppIndexView).appIconPath}></img> : null}
+                                {this.showCaption ? <span class="page-logo-title">{this.model.srfCaption}</span> : null}
+                                {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <context-menu-drag viewStyle={this.viewInstance.viewStyle} contextMenuDragVisiable={this.contextMenuDragVisiable}></context-menu-drag> : null}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right" style="display: flex;align-items: center;justify-content: space-between;">
+                        <app-header-menus />
+                        <app-lang style='font-size: 15px;padding: 0 10px;' />
+                        <app-orgsector />
+                        <app-user viewStyle={this.viewInstance.viewStyle} />
+                        <app-message-popover />
+                    </div>
+                </header>
+                <layout>
+                    <sider class="index_sider" width={0} hide-trigger value={this.collapseChange}>
+                    </sider>
+                    <content class={contentClass} >
+                        {Object.is(this.viewInstance.viewStyle, 'DEFAULT') ? <tab-page-exp modelService={this.modelService}></tab-page-exp> : null}
+                        <app-keep-alive routerList={this.routerList}>
+                            <router-view key={this.routerViewKey}></router-view>
+                        </app-keep-alive>
+                    </content>
+                </layout>
+            </layout>
+        );
+    }
+    
     /**
      * 渲染顶部菜单样式
      * 
@@ -275,6 +335,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                 { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_TOP') ? this.renderContentTabexpView() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_RIGHT') ? this.renderContentTabexpView() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_BOTTOM') ? this.renderContentTabexpView() : null}
+                { Object.is(this.viewInstance.mainMenuAlign, "NONE") ? this.renderContentOnly() : null}
             </div>
         );
     }

@@ -35,6 +35,7 @@ function getAppLocale(){
                 yes: "是",
                 no: "否",
                 wrongdataformat:'数据格式有误!',
+                isexist:"已存在",
             },
             local:{
                 new: "新建",
@@ -182,6 +183,7 @@ function getAppLocale(){
                 undefined: "未定义",
                 quarter: "季度",   
                 year: "年",
+                noindicator: "雷达图indicator不存在，无法转换数据集！"
             },
             searchform: {
                 notconfig: {

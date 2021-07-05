@@ -20,6 +20,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
     protected APPNAME = 'Web';
     protected APPDENAME = 'SubProductPlan';
     protected APPDENAMEPLURAL = 'SubProductPlans';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title','productplansn',];

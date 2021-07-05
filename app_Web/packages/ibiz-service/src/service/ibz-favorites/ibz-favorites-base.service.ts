@@ -18,6 +18,7 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'IbzFavorites';
     protected APPDENAMEPLURAL = 'IbzFavorites';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzFavorites.json';
     protected APPDEKEY = 'ibzfavoritesid';
     protected APPDETEXT = 'ibzfavoritesname';
     protected quickSearchFields = ['ibzfavoritesname',];

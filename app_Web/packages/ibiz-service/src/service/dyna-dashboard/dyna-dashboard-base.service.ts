@@ -18,6 +18,7 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'DynaDashboard';
     protected APPDENAMEPLURAL = 'DynaDashboards';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/DynaDashboard.json';
     protected APPDEKEY = 'dynadashboardid';
     protected APPDETEXT = 'dynadashboardname';
     protected quickSearchFields = ['dynadashboardname',];

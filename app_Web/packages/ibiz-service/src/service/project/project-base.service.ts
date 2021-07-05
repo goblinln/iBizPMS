@@ -4,7 +4,6 @@ import { IProject, Project } from '../../entities';
 import keys from '../../entities/project/project-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { ProjectTaskQCntLogic } from '../../logic/entity/project/project-task-qcnt/project-task-qcnt-logic';
 
 /**
  * 项目服务对象基类
@@ -21,6 +20,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Project';
     protected APPDENAMEPLURAL = 'Projects';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name','code','projectsn',];

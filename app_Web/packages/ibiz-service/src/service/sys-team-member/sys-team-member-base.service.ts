@@ -18,6 +18,7 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'SysTeamMember';
     protected APPDENAMEPLURAL = 'SysTeamMembers';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SysTeamMember.json';
     protected APPDEKEY = 'teammemberid';
     protected APPDETEXT = 'teamid';
     protected quickSearchFields = ['teamid',];

@@ -20,6 +20,7 @@ export class FileBaseService extends EntityBaseService<IFile> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'File';
     protected APPDENAMEPLURAL = 'Files';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];

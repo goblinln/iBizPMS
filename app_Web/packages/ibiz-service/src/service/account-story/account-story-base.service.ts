@@ -4,7 +4,6 @@ import { IAccountStory, AccountStory } from '../../entities';
 import keys from '../../entities/account-story/account-story-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetCurUserConcatLogic } from '../../logic/entity/account-story/get-cur-user-concat/get-cur-user-concat-logic';
 
 /**
  * 需求服务对象基类
@@ -21,6 +20,7 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'AccountStory';
     protected APPDENAMEPLURAL = 'AccountStories';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountStory.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title','id',];
@@ -365,9 +365,7 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
      * @memberof AccountStoryService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetCurUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+        return await this.executeAppDeLogic('GetCurUserConcat',_context,_data);
     }
     /**
      * FetchAccount

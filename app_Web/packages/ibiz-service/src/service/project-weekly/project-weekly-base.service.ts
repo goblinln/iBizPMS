@@ -18,6 +18,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProjectWeekly';
     protected APPDENAMEPLURAL = 'ProjectWeeklies';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectWeekly.json';
     protected APPDEKEY = 'projectweeklyid';
     protected APPDETEXT = 'projectweeklyname';
     protected quickSearchFields = ['projectweeklyname',];

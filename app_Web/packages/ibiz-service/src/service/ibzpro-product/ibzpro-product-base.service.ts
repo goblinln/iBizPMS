@@ -18,6 +18,7 @@ export class IBZProProductBaseService extends EntityBaseService<IIBZProProduct> 
     protected APPNAME = 'Web';
     protected APPDENAME = 'IBZProProduct';
     protected APPDENAMEPLURAL = 'IBZProProducts';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name','id',];

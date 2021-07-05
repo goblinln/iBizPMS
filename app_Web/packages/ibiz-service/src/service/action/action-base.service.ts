@@ -20,6 +20,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Action';
     protected APPDENAMEPLURAL = 'Actions';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'comment';
     protected quickSearchFields = ['actor',];

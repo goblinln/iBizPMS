@@ -34,3 +34,4 @@ export { AppWFDynaStartViewBase } from "./app-wfdynastartview-base";
 export { AppWizardViewBase } from './app-wizardview-base';
 export { AppWFActionViewBase } from './app-wfactionview-base';
 export { AppDeReportViewBase } from './app-dereportview-base';
+export { AppMapExpViewBase } from './app-mapexpview-base';

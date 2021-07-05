@@ -21,6 +21,7 @@ export class IBZTaskEstimateBaseService extends EntityBaseService<IIBZTaskEstima
     protected APPNAME = 'Web';
     protected APPDENAME = 'IBZTaskEstimate';
     protected APPDENAMEPLURAL = 'IBZTaskEstimates';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'id';
     protected quickSearchFields = ['id',];

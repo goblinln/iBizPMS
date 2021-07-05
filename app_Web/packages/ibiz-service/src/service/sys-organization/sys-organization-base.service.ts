@@ -18,6 +18,7 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
     protected APPNAME = 'Web';
     protected APPDENAME = 'SysOrganization';
     protected APPDENAMEPLURAL = 'SysOrganizations';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json';
     protected APPDEKEY = 'orgid';
     protected APPDETEXT = 'orgname';
     protected quickSearchFields = ['orgname',];

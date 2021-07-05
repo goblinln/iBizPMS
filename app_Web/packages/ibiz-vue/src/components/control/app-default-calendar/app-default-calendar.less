@@ -50,14 +50,22 @@
     }
   }
 }
+// 时间轴选中样式
+.el-timeline{
+    .el-timeline-item{
+        .el-card.is-always-shadow.is-select{
+            box-shadow: 0px 0px 3px 1px var(--ctrl-background-color-bright);        
+        }
+    }
+}
 // 选中样式
 .calendar .selected-event,
 .select-first-calendar .select-first-event{
   border: 2px solid var(--ctrl-font-color) !important;
 }
-.calendar .fc-dayGrid-view .selected-event:before,
+.calendar .fc-dayGrid-view .selected-event.fc-end:before,
 .select-first-calendar .fc-dayGrid-view .select-first-event:before,
-.calendar .fc-timeGrid-view .selected-event:before,
+.calendar .fc-timeGrid-view .selected-event.fc-end:before,
 .select-first-calendar .fc-timeGrid-view .select-first-event:before{
   content: '';
   display: block;
@@ -69,9 +77,9 @@
   border-left-color: transparent;
   color:var(--ctrl-font-color-light);
 }
-.calendar .fc-dayGrid-view .selected-event:after,
+.calendar .fc-dayGrid-view .selected-event.fc-end:after,
 .select-first-calendar .fc-dayGrid-view .select-first-event:after,
-.calendar .fc-timeGrid-view .selected-event:after,
+.calendar .fc-timeGrid-view .selected-event.fc-end:after,
 .select-first-calendar .fc-timeGrid-view .select-first-event:after{
   content: '';
   display: block;

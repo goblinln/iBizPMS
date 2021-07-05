@@ -49,15 +49,6 @@ export class ChartLineSeries extends ChartSeries{
     public encode:any = null;
 
     /**
-     * 序列模板
-     *
-     * @type {*}
-     * @memberof ChartLineSeries
-     */
-    public seriesTemp:any = null;
-
-
-    /**
      * Creates an instance of ChartLineSeries.
      * ChartLineSeries 实例
      * 
@@ -71,7 +62,6 @@ export class ChartLineSeries extends ChartSeries{
         this.valueField = !Object.is(opts.valueField, '') ? opts.valueField : '';
         this.dimensions = opts.dimensions ? opts.dimensions :'';
         this.encode = opts.encode ? opts.encode : null;
-        this.seriesTemp = opts.seriesTemp ? opts.seriesTemp:null;
     }
 
     /**
@@ -122,16 +112,6 @@ export class ChartLineSeries extends ChartSeries{
      */
     public setEncode(state: any): void {
         this.encode = state;
-    }
-
-    /**
-     * 设置序列模板
-     *
-     * @param {*} state
-     * @memberof ChartLineSeries
-     */
-    public setSeriesTemp(state: any): void {
-        this.seriesTemp = state;
     }
 
 }

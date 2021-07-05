@@ -4,8 +4,6 @@ import { ITest, Test } from '../../entities';
 import keys from '../../entities/test/test-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { CancelProductTopLogic } from '../../logic/entity/test/cancel-product-top/cancel-product-top-logic';
-import { ProductTopLogic } from '../../logic/entity/test/product-top/product-top-logic';
 
 /**
  * 产品服务对象基类
@@ -22,6 +20,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Test';
     protected APPDENAMEPLURAL = 'Tests';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name','productsn','code',];

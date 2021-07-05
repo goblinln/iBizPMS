@@ -18,6 +18,7 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'Group';
     protected APPDENAMEPLURAL = 'Groups';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Group.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

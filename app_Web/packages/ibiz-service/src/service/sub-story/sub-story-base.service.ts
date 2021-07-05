@@ -4,7 +4,6 @@ import { ISubStory, SubStory } from '../../entities';
 import keys from '../../entities/sub-story/sub-story-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetCurUserConcatLogic } from '../../logic/entity/sub-story/get-cur-user-concat/get-cur-user-concat-logic';
 
 /**
  * 需求服务对象基类
@@ -21,6 +20,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'SubStory';
     protected APPDENAMEPLURAL = 'SubStories';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title','id',];
@@ -625,9 +625,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @memberof SubStoryService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetCurUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+        return await this.executeAppDeLogic('GetCurUserConcat',_context,_data);
     }
     /**
      * ImportPlanStories

@@ -18,6 +18,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
     protected APPNAME = 'Web';
     protected APPDENAME = 'SysUpdateFeatures';
     protected APPDENAMEPLURAL = 'SysUpdateFeatures';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateFeatures.json';
     protected APPDEKEY = 'sysupdatefeaturesid';
     protected APPDETEXT = 'sysupdatefeaturesname';
     protected quickSearchFields = ['sysupdatefeaturesname',];

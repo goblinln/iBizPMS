@@ -18,6 +18,7 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'TaskStats';
     protected APPDENAMEPLURAL = 'TaskStats';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];

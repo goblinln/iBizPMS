@@ -92,7 +92,7 @@ import AppAfterTime from './common/app-after-time/app-after-time.vue';
 import AppInputIp from './common/app-input-ip/app-input-ip.vue';
 import AppColorSpan from './common/app-color-span/app-color-span.vue';
 import AppColorPicker from './common/app-color-picker/app-color-picker.vue';
-// import AppRichTextEditor from './common/app-rich-text-editor/app-rich-text-editor.vue';
+import AppRichTextEditor from './common/app-rich-text-editor/app-rich-text-editor.vue';
 import AppPortalDesign from './common/app-portal-design/app-portal-design.vue';
 import AppNotSupportedEditor from './common/app-not-supported-editor/app-not-supported-editor.vue';
 import { AppLayout } from './common/layout/app-layout/app-layout';
@@ -126,6 +126,7 @@ import { AppDefaultEditView4 } from './view/app-default-view/app-default-editvie
 import { AppDefaultListView } from './view/app-default-view/app-default-listview';
 import { AppDefaultGridView } from './view/app-default-view/app-default-gridview';
 import { AppDefaultChartView } from './view/app-default-view/app-default-chartview';
+import { AppDefaultChartExpView } from './view/app-default-view/app-default-chartexpview';
 import { AppDefaultKanbanView } from './view/app-default-view/app-default-kanbanview';
 import { AppDefaultCalendarView } from './view/app-default-view/app-default-calendarview';
 import { AppDefaultDataViewView } from './view/app-default-view/app-default-dataview';
@@ -166,6 +167,7 @@ import { AppDefaultWFDynaEditView3 } from './view/app-default-view/app-default-w
 import { AppDefaultHtmlView } from './view/app-default-view/app-default-htmlview';
 import { AppDefaultMapView } from './view/app-default-view/app-default-mapview';
 import { AppDefaultDeReportView } from './view/app-default-view/app-default-dereportview';
+import { AppDefaultMapExpView } from './view/app-default-view/app-default-mapexpview';
 import { AppStyle2IndexView } from './view/app-style2-view/app-style2-indexview';
 import { AppStyle2EditView } from './view/app-style2-view/app-style2-editview';
 import { AppStyle2EditView2 } from './view/app-style2-view/app-style2-editview2';
@@ -174,6 +176,7 @@ import { AppStyle2EditView4 } from './view/app-style2-view/app-style2-editview4'
 import { AppStyle2ListView } from './view/app-style2-view/app-style2-listview';
 import { AppStyle2GridView } from './view/app-style2-view/app-style2-gridview';
 import { AppStyle2ChartView } from './view/app-style2-view/app-style2-chartview';
+import { AppStyle2ChartExpView } from './view/app-style2-view/app-style2-chartexpview';
 import { AppStyle2KanbanView } from './view/app-style2-view/app-style2-kanbanview';
 import { AppStyle2CalendarView } from './view/app-style2-view/app-style2-calendarview';
 import { AppStyle2DataViewView } from './view/app-style2-view/app-style2-dataview';
@@ -209,10 +212,12 @@ import { AppStyle2DeRedirectView } from './view/app-style2-view/app-style2-dered
 import { AppStyle2WfStepTraceView } from './view/app-style2-view/app-style2-wfsteptraceview';
 import { AppStyle2WFDynaEditView3 } from './view/app-style2-view/app-style2-wfdynaeditview3';
 import { AppStyle2DeReportView } from './view/app-style2-view/app-style2-dereportview';
+import { AppStyle2MapExpView } from './view/app-style2-view/app-style2-mapexpview';
 // 部件组件
 import { ViewToolbar } from './control/view-toolbar/view-toolbar';
 import { AppDefaultGrid } from './control/app-default-grid/app-default-grid';
 import { AppDefaultChart } from './control/app-default-chart/app-default-chart';
+import { AppDefaultChartExpBar } from './control/app-default-chart-exp-bar/app-default-chart-exp-bar';
 import { AppDefaultAppmenu } from './control/app-default-appmenu/app-default-appmenu';
 import { AppDefaultForm } from './control/app-default-form/app-default-form';
 import { AppDefaultSearchForm } from './control/app-default-searchform/app-default-searchform';
@@ -251,6 +256,7 @@ import { AppDefaultDrtab } from './control/app-default-drtab/app-default-drtab';
 import { AppDefaultDrbar } from './control/app-default-drbar/app-default-drbar';
 import { AppDefaultMap } from './control/app-default-map/app-default-map';
 import { AppDefaultReportPanel } from './control/app-default-reportpanel/app-default-reportpanel';
+import { AppDefaultMapExpBar } from './control/app-default-map-exp-bar/app-default-map-exp-bar';
 import { NotificationSignal } from '../directives';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
@@ -286,7 +292,7 @@ export const ComponentsRegister = {
         v.component('app-radio-group', AppRadioGroup);
         v.component('app-embed-picker', AppEmbedPicker);
         v.component('app-tree-picker', AppTreePicker);
-        v.component('app-rich-text-editor', () => { import('./common/app-rich-text-editor/app-rich-text-editor.vue') });
+        v.component('app-rich-text-editor', AppRichTextEditor);
         v.component('app-file-upload', AppFileUpload);
         v.component('app-image-upload', AppImageUpload);
         v.component('property-layout', PropertyLayout);
@@ -381,6 +387,7 @@ export const ComponentsRegister = {
         v.component('app-default-listview', AppDefaultListView);
         v.component('app-default-gridview', AppDefaultGridView);
         v.component('app-default-chartview', AppDefaultChartView);
+        v.component('app-default-chartexpview', AppDefaultChartExpView);
         v.component('app-default-kanbanview', AppDefaultKanbanView);
         v.component('app-default-calendarview', AppDefaultCalendarView);
         v.component('app-default-dataviewview', AppDefaultDataViewView);
@@ -421,6 +428,7 @@ export const ComponentsRegister = {
         v.component('app-default-htmlview', AppDefaultHtmlView);
         v.component('app-default-mapview', AppDefaultMapView);
         v.component('app-default-dereportview', AppDefaultDeReportView);
+        v.component('app-default-mapexpview', AppDefaultMapExpView);
         v.component('app-style2-indexview', AppStyle2IndexView);
         v.component('app-style2-editview', AppStyle2EditView);
         v.component('app-style2-editview2', AppStyle2EditView2);
@@ -429,6 +437,7 @@ export const ComponentsRegister = {
         v.component('app-style2-listview', AppStyle2ListView);
         v.component('app-style2-gridview', AppStyle2GridView);
         v.component('app-style2-chartview', AppStyle2ChartView);
+        v.component('app-style2-chartexpview', AppStyle2ChartExpView);
         v.component('app-style2-kanbanview', AppStyle2KanbanView);
         v.component('app-style2-calendarview', AppStyle2CalendarView);
         v.component('app-style2-dataviewview', AppStyle2DataViewView);
@@ -464,6 +473,7 @@ export const ComponentsRegister = {
         v.component("app-style2-wfsteptraceview", AppStyle2WfStepTraceView);
         v.component('app-style2-wfdynaeditview3', AppStyle2WFDynaEditView3);
         v.component('app-style2-dereportview', AppStyle2DeReportView);
+        v.component('app-style2-mapexpview', AppStyle2MapExpView);
         // 部件组件
         v.component('app-default-form', AppDefaultForm);
         v.component('app-default-searchform', AppDefaultSearchForm);
@@ -472,6 +482,7 @@ export const ComponentsRegister = {
         v.component('app-default-list', AppDefaultList);
         v.component('app-default-grid', AppDefaultGrid);
         v.component('app-default-chart', AppDefaultChart);
+        v.component('app-default-chart-exp-bar', AppDefaultChartExpBar);
         v.component('app-default-appmenu', AppDefaultAppmenu);
         v.component('app-control-shell', AppControlShell);
         v.component('app-default-dataview', AppDefaultDataView);
@@ -504,6 +515,7 @@ export const ComponentsRegister = {
         v.component('app-pivot-table', AppPivotTable);
         v.component('app-default-map', AppDefaultMap);
         v.component('app-default-report-panel', AppDefaultReportPanel);
+        v.component('app-default-map-exp-bar', AppDefaultMapExpBar);
         // 注册指令
         v.directive('notification-signal', NotificationSignal);
     }

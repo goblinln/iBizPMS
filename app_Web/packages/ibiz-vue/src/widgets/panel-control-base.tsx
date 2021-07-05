@@ -176,7 +176,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
                     name: panelItem.name,
                     caption: panelItem.caption,
                     itemType: panelItem.itemType,
-                    visible: !panelItem?.getPSPanelItemGroupLogics?.(),
+                    visible: true,
                 };
                 switch (panelItem.itemType) {
                     case 'BUTTON':
@@ -404,8 +404,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
     public async computedUIData(newVal: any) {
         if (this.controlInstance?.getAllPSPanelFields() && this.getDataItems().length > 0) {
             this.getDataItems().forEach((item: any) => {
-                // this.data[item.name] = newVal[item.prop];
-                this.data[item.name] = newVal['curdata'][item.prop];
+                this.data[item.name] = newVal[item.prop];
             });
         }
     }

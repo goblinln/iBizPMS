@@ -20,6 +20,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProductPlan';
     protected APPDENAMEPLURAL = 'ProductPlans';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title','productplansn',];

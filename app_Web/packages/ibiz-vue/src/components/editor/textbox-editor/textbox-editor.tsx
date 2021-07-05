@@ -23,7 +23,7 @@ export default class TextboxEditor extends EditorBase {
     public async initEditor() {
         await super.initEditor();
         let unitName = this.parentItem?.unitName;
-        let appDeField: IPSAppDEField = this.parentItem?.getPSAppDEField();
+        let appDeField: IPSAppDEField = this.parentItem?.getPSAppDEField?.();
         switch (this.editorInstance?.editorType) {
             case 'TEXTBOX':
                 this.customProps.type = ModelTool.isNumberField(appDeField) ? 'number' : 'text';
