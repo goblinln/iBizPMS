@@ -115,8 +115,9 @@ export class DrbarControlBase extends MainControlBase implements DrbarControlInt
         const formInstance = ModelTool.findPSControlByType('FORM', (this.controlInstance.getParentPSModelObject?.() as IPSAppView).getPSControls?.() || []);
         if (formInstance) {
             this.formName = formInstance.name?.toLowerCase();
+            const editItemCaption = this.controlInstance.M?.editItemCaption;
             this.items.push({
-                text: formInstance.logicName,
+                text: editItemCaption ? editItemCaption : formInstance.logicName,
                 disabled: false,
                 id: this.formName
             })

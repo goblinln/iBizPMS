@@ -51,7 +51,7 @@ export class AppDefaultGroupPanel extends AppDefaultFormDetail {
      */
     public render(): any {
         const { detailClassNames } = this.renderOptions;
-        let { codeName, caption, titleBarCloseMode, showCaption, infoGroupMode } = this.detailsInstance;
+        let { codeName, caption, titleBarCloseMode, showCaption, infoGroupMode, detailStyle } = this.detailsInstance;
         let layout = this.detailsInstance.getPSLayout();
         // 设置默认值
         let layoutMode = layout?.layout || 'TABLE_24COL';
@@ -61,7 +61,7 @@ export class AppDefaultGroupPanel extends AppDefaultFormDetail {
             <app-form-group
                 layoutType={layoutMode}
                 caption={labelCaption}
-                isShowCaption={showCaption}
+                isShowCaption={showCaption && detailStyle != "STYLE2"}
                 uiStyle='DEFAULT'
                 titleBarCloseMode={titleBarCloseMode}
                 titleStyle={this.detailsInstance.getLabelPSSysCss()?.cssName || ''}
@@ -70,7 +70,7 @@ export class AppDefaultGroupPanel extends AppDefaultFormDetail {
                 manageContainerStatus={this.runtimeModel?.manageContainerStatus}
                 isManageContainer={this.runtimeModel?.isManageContainer}
                 uiActionGroup={this.runtimeModel?.uiActionGroup}
-                class={detailClassNames}
+                class={{...detailClassNames, [`form-group-${detailStyle.toLowerCase()}`]: true}}
                 on-groupuiactionclick={(e: any)=>{debounce(this.groupUIActionClick,[e],this)}}
                 on-managecontainerclick={() => { debounce(this.$emit,['managecontainerclick', this.runtimeModel.name],this) }}
                 style={this.runtimeModel?.visible ? '' : 'display: none;'}

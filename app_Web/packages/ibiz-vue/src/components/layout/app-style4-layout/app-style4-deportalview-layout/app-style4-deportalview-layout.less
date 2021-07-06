@@ -1,0 +1,28 @@
+.view-container.view-style4.deportalview{
+    background-color: var(--app-background-color-light);
+    box-shadow: none;
+    .view-card {
+        background-color: var(--app-background-color-light);
+    }
+    .portlet-without-title {
+        >.portlet-card {
+            border: 0px;
+            background-color: var(--app-background-color-light);
+        }
+    }
+    .portlet-with-title{
+        >.view-container{
+            box-shadow: none;
+        }
+    }
+    .custom-card {
+        background-color: var(--view-background-color);
+        margin: 5px;
+        .view-card {
+            background-color: var(--view-background-color);
+        }
+    }
+    > .view-card > .ivu-card-body {
+        height: 100%;
+    }
+}

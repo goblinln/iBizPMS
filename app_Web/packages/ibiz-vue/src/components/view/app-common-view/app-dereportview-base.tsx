@@ -96,7 +96,6 @@ export class AppDeReportViewBase extends DeReportViewBase {
             this.renderQuickGroup(),
             this.renderQuickSearch(),
             this.renderQuickSearchForm(),
-            this.renderSearchForm(),
             this.renderSearchBar(),
             this.renderBodyMessage(),
             this.renderMainContent(),

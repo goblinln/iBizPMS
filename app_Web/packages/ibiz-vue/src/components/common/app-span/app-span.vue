@@ -18,7 +18,7 @@
         :value="value"
         :name="name"
     />
-    <span class="app-span" v-else>{{ (!text && (text !== 0) && !unitName) ? '- - -' : text + '&nbsp;' + unitName }}</span>
+    <span class="app-span" v-else>{{ (!text && (text !== 0) && !unitName) ? '- - -' : text + '&nbsp;' + (unitName ? unitName : '')}}</span>
 </template>
 
 <script lang="ts">

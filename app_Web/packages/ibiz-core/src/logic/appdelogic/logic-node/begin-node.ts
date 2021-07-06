@@ -22,7 +22,6 @@ export class AppDeLogicBeginNode extends AppDeLogicNodeBase {
      * @memberof AppDeLogicBeginNode
      */
     public async executeNode(logicNode: IPSDELogicNode, actionContext: ActionContext) {
-        this.setParam(logicNode, actionContext);
         return this.computeNextNodes(logicNode, actionContext);
     }
 }

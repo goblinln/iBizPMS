@@ -81,7 +81,6 @@ import AvueCustomForm from './common/avue-custom-form/avue-custom-form.vue'
 import DiskImageUpload from './common/disk-image-upload/disk-image-upload.vue'
 import AppFormPart from './common/app-form-part/app-form-part.vue'
 import AppAlert from './common/app-alert/app-alert.vue'
-import AppAlertGroup from './common/app-alert-group/app-alert-group.vue'
 import AppRawItem from './common/app-rawitem/app-rawitem.vue'
 import AppImageRomate from './common/app-image-romate/app-image-romate.vue'
 import { MenuIcon } from './common/menu-icon/menu-icon'
@@ -213,6 +212,8 @@ import { AppStyle2WfStepTraceView } from './view/app-style2-view/app-style2-wfst
 import { AppStyle2WFDynaEditView3 } from './view/app-style2-view/app-style2-wfdynaeditview3';
 import { AppStyle2DeReportView } from './view/app-style2-view/app-style2-dereportview';
 import { AppStyle2MapExpView } from './view/app-style2-view/app-style2-mapexpview';
+import { AppStyle4PortalView } from './view/app-style4-view/app-style4-portalview';
+import { AppStyle4DePortalView } from './view/app-style4-view/app-style4-deportalview';
 // 部件组件
 import { ViewToolbar } from './control/view-toolbar/view-toolbar';
 import { AppDefaultGrid } from './control/app-default-grid/app-default-grid';
@@ -353,7 +354,6 @@ export const ComponentsRegister = {
         v.component('disk-image-upload', DiskImageUpload);
         v.component('app-form-part', AppFormPart);
         v.component('app-alert', AppAlert);
-        v.component('app-alert-group', AppAlertGroup);
         v.component('app-rawitem', AppRawItem);
         v.component('app-image-romate', AppImageRomate);
         v.component('menu-icon', MenuIcon);
@@ -474,6 +474,8 @@ export const ComponentsRegister = {
         v.component('app-style2-wfdynaeditview3', AppStyle2WFDynaEditView3);
         v.component('app-style2-dereportview', AppStyle2DeReportView);
         v.component('app-style2-mapexpview', AppStyle2MapExpView);
+        v.component('app-style4-portalview', AppStyle4PortalView);
+        v.component('app-style4-deportalview', AppStyle4DePortalView);
         // 部件组件
         v.component('app-default-form', AppDefaultForm);
         v.component('app-default-searchform', AppDefaultSearchForm);

@@ -5,6 +5,11 @@
       height: 100%;
       >.ivu-tabs-bar {
           margin-bottom: 16px;
+          .ivu-tabs-nav {
+            .ivu-tabs-tab-disabled {
+              pointer-events: auto;
+            }
+          }
       }
       >.ivu-tabs-content {
           height: calc(100% - 36px);

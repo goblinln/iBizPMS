@@ -23,7 +23,6 @@ export class AppDeLogicDeActionNode extends AppDeLogicNodeBase{
      * @memberof AppDeLogicDeActionNode
      */
     public async executeNode(logicNode: IPSDEDEActionLogic, actionContext: ActionContext){
-        this.setParam(logicNode, actionContext);
         const dstEntity = logicNode.getDstPSAppDataEntity();
         const deAction = logicNode.getDstPSAppDEAction();
         const dstParam = actionContext.getParam((logicNode.getDstPSDELogicParam() as IPSDELogicParam)?.codeName);

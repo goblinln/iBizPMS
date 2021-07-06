@@ -4,4 +4,3 @@ export { UtilServiceRegister } from "./util-service-register";
 export { AuthServiceRegister } from "./auth-service-register";
 // TODO
 export { codeListRegister,CodeListRegister } from "./codelist-register";
-export { messageServiceRegister,MessageServiceRegister } from "./message-service-register";

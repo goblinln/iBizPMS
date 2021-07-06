@@ -83,6 +83,22 @@ export class AppDrtabBase extends DrtabControlBase {
      * @return {*} 
      * @memberof AppDrtabBase
      */
+    public renderPanelLabel(h: any,tabPage: any){
+      return (<el-popover
+          content={this.$t("components.appformdruipart.blockuitipinfo")}
+          width="150"
+          trigger="hover">
+          <span slot="reference">{this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}</span>
+      </el-popover>);
+    }
+
+    /**
+     * 绘制关系界面
+     *
+     * @param {*} tabPage
+     * @return {*} 
+     * @memberof AppDrtabBase
+     */
     public renderDrView(tabPage: any){
         let viewData: any = Util.deepCopy(this.context);
         let viewParam = this.viewparams;
@@ -138,7 +154,7 @@ export class AppDrtabBase extends DrtabControlBase {
                         </tab-pane>
                     : null}
                     {this.drtabItems?.length > 0 && this.drtabItems.map((tabPage: any,index: number)=>{
-                        return <tab-pane index={index+1} disabled={tabPage.disabled} name={tabPage.name} tab={codeName} label={this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}>
+                        return <tab-pane index={index+1} disabled={tabPage.disabled} name={tabPage.name} tab={codeName} label={(h: any) =>this.renderPanelLabel(h,tabPage)}>
                             {!this.isShowSlot && tabPage.disabled ?
                                 <spin class="app-druipart-spin" fix>{this.$t("components.appformdruipart.blockuitipinfo")}</spin>
                             : this.renderDrView(tabPage)}

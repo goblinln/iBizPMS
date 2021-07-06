@@ -434,7 +434,7 @@ export class FormControlBase extends MainControlBase implements FormControlInter
             this.ctrlEvent({
                 controlname: this.controlInstance.name,
                 action: 'load',
-                data: data,
+                data: this.data,
             });
             this.$nextTick(() => {
                 this.formState.next({ type: 'load', data: data });

@@ -23,7 +23,6 @@ export class AppThrowExceptionNode extends AppDeLogicNodeBase {
      * @memberof AppThrowExceptionNode
      */
     public async executeNode(logicNode: IPSDEThrowExceptionLogic, actionContext: ActionContext) {
-        this.setParam(logicNode, actionContext);
         actionContext.throwExceptionInfo = {
             exceptionInfo:logicNode.errorInfo
         };

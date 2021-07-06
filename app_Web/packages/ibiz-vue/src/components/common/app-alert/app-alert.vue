@@ -1,29 +1,27 @@
 <template>
     <div class="app-alert">
-    <template v-if="items && items.length > 0">
-        <template v-for="(item, index) in items">
-            <template v-if="item.hasContent && !Object.is('POPUP', item.position)">
-            <el-alert
-                :key="index"
-                v-show="item.showState"
-                :title="item.title"
-                :type="item.type"
-                :closable="item.closable"
-                @close="alertClose(item)">
-                <template slot>
-                    <span v-html="item.content"></span>
+        <template v-if="items && items.length > 0">
+            <template v-for="(item, index) in items">
+                <template v-if="item.hasContent && !Object.is('POPUP', item.position)">
+                <el-alert
+                    :key="index"
+                    v-show="item.showState"
+                    :title="item.title"
+                    :type="item.type"
+                    :closable="item.closeable"
+                    @close="alertClose(item)">
+                    <template slot>
+                        <span v-html="item.content"></span>
+                    </template>
+                </el-alert>
                 </template>
-            </el-alert>
             </template>
         </template>
-    </template>
     </div>
-
 </template>
 
 <script lang="ts">
 import {Vue, Component, Prop} from 'vue-property-decorator';
-import { ViewMessageService } from 'ibiz-service';
 
 @Component({})
 export default class AppAlert extends Vue {
@@ -76,6 +74,8 @@ export default class AppAlert extends Vue {
      * @memberof AppAlert
      */
     @Prop() viewname!: any;
+
+    @Prop() messageDetails!: any[];
     
     /**
      * 视图消息对象
@@ -84,14 +84,6 @@ export default class AppAlert extends Vue {
      * @memberof AppAlert
      */
     public items: any[]= [];
-    
-    /**
-     * 视图消息服务
-     * 
-     * @type {ViewMessageService}
-     * @memberof AppAlert
-     */
-    public viewMessageService = ViewMessageService.getInstance();
 
     /**
      * Vue生命周期
@@ -99,11 +91,7 @@ export default class AppAlert extends Vue {
      * @memberof AppAlert
      */
     public created() {
-        this.getData().then((result:any) =>{
-            if(!this.items) {
-                return;
-            }
-        })
+        this.handleItems();
     }
 
     /**
@@ -111,33 +99,39 @@ export default class AppAlert extends Vue {
      * 
      * @memberof AppAlert
      */
-    public async getData() {
-        let response: any = await this.viewMessageService.getViewMessageByTag(this.tag, this.context, this.viewparam);
-        if(response && response.length > 0) {
-            response.forEach((item: any) => {
-                let tempData: any = JSON.parse(JSON.stringify(item));
-                if(!tempData.type) {
-                    tempData.type = "info";
-                }
-                //  判断是否存在内容
-                this.handleItemHasContent(tempData);
-                tempData.closable = tempData.isEnableRemove;
-                let flag = this.handleItemCloseMode(tempData);
-                this.handleItemPosition(tempData, flag);
-                this.items.push(tempData);
-            });
-        } 
+    public handleItems() {
+        if (this.messageDetails.length > 0) {
+            this.messageDetails.forEach((detail: any) => {
+                this.handleItemOption(detail);
+                let flag = this.handleItemCloseMode(detail);
+                this.handleItemPosition(detail, flag);
+                this.items.push(detail);
+            })
+        }
     }
 
-    /**
-     * 处理数据项是否存在内容
-     * 
-     * @memberof AppAlert
-     */
-    public handleItemHasContent(data: any) {
-        data.hasContent = true;
-        if(!data.title && !data.content) {
-            data.hasContent = false;
+    public handleItemOption(detail: any) {
+        //  是否存在内容
+        detail.hasContent = true;
+        if(!detail.title && !detail.content) {
+            detail.hasContent = false;
+        }
+        //  关闭模式
+        detail.closeable = detail.enableRemove;
+        //  类型
+        switch (detail.type) {
+            case 'WARN':
+                detail.type = 'warning';
+                break;
+            case 'SUCCESS':
+                detail.type = 'success';
+                break;
+            case 'ERROR':
+                detail.type = 'error';
+                break;
+            default:
+                detail.type = 'info';
+                break;
         }
     }
 
@@ -149,17 +143,17 @@ export default class AppAlert extends Vue {
     public handleItemCloseMode(data: any) {
         let flag = true;
         data.showState = true; 
-        if(data.closeMode || data.closeMode == 0) {
-            if(data.closeMode == 1) {
-                const tag = this.viewname + '_' + this.infoGroup + '_' + data.codename;
-                const id = localStorage.getItem(tag);
-                if(id) {
+        if(data.removeMode || data.removeMode == 0) {
+            if(data.removeMode == 1) {
+                const tag = this.viewname + '_' + this.infoGroup + '_' + data.codeName;
+                const codeName = localStorage.getItem(tag);
+                if(codeName) {
                     data.showState = false;
                     flag = false;
                 }
             }
-            if(data.closeMode == 0) {
-                data.closable = false;
+            if(data.removeMode == 0) {
+                data.closeable = false;
             }
         }
         return flag;
@@ -178,26 +172,26 @@ export default class AppAlert extends Vue {
                 if(Object.is('HTML',data.messageType) && data.hasMessageTemp) {
                     setTimeout(() => {
                         this.$message({
-                            customClass: data.codename+","+data.closeMode,
+                            customClass: data.codeName+","+data.removeMode,
                             message: h('div',{}, [
                                 h('p',data.title),
                                 h('p',{domProps:{innerHTML: data.content}})
                             ]), 
                             type: data.type,
-                            showClose: data.closable,
+                            showClose: data.closeable,
                             onClose: this.alertClose,
                         })
                     }, 0)
                 } else {
                     setTimeout(() => {
                         this.$message({
-                            customClass: data.codename+","+data.closeMode,
+                            customClass: data.codeName+","+data.removeMode,
                             message: h('div',{}, [
                                 h('p',data.title),
                                 h('p',data.content)
                             ]), 
                             type: data.type,
-                            showClose: data.closable,
+                            showClose: data.closeable,
                             onClose: this.alertClose,
                         })
                     }, 0)
@@ -221,9 +215,9 @@ export default class AppAlert extends Vue {
                 }
             } 
         }
-        if(data.closeMode && data.closeMode == 1) {
-            const tag = this.viewname + '_' + this.infoGroup + '_' + data.codename;
-            localStorage.setItem(tag,data.id);
+        if(data.removeMode && data.removeMode == 1) {
+            const tag = this.viewname + '_' + this.infoGroup + '_' + data.codeName;
+            localStorage.setItem(tag, data.codeName);
         }
     }
 

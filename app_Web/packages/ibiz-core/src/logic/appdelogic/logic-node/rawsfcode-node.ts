@@ -8,12 +8,12 @@ import { AppDeLogicNodeBase } from './logic-node-base';
  * @export
  * @class AppRawsfcodeNode
  */
-export class AppRawsfcodeNode extends AppDeLogicNodeBase{
+export class AppRawsfcodeNode extends AppDeLogicNodeBase {
 
-    constructor() { 
+    constructor() {
         super();
     }
-    
+
     /**
      * 执行节点
      *
@@ -22,9 +22,9 @@ export class AppRawsfcodeNode extends AppDeLogicNodeBase{
      * @param {ActionContext} actionContext
      * @memberof AppRawsfcodeNode
      */
-    public async executeNode(logicNode: IPSDERawCodeLogic, actionContext: ActionContext){
-        this.setParam(logicNode, actionContext);
-        if(logicNode && logicNode.code){
+    public async executeNode(logicNode: IPSDERawCodeLogic, actionContext: ActionContext) {
+        let { context: context, defaultParam: data } = actionContext;
+        if (logicNode && logicNode.code) {
             eval(logicNode.code);
         }
         return this.computeNextNodes(logicNode, actionContext);

@@ -91,6 +91,8 @@ import { AppStyle2DeReportViewLayout } from "../../components/layout/app-style2-
 import { AppDefaultDeReportViewLayout } from "../../components/layout/app-default-layout/app-default-dereportview-layout/app-default-dereportview-layout";
 import { AppDefaultMapExpViewLayout } from "../../components/layout/app-default-layout/app-default-mapexpview-layout/app-default-mapexpview-layout";
 import { AppStyle2MapExpViewLayout } from "../../components/layout/app-style2-layout/app-style2-mapexpview-layout/app-style2-mapexpview-layout";
+import { AppStyle4PortalViewLayout } from "../../components/layout/app-style4-layout/app-style4-portalview-layout/app-style4-portalview-layout";
+import { AppStyle4DePortalViewLayout } from "../../components/layout/app-style4-layout/app-style4-deportalview-layout/app-style4-deportalview-layout";
 /**
  * 应用组件服务
  * 
@@ -221,6 +223,8 @@ export class AppLayoutService {
         this.layoutMap.set("APPINDEXVIEW-STYLE3", AppStyle3IndexViewLayout);
         // STYLE4视图布局
         this.layoutMap.set("APPINDEXVIEW-STYLE4", AppStyle4IndexViewLayout);
+        this.layoutMap.set("APPPORTALVIEW-STYLE4", AppStyle4PortalViewLayout);
+        this.layoutMap.set("DEPORTALVIEW-STYLE4", AppStyle4DePortalViewLayout);
     }
 
     /**

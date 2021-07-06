@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
 import { IPSAppCounterRef, IPSAppView, IPSControl, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface } from 'ibiz-core';
-import { CounterServiceRegister } from 'ibiz-service';
+import { CounterServiceRegister, ViewMessageService } from 'ibiz-service';
 import { AppNavHistory, NavDataService, ViewLoadingService } from '../app-service';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
 
@@ -158,7 +158,9 @@ export class ViewBase extends Vue implements ViewInterface {
      * @type {*}
      * @memberof ViewBase
      */
-    public containerModel: any = {}
+    public containerModel: any = {};
+
+    public viewMessageService: ViewMessageService = new ViewMessageService();
 
     /**
     * 视图状态订阅对象
@@ -499,6 +501,7 @@ export class ViewBase extends Vue implements ViewInterface {
             this.parseViewParam();
             if (this.staticProps && this.staticProps.modeldata) {
                 this.initContainerModel(this.staticProps);
+                await this.initViewMessageService(this.staticProps.modeldata);
                 await this.initCounterService(this.staticProps.modeldata);
                 await this.initAppUIService();
             }
@@ -506,6 +509,7 @@ export class ViewBase extends Vue implements ViewInterface {
             LogUtil.warn(error);
         }
     }
+
     /**
      * 初始化containerModel
      * 
@@ -560,6 +564,16 @@ export class ViewBase extends Vue implements ViewInterface {
                 }
             }
         }
+    }
+
+    /**
+     * 初始化视图消息服务
+     *
+     * @memberof ViewBase
+     */
+    public async initViewMessageService(param: any) {
+        const viewMsgGroup: any = (param as IPSAppView).getPSAppViewMsgGroup?.();
+        await this.viewMessageService.initBasicParam(viewMsgGroup, this.context, this.viewparams);
     }
 
     /**
@@ -1028,19 +1042,20 @@ export class ViewBase extends Vue implements ViewInterface {
      * @memberof ViewBase
      */
     public renderTopMessage() {
-        const viewMessageGroup = this.viewInstance.getPSAppViewMsgGroup();
-        if (!viewMessageGroup || !viewMessageGroup.id) {
+        const msgDetails: any[] = this.viewMessageService.getViewMsgDetails('TOP');
+        if (msgDetails.length == 0) {
             return null;
         }
         return (
             <div slot="topMessage" class="view-top-message">
-                <app-alert-group
+                <app-alert
                     position="TOP"
-                    context={this.context}
-                    viewparam={this.viewparam}
-                    infoGroup={viewMessageGroup.id}
-                    viewname={this.viewInstance?.codeName.toLowerCase()}
-                ></app-alert-group>
+                    messageDetails={msgDetails}
+                    context={Util.deepCopy(this.context)}
+                    viewparam={Util.deepCopy(this.viewparam)}
+                    infoGroup={this.viewInstance.getPSAppViewMsgGroup()?.codeName}
+                    viewname={this.viewInstance.codeName.toLowerCase()}
+                ></app-alert>
             </div>
         );
     }
@@ -1051,19 +1066,20 @@ export class ViewBase extends Vue implements ViewInterface {
      * @memberof ViewBase
      */
     public renderBodyMessage() {
-        const viewMessageGroup = this.viewInstance.getPSAppViewMsgGroup();
-        if (!viewMessageGroup || !viewMessageGroup.id) {
+        const msgDetails: any[] = this.viewMessageService.getViewMsgDetails('BODY');
+        if (msgDetails.length == 0) {
             return null;
         }
         return (
             <div slot="bodyMessage" class="view-body-message">
-                <app-alert-group
+                <app-alert
                     position="BODY"
-                    context={this.context}
-                    viewparam={this.viewparam}
-                    infoGroup={viewMessageGroup.id}
-                    viewname={this.viewInstance?.codeName.toLowerCase()}
-                ></app-alert-group>
+                    messageDetails={msgDetails}
+                    context={Util.deepCopy(this.context)}
+                    viewparam={Util.deepCopy(this.viewparam)}
+                    infoGroup={this.viewInstance.getPSAppViewMsgGroup()?.codeName}
+                    viewname={this.viewInstance.codeName.toLowerCase()}
+                ></app-alert>
             </div>
         );
     }
@@ -1074,19 +1090,20 @@ export class ViewBase extends Vue implements ViewInterface {
      * @memberof ViewBase
      */
     public renderBottomMessage() {
-        const viewMessageGroup = this.viewInstance.getPSAppViewMsgGroup();
-        if (!viewMessageGroup || !viewMessageGroup.id) {
+        const msgDetails: any[] = this.viewMessageService.getViewMsgDetails('BOTTOM');
+        if (msgDetails.length == 0) {
             return null;
         }
         return (
             <div slot="bottomMessage" class="view-bottom-message">
-                <app-alert-group
+                <app-alert
                     position="BOTTOM"
-                    context={this.context}
-                    viewparam={this.viewparam}
-                    infoGroup={viewMessageGroup.id}
-                    viewname={this.viewInstance?.codeName.toLowerCase()}
-                ></app-alert-group>
+                    messageDetails={msgDetails}
+                    context={Util.deepCopy(this.context)}
+                    viewparam={Util.deepCopy(this.viewparam)}
+                    infoGroup={this.viewInstance.getPSAppViewMsgGroup()?.codeName}
+                    viewname={this.viewInstance.codeName.toLowerCase()}
+                ></app-alert>
             </div>
         );
     }

@@ -1,6 +1,6 @@
 import { Component } from 'vue-property-decorator';
-import { AppDefaultViewLayout } from "../app-default-view-layout/app-default-view-layout";
+import { AppDefaultMDViewLayout } from '../app-default-mdview-layout/app-default-mdview-layout';
 import './app-default-dereportview-layout.less';
 
 @Component({})
-export class AppDefaultDeReportViewLayout extends AppDefaultViewLayout {}
+export class AppDefaultDeReportViewLayout extends AppDefaultMDViewLayout {}

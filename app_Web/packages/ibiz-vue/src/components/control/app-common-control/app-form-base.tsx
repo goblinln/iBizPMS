@@ -253,7 +253,7 @@ export class AppFormBase extends EditFormControlBase {
         };
         return (
             <div style={iframeStyle}>
-                <iframe src={iFrameUrl} style="height: 100%;width: 100%"></iframe>
+                <iframe src={iFrameUrl} style="height: 100%;width: 100%;border: 0"></iframe>
             </div>
         );
     }
@@ -618,6 +618,7 @@ export class AppFormBase extends EditFormControlBase {
                 class={{ ...controlClassNames, 'app-form': true }}
                 ref={this.controlInstance.name}
                 id={formId}
+                style={`height:${this.controlInstance.height};min-height: 200px;`}
                 on-on-validate={this.formItemValidate.bind(this)}
             >
                 <input style='display:none;' />

@@ -157,6 +157,8 @@ export class AppComponentService {
         this.viewMap.set("APPINDEXVIEW_STYLE3", 'app-style2-indexview');
         // STYLE4 样式
         this.viewMap.set("APPINDEXVIEW_STYLE4", 'app-default-indexview');
+        this.viewMap.set("APPPORTALVIEW_STYLE4", 'app-style4-portalview');
+        this.viewMap.set("DEPORTALVIEW_STYLE4", 'app-style4-deportalview');
         // 注册视图插件
         // 注册视图样式，无插件模式
     }
@@ -219,6 +221,7 @@ export class AppComponentService {
         this.controlMap.set("MAP_DEFAULT", 'app-default-map');
         this.controlMap.set("REPORTPANEL_DEFAULT", 'app-default-report-panel');
         this.controlMap.set("MAPEXPBAR_DEFAULT", 'app-default-map-exp-bar');
+        this.controlMap.set("DASHBOARD_STYLE4", 'app-default-dashboard');
         // 注册部件插件标识
         this.controlMap.set("CUSTOM_LEFTNAVLIST", 'app-custom-leftnavlist');
         this.controlMap.set("GRID_RENDER_TreeGrid", 'app-grid-render-tree-grid');
