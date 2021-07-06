@@ -1,1 +1,0 @@
-export { ViewMessageService } from './view-message-service';
