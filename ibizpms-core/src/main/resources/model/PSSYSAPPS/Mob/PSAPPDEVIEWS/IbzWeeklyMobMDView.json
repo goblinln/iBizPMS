@@ -6,7 +6,7 @@
   "name" : "IbzWeeklyMobMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -100,7 +100,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly/PSMOBMDCTRLS/WeeklyMyRecevied.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly/PSMOBMDCTRLS/WeeklyMyRecevied.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -115,7 +115,7 @@
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -129,7 +129,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -140,7 +140,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionName" : "Remove",
@@ -153,7 +153,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionName" : "Get",
@@ -166,7 +166,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionName" : "Create",
@@ -179,7 +179,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -265,7 +265,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -283,7 +283,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

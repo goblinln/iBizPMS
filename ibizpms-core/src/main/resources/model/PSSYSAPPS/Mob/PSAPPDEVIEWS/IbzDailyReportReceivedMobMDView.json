@@ -6,7 +6,7 @@
   "name" : "IbzDailyReportReceivedMobMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -100,7 +100,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily/PSMOBMDCTRLS/ReportReceivedMob.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily/PSMOBMDCTRLS/ReportReceivedMob.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -115,7 +115,7 @@
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -129,7 +129,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -140,7 +140,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Remove",
@@ -153,7 +153,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Get",
@@ -166,7 +166,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Create",
@@ -179,7 +179,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -273,7 +273,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -291,7 +291,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

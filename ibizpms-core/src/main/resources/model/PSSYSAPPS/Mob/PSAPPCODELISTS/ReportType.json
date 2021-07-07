@@ -7,7 +7,7 @@
   "name" : "汇报类型",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "Weekly",

@@ -858,7 +858,22 @@
         "enablePullDownRefresh" : true,
         "enableQuickSearch" : true,
         "modelid" : "19e1bcc5b012c2502c5ff456c4d9b6ef",
-        "modeltype" : "PSAPPDEVIEW"
+        "modeltype" : "PSAPPDEVIEW",
+        "getPSAppDERSPaths" : [ [ {
+          "actionRSMode" : 1,
+          "codeName" : "Todos",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+          },
+          "name" : "ACCOUNT__TODO",
+          "rSMode" : 2
+        } ] ]
       }
     }, {
       "caption" : "仪表盘",

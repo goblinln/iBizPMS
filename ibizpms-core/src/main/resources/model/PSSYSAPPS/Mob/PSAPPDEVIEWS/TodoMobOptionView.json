@@ -289,7 +289,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
             },
             "getPickupPSAppView" : {
               "modelref" : true,
@@ -482,5 +482,20 @@
   "enablePullDownRefresh" : false,
   "showDataInfoBar" : true,
   "modelid" : "408fe78e73e857a785ba188e9468a539",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Todos",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+    },
+    "name" : "ACCOUNT__TODO",
+    "rSMode" : 2
+  } ] ]
 }

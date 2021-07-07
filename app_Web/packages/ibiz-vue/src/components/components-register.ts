@@ -114,6 +114,7 @@ import AppCalendarTimeline from './common/app-calendar-timeline/app-calendar-tim
 import AppCustomTheme from './common/app-custom-theme/app-custom-theme.vue';
 import AppWFOpinion from './common/app-wf-opinion/app-wf-opinion.vue';
 import { AppDefaultGridColumn } from './common/app-grid-column/app-grid-column';
+import AppMarkdownEditor from './common/app-markdown-editor/app-markdown-editor';
 
 // 视图组件
 import { AppViewShell } from '../view-container/app-view-shell';
@@ -376,6 +377,7 @@ export const ComponentsRegister = {
         v.component('app-wf-opinion', AppWFOpinion);
         v.component('app-grid-column', AppDefaultGridColumn);
         v.component('draggable', draggable);
+        v.component('app-markdown-editor', AppMarkdownEditor);
 
         // 视图组件
         v.component('app-view-shell', AppViewShell);

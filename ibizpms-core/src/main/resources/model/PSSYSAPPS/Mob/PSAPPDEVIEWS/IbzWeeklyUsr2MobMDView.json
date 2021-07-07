@@ -6,7 +6,7 @@
   "name" : "IbzWeeklyUsr2MobMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -245,7 +245,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
       },
       "modelref" : true,
       "id" : "MobEdit@IbzWeekly"
@@ -261,7 +261,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly/PSMOBMDCTRLS/MyWeekly.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly/PSMOBMDCTRLS/MyWeekly.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -286,12 +286,12 @@
       } ],
       "codeName" : "MyWeekly",
       "controlType" : "PANEL",
-      "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly/PSPANELS/MyWeekly.json",
+      "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly/PSPANELS/MyWeekly.json",
       "layoutMode" : "TABLE_24COL",
       "logicName" : "我的周报项布局面板",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
       },
       "getPSControlParam" : { },
       "getPSLayout" : {
@@ -404,7 +404,7 @@
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -420,7 +420,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         },
         "modelref" : true,
         "id" : "mobEdit1@IbzWeekly"
@@ -440,7 +440,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -451,7 +451,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionName" : "Remove",
@@ -464,7 +464,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionName" : "Get",
@@ -477,7 +477,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionName" : "Create",
@@ -490,7 +490,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -602,7 +602,7 @@
           "name" : "移动端编辑",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
           },
           "getPSSysImage" : {
             "glyph" : "xf044@FontAwesome",
@@ -651,7 +651,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -683,7 +683,7 @@
         "name" : "移动端新建",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
         },
         "getPSSysImage" : {
           "cssClass" : "add"
@@ -711,7 +711,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

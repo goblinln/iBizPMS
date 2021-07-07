@@ -102,12 +102,13 @@ export class ViewMessageService {
         }
         for (let i = 0; i<viewMsgGroupDetails.length; i++) {
             const viewMsg = viewMsgGroupDetails[i].getPSAppViewMsg() as IPSAppViewMsg;
+            let items: any[] = [];
             if (viewMsg.dynamicMode == 0) { //  动态模式为 静态
-                this.initStaticViewMessage(viewMsg);
+                items = await this.initStaticViewMessage(viewMsg);
             } else if (viewMsg.dynamicMode == 1) {  //  动态模式为 实体数据集
-                const items: any[] = await this.initDynamicViewMessage(viewMsg as IPSAppDEDataSetViewMsg, this.context, this.viewparams);
-                this.viewMessageDetails.push(...items);
+                items = await this.initDynamicViewMessage(viewMsg as IPSAppDEDataSetViewMsg, this.context, this.viewparams);
             }
+            this.viewMessageDetails.push(...items);
         }
     }
 
@@ -117,20 +118,24 @@ export class ViewMessageService {
      * @param {IPSAppViewMsg} 动态模式（静态）类型视图消息实例
      * @memberof ViewMessageService
      */
-    public initStaticViewMessage(detail: IPSAppViewMsg): any {
-        let viewMessage: any = {
-            position: detail.position || 'TOP',
-            name: detail.name,
-            codeName: detail.codeName?.toLowerCase(),
-            type: detail.messageType,
-            title: detail.title,
-            titleLanResTag: detail.titleLanResTag || detail.getTitlePSLanguageRes()?.lanResTag,
-            content: detail.message,
-            removeMode: detail.removeMode,
-            enableRemove: detail.enableRemove,
-        };
-        this.translateMessageTemp(viewMessage, detail);
-        this.viewMessageDetails.push(viewMessage);
+    public async initStaticViewMessage(detail: IPSAppViewMsg): Promise<any[]> {
+        const _this: any = this;
+        return new Promise((resolve: any, reject: any) => {
+            let viewMessage: any = {
+                position: detail.position || 'TOP',
+                name: detail.name,
+                codeName: detail.codeName?.toLowerCase(),
+                type: detail.messageType,
+                title: detail.title,
+                titleLanResTag: detail.titleLanResTag || detail.getTitlePSLanguageRes()?.lanResTag,
+                content: detail.message,
+                removeMode: detail.removeMode,
+                enableRemove: detail.enableRemove,
+            };
+            _this.translateMessageTemp(viewMessage, detail);
+            resolve([viewMessage]);
+        })
+        
     }
 
     /**

@@ -23,7 +23,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
     protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name','productsn','code',];
+    protected quickSearchFields = ['name','id','code',];
     protected selectContextParam = {
     };
 

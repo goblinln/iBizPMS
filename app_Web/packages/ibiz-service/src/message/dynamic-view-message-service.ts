@@ -104,10 +104,10 @@ export class DynamicViewMessageService {
     public doItems(items: any[], context: any = {}, data: any = {}): any[] {
         const _this: any = this;
         let tempItems: any[] = [];
-        const { name, codeName, title, position, titleLanResTag, message, messageType, removeMode, enableRemove, orderValueField } = this.viewMsgInstance;
+        const { name, codeName, title, position, titleLanResTag, message, messageType, removeMode, enableRemove } = this.viewMsgInstance;
         if (items.length > 0) {
             //  排序
-            if (orderValueField) {
+            if (this.viewMsgInstance.getOrderValuePSAppDEField()?.codeName) {
                 _this.sortItems(items);
             }
             items.forEach((item: any) => {
@@ -143,27 +143,30 @@ export class DynamicViewMessageService {
         if (!item) {
             return;
         }
-        const { contentField, msgPosField, msgTypeField, orderValueField, removeFlagField, titleField, titleLanResTagField } = this.viewMsgInstance;
         //  标题
-        if (titleField && item[titleField.toLowerCase()]) {
-            Object.assign(target, { title: item[titleField.toLowerCase()] } );
+        const titleField = this.viewMsgInstance.getTitlePSAppDEField?.()?.codeName?.toLowerCase();
+        if (titleField && item[titleField]) {
+            Object.assign(target, { title: item[titleField] } );
         }
         //  内容
-        if (contentField && item[contentField.toLowerCase()]) {
-            Object.assign(target, { content: item[contentField.toLowerCase()] });
+        const contentField = this.viewMsgInstance.getContentPSAppDEField?.()?.codeName?.toLowerCase();
+        if (contentField && item[contentField]) {
+            Object.assign(target, { content: item[contentField] });
         }
         //  消息类型
+        const msgTypeField = this.viewMsgInstance.getMsgTypePSAppDEField?.()?.codeName?.toLowerCase();
         if (msgTypeField) {
-            const type = item[msgTypeField.toLowerCase()];
-            if (type == 'INFO' || item[msgTypeField.toLowerCase()] == 'WARN' || type == 'ERROR' || type == 'CUSTOM') {
+            const type = item[msgTypeField];
+            if (type == 'INFO' || item[msgTypeField] == 'WARN' || type == 'ERROR' || type == 'CUSTOM') {
                 Object.assign(target, { type: type });
             } else {
                 LogUtil.warn("视图消息类型值异常，应为['INFO', 'WARN', 'ERROR', 'CUSTOM']中的类型");
             }
         }
         //  消息位置
+        const msgPosField = this.viewMsgInstance.getMsgTypePSAppDEField?.()?.codeName?.toLowerCase();
         if (msgPosField) {
-            const position = item[msgPosField.toLowerCase()];
+            const position = item[msgPosField];
             if (position == 'TOP' || position == 'BODY' || position == 'BOTTOM' || position == 'POPUP' || position == 'CUSTOM') {
                 Object.assign(target, { position: position });
             } else {
@@ -171,8 +174,9 @@ export class DynamicViewMessageService {
             }
         }
         //  删除模式
-        if (removeFlagField && (item[removeFlagField] == 0 || item[removeFlagField] == 1 || item[removeFlagField] == 2)) {
-            const removeMode = item[removeFlagField.toLowerCase()];
+        const removeFlagField = this.viewMsgInstance.getRemoveFlagPSAppDEField?.()?.codeName?.toLowerCase();
+        if (removeFlagField) {
+            const removeMode = item[removeFlagField];
             if (removeMode == 0 || removeMode == 1 || removeMode == 2) {
                 Object.assign(target, { removeMode: removeMode });
             } else {
@@ -180,12 +184,14 @@ export class DynamicViewMessageService {
             }
         }
         //  排序标识
-        if (orderValueField && item[orderValueField.toLowerCase()]) {
-            Object.assign(target, { orderKey: item[removeFlagField.toLowerCase()] });
+        const orderValueField = this.viewMsgInstance.getOrderValuePSAppDEField?.()?.codeName?.toLowerCase();
+        if (orderValueField && item[orderValueField]) {
+            Object.assign(target, { orderKey: item[orderValueField] });
         }
         //  标题多语言
-        if (titleLanResTagField && item[titleLanResTagField.toLowerCase()]) {
-            Object.assign(target, { titleLanResTag: item[removeFlagField.toLowerCase()] });
+        const titleLanResTagField = this.viewMsgInstance.getTitleLanResTagPSAppDEField?.()?.codeName?.toLowerCase();
+        if (titleLanResTagField && item[titleLanResTagField]) {
+            Object.assign(target, { titleLanResTag: item[titleLanResTagField] });
         }
     }
 
@@ -200,7 +206,7 @@ export class DynamicViewMessageService {
      * @memberof DynamicViewMessageService
      */
     public translateMessageTemp(target: any, context: any = {}, data: any = {}, item?: any){
-        const sysMsgTempl: any = (this.viewMsgInstance as any).getPSSysMsgTempl?.();
+        const sysMsgTempl: any = (this.viewMsgInstance as any).getPSAppMsgTempl?.();
         if (!sysMsgTempl) {
             return;
         }
@@ -215,10 +221,12 @@ export class DynamicViewMessageService {
      * @param items 
      */
     public sortItems(items: any[], mode: string = 'ASC') {
+        const _this: any = this;
+        const orderValue = _this.viewMsgInstance.getOrderValuePSAppDEField().codeName.toLowerCase();
         if (mode == 'ASC') {
-            items = ascSort(items, this.viewMsgInstance.orderValueField);
+            items = ascSort(items, orderValue);
         } else {
-            items = descSort(items, this.viewMsgInstance.orderValueField);
+            items = descSort(items, orderValue);
         }
     }
 }

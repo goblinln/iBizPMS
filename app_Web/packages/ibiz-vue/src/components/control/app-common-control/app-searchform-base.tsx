@@ -225,7 +225,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
         let { rawItemHeight, rawItemWidth, contentType, htmlContent, rawContent } = modelJson;
         let sysCss = modelJson.getPSSysCss();
         let sysImage = modelJson.getPSSysImage();
-        let sizeStyle = rawItemHeight > 0 && rawItemWidth > 0 ? { width: rawItemWidth, height: rawItemHeight } : '';
+        let sizeStyle = rawItemHeight > 0 && rawItemWidth > 0 ? { width: rawItemWidth + 'px', height: rawItemHeight + 'px' } : '';
         if (rawContent) {
             const items = rawContent?.match(/\{{(.+?)\}}/g);
             if (items) {
@@ -325,7 +325,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
         const uiAction = modelJson.getPSUIAction() as IPSAppDEUIAction;
         const sysImage = modelJson.getPSSysImage();
         const sysCss = modelJson.getPSSysCss();
-        let btnClass = width > 0 && height > 0 ? { width: width, height: height } : '';
+        let btnClass = width > 0 && height > 0 ? { width: width + 'px', height: height + 'px' } : '';
         let badge = null;
         // TODO计数器徽章
         // if (uiAction) {
@@ -452,6 +452,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
                 runtimeModel={this.detailsModel[modelJson.name]}
                 controlInstance={this.controlInstance}
                 on-groupUIActionClick={(...params: any[]) => debounce(this.handleActionClick,params,this)}
+                data={this.data}
             >
                 {this.renderDetails(modelJson)}
             </app-default-group-panel>

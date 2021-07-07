@@ -85,6 +85,7 @@ export class AppMapModel {
             const iconField: IPSAppDEField = item.getIconPSAppDEField() as IPSAppDEField;
             const groupField: IPSAppDEField = item.getGroupPSAppDEField() as IPSAppDEField;
             const fontcolorField: IPSAppDEField = item.getColorPSAppDEField() as IPSAppDEField;
+            const sortField: IPSAppDEField = item.getOrderValuePSAppDEField() as IPSAppDEField;
             let tempArr: any[] = [{
                 name: entity?.codeName?.toLowerCase(),
                 prop: idField?.codeName ? idField.codeName.toLowerCase()
@@ -114,6 +115,9 @@ export class AppMapModel {
             }, {
                 name: 'color',
                 prop: colorField?.codeName ? colorField.codeName.toLowerCase() : colorField?.name?.toLowerCase()
+            },{
+                name: 'sort',
+                prop: sortField?.codeName ? sortField.codeName.toLowerCase() : sortField?.name?.toLowerCase()
             }];
             if (contentField) {
                 tempArr.push({

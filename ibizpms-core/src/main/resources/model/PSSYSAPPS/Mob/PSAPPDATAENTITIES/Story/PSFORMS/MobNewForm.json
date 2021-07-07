@@ -723,7 +723,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
           },
           "getPickupPSAppView" : {
             "modelref" : true,
@@ -1075,7 +1075,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
           },
           "getPickupPSAppView" : {
             "modelref" : true,

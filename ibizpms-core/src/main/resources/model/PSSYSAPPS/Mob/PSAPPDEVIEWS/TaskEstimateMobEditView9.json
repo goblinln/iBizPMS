@@ -201,19 +201,11 @@
     }, {
       "id" : "srfkey",
       "hidden" : true,
-      "dataType" : 1,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
+      "dataType" : 1
     }, {
       "id" : "srfmajortext",
       "hidden" : true,
-      "dataType" : 1,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
+      "dataType" : 1
     }, {
       "id" : "srftempmode",
       "hidden" : true,
@@ -232,40 +224,20 @@
       "dataType" : 25
     }, {
       "id" : "dates",
-      "dataType" : 5,
-      "getPSAppDEField" : {
-        "name" : "DATES",
-        "codeName" : "Dates"
-      }
+      "dataType" : 5
     }, {
       "id" : "consumed",
-      "dataType" : 7,
-      "getPSAppDEField" : {
-        "name" : "CONSUMED",
-        "codeName" : "Consumed"
-      }
+      "dataType" : 7
     }, {
       "id" : "left",
-      "dataType" : 7,
-      "getPSAppDEField" : {
-        "name" : "LEFT",
-        "codeName" : "Left"
-      }
+      "dataType" : 7
     }, {
       "id" : "work",
-      "dataType" : 21,
-      "getPSAppDEField" : {
-        "name" : "WORK",
-        "codeName" : "Work"
-      }
+      "dataType" : 21
     }, {
       "id" : "id",
       "hidden" : true,
-      "dataType" : 1,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
+      "dataType" : 1
     } ],
     "getPSDEFormPages" : [ {
       "caption" : "基本信息",
@@ -285,10 +257,6 @@
         "labelWidth" : 130,
         "name" : "dates",
         "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "DATES",
-          "codeName" : "Dates"
-        },
         "getPSEditor" : {
           "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
           "editorParams" : {
@@ -319,10 +287,6 @@
         "labelWidth" : 130,
         "name" : "consumed",
         "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "CONSUMED",
-          "codeName" : "Consumed"
-        },
         "getPSEditor" : {
           "editorType" : "MOBNUMBER",
           "name" : "consumed",
@@ -349,10 +313,6 @@
         "labelWidth" : 130,
         "name" : "left",
         "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "LEFT",
-          "codeName" : "Left"
-        },
         "getPSEditor" : {
           "editorType" : "MOBNUMBER",
           "name" : "left",
@@ -379,10 +339,6 @@
         "labelWidth" : 130,
         "name" : "work",
         "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "WORK",
-          "codeName" : "Work"
-        },
         "getPSEditor" : {
           "editorType" : "MOBTEXTAREA",
           "maxLength" : 65535,

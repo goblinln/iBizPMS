@@ -1,0 +1,209 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "account"
+  }, {
+    "id" : "submittime"
+  }, {
+    "id" : "worktoday"
+  }, {
+    "id" : "planstomorrow"
+  }, {
+    "id" : "type",
+    "hidden" : true
+  }, {
+    "id" : "issubmit",
+    "hidden" : true
+  } ],
+  "codeName" : "MySubmit",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary/PSPANELS/MySubmit.json",
+  "layoutMode" : "TABLE_12COL",
+  "logicName" : "我提交的项布局面板",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
+  },
+  "getPSLayout" : {
+    "columnCount" : 12,
+    "layout" : "TABLE_12COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container2",
+    "getPSLayout" : {
+      "columnCount" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "columnCount" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "account",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "account",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+          },
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 5,
+          "colMD" : 12,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "account",
+        "convertToCodeItemText" : true,
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "submittime",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "submittime",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 2,
+          "colLGOffset" : 4,
+          "colMD" : 12,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "submittime",
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container3",
+      "getPSLayout" : {
+        "columnCount" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "worktoday",
+        "getPSEditor" : {
+          "editorStyle" : "MOBHTMLOFPMS",
+          "editorType" : "MOBHTMLTEXT",
+          "name" : "worktoday",
+          "getPSSysPFPlugin" : {
+            "pluginType" : "EDITOR_CUSTOMSTYLE",
+            "pluginCode" : "PMSRICHTEXT"
+          }
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 11,
+          "colLGOffset" : 1,
+          "colMD" : 12,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "worktoday",
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "showCaption" : true
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container4",
+      "getPSLayout" : {
+        "columnCount" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "planstomorrow",
+        "getPSEditor" : {
+          "editorStyle" : "MOBHTMLOFPMS",
+          "editorType" : "MOBHTMLTEXT",
+          "name" : "planstomorrow",
+          "getPSSysPFPlugin" : {
+            "pluginType" : "EDITOR_CUSTOMSTYLE",
+            "pluginCode" : "PMSRICHTEXT"
+          }
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 11,
+          "colLGOffset" : 1,
+          "colMD" : 12,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "planstomorrow",
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "showCaption" : true
+    } ],
+    "getPSSysCss" : {
+      "cssName" : "mob_list_card"
+    },
+    "showCaption" : false
+  }, {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "FIELD",
+    "name" : "type",
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "type"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "viewFieldName" : "type",
+    "hidden" : true,
+    "showCaption" : false
+  }, {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "FIELD",
+    "name" : "issubmit",
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "issubmit"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "viewFieldName" : "issubmit",
+    "hidden" : true,
+    "showCaption" : false
+  } ],
+  "mobilePanel" : true,
+  "modelid" : "b8c465d621ad8098363ffc3bb5327845",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

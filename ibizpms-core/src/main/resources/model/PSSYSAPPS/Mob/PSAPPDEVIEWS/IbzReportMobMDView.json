@@ -7,7 +7,7 @@
   "name" : "IbzReportMobMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -60,12 +60,12 @@
   "getPSControls" : [ {
     "codeName" : "MobDef",
     "controlType" : "SEARCHFORM",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport/PSSEARCHFORMS/MobDef.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary/PSSEARCHFORMS/MobDef.json",
     "hookEventNames" : [ "SEARCH", "LOAD" ],
     "logicName" : "移动端搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -77,7 +77,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -88,7 +88,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -99,7 +99,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -188,7 +188,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport/PSMOBMDCTRLS/MySubmit.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary/PSMOBMDCTRLS/MySubmit.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -212,7 +212,7 @@
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -252,7 +252,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         },
         "modelref" : true,
         "id" : "LookDaily@IbzReport"
@@ -264,7 +264,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         },
         "modelref" : true,
         "id" : "LookWeekly@IbzReport"
@@ -276,7 +276,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         },
         "modelref" : true,
         "id" : "LookMonthy@IbzReport"
@@ -288,7 +288,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         },
         "modelref" : true,
         "id" : "LookReportly@IbzReport"
@@ -308,18 +308,18 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         }
       }, {
         "actionType" : "DEDATASET",
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchAllReport"
+          "id" : "FetchAll"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         }
       }, {
         "actionName" : "Remove",
@@ -332,7 +332,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         }
       }, {
         "actionName" : "Get",
@@ -345,7 +345,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         }
       }, {
         "actionName" : "Create",
@@ -358,7 +358,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -465,7 +465,7 @@
           "name" : "我提交的（日报）",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
           },
           "getPSNavigateContexts" : [ {
             "key" : "IBZDAILY",
@@ -499,7 +499,7 @@
           "name" : "我提交的（周报）",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
           },
           "getPSNavigateContexts" : [ {
             "key" : "IBZWEEKLY",
@@ -539,7 +539,7 @@
           "name" : "我提交的（月报）",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
           },
           "getPSNavigateContexts" : [ {
             "key" : "IBZMONTHLY",
@@ -579,7 +579,7 @@
           "name" : "我提交的（汇报）",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
           },
           "getPSNavigateContexts" : [ {
             "key" : "IBZREPORTLY",
@@ -638,7 +638,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

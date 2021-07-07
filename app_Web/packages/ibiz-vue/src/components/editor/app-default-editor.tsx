@@ -215,6 +215,7 @@ export class AppDefaultEditor extends Vue {
             'PASSWORD',
             'TEXTAREA',
             'TEXTAREA_10',
+            'TEXTAREA_10_MARKDOWNEDITOR',
             'NUMBER',
             "TEXTBOX_COLORPICKER",
             'TEXTAREA_WFAPPROVAL',

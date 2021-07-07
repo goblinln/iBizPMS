@@ -6,7 +6,7 @@
   "name" : "IbzReportlyCreateMobEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -44,7 +44,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly/PSFORMS/MobCreate.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly/PSFORMS/MobCreate.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -61,7 +61,7 @@
     "logicName" : "新建表单（移动端）",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -75,7 +75,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -84,7 +84,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
         }
       }, {
         "actionName" : "Remove",
@@ -97,7 +97,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -110,7 +110,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
         }
       }, {
         "actionName" : "Get",
@@ -123,7 +123,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
         }
       }, {
         "actionName" : "Create",
@@ -136,7 +136,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -450,7 +450,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
             },
             "getPickupPSAppView" : {
               "modelref" : true,
@@ -676,7 +676,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -736,7 +736,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

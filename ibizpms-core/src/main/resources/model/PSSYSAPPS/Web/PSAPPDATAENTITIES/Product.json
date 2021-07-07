@@ -440,13 +440,13 @@
     "codeName" : "Productsn",
     "logicName" : "产品编号",
     "name" : "PRODUCTSN",
-    "stdDataType" : 1,
-    "enableQuickSearch" : true
+    "stdDataType" : 1
   }, {
     "codeName" : "Id",
     "logicName" : "编号",
     "name" : "ID",
     "stdDataType" : 1,
+    "enableQuickSearch" : true,
     "keyField" : true
   }, {
     "codeName" : "Deleted",
@@ -1897,8 +1897,8 @@
     "name" : "NAME",
     "codeName" : "Name"
   }, {
-    "name" : "PRODUCTSN",
-    "codeName" : "Productsn"
+    "name" : "ID",
+    "codeName" : "Id"
   }, {
     "name" : "CODE",
     "codeName" : "Code"

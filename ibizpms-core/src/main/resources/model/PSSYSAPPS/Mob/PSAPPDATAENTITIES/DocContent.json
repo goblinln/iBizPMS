@@ -473,25 +473,6 @@
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocContent.json",
   "enableUIActions" : 15,
   "logicName" : "文档内容",
-  "getMinorPSAppDERSs" : [ {
-    "actionRSMode" : 1,
-    "codeName" : "docConents",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocContent.json"
-    },
-    "name" : "文档正文",
-    "getParentPSAppDEField" : {
-      "name" : "DOC",
-      "codeName" : "Doc"
-    },
-    "rSMode" : 2
-  } ],
   "name" : "ZT_DOCCONTENT",
   "getPSDEName" : "ZT_DOCCONTENT",
   "getPSDEServiceAPI" : {

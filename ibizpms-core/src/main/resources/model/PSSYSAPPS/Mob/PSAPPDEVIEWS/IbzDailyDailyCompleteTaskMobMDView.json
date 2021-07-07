@@ -6,7 +6,7 @@
   "name" : "IbzDailyDailyCompleteTaskMobMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -563,7 +563,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -581,7 +581,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

@@ -2,7 +2,16 @@
   >.view-card {
     >.ivu-card-body .content-container {
       .app-form {
-        height: auto;
+        >.ivu-row {
+          min-height: 200px;
+        }
+      }
+      .drtab {
+        .app-dr-tab {
+          .ivu-tabs-tab-disabled {
+            pointer-events: none;
+          }
+        }
       }
     }
   }

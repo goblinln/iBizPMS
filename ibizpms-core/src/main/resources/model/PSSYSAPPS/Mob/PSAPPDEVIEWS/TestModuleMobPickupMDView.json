@@ -190,5 +190,24 @@
   "enablePullDownRefresh" : false,
   "expandSearchForm" : true,
   "modelid" : "958d619ef6cda3f0d7b7f484aacd3dfb",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "TestModules",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
+    },
+    "name" : "TEST_MODULE",
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
+    "rSMode" : 2
+  } ] ]
 }

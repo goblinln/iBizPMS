@@ -454,5 +454,20 @@
   "enablePullDownRefresh" : false,
   "enableQuickSearch" : true,
   "modelid" : "761136c7925a9c8214302cff481a0696",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Todos",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+    },
+    "name" : "ACCOUNT__TODO",
+    "rSMode" : 2
+  } ] ]
 }

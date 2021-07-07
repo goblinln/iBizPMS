@@ -33,6 +33,7 @@
   "getAllPSAppDEActions" : [ {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/CheckKey.json"
@@ -41,14 +42,11 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   }, {
     "codeName" : "Collect",
     "methodType" : "DEACTION",
+    "name" : "Collect",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
@@ -65,6 +63,7 @@
   }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Create.json"
@@ -75,48 +74,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "DOCLIBMODULE__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "DocLibModuleNFavorite",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DocLibModuleNFavorite.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "DocLibModuleNFavorite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "DoclibModuleFavorite",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DoclibModuleFavorite.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "DoclibModuleFavorite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Fix",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Fix.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Fix"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
@@ -127,12 +91,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "DOCLIBMODULE__DEACTION__GET"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/GetDraft.json"
@@ -150,6 +115,7 @@
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
@@ -160,7 +126,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "DOCLIBMODULE__DEACTION__REMOVE"
+      "id" : "Remove"
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
@@ -168,6 +134,7 @@
     "batchActionMode" : 2,
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json"
@@ -181,6 +148,7 @@
   }, {
     "codeName" : "UnCollect",
     "methodType" : "DEACTION",
+    "name" : "UnCollect",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/UnCollect.json"
@@ -197,6 +165,7 @@
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Update.json"
@@ -207,29 +176,14 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "DOCLIBMODULE__DEACTION__UPDATE"
+      "id" : "Update"
     },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchAllDocLibModule_Custom",
+    "codeName" : "FetchAllDir",
     "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "AllDocLibModule_Custom"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAllDocLibModule_Custom"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchAllDoclibModule",
-    "methodType" : "FETCH",
+    "name" : "FetchAllDoclibModule",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "AllDoclibModule"
@@ -240,47 +194,52 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchAllDoclibModule"
+      "id" : "FetchAllDir"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAllDocLibModule_Custom",
+    "methodType" : "FETCH",
+    "name" : "AllDocLibModule_Custom",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AllDocLibModule_Custom"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildModuleByParent",
     "methodType" : "FETCH",
+    "name" : "ChildModuleByParent",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildModuleByParent"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildModuleByParent"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildModuleByRealParent",
     "methodType" : "FETCH",
+    "name" : "ChildModuleByRealParent",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildModuleByRealParent"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildModuleByRealParent"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "DEFAULT",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDir",
+    "methodType" : "FETCH",
+    "name" : "FetchRootModuleMuLu",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RootModuleMuLu"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -288,12 +247,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "FetchDir"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavourites",
     "methodType" : "FETCH",
+    "name" : "FetchMyFavourites",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyFavourites"
@@ -310,65 +270,28 @@
   }, {
     "codeName" : "FetchParentModule",
     "methodType" : "FETCH",
+    "name" : "ParentModule",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ParentModule"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchParentModule"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchRootModuleMuLu",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RootModuleMuLu"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRootModuleMuLu"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootModuleMuLuByRoot",
     "methodType" : "FETCH",
+    "name" : "RootModuleMuLuByRoot",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RootModuleMuLuByRoot"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRootModuleMuLuByRoot"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootModuleMuLuBysrfparentkey",
     "methodType" : "FETCH",
+    "name" : "RootModuleMuLuBysrfparentkey",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RootModuleMuLuBysrfparentkey"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRootModuleMuLuBysrfparentkey"
     },
     "builtinMethod" : false
   } ],
@@ -522,6 +445,7 @@
   "getAllPSAppDEMethods" : [ {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/CheckKey.json"
@@ -530,14 +454,11 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   }, {
     "codeName" : "Collect",
     "methodType" : "DEACTION",
+    "name" : "Collect",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
@@ -554,6 +475,7 @@
   }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Create.json"
@@ -564,48 +486,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "DOCLIBMODULE__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "DocLibModuleNFavorite",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DocLibModuleNFavorite.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "DocLibModuleNFavorite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "DoclibModuleFavorite",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DoclibModuleFavorite.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "DoclibModuleFavorite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Fix",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Fix.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Fix"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
@@ -616,12 +503,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "DOCLIBMODULE__DEACTION__GET"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/GetDraft.json"
@@ -639,6 +527,7 @@
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
@@ -649,7 +538,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "DOCLIBMODULE__DEACTION__REMOVE"
+      "id" : "Remove"
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
@@ -657,6 +546,7 @@
     "batchActionMode" : 2,
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json"
@@ -670,6 +560,7 @@
   }, {
     "codeName" : "UnCollect",
     "methodType" : "DEACTION",
+    "name" : "UnCollect",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/UnCollect.json"
@@ -686,6 +577,7 @@
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Update.json"
@@ -696,28 +588,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "DOCLIBMODULE__DEACTION__UPDATE"
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchAllDocLibModule_Custom",
+    "codeName" : "FetchAllDir",
     "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "AllDocLibModule_Custom"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAllDocLibModule_Custom"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchAllDoclibModule",
-    "methodType" : "FETCH",
+    "name" : "FetchAllDoclibModule",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "AllDoclibModule"
@@ -728,47 +605,52 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchAllDoclibModule"
+      "id" : "FetchAllDir"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAllDocLibModule_Custom",
+    "methodType" : "FETCH",
+    "name" : "AllDocLibModule_Custom",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AllDocLibModule_Custom"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildModuleByParent",
     "methodType" : "FETCH",
+    "name" : "ChildModuleByParent",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildModuleByParent"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildModuleByParent"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildModuleByRealParent",
     "methodType" : "FETCH",
+    "name" : "ChildModuleByRealParent",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildModuleByRealParent"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchChildModuleByRealParent"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "DEFAULT",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDir",
+    "methodType" : "FETCH",
+    "name" : "FetchRootModuleMuLu",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RootModuleMuLu"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -776,12 +658,13 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "FetchDir"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavourites",
     "methodType" : "FETCH",
+    "name" : "FetchMyFavourites",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyFavourites"
@@ -798,65 +681,28 @@
   }, {
     "codeName" : "FetchParentModule",
     "methodType" : "FETCH",
+    "name" : "ParentModule",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ParentModule"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchParentModule"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchRootModuleMuLu",
-    "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RootModuleMuLu"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRootModuleMuLu"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootModuleMuLuByRoot",
     "methodType" : "FETCH",
+    "name" : "RootModuleMuLuByRoot",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RootModuleMuLuByRoot"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRootModuleMuLuByRoot"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootModuleMuLuBysrfparentkey",
     "methodType" : "FETCH",
+    "name" : "RootModuleMuLuBysrfparentkey",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "RootModuleMuLuBysrfparentkey"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRootModuleMuLuBysrfparentkey"
     },
     "builtinMethod" : false
   }, {
@@ -894,18 +740,6 @@
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
     "builtinMethod" : true
-  }, {
-    "codeName" : "Select",
-    "methodType" : "SELECT",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Select"
-    },
-    "builtinMethod" : false
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
@@ -1184,7 +1018,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
     },
-    "name" : "文档库-文档库分类",
+    "name" : "DOC_LIB__DOC_LIB_MODULE",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
@@ -1208,5 +1042,5 @@
   "enableUIModify" : true,
   "enableUIRemove" : true,
   "enableWFActions" : false,
-  "major" : true
+  "major" : false
 }

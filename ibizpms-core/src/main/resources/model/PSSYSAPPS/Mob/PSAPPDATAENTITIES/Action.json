@@ -166,19 +166,36 @@
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
-    "name" : "Account",
+    "name" : "FetchAccount",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Account"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
-    "name" : "FetchDefault",
+    "name" : "DEFAULT",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMain",
+    "methodType" : "FETCH",
+    "name" : "FetchType",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Type"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -186,16 +203,25 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "FetchMain"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMobType",
     "methodType" : "FETCH",
-    "name" : "FetchMobType",
+    "name" : "MobType",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MobType"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMy",
+    "methodType" : "FETCH",
+    "name" : "FetchMy",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "My"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -203,16 +229,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMobType"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMy",
-    "methodType" : "FETCH",
-    "name" : "My",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "My"
+      "id" : "FetchMy"
     },
     "builtinMethod" : false
   }, {
@@ -242,7 +259,7 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchProductTrends",
+    "codeName" : "FetchProduct",
     "methodType" : "FETCH",
     "name" : "FetchProductTrends",
     "getPSDEDataSet" : {
@@ -255,11 +272,11 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchProductTrends"
+      "id" : "FetchProduct"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchProjectTrends",
+    "codeName" : "FetchProject",
     "methodType" : "FETCH",
     "name" : "FetchProjectTrends",
     "getPSDEDataSet" : {
@@ -272,41 +289,16 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchProjectTrends"
+      "id" : "FetchProject"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchQueryUserYEAR",
     "methodType" : "FETCH",
-    "name" : "FetchQueryUserYEAR",
+    "name" : "QueryUserYEAR",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "QueryUserYEAR"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchQueryUserYEAR"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchType",
-    "methodType" : "FETCH",
-    "name" : "FetchType",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Type"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchType"
     },
     "builtinMethod" : false
   } ],
@@ -635,19 +627,36 @@
   }, {
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
-    "name" : "Account",
+    "name" : "FetchAccount",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Account"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
-    "name" : "FetchDefault",
+    "name" : "DEFAULT",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMain",
+    "methodType" : "FETCH",
+    "name" : "FetchType",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Type"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -655,16 +664,25 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "FetchMain"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMobType",
     "methodType" : "FETCH",
-    "name" : "FetchMobType",
+    "name" : "MobType",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MobType"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMy",
+    "methodType" : "FETCH",
+    "name" : "FetchMy",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "My"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -672,16 +690,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMobType"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMy",
-    "methodType" : "FETCH",
-    "name" : "My",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "My"
+      "id" : "FetchMy"
     },
     "builtinMethod" : false
   }, {
@@ -711,7 +720,7 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchProductTrends",
+    "codeName" : "FetchProduct",
     "methodType" : "FETCH",
     "name" : "FetchProductTrends",
     "getPSDEDataSet" : {
@@ -724,11 +733,11 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchProductTrends"
+      "id" : "FetchProduct"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchProjectTrends",
+    "codeName" : "FetchProject",
     "methodType" : "FETCH",
     "name" : "FetchProjectTrends",
     "getPSDEDataSet" : {
@@ -741,41 +750,16 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchProjectTrends"
+      "id" : "FetchProject"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchQueryUserYEAR",
     "methodType" : "FETCH",
-    "name" : "FetchQueryUserYEAR",
+    "name" : "QueryUserYEAR",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "QueryUserYEAR"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchQueryUserYEAR"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchType",
-    "methodType" : "FETCH",
-    "name" : "FetchType",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Type"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchType"
     },
     "builtinMethod" : false
   }, {
@@ -1509,13 +1493,13 @@
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
-    "name" : "周报日志",
+    "name" : "ACCOUNT__ACTION",
     "rSMode" : 2
   }, {
     "actionRSMode" : 1,
@@ -1523,13 +1507,41 @@
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
-    "name" : "待办日志",
+    "name" : "BUG__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "BUILD__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "DAILY__ACTION",
     "rSMode" : 2
   }, {
     "actionRSMode" : 1,
@@ -1543,7 +1555,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
-    "name" : "文档库日志",
+    "name" : "DOC_LIB__ACTION",
     "rSMode" : 2
   }, {
     "actionRSMode" : 1,
@@ -1557,7 +1569,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
-    "name" : "文档日志",
+    "name" : "DOC__ACTION",
     "rSMode" : 2
   }, {
     "actionRSMode" : 1,
@@ -1565,13 +1577,13 @@
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
-    "name" : "日报日志",
+    "name" : "MONTHLY__ACTION",
     "rSMode" : 2
   }, {
     "actionRSMode" : 1,
@@ -1579,13 +1591,13 @@
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
-    "name" : "月报日志",
+    "name" : "PRODUCT_PLAN__ACTION",
     "rSMode" : 2
   }, {
     "actionRSMode" : 1,
@@ -1593,13 +1605,97 @@
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
-    "name" : "汇报日志",
+    "name" : "PRODUCT_RELEASE__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "PRODUCT__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "PROJECT__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "REPORTLY__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "STORY__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "TASK__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "TEST_CASE_ACTION",
     "rSMode" : 2
   }, {
     "actionRSMode" : 1,
@@ -1613,7 +1709,49 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
-    "name" : "测试套件日志",
+    "name" : "TEST_SUITE__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "TEST_TASK__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "TODO__ACTION",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Actions",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "name" : "WEEKLY__ACTION",
     "rSMode" : 2
   } ],
   "name" : "ZT_ACTION",
@@ -1633,5 +1771,5 @@
   "enableUIModify" : true,
   "enableUIRemove" : true,
   "enableWFActions" : false,
-  "major" : true
+  "major" : false
 }

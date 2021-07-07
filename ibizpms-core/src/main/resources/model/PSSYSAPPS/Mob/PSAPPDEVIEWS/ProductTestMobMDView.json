@@ -6,7 +6,7 @@
   "name" : "ProductTestMobMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -99,13 +99,13 @@
   "getPSControls" : [ {
     "codeName" : "MobDef",
     "controlType" : "SEARCHFORM",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product/PSSEARCHFORMS/MobDef.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test/PSSEARCHFORMS/MobDef.json",
     "formStyle" : "MOBSEARCHBAR2",
     "hookEventNames" : [ "SEARCH", "LOAD" ],
     "logicName" : "移动端搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -117,7 +117,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -128,7 +128,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -139,7 +139,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -306,7 +306,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product/PSMOBMDCTRLS/Mob.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test/PSMOBMDCTRLS/Mob.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -321,7 +321,7 @@
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
     },
     "getPSAppViewLogics" : [ {
       "eventArg" : "deuiaction1",
@@ -356,7 +356,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -367,7 +367,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
         }
       }, {
         "actionName" : "Remove",
@@ -380,7 +380,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
         }
       }, {
         "actionName" : "Get",
@@ -393,7 +393,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
         }
       }, {
         "actionName" : "Create",
@@ -406,7 +406,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -426,7 +426,7 @@
       "name" : "mdctrl_batchtoolbar",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
       },
       "getPSControlParam" : {
         "id" : "mdctrl_batchtoolbar"
@@ -552,7 +552,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

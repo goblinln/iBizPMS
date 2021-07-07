@@ -1047,11 +1047,6 @@
               "excelCaption" : "日期",
               "name" : "dates",
               "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "DATES",
-                "codeName" : "Dates"
-              },
-              "valueFormat" : "YYYY-MM-DD",
               "width" : 100,
               "widthUnit" : "PX",
               "enableRowEdit" : true,
@@ -1066,10 +1061,6 @@
               "excelCaption" : "总计消耗",
               "name" : "consumed",
               "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              },
               "width" : 100,
               "widthUnit" : "PX",
               "enableRowEdit" : true,
@@ -1084,10 +1075,6 @@
               "excelCaption" : "预计剩余",
               "name" : "left",
               "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "LEFT",
-                "codeName" : "Left"
-              },
               "width" : 100,
               "widthUnit" : "PX",
               "enableRowEdit" : true,
@@ -1102,10 +1089,6 @@
               "excelCaption" : "备注",
               "name" : "work",
               "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "WORK",
-                "codeName" : "Work"
-              },
               "width" : 100,
               "widthUnit" : "PX",
               "enableRowEdit" : true,
@@ -1113,83 +1096,35 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
+              "name" : "id"
             }, {
               "dataType" : 21,
-              "name" : "work",
-              "getPSAppDEField" : {
-                "name" : "WORK",
-                "codeName" : "Work"
-              }
+              "name" : "work"
             }, {
               "dataType" : 7,
-              "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              }
+              "name" : "consumed"
             }, {
               "dataType" : 1,
-              "name" : "taskestimatesn",
-              "getPSAppDEField" : {
-                "name" : "TASKESTIMATESN",
-                "codeName" : "TaskEstimatesn"
-              }
+              "name" : "taskestimatesn"
             }, {
-              "format" : "YYYY-MM-DD",
               "dataType" : 5,
-              "name" : "dates",
-              "getPSAppDEField" : {
-                "name" : "DATES",
-                "codeName" : "Dates"
-              }
+              "name" : "dates"
             }, {
               "dataType" : 1,
-              "name" : "task",
-              "getPSAppDEField" : {
-                "name" : "TASK",
-                "codeName" : "Task"
-              }
+              "name" : "task"
             }, {
               "dataType" : 25,
-              "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              }
+              "name" : "account"
             }, {
               "dataType" : 7,
-              "name" : "left",
-              "getPSAppDEField" : {
-                "name" : "LEFT",
-                "codeName" : "Left"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "srfmajortext",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
+              "name" : "left"
             }, {
               "dataType" : 1,
               "name" : "srfdataaccaction",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              },
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
+              "name" : "srfkey"
             } ],
             "getPSDEGridEditItemVRs" : [ {
               "checkMode" : 3,
@@ -1264,10 +1199,6 @@
               "enableCond" : 0,
               "ignoreInput" : 0,
               "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              },
               "getPSEditor" : {
                 "editorType" : "TEXTBOX",
                 "name" : "id"
@@ -1279,10 +1210,6 @@
               "enableCond" : 3,
               "ignoreInput" : 0,
               "name" : "work",
-              "getPSAppDEField" : {
-                "name" : "WORK",
-                "codeName" : "Work"
-              },
               "getPSEditor" : {
                 "editorType" : "TEXTBOX",
                 "maxLength" : 65535,
@@ -1295,10 +1222,6 @@
               "enableCond" : 3,
               "ignoreInput" : 0,
               "name" : "consumed",
-              "getPSAppDEField" : {
-                "name" : "CONSUMED",
-                "codeName" : "Consumed"
-              },
               "getPSEditor" : {
                 "editorType" : "TEXTBOX",
                 "name" : "consumed",
@@ -1311,10 +1234,6 @@
               "enableCond" : 3,
               "ignoreInput" : 0,
               "name" : "taskestimatesn",
-              "getPSAppDEField" : {
-                "name" : "TASKESTIMATESN",
-                "codeName" : "TaskEstimatesn"
-              },
               "getPSEditor" : {
                 "editorType" : "TEXTBOX",
                 "name" : "taskestimatesn"
@@ -1327,10 +1246,6 @@
               "enableCond" : 3,
               "ignoreInput" : 0,
               "name" : "dates",
-              "getPSAppDEField" : {
-                "name" : "DATES",
-                "codeName" : "Dates"
-              },
               "getPSEditor" : {
                 "dateTimeFormat" : "YYYY-MM-DD",
                 "editorParams" : {
@@ -1346,10 +1261,6 @@
               "enableCond" : 3,
               "ignoreInput" : 0,
               "name" : "task",
-              "getPSAppDEField" : {
-                "name" : "TASK",
-                "codeName" : "Task"
-              },
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "task"
@@ -1361,10 +1272,6 @@
               "enableCond" : 3,
               "ignoreInput" : 0,
               "name" : "account",
-              "getPSAppDEField" : {
-                "name" : "ACCOUNT",
-                "codeName" : "Account"
-              },
               "getPSEditor" : {
                 "editorType" : "TEXTBOX",
                 "maxLength" : 30,
@@ -1377,10 +1284,6 @@
               "enableCond" : 3,
               "ignoreInput" : 0,
               "name" : "left",
-              "getPSAppDEField" : {
-                "name" : "LEFT",
-                "codeName" : "Left"
-              },
               "getPSEditor" : {
                 "editorType" : "TEXTBOX",
                 "name" : "left",
@@ -1393,10 +1296,6 @@
               "enableCond" : 0,
               "ignoreInput" : 0,
               "name" : "srfkey",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              },
               "getPSEditor" : {
                 "editorType" : "HIDDEN",
                 "name" : "srfkey"

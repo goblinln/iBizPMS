@@ -471,8 +471,8 @@ export class AppPanelBase extends PanelControlBase {
         };
         let { width, height, layoutMode } = this.controlInstance;
         let controlStyle: any = {};
-        controlStyle.width = width > 0 ? width : '100%';
-        controlStyle.height = height > 0 ? height : '100%';
+        controlStyle.width = width > 0 ? width + 'px' : '100%';
+        controlStyle.height = height > 0 ? height + 'px' : '100%';
         if (layoutMode == 'FLEX') {
             controlStyle.display = 'flex';
         }

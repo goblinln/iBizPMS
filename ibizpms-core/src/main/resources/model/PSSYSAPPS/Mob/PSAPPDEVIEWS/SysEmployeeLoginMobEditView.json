@@ -6,7 +6,7 @@
   "name" : "SysEmployeeLoginMobEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -30,7 +30,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee/PSFORMS/MobInfo.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee/PSFORMS/MobInfo.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -47,7 +47,7 @@
     "logicName" : "移动端账号信息",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -61,7 +61,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -70,7 +70,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
         }
       }, {
         "actionName" : "Remove",
@@ -83,7 +83,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -96,7 +96,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
         }
       }, {
         "actionName" : "Get",
@@ -109,7 +109,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
         }
       }, {
         "actionName" : "Create",
@@ -122,7 +122,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -666,7 +666,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

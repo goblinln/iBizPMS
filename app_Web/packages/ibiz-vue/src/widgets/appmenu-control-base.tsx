@@ -316,7 +316,7 @@ export class AppMenuControlBase extends ControlBase implements MenuControlInterf
                     return true;
                 }
             }
-            if (item.getPSAppFunc && Object.is(item.getPSAppFunc.codeName, appfunctag) && item.openDefault) {
+            if (item.getPSAppFunc && Object.is(item.getPSAppFunc.codeName, appfunctag)) {
                 this.setHideSideBar(item);
                 this.defaultActive = item.name;
                 return true;

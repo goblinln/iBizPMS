@@ -32,7 +32,7 @@
     "name" : "test",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchProductTrends"
+      "id" : "FetchProduct"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

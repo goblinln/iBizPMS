@@ -137,8 +137,7 @@ export class IndexViewBase extends ViewBase implements IndexViewInterface {
             mode: this.viewInstance?.mainMenuAlign,
             isDefaultPage: (this.viewInstance as IPSAppIndexView)?.defaultPage,
             isBlankMode: (this.viewInstance as IPSAppIndexView)?.blankMode,
-            // TODO 缺失
-            //defPSAppView: (this.viewInstance as IPSAppIndexView)?.defPSAppView
+            defPSAppView: (this.viewInstance as IPSAppIndexView)?.getDefPSAppView()
         })
         return { targetCtrlName, targetCtrlParam, targetCtrlEvent }
     }

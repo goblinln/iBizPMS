@@ -1578,8 +1578,7 @@
     "logicName" : "产品编号",
     "name" : "PRODUCTSN",
     "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "enableQuickSearch" : true
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "id",
@@ -1632,6 +1631,7 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
+    "enableQuickSearch" : true,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,

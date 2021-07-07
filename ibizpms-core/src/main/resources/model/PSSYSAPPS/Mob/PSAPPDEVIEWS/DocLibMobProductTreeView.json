@@ -1301,7 +1301,7 @@
       "nodeType" : "DocLib",
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchByProductNotFiles"
+        "id" : "FetchByProduct"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -1652,7 +1652,7 @@
       "nodeType" : "ChildDocLibModule",
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchAllDoclibModule"
+        "id" : "FetchAllDir"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -1798,7 +1798,7 @@
       "nodeType" : "File",
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchProductDocLibFile"
+        "id" : "FetchProduct"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -1942,7 +1942,7 @@
       "nodeType" : "RootDocLibModule",
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchRootModuleMuLu"
+        "id" : "FetchDir"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -2280,5 +2280,74 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "modelid" : "7c36c142bcb6788527dfa0695b8d2b4f",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Projects",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "name" : "PRODUCT__PROJECT",
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "DocLibs",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+    },
+    "name" : "PROJECT__DOC_LIB",
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "rSMode" : 2
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "DocLibs",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+    },
+    "name" : "PROJECT__DOC_LIB",
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "rSMode" : 2
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "DocLibs",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+    },
+    "name" : "PRODUCT__DOC_LIB",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2
+  } ] ]
 }

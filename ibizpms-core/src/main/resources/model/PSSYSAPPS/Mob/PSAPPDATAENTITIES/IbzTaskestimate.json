@@ -5,28 +5,12 @@
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
-      "name" : "value",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
+      "name" : "value"
     }, {
       "dataType" : 25,
-      "name" : "text",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
+      "name" : "text"
     } ],
     "pagingSize" : 50,
-    "getTextPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "getValuePSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
     "defaultMode" : true,
     "enablePagingBar" : false
   } ],
@@ -348,101 +332,16 @@
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
+    "codeName" : "Estimate",
+    "logicName" : "最初预计",
+    "name" : "ESTIMATE",
+    "stdDataType" : 7
+  }, {
     "codeName" : "Org",
     "logicName" : "归属组织",
     "name" : "ORG",
     "stdDataType" : 25,
     "stringLength" : 100
-  }, {
-    "codeName" : "Monthname",
-    "logicName" : "月（显示）",
-    "name" : "MONTHNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Dept",
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Year",
-    "logicName" : "年",
-    "name" : "YEAR",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Account",
-    "logicName" : "用户",
-    "name" : "ACCOUNT",
-    "stdDataType" : 25,
-    "stringLength" : 30
-  }, {
-    "codeName" : "Left",
-    "logicName" : "预计剩余",
-    "name" : "LEFT",
-    "precision" : 2,
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Consumed",
-    "logicName" : "总计消耗",
-    "name" : "CONSUMED",
-    "precision" : 2,
-    "stdDataType" : 7
-  }, {
-    "codeName" : "CreateBy",
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Evaluationcost",
-    "logicName" : "评估成本",
-    "name" : "EVALUATIONCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Monthorder",
-    "logicName" : "月（排序）",
-    "name" : "MONTHORDER",
-    "stdDataType" : 9
-  }, {
-    "codeName" : "Files",
-    "logicName" : "附件",
-    "name" : "FILES",
-    "stdDataType" : 25,
-    "stringLength" : 2000
-  }, {
-    "codeName" : "Id",
-    "logicName" : "编号",
-    "name" : "ID",
-    "stdDataType" : 1,
-    "enableQuickSearch" : true,
-    "keyField" : true,
-    "majorField" : true
-  }, {
-    "codeName" : "Evaluationstatus",
-    "logicName" : "评估状态",
-    "name" : "EVALUATIONSTATUS",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Yearname",
-    "logicName" : "年（显示）",
-    "name" : "YEARNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Date",
-    "logicName" : "日期",
-    "name" : "DATE",
-    "stdDataType" : 5,
-    "valueFormat" : "YYYY-MM-DD"
   }, {
     "codeName" : "UpdateBy",
     "logicName" : "由谁更新",
@@ -450,21 +349,40 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
-    "codeName" : "Evaluationtime",
-    "logicName" : "评估工时",
-    "name" : "EVALUATIONTIME",
-    "stdDataType" : 7
+    "codeName" : "Username",
+    "logicName" : "用户",
+    "name" : "USERNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
   }, {
-    "codeName" : "Inputcost",
-    "logicName" : "投入成本",
-    "name" : "INPUTCOST",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Dates",
-    "logicName" : "日期",
-    "name" : "DATES",
+    "codeName" : "Join",
+    "logicName" : "加盟日",
+    "name" : "JOIN",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Hours",
+    "logicName" : "可用工时/天",
+    "name" : "HOURS",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Account",
+    "logicName" : "用户",
+    "name" : "ACCOUNT",
+    "stdDataType" : 25,
+    "stringLength" : 30,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "Order",
+    "logicName" : "排序",
+    "name" : "ORDER",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Left",
+    "logicName" : "预计剩余",
+    "name" : "LEFT",
+    "stdDataType" : 7
   }, {
     "codeName" : "DeptName",
     "logicName" : "归属部门名",
@@ -472,67 +390,66 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
-    "codeName" : "TaskEstimatesn",
-    "logicName" : "任务预计编号",
-    "name" : "TASKESTIMATESN",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "Month",
-    "logicName" : "月",
-    "name" : "MONTH",
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
-    "codeName" : "Work",
-    "logicName" : "work",
-    "name" : "WORK",
-    "stdDataType" : 21,
-    "stringLength" : 65535
+    "codeName" : "Consumed",
+    "logicName" : "总计消耗",
+    "name" : "CONSUMED",
+    "stdDataType" : 7
   }, {
-    "codeName" : "Evaluationdesc",
-    "logicName" : "评估说明",
-    "name" : "EVALUATIONDESC",
-    "stdDataType" : 21,
-    "stringLength" : 1048576
-  }, {
-    "codeName" : "Taskspecies",
-    "logicName" : "任务种别",
-    "name" : "TASKSPECIES",
+    "codeName" : "Limited",
+    "logicName" : "受限用户",
+    "name" : "LIMITED",
     "stdDataType" : 25,
-    "stringLength" : 60
+    "stringLength" : 8
   }, {
-    "codeName" : "TaskName",
-    "logicName" : "任务名称",
-    "name" : "TASKNAME",
+    "codeName" : "Role",
+    "logicName" : "角色",
+    "name" : "ROLE",
     "stdDataType" : 25,
-    "stringLength" : 255
+    "stringLength" : 30
   }, {
-    "codeName" : "ProjectName",
-    "logicName" : "所属项目",
-    "name" : "PROJECTNAME",
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
     "stdDataType" : 25,
-    "stringLength" : 90
+    "stringLength" : 100
+  }, {
+    "codeName" : "Id",
+    "logicName" : "编号",
+    "name" : "ID",
+    "stdDataType" : 1,
+    "keyField" : true
+  }, {
+    "codeName" : "Days",
+    "logicName" : "可用工日",
+    "name" : "DAYS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Total",
+    "logicName" : "总计可用",
+    "name" : "TOTAL",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Type",
-    "logicName" : "任务类型",
+    "logicName" : "团队类型",
     "name" : "TYPE",
     "stdDataType" : 25,
-    "stringLength" : 20
+    "stringLength" : 7
   }, {
-    "codeName" : "Deleted",
-    "logicName" : "任务删除标识",
-    "name" : "DELETED",
-    "stdDataType" : 25,
-    "stringLength" : 1
-  }, {
-    "codeName" : "Project",
-    "logicName" : "项目",
-    "name" : "PROJECT",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "Task",
-    "logicName" : "任务",
-    "name" : "TASK",
+    "codeName" : "Root",
+    "logicName" : "编号",
+    "name" : "ROOT",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
@@ -1017,16 +934,16 @@
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json",
   "enableUIActions" : 15,
-  "logicName" : "任务预计",
+  "logicName" : "任务团队（嵌套）",
   "name" : "IBZ_TASKESTIMATE",
   "getPSDEName" : "ZT_TASKESTIMATE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDESERVICEAPIS/IBZTaskEstimate.json"
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDESERVICEAPIS/TaskTeamNested.json"
   },
   "getQuickSearchPSAppDEFields" : [ {
-    "name" : "ID",
-    "codeName" : "Id"
+    "name" : "ACCOUNT",
+    "codeName" : "Account"
   } ],
   "storageMode" : 0,
   "defaultMode" : false,

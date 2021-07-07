@@ -23,7 +23,7 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
     protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProduct.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name','productsn','code',];
+    protected quickSearchFields = ['name','id','code',];
     protected selectContextParam = {
     };
 

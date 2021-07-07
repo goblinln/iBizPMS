@@ -270,6 +270,7 @@ export class AppComponentService {
         this.editorMap.set("PASSWORD_DEFAULT", 'input-box');
         this.editorMap.set("TEXTAREA_DEFAULT", 'input-box');
         this.editorMap.set("TEXTAREA_10_DEFAULT", 'input-box');
+        this.editorMap.set("TEXTAREA_10_MARKDOWNEDITOR", 'app-markdown-editor');
         this.editorMap.set("NUMBER_DEFAULT", 'input-box');
         this.editorMap.set("SLIDER_DEFAULT", 'app-slider');
         this.editorMap.set("RATING_DEFAULT", 'app-rate');

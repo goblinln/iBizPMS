@@ -1,5 +1,5 @@
 import { debounce } from 'ibiz-core';
-import { Component } from 'vue-property-decorator';
+import { Component, Prop } from 'vue-property-decorator';
 import { IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { AppDefaultSearchFormDetail } from '../app-default-searchform-detail/app-default-searchform-detail';
 
@@ -12,6 +12,14 @@ import { AppDefaultSearchFormDetail } from '../app-default-searchform-detail/app
  */
 @Component({})
 export class AppDefaultGroupPanel extends AppDefaultSearchFormDetail {
+
+    /**
+     * 表单数据
+     * 
+     * @type {*}
+     * @memberof AppDefaultGroupPanel
+     */
+    @Prop() public data: any;
 
     /**
      * 分组面板界面行为点击事件回调
@@ -40,7 +48,7 @@ export class AppDefaultGroupPanel extends AppDefaultSearchFormDetail {
         // 设置默认值
         let layoutMode = getLayout?.layout || 'TABLE_24COL';
         titleBarCloseMode = Number(titleBarCloseMode) || 0;
-        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
+        let labelCaption: any = this.detailsInstance.captionItemName ? this.data[this.detailsInstance.captionItemName] : this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             <app-form-group
                 layoutType={layoutMode}

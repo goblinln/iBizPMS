@@ -211,3 +211,59 @@
 新增图表label提示，[22f1f884](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/22f1f884baeaadecdf2ddf5ceccbd25b5db379d5)（by RedPig97）
 
 更新饼图、漏斗图label标识，[f7e029f7](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f7e029f76ffda2238264c3d7b219684609c4fbbe)（by RedPig97）
+
+## 2021-07-05
+
+新增轻量化表格支持，[2f710a9d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/2f710a9d1604e83f0a5a4c839852f49967ea68f9)（by Mosher）
+
+新增表单分组STYLE2样式，[320d95f3](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/320d95f360885d5511fe1b0e83c8f62c38638c16)（by Mosher）
+
+新增default快速搜索工具栏布局，[24ea4124](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/24ea4124c0be25285599b780847830b604707ed8)（by RedPig97）
+
+新增实体处理逻辑，[96e96133](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/96e96133df31baa8e5d0cfcd9428400dacf8ccfd)，[36dfa522](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/36dfa52274dacff405cfc0b2a4c45f625c09169c)（by tony）
+
+更新地图，[78dbe7ec](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/78dbe7eccd3390cfa50b858ac652150ee0401be1)，[07c84fd3](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/07c84fd326da82a8520a88a694ac4d328c6af799)，[a5fabc1b](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/a5fabc1b14ee3bde2fbe0820b078c06f35a5525d)（by Shine-zwj）
+
+更新雷达图数据集转换逻辑，[9280885f](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/9280885f8ba5a95dd8d0ce16262ba8a70a5e8e83)（by RedPig97）
+
+修复表格保存失败提示多语言找不到，[2ac00561](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/2ac0056171b5a7be60e5b3edaeee846db73bcdc0)（by KK）
+
+修复日历日程显示异常问题，[4c337e46](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/4c337e4675c91fb64eda7a01a942d13f3fe8011a)（by Mosher）
+
+修复甘特图部件按钮样式，[cb256dd6](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/cb256dd61f22819b14652c3f16b2ab74c875ffde)（by Mosher）
+
+修复app-picker组件宽度塌陷，[3c25b098](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/3c25b098e3ccd92e7a8eb94b51a61d30e1a29ea4)（by RedPig97）
+
+修复菜单折叠样式，[98385e75](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/98385e758ee458ea9f414532e99d08a131834916)（by Shine-zwj）
+
+修复报表视图搜索表单问题，[98ecdc4f](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/98ecdc4f77fe53acae7a6fec9a1ea0488b15d71f)（by RedPig97）
+
+修复app-span无单位显示为null的问题，[279fa8ae](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/279fa8ae932077f5724929b1b10d256c702c87df)（by Shine-zwj）
+
+## 2021-07-06
+
+新增default快速搜索工具栏布局，[3904e66b](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/3904e66b606e9a5124890c333bcbfed6bbd0ad34) [8945c7ba](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/8945c7ba64d29af4ad3fa02a3b19a8c3ec8e8355)（by RedPig97）
+
+优化表单iframe边框，[f81acd2a](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f81acd2ade552db11126a560b6876d08c34d4932)（by RedPig97）
+
+新增应用门户和数据看板视图style4样式（卡片样式），[7f90096d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/7f90096d468ab667e9fafa712ca92abbca97e36d)（by Shine-zwj）
+
+优化编辑视图（左右关系）编辑项标题，[bb5193eb](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/bb5193eb4d1826ddd580446789c5c1838c930b1f)（by RedPig97）
+
+修复表单加载完成向外抛出数据异常，[43e11f29](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/43e11f291ad0aaae8ba387b990006ed1790195bb)（by KK）
+
+更新编辑视图分页面板title提示，[03ce1226](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/03ce12262accc529c506346bdfa10540823899d2)（by RedPig97）
+
+重构视图消息服务，[ce4f5cbb](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/ce4f5cbb6e8f72f4e65af8c4693b115ace72f082) [5ed3d4ca](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/5ed3d4ca013dff8339003745ba3bf374ac64d000)（by Mosher）
+
+更新视图消息绘制及视图消息组件逻辑，[95258154](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/95258154e531558801811d70db3961156de900db)（by Mosher）
+
+前端处理逻辑，实体处理逻辑+界面处理逻辑，[c5d7a907](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/c5d7a907f18f0cb355e8b067150ac5f81a140f58)（by tony001）
+
+更新视图消息服务逻辑，[11b01679](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/11b016793ab84685fec0118a12cd4796eefe29fe) [d7f919ca](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/d7f919ca850e2e5a9c137a09454078696dc01450) [eae6d4bc](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/eae6d4bcdf86413ee6936569a93cbe3d0abd5caf) [78bc781f](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/78bc781ff51791399505bce583442ac937223562)（by Mosher）
+
+编辑视图样式调整，[90f2ed77](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/90f2ed77875a3a43c14beb78dd5c657a4c4b8a01) [b093e876](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/b093e876895cb48f84006cccf5986dd8ac1fc9b1)（by RedPig97）
+
+修复表单项宽度高度设定不生效的问题，[0eca9e90](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/0eca9e909b3550b007881f6b815f610261a860b1)（by Mosher）
+
+更新地图线样式，[3ab380b1](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/3ab380b11771f12e345782954cc1bbd7d3ae5d61)（by Shine-zwj）

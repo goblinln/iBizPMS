@@ -133,16 +133,13 @@ export class AppmenuBase extends AppMenuControlBase {
             }
             return;
         } else if (this.defPSAppView && Object.keys(this.defPSAppView).length > 0) { // 存在默认视图
-            const appfunc: any = appFuncs.find((_appfunc: any) => Object.is(_appfunc.routepath, this.defPSAppView.routepath) && Object.is(_appfunc.appfunctype, 'APPVIEW'));
+            const appfunc: any = appFuncs.find((_appfunc: any) => Object.is(_appfunc.getPSAppView.codeName, this.defPSAppView.codeName) && Object.is(_appfunc.appFuncType, 'APPVIEW'));
             if (appfunc) {
                 this.computeMenuSelect(this.menus, appfunc.appfunctag);
             }
-            const viewparam: any = {};
-            const path: string = this.$viewTool.buildUpRoutePath(this.$route, {}, this.defPSAppView.deResParameters, this.defPSAppView.parameters, [], viewparam);
-            this.$router.push(path);
-            return;
+        } else {
+            this.computeMenuSelect(this.menus, '');
         }
-        this.computeMenuSelect(this.menus, '');
         let item = this.compute(this.menus, this.defaultActive);
         if (Object.keys(item).length === 0) {
             return;

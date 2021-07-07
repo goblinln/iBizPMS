@@ -1,0 +1,65 @@
+.app-mavon-editor {
+    border-width: 0 !important;
+    .v-note-panel {
+        color: var(--view-font-color) !important;
+        background-color: var(--view-background-color-bright) !important;
+        .v-show-content {
+            background-color: var(--view-background-color-bright) !important;
+            // border-left: 1px solid #666;
+            table {
+                tr {
+                    background-color: var(--view-background-color-bright) !important;
+                    td, th {
+                        border-color: #666 !important;
+                    }
+                }
+            }
+            pre, .highlight pre {
+                color: #333;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                color: var(--view-font-color);
+                border-color: #666 !important;
+            }
+        }
+        .v-show-content-html {
+            background-color: var(--view-background-color-bright) !important;
+            border-left: 1px solid #666;
+        }
+        .content-input-wrapper {
+            background-color: var(--view-background-color-bright) !important;
+            textarea {
+                background-color: var(--view-background-color-bright) !important;
+                color: var(--view-font-color);
+            }
+        }
+    }
+    .v-note-op {
+        background: var(--app-header-background-color) !important;
+        border-width: 0 !important;
+        .v-left-item {
+            .op-icon {
+                color: var(--view-font-color);
+            }
+            .op-icon-divider {
+                border-color: #666;
+            }
+        }
+        .v-right-item {
+            .op-icon {
+                color: var(--view-font-color);
+            }
+        }
+    }
+    .op-icon.dropdown-wrapper.dropdown .popup-dropdown {
+        background: var(--app-header-background-color);
+        border-color: var(--app-header-background-color);
+        .dropdown-item {
+            color: var(--view-font-color);
+        }
+        .dropdown-item:hover {
+            color: var(--app-header-font-color-active);
+            background: transparent;
+        }
+    }
+}

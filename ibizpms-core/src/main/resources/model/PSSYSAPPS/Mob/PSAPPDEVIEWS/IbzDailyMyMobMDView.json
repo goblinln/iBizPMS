@@ -6,7 +6,7 @@
   "name" : "IbzDailyMyMobMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -119,7 +119,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
       },
       "modelref" : true,
       "id" : "MobCreate@IbzDaily"
@@ -135,7 +135,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily/PSMOBMDCTRLS/Mob.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily/PSMOBMDCTRLS/Mob.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -383,7 +383,7 @@
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -397,7 +397,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -408,7 +408,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Remove",
@@ -421,7 +421,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Get",
@@ -434,7 +434,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Create",
@@ -447,7 +447,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -547,7 +547,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -579,7 +579,7 @@
         "name" : "新建（移动端）",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         },
         "getPSSysImage" : {
           "cssClass" : "add"
@@ -607,7 +607,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

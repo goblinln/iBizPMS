@@ -6,7 +6,7 @@
   "name" : "IbzDailyDailyMobEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -45,7 +45,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -102,7 +102,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily/PSFORMS/MobDailyEdit.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily/PSFORMS/MobDailyEdit.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -119,7 +119,7 @@
     "logicName" : "移动端日报编辑",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -133,7 +133,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -142,7 +142,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Remove",
@@ -155,7 +155,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -168,7 +168,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "getYeaterdayDailyPlansTaskEdit",
@@ -181,7 +181,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Create",
@@ -194,7 +194,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -734,7 +734,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Employee.json"
           },
           "getPickupPSAppView" : {
             "modelref" : true,
@@ -921,7 +921,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

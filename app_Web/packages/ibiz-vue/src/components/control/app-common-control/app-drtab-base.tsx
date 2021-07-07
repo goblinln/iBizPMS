@@ -84,9 +84,14 @@ export class AppDrtabBase extends DrtabControlBase {
      * @memberof AppDrtabBase
      */
     public renderPanelLabel(h: any,tabPage: any){
+      if (Object.is(this.controlInstance.parentModel.viewType,'DEEDITVIEW4')) {
+        return <span slot="reference">{this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}</span>
+      }
       return (<el-popover
           content={this.$t("components.appformdruipart.blockuitipinfo")}
           width="150"
+          popper-class="app-tooltip"
+          disabled={!tabPage.disabled}
           trigger="hover">
           <span slot="reference">{this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}</span>
       </el-popover>);

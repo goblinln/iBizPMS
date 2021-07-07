@@ -56,7 +56,7 @@ export class AppDefaultGroupPanel extends AppDefaultFormDetail {
         // 设置默认值
         let layoutMode = layout?.layout || 'TABLE_24COL';
         titleBarCloseMode = Number(titleBarCloseMode) || 0;
-        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
+        let labelCaption: any = this.detailsInstance.captionItemName ? this.data[this.detailsInstance.captionItemName.toLowerCase()] : this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             <app-form-group
                 layoutType={layoutMode}

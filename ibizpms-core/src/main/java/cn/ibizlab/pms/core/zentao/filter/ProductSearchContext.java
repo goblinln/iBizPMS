@@ -108,7 +108,7 @@ public class ProductSearchContext extends QueryWrapperContext<Product> {
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
                      wrapper.like("t1.`name`", query)
-                        .or().like("t1.`productsn`", query)
+                        .or().like("t1.`id`", query)
                         .or().like("t1.`code`", query)
             );
 		 }

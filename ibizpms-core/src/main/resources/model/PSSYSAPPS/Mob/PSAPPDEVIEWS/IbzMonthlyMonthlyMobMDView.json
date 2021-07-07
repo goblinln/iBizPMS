@@ -6,7 +6,7 @@
   "name" : "IbzMonthlyMonthlyMobMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -114,7 +114,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
       },
       "modelref" : true,
       "id" : "MobCreate@IbzMonthly"
@@ -130,7 +130,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly/PSMOBMDCTRLS/MyMonthly.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly/PSMOBMDCTRLS/MyMonthly.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -150,7 +150,7 @@
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -164,7 +164,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -175,7 +175,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Remove",
@@ -188,7 +188,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Get",
@@ -201,7 +201,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Create",
@@ -214,7 +214,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -322,7 +322,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -355,7 +355,7 @@
         "name" : "新建（移动端）",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "DATE",
@@ -397,7 +397,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

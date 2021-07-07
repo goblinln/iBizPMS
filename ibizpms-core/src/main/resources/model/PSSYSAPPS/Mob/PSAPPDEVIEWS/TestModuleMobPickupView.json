@@ -213,7 +213,26 @@
       "enablePullDownRefresh" : false,
       "expandSearchForm" : true,
       "modelid" : "958d619ef6cda3f0d7b7f484aacd3dfb",
-      "modeltype" : "PSAPPDEVIEW"
+      "modeltype" : "PSAPPDEVIEW",
+      "getPSAppDERSPaths" : [ [ {
+        "actionRSMode" : 1,
+        "codeName" : "TestModules",
+        "dataRSMode" : 0,
+        "getMajorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+        },
+        "getMinorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
+        },
+        "name" : "TEST_MODULE",
+        "getParentPSAppDEField" : {
+          "name" : "ROOT",
+          "codeName" : "Root"
+        },
+        "rSMode" : 2
+      } ] ]
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "name" : "pickupviewpanel",
@@ -247,5 +266,24 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
   "modelid" : "1ddc35d9a0eb61fb471e5a295520d3fe",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "TestModules",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
+    },
+    "name" : "TEST_MODULE",
+    "getParentPSAppDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
+    "rSMode" : 2
+  } ] ]
 }

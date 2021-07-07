@@ -222,7 +222,6 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                     },
                 },
                 itemStyle: {
-                    borderColor: '#fff',
                     borderWidth: 1,
                 },
                 emphasis: {
@@ -523,7 +522,8 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                 break;
             case 'candlestick':
                 const candlestickEncode = series.getPSChartSeriesEncode() as IPSChartSeriesCSCartesian2DEncode;
-                encode.itemName = this.arrayToLowerCase(candlestickEncode.getX())
+                encode.x = this.arrayToLowerCase(candlestickEncode.getX())
+                encode.y = this.arrayToLowerCase(candlestickEncode.getY());
                 break;
             default:
                 break;
@@ -1203,11 +1203,16 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
             tempMap.forEach((tempItem: any) => {
                 if (tempItem.length > 0) {
                     let curObject: any = {};
-                    let valueResult: number = 0;
+                    let valueResult: any = {};
                     let categorResult: any;
                     tempItem.forEach((singleItem: any) => {
                         categorResult = singleItem[groupField[0]];
-                        valueResult += singleItem[valueField[0]];
+                        valueResult[valueField[0]] = valueResult[valueField[0]] ? valueResult[valueField[0]] + singleItem[valueField[0]] : singleItem[valueField[0]];
+                        item.dataSetFields.forEach((dataSetField: any) => {
+                          if (!Object.is(dataSetField.name,groupField[0]) && !Object.is(dataSetField.name,valueField[0])) {
+                            valueResult[dataSetField.name] = valueResult[dataSetField.name] ? valueResult[dataSetField.name] + singleItem[dataSetField.name] : singleItem[dataSetField.name];
+                          }
+                        });
                     });
                     Object.defineProperty(curObject, groupField[0], {
                         value: categorResult,
@@ -1215,12 +1220,14 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                         enumerable: true,
                         configurable: true,
                     });
-                    Object.defineProperty(curObject, valueField[0], {
-                        value: valueResult,
+                    for (const value in valueResult) {
+                      Object.defineProperty(curObject, value, {
+                        value: valueResult[value],
                         writable: true,
                         enumerable: true,
                         configurable: true,
-                    });
+                      });
+                    }
                     returnArray.push(curObject);
                 }
             });

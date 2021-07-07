@@ -127,11 +127,12 @@ export class AppFormBase extends EditFormControlBase {
                             return;
                         }
                         let attrs = LayoutTool.getGridOptions(item.getPSLayoutPos() as IPSGridLayoutPos);
+                        let style: any = this.getGridLayoutStyle(item);
                         return (
                             <i-col
                                 class='form-layout-container'
                                 {...{ props: attrs }}
-                                style={this.detailsModel[item.name]?.visible ? '' : 'display: none;'}
+                                style={style}
                             >
                                 {this.renderByDetailType(item, index)}
                             </i-col>
@@ -163,6 +164,27 @@ export class AppFormBase extends EditFormControlBase {
         }
 
         throw new Error(`${layout.layout}${this.$t('app.nosupport.layout')}`);
+    }
+
+    /**
+     * 获取栅格布局样式
+     *
+     * @param {*} item
+     * @memberof AppFormBase
+     */
+    public getGridLayoutStyle(item: IPSDEFormDetail) {
+        const { name, width, height } = item;
+        let style: any = {};
+        if (!this.detailsModel[name]?.visible) {
+            Object.assign(style, { display: 'none' });
+        }
+        if (width && width > 0) {
+            Object.assign(style, { width: `${width}px` });
+        }
+        if (height && height > 0) {
+            Object.assign(style, { height: `${height}px` });
+        }
+        return style;
     }
 
     /**
@@ -269,7 +291,7 @@ export class AppFormBase extends EditFormControlBase {
         let { rawItemHeight, rawItemWidth, contentType, htmlContent, rawContent } = modelJson;
         let sysCss = modelJson.getPSSysCss();
         let sysImage = modelJson.getPSSysImage();
-        let sizeStyle = rawItemHeight > 0 && rawItemWidth > 0 ? { width: rawItemWidth, height: rawItemHeight } : '';
+        let sizeStyle = rawItemHeight > 0 && rawItemWidth > 0 ? { width: `${rawItemWidth}px`, height: `${rawItemHeight}px` } : '';
         if (rawContent) {
             const items = rawContent?.match(/\{{(.+?)\}}/g);
             if (items) {
@@ -374,7 +396,7 @@ export class AppFormBase extends EditFormControlBase {
         const uiAction = modelJson.getPSUIAction() as IPSAppDEUIAction;
         const sysImage = modelJson.getPSSysImage();
         const sysCss = modelJson.getPSSysCss();
-        let btnClass = width > 0 && height > 0 ? { width: width, height: height } : '';
+        let btnClass = width > 0 && height > 0 ? { width: `${width}px`, height: `${height}px` } : '';
         let badge = null;
         // TODO计数器徽章
         // if (uiAction) {
@@ -421,8 +443,8 @@ export class AppFormBase extends EditFormControlBase {
         let editor = modelJson.getPSEditor();
         const refFormItem: any = [];
         const style = {
-            width: contentWidth ? contentWidth : false,
-            height: contentHeight ? contentHeight : false,
+            width: contentWidth ? `${contentWidth}px` : false,
+            height: contentHeight ? `${contentHeight}px` : false,
         };
         if (compositeItem) {
             let formItems = (modelJson as IPSDEFormItemEx).getPSDEFormItems();
@@ -612,13 +634,14 @@ export class AppFormBase extends EditFormControlBase {
         let formId =
             this.controlInstance.getPSAppDataEntity()?.codeName?.toLowerCase() +
             this.controlInstance.codeName?.toLowerCase();
+        const controlHeight = this.controlInstance.height != 0 ? this.controlInstance.height + 'px' : 'auto';
         return (
             <i-form
                 props={{ model: this.data }}
                 class={{ ...controlClassNames, 'app-form': true }}
                 ref={this.controlInstance.name}
                 id={formId}
-                style={`height:${this.controlInstance.height};min-height: 200px;`}
+                style={`height:${controlHeight};`}
                 on-on-validate={this.formItemValidate.bind(this)}
             >
                 <input style='display:none;' />

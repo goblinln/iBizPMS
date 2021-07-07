@@ -6,7 +6,7 @@
   "name" : "IbzDailyDailyMobMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -119,7 +119,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily/PSMOBMDCTRLS/Mob.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily/PSMOBMDCTRLS/Mob.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -367,7 +367,7 @@
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -391,7 +391,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         },
         "modelref" : true,
         "id" : "MobEdit@IbzDaily"
@@ -403,7 +403,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         },
         "modelref" : true,
         "id" : "submitMob@IbzDaily"
@@ -423,7 +423,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -434,7 +434,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Remove",
@@ -447,7 +447,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Get",
@@ -460,7 +460,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Create",
@@ -473,7 +473,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -560,7 +560,7 @@
           "name" : "移动端编辑",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
           },
           "getPSNavigateContexts" : [ {
             "key" : "DATE",
@@ -602,7 +602,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
           },
           "getPSSysImage" : {
             "glyph" : "xf00c@FontAwesome",
@@ -654,7 +654,7 @@
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
@@ -715,7 +715,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

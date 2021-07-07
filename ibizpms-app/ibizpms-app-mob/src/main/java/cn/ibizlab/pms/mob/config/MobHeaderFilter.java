@@ -49,7 +49,7 @@ public class MobHeaderFilter extends ZuulFilter {
     public boolean shouldFilter() {
         RequestContext ctx = RequestContext.getCurrentContext();
         String requestURI = ctx.getRequest().getRequestURI();
-        if (pathMatcher.match("/sysemployees/**", requestURI))
+        if (pathMatcher.match("/employees/**", requestURI))
             return true;
         if (pathMatcher.match("/systeams/**", requestURI))
             return true;
@@ -58,6 +58,8 @@ public class MobHeaderFilter extends ZuulFilter {
         if (pathMatcher.match("/sysdepartments/**", requestURI))
             return true;
         if (pathMatcher.match("/systeammembers/**", requestURI))
+            return true;
+        if (pathMatcher.match("/sysaccounts/**", requestURI))
             return true;
         if (pathMatcher.match("/sysorganizations/**", requestURI))
             return true;
@@ -68,7 +70,7 @@ public class MobHeaderFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         RequestContext ctx = RequestContext.getCurrentContext();
 		String requestURI = ctx.getRequest().getRequestURI();
-        if (pathMatcher.match("/sysemployees/**", requestURI)){
+        if (pathMatcher.match("/employees/**", requestURI)){
 			ctx.addZuulRequestHeader("srfsystemid", env.getProperty("ibiz.ref.service.ibzou-api.system","f7ad7e05-9031-11eb-b882-00163e06e68c"));
             if (env.getProperty("ibiz.ref.service.ibzou-api.super", Boolean.class, false)) {
                 AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
@@ -158,6 +160,25 @@ public class MobHeaderFilter extends ZuulFilter {
                 }));
                 String login = env.getProperty("ibiz.ref.service.ibzou-api.login", "login");
                 String password = env.getProperty("ibiz.ref.service.ibzou-api.password", "password");
+                IgnorePrivInterceptor ignorePrivInterceptor = new IgnorePrivInterceptor(superLoginClient, login, password);
+                ctx.addZuulRequestHeader("srfdcid", curUser.getSrfdcid());
+                ctx.addZuulRequestHeader("Authorization", "Bearer " + ignorePrivInterceptor.getToken());
+            }
+		}
+        if (pathMatcher.match("/sysaccounts/**", requestURI)){
+			ctx.addZuulRequestHeader("srfsystemid", env.getProperty("ibiz.ref.service.ibzuaa-api.system","f7ad7e05-9031-11eb-b882-00163e06e68c"));
+            if (env.getProperty("ibiz.ref.service.ibzuaa-api.super", Boolean.class, false)) {
+                AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
+                SuperLoginClient superLoginClient = outsideAccessorUtils.buildAccessor(SuperLoginClient.class, null, uaaservice, Arrays.asList(new RequestInterceptor() {
+                    @Override
+                    public void apply(RequestTemplate requestTemplate) {
+                        requestTemplate.header("srfsystemid", Collections.emptyList());
+                        requestTemplate.header("srforgid", Collections.emptyList());
+                        requestTemplate.header("Authorization", Collections.emptyList());
+                    }
+                }));
+                String login = env.getProperty("ibiz.ref.service.ibzuaa-api.login", "login");
+                String password = env.getProperty("ibiz.ref.service.ibzuaa-api.password", "password");
                 IgnorePrivInterceptor ignorePrivInterceptor = new IgnorePrivInterceptor(superLoginClient, login, password);
                 ctx.addZuulRequestHeader("srfdcid", curUser.getSrfdcid());
                 ctx.addZuulRequestHeader("Authorization", "Bearer " + ignorePrivInterceptor.getToken());

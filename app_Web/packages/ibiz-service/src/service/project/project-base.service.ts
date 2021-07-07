@@ -23,7 +23,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     protected dynaModelFilePath:string = 'PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name','code','projectsn',];
+    protected quickSearchFields = ['id','name','code',];
     protected selectContextParam = {
     };
 

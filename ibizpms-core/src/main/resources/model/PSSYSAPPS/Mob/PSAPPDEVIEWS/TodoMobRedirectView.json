@@ -48,5 +48,20 @@
   "enableWorkflow" : false,
   "redirectView" : true,
   "modelid" : "bff2e6aabf8c5a3b6c8467dc19c931fc",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Todos",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+    },
+    "name" : "ACCOUNT__TODO",
+    "rSMode" : 2
+  } ] ]
 }

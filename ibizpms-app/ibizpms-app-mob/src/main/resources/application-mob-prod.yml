@@ -68,16 +68,16 @@ zuul:
       serviceId: ${ibiz.ref.service.uaa:ibzuaa-api}
       stripPrefix: false
     ibz_monthly:
-      path: /ibzmonthlies/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      path: /monthlies/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibzemp:
-      path: /sysemployees/**
+      path: /employees/**
       serviceId: ${ibiz.ref.service.ibzou-api.name:ibzou-api}
       stripPrefix: false
     zt_taskteam:
       path: /taskteams/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_myterritory:
       path: /ibzmyterritories/**
@@ -85,7 +85,7 @@ zuul:
       stripPrefix: false
     zt_action:
       path: /actions/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     sys_team:
       path: /systeams/**
@@ -112,8 +112,8 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_reportly:
-      path: /ibzreportlies/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      path: /reportlies/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     zt_doccontent:
       path: /doccontents/**
@@ -121,7 +121,7 @@ zuul:
       stripPrefix: false
     ibz_testmodule:
       path: /testmodules/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_projectstats:
       path: /projectstats/**
@@ -129,11 +129,11 @@ zuul:
       stripPrefix: false
     ibz_taskteam:
       path: /ibztaskteams/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_taskestimate:
       path: /ibztaskestimates/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     zt_project:
       path: /projects/**
@@ -145,7 +145,7 @@ zuul:
       stripPrefix: false
     zt_testsuite:
       path: /testsuites/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_projectteam:
       path: /projectteams/**
@@ -153,7 +153,7 @@ zuul:
       stripPrefix: false
     zt_file:
       path: /files/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     zt_branch:
       path: /productbranches/**
@@ -172,12 +172,12 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_daily:
-      path: /ibzdailies/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      path: /dailies/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     zt_doclib:
       path: /doclibs/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     dynafilter:
       path: /dynafilters/**
@@ -205,11 +205,15 @@ zuul:
       stripPrefix: false
     zt_doc:
       path: /docs/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     sys_update_log:
       path: /sysupdatelogs/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      stripPrefix: false
+    sys_user:
+      path: /sysaccounts/**
+      serviceId: ${ibiz.ref.service.ibzuaa-api.name:ibzuaa-api}
       stripPrefix: false
     zt_user:
       path: /users/**
@@ -224,8 +228,8 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_report:
-      path: /ibzreports/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      path: /reportsummaries/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_productstats:
       path: /productstats/**
@@ -233,7 +237,7 @@ zuul:
       stripPrefix: false
     zt_usercontact:
       path: /usercontacts/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     sys_update_features:
       path: /sysupdatefeatures/**
@@ -245,7 +249,7 @@ zuul:
       stripPrefix: false
     zt_todo:
       path: /todos/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     sys_org:
       path: /sysorganizations/**
@@ -253,7 +257,7 @@ zuul:
       stripPrefix: false
     ibz_doclibmodule:
       path: /doclibmodules/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     zt_testtask:
       path: /testtasks/**
@@ -264,8 +268,8 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_weekly:
-      path: /ibzweeklies/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      path: /weeklies/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_projectteamnest:
       path: /ibzprojectteams/**

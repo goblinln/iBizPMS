@@ -6,7 +6,7 @@
   "name" : "IbzMonthlyMyReceivedMobEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -24,7 +24,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly/PSFORMS/MobMainInfo.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly/PSFORMS/MobMainInfo.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -41,7 +41,7 @@
     "logicName" : "移动端月报描述",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -55,7 +55,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -64,7 +64,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Remove",
@@ -77,7 +77,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -90,7 +90,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "HaveRead",
@@ -99,11 +99,11 @@
         "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "HaveRead"
+          "id" : "Read"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Create",
@@ -116,7 +116,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -881,7 +881,1265 @@
               "enablePullDownRefresh" : true,
               "showCaptionBar" : false,
               "modelid" : "22961cd5ac6f56eb438a9c9547e474e1",
-              "modeltype" : "PSAPPDEVIEW"
+              "modeltype" : "PSAPPDEVIEW",
+              "getPSAppDERSPaths" : [ [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PROJECT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Docs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "name" : "DOCLIB__DOC",
+                "getParentPSAppDEField" : {
+                  "name" : "LIB",
+                  "codeName" : "Lib"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DOC__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "TestCases",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+                },
+                "name" : "TEST__TEST_CASE",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "caseSteps",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCaseStep.json"
+                },
+                "name" : "TEST_CASE__TEST_CASE_STEP",
+                "getParentPSAppDEField" : {
+                  "name" : "CASE",
+                  "codeName" : "IBizCase"
+                },
+                "rSMode" : 2,
+                "tempDataOrder" : 10
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCaseStep.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "TEST_CASE_STEP__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PROJECT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Docs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "name" : "DOCLIB__DOC",
+                "getParentPSAppDEField" : {
+                  "name" : "LIB",
+                  "codeName" : "Lib"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DOC__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "TestTasks",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "name" : "PROJECT__TEST_TASK",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "TEST_TASK__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Stories",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "name" : "PROJECT__STORY",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "STORY__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Tasks",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+                },
+                "name" : "PROJECT__PROJECT_TASK",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "TASK__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Builds",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "name" : "PROJECT__PROJECT_BUILD",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "BUILD__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Bugs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "name" : "PROJECT__PROJECT_BUG",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "BUG__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "ProductPlans",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "name" : "PROJECT__PRODUCT_PLAN",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "PRODUCT_PLAN__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PROJECT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DOC_LIB__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PRODUCT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Docs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "name" : "DOCLIB__DOC",
+                "getParentPSAppDEField" : {
+                  "name" : "LIB",
+                  "codeName" : "Lib"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DOC__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "TestCases",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+                },
+                "name" : "TEST__TEST_CASE",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "TEST_CASE__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Bugs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "name" : "TEST__TEST_BUG",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "BUG__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "TestTasks",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "name" : "PROJECT__TEST_TASK",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "TEST_TASK__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Stories",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "name" : "PROJECT__STORY",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "STORY__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Tasks",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+                },
+                "name" : "PROJECT__PROJECT_TASK",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "TASK__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Builds",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "name" : "PROJECT__PROJECT_BUILD",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "BUILD__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Bugs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "name" : "PROJECT__PROJECT_BUG",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "BUG__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "ProductPlans",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "name" : "PROJECT__PRODUCT_PLAN",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "PRODUCT_PLAN__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PROJECT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DOC_LIB__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "PROJECT__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Stories",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "name" : "PRODUCT__PRODUCT_STORY",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "STORY__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "ProductReleases",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
+                },
+                "name" : "PRODUCT__PRODUCT_RELEASE",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "PRODUCT_RELEASE__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "ProductPlans",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "name" : "PRODUCT__PRODUCT_PLAN",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "PRODUCT_PLAN__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Builds",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "name" : "PRODUCT__PRODUCT_BUILD",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "BUILD__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PRODUCT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DOC_LIB__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "TestTasks",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "name" : "PRODUCT_TEST_TASK",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "TEST_TASK__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Docs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "name" : "DOCLIB__DOC",
+                "getParentPSAppDEField" : {
+                  "name" : "LIB",
+                  "codeName" : "Lib"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DOC__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Todos",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+                },
+                "name" : "ACCOUNT__TODO",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "TODO__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Docs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "name" : "ACCOUNT__DOC",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DOC__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "WEEKLY__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "TODO__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestSuite.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "TEST_SUITE__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "REPORTLY",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "PROJECT__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "PRODUCT__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "MONTHLY__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DOC__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DOC_LIB__FILE",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Files",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
+                },
+                "name" : "DAILY__FILE",
+                "rSMode" : 2
+              } ] ]
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1317,6 +2575,38 @@
               "modeltype" : "PSAPPDEVIEW",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PROJECT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
                 "codeName" : "Docs",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
@@ -1327,7 +2617,7 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                 },
-                "name" : "文档库-文档",
+                "name" : "DOCLIB__DOC",
                 "getParentPSAppDEField" : {
                   "name" : "LIB",
                   "codeName" : "Lib"
@@ -1345,65 +2635,45 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
-                "name" : "文档日志",
+                "name" : "DOC__ACTION",
                 "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
-                "codeName" : "Actions",
+                "codeName" : "DocLibs",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestSuite.json"
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
                 },
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                 },
-                "name" : "测试套件日志",
+                "name" : "PROJECT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
                 "rSMode" : 2
-              } ], [ {
+              }, {
                 "actionRSMode" : 1,
-                "codeName" : "Actions",
+                "codeName" : "Docs",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReportly.json"
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
                 },
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
                 },
-                "name" : "汇报日志",
+                "name" : "DOCLIB__DOC",
+                "getParentPSAppDEField" : {
+                  "name" : "LIB",
+                  "codeName" : "Lib"
+                },
                 "rSMode" : 2
-              } ], [ {
-                "actionRSMode" : 1,
-                "codeName" : "Actions",
-                "dataRSMode" : 0,
-                "getMajorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
-                },
-                "getMinorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
-                },
-                "name" : "月报日志",
-                "rSMode" : 2
-              } ], [ {
-                "actionRSMode" : 1,
-                "codeName" : "Actions",
-                "dataRSMode" : 0,
-                "getMajorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
-                },
-                "getMinorPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
-                },
-                "name" : "日报日志",
-                "rSMode" : 2
-              } ], [ {
+              }, {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
                 "dataRSMode" : 0,
@@ -1415,9 +2685,309 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
-                "name" : "文档日志",
+                "name" : "DOC__ACTION",
                 "rSMode" : 2
               } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "TestTasks",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "name" : "PROJECT__TEST_TASK",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "TEST_TASK__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Stories",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "name" : "PROJECT__STORY",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "STORY__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Tasks",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+                },
+                "name" : "PROJECT__PROJECT_TASK",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "TASK__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Builds",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "name" : "PROJECT__PROJECT_BUILD",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "BUILD__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Bugs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "name" : "PROJECT__PROJECT_BUG",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "BUG__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "ProductPlans",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "name" : "PROJECT__PRODUCT_PLAN",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "PRODUCT_PLAN__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PROJECT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
                 "actionRSMode" : 1,
                 "codeName" : "Actions",
                 "dataRSMode" : 0,
@@ -1429,7 +2999,659 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
-                "name" : "文档库日志",
+                "name" : "DOC_LIB__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PRODUCT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Docs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "name" : "DOCLIB__DOC",
+                "getParentPSAppDEField" : {
+                  "name" : "LIB",
+                  "codeName" : "Lib"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "DOC__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "TestCases",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+                },
+                "name" : "TEST__TEST_CASE",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "TEST_CASE_ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Bugs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "name" : "TEST__TEST_BUG",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "BUG__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "TestTasks",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "name" : "PROJECT__TEST_TASK",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "TEST_TASK__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Stories",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "name" : "PROJECT__STORY",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "STORY__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Tasks",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+                },
+                "name" : "PROJECT__PROJECT_TASK",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "TASK__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Builds",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "name" : "PROJECT__PROJECT_BUILD",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "BUILD__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Bugs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "name" : "PROJECT__PROJECT_BUG",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "BUG__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "ProductPlans",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "name" : "PROJECT__PRODUCT_PLAN",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "PRODUCT_PLAN__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PROJECT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "DOC_LIB__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "PRODUCT__PROJECT",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "PROJECT__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Stories",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "name" : "PRODUCT__PRODUCT_STORY",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "STORY__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "ProductReleases",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
+                },
+                "name" : "PRODUCT__PRODUCT_RELEASE",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "PRODUCT_RELEASE__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "ProductPlans",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "name" : "PRODUCT__PRODUCT_PLAN",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "PRODUCT_PLAN__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Builds",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "name" : "PRODUCT__PRODUCT_BUILD",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "BUILD__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "DocLibs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "name" : "PRODUCT__DOC_LIB",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "DOC_LIB__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "TestTasks",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "name" : "PRODUCT_TEST_TASK",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "TEST_TASK__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Docs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "name" : "DOCLIB__DOC",
+                "getParentPSAppDEField" : {
+                  "name" : "LIB",
+                  "codeName" : "Lib"
+                },
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "DOC__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Todos",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+                },
+                "name" : "ACCOUNT__TODO",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "TODO__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Docs",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "name" : "ACCOUNT__DOC",
+                "rSMode" : 2
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "DOC__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "WEEKLY__ACTION",
                 "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
@@ -1443,7 +3665,7 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
-                "name" : "待办日志",
+                "name" : "TODO__ACTION",
                 "rSMode" : 2
               } ], [ {
                 "actionRSMode" : 1,
@@ -1451,13 +3673,125 @@
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestSuite.json"
                 },
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
-                "name" : "周报日志",
+                "name" : "TEST_SUITE__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "REPORTLY__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "PROJECT__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "PRODUCT__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "MONTHLY__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "DOC__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "DOC_LIB__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "DAILY__ACTION",
+                "rSMode" : 2
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "ACCOUNT__ACTION",
                 "rSMode" : 2
               } ] ]
             },
@@ -1660,7 +3994,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

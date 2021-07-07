@@ -2,7 +2,7 @@
   <div class="app-sider-menus">
       <template v-for="(item,index) in menus">
           <template v-if="item.items && Array.isArray(item.items) && item.items.length > 0">
-              <el-submenu :index="item.id" :disabled="item.disabled">
+              <el-submenu :key="index" :index="item.id" :disabled="item.disabled">
                   <template slot='title'>
                       <img v-if="item.icon && !Object.is(item.icon, '')" :src="item.icon" class='app-menu-icon'/>
                       <i v-else-if="item.iconcls && !Object.is(item.iconcls, '')" :class="item.iconcls + ' app-menu-icon'"></i>
@@ -13,11 +13,19 @@
               </el-submenu>
           </template>
           <template v-else>
-              <el-menu-item :index="item.id" :disabled="item.disabled">
+              <el-menu-item :key="index" :index="item.id" :disabled="item.disabled">
                   <img v-if="item.icon && !Object.is(item.icon, '')" :src="item.icon" class='app-menu-icon'/>
                   <i v-else-if="item.iconcls && !Object.is(item.iconcls, '')" :class="item.iconcls + ' app-menu-icon'"></i>
                   <template v-else></template>
-                  <span slot='title'>{{item.text}}</span>
+                  <el-popover
+                    :content="$t('components.appformdruipart.blockuitipinfo')"
+                    width="150"
+                    popper-class="app-tooltip"
+                    :disabled="!item.disabled"
+                    trigger="hover">
+                    <span slot="reference">{{item.text}}</span>
+                </el-popover>
+                  
               </el-menu-item>
           </template>
       </template>

@@ -1,0 +1,316 @@
+{
+  "codeName" : "MyWeekly",
+  "controlStyle" : "LISTVIEW",
+  "controlType" : "MOBMDCTRL",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly/PSMOBMDCTRLS/MyWeekly.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "ibz_weeklyid"
+    }, {
+      "id" : "ibz_weeklyname"
+    }, {
+      "id" : "account"
+    }, {
+      "id" : "date"
+    }, {
+      "id" : "reportto"
+    } ],
+    "codeName" : "MyWeekly",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly/PSPANELS/MyWeekly.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "我的周报项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "ibz_weeklyid",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "ibz_weeklyid",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 6,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "caption" : "周报名",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "ibz_weeklyname",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "ibz_weeklyname",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "account",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "account",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 5,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "date",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "date",
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "caption" : "汇报给",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "reportto",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "reportto",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+        },
+        "editable" : false,
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "convertToCodeItemText" : true,
+      "hidden" : false,
+      "showCaption" : false
+    } ],
+    "mobilePanel" : true,
+    "name" : "mdctrl_itempanel",
+    "modelid" : "ad2d891314af2b22e87d9aff8d22ad10",
+    "modeltype" : "PSSYSVIEWPANEL"
+  },
+  "logicName" : "MyWeekly",
+  "mobListStyle" : "LISTVIEW",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u16db00c_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "移动端编辑"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "移动端编辑",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
+      },
+      "modelref" : true,
+      "id" : "mobEdit1@IbzWeekly"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  } ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo.json"
+    },
+    "name" : "issubmit"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "date"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+    },
+    "name" : "account"
+  }, {
+    "dataType" : 25,
+    "name" : "ibz_weeklyname"
+  }, {
+    "dataType" : 1,
+    "name" : "ibz_weeklyid"
+  }, {
+    "dataType" : 5,
+    "format" : "HH:mm:ss",
+    "name" : "submittime"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "name" : "reportto"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "name" : "mailto"
+  }, {
+    "dataType" : 25,
+    "name" : "worktoday",
+    "getPSAppDEField" : {
+      "name" : "WORKTHISWEEK",
+      "codeName" : "Workthisweek"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "planstomorrow",
+    "getPSAppDEField" : {
+      "name" : "PLANNEXTWEEK",
+      "codeName" : "Plannextweek"
+    }
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/ReportStatus.json"
+    },
+    "name" : "reportstatus"
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "IBZ_WEEKLYID",
+      "codeName" : "IbzWeeklyId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "IBZ_WEEKLYNAME",
+      "codeName" : "IbzWeeklyName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  } ],
+  "getPSDEUIActionGroup2" : {
+    "name" : "移动端周报右滑界面行为组",
+    "getPSUIActionGroupDetails" : [ {
+      "detailType" : "DEUIACTION",
+      "name" : "u16db00c",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "编辑",
+        "codeName" : "mobEdit1",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyMobEditViewMian.json",
+          "viewType" : "DEMOBEDITVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "IbzWeekly_mobEdit1",
+        "name" : "移动端编辑",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf044@FontAwesome",
+          "cssClass" : "fa fa-edit"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "mobEdit1",
+        "uIActionType" : "DEUIACTION",
+        "id" : "mobEdit1@IbzWeekly"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    } ]
+  },
+  "getPSSysPFPlugin" : {
+    "pluginType" : "LIST_RENDER",
+    "pluginCode" : "mobReportList2"
+  },
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "ad2d891314af2b22e87d9aff8d22ad10",
+  "modeltype" : "PSDELIST"
+}

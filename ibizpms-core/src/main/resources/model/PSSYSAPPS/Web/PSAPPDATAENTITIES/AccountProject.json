@@ -814,6 +814,7 @@
     "logicName" : "项目编号",
     "name" : "ID",
     "stdDataType" : 1,
+    "enableQuickSearch" : true,
     "keyField" : true
   }, {
     "codeName" : "Name",
@@ -998,8 +999,7 @@
     "codeName" : "Projectsn",
     "logicName" : "项目编号",
     "name" : "PROJECTSN",
-    "stdDataType" : 1,
-    "enableQuickSearch" : true
+    "stdDataType" : 1
   }, {
     "codeName" : "Statge",
     "logicName" : "statge",
@@ -3621,14 +3621,14 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDESERVICEAPIS/AccountProject.json"
   },
   "getQuickSearchPSAppDEFields" : [ {
+    "name" : "ID",
+    "codeName" : "Id"
+  }, {
     "name" : "NAME",
     "codeName" : "Name"
   }, {
     "name" : "CODE",
     "codeName" : "Code"
-  }, {
-    "name" : "PROJECTSN",
-    "codeName" : "Projectsn"
   } ],
   "storageMode" : 0,
   "defaultMode" : false,
