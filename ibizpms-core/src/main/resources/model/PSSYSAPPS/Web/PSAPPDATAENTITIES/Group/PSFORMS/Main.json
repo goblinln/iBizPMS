@@ -151,7 +151,8 @@
           },
           "editorType" : "TEXTAREA_10",
           "maxLength" : 255,
-          "name" : "desc"
+          "name" : "desc",
+          "showMaxLength" : true
         },
         "getPSLayoutPos" : {
           "colMD" : 24,

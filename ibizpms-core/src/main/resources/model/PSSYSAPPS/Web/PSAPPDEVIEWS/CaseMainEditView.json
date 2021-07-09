@@ -539,7 +539,8 @@
           "getPSEditor" : {
             "editorType" : "TEXTAREA",
             "maxLength" : 65535,
-            "name" : "precondition"
+            "name" : "precondition",
+            "showMaxLength" : true
           },
           "getPSLayoutPos" : {
             "colMD" : 24,

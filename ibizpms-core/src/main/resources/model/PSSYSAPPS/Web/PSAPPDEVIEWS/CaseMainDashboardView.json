@@ -1003,7 +1003,8 @@
                           "getPSEditor" : {
                             "editorType" : "TEXTAREA",
                             "maxLength" : 65535,
-                            "name" : "expect"
+                            "name" : "expect",
+                            "showMaxLength" : true
                           },
                           "allowEmpty" : true
                         }, {
@@ -1019,7 +1020,8 @@
                           "getPSEditor" : {
                             "editorType" : "TEXTAREA",
                             "maxLength" : 65535,
-                            "name" : "desc"
+                            "name" : "desc",
+                            "showMaxLength" : true
                           },
                           "allowEmpty" : true
                         }, {

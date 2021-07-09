@@ -239,7 +239,8 @@
       "getPSEditor" : {
         "editorType" : "MOBTEXTAREA",
         "maxLength" : 65535,
-        "name" : "work"
+        "name" : "work",
+        "showMaxLength" : true
       },
       "getPSLayoutPos" : {
         "colMD" : 24,

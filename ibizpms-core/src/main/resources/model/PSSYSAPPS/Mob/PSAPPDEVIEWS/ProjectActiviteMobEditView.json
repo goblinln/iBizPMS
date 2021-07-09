@@ -345,7 +345,8 @@
             },
             "editorType" : "MOBTEXTAREA",
             "maxLength" : 1048576,
-            "name" : "comment"
+            "name" : "comment",
+            "showMaxLength" : true
           },
           "getPSLayoutPos" : {
             "colMD" : 24,

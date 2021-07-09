@@ -476,7 +476,8 @@
     "getPSEditor" : {
       "editorType" : "TEXTAREA",
       "maxLength" : 1048576,
-      "name" : "spec"
+      "name" : "spec",
+      "showMaxLength" : true
     },
     "allowEmpty" : true
   }, {
