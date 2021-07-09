@@ -422,7 +422,7 @@ export class AppFormBase extends EditFormControlBase {
                     disabled={this.detailsModel[modelJson.name]?.disabled}
                 >
                     {sysImage ? (
-                        <i class={sysImage?.cssClass} style='margin-right: 2px;'></i>
+                        <i class={sysImage?.cssClass} style='margin-right: 4px;'></i>
                     ) : (
                         <menu-icon item={{ iconcls: uiAction?.getPSSysImage()?.cssClass }} />
                     )}

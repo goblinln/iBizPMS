@@ -4,7 +4,7 @@
             <span v-if="index > 0" class="editor-space"  :key="index+10">~</span>
             <date-picker 
              :key="index"
-              v-if="Object.is(editorType, 'DATEPICKEREX') || Object.is(editorType, 'DATEPICKEREX_NOTIME')" 
+              v-if="Object.is(editorType, 'DATEPICKEREX') || Object.is(editorType, 'DATEPICKEREX_NOTIME') || Object.is(editorType, 'DATEPICKER')" 
               type="date" 
               :transfer="true"
               :format="valFormat"

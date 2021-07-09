@@ -448,6 +448,28 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
         return await this.executeAppDeLogic('GetCurUserConcat',_context,_data);
     }
     /**
+     * TestScript
+     *
+     * @param {*} [context={}]
+     * @param {*} [data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountBugService
+     */
+    async TestScript(context: any = {}, data: any = {}): Promise<HttpResponse> {
+        eval(`var childrenbugs = entity.children("ZT_BUG"); 
+if(childrenbugs !=null){
+for(var i=0 ;i< childrenbugs.length;i++){
+sys.info(childrenbugs[i].get("TITLE"));
+}
+}
+entity.set("id",100).wfstart();
+entity.set("status","FINISH").update();`);
+        return new HttpResponse(data, {
+            ok: true,
+            status: 200,
+        });
+    }
+    /**
      * FetchAccount
      *
      * @param {*} [_context={}]

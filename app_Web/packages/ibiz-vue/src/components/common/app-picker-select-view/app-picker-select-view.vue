@@ -1,6 +1,6 @@
 <template>
     <div class="app-picker-select-view">
-        <Dropdown :visible="visible" trigger="custom" style="left:0px;width: 100%" @on-clickoutside="() => {triggerMenu(false);}" >
+        <Dropdown :visible="visible" trigger="custom" transfer placement="bottom-start" style="left:0px;width: 100%" @on-clickoutside="() => {triggerMenu(false);}" >
           <Input v-if="isSingleSelect" v-model="queryValue" class="tree-input" type="text" :placeholder="placeholder ? placeholder : $t('components.apppickerselectview.placeholder')" :disabled="disabled" @on-change="OnInputChange" @on-focus="()=>{triggerMenu(true);}" >
               <template v-slot:suffix>
                   <i v-if="queryValue && !disabled" class='el-icon-circle-close' @click="onClear"></i>

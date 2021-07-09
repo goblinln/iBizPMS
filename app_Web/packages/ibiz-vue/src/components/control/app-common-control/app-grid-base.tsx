@@ -7,6 +7,7 @@ import {
     IPSSysPFPlugin,
     IPSUIActionGroupDetail,
     IPSAppDEGridView,
+    IPSDEGridGroupColumn,
 } from '@ibiz/dynamic-model-api';
 import { debounce, ModelTool, Util } from 'ibiz-core';
 import { Prop, Watch, Emit } from 'vue-property-decorator';
@@ -180,7 +181,7 @@ export class AppGridBase extends GridControlBase {
      */
     public renderGridContent(h: any) {
         this.renderEmptyColumn = !this.allColumns.find((column: any) => {
-            return column.show && Object.is(column.unit, 'STAR');
+            return column.columnType != 'GROUPGRIDCOLUMN' && column.show && Object.is(column.unit, 'STAR');
         });
         return this.$createElement(
             'el-table',
@@ -207,7 +208,7 @@ export class AppGridBase extends GridControlBase {
                         }}
                     ></el-table-column>
                 ) : null,
-                this.renderGridColumns(h),
+                this.renderGridColumns(this.allColumnsInstance),
                 this.renderEmptyColumn ? <el-table-column></el-table-column> : null,
             ],
         );
@@ -219,11 +220,11 @@ export class AppGridBase extends GridControlBase {
      * @param {*} h CreateElement对象
      * @memberof AppGridBase
      */
-    public renderGridColumns(h: any) {
-        if (!this.allColumnsInstance || this.allColumnsInstance.length === 0) {
+    public renderGridColumns(allColumnsInstance: IPSDEGridColumn[]) {
+        if (!allColumnsInstance || allColumnsInstance.length === 0) {
             return;
         }
-        return this.allColumnsInstance.map((item: IPSDEGridColumn) => {
+        return allColumnsInstance.map((item: IPSDEGridColumn) => {
             //隐藏表格项
             if (item.hideDefault || item.hiddenDataItem || !this.getColumnState(item.name.toLowerCase())) {
                 return null;
@@ -239,7 +240,10 @@ export class AppGridBase extends GridControlBase {
                     return this.renderUAColumn(item as IPSDEGridUAColumn);
                 } else if (item.columnType == 'DEFGRIDCOLUMN') {
                     //  数据列
-                    return this.renderGridColumn(h, item);
+                    return this.renderGridColumn(item);
+                } else if (item.columnType == 'GROUPGRIDCOLUMN') {
+                    //分组列
+                    return this.renderGroupGridColumn(item as IPSDEGridGroupColumn);
                 }
             }
         });
@@ -252,10 +256,11 @@ export class AppGridBase extends GridControlBase {
      * @memberof AppGridBase
      */
     public renderUAColumn(column: IPSDEGridUAColumn) {
-        if (this.viewStyle == 'STYLE2') {
-            return this.renderStyle2UAColumn(column)
-        } else {
+        const UIActionGroupDetails: Array<IPSUIActionGroupDetail> = column.getPSDEUIActionGroup()?.getPSUIActionGroupDetails() || [];
+        if (UIActionGroupDetails?.length > 2) {
             return this.renderDefaultUAColumn(column);
+        } else {
+            return this.renderStyle2UAColumn(column);
         }
     }
 
@@ -458,11 +463,10 @@ export class AppGridBase extends GridControlBase {
     /**
      * 绘制数据列
      *
-     * @param {*} h CreateElement对象
      * @param {any} column 表格列实例
      * @memberof AppGridBase
      */
-    public renderGridColumn(h: any, column: IPSDEGridColumn) {
+    public renderGridColumn(column: IPSDEGridColumn) {
         const { name, codeName, enableRowEdit, width, caption, widthUnit, align, enableSort } = column;
         const editItem: IPSDEGridEditItem = ModelTool.getGridItemByCodeName(
             codeName,
@@ -494,6 +498,31 @@ export class AppGridBase extends GridControlBase {
                 },
             },
         });
+    }
+
+    /**
+     * 绘制分组列
+     *
+     * @param {IPSDEGridGroupColumn} column 表格分组列实例对象
+     * @memberof AppGridBase
+     */
+    public renderGroupGridColumn(column: IPSDEGridGroupColumn): any {
+        const { name, width, caption, widthUnit, align, enableSort } = column;
+        let renderParams: any = {
+            'show-overflow-tooltip': true,
+            label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
+            prop: name,
+            align: align ? align.toLowerCase() : 'center',
+            sortable: !this.controlInstance.noSort && enableSort ? 'custom' : false,
+        };
+        if (widthUnit && widthUnit != 'STAR') {
+            renderParams['width'] = width;
+        } else {
+            renderParams['min-width'] = width;
+        }
+        return this.$createElement('el-table-column', {
+            props: renderParams
+        }, this.renderGridColumns(column.getPSDEGridColumns() || []));
     }
 
     /**

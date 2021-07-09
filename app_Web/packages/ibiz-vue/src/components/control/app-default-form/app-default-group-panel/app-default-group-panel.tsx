@@ -53,6 +53,7 @@ export class AppDefaultGroupPanel extends AppDefaultFormDetail {
         const { detailClassNames } = this.renderOptions;
         let { codeName, caption, titleBarCloseMode, showCaption, infoGroupMode, detailStyle } = this.detailsInstance;
         let layout = this.detailsInstance.getPSLayout();
+        let iconInfo = this.detailsInstance.getPSSysImage();
         // 设置默认值
         let layoutMode = layout?.layout || 'TABLE_24COL';
         titleBarCloseMode = Number(titleBarCloseMode) || 0;
@@ -67,6 +68,7 @@ export class AppDefaultGroupPanel extends AppDefaultFormDetail {
                 titleStyle={this.detailsInstance.getLabelPSSysCss()?.cssName || ''}
                 isInfoGroupMode={infoGroupMode}
                 key={codeName}
+                iconInfo={iconInfo}
                 manageContainerStatus={this.runtimeModel?.manageContainerStatus}
                 isManageContainer={this.runtimeModel?.isManageContainer}
                 uiActionGroup={this.runtimeModel?.uiActionGroup}

@@ -145,6 +145,11 @@ function getLocaleResourceBase(){
           placeholder: '请选择时间...',
           input: '请输入...',
         },
+        appdaterange: {
+          start: '开始时间',
+          end: '结束时间',
+          separator: '至'
+        },
         appstudioaction: {
           configtitle: '进入当前视图配置界面',
           configbutton: '配置',

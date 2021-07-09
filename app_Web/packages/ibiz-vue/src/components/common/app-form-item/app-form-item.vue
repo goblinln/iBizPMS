@@ -33,12 +33,16 @@
                 <span v-if="required" style="color:red;">* </span>
                     <span v-if="!isEmptyCaption">
                         <el-tooltip v-if="isShowTip" placement="top" effect="light">
+                            <i v-if="iconInfo && iconInfo.cssClass" :class="iconInfo.cssClass" style="margin-right: 4px;" />
+                            <img v-else-if="iconInfo && iconInfo.imagePath" :src="iconInfo.imagePath" style="margin-right: 4px;" alt="">
                             <span v-html="caption"></span>
                             <template >
                                 <span slot="content" v-html="caption" ></span>
                             </template>
                         </el-tooltip>
                         <template v-if="!isShowTip">
+                            <i v-if="iconInfo && iconInfo.cssClass" :class="iconInfo.cssClass" style="margin-right: 4px;" />
+                            <img v-else-if="iconInfo && iconInfo.imagePath" :src="iconInfo.imagePath" style="margin-right: 4px;" alt="">
                             <span v-html="caption" ></span>
                         </template>
                     </span>
@@ -78,10 +82,19 @@
     </div>
 </template>
 <script lang="ts">
+import { IPSDEFormItemEx } from "node_modules/@ibiz/dynamic-model-api/dist/types";
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
 @Component({})
 export default class AppFormItem extends Vue {
+
+  /**
+   * 表单项实例对象
+   *
+   * @type {*}
+   * @memberof AppDefaultFormItem
+   */
+  @Prop() public detailsInstance!: IPSDEFormItemEx;
 
   /**
    * 表单的模型对象
@@ -176,6 +189,14 @@ export default class AppFormItem extends Vue {
    * @memberof AppFormItem
    */
   @Prop() public itemRules!: any;
+
+  /**
+   * 输入项图片
+   *
+   * @type {*}
+   * @memberof AppFormItem
+   */
+  public iconInfo: any = {};
 
   /**
    * 表单项实例
@@ -321,6 +342,7 @@ export default class AppFormItem extends Vue {
       } catch (error) {}
     }
     this.getShowTip();
+    this.iconInfo = this.detailsInstance?.getPSSysImage();
   }
 
 

@@ -157,7 +157,7 @@ export default class AppMarkdownEditor extends Vue {
     public created() {
         const _this: any = this;
         const locale: string = _this.$i18n.locale;
-        if (locale == 'en_US') {
+        if (locale == 'en-US') {
             _this.locale = 'en';
         } else {
             _this.locale = 'zh_CN';
@@ -221,6 +221,7 @@ export default class AppMarkdownEditor extends Vue {
                 v-model={this.curVal}
                 defaultOpen={this.isInfoMode ? 'preview' : this.defaultOpen}
                 subfield={!this.isInfoMode && this.subfield}
+                autofocus={false}
                 toolbarsFlag={!this.isInfoMode && this.showToolbar}
                 navigation={!this.isInfoMode && this.showCatalog}
                 shortCut={!this.isInfoMode && this.shortCut}

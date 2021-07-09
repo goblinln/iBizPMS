@@ -144,6 +144,11 @@ function getLocaleResourceBase(){
           placeholder: 'Please select time...',
           input: 'Please input...',
         },
+        appdaterange: {
+          start: 'start time',
+          end: 'end time',
+          separator: 'to'
+        },
         appstudioaction: {
           configtitle: 'Enter the configuration of current view',
           configbutton: 'Configuration',

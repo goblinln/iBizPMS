@@ -267,3 +267,35 @@
 修复表单项宽度高度设定不生效的问题，[0eca9e90](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/0eca9e909b3550b007881f6b815f610261a860b1)（by Mosher）
 
 更新地图线样式，[3ab380b1](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/3ab380b11771f12e345782954cc1bbd7d3ae5d61)（by Shine-zwj）
+
+## 2021-07-07
+
+优化编辑视图左右关系禁用提示，[8e0fdafd](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/8e0fdafdfafbdf6b4013ec460914fdb45b0cbc3a)（by RedPig97）
+
+修复表单、面板宽高未加单位的问题，[70bb4aaf](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/70bb4aaf884b99d4ddcb3c129e903110e29a9d2a)（by Mosher）
+
+新增菜单默认打开视图，[76fc0c14](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/76fc0c14b52a044e0d0f0256461c829f197e7a94)（by RedPig97）
+
+新增MarkDown编辑器，[0b2769a5](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/0b2769a5e42a390d41b349a35d13770ca7270b9f)（by Mosher）
+
+更新视图消息逻辑，[68454243](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/68454243f5c37fd999404cc85843af973c3a3f7e)（by Mosher）
+
+新增k线图图表，[b3a5ba84](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/b3a5ba841b3a96c5bd207d67f4744f1ea9d1ac6b)（by RedPig97）
+
+更新地图（区域图），[ed257172](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/ed257172c20d9a8a799ae9b3d8868fcbfbd57069)（by Shine-zwj）
+
+更新Md编辑器支持信息模式，[96b12282](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/96b1228219b255c6dc9c280b5b584ec73f35c310)（by Mosher）
+
+更新表单和搜索表单动态分组标题逻辑，[7aece333](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/7aece333e475ebd34169b39d6eb589b354925ea8)（by Mosher）
+
+更新表单分组头部留点间距，分隔水平的两个分组，[a58edb23](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/a58edb23af287d22816b707e4388d41ae35e3165)（by WodahsOrez）
+
+更新地图（悬浮提示），[777288a5](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/777288a5f05386df5b588c9db5452cf76a68eb31)（by Shine-zwj）
+
+修复下拉列表框多选不能一次选择多个的问题，[a522d445](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/a522d4454af061819e454a116f4dfec91018e5d3)（by Mosher）
+
+调整下拉视图高度，[c9029bc2](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/c9029bc26a301f5488af9f7c07f77eb128fd7257)（by Mosher）
+
+更新地图显示，[4bc1cce5](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/4bc1cce55f12abfce2fd5ebbb4b84ae6a68cdae7)，[221402f7](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/221402f7f8f2328f49bba923c77f8265a94facb5)（by Shine-zwj）
+
+

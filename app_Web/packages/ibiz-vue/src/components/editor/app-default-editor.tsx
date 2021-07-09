@@ -215,7 +215,7 @@ export class AppDefaultEditor extends Vue {
             'PASSWORD',
             'TEXTAREA',
             'TEXTAREA_10',
-            'TEXTAREA_10_MARKDOWNEDITOR',
+            'MARKDOWN',
             'NUMBER',
             "TEXTBOX_COLORPICKER",
             'TEXTAREA_WFAPPROVAL',
@@ -265,7 +265,7 @@ export class AppDefaultEditor extends Vue {
             'PICKER_COMMONMICROCOM',
         ]],
         ['code-editor', [
-            'CODEEIDT',
+            'CODE',
         ]],
 
     ]);

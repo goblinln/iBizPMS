@@ -1,13 +1,7 @@
-.view-default.deeditview {
-    .ivu-card-head {
-        padding: 12px;
-    }
-}
-
-//关系界面嵌入树导航视图
 .view-default.deeditview.view-container {
     >.ivu-card >.ivu-card-body .app-form .ivu-tabs >.ivu-tabs-content {
         padding: 0;
+        // 表单嵌入树导航视图
         .ivu-tabs-tabpane .form-druipart >.view-container.view-default.detreeexpview.viewcontainer2 {
             padding: 0;
             >.ivu-card >.ivu-card-body >.content-container >.treeexpbar >.ivu-split-horizontal >.right-pane {
@@ -16,6 +10,48 @@
                     padding: 0 10px;
                 }
             }
+        }
+    }
+    .app-form{
+        padding-top: 4px;
+        .ivu-tabs-nav .ivu-tabs-tab {
+            padding: 8px 2px;
+        }
+        .ivu-tabs-bar {
+            border-bottom: none;
+        }
+        .ivu-tabs-content {
+            >.ivu-tabs-tabpane {
+                .form-druipart {
+                    >.viewcontainer2 {
+                        >.ivu-card {
+                            >.ivu-card-body {
+                                >.content-container {
+                                    padding: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .app-form-group {
+            .ivu-card-head {
+                padding: 0 0 5px 0;
+                margin: 0 6px;
+            }
+            .ivu-card-body {
+                .ivu-card-body {
+                    padding: 20px 20px 8px 20px;
+                }
+                //关系界面下视图padding
+                .form-druipart .view-card >.ivu-card-body {
+                    padding: 0;
+                }
+            }
+        }
+        .ivu-tabs-no-animation > .ivu-tabs-content {
+            padding: 0 0 0 16px;
         }
     }
 }

@@ -28,9 +28,9 @@ export class AppDefaultFormTabPage extends AppDefaultFormDetail {
         let labelIcon: any;
         if(sysImg){
             if(sysImg?.imagePath){
-                labelIcon = <img src={sysImg?.imagePath} style={{'margin-right' : '2px'}}></img>
+                labelIcon = <img src={sysImg?.imagePath} style={{'margin-right' : '4px'}}></img>
             }else{
-                labelIcon = <i class={sysImg?.cssClass} style={{'margin-right' : '2px'}}></i>
+                labelIcon = <i class={sysImg?.cssClass} style={{'margin-right' : '4px'}}></i>
             }
         }
         return <span class={labelClass}>

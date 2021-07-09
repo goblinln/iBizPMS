@@ -95,6 +95,59 @@ export class AppDefaultFormItem extends AppDefaultFormDetail {
     }
 
     /**
+     * 绘制基础复合编辑器
+     *
+     * @memberof AppDefaultFormItem
+     */
+     public renderBaseCompositeEditor(refFormItem: any[],name: string,editor: any,contentStyle: any) {
+        if (Object.is(editor?.editorType,'DATERANGE') || Object.is(editor?.editorType,'DATERANGE_NOTIME')) {
+            return (
+                <app-date-range
+                    activeData={this.data}
+                    name={name}
+                    editorType={editor.editorType}
+                    refFormItem={refFormItem}
+                    disabled={this.runtimeModel?.disabled}
+                    format={editor?.editorParams?.['TIMEFMT']}
+                    on-formitemvaluechange={(value: any) => {
+                      this.onFormItemValueChange(value);
+                    }}
+                    style={contentStyle}
+                ></app-date-range>
+            );
+        } else if (Object.is(editor?.editorType,'NUMBERRANGE')) {
+            return (
+                <app-number-range
+                    name={name}
+                    activeData={this.data}
+                    refFormItem={refFormItem}
+                    disabled={this.runtimeModel?.disabled}
+                    on-formitemvaluechange={(value: any) => {
+                        this.onFormItemValueChange(value);
+                    }}
+                    style={contentStyle ? contentStyle : 'width: 300px'}
+                ></app-number-range>
+            )
+        } else {
+            return (
+                <app-range-editor
+                    value={this.data[name]}
+                    activeData={this.data}
+                    name={name}
+                    editorType={editor?.editorType}
+                    refFormItem={refFormItem}
+                    disabled={this.runtimeModel?.disabled}
+                    format={editor?.editorParams?.['TIMEFMT']}
+                    on-formitemvaluechange={(value: any) => {
+                      this.onFormItemValueChange(value);
+                    }}
+                    style={contentStyle}
+                ></app-range-editor>
+            );
+        }
+    }
+
+    /**
      * 绘制复合表单项
      *
      * @returns
@@ -117,21 +170,7 @@ export class AppDefaultFormItem extends AppDefaultFormDetail {
             });   
         }
         if (editor?.editorType !== 'USERCONTROL') {
-          return (
-              <app-range-editor
-                  value={this.data[name]}
-                  activeData={this.data}
-                  name={name}
-                  editorType={editorType}
-                  refFormItem={refFormItem}
-                  disabled={this.runtimeModel?.disabled}
-                  format={editor?.editorParams?.['TIMEFMT']}
-                  on-formitemvaluechange={(value: any) => {
-                    this.onFormItemValueChange(value);
-                  }}
-                  style={contentStyle}
-              ></app-range-editor>
-          );
+          return this.renderBaseCompositeEditor(refFormItem,name,editor,contentStyle);
         } else {
           return (
           <app-default-editor
@@ -192,6 +231,7 @@ export class AppDefaultFormItem extends AppDefaultFormDetail {
                 isShowCaption={showCaption}
                 labelWidth={labelWidth}
                 labelPos={labelPos}
+                detailsInstance={this.detailsInstance}
                 uiStyle={detailStyle}
                 itemRules={this.rules}
                 required={this.runtimeModel?.required}

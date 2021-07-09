@@ -179,7 +179,7 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
      */
     public initOptions: any = {
         title: {
-            text: '中国地图',
+            text: '',
             left: 'center',
             top: 20,
         },
@@ -187,8 +187,9 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
             trigger: 'item',
         },
         legend: {
-            orient: 'horizontal',
-            x: 'center',
+            orient: 'vertical',
+            x: 'left',
+            y: 'center',
             data: [],
         },
         geo: {
@@ -401,6 +402,16 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
         let tempViewParams: any = parentData.viewparams ? parentData.viewparams : {};
         if (this.viewparams) {
             Object.assign(tempViewParams, Util.deepCopy(this.viewparams));
+        }
+        for (let item in this.mapItems) {
+            let sort = '';
+            if (this.mapItems[item].sort) {
+                sort += this.mapItems[item].sort + ',';
+            }
+            if (sort) {
+                sort = sort + 'desc';
+                Object.assign(tempViewParams, { sort: sort });
+            }
         }
         Object.assign(data, { viewparams: tempViewParams });
         let tempContext: any =  Util.deepCopy(this.context);
@@ -653,7 +664,7 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
                             polyline: true,
                             tooltip:{
                                 show: true,
-                                formatter: '{a}: {b}',
+                                formatter: (arg: any) => this.renderTooltip(arg),
                             },
                             lineStyle: {
                                 color: item.color,
@@ -677,12 +688,38 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
                                 color: item.color,
                                 opacity: 0.5,
                             },
+                            tooltip:{
+                                formatter: (arg: any) => this.renderTooltip(arg),
+                            },
                             data: [],
                         }
                     )
                 }
             });
         }
+    }
+
+    /**
+     * 绘制悬浮提示
+     * 
+     * @param arg 
+     */
+    public renderTooltip(arg: any) {
+        const curData: any = arg.data;
+        const items: any[] = curData.coords;
+        let content: any = '';
+        if (Object.is("lines" ,arg.seriesType)) {
+            content = items[0][2] + '-' + items[items.length - 1][2];
+        } else {
+            let total: number = 0;
+            items.forEach((item: any) => {
+                total += item[2];
+            });
+            content = total;
+        }
+        const interval: any = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+        const tooltip = arg.name + '<br />' + arg.marker + curData.name + interval + content;
+        return tooltip;
     }
 
     /**
@@ -806,6 +843,7 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
             return;
         }
         this.valueMax = 0;
+        this.initOptions.title.text = this.controlInstance?.logicName;
         this.initOptions.series[0].data = this.getAreaValueList();
         this.initOptions.visualMap[0].max = this.valueMax > 0 ? this.valueMax : 1000;
     }

@@ -48,7 +48,7 @@ export default class TextboxEditor extends EditorBase {
                 this.customProps.unit = unitName;
                 this.customProps.precision = ModelTool.getPrecision(this.editorInstance, appDeField);
                 break;
-            case 'TEXTAREA_10_MARKDOWNEDITOR':
+            case 'MARKDOWN':
                 break;
         }
     }
@@ -156,7 +156,7 @@ export default class TextboxEditor extends EditorBase {
             case "TEXTAREA":
             case "TEXTAREA_10":
             case "NUMBER":
-            case 'TEXTAREA_10_MARKDOWNEDITOR':
+            case 'MARKDOWN':
                 return this.renderTextbox();
             case "TEXTBOX_COLORPICKER":
                 return this.renderTextboxColorPicker();

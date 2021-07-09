@@ -24,24 +24,6 @@ export default class DropdownListEditor extends EditorBase {
     @Prop() editorInstance!: IPSDropDownList;
 
     /**
-     * 监听编辑器值
-     * 
-     * 
-     * @param newVlue 
-     * @param oldVal 
-     * @memberof EditorBase
-     */
-    @Watch('value',{
-        deep: true,
-        immediate: true
-    })
-    public valueChange(newVlue: any, oldVal: any){
-        if (!Object.is(newVlue, oldVal)) {
-            this.cacheUUID = Util.createUUID();
-        }
-    }
-
-    /**
      * 缓存UUID
      * 
      * @memberof EditorBase
@@ -161,6 +143,9 @@ export default class DropdownListEditor extends EditorBase {
     public render(): any {
         if(!this.editorIsLoaded) {
             return null;
+        }
+        if (!this.cacheUUID) {
+            this.cacheUUID = Util.createUUID();
         }
         const { editorType: type, editorStyle: style } = this.editorInstance;
         const editorTypeStyle: string = `${type}${style && style != 'DEFAULT' ? '_'+style : ''}`;

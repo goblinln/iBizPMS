@@ -5,7 +5,7 @@ import { EditorBase } from '../editor-base/editor-base';
 // import { AppCodeEditor } from 'ibiz-plugin';
 
 /**
- * 文本框编辑器
+ * 代码编辑器
  *
  * @export
  * @class TextboxEditor
@@ -50,7 +50,7 @@ export default class CodeEditor extends EditorBase {
      * @memberof TextboxEditor
      */
     public render(): any {
-        return this.$createElement('app-code-editor', {
+        return this.$createElement(this.editorComponentName, {
             props: {
                 name: this.editorInstance.name,
                 value: this.value,

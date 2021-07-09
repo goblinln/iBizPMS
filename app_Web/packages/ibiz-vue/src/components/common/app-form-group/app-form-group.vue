@@ -13,10 +13,12 @@
         </template>
         <template v-else>
             <card v-if="isShowCaption === true" :bordered="false" :dis-hover="true" :class="classes">
-                <p class='' slot='title'>
+                <p :class="titleClass" slot='title'>
                      <icon v-if="titleBarCloseMode !== 0" :type="collapseContant ? 'ios-arrow-dropright-circle' : 'ios-arrow-dropdown-circle'"
                     @click="clickCollapse"></icon>
-                    <span :class="titleClass">{{caption}}</span>
+                      <i v-if="iconInfo && iconInfo.cssClass" :class="iconInfo.cssClass" style="margin-right: 4px;" />
+                      <img v-else-if="iconInfo && iconInfo.imagePath" :src="iconInfo.imagePath" style="margin-right: 4px;" alt="">
+                      <span>{{caption}}</span>
                 </p>
                 <template slot='extra'>
                     <template v-if="uiActionGroup">

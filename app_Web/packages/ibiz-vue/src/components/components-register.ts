@@ -21,6 +21,7 @@ import AppFileUpload from './common/app-file-upload/app-file-upload.vue'
 import AppImageUpload from './common/app-image-upload/app-image-upload.vue'
 import PropertyLayout from './common/property-layout/property-layout.vue'
 import AppRangeEditor from './common/app-range-editor/app-range-editor.vue'
+import AppDateRange from './common/app-date-range/app-date-range.vue'
 import AppExportExcel from './common/app-export-excel/app-export-excel.vue'
 import AppFormGroup from './common/app-form-group/app-form-group.vue'
 import AppFormItem from './common/app-form-item/app-form-item.vue'
@@ -115,7 +116,7 @@ import AppCustomTheme from './common/app-custom-theme/app-custom-theme.vue';
 import AppWFOpinion from './common/app-wf-opinion/app-wf-opinion.vue';
 import { AppDefaultGridColumn } from './common/app-grid-column/app-grid-column';
 import AppMarkdownEditor from './common/app-markdown-editor/app-markdown-editor';
-
+import AppNumberRange from './common/app-number-range/app-number-range.vue';
 // 视图组件
 import { AppViewShell } from '../view-container/app-view-shell';
 import { AppDefaultIndexView } from './view/app-default-view/app-default-indexview';
@@ -262,6 +263,7 @@ import { AppDefaultMapExpBar } from './control/app-default-map-exp-bar/app-defau
 import { NotificationSignal } from '../directives';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
+        v.component('app-number-range', AppNumberRange);
         v.component('app-calendar-timeline', AppCalendarTimeline);
         v.component('app-common-microcom', AppCommonMicrocom);
         v.component('dropdown-list-hidden', DropdownListHidden);
@@ -299,6 +301,7 @@ export const ComponentsRegister = {
         v.component('app-image-upload', AppImageUpload);
         v.component('property-layout', PropertyLayout);
         v.component('app-range-editor', AppRangeEditor);
+        v.component('app-date-range', AppDateRange);
         v.component('app-export-excel', AppExportExcel);
         v.component('app-form-group', AppFormGroup);
         v.component('app-form-item', AppFormItem);

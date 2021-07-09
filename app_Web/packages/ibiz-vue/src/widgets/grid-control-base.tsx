@@ -3,7 +3,7 @@ import { ViewTool, FormItemModel, Util, Verify, ModelTool, AppServiceBase, LogUt
 import { MDControlBase } from './md-control-base';
 import { AppGridService } from '../ctrl-service/app-grid-service';
 import { AppViewLogicService } from 'ibiz-vue';
-import { IPSDEDataImport,DynamicInstanceConfig, IPSDEDataImportItem, IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeList, IPSDEDataExport, IPSDEDataExportItem, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSDEDataImport,DynamicInstanceConfig, IPSDEDataImportItem, IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeList, IPSDEDataExport, IPSDEDataExportItem, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail, IPSDEGridGroupColumn, IPSDEGridEditItemUpdate } from '@ibiz/dynamic-model-api';
 
 /**
  * 表格部件基类
@@ -604,24 +604,30 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      */
     public initAllColumns() {
         this.allColumns = [];
-        let columnsInstanceArr: Array<IPSDEGridColumn> = this.controlInstance.getPSDEGridColumns() || [];
-        if (columnsInstanceArr && columnsInstanceArr.length > 0) {
-            for (const columnInstance of columnsInstanceArr) {
-                let editItem: IPSDEGridEditItem = ModelTool.getGridItemByCodeName(columnInstance.codeName, this.controlInstance) as IPSDEGridEditItem;
-                //表格列
-                const column = {
-                    name: columnInstance.name.toLowerCase(),
-                    label: this.$tl(columnInstance.getCapPSLanguageRes()?.lanResTag, columnInstance.caption),
-                    langtag: columnInstance.getCapPSLanguageRes()?.lanResTag,
-                    show: !columnInstance.hideDefault,
-                    unit: columnInstance.widthUnit,
-                    isEnableRowEdit: columnInstance.enableRowEdit,
-                    enableCond: editItem?.enableCond ? editItem?.enableCond : 3,
-                    columnType: columnInstance.columnType
-                };
-                this.allColumns.push(column);
+        const init = (columns: IPSDEGridColumn[]) => {
+            if (columns && columns.length > 0) {
+                for (const columnInstance of columns) {
+                    if (columnInstance.columnType == 'GROUPGRIDCOLUMN') {
+                        init((columnInstance as IPSDEGridGroupColumn).getPSDEGridColumns() || []);
+                    }
+                    let editItem: IPSDEGridEditItem = ModelTool.getGridItemByCodeName(columnInstance.codeName, this.controlInstance) as IPSDEGridEditItem;
+                    //表格列
+                    const column = {
+                        name: columnInstance.name.toLowerCase(),
+                        label: this.$tl(columnInstance.getCapPSLanguageRes()?.lanResTag, columnInstance.caption),
+                        langtag: columnInstance.getCapPSLanguageRes()?.lanResTag,
+                        show: !columnInstance.hideDefault,
+                        unit: columnInstance.widthUnit,
+                        isEnableRowEdit: columnInstance.enableRowEdit,
+                        enableCond: editItem?.enableCond ? editItem?.enableCond : 3,
+                        columnType: columnInstance.columnType
+                    };
+                    this.allColumns.push(column);
+                }
             }
         }
+        let columnsInstanceArr: Array<IPSDEGridColumn> = this.controlInstance.getPSDEGridColumns() || [];
+        init(columnsInstanceArr);
     }
 
     /**
@@ -638,7 +644,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             })
             if (dataItem && this.allColumnsInstance?.length > 0) {
                 const srfKeyColumn: any = this.allColumnsInstance.find((columnInstance: any) => {
-                    return Object.is(columnInstance.columnType, 'DEFGRIDCOLUMN') && Object.is(columnInstance.getPSAppDEField.codeName, dataItem.getPSAppDEField.codeName);
+                    return Object.is(columnInstance.columnType, 'DEFGRIDCOLUMN') && Object.is(columnInstance.getPSAppDEField().codeName, dataItem.getPSAppDEField().codeName);
                 })
                 if (srfKeyColumn) {
                     this.columnKeyName = srfKeyColumn.name.toLowerCase();
@@ -2046,21 +2052,23 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         this.resetGridData(row, property, rowIndex);
         this.validate(property, row, rowIndex);
         //  表格项更新对象
-        const allEditColumns: Array<any> = this.controlInstance.getPSDEGridColumns() || [];
+        const allGridEditItemUpdates: Array<IPSDEGridEditItemUpdate> = this.controlInstance.getPSDEGridEditItemUpdates() || [];
+        const allEditColumns: Array<IPSDEGridEditItem> = this.controlInstance.getPSDEGridEditItems() || [];
         if (allEditColumns && allEditColumns.length > 0) {
             allEditColumns.forEach((item: any) => {
-                if (item.getPSDEGridEditItemUpdate?.modelref && Object.is(property, item.name)) {
-                    const allGridEditItemUpdates: Array<any> = this.controlInstance.getPSDEGridEditItemUpdates() || [];
-                    const editItemUpdate: any = allGridEditItemUpdates.find((gridEditItemUpdate: any) => {
-                        return item.getPSDEGridEditItemUpdate.id = gridEditItemUpdate.codeName;
-                    })
+                //  TODO临时提交，模型更新后改为方法
+                const itemUpdateId: any = item._data.getPSDEGridEditItemUpdate?.id;
+                if (itemUpdateId && Object.is(property, item.name)) {
+                    const editItemUpdate: IPSDEGridEditItemUpdate | undefined = allGridEditItemUpdates.find((gridEditItemUpdate: IPSDEGridEditItemUpdate) => {
+                        return itemUpdateId == gridEditItemUpdate.codeName;
+                    });
                     if (editItemUpdate) {
                         let details: string[] = [];
-                        editItemUpdate.getPSDEGEIUpdateDetails.forEach((updateDetail: any) => {
+                        (editItemUpdate.getPSDEGEIUpdateDetails?.() || []).forEach((updateDetail: any) => {
                             details.push(updateDetail.name);
                         })
                         const showBusyIndicator = editItemUpdate.hasOwnProperty('showBusyIndicator') ? editItemUpdate.showBusyIndicator : true;
-                        this.updateGridEditItem(editItemUpdate.getPSAppDEMethod.id, row, details, showBusyIndicator);
+                        this.updateGridEditItem(editItemUpdate.getPSAppDEMethod?.()?.codeName as string, row, details, showBusyIndicator);
                     }
                 }
             })
@@ -2083,7 +2091,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         let tempContext: any = Util.deepCopy(this.context);
         const appDeCodeName: string = this.controlInstance.getPSAppDataEntity()?.codeName || "";
         if (!Util.isEmpty(this.columnKeyName)) {
-            Object.is(tempContext, { [appDeCodeName?.toLowerCase()]: data[this.columnKeyName] });
+            Object.assign(tempContext, { [appDeCodeName?.toLowerCase()]: data[this.columnKeyName] });
         }
         const arg: any = JSON.parse(JSON.stringify(data));
         Object.assign(arg, { viewparams: this.viewparams });

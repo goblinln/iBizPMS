@@ -799,6 +799,28 @@ export class BugBaseService extends EntityBaseService<IBug> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * TestScript
+     *
+     * @param {*} [context={}]
+     * @param {*} [data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugService
+     */
+    async TestScript(context: any = {}, data: any = {}): Promise<HttpResponse> {
+        eval(`var childrenbugs = entity.children("ZT_BUG"); 
+if(childrenbugs !=null){
+for(var i=0 ;i< childrenbugs.length;i++){
+sys.info(childrenbugs[i].get("TITLE"));
+}
+}
+entity.set("id",100).wfstart();
+entity.set("status","FINISH").update();`);
+        return new HttpResponse(data, {
+            ok: true,
+            status: 200,
+        });
+    }
+    /**
      * Update
      *
      * @param {*} [_context={}]
