@@ -48,6 +48,13 @@ public class TaskEstimateSearchContext extends QueryWrapperContext<TaskEstimate>
             this.getSearchCond().eq("`id`", n_id_eq);
         }
     }
+	private String n_evaluationstatus_eq;//[评估状态]
+	public void setN_evaluationstatus_eq(String n_evaluationstatus_eq) {
+        this.n_evaluationstatus_eq = n_evaluationstatus_eq;
+        if(!ObjectUtils.isEmpty(this.n_evaluationstatus_eq)){
+            this.getSearchCond().eq("`evaluationstatus`", n_evaluationstatus_eq);
+        }
+    }
 	private String n_month_eq;//[月]
 	public void setN_month_eq(String n_month_eq) {
         this.n_month_eq = n_month_eq;

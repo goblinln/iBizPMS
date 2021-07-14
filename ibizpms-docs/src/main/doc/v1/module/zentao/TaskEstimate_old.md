@@ -154,6 +154,7 @@ hide members
 |年(YEAR)|EQ|
 |编号(ID)|LIKE|
 |编号(ID)|EQ|
+|评估状态(EVALUATIONSTATUS)|EQ|
 |月(MONTH)|EQ|
 |任务名称(TASKNAME)|EQ|
 |任务名称(TASKNAME)|LIKE|
