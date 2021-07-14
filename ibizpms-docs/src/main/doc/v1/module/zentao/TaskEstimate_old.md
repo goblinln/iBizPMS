@@ -152,9 +152,12 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |年(YEAR)|EQ|
+|用户(ACCOUNT)|EQ|
 |编号(ID)|LIKE|
 |编号(ID)|EQ|
 |评估状态(EVALUATIONSTATUS)|EQ|
+|日期(DATE)|GTANDEQ|
+|日期(DATE)|LTANDEQ|
 |月(MONTH)|EQ|
 |任务名称(TASKNAME)|EQ|
 |任务名称(TASKNAME)|LIKE|

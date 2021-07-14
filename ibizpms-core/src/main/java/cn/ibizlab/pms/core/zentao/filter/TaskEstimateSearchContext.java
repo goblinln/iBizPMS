@@ -34,6 +34,13 @@ public class TaskEstimateSearchContext extends QueryWrapperContext<TaskEstimate>
             this.getSearchCond().eq("`year`", n_year_eq);
         }
     }
+	private String n_account_eq;//[用户]
+	public void setN_account_eq(String n_account_eq) {
+        this.n_account_eq = n_account_eq;
+        if(!ObjectUtils.isEmpty(this.n_account_eq)){
+            this.getSearchCond().eq("`account`", n_account_eq);
+        }
+    }
 	private Long n_id_like;//[编号]
 	public void setN_id_like(Long n_id_like) {
         this.n_id_like = n_id_like;
@@ -53,6 +60,24 @@ public class TaskEstimateSearchContext extends QueryWrapperContext<TaskEstimate>
         this.n_evaluationstatus_eq = n_evaluationstatus_eq;
         if(!ObjectUtils.isEmpty(this.n_evaluationstatus_eq)){
             this.getSearchCond().eq("`evaluationstatus`", n_evaluationstatus_eq);
+        }
+    }
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
+	private Timestamp n_date_gtandeq;//[日期]
+	public void setN_date_gtandeq(Timestamp n_date_gtandeq) {
+        this.n_date_gtandeq = n_date_gtandeq;
+        if(!ObjectUtils.isEmpty(this.n_date_gtandeq)){
+            this.getSearchCond().ge("`date`", n_date_gtandeq);
+        }
+    }
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
+	private Timestamp n_date_ltandeq;//[日期]
+	public void setN_date_ltandeq(Timestamp n_date_ltandeq) {
+        this.n_date_ltandeq = n_date_ltandeq;
+        if(!ObjectUtils.isEmpty(this.n_date_ltandeq)){
+            this.getSearchCond().le("`date`", n_date_ltandeq);
         }
     }
 	private String n_month_eq;//[月]
