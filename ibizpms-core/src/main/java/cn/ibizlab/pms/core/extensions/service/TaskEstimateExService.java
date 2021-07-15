@@ -33,7 +33,12 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
     @Override
     public void saveBatch(List<TaskEstimate> list) {
         Map<Long, Task> taskMap = new HashMap<>();
+        List<TaskEstimate> taskEstimateList_0 = new ArrayList<>();
         for(TaskEstimate taskEstimate : list) {
+            if(taskEstimate.getTask() == null || taskEstimate.getTask() == 0L) {
+                taskEstimateList_0.add(taskEstimate);
+                continue;
+            }
             if(taskMap.get(taskEstimate.getTask()) != null) {
                 Task task = taskMap.get(taskEstimate.getTask());
                 List<TaskEstimate> taskEstimateList = task.getTaskestimate();
@@ -49,6 +54,7 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
         for(Long task : taskMap.keySet()) {
             taskService.recordEstimate(taskMap.get(task));
         }
+        super.saveBatch(taskEstimateList_0);
     }
 
     /**
