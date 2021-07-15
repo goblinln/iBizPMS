@@ -118,11 +118,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -144,11 +140,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -172,11 +164,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         const res = await this.http.get(`/sysupdatefeatures/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -196,11 +184,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         const res = await this.http.delete(`/sysupdatefeatures/${_context.sysupdatefeatures}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -226,11 +210,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -252,11 +232,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -276,11 +252,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         const res = await this.http.get(`/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 }

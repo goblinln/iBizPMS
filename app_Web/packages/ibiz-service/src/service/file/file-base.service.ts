@@ -305,11 +305,7 @@ export class FileBaseService extends EntityBaseService<IFile> {
         const res = await this.http.delete(`/files/${_context.file}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -551,11 +547,7 @@ export class FileBaseService extends EntityBaseService<IFile> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -797,11 +789,7 @@ export class FileBaseService extends EntityBaseService<IFile> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1043,11 +1031,7 @@ export class FileBaseService extends EntityBaseService<IFile> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 }

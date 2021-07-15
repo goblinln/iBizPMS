@@ -143,11 +143,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -170,11 +166,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         const res = await this.http.post(`/todos/${_context.todo}/finish`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -196,11 +188,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -224,11 +212,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         const res = await this.http.get(`/todos/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -248,11 +232,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         const res = await this.http.delete(`/todos/${_context.todo}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -275,11 +255,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         const res = await this.http.post(`/todos/${_context.todo}/start`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -305,11 +281,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -331,11 +303,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -357,11 +325,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 

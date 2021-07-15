@@ -88,11 +88,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -109,11 +105,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -131,11 +123,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
         const res = await this.http.get(`/suitecases/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -151,11 +139,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
         const res = await this.http.delete(`/suitecases/${_context.suitecase}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -174,11 +158,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -195,11 +175,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -215,11 +191,7 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
         const res = await this.http.get(`/suitecases/${_context.suitecase}/select`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 }

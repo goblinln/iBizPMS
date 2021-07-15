@@ -88,11 +88,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -109,11 +105,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -130,11 +122,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -152,11 +140,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         const res = await this.http.get(`/useryearworkstats/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -173,11 +157,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -194,11 +174,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -214,11 +190,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}/getuseryearaction`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -234,11 +206,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         const res = await this.http.delete(`/useryearworkstats/${_context.useryearworkstats}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -257,11 +225,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -277,11 +241,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}/updatetitlebyyear`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -298,11 +258,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -319,11 +275,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -340,11 +292,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -361,11 +309,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -381,11 +325,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/select`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 

@@ -88,11 +88,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -109,11 +105,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -131,11 +123,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
         const res = await this.http.get(`/projectweeklies/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -151,11 +139,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
         const res = await this.http.post(`/projectweeklies/${_context.projectweekly}/summary`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -174,11 +158,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -195,11 +175,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 

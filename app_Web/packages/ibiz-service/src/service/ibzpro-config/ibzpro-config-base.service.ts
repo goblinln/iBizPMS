@@ -88,11 +88,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -109,11 +105,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -131,11 +123,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
         const res = await this.http.get(`/ibzproconfigs/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -151,11 +139,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
         const res = await this.http.put(`/ibzproconfigs/${_context.ibzproconfig}/getsystemconfig`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -171,11 +155,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
         const res = await this.http.delete(`/ibzproconfigs/${_context.ibzproconfig}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -194,11 +174,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -215,11 +191,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -235,11 +207,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
         const res = await this.http.get(`/ibzproconfigs/${_context.ibzproconfig}/select`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 

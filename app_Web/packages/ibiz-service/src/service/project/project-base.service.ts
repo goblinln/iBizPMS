@@ -204,11 +204,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/activate`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -231,11 +227,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/cancelprojecttop`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -258,11 +250,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/close`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -300,11 +288,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -326,11 +310,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -354,11 +334,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.get(`/projects/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -381,11 +357,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/importplanstories`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -408,11 +380,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/linkproduct`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -435,11 +403,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/linkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -462,11 +426,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/projecttop`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -489,11 +449,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/putoff`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -513,11 +469,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.delete(`/projects/${_context.project}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -540,11 +492,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/start`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -567,11 +515,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/suspend`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -594,11 +538,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         const res = await this.http.post(`/projects/${_context.project}/unlinkproduct`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -624,11 +564,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -650,11 +586,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -676,11 +608,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 

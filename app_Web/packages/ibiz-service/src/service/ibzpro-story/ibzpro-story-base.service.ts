@@ -88,11 +88,7 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -109,11 +105,7 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -131,11 +123,7 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
         const res = await this.http.get(`/ibzprostories/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -151,11 +139,7 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
         const res = await this.http.delete(`/ibzprostories/${_context.ibzprostory}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -171,11 +155,7 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
         const res = await this.http.post(`/ibzprostories/${_context.ibzprostory}/syncfromibiz`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -194,11 +174,7 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -215,11 +191,7 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -235,11 +207,7 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
         const res = await this.http.get(`/ibzprostories/${_context.ibzprostory}/select`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 

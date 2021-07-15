@@ -134,11 +134,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -155,11 +151,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -177,11 +169,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         const res = await this.http.get(`/ibzprojectmembers/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -197,11 +185,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         const res = await this.http.delete(`/ibzprojectmembers/${_context.ibzprojectmember}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -220,11 +204,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -241,11 +221,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -261,11 +237,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         const res = await this.http.get(`/ibzprojectmembers/${_context.ibzprojectmember}/select`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 }

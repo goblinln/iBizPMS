@@ -88,11 +88,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -109,11 +105,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -131,11 +123,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         const res = await this.http.get(`/ibzmyterritories/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -151,11 +139,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         const res = await this.http.post(`/ibzmyterritories/mobmenucount`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -171,11 +155,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         const res = await this.http.post(`/ibzmyterritories/myfavoritecount`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -191,11 +171,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         const res = await this.http.post(`/ibzmyterritories/myterritorycount`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -211,11 +187,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         const res = await this.http.delete(`/ibzmyterritories/${_context.ibzmyterritory}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -234,11 +206,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -255,11 +223,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -276,11 +240,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -297,11 +257,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -318,11 +274,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -339,11 +291,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -360,11 +308,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -380,11 +324,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         const res = await this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}/select`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 }

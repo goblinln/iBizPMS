@@ -79,11 +79,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         const res = await this.http.post(`/weeklies/${_context.weekly}/autocreate`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -108,11 +104,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -129,11 +121,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -151,11 +139,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         const res = await this.http.get(`/weeklies/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -171,11 +155,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         const res = await this.http.post(`/weeklies/${_context.weekly}/notice`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -191,11 +171,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         const res = await this.http.post(`/weeklies/${_context.weekly}/read`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -211,11 +187,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         const res = await this.http.post(`/weeklies/${_context.weekly}/submit`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -234,11 +206,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -255,11 +223,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 

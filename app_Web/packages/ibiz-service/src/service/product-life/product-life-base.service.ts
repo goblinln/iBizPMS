@@ -99,11 +99,7 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
     this.log.warn([`[ProductLife]>>>[FetchRoadMapYear函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -124,11 +120,7 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
     this.log.warn([`[ProductLife]>>>[FetchRoadmap函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 }

@@ -110,11 +110,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -134,11 +130,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         }
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -159,11 +151,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         }
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -183,11 +171,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         }
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -203,11 +187,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         const res = await this.http.delete(`/ibzplantemplets/${_context.ibzplantemplet}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -226,11 +206,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -247,11 +223,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -268,11 +240,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -288,11 +256,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         const res = await this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}/select`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 

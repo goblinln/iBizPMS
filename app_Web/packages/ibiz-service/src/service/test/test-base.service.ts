@@ -193,11 +193,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
         const res = await this.http.post(`/tests/${_context.test}/canceltesttop`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -214,11 +210,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -234,11 +226,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
         const res = await this.http.post(`/tests/${_context.test}/testtop`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -255,11 +243,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 }

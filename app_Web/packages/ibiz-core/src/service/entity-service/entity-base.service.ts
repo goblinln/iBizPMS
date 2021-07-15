@@ -318,7 +318,12 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     * @memberof EntityBaseService
     */
     protected async executeAppDELogic(tag: string, _context: any, _data: any) {
-        return await this.appDeLogicService.onExecute(this.appDeLogicMap.get(tag), _context, _data);
+        try {
+            return await this.appDeLogicService.onExecute(this.appDeLogicMap.get(tag), _context, _data);
+        } catch (error) {
+            throw new Error(`执行实体处理逻辑异常，[逻辑错误]${error.message}`)
+        }
+
     }
 
     /**
@@ -331,7 +336,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     * @memberof EntityBaseService
     */
     protected async executeAppDEFieldLogic(model: any, _context: any, _data: any) {
-        return await this.appDeLogicService.onExecute(model, _context, _data);
+        try {
+            return await this.appDeLogicService.onExecute(model, _context, _data);
+        } catch (error) {
+            throw new Error(`执行实体属性处理逻辑异常，[逻辑错误]${error.message}`)
+        }
     }
 
     /**
@@ -370,10 +379,10 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     * @param {*} dataSet 当前数据集合
     * @memberof EntityBaseService
     */
-     protected async afterExecuteActionBatch(_context:any,dataSet:Array<any>){
-        if(dataSet && dataSet.length >0){
+    protected async afterExecuteActionBatch(_context: any, dataSet: Array<any>) {
+        if (dataSet && dataSet.length > 0) {
             for (let i = 0; i < dataSet.length; i++) {
-                dataSet[i] = await this.afterExecuteAction( _context, dataSet[i]);
+                dataSet[i] = await this.afterExecuteAction(_context, dataSet[i]);
             }
         }
         return dataSet;
@@ -425,6 +434,22 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
             }
         }
         return _data;
+    }
+
+    /**
+    * 处理响应错误
+    *
+    * @protected
+    * @param {*} error 错误数据
+    * @memberof EntityBaseService
+    */
+    protected handleResponseError(error: Error) {
+        LogUtil.warn(error);
+        const errorMessage = (error?.message?.indexOf('[逻辑错误]') !== -1) ? error.message : '执行行为异常';
+        return new HttpResponse({ message: errorMessage }, {
+            ok: false,
+            status: 500,
+        });
     }
 
     /**

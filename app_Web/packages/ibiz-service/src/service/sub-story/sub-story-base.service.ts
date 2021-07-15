@@ -353,11 +353,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/activate`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -373,11 +369,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/allpush`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -393,11 +385,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/assignto`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -413,11 +401,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/batchassignto`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -433,11 +417,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/batchchangebranch`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -453,11 +433,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/batchchangemodule`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -473,11 +449,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/batchchangeplan`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -493,11 +465,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/batchchangestage`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -513,11 +481,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/batchclose`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -533,11 +497,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/batchreview`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -553,11 +513,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/batchunlinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -573,11 +529,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/bugtostory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -593,11 +545,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/buildbatchunlinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -613,11 +561,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/buildlinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -633,11 +577,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/buildunlinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -653,11 +593,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/buildunlinkstorys`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -673,11 +609,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/change`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -693,11 +625,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/close`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -722,11 +650,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -742,11 +666,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/createtasks`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -763,11 +683,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -785,11 +701,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.get(`/substories/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -805,11 +717,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/getstoryspec`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -826,11 +734,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -868,11 +772,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/importplanstories`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -888,11 +788,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/linkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -908,11 +804,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/projectbatchunlinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -928,11 +820,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/projectlinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -948,11 +836,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/projectunlinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -968,11 +852,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/projectunlinkstorys`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -988,11 +868,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/push`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1008,11 +884,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/releasebatchunlinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1028,11 +900,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/releaselinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1048,11 +916,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/releaseunlinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1068,11 +932,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.delete(`/substories/${_context.substory}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1088,11 +948,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/resetreviewedby`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1108,11 +964,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/review`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1128,11 +980,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/sendmessage`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1148,11 +996,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/sendmsgpreprocess`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1168,11 +1012,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/setstage`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1188,11 +1028,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/storyfavorites`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1208,11 +1044,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/storynfavorites`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1228,11 +1060,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/syncfromibiz`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1248,11 +1076,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.post(`/substories/${_context.substory}/unlinkstory`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1271,11 +1095,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1292,11 +1112,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1313,11 +1129,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1334,11 +1146,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1355,11 +1163,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1376,11 +1180,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1397,11 +1197,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1418,11 +1214,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1439,11 +1231,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1460,11 +1248,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1481,11 +1265,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1502,11 +1282,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1523,11 +1299,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1544,11 +1316,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1565,11 +1333,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1586,11 +1350,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1607,11 +1367,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1628,11 +1384,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1649,11 +1401,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1670,11 +1418,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1691,11 +1435,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1712,11 +1452,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1733,11 +1469,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1754,11 +1486,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1775,11 +1503,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1796,11 +1520,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1817,11 +1537,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1838,11 +1554,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1859,11 +1571,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1880,11 +1588,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1901,11 +1605,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -1921,11 +1621,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         const res = await this.http.get(`/substories/${_context.substory}/select`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 

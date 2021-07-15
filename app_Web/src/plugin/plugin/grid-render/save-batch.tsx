@@ -71,7 +71,7 @@ export class SaveBatch extends AppGridBase {
      * @param {any} column 表格列实例
      * @memberof AppGridBase
      */
-    public renderGridColumn(h: any, column: any) {
+    public renderGridColumn(column: any) {
         const { name, enableRowEdit, width, caption, widthUnit, align } = column;
         const editItem = this.controlInstance.findPSDEGridEditItem(column.codeName);
         let renderParams: any = {

@@ -106,11 +106,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -127,11 +123,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -149,11 +141,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         const res = await this.http.get(`/testcaselibs/getdraft`, _data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -169,11 +157,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         const res = await this.http.delete(`/testcaselibs/${_context.testcaselib}`);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -192,11 +176,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
     /**
@@ -213,11 +193,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
             } catch (error) {
-                console.warn(error);
-                return new HttpResponse({message:error.message}, {
-                    ok: false,
-                    status: 500,
-                });
+                return this.handleResponseError(error);
             }
     }
 }
