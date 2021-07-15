@@ -15059,9 +15059,9 @@ FROM
 	`zt_project` t1
 	LEFT JOIN t_ibz_top t2 ON t1.id = t2.OBJECTID 
 	AND t2.type = 'project' 
-	AND t2.ACCOUNT = #{srf.sessioncontext.srfloginname} LEFT JOIN zt_project t11 ON t1.PARENT = t11.ID where t1.deleted = '0' and t1.acl = 'private' and t1.id in (select t4.project from zt_team t3 left join zt_projectproduct t4 on t3.root = t4.product where t3.account =#{srf.sessioncontext.srfloginname}  and t3.type = 'product'
+	AND t2.ACCOUNT = #{srf.sessioncontext.srfloginname} LEFT JOIN zt_project t11 ON t1.PARENT = t11.ID where t1.deleted = '0' and ( t1.acl = 'private' and t1.id in (select t4.project from zt_team t3 left join zt_projectproduct t4 on t3.root = t4.product where t3.account =#{srf.sessioncontext.srfloginname}  and t3.type = 'product'
 	
-	) 
+	)  or t1.id = 0)
 	) t1
 ```
 ### 当前用户待办项目(CurUserTodo)<div id="Project_CurUserTodo"></div>
