@@ -109,12 +109,22 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
      * @memberof AccountTestTaskService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && _context.accounttesttask) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttesttasks/${_context.accounttesttask}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         const res = await this.http.get(`/accounttesttasks/${_context.accounttesttask}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetUserConcat
@@ -147,12 +157,22 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
      * @memberof AccountTestTaskService
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttesttasks/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         const res = await this.http.post(`/accounttesttasks/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMy
@@ -163,11 +183,21 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
      * @memberof AccountTestTaskService
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttesttasks/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         const res = await this.http.post(`/accounttesttasks/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

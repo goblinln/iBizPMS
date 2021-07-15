@@ -90,19 +90,30 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
      * @memberof StorySpecService
      */
     async FetchVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[StorySpec]>>>[FetchVersion函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

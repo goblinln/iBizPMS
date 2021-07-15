@@ -133,8 +133,10 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      * @memberof UserContactService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -142,9 +144,11 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -152,7 +156,15 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/usercontacts`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -163,12 +175,22 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      * @memberof UserContactService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && _context.usercontact) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         const res = await this.http.get(`/usercontacts/${_context.usercontact}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -179,6 +201,7 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      * @memberof UserContactService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -189,6 +212,13 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/usercontacts/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -199,12 +229,20 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      * @memberof UserContactService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && _context.usercontact) {
             const res = await this.http.delete(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`);
             return res;
         }
         const res = await this.http.delete(`/usercontacts/${_context.usercontact}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -215,14 +253,26 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      * @memberof UserContactService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && _context.usercontact) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/usercontacts/${_context.usercontact}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchAccount
@@ -233,12 +283,22 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      * @memberof UserContactService
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         const res = await this.http.post(`/usercontacts/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMy
@@ -249,11 +309,21 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
      * @memberof UserContactService
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         const res = await this.http.post(`/usercontacts/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

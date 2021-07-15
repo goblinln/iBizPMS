@@ -157,8 +157,17 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      * @memberof EmployeeService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/employees/${_context.employee}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchBug
@@ -169,8 +178,17 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      * @memberof EmployeeService
      */
     async FetchBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/employees/fetchbug`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchContact
@@ -181,8 +199,17 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      * @memberof EmployeeService
      */
     async FetchContact(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/employees/fetchcontact`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -193,8 +220,17 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      * @memberof EmployeeService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/employees/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProduct
@@ -205,8 +241,17 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      * @memberof EmployeeService
      */
     async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/employees/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProject
@@ -217,8 +262,17 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      * @memberof EmployeeService
      */
     async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/employees/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchTask
@@ -229,8 +283,17 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      * @memberof EmployeeService
      */
     async FetchTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/employees/fetchtask`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchTaskMulti
@@ -241,7 +304,16 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      * @memberof EmployeeService
      */
     async FetchTaskMulti(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/employees/fetchtaskmulti`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

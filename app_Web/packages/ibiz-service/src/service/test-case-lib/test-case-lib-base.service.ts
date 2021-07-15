@@ -93,7 +93,9 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      * @memberof TestCaseLibService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -101,7 +103,15 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/testcaselibs`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -112,8 +122,17 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      * @memberof TestCaseLibService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/testcaselibs/${_context.testcaselib}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -124,10 +143,18 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      * @memberof TestCaseLibService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/testcaselibs/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -138,8 +165,16 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      * @memberof TestCaseLibService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.delete(`/testcaselibs/${_context.testcaselib}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -150,9 +185,19 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      * @memberof TestCaseLibService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/testcaselibs/${_context.testcaselib}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -163,7 +208,16 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      * @memberof TestCaseLibService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/testcaselibs/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

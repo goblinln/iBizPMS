@@ -75,7 +75,9 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -83,7 +85,15 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/useryearworkstats`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -94,8 +104,17 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDevInfomation
@@ -106,8 +125,17 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async GetDevInfomation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/getdevinfomation`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -118,10 +146,18 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/useryearworkstats/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetPoInfomation
@@ -132,8 +168,17 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async GetPoInfomation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/getpoinfomation`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetQaInfomation
@@ -144,8 +189,17 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async GetQaInfomation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/getqainfomation`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetUserYearAction
@@ -156,8 +210,16 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async GetUserYearAction(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}/getuseryearaction`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -168,8 +230,16 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.delete(`/useryearworkstats/${_context.useryearworkstats}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -180,9 +250,19 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * UpdateTitleByYear
@@ -193,8 +273,16 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async UpdateTitleByYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}/updatetitlebyyear`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -205,8 +293,17 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/useryearworkstats/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMonthFinishTaskAndBug
@@ -217,8 +314,17 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchMonthFinishTaskAndBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/useryearworkstats/fetchmonthfinishtaskandbug`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMonthOpenedBugAndCase
@@ -229,8 +335,17 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchMonthOpenedBugAndCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/useryearworkstats/fetchmonthopenedbugandcase`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMonthOpenedStory
@@ -241,8 +356,17 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchMonthOpenedStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/useryearworkstats/fetchmonthopenedstory`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Select
@@ -253,8 +377,16 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/select`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -268,7 +400,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     public async GetUserYearActionBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/useryearworkstats/getuseryearactionbatch`,_data);
+        const res = await this.http.post(`/useryearworkstats/getuseryearactionbatch`,_data);
+        return res;
     }
 
     /**
@@ -282,6 +415,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     public async UpdateTitleByYearBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/useryearworkstats/updatetitlebyyearbatch`,_data);
+        const res = await this.http.post(`/useryearworkstats/updatetitlebyyearbatch`,_data);
+        return res;
     }
 }

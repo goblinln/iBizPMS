@@ -176,8 +176,10 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @memberof ProductPlanService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -185,10 +187,12 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -196,10 +200,12 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/productplans`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -207,10 +213,18 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/productplans`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[Create函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -221,20 +235,31 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @memberof ProductPlanService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.productplan) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan) {
             const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan) {
             const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[Get函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -245,6 +270,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @memberof ProductPlanService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -265,6 +291,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         }
     this.log.warn([`[ProductPlan]>>>[GetDraft函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * ImportPlanTemplet
@@ -275,23 +308,37 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @memberof ProductPlanService
      */
     async ImportPlanTemplet(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/importplantemplet`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/importplantemplet`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/importplantemplet`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[ImportPlanTemplet函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * LinkBug
@@ -302,23 +349,37 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @memberof ProductPlanService
      */
     async LinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/linkbug`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/linkbug`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/linkbug`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[LinkBug函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * LinkStory
@@ -329,23 +390,37 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @memberof ProductPlanService
      */
     async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/linkstory`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/linkstory`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/linkstory`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[LinkStory函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -356,6 +431,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @memberof ProductPlanService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.productplan) {
             const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}`);
             return res;
@@ -370,6 +446,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         }
     this.log.warn([`[ProductPlan]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -380,23 +463,37 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @memberof ProductPlanService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/productplans/${_context.productplan}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/productplans/${_context.productplan}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[Update函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProductQuery
@@ -407,20 +504,31 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @memberof ProductPlanService
      */
     async FetchProductQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/fetchproductquery`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/fetchproductquery`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/fetchproductquery`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[FetchProductQuery函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProjectPlan
@@ -431,20 +539,31 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @memberof ProductPlanService
      */
     async FetchProjectPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/fetchprojectplan`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/fetchprojectplan`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/fetchprojectplan`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[FetchProjectPlan函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -459,15 +578,18 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     public async ImportPlanTempletBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/importplantempletbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/importplantempletbatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/productplans/importplantempletbatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/productplans/importplantempletbatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/importplantempletbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/productplans/importplantempletbatch`,_data);
+            return res;
         }
         this.log.warn([`[ProductPlan]>>>[ImportPlanTempletBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -485,15 +607,18 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/linkbugbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/linkbugbatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/productplans/linkbugbatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/productplans/linkbugbatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/linkbugbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/productplans/linkbugbatch`,_data);
+            return res;
         }
         this.log.warn([`[ProductPlan]>>>[LinkBugBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -511,15 +636,18 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/linkstorybatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/linkstorybatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/productplans/linkstorybatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/productplans/linkstorybatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/linkstorybatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/productplans/linkstorybatch`,_data);
+            return res;
         }
         this.log.warn([`[ProductPlan]>>>[LinkStoryBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });

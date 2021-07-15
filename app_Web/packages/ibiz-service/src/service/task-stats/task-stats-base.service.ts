@@ -75,7 +75,9 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -83,7 +85,15 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/taskstats`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -94,8 +104,17 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/taskstats/${_context.taskstats}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -106,10 +125,18 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/taskstats/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -120,8 +147,16 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.delete(`/taskstats/${_context.taskstats}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -132,9 +167,19 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/taskstats/${_context.taskstats}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -145,8 +190,17 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/taskstats/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchTaskFinishHuiZong
@@ -157,8 +211,17 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async FetchTaskFinishHuiZong(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/taskstats/fetchtaskfinishhuizong`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchUserFinishTaskSum
@@ -169,8 +232,17 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async FetchUserFinishTaskSum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/taskstats/fetchuserfinishtasksum`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Select
@@ -181,7 +253,15 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/taskstats/${_context.taskstats}/select`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

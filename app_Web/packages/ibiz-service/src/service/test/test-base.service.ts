@@ -189,8 +189,16 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async CancelTestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/tests/${_context.test}/canceltesttop`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -201,8 +209,17 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/tests/${_context.test}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * TestTop
@@ -213,8 +230,16 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async TestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/tests/${_context.test}/testtop`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchCurDefault
@@ -225,7 +250,16 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/tests/fetchcurdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

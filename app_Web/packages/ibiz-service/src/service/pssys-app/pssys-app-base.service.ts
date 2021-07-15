@@ -75,7 +75,9 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -83,7 +85,15 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/pssysapps`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -94,8 +104,17 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/pssysapps/${_context.pssysapp}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -106,10 +125,18 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/pssysapps/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -120,8 +147,16 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.delete(`/pssysapps/${_context.pssysapp}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -132,9 +167,19 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/pssysapps/${_context.pssysapp}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchBuild
@@ -145,8 +190,17 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async FetchBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/pssysapps/fetchbuild`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -157,8 +211,17 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/pssysapps/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Select
@@ -169,7 +232,15 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/pssysapps/${_context.pssysapp}/select`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

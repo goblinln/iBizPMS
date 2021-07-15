@@ -149,8 +149,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -158,10 +160,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -169,10 +173,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testtask && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -180,10 +186,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testreport && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -191,10 +199,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.story && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -202,10 +212,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.task && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -213,10 +225,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.build && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -224,10 +238,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.bug && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -235,10 +251,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.productplan && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -246,10 +264,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -257,10 +277,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -268,10 +290,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -279,10 +303,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testcase && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -290,10 +316,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -301,10 +329,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testtask && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -312,10 +342,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -323,10 +355,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.story && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -334,10 +368,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -345,10 +381,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.build && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -356,10 +394,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -367,10 +407,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -378,10 +420,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -389,10 +433,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -400,10 +446,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.story && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -411,10 +459,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productrelease && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -422,10 +472,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -433,10 +485,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.build && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -444,10 +498,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -455,10 +511,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testtask && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -466,10 +524,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -477,10 +537,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.todo && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -488,10 +550,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -499,10 +563,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.weekly && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -510,10 +576,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/weeklies/${_context.weekly}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.todo && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -521,10 +589,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/todos/${_context.todo}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.testsuite && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -532,10 +602,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/testsuites/${_context.testsuite}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.reportly && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -543,10 +615,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/reportlies/${_context.reportly}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -554,10 +628,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -565,10 +641,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.monthly && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -576,10 +654,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/monthlies/${_context.monthly}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -587,10 +667,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/docs/${_context.doc}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -598,10 +680,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/doclibs/${_context.doclib}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.daily && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -609,10 +693,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/dailies/${_context.daily}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -620,10 +706,18 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/actions`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Action]>>>[Create函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -634,180 +728,231 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testtask && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testreport && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.story && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.task && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.build && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.bug && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.productplan && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.doclib && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport && _context.action) {
             const res = await this.http.get(`/tests/${_context.test}/testreports/${_context.testreport}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testcase && _context.action) {
             const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug && _context.action) {
             const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testtask && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.story && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.build && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.story && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productrelease && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.build && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testtask && _context.action) {
             const res = await this.http.get(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doc && _context.action) {
             const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.todo && _context.action) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.doc && _context.action) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.weekly && _context.action) {
             const res = await this.http.get(`/weeklies/${_context.weekly}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.todo && _context.action) {
             const res = await this.http.get(`/todos/${_context.todo}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.testsuite && _context.action) {
             const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.reportly && _context.action) {
             const res = await this.http.get(`/reportlies/${_context.reportly}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.monthly && _context.action) {
             const res = await this.http.get(`/monthlies/${_context.monthly}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doc && _context.action) {
             const res = await this.http.get(`/docs/${_context.doc}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.action) {
             const res = await this.http.get(`/doclibs/${_context.doclib}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.daily && _context.action) {
             const res = await this.http.get(`/dailies/${_context.daily}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.action) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Action]>>>[Get函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -818,6 +963,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -1078,6 +1224,13 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
     this.log.warn([`[Action]>>>[GetDraft函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -1088,223 +1241,317 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.task && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.build && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.bug && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.productplan && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/tests/${_context.test}/testreports/${_context.testreport}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testcase && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/tests/${_context.test}/testcases/${_context.testcase}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.build && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productrelease && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.build && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.todo && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.weekly && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/weeklies/${_context.weekly}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.todo && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/todos/${_context.todo}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.testsuite && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/testsuites/${_context.testsuite}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.reportly && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/reportlies/${_context.reportly}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.monthly && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/monthlies/${_context.monthly}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/docs/${_context.doc}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.daily && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/dailies/${_context.daily}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.action) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Action]>>>[Update函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchAccount
@@ -1315,180 +1562,231 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testtask && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testreport && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.bug && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport && true) {
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testtask && true) {
             const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport && true) {
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.build && true) {
             const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productrelease && true) {
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testtask && true) {
             const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doc && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.todo && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.doc && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.weekly && true) {
             const res = await this.http.post(`/weeklies/${_context.weekly}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.todo && true) {
             const res = await this.http.post(`/todos/${_context.todo}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.testsuite && true) {
             const res = await this.http.post(`/testsuites/${_context.testsuite}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.reportly && true) {
             const res = await this.http.post(`/reportlies/${_context.reportly}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.monthly && true) {
             const res = await this.http.post(`/monthlies/${_context.monthly}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doc && true) {
             const res = await this.http.post(`/docs/${_context.doc}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.daily && true) {
             const res = await this.http.post(`/dailies/${_context.daily}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[Action]>>>[FetchAccount函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMain
@@ -1499,180 +1797,231 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchMain(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testtask && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testreport && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.bug && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport && true) {
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testtask && true) {
             const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport && true) {
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.build && true) {
             const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productrelease && true) {
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testtask && true) {
             const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doc && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.todo && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.doc && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.weekly && true) {
             const res = await this.http.post(`/weeklies/${_context.weekly}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.todo && true) {
             const res = await this.http.post(`/todos/${_context.todo}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.testsuite && true) {
             const res = await this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.reportly && true) {
             const res = await this.http.post(`/reportlies/${_context.reportly}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.monthly && true) {
             const res = await this.http.post(`/monthlies/${_context.monthly}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doc && true) {
             const res = await this.http.post(`/docs/${_context.doc}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.daily && true) {
             const res = await this.http.post(`/dailies/${_context.daily}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmain`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[Action]>>>[FetchMain函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMy
@@ -1683,180 +2032,231 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testtask && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testreport && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.bug && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport && true) {
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testtask && true) {
             const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport && true) {
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.build && true) {
             const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productrelease && true) {
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testtask && true) {
             const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doc && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.todo && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.doc && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.weekly && true) {
             const res = await this.http.post(`/weeklies/${_context.weekly}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.todo && true) {
             const res = await this.http.post(`/todos/${_context.todo}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.testsuite && true) {
             const res = await this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.reportly && true) {
             const res = await this.http.post(`/reportlies/${_context.reportly}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.monthly && true) {
             const res = await this.http.post(`/monthlies/${_context.monthly}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doc && true) {
             const res = await this.http.post(`/docs/${_context.doc}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.daily && true) {
             const res = await this.http.post(`/dailies/${_context.daily}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[Action]>>>[FetchMy函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMyTrends
@@ -1867,180 +2267,231 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchMyTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testtask && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testreport && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.bug && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport && true) {
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testtask && true) {
             const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport && true) {
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.build && true) {
             const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productrelease && true) {
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testtask && true) {
             const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doc && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.todo && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.doc && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.weekly && true) {
             const res = await this.http.post(`/weeklies/${_context.weekly}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.todo && true) {
             const res = await this.http.post(`/todos/${_context.todo}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.testsuite && true) {
             const res = await this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.reportly && true) {
             const res = await this.http.post(`/reportlies/${_context.reportly}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.monthly && true) {
             const res = await this.http.post(`/monthlies/${_context.monthly}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doc && true) {
             const res = await this.http.post(`/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.daily && true) {
             const res = await this.http.post(`/dailies/${_context.daily}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmytrends`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[Action]>>>[FetchMyTrends函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProduct
@@ -2051,180 +2502,231 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testtask && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testreport && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.bug && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport && true) {
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testtask && true) {
             const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport && true) {
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.build && true) {
             const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productrelease && true) {
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testtask && true) {
             const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doc && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.todo && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.doc && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.weekly && true) {
             const res = await this.http.post(`/weeklies/${_context.weekly}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.todo && true) {
             const res = await this.http.post(`/todos/${_context.todo}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.testsuite && true) {
             const res = await this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.reportly && true) {
             const res = await this.http.post(`/reportlies/${_context.reportly}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.monthly && true) {
             const res = await this.http.post(`/monthlies/${_context.monthly}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doc && true) {
             const res = await this.http.post(`/docs/${_context.doc}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.daily && true) {
             const res = await this.http.post(`/dailies/${_context.daily}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[Action]>>>[FetchProduct函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProject
@@ -2235,179 +2737,230 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testtask && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.testreport && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.bug && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport && true) {
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testtask && true) {
             const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport && true) {
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.build && true) {
             const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productrelease && true) {
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testtask && true) {
             const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doc && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.todo && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && _context.doc && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.weekly && true) {
             const res = await this.http.post(`/weeklies/${_context.weekly}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.todo && true) {
             const res = await this.http.post(`/todos/${_context.todo}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.testsuite && true) {
             const res = await this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.reportly && true) {
             const res = await this.http.post(`/reportlies/${_context.reportly}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.monthly && true) {
             const res = await this.http.post(`/monthlies/${_context.monthly}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doc && true) {
             const res = await this.http.post(`/docs/${_context.doc}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.daily && true) {
             const res = await this.http.post(`/dailies/${_context.daily}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[Action]>>>[FetchProject函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

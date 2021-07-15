@@ -309,12 +309,22 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
      * @memberof AccountTaskService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && _context.accounttask) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttasks/${_context.accounttask}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         const res = await this.http.get(`/accounttasks/${_context.accounttask}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetUserConcat
@@ -347,12 +357,22 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
      * @memberof AccountTaskService
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         const res = await this.http.post(`/accounttasks/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMy
@@ -363,12 +383,22 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
      * @memberof AccountTaskService
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         const res = await this.http.post(`/accounttasks/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMyFavorites
@@ -379,11 +409,21 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
      * @memberof AccountTaskService
      */
     async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchmyfavorites`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         const res = await this.http.post(`/accounttasks/fetchmyfavorites`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

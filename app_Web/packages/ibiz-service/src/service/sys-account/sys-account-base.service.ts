@@ -75,8 +75,17 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
      * @memberof SysAccountService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/sysaccounts/${_context.sysaccount}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * CountMyContribution
@@ -87,8 +96,17 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
      * @memberof SysAccountService
      */
     async CountMyContribution(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/sysaccounts/countmycontribution`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * CountMyWork
@@ -99,7 +117,16 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
      * @memberof SysAccountService
      */
     async CountMyWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/sysaccounts/countmywork`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

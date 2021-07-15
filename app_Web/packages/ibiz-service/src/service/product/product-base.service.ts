@@ -189,8 +189,16 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Close
@@ -201,8 +209,16 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/products/${_context.product}/close`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Create
@@ -213,7 +229,9 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -221,7 +239,15 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/products`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -232,8 +258,17 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/products/${_context.product}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -244,10 +279,18 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/products/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * ProductTop
@@ -258,8 +301,16 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async ProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/products/${_context.product}/producttop`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -270,8 +321,16 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.delete(`/products/${_context.product}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -282,9 +341,19 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/products/${_context.product}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchCurDefault
@@ -295,8 +364,17 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/products/fetchcurdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchCurProject
@@ -307,8 +385,17 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/products/fetchcurproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -322,6 +409,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/products/closebatch`,_data);
+        const res = await this.http.post(`/products/closebatch`,_data);
+        return res;
     }
 }

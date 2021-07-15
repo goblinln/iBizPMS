@@ -90,18 +90,30 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
      * @memberof ProjectBurnService
      */
     async ComputeBurn(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.projectburn) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectburns/${_context.projectburn}/computeburn`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.projectburn) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.post(`/projects/${_context.project}/projectburns/${_context.projectburn}/computeburn`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProjectBurn]>>>[ComputeBurn函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchEstimate
@@ -112,16 +124,26 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
      * @memberof ProjectBurnService
      */
     async FetchEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectburns/fetchestimate`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/projectburns/fetchestimate`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProjectBurn]>>>[FetchEstimate函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -136,11 +158,13 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
     public async ComputeBurnBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/projectburns/computeburnbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectburns/computeburnbatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/projectburns/computeburnbatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/projectburns/computeburnbatch`,_data);
+            return res;
         }
         this.log.warn([`[ProjectBurn]>>>[ComputeBurnBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });

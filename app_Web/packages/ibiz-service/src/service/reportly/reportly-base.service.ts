@@ -75,7 +75,9 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      * @memberof ReportlyService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -83,7 +85,15 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/reportlies`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -94,8 +104,17 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      * @memberof ReportlyService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/reportlies/${_context.reportly}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -106,10 +125,18 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      * @memberof ReportlyService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/reportlies/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Read
@@ -120,8 +147,16 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      * @memberof ReportlyService
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/reportlies/${_context.reportly}/read`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Submit
@@ -132,8 +167,16 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      * @memberof ReportlyService
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/reportlies/${_context.reportly}/submit`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -144,9 +187,19 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      * @memberof ReportlyService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/reportlies/${_context.reportly}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -157,8 +210,17 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      * @memberof ReportlyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/reportlies/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -172,7 +234,8 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      */
     public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/reportlies/readbatch`,_data);
+        const res = await this.http.post(`/reportlies/readbatch`,_data);
+        return res;
     }
 
     /**
@@ -186,6 +249,7 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      */
     public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/reportlies/submitbatch`,_data);
+        const res = await this.http.post(`/reportlies/submitbatch`,_data);
+        return res;
     }
 }

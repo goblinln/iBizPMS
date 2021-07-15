@@ -363,6 +363,23 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     }
 
     /**
+    * 执行实体行为之后批处理（主要用于数据集处理）
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} dataSet 当前数据集合
+    * @memberof EntityBaseService
+    */
+     protected async afterExecuteActionBatch(_context:any,dataSet:Array<any>){
+        if(dataSet && dataSet.length >0){
+            for (let i = 0; i < dataSet.length; i++) {
+                dataSet[i] = await this.afterExecuteAction( _context, dataSet[i]);
+            }
+        }
+        return dataSet;
+    }
+
+    /**
     * 执行实体属性值计算逻辑
     *
     * @protected

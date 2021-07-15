@@ -321,12 +321,22 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
      * @memberof AccountTestCaseService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && _context.accounttestcase) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttestcases/${_context.accounttestcase}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         const res = await this.http.get(`/accounttestcases/${_context.accounttestcase}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchAccount
@@ -337,12 +347,22 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
      * @memberof AccountTestCaseService
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         const res = await this.http.post(`/accounttestcases/fetchaccount`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMy
@@ -353,12 +373,22 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
      * @memberof AccountTestCaseService
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         const res = await this.http.post(`/accounttestcases/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchMyFavorite
@@ -369,11 +399,21 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
      * @memberof AccountTestCaseService
      */
     async FetchMyFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmyfavorite`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         const res = await this.http.post(`/accounttestcases/fetchmyfavorite`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

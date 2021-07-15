@@ -75,7 +75,9 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      * @memberof IBZProStoryModuleService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -83,7 +85,15 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/ibzprostorymodules`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -94,8 +104,17 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      * @memberof IBZProStoryModuleService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzprostorymodules/${_context.ibzprostorymodule}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -106,10 +125,18 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      * @memberof IBZProStoryModuleService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzprostorymodules/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -120,8 +147,16 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      * @memberof IBZProStoryModuleService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.delete(`/ibzprostorymodules/${_context.ibzprostorymodule}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * SyncFromIBIZ
@@ -132,8 +167,16 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      * @memberof IBZProStoryModuleService
      */
     async SyncFromIBIZ(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/ibzprostorymodules/${_context.ibzprostorymodule}/syncfromibiz`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -144,9 +187,19 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      * @memberof IBZProStoryModuleService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/ibzprostorymodules/${_context.ibzprostorymodule}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -157,8 +210,17 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      * @memberof IBZProStoryModuleService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/ibzprostorymodules/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Select
@@ -169,8 +231,16 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      * @memberof IBZProStoryModuleService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzprostorymodules/${_context.ibzprostorymodule}/select`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -184,6 +254,7 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
      */
     public async SyncFromIBIZBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzprostorymodules/syncfromibizbatch`,_data);
+        const res = await this.http.post(`/ibzprostorymodules/syncfromibizbatch`,_data);
+        return res;
     }
 }

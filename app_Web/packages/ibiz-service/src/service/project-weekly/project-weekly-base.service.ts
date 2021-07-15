@@ -75,7 +75,9 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
      * @memberof ProjectWeeklyService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -83,7 +85,15 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/projectweeklies`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -94,8 +104,17 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
      * @memberof ProjectWeeklyService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/projectweeklies/${_context.projectweekly}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -106,10 +125,18 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
      * @memberof ProjectWeeklyService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/projectweeklies/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Summary
@@ -120,8 +147,16 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
      * @memberof ProjectWeeklyService
      */
     async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectweeklies/${_context.projectweekly}/summary`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -132,9 +167,19 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
      * @memberof ProjectWeeklyService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/projectweeklies/${_context.projectweekly}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -145,8 +190,17 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
      * @memberof ProjectWeeklyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectweeklies/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -160,6 +214,7 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
      */
     public async SummaryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projectweeklies/summarybatch`,_data);
+        const res = await this.http.post(`/projectweeklies/summarybatch`,_data);
+        return res;
     }
 }

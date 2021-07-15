@@ -75,8 +75,16 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/weeklies/${_context.weekly}/autocreate`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Create
@@ -87,7 +95,9 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -95,7 +105,15 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/weeklies`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -106,8 +124,17 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/weeklies/${_context.weekly}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -118,10 +145,18 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/weeklies/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Notice
@@ -132,8 +167,16 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/weeklies/${_context.weekly}/notice`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Read
@@ -144,8 +187,16 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/weeklies/${_context.weekly}/read`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Submit
@@ -156,8 +207,16 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/weeklies/${_context.weekly}/submit`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -168,9 +227,19 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/weeklies/${_context.weekly}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -181,8 +250,17 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/weeklies/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -196,7 +274,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/weeklies/autocreatebatch`,_data);
+        const res = await this.http.post(`/weeklies/autocreatebatch`,_data);
+        return res;
     }
 
     /**
@@ -210,7 +289,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     public async NoticeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/weeklies/noticebatch`,_data);
+        const res = await this.http.post(`/weeklies/noticebatch`,_data);
+        return res;
     }
 
     /**
@@ -224,7 +304,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/weeklies/readbatch`,_data);
+        const res = await this.http.post(`/weeklies/readbatch`,_data);
+        return res;
     }
 
     /**
@@ -238,6 +319,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/weeklies/submitbatch`,_data);
+        const res = await this.http.post(`/weeklies/submitbatch`,_data);
+        return res;
     }
 }

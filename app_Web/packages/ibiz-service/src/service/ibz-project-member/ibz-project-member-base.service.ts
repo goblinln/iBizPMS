@@ -121,7 +121,9 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -129,7 +131,15 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/ibzprojectmembers`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -140,8 +150,17 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzprojectmembers/${_context.ibzprojectmember}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -152,10 +171,18 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzprojectmembers/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -166,8 +193,16 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.delete(`/ibzprojectmembers/${_context.ibzprojectmember}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -178,9 +213,19 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/ibzprojectmembers/${_context.ibzprojectmember}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -191,8 +236,17 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/ibzprojectmembers/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Select
@@ -203,7 +257,15 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzprojectmembers/${_context.ibzprojectmember}/select`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

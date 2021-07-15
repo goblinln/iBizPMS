@@ -97,7 +97,9 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -105,7 +107,15 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/ibzplantemplets`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -116,11 +126,20 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
         }
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -131,6 +150,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzplantemplets/getdraft`, _data);
@@ -138,6 +158,13 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
             await this.fillMinor(_context, res.data);
         }
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetPlan
@@ -148,11 +175,20 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async GetPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}/getplan`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
         }
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -163,8 +199,16 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.delete(`/ibzplantemplets/${_context.ibzplantemplet}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -175,9 +219,19 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/ibzplantemplets/${_context.ibzplantemplet}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchCurUserTemplet
@@ -188,8 +242,17 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async FetchCurUserTemplet(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/ibzplantemplets/fetchcurusertemplet`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -200,8 +263,17 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/ibzplantemplets/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Select
@@ -212,8 +284,16 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}/select`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -227,6 +307,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      */
     public async GetPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzplantemplets/getplanbatch`,_data);
+        const res = await this.http.post(`/ibzplantemplets/getplanbatch`,_data);
+        return res;
     }
 }

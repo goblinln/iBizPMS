@@ -75,8 +75,16 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
      * @memberof ProjectMonthlyService
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectmonthlies/${_context.projectmonthly}/autocreate`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Create
@@ -87,7 +95,9 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
      * @memberof ProjectMonthlyService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -95,7 +105,15 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/projectmonthlies`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -106,8 +124,17 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
      * @memberof ProjectMonthlyService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/projectmonthlies/${_context.projectmonthly}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -118,10 +145,18 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
      * @memberof ProjectMonthlyService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/projectmonthlies/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -132,9 +167,19 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
      * @memberof ProjectMonthlyService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/projectmonthlies/${_context.projectmonthly}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -145,8 +190,17 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
      * @memberof ProjectMonthlyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectmonthlies/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -160,6 +214,7 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
      */
     public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projectmonthlies/autocreatebatch`,_data);
+        const res = await this.http.post(`/projectmonthlies/autocreatebatch`,_data);
+        return res;
     }
 }

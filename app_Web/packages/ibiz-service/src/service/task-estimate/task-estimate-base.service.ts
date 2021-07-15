@@ -144,8 +144,10 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.task && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -153,10 +155,12 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -164,10 +168,18 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TaskEstimate]>>>[Create函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -178,16 +190,26 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.task && _context.taskestimate) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && _context.taskestimate) {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TaskEstimate]>>>[Get函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -198,6 +220,7 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.task && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -212,6 +235,13 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         }
     this.log.warn([`[TaskEstimate]>>>[GetDraft函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -222,6 +252,7 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.task && _context.taskestimate) {
             const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
             return res;
@@ -232,6 +263,13 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         }
     this.log.warn([`[TaskEstimate]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -242,18 +280,30 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.task && _context.taskestimate) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && _context.taskestimate) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
             const res = await this.http.put(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TaskEstimate]>>>[Update函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -264,15 +314,25 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @memberof TaskEstimateService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
             return res;
         }
     this.log.warn([`[TaskEstimate]>>>[FetchDefault函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }

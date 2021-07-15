@@ -75,7 +75,9 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -83,7 +85,15 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/ibzproconfigs`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -94,8 +104,17 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzproconfigs/${_context.ibzproconfig}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -106,10 +125,18 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzproconfigs/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetSystemConfig
@@ -120,8 +147,16 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async GetSystemConfig(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.put(`/ibzproconfigs/${_context.ibzproconfig}/getsystemconfig`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -132,8 +167,16 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.delete(`/ibzproconfigs/${_context.ibzproconfig}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -144,9 +187,19 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/ibzproconfigs/${_context.ibzproconfig}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -157,8 +210,17 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/ibzproconfigs/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Select
@@ -169,8 +231,16 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzproconfigs/${_context.ibzproconfig}/select`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 
     /**
@@ -184,6 +254,7 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      */
     public async GetSystemConfigBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzproconfigs/getsystemconfigbatch`,_data);
+        const res = await this.http.post(`/ibzproconfigs/getsystemconfigbatch`,_data);
+        return res;
     }
 }

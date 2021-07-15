@@ -133,7 +133,9 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -141,7 +143,15 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/projectstats`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Get
@@ -152,8 +162,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/projectstats/${_context.projectstats}`);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * GetDraft
@@ -164,10 +183,18 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/projectstats/getdraft`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * ProjectQualitySum
@@ -178,8 +205,16 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async ProjectQualitySum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/${_context.projectstats}/projectqualitysum`, _data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Remove
@@ -190,8 +225,16 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.delete(`/projectstats/${_context.projectstats}`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Update
@@ -202,9 +245,19 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data);
         const res = await this.http.put(`/projectstats/${_context.projectstats}`, _data);
+        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchDefault
@@ -215,8 +268,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchNoOpenProduct
@@ -227,8 +289,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchNoOpenProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchnoopenproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProjectBugType
@@ -239,8 +310,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectBugType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchprojectbugtype`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProjectInputStats
@@ -251,8 +331,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectInputStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchprojectinputstats`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProjectProgress
@@ -263,8 +352,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectProgress(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchprojectprogress`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProjectQuality
@@ -275,8 +373,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectQuality(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchprojectquality`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProjectStoryStageStats
@@ -287,8 +394,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectStoryStageStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchprojectstorystagestats`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProjectStoryStatusStats
@@ -299,8 +415,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectStoryStatusStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchprojectstorystatusstats`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProjectTaskCountByTaskStatus
@@ -311,8 +436,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectTaskCountByTaskStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchprojecttaskcountbytaskstatus`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchProjectTaskCountByType
@@ -323,8 +457,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectTaskCountByType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchprojecttaskcountbytype`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * FetchTaskTime
@@ -335,8 +478,17 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchTaskTime(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/projectstats/fetchtasktime`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
     /**
      * Select
@@ -347,7 +499,15 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/projectstats/${_context.projectstats}/select`);
         return res;
+            } catch (error) {
+                console.warn(error);
+                return new HttpResponse({message:error.message}, {
+                    ok: false,
+                    status: 500,
+                });
+            }
     }
 }
