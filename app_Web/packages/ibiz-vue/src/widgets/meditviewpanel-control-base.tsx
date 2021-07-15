@@ -67,6 +67,15 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
     public parameters: any[] = [];
 
     /**
+     * 是否显示底部按钮
+     *
+     * @public
+     * @type {any[]}
+     * @memberof MEditViewPanelControlBase
+     */
+     public showBottomButton: boolean = true;
+
+    /**
      * 部件模型数据初始化
      *
      * @memberof MEditViewPanelControlBase
@@ -74,7 +83,7 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
     public async ctrlModelInit(args?:any) {
         await super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppMEditViewPanelService(this.controlInstance);
+            this.service = new AppMEditViewPanelService(this.controlInstance, this.context);
         }
         // 加载嵌入视图的数据
         await this.controlInstance.getEmbeddedPSAppView()?.fill();
@@ -111,6 +120,10 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
     public initParameters() {
         const emView = this.controlInstance.getEmbeddedPSAppView() as IPSAppView;
         const emViewEntity = emView?.getPSAppDataEntity();
+        const ctrlParams = this.controlInstance.getPSControlParam()?.ctrlParams;
+        if (ctrlParams && ctrlParams.SHOWBOTTOMBUTTON) {
+          this.showBottomButton = Object.is(ctrlParams.SHOWBOTTOMBUTTON,"false") ? false : true;
+        }
         if (emView && emViewEntity){
             this.deResParameters = Util.formatAppDERSPath(this.context, (emView as IPSAppDEView).getPSAppDERSPaths());
             this.parameters = [{

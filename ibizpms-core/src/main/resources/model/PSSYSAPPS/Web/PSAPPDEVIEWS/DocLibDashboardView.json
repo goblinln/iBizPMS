@@ -118,6 +118,7 @@
           "layout" : "TABLE_24COL"
         },
         "getPSUIActionGroup" : {
+          "codeName" : "Auto113",
           "name" : "更多（最近更新）",
           "getPSUIActionGroupDetails" : [ {
             "detailType" : "DEUIACTION",
@@ -792,6 +793,7 @@
           "layout" : "TABLE_24COL"
         },
         "getPSUIActionGroup" : {
+          "codeName" : "Auto78",
           "name" : "更多（我的文档）",
           "getPSUIActionGroupDetails" : [ {
             "detailType" : "DEUIACTION",
@@ -1471,6 +1473,7 @@
           "layout" : "TABLE_24COL"
         },
         "getPSUIActionGroup" : {
+          "codeName" : "Auto107",
           "name" : "更多（我的收藏）",
           "getPSUIActionGroupDetails" : [ {
             "detailType" : "DEUIACTION",
@@ -2471,9 +2474,7 @@
                         "name" : "alldoccnt1"
                       },
                       "allowEmpty" : true,
-                      "emptyCaption" : false,
                       "hidden" : true,
-                      "inputTipClosable" : false,
                       "showCaption" : true
                     }, {
                       "caption" : "最近更新数量",
@@ -2496,9 +2497,7 @@
                         "name" : "recentupdatecnt"
                       },
                       "allowEmpty" : true,
-                      "emptyCaption" : false,
                       "hidden" : true,
-                      "inputTipClosable" : false,
                       "showCaption" : true
                     } ],
                     "getPSEditor" : {
@@ -2520,11 +2519,7 @@
                       "layout" : "TABLE_24COL"
                     },
                     "allowEmpty" : true,
-                    "compositeItem" : true,
-                    "emptyCaption" : false,
-                    "hidden" : false,
-                    "inputTipClosable" : false,
-                    "showCaption" : false
+                    "compositeItem" : true
                   } ],
                   "getPSLayout" : {
                     "columnCount" : 24,
@@ -2672,9 +2667,7 @@
                         "name" : "alldoccnt2"
                       },
                       "allowEmpty" : true,
-                      "emptyCaption" : false,
                       "hidden" : true,
-                      "inputTipClosable" : false,
                       "showCaption" : true
                     }, {
                       "caption" : "最近添加数量",
@@ -2697,9 +2690,7 @@
                         "name" : "recentaddcnt"
                       },
                       "allowEmpty" : true,
-                      "emptyCaption" : false,
                       "hidden" : true,
-                      "inputTipClosable" : false,
                       "showCaption" : true
                     } ],
                     "getPSEditor" : {
@@ -2721,11 +2712,7 @@
                       "layout" : "TABLE_24COL"
                     },
                     "allowEmpty" : true,
-                    "compositeItem" : true,
-                    "emptyCaption" : false,
-                    "hidden" : false,
-                    "inputTipClosable" : false,
-                    "showCaption" : false
+                    "compositeItem" : true
                   } ],
                   "getPSLayout" : {
                     "columnCount" : 24,
@@ -2792,9 +2779,7 @@
                         "name" : "alldoccnt3"
                       },
                       "allowEmpty" : true,
-                      "emptyCaption" : false,
                       "hidden" : true,
-                      "inputTipClosable" : false,
                       "showCaption" : true
                     }, {
                       "caption" : "我的文档数量",
@@ -2817,9 +2802,7 @@
                         "name" : "mydoccnt"
                       },
                       "allowEmpty" : true,
-                      "emptyCaption" : false,
                       "hidden" : true,
-                      "inputTipClosable" : false,
                       "showCaption" : true
                     } ],
                     "getPSEditor" : {
@@ -2841,11 +2824,7 @@
                       "layout" : "TABLE_24COL"
                     },
                     "allowEmpty" : true,
-                    "compositeItem" : true,
-                    "emptyCaption" : false,
-                    "hidden" : false,
-                    "inputTipClosable" : false,
-                    "showCaption" : false
+                    "compositeItem" : true
                   } ],
                   "getPSLayout" : {
                     "columnCount" : 24,
@@ -2912,9 +2891,7 @@
                         "name" : "alldoccnt4"
                       },
                       "allowEmpty" : true,
-                      "emptyCaption" : false,
                       "hidden" : true,
-                      "inputTipClosable" : false,
                       "showCaption" : true
                     }, {
                       "caption" : "我的收藏数量",
@@ -2937,9 +2914,7 @@
                         "name" : "myfavouritecnt"
                       },
                       "allowEmpty" : true,
-                      "emptyCaption" : false,
                       "hidden" : true,
-                      "inputTipClosable" : false,
                       "showCaption" : true
                     } ],
                     "getPSEditor" : {
@@ -2961,11 +2936,7 @@
                       "layout" : "TABLE_24COL"
                     },
                     "allowEmpty" : true,
-                    "compositeItem" : true,
-                    "emptyCaption" : false,
-                    "hidden" : false,
-                    "inputTipClosable" : false,
-                    "showCaption" : false
+                    "compositeItem" : true
                   } ],
                   "getPSLayout" : {
                     "columnCount" : 24,
@@ -3250,6 +3221,7 @@
           "layout" : "TABLE_24COL"
         },
         "getPSUIActionGroup" : {
+          "codeName" : "Auto133",
           "name" : "更多（未完成项目）",
           "getPSUIActionGroupDetails" : [ {
             "detailType" : "DEUIACTION",

@@ -18,14 +18,11 @@ export class AppThrowExceptionNode extends AppDeLogicNodeBase {
      * 执行节点
      *
      * @static
-     * @param {IPSDEThrowExceptionLogic} logicNode
-     * @param {ActionContext} actionContext
+     * @param {IPSDELogicNode} logicNode 逻辑节点
+     * @param {ActionContext} actionContext 逻辑上下文
      * @memberof AppThrowExceptionNode
      */
     public async executeNode(logicNode: IPSDEThrowExceptionLogic, actionContext: ActionContext) {
-        actionContext.throwExceptionInfo = {
-            exceptionInfo:logicNode.errorInfo
-        };
-        return this.computeNextNodes(logicNode, actionContext);
+        throw new Error(logicNode.errorInfo);
     }
 }

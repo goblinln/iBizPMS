@@ -622,6 +622,7 @@
     "name" : "srfmstag"
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "UAGroup",
     "name" : "移动端滑动",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

@@ -315,9 +315,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "actionGroupExtractMode" : "ITEM",
@@ -384,9 +382,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : false,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -414,9 +409,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "预计剩余",
@@ -445,10 +438,7 @@
           },
           "unitName" : "小时",
           "allowEmpty" : false,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "消息通知用户",
@@ -475,9 +465,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "备注",
@@ -508,9 +496,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "任务状态",
@@ -537,9 +522,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",

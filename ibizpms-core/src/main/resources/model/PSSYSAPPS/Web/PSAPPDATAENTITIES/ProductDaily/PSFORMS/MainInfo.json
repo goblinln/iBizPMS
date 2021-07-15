@@ -209,9 +209,6 @@
         },
         "valueItemName" : "product",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "actionGroupExtractMode" : "ITEM",
@@ -252,9 +249,6 @@
           },
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "日期",
@@ -283,10 +277,8 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "总工时",
@@ -316,9 +308,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {
@@ -355,10 +344,9 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "结束日期",
@@ -384,10 +372,9 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "产品",
@@ -414,9 +401,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "任务",
@@ -443,9 +428,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {

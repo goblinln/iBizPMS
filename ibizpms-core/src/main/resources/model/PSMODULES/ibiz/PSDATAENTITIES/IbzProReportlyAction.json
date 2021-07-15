@@ -138,6 +138,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -149,6 +150,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Type",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "动态(根据类型过滤)",
     "name" : "Type",
     "getPSDEDataQueries" : [ {

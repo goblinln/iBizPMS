@@ -27,7 +27,6 @@ export class AppKanbanService extends ControlServiceBase {
      */
     public appEntityService!: any;
 
-
     /**
      * 初始化服务参数
      *
@@ -36,7 +35,7 @@ export class AppKanbanService extends ControlServiceBase {
      */
     public async initServiceParam(opts: any) {
         this.controlInstance = opts;
-        this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+        this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         this.model = new AppKanbanModel(opts);
     }
 
@@ -46,8 +45,8 @@ export class AppKanbanService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppKanbanService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
         this.initServiceParam(opts);
     }
 

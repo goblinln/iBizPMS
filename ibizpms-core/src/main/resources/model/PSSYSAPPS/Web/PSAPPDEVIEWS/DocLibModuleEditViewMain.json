@@ -324,9 +324,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "名称",
@@ -354,9 +352,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : false,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "所属文档库",
@@ -414,9 +409,6 @@
         },
         "valueItemName" : "root",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "查询类型",
@@ -443,9 +435,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "是否已收藏",
@@ -472,9 +462,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {

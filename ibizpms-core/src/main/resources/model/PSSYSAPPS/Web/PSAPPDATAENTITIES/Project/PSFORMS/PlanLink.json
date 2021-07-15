@@ -114,9 +114,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "plans",
@@ -176,8 +174,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       } ],

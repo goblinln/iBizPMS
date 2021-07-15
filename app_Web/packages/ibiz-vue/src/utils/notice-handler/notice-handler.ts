@@ -65,7 +65,7 @@ export class NoticeHandler {
             } else {
                 if (!error || !error.status || !error.data) {
                     LogUtil.error(error);
-                    return this.createError({ code: error?.status || AppErrorCode.SYSTEMERROR, message: error?.message });
+                    return this.createError({ code: error?.status || AppErrorCode.SYSTEMERROR, message: error?.message || error?.statusText });
                 } else {
                     const errorInfo: any = error.data;
                     if (errorInfo.message) {
@@ -73,7 +73,7 @@ export class NoticeHandler {
                         return this.createError(errorInfo);
                     } else {
                         LogUtil.error(error);
-                        return this.createError({ code: error?.status || AppErrorCode.SYSTEMERROR, message: error?.message });
+                        return this.createError({ code: error?.status || AppErrorCode.SYSTEMERROR, message: error?.message || error?.statusText });
                     }
                 }
             }

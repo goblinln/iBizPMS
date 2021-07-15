@@ -477,10 +477,8 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "周期",
@@ -507,9 +505,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
@@ -562,9 +558,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           }, {
@@ -617,8 +610,6 @@
               "allowEmpty" : true,
               "emptyCaption" : true,
               "enableUnitName" : true,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "codeName" : "config_week",
@@ -664,8 +655,6 @@
               },
               "allowEmpty" : true,
               "emptyCaption" : true,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -712,8 +701,6 @@
               },
               "allowEmpty" : true,
               "emptyCaption" : true,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -741,9 +728,7 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -782,9 +767,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "天生成待办",
@@ -809,9 +791,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "过期时间",
@@ -844,10 +823,8 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "valueFormat" : "YYYY-MM-DD",
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -906,9 +883,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -937,9 +911,7 @@
           },
           "valueItemName" : "idvalue",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "待办名称",
@@ -967,9 +939,7 @@
           },
           "valueItemName" : "idvalue",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "待办名称",
@@ -997,9 +967,7 @@
           },
           "valueItemName" : "idvalue",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "优先级",
@@ -1032,9 +1000,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -1090,9 +1055,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "描述",
@@ -1123,9 +1085,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "状态",
@@ -1158,9 +1117,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -1216,9 +1172,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           }, {
@@ -1267,11 +1220,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
-            "needCodeListConfig" : true,
-            "showCaption" : false
+            "needCodeListConfig" : true
           }, {
             "codeName" : "formitem10",
             "dataType" : 25,
@@ -1298,10 +1247,7 @@
             },
             "allowEmpty" : true,
             "emptyCaption" : true,
-            "hidden" : false,
-            "inputTipClosable" : false,
-            "needCodeListConfig" : true,
-            "showCaption" : false
+            "needCodeListConfig" : true
           } ],
           "getPSLayout" : {
             "columnCount" : 24,
@@ -1342,9 +1288,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         } ],

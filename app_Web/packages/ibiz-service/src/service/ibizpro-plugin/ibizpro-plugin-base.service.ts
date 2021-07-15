@@ -82,7 +82,8 @@ export class IBIZProPluginBaseService extends EntityBaseService<IIBIZProPlugin> 
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibizproplugins`, _data);
+        const res = await this.http.post(`/ibizproplugins`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class IBIZProPluginBaseService extends EntityBaseService<IIBIZProPlugin> 
      * @memberof IBIZProPluginService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibizproplugins/${_context.ibizproplugin}`);
+        const res = await this.http.delete(`/ibizproplugins/${_context.ibizproplugin}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class IBIZProPluginBaseService extends EntityBaseService<IIBIZProPlugin> 
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibizproplugins/${_context.ibizproplugin}`, _data);
+        const res = await this.http.put(`/ibizproplugins/${_context.ibizproplugin}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class IBIZProPluginBaseService extends EntityBaseService<IIBIZProPlugin> 
      * @memberof IBIZProPluginService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibizproplugins/fetchdefault`, _data);
+        const res = await this.http.post(`/ibizproplugins/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class IBIZProPluginBaseService extends EntityBaseService<IIBIZProPlugin> 
      * @memberof IBIZProPluginService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizproplugins/${_context.ibizproplugin}/select`);
+        const res = await this.http.get(`/ibizproplugins/${_context.ibizproplugin}/select`);
+        return res;
     }
 }

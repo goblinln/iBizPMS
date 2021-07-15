@@ -40,7 +40,7 @@ export default class AppMarkdownEditor extends Vue {
      * @type {*}
      * @memberof AppMarkdownEditor
      */
-    @Prop({ default: false }) public isInfoMode?: boolean;
+    @Prop({ default: 'EDIT' }) public mode?: 'EDIT' | 'PREVIEW' | 'SUBFIELD';
 
     /**
      * 是否显示工具栏
@@ -219,17 +219,17 @@ export default class AppMarkdownEditor extends Vue {
             <mavon-editor
                 class="app-mavon-editor"
                 v-model={this.curVal}
-                defaultOpen={this.isInfoMode ? 'preview' : this.defaultOpen}
-                subfield={!this.isInfoMode && this.subfield}
+                defaultOpen={this.mode != 'EDIT' ? 'preview' : this.defaultOpen}
+                subfield={this.mode != 'PREVIEW' && this.subfield}
                 autofocus={false}
-                toolbarsFlag={!this.isInfoMode && this.showToolbar}
-                navigation={!this.isInfoMode && this.showCatalog}
-                shortCut={!this.isInfoMode && this.shortCut}
+                toolbarsFlag={this.mode != 'PREVIEW' && this.showToolbar}
+                navigation={this.mode != 'PREVIEW' && this.showCatalog}
+                shortCut={this.mode != 'PREVIEW' && this.shortCut}
                 fontSize={`${this.fontSize}px`}
                 placeholder={this.placeholder}
                 toolbars={this.toolbars}
                 language={this.locale}
-                editable={this.isInfoMode ? false : !this.disabled}
+                editable={this.mode == 'PREVIEW' ? false : !this.disabled}
                 ishljs={this.highLight}
                 boxShadow={this.boxShadow} />
         );

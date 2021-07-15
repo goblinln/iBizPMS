@@ -402,6 +402,7 @@
     "enableSort" : true
   } ],
   "getPSDEUIActionGroup" : {
+    "codeName" : "MyRe",
     "name" : "右滑行为组（我收到的）",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

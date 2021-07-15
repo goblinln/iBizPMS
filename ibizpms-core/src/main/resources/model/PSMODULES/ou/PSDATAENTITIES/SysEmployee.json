@@ -339,6 +339,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "BugUser",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "Bug用户",
     "name" : "BugUser",
     "getPSDEDataQueries" : [ {
@@ -349,6 +350,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ContActList",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "联系人用户",
     "name" : "ContActList",
     "getPSDEDataQueries" : [ {
@@ -359,6 +361,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -370,6 +373,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductTeamM",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队管理",
     "name" : "ProductTeamM",
     "getPSDEDataQueries" : [ {
@@ -380,6 +384,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamM",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队管理",
     "name" : "ProjectTeamM",
     "getPSDEDataQueries" : [ {
@@ -390,6 +395,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamMProduct",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队管理",
     "name" : "ProjectTeamMProduct",
     "getPSDEDataQueries" : [ {
@@ -400,6 +406,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamTaskUserTemp",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队成员(临时)",
     "name" : "ProjectTeamTaskUserTemp",
     "getPSDEDataQueries" : [ {
@@ -410,6 +417,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamUser",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUser",
     "getPSDEDataQueries" : [ {
@@ -420,6 +428,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamUserTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUserTask",
     "getPSDEDataQueries" : [ {
@@ -430,6 +439,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectteamPk",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队成员选择",
     "name" : "ProjectteamPk",
     "getPSDEDataQueries" : [ {
@@ -440,6 +450,7 @@
     "enableFront" : true
   }, {
     "codeName" : "StoryProductTeamPK",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品团队成员选择",
     "name" : "StoryProductTeamChoice",
     "getPSDEDataQueries" : [ {
@@ -450,6 +461,7 @@
     "enableFront" : true
   }, {
     "codeName" : "TaskMTeam",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "任务多人团队",
     "name" : "TaskMTeam",
     "getPSDEDataQueries" : [ {
@@ -460,6 +472,7 @@
     "enableFront" : true
   }, {
     "codeName" : "TaskTeam",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据查询2",
     "name" : "TASKTEAM",
     "getPSDEDataQueries" : [ {

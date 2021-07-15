@@ -517,6 +517,7 @@
     "name" : "srfmstag"
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "Auto53_6317",
     "name" : "移动端右滑（指派给）",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

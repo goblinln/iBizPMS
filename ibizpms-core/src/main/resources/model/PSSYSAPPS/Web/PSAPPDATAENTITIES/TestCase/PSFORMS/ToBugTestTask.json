@@ -164,10 +164,7 @@
           },
           "unitName" : "次",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "失败",
@@ -219,10 +216,7 @@
           },
           "unitName" : "次",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "codeName" : "rawitem2",

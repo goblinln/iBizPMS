@@ -252,7 +252,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
     public async ctrlModelInit() {
         super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppDataViewService(this.controlInstance);
+            this.service = new AppDataViewService(this.controlInstance, this.context);
             await this.service.loaded();
         }
         this.initSortModel();
@@ -379,10 +379,10 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
         this.$emit('ctrl-event', { controlname: this.controlInstance.name, action: 'beforeload', data: parentdata });
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
-        Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
+        Object.assign(tempViewParams, Util.deepCopy(this.viewparams));
         Object.assign(arg, { viewparams: tempViewParams }, opt);
         if (this.service) {
-            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            let tempContext:any = Util.deepCopy(this.context);
             this.onControlRequset('load', tempContext, arg);
             const post: Promise<any> = this.service.search(
                 this.fetchAction,
@@ -402,7 +402,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                         this.items = [];
                     }
                     if (Object.keys(data).length > 0) {
-                        let datas = JSON.parse(JSON.stringify(data));
+                        let datas = Util.deepCopy(data);
                         datas.map((item: any) => {
                             Object.assign(item, { isselected: false });
                         });
@@ -514,7 +514,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                 keys.push(data.srfkey);
             });
             let _removeAction = keys.length > 1 ? 'removeBatch' : this.removeAction;
-            const tempContext: any = JSON.parse(JSON.stringify(this.context));
+            const tempContext: any = Util.deepCopy(this.context);
             Object.assign(tempContext, { [this.appDeCodeName]: keys.join(';') });
             const arg = { [this.appDeCodeName]: keys.join(';') };
             Object.assign(arg, { viewparams: this.viewparams }),
@@ -591,11 +591,11 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                         this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notconfig.createaction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
-                        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                        let tempContext:any = Util.deepCopy(this.context);
                         this.onControlRequset('create', tempContext, item);
                         let response = await this.service.add(this.createAction, tempContext, item, this.showBusyIndicator);
                         this.onControlResponse('create', response);
-                        successItems.push(JSON.parse(JSON.stringify(response.data)));
+                        successItems.push(Util.deepCopy(response.data));
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
@@ -611,16 +611,16 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                         // if(de){
                         //     Object.assign(this.context,{de.getCodeName():item.de.getCodeName()})
                         // }
-                        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                        let tempContext:any = Util.deepCopy(this.context);
                         this.onControlRequset('update', tempContext, item);
                         let response = await this.service.add(this.updateAction, tempContext, item, this.showBusyIndicator);
                         this.onControlResponse('update', response);
-                        successItems.push(JSON.parse(JSON.stringify(response.data)));
+                        successItems.push(Util.deepCopy(response.data));
                     }
                 }
             } catch (error) {
                 this.onControlResponse('save', error);
-                errorItems.push(JSON.parse(JSON.stringify(item)));
+                errorItems.push(Util.deepCopy(item));
                 errorMessage.push(error);
             }
         }
@@ -1233,7 +1233,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @memberof DataViewControlBase
      */
      public getActionState(data: any) {
-        let tempActionModel: any = JSON.parse(JSON.stringify(this.actionModel));
+        let tempActionModel: any = Util.deepCopy(this.actionModel);
         let targetData: any = this.transformData(data);
         ViewTool.calcActionItemAuthState(targetData, tempActionModel, this.appUIService);
         return tempActionModel;

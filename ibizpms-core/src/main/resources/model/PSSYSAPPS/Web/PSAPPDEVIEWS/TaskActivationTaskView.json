@@ -339,9 +339,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -371,10 +368,7 @@
           },
           "unitName" : "小时",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "备注",
@@ -405,9 +399,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "所属项目",
@@ -434,9 +425,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "多人任务",
@@ -463,9 +452,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",

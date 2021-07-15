@@ -234,6 +234,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -255,6 +256,7 @@
     "enableFront" : true
   }, {
     "codeName" : "NoOpenProduct",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "未关闭产品",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -275,6 +277,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProdctQuantiGird",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品质量表",
     "name" : "ProdctQuantiGird",
     "getPSDEDataQueries" : [ {
@@ -285,6 +288,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductInputTable",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品投入表",
     "name" : "ProductInputTable",
     "getPSDEDataQueries" : [ {
@@ -295,6 +299,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Productcompletionstatistics",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品完成统计表",
     "name" : "Productcompletionstatistics",
     "getPSDEDataQueries" : [ {

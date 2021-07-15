@@ -82,7 +82,8 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzagents`, _data);
+        const res = await this.http.post(`/ibzagents`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
      * @memberof IbzAgentService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzagents/${_context.ibzagent}`);
+        const res = await this.http.delete(`/ibzagents/${_context.ibzagent}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzagents/${_context.ibzagent}`, _data);
+        const res = await this.http.put(`/ibzagents/${_context.ibzagent}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
      * @memberof IbzAgentService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzagents/fetchdefault`, _data);
+        const res = await this.http.post(`/ibzagents/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
      * @memberof IbzAgentService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzagents/${_context.ibzagent}/select`);
+        const res = await this.http.get(`/ibzagents/${_context.ibzagent}/select`);
+        return res;
     }
 }

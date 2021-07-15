@@ -1,4 +1,4 @@
-import { CodeListServiceBase, TreeGridExControlInterface, Util } from "ibiz-core";
+import { CodeListServiceBase, ModelTool, TreeGridExControlInterface, Util } from "ibiz-core";
 import { MDControlBase } from "./md-control-base";
 import { AppTreeGridExService } from '../ctrl-service';
 import { IPSDETreeGridEx, IPSDETreeNode, IPSDETreeNodeDataItem, IPSDETreeColumn } from '@ibiz/dynamic-model-api';
@@ -72,7 +72,7 @@ export class TreeGridExControlBase extends MDControlBase implements TreeGridExCo
      */
     public async ctrlModelInit() {
         await super.ctrlModelInit();
-        this.service = new AppTreeGridExService(this.controlInstance);
+        this.service = new AppTreeGridExService(this.controlInstance, this.context);
         await this.initColumnsCodeList();
     }
 
@@ -138,7 +138,7 @@ export class TreeGridExControlBase extends MDControlBase implements TreeGridExCo
             srfnodeid: node && node.id ? node.id : "#",
             srfnodefilter: this.srfnodefilter,
         };
-        let tempViewParams: any = JSON.parse(JSON.stringify(this.viewparams));
+        let tempViewParams: any = Util.deepCopy(this.viewparams);
         let curNode: any = {};
         Util.deepObjectMerge(curNode, node);
         let tempContext: any = this.computecurNodeContext(curNode);
@@ -217,7 +217,7 @@ export class TreeGridExControlBase extends MDControlBase implements TreeGridExCo
         if (!$event) {
             return;
         }
-        this.selections = [JSON.parse(JSON.stringify($event))];
+        this.selections = [Util.deepCopy($event)];
         this.ctrlEvent({ controlname: this.controlInstance.name, action: "selectionchange", data: this.selections });
     }
 
@@ -256,39 +256,56 @@ export class TreeGridExControlBase extends MDControlBase implements TreeGridExCo
      * @memberof TreeGridExControlBase
      */
     public renderColumns() {
-        const treeColumns:any = this.controlInstance.getPSDETreeColumns();
-        return (
-            treeColumns.map((column: IPSDETreeColumn) => {
-                column.widthUnit != 'STAR'
-                const props: any = {
-                    'show-overflow-tooltip': true,
-                    "label": this.$tl(column.getCapPSLanguageRes()?.lanResTag,column.caption),
-                    "align": column.align ? column.align.toLowerCase() : '',
-                }
-                if (column.widthUnit != 'STAR') {
-                    props['width'] = column.width;
-                } else {
-                    props['min-width'] = column.width;
-                }
-                return this.$createElement('el-table-column', {
-                    props: props,
-                    scopedSlots: {
-                        default: (row: any) => {
-                            if (column?.getRenderPSSysPFPlugin()) {
-                                let plugin:any = column.getRenderPSSysPFPlugin();
-                                const pluginInstance: any = this.PluginFactory.getPluginInstance("CONTROLITEM", plugin.pluginCode);
-                                if (pluginInstance) {
-                                    return pluginInstance.renderCtrlItem(this.$createElement, column, this, row);
-                                }
-                            } else {
-                                return (<span>{this.getColumnValue(row, column.name)}</span>)
-                            }
-                        },
+        const treeColumns: IPSDETreeColumn[] = this.controlInstance.getPSDETreeColumns() || [];
+        if (treeColumns.length > 0) {
+            return (
+                treeColumns.map((column: IPSDETreeColumn) => {
+                    column.widthUnit != 'STAR'
+                    const props: any = {
+                        'show-overflow-tooltip': true,
+                        "label": this.$tl(column.getCapPSLanguageRes()?.lanResTag,column.caption),
+                        "align": column.align ? column.align.toLowerCase() : '',
                     }
-                });
+                    if (column.widthUnit != 'STAR') {
+                        props['width'] = column.width;
+                    } else {
+                        props['min-width'] = column.width;
+                    }
+                    return this.$createElement('el-table-column', {
+                        props: props,
+                        scopedSlots: {
+                            default: (row: any) => {
+                                if (column?.getRenderPSSysPFPlugin()) {
+                                    let plugin:any = column.getRenderPSSysPFPlugin();
+                                    const pluginInstance: any = this.PluginFactory.getPluginInstance("CONTROLITEM", plugin.pluginCode);
+                                    if (pluginInstance) {
+                                        return pluginInstance.renderCtrlItem(this.$createElement, column, this, row);
+                                    }
+                                } else {
+                                    return (<span>{this.getColumnValue(row, column.name)}</span>)
+                                }
+                            },
+                        }
+                    });
+                })
+            )
+        } else {
+            const majorField = ModelTool.getAppEntityMajorField(this.controlInstance.getPSAppDataEntity());
+            const props: any = {
+                'show-overflow-tooltip': true,
+                'label': majorField ? this.$tl(majorField.getLNPSLanguageRes()?.lanResTag, majorField.logicName) : this.$t('app.commonwords.srfmajortext'),
+                'align': 'center',
+                'width': 200
+            };
+            return this.$createElement('el-table-column', {
+                props: props,
+                scopedSlots: {
+                    default: (row: any) => {
+                        return <span>{row?.row?.['srfmajortext']}</span>
+                    }
+                }
             })
-
-        )
+        }
     }
 
     /**
@@ -335,9 +352,9 @@ export class TreeGridExControlBase extends MDControlBase implements TreeGridExCo
     public computecurNodeContext(curNode: any) {
         let tempContext: any = {};
         if (curNode?.srfappctx) {
-            tempContext = JSON.parse(JSON.stringify(curNode.srfappctx));
+            tempContext = Util.deepCopy(curNode.srfappctx);
         } else {
-            tempContext = JSON.parse(JSON.stringify(this.context));
+            tempContext = Util.deepCopy(this.context);
         }
         return tempContext;
     }

@@ -227,9 +227,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "状态",
@@ -263,9 +260,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "类型",
@@ -299,9 +293,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "所有者",
@@ -335,9 +326,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "日期",
@@ -365,10 +353,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "起止时间",
@@ -403,9 +389,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "~",
@@ -440,9 +423,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "指派给",
@@ -476,9 +456,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "指派日期",
@@ -506,10 +483,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
@@ -569,9 +544,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "起止时间",
@@ -601,9 +574,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "~",
@@ -632,10 +602,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "周期设置",
@@ -680,10 +648,7 @@
         },
         "unitName" : "天",
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "周期设置",
@@ -732,9 +697,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "周期设置",
@@ -783,9 +745,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "提前",
@@ -814,9 +773,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {

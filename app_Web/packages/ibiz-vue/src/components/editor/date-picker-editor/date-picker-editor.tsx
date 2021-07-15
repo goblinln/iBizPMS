@@ -131,7 +131,6 @@ export default class DatePickerEditor extends EditorBase {
             case 'DATEPICKEREX':
             case 'DATEPICKER':
             case 'DATEPICKEREX_SECOND':
-                this.customProps.type = 'date';
                 this.customProps.format = 'yyyy-MM-dd HH:mm:ss';
                 this.customStyle.width = width == 160 ? '100%' : `${width}px`;
                 break;

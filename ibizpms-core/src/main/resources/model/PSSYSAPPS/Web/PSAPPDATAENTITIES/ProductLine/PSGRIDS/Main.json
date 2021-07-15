@@ -119,6 +119,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "Auto149",
       "name" : "删除",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

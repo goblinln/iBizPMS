@@ -217,6 +217,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "Auto12",
       "name" : "解除关联（发布）",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

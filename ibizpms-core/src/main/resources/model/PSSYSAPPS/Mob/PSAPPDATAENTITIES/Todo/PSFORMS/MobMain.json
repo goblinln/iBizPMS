@@ -193,9 +193,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "优先级",
@@ -229,9 +226,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "日期",
@@ -260,9 +254,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "开始",
@@ -296,9 +287,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "结束",
@@ -332,9 +320,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "类型",
@@ -368,9 +353,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "状态",
@@ -404,9 +386,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "由谁指派",
@@ -440,9 +419,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "指派日期",
@@ -470,10 +446,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "指派给",
@@ -507,9 +481,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "描述",
@@ -541,9 +512,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "测试人员",
@@ -589,9 +557,6 @@
         },
         "valueItemName" : "desc",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "actionGroupExtractMode" : "ITEM",

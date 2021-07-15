@@ -726,6 +726,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto26",
         "name" : "todo行为组",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

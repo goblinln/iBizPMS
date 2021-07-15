@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -47,6 +48,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -63,6 +65,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -79,6 +82,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchAssignTo",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -95,6 +99,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeBranch",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -111,6 +116,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeModule",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -127,6 +133,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangePlan",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -143,6 +150,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeStage",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -159,6 +167,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchClose",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -175,6 +184,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchReview",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -191,6 +201,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -207,6 +218,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BugToStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -223,6 +235,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildBatchUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -239,6 +252,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildLinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -255,6 +269,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -271,6 +286,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkStorys",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -287,6 +303,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Change",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -303,6 +320,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -319,6 +337,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -335,6 +354,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -353,6 +373,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTasks",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -369,6 +390,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -385,6 +407,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -401,6 +424,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -417,6 +441,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetStorySpecs",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -433,6 +458,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTaskReStory",
     "methodType" : "DEACTION",
     "name" : "GetTaskReStory",
@@ -446,6 +472,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -463,6 +490,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ImportPlanStories",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -479,6 +507,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -495,6 +524,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectBatchUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -511,6 +541,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectLinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -527,6 +558,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -543,6 +575,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectUnlinkStorys",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -559,6 +592,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Push",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -575,6 +609,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseBatchUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -591,6 +626,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseLinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -607,6 +643,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -623,6 +660,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -641,6 +679,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ResetReviewedBy",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -657,6 +696,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Review",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -673,6 +713,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UNKNOWN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -691,6 +732,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -707,6 +749,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -723,6 +766,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SetStage",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -735,6 +779,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "StoryFavorites",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -751,6 +796,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "StoryNFavorites",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -767,6 +813,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SyncFromIbiz",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -779,6 +826,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -792,6 +840,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -808,6 +857,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2031,6 +2081,7 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2047,6 +2098,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2063,6 +2115,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2079,6 +2132,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchAssignTo",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2095,6 +2149,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeBranch",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2111,6 +2166,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeModule",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2127,6 +2183,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangePlan",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2143,6 +2200,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeStage",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2159,6 +2217,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchClose",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2175,6 +2234,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchReview",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2191,6 +2251,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2207,6 +2268,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BugToStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2223,6 +2285,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildBatchUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2239,6 +2302,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildLinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2255,6 +2319,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2271,6 +2336,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkStorys",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2287,6 +2353,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Change",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2303,6 +2370,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2319,6 +2387,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2335,6 +2404,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -2353,6 +2423,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTasks",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2369,6 +2440,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2385,6 +2457,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2401,6 +2474,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2417,6 +2491,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetStorySpecs",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2433,6 +2508,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTaskReStory",
     "methodType" : "DEACTION",
     "name" : "GetTaskReStory",
@@ -2446,6 +2522,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -2463,6 +2540,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ImportPlanStories",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2479,6 +2557,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2495,6 +2574,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectBatchUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2511,6 +2591,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectLinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2527,6 +2608,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2543,6 +2625,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectUnlinkStorys",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2559,6 +2642,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Push",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2575,6 +2659,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseBatchUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2591,6 +2676,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseLinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2607,6 +2693,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseUnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2623,6 +2710,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -2641,6 +2729,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ResetReviewedBy",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2657,6 +2746,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Review",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2673,6 +2763,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UNKNOWN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -2691,6 +2782,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2707,6 +2799,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2723,6 +2816,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SetStage",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2735,6 +2829,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "StoryFavorites",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2751,6 +2846,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "StoryNFavorites",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2767,6 +2863,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SyncFromIbiz",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2779,6 +2876,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -2792,6 +2890,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2808,6 +2907,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "getPSDEAction" : {

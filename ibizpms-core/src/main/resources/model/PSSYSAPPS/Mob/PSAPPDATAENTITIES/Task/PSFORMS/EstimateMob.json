@@ -119,9 +119,7 @@
         "cssName" : "panelitem-borad"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "任务名称",
@@ -151,9 +149,7 @@
         "cssName" : "MainInfo2"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "actionGroupExtractMode" : "ITEM",
@@ -516,6 +512,7 @@
               }
             } ],
             "getPSDEUIActionGroup2" : {
+              "codeName" : "UAGroup",
               "name" : "移动端操作",
               "getPSUIActionGroupDetails" : [ {
                 "detailType" : "DEUIACTION",

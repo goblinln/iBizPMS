@@ -345,10 +345,8 @@
             "layout" : "TABLE_24COL"
           },
           "updateDVT" : "CURTIME",
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "总计消耗",
@@ -377,10 +375,7 @@
           },
           "unitName" : "小时",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "预计剩余",
@@ -409,10 +404,7 @@
           },
           "unitName" : "小时",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "消息通知用户",
@@ -439,9 +431,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "备注",
@@ -472,9 +462,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",

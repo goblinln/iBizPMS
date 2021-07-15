@@ -1,4 +1,5 @@
-import { IPSAppDEDataSetViewMsg, IPSAppViewMsg, IPSAppViewMsgGroup, IPSAppViewMsgGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSAppDEDataSetViewMsg, IPSAppMsgTempl, IPSAppViewMsg, IPSAppViewMsgGroup, IPSAppViewMsgGroupDetail } from '@ibiz/dynamic-model-api';
+import { Util } from 'ibiz-core';
 import { DynamicViewMessageService } from './dynamic-view-message-service';
 
 /**
@@ -147,13 +148,39 @@ export class ViewMessageService {
      * @memberof ViewMessageService
      */
     public translateMessageTemp(target: any, detail: IPSAppViewMsg) {
-        const sysMsgTempl: any = (detail as any).getPSSysMsgTempl?.();
-        if (!sysMsgTempl) {
+        const format = (content: any) => {
+            if (!Util.isExistAndNotEmpty(content)) {
+                return content;
+            }
+            const params: any[] = content.match(/\${(.+?)\}/g) || [];
+            if (params.length > 0) {
+                params.forEach((param: any) => {
+                    let _param: any = param.substring(2, param.length - 1).toLowerCase();
+                    const arr: string[] = _param.split('.');
+                    if (arr.length == 2) {
+                        switch (arr[0]) {
+                            case 'context':
+                                content = this.context ? content.replace(param, this.context[arr[1]]) : content;
+                                break;
+                            case 'viewparams':
+                                content = this.viewparams ? content.replace(param, this.viewparams[arr[1]]) : content;
+                                break;
+                        }
+                    }
+                })
+            }
+            return content;
+        }
+        const appMsgTempl: IPSAppMsgTempl = detail.getPSAppMsgTempl?.() as IPSAppMsgTempl;
+        if (!appMsgTempl) {
             return;
         }
-        //  系统消息模板待补充
-        if (sysMsgTempl.getContentType) {
-        }
+        Object.assign(target, {
+            messageType: appMsgTempl.contentType == 'HTML' ? 'HTML' : 'TEXT',
+            title: format(appMsgTempl.subject),
+            titleLanResTag: appMsgTempl.getSubPSLanguageRes()?.lanResTag,
+            content: format(appMsgTempl.content)
+        });
     }
 
     /**

@@ -550,6 +550,7 @@
     "name" : "srfmstag"
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "Auto71",
     "name" : "移动端操作按钮",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

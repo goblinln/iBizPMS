@@ -150,7 +150,7 @@ export class StateWizardPanelControlBase extends MainControlBase implements Stat
         this.initAction = (this.controlInstance.getInitPSControlAction() as IPSControlAction)?.getPSAppDEMethod()?.codeName || 'Get';
         this.finishAction = (this.controlInstance.getFinishPSControlAction() as IPSControlAction)?.getPSAppDEMethod()?.codeName || 'Update';
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppWizardPanelService(this.controlInstance);
+            this.service = new AppWizardPanelService(this.controlInstance, this.context);
             await this.service.loaded();
         }
         this.initFirstForm();
@@ -488,7 +488,7 @@ export class StateWizardPanelControlBase extends MainControlBase implements Stat
     }
     
     /**
-     * 表单加载完成
+     * 完成行为
      *
      * @memberof StateWizardPanelControlBase
      */

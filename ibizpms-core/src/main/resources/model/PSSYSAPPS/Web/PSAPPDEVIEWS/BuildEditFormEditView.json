@@ -387,9 +387,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "产品",
@@ -457,9 +455,6 @@
             },
             "valueItemName" : "product",
             "allowEmpty" : false,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "名称编号",
@@ -487,9 +482,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : false,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "构建者",
@@ -523,9 +515,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : false,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           }, {
@@ -558,10 +547,8 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "valueFormat" : "YYYY-MM-DD",
             "allowEmpty" : false,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -601,9 +588,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "产品",
@@ -630,9 +614,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "下载地址",
@@ -660,9 +642,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "上传发行包",
@@ -700,9 +679,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "描述",
@@ -729,9 +705,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {

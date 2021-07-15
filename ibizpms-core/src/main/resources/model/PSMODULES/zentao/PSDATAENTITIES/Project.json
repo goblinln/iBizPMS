@@ -1079,6 +1079,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "指定用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -1090,6 +1091,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "BugProject",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "BugProject",
     "name" : "BugProject",
     "getPSDEDataQueries" : [ {
@@ -1101,6 +1103,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurDefaultQuery",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "默认查询",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -1117,6 +1120,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurDefaultQueryExp",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "默认查询（项目导航）",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -1133,6 +1137,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurPlanProject",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "当前计划项目",
     "name" : "CurPlanProject",
     "getPSDEDataQueries" : [ {
@@ -1144,6 +1149,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurProduct",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "当前项目",
     "name" : "CurProduct",
     "getPSDEDataQueries" : [ {
@@ -1155,6 +1161,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurUser",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "当前用户项目",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -1176,6 +1183,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurUserSa",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "当前用户项目（企业版）",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -1192,6 +1200,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -1209,6 +1218,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "DeveloperQuery",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "参与者（启用权限）",
     "name" : "DeveloperQuery",
     "getPSDEDataQueries" : [ {
@@ -1220,6 +1230,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ESBulk",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
     "getPSDEDataQueries" : [ {
@@ -1231,6 +1242,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "InvolvedProject",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "参与项目(年度总结)",
     "name" : "InvolvedProject",
     "getPSDEDataQueries" : [ {
@@ -1242,6 +1254,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "InvolvedProject_StoryTaskBug",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "参与项目完成需求任务bug",
     "name" : "InvolvedProject_StoryTaskBug",
     "getPSDEDataQueries" : [ {
@@ -1253,6 +1266,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "My",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -1264,6 +1278,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyProject",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的项目",
     "name" : "MyProject",
     "getPSDEDataQueries" : [ {
@@ -1275,6 +1290,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "OpenByQuery",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "创建者或更新者（启用权限）",
     "name" : "OpenByQuery",
     "getPSDEDataQueries" : [ {
@@ -1286,6 +1302,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "OpenQuery",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "公开（启用权限）",
     "name" : "OpenQuery",
     "getPSDEDataQueries" : [ {
@@ -1297,6 +1314,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ProjectTeam",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队",
     "name" : "ProjectTeam",
     "getPSDEDataQueries" : [ {
@@ -1308,6 +1326,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "StoryProject",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "需求影响项目",
     "name" : "StoryProject",
     "getPSDEDataQueries" : [ {
@@ -1319,6 +1338,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "UnDoneProject",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "未完成项目",
     "name" : "UnDoneProject",
     "getPSDEDataQueries" : [ {

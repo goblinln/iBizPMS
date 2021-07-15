@@ -264,9 +264,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "状态",
@@ -299,9 +296,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       }, {
@@ -333,10 +327,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
@@ -801,6 +793,7 @@
       "name" : "srfmstag"
     } ],
     "getPSDEUIActionGroup2" : {
+      "codeName" : "Right2",
       "name" : "移动端发布右滑行为组",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

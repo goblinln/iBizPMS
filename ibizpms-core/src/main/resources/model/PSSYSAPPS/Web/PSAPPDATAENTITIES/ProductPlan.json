@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchLinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchLinkBug",
@@ -40,6 +41,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchLinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchLinkStory",
@@ -49,6 +51,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkBug",
@@ -59,6 +62,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
@@ -69,6 +73,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -82,6 +87,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -99,6 +105,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeActivePlan",
     "methodType" : "DEACTION",
     "name" : "EeActivePlan",
@@ -109,6 +116,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeCancelPlan",
     "methodType" : "DEACTION",
     "name" : "EeCancelPlan",
@@ -119,6 +127,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeClosePlan",
     "methodType" : "DEACTION",
     "name" : "EeClosePlan",
@@ -129,6 +138,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeFinishPlan",
     "methodType" : "DEACTION",
     "name" : "EeFinishPlan",
@@ -139,6 +149,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EePausePlan",
     "methodType" : "DEACTION",
     "name" : "EePausePlan",
@@ -149,6 +160,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeRestartPlan",
     "methodType" : "DEACTION",
     "name" : "EeRestartPlan",
@@ -159,6 +171,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeStartPlan",
     "methodType" : "DEACTION",
     "name" : "EeStartPlan",
@@ -169,6 +182,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -186,6 +200,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -203,6 +218,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetPlanEnd",
     "methodType" : "DEACTION",
     "name" : "GetPlanEnd",
@@ -216,6 +232,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ImportPlanTemplet",
     "methodType" : "DEACTION",
     "name" : "ImportPlanTemplet",
@@ -233,6 +250,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkBug",
     "methodType" : "DEACTION",
     "name" : "LinkBug",
@@ -250,6 +268,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "name" : "LinkStory",
@@ -267,6 +286,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkTask",
     "methodType" : "DEACTION",
     "name" : "LinkTask",
@@ -277,6 +297,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -296,6 +317,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -305,6 +327,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkBug",
     "methodType" : "DEACTION",
     "name" : "UnlinkBug",
@@ -315,6 +338,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
@@ -325,6 +349,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -786,6 +811,7 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchLinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchLinkBug",
@@ -795,6 +821,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchLinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchLinkStory",
@@ -804,6 +831,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkBug",
@@ -814,6 +842,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
@@ -824,6 +853,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -837,6 +867,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -854,6 +885,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeActivePlan",
     "methodType" : "DEACTION",
     "name" : "EeActivePlan",
@@ -864,6 +896,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeCancelPlan",
     "methodType" : "DEACTION",
     "name" : "EeCancelPlan",
@@ -874,6 +907,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeClosePlan",
     "methodType" : "DEACTION",
     "name" : "EeClosePlan",
@@ -884,6 +918,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeFinishPlan",
     "methodType" : "DEACTION",
     "name" : "EeFinishPlan",
@@ -894,6 +929,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EePausePlan",
     "methodType" : "DEACTION",
     "name" : "EePausePlan",
@@ -904,6 +940,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeRestartPlan",
     "methodType" : "DEACTION",
     "name" : "EeRestartPlan",
@@ -914,6 +951,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EeStartPlan",
     "methodType" : "DEACTION",
     "name" : "EeStartPlan",
@@ -924,6 +962,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -941,6 +980,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -958,6 +998,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetPlanEnd",
     "methodType" : "DEACTION",
     "name" : "GetPlanEnd",
@@ -971,6 +1012,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ImportPlanTemplet",
     "methodType" : "DEACTION",
     "name" : "ImportPlanTemplet",
@@ -988,6 +1030,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkBug",
     "methodType" : "DEACTION",
     "name" : "LinkBug",
@@ -1005,6 +1048,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "name" : "LinkStory",
@@ -1022,6 +1066,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkTask",
     "methodType" : "DEACTION",
     "name" : "LinkTask",
@@ -1032,6 +1077,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -1051,6 +1097,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -1060,6 +1107,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkBug",
     "methodType" : "DEACTION",
     "name" : "UnlinkBug",
@@ -1070,6 +1118,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
@@ -1080,6 +1129,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",

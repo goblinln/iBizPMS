@@ -566,6 +566,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto100",
         "name" : "文档库编辑",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

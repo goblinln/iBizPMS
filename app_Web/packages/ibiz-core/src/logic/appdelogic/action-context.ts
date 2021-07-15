@@ -18,14 +18,6 @@ export class ActionContext {
     public context: IContext;
 
     /**
-     * 异常信息
-     *
-     * @type {*}
-     * @memberof ActionContext
-     */    
-    public throwExceptionInfo:any;
-
-    /**
      * 逻辑处理参数集合
      *
      * @type {Map<string, any>}
@@ -48,11 +40,7 @@ export class ActionContext {
      * @memberof ActionContext
      */
     get defaultParam() {
-        if(this.throwExceptionInfo){
-            return this.throwExceptionInfo;
-        }else{
-            return this.paramsMap.get(this.defaultParamName);
-        }
+        return this.paramsMap.get(this.defaultParamName);
     }
 
     /**

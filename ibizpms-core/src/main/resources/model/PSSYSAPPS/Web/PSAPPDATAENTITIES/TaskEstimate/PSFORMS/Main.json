@@ -207,10 +207,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : false,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "工时",
@@ -238,9 +236,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : false,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "剩余",
@@ -268,9 +263,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : false,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "备注",
@@ -299,9 +291,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {

@@ -12,27 +12,29 @@ export class AccountTaskService extends AccountTaskBaseService {
      * Creates an instance of AccountTaskService.
      * @memberof AccountTaskService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('AccountTaskService')) {
-            return ___ibz___.sc.get('AccountTaskService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('AccountTaskService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {AccountTaskService}
      * @memberof AccountTaskService
      */
-    static getInstance(): AccountTaskService {
-        if (!___ibz___.sc.has('AccountTaskService')) {
-            new AccountTaskService();
+    static getInstance(context?: any): AccountTaskService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}AccountTaskService` : `AccountTaskService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new AccountTaskService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('AccountTaskService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default AccountTaskService;

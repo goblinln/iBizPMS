@@ -1319,6 +1319,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "指定用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -1330,6 +1331,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "BatchNew",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "批量新建用例",
     "name" : "BatchNew",
     "getPSDEDataQueries" : [ {
@@ -1341,6 +1343,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurOpenedCase",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "累计创建的用例",
     "name" : "CurOpenedCase",
     "getPSDEDataQueries" : [ {
@@ -1352,6 +1355,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurSuite",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "套件关联用例",
     "name" : "CurSuite",
     "getPSDEDataQueries" : [ {
@@ -1363,6 +1367,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurTestTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试单关联用例",
     "name" : "CurTestTask",
     "getPSDEDataQueries" : [ {
@@ -1374,6 +1379,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -1386,6 +1392,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ESBulk",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
     "getPSDEDataQueries" : [ {
@@ -1397,6 +1404,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ModuleRePortCase",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试报告关联用例",
     "name" : "ModuleRePortCase",
     "getPSDEDataQueries" : [ {
@@ -1408,6 +1416,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ModuleRePortCaseEntry",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试报告关联-按模块-条目",
     "name" : "ModuleRePortCaseEntry",
     "getPSDEDataQueries" : [ {
@@ -1419,6 +1428,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ModuleRePortCase_Project",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目报告关联-按模块",
     "name" : "ModuleRePortCase_Project",
     "getPSDEDataQueries" : [ {
@@ -1430,6 +1440,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "My",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -1441,6 +1452,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyCreateOrUpdate",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我创建或更新（权限）",
     "name" : "MyCreateOrUpdate",
     "getPSDEDataQueries" : [ {
@@ -1452,6 +1464,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyFavorites",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的收藏",
     "name" : "MyFavorite",
     "getPSDEDataQueries" : [ {
@@ -1463,6 +1476,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyReProduct",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我相关的产品（权限）",
     "name" : "MyReProduct",
     "getPSDEDataQueries" : [ {
@@ -1474,6 +1488,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "NotCurTestSuite",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "套件关联用例",
     "name" : "NotCurTestSuite",
     "getPSDEDataQueries" : [ {
@@ -1485,6 +1500,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "NotCurTestTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试单关联用例",
     "name" : "NotCurTestTask",
     "getPSDEDataQueries" : [ {
@@ -1496,6 +1512,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "NotCurTestTaskProject",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试单关联用例（项目关联）",
     "name" : "NotCurTestTaskProject",
     "getPSDEDataQueries" : [ {
@@ -1507,6 +1524,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RePortCase",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试报告关联用例",
     "name" : "RePortCase",
     "getPSDEDataQueries" : [ {
@@ -1518,6 +1536,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RePortCaseEntry",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试报告关联用例-条目",
     "name" : "RePortCaseEntry",
     "getPSDEDataQueries" : [ {
@@ -1529,6 +1548,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RePortCase_Project",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目报告关联用例-关联用例",
     "name" : "RePortCase_Project",
     "getPSDEDataQueries" : [ {
@@ -1540,6 +1560,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RunERRePortCase",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试报告关联-执行人",
     "name" : "RunERRePortCase",
     "getPSDEDataQueries" : [ {
@@ -1551,6 +1572,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RunERRePortCaseEntry",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试报告关联-执行人-条目",
     "name" : "RunERRePortCaseEntry",
     "getPSDEDataQueries" : [ {
@@ -1562,6 +1584,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RunERRePortCase_Project",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目报告关联-执行人",
     "name" : "RunERRePortCase_Project",
     "getPSDEDataQueries" : [ {
@@ -1573,6 +1596,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RunRePortCase",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试报告关联用例",
     "name" : "RunRePortCase",
     "getPSDEDataQueries" : [ {
@@ -1584,6 +1608,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RunRePortCaseEntry",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试报告关联--执行结果条目",
     "name" : "RunRePortCaseEntry",
     "getPSDEDataQueries" : [ {
@@ -1595,6 +1620,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RunRePortCase_Project",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目报告关联-执行结果",
     "name" : "RunRePortCase_Project",
     "getPSDEDataQueries" : [ {

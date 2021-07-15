@@ -886,6 +886,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto5",
         "name" : "默认表格操作栏",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

@@ -12,27 +12,29 @@ export class EmployeeService extends EmployeeBaseService {
      * Creates an instance of EmployeeService.
      * @memberof EmployeeService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('EmployeeService')) {
-            return ___ibz___.sc.get('EmployeeService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('EmployeeService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {EmployeeService}
      * @memberof EmployeeService
      */
-    static getInstance(): EmployeeService {
-        if (!___ibz___.sc.has('EmployeeService')) {
-            new EmployeeService();
+    static getInstance(context?: any): EmployeeService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}EmployeeService` : `EmployeeService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new EmployeeService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('EmployeeService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default EmployeeService;

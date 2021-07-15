@@ -267,7 +267,7 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppMapService(this.controlInstance);
+            this.service = new AppMapService(this.controlInstance, this.context);
             await this.service.loaded(this.controlInstance);
             this.initMapModel();
         }
@@ -422,8 +422,12 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
             if (!response || response.status !== 200) {
                 this.$throw(response, 'load');
             }
-            this.$emit('load', response.data ? response.data : []);
             this.items = response.data;
+            this.ctrlEvent({
+                controlname: this.name,
+                action: 'load',
+                data: this.items,
+            });
             this.calculateAreaData().then(() => {
                 this.setAreaData();
                 this.handleMapOptions();

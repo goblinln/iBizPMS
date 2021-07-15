@@ -452,6 +452,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "Auto12",
             "name" : "解除关联（发布）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",

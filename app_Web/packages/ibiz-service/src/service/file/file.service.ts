@@ -12,27 +12,29 @@ export class FileService extends FileBaseService {
      * Creates an instance of FileService.
      * @memberof FileService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('FileService')) {
-            return ___ibz___.sc.get('FileService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('FileService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {FileService}
      * @memberof FileService
      */
-    static getInstance(): FileService {
-        if (!___ibz___.sc.has('FileService')) {
-            new FileService();
+    static getInstance(context?: any): FileService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}FileService` : `FileService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new FileService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('FileService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default FileService;

@@ -128,7 +128,8 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzprojectmembers`, _data);
+        const res = await this.http.post(`/ibzprojectmembers`, _data);
+        return res;
     }
     /**
      * Get
@@ -165,7 +166,8 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzprojectmembers/${_context.ibzprojectmember}`);
+        const res = await this.http.delete(`/ibzprojectmembers/${_context.ibzprojectmember}`);
+        return res;
     }
     /**
      * Update
@@ -177,7 +179,8 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzprojectmembers/${_context.ibzprojectmember}`, _data);
+        const res = await this.http.put(`/ibzprojectmembers/${_context.ibzprojectmember}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -188,7 +191,8 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzprojectmembers/fetchdefault`, _data);
+        const res = await this.http.post(`/ibzprojectmembers/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -199,6 +203,7 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      * @memberof IbzProjectMemberService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzprojectmembers/${_context.ibzprojectmember}/select`);
+        const res = await this.http.get(`/ibzprojectmembers/${_context.ibzprojectmember}/select`);
+        return res;
     }
 }

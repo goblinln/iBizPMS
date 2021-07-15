@@ -141,7 +141,8 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls`, _data);
+            return res;
         }
     this.log.warn([`[UserTpl]>>>[Create函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -190,7 +191,8 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.usertpl) {
-            return this.http.delete(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`);
+            const res = await this.http.delete(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`);
+            return res;
         }
     this.log.warn([`[UserTpl]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -206,7 +208,8 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.usertpl) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`, _data);
+            const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`, _data);
+            return res;
         }
     this.log.warn([`[UserTpl]>>>[Update函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -221,7 +224,8 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls/fetchaccount`, _data);
+            return res;
         }
     this.log.warn([`[UserTpl]>>>[FetchAccount函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -236,7 +240,8 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls/fetchmy`, _data);
+            return res;
         }
     this.log.warn([`[UserTpl]>>>[FetchMy函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });

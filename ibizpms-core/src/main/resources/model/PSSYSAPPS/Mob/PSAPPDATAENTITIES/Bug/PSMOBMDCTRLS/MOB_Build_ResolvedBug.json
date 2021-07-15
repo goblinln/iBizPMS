@@ -499,6 +499,7 @@
     "enableSort" : false
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "Auto72",
     "name" : "版本-移除（移动端）",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

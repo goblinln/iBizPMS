@@ -609,9 +609,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       }, {
@@ -649,10 +646,8 @@
           "colMD" : 4,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "至",
@@ -690,10 +685,8 @@
           "colMDOffset" : 1,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "工作天数",
@@ -722,9 +715,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "每天工时",
@@ -749,9 +739,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "assign",
@@ -785,8 +772,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       } ],

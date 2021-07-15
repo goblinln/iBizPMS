@@ -12,27 +12,29 @@ export class IbzPlanTempletDetailService extends IbzPlanTempletDetailBaseService
      * Creates an instance of IbzPlanTempletDetailService.
      * @memberof IbzPlanTempletDetailService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('IbzPlanTempletDetailService')) {
-            return ___ibz___.sc.get('IbzPlanTempletDetailService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('IbzPlanTempletDetailService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {IbzPlanTempletDetailService}
      * @memberof IbzPlanTempletDetailService
      */
-    static getInstance(): IbzPlanTempletDetailService {
-        if (!___ibz___.sc.has('IbzPlanTempletDetailService')) {
-            new IbzPlanTempletDetailService();
+    static getInstance(context?: any): IbzPlanTempletDetailService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}IbzPlanTempletDetailService` : `IbzPlanTempletDetailService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new IbzPlanTempletDetailService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('IbzPlanTempletDetailService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default IbzPlanTempletDetailService;

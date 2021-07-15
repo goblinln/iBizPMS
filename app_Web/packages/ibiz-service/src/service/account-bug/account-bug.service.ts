@@ -12,27 +12,29 @@ export class AccountBugService extends AccountBugBaseService {
      * Creates an instance of AccountBugService.
      * @memberof AccountBugService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('AccountBugService')) {
-            return ___ibz___.sc.get('AccountBugService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('AccountBugService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {AccountBugService}
      * @memberof AccountBugService
      */
-    static getInstance(): AccountBugService {
-        if (!___ibz___.sc.has('AccountBugService')) {
-            new AccountBugService();
+    static getInstance(context?: any): AccountBugService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}AccountBugService` : `AccountBugService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new AccountBugService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('AccountBugService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default AccountBugService;

@@ -82,7 +82,8 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/companies`, _data);
+        const res = await this.http.post(`/companies`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
      * @memberof CompanyService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/companies/${_context.company}`);
+        const res = await this.http.delete(`/companies/${_context.company}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/companies/${_context.company}`, _data);
+        const res = await this.http.put(`/companies/${_context.company}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
      * @memberof CompanyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/companies/fetchdefault`, _data);
+        const res = await this.http.post(`/companies/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
      * @memberof CompanyService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/companies/${_context.company}/select`);
+        const res = await this.http.get(`/companies/${_context.company}/select`);
+        return res;
     }
 }

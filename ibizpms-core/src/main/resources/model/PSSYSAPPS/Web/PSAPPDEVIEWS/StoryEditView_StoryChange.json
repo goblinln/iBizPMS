@@ -396,9 +396,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "当前状态",
@@ -425,9 +423,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "版本#",
@@ -460,9 +456,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
@@ -527,9 +521,6 @@
             "resetItemName" : "neednotreview",
             "resetItemNames" : [ "neednotreview" ],
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           }, {
@@ -587,9 +578,7 @@
             "resetItemNames" : [ "notreview" ],
             "updateDV" : "1",
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "codeName" : "neednotreview",
@@ -622,8 +611,6 @@
             "updateDV" : "1",
             "allowEmpty" : true,
             "emptyCaption" : true,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           } ],
@@ -671,9 +658,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : false,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "标题颜色",
@@ -700,9 +684,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "需求描述",
@@ -757,9 +739,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "验收标准",
@@ -814,9 +793,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "备注",
@@ -847,9 +823,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "附件",
@@ -887,9 +860,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",

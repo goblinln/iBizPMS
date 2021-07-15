@@ -12,27 +12,29 @@ export class IBIZProTagService extends IBIZProTagBaseService {
      * Creates an instance of IBIZProTagService.
      * @memberof IBIZProTagService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('IBIZProTagService')) {
-            return ___ibz___.sc.get('IBIZProTagService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('IBIZProTagService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {IBIZProTagService}
      * @memberof IBIZProTagService
      */
-    static getInstance(): IBIZProTagService {
-        if (!___ibz___.sc.has('IBIZProTagService')) {
-            new IBIZProTagService();
+    static getInstance(context?: any): IBIZProTagService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}IBIZProTagService` : `IBIZProTagService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new IBIZProTagService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('IBIZProTagService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default IBIZProTagService;

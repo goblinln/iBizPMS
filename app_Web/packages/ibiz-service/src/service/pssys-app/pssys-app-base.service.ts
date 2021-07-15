@@ -82,7 +82,8 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/pssysapps`, _data);
+        const res = await this.http.post(`/pssysapps`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/pssysapps/${_context.pssysapp}`);
+        const res = await this.http.delete(`/pssysapps/${_context.pssysapp}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/pssysapps/${_context.pssysapp}`, _data);
+        const res = await this.http.put(`/pssysapps/${_context.pssysapp}`, _data);
+        return res;
     }
     /**
      * FetchBuild
@@ -142,7 +145,8 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async FetchBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/pssysapps/fetchbuild`, _data);
+        const res = await this.http.post(`/pssysapps/fetchbuild`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -153,7 +157,8 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/pssysapps/fetchdefault`, _data);
+        const res = await this.http.post(`/pssysapps/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -164,6 +169,7 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
      * @memberof PSSysAppService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssysapps/${_context.pssysapp}/select`);
+        const res = await this.http.get(`/pssysapps/${_context.pssysapp}/select`);
+        return res;
     }
 }

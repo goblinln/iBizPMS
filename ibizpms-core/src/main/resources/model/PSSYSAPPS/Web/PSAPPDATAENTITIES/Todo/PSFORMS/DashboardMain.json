@@ -123,9 +123,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "desc",
@@ -157,8 +154,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {

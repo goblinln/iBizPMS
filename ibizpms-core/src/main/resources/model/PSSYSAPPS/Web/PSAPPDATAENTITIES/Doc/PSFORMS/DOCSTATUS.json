@@ -201,9 +201,7 @@
               "name" : "alldoccnt1"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "最近更新数量",
@@ -226,9 +224,7 @@
               "name" : "recentupdatecnt"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSEditor" : {
@@ -250,11 +246,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "compositeItem" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "compositeItem" : true
         } ],
         "getPSLayout" : {
           "columnCount" : 24,
@@ -402,9 +394,7 @@
               "name" : "alldoccnt2"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "最近添加数量",
@@ -427,9 +417,7 @@
               "name" : "recentaddcnt"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSEditor" : {
@@ -451,11 +439,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "compositeItem" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "compositeItem" : true
         } ],
         "getPSLayout" : {
           "columnCount" : 24,
@@ -522,9 +506,7 @@
               "name" : "alldoccnt3"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "我的文档数量",
@@ -547,9 +529,7 @@
               "name" : "mydoccnt"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSEditor" : {
@@ -571,11 +551,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "compositeItem" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "compositeItem" : true
         } ],
         "getPSLayout" : {
           "columnCount" : 24,
@@ -642,9 +618,7 @@
               "name" : "alldoccnt4"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "我的收藏数量",
@@ -667,9 +641,7 @@
               "name" : "myfavouritecnt"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSEditor" : {
@@ -691,11 +663,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "compositeItem" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "compositeItem" : true
         } ],
         "getPSLayout" : {
           "columnCount" : 24,

@@ -146,9 +146,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "actionGroupExtractMode" : "ITEM",
@@ -198,9 +196,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {
@@ -283,10 +278,7 @@
             },
             "unitName" : "次",
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "enableUnitName" : true,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "失败",
@@ -338,10 +330,7 @@
             },
             "unitName" : "次",
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "enableUnitName" : true,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "codeName" : "rawitem3",

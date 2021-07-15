@@ -12,27 +12,29 @@ export class TestCaseLibService extends TestCaseLibBaseService {
      * Creates an instance of TestCaseLibService.
      * @memberof TestCaseLibService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TestCaseLibService')) {
-            return ___ibz___.sc.get('TestCaseLibService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TestCaseLibService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {TestCaseLibService}
      * @memberof TestCaseLibService
      */
-    static getInstance(): TestCaseLibService {
-        if (!___ibz___.sc.has('TestCaseLibService')) {
-            new TestCaseLibService();
+    static getInstance(context?: any): TestCaseLibService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TestCaseLibService` : `TestCaseLibService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TestCaseLibService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TestCaseLibService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default TestCaseLibService;

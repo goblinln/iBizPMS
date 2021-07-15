@@ -369,9 +369,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : false,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "项目代号",
@@ -399,9 +396,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : false,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -444,10 +438,8 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : false,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "时间段",
@@ -485,9 +477,6 @@
           "resetItemName" : "end",
           "resetItemNames" : [ "end" ],
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -525,10 +514,8 @@
           },
           "resetItemName" : "begin",
           "resetItemNames" : [ "begin" ],
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : false,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
@@ -566,10 +553,7 @@
             "resetItemNames" : [ "begin" ],
             "unitName" : "天",
             "allowEmpty" : false,
-            "emptyCaption" : false,
             "enableUnitName" : true,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "团队名称",
@@ -597,9 +581,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "项目类型",
@@ -632,9 +613,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           }, {
@@ -670,9 +648,7 @@
               },
               "userTag" : "unique",
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "关联数据数组",
@@ -695,9 +671,7 @@
                 "name" : "srfarray"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "关联产品平台集合",
@@ -722,9 +696,7 @@
               "userTag" : "hidden",
               "valueItemName" : "products",
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "关联计划",
@@ -749,9 +721,7 @@
               "resetItemName" : "products",
               "resetItemNames" : [ "products" ],
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSEditor" : {
@@ -768,9 +738,6 @@
             },
             "allowEmpty" : true,
             "compositeItem" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -817,9 +784,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "访问控制",
@@ -851,9 +815,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         } ],

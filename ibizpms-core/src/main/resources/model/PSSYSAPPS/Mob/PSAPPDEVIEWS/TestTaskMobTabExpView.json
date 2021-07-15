@@ -317,9 +317,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "用例类型",
@@ -352,9 +349,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -388,9 +382,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -447,9 +438,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -989,6 +977,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "Auto80",
             "name" : "移动端右滑行为组（测试版本下）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",

@@ -176,9 +176,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "用例库",
@@ -235,9 +233,6 @@
       },
       "valueItemName" : "lib",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "id",
@@ -267,9 +262,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "所属模块",
@@ -333,9 +326,6 @@
       },
       "valueItemName" : "module",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "用例类型",
@@ -371,9 +361,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "needCodeListConfig" : true,
       "showCaption" : true
     }, {
@@ -409,9 +396,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "needCodeListConfig" : true,
       "showCaption" : true
     }, {
@@ -443,9 +427,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : false,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "优先级",
@@ -480,9 +461,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "needCodeListConfig" : true,
       "showCaption" : true
     }, {
@@ -515,9 +493,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "codeName" : "druipart1",
@@ -1119,9 +1094,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {

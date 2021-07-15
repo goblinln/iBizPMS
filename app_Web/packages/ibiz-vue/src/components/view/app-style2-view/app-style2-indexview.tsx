@@ -103,7 +103,7 @@ export class AppStyle2IndexView extends AppIndexViewBase {
      */
     public async viewModelInit(){
         await super.viewModelInit();
-        this.service = new AppMenuService(this.menuInstance);
+        this.service = new AppMenuService(this.menuInstance, this.context);
         await this.service.initServiceParam(this.context,this.menuInstance);
         this.appMenuModel = this.service.getAllMenuItems();
         this.left_exp = this.handleMenusResource('left_exp');

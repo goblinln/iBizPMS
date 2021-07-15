@@ -117,6 +117,9 @@ import AppWFOpinion from './common/app-wf-opinion/app-wf-opinion.vue';
 import { AppDefaultGridColumn } from './common/app-grid-column/app-grid-column';
 import AppMarkdownEditor from './common/app-markdown-editor/app-markdown-editor';
 import AppNumberRange from './common/app-number-range/app-number-range.vue';
+import AppAnchor from './common/app-anchor/app-anchor.vue';
+import { AppDefaultViewPanel } from './control/app-default-viewpanel/app-default-viewpanel';
+import { AppPanelShell } from './control/app-common-control';
 // 视图组件
 import { AppViewShell } from '../view-container/app-view-shell';
 import { AppDefaultIndexView } from './view/app-default-view/app-default-indexview';
@@ -169,6 +172,7 @@ import { AppDefaultHtmlView } from './view/app-default-view/app-default-htmlview
 import { AppDefaultMapView } from './view/app-default-view/app-default-mapview';
 import { AppDefaultDeReportView } from './view/app-default-view/app-default-dereportview';
 import { AppDefaultMapExpView } from './view/app-default-view/app-default-mapexpview';
+import { AppDefaultDePanelView } from './view/app-default-view/app-default-depanelview';
 import { AppStyle2IndexView } from './view/app-style2-view/app-style2-indexview';
 import { AppStyle2EditView } from './view/app-style2-view/app-style2-editview';
 import { AppStyle2EditView2 } from './view/app-style2-view/app-style2-editview2';
@@ -213,6 +217,7 @@ import { AppStyle2DeRedirectView } from './view/app-style2-view/app-style2-dered
 import { AppStyle2WfStepTraceView } from './view/app-style2-view/app-style2-wfsteptraceview';
 import { AppStyle2WFDynaEditView3 } from './view/app-style2-view/app-style2-wfdynaeditview3';
 import { AppStyle2DeReportView } from './view/app-style2-view/app-style2-dereportview';
+import { AppStyle2DePanelView } from './view/app-style2-view/app-style2-depanelview';
 import { AppStyle2MapExpView } from './view/app-style2-view/app-style2-mapexpview';
 import { AppStyle4PortalView } from './view/app-style4-view/app-style4-portalview';
 import { AppStyle4DePortalView } from './view/app-style4-view/app-style4-deportalview';
@@ -263,6 +268,7 @@ import { AppDefaultMapExpBar } from './control/app-default-map-exp-bar/app-defau
 import { NotificationSignal } from '../directives';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
+        v.component('app-anchor', AppAnchor);
         v.component('app-number-range', AppNumberRange);
         v.component('app-calendar-timeline', AppCalendarTimeline);
         v.component('app-common-microcom', AppCommonMicrocom);
@@ -434,6 +440,7 @@ export const ComponentsRegister = {
         v.component('app-default-mapview', AppDefaultMapView);
         v.component('app-default-dereportview', AppDefaultDeReportView);
         v.component('app-default-mapexpview', AppDefaultMapExpView);
+        v.component('app-default-depanelview', AppDefaultDePanelView);
         v.component('app-style2-indexview', AppStyle2IndexView);
         v.component('app-style2-editview', AppStyle2EditView);
         v.component('app-style2-editview2', AppStyle2EditView2);
@@ -479,6 +486,7 @@ export const ComponentsRegister = {
         v.component('app-style2-wfdynaeditview3', AppStyle2WFDynaEditView3);
         v.component('app-style2-dereportview', AppStyle2DeReportView);
         v.component('app-style2-mapexpview', AppStyle2MapExpView);
+        v.component('app-style2-depanelview', AppStyle2DePanelView);
         v.component('app-style4-portalview', AppStyle4PortalView);
         v.component('app-style4-deportalview', AppStyle4DePortalView);
         // 部件组件
@@ -523,6 +531,8 @@ export const ComponentsRegister = {
         v.component('app-default-map', AppDefaultMap);
         v.component('app-default-report-panel', AppDefaultReportPanel);
         v.component('app-default-map-exp-bar', AppDefaultMapExpBar);
+        v.component('app-default-viewpanel', AppDefaultViewPanel);
+        v.component('app-panel-shell', AppPanelShell);
         // 注册指令
         v.directive('notification-signal', NotificationSignal);
     }

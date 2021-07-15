@@ -193,6 +193,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "Auto87",
       "name" : "项目查看",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

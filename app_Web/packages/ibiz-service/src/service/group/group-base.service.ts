@@ -82,7 +82,8 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/groups`, _data);
+        const res = await this.http.post(`/groups`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
      * @memberof GroupService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/groups/${_context.group}`);
+        const res = await this.http.delete(`/groups/${_context.group}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/groups/${_context.group}`, _data);
+        const res = await this.http.put(`/groups/${_context.group}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
      * @memberof GroupService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/groups/fetchdefault`, _data);
+        const res = await this.http.post(`/groups/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
      * @memberof GroupService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/groups/${_context.group}/select`);
+        const res = await this.http.get(`/groups/${_context.group}/select`);
+        return res;
     }
 }

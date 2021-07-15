@@ -110,19 +110,4 @@ export class MapViewBase extends MDViewBase implements MapViewInterface{
         }
     }
 
-    /**
-     * 部件事件
-     * @param ctrl 部件 
-     * @param action  行为
-     * @param data 数据
-     * 
-     * @memberof MapViewBase
-     */
-    public onCtrlEvent(controlname: string, action: string, data: any) {
-        if(action == 'save'){
-            this.$emit("view-event", { action: "drdatasaved", data: data });
-        }else{
-            super.onCtrlEvent(controlname, action, data);
-        }
-    }
 }

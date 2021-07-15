@@ -117,7 +117,8 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      * @memberof MonthlyService
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/${_context.monthly}/autocreate`, _data);
+        const res = await this.http.post(`/monthlies/${_context.monthly}/autocreate`, _data);
+        return res;
     }
     /**
      * Create
@@ -135,7 +136,8 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/monthlies`, _data);
+        const res = await this.http.post(`/monthlies`, _data);
+        return res;
     }
     /**
      * Get
@@ -172,7 +174,8 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      * @memberof MonthlyService
      */
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/${_context.monthly}/notice`, _data);
+        const res = await this.http.post(`/monthlies/${_context.monthly}/notice`, _data);
+        return res;
     }
     /**
      * Read
@@ -183,7 +186,8 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      * @memberof MonthlyService
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/${_context.monthly}/read`, _data);
+        const res = await this.http.post(`/monthlies/${_context.monthly}/read`, _data);
+        return res;
     }
     /**
      * Submit
@@ -194,7 +198,8 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      * @memberof MonthlyService
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/${_context.monthly}/submit`, _data);
+        const res = await this.http.post(`/monthlies/${_context.monthly}/submit`, _data);
+        return res;
     }
     /**
      * Update
@@ -206,7 +211,8 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/monthlies/${_context.monthly}`, _data);
+        const res = await this.http.put(`/monthlies/${_context.monthly}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -217,7 +223,8 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      * @memberof MonthlyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/fetchdefault`, _data);
+        const res = await this.http.post(`/monthlies/fetchdefault`, _data);
+        return res;
     }
 
     /**

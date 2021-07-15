@@ -167,10 +167,7 @@
         },
         "unitName" : "小时",
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "总计消耗",
@@ -191,6 +188,7 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "consumed",
+          "precision" : 2,
           "editable" : false,
           "enableLinkView" : false
         },
@@ -200,10 +198,7 @@
         },
         "unitName" : "小时",
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "预计剩余",
@@ -224,6 +219,7 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "left",
+          "precision" : 2,
           "editable" : false,
           "enableLinkView" : false
         },
@@ -233,10 +229,7 @@
         },
         "unitName" : "小时",
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "预计开始",
@@ -264,10 +257,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "实际开始",
@@ -295,10 +286,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "截止日期",
@@ -327,10 +316,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "delay",
@@ -377,8 +364,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {

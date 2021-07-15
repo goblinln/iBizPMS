@@ -348,8 +348,6 @@
                   "width" : 70.0,
                   "allowEmpty" : true,
                   "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "codeName" : "title",
@@ -387,8 +385,6 @@
                   },
                   "allowEmpty" : true,
                   "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "codeName" : "version",
@@ -423,8 +419,6 @@
                   },
                   "allowEmpty" : true,
                   "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "needCodeListConfig" : true,
                   "showCaption" : true
                 }, {
@@ -452,9 +446,7 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
                   "hidden" : true,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "前置条件",
@@ -497,9 +489,6 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "用例步骤",
@@ -5012,6 +5001,7 @@
             "layout" : "TABLE_24COL"
           },
           "getPSUIActionGroup" : {
+            "codeName" : "Auto8_350",
             "name" : "看板主信息（快捷操作栏）（测试单）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -5626,9 +5616,7 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
                   "hidden" : true,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "产品名称",
@@ -5657,9 +5645,6 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "所属模块",
@@ -5686,9 +5671,7 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
                   "hidden" : true,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "模块名称",
@@ -5715,9 +5698,7 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
                   "hidden" : true,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "模块名称",
@@ -5746,9 +5727,6 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "相关需求",
@@ -5822,9 +5800,6 @@
                   },
                   "valueItemName" : "story",
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "用例类型",
@@ -5858,9 +5833,6 @@
                   },
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "适用阶段",
@@ -5894,9 +5866,6 @@
                   },
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "优先级",
@@ -5933,9 +5902,6 @@
                   "width" : 300.0,
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "用例状态",
@@ -5969,9 +5935,6 @@
                   },
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "执行时间",
@@ -5999,10 +5962,8 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "valueFormat" : "YYYY-MM-DD HH:mm:ss",
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "结果",
@@ -6036,9 +5997,6 @@
                   },
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "关键词",
@@ -6067,9 +6025,6 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "相关用例",
@@ -6098,9 +6053,6 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "actionGroupExtractMode" : "ITEM",
@@ -6159,9 +6111,6 @@
                     },
                     "allowEmpty" : true,
                     "convertToCodeItemText" : true,
-                    "emptyCaption" : false,
-                    "hidden" : false,
-                    "inputTipClosable" : false,
                     "showCaption" : true
                   }, {
                     "caption" : "于",
@@ -6190,10 +6139,8 @@
                       "colMD" : 24,
                       "layout" : "TABLE_24COL"
                     },
+                    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
                     "allowEmpty" : true,
-                    "emptyCaption" : false,
-                    "hidden" : false,
-                    "inputTipClosable" : false,
                     "showCaption" : true
                   }, {
                     "caption" : "最后修改者",
@@ -6228,9 +6175,6 @@
                     },
                     "allowEmpty" : true,
                     "convertToCodeItemText" : true,
-                    "emptyCaption" : false,
-                    "hidden" : false,
-                    "inputTipClosable" : false,
                     "showCaption" : true
                   }, {
                     "caption" : "于",
@@ -6259,10 +6203,8 @@
                       "colMD" : 24,
                       "layout" : "TABLE_24COL"
                     },
+                    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
                     "allowEmpty" : true,
-                    "emptyCaption" : false,
-                    "hidden" : false,
-                    "inputTipClosable" : false,
                     "showCaption" : true
                   } ],
                   "getPSLayout" : {

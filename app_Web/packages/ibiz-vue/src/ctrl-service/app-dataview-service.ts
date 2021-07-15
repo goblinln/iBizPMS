@@ -42,7 +42,7 @@ export class AppDataViewService extends ControlServiceBase {
      * @memberof AppDataViewService
      */
     public async initServiceParam() {
-        this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+        this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         this.model = new AppDataViewModel(this.controlInstance);
     }
 
@@ -52,8 +52,8 @@ export class AppDataViewService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppDataViewService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
         this.controlInstance = opts;
     }
 

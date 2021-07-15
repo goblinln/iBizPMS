@@ -12,27 +12,29 @@ export class PSSystemDBCfgService extends PSSystemDBCfgBaseService {
      * Creates an instance of PSSystemDBCfgService.
      * @memberof PSSystemDBCfgService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('PSSystemDBCfgService')) {
-            return ___ibz___.sc.get('PSSystemDBCfgService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('PSSystemDBCfgService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {PSSystemDBCfgService}
      * @memberof PSSystemDBCfgService
      */
-    static getInstance(): PSSystemDBCfgService {
-        if (!___ibz___.sc.has('PSSystemDBCfgService')) {
-            new PSSystemDBCfgService();
+    static getInstance(context?: any): PSSystemDBCfgService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}PSSystemDBCfgService` : `PSSystemDBCfgService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new PSSystemDBCfgService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('PSSystemDBCfgService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default PSSystemDBCfgService;

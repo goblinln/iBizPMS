@@ -499,6 +499,7 @@
     "enableSort" : true
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "UAGroup2",
     "name" : "移除遗留bug（发布）",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

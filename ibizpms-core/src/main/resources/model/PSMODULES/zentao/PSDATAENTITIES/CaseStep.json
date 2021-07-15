@@ -334,6 +334,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurTest",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "当前测试步骤",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -350,6 +351,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -362,6 +364,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Default1",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT1",
     "name" : "DEFAULT1",
     "getPSDEDataQueries" : [ {
@@ -373,6 +376,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Mob",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "Mob",
     "name" : "Mob",
     "getPSDEDataQueries" : [ {
@@ -384,6 +388,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Version",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "版本",
     "name" : "Version",
     "getPSDEDataQueries" : [ {
@@ -395,6 +400,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Versions",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "版本1",
     "name" : "Versions",
     "getPSDEDataQueries" : [ {

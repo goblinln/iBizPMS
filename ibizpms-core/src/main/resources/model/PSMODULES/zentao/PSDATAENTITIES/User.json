@@ -342,6 +342,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "BugUser",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "Bug用户",
     "name" : "BugUser",
     "getPSDEDataQueries" : [ {
@@ -352,6 +353,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -363,6 +365,7 @@
     "enableFront" : true
   }, {
     "codeName" : "GetByCommiter",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "根据源代码账户获取登录名",
     "name" : "getByCommiter",
     "getPSDEDataQueries" : [ {
@@ -373,6 +376,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamM",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队管理",
     "name" : "ProjectTeamM",
     "getPSDEDataQueries" : [ {
@@ -383,6 +387,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamUser",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUser",
     "getPSDEDataQueries" : [ {
@@ -393,6 +398,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTeamUserTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUserTask",
     "getPSDEDataQueries" : [ {
@@ -403,6 +409,7 @@
     "enableFront" : true
   }, {
     "codeName" : "TaskTeam",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "TASKTEAM",
     "name" : "TASKTEAM",
     "getPSDEDataQueries" : [ {

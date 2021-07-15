@@ -74,10 +74,24 @@
           }
       }
       .el-table__body .edit-cell {
-          padding: 0;
-          .app-form-item {
-              margin-top: 20px;
-              margin-bottom: 20px;
+          padding: 0 8px;
+          display: table-cell;
+          .cell {
+            padding: 0;
+            .app-form-item {
+                padding: 0;
+                .ivu-form-item {
+                  margin-bottom: 0;
+                  .ivu-form-item-content {
+                    .ivu-form-item-error-tip {
+                      display: none;
+                    }
+                    .el-slider {
+                      padding: 0 10px;
+                    }
+                  }
+                }
+            }
           }
       }
       .el-table__header-wrapper {

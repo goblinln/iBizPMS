@@ -245,9 +245,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "于",
@@ -278,10 +275,8 @@
           "colXS" : 12,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "由谁编辑",
@@ -318,9 +313,6 @@
         },
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "于",
@@ -351,10 +343,8 @@
           "colXS" : 12,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {

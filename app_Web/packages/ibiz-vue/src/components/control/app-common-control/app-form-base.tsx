@@ -422,7 +422,7 @@ export class AppFormBase extends EditFormControlBase {
                     disabled={this.detailsModel[modelJson.name]?.disabled}
                 >
                     {sysImage ? (
-                        <i class={sysImage?.cssClass} style='margin-right: 4px;'></i>
+                        <i class={sysImage?.cssClass} style='margin-right: 2px;'></i>
                     ) : (
                         <menu-icon item={{ iconcls: uiAction?.getPSSysImage()?.cssClass }} />
                     )}
@@ -477,6 +477,7 @@ export class AppFormBase extends EditFormControlBase {
                         parentItem={modelJson}
                         value={this.data[editor?.name]}
                         contextData={this.data}
+                        valueFormat={modelJson.valueFormat}
                         context={Util.deepCopy(this.context)}
                         viewparams={Util.deepCopy(this.viewparams)}
                         contextState={this.formState}
@@ -545,6 +546,7 @@ export class AppFormBase extends EditFormControlBase {
         return (
             <app-default-group-panel
                 detailsInstance={modelJson}
+                id={modelJson.codeName}
                 modelService={this.modelService}
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}
@@ -635,6 +637,7 @@ export class AppFormBase extends EditFormControlBase {
             this.controlInstance.getPSAppDataEntity()?.codeName?.toLowerCase() +
             this.controlInstance.codeName?.toLowerCase();
         const controlHeight = this.controlInstance.height != 0 ? this.controlInstance.height + 'px' : 'auto';
+        const viewType = (this.controlInstance.getParentPSModelObject() as IPSAppDEView).viewType;
         return (
             <i-form
                 props={{ model: this.data }}
@@ -645,6 +648,7 @@ export class AppFormBase extends EditFormControlBase {
                 on-on-validate={this.formItemValidate.bind(this)}
             >
                 <input style='display:none;' />
+                {this.groupAnchorDatas.length > 0 ? <app-anchor viewType={viewType} anchorDatas={this.groupAnchorDatas}></app-anchor> : null}
                 <row>{this.renderFormContent()}</row>
             </i-form>
         );

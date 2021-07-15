@@ -194,9 +194,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "相关需求",
@@ -223,9 +221,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "所属项目",
@@ -252,9 +248,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "id",
@@ -290,8 +284,6 @@
         "width" : 70.0,
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "name",
@@ -332,8 +324,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "标题颜色",
@@ -360,9 +350,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "actionGroupExtractMode" : "ITEM",
@@ -400,11 +388,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "allowEmpty" : true
         } ],
         "getPSLayout" : {
           "columnCount" : 24,
@@ -729,11 +713,7 @@
                           "colMD" : 24,
                           "layout" : "TABLE_24COL"
                         },
-                        "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
-                        "showCaption" : false
+                        "allowEmpty" : true
                       }, {
                         "actionGroupExtractMode" : "ITEM",
                         "caption" : "附件",
@@ -2450,9 +2430,7 @@
                             "layout" : "TABLE_24COL"
                           },
                           "allowEmpty" : true,
-                          "emptyCaption" : false,
                           "hidden" : true,
-                          "inputTipClosable" : false,
                           "showCaption" : true
                         } ],
                         "getPSLayout" : {
@@ -2520,11 +2498,7 @@
                           "colMD" : 24,
                           "layout" : "TABLE_24COL"
                         },
-                        "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
-                        "showCaption" : false
+                        "allowEmpty" : true
                       } ],
                       "getPSLayout" : {
                         "columnCount" : 24,
@@ -4971,6 +4945,7 @@
                 "name" : "uagridcolumn1",
                 "noPrivDisplayMode" : 1,
                 "getPSDEUIActionGroup" : {
+                  "codeName" : "Auto115",
                   "name" : "子任务操作栏",
                   "getPSUIActionGroupDetails" : [ {
                     "detailType" : "DEUIACTION",

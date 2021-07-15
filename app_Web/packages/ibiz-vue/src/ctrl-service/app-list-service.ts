@@ -26,9 +26,6 @@ export class AppListService extends ControlServiceBase {
      */
     public appEntityService!: any;
 
-
-
-
     /**
      * 初始化服务参数
      *
@@ -37,7 +34,7 @@ export class AppListService extends ControlServiceBase {
      */
     public async initServiceParam(opts: any) {
         this.controlInstance = opts;
-        this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+        this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         this.model = new AppListModel(opts);
     }
 
@@ -47,8 +44,8 @@ export class AppListService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppListService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
     }
 
     /**

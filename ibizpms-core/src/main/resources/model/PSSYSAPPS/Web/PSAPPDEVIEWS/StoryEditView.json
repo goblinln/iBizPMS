@@ -533,9 +533,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "所属模块",
@@ -564,9 +562,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "所属产品",
@@ -621,9 +617,6 @@
           },
           "valueItemName" : "product",
           "allowEmpty" : false,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "codeName" : "branch",
@@ -677,8 +670,6 @@
           "resetItemNames" : [ "prodoctname" ],
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -775,9 +766,6 @@
           "resetItemNames" : [ "branch" ],
           "valueItemName" : "module",
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "计划",
@@ -830,9 +818,6 @@
           "resetItemName" : "prodoctname",
           "resetItemNames" : [ "prodoctname" ],
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -866,9 +851,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -898,9 +880,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "由谁评审",
@@ -928,9 +907,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
@@ -1005,9 +982,6 @@
           "resetItemName" : "neednotreview",
           "resetItemNames" : [ "neednotreview" ],
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -1041,8 +1015,6 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -1080,9 +1052,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : false,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "优先级",
@@ -1115,9 +1084,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -1151,9 +1117,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -1183,9 +1146,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "标题颜色",
@@ -1212,9 +1172,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "需求描述",
@@ -1269,9 +1227,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "验收标准",
@@ -1302,9 +1257,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "附件",
@@ -1342,9 +1294,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "抄送给",
@@ -1377,9 +1326,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -1439,8 +1385,6 @@
           "valueItemName" : "mailtopk",
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "关键词",
@@ -1468,9 +1412,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "抄送给",
@@ -1497,9 +1438,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {

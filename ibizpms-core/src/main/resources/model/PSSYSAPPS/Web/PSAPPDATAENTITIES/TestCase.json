@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "BugCreateCase",
     "methodType" : "DEACTION",
     "name" : "bugCreateCase",
@@ -44,6 +45,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "CaseFavorite",
     "methodType" : "DEACTION",
     "name" : "CaseFavorite",
@@ -61,6 +63,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "CaseNFavorite",
     "methodType" : "DEACTION",
     "name" : "CaseNFavorite",
@@ -78,6 +81,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -91,6 +95,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ConfirmChange",
     "methodType" : "DEACTION",
     "name" : "confirmChange",
@@ -105,6 +110,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Confirmstorychange",
     "methodType" : "DEACTION",
     "name" : "confirmstorychange",
@@ -115,6 +121,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -132,6 +139,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -146,6 +154,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -160,6 +169,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -177,6 +187,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetByTestTask",
     "methodType" : "DEACTION",
     "name" : "GetByTestTask",
@@ -190,6 +201,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -207,6 +219,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -221,6 +234,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -235,6 +249,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -249,6 +264,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -263,6 +279,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTestTaskCntRun",
     "methodType" : "DEACTION",
     "name" : "GetTestTaskCntRun",
@@ -276,6 +293,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "batchActionMode" : 1,
     "codeName" : "LinkCase",
     "methodType" : "DEACTION",
@@ -288,6 +306,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "MobLinkCase",
     "methodType" : "DEACTION",
     "name" : "MobLinkCase",
@@ -302,6 +321,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -321,6 +341,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -337,6 +358,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -353,6 +375,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RunCase",
     "methodType" : "DEACTION",
     "name" : "RunCase",
@@ -367,6 +390,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RunCases",
     "methodType" : "DEACTION",
     "name" : "runCases",
@@ -384,6 +408,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UNKNOWN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -399,6 +424,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "TestRunCase",
     "methodType" : "DEACTION",
     "name" : "TestRunCase",
@@ -413,6 +439,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "TestRunCases",
     "methodType" : "DEACTION",
     "name" : "testRunCases",
@@ -430,6 +457,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkCase",
     "methodType" : "DEACTION",
     "name" : "unlinkCase",
@@ -444,6 +472,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkSuiteCase",
     "methodType" : "DEACTION",
     "name" : "unlinkSuiteCase",
@@ -458,6 +487,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -475,6 +505,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -489,6 +520,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
@@ -503,6 +535,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "batchActionMode" : 1,
     "codeName" : "testsuitelinkCase",
     "methodType" : "DEACTION",
@@ -1400,6 +1433,7 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "BugCreateCase",
     "methodType" : "DEACTION",
     "name" : "bugCreateCase",
@@ -1413,6 +1447,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "CaseFavorite",
     "methodType" : "DEACTION",
     "name" : "CaseFavorite",
@@ -1430,6 +1465,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "CaseNFavorite",
     "methodType" : "DEACTION",
     "name" : "CaseNFavorite",
@@ -1447,6 +1483,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -1460,6 +1497,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ConfirmChange",
     "methodType" : "DEACTION",
     "name" : "confirmChange",
@@ -1474,6 +1512,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Confirmstorychange",
     "methodType" : "DEACTION",
     "name" : "confirmstorychange",
@@ -1484,6 +1523,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -1501,6 +1541,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -1515,6 +1556,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -1529,6 +1571,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -1546,6 +1589,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetByTestTask",
     "methodType" : "DEACTION",
     "name" : "GetByTestTask",
@@ -1559,6 +1603,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -1576,6 +1621,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -1590,6 +1636,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -1604,6 +1651,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -1618,6 +1666,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -1632,6 +1681,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTestTaskCntRun",
     "methodType" : "DEACTION",
     "name" : "GetTestTaskCntRun",
@@ -1645,6 +1695,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "batchActionMode" : 1,
     "codeName" : "LinkCase",
     "methodType" : "DEACTION",
@@ -1657,6 +1708,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "MobLinkCase",
     "methodType" : "DEACTION",
     "name" : "MobLinkCase",
@@ -1671,6 +1723,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -1690,6 +1743,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -1706,6 +1760,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -1722,6 +1777,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RunCase",
     "methodType" : "DEACTION",
     "name" : "RunCase",
@@ -1736,6 +1792,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RunCases",
     "methodType" : "DEACTION",
     "name" : "runCases",
@@ -1753,6 +1810,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UNKNOWN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -1768,6 +1826,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "TestRunCase",
     "methodType" : "DEACTION",
     "name" : "TestRunCase",
@@ -1782,6 +1841,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "TestRunCases",
     "methodType" : "DEACTION",
     "name" : "testRunCases",
@@ -1799,6 +1859,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkCase",
     "methodType" : "DEACTION",
     "name" : "unlinkCase",
@@ -1813,6 +1874,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkSuiteCase",
     "methodType" : "DEACTION",
     "name" : "unlinkSuiteCase",
@@ -1827,6 +1889,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -1844,6 +1907,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -1858,6 +1922,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
@@ -1872,6 +1937,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "batchActionMode" : 1,
     "codeName" : "testsuitelinkCase",
     "methodType" : "DEACTION",

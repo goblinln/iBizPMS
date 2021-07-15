@@ -1,5 +1,5 @@
 import { IPSAppDEField, IPSApplication, IPSAppUtil, IPSDEFSearchMode, IPSSearchBar, IPSSearchBarFilter } from '@ibiz/dynamic-model-api';
-import { GetModelService, LogUtil, SearchBarControlInterface } from 'ibiz-core';
+import { GetModelService, LogUtil, SearchBarControlInterface, Util } from 'ibiz-core';
 import moment from 'moment';
 import { AppSearchBarService } from '../ctrl-service/app-searchbar-service';
 import { MDControlBase } from './md-control-base';
@@ -210,12 +210,12 @@ export class SearchBarControlBase extends MDControlBase implements SearchBarCont
         this.historyItems.push({
             name: (name ? name : time.format('YYYY-MM-DD HH:mm:ss')),
             value: time.unix().toString(),
-            data: JSON.parse(JSON.stringify(this.filterItems))
+            data: Util.deepCopy(this.filterItems)
         })
         this.selectItem = time.unix().toString();
         let param: any = {};
 		Object.assign(param, {
-            model: JSON.parse(JSON.stringify(this.historyItems)),
+            model: Util.deepCopy(this.historyItems),
             appdeName: this.appDeCodeName,
             modelid: this.modelId,
             utilServiceName: this.utilServiceName,
@@ -253,7 +253,7 @@ export class SearchBarControlBase extends MDControlBase implements SearchBarCont
             utilServiceName: this.utilServiceName,
             ...this.viewparams
         });
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext:any = Util.deepCopy(this.context);
         this.onControlRequset('load', tempContext, param);
         let post = this.service.loadModel(this.utilServiceName, tempContext, param);
         post.then((response: any) => {
@@ -261,7 +261,7 @@ export class SearchBarControlBase extends MDControlBase implements SearchBarCont
             if(response.status == 200) {
                 this.historyItems = response.data;
             }
-            this.isControlLoaded = true;
+            this.ctrlEvent({ controlname: this.controlInstance.name, action: "load", data: this.historyItems });
         }).catch((response: any) => {
             this.onControlResponse('load', response);
             LogUtil.log(response);
@@ -278,7 +278,7 @@ export class SearchBarControlBase extends MDControlBase implements SearchBarCont
         let item: any = this.historyItems.find((item: any) => Object.is(evt, item.value));
         if(item) {
             this.selectItem = item.value;
-            this.filterItems = JSON.parse(JSON.stringify(item.data));
+            this.filterItems = Util.deepCopy(item.data);
         }
     }
 

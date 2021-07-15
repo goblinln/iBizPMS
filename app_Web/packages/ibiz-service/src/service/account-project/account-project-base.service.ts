@@ -210,9 +210,11 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchaccount`, _data);
+            return res;
         }
-        return this.http.post(`/accountprojects/fetchaccount`, _data);
+        const res = await this.http.post(`/accountprojects/fetchaccount`, _data);
+        return res;
     }
     /**
      * FetchMy
@@ -224,8 +226,10 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchmy`, _data);
+            return res;
         }
-        return this.http.post(`/accountprojects/fetchmy`, _data);
+        const res = await this.http.post(`/accountprojects/fetchmy`, _data);
+        return res;
     }
 }

@@ -227,9 +227,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "当前状态",
@@ -262,9 +259,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       }, {
@@ -298,9 +292,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       } ],
@@ -710,6 +701,7 @@
       "name" : "srfmstag"
     } ],
     "getPSDEUIActionGroup2" : {
+      "codeName" : "Auto53",
       "name" : "移动端右滑",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

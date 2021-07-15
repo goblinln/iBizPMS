@@ -198,8 +198,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "ibz_reportlyname",
@@ -230,8 +228,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
@@ -284,8 +280,6 @@
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "date",
@@ -314,10 +308,9 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
@@ -476,8 +469,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
@@ -4150,9 +4141,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {

@@ -1,5 +1,5 @@
 import { IPSAppViewRef, IPSDETree, IPSTreeExpBar, IPSDEPickupViewPanel } from '@ibiz/dynamic-model-api';
-import { ModelTool, TreeExpBarControlInterface } from 'ibiz-core';
+import { ModelTool, TreeExpBarControlInterface, Util } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
 /**
  * 树视图导航栏部件基类
@@ -183,9 +183,9 @@ export class TreeExpBarControlBase extends ExpBarControlBase implements TreeExpB
             })
             Object.assign(tempContext, { srfcounter: this.counter });
         }
-        Object.assign(tempContext, JSON.parse(JSON.stringify(this.context)));
+        Object.assign(tempContext, Util.deepCopy(this.context));
         if (arg.srfappctx) {
-            Object.assign(tempContext, JSON.parse(JSON.stringify(arg.srfappctx)));
+            Object.assign(tempContext, Util.deepCopy(arg.srfappctx));
         }
         if (arg.srfparentdename) {
             Object.assign(tempContext, { srfparentdename: arg.srfparentdename });

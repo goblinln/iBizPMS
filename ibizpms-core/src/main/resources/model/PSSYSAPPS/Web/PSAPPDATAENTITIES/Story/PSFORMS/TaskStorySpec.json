@@ -159,11 +159,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
-            "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
-            "showCaption" : false
+            "allowEmpty" : true
           }, {
             "actionGroupExtractMode" : "ITEM",
             "caption" : "附件",
@@ -1880,9 +1876,7 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -1950,11 +1944,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
-            "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
-            "showCaption" : false
+            "allowEmpty" : true
           } ],
           "getPSLayout" : {
             "columnCount" : 24,

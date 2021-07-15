@@ -295,6 +295,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "指定用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -305,6 +306,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -316,6 +318,7 @@
     "enableFront" : true
   }, {
     "codeName" : "My",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -326,6 +329,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyUserTpl",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的模板",
     "name" : "MyUserTpl",
     "getPSDEDataQueries" : [ {
@@ -336,6 +340,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyUserTplQuery",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的模板（权限）",
     "name" : "MyUserTplQuery",
     "getPSDEDataQueries" : [ {

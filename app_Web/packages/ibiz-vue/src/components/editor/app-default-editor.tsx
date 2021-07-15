@@ -147,6 +147,14 @@ export class AppDefaultEditor extends Vue {
     @Prop() public rowPreview?:any
 
     /**
+     * 值格式化
+     *
+     * @type {boolean}
+     * @memberof AppDefaultEditor
+     */
+    @Prop() public valueFormat?:any
+
+    /**
      * 编辑器change事件
      *
      * @param {*} value
@@ -316,6 +324,7 @@ export class AppDefaultEditor extends Vue {
                     parentItem: this.parentItem,
                     context: this.context,
                     value: this.value,
+                    valueFormat: this.valueFormat,
                     viewparams: this.viewparams,
                     contextData: this.contextData,
                     contextState: this.contextState,

@@ -12,27 +12,29 @@ export class HistoryService extends HistoryBaseService {
      * Creates an instance of HistoryService.
      * @memberof HistoryService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('HistoryService')) {
-            return ___ibz___.sc.get('HistoryService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('HistoryService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {HistoryService}
      * @memberof HistoryService
      */
-    static getInstance(): HistoryService {
-        if (!___ibz___.sc.has('HistoryService')) {
-            new HistoryService();
+    static getInstance(context?: any): HistoryService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}HistoryService` : `HistoryService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new HistoryService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('HistoryService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default HistoryService;

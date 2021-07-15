@@ -615,6 +615,7 @@
               "name" : "uagridcolumn1",
               "noPrivDisplayMode" : 1,
               "getPSDEUIActionGroup" : {
+                "codeName" : "SuitSub",
                 "name" : "表格主信息（操作栏）_套件",
                 "getPSUIActionGroupDetails" : [ {
                   "detailType" : "DEUIACTION",
@@ -1984,6 +1985,7 @@
             "layout" : "TABLE_24COL"
           },
           "getPSUIActionGroup" : {
+            "codeName" : "Auto63",
             "name" : "操作栏",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -2434,9 +2436,6 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "描述",
@@ -2468,9 +2467,6 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 } ],
                 "getPSLayout" : {

@@ -12,27 +12,29 @@ export class TodoService extends TodoBaseService {
      * Creates an instance of TodoService.
      * @memberof TodoService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TodoService')) {
-            return ___ibz___.sc.get('TodoService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TodoService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {TodoService}
      * @memberof TodoService
      */
-    static getInstance(): TodoService {
-        if (!___ibz___.sc.has('TodoService')) {
-            new TodoService();
+    static getInstance(context?: any): TodoService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TodoService` : `TodoService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TodoService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TodoService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default TodoService;

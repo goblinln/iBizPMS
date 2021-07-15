@@ -155,9 +155,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       } ],
@@ -447,6 +444,7 @@
       "enableSort" : true
     } ],
     "getPSDEUIActionGroup2" : {
+      "codeName" : "Auto126",
       "name" : "右滑行为组（我提交的）",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

@@ -169,9 +169,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "对象ID",
@@ -200,9 +198,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "备注",
@@ -232,11 +228,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
-        "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
-        "showCaption" : false
+        "allowEmpty" : true
       }, {
         "caption" : "文件",
         "codeName" : "files",
@@ -272,11 +264,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
-        "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
-        "showCaption" : false
+        "allowEmpty" : true
       }, {
         "caption" : "消息通知用户",
         "codeName" : "noticeusers",
@@ -302,9 +290,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "附加值",
@@ -333,9 +319,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {

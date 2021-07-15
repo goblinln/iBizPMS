@@ -691,6 +691,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto13",
         "name" : "产品计划-关联Bug-操作栏",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

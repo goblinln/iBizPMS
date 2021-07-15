@@ -12,27 +12,29 @@ export class ProjectWeeklyService extends ProjectWeeklyBaseService {
      * Creates an instance of ProjectWeeklyService.
      * @memberof ProjectWeeklyService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ProjectWeeklyService')) {
-            return ___ibz___.sc.get('ProjectWeeklyService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ProjectWeeklyService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {ProjectWeeklyService}
      * @memberof ProjectWeeklyService
      */
-    static getInstance(): ProjectWeeklyService {
-        if (!___ibz___.sc.has('ProjectWeeklyService')) {
-            new ProjectWeeklyService();
+    static getInstance(context?: any): ProjectWeeklyService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ProjectWeeklyService` : `ProjectWeeklyService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ProjectWeeklyService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ProjectWeeklyService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default ProjectWeeklyService;

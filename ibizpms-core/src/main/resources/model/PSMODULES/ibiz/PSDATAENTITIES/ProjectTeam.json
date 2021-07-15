@@ -376,6 +376,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -388,6 +389,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ProjectTeamPm",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目成员（项目经理）",
     "name" : "ProjectTeamPm",
     "getPSDEDataQueries" : [ {
@@ -399,6 +401,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RowEditDefault",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "行编辑查询",
     "name" : "RowEditDefault",
     "getPSDEDataQueries" : [ {
@@ -410,6 +413,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "SpecifyTeam",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "指定团队",
     "name" : "SpecifyTeam",
     "getPSDEDataQueries" : [ {
@@ -421,6 +425,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "TaskCntEstimateConsumedLeft",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据查询",
     "name" : "TaskCntEstimateConsumedLeft",
     "getPSDEDataQueries" : [ {

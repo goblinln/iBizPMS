@@ -117,7 +117,8 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/autocreate`, _data);
+        const res = await this.http.post(`/dailies/${_context.daily}/autocreate`, _data);
+        return res;
     }
     /**
      * Create
@@ -135,7 +136,8 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/dailies`, _data);
+        const res = await this.http.post(`/dailies`, _data);
+        return res;
     }
     /**
      * Get
@@ -172,7 +174,8 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/notice`, _data);
+        const res = await this.http.post(`/dailies/${_context.daily}/notice`, _data);
+        return res;
     }
     /**
      * Read
@@ -183,7 +186,8 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/read`, _data);
+        const res = await this.http.post(`/dailies/${_context.daily}/read`, _data);
+        return res;
     }
     /**
      * Submit
@@ -194,7 +198,8 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/submit`, _data);
+        const res = await this.http.post(`/dailies/${_context.daily}/submit`, _data);
+        return res;
     }
     /**
      * Update
@@ -206,7 +211,8 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/dailies/${_context.daily}`, _data);
+        const res = await this.http.put(`/dailies/${_context.daily}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -217,7 +223,8 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/fetchdefault`, _data);
+        const res = await this.http.post(`/dailies/fetchdefault`, _data);
+        return res;
     }
 
     /**

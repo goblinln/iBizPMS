@@ -12,27 +12,29 @@ export class AccountProjectService extends AccountProjectBaseService {
      * Creates an instance of AccountProjectService.
      * @memberof AccountProjectService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('AccountProjectService')) {
-            return ___ibz___.sc.get('AccountProjectService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('AccountProjectService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {AccountProjectService}
      * @memberof AccountProjectService
      */
-    static getInstance(): AccountProjectService {
-        if (!___ibz___.sc.has('AccountProjectService')) {
-            new AccountProjectService();
+    static getInstance(context?: any): AccountProjectService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}AccountProjectService` : `AccountProjectService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new AccountProjectService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('AccountProjectService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default AccountProjectService;

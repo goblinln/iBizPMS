@@ -89,7 +89,7 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppListService(this.controlInstance);
+            this.service = new AppListService(this.controlInstance, this.context);
             await this.service.loaded(this.controlInstance);
         }
         this.minorSortPSDEF = this.controlInstance.getMinorSortPSAppDEField()?.codeName;

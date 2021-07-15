@@ -97,7 +97,7 @@ export default class AppWFApproval extends Vue {
      */
     public created(){
         if(this.appEntityCodeName){
-            new GlobalService().getService(this.appEntityCodeName).then((service: any) => {
+            new GlobalService().getService(this.appEntityCodeName, this.context).then((service: any) => {
                 if(service){
                     service.GetWFHistory(this.context).then((res:any) =>{
                         if(res && (res.status === 200)){

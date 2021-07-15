@@ -251,8 +251,6 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "codeName" : "name",
@@ -285,8 +283,6 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "备注",
@@ -317,9 +313,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "codeName" : "druipart1",

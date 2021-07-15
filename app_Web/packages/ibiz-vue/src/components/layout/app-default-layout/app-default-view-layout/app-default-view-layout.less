@@ -190,6 +190,30 @@
       }
   }
 }
+.app-viewlayout-panel {
+  .el-tabs {
+    height: 100%;
+    overflow: auto;
+  }
+}
+.app-viewlayoutpanel-container {
+  padding: 4px;
+  >.viewlayoutpanel-container-content {
+    height: 100%;
+    padding: 4px;
+  }
+}
+.app-viewlayoutpanel-container.show-caption {
+  >.viewlayoutpanel-container-header {
+    height: 38px;
+    font-weight: 600;
+    padding: 7px 8px;
+    border-bottom: 1px solid #e8eaec;
+  }
+  >.viewlayoutpanel-container-content {
+    height: calc(100% - 38px);
+  }
+}
 .view-default .viewcontainer2 {
   height: 100%;
   width: 100%;

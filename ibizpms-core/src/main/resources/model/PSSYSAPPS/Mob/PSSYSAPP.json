@@ -4142,19 +4142,6 @@
     "group" : true,
     "id" : "d25a9e58be16f27e8e61f784a1c74ea5"
   }, {
-    "caption" : "刷新",
-    "codeName" : "Refresh",
-    "fullCodeName" : "Refresh",
-    "name" : "表格界面_刷新操作",
-    "getPSSysImage" : {
-      "glyph" : "xf021@FontAwesome",
-      "cssClass" : "fa fa-refresh"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "SYS",
-    "uIActionTag" : "Refresh",
-    "uIActionType" : "DEUIACTION"
-  }, {
     "getCapPSLanguageRes" : {
       "lanResTag" : "TBB.TEXT.*.NEW"
     },
@@ -5072,6 +5059,7 @@
         "imagePath" : "assets/images/add-bug-distribution-card.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "Auto143",
         "name" : "更多",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -6844,6 +6832,7 @@
         "imagePath" : "assets/images/myfavoritetask.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "UAGroup5",
         "name" : "我的收藏（更多）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -7086,9 +7075,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "任务类型",
@@ -7121,9 +7107,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -7157,9 +7140,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -7216,9 +7196,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -7720,6 +7697,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "UAGroup_6849",
             "name" : "移动端滑动（收藏）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -7960,6 +7938,7 @@
         "imagePath" : "assets/images/myfavoritestory.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "UAGroup4",
         "name" : "更多（我收藏的）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -8192,9 +8171,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "当前状态",
@@ -8227,9 +8203,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -8263,9 +8236,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             } ],
@@ -8539,6 +8509,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "Auto53_3854",
             "name" : " 移动端右滑（收藏）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -9424,6 +9395,7 @@
         "imagePath" : "assets/images/mybug.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "UAGroup",
         "name" : "指派给我Bug（更多）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -9686,9 +9658,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "Bug状态",
@@ -9721,9 +9690,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -9757,9 +9723,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -9793,9 +9756,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -9829,9 +9789,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -9860,9 +9817,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -10510,6 +10464,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "Auto71",
             "name" : "移动端操作按钮",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -10913,6 +10868,7 @@
         "imagePath" : "assets/images/add-task-list-card.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "UAGroup3",
         "name" : "指派给我（更多）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -11162,9 +11118,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "任务类型",
@@ -11197,9 +11150,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -11233,9 +11183,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -11292,9 +11239,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -11965,6 +11909,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "UAGroup_8597",
             "name" : "移动端（指派给）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -12369,6 +12314,7 @@
         "imagePath" : "assets/images/add-story-list-card.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "UAGroup3",
         "name" : "更多（指派给我）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -12607,9 +12553,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "当前状态",
@@ -12642,9 +12585,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -12678,9 +12618,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             } ],
@@ -13034,6 +12971,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "Auto53_6317",
             "name" : "移动端右滑（指派给）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -16764,9 +16702,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "地址",
@@ -16793,9 +16728,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "社交账号",
@@ -16822,9 +16755,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "业务编码",
@@ -16851,9 +16782,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "getCapPSLanguageRes" : {
@@ -16882,10 +16811,9 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "valueFormat" : "YYYY-MM-DD HH:mm:ss",
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "建立人",
@@ -16912,9 +16840,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "区属",
@@ -16941,9 +16867,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "邮件",
@@ -16970,9 +16894,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "getCapPSLanguageRes" : {
@@ -17002,9 +16924,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "ip地址",
@@ -17031,9 +16951,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "语言",
@@ -17060,9 +16978,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "主部门代码",
@@ -17089,9 +17005,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "主部门",
@@ -17118,9 +17032,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "昵称别名",
@@ -17147,9 +17059,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "排序",
@@ -17176,9 +17086,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "备注",
@@ -17205,9 +17113,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "用户标识",
@@ -17234,9 +17140,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "用户全局名",
@@ -17263,9 +17167,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "更新人",
@@ -17292,9 +17194,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "用户工号",
@@ -17321,9 +17221,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "更新时间",
@@ -17349,10 +17247,9 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "valueFormat" : "YYYY-MM-DD HH:mm:ss",
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "性别",
@@ -17379,9 +17276,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "联系方式",
@@ -17408,9 +17303,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "保留",
@@ -17437,9 +17330,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "单位名称",
@@ -17466,9 +17357,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "姓名",
@@ -17495,9 +17384,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "主部门名称",
@@ -17524,9 +17411,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "单位",
@@ -17553,9 +17438,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "单位代码",
@@ -17582,9 +17465,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -17869,9 +17750,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "项目状态",
@@ -17904,9 +17782,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           }, {
@@ -17940,9 +17815,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           } ],
@@ -18343,6 +18215,7 @@
           "name" : "srfmstag"
         } ],
         "getPSDEUIActionGroup2" : {
+          "codeName" : "UAGroup",
           "name" : "移动端右滑",
           "getPSUIActionGroupDetails" : [ {
             "detailType" : "DEUIACTION",
@@ -19223,9 +19096,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "状态",
@@ -19256,9 +19126,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           }, {
@@ -19292,9 +19159,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           } ],
@@ -19638,6 +19502,7 @@
           "name" : "srfmstag"
         } ],
         "getPSDEUIActionGroup2" : {
+          "codeName" : "Auto45",
           "name" : "移动端右滑",
           "getPSUIActionGroupDetails" : [ {
             "detailType" : "DEUIACTION",
@@ -21002,9 +20867,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "姓名",
@@ -21033,9 +20895,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "账号",
@@ -21064,9 +20923,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "单位",
@@ -21095,9 +20951,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "部门",
@@ -21126,9 +20979,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "业务编码",
@@ -21157,9 +21007,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "昵称别名",
@@ -21188,9 +21035,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "性别",
@@ -21219,9 +21063,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "电话",
@@ -21250,9 +21091,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "社交账号",
@@ -21281,9 +21119,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "邮件",
@@ -21312,9 +21147,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -21586,9 +21418,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "状态",
@@ -21619,9 +21448,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           }, {
@@ -21655,9 +21481,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           } ],
@@ -23339,6 +23162,7 @@
         "enablePagingBar" : false
       } ],
       "getAllPSAppDEActions" : [ {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23355,6 +23179,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23371,6 +23196,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23387,6 +23213,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23403,6 +23230,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "GetLastUpdateInfo",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23419,6 +23247,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -23437,6 +23266,7 @@
         "builtinMethod" : false,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23449,6 +23279,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23546,6 +23377,7 @@
         "valueFormat" : "YYYY-MM-DD"
       } ],
       "getAllPSAppDEMethods" : [ {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23562,6 +23394,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23578,6 +23411,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23594,6 +23428,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23610,6 +23445,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "GetLastUpdateInfo",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23626,6 +23462,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -23644,6 +23481,7 @@
         "builtinMethod" : false,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23656,6 +23494,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -23805,6 +23644,7 @@
         "enablePagingBar" : false
       } ],
       "getAllPSAppDEActions" : [ {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "name" : "CheckKey",
@@ -23818,6 +23658,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -23835,6 +23676,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "CreateHis",
         "methodType" : "DEACTION",
         "name" : "CreateHis",
@@ -23848,6 +23690,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "EditComment",
         "methodType" : "DEACTION",
         "name" : "editComment",
@@ -23862,6 +23705,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "name" : "Get",
@@ -23879,6 +23723,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "name" : "GetDraft",
@@ -23896,6 +23741,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -23911,6 +23757,7 @@
         "builtinMethod" : true,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "name" : "Save",
@@ -23920,6 +23767,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "name" : "Update",
@@ -24267,6 +24115,7 @@
         "stdDataType" : 1
       } ],
       "getAllPSAppDEMethods" : [ {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "name" : "CheckKey",
@@ -24280,6 +24129,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -24297,6 +24147,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "CreateHis",
         "methodType" : "DEACTION",
         "name" : "CreateHis",
@@ -24310,6 +24161,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "EditComment",
         "methodType" : "DEACTION",
         "name" : "editComment",
@@ -24324,6 +24176,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "name" : "Get",
@@ -24341,6 +24194,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "name" : "GetDraft",
@@ -24358,6 +24212,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -24373,6 +24228,7 @@
         "builtinMethod" : true,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "name" : "Save",
@@ -24382,6 +24238,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "name" : "Update",
@@ -25579,6 +25436,7 @@
         "enablePagingBar" : false
       } ],
       "getAllPSAppDEActions" : [ {
+        "actionMode" : "CUSTOM",
         "codeName" : "CancelTestTop",
         "methodType" : "DEACTION",
         "name" : "CancelProductTop",
@@ -25596,6 +25454,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "name" : "CheckKey",
@@ -25609,6 +25468,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Close",
         "methodType" : "DEACTION",
         "name" : "Close",
@@ -25623,6 +25483,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -25638,6 +25499,7 @@
         "userTag4" : "create",
         "builtinMethod" : true
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "name" : "Get",
@@ -25655,6 +25517,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "name" : "GetDraft",
@@ -25668,6 +25531,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -25685,6 +25549,7 @@
         "builtinMethod" : true,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "name" : "Save",
@@ -25694,6 +25559,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "TestTop",
         "methodType" : "DEACTION",
         "name" : "ProductTop",
@@ -25711,6 +25577,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "name" : "Update",
@@ -25726,6 +25593,7 @@
         "userTag4" : "update",
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "WizardCreate",
         "methodType" : "DEACTION",
         "name" : "WizardCreate",
@@ -26420,6 +26288,7 @@
         "enableFront" : true
       } ],
       "getAllPSAppDEMethods" : [ {
+        "actionMode" : "CUSTOM",
         "codeName" : "CancelTestTop",
         "methodType" : "DEACTION",
         "name" : "CancelProductTop",
@@ -26437,6 +26306,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "name" : "CheckKey",
@@ -26450,6 +26320,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Close",
         "methodType" : "DEACTION",
         "name" : "Close",
@@ -26464,6 +26335,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -26479,6 +26351,7 @@
         "userTag4" : "create",
         "builtinMethod" : true
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "name" : "Get",
@@ -26496,6 +26369,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "name" : "GetDraft",
@@ -26509,6 +26383,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -26526,6 +26401,7 @@
         "builtinMethod" : true,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "name" : "Save",
@@ -26535,6 +26411,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "TestTop",
         "methodType" : "DEACTION",
         "name" : "ProductTop",
@@ -26552,6 +26429,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "name" : "Update",
@@ -26567,6 +26445,7 @@
         "userTag4" : "update",
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "WizardCreate",
         "methodType" : "DEACTION",
         "name" : "WizardCreate",
@@ -27205,6 +27084,7 @@
         "enablePagingBar" : false
       } ],
       "getAllPSAppDEActions" : [ {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "name" : "CheckKey",
@@ -27218,6 +27098,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -27231,6 +27112,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "name" : "Get",
@@ -27248,6 +27130,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "name" : "GetDraft",
@@ -27261,6 +27144,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -27276,6 +27160,7 @@
         "builtinMethod" : true,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "name" : "Save",
@@ -27285,6 +27170,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "name" : "Update",
@@ -27667,6 +27553,7 @@
         "stringLength" : 60
       } ],
       "getAllPSAppDEMethods" : [ {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "name" : "CheckKey",
@@ -27680,6 +27567,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -27693,6 +27581,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "name" : "Get",
@@ -27710,6 +27599,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "name" : "GetDraft",
@@ -27723,6 +27613,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -27738,6 +27629,7 @@
         "builtinMethod" : true,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "name" : "Save",
@@ -27747,6 +27639,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "name" : "Update",
@@ -28068,6 +27961,7 @@
         "enablePagingBar" : false
       } ],
       "getAllPSAppDEActions" : [ {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28084,6 +27978,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28100,6 +27995,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28116,6 +28012,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "GetByCommiter",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28132,6 +28029,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28148,6 +28046,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -28166,6 +28065,7 @@
         "builtinMethod" : false,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28178,6 +28078,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "SyncAccount",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28190,6 +28091,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28526,6 +28428,7 @@
         "stringLength" : 20
       } ],
       "getAllPSAppDEMethods" : [ {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28542,6 +28445,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28558,6 +28462,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28574,6 +28479,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "GetByCommiter",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28590,6 +28496,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28606,6 +28513,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -28624,6 +28532,7 @@
         "builtinMethod" : false,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28636,6 +28545,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "SyncAccount",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28648,6 +28558,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "getPSDEAction" : {
@@ -28893,6 +28804,7 @@
         "enablePagingBar" : false
       } ],
       "getAllPSAppDEActions" : [ {
+        "actionMode" : "CUSTOM",
         "codeName" : "CancelProductTop",
         "methodType" : "DEACTION",
         "name" : "CancelProductTop",
@@ -28910,6 +28822,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "name" : "CheckKey",
@@ -28923,6 +28836,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Close",
         "methodType" : "DEACTION",
         "name" : "Close",
@@ -28940,6 +28854,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -28957,6 +28872,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "name" : "Get",
@@ -28974,6 +28890,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "name" : "GetDraft",
@@ -28991,6 +28908,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "ProductTop",
         "methodType" : "DEACTION",
         "name" : "ProductTop",
@@ -29008,6 +28926,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -29027,6 +28946,7 @@
         "builtinMethod" : false,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "name" : "Save",
@@ -29036,6 +28956,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "name" : "Update",
@@ -29053,6 +28974,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "WizardCreate",
         "methodType" : "DEACTION",
         "name" : "WizardCreate",
@@ -29755,6 +29677,7 @@
         "enableFront" : true
       } ],
       "getAllPSAppDEMethods" : [ {
+        "actionMode" : "CUSTOM",
         "codeName" : "CancelProductTop",
         "methodType" : "DEACTION",
         "name" : "CancelProductTop",
@@ -29772,6 +29695,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "name" : "CheckKey",
@@ -29785,6 +29709,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Close",
         "methodType" : "DEACTION",
         "name" : "Close",
@@ -29802,6 +29727,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -29819,6 +29745,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "name" : "Get",
@@ -29836,6 +29763,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "name" : "GetDraft",
@@ -29853,6 +29781,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "ProductTop",
         "methodType" : "DEACTION",
         "name" : "ProductTop",
@@ -29870,6 +29799,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -29889,6 +29819,7 @@
         "builtinMethod" : false,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "name" : "Save",
@@ -29898,6 +29829,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "name" : "Update",
@@ -29915,6 +29847,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "WizardCreate",
         "methodType" : "DEACTION",
         "name" : "WizardCreate",
@@ -30729,6 +30662,7 @@
         "enablePagingBar" : false
       } ],
       "getAllPSAppDEActions" : [ {
+        "actionMode" : "CUSTOM",
         "codeName" : "Activate",
         "methodType" : "DEACTION",
         "name" : "Activate",
@@ -30746,6 +30680,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "BatchUnlinkStory",
         "methodType" : "DEACTION",
         "name" : "BatchUnlinkStory",
@@ -30760,6 +30695,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "CancelProjectTop",
         "methodType" : "DEACTION",
         "name" : "CancelProjectTop",
@@ -30777,6 +30713,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "name" : "CheckKey",
@@ -30790,6 +30727,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Close",
         "methodType" : "DEACTION",
         "name" : "Close",
@@ -30807,6 +30745,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -30824,6 +30763,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "CreateTemp",
         "methodType" : "DEACTION",
         "name" : "CreateTemp",
@@ -30838,6 +30778,7 @@
         "tempDataMode" : 2,
         "builtinMethod" : true
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "CreateTempMajor",
         "methodType" : "DEACTION",
         "name" : "CreateTempMajor",
@@ -30852,6 +30793,7 @@
         "tempDataMode" : 1,
         "builtinMethod" : true
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "name" : "Get",
@@ -30869,6 +30811,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "name" : "GetDraft",
@@ -30886,6 +30829,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraftTemp",
         "methodType" : "DEACTION",
         "name" : "GetDraftTemp",
@@ -30900,6 +30844,7 @@
         "tempDataMode" : 2,
         "builtinMethod" : true
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraftTempMajor",
         "methodType" : "DEACTION",
         "name" : "GetDraftTempMajor",
@@ -30914,6 +30859,7 @@
         "tempDataMode" : 1,
         "builtinMethod" : true
       }, {
+        "actionMode" : "READ",
         "codeName" : "GetTemp",
         "methodType" : "DEACTION",
         "name" : "GetTemp",
@@ -30928,6 +30874,7 @@
         "tempDataMode" : 2,
         "builtinMethod" : true
       }, {
+        "actionMode" : "READ",
         "codeName" : "GetTempMajor",
         "methodType" : "DEACTION",
         "name" : "GetTempMajor",
@@ -30942,6 +30889,7 @@
         "tempDataMode" : 1,
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "ImportPlanStories",
         "methodType" : "DEACTION",
         "name" : "importPlanStories",
@@ -30959,6 +30907,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "LinkProduct",
         "methodType" : "DEACTION",
         "name" : "LinkProduct",
@@ -30972,6 +30921,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "LinkStory",
         "methodType" : "DEACTION",
         "name" : "LinkStory",
@@ -30989,6 +30939,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "ManageMembers",
         "methodType" : "DEACTION",
         "name" : "ManageMembers",
@@ -31003,6 +30954,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "PmsEeProjectTodoTaskCount",
         "methodType" : "DEACTION",
         "name" : "PmsEeProjectTodoTaskCount",
@@ -31017,6 +30969,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "ProjectTop",
         "methodType" : "DEACTION",
         "name" : "projectTop",
@@ -31034,6 +30987,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Putoff",
         "methodType" : "DEACTION",
         "name" : "Putoff",
@@ -31051,6 +31005,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -31070,6 +31025,7 @@
         "builtinMethod" : false,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "RemoveTemp",
         "methodType" : "DEACTION",
@@ -31086,6 +31042,7 @@
         "builtinMethod" : true,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "RemoveTempMajor",
         "methodType" : "DEACTION",
@@ -31102,6 +31059,7 @@
         "builtinMethod" : true,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "ReturnEdit",
         "methodType" : "DEACTION",
         "name" : "ReturnEdit",
@@ -31111,6 +31069,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "name" : "Save",
@@ -31120,6 +31079,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Start",
         "methodType" : "DEACTION",
         "name" : "Start",
@@ -31137,6 +31097,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Suspend",
         "methodType" : "DEACTION",
         "name" : "Suspend",
@@ -31154,6 +31115,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "UnlinkMember",
         "methodType" : "DEACTION",
         "name" : "UnlinkMember",
@@ -31168,6 +31130,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "UnlinkProduct",
         "methodType" : "DEACTION",
         "name" : "UnlinkProduct",
@@ -31181,6 +31144,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "UnlinkStory",
         "methodType" : "DEACTION",
         "name" : "UnlinkStory",
@@ -31195,6 +31159,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "name" : "Update",
@@ -31212,6 +31177,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "UpdateCycle",
         "methodType" : "DEACTION",
         "name" : "UpdateCycle",
@@ -31225,6 +31191,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "UpdateOrder",
         "methodType" : "DEACTION",
         "name" : "UpdateOrder",
@@ -31239,6 +31206,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "UpdateProjectCycle",
         "methodType" : "DEACTION",
         "name" : "UpdateProjectCycle",
@@ -31252,6 +31220,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "UpdateTemp",
         "methodType" : "DEACTION",
         "name" : "UpdateTemp",
@@ -31266,6 +31235,7 @@
         "tempDataMode" : 2,
         "builtinMethod" : true
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "UpdateTempMajor",
         "methodType" : "DEACTION",
         "name" : "UpdateTempMajor",
@@ -32352,6 +32322,7 @@
         "enableFront" : true
       } ],
       "getAllPSAppDEMethods" : [ {
+        "actionMode" : "CUSTOM",
         "codeName" : "Activate",
         "methodType" : "DEACTION",
         "name" : "Activate",
@@ -32369,6 +32340,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "BatchUnlinkStory",
         "methodType" : "DEACTION",
         "name" : "BatchUnlinkStory",
@@ -32383,6 +32355,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "CancelProjectTop",
         "methodType" : "DEACTION",
         "name" : "CancelProjectTop",
@@ -32400,6 +32373,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CHECKKEY",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
         "name" : "CheckKey",
@@ -32413,6 +32387,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Close",
         "methodType" : "DEACTION",
         "name" : "Close",
@@ -32430,6 +32405,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "Create",
         "methodType" : "DEACTION",
         "name" : "Create",
@@ -32447,6 +32423,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "CreateTemp",
         "methodType" : "DEACTION",
         "name" : "CreateTemp",
@@ -32461,6 +32438,7 @@
         "tempDataMode" : 2,
         "builtinMethod" : true
       }, {
+        "actionMode" : "CREATE",
         "codeName" : "CreateTempMajor",
         "methodType" : "DEACTION",
         "name" : "CreateTempMajor",
@@ -32475,6 +32453,7 @@
         "tempDataMode" : 1,
         "builtinMethod" : true
       }, {
+        "actionMode" : "READ",
         "codeName" : "Get",
         "methodType" : "DEACTION",
         "name" : "Get",
@@ -32492,6 +32471,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
         "name" : "GetDraft",
@@ -32509,6 +32489,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraftTemp",
         "methodType" : "DEACTION",
         "name" : "GetDraftTemp",
@@ -32523,6 +32504,7 @@
         "tempDataMode" : 2,
         "builtinMethod" : true
       }, {
+        "actionMode" : "GETDRAFT",
         "codeName" : "GetDraftTempMajor",
         "methodType" : "DEACTION",
         "name" : "GetDraftTempMajor",
@@ -32537,6 +32519,7 @@
         "tempDataMode" : 1,
         "builtinMethod" : true
       }, {
+        "actionMode" : "READ",
         "codeName" : "GetTemp",
         "methodType" : "DEACTION",
         "name" : "GetTemp",
@@ -32551,6 +32534,7 @@
         "tempDataMode" : 2,
         "builtinMethod" : true
       }, {
+        "actionMode" : "READ",
         "codeName" : "GetTempMajor",
         "methodType" : "DEACTION",
         "name" : "GetTempMajor",
@@ -32565,6 +32549,7 @@
         "tempDataMode" : 1,
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "ImportPlanStories",
         "methodType" : "DEACTION",
         "name" : "importPlanStories",
@@ -32582,6 +32567,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "LinkProduct",
         "methodType" : "DEACTION",
         "name" : "LinkProduct",
@@ -32595,6 +32581,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "LinkStory",
         "methodType" : "DEACTION",
         "name" : "LinkStory",
@@ -32612,6 +32599,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "ManageMembers",
         "methodType" : "DEACTION",
         "name" : "ManageMembers",
@@ -32626,6 +32614,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "PmsEeProjectTodoTaskCount",
         "methodType" : "DEACTION",
         "name" : "PmsEeProjectTodoTaskCount",
@@ -32640,6 +32629,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "ProjectTop",
         "methodType" : "DEACTION",
         "name" : "projectTop",
@@ -32657,6 +32647,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Putoff",
         "methodType" : "DEACTION",
         "name" : "Putoff",
@@ -32674,6 +32665,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
@@ -32693,6 +32685,7 @@
         "builtinMethod" : false,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "RemoveTemp",
         "methodType" : "DEACTION",
@@ -32709,6 +32702,7 @@
         "builtinMethod" : true,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "DELETE",
         "batchActionMode" : 1,
         "codeName" : "RemoveTempMajor",
         "methodType" : "DEACTION",
@@ -32725,6 +32719,7 @@
         "builtinMethod" : true,
         "enableBatchAction" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "ReturnEdit",
         "methodType" : "DEACTION",
         "name" : "ReturnEdit",
@@ -32734,6 +32729,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UNKNOWN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
         "name" : "Save",
@@ -32743,6 +32739,7 @@
         },
         "builtinMethod" : true
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Start",
         "methodType" : "DEACTION",
         "name" : "Start",
@@ -32760,6 +32757,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "Suspend",
         "methodType" : "DEACTION",
         "name" : "Suspend",
@@ -32777,6 +32775,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "UnlinkMember",
         "methodType" : "DEACTION",
         "name" : "UnlinkMember",
@@ -32791,6 +32790,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "UnlinkProduct",
         "methodType" : "DEACTION",
         "name" : "UnlinkProduct",
@@ -32804,6 +32804,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "CUSTOM",
         "codeName" : "UnlinkStory",
         "methodType" : "DEACTION",
         "name" : "UnlinkStory",
@@ -32818,6 +32819,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "Update",
         "methodType" : "DEACTION",
         "name" : "Update",
@@ -32835,6 +32837,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "UpdateCycle",
         "methodType" : "DEACTION",
         "name" : "UpdateCycle",
@@ -32848,6 +32851,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "UpdateOrder",
         "methodType" : "DEACTION",
         "name" : "UpdateOrder",
@@ -32862,6 +32866,7 @@
         "userCat" : "CAT1",
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "UpdateProjectCycle",
         "methodType" : "DEACTION",
         "name" : "UpdateProjectCycle",
@@ -32875,6 +32880,7 @@
         },
         "builtinMethod" : false
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "UpdateTemp",
         "methodType" : "DEACTION",
         "name" : "UpdateTemp",
@@ -32889,6 +32895,7 @@
         "tempDataMode" : 2,
         "builtinMethod" : true
       }, {
+        "actionMode" : "UPDATE",
         "codeName" : "UpdateTempMajor",
         "methodType" : "DEACTION",
         "name" : "UpdateTempMajor",

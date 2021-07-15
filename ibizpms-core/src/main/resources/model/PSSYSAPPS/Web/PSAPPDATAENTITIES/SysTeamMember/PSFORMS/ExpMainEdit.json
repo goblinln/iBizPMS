@@ -145,9 +145,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "组标识",
@@ -174,9 +172,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "用户标识",
@@ -203,9 +199,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "姓名",
@@ -234,9 +228,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "账号",
@@ -265,9 +256,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "岗位",
@@ -328,9 +316,6 @@
       },
       "valueItemName" : "postid",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "组成员标识",
@@ -357,9 +342,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {

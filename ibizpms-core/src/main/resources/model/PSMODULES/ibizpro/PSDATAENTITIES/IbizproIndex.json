@@ -124,6 +124,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -135,6 +136,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ESquery",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "全文检索",
     "name" : "ESquery",
     "getPSDEDataQueries" : [ {
@@ -145,6 +147,7 @@
     "enableFront" : true
   }, {
     "codeName" : "IndexDER",
+    "dataSetType" : "INDEXDE",
     "logicName" : "数据集2",
     "name" : "IndexDER",
     "predefinedType" : "INDEXDE",

@@ -18,7 +18,16 @@
         :value="value"
         :name="name"
     />
-    <span class="app-span" v-else>{{ (!text && (text !== 0) && !unitName) ? '- - -' : text + '&nbsp;' + (unitName ? unitName : '')}}</span>
+    <span class="app-span" v-else>
+      <span v-if="(!text && (text !== 0) && !unitName)">- - -</span>
+      <span v-else-if="(valueFormat && valueFormat.length > 0)">
+          <span class="app-span-value-format" v-format="valueFormat">{{text}}</span>
+          {{ (unitName ? '&nbsp;' + unitName : '') }}
+      </span>
+      <span v-else>
+        {{ text + '&nbsp;' + (unitName ? unitName : '') }}
+      </span>
+    </span>
 </template>
 
 <script lang="ts">
@@ -59,12 +68,12 @@ export default class AppSpan extends Vue {
     @Prop({ default: '2' }) public precision?: number;
 
     /**
-     * 日期值格式化
+     * 数据值格式化
      *
      * @type {string}
      * @memberof AppSpan
      */
-    @Prop() public valueFormat?: string;
+    @Prop() public valueFormat!: string;
 
     /**
      * 当前表单项名称
@@ -192,7 +201,7 @@ export default class AppSpan extends Vue {
      */
     public dataFormat() {
         if (this.valueFormat) {
-            this.dateFormat();
+            this.formatData();
             return;
         }
         if (Object.is(this.dataType, 'CURRENCY')) {
@@ -212,25 +221,16 @@ export default class AppSpan extends Vue {
     }
 
     /**
-     * 日期格式化
+     * 数据格式化
      *
      * @memberof AppSpan
      */
-    public dateFormat() {
-        if (this.valueFormat) {
-            let date: any = moment(this.value);
-            if (!date._isValid) {
-                this.text = this.value;
-                return;
-            }
-            if (this.valueFormat.indexOf('%1$t') !== -1) {
-                this.text = moment(this.value).format('YYYY-MM-DD HH:mm:ss');
-            } else {
-                this.text = moment(this.value).format(this.valueFormat);
-            }
-        } else {
-            this.text = this.value;
-        }
+    public formatData() {
+      if (Object.is(this.dataType, 'DATETIME') && this.valueFormat.length > 0) {
+        this.text = moment(this.value).unix();
+      }else {
+        this.text = this.value;
+      }
     }
 }
 </script>

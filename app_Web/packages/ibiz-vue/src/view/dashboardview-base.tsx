@@ -67,7 +67,7 @@ export class DashboardViewBase extends MainViewBase implements DashboardViewInte
         await super.viewModelInit();
         this.dashboardInstance = ModelTool.findPSControlByName('dashboard',this.viewInstance.getPSControls()) as IPSDEDashboard;
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+            this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         }
     }
 

@@ -1,0 +1,36 @@
+.app-anchor {
+    position: absolute;
+    top: 6px;
+    right: 0px;
+    z-index: 99;
+    padding: 10px 10px 10px 20px;
+    background: rgba(45, 140, 240, 0.3);
+    .line {
+        width: 2px;
+        position: absolute;
+        height: 90%;
+        top: 5%;
+        left: 9%;
+        background: #fff;
+    }
+    .anchor-points {
+        padding: 2px 0px;
+        cursor: pointer;
+        color: var(--view-font-color);
+    }
+    .active {
+        color: var(--item-font-color-bright);
+        position: relative;
+        .dot {
+            margin: 2px 0px;
+            position: absolute;
+            display: inline-block;
+            top: 7px;
+            left: -15px;
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: var(--item-font-color-bright);
+        }
+    }
+}

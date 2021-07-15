@@ -12,27 +12,29 @@ export class ProjectModuleService extends ProjectModuleBaseService {
      * Creates an instance of ProjectModuleService.
      * @memberof ProjectModuleService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ProjectModuleService')) {
-            return ___ibz___.sc.get('ProjectModuleService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ProjectModuleService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {ProjectModuleService}
      * @memberof ProjectModuleService
      */
-    static getInstance(): ProjectModuleService {
-        if (!___ibz___.sc.has('ProjectModuleService')) {
-            new ProjectModuleService();
+    static getInstance(context?: any): ProjectModuleService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ProjectModuleService` : `ProjectModuleService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ProjectModuleService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ProjectModuleService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default ProjectModuleService;

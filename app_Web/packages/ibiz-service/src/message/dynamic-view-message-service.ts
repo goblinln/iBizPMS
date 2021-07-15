@@ -1,5 +1,5 @@
-import { IPSAppDEDataSetViewMsg } from "@ibiz/dynamic-model-api";
-import { LogUtil } from "ibiz-core";
+import { IPSAppDEDataSetViewMsg, IPSAppMsgTempl } from "@ibiz/dynamic-model-api";
+import { LogUtil, Util } from "ibiz-core";
 import { descSort, ascSort } from 'qx-util';
 
 /**
@@ -206,13 +206,43 @@ export class DynamicViewMessageService {
      * @memberof DynamicViewMessageService
      */
     public translateMessageTemp(target: any, context: any = {}, data: any = {}, item?: any){
-        const sysMsgTempl: any = (this.viewMsgInstance as any).getPSAppMsgTempl?.();
-        if (!sysMsgTempl) {
+        const format = (content: any) => {
+            if (!Util.isExistAndNotEmpty(content)) {
+                return content;
+            }
+            const params: any[] = content.match(/\${(.+?)\}/g) || [];
+            if (params.length > 0) {
+                params.forEach((param: any) => {
+                    let _param: any = param.substring(2, param.length - 1).toLowerCase();
+                    const arr: string[] = _param.split('.');
+                    if (arr.length == 2) {
+                        switch (arr[0]) {
+                            case 'context':
+                                content = context ? content.replace(param, context[arr[1]]) : content;
+                                break;
+                            case 'viewparams':
+                                content = data ? content.replace(param, data[arr[1]]) : content;
+                                break;
+                            case 'item':
+                            case 'data':
+                                content = item ? content.replace(param, item[arr[1]]) : content;
+                                break;
+                        }
+                    }
+                })
+            }
+            return content;
+        }
+        const appMsgTempl: IPSAppMsgTempl = this.viewMsgInstance.getPSAppMsgTempl?.() as IPSAppMsgTempl;
+        if (!appMsgTempl) {
             return;
         }
-        //  系统消息模板待补充
-        if (sysMsgTempl.getContentType) {
-        }
+        Object.assign(target, {
+            messageType: appMsgTempl.contentType == 'HTML' ? 'HTML' : 'TEXT',
+            title: format(appMsgTempl.subject),
+            titleLanResTag: appMsgTempl.getSubPSLanguageRes()?.lanResTag,
+            content: format(appMsgTempl.content)
+        });
     }
 
     /**

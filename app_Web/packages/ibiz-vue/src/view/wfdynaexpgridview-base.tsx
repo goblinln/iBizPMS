@@ -41,7 +41,7 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
      * @type {Engine}
      * @memberof WfDynaExpGridViewBase
      */
-    public engine: WFDynaExpGridViewEngine = new WFDynaExpGridViewEngine;
+    public engine: WFDynaExpGridViewEngine = new WFDynaExpGridViewEngine();
 
 
     /**
@@ -149,7 +149,7 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
         await super.viewModelInit();
         this.gridInstance = ModelTool.findPSControlByName('grid', this.viewInstance.getPSControls()) as IPSDEGrid;
         this.searchFormInstance = ModelTool.findPSControlByName('searchform', this.viewInstance.getPSControls()) as IPSDESearchForm;
-        this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+        this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         this.viewRefData = await ModelTool.loadedAppViewRef(this.viewInstance);
     }
 

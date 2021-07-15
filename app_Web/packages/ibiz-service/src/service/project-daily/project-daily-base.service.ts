@@ -82,7 +82,8 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/projectdailies`, _data);
+        const res = await this.http.post(`/projectdailies`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
      * @memberof ProjectDailyService
      */
     async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectdailies/${_context.projectdaily}/summary`, _data);
+        const res = await this.http.post(`/projectdailies/${_context.projectdaily}/summary`, _data);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projectdailies/${_context.projectdaily}`, _data);
+        const res = await this.http.put(`/projectdailies/${_context.projectdaily}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
      * @memberof ProjectDailyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectdailies/fetchdefault`, _data);
+        const res = await this.http.post(`/projectdailies/fetchdefault`, _data);
+        return res;
     }
 
     /**

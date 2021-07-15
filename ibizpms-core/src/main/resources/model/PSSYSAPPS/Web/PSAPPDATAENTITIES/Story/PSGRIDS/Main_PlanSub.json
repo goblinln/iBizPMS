@@ -238,6 +238,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "Auto28",
       "name" : "产品计划-关联需求-表格操作栏",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

@@ -271,6 +271,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurUserTemplet",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "CurUserTemplet",
     "name" : "CurUserTemplet",
     "getPSDEDataQueries" : [ {
@@ -282,6 +283,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {

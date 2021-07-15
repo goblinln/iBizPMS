@@ -82,7 +82,8 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/productweeklies`, _data);
+        const res = await this.http.post(`/productweeklies`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
      * @memberof ProductWeeklyService
      */
     async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productweeklies/${_context.productweekly}/summary`, _data);
+        const res = await this.http.post(`/productweeklies/${_context.productweekly}/summary`, _data);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productweeklies/${_context.productweekly}`, _data);
+        const res = await this.http.put(`/productweeklies/${_context.productweekly}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
      * @memberof ProductWeeklyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productweeklies/fetchdefault`, _data);
+        const res = await this.http.post(`/productweeklies/fetchdefault`, _data);
+        return res;
     }
 
     /**

@@ -170,25 +170,20 @@ export class AppDefaultGridColumn extends Vue {
         const editItem: IPSDEGridEditItem = ModelTool.getGridItemByCodeName(this.columnInstance.codeName, this.gridInstance) as IPSDEGridEditItem;
         const editor: IPSEditor | null = editItem?.getPSEditor();
         const appDEField: IPSAppDEField = (editItem ? editItem.getPSAppDEField() : (this.columnInstance as IPSDEGridFieldColumn).getPSAppDEField()) as IPSAppDEField;
-        const { stdDataType, precision, valueFormat } = appDEField;
-        const name = this.columnInstance.name;
-        if (editor && editor.editorType) {
-            return (
-                <app-span
-                    name={editor.name}
-                    editorType={editor.editorType}
-                    value={this.row[editor.name]}
-                    dataType={stdDataType ? DataTypes.toString(stdDataType) : "text"}
-                    precision={precision || 0}>
-                </app-span>
-            )
-        } else if (valueFormat && valueFormat != '%1$s') {
-            return (
-                <app-format-data
-                    format={valueFormat}
-                    data={this.row[name]}>
-                </app-format-data>
-            )
+        let { stdDataType, precision, valueFormat } = appDEField;
+        valueFormat = (this.columnInstance as IPSDEGridFieldColumn).valueFormat ? (this.columnInstance as IPSDEGridFieldColumn).valueFormat : valueFormat;
+        const name: any = editor?.name ? editor.name : this.columnInstance.name;
+        if ((editor && editor.editorType) || (valueFormat && valueFormat != '%1$s')) {
+          return (
+            <app-span
+                name={name}
+                editorType={editor?.editorType}
+                value={name ? this.row[name] : ""}
+                dataType={stdDataType ? DataTypes.toString(stdDataType) : "text"}
+                valueFormat={valueFormat}
+                precision={precision || 0}>
+            </app-span>
+          )
         } else if (stdDataType && DataTypes.toString(stdDataType) && (DataTypes.toString(stdDataType) == "FLOAT" || DataTypes.toString(stdDataType) == "CURRENCY" || DataTypes.toString(stdDataType) == "DECIMAL")) {
             return (<app-format-data
                 dataType={DataTypes.toString(stdDataType)}

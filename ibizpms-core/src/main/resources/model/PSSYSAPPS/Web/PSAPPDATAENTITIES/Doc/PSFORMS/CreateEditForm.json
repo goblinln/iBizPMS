@@ -181,9 +181,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "所属文档库",
@@ -244,9 +242,6 @@
       },
       "valueItemName" : "lib",
       "allowEmpty" : false,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "所属分类",
@@ -273,9 +268,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "所属分类",
@@ -345,9 +338,6 @@
       "resetItemNames" : [ "libname" ],
       "valueItemName" : "module",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "文档标题",
@@ -375,9 +365,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : false,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "关键字",
@@ -405,9 +392,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "文档类型",
@@ -439,9 +423,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "needCodeListConfig" : true,
       "showCaption" : true
     }, {
@@ -490,9 +471,6 @@
       "resetItemName" : "type",
       "resetItemNames" : [ "type" ],
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "文档链接",
@@ -537,9 +515,6 @@
       "resetItemName" : "type",
       "resetItemNames" : [ "type" ],
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "附件",
@@ -577,9 +552,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "权限",
@@ -611,9 +583,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "needCodeListConfig" : true,
       "showCaption" : true
     } ],

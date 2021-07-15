@@ -440,9 +440,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : false,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "项目代号",
@@ -470,9 +467,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : false,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -520,10 +514,8 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : false,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "至",
@@ -562,10 +554,8 @@
           },
           "resetItemName" : "begin",
           "resetItemNames" : [ "begin" ],
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : false,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "codeName" : "period",
@@ -606,8 +596,6 @@
           "resetItemNames" : [ "end" ],
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         }, {
@@ -646,10 +634,7 @@
             "resetItemNames" : [ "begin" ],
             "unitName" : "天",
             "allowEmpty" : false,
-            "emptyCaption" : false,
             "enableUnitName" : true,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "团队名称",
@@ -677,9 +662,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "项目类型",
@@ -712,9 +694,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           }, {
@@ -747,9 +726,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           }, {
@@ -785,9 +761,6 @@
                 "singleSelect" : true
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -817,9 +790,6 @@
               },
               "userTag" : "unique",
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -858,9 +828,6 @@
               },
               "userTag" : "hidden",
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -898,9 +865,6 @@
                 "singleSelect" : true
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             } ],
@@ -918,9 +882,6 @@
             },
             "allowEmpty" : true,
             "compositeItem" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -970,9 +931,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "访问控制",
@@ -1007,9 +965,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
         } ],

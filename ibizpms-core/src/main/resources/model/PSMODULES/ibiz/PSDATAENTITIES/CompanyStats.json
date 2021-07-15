@@ -116,6 +116,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "CompanyDynamicStats",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "公司动态统计",
     "name" : "CompanyDynamicStats",
     "getPSDEDataQueries" : [ {
@@ -126,6 +127,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {

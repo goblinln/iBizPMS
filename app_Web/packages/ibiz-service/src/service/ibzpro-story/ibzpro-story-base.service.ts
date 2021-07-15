@@ -82,7 +82,8 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzprostories`, _data);
+        const res = await this.http.post(`/ibzprostories`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
      * @memberof IBZProStoryService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzprostories/${_context.ibzprostory}`);
+        const res = await this.http.delete(`/ibzprostories/${_context.ibzprostory}`);
+        return res;
     }
     /**
      * SyncFromIBIZ
@@ -130,7 +132,8 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
      * @memberof IBZProStoryService
      */
     async SyncFromIBIZ(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzprostories/${_context.ibzprostory}/syncfromibiz`, _data);
+        const res = await this.http.post(`/ibzprostories/${_context.ibzprostory}/syncfromibiz`, _data);
+        return res;
     }
     /**
      * Update
@@ -142,7 +145,8 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzprostories/${_context.ibzprostory}`, _data);
+        const res = await this.http.put(`/ibzprostories/${_context.ibzprostory}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -153,7 +157,8 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
      * @memberof IBZProStoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzprostories/fetchdefault`, _data);
+        const res = await this.http.post(`/ibzprostories/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -164,7 +169,8 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
      * @memberof IBZProStoryService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzprostories/${_context.ibzprostory}/select`);
+        const res = await this.http.get(`/ibzprostories/${_context.ibzprostory}/select`);
+        return res;
     }
 
     /**

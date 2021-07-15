@@ -12,27 +12,29 @@ export class GroupService extends GroupBaseService {
      * Creates an instance of GroupService.
      * @memberof GroupService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('GroupService')) {
-            return ___ibz___.sc.get('GroupService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('GroupService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {GroupService}
      * @memberof GroupService
      */
-    static getInstance(): GroupService {
-        if (!___ibz___.sc.has('GroupService')) {
-            new GroupService();
+    static getInstance(context?: any): GroupService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}GroupService` : `GroupService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new GroupService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('GroupService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default GroupService;

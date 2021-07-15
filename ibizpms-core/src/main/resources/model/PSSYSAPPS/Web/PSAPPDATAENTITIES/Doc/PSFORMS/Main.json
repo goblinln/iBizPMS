@@ -227,9 +227,6 @@
       },
       "valueItemName" : "project",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "所属产品",
@@ -310,9 +307,6 @@
       },
       "valueItemName" : "product",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "所属文档库",
@@ -341,9 +335,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "模块分类",
@@ -405,9 +396,6 @@
       },
       "valueItemName" : "module",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "添加时间",
@@ -435,10 +423,8 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "由谁更新",
@@ -467,9 +453,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "更新时间",
@@ -497,10 +480,8 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "actionGroupExtractMode" : "ITEM",

@@ -326,6 +326,7 @@
     "name" : "srfmstag"
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "Right",
     "name" : "移动端右滑操作栏",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

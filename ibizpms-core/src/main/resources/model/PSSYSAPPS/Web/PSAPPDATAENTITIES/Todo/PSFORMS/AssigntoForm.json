@@ -147,9 +147,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : false,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       }, {
@@ -198,10 +195,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "future",
@@ -229,11 +224,7 @@
         },
         "valueItemName" : "future",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
-        "needCodeListConfig" : true,
-        "showCaption" : false
+        "needCodeListConfig" : true
       }, {
         "caption" : "起止时间",
         "codeName" : "begin",
@@ -280,9 +271,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       }, {
@@ -331,9 +319,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       }, {
@@ -362,11 +347,7 @@
         },
         "valueItemName" : "lblDisableDate",
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
-        "needCodeListConfig" : true,
-        "showCaption" : false
+        "needCodeListConfig" : true
       } ],
       "getPSLayout" : {
         "columnCount" : 24,

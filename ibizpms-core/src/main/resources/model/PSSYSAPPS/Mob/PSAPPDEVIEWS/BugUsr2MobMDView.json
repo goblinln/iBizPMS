@@ -471,6 +471,7 @@
       "enableSort" : true
     } ],
     "getPSDEUIActionGroup2" : {
+      "codeName" : "UAGroup3",
       "name" : "移除解决bug（发布）",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

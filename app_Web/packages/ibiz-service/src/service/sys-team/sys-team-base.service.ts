@@ -82,7 +82,8 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/systeams`, _data);
+        const res = await this.http.post(`/systeams`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      * @memberof SysTeamService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/systeams/${_context.systeam}`);
+        const res = await this.http.delete(`/systeams/${_context.systeam}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/systeams/${_context.systeam}`, _data);
+        const res = await this.http.put(`/systeams/${_context.systeam}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      * @memberof SysTeamService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/systeams/fetchdefault`, _data);
+        const res = await this.http.post(`/systeams/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      * @memberof SysTeamService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/systeams/${_context.systeam}/select`);
+        const res = await this.http.get(`/systeams/${_context.systeam}/select`);
+        return res;
     }
 }

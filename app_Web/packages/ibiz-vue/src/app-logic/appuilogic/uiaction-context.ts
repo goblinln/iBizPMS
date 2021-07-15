@@ -1,5 +1,5 @@
-import { IPSAppUILogic } from "@ibiz/dynamic-model-api";
-import { IContext, IParams } from "ibiz-core";
+import { IContext } from "ibiz-core";
+import { IPSDEUILogicParam } from "@ibiz/dynamic-model-api";
 
 /**
  * 界面处理逻辑上下文参数对象
@@ -72,7 +72,7 @@ export class UIActionContext {
     /**
      * 构造函数
      * 
-     * @param {IPSAppUILogic} logic 处理逻辑模型对象
+     * @param {*} logic 处理逻辑模型对象
      * @param {any[]} args 数据对象
      * @param {*} context 应用上下文
      * @param {*} params 视图参数
@@ -82,7 +82,7 @@ export class UIActionContext {
      * @param {*} srfParentDeName 关联父应用实体代码名称
      * @memberof UIActionContext
      */
-    constructor(logic: IPSAppUILogic, args: any[], context: any = {}, params: any = {},
+    constructor(logic: any, args: any[], context: any = {}, params: any = {},
         $event?: any, xData?: any, actioncontext?: any, srfParentDeName?: string) {
         this.context = context;
         this.data = args && Array.isArray(args) ? args[0] : {};
@@ -93,12 +93,12 @@ export class UIActionContext {
             container: actioncontext,
             parentDeName: srfParentDeName
         };
-        // 初始化逻辑处理参数
-        // if (logic.getPSDELogicParams() && (logic.getPSDELogicParams() as IPSDELogicParam[]).length > 0) {
-        //     for (let logicParam of (logic.getPSDELogicParams() as IPSDELogicParam[])) {
-        //         this.paramsMap.set(logicParam.codeName, logicParam.default ? params : {})
-        //         if (logicParam.default) this.defaultParamName = logicParam.codeName;
-        //     }
-        // }
+        // 初始化界面逻辑处理参数
+        if (logic.getPSDEUILogicParams() && (logic.getPSDEUILogicParams() as IPSDEUILogicParam[]).length > 0) {
+            for (let logicParam of (logic.getPSDEUILogicParams() as IPSDEUILogicParam[])) {
+                this.paramsMap.set(logicParam.codeName, logicParam.default ? this.data : {})
+                if (logicParam.default) this.defaultParamName = logicParam.codeName;
+            }
+        }
     }
 }

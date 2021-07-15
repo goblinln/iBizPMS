@@ -4,7 +4,7 @@ import { FormButtonModel, FormDruipartModel, FormGroupPanelModel, FormIFrameMode
 import { FormControlBase } from './form-control-base';
 import { AppFormService } from '../ctrl-service';
 import { AppCenterService, AppViewLogicService } from '../app-service';
-import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFDLogic, IPSDEFDSingleLogic, IPSDEFIUpdateDetail, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFDLogic, IPSDEFDSingleLogic, IPSDEFIUpdateDetail, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemUpdate, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 编辑表单部件基类
@@ -174,6 +174,13 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
     public showResultInfo: boolean = true;
 
     /**
+     * 表单分组锚点数据集合
+     * 
+     * @memberof  EditFormControlBase
+     */
+    public groupAnchorDatas: any[] = [];
+
+    /**
      * 监听静态参数变化
      *
      * @param {*} newVal
@@ -213,7 +220,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppFormService(this.controlInstance);
+            this.service = new AppFormService(this.controlInstance, this.context);
             await this.service.loaded();
         }
         this.isAutoSave = this.controlInstance.enableAutoSave;
@@ -517,7 +524,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
             const arg: any = opt[0];
             const _this: any = this;
             Object.assign(arg, { viewparams: this.viewparams });
-            let tempContext: any = JSON.parse(JSON.stringify(this.context));
+            let tempContext: any = Util.deepCopy(this.context);
             this.onControlRequset('remove', tempContext, arg);
             this.service.delete(_this.removeAction, tempContext, arg, showResultInfo).then((response: any) => {
                 this.onControlResponse('remove', response);
@@ -1032,6 +1039,31 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
     }
 
     /**
+     * 获取锚点项数据
+     *
+     * @public
+     * @param {*} data
+     * @memberof EditFormControlBase
+     */
+    public setAnchorItems(item: any,anchorArray: any[]) {
+      if(Object.is(item.detailType,'GROUPPANEL')) {
+        const itemDetails: any[] = item.getPSDEFormDetails() || [];
+        if (itemDetails.length > 0) {
+          itemDetails.forEach((item1: IPSDEFormDetail, index: number) => {
+            this.setAnchorItems(item1,anchorArray);
+          })
+        }
+      } else {
+        if ((item as any).enableAnchor) {
+          anchorArray.push({
+              name: item.name,
+              editor: (item as IPSDEFormItem).getPSEditor() || {}
+          });
+        }
+      }
+    }
+
+    /**
      * 设置表单项是否启用
      *
      * @public
@@ -1207,11 +1239,31 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                 this.errorMessages.splice(index, 1);
             }
         } else {
+            this.handleBottomLabelErrorMsgPosition(prop);
             if (index != -1) {
                 this.errorMessages[index].error = error;
             } else {
                 this.errorMessages.push({ prop: prop, error: error });
             }
+        }
+    }
+
+    /**
+     * 处理下方标签错误信息位置
+     * 
+     * @param {*} prop 表单项字段名
+     * @memberof EditFormControlBase
+     */
+    public handleBottomLabelErrorMsgPosition(prop: any) {
+        const element: any = document.querySelector(`.${this.appDeCodeName.toLowerCase()}-${this.controlInstance.codeName?.toLowerCase()}-item-${prop}`);
+        if (element && element.className.indexOf('label-bottom') != -1) {
+            this.$nextTick(() => {
+                const labelWidth = element.querySelector('.app-form-item-label')?.offsetWidth;
+                const errorDom = element.querySelector('.ivu-form-item-error-tip');
+                if (labelWidth && errorDom) {
+                    errorDom.style.left = labelWidth + 'px';
+                }
+            })
         }
     }
 
@@ -1527,18 +1579,19 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                         let showMoreModeItems: any[] = [];
                         //  支持锚点的成员
                         let anchorPoints: any[] = [];
-                        // todo
+                        // 分组面板支持锚点
+                        if ((detail as IPSDEFormGroupPanel)?.enableAnchor) {
+                            this.groupAnchorDatas.push({
+                                caption: detail.caption,
+                                codeName: detail.codeName
+                            });
+                        };
                         (detail as IPSDEFormGroupPanel).getPSDEFormDetails()?.forEach((item: IPSDEFormDetail, index: number) => {
                             if (!item) return;
                             if (item.showMoreMode == 1) {
                                 showMoreModeItems.push(item.name);
                             }
-                            if ((item as any).enableAnchor) {
-                                anchorPoints.push({
-                                    name: item.name,
-                                    editor: (item as IPSDEFormItem).getPSEditor() || {}
-                                });
-                            }
+                            this.setAnchorItems(item,anchorPoints);
                             const showMore = item.getShowMoreMgrPSDEFormDetail?.();
                             if (showMore && showMore.id && Object.is(showMore.id, detail.name)) {
                                 detailOpts.isManageContainer = true;
@@ -1668,16 +1721,26 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
 
         // 表单项更新
         let formDetail: IPSDEFormItem = ModelTool.getFormDetailByName(this.controlInstance, name);
-        if (formDetail?.getPSDEFormItemUpdate?.()) {
-            const showBusyIndicator = formDetail.getPSDEFormItemUpdate()?.showBusyIndicator;
-            const getPSAppDEMethod = formDetail.getPSDEFormItemUpdate()?.getPSAppDEMethod();
-            const getPSDEFIUpdateDetails = formDetail.getPSDEFormItemUpdate()?.getPSDEFIUpdateDetails();
-            let details: string[] = [];
-            getPSDEFIUpdateDetails?.forEach((item: IPSDEFIUpdateDetail) => {
-                details.push(item.name)
-            })
+        const formItemUpdate: IPSDEFormItemUpdate | null = formDetail?.getPSDEFormItemUpdate?.();
+        if (formItemUpdate) {
             if (await this.checkItem(formDetail.name)) {
-                this.updateFormItems(getPSAppDEMethod?.codeName as string, this.data, details, showBusyIndicator);
+                if (formItemUpdate.customCode) {
+                    if (formItemUpdate.scriptCode) {
+                        const context = Util.deepCopy(this.context);
+                        const viewparams = Util.deepCopy(this.viewparams);
+                        let data = this.data;
+                        eval(formItemUpdate.scriptCode);
+                    }
+                } else {
+                    const showBusyIndicator = formItemUpdate.showBusyIndicator;
+                    const getPSAppDEMethod = formItemUpdate.getPSAppDEMethod();
+                    const getPSDEFIUpdateDetails = formItemUpdate.getPSDEFIUpdateDetails();
+                    let details: string[] = [];
+                    getPSDEFIUpdateDetails?.forEach((item: IPSDEFIUpdateDetail) => {
+                        details.push(item.name)
+                    })
+                    this.updateFormItems(getPSAppDEMethod?.codeName as string, this.data, details, showBusyIndicator);
+                }
             }
         }
     }

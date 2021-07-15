@@ -100,6 +100,7 @@ export class AppComponentService {
         this.viewMap.set("DEMAPVIEW_DEFAULT", 'app-default-mapview');
         this.viewMap.set("DEREPORTVIEW_DEFAULT",'app-default-dereportview');
         this.viewMap.set("DEMAPEXPVIEW_DEFAULT",'app-default-mapexpview');
+        this.viewMap.set("DEPANELVIEW_DEFAULT", 'app-default-depanelview');
         // STYLE2 样式
         this.viewMap.set("APPINDEXVIEW_STYLE2", 'app-style2-indexview');
         this.viewMap.set("DEEDITVIEW_STYLE2", 'app-style2-editview');
@@ -153,6 +154,7 @@ export class AppComponentService {
         this.viewMap.set("APPWFSTEPTRACEVIEW_STYLE2", 'app-style2-wfsteptraceview');
         this.viewMap.set("DEREPORTVIEW_STYLE2",'app-style2-dereportview');
         this.viewMap.set("DEMAPEXPVIEW_STYLE2",'app-style2-mapexpview');
+        this.viewMap.set("DEPANELVIEW_STYLE2",'app-style2-depanelview');
         // STYLE3 样式
         this.viewMap.set("APPINDEXVIEW_STYLE3", 'app-style2-indexview');
         // STYLE4 样式
@@ -195,7 +197,7 @@ export class AppComponentService {
         this.controlMap.set("CHART_NEW", 'app-default-chart');
         this.controlMap.set("CHARTEXPBAR_DEFAULT", 'app-default-chart-exp-bar');
         this.controlMap.set("DATAVIEW_DEFAULT", 'app-default-dataview');
-        this.controlMap.set("PANEL_DEFAULT", 'app-default-panel');
+        this.controlMap.set("PANEL_DEFAULT", 'app-panel-shell');
         this.controlMap.set("CALENDAR_DEFAULT", 'app-default-calendar');
         this.controlMap.set("KANBAN_DEFAULT", 'app-default-kanban');
         this.controlMap.set("DASHBOARD_DEFAULT", 'app-default-dashboard');

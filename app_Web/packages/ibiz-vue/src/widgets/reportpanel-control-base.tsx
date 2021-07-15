@@ -21,7 +21,7 @@ export class ReportPanelControlBase extends MDControlBase {
     public async ctrlModelInit() {
         await super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppReportPanelService(this.controlInstance);
+            this.service = new AppReportPanelService(this.controlInstance, this.context);
         }
     }
 

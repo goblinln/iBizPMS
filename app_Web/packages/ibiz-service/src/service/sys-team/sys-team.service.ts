@@ -12,27 +12,29 @@ export class SysTeamService extends SysTeamBaseService {
      * Creates an instance of SysTeamService.
      * @memberof SysTeamService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('SysTeamService')) {
-            return ___ibz___.sc.get('SysTeamService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('SysTeamService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {SysTeamService}
      * @memberof SysTeamService
      */
-    static getInstance(): SysTeamService {
-        if (!___ibz___.sc.has('SysTeamService')) {
-            new SysTeamService();
+    static getInstance(context?: any): SysTeamService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}SysTeamService` : `SysTeamService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new SysTeamService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('SysTeamService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default SysTeamService;

@@ -189,7 +189,8 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
+        const res = await this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
+        return res;
     }
     /**
      * Close
@@ -200,7 +201,8 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/close`, _data);
+        const res = await this.http.post(`/products/${_context.product}/close`, _data);
+        return res;
     }
     /**
      * Create
@@ -218,7 +220,8 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/products`, _data);
+        const res = await this.http.post(`/products`, _data);
+        return res;
     }
     /**
      * Get
@@ -255,7 +258,8 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async ProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/producttop`, _data);
+        const res = await this.http.post(`/products/${_context.product}/producttop`, _data);
+        return res;
     }
     /**
      * Remove
@@ -266,7 +270,8 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/products/${_context.product}`);
+        const res = await this.http.delete(`/products/${_context.product}`);
+        return res;
     }
     /**
      * Update
@@ -278,7 +283,8 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/products/${_context.product}`, _data);
+        const res = await this.http.put(`/products/${_context.product}`, _data);
+        return res;
     }
     /**
      * FetchCurDefault
@@ -289,7 +295,8 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchcurdefault`, _data);
+        const res = await this.http.post(`/products/fetchcurdefault`, _data);
+        return res;
     }
     /**
      * FetchCurProject
@@ -300,7 +307,8 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchcurproject`, _data);
+        const res = await this.http.post(`/products/fetchcurproject`, _data);
+        return res;
     }
 
     /**

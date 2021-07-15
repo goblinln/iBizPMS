@@ -241,10 +241,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "emptyCaption" : true
         }, {
           "codeName" : "update",
           "dataType" : 5,
@@ -270,11 +267,9 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : true,
-          "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "emptyCaption" : true
         }, {
           "codeName" : "updesc",
           "dataType" : 21,
@@ -304,10 +299,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "emptyCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
           "caption" : "功能增强",

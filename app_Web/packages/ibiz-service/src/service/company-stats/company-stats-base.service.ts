@@ -82,7 +82,8 @@ export class CompanyStatsBaseService extends EntityBaseService<ICompanyStats> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/companystats`, _data);
+        const res = await this.http.post(`/companystats`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class CompanyStatsBaseService extends EntityBaseService<ICompanyStats> {
      * @memberof CompanyStatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/companystats/${_context.companystats}`);
+        const res = await this.http.delete(`/companystats/${_context.companystats}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class CompanyStatsBaseService extends EntityBaseService<ICompanyStats> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/companystats/${_context.companystats}`, _data);
+        const res = await this.http.put(`/companystats/${_context.companystats}`, _data);
+        return res;
     }
     /**
      * FetchCompanyDynamicStats
@@ -142,7 +145,8 @@ export class CompanyStatsBaseService extends EntityBaseService<ICompanyStats> {
      * @memberof CompanyStatsService
      */
     async FetchCompanyDynamicStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/companystats/fetchcompanydynamicstats`, _data);
+        const res = await this.http.post(`/companystats/fetchcompanydynamicstats`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -153,7 +157,8 @@ export class CompanyStatsBaseService extends EntityBaseService<ICompanyStats> {
      * @memberof CompanyStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/companystats/fetchdefault`, _data);
+        const res = await this.http.post(`/companystats/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -164,6 +169,7 @@ export class CompanyStatsBaseService extends EntityBaseService<ICompanyStats> {
      * @memberof CompanyStatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/companystats/${_context.companystats}/select`);
+        const res = await this.http.get(`/companystats/${_context.companystats}/select`);
+        return res;
     }
 }

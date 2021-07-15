@@ -260,8 +260,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "name",
@@ -294,8 +292,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "所属项目",
@@ -322,9 +318,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "druipart3",
@@ -1158,6 +1152,7 @@
               "name" : "uagridcolumn1",
               "noPrivDisplayMode" : 1,
               "getPSDEUIActionGroup" : {
+                "codeName" : "Auto47",
                 "name" : "操作列",
                 "getPSUIActionGroupDetails" : [ {
                   "detailType" : "DEUIACTION",
@@ -2283,9 +2278,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {

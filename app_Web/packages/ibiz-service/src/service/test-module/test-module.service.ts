@@ -12,27 +12,29 @@ export class TestModuleService extends TestModuleBaseService {
      * Creates an instance of TestModuleService.
      * @memberof TestModuleService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TestModuleService')) {
-            return ___ibz___.sc.get('TestModuleService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TestModuleService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {TestModuleService}
      * @memberof TestModuleService
      */
-    static getInstance(): TestModuleService {
-        if (!___ibz___.sc.has('TestModuleService')) {
-            new TestModuleService();
+    static getInstance(context?: any): TestModuleService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TestModuleService` : `TestModuleService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TestModuleService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TestModuleService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default TestModuleService;

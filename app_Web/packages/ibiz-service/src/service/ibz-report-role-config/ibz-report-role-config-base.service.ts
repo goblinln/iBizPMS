@@ -82,7 +82,8 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzreportroleconfigs`, _data);
+        const res = await this.http.post(`/ibzreportroleconfigs`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
      * @memberof IbzReportRoleConfigService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzreportroleconfigs/${_context.ibzreportroleconfig}`);
+        const res = await this.http.delete(`/ibzreportroleconfigs/${_context.ibzreportroleconfig}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzreportroleconfigs/${_context.ibzreportroleconfig}`, _data);
+        const res = await this.http.put(`/ibzreportroleconfigs/${_context.ibzreportroleconfig}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
      * @memberof IbzReportRoleConfigService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzreportroleconfigs/fetchdefault`, _data);
+        const res = await this.http.post(`/ibzreportroleconfigs/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
      * @memberof IbzReportRoleConfigService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzreportroleconfigs/${_context.ibzreportroleconfig}/select`);
+        const res = await this.http.get(`/ibzreportroleconfigs/${_context.ibzreportroleconfig}/select`);
+        return res;
     }
 }

@@ -126,7 +126,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
      */
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
-        this.service = new AppChartService(this.controlInstance);
+        this.service = new AppChartService(this.controlInstance, this.context);
         await this.service.loaded(this.controlInstance);
         this.initChartParams();
     }
@@ -664,13 +664,13 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         this.ctrlEvent({ controlname: this.controlInstance.name, action: 'beforeload', data: parentdata });
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
-        Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
+        Object.assign(tempViewParams, Util.deepCopy(this.viewparams));
         Object.assign(arg, { viewparams: tempViewParams });
         Object.assign(arg, { page: 0, size: 1000 });
         if (this.controlInstance.minorSortDir && this.controlInstance.getMinorSortPSAppDEField()?.codeName) {
             Object.assign(arg, { sort: `${this.controlInstance.getMinorSortPSAppDEField()?.codeName?.toLowerCase()},${this.controlInstance.minorSortDir?.toLowerCase()}` });
         }
-        let tempContext: any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = Util.deepCopy(this.context);
         this.onControlRequset('load', tempContext, arg);
         this.service
             .search(this.fetchAction, tempContext, arg, this.showBusyIndicator)
@@ -679,6 +679,11 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                     this.onControlResponse('load', res);
                     if (res) {
                         this.transformToBasicChartSetData(res.data, (codelist: any) => {
+                            _this.ctrlEvent({
+                                controlname: _this.name,
+                                action: 'load',
+                                data: res.data,
+                            });
                             _this.drawCharts();
                         });
                     }
@@ -793,7 +798,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
      * @memberof ChartControlBase
      */
     public handleChartOPtion() {
-        let _chartOption: any = JSON.parse(JSON.stringify(this.chartOption));
+        let _chartOption: any = Util.deepCopy(this.chartOption);
         if (Object.keys(this.seriesModel).length > 0) {
             let tempDataSourceMap: Map<string, any> = new Map();
             for (let i = 0; i < Object.keys(this.seriesModel).length; i++) {
@@ -872,7 +877,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                     _chartOption.series.splice(returnIndex, 1);
                     delete series.id;
                     tempSeries.seriesValues.forEach((seriesvalueItem: any) => {
-                        let tempSeriesTemp: any = JSON.parse(JSON.stringify(tempSeries.seriesTemp));
+                        let tempSeriesTemp: any = Util.deepCopy(tempSeries.seriesTemp);
                         Object.assign(tempSeriesTemp,series);
                         tempSeriesTemp.name = tempSeries.seriesMap[seriesvalueItem];
                         tempSeriesTemp.datasetIndex = tempSeries.seriesIndex;
@@ -1582,7 +1587,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         });
         timeFragmentArray.forEach((timeFragment: any) => {
             if (!tempGrounpData.get(timeFragment)) {
-                let copyTemp: any = JSON.parse(JSON.stringify(data[0]));
+                let copyTemp: any = Util.deepCopy(data[0]);
                 let curObj: any = {};
                 curObj[groupField.name] = timeFragment;
                 curObj[valueField.name] = 0;
@@ -1623,7 +1628,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         if (curCodeList.size !== tempGrounpData.size) {
             curCodeList.forEach((text: any, value: any) => {
                 if (!tempGrounpData.get(value)) {
-                    let copyTemp: any = JSON.parse(JSON.stringify(data[0]));
+                    let copyTemp: any = Util.deepCopy(data[0]);
                     let curObj: any = {};
                     curObj[groupField.name + '_srfvalue'] = value;
                     curObj[groupField.name] = text;

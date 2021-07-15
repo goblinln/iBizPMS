@@ -82,7 +82,8 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibizprotags`, _data);
+        const res = await this.http.post(`/ibizprotags`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
      * @memberof IBIZProTagService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibizprotags/${_context.ibizprotag}`);
+        const res = await this.http.delete(`/ibizprotags/${_context.ibizprotag}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibizprotags/${_context.ibizprotag}`, _data);
+        const res = await this.http.put(`/ibizprotags/${_context.ibizprotag}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
      * @memberof IBIZProTagService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibizprotags/fetchdefault`, _data);
+        const res = await this.http.post(`/ibizprotags/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
      * @memberof IBIZProTagService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizprotags/${_context.ibizprotag}/select`);
+        const res = await this.http.get(`/ibizprotags/${_context.ibizprotag}/select`);
+        return res;
     }
 }

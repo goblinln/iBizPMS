@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -47,6 +48,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -63,6 +65,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -79,6 +82,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -95,6 +99,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -113,6 +118,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -125,6 +131,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -243,6 +250,7 @@
     "stdDataType" : 9
   } ],
   "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -259,6 +267,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -275,6 +284,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -291,6 +301,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -307,6 +318,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -325,6 +337,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -337,6 +350,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "getPSDEAction" : {

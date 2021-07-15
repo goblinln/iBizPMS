@@ -252,7 +252,7 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
             if(!this.controlInstance?.getPSAppDataEntity()?.isFill){
                 await this.controlInstance?.getPSAppDataEntity().fill();
             }
-            this.appEntityService = await new GlobalService().getService((this.controlInstance.getPSAppDataEntity() as IPSAppDataEntity).codeName);
+            this.appEntityService = await new GlobalService().getService((this.controlInstance.getPSAppDataEntity() as IPSAppDataEntity).codeName, this.context);
         }
         this.loaddraftAction = this.controlInstance?.getGetDraftPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "GetDraft";
         this.loadAction = this.controlInstance?.getGetPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Get";

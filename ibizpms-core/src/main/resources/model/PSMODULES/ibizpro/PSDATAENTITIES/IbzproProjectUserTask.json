@@ -165,6 +165,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -176,6 +177,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectDailyTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目日报任务",
     "name" : "ProjectDailyTask",
     "getPSDEDataQueries" : [ {
@@ -186,6 +188,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectMonthlyTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目日报任务",
     "name" : "ProjectMonthlyTask",
     "getPSDEDataQueries" : [ {
@@ -196,6 +199,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectWeeklyTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目周报任务",
     "name" : "ProjectWeeklyTask",
     "getPSDEDataQueries" : [ {

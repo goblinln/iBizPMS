@@ -82,7 +82,8 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/reportlies`, _data);
+        const res = await this.http.post(`/reportlies`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      * @memberof ReportlyService
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/reportlies/${_context.reportly}/read`, _data);
+        const res = await this.http.post(`/reportlies/${_context.reportly}/read`, _data);
+        return res;
     }
     /**
      * Submit
@@ -130,7 +132,8 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      * @memberof ReportlyService
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/reportlies/${_context.reportly}/submit`, _data);
+        const res = await this.http.post(`/reportlies/${_context.reportly}/submit`, _data);
+        return res;
     }
     /**
      * Update
@@ -142,7 +145,8 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/reportlies/${_context.reportly}`, _data);
+        const res = await this.http.put(`/reportlies/${_context.reportly}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -153,7 +157,8 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      * @memberof ReportlyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/reportlies/fetchdefault`, _data);
+        const res = await this.http.post(`/reportlies/fetchdefault`, _data);
+        return res;
     }
 
     /**

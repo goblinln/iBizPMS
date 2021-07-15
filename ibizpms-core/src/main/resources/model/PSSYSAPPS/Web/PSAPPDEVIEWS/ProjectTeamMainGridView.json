@@ -595,6 +595,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto35",
         "name" : "项目团队主数据表格操作栏",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

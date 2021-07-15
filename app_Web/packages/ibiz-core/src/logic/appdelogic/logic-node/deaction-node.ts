@@ -1,4 +1,4 @@
-import { IPSDEDEActionLogic,IPSDELogicParam } from '@ibiz/dynamic-model-api';
+import { getDstPSAppDEAction, IPSDEDEActionLogic,IPSDELogicParam } from '@ibiz/dynamic-model-api';
 import { AppDeLogicNodeBase } from './logic-node-base';
 import { ActionContext } from '../action-context';
 
@@ -18,13 +18,13 @@ export class AppDeLogicDeActionNode extends AppDeLogicNodeBase{
      * 执行节点
      *
      * @static
-     * @param {IPSDEDEActionLogic} logicNode
-     * @param {DeLogicContext} delogicContext
+     * @param {IPSDELogicNode} logicNode 逻辑节点
+     * @param {ActionContext} actionContext 逻辑上下文
      * @memberof AppDeLogicDeActionNode
      */
     public async executeNode(logicNode: IPSDEDEActionLogic, actionContext: ActionContext){
         const dstEntity = logicNode.getDstPSAppDataEntity();
-        const deAction = logicNode.getDstPSAppDEAction();
+        const deAction = await getDstPSAppDEAction(logicNode);
         const dstParam = actionContext.getParam((logicNode.getDstPSDELogicParam() as IPSDELogicParam)?.codeName);
         if(dstEntity && deAction && dstParam){
             const service = await  ___ibz___.gs.getService(dstEntity.codeName);

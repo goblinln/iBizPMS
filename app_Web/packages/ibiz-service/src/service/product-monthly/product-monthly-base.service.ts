@@ -75,7 +75,8 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
      * @memberof ProductMonthlyService
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
+        const res = await this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
+        return res;
     }
     /**
      * Create
@@ -93,7 +94,8 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/productmonthlies`, _data);
+        const res = await this.http.post(`/productmonthlies`, _data);
+        return res;
     }
     /**
      * Get
@@ -131,7 +133,8 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productmonthlies/${_context.productmonthly}`, _data);
+        const res = await this.http.put(`/productmonthlies/${_context.productmonthly}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
      * @memberof ProductMonthlyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productmonthlies/fetchdefault`, _data);
+        const res = await this.http.post(`/productmonthlies/fetchdefault`, _data);
+        return res;
     }
 
     /**

@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "activate",
@@ -48,6 +49,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
     "name" : "AllPush",
@@ -61,6 +63,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "AssignTo",
@@ -78,6 +81,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchAssignTo",
     "methodType" : "DEACTION",
     "name" : "BatchAssignTo",
@@ -91,6 +95,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeBranch",
     "methodType" : "DEACTION",
     "name" : "BatchChangeBranch",
@@ -104,6 +109,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeModule",
     "methodType" : "DEACTION",
     "name" : "BatchChangeModule",
@@ -117,6 +123,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangePlan",
     "methodType" : "DEACTION",
     "name" : "BatchChangePlan",
@@ -130,6 +137,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeStage",
     "methodType" : "DEACTION",
     "name" : "BatchChangeStage",
@@ -143,6 +151,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchClose",
     "methodType" : "DEACTION",
     "name" : "BatchClose",
@@ -156,6 +165,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchReview",
     "methodType" : "DEACTION",
     "name" : "BatchReview",
@@ -169,6 +179,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
@@ -183,6 +194,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BugToStory",
     "methodType" : "DEACTION",
     "name" : "BugToStory",
@@ -196,6 +208,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "buildBatchUnlinkStory",
@@ -210,6 +223,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildLinkStory",
     "methodType" : "DEACTION",
     "name" : "buildLinkStory",
@@ -224,6 +238,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "buildUnlinkStory",
@@ -241,6 +256,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Change",
     "methodType" : "DEACTION",
     "name" : "Change",
@@ -258,6 +274,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -271,6 +288,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -288,6 +306,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -307,6 +326,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -324,6 +344,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetByVersion",
     "methodType" : "DEACTION",
     "name" : "GetStorySpecs",
@@ -341,6 +362,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -358,6 +380,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
     "name" : "GetStorySpec",
@@ -371,6 +394,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTaskReStory",
     "methodType" : "DEACTION",
     "name" : "GetTaskReStory",
@@ -384,6 +408,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -401,6 +426,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ImportPlanStories",
     "methodType" : "DEACTION",
     "name" : "importPlanStories",
@@ -415,6 +441,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "name" : "LinkStory",
@@ -429,6 +456,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "PlanUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
@@ -446,6 +474,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectBatchUnlinkStory",
@@ -460,6 +489,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectLinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectLinkStory",
@@ -474,6 +504,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectUnlinkStory",
@@ -491,6 +522,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Push",
     "methodType" : "DEACTION",
     "name" : "Push",
@@ -504,6 +536,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseBatchUnlinkStory",
@@ -518,6 +551,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseLinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkStory",
@@ -532,6 +566,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnlinkStory",
@@ -549,6 +584,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -568,6 +604,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ResetReviewedBy",
     "methodType" : "DEACTION",
     "name" : "ResetReviewedBy",
@@ -581,6 +618,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Review",
     "methodType" : "DEACTION",
     "name" : "Review",
@@ -598,6 +636,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UNKNOWN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -613,6 +652,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -626,6 +666,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -639,6 +680,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "StoryFavorites",
     "methodType" : "DEACTION",
     "name" : "StoryFavorites",
@@ -656,6 +698,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "StoryNFavorites",
     "methodType" : "DEACTION",
     "name" : "StoryNFavorites",
@@ -673,6 +716,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SyncFromIbiz",
     "methodType" : "DEACTION",
     "name" : "SyncFromIbiz",
@@ -682,6 +726,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -695,6 +740,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -1741,6 +1787,7 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "activate",
@@ -1758,6 +1805,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
     "name" : "AllPush",
@@ -1771,6 +1819,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "AssignTo",
@@ -1788,6 +1837,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchAssignTo",
     "methodType" : "DEACTION",
     "name" : "BatchAssignTo",
@@ -1801,6 +1851,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeBranch",
     "methodType" : "DEACTION",
     "name" : "BatchChangeBranch",
@@ -1814,6 +1865,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeModule",
     "methodType" : "DEACTION",
     "name" : "BatchChangeModule",
@@ -1827,6 +1879,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangePlan",
     "methodType" : "DEACTION",
     "name" : "BatchChangePlan",
@@ -1840,6 +1893,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchChangeStage",
     "methodType" : "DEACTION",
     "name" : "BatchChangeStage",
@@ -1853,6 +1907,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchClose",
     "methodType" : "DEACTION",
     "name" : "BatchClose",
@@ -1866,6 +1921,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchReview",
     "methodType" : "DEACTION",
     "name" : "BatchReview",
@@ -1879,6 +1935,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
@@ -1893,6 +1950,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BugToStory",
     "methodType" : "DEACTION",
     "name" : "BugToStory",
@@ -1906,6 +1964,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "buildBatchUnlinkStory",
@@ -1920,6 +1979,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildLinkStory",
     "methodType" : "DEACTION",
     "name" : "buildLinkStory",
@@ -1934,6 +1994,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "buildUnlinkStory",
@@ -1951,6 +2012,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Change",
     "methodType" : "DEACTION",
     "name" : "Change",
@@ -1968,6 +2030,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -1981,6 +2044,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -1998,6 +2062,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -2017,6 +2082,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -2034,6 +2100,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetByVersion",
     "methodType" : "DEACTION",
     "name" : "GetStorySpecs",
@@ -2051,6 +2118,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -2068,6 +2136,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
     "name" : "GetStorySpec",
@@ -2081,6 +2150,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTaskReStory",
     "methodType" : "DEACTION",
     "name" : "GetTaskReStory",
@@ -2094,6 +2164,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -2111,6 +2182,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ImportPlanStories",
     "methodType" : "DEACTION",
     "name" : "importPlanStories",
@@ -2125,6 +2197,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "name" : "LinkStory",
@@ -2139,6 +2212,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "PlanUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
@@ -2156,6 +2230,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectBatchUnlinkStory",
@@ -2170,6 +2245,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectLinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectLinkStory",
@@ -2184,6 +2260,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ProjectUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectUnlinkStory",
@@ -2201,6 +2278,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Push",
     "methodType" : "DEACTION",
     "name" : "Push",
@@ -2214,6 +2292,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseBatchUnlinkStory",
@@ -2228,6 +2307,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseLinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkStory",
@@ -2242,6 +2322,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnlinkStory",
@@ -2259,6 +2340,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -2278,6 +2360,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ResetReviewedBy",
     "methodType" : "DEACTION",
     "name" : "ResetReviewedBy",
@@ -2291,6 +2374,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Review",
     "methodType" : "DEACTION",
     "name" : "Review",
@@ -2308,6 +2392,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UNKNOWN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -2323,6 +2408,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -2336,6 +2422,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -2349,6 +2436,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "StoryFavorites",
     "methodType" : "DEACTION",
     "name" : "StoryFavorites",
@@ -2366,6 +2454,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "StoryNFavorites",
     "methodType" : "DEACTION",
     "name" : "StoryNFavorites",
@@ -2383,6 +2472,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SyncFromIbiz",
     "methodType" : "DEACTION",
     "name" : "SyncFromIbiz",
@@ -2392,6 +2482,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -2405,6 +2496,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",

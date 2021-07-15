@@ -82,7 +82,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/useryearworkstats`, _data);
+        const res = await this.http.post(`/useryearworkstats`, _data);
+        return res;
     }
     /**
      * Get
@@ -155,7 +156,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async GetUserYearAction(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.put(`/useryearworkstats/${_context.useryearworkstats}/getuseryearaction`, _data);
+        const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}/getuseryearaction`, _data);
+        return res;
     }
     /**
      * Remove
@@ -166,7 +168,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/useryearworkstats/${_context.useryearworkstats}`);
+        const res = await this.http.delete(`/useryearworkstats/${_context.useryearworkstats}`);
+        return res;
     }
     /**
      * Update
@@ -178,7 +181,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/useryearworkstats/${_context.useryearworkstats}`, _data);
+        const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}`, _data);
+        return res;
     }
     /**
      * UpdateTitleByYear
@@ -189,7 +193,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async UpdateTitleByYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.put(`/useryearworkstats/${_context.useryearworkstats}/updatetitlebyyear`, _data);
+        const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}/updatetitlebyyear`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -200,7 +205,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/useryearworkstats/fetchdefault`, _data);
+        const res = await this.http.post(`/useryearworkstats/fetchdefault`, _data);
+        return res;
     }
     /**
      * FetchMonthFinishTaskAndBug
@@ -211,7 +217,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchMonthFinishTaskAndBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/useryearworkstats/fetchmonthfinishtaskandbug`, _data);
+        const res = await this.http.post(`/useryearworkstats/fetchmonthfinishtaskandbug`, _data);
+        return res;
     }
     /**
      * FetchMonthOpenedBugAndCase
@@ -222,7 +229,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchMonthOpenedBugAndCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/useryearworkstats/fetchmonthopenedbugandcase`, _data);
+        const res = await this.http.post(`/useryearworkstats/fetchmonthopenedbugandcase`, _data);
+        return res;
     }
     /**
      * FetchMonthOpenedStory
@@ -233,7 +241,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async FetchMonthOpenedStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/useryearworkstats/fetchmonthopenedstory`, _data);
+        const res = await this.http.post(`/useryearworkstats/fetchmonthopenedstory`, _data);
+        return res;
     }
     /**
      * Select
@@ -244,7 +253,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @memberof UserYearWorkStatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/useryearworkstats/${_context.useryearworkstats}/select`);
+        const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/select`);
+        return res;
     }
 
     /**

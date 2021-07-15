@@ -69,15 +69,6 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
     }
 
     /**
-     * 工具栏模型数据
-     *
-     * @protected
-     * @type {*}
-     * @memberof MainViewBase
-     */
-    protected toolbarModels: any;
-
-    /**
      * 应用实体codeName
      *
      * @readonly
@@ -142,61 +133,6 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
     }
 
     /**
-     * 初始化工具栏项问题修复
-     *
-     * @author chitanda
-     * @date 2021-04-20 10:04:54
-     * @param {IPSDEToolbarItem} item
-     * @return {*}  {void}
-     */
-    initToolBarItems(item: IPSDEToolbarItem): void {
-        if (item.itemType === 'ITEMS') {
-            const items = (item as IPSDETBGroupItem).getPSDEToolbarItems();
-            if (items && items.length != 0) {
-                const models: Array<any> = [];
-                const tempModel: any = {
-                    name: item.name,
-                    showCaption: item.showCaption,
-                    caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
-                    tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
-                    disabled: false,
-                    visabled: true,
-                    itemType: item.itemType,
-                    dataaccaction: '',
-                    actionLevel: (item as any).actionLevel
-                };
-                items.forEach((_item: any) => {
-                    models.push(this.initToolBarItems(_item));
-                });
-                Object.assign(tempModel, {
-                    model: models,
-                });
-                return tempModel;
-            }
-        }
-        const img = item.getPSSysImage();
-        const css = item.getPSSysCss();
-        const uiAction = (item as any)?.getPSUIAction?.() as IPSDEUIAction;
-        const tempModel: any = {
-            name: item.name,
-            showCaption: item.showCaption,
-            caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
-            tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
-            disabled: false,
-            visabled: uiAction?.dataAccessAction && this.Environment.enablePermissionValid ? false : true,
-            itemType: item.itemType,
-            dataaccaction: uiAction?.dataAccessAction,
-            noprivdisplaymode: uiAction?.noPrivDisplayMode,
-            uiaction: uiAction,
-            showIcon: item.showIcon,
-            class: css ? css.cssName : '',
-            getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
-            actionLevel: (item as any).actionLevel
-        };
-        return tempModel;
-    }
-
-    /**
      * 视图模型数据初始化实例
      *
      * @memberof MainViewBase
@@ -206,6 +142,7 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
         if (!(this.Environment && this.Environment.isPreviewMode)) {
             this.appEntityService = await new GlobalService().getService(
                 ModelTool.getViewAppEntityCodeName(this.viewInstance) as string,
+                this.context
             );
         }
         this.initViewToolBar();

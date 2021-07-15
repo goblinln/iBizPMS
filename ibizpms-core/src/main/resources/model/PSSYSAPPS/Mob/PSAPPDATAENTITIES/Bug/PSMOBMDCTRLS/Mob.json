@@ -599,6 +599,7 @@
     "enableSort" : true
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "Auto61",
     "name" : "右滑行为组（移动端）",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

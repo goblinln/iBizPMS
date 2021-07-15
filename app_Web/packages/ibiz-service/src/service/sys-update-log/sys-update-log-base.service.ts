@@ -82,7 +82,8 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/sysupdatelogs`, _data);
+        const res = await this.http.post(`/sysupdatelogs`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async GetLastUpdateInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/getlastupdateinfo`, _data);
+        const res = await this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/getlastupdateinfo`, _data);
+        return res;
     }
     /**
      * Remove
@@ -130,7 +132,8 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysupdatelogs/${_context.sysupdatelog}`);
+        const res = await this.http.delete(`/sysupdatelogs/${_context.sysupdatelog}`);
+        return res;
     }
     /**
      * Update
@@ -142,7 +145,8 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysupdatelogs/${_context.sysupdatelog}`, _data);
+        const res = await this.http.put(`/sysupdatelogs/${_context.sysupdatelog}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -153,7 +157,8 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysupdatelogs/fetchdefault`, _data);
+        const res = await this.http.post(`/sysupdatelogs/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -164,7 +169,8 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/select`);
+        const res = await this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/select`);
+        return res;
     }
 
     /**

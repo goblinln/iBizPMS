@@ -56,9 +56,6 @@
       },
       "width" : 320.0,
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "needCodeListConfig" : true,
       "showCaption" : true
     } ],

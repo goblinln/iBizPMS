@@ -701,9 +701,7 @@
                 "name" : "custom7"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "任务消耗总工时",
@@ -726,9 +724,7 @@
                 "name" : "custom8"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSEditor" : {
@@ -750,11 +746,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "compositeItem" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
-            "showCaption" : false
+            "compositeItem" : true
           } ],
           "getPSLayout" : {
             "columnCount" : 24,
@@ -792,6 +784,7 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "totalestimate",
+              "precision" : 2,
               "editable" : false,
               "enableLinkView" : false
             },
@@ -804,9 +797,6 @@
               "cssName" : "text-center"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "消耗",
@@ -839,9 +829,6 @@
               "cssName" : "text-center"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "剩余",
@@ -874,9 +861,6 @@
               "cssName" : "text-center"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -972,7 +956,6 @@
             "allowEmpty" : true,
             "emptyCaption" : true,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "总任务",
@@ -1001,9 +984,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "codeName" : "formitemex1",
@@ -1037,9 +1018,7 @@
                 "name" : "custom1"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "已结束任务总数",
@@ -1062,9 +1041,7 @@
                 "name" : "custom2"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSEditor" : {
@@ -1086,9 +1063,6 @@
             },
             "allowEmpty" : true,
             "compositeItem" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "codeName" : "rawitem7",
@@ -1131,9 +1105,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -1213,7 +1185,6 @@
             "allowEmpty" : true,
             "emptyCaption" : true,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "总需求",
@@ -1242,9 +1213,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "codeName" : "formitemex2",
@@ -1278,9 +1247,7 @@
                 "name" : "custom3"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "关闭需求总数",
@@ -1303,9 +1270,7 @@
                 "name" : "custom4"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSEditor" : {
@@ -1327,9 +1292,6 @@
             },
             "allowEmpty" : true,
             "compositeItem" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "codeName" : "rawitem8",
@@ -1372,9 +1334,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -1439,7 +1399,6 @@
             "allowEmpty" : true,
             "emptyCaption" : true,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "codeName" : "rawitem4",
@@ -1483,9 +1442,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "codeName" : "formitemex3",
@@ -1519,9 +1476,7 @@
                 "name" : "custom5"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "已解决Bug总数",
@@ -1544,9 +1499,7 @@
                 "name" : "custom6"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSEditor" : {
@@ -1568,9 +1521,6 @@
             },
             "allowEmpty" : true,
             "compositeItem" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "codeName" : "rawitem9",
@@ -1613,9 +1563,7 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {

@@ -323,8 +323,6 @@
                   },
                   "allowEmpty" : true,
                   "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "codeName" : "title",
@@ -354,8 +352,6 @@
                   },
                   "allowEmpty" : true,
                   "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "前置条件",
@@ -387,9 +383,6 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "codeName" : "druipart2",
@@ -2591,6 +2584,7 @@
             "layout" : "TABLE_24COL"
           },
           "getPSUIActionGroup" : {
+            "codeName" : "Auto39",
             "name" : "操作栏",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -3058,9 +3052,6 @@
                   },
                   "valueItemName" : "lib",
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "所属模块",
@@ -3089,9 +3080,6 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "用例类型",
@@ -3125,9 +3113,6 @@
                   },
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "适用阶段",
@@ -3161,9 +3146,6 @@
                   },
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "优先级",
@@ -3197,9 +3179,6 @@
                   },
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "状态",
@@ -3233,9 +3212,6 @@
                   },
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "关键词",
@@ -3264,9 +3240,6 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 } ],
                 "getPSLayout" : {
@@ -3608,9 +3581,6 @@
                 },
                 "allowEmpty" : true,
                 "convertToCodeItemText" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               }, {
                 "caption" : "于",
@@ -3641,10 +3611,8 @@
                   "colXS" : 12,
                   "layout" : "TABLE_24COL"
                 },
+                "valueFormat" : "YYYY-MM-DD HH:mm:ss",
                 "allowEmpty" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               }, {
                 "caption" : "由谁编辑",
@@ -3681,9 +3649,6 @@
                 },
                 "allowEmpty" : true,
                 "convertToCodeItemText" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               }, {
                 "caption" : "于",
@@ -3714,10 +3679,8 @@
                   "colXS" : 12,
                   "layout" : "TABLE_24COL"
                 },
+                "valueFormat" : "YYYY-MM-DD HH:mm:ss",
                 "allowEmpty" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               } ],
               "getPSLayout" : {

@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -45,6 +46,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "AssignTo",
@@ -59,6 +61,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -72,6 +75,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -86,6 +90,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -103,6 +108,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateCycle",
     "methodType" : "DEACTION",
     "name" : "createCycle",
@@ -116,6 +122,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Finish",
     "methodType" : "DEACTION",
     "name" : "Finish",
@@ -133,6 +140,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -150,6 +158,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -167,6 +176,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -186,6 +196,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -195,6 +206,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -208,6 +220,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -221,6 +234,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
@@ -238,6 +252,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -676,6 +691,7 @@
     "stringLength" : 255
   } ],
   "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -690,6 +706,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "AssignTo",
@@ -704,6 +721,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -717,6 +735,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -731,6 +750,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -748,6 +768,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateCycle",
     "methodType" : "DEACTION",
     "name" : "createCycle",
@@ -761,6 +782,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Finish",
     "methodType" : "DEACTION",
     "name" : "Finish",
@@ -778,6 +800,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -795,6 +818,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -812,6 +836,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -831,6 +856,7 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -840,6 +866,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -853,6 +880,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -866,6 +894,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
@@ -883,6 +912,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",

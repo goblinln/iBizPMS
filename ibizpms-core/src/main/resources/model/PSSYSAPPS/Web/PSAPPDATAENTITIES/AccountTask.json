@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -45,6 +46,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "AssignTo",
@@ -59,6 +61,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "CalcTime",
     "methodType" : "DEACTION",
     "name" : "CalcTime",
@@ -68,6 +71,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Cancel",
     "methodType" : "DEACTION",
     "name" : "Cancel",
@@ -82,6 +86,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -95,6 +100,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -109,6 +115,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ComputeHours4Multiple",
     "methodType" : "DEACTION",
     "name" : "computeHours4Multiple",
@@ -118,6 +125,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ConfirmStoryChange",
     "methodType" : "DEACTION",
     "name" : "ConfirmStoryChange",
@@ -128,6 +136,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -145,6 +154,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -159,6 +169,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -173,6 +184,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Delete",
     "methodType" : "DEACTION",
     "name" : "delete",
@@ -182,6 +194,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "DeleteEstimate",
     "methodType" : "DEACTION",
     "name" : "DeleteEstimate",
@@ -192,6 +205,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EditEstimate",
     "methodType" : "DEACTION",
     "name" : "EditEstimate",
@@ -202,6 +216,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Finish",
     "methodType" : "DEACTION",
     "name" : "Finish",
@@ -216,6 +231,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -233,6 +249,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -246,6 +263,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -260,6 +278,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -274,6 +293,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetNextTeamUser",
     "methodType" : "DEACTION",
     "name" : "GetNextTeamUserFinish",
@@ -288,6 +308,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTeamUserLeftActivity",
     "methodType" : "DEACTION",
     "name" : "GetTeamUserLeftActivity",
@@ -301,6 +322,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTeamUserLeftStart",
     "methodType" : "DEACTION",
     "name" : "GetTeamUserLeftStart",
@@ -314,6 +336,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -328,6 +351,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -342,6 +366,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -359,6 +384,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "OtherUpdate",
     "methodType" : "DEACTION",
     "name" : "OtherUpdate",
@@ -373,6 +399,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Pause",
     "methodType" : "DEACTION",
     "name" : "Pause",
@@ -387,6 +414,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RecordEstimate",
     "methodType" : "DEACTION",
     "name" : "RecordEstimate",
@@ -401,6 +429,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RecordTimZeroLeftAfterContinue",
     "methodType" : "DEACTION",
     "name" : "RecordTimZeroLeftAfterContinue",
@@ -410,6 +439,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RecordTimateZeroLeft",
     "methodType" : "DEACTION",
     "name" : "RecordTimateZeroLeft",
@@ -419,6 +449,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RecordTimateZeroLeftAfterStart",
     "methodType" : "DEACTION",
     "name" : "RecordTimateZeroLeftAfterStart",
@@ -428,6 +459,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -445,6 +477,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -461,6 +494,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -477,6 +511,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Restart",
     "methodType" : "DEACTION",
     "name" : "Restart",
@@ -491,6 +526,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "UNKNOWN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -506,6 +542,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -515,6 +552,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -524,6 +562,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
@@ -538,6 +577,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "TaskForward",
     "methodType" : "DEACTION",
     "name" : "taskForward",
@@ -547,6 +587,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -562,6 +603,7 @@
     "userTag4" : "update",
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateParentStatus",
     "methodType" : "DEACTION",
     "name" : "updateParentStatus",
@@ -575,6 +617,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -589,6 +632,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
@@ -1802,6 +1846,7 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -1816,6 +1861,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "AssignTo",
@@ -1830,6 +1876,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "CalcTime",
     "methodType" : "DEACTION",
     "name" : "CalcTime",
@@ -1839,6 +1886,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Cancel",
     "methodType" : "DEACTION",
     "name" : "Cancel",
@@ -1853,6 +1901,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -1866,6 +1915,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -1880,6 +1930,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ComputeHours4Multiple",
     "methodType" : "DEACTION",
     "name" : "computeHours4Multiple",
@@ -1889,6 +1940,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ConfirmStoryChange",
     "methodType" : "DEACTION",
     "name" : "ConfirmStoryChange",
@@ -1899,6 +1951,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -1916,6 +1969,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -1930,6 +1984,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -1944,6 +1999,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Delete",
     "methodType" : "DEACTION",
     "name" : "delete",
@@ -1953,6 +2009,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "DeleteEstimate",
     "methodType" : "DEACTION",
     "name" : "DeleteEstimate",
@@ -1963,6 +2020,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "EditEstimate",
     "methodType" : "DEACTION",
     "name" : "EditEstimate",
@@ -1973,6 +2031,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Finish",
     "methodType" : "DEACTION",
     "name" : "Finish",
@@ -1987,6 +2046,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -2004,6 +2064,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -2017,6 +2078,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -2031,6 +2093,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -2045,6 +2108,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetNextTeamUser",
     "methodType" : "DEACTION",
     "name" : "GetNextTeamUserFinish",
@@ -2059,6 +2123,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTeamUserLeftActivity",
     "methodType" : "DEACTION",
     "name" : "GetTeamUserLeftActivity",
@@ -2072,6 +2137,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTeamUserLeftStart",
     "methodType" : "DEACTION",
     "name" : "GetTeamUserLeftStart",
@@ -2085,6 +2151,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -2099,6 +2166,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -2113,6 +2181,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -2130,6 +2199,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "OtherUpdate",
     "methodType" : "DEACTION",
     "name" : "OtherUpdate",
@@ -2144,6 +2214,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Pause",
     "methodType" : "DEACTION",
     "name" : "Pause",
@@ -2158,6 +2229,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RecordEstimate",
     "methodType" : "DEACTION",
     "name" : "RecordEstimate",
@@ -2172,6 +2244,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RecordTimZeroLeftAfterContinue",
     "methodType" : "DEACTION",
     "name" : "RecordTimZeroLeftAfterContinue",
@@ -2181,6 +2254,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RecordTimateZeroLeft",
     "methodType" : "DEACTION",
     "name" : "RecordTimateZeroLeft",
@@ -2190,6 +2264,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "RecordTimateZeroLeftAfterStart",
     "methodType" : "DEACTION",
     "name" : "RecordTimateZeroLeftAfterStart",
@@ -2199,6 +2274,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -2216,6 +2292,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -2232,6 +2309,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -2248,6 +2326,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Restart",
     "methodType" : "DEACTION",
     "name" : "Restart",
@@ -2262,6 +2341,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "UNKNOWN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -2277,6 +2357,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -2286,6 +2367,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -2295,6 +2377,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
@@ -2309,6 +2392,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "TaskForward",
     "methodType" : "DEACTION",
     "name" : "taskForward",
@@ -2318,6 +2402,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -2333,6 +2418,7 @@
     "userTag4" : "update",
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateParentStatus",
     "methodType" : "DEACTION",
     "name" : "updateParentStatus",
@@ -2346,6 +2432,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -2360,6 +2447,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",

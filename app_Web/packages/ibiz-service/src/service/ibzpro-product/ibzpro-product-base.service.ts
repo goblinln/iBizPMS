@@ -82,7 +82,8 @@ export class IBZProProductBaseService extends EntityBaseService<IIBZProProduct> 
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzproproducts`, _data);
+        const res = await this.http.post(`/ibzproproducts`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class IBZProProductBaseService extends EntityBaseService<IIBZProProduct> 
      * @memberof IBZProProductService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzproproducts/${_context.ibzproproduct}`);
+        const res = await this.http.delete(`/ibzproproducts/${_context.ibzproproduct}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class IBZProProductBaseService extends EntityBaseService<IIBZProProduct> 
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzproproducts/${_context.ibzproproduct}`, _data);
+        const res = await this.http.put(`/ibzproproducts/${_context.ibzproproduct}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class IBZProProductBaseService extends EntityBaseService<IIBZProProduct> 
      * @memberof IBZProProductService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzproproducts/fetchdefault`, _data);
+        const res = await this.http.post(`/ibzproproducts/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class IBZProProductBaseService extends EntityBaseService<IIBZProProduct> 
      * @memberof IBZProProductService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproproducts/${_context.ibzproproduct}/select`);
+        const res = await this.http.get(`/ibzproproducts/${_context.ibzproproduct}/select`);
+        return res;
     }
 }

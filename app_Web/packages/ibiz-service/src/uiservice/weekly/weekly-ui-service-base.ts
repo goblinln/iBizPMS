@@ -39,7 +39,7 @@ export class WeeklyUIServiceBase extends UIServiceBase {
      protected async loaded() {
         await super.loaded();
         this.authService = await AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
-        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`,this.context);
         await this.authService.loaded();
     }
 

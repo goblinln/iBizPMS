@@ -109,10 +109,12 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project && _context.task && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
+            return res;
         }
         if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
+            return res;
         }
     this.log.warn([`[TaskTeam]>>>[FetchDefault函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });

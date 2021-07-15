@@ -210,7 +210,7 @@ export class AppMenuControlBase extends ControlBase implements MenuControlInterf
      */
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
-        this.service = new AppMenuService(this.controlInstance);
+        this.service = new AppMenuService(this.controlInstance, this.context);
         await this.service.initServiceParam(this.context, this.controlInstance);
     }
 

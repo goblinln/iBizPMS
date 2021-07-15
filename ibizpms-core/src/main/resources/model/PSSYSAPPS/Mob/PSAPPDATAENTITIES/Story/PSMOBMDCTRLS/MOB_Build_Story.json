@@ -152,6 +152,7 @@
     "name" : "srfmstag"
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "Atuo_115",
     "name" : "移动端右滑(版本解绑需求)",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

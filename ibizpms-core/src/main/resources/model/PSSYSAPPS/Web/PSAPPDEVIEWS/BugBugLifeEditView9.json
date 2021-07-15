@@ -380,9 +380,6 @@
             },
             "allowEmpty" : true,
             "convertToCodeItemText" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "于",
@@ -424,10 +421,8 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "valueFormat" : "YYYY-MM-DD HH:mm:ss",
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -486,9 +481,6 @@
           },
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "所属项目",
@@ -515,9 +507,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "所属产品",
@@ -544,9 +534,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
@@ -587,9 +575,6 @@
             },
             "allowEmpty" : true,
             "convertToCodeItemText" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "于",
@@ -631,10 +616,8 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "valueFormat" : "YYYY-MM-DD HH:mm:ss",
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "codeName" : "delayresolve",
@@ -666,8 +649,6 @@
             },
             "allowEmpty" : true,
             "emptyCaption" : true,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -711,9 +692,6 @@
           },
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "解决方案",
@@ -747,9 +725,6 @@
           },
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
@@ -790,9 +765,6 @@
             },
             "allowEmpty" : true,
             "convertToCodeItemText" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "于",
@@ -834,10 +806,8 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "valueFormat" : "YYYY-MM-DD HH:mm:ss",
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -888,9 +858,6 @@
             },
             "allowEmpty" : true,
             "convertToCodeItemText" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "于",
@@ -932,10 +899,8 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "valueFormat" : "YYYY-MM-DD HH:mm:ss",
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
@@ -1004,9 +969,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "相关用例",
@@ -1033,9 +995,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "相关用例",
@@ -1096,9 +1056,6 @@
           },
           "valueItemName" : "case",
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {

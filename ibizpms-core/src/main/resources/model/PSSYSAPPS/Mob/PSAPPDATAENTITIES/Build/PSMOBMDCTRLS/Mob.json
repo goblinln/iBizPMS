@@ -246,6 +246,7 @@
     }
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "MobRightGroup",
     "name" : "移动端右滑行为组",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

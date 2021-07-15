@@ -400,6 +400,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto24",
         "name" : "行编辑默认操作列",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

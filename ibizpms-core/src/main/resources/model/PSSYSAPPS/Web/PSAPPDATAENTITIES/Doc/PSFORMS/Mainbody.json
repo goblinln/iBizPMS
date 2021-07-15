@@ -145,10 +145,7 @@
           "cssName" : "panelitem-borad"
         },
         "allowEmpty" : true,
-        "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
-        "showCaption" : false
+        "emptyCaption" : true
       }, {
         "codeName" : "title",
         "dataType" : 25,
@@ -177,8 +174,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "version",
@@ -218,8 +213,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       }, {
@@ -252,8 +245,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "actionGroupExtractMode" : "ITEM",

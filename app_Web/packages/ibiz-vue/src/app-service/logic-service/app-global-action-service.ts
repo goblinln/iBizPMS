@@ -500,7 +500,6 @@ export class AppGlobalService {
                                             }
                                         })
                                         Object.assign(tempSubmitData, tempData);
-                                        Object.assign(tempSubmitData, args[0]);
                                     }
                                 }
                                 startWorkFlow([tempSubmitData], localdata);

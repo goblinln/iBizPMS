@@ -413,6 +413,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "Auto16",
       "name" : "表格主信息（操作栏）",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

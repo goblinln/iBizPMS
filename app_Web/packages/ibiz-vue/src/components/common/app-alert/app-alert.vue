@@ -11,7 +11,8 @@
                     :closable="item.closeable"
                     @close="alertClose(item)">
                     <template slot>
-                        <span v-html="item.content"></span>
+                        <span v-if="item.messageType == 'HTML'" v-html="item.content"></span>
+                        <span v-else>{{ item.content }}</span>
                     </template>
                 </el-alert>
                 </template>
@@ -169,7 +170,7 @@ export default class AppAlert extends Vue {
             if(flag && Object.is('POPUP', data.position)) {
                 const h = this.$createElement;
                 data.showState = false;
-                if(Object.is('HTML',data.messageType) && data.hasMessageTemp) {
+                if(Object.is('HTML',data.messageType)) {
                     setTimeout(() => {
                         this.$message({
                             customClass: data.codeName+","+data.removeMode,

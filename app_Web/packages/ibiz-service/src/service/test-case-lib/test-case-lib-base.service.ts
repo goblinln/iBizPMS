@@ -100,7 +100,8 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/testcaselibs`, _data);
+        const res = await this.http.post(`/testcaselibs`, _data);
+        return res;
     }
     /**
      * Get
@@ -137,7 +138,8 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      * @memberof TestCaseLibService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/testcaselibs/${_context.testcaselib}`);
+        const res = await this.http.delete(`/testcaselibs/${_context.testcaselib}`);
+        return res;
     }
     /**
      * Update
@@ -149,7 +151,8 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/testcaselibs/${_context.testcaselib}`, _data);
+        const res = await this.http.put(`/testcaselibs/${_context.testcaselib}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -160,6 +163,7 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
      * @memberof TestCaseLibService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testcaselibs/fetchdefault`, _data);
+        const res = await this.http.post(`/testcaselibs/fetchdefault`, _data);
+        return res;
     }
 }

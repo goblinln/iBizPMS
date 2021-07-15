@@ -576,6 +576,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "UAGroup3",
         "name" : "移除解决bug（发布）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

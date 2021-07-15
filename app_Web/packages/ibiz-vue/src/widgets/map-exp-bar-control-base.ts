@@ -98,15 +98,6 @@ export class MapExpBarControlBase extends ExpBarControlBase implements MapExpBar
         this.navPSDer = navPSDer;
     }
 
-    /**
-     * 工具栏点击
-     * 
-     * @memberof MapExpBarControlBase
-     */
-    public handleItemClick(data: any, $event: any) {
-        this.$emit('ctrl-event', { data: data, $event: $event });
-    }
-
    /**
     * 执行搜索
     *
@@ -164,7 +155,7 @@ export class MapExpBarControlBase extends ExpBarControlBase implements MapExpBar
         }
         const arg: any = args[0];
         if (this.context) {
-            Object.assign(tempContext, JSON.parse(JSON.stringify(this.context)));
+            Object.assign(tempContext, Util.deepCopy(this.context));
         }
         const mapItem: IPSSysMapItem | null | undefined = ((this.$xDataControl as IPSSysMap).getPSSysMapItems() || []).find((item: IPSSysMapItem) => {
             return item.itemType === arg.itemType;

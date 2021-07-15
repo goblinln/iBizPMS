@@ -945,6 +945,7 @@
               "name" : "uagridcolumn1",
               "noPrivDisplayMode" : 1,
               "getPSDEUIActionGroup" : {
+                "codeName" : "Auto28",
                 "name" : "产品计划-关联需求-表格操作栏",
                 "getPSUIActionGroupDetails" : [ {
                   "detailType" : "DEUIACTION",
@@ -3402,6 +3403,7 @@
               "name" : "uagridcolumn1",
               "noPrivDisplayMode" : 1,
               "getPSDEUIActionGroup" : {
+                "codeName" : "Auto13",
                 "name" : "产品计划-关联Bug-操作栏",
                 "getPSUIActionGroupDetails" : [ {
                   "detailType" : "DEUIACTION",
@@ -5557,9 +5559,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "名称",
@@ -5588,9 +5588,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "开始日期",
@@ -5616,10 +5613,9 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "开始日期",
@@ -5648,9 +5644,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "结束日期",
@@ -5676,10 +5669,9 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "结束日期",
@@ -5708,9 +5700,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
@@ -6220,9 +6209,6 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
@@ -8192,9 +8178,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {

@@ -270,6 +270,7 @@
           "name" : "uagridcolumn1",
           "noPrivDisplayMode" : 1,
           "getPSDEUIActionGroup" : {
+            "codeName" : "Auto134",
             "name" : "操作列",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",

@@ -54,6 +54,7 @@ export default class SpanEditor extends EditorBase {
      * @memberof SpanEditor
      */     
     public initFormatParams(){
+        this.customProps.valueFormat = "";
         let unitName = this.parentItem?.unitName;
         let appDeField: IPSAppDEField= this.parentItem?.getPSAppDEField?.();
         if (appDeField?.stdDataType) {
@@ -61,6 +62,12 @@ export default class SpanEditor extends EditorBase {
         }
         if (appDeField?.valueFormat) {
             this.customProps.valueFormat = appDeField?.valueFormat;
+        }
+        if (this.valueFormat) {
+          this.customProps.valueFormat = this.valueFormat;
+        }
+        if (this.editorInstance.editorParams?.valueFormat) {
+          this.customProps.valueFormat = this.editorInstance.editorParams?.valueFormat;
         }
         if (unitName) {
             this.customProps.unitName = unitName;

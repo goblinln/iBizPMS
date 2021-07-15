@@ -82,7 +82,8 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/sysorganizations`, _data);
+        const res = await this.http.post(`/sysorganizations`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysorganizations/${_context.sysorganization}`);
+        const res = await this.http.delete(`/sysorganizations/${_context.sysorganization}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysorganizations/${_context.sysorganization}`, _data);
+        const res = await this.http.put(`/sysorganizations/${_context.sysorganization}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysorganizations/fetchdefault`, _data);
+        const res = await this.http.get(`/sysorganizations/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysorganizations/${_context.sysorganization}/select`);
+        const res = await this.http.get(`/sysorganizations/${_context.sysorganization}/select`);
+        return res;
     }
 }

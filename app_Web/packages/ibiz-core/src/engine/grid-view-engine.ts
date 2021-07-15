@@ -79,7 +79,7 @@ export class GridViewEngine extends MDViewEngine {
             this.doEdit(args);
             return;
         }
-        if (Object.is(eventName, 'selectiondata')) {
+        if (Object.is(eventName, 'selectionchange')) {
             this.selectionChange(args);
             return;
         }

@@ -46,6 +46,14 @@ export class ControlServiceBase {
     public codeListService: any;
 
     /**
+     * 上下文
+     *
+     * @type {any}
+     * @memberof ControlServiceBase
+     */
+    public context: any;
+
+    /**
      * 是否为从数据模式
      *
      * @type {boolean}
@@ -59,8 +67,9 @@ export class ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof ControlServiceBase
      */
-    constructor(opts: any = {}) {
-        this.$store = AppServiceBase.getInstance().getAppStore();;
+    constructor(opts: any = {}, context?: any) {
+        this.$store = AppServiceBase.getInstance().getAppStore();
+        this.context = context;
         this.setTempMode();
         this.codeListService = new CodeListServiceBase();
     }

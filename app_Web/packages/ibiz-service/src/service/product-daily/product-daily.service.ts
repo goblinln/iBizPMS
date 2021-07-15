@@ -12,27 +12,29 @@ export class ProductDailyService extends ProductDailyBaseService {
      * Creates an instance of ProductDailyService.
      * @memberof ProductDailyService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ProductDailyService')) {
-            return ___ibz___.sc.get('ProductDailyService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ProductDailyService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {ProductDailyService}
      * @memberof ProductDailyService
      */
-    static getInstance(): ProductDailyService {
-        if (!___ibz___.sc.has('ProductDailyService')) {
-            new ProductDailyService();
+    static getInstance(context?: any): ProductDailyService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ProductDailyService` : `ProductDailyService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ProductDailyService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ProductDailyService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default ProductDailyService;

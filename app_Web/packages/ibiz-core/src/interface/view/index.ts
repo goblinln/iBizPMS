@@ -48,3 +48,4 @@ export * from './portal-view';
 export * from './index-view';
 export * from './wf-dyna-start-view';
 export * from './map-exp-view';
+export * from './depanel-view';

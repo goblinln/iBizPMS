@@ -707,6 +707,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto66",
         "name" : "表格视图_操作列",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

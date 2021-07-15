@@ -47,8 +47,8 @@ export class AppTreeService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppFormService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
         this.initServiceParam(opts);
     }
 
@@ -123,7 +123,7 @@ export class AppTreeService extends ControlServiceBase {
             strRealNodeId: strRealNodeId,
             srfnodeid: srfnodeid,
             strNodeType: strNodeType,
-            viewparams: JSON.parse(JSON.stringify(data)).viewparams,
+            viewparams: Util.deepCopy(data).viewparams,
         });
 
         // 分解节点标识
@@ -238,6 +238,8 @@ export class AppTreeService extends ControlServiceBase {
                 }
                 const treeNode: any = {
                     text: (nodeJson as IPSDETreeStaticNode)?.text,
+                    tooltip: (nodeJson as IPSDETreeStaticNode)?.tooltip,
+                    cssName: (nodeJson as IPSDETreeStaticNode)?.getPSSysCss()?.cssName,
                     nodeType: nodeJson.treeNodeType,
                     lanResTag: nodeJson.getNamePSLanguageRes()?.lanResTag,
                     isUseLangRes: false,
@@ -364,7 +366,7 @@ export class AppTreeService extends ControlServiceBase {
                                     strText = entity[majorField?.codeName.toLowerCase()];
                                 }
                                 Object.assign(treeNode, { srfparentdename: deCodeName, srfparentdemapname: appDataEntity?.getPSDEName(), srfparentkey: strId });
-                                let tempContext: any = JSON.parse(JSON.stringify(context));
+                                let tempContext: any = Util.deepCopy(context);
                                 Object.assign(tempContext, { srfparentdename: deCodeName, srfparentdemapname: appDataEntity?.getPSDEName(), srfparentkey: strId, [deCodeName.toLowerCase()]: strId });
                                 Object.assign(treeNode, { srfappctx: tempContext });
                                 Object.assign(treeNode, { [deCodeName.toLowerCase()]: strId });
@@ -388,6 +390,9 @@ export class AppTreeService extends ControlServiceBase {
                                 }
                                 if (nodeJson.disableSelect) {
                                     Object.assign(treeNode, { disabled: true });
+                                }
+                                if (nodeJson.getPSSysCss()?.cssName) {
+                                    Object.assign(treeNode, { cssName: nodeJson.getPSSysCss()?.cssName });
                                 }
                                 if (nodeJson.expanded) {
                                     Object.assign(treeNode, { expanded: nodeJson.expandFirstOnly ? bFirst : true });
@@ -472,17 +477,17 @@ export class AppTreeService extends ControlServiceBase {
             Object.assign(searchFilter, { size: 1000 });
         }
         if (context && context.srfparentdename) {
-            Object.assign(searchFilter, { srfparentdename: JSON.parse(JSON.stringify(context)).srfparentdename });
+            Object.assign(searchFilter, { srfparentdename: Util.deepCopy(context).srfparentdename });
         }
         if (context && context.srfparentkey) {
-            Object.assign(searchFilter, { srfparentkey: JSON.parse(JSON.stringify(context)).srfparentkey });
+            Object.assign(searchFilter, { srfparentkey: Util.deepCopy(context).srfparentkey });
         }
         if ((nodeJson as IPSDETreeDataSetNode)?.getSortPSAppDEField() && (nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName && (nodeJson as IPSDETreeDataSetNode)?.sortDir) {
             Object.assign(searchFilter, { sort: `${(nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName.toLowerCase()},${(nodeJson as IPSDETreeDataSetNode).sortDir.toLowerCase()}` });
         }
         const appDataEntity = nodeJson.getPSAppDataEntity() as IPSAppDataEntity;
         await appDataEntity.fill();
-        let appEntityService = await this.globalService.getService(appDataEntity?.codeName);
+        let appEntityService = await this.globalService.getService(appDataEntity?.codeName, context);
         let list: any[] = [];
         if (appEntityService[(nodeJson as IPSDETreeDataSetNode)?.getPSAppDEDataSet()?.codeName as string] && appEntityService[(nodeJson as IPSDETreeDataSetNode).getPSAppDEDataSet()?.codeName as string] instanceof Function) {
             const response = await appEntityService[(nodeJson as IPSDETreeDataSetNode).getPSAppDEDataSet()?.codeName as string](context, searchFilter, false);
@@ -493,7 +498,7 @@ export class AppTreeService extends ControlServiceBase {
                 }
                 const data: any = response.data;
                 if (Object.keys(data).length > 0) {
-                    list = JSON.parse(JSON.stringify(data));
+                    list = Util.deepCopy(data);
                     return list;
                 } else {
                     return [];
@@ -563,6 +568,9 @@ export class AppTreeService extends ControlServiceBase {
                         Object.assign(node, { icon: nodeJson.getPSSysImage()?.imagePath });
                     }
                 }
+                if (nodeJson.getPSSysCss()?.cssName) {
+                    Object.assign(node, { cssName: nodeJson.getPSSysCss()?.cssName });
+                }
                 if (nodeJson.enableCheck) {
                     Object.assign(node, { enablecheck: true });
                 }
@@ -621,7 +629,7 @@ export class AppTreeService extends ControlServiceBase {
      */
     public handleResNavContext(context: any, filter: any, resNavContext: any) {
         if (resNavContext && Object.keys(resNavContext).length > 0) {
-            let tempContextData: any = JSON.parse(JSON.stringify(context));
+            let tempContextData: any = Util.deepCopy(context);
             let tempViewParams: any = {};
             if (filter && filter.viewparams) {
                 tempViewParams = filter.viewparams;
@@ -652,7 +660,7 @@ export class AppTreeService extends ControlServiceBase {
             let tempViewParams: any = {};
             if (filter && filter.viewparams) {
                 tempViewParams = filter.viewparams;
-                tempViewParamData = JSON.parse(JSON.stringify(filter.viewparams));
+                tempViewParamData = Util.deepCopy(filter.viewparams);
             }
             if (Object.keys(resNavParams).length > 0) {
                 Object.keys(resNavParams).forEach((item: any) => {

@@ -170,7 +170,8 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/tests/${_context.test}/testmodules`, _data);
+            const res = await this.http.post(`/tests/${_context.test}/testmodules`, _data);
+            return res;
         }
     this.log.warn([`[TestModule]>>>[Create函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -219,7 +220,8 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testmodule) {
-            return this.http.delete(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
+            const res = await this.http.delete(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
+            return res;
         }
     this.log.warn([`[TestModule]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -235,7 +237,8 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/tests/${_context.test}/testmodules/${_context.testmodule}`, _data);
+            const res = await this.http.put(`/tests/${_context.test}/testmodules/${_context.testmodule}`, _data);
+            return res;
         }
     this.log.warn([`[TestModule]>>>[Update函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -250,7 +253,8 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && true) {
-            return this.http.post(`/tests/${_context.test}/testmodules/fetchdefault`, _data);
+            const res = await this.http.post(`/tests/${_context.test}/testmodules/fetchdefault`, _data);
+            return res;
         }
     this.log.warn([`[TestModule]>>>[FetchDefault函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });

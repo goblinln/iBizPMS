@@ -226,8 +226,6 @@
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "po",
@@ -281,8 +279,6 @@
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "qd",
@@ -336,8 +332,6 @@
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "rd",
@@ -391,8 +385,6 @@
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "fristmember",
@@ -444,8 +436,6 @@
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "secondmember",
@@ -497,8 +487,6 @@
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "thirdmember",
@@ -550,8 +538,6 @@
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "fourthmember",
@@ -603,8 +589,6 @@
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "fifthmember",
@@ -656,8 +640,6 @@
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "sixthmember",
@@ -709,8 +691,6 @@
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "id",
@@ -738,7 +718,6 @@
         "allowEmpty" : true,
         "emptyCaption" : true,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "actionType" : "UIACTION",

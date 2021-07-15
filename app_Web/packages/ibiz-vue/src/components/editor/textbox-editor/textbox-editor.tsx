@@ -49,6 +49,7 @@ export default class TextboxEditor extends EditorBase {
                 this.customProps.precision = ModelTool.getPrecision(this.editorInstance, appDeField);
                 break;
             case 'MARKDOWN':
+                this.customProps.mode = (this.editorInstance as any).mode ? (this.editorInstance as any).mode : 'EDIT';
                 break;
         }
     }

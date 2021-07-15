@@ -320,6 +320,7 @@
     "name" : "srfmstag"
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "Auto108",
     "name" : "移动端右滑行为组（测试套件下）",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

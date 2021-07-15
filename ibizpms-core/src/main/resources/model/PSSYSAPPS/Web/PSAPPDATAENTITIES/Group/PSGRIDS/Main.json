@@ -108,6 +108,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "Auto31",
       "name" : "群组表格操作列",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

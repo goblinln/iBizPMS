@@ -255,8 +255,6 @@
           "width" : 70.0,
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "codeName" : "title",
@@ -294,8 +292,6 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "codeName" : "steps",
@@ -330,10 +326,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "emptyCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
           "caption" : "附件",
@@ -2050,9 +2043,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {

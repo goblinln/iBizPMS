@@ -590,6 +590,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto33",
         "name" : "测试-Bug表格-行为组",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

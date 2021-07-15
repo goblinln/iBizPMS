@@ -491,6 +491,7 @@
     "name" : "srfmstag"
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "UAGroup_8597",
     "name" : "移动端（指派给）",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

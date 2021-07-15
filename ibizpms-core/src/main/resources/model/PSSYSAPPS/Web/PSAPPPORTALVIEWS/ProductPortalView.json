@@ -1228,6 +1228,7 @@
             "layout" : "TABLE_24COL"
           },
           "getPSUIActionGroup" : {
+            "codeName" : "Auto119",
             "name" : "更多",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",

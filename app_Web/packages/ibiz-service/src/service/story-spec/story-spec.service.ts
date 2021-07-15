@@ -12,27 +12,29 @@ export class StorySpecService extends StorySpecBaseService {
      * Creates an instance of StorySpecService.
      * @memberof StorySpecService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('StorySpecService')) {
-            return ___ibz___.sc.get('StorySpecService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('StorySpecService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {StorySpecService}
      * @memberof StorySpecService
      */
-    static getInstance(): StorySpecService {
-        if (!___ibz___.sc.has('StorySpecService')) {
-            new StorySpecService();
+    static getInstance(context?: any): StorySpecService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}StorySpecService` : `StorySpecService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new StorySpecService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('StorySpecService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default StorySpecService;

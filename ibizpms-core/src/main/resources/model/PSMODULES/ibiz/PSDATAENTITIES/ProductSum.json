@@ -202,6 +202,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -213,6 +214,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductBugcnt_QA",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品创建bug数及占比",
     "name" : "ProductBugcnt_QA",
     "getPSDEDataQueries" : [ {
@@ -223,6 +225,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductCreateStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品创建需求占比",
     "name" : "ProductCreateStory",
     "getPSDEDataQueries" : [ {
@@ -233,6 +236,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductStoryHoursSum",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品需求工时汇总",
     "name" : "ProductStoryHoursSum",
     "getPSDEDataQueries" : [ {
@@ -243,6 +247,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductStorySum",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品需求汇总查询",
     "name" : "ProductStorySum",
     "getPSDEDataQueries" : [ {
@@ -253,6 +258,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductStorycntAndPlancnt",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品计划数和需求数",
     "name" : "ProductStorycntAndPlancnt",
     "getPSDEDataQueries" : [ {
@@ -263,6 +269,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductSumBugType",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品Bug类型统计",
     "name" : "ProductSumBugType",
     "getPSDEDataQueries" : [ {

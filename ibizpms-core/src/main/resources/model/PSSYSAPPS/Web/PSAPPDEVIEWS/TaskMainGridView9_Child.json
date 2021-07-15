@@ -520,6 +520,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto115",
         "name" : "子任务操作栏",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

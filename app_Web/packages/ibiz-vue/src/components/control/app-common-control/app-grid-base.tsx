@@ -8,6 +8,7 @@ import {
     IPSUIActionGroupDetail,
     IPSAppDEGridView,
     IPSDEGridGroupColumn,
+    IPSDEGridFieldColumn
 } from '@ibiz/dynamic-model-api';
 import { debounce, ModelTool, Util } from 'ibiz-core';
 import { Prop, Watch, Emit } from 'vue-property-decorator';
@@ -128,7 +129,7 @@ export class AppGridBase extends GridControlBase {
             });
         }
         //  支持表格聚合
-        if (aggMode && aggMode != 'NONE') {
+        if (aggMode && aggMode != 'NONE' && !this.controlInstance.getAggPSLayoutPanel()) {
             Object.assign(options, {
                 'show-summary': this.items.length > 0 ? true : false,
                 'summary-method': (param: any) => this.getSummaries(param),
@@ -210,8 +211,23 @@ export class AppGridBase extends GridControlBase {
                 ) : null,
                 this.renderGridColumns(this.allColumnsInstance),
                 this.renderEmptyColumn ? <el-table-column></el-table-column> : null,
+                this.renderSummaryPanel()
             ],
         );
+    }
+
+    /**
+     * 渲染聚合面板
+     *
+     * @memberof AppGridBase
+     */
+    public renderSummaryPanel() {
+        const panel = this.controlInstance.getAggPSLayoutPanel();
+        if (!panel) {
+            return;
+        }
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(panel, this.remoteData) ;
+        return this.$createElement(targetCtrlName, { slot: 'append', props: targetCtrlParam, on: targetCtrlEvent, ref: panel.name });
     }
 
     /**
@@ -257,7 +273,7 @@ export class AppGridBase extends GridControlBase {
      */
     public renderUAColumn(column: IPSDEGridUAColumn) {
         const UIActionGroupDetails: Array<IPSUIActionGroupDetail> = column.getPSDEUIActionGroup()?.getPSUIActionGroupDetails() || [];
-        if (UIActionGroupDetails?.length > 2) {
+        if (UIActionGroupDetails?.length > 2 && this.viewStyle == 'DEFAULT') {
             return this.renderDefaultUAColumn(column);
         } else {
             return this.renderStyle2UAColumn(column);
@@ -277,8 +293,10 @@ export class AppGridBase extends GridControlBase {
             'column-key': name,
             label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             align: 'center',
-            'class-name':'default-ua-column'
+            'class-name': 'default-ua-column' + (column.getCellPSSysCss()?.cssName ? '' + column.getCellPSSysCss()?.cssName : ''),
+            'label-class-name': column.getHeaderPSSysCss()?.cssName,
         };
+        const sysImage = column.getPSSysImage();
         renderParams['width'] = 48;
         renderParams['fixed'] = 'right';
         //绘制
@@ -293,6 +311,14 @@ export class AppGridBase extends GridControlBase {
                     }}>
                         <i class='el-icon-more ua-column-icon' ></i>
                     </div>
+                },
+                header: () => {
+                    return (
+                        <span class='column-header'>
+                            {sysImage ? <i class={sysImage?.cssClass} style='margin-right: 4px;'></i> : null}
+                            {this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption)}
+                        </span>
+                    );
                 },
             },
         });
@@ -359,9 +385,12 @@ export class AppGridBase extends GridControlBase {
         //参数
         let renderParams: any = {
             'column-key': name,
+            'class-name': column.getCellPSSysCss()?.cssName,
+            'label-class-name': column.getHeaderPSSysCss()?.cssName,
             label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             align: align ? align.toLowerCase() : 'center',
         };
+        const sysImage = column.getPSSysImage();
         if (widthUnit && widthUnit != 'STAR') {
             renderParams['width'] = width;
         } else {
@@ -377,7 +406,12 @@ export class AppGridBase extends GridControlBase {
                     return this.renderActionModel(column, scope);
                 },
                 header: () => {
-                    return <span class='column-header'>{this.$tl(column.getCapPSLanguageRes()?.lanResTag, column.caption)}</span>;
+                    return (
+                        <span class='column-header'>
+                            {sysImage ? <i class={sysImage?.cssClass} style='margin-right: 4px;'></i> : null}
+                            {this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption)}
+                        </span>
+                    );
                 },
             },
         });
@@ -472,8 +506,10 @@ export class AppGridBase extends GridControlBase {
             codeName,
             this.controlInstance,
         ) as IPSDEGridEditItem;
+        const sysImage = column.getPSSysImage();
         let renderParams: any = {
-            'show-overflow-tooltip': true,
+            'class-name': column.getCellPSSysCss()?.cssName,
+            'label-class-name': column.getHeaderPSSysCss()?.cssName,
             label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             prop: name,
             align: align ? align.toLowerCase() : 'center',
@@ -493,8 +529,13 @@ export class AppGridBase extends GridControlBase {
                         : this.renderColumn(column, scope);
                 },
                 header: () => {
-                  this.allColumnsInstance; // 别删，触发表格头刷新用
-                  return <span class='column-header'>{this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption)}</span>;
+                    this.allColumnsInstance; // 别删，触发表格头刷新用
+                    return (
+                        <span class='column-header'>
+                            {sysImage ? <i class={sysImage?.cssClass} style='margin-right: 4px;'></i> : null}
+                            {this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption)}
+                        </span>
+                    );
                 },
             },
         });
@@ -510,18 +551,31 @@ export class AppGridBase extends GridControlBase {
         const { name, width, caption, widthUnit, align, enableSort } = column;
         let renderParams: any = {
             'show-overflow-tooltip': true,
+            'class-name': column.getCellPSSysCss()?.cssName,
+            'label-class-name': column.getHeaderPSSysCss()?.cssName,
             label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             prop: name,
             align: align ? align.toLowerCase() : 'center',
             sortable: !this.controlInstance.noSort && enableSort ? 'custom' : false,
         };
+        const sysImage = column.getPSSysImage();
         if (widthUnit && widthUnit != 'STAR') {
             renderParams['width'] = width;
         } else {
             renderParams['min-width'] = width;
         }
         return this.$createElement('el-table-column', {
-            props: renderParams
+            props: renderParams,
+            scopedSlots: {
+                header: () => {
+                    return (
+                        <span class='column-header'>
+                            {sysImage ? <i class={sysImage?.cssClass} style='margin-right: 4px;'></i> : null}
+                            {this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption)}
+                        </span>
+                    );
+                },
+            },
         }, this.renderGridColumns(column.getPSDEGridColumns() || []));
     }
 
@@ -646,9 +700,10 @@ export class AppGridBase extends GridControlBase {
         if (!editor) {
             return null;
         }
+        const valueFormat = (item as IPSDEGridFieldColumn).valueFormat;
         const { row, column, $index } = scope;
         return (
-            <app-form-item error={this.gridItemsModel[$index][column.property].error}>
+            <app-form-item gridError={this.gridItemsModel[$index][column.property].error}>
                 <app-default-editor
                     editorInstance={editor}
                     parentItem={editItem}
@@ -657,6 +712,7 @@ export class AppGridBase extends GridControlBase {
                     context={this.context}
                     contextData={row}
                     viewparams={this.viewparams}
+                    valueFormat={valueFormat}
                     service={this.service}
                     on-change={(value: any) => {
                         this.onGridItemValueChange(row, value, $index);

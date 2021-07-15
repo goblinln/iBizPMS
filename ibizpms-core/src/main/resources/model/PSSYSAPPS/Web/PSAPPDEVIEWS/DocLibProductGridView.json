@@ -416,6 +416,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto99",
         "name" : "产品查看",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

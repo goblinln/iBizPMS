@@ -82,7 +82,8 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/testruns`, _data);
+        const res = await this.http.post(`/testruns`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/testruns/${_context.testrun}`);
+        const res = await this.http.delete(`/testruns/${_context.testrun}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/testruns/${_context.testrun}`, _data);
+        const res = await this.http.put(`/testruns/${_context.testrun}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testruns/fetchdefault`, _data);
+        const res = await this.http.post(`/testruns/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
      * @memberof TestRunService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/testruns/${_context.testrun}/select`);
+        const res = await this.http.get(`/testruns/${_context.testrun}/select`);
+        return res;
     }
 }

@@ -39,3 +39,4 @@ export { HtmlViewBase } from './htmlview-base';
 export { MapViewBase } from './mapview-base';
 export { DeReportViewBase } from './dereportview-base';
 export { MapExpViewBase } from './mapexpview-base';
+export { DePanelViewBase } from './depanelview-base';

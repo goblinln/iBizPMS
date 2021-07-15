@@ -663,6 +663,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ChildPlan",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "子计划",
     "name" : "ChildPlan",
     "getPSDEDataQueries" : [ {
@@ -673,6 +674,7 @@
     "enableFront" : true
   }, {
     "codeName" : "CurProductPlan",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "CurProductPlan",
     "name" : "CurProductPlan",
     "getPSDEDataQueries" : [ {
@@ -683,6 +685,7 @@
     "enableFront" : true
   }, {
     "codeName" : "CurProductPlanStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "CurProductPlanStory",
     "getPSDEDataQueries" : [ {
@@ -693,6 +696,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -709,6 +713,7 @@
     "enableFront" : true
   }, {
     "codeName" : "DefaultParent",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "默认查询",
     "name" : "DefaultParent",
     "getPSDEDataQueries" : [ {
@@ -719,6 +724,7 @@
     "enableFront" : true
   }, {
     "codeName" : "PlanCodeList",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "计划（代码表）",
     "name" : "PlanCodeList",
     "getPSDEDataQueries" : [ {
@@ -729,6 +735,7 @@
     "enableFront" : true
   }, {
     "codeName" : "PlanTasks",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目计划任务（项目管理-项目计划）",
     "name" : "PlanTasks",
     "getPSDEDataQueries" : [ {
@@ -739,6 +746,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductQuery",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品默认查询",
     "name" : "ProductQuery",
     "getPSDEDataQueries" : [ {
@@ -749,6 +757,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectApp",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目立项",
     "name" : "ProjectApp",
     "getPSDEDataQueries" : [ {
@@ -759,6 +768,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectPlan",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目计划列表",
     "name" : "ProjectPlan",
     "getPSDEDataQueries" : [ {
@@ -769,6 +779,7 @@
     "enableFront" : true
   }, {
     "codeName" : "RootPlan",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "跟计划",
     "name" : "RootPlan",
     "getPSDEDataQueries" : [ {
@@ -779,6 +790,7 @@
     "enableFront" : true
   }, {
     "codeName" : "TaskPlan",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "任务计划",
     "name" : "TaskPlan",
     "getPSDEDataQueries" : [ {

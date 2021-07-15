@@ -135,9 +135,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "needCodeListConfig" : true,
       "showCaption" : true
     }, {
@@ -167,9 +164,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "needCodeListConfig" : true,
       "showCaption" : true
     }, {
@@ -655,6 +649,7 @@
             "name" : "uagridcolumn1",
             "noPrivDisplayMode" : 1,
             "getPSDEUIActionGroup" : {
+              "codeName" : "UAGroup",
               "name" : "行编辑操作栏",
               "getPSUIActionGroupDetails" : [ {
                 "detailType" : "DEUIACTION",
@@ -1161,9 +1156,6 @@
               "resetItemName" : "teams",
               "resetItemNames" : [ "teams" ],
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -1210,9 +1202,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             } ],

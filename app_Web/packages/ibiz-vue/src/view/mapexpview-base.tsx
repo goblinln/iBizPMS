@@ -34,7 +34,7 @@ export class MapExpViewBase extends ExpViewBase implements MapExpViewInterface {
      * @type {Engine}
      * @memberof MapExpViewBase
      */
-    public engine: MapExpViewEngine = new MapExpViewEngine;
+    public engine: MapExpViewEngine = new MapExpViewEngine();
 
     /**
      * 引擎初始化

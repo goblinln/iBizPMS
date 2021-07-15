@@ -189,7 +189,8 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async CancelTestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/tests/${_context.test}/canceltesttop`, _data);
+        const res = await this.http.post(`/tests/${_context.test}/canceltesttop`, _data);
+        return res;
     }
     /**
      * Get
@@ -212,7 +213,8 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async TestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/tests/${_context.test}/testtop`, _data);
+        const res = await this.http.post(`/tests/${_context.test}/testtop`, _data);
+        return res;
     }
     /**
      * FetchCurDefault
@@ -223,6 +225,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/tests/fetchcurdefault`, _data);
+        const res = await this.http.post(`/tests/fetchcurdefault`, _data);
+        return res;
     }
 }

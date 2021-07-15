@@ -82,7 +82,8 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/taskstats`, _data);
+        const res = await this.http.post(`/taskstats`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/taskstats/${_context.taskstats}`);
+        const res = await this.http.delete(`/taskstats/${_context.taskstats}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/taskstats/${_context.taskstats}`, _data);
+        const res = await this.http.put(`/taskstats/${_context.taskstats}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/taskstats/fetchdefault`, _data);
+        const res = await this.http.post(`/taskstats/fetchdefault`, _data);
+        return res;
     }
     /**
      * FetchTaskFinishHuiZong
@@ -153,7 +157,8 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async FetchTaskFinishHuiZong(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/taskstats/fetchtaskfinishhuizong`, _data);
+        const res = await this.http.post(`/taskstats/fetchtaskfinishhuizong`, _data);
+        return res;
     }
     /**
      * FetchUserFinishTaskSum
@@ -164,7 +169,8 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async FetchUserFinishTaskSum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/taskstats/fetchuserfinishtasksum`, _data);
+        const res = await this.http.post(`/taskstats/fetchuserfinishtasksum`, _data);
+        return res;
     }
     /**
      * Select
@@ -175,6 +181,7 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      * @memberof TaskStatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/taskstats/${_context.taskstats}/select`);
+        const res = await this.http.get(`/taskstats/${_context.taskstats}/select`);
+        return res;
     }
 }

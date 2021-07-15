@@ -35,7 +35,7 @@ export class AppMEditViewPanelService extends ControlServiceBase {
     */
    public async initServiceParam(opts: any) {
        this.controlInstance = opts;
-       this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+       this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
        this.model = new AppMEditviewPanelModel(opts);
    }
 
@@ -45,8 +45,8 @@ export class AppMEditViewPanelService extends ControlServiceBase {
     * @param {*} [opts={}]
     * @memberof AppMEditViewPanelService
     */
-   constructor(opts: any = {}) {
-       super(opts);
+   constructor(opts: any = {}, context?: any) {
+       super(opts, context);
        this.initServiceParam(opts);
    }  
 

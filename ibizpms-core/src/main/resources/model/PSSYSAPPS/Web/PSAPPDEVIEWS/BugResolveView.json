@@ -331,9 +331,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "Bug编号",
@@ -360,9 +358,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
@@ -409,9 +405,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : false,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             } ],
@@ -528,9 +521,6 @@
               "resetItemName" : "createbuild",
               "resetItemNames" : [ "createbuild" ],
               "allowEmpty" : false,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -610,9 +600,6 @@
               "resetItemName" : "createbuild",
               "resetItemNames" : [ "createbuild" ],
               "allowEmpty" : false,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -673,8 +660,6 @@
               "resetItemNames" : [ "createbuild" ],
               "allowEmpty" : false,
               "emptyCaption" : true,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "codeName" : "createbuild",
@@ -706,8 +691,6 @@
               },
               "allowEmpty" : true,
               "emptyCaption" : true,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             } ],
@@ -759,10 +742,8 @@
                 "layout" : "TABLE_24COL"
               },
               "updateDVT" : "CURTIME",
+              "valueFormat" : "YYYY-MM-DD HH:mm:ss",
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "指派给",
@@ -822,9 +803,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             } ],
@@ -875,9 +853,7 @@
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "hidden" : true,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "actionGroupExtractMode" : "ITEM",
@@ -922,9 +898,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "备注",
@@ -955,9 +928,6 @@
               "layout" : "TABLE_24COL"
             },
             "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {

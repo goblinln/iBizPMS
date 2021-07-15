@@ -132,7 +132,7 @@ export class GanttControlBase extends MDControlBase implements GanttControlInter
     public async ctrlModelInit() {
         super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppGanttService(this.controlInstance);
+            this.service = new AppGanttService(this.controlInstance, this.context);
         }
         await this.initColumnsCodeList();
         this.initOptions();
@@ -182,6 +182,16 @@ export class GanttControlBase extends MDControlBase implements GanttControlInter
             if(tempOptions) {
                 this.options.taskList.columns = [...tempOptions];
             }
+        } else {
+            const majorField = ModelTool.getAppEntityMajorField(this.controlInstance.getPSAppDataEntity());
+            this.options.taskList.columns = [{
+                label: majorField ? this.$tl(majorField.getLNPSLanguageRes()?.lanResTag, majorField.logicName) : this.$t('app.commonwords.srfmajortext'),
+                value: 'srfmajortext',
+                width: 100,
+                render: (task: any) => {
+                    return task['srfmajortext'];
+                }
+            }]
         }
     }
 
@@ -248,7 +258,7 @@ export class GanttControlBase extends MDControlBase implements GanttControlInter
             srfnodeid: task && task.id ? task.id : "#",
             srfnodefilter: ''
         };
-        let tempViewParams:any = JSON.parse(JSON.stringify(this.viewparams));
+        let tempViewParams:any = Util.deepCopy(this.viewparams);
         let curNode:any = {}; 
         Util.deepObjectMerge(curNode, task);
         let tempContext:any = this.computecurNodeContext(curNode);
@@ -279,7 +289,11 @@ export class GanttControlBase extends MDControlBase implements GanttControlInter
                     this.load(item);
                 }
             })
-            this.$emit("load", this.tasks);
+            this.ctrlEvent({
+                controlname: this.name,
+                action: 'load',
+                data: this.tasks,
+            });
         }).catch((response: any) => {
             this.onControlResponse('load', response);
             this.$throw(response,'load');
@@ -331,9 +345,9 @@ export class GanttControlBase extends MDControlBase implements GanttControlInter
     public computecurNodeContext(curNode:any){
         let tempContext:any = {};
         if(curNode && curNode.srfappctx){
-            tempContext = JSON.parse(JSON.stringify(curNode.srfappctx));
+            tempContext = Util.deepCopy(curNode.srfappctx);
         }else{
-            tempContext = JSON.parse(JSON.stringify(this.context));
+            tempContext = Util.deepCopy(this.context);
         }
         return tempContext;
     }
@@ -410,7 +424,7 @@ export class GanttControlBase extends MDControlBase implements GanttControlInter
         if (viewOpenAppUIlogic?.getOpenDataPSAppView()) {
             const openViewRef: IPSAppUILogicRefView = viewOpenAppUIlogic.getOpenDataPSAppView() as IPSAppUILogicRefView;
             const data: any = {};
-            let tempContext = JSON.parse(JSON.stringify(this.context));
+            let tempContext = Util.deepCopy(this.context);
             // 准备参数
             if (args.length > 0) {
                 Object.assign(tempContext, args[0]);

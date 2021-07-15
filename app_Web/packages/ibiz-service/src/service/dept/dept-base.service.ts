@@ -104,7 +104,8 @@ export class DeptBaseService extends EntityBaseService<IDept> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/depts`, _data);
+        const res = await this.http.post(`/depts`, _data);
+        return res;
     }
     /**
      * Get
@@ -141,7 +142,8 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      * @memberof DeptService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/depts/${_context.dept}`);
+        const res = await this.http.delete(`/depts/${_context.dept}`);
+        return res;
     }
     /**
      * Update
@@ -153,7 +155,8 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/depts/${_context.dept}`, _data);
+        const res = await this.http.put(`/depts/${_context.dept}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -164,7 +167,8 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      * @memberof DeptService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/depts/fetchdefault`, _data);
+        const res = await this.http.post(`/depts/fetchdefault`, _data);
+        return res;
     }
     /**
      * FetchRoot
@@ -175,7 +179,8 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      * @memberof DeptService
      */
     async FetchRoot(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/depts/fetchroot`, _data);
+        const res = await this.http.post(`/depts/fetchroot`, _data);
+        return res;
     }
     /**
      * Select
@@ -186,6 +191,7 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      * @memberof DeptService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/depts/${_context.dept}/select`);
+        const res = await this.http.get(`/depts/${_context.dept}/select`);
+        return res;
     }
 }

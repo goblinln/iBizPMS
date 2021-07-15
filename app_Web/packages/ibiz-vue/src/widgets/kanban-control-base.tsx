@@ -110,7 +110,7 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppKanbanService(this.controlInstance);
+            this.service = new AppKanbanService(this.controlInstance, this.context);
         }
         this.limit = this.controlInstance?.pagingSize ? this.controlInstance.pagingSize : 20;
         this.minorSortPSDEF = this.controlInstance.getMinorSortPSAppDEField()?.codeName?.toLowerCase() || '';
@@ -238,9 +238,9 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
         this.$emit("ctrl-event", { controlname: "kanban", action: "beforeload", data: parentdata });
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
-        Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
+        Object.assign(tempViewParams, Util.deepCopy(this.viewparams));
         Object.assign(arg, { viewparams: tempViewParams });
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext:any = Util.deepCopy(this.context);
         this.onControlRequset('load', tempContext, arg);
         const post: Promise<any> = this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
@@ -254,7 +254,7 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
                 this.items = [];
             }
             if (Object.keys(data).length > 0) {
-                let datas = JSON.parse(JSON.stringify(data));
+                let datas = Util.deepCopy(data);
                 datas.map((item: any) => {
                     Object.assign(item, { isselected: false });
                 });
@@ -355,7 +355,7 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
                 keys.push(data.srfkey);
             });
             let _removeAction = keys.length > 1 ? 'removeBatch' : this.removeAction;
-            let tempContext: any = JSON.parse(JSON.stringify(this.context));
+            let tempContext: any = Util.deepCopy(this.context);
             Object.assign(tempContext, { [(this.controlInstance?.getPSAppDataEntity as any)?.codeName?.toLowerCase()]: keys.join(';') });
             let arg: any = { [(this.controlInstance.getPSAppDataEntity as any).codeName.toLowerCase()]: keys.join(';') };
             Object.assign(arg, { viewparams: this.viewparams });
@@ -446,7 +446,7 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
      */
     public async onDragChange(evt: any, name: string) {
         if (evt?.added?.element) {
-            let item: any = JSON.parse(JSON.stringify(evt.added.element))
+            let item: any = Util.deepCopy(evt.added.element)
             let updateView: IPSAppView | null = await this.getUpdateView(name);
             if (updateView) {
                 let view: any = {
@@ -455,8 +455,8 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
                     width: updateView.width,
                     title: this.$tl(updateView.getCapPSLanguageRes()?.lanResTag, updateView.caption),
                 };
-                const _context: any = JSON.parse(JSON.stringify(this.context));
-                const _param: any = JSON.parse(JSON.stringify(this.viewparams));
+                const _context: any = Util.deepCopy(this.context);
+                const _param: any = Util.deepCopy(this.viewparams);
                 Object.assign(_context, { [this.appDeCodeName.toLowerCase()]: item.srfkey });
                 if (updateView && updateView.modelPath) {
                     Object.assign(_context, { viewpath: updateView.modelPath });
@@ -503,7 +503,7 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
         }
         const arg: any = { ...opt };
         Object.assign(arg, { viewparams: this.viewparams });
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext:any = Util.deepCopy(this.context);
         if (this.controlInstance.getPSAppDataEntity()?.codeName) {
             Object.assign(tempContext, { [(this.controlInstance.getPSAppDataEntity()?.codeName?.toLowerCase() as string)]: opt.srfkey });
         }

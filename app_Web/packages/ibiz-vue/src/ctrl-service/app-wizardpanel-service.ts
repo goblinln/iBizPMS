@@ -27,7 +27,7 @@ export class AppWizardPanelService extends ControlServiceBase {
      * @memberof AppGridService
      */
     public async initServiceParam() {
-        this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+        this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         this.model = new AppWizardPanelModel(this.controlInstance);
     }
 
@@ -37,8 +37,8 @@ export class AppWizardPanelService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppGridService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
         this.controlInstance = opts;
     }
 

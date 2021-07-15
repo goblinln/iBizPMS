@@ -319,7 +319,7 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
         }
         try {
             let res: any = await codeListService.getDataItems({ tag: quickGroupCodeList.codeName, type: quickGroupCodeList.codeListType, codeList: quickGroupCodeList, context: this.context });
-            this.quickGroupModel = [...this.handleDynamicData(JSON.parse(JSON.stringify(res)))];
+            this.quickGroupModel = [...this.handleDynamicData(Util.deepCopy(res))];
         } catch (error: any) {
             LogUtil.log(`----${quickGroupCodeList.codeName}----${this.$t('app.commonwords.codenotexist')}`);
         }
@@ -668,7 +668,7 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
         }
         const arg: any = args[0];
         if (this.context) {
-            Object.assign(tempContext, JSON.parse(JSON.stringify(this.context)));
+            Object.assign(tempContext, Util.deepCopy(this.context));
         }
         if (this.$xDataControl) {
             const appDataEntity: IPSAppDataEntity | null = this.$xDataControl?.getPSAppDataEntity();
@@ -699,6 +699,7 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
                 this.split = this.copySplit;
             }
             this.$forceUpdate();
+            this.$emit("ctrl-event", { controlname: this.controlInstance.name, action: "selectionchange", data: args });
         }
     }
 

@@ -12,27 +12,29 @@ export class TestSuiteService extends TestSuiteBaseService {
      * Creates an instance of TestSuiteService.
      * @memberof TestSuiteService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TestSuiteService')) {
-            return ___ibz___.sc.get('TestSuiteService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TestSuiteService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {TestSuiteService}
      * @memberof TestSuiteService
      */
-    static getInstance(): TestSuiteService {
-        if (!___ibz___.sc.has('TestSuiteService')) {
-            new TestSuiteService();
+    static getInstance(context?: any): TestSuiteService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TestSuiteService` : `TestSuiteService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TestSuiteService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TestSuiteService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default TestSuiteService;

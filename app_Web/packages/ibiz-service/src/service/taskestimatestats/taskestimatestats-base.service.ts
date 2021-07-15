@@ -82,7 +82,8 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/taskestimatestats`, _data);
+        const res = await this.http.post(`/taskestimatestats`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      * @memberof TaskestimatestatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/taskestimatestats/${_context.taskestimatestats}`);
+        const res = await this.http.delete(`/taskestimatestats/${_context.taskestimatestats}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/taskestimatestats/${_context.taskestimatestats}`, _data);
+        const res = await this.http.put(`/taskestimatestats/${_context.taskestimatestats}`, _data);
+        return res;
     }
     /**
      * FetchActionMonth
@@ -142,7 +145,8 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      * @memberof TaskestimatestatsService
      */
     async FetchActionMonth(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/taskestimatestats/fetchactionmonth`, _data);
+        const res = await this.http.post(`/taskestimatestats/fetchactionmonth`, _data);
+        return res;
     }
     /**
      * FetchActionYear
@@ -153,7 +157,8 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      * @memberof TaskestimatestatsService
      */
     async FetchActionYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/taskestimatestats/fetchactionyear`, _data);
+        const res = await this.http.post(`/taskestimatestats/fetchactionyear`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -164,7 +169,8 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      * @memberof TaskestimatestatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/taskestimatestats/fetchdefault`, _data);
+        const res = await this.http.post(`/taskestimatestats/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -175,6 +181,7 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      * @memberof TaskestimatestatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/taskestimatestats/${_context.taskestimatestats}/select`);
+        const res = await this.http.get(`/taskestimatestats/${_context.taskestimatestats}/select`);
+        return res;
     }
 }

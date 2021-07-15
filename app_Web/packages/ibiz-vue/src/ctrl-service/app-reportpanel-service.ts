@@ -33,8 +33,8 @@ export class AppReportPanelService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppReportPanelService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
         this.initServiceParam(opts);
     }
 
@@ -47,7 +47,7 @@ export class AppReportPanelService extends ControlServiceBase {
     public async initServiceParam(opts: any) {
         this.controlInstance = opts;
         if (this.appDeCodeName) {
-            this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+            this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         }
         // this.model = new AppReportPanelModel(opts);
     }

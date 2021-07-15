@@ -104,7 +104,8 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzplantemplets`, _data);
+        const res = await this.http.post(`/ibzplantemplets`, _data);
+        return res;
     }
     /**
      * Get
@@ -162,7 +163,8 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzplantemplets/${_context.ibzplantemplet}`);
+        const res = await this.http.delete(`/ibzplantemplets/${_context.ibzplantemplet}`);
+        return res;
     }
     /**
      * Update
@@ -174,7 +176,8 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzplantemplets/${_context.ibzplantemplet}`, _data);
+        const res = await this.http.put(`/ibzplantemplets/${_context.ibzplantemplet}`, _data);
+        return res;
     }
     /**
      * FetchCurUserTemplet
@@ -185,7 +188,8 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async FetchCurUserTemplet(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzplantemplets/fetchcurusertemplet`, _data);
+        const res = await this.http.post(`/ibzplantemplets/fetchcurusertemplet`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -196,7 +200,8 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzplantemplets/fetchdefault`, _data);
+        const res = await this.http.post(`/ibzplantemplets/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -207,7 +212,8 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @memberof IbzPlanTempletService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}/select`);
+        const res = await this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}/select`);
+        return res;
     }
 
     /**

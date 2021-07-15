@@ -12,7 +12,6 @@ import { AppChartModel } from 'ibiz-vue';
  */
 export class AppChartService extends ControlServiceBase {
 
-
     /**
     * 图表实例对象
     *
@@ -37,7 +36,7 @@ export class AppChartService extends ControlServiceBase {
     public async initServiceParam(opts: any) {
         this.controlInstance = opts;
         if (this.appDeCodeName) {
-            this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+            this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         }
         this.model = new AppChartModel();
     }
@@ -48,8 +47,8 @@ export class AppChartService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppChartService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
 
     }
 

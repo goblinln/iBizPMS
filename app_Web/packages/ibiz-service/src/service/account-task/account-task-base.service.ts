@@ -325,7 +325,18 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
      * @memberof AccountTaskService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return await this.executeAppDeLogic('GetUserConcat',_context,_data);
+        try {
+            _data =  await this.executeAppDELogic('GetUserConcat',_context,_data);
+            return new HttpResponse(_data, {
+                ok: true,
+                status: 200
+            });
+        }catch (error) {
+            return new HttpResponse({message:error.message}, {
+                ok: false,
+                status: 500,
+            });
+        }
     }
     /**
      * FetchAccount
@@ -337,9 +348,11 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchaccount`, _data);
+            return res;
         }
-        return this.http.post(`/accounttasks/fetchaccount`, _data);
+        const res = await this.http.post(`/accounttasks/fetchaccount`, _data);
+        return res;
     }
     /**
      * FetchMy
@@ -351,9 +364,11 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchmy`, _data);
+            return res;
         }
-        return this.http.post(`/accounttasks/fetchmy`, _data);
+        const res = await this.http.post(`/accounttasks/fetchmy`, _data);
+        return res;
     }
     /**
      * FetchMyFavorites
@@ -365,8 +380,10 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
      */
     async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchmyfavorites`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchmyfavorites`, _data);
+            return res;
         }
-        return this.http.post(`/accounttasks/fetchmyfavorites`, _data);
+        const res = await this.http.post(`/accounttasks/fetchmyfavorites`, _data);
+        return res;
     }
 }

@@ -119,6 +119,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "Auto144",
       "name" : "代理操作列行为组",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

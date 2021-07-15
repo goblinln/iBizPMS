@@ -82,7 +82,8 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/pssystemdbcfgs`, _data);
+        const res = await this.http.post(`/pssystemdbcfgs`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
      * @memberof PSSystemDBCfgService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/pssystemdbcfgs/${_context.pssystemdbcfg}`);
+        const res = await this.http.delete(`/pssystemdbcfgs/${_context.pssystemdbcfg}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/pssystemdbcfgs/${_context.pssystemdbcfg}`, _data);
+        const res = await this.http.put(`/pssystemdbcfgs/${_context.pssystemdbcfg}`, _data);
+        return res;
     }
     /**
      * FetchBuild
@@ -142,7 +145,8 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
      * @memberof PSSystemDBCfgService
      */
     async FetchBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/pssystemdbcfgs/fetchbuild`, _data);
+        const res = await this.http.post(`/pssystemdbcfgs/fetchbuild`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -153,7 +157,8 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
      * @memberof PSSystemDBCfgService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/pssystemdbcfgs/fetchdefault`, _data);
+        const res = await this.http.post(`/pssystemdbcfgs/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -164,6 +169,7 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
      * @memberof PSSystemDBCfgService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssystemdbcfgs/${_context.pssystemdbcfg}/select`);
+        const res = await this.http.get(`/pssystemdbcfgs/${_context.pssystemdbcfg}/select`);
+        return res;
     }
 }

@@ -604,6 +604,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto122",
         "name" : "联系人",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

@@ -12,27 +12,29 @@ export class TaskStatsService extends TaskStatsBaseService {
      * Creates an instance of TaskStatsService.
      * @memberof TaskStatsService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TaskStatsService')) {
-            return ___ibz___.sc.get('TaskStatsService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TaskStatsService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {TaskStatsService}
      * @memberof TaskStatsService
      */
-    static getInstance(): TaskStatsService {
-        if (!___ibz___.sc.has('TaskStatsService')) {
-            new TaskStatsService();
+    static getInstance(context?: any): TaskStatsService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TaskStatsService` : `TaskStatsService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TaskStatsService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TaskStatsService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default TaskStatsService;

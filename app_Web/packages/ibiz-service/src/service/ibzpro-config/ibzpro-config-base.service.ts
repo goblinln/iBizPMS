@@ -82,7 +82,8 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzproconfigs`, _data);
+        const res = await this.http.post(`/ibzproconfigs`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async GetSystemConfig(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.put(`/ibzproconfigs/${_context.ibzproconfig}/getsystemconfig`, _data);
+        const res = await this.http.put(`/ibzproconfigs/${_context.ibzproconfig}/getsystemconfig`, _data);
+        return res;
     }
     /**
      * Remove
@@ -130,7 +132,8 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzproconfigs/${_context.ibzproconfig}`);
+        const res = await this.http.delete(`/ibzproconfigs/${_context.ibzproconfig}`);
+        return res;
     }
     /**
      * Update
@@ -142,7 +145,8 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzproconfigs/${_context.ibzproconfig}`, _data);
+        const res = await this.http.put(`/ibzproconfigs/${_context.ibzproconfig}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -153,7 +157,8 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzproconfigs/fetchdefault`, _data);
+        const res = await this.http.post(`/ibzproconfigs/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -164,7 +169,8 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @memberof IbzproConfigService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproconfigs/${_context.ibzproconfig}/select`);
+        const res = await this.http.get(`/ibzproconfigs/${_context.ibzproconfig}/select`);
+        return res;
     }
 
     /**

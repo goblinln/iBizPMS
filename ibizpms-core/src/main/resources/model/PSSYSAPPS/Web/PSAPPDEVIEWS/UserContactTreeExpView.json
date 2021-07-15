@@ -203,7 +203,6 @@
         },
         "treeNodeType" : "DE",
         "hasPSDETreeNodeRSs" : false,
-        "appendCaption" : false,
         "appendPNodeId" : false,
         "disableSelect" : false,
         "enableCheck" : false,

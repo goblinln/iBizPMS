@@ -82,7 +82,8 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/sysdepartments`, _data);
+        const res = await this.http.post(`/sysdepartments`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysdepartments/${_context.sysdepartment}`);
+        const res = await this.http.delete(`/sysdepartments/${_context.sysdepartment}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysdepartments/${_context.sysdepartment}`, _data);
+        const res = await this.http.put(`/sysdepartments/${_context.sysdepartment}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysdepartments/fetchdefault`, _data);
+        const res = await this.http.get(`/sysdepartments/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysdepartments/${_context.sysdepartment}/select`);
+        const res = await this.http.get(`/sysdepartments/${_context.sysdepartment}/select`);
+        return res;
     }
 }

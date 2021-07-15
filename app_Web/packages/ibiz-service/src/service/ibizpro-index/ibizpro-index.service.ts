@@ -12,27 +12,29 @@ export class IbizproIndexService extends IbizproIndexBaseService {
      * Creates an instance of IbizproIndexService.
      * @memberof IbizproIndexService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('IbizproIndexService')) {
-            return ___ibz___.sc.get('IbizproIndexService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('IbizproIndexService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {IbizproIndexService}
      * @memberof IbizproIndexService
      */
-    static getInstance(): IbizproIndexService {
-        if (!___ibz___.sc.has('IbizproIndexService')) {
-            new IbizproIndexService();
+    static getInstance(context?: any): IbizproIndexService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}IbizproIndexService` : `IbizproIndexService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new IbizproIndexService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('IbizproIndexService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default IbizproIndexService;

@@ -126,8 +126,6 @@
       },
       "allowEmpty" : true,
       "emptyCaption" : true,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "codeName" : "rawitem1",

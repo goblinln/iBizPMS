@@ -12,27 +12,29 @@ export class IBZProStoryService extends IBZProStoryBaseService {
      * Creates an instance of IBZProStoryService.
      * @memberof IBZProStoryService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('IBZProStoryService')) {
-            return ___ibz___.sc.get('IBZProStoryService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('IBZProStoryService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {IBZProStoryService}
      * @memberof IBZProStoryService
      */
-    static getInstance(): IBZProStoryService {
-        if (!___ibz___.sc.has('IBZProStoryService')) {
-            new IBZProStoryService();
+    static getInstance(context?: any): IBZProStoryService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}IBZProStoryService` : `IBZProStoryService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new IBZProStoryService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('IBZProStoryService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default IBZProStoryService;

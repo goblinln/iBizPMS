@@ -80,6 +80,9 @@ export class AppGanttBase extends GanttControlBase {
      * @memberof AppGanttBase
      */
     public render() {
+        if (!this.controlIsLoaded) {
+            return null;
+        }
         const { controlClassNames } = this.renderOptions;
         return (
             <div class={{...controlClassNames, "app-gantt": true}}>

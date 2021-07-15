@@ -82,7 +82,8 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzfavorites`, _data);
+        const res = await this.http.post(`/ibzfavorites`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzfavorites/${_context.ibzfavorites}`);
+        const res = await this.http.delete(`/ibzfavorites/${_context.ibzfavorites}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzfavorites/${_context.ibzfavorites}`, _data);
+        const res = await this.http.put(`/ibzfavorites/${_context.ibzfavorites}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzfavorites/fetchdefault`, _data);
+        const res = await this.http.post(`/ibzfavorites/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzfavorites/${_context.ibzfavorites}/select`);
+        const res = await this.http.get(`/ibzfavorites/${_context.ibzfavorites}/select`);
+        return res;
     }
 }

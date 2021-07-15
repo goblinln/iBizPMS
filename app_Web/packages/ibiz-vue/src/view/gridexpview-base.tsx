@@ -34,7 +34,7 @@ export class GridExpViewBase extends ExpViewBase implements GridExpViewInterface
      * @type {Engine}
      * @memberof GridExpViewBase
      */
-    public engine: GridExpViewEngine = new GridExpViewEngine;
+    public engine: GridExpViewEngine = new GridExpViewEngine();
 
     /**
      * 引擎初始化

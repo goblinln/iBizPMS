@@ -386,6 +386,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "BugProductBuild",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "Bug产品版本",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -401,6 +402,7 @@
     "enableFront" : true
   }, {
     "codeName" : "BugProductOrProjectBuild",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "Bug产品或者项目版本",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -416,6 +418,7 @@
     "enableFront" : true
   }, {
     "codeName" : "CurProduct",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品版本",
     "name" : "CurProduct",
     "getPSDEDataQueries" : [ {
@@ -426,6 +429,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -437,6 +441,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductBuildDS",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品版本",
     "name" : "ProductBuildDS",
     "getPSDEDataQueries" : [ {
@@ -447,6 +452,7 @@
     "enableFront" : true
   }, {
     "codeName" : "TestBuild",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试版本",
     "name" : "TestBuild",
     "getPSDEDataQueries" : [ {
@@ -457,6 +463,7 @@
     "enableFront" : true
   }, {
     "codeName" : "TestRounds",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "测试轮次",
     "name" : "TestRounds",
     "getPSDEDataQueries" : [ {
@@ -467,6 +474,7 @@
     "enableFront" : true
   }, {
     "codeName" : "UpdateLog",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "更新日志",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {

@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -45,6 +46,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "assignTo",
@@ -59,6 +61,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkBug",
@@ -69,6 +72,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildBatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "buildBatchUnlinkBug",
@@ -79,6 +83,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildLinkBug",
     "methodType" : "DEACTION",
     "name" : "buildLinkBug",
@@ -93,6 +98,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "buildUnlinkBug",
@@ -107,6 +113,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -120,6 +127,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -134,6 +142,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Confirm",
     "methodType" : "DEACTION",
     "name" : "Confirm",
@@ -148,6 +157,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -163,6 +173,7 @@
     "userTag4" : "create",
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -180,6 +191,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -193,6 +205,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -210,6 +223,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkBug",
     "methodType" : "DEACTION",
     "name" : "LinkBug",
@@ -224,6 +238,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaaseBatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "ReleaaseBatchUnlinkBug",
@@ -238,6 +253,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseLinkBugbyBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkBugbyBug",
@@ -252,6 +268,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseLinkBugbyLeftBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkBugbyLeftBug",
@@ -266,6 +283,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseUnLinkBugbyLeftBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnLinkBugbyLeftBug",
@@ -280,6 +298,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnlinkBug",
@@ -294,6 +313,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -311,6 +331,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Resolve",
     "methodType" : "DEACTION",
     "name" : "Resolve",
@@ -325,6 +346,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -334,6 +356,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -343,6 +366,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -352,6 +376,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "TestScript",
     "methodType" : "DEACTION",
     "name" : "TestScript",
@@ -361,6 +386,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -375,6 +401,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkBug",
     "methodType" : "DEACTION",
     "name" : "UnlinkBug",
@@ -389,6 +416,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -1481,6 +1509,7 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -1495,6 +1524,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "assignTo",
@@ -1509,6 +1539,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkBug",
@@ -1519,6 +1550,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildBatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "buildBatchUnlinkBug",
@@ -1529,6 +1561,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildLinkBug",
     "methodType" : "DEACTION",
     "name" : "buildLinkBug",
@@ -1543,6 +1576,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "BuildUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "buildUnlinkBug",
@@ -1557,6 +1591,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -1570,6 +1605,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -1584,6 +1620,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Confirm",
     "methodType" : "DEACTION",
     "name" : "Confirm",
@@ -1598,6 +1635,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -1613,6 +1651,7 @@
     "userTag4" : "create",
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -1630,6 +1669,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -1643,6 +1683,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -1660,6 +1701,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "LinkBug",
     "methodType" : "DEACTION",
     "name" : "LinkBug",
@@ -1674,6 +1716,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaaseBatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "ReleaaseBatchUnlinkBug",
@@ -1688,6 +1731,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseLinkBugbyBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkBugbyBug",
@@ -1702,6 +1746,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseLinkBugbyLeftBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkBugbyLeftBug",
@@ -1716,6 +1761,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseUnLinkBugbyLeftBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnLinkBugbyLeftBug",
@@ -1730,6 +1776,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ReleaseUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnlinkBug",
@@ -1744,6 +1791,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -1761,6 +1809,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "Resolve",
     "methodType" : "DEACTION",
     "name" : "Resolve",
@@ -1775,6 +1824,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -1784,6 +1834,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -1793,6 +1844,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -1802,6 +1854,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "TestScript",
     "methodType" : "DEACTION",
     "name" : "TestScript",
@@ -1811,6 +1864,7 @@
     },
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -1825,6 +1879,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "CUSTOM",
     "codeName" : "UnlinkBug",
     "methodType" : "DEACTION",
     "name" : "UnlinkBug",
@@ -1839,6 +1894,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",

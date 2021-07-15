@@ -1,37 +1,47 @@
 <template>
-    <modal v-model='isShow' :ref="refName" class="app-modal-confirm" :class="customClass" :closable="showClose" :zIndex="zIndex" :mask="mask" :maskClosable="maskClosable" :className="getClassName()">
+    <modal
+        v-model="isShow"
+        :ref="refName"
+        class="app-modal-ok"
+        :class="customClass"
+        :closable="showClose"
+        :zIndex="zIndex"
+        :mask="mask"
+        :maskClosable="maskClosable"
+        :className="getClassName()"
+    >
         <p slot="header" :class="type" class="header">
-            <i :class="geticonClass()" ></i>
-            {{title}}
+            <i :class="geticonClass()"></i>
+            {{ title }}
         </p>
-        <div style="text-align:center" class="content" v-html="content"></div>
-         <div slot="footer" ref="modelConfirmFooter">
-             <template v-for="item in buttonModel">
-                <i-button v-if="item.visibel" :key="item.value"  :type="item.type" @click="button_click(item)">
-                    {{item.text}}
+        <div style="text-align: center" class="content" v-html="content"></div>
+        <div slot="footer" ref="modelokFooter">
+            <template v-for="item in buttonModel">
+                <i-button v-if="item.visibel" :key="item.value" :type="item.type" @click="button_click(item)">
+                    {{ item.text }}
                 </i-button>
-             </template>
-             <slot name="customFooter" @click='button_click'></slot>
+            </template>
+            <slot name="customFooter" @click="button_click"></slot>
         </div>
     </modal>
 </template>
 <script lang="ts">
-import { VNode } from "node_modules/vue/types";
-import { Subject } from "rxjs";
-import { Vue, Component, Prop } from "vue-property-decorator";
-import './app-message-box.less'
+import { VNode } from 'node_modules/vue/types';
+import { Subject } from 'rxjs';
+import { Vue, Component, Prop } from 'vue-property-decorator';
+import './app-message-box.less';
 @Component({
-    components: {}
+    components: {},
 })
 export default class AppMessageBox extends Vue {
     /**
      * 对话框类型
      *
-     * @type {('info' | 'success' | 'warning' | 'error' | 'confirm')}
+     * @type {('info' | 'success' | 'warning' | 'error')}
      * @memberof AppMessageBox
      */
     @Prop({ default: 'info' })
-    public type?: 'info' | 'success' | 'warning' | 'error' ;
+    public type?: 'info' | 'success' | 'warning' | 'error';
 
     /**
      * 标题
@@ -57,24 +67,23 @@ export default class AppMessageBox extends Vue {
      * @type {string}
      * @memberof AppMessageBox
      */
-    @Prop({ default: 'confirmOrCancel' })
-    public buttonType?: string | 'confirmOrCancel' | 'yesOrNo' | 'yesOrNoOrCancel' | 'confirm';
+    @Prop({ default: 'okcancel' })
+    public buttonType?: string | 'okcancel' | 'yesno' | 'yesnocancel' | 'ok';
 
     /**
      * 启用自定义底部
      *
      * @type {boolean}
-     * @memberof ModalConfirmOptions
+     * @memberof ModalokOptions
      */
     @Prop({ default: false })
     public visibleCustomFooter?: boolean;
-
 
     /**
      * 自定义底部
      *
      * @type {VNode}
-     * @memberof ModalConfirmOptions
+     * @memberof ModalokOptions
      */
     @Prop()
     public customFooter?: VNode;
@@ -158,19 +167,18 @@ export default class AppMessageBox extends Vue {
      * @memberof AppMessageBox
      */
     public buttonModel = [
-        {text: this.$t('app.commonwords.ok') , value: 'confirm' , type: 'primary',visibel: false },
-        {text: this.$t('app.commonwords.yes') , value: 'yes', type:'primary',visibel: false},
-        {text: this.$t('app.commonwords.no') , value: 'no', visibel: false},
-        {text: this.$t('app.commonwords.cancel') , value: 'cancel', visibel: false},
-    ]
-    
+        { text: this.$t('app.commonwords.ok'), value: 'ok', type: 'primary', visibel: false },
+        { text: this.$t('app.commonwords.yes'), value: 'yes', type: 'primary', visibel: false },
+        { text: this.$t('app.commonwords.no'), value: 'no', visibel: false },
+        { text: this.$t('app.commonwords.cancel'), value: 'cancel', visibel: false },
+    ];
 
     /**
      * 数据传递对象
      *
      * @type {any}
      * @memberof AppMessageBox
-     */ 
+     */
     public subject: null | Subject<any> = new Subject<any>();
 
     /**
@@ -178,8 +186,8 @@ export default class AppMessageBox extends Vue {
      *
      * @type {any}
      * @memberof AppMessageBox
-     */ 
-    public zIndex:any = null;
+     */
+    public zIndex: any = null;
 
     /**
      * 是否显示
@@ -193,18 +201,18 @@ export default class AppMessageBox extends Vue {
      * 获取显示模式类名 居中/top
      *
      * @memberof AppMessageBox
-     */ 
+     */
     public getClassName() {
-        return this.showMode === 'center'?'center':'top';
+        return this.showMode === 'center' ? 'center' : 'top';
     }
-    
+
     /**
      * 根据type计算iconClass
      *
      * @memberof AppMessageBox
-     */ 
-    public geticonClass(){
-        if(this.customClass){
+     */
+    public geticonClass() {
+        if (this.customClass) {
             return this.customClass;
         }
         let classes = 'ivu-icon ';
@@ -229,8 +237,8 @@ export default class AppMessageBox extends Vue {
      * 获取数据传递对象
      *
      * @memberof AppMessageBox
-     */ 
-    public getSubject(){
+     */
+    public getSubject() {
         return this.subject;
     }
 
@@ -238,8 +246,8 @@ export default class AppMessageBox extends Vue {
      * 按钮点击
      *
      * @memberof AppMessageBox
-     */ 
-    public button_click(item:any) {
+     */
+    public button_click(item: any) {
         this.isShow = false;
         this.subject?.next(item.value);
         this.close();
@@ -249,26 +257,26 @@ export default class AppMessageBox extends Vue {
      * 初始化按钮Model
      *
      * @memberof AppMessageBox
-     */ 
+     */
     public initButtonModel() {
-        if(this.visibleCustomFooter){
+        if (this.visibleCustomFooter) {
             return;
         }
-        switch(this.buttonType) {
-            case 'confirmOrCancel':
+        switch (this.buttonType) {
+            case 'okcancel':
                 this.buttonModel[0].visibel = true;
                 this.buttonModel[3].visibel = true;
                 break;
-            case 'yesOrNo':
+            case 'yesno':
                 this.buttonModel[1].visibel = true;
                 this.buttonModel[2].visibel = true;
                 break;
-            case 'yesOrNoOrCancel':
+            case 'yesnocancel':
                 this.buttonModel[1].visibel = true;
                 this.buttonModel[2].visibel = true;
                 this.buttonModel[3].visibel = true;
                 break;
-            case 'confirm':
+            case 'ok':
                 this.buttonModel[0].visibel = true;
                 break;
         }
@@ -278,23 +286,23 @@ export default class AppMessageBox extends Vue {
      * 关闭方法
      *
      * @memberof AppMessageBox
-     */ 
+     */
     public close() {
-        if(this.onClose){
-            this.onClose(this)
+        if (this.onClose) {
+            this.onClose(this);
         }
         setTimeout(() => {
             document.body.removeChild(this.$el);
             this.$destroy();
             this.subject = null;
-        }, 500)
+        }, 500);
     }
 
     /**
      * Vue生命周期created
      *
      * @memberof AppMessageBox
-     */ 
+     */
     public created() {
         this.initButtonModel();
     }
@@ -303,18 +311,18 @@ export default class AppMessageBox extends Vue {
      * Vue生命周期mounted
      *
      * @memberof AppMessageBox
-     */ 
+     */
     public mounted() {
         const zIndex = this.$store.getters.getZIndex();
         if (zIndex) {
             this.zIndex = zIndex + 100;
             this.$store.commit('updateZIndex', this.zIndex);
         }
-      if(this.visibleCustomFooter && this.customFooter){
-          this.$slots.customFooter = [this.customFooter];
-          this.$forceUpdate();
-      }
-      this.isShow = true;
+        if (this.visibleCustomFooter && this.customFooter) {
+            this.$slots.customFooter = [this.customFooter];
+            this.$forceUpdate();
+        }
+        this.isShow = true;
     }
 }
 </script>

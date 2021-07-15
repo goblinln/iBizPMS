@@ -491,6 +491,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto96",
         "name" : "界面行为组",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

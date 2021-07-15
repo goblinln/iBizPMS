@@ -262,10 +262,7 @@
           "cssName" : "panelitem-20px"
         },
         "allowEmpty" : true,
-        "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
-        "showCaption" : false
+        "emptyCaption" : true
       }, {
         "caption" : "年度",
         "codeName" : "curyear",
@@ -301,11 +298,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
-        "needCodeListConfig" : true,
-        "showCaption" : false
+        "needCodeListConfig" : true
       } ],
       "getPSLayout" : {
         "columnCount" : 24,
@@ -5883,9 +5876,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "真实用户名",
@@ -5912,9 +5903,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "判断角色",
@@ -5941,9 +5930,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "累计登录次数",
@@ -5970,9 +5957,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "累计动态数",
@@ -5999,9 +5984,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "累计创建Bug数",
@@ -6028,9 +6011,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "累计日志数",
@@ -6057,9 +6038,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "累计创建用例数",
@@ -6086,9 +6065,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "累计登录次数",
@@ -6115,9 +6092,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "累计创建需求数",
@@ -6144,9 +6119,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "累计参与产品数",
@@ -6173,9 +6146,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "累计创建计划数",
@@ -6202,9 +6173,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "累计工时数",
@@ -6231,9 +6200,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {

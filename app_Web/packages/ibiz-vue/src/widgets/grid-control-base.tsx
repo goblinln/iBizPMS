@@ -3,7 +3,8 @@ import { ViewTool, FormItemModel, Util, Verify, ModelTool, AppServiceBase, LogUt
 import { MDControlBase } from './md-control-base';
 import { AppGridService } from '../ctrl-service/app-grid-service';
 import { AppViewLogicService } from 'ibiz-vue';
-import { IPSDEDataImport,DynamicInstanceConfig, IPSDEDataImportItem, IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeList, IPSDEDataExport, IPSDEDataExportItem, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail, IPSDEGridGroupColumn, IPSDEGridEditItemUpdate } from '@ibiz/dynamic-model-api';
+import { GlobalService } from 'ibiz-service';
+import { IPSDEDataImport,DynamicInstanceConfig, IPSDEDataImportItem, IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeList, IPSDEDataExport, IPSDEDataExportItem, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail, IPSDEGridGroupColumn, IPSDEGridEditItemUpdate, IPSAppDEDataSet, IPSDEFValueRule } from '@ibiz/dynamic-model-api';
 
 /**
  * 表格部件基类
@@ -408,7 +409,9 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         const allGridEditItemVRs = this.controlInstance.getPSDEGridEditItemVRs() || [];
         if (allGridEditItemVRs.length > 0) {
             allGridEditItemVRs.forEach((item: any) => {
-                const { getPSDEGridEditItemName: gridEditItemName, checkMode, valueRuleType, getPSSysValueRule: sysRule, getPSDEFValueRule: deRule } = item;
+                const { checkMode, valueRuleType, getPSSysValueRule: sysRule } = item;
+                const deRule: IPSDEFValueRule | null = item.getPSDEFValueRule();
+                const gridEditItemName = item.getPSDEGridEditItemName();
                 if (!staticRules[gridEditItemName]) {
                     staticRules[gridEditItemName] = [];
                 }
@@ -446,7 +449,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                     // 属性值规则
                 } else if (valueRuleType == 'DEFVALUERULE' && deRule) {
                     // 有值项的情况，校验值项的值
-                    let editItem: IPSDEGridEditItem = (this.controlInstance.getPSDEGridEditItems() || []).find((item: IPSDEGridEditItem) => { return item.name === gridEditItemName; }) as IPSDEGridEditItem;
+                    let editItem: IPSDEGridEditItem = (this.controlInstance.getPSDEGridEditItems() || []).find((item: IPSDEGridEditItem) => { return item.M.getPSDEGridEditItemName === gridEditItemName; }) as IPSDEGridEditItem;
                     let valueName = editItem && editItem.valueItemName ? editItem.valueItemName : gridEditItemName;
                     staticRules[gridEditItemName].push({
                         validator: (rule: any, value: any, callback: any, source: any) => {
@@ -454,7 +457,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                             if (Util.isEmpty(source[valueName])) {
                                 return true
                             }
-                            const { isPast, infoMessage } = Verify.verifyDeRules(valueName, source, deRule.getPSDEFVRGroupCondition);
+                            const { isPast, infoMessage } = Verify.verifyDeRules(valueName, source, deRule?.getPSDEFVRGroupCondition());
                             if (!isPast) {
                                 callback(new Error(infoMessage || deRule.ruleInfo));
                             }
@@ -528,7 +531,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
     public async ctrlModelInit() {
         await super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppGridService(this.controlInstance);
+            this.service = new AppGridService(this.controlInstance, this.context);
         }
         this.initGridBasicData();
         this.initAllColumns();
@@ -578,7 +581,6 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         this.minorSortPSDEF = (this.controlInstance.getMinorSortPSAppDEField() as IPSAppDEField)?.codeName?.toLowerCase();
         this.gridRefName = `${this.name.toLowerCase()}grid`;
         this.aggMode = this.controlInstance.aggMode;
-        this.aggAction = this.controlInstance.getAggPSAppDEAction()?.codeName;
         this.allColumnsInstance = this.controlInstance.getPSDEGridColumns() || [];
         this.isEnableGroup = (this.controlInstance.enableGroup && this.controlInstance.getGroupPSAppDEField()) ? true : false;
         //开启分组
@@ -824,7 +826,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public getActionState(data: any) {
-        let tempActionModel: any = JSON.parse(JSON.stringify(this.actionModel));
+        let tempActionModel: any = Util.deepCopy(this.actionModel);
         let targetData: any = this.transformData(data);
         ViewTool.calcActionItemAuthState(targetData, tempActionModel, this.appUIService);
         return tempActionModel;
@@ -846,7 +848,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                 this.gridItemsModel[rowIndex][name].setError(null);
                 resolve(true);
             }).catch(({ errors, fields }: any) => {
-                this.gridItemsModel[rowIndex][name].setError(errors[0].message);
+                this.gridItemsModel[rowIndex][name].setError(errors?.[0].message);
                 resolve(false);
             });
         });
@@ -910,7 +912,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         this.ctrlEvent({ controlname: this.name, action: "beforeload", data: parentdata });
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
-        Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
+        Object.assign(tempViewParams, Util.deepCopy(this.viewparams));
         // 多实例查询数据处理
         let appEnvironment = AppServiceBase.getInstance().getAppEnvironment();
         if (appEnvironment.bDynamic) {
@@ -929,7 +931,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             }
         }
         Object.assign(arg, { viewparams: tempViewParams });
-        let tempContext: any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = Util.deepCopy(this.context);
         this.onControlRequset('load', tempContext, arg);
         const post: Promise<any> = this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
@@ -940,7 +942,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             }
             const data: any = response.data;
             this.totalRecord = response.total;
-            this.items = JSON.parse(JSON.stringify(data));
+            this.items = Util.deepCopy(data);
             // 清空selections,gridItemsModel
             this.selections = [];
             this.gridItemsModel = [];
@@ -992,7 +994,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                 }
             }, 300);
             if (this.aggMode && Object.is(this.aggMode, "ALL")) {
-                this.getAggData();
+                this.getAggData(tempContext, tempViewParams);
             }
             if (this.isEnableGroup) {
                 this.group();
@@ -1057,7 +1059,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             });
             let _removeAction = keys.length > 1 ? 'removeBatch' : this.removeAction;
             let _keys = keys.length > 1 ? keys : keys[0];
-            let tempContext: any = JSON.parse(JSON.stringify(this.context));
+            let tempContext: any = Util.deepCopy(this.context);
             Object.assign(tempContext, { [this.appDeCodeName.toLowerCase()]: _keys });
             const arg = { [this.appDeCodeName.toLowerCase()]: _keys };
             Object.assign(arg, { viewparams: this.viewparams });
@@ -1146,11 +1148,11 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                         this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.grid.notconfig.createaction') as string), 'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
-                        let tempContext: any = JSON.parse(JSON.stringify(this.context));
+                        let tempContext: any = Util.deepCopy(this.context);
                         this.onControlRequset('create', tempContext, item);
                         let response = await this.service.add(this.createAction, tempContext, item, this.showBusyIndicator);
                         this.onControlResponse('create', response);
-                        successItems.push(JSON.parse(JSON.stringify(response.data)));
+                        successItems.push(Util.deepCopy(response.data));
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
@@ -1160,16 +1162,16 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                         if (item[appDeCodeName?.toLowerCase()]) {
                             Object.assign(this.context, { [appDeCodeName?.toLowerCase()]: item[appDeCodeName?.toLowerCase()] });
                         }
-                        let tempContext: any = JSON.parse(JSON.stringify(this.context));
+                        let tempContext: any = Util.deepCopy(this.context);
                         this.onControlRequset('update', tempContext, item);
                         let response = await this.service.update(this.updateAction, tempContext, item, this.showBusyIndicator);
                         this.onControlResponse('update', response);
-                        successItems.push(JSON.parse(JSON.stringify(response.data)));
+                        successItems.push(Util.deepCopy(response.data));
                     }
                 }
             } catch (error) {
                 this.onControlResponse('save', error);
-                errorItems.push(JSON.parse(JSON.stringify(item)));
+                errorItems.push(Util.deepCopy(item));
                 errorMessage.push(error);
             }
         }
@@ -1229,7 +1231,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         }
         let _this = this;
         Object.assign(args[0], { viewparams: this.viewparams });
-        let tempContext: any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = Util.deepCopy(this.context);
         this.onControlRequset('newRow', tempContext, args[0]);
         let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, tempContext, args[0], this.showBusyIndicator);
         post.then((response: any) => {
@@ -1275,7 +1277,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             height: 368,
             customClass: customClass
         }
-        let container: Subject<any> = _this.$appmodal.openModal(view, JSON.parse(JSON.stringify(this.context)), this.importDataModel);
+        let container: Subject<any> = _this.$appmodal.openModal(view, Util.deepCopy(this.context), this.importDataModel);
         container.subscribe((result: any) => {
             if (Object.is(result.ret, 'OK')) {
                 this.refresh(result.datas);
@@ -1323,7 +1325,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                 Object.assign(page, { page: this.curPage - 1, size: this.limit });
             } else {
                 try {
-                    doExport(JSON.parse(JSON.stringify(this.items)));
+                    doExport(Util.deepCopy(this.items));
                 } catch (error) {
                     this.$throw(error, 'exportExcel');
                 }
@@ -1342,7 +1344,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         this.ctrlEvent({ controlname: this.name, action: "beforeload", data: parentdata });
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
-        Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
+        Object.assign(tempViewParams, Util.deepCopy(this.viewparams));
         // 多实例查询数据处理
         let appModelObj = AppServiceBase.getInstance().getAppModelDataObject();
         let appEnvironment = AppServiceBase.getInstance().getAppEnvironment();
@@ -1362,7 +1364,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             }
         }
         Object.assign(arg, { viewparams: tempViewParams });
-        let tempContext: any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = Util.deepCopy(this.context);
         this.onControlRequset('exportExcel', tempContext, arg);
         const post: Promise<any> = this.allExportColumns?.length > 0 ?
             this.service.searchDEExportData(this.fetchAction, tempContext, arg, this.showBusyIndicator) :
@@ -1374,7 +1376,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                 return;
             }
             try {
-                doExport(JSON.parse(JSON.stringify(response.data)));
+                doExport(Util.deepCopy(response.data));
             } catch (error) {
                 this.$throw(error, 'exportExcel');
             }
@@ -1642,9 +1644,9 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             if (!selection) {
                 return;
             }
-            this.selections = [...JSON.parse(JSON.stringify(selection))];
+            this.selections = [...Util.deepCopy(selection)];
         }
-        this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: this.selections });
+        this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: this.selections });
     }
 
     /**
@@ -1733,7 +1735,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             if (!selection) {
                 return;
             }
-            this.selections = [...JSON.parse(JSON.stringify(selection))];
+            this.selections = [...Util.deepCopy(selection)];
         }
         this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: this.selections });
     }
@@ -1775,7 +1777,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         this.selections = [];
         if (this.gridRowActiveMode == 1 && !isSelectColumn) {
             this.ctrlEvent({ controlname: this.name, action: "rowclick", data: Util.deepCopy(row) });
-            this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: [Util.deepCopy(row)] });
+            this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: [Util.deepCopy(row)] });
         } else if (this.gridRowActiveMode == 2 || isSelectColumn) {
             // 只选中当前行
             this.selections.push(Util.deepCopy(row));
@@ -1788,7 +1790,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                     table.toggleRowSelection(row, true);
                 }
             }
-            this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: this.selections });
+            this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: this.selections });
         }
     }
 
@@ -1950,23 +1952,31 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      *
      * @memberof GridControlBase
      */
-    public getAggData() {
-        let tempContext: any = JSON.parse(JSON.stringify(this.context));
-        this.onControlRequset('getAggData', tempContext, {});
-        this.service.getAggData(this.aggAction, tempContext, this.showBusyIndicator).then((response: any) => {
-            this.onControlResponse('getAggData', response);
-            if (!response.status || response.status !== 200) {
-                this.$throw(response, 'getAggData');
-                return;
+    public getAggData(context: any = {}, data: any = {}) {
+        const _this: any = this;
+        const dataEntity = _this.controlInstance.getAggPSAppDataEntity() as IPSAppDataEntity;
+        const dataSet = _this.controlInstance.getAggPSAppDEDataSet() as IPSAppDEDataSet;
+        if (!(dataEntity && dataSet && dataSet.codeName)) {
+            return;
+        }
+        new GlobalService().getService(dataEntity.codeName, context).then((service: any) => {
+            if (service && service[dataSet.codeName] && service[dataSet.codeName] instanceof Function) {
+                service[dataSet.codeName](context, data).then((response: any) => {
+                    _this.onControlResponse('getAggData', response);
+                    if (!response.status || response.status !== 200) {
+                        _this.$throw(response, 'getAggData');
+                        return;
+                    }
+                    _this.remoteData = response.data;
+                    _this.isDisplay = true;
+                }).catch((response: any) => {
+                    _this.onControlResponse('getAggData', response);
+                    _this.remoteData = {};
+                    _this.isDisplay = true;
+                    _this.$throw(response, 'getAggData');
+                })
             }
-            this.remoteData = response.data;
-            this.isDisplay = true;
-        }).catch((response: any) => {
-            this.onControlResponse('getAggData', response);
-            this.remoteData = {};
-            this.isDisplay = true;
-            this.$throw(response, 'getAggData');
-        })
+        });
     }
 
     /**
@@ -2052,23 +2062,26 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         this.resetGridData(row, property, rowIndex);
         this.validate(property, row, rowIndex);
         //  表格项更新对象
-        const allGridEditItemUpdates: Array<IPSDEGridEditItemUpdate> = this.controlInstance.getPSDEGridEditItemUpdates() || [];
         const allEditColumns: Array<IPSDEGridEditItem> = this.controlInstance.getPSDEGridEditItems() || [];
         if (allEditColumns && allEditColumns.length > 0) {
-            allEditColumns.forEach((item: any) => {
-                //  TODO临时提交，模型更新后改为方法
-                const itemUpdateId: any = item._data.getPSDEGridEditItemUpdate?.id;
-                if (itemUpdateId && Object.is(property, item.name)) {
-                    const editItemUpdate: IPSDEGridEditItemUpdate | undefined = allGridEditItemUpdates.find((gridEditItemUpdate: IPSDEGridEditItemUpdate) => {
-                        return itemUpdateId == gridEditItemUpdate.codeName;
-                    });
-                    if (editItemUpdate) {
+            allEditColumns.forEach((item: IPSDEGridEditItem) => {
+                const itemUpdate: IPSDEGridEditItemUpdate | null = item.getPSDEGridEditItemUpdate?.();
+                if (itemUpdate && Object.is(property, item.name)) {
+                    if (itemUpdate.customCode) {
+                        if (itemUpdate.scriptCode) {
+                            const context = Util.deepCopy(this.context);
+                            const viewparams = Util.deepCopy(this.viewparams);
+                            let data = this.items[rowIndex];
+                            eval(itemUpdate.scriptCode);
+                        }
+                    } else {
                         let details: string[] = [];
-                        (editItemUpdate.getPSDEGEIUpdateDetails?.() || []).forEach((updateDetail: any) => {
-                            details.push(updateDetail.name);
+                        const updateDetails: any[] = itemUpdate.getPSDEGEIUpdateDetails() || [];
+                        updateDetails.forEach((detail: any) => {
+                            details.push(detail.name);
                         })
-                        const showBusyIndicator = editItemUpdate.hasOwnProperty('showBusyIndicator') ? editItemUpdate.showBusyIndicator : true;
-                        this.updateGridEditItem(editItemUpdate.getPSAppDEMethod?.()?.codeName as string, row, details, showBusyIndicator);
+                        const showBusyIndicator = itemUpdate.hasOwnProperty('showBusyIndicator') ? itemUpdate.showBusyIndicator : true;
+                        this.updateGridEditItem(itemUpdate.getPSAppDEMethod?.()?.codeName as string, row, details, showBusyIndicator);
                     }
                 }
             })
@@ -2093,7 +2106,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         if (!Util.isEmpty(this.columnKeyName)) {
             Object.assign(tempContext, { [appDeCodeName?.toLowerCase()]: data[this.columnKeyName] });
         }
-        const arg: any = JSON.parse(JSON.stringify(data));
+        const arg: any = Util.deepCopy(data);
         Object.assign(arg, { viewparams: this.viewparams });
         this.onControlRequset('updateGridEditItem', tempContext, arg);
         const post: Promise<any> = this.service.frontLogic(mode, tempContext, arg, showloading);
@@ -2286,12 +2299,20 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public getSummaries(param: any) {
+        const _this: any = this;
+        const valueFormat = (value: any, format: any) => {
+            try {
+                return _this.textFormat(value, format);
+            } catch {
+                return value;
+            }
+        } 
+        const { columns, data } = param;
+        const sums: Array<any> = [];
         if (Object.is(this.aggMode, "PAGE")) {
-            const { columns, data } = param;
-            const sums: Array<any> = [];
             columns.forEach((column: any, index: number) => {
                 if (index === 0) {
-                    sums[index] = (this.$t('app.grid.sum') as string);
+                    sums[index] = (this.$t('app.grid.dataaggregate.dataaggregate') as string);
                     return;
                 }
                 this.allColumnsInstance.forEach((columnInstance: any) => {
@@ -2300,105 +2321,97 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                         return;
                     }
                 })
-                const values = data.map((item: any) => Number(item[column.property]));
-                if (!values.every((value: any) => isNaN(value))) {
-                    this.allColumnsInstance.forEach((columnInstance: any) => {
-                        if (Object.is(columnInstance.aggMode, "SUM")) {
-                            if (Object.is(column.property, columnInstance.codeName.toLowerCase())) {
-                                let tempData = values.reduce((prev: any, curr: any) => {
-                                    const value = Number(curr);
-                                    if (!isNaN(value)) {
-                                        return prev + curr;
-                                    } else {
-                                        return prev;
-                                    }
-                                }, 0);
-                                sums[index] = tempData.toFixed(3);
+                const columnInstance: IPSDEGridColumn | undefined = this.allColumnsInstance.find((_column: any) => {
+                    return Object.is(column.property, _column.codeName.toLowerCase());
+                })
+                const values = data.map((item: any) => Number(item[columnInstance && columnInstance.aggField ? columnInstance.aggField.toLowerCase() : column.property]));
+                if (!values.every((value: any) => isNaN(value)) && columnInstance) {
+                    if (Object.is(columnInstance.aggMode, "SUM")) {
+                        let tempData = values.reduce((prev: any, curr: any) => {
+                            const value = Number(curr);
+                            if (!isNaN(value)) {
+                                return prev + curr;
+                            } else {
+                                return prev;
                             }
-                        } else if (Object.is(columnInstance.aggMode, "AVG")) {
-                            if (Object.is(column.property, columnInstance.codeName.toLowerCase())) {
-                                let tempData = values.reduce((prev: any, curr: any) => {
-                                    const value = Number(curr);
-                                    if (!isNaN(value)) {
-                                        return prev + curr;
-                                    } else {
-                                        return prev;
-                                    }
-                                }, 0);
-                                sums[index] = (tempData / data.length).toFixed(2);
+                        }, 0);
+                        sums[index] = columnInstance.aggValueFormat ? valueFormat(tempData, columnInstance.aggValueFormat) : (this.$t('app.grid.dataaggregate.sum') as string) + tempData.toFixed(3);
+                    } else if (Object.is(columnInstance.aggMode, "AVG")) {
+                        let tempData = values.reduce((prev: any, curr: any) => {
+                            const value = Number(curr);
+                            if (!isNaN(value)) {
+                                return prev + curr;
+                            } else {
+                                return prev;
                             }
-                        } else if (Object.is(columnInstance.aggMode, "MAX")) {
-                            if (Object.is(column.property, columnInstance.codeName.toLowerCase())) {
-                                let tempData: any;
-                                values.forEach((item: any) => {
-                                    const value = Number(item);
-                                    if (!isNaN(value)) {
-                                        if (!tempData) {
-                                            tempData = value;
-                                        }
-                                        if (value > tempData) {
-                                            tempData = value;
-                                        }
-                                    }
-                                });
-                                sums[index] = tempData;
+                        }, 0);
+                        sums[index] = columnInstance.aggValueFormat ? valueFormat(tempData, columnInstance.aggValueFormat) : (this.$t('app.grid.dataaggregate.avg') as string) + (tempData / data.length).toFixed(2);
+                    } else if (Object.is(columnInstance.aggMode, "MAX")) {
+                        let tempData: any;
+                        values.forEach((item: any) => {
+                            const value = Number(item);
+                            if (!isNaN(value)) {
+                                if (!tempData) {
+                                    tempData = value;
+                                }
+                                if (value > tempData) {
+                                    tempData = value;
+                                }
                             }
-                        } else if (Object.is(columnInstance.aggMode, "MIN")) {
-                            if (Object.is(column.property, columnInstance.codeName.toLowerCase())) {
-                                let tempData: any;
-                                values.forEach((item: any) => {
-                                    const value = Number(item);
-                                    if (!isNaN(value)) {
-                                        if (!tempData) {
-                                            tempData = value;
-                                        }
-                                        if (value < tempData) {
-                                            tempData = value;
-                                        }
-                                    }
-                                });
-                                sums[index] = tempData;
+                        });
+                        sums[index] = columnInstance.aggValueFormat ? valueFormat(tempData, columnInstance.aggValueFormat) : (this.$t('app.grid.dataaggregate.max') as string) + tempData;
+                    } else if (Object.is(columnInstance.aggMode, "MIN")) {
+                        let tempData: any;
+                        values.forEach((item: any) => {
+                            const value = Number(item);
+                            if (!isNaN(value)) {
+                                if (!tempData) {
+                                    tempData = value;
+                                }
+                                if (value < tempData) {
+                                    tempData = value;
+                                }
                             }
-                        }
-                    })
+                        });
+                        sums[index] = columnInstance.aggValueFormat ? valueFormat(tempData, columnInstance.aggValueFormat) : (this.$t('app.grid.dataaggregate.min') as string) + tempData;
+                    }
                 } else {
                     sums[index] = '';
                 }
             });
             return sums;
         } else if (Object.is(this.aggMode, "ALL")) {
-            const { columns } = param;
-            const sums: Array<any> = [];
             columns.forEach((column: any, index: number) => {
                 if (index === 0) {
-                    sums[index] = (this.$t('app.grid.sum') as string);
+                    sums[index] = (this.$t('app.grid.dataaggregate.dataaggregate') as string);
                     return;
                 } else if (index === (columns.length - 1)) {
                     sums[index] = '';
                     return;
                 } else {
                     sums[index] = '';
-                    this.allColumnsInstance.forEach((columnInstance: any) => {
-                        if (columnInstance.aggMode && Object.is(column.property, columnInstance.codeName.toLowerCase())) {
-                            const value = Number(this.remoteData.columnInstance.codeName.toLowerCase());
-                            if (!isNaN(value)) {
-                                switch (columnInstance.aggMode) {
-                                    case 'SUM':
-                                        sums[index] = value;
-                                        break;
-                                    case 'AVG':
-                                        sums[index] = value;
-                                        break;
-                                    case 'MAX':
-                                        sums[index] = value;
-                                        break;
-                                    case 'MIN':
-                                        sums[index] = value;
-                                        break;
-                                }
+                    const columnInstance: IPSDEGridColumn | undefined = this.allColumnsInstance.find((_column: any) => {
+                        return Object.is(column.property, _column.codeName.toLowerCase());
+                    });
+                    if (columnInstance && this.remoteData) {
+                        const value = this.remoteData[columnInstance.aggField ? columnInstance.aggField.toLowerCase() : columnInstance.codeName.toLowerCase()];
+                        if (!isNaN(value)) {
+                            switch (columnInstance.aggMode) {
+                                case 'SUM':
+                                    sums[index] = columnInstance.aggValueFormat ? valueFormat(value, columnInstance.aggValueFormat) : (this.$t('app.grid.dataaggregate.sum') as string) + value;
+                                    break;
+                                case 'AVG':
+                                    sums[index] = columnInstance.aggValueFormat ? valueFormat(value, columnInstance.aggValueFormat) : (this.$t('app.grid.dataaggregate.avg') as string) + value;
+                                    break;
+                                case 'MAX':
+                                    sums[index] = columnInstance.aggValueFormat ? valueFormat(value, columnInstance.aggValueFormat) : (this.$t('app.grid.dataaggregate.max') as string) + value;
+                                    break;
+                                case 'MIN':
+                                    sums[index] = columnInstance.aggValueFormat ? valueFormat(value, columnInstance.aggValueFormat) : (this.$t('app.grid.dataaggregate.min') as string) + value;
+                                    break;
                             }
                         }
-                    })
+                    }
                 }
             });
             return sums;
@@ -2534,6 +2547,30 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
     public handleActionButtonClick(row:any, $event:any, _column:IPSDEGridUAColumn, uiactionDetail:IPSUIActionGroupDetail){
         (this.$apppopover as any).popperDestroy2();
         this.handleActionClick(row, $event, _column, uiactionDetail);
+    }
+
+    /**
+     * 计算目标部件参数
+     *
+     * @memberof GridControlBase
+     */ 
+    public computeTargetCtrlData(controlInstance: any, item?: any) {
+        const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
+        Object.assign(targetCtrlParam.dynamicProps, {
+            inputData: item,
+        })
+        Object.assign(targetCtrlParam.staticProps, {
+            transformData: this.transformData,
+            opendata: this.opendata,
+            newdata: this.newdata,
+            remove: this.remove,
+            refresh: this.refresh,
+
+        })
+        targetCtrlEvent['ctrl-event'] = ({ controlname, action, data }: { controlname: string, action: string, data: any }) => {
+            this.onCtrlEvent(controlname, action, { item: item, data: data });
+        };
+        return { targetCtrlName, targetCtrlParam, targetCtrlEvent };
     }
 
 }

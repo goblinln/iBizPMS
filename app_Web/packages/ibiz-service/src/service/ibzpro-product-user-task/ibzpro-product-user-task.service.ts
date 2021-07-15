@@ -12,27 +12,29 @@ export class IbzproProductUserTaskService extends IbzproProductUserTaskBaseServi
      * Creates an instance of IbzproProductUserTaskService.
      * @memberof IbzproProductUserTaskService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('IbzproProductUserTaskService')) {
-            return ___ibz___.sc.get('IbzproProductUserTaskService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('IbzproProductUserTaskService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {IbzproProductUserTaskService}
      * @memberof IbzproProductUserTaskService
      */
-    static getInstance(): IbzproProductUserTaskService {
-        if (!___ibz___.sc.has('IbzproProductUserTaskService')) {
-            new IbzproProductUserTaskService();
+    static getInstance(context?: any): IbzproProductUserTaskService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}IbzproProductUserTaskService` : `IbzproProductUserTaskService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new IbzproProductUserTaskService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('IbzproProductUserTaskService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default IbzproProductUserTaskService;

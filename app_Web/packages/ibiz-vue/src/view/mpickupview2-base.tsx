@@ -1,5 +1,5 @@
 import { IPSAppDEPickupView, IPSDEPickupViewPanel, IPSDETreeGridExParam, IPSTreeExpBar } from '@ibiz/dynamic-model-api';
-import { ModelTool, debounce, MPickupView2Engine, MPickUpView2Interface } from 'ibiz-core';
+import { ModelTool, debounce, MPickupView2Engine, MPickUpView2Interface, Util } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 
@@ -313,7 +313,7 @@ export class MPickUpView2Base extends MainViewBase implements MPickUpView2Interf
      * @memberof MPickUpViewBase
      */
     public onCLickLeft(): void {
-        const _selectiions = [...JSON.parse(JSON.stringify(this.viewSelections))];
+        const _selectiions = [...Util.deepCopy(this.viewSelections)];
         _selectiions.forEach((item: any) => {
             if (!item._select) {
                 return;
@@ -342,7 +342,7 @@ export class MPickUpView2Base extends MainViewBase implements MPickUpView2Interf
             model.selections.forEach((item: any) => {
                 const index: number = this.viewSelections.findIndex((selection: any) => Object.is(item.srfkey, selection.srfkey));
                 if (index === -1) {
-                    let _item: any = { ...JSON.parse(JSON.stringify(item)) };
+                    let _item: any = { ...Util.deepCopy(item) };
                     Object.assign(_item, { _select: false })
                     newSelections.push(_item);
                 } else {
@@ -402,7 +402,7 @@ export class MPickUpView2Base extends MainViewBase implements MPickUpView2Interf
             model.datas.forEach((item: any) => {
                 const index: number = this.viewSelections.findIndex((selection: any) => Object.is(item.srfkey, selection.srfkey));
                 if (index === -1) {
-                    let _item: any = { ...JSON.parse(JSON.stringify(item)) };
+                    let _item: any = { ...Util.deepCopy(item) };
                     Object.assign(_item, { _select: false })
                     this.viewSelections.push(_item);
                 }

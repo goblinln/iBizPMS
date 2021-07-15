@@ -148,9 +148,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       } ],
@@ -651,6 +648,7 @@
       "enableSort" : true
     } ],
     "getPSDEUIActionGroup" : {
+      "codeName" : "MyRe",
       "name" : "右滑行为组（我收到的）",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

@@ -806,6 +806,7 @@
       "name" : "actions",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto30",
         "name" : "计划表格操作列行为组",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

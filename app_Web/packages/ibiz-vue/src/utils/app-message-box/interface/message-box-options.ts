@@ -4,17 +4,16 @@ export interface MessageBoxOptions {
     /**
      * 对话框类型
      *
-     * @type {('info' | 'success' | 'warning' | 'error' | 'confirm')}
-     * @memberof AppModalConfirm
+     * @type {(string | 'info' | 'success' | 'warning' | 'error' | 'ok' )}
+     * @memberof AppModalok
      */
-    type?: 'info' | 'success' | 'warning' | 'error';
-
+    type?: string | 'info' | 'success' | 'warning' | 'error';
 
     /**
      * 标题
      *
      * @type {string}
-     * @memberof AppModalConfirm
+     * @memberof AppModalok
      */
     title?: string;
 
@@ -22,29 +21,29 @@ export interface MessageBoxOptions {
      * 内容
      *
      * @type {string}
-     * @memberof AppModalConfirm
+     * @memberof AppModalok
      */
     content?: string;
 
     /**
      * 按钮类型
-     * 默认值:'confirmOrCancel'
-     * confirmOrCancel 确认/取消
-     * yesOrNo 是/否
-     * yesOrNoOrCanel 是/否/取消
-     * confirm 确认
+     * 默认值:'okcancel'
+     * okcancel 确认/取消
+     * yesno 是/否
+     * yesnocanel 是/否/取消
+     * ok 确认
      * 
-     * @type {(string | 'confirmOrCancel' | 'yesOrNo' | 'yesOrNoOrCanel' | 'confirm')}
-     * @memberof ModalConfirmOptions
+     * @type {(string | 'okcancel' | 'yesno' | 'yesnocanel' | 'ok')}
+     * @memberof ModalokOptions
      */
-    buttonType?: string | 'confirmOrCancel' | 'yesOrNo' | 'yesOrNoOrCancel' | 'confirm';
+    buttonType?: string | 'okcancel' | 'yesno' | 'yesnocanel' | 'ok';
 
 
     /**
      * 启用自定义底部
      *
      * @type {boolean}
-     * @memberof ModalConfirmOptions
+     * @memberof ModalokOptions
      */
     visibleCustomFooter?: boolean;
 
@@ -53,7 +52,7 @@ export interface MessageBoxOptions {
      * 自定义底部
      *
      * @type {VNode}
-     * @memberof ModalConfirmOptions
+     * @memberof ModalokOptions
      */
     customFooter?: VNode;
 
@@ -114,7 +113,7 @@ export interface MessageBoxOptions {
      * 引用对象名称
      *
      * @type {string}
-     * @memberof ModalConfirmOptions
+     * @memberof ModalokOptions
      */
     refName?: string;
 

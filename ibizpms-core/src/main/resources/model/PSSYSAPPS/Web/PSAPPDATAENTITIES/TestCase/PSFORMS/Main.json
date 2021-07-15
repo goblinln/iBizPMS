@@ -139,9 +139,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : false,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
@@ -179,9 +176,7 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
       "hidden" : true,
-      "inputTipClosable" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {

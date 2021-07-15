@@ -419,9 +419,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "是否收藏",
@@ -448,9 +446,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "任务类型",
@@ -477,9 +473,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "任务状态",
@@ -506,9 +500,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "相关需求",
@@ -535,9 +527,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "id",
@@ -574,8 +564,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "status",
@@ -613,8 +601,6 @@
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "codeName" : "name",
@@ -647,8 +633,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "最初预计",
@@ -679,10 +663,7 @@
         },
         "unitName" : "小时",
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "消耗",
@@ -703,6 +684,7 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "consumed",
+          "precision" : 2,
           "editable" : false,
           "enableLinkView" : false
         },
@@ -713,10 +695,7 @@
         },
         "unitName" : "小时",
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "剩余",
@@ -737,6 +716,7 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "left",
+          "precision" : 2,
           "editable" : false,
           "enableLinkView" : false
         },
@@ -747,10 +727,7 @@
         },
         "unitName" : "小时",
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "enableUnitName" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "进度",
@@ -780,9 +757,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "actionGroupExtractMode" : "ITEM",
@@ -1344,11 +1318,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "allowEmpty" : true
         } ],
         "getPSLayout" : {
           "columnCount" : 24,
@@ -1667,11 +1637,7 @@
                           "colMD" : 24,
                           "layout" : "TABLE_24COL"
                         },
-                        "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
-                        "showCaption" : false
+                        "allowEmpty" : true
                       }, {
                         "actionGroupExtractMode" : "ITEM",
                         "caption" : "附件",
@@ -3388,9 +3354,7 @@
                             "layout" : "TABLE_24COL"
                           },
                           "allowEmpty" : true,
-                          "emptyCaption" : false,
                           "hidden" : true,
-                          "inputTipClosable" : false,
                           "showCaption" : true
                         } ],
                         "getPSLayout" : {
@@ -3458,11 +3422,7 @@
                           "colMD" : 24,
                           "layout" : "TABLE_24COL"
                         },
-                        "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
-                        "showCaption" : false
+                        "allowEmpty" : true
                       } ],
                       "getPSLayout" : {
                         "columnCount" : 24,

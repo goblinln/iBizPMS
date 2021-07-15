@@ -12,27 +12,29 @@ export class AccountTestCaseService extends AccountTestCaseBaseService {
      * Creates an instance of AccountTestCaseService.
      * @memberof AccountTestCaseService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('AccountTestCaseService')) {
-            return ___ibz___.sc.get('AccountTestCaseService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('AccountTestCaseService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {AccountTestCaseService}
      * @memberof AccountTestCaseService
      */
-    static getInstance(): AccountTestCaseService {
-        if (!___ibz___.sc.has('AccountTestCaseService')) {
-            new AccountTestCaseService();
+    static getInstance(context?: any): AccountTestCaseService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}AccountTestCaseService` : `AccountTestCaseService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new AccountTestCaseService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('AccountTestCaseService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default AccountTestCaseService;

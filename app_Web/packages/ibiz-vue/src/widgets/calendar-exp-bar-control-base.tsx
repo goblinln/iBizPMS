@@ -118,15 +118,6 @@ export class CalendarExpBarControlBase extends ExpBarControlBase implements Cale
     }
 
     /**
-     * 工具栏点击
-     * 
-     * @memberof CalendarExpBarControlBase
-     */
-    public handleItemClick(data: any, $event: any) {
-        this.$emit('ctrl-event', { data: data, $event: $event });
-    }
-
-    /**
      * 执行搜索
      *
      * @memberof CalendarExpBarControlBase
@@ -170,7 +161,7 @@ export class CalendarExpBarControlBase extends ExpBarControlBase implements Cale
         }
         const arg: any = args[0];
         if (this.context) {
-            Object.assign(tempContext, JSON.parse(JSON.stringify(this.context)));
+            Object.assign(tempContext, Util.deepCopy(this.context));
         }
         const calendarItem: IPSSysCalendarItem | null | undefined = ((this.$xDataControl as IPSSysCalendar).getPSSysCalendarItems() || []).find((item: IPSSysCalendarItem) => {
             return item.itemType === arg.itemType;

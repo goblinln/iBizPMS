@@ -12,27 +12,29 @@ export class CompanyService extends CompanyBaseService {
      * Creates an instance of CompanyService.
      * @memberof CompanyService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('CompanyService')) {
-            return ___ibz___.sc.get('CompanyService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('CompanyService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {CompanyService}
      * @memberof CompanyService
      */
-    static getInstance(): CompanyService {
-        if (!___ibz___.sc.has('CompanyService')) {
-            new CompanyService();
+    static getInstance(context?: any): CompanyService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}CompanyService` : `CompanyService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new CompanyService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('CompanyService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default CompanyService;

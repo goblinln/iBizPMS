@@ -4418,6 +4418,7 @@
             "layout" : "TABLE_24COL"
           },
           "getPSUIActionGroup" : {
+            "codeName" : "Auto75",
             "name" : "更多",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -5012,6 +5013,7 @@
             "layout" : "TABLE_24COL"
           },
           "getPSUIActionGroup" : {
+            "codeName" : "Auto83",
             "name" : "更多",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -5738,6 +5740,7 @@
             "layout" : "TABLE_24COL"
           },
           "getPSUIActionGroup" : {
+            "codeName" : "Auto119",
             "name" : "更多",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -6351,6 +6354,7 @@
             "layout" : "TABLE_24COL"
           },
           "getPSUIActionGroup" : {
+            "codeName" : "Auto94",
             "name" : "更多",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",

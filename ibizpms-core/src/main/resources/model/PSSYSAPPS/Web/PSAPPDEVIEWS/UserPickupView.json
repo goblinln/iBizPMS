@@ -401,6 +401,7 @@
           "name" : "uagridcolumn1",
           "noPrivDisplayMode" : 1,
           "getPSDEUIActionGroup" : {
+            "codeName" : "Auto23",
             "name" : "表格操作列默认行为组",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",

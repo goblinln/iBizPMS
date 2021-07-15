@@ -13,7 +13,6 @@ import { notNilEmpty } from 'qx-util';
  */
 export class AppFormService extends ControlServiceBase {
 
-
     /**
     * 表单实例对象
     *
@@ -44,7 +43,7 @@ export class AppFormService extends ControlServiceBase {
      * @memberof AppFormService
      */
     public async initServiceParam() {
-        this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+        this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         this.model = new AppFormModel(this.controlInstance);
     }
 
@@ -54,8 +53,8 @@ export class AppFormService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppFormService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
         this.controlInstance = opts;
     }
 

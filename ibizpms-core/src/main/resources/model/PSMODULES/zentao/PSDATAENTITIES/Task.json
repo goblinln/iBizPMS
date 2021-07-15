@@ -1944,6 +1944,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "指定用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -1955,6 +1956,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "AssignedToMyTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "指派给我任务",
     "name" : "AssignedToMyTask",
     "getPSDEDataQueries" : [ {
@@ -1966,6 +1968,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "AssignedToMyTaskPc",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "指派给我任务（PC）",
     "name" : "AssignedToMyTaskPc",
     "getPSDEDataQueries" : [ {
@@ -1977,6 +1980,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "BugTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "Bug相关任务",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -1993,6 +1997,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ByModule",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "通过模块查询",
     "name" : "ByModule",
     "getPSDEDataQueries" : [ {
@@ -2004,6 +2009,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ChildDefault",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据查询（子任务）",
     "name" : "ChildDefault",
     "getPSDEDataQueries" : [ {
@@ -2015,6 +2021,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ChildDefaultMore",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "子任务（更多）",
     "name" : "ChildDefaultMore",
     "getPSDEDataQueries" : [ {
@@ -2026,6 +2033,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ChildTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "子任务",
     "name" : "ChildTask",
     "getPSDEDataQueries" : [ {
@@ -2037,6 +2045,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ChildTaskTree",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "子任务（树）",
     "name" : "ChildTaskTree",
     "getPSDEDataQueries" : [ {
@@ -2048,6 +2057,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurFinishTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "用户年度完成任务",
     "name" : "CurFinishTask",
     "getPSDEDataQueries" : [ {
@@ -2059,6 +2069,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "CurProjectTaskQuery",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "当前项目任务",
     "name" : "CurProjectTaskQuery",
     "getPSDEDataQueries" : [ {
@@ -2070,6 +2081,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -2082,6 +2094,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "DefaultRow",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DefaultRow",
     "name" : "DefaultRow",
     "getPSDEDataQueries" : [ {
@@ -2093,6 +2106,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ESBulk",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
     "getPSDEDataQueries" : [ {
@@ -2104,6 +2118,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MultipleTaskAction",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "多人任务（权限）",
     "name" : "MultipleTaskAction",
     "getPSDEDataQueries" : [ {
@@ -2115,6 +2130,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "My",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -2126,6 +2142,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyAgentTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我代理的任务",
     "name" : "MyAgentTask",
     "getPSDEDataQueries" : [ {
@@ -2137,6 +2154,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyAllTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我相关的任务",
     "name" : "MyAllTask",
     "getPSDEDataQueries" : [ {
@@ -2148,6 +2166,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我完成的任务（汇报）",
     "name" : "MyCompleteTask",
     "getPSDEDataQueries" : [ {
@@ -2159,6 +2178,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyCompleteTaskMobDaily",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我完成的任务（移动端日报）",
     "name" : "MyCompleteTaskMobDaily",
     "getPSDEDataQueries" : [ {
@@ -2170,6 +2190,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyCompleteTaskMobMonthly",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我完成的任务（移动端月报）",
     "name" : "MyCompleteTaskMobMonthly",
     "getPSDEDataQueries" : [ {
@@ -2181,6 +2202,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyCompleteTaskMonthlyZS",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我完成的任务（月报展示）",
     "name" : "MyCompleteTaskMonthlyZS",
     "getPSDEDataQueries" : [ {
@@ -2192,6 +2214,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我完成的任务（汇报）",
     "name" : "MyCompleteTaskZS",
     "getPSDEDataQueries" : [ {
@@ -2203,6 +2226,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyCreate",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我创建的（权限）",
     "name" : "MyCreate",
     "getPSDEDataQueries" : [ {
@@ -2214,6 +2238,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我创建或参与（权限）",
     "name" : "MyCreateOrPartake",
     "getPSDEDataQueries" : [ {
@@ -2225,6 +2250,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyFavorites",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
     "getPSDEDataQueries" : [ {
@@ -2236,6 +2262,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyPlansTaskMobMonthly",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我计划参与的任务（移动端月报）",
     "name" : "MyPlansTaskMobMonthly",
     "getPSDEDataQueries" : [ {
@@ -2247,6 +2274,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyReProject",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我相关项目（权限）",
     "name" : "MyReProject",
     "getPSDEDataQueries" : [ {
@@ -2258,6 +2286,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyTomorrowPlanTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我计划参与的任务（汇报）",
     "name" : "MyTomorrowPlanTask",
     "getPSDEDataQueries" : [ {
@@ -2269,6 +2298,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "MyTomorrowPlanTaskMobDaily",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我计划参与的任务（汇报）",
     "name" : "MyTomorrowPlanTaskMobDaily",
     "getPSDEDataQueries" : [ {
@@ -2280,6 +2310,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "NextWeekCompleteTaskMobZS",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "移动端下周计划参与(汇报)",
     "name" : "NextWeekCompleteTaskMobZS",
     "getPSDEDataQueries" : [ {
@@ -2291,6 +2322,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "NextWeekCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "NextWeekCompleteTaskZS",
     "getPSDEDataQueries" : [ {
@@ -2302,6 +2334,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "NextWeekPlanCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "下周计划完成任务(汇报)",
     "name" : "NextWeekPlanCompleteTask",
     "getPSDEDataQueries" : [ {
@@ -2313,6 +2346,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "PlanTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "相关任务（计划）",
     "name" : "PlanTask",
     "getPSDEDataQueries" : [ {
@@ -2324,6 +2358,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ProjectAppTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目任务（项目立项）",
     "name" : "ProjectAppTask",
     "getPSDEDataQueries" : [ {
@@ -2335,6 +2370,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ProjectTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目任务",
     "name" : "ProjectTask",
     "getPSDEDataQueries" : [ {
@@ -2346,6 +2382,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ReportDS",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "透视表结果集",
     "name" : "ReportDS",
     "getPSDEDataQueries" : [ {
@@ -2357,6 +2394,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "RootTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "根任务",
     "name" : "RootTask",
     "getPSDEDataQueries" : [ {
@@ -2368,6 +2406,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "TaskLinkPlan",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "关联计划（当前项目未关联）",
     "name" : "TaskLinkPlan",
     "getPSDEDataQueries" : [ {
@@ -2379,6 +2418,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ThisMonthCompleteTaskChoice",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我本月完成的任务（下拉列表框）",
     "name" : "ThisMonthCompleteTaskChoice",
     "getPSDEDataQueries" : [ {
@@ -2390,6 +2430,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ThisWeekCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "ThisWeekCompleteTask",
     "getPSDEDataQueries" : [ {
@@ -2401,6 +2442,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ThisWeekCompleteTaskChoice",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "本周已完成任务(下拉框选择)",
     "name" : "ThisWeekCompleteTaskChoice",
     "getPSDEDataQueries" : [ {
@@ -2412,6 +2454,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ThisWeekCompleteTaskMobZS",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "移动端本周已完成任务(汇报)",
     "name" : "ThisWeekCompleteTaskMobZS",
     "getPSDEDataQueries" : [ {
@@ -2423,6 +2466,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ThisWeekCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "本周完成的任务(汇报)",
     "name" : "ThisWeekCompleteTaskZS",
     "getPSDEDataQueries" : [ {
@@ -2434,6 +2478,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "TodoListTask",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "todo列表查询",
     "name" : "TodoListTask",
     "getPSDEDataQueries" : [ {
@@ -2445,6 +2490,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "TypeGroup",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "任务类型分组",
     "name" : "TypeGroup",
     "getPSDEDataQueries" : [ {
@@ -2457,6 +2503,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "TypeGroupPlan",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "任务类型分组（计划）",
     "name" : "TypeGroupPlan",
     "getPSDEDataQueries" : [ {

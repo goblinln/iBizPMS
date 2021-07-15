@@ -130,7 +130,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
      */
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
-        this.service = new AppTreeService(this.controlInstance);
+        this.service = new AppTreeService(this.controlInstance, this.context);
         this.initActionModel();   
     }
 
@@ -251,7 +251,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
             srfnodeid: node.data && node.data.id ? node.data.id : '#',
             srfnodefilter: this.srfnodefilter,
         };
-        let tempViewParams: any = JSON.parse(JSON.stringify(this.viewparams));
+        let tempViewParams: any = Util.deepCopy(this.viewparams);
         let curNode: any = {};
         curNode = Util.deepObjectMerge(curNode, node);
         let tempContext: any = this.computecurNodeContext(curNode);
@@ -309,7 +309,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         // 处理多选数据
         if (!this.isSingleSelect) {
             // let leafNodes = checkedState.checkedNodes.filter((item: any) => item.leaf);
-            this.selectedNodes = JSON.parse(JSON.stringify(checkedState.checkedNodes));
+            this.selectedNodes = Util.deepCopy(checkedState.checkedNodes);
             this.ctrlEvent({
                 controlname: this.name,
                 action: 'selectionchange',
@@ -334,7 +334,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         }
         // 只处理最底层子节点
         if (this.isBranchAvailable || data.leaf) {
-            this.currentselectedNode = JSON.parse(JSON.stringify(data));
+            this.currentselectedNode = Util.deepCopy(data);
             // 单选直接替换
             if (this.isSingleSelect) {
                 this.selectedNodes = [this.currentselectedNode];
@@ -382,7 +382,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
     public refresh_node(curContext: any, arg: any = {}, parentnode?: boolean): void {
         const { srfnodeid: id } = arg;
         Object.assign(arg, { viewparams: this.viewparams });
-        let tempContext:any = JSON.parse(JSON.stringify(curContext));
+        let tempContext:any = Util.deepCopy(curContext);
         this.onControlRequset('refresh_node', tempContext, arg);
         const get: Promise<any> = this.service.getNodes(tempContext, arg);
         get.then((response: any) => {
@@ -522,7 +522,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         if (Object.is(nodeType, 'STATIC')) {
             return this.copyActionModel;
         }
-        let service: any = await new GlobalService().getService(appEntityName);
+        let service: any = await new GlobalService().getService(appEntityName, this.context);
         if (this.copyActionModel && Object.keys(this.copyActionModel).length > 0) {
             if (service['Get'] && service['Get'] instanceof Function) {
                 let tempContext: any = Util.deepCopy(this.context);
@@ -579,9 +579,9 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
     public computecurNodeContext(curNode: any) {
         let tempContext: any = {};
         if (curNode && curNode.data && curNode.data.srfappctx) {
-            tempContext = JSON.parse(JSON.stringify(curNode.data.srfappctx));
+            tempContext = Util.deepCopy(curNode.data.srfappctx);
         } else {
-            tempContext = JSON.parse(JSON.stringify(this.context));
+            tempContext = Util.deepCopy(this.context);
         }
         return tempContext;
     }
@@ -641,7 +641,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
                 }
                 defaultData = items[index];
                 this.setTreeNodeHighLight(defaultData);
-                this.currentselectedNode = JSON.parse(JSON.stringify(defaultData));
+                this.currentselectedNode = Util.deepCopy(defaultData);
                 if (this.isBranchAvailable || defaultData.leaf) {
                     this.selectedNodes = [this.currentselectedNode];
                     this.ctrlEvent({
@@ -674,7 +674,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
                 if (!isSelectedAll) {
                     if (this.isSingleSelect) {
                         this.setTreeNodeHighLight(checkedNodes[0]);
-                        this.currentselectedNode = JSON.parse(JSON.stringify(checkedNodes[0]));
+                        this.currentselectedNode = Util.deepCopy(checkedNodes[0]);
                         this.selectedNodes = [this.currentselectedNode];
                     } else {
                         this.selectedNodes = this.selectedNodes.concat(checkedNodes);

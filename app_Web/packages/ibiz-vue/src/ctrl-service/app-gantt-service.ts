@@ -51,7 +51,7 @@ export class AppGanttService extends ControlServiceBase {
      * @memberof AppGanttService
      */
     public async initServiceParam() {
-        this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+        this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         await this.initTreeNodeEntityService();
     }
 
@@ -61,8 +61,8 @@ export class AppGanttService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppGanttService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
         this.controlInstance = opts;
         this.model = new AppGanttModel(opts);
         this.initServiceParam();

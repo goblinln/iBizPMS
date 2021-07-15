@@ -309,6 +309,17 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
      * @memberof SubTaskService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return await this.executeAppDeLogic('GetUserConcat',_context,_data);
+        try {
+            _data =  await this.executeAppDELogic('GetUserConcat',_context,_data);
+            return new HttpResponse(_data, {
+                ok: true,
+                status: 200
+            });
+        }catch (error) {
+            return new HttpResponse({message:error.message}, {
+                ok: false,
+                status: 500,
+            });
+        }
     }
 }

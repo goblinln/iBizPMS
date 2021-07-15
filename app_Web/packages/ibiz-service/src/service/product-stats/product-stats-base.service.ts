@@ -116,7 +116,8 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/productstats`, _data);
+        const res = await this.http.post(`/productstats`, _data);
+        return res;
     }
     /**
      * Get
@@ -165,7 +166,8 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productstats/${_context.productstats}`);
+        const res = await this.http.delete(`/productstats/${_context.productstats}`);
+        return res;
     }
     /**
      * Update
@@ -177,7 +179,8 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productstats/${_context.productstats}`, _data);
+        const res = await this.http.put(`/productstats/${_context.productstats}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -188,7 +191,8 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productstats/fetchdefault`, _data);
+        const res = await this.http.post(`/productstats/fetchdefault`, _data);
+        return res;
     }
     /**
      * FetchNoOpenProduct
@@ -199,7 +203,8 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchNoOpenProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productstats/fetchnoopenproduct`, _data);
+        const res = await this.http.post(`/productstats/fetchnoopenproduct`, _data);
+        return res;
     }
     /**
      * FetchProdctQuantiGird
@@ -210,7 +215,8 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchProdctQuantiGird(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productstats/fetchprodctquantigird`, _data);
+        const res = await this.http.post(`/productstats/fetchprodctquantigird`, _data);
+        return res;
     }
     /**
      * FetchProductInputTable
@@ -221,7 +227,8 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchProductInputTable(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productstats/fetchproductinputtable`, _data);
+        const res = await this.http.post(`/productstats/fetchproductinputtable`, _data);
+        return res;
     }
     /**
      * FetchProductcompletionstatistics
@@ -232,7 +239,8 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchProductcompletionstatistics(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productstats/fetchproductcompletionstatistics`, _data);
+        const res = await this.http.post(`/productstats/fetchproductcompletionstatistics`, _data);
+        return res;
     }
     /**
      * Select
@@ -243,6 +251,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productstats/${_context.productstats}/select`);
+        const res = await this.http.get(`/productstats/${_context.productstats}/select`);
+        return res;
     }
 }

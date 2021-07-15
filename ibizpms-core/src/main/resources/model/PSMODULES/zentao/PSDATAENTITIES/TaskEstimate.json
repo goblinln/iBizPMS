@@ -380,6 +380,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ActionMonth",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "日志月",
     "name" : "ActionMonth",
     "getPSDEDataQueries" : [ {
@@ -391,6 +392,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ActionYear",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "日志年",
     "name" : "ActionYear",
     "getPSDEDataQueries" : [ {
@@ -402,6 +404,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -414,6 +417,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "Defaults",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT1",
     "name" : "DEFAULT1",
     "getPSDEDataQueries" : [ {
@@ -425,6 +429,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ProjectActionMonth",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "日志月（项目）",
     "name" : "ProjectActionMonth",
     "getPSDEDataQueries" : [ {
@@ -436,6 +441,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ProjectActionYear",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "日志年（项目）",
     "name" : "ProjectActionYear",
     "getPSDEDataQueries" : [ {
@@ -447,6 +453,7 @@
     "enableTempData" : true
   }, {
     "codeName" : "ProjectTaskEstimate",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目日志",
     "name" : "ProjectTaskEstimate",
     "getPSDEDataQueries" : [ {

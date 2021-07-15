@@ -8,20 +8,15 @@ import {
     IPSAppView,
     IPSAppViewRef,
     IPSNavigateContext,
-    IPSNavigateParam,
+    IPSNavigateParam
 } from '@ibiz/dynamic-model-api';
 import { ModelTool, StringUtil, UIActionTool, Util } from 'ibiz-core';
 import { Subject } from 'rxjs';
 import { AppGlobalService } from '../app-service';
 import { appPopup } from '../utils';
+import { AppDEUIAction } from './app-ui-action';
 
-export class AppFrontAction {
-    /**
-     * 模型数据
-     *
-     * @memberof AppFrontAction
-     */
-    private actionModel!: IPSAppDEUIAction;
+export class AppFrontAction extends AppDEUIAction {
 
     /**
      * 初始化AppFrontAction
@@ -29,7 +24,7 @@ export class AppFrontAction {
      * @memberof AppFrontAction
      */
     constructor(opts: IPSAppDEUIAction, context?: any) {
-        this.actionModel = opts;
+        super(opts, context);
     }
 
     /**
@@ -55,6 +50,10 @@ export class AppFrontAction {
         srfParentDeName?: string,
         deUIService?: any,
     ) {
+        if (Object.is(this.actionModel?.uILogicAttachMode, 'REPLACE')) {
+            await this.executeDEUILogic(args, context, params, $event, xData, actionContext, srfParentDeName);
+            return;
+        }
         const actionTarget: string | null = this.actionModel.actionTarget;
         if (Object.is(actionTarget, 'SINGLEDATA')) {
             actionContext.$throw(actionContext.$t('app.commonwords.nosupportsingle'), 'AppFrontAction');
@@ -235,7 +234,10 @@ export class AppFrontAction {
                 }
             }
             //打开视图后续逻辑
-            const openViewNextLogic: any = (actionModel: any, actionContext: any, xData: any, resultDatas?: any) => {
+            const openViewNextLogic: any = async (actionModel: any, actionContext: any, xData: any, resultDatas?: any) => {
+                if (Object.is(actionModel?.uILogicAttachMode, 'AFTER')) {
+                    await this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
+                }
                 if (actionModel.reloadData && xData && xData.refresh && xData.refresh instanceof Function) {
                     xData.refresh(args);
                 }
@@ -335,7 +337,7 @@ export class AppFrontAction {
                     openViewNextLogic(this.actionModel, actionContext, xData, result.datas);
                     return result.datas;
                 });
-            } else if (frontPSAppView.openMode.indexOf('DRAWER') !== -1) {
+            } else if (frontPSAppView.openMode?.indexOf('DRAWER') !== -1) {
                 const view: any = {
                     viewname: 'app-view-shell',
                     height: frontPSAppView.height,

@@ -53,18 +53,28 @@ export class AppDeLogicService {
      *
      * @param {IPSAppDELogic} logic 处理逻辑模型对象
      * @param {IContext} context 应用上下文参数
-     * @param {IParams} params 数据参数
+     * @param {IParams} data 数据参数
      * @return {*} 
      * @memberof AppDeLogicService
      */
-    public async onExecute(logic: IPSAppDELogic, context: IContext, params: IParams) {
-        let ActionContext = await this.beforeExecute(logic, context, params);
-        let startNode: IPSDELogicNode | null = logic.getStartPSDELogicNode();
-        if (!startNode) {
-            LogUtil.warn('没有开始节点');
-            return params;
+    public async onExecute(logic: IPSAppDELogic, context: IContext, data: IParams) {
+        let actionContext = await this.beforeExecute(logic, context, data);
+        // 自定义脚本代码
+        if (logic && logic.customCode) {
+            if(logic.scriptCode){
+                eval(logic.scriptCode);
+                return data;
+            }else{
+                LogUtil.warn('自定义代码不能为空');
+            }
+        } else {
+            let startNode: IPSDELogicNode | null = logic.getStartPSDELogicNode();
+            if (!startNode) {
+                LogUtil.warn('没有开始节点');
+                return data;
+            }
+            return this.executeNode(startNode, actionContext);
         }
-        return this.executeNode(startNode, ActionContext);
     }
 
     /**
@@ -101,15 +111,11 @@ export class AppDeLogicService {
                 console.log(`${logicNode.logicNodeType}暂未支持`);
         }
         // 有后续节点时继续递归，反之返回值。
-        if (result.nextNodes?.length > 0) {
+        if (result && (result.nextNodes?.length > 0)) {
             return await this.executeNextNodes(result.nextNodes, actionContext);
         } else {
             const { defaultParam } = result.actionContext;
-            if (defaultParam && defaultParam.exceptionInfo) {
-                return { status: 500, message: defaultParam.exceptionInfo };
-            } else {
-                return { status: 200, data: defaultParam };
-            }
+            return defaultParam;
         }
     }
 

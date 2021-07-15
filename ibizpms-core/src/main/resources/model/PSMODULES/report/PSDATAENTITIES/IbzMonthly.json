@@ -319,6 +319,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -330,6 +331,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyMonthly",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的月报",
     "name" : "MyMonthly",
     "getPSDEDataQueries" : [ {
@@ -340,6 +342,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyMonthlyMob",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的月报（移动端）",
     "name" : "MyMonthlyMob",
     "getPSDEDataQueries" : [ {
@@ -350,6 +353,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyReceivedMonthly",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我收到的月报",
     "name" : "MyReceivedMonthly",
     "getPSDEDataQueries" : [ {
@@ -360,6 +364,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MySubmitMonthly",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我提交的月报",
     "name" : "MySubmitMonthly",
     "getPSDEDataQueries" : [ {
@@ -370,6 +375,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductMonthly",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品月报",
     "name" : "ProductMonthly",
     "getPSDEDataQueries" : [ {
@@ -380,6 +386,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectMonthly",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目月报",
     "name" : "ProjectMonthly",
     "getPSDEDataQueries" : [ {

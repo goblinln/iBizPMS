@@ -195,9 +195,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/activate`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/activate`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/activate`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/activate`, _data);
+        return res;
     }
     /**
      * CancelProjectTop
@@ -210,9 +212,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async CancelProjectTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/cancelprojecttop`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/cancelprojecttop`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/cancelprojecttop`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/cancelprojecttop`, _data);
+        return res;
     }
     /**
      * Close
@@ -225,9 +229,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/close`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/close`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/close`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/close`, _data);
+        return res;
     }
     /**
      * Create
@@ -246,7 +252,8 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/products/${_context.product}/projects`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects`, _data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -255,7 +262,8 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/projects`, _data);
+        const res = await this.http.post(`/projects`, _data);
+        return res;
     }
     /**
      * Get
@@ -304,9 +312,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async ImportPlanStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/importplanstories`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/importplanstories`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/importplanstories`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/importplanstories`, _data);
+        return res;
     }
     /**
      * LinkProduct
@@ -319,9 +329,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async LinkProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/linkproduct`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/linkproduct`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/linkproduct`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/linkproduct`, _data);
+        return res;
     }
     /**
      * LinkStory
@@ -334,9 +346,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/linkstory`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/linkstory`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/linkstory`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/linkstory`, _data);
+        return res;
     }
     /**
      * ProjectTop
@@ -349,9 +363,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async ProjectTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/projecttop`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projecttop`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/projecttop`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/projecttop`, _data);
+        return res;
     }
     /**
      * Putoff
@@ -364,9 +380,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async Putoff(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/putoff`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/putoff`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/putoff`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/putoff`, _data);
+        return res;
     }
     /**
      * Remove
@@ -378,9 +396,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
-            return this.http.delete(`/products/${_context.product}/projects/${_context.project}`);
+            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}`);
+            return res;
         }
-        return this.http.delete(`/projects/${_context.project}`);
+        const res = await this.http.delete(`/projects/${_context.project}`);
+        return res;
     }
     /**
      * Start
@@ -393,9 +413,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/start`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/start`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/start`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/start`, _data);
+        return res;
     }
     /**
      * Suspend
@@ -408,9 +430,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async Suspend(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/suspend`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/suspend`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/suspend`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/suspend`, _data);
+        return res;
     }
     /**
      * UnlinkProduct
@@ -423,9 +447,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async UnlinkProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/unlinkproduct`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/unlinkproduct`, _data);
+            return res;
         }
-        return this.http.post(`/projects/${_context.project}/unlinkproduct`, _data);
+        const res = await this.http.post(`/projects/${_context.project}/unlinkproduct`, _data);
+        return res;
     }
     /**
      * Update
@@ -438,10 +464,12 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/projects/${_context.project}`, _data);
+            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}`, _data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projects/${_context.project}`, _data);
+        const res = await this.http.put(`/projects/${_context.project}`, _data);
+        return res;
     }
     /**
      * FetchCurDefaultQuery
@@ -453,9 +481,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      */
     async FetchCurDefaultQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/projects/fetchcurdefaultquery`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/fetchcurdefaultquery`, _data);
+            return res;
         }
-        return this.http.post(`/projects/fetchcurdefaultquery`, _data);
+        const res = await this.http.post(`/projects/fetchcurdefaultquery`, _data);
+        return res;
     }
     /**
      * FetchCurProduct
@@ -467,9 +497,11 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      */
     async FetchCurProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/projects/fetchcurproduct`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/fetchcurproduct`, _data);
+            return res;
         }
-        return this.http.post(`/projects/fetchcurproduct`, _data);
+        const res = await this.http.post(`/projects/fetchcurproduct`, _data);
+        return res;
     }
 
     /**

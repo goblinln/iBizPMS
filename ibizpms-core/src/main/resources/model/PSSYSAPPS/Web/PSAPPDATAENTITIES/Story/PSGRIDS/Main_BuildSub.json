@@ -217,6 +217,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "Auto54",
       "name" : "解除关联（版本——需求）",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

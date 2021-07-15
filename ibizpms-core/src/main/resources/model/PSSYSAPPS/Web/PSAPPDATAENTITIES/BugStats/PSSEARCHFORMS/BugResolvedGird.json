@@ -72,9 +72,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "needCodeListConfig" : true,
       "showCaption" : true
     }, {
@@ -107,10 +104,8 @@
         "colMD" : 6,
         "layout" : "TABLE_24COL"
       },
+      "valueFormat" : "YYYY-MM-DD",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "至",
@@ -142,10 +137,8 @@
         "colMD" : 6,
         "layout" : "TABLE_24COL"
       },
+      "valueFormat" : "YYYY-MM-DD",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {

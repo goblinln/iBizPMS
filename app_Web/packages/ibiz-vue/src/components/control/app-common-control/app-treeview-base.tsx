@@ -122,6 +122,7 @@ export class AppTreeViewBase extends TreeControlBase {
             iconElement = <icon type="ios-paper-outline"></icon>
         }
 
+        const cssName = data.cssName ? data.cssName : "";
         // 绘制显示文本
         let textElement = null;
         if (data.html) {
@@ -150,7 +151,7 @@ export class AppTreeViewBase extends TreeControlBase {
             >
                 <tooltip transfer style='width: 100%;' max-width={2000} placement='right'>
                     <div
-                        class='tree-node'
+                        class={['tree-node',cssName]}
                         on-dblclick={() => {
                             debounce(this.doDefaultAction, [node], this);
                         }}
@@ -162,7 +163,7 @@ export class AppTreeViewBase extends TreeControlBase {
                         <badge count={nodeCount} type="primary" showZero={data.counterMode !== 1}></badge>
                     </div>
                     <template slot='content'>
-                        {textElement}
+                        {data.tooltip ? data.tooltip : textElement}
                     </template>
                 </tooltip>
             </context-menu>

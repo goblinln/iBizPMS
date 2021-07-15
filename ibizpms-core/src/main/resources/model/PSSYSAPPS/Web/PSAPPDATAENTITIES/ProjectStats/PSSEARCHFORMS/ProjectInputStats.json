@@ -67,9 +67,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "needCodeListConfig" : true,
       "showCaption" : true
     }, {
@@ -103,10 +100,8 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "valueFormat" : "YYYY-MM-DD",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "项目结束时间",
@@ -138,10 +133,8 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "valueFormat" : "YYYY-MM-DD",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {

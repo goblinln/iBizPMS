@@ -121,7 +121,7 @@ export class ChartExpBarControlBase extends ExpBarControlBase {
         }
         const arg: any = args[0];
         if (this.context) {
-            Object.assign(tempContext, JSON.parse(JSON.stringify(this.context)));
+            Object.assign(tempContext, Util.deepCopy(this.context));
         }
         const seriesItem: IPSDEChartSeries | null | undefined = (this.$xDataControl.getPSDEChartSerieses() || []).find((item: IPSDEChartSeries) => {
             return item.name === arg._chartName;

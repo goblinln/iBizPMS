@@ -12,27 +12,29 @@ export class BugService extends BugBaseService {
      * Creates an instance of BugService.
      * @memberof BugService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('BugService')) {
-            return ___ibz___.sc.get('BugService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('BugService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {BugService}
      * @memberof BugService
      */
-    static getInstance(): BugService {
-        if (!___ibz___.sc.has('BugService')) {
-            new BugService();
+    static getInstance(context?: any): BugService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}BugService` : `BugService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new BugService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('BugService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default BugService;

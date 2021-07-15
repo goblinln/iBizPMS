@@ -19,3 +19,4 @@ declare module  '@interactjs/modifiers';
 declare module  '@interactjs/dev-tools';
 declare module '@interactjs/interact';
 declare module 'events';
+declare module 'vue-text-format';

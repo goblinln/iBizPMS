@@ -619,6 +619,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto9",
         "name" : "解除绑定（Bug）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

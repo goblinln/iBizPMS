@@ -36,7 +36,8 @@ function getAppLocale(){
                 yes: "yes",
                 no: "no",
                 wrongdataformat:"The data format is wrong!",
-                isexist:"Exist",                
+                isexist:"Exist",
+                srfmajortext: "Major Text"
             },
             local:{
                 new: "New",
@@ -68,6 +69,13 @@ function getAppLocale(){
                 exportfail: "Data export failed",
                 sum: "Total",
                 formitemfailed: "Form item update failed",
+                dataaggregate:{
+                    dataaggregate: "Aggregate",
+                    sum: "Sum：",
+                    avg: "Avg：",
+                    max: "Max：",
+                    min: "Min：",
+                },
             },
             list: {
                 notconfig: {

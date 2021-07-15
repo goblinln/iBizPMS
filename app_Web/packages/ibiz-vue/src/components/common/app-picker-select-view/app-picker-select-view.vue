@@ -328,7 +328,7 @@ export default class AppPickerSelectView extends Vue {
      * @param {*} oldVal
      * @memberof AppPickerSelectView
      */
-    @Watch('value', {immediate: true, deep: true })
+    @Watch('value', {immediate: false, deep: true })
     public onValueChange(newVal: any, oldVal: any) {
         if(this.isSingleSelect){
             this.queryValue = newVal;

@@ -69,7 +69,7 @@ export class AppMapService extends ControlServiceBase {
      */
     public async initServiceParam(opts: any) {
         this.controlInstance = opts;
-        this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+        this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         this.model = new AppMapModel(opts);
         this.initMapConfig();
     }
@@ -99,8 +99,8 @@ export class AppMapService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppMapService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
     }
 
     /**

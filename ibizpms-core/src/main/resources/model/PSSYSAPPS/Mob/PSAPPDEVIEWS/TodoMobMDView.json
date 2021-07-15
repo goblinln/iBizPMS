@@ -536,6 +536,7 @@
       "name" : "srfmstag"
     } ],
     "getPSDEUIActionGroup2" : {
+      "codeName" : "Auto60",
       "name" : "右滑行为组",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

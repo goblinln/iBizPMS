@@ -684,6 +684,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto57",
         "name" : "Bug表格操作列（版本下属）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

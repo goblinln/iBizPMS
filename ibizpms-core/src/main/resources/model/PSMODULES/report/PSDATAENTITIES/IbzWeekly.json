@@ -258,6 +258,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -269,6 +270,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyNotSubmit",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的周报",
     "name" : "MyNotSubmit",
     "getPSDEDataQueries" : [ {
@@ -279,6 +281,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyWeekly",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我收到的周报",
     "name" : "MyWeekly",
     "getPSDEDataQueries" : [ {
@@ -289,6 +292,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductTeamMemberWeekly",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品团队成员周报",
     "name" : "ProductTeamMemberWeekly",
     "getPSDEDataQueries" : [ {
@@ -299,6 +303,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectWeekly",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目周报",
     "name" : "ProjectWeekly",
     "getPSDEDataQueries" : [ {

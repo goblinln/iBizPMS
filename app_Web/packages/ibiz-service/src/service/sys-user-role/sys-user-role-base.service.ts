@@ -82,7 +82,8 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/sysuserroles`, _data);
+        const res = await this.http.post(`/sysuserroles`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
      * @memberof SysUserRoleService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysuserroles/${_context.sysuserrole}`);
+        const res = await this.http.delete(`/sysuserroles/${_context.sysuserrole}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysuserroles/${_context.sysuserrole}`, _data);
+        const res = await this.http.put(`/sysuserroles/${_context.sysuserrole}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
      * @memberof SysUserRoleService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysuserroles/fetchdefault`, _data);
+        const res = await this.http.post(`/sysuserroles/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
      * @memberof SysUserRoleService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysuserroles/${_context.sysuserrole}/select`);
+        const res = await this.http.get(`/sysuserroles/${_context.sysuserrole}/select`);
+        return res;
     }
 }

@@ -12,6 +12,7 @@ import i18n from '@/locale';
 import { install } from 'ibiz-service';
 import { installPlugin } from '@/plugin/app-plugin-service';
 import { Environment } from '@/environments/environment';
+import format from 'vue-text-format'
 
 import 'element-ui/lib/theme-chalk/index.css';
 import 'view-design/dist/styles/iview.css';
@@ -68,6 +69,7 @@ Vue.use(Print);
 Vue.use(ibizLab);
 Vue.use(Vuex);
 Vue.use(win.AVUE);
+Vue.use(format);
 Vue.use(VueRouter);;
 Vue.use(ElementUi, {
   i18n: (key: any, value: any) => i18n.t(key, value)

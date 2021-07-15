@@ -12,27 +12,29 @@ export class ProjectDailyService extends ProjectDailyBaseService {
      * Creates an instance of ProjectDailyService.
      * @memberof ProjectDailyService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ProjectDailyService')) {
-            return ___ibz___.sc.get('ProjectDailyService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ProjectDailyService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {ProjectDailyService}
      * @memberof ProjectDailyService
      */
-    static getInstance(): ProjectDailyService {
-        if (!___ibz___.sc.has('ProjectDailyService')) {
-            new ProjectDailyService();
+    static getInstance(context?: any): ProjectDailyService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ProjectDailyService` : `ProjectDailyService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ProjectDailyService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ProjectDailyService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default ProjectDailyService;

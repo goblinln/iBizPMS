@@ -191,6 +191,7 @@
     "enableSort" : true
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "Auto126",
     "name" : "右滑行为组（我提交的）",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

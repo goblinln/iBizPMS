@@ -236,6 +236,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -247,6 +248,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MonthFinishTaskAndBug",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "月完成任务数及累计工时和解决Bug数",
     "name" : "MonthFinishTaskAndBug",
     "getPSDEDataQueries" : [ {
@@ -257,6 +259,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MonthOpenedBugAndCase",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "月创建Bug数和创建用例数",
     "name" : "MonthOpenedBugAndCase",
     "getPSDEDataQueries" : [ {
@@ -267,6 +270,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MonthOpenedStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "月创建需求数",
     "name" : "MonthOpenedStory",
     "getPSDEDataQueries" : [ {

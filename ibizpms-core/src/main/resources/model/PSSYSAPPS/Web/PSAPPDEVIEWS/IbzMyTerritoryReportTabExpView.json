@@ -645,6 +645,7 @@
             "name" : "uagridcolumn1",
             "noPrivDisplayMode" : 1,
             "getPSDEUIActionGroup" : {
+              "codeName" : "Auto117",
               "name" : "修改",
               "getPSUIActionGroupDetails" : [ {
                 "detailType" : "DEUIACTION",

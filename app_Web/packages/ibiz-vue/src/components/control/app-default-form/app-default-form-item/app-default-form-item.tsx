@@ -222,7 +222,7 @@ export class AppDefaultFormItem extends AppDefaultFormDetail {
         contentStyle += contentWidth && contentWidth != 0 ? `width:${contentWidth}px;` : '';
         contentStyle += contentHeight && contentHeight != 0 ? `height:${contentHeight}px;` : '';
         contentStyle += this.runtimeModel?.visible ? '' : 'display: none;';
-        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
+        let labelCaption: any = this.detailsInstance.captionItemName ? this.data[this.detailsInstance.captionItemName.toLowerCase()] : this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             <app-form-item
                 name={name}

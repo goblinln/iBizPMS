@@ -201,6 +201,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "UAGroup",
       "name" : "行编辑操作栏",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

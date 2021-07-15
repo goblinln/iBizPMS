@@ -63,9 +63,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "产品名称",
@@ -93,9 +90,6 @@
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     }, {
       "caption" : "打包日期",
@@ -126,10 +120,8 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "valueFormat" : "YYYY-MM-DD",
       "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "inputTipClosable" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {

@@ -140,7 +140,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/products/${_context.product}/productteams`, _data);
+            const res = await this.http.post(`/products/${_context.product}/productteams`, _data);
+            return res;
         }
     this.log.warn([`[ProductTeam]>>>[Create函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -189,7 +190,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productteam) {
-            return this.http.delete(`/products/${_context.product}/productteams/${_context.productteam}`);
+            const res = await this.http.delete(`/products/${_context.product}/productteams/${_context.productteam}`);
+            return res;
         }
     this.log.warn([`[ProductTeam]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -205,7 +207,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.productteam) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productteams/${_context.productteam}`, _data);
+            const res = await this.http.put(`/products/${_context.product}/productteams/${_context.productteam}`, _data);
+            return res;
         }
     this.log.warn([`[ProductTeam]>>>[Update函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -220,7 +223,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
      */
     async FetchProductTeamInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
+            const res = await this.http.post(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
+            return res;
         }
     this.log.warn([`[ProductTeam]>>>[FetchProductTeamInfo函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -235,7 +239,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
      */
     async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
+            const res = await this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
+            return res;
         }
     this.log.warn([`[ProductTeam]>>>[FetchSpecifyTeam函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });

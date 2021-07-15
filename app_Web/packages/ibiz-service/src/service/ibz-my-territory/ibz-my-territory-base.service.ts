@@ -82,7 +82,8 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzmyterritories`, _data);
+        const res = await this.http.post(`/ibzmyterritories`, _data);
+        return res;
     }
     /**
      * Get
@@ -155,7 +156,8 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzmyterritories/${_context.ibzmyterritory}`);
+        const res = await this.http.delete(`/ibzmyterritories/${_context.ibzmyterritory}`);
+        return res;
     }
     /**
      * Update
@@ -167,7 +169,8 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzmyterritories/${_context.ibzmyterritory}`, _data);
+        const res = await this.http.put(`/ibzmyterritories/${_context.ibzmyterritory}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -178,7 +181,8 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchdefault`, _data);
+        const res = await this.http.post(`/ibzmyterritories/fetchdefault`, _data);
+        return res;
     }
     /**
      * FetchMyWork
@@ -189,7 +193,8 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchMyWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchmywork`, _data);
+        const res = await this.http.post(`/ibzmyterritories/fetchmywork`, _data);
+        return res;
     }
     /**
      * FetchMyWorkMob
@@ -200,7 +205,8 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchMyWorkMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchmyworkmob`, _data);
+        const res = await this.http.post(`/ibzmyterritories/fetchmyworkmob`, _data);
+        return res;
     }
     /**
      * FetchMyWorkPm
@@ -211,7 +217,8 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchMyWorkPm(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchmyworkpm`, _data);
+        const res = await this.http.post(`/ibzmyterritories/fetchmyworkpm`, _data);
+        return res;
     }
     /**
      * FetchPersonInfo
@@ -222,7 +229,8 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchPersonInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchpersoninfo`, _data);
+        const res = await this.http.post(`/ibzmyterritories/fetchpersoninfo`, _data);
+        return res;
     }
     /**
      * FetchWelcome
@@ -233,7 +241,8 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchWelcome(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchwelcome`, _data);
+        const res = await this.http.post(`/ibzmyterritories/fetchwelcome`, _data);
+        return res;
     }
     /**
      * Select
@@ -244,6 +253,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}/select`);
+        const res = await this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}/select`);
+        return res;
     }
 }

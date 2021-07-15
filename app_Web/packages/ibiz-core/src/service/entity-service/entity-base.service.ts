@@ -1,6 +1,6 @@
 import { clone, equals, isEmpty, isNil, mergeDeepLeft, where } from 'ramda';
 import { ascSort, createUUID, descSort, generateOrderValue, notNilEmpty } from 'qx-util';
-import { IPSAppDataEntity, IPSAppDELogic } from '@ibiz/dynamic-model-api';
+import { IPSAppDataEntity, IPSAppDEField, IPSAppDELogic, IPSAppDEMethod } from '@ibiz/dynamic-model-api';
 import { Entity } from '../../entities';
 import { IContext, IEntityBase, IEntityLocalDataService, IHttpResponse, IParams } from '../../interface';
 import { acc } from '../../modules/message-center/app-communications-center';
@@ -27,6 +27,15 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected log = LogUtil;
+
+    /**
+     * 应用上下文
+     *
+     * @protected
+     * @memberof EntityBaseService
+     */
+    protected context: any;
+
     /**
      * 实体全部属性
      *
@@ -36,6 +45,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     protected get keys(): string[] {
         return [];
     }
+
     /**
      * 应用实体名称
      *
@@ -43,6 +53,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPDENAME = '';
+
     /**
      * 应用实体名称复数形式
      *
@@ -50,6 +61,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPDENAMEPLURAL = '';
+
     /**
      * 应用实体主键
      *
@@ -57,6 +69,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPDEKEY = '';
+
     /**
      * 应用实体主文本
      *
@@ -64,6 +77,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPDETEXT = '';
+
 
     /**
      * 系统名称
@@ -80,6 +94,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPNAME = '';
+
     /**
      * 当前实体服务支持快速搜索的属性
      *
@@ -88,6 +103,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected quickSearchFields: string[] = [];
+
     /**
      * 根据关系，select查询时填充额外条件。
      *
@@ -96,6 +112,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected selectContextParam: any = null;
+
     /**
      * 搜索条件引擎实例缓存
      *
@@ -104,12 +121,14 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected condCache: Map<string, PSDEDQCondEngine> = new Map();
+
     /**
      * 是否启用acc通知
      *
      * @memberof EntityBaseService
      */
     private isEnableAcc = true;
+
     /**
      * http请求服务
      *
@@ -136,75 +155,260 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     protected appDeLogicService: AppDeLogicService = AppDeLogicService.getInstance();
 
-     /**
-     * 应用实体动态模型文件路径
-     *
-     * @protected
-     * @type {string}
-     * @memberof EntityBaseService
-     */
+    /**
+    * 应用实体动态模型文件路径
+    *
+    * @protected
+    * @type {string}
+    * @memberof EntityBaseService
+    */
     protected dynaModelFilePath: string = '';
- 
-     /**
-     * 应用实体模型
-     *
-     * @protected
-     * @type {IPSAppDataEntity}
-     * @memberof EntityBaseService
-     */
+
+    /**
+    * 应用实体模型
+    *
+    * @protected
+    * @type {IPSAppDataEntity}
+    * @memberof EntityBaseService
+    */
     protected appDeModel !: IPSAppDataEntity;
- 
-     /**
-     * 实体处理逻辑Map
-     *
-     * @protected
-     * @type {Map<string,any>}
-     * @memberof EntityBaseService
-     */
+
+    /**
+    * 实体处理逻辑Map
+    *
+    * @protected
+    * @type {Map<string,any>}
+    * @memberof EntityBaseService
+    */
     protected appDeLogicMap: Map<string, any> = new Map();
- 
-     /**
-     * 初始化应用实体模型数据
-     *
-     * @protected
-     * @type {Map<string,any>}
+
+    /**
+    * 实体属性处理逻辑Map
+    *
+    * @protected
+    * @type {Map<string,any>}
+    * @memberof EntityBaseService
+    */
+    protected appDeFieldLogicMap: Map<string, any> = new Map();
+
+    /**
+     * Creates an instance of EntityBaseService.
      * @memberof EntityBaseService
      */
+    constructor(opts?: any) {
+        this.context = opts;
+    }
+
+    /**
+    * 加载动态数据模型
+    *
+    * @protected
+    * @param context 应用上下文
+    * @param data 额外数据
+    * @memberof EntityBaseService
+    */
+    protected async loaded(context: any = {}, data: any = {}) {
+        await this.initAppDeModel(context, data);
+        this.initAppDELogicMap();
+        this.initAppDEFieldLogicMap();
+        this.initAppDEDynaMethods();
+    }
+
+    /**
+    * 初始化应用实体模型数据
+    *
+    * @protected
+    * @type {Map<string,any>}
+    * @memberof EntityBaseService
+    */
     protected async initAppDeModel(context: any = {}, data: any = {}) {
         if (!this.appDeModel && this.dynaModelFilePath) {
             this.appDeModel = await (await GetModelService(context)).getPSAppDataEntity(this.dynaModelFilePath);
         }
     }
- 
-     /**
-     * 初始化实体处理逻辑Map
-     *
-     * @protected
-     * @type {Map<string,any>}
-     * @memberof EntityBaseService
-     */
-    protected initAppDeLogicMap() {
+
+    /**
+    * 初始化实体处理逻辑Map
+    *
+    * @protected
+    * @memberof EntityBaseService
+    */
+    protected initAppDELogicMap() {
         if ((this.appDeLogicMap.size === 0) && this.appDeModel && this.appDeModel.getAllPSAppDELogics()) {
             this.appDeModel.getAllPSAppDELogics()?.forEach((item: IPSAppDELogic) => {
                 this.appDeLogicMap.set(item.codeName, item);
             })
         }
     }
- 
-     /**
-     * 执行实体处理逻辑
-     *
-     * @protected
-     * @param {string} tag 逻辑标识
-     * @param {*} _context 应用上下文
-     * @param {*} _data 当前数据
-     * @memberof EntityBaseService
-     */
-    protected async executeAppDeLogic(tag: string, _context: any, _data: any) {
-        await this.initAppDeModel(_context, _data);
-        this.initAppDeLogicMap();
+
+    /**
+    * 初始化实体属性处理逻辑Map
+    *
+    * @protected
+    * @memberof EntityBaseService
+    */
+    protected initAppDEFieldLogicMap() {
+        const allAppDEFields: IPSAppDEField[] | null = this.appDeModel?.getAllPSAppDEFields();
+        if (allAppDEFields && (allAppDEFields.length > 0) && (this.appDeFieldLogicMap.size === 0)) {
+            allAppDEFields.forEach((item: IPSAppDEField) => {
+                if (item.getComputePSAppDEFLogic()) {
+                    let computePSAppDEFLogics = this.appDeFieldLogicMap.get('ComputePSAppDEFLogic');
+                    if (!computePSAppDEFLogics) {
+                        computePSAppDEFLogics = [];
+                        this.appDeFieldLogicMap.set('ComputePSAppDEFLogic', computePSAppDEFLogics);
+                    }
+                    computePSAppDEFLogics.push(item.getComputePSAppDEFLogic());
+                }
+                if (item.getOnChangePSAppDEFLogic()) {
+                    let changePSAppDEFLogics = this.appDeFieldLogicMap.get('ChangePSAppDEFLogic');
+                    if (!changePSAppDEFLogics) {
+                        changePSAppDEFLogics = [];
+                        this.appDeFieldLogicMap.set('ChangePSAppDEFLogic', changePSAppDEFLogics);
+                    }
+                    changePSAppDEFLogics.push(item.getOnChangePSAppDEFLogic());
+                }
+                if (item.getDefaultValuePSAppDEFLogic()) {
+                    let defaultValuePSAppDEFLogics = this.appDeFieldLogicMap.get('DefaultValuePSAppDEFLogic');
+                    if (!defaultValuePSAppDEFLogics) {
+                        defaultValuePSAppDEFLogics = [];
+                        this.appDeFieldLogicMap.set('DefaultValuePSAppDEFLogic', defaultValuePSAppDEFLogics);
+                    }
+                    defaultValuePSAppDEFLogics.push(item.getOnChangePSAppDEFLogic());
+                }
+            })
+        }
+    }
+
+    /**
+    * 初始化实体动态方法
+    *
+    * @protected
+    * @memberof EntityBaseService
+    */
+    protected initAppDEDynaMethods() {
+        // TODO
+        // if(this.appDeModel && this.appDeModel.getAllPSAppDEMethods() && (this.appDeModel.getAllPSAppDEMethods() as IPSAppDEMethod[]).length >0){
+        //     this.appDeModel.getAllPSAppDEMethods()?.forEach((appDEMethod:IPSAppDEMethod) =>{
+        //         if(appDEMethod && appDEMethod.isDynaInstModel){
+        //             this.initAppDEDynaMethod(appDEMethod);
+        //         }
+        //     })
+        // }
+    }
+
+    /**
+    * 初始化实体动态方法
+    *
+    * @protected
+    * @memberof EntityBaseService
+    */
+    protected initAppDEDynaMethod(appDEMethod: IPSAppDEMethod) {
+        (this as any)[appDEMethod.codeName] = (context: any, data: any) => {
+            // TODO
+        }
+    }
+
+    /**
+    * 执行实体处理逻辑
+    *
+    * @protected
+    * @param {string} tag 逻辑标识
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async executeAppDELogic(tag: string, _context: any, _data: any) {
         return await this.appDeLogicService.onExecute(this.appDeLogicMap.get(tag), _context, _data);
-    } 
+    }
+
+    /**
+    * 执行实体属性处理逻辑
+    *
+    * @protected
+    * @param {*} model 模型对象
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async executeAppDEFieldLogic(model: any, _context: any, _data: any) {
+        return await this.appDeLogicService.onExecute(model, _context, _data);
+    }
+
+    /**
+    * 执行实体行为之前
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async beforeExecuteAction(_context: any, _data: any) {
+        // 执行实体属性值变更逻辑
+        _data = await this.executeOnChangePSAppDEFLogic(_context, _data);
+        return _data;
+    }
+
+    /**
+    * 执行实体行为之后
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async afterExecuteAction(_context: any, _data: any) {
+        // 执行实体属性值计算逻辑
+        _data = await this.executeComputePSAppDEFLogic(_context, _data);
+        return _data;
+    }
+
+    /**
+    * 执行实体属性值计算逻辑
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async executeComputePSAppDEFLogic(_context: any, _data: any) {
+        let computePSAppDEFLogics = this.appDeFieldLogicMap.get('ComputePSAppDEFLogic');
+        if (computePSAppDEFLogics && computePSAppDEFLogics.length > 0) {
+            for (let i = 0; i < computePSAppDEFLogics.length; i++) {
+                _data = await this.executeAppDEFieldLogic(computePSAppDEFLogics[i], _context, _data);
+            }
+        }
+        return _data;
+    }
+
+    /**
+    * 执行实体属性默认值逻辑
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async executeDefaultValuePSAppDEFLogic(_context: any, _data: any) {
+
+    }
+
+    /**
+    * 执行实体属性值变更逻辑
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async executeOnChangePSAppDEFLogic(_context: any, _data: any) {
+        let changePSAppDEFLogics = this.appDeFieldLogicMap.get('ChangePSAppDEFLogic');
+        if (changePSAppDEFLogics && changePSAppDEFLogics.length > 0) {
+            for (let i = 0; i < changePSAppDEFLogics.length; i++) {
+                _data = await this.executeAppDEFieldLogic(changePSAppDEFLogics[i], _context, _data);
+            }
+        }
+        return _data;
+    }
 
     /**
      * 发送应用中心消息

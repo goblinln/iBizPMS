@@ -36,6 +36,7 @@ function getAppLocale(){
                 no: "否",
                 wrongdataformat:'数据格式有误!',
                 isexist:"已存在",
+                srfmajortext: "主信息"
             },
             local:{
                 new: "新建",
@@ -67,6 +68,13 @@ function getAppLocale(){
                 exportfail: "数据导出失败",
                 sum: "合计",
                 formitemfailed: "表单项更新失败",
+                dataaggregate:{
+                    dataaggregate: "聚合",
+                    sum: "合计值：",
+                    avg: "平均值：",
+                    max: "最大值：",
+                    min: "最小值：",
+                },
             },
             list: {
                 notconfig: {

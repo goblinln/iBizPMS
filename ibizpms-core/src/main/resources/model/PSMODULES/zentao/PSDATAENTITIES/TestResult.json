@@ -144,6 +144,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurTestRun",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "CurTestRun",
     "name" : "CurTestRun",
     "getPSDEDataQueries" : [ {
@@ -154,6 +155,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {

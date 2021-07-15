@@ -12,27 +12,29 @@ export class DocLibModuleService extends DocLibModuleBaseService {
      * Creates an instance of DocLibModuleService.
      * @memberof DocLibModuleService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('DocLibModuleService')) {
-            return ___ibz___.sc.get('DocLibModuleService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('DocLibModuleService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {DocLibModuleService}
      * @memberof DocLibModuleService
      */
-    static getInstance(): DocLibModuleService {
-        if (!___ibz___.sc.has('DocLibModuleService')) {
-            new DocLibModuleService();
+    static getInstance(context?: any): DocLibModuleService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}DocLibModuleService` : `DocLibModuleService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new DocLibModuleService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('DocLibModuleService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default DocLibModuleService;

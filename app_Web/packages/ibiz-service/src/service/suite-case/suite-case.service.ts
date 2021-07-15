@@ -12,27 +12,29 @@ export class SuiteCaseService extends SuiteCaseBaseService {
      * Creates an instance of SuiteCaseService.
      * @memberof SuiteCaseService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('SuiteCaseService')) {
-            return ___ibz___.sc.get('SuiteCaseService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('SuiteCaseService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {SuiteCaseService}
      * @memberof SuiteCaseService
      */
-    static getInstance(): SuiteCaseService {
-        if (!___ibz___.sc.has('SuiteCaseService')) {
-            new SuiteCaseService();
+    static getInstance(context?: any): SuiteCaseService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}SuiteCaseService` : `SuiteCaseService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new SuiteCaseService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('SuiteCaseService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default SuiteCaseService;

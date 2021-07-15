@@ -15,6 +15,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -28,6 +29,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -41,6 +43,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -55,6 +58,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -69,6 +73,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -82,6 +87,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -95,6 +101,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -109,6 +116,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -123,6 +131,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -137,6 +146,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -151,6 +161,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -166,6 +177,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -182,6 +194,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -198,6 +211,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -207,6 +221,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -220,6 +235,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -234,6 +250,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
@@ -315,6 +332,7 @@
     "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -328,6 +346,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -341,6 +360,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -355,6 +375,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "CREATE",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -369,6 +390,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -382,6 +404,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -395,6 +418,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -409,6 +433,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "GETDRAFT",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -423,6 +448,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -437,6 +463,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "READ",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -451,6 +478,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -466,6 +494,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -482,6 +511,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -498,6 +528,7 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
+    "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -507,6 +538,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -520,6 +552,7 @@
     },
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -534,6 +567,7 @@
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
+    "actionMode" : "UPDATE",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",

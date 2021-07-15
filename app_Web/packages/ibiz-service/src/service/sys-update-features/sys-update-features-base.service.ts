@@ -100,7 +100,8 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures`, _data);
+            const res = await this.http.post(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures`, _data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -109,7 +110,8 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/sysupdatefeatures`, _data);
+        const res = await this.http.post(`/sysupdatefeatures`, _data);
+        return res;
     }
     /**
      * Get
@@ -157,9 +159,11 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysupdatelog && _context.sysupdatefeatures) {
-            return this.http.delete(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`);
+            const res = await this.http.delete(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`);
+            return res;
         }
-        return this.http.delete(`/sysupdatefeatures/${_context.sysupdatefeatures}`);
+        const res = await this.http.delete(`/sysupdatefeatures/${_context.sysupdatefeatures}`);
+        return res;
     }
     /**
      * Update
@@ -172,10 +176,12 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysupdatelog && _context.sysupdatefeatures) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
+            const res = await this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
+        const res = await this.http.put(`/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -187,9 +193,11 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysupdatelog && true) {
-            return this.http.post(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/fetchdefault`, _data);
+            const res = await this.http.post(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/fetchdefault`, _data);
+            return res;
         }
-        return this.http.post(`/sysupdatefeatures/fetchdefault`, _data);
+        const res = await this.http.post(`/sysupdatefeatures/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -201,8 +209,10 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysupdatelog && _context.sysupdatefeatures) {
-            return this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
+            const res = await this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
+            return res;
         }
-        return this.http.get(`/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
+        const res = await this.http.get(`/sysupdatefeatures/${_context.sysupdatefeatures}/select`);
+        return res;
     }
 }

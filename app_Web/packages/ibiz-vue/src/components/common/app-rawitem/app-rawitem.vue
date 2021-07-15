@@ -1,5 +1,5 @@
 <template>
-    <div :style="sizeStyle">
+    <div class="rawitem" :style="sizeStyle">
         <span>{{caption}}</span>
         <div v-if="Object.is(contentType,'RAW')" :class="contentStyle">
             <slot></slot>
@@ -12,7 +12,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Vue, Prop, Model, Watch } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component({})
 export default class AppRawItem extends Vue {
@@ -86,5 +86,5 @@ export default class AppRawItem extends Vue {
 </script>
 
 <style lang='less'>
-
+@import './app-rawitem.less';
 </style>

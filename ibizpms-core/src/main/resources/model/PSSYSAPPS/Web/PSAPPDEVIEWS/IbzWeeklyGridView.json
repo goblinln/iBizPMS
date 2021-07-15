@@ -1000,6 +1000,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto79",
         "name" : "周报修改工具栏",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

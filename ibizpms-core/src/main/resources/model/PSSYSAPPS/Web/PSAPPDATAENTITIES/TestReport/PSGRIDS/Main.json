@@ -229,6 +229,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "UAGroup2",
       "name" : "表格操作列",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

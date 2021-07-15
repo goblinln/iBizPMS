@@ -276,6 +276,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "Auto18",
       "name" : "版本表格（操作列）按钮组",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

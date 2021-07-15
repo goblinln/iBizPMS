@@ -94,19 +94,23 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
     async Collect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
+            return res;
         }
         if (_context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
+            return res;
         }
     this.log.warn([`[DocLibModule]>>>[Collect函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -128,7 +132,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -138,7 +143,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -148,7 +154,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules`, _data);
+            return res;
         }
         if (_context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -158,7 +165,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/doclibs/${_context.doclib}/doclibmodules`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules`, _data);
+            return res;
         }
     this.log.warn([`[DocLibModule]>>>[Create函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -237,16 +245,20 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project && _context.doclib && _context.doclibmodule) {
-            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
+            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
+            return res;
         }
         if (_context.project && _context.doclib && _context.doclibmodule) {
-            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
+            const res = await this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
+            return res;
         }
         if (_context.product && _context.doclib && _context.doclibmodule) {
-            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
+            const res = await this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
+            return res;
         }
         if (_context.doclib && _context.doclibmodule) {
-            return this.http.delete(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
+            const res = await this.http.delete(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
+            return res;
         }
     this.log.warn([`[DocLibModule]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -262,19 +274,23 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
     async UnCollect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
+            return res;
         }
         if (_context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
+            return res;
         }
     this.log.warn([`[DocLibModule]>>>[UnCollect函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -290,19 +306,23 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
+            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
+            const res = await this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
+            const res = await this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
+            return res;
         }
         if (_context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
+            const res = await this.http.put(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
+            return res;
         }
     this.log.warn([`[DocLibModule]>>>[Update函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -317,16 +337,20 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      */
     async FetchAllDir(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
+            return res;
         }
         if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
+            return res;
         }
     this.log.warn([`[DocLibModule]>>>[FetchAllDir函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -341,16 +365,20 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      */
     async FetchDir(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
+            return res;
         }
         if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
+            return res;
         }
     this.log.warn([`[DocLibModule]>>>[FetchDir函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -365,16 +393,20 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      */
     async FetchMyFavourites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
+            return res;
         }
         if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
+            return res;
         }
     this.log.warn([`[DocLibModule]>>>[FetchMyFavourites函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });

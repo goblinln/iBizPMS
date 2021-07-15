@@ -133,6 +133,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -144,6 +145,7 @@
     "enableFront" : true
   }, {
     "codeName" : "TaskFinishHuiZong",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "任务完成汇总表",
     "name" : "TaskFinishHuiZong",
     "getPSDEDataQueries" : [ {
@@ -154,6 +156,7 @@
     "enableFront" : true
   }, {
     "codeName" : "UserFinishTaskSum",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "用户完成任务统计",
     "name" : "UserFinishTaskSum",
     "getPSDEDataQueries" : [ {

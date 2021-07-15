@@ -82,7 +82,8 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibizprokeywords`, _data);
+        const res = await this.http.post(`/ibizprokeywords`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
      * @memberof IBIZProKeywordService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibizprokeywords/${_context.ibizprokeyword}`);
+        const res = await this.http.delete(`/ibizprokeywords/${_context.ibizprokeyword}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibizprokeywords/${_context.ibizprokeyword}`, _data);
+        const res = await this.http.put(`/ibizprokeywords/${_context.ibizprokeyword}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
      * @memberof IBIZProKeywordService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibizprokeywords/fetchdefault`, _data);
+        const res = await this.http.post(`/ibizprokeywords/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
      * @memberof IBIZProKeywordService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizprokeywords/${_context.ibizprokeyword}/select`);
+        const res = await this.http.get(`/ibizprokeywords/${_context.ibizprokeyword}/select`);
+        return res;
     }
 }

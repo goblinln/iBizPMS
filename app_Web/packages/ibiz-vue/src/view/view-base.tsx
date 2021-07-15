@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
-import { IPSAppCounterRef, IPSAppView, IPSControl, IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface } from 'ibiz-core';
+import { IPSAppCounterRef, IPSAppView, IPSControl, IPSDETBGroupItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSLanguageRes } from '@ibiz/dynamic-model-api';
+import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface, debounce } from 'ibiz-core';
 import { CounterServiceRegister, ViewMessageService } from 'ibiz-service';
 import { AppNavHistory, NavDataService, ViewLoadingService } from '../app-service';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
@@ -511,6 +511,61 @@ export class ViewBase extends Vue implements ViewInterface {
     }
 
     /**
+     * 绘制视图部件集合
+     * 
+     * @memberof ViewBase
+     */
+    public renderViewControls() {
+        const viewLayoutPanel = this.viewInstance.getPSViewLayoutPanel();
+        if (viewLayoutPanel && viewLayoutPanel.useDefaultLayout) {
+            return [];
+        } else {
+            const controlArray: Array<any> = [];
+            if (this.viewInstance.getPSControls() && (this.viewInstance.getPSControls() as IPSControl[]).length > 0) {
+                (this.viewInstance.getPSControls() as IPSControl[]).forEach((control: IPSControl) => {
+                    const targetCtrl = this.renderTargetControl(control);
+                    controlArray.push(targetCtrl);
+                });
+            }
+            controlArray.push(this.renderCaptionBar());
+            controlArray.push(this.renderDataInfoBar());
+            return controlArray;
+        }
+    }
+
+    /**
+     * 绘制目标部件
+     * 
+     * @memberof ViewBase
+     */
+    public renderTargetControl(control: IPSControl) {
+        if (Object.is(control.controlType, 'TOOLBAR')) {
+            const viewToolBar: IPSDEToolbar = control as IPSDEToolbar;
+            const targetViewToolbarItems: any[] = [];
+            if (viewToolBar && viewToolBar.getPSDEToolbarItems()) {
+                viewToolBar.getPSDEToolbarItems()?.forEach((toolbarItem: IPSDEToolbarItem) => {
+                    targetViewToolbarItems.push(this.initToolBarItems(toolbarItem));
+                });
+            }
+            return (
+                <view-toolbar
+                    slot={`layout-${control.name}`}
+                    mode={this.viewInstance?.viewStyle || 'DEFAULT'}
+                    counterServiceArray={this.counterServiceArray}
+                    isViewLoading={this.viewLoadingService?.isLoading}
+                    toolbarModels={targetViewToolbarItems}
+                    on-item-click={(data: any, $event: any) => {
+                        debounce(this.handleItemClick, [data, $event], this);
+                    }}
+                ></view-toolbar>
+            );
+        } else {
+            let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(control);
+            return this.$createElement(targetCtrlName, { slot: `layout-${control.name}`, props: targetCtrlParam, ref: control?.name, on: targetCtrlEvent });
+        }
+    }
+
+    /**
      * 初始化containerModel
      * 
      * @memberof ViewBase
@@ -545,6 +600,60 @@ export class ViewBase extends Vue implements ViewInterface {
      * @memberof ViewBase
      */
     public async initAppUIService() { }
+
+    /**
+     * 初始化工具栏项
+     *
+     * @param {IPSDEToolbarItem} item
+     * 
+     * @@memberof ViewBase
+     */
+    initToolBarItems(item: IPSDEToolbarItem): void {
+        if (item.itemType === 'ITEMS') {
+            const items = (item as IPSDETBGroupItem).getPSDEToolbarItems();
+            if (items && items.length != 0) {
+                const models: Array<any> = [];
+                const tempModel: any = {
+                    name: item.name,
+                    showCaption: item.showCaption,
+                    caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+                    tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
+                    disabled: false,
+                    visabled: true,
+                    itemType: item.itemType,
+                    dataaccaction: '',
+                    actionLevel: (item as any).actionLevel
+                };
+                items.forEach((_item: any) => {
+                    models.push(this.initToolBarItems(_item));
+                });
+                Object.assign(tempModel, {
+                    model: models,
+                });
+                return tempModel;
+            }
+        }
+        const img = item.getPSSysImage();
+        const css = item.getPSSysCss();
+        const uiAction = (item as any)?.getPSUIAction?.() as IPSDEUIAction;
+        const tempModel: any = {
+            name: item.name,
+            showCaption: item.showCaption,
+            caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+            tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
+            disabled: false,
+            visabled: uiAction?.dataAccessAction && this.Environment.enablePermissionValid ? false : true,
+            itemType: item.itemType,
+            dataaccaction: uiAction?.dataAccessAction,
+            noprivdisplaymode: uiAction?.noPrivDisplayMode,
+            uiaction: uiAction,
+            showIcon: item.showIcon,
+            class: css ? css.cssName : '',
+            getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
+            actionLevel: (item as any).actionLevel
+        };
+        return tempModel;
+    }
 
     /**
      * 初始化计数器服务
@@ -1171,7 +1280,7 @@ export class ViewBase extends Vue implements ViewInterface {
     public renderCaptionBar() {
         const captionBar: any = ModelTool.findPSControlByName('captionbar', this.viewInstance.getPSControls());
         return (
-            <div slot="captionBar" class="app-captionbar-container">
+            <div slot="layout-captionbar" class="app-captionbar-container">
                 <app-default-captionbar
                     viewModelData={this.viewInstance}
                     modelData={captionBar}
@@ -1190,7 +1299,7 @@ export class ViewBase extends Vue implements ViewInterface {
     public renderDataInfoBar() {
         const datainfoBar: any = ModelTool.findPSControlByName('datainfobar', this.viewInstance.getPSControls());
         return (
-            <div slot="datainfoBar" class="app-datainfobar-container">
+            <div slot="layout-datainfobar" class="app-datainfobar-container">
                 <app-default-datainfobar
                     modelData={datainfoBar}
                     viewInfo={this.model}
@@ -1247,5 +1356,4 @@ export class ViewBase extends Vue implements ViewInterface {
             el.appendChild(shade);
         }
     }
-
 }

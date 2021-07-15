@@ -248,11 +248,7 @@
           "getPSSysCss" : {
             "cssName" : "project-id"
           },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "allowEmpty" : true
         }, {
           "caption" : "项目代号",
           "codeName" : "code",
@@ -282,11 +278,7 @@
           "getPSSysCss" : {
             "cssName" : "project-code"
           },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "allowEmpty" : true
         }, {
           "codeName" : "name",
           "dataType" : 25,
@@ -316,10 +308,7 @@
             "cssName" : "project-name"
           },
           "allowEmpty" : true,
-          "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "emptyCaption" : true
         } ],
         "getPSLayout" : {
           "layout" : "FLEX"
@@ -360,8 +349,6 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : true,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "actionGroupExtractMode" : "ITEM",
@@ -404,11 +391,7 @@
             "cssName" : "project-type"
           },
           "allowEmpty" : true,
-          "convertToCodeItemText" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "convertToCodeItemText" : true
         }, {
           "caption" : "项目状态",
           "codeName" : "status",
@@ -443,11 +426,7 @@
             "cssName" : "project-status"
           },
           "allowEmpty" : true,
-          "convertToCodeItemText" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "convertToCodeItemText" : true
         } ],
         "getPSLayout" : {
           "layout" : "FLEX"
@@ -1422,10 +1401,8 @@
             },
             "unitName" : "工时",
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "enableUnitName" : true,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "caption" : "任务消耗总工时",
@@ -1449,10 +1426,8 @@
             },
             "unitName" : "工时",
             "allowEmpty" : true,
-            "emptyCaption" : false,
             "enableUnitName" : true,
             "hidden" : true,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSEditor" : {
@@ -1474,9 +1449,6 @@
           },
           "allowEmpty" : true,
           "compositeItem" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {
@@ -1522,10 +1494,8 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "结束日期",
@@ -1553,10 +1523,8 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "可用工作日",
@@ -1586,10 +1554,7 @@
           },
           "unitName" : "天",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "可用工时",
@@ -1619,10 +1584,7 @@
           },
           "unitName" : "工时",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {
@@ -1664,6 +1626,7 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "formitem",
+            "precision" : 2,
             "editable" : false,
             "enableLinkView" : false
           },
@@ -1673,10 +1636,7 @@
           },
           "unitName" : "工时",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "消耗",
@@ -1706,10 +1666,7 @@
           },
           "unitName" : "工时",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         }, {
           "caption" : "剩余",
@@ -1739,10 +1696,7 @@
           },
           "unitName" : "工时",
           "allowEmpty" : true,
-          "emptyCaption" : false,
           "enableUnitName" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {
@@ -1807,9 +1761,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "任务",
@@ -1839,9 +1790,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "Bug",
@@ -1871,9 +1819,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
@@ -1927,11 +1872,7 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "convertToCodeItemText" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
-        "showCaption" : false
+        "convertToCodeItemText" : true
       } ],
       "getPSLayout" : {
         "columnCount" : 24,

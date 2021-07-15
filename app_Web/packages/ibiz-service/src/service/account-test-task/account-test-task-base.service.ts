@@ -125,7 +125,18 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
      * @memberof AccountTestTaskService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return await this.executeAppDeLogic('GetCurUserConcat',_context,_data);
+        try {
+            _data =  await this.executeAppDELogic('GetCurUserConcat',_context,_data);
+            return new HttpResponse(_data, {
+                ok: true,
+                status: 200
+            });
+        }catch (error) {
+            return new HttpResponse({message:error.message}, {
+                ok: false,
+                status: 500,
+            });
+        }
     }
     /**
      * FetchAccount
@@ -137,9 +148,11 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttesttasks/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttesttasks/fetchaccount`, _data);
+            return res;
         }
-        return this.http.post(`/accounttesttasks/fetchaccount`, _data);
+        const res = await this.http.post(`/accounttesttasks/fetchaccount`, _data);
+        return res;
     }
     /**
      * FetchMy
@@ -151,8 +164,10 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttesttasks/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttesttasks/fetchmy`, _data);
+            return res;
         }
-        return this.http.post(`/accounttesttasks/fetchmy`, _data);
+        const res = await this.http.post(`/accounttesttasks/fetchmy`, _data);
+        return res;
     }
 }

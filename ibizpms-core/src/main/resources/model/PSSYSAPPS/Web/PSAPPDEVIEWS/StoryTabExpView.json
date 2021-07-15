@@ -967,6 +967,7 @@
             "name" : "uagridcolumn1",
             "noPrivDisplayMode" : 1,
             "getPSDEUIActionGroup" : {
+              "codeName" : "Auto29",
               "name" : "项目-关联需求-表格操作栏",
               "getPSUIActionGroupDetails" : [ {
                 "detailType" : "DEUIACTION",

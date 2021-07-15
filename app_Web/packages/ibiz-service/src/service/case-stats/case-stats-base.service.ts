@@ -82,7 +82,8 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/casestats`, _data);
+        const res = await this.http.post(`/casestats`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
      * @memberof CaseStatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/casestats/${_context.casestats}`);
+        const res = await this.http.delete(`/casestats/${_context.casestats}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/casestats/${_context.casestats}`, _data);
+        const res = await this.http.put(`/casestats/${_context.casestats}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
      * @memberof CaseStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/casestats/fetchdefault`, _data);
+        const res = await this.http.post(`/casestats/fetchdefault`, _data);
+        return res;
     }
     /**
      * FetchTestCaseStats
@@ -153,7 +157,8 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
      * @memberof CaseStatsService
      */
     async FetchTestCaseStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/casestats/fetchtestcasestats`, _data);
+        const res = await this.http.post(`/casestats/fetchtestcasestats`, _data);
+        return res;
     }
     /**
      * Select
@@ -164,6 +169,7 @@ export class CaseStatsBaseService extends EntityBaseService<ICaseStats> {
      * @memberof CaseStatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/casestats/${_context.casestats}/select`);
+        const res = await this.http.get(`/casestats/${_context.casestats}/select`);
+        return res;
     }
 }

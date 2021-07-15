@@ -125,7 +125,8 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos`, _data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -134,7 +135,8 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/todos`, _data);
+        const res = await this.http.post(`/todos`, _data);
+        return res;
     }
     /**
      * Finish
@@ -147,9 +149,11 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     async Finish(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.todo) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/finish`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/finish`, _data);
+            return res;
         }
-        return this.http.post(`/todos/${_context.todo}/finish`, _data);
+        const res = await this.http.post(`/todos/${_context.todo}/finish`, _data);
+        return res;
     }
     /**
      * Get
@@ -197,9 +201,11 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.todo) {
-            return this.http.delete(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}`);
+            const res = await this.http.delete(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}`);
+            return res;
         }
-        return this.http.delete(`/todos/${_context.todo}`);
+        const res = await this.http.delete(`/todos/${_context.todo}`);
+        return res;
     }
     /**
      * Start
@@ -212,9 +218,11 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.todo) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/start`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/start`, _data);
+            return res;
         }
-        return this.http.post(`/todos/${_context.todo}/start`, _data);
+        const res = await this.http.post(`/todos/${_context.todo}/start`, _data);
+        return res;
     }
     /**
      * Update
@@ -227,10 +235,12 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.todo) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}`, _data);
+            const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}`, _data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/todos/${_context.todo}`, _data);
+        const res = await this.http.put(`/todos/${_context.todo}`, _data);
+        return res;
     }
     /**
      * FetchAccount
@@ -242,9 +252,11 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/fetchaccount`, _data);
+            return res;
         }
-        return this.http.post(`/todos/fetchaccount`, _data);
+        const res = await this.http.post(`/todos/fetchaccount`, _data);
+        return res;
     }
     /**
      * FetchMy
@@ -256,9 +268,11 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/fetchmy`, _data);
+            return res;
         }
-        return this.http.post(`/todos/fetchmy`, _data);
+        const res = await this.http.post(`/todos/fetchmy`, _data);
+        return res;
     }
 
     /**

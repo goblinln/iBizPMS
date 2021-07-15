@@ -236,6 +236,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "BugCountInResolution",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "Bug在每个解决方案的Bug数",
     "name" : "BugCountInResolution",
     "getPSDEDataQueries" : [ {
@@ -246,6 +247,7 @@
     "enableFront" : true
   }, {
     "codeName" : "BugResolvedBy",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "Bug完成表",
     "name" : "BugResolvedBy",
     "getPSDEDataQueries" : [ {
@@ -256,6 +258,7 @@
     "enableFront" : true
   }, {
     "codeName" : "BugResolvedGird",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "bug解决汇总表",
     "name" : "BugResolvedGird",
     "getPSDEDataQueries" : [ {
@@ -266,6 +269,7 @@
     "enableFront" : true
   }, {
     "codeName" : "BugassignedTo",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "Bug指派表",
     "name" : "BugassignedTo",
     "getPSDEDataQueries" : [ {
@@ -276,6 +280,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -287,6 +292,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductBugResolutionStats",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品Bug解决方案汇总",
     "name" : "ProductBugResolutionStats",
     "getPSDEDataQueries" : [ {
@@ -297,6 +303,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductBugStatusSum",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品Bug状态汇总",
     "name" : "ProductBugStatusSum",
     "getPSDEDataQueries" : [ {
@@ -307,6 +314,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductCreateBug",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品创建bug占比",
     "name" : "ProductCreateBug",
     "getPSDEDataQueries" : [ {
@@ -317,6 +325,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectBugStatusCount",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目bug状态统计",
     "name" : "ProjectBugStatusCount",
     "getPSDEDataQueries" : [ {

@@ -12,27 +12,29 @@ export class ProjectBurnService extends ProjectBurnBaseService {
      * Creates an instance of ProjectBurnService.
      * @memberof ProjectBurnService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ProjectBurnService')) {
-            return ___ibz___.sc.get('ProjectBurnService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ProjectBurnService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {ProjectBurnService}
      * @memberof ProjectBurnService
      */
-    static getInstance(): ProjectBurnService {
-        if (!___ibz___.sc.has('ProjectBurnService')) {
-            new ProjectBurnService();
+    static getInstance(context?: any): ProjectBurnService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ProjectBurnService` : `ProjectBurnService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ProjectBurnService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ProjectBurnService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default ProjectBurnService;

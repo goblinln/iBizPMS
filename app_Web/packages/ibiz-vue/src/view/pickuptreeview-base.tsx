@@ -45,7 +45,7 @@ export class PickupTreeViewBase extends MDViewBase implements PickupTreeViewInte
      * @type {Engine}
      * @memberof PickupTreeViewBase
      */
-    public engine: PickupTreeViewEngine = new PickupTreeViewEngine;
+    public engine: PickupTreeViewEngine = new PickupTreeViewEngine();
 
     /**
      * 监听视图动态参数变化

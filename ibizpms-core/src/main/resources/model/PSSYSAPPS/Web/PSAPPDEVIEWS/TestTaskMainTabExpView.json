@@ -894,6 +894,7 @@
             "name" : "uagridcolumn1",
             "noPrivDisplayMode" : 1,
             "getPSDEUIActionGroup" : {
+              "codeName" : "Auto16_4198",
               "name" : "表格主信息（操作栏）_测试单",
               "getPSUIActionGroupDetails" : [ {
                 "detailType" : "DEUIACTION",

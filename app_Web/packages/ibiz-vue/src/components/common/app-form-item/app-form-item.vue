@@ -21,7 +21,12 @@
                 class="editor"
                 :style="slotstyle"
             >
-                <form-item :ref="name" :prop="name" :error="error"  :rules="rules">
+                <Tooltip v-if="gridError" :content="gridError" transfer placement="top">
+                    <form-item :ref="name" :prop="name" :error="gridError"  :rules="rules">
+                        <slot></slot>
+                    </form-item>
+                </Tooltip>
+                <form-item v-else :ref="name" :prop="name" :error="error"  :rules="rules">
                     <slot></slot>
                 </form-item>
             </div>
@@ -119,6 +124,14 @@ export default class AppFormItem extends Vue {
    * @memberof AppFormItem
    */
   @Prop() public error?: string;
+
+  /**
+   * 表格行编辑错误信息
+   *
+   * @type {string}
+   * @memberof AppFormItem
+   */
+  @Prop() public gridError?: string;
 
   /**
    * label样式
@@ -222,6 +235,14 @@ export default class AppFormItem extends Vue {
   public rules: any[] = [];
 
   /**
+   * 表单项样式名
+   *
+   * @type {string}
+   * @memberof AppFormItem
+   */
+  public itemClassName: string = '';
+
+  /**
    * 是否必填
    *
    * @type {boolean}
@@ -273,7 +294,7 @@ export default class AppFormItem extends Vue {
         posClass = "label-none";
         break;
     }
-    return [ "app-form-item", posClass ];
+    return [ "app-form-item", this.itemClassName, posClass ];
   }
 
   /**
@@ -297,7 +318,7 @@ export default class AppFormItem extends Vue {
    * @memberof AppFormItem
    */
   get labelstyle(): any {
-    if (Object.is(this.labelPos, 'LEFT') || Object.is(this.labelPos, 'RIGHT')) {
+    if (Object.is(this.labelPos, 'LEFT') || Object.is(this.labelPos, 'RIGHT') || Object.is(this.labelPos, 'BOTTOM')) {
       return { width: this.labelWidth + "px" };
     }
   }
@@ -343,6 +364,7 @@ export default class AppFormItem extends Vue {
     }
     this.getShowTip();
     this.iconInfo = this.detailsInstance?.getPSSysImage();
+    this.itemClassName = `${this.controlInstance?.getPSAppDataEntity?.()?.codeName?.toLowerCase()}-${this.controlInstance?.codeName?.toLowerCase()}-item-${this.name}`;
   }
 
 

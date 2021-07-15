@@ -418,9 +418,6 @@
                           "layout" : "TABLE_24COL"
                         },
                         "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
                         "showCaption" : true
                       }, {
                         "caption" : "用户姓名",
@@ -449,9 +446,6 @@
                           "layout" : "TABLE_24COL"
                         },
                         "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
                         "showCaption" : true
                       }, {
                         "caption" : "性别",
@@ -480,9 +474,6 @@
                           "layout" : "TABLE_24COL"
                         },
                         "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
                         "showCaption" : true
                       }, {
                         "caption" : "主部门名称",
@@ -511,9 +502,6 @@
                           "layout" : "TABLE_24COL"
                         },
                         "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
                         "showCaption" : true
                       }, {
                         "caption" : "用户标识",
@@ -540,9 +528,7 @@
                           "layout" : "TABLE_24COL"
                         },
                         "allowEmpty" : true,
-                        "emptyCaption" : false,
                         "hidden" : true,
-                        "inputTipClosable" : false,
                         "showCaption" : true
                       } ],
                       "getPSLayout" : {
@@ -592,9 +578,6 @@
                           "layout" : "TABLE_24COL"
                         },
                         "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
                         "showCaption" : true
                       }, {
                         "caption" : "邮件",
@@ -623,9 +606,6 @@
                           "layout" : "TABLE_24COL"
                         },
                         "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
                         "showCaption" : true
                       }, {
                         "caption" : "地址",
@@ -654,9 +634,6 @@
                           "layout" : "TABLE_24COL"
                         },
                         "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
                         "showCaption" : true
                       }, {
                         "caption" : "社交账号",
@@ -685,9 +662,6 @@
                           "layout" : "TABLE_24COL"
                         },
                         "allowEmpty" : true,
-                        "emptyCaption" : false,
-                        "hidden" : false,
-                        "inputTipClosable" : false,
                         "showCaption" : true
                       } ],
                       "getPSLayout" : {

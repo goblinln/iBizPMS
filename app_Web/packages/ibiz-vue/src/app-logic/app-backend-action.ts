@@ -3,7 +3,6 @@ import {
     IPSAppDataEntity,
     IPSAppDEField,
     IPSAppDEMethod,
-    IPSAppDEUIAction,
     IPSAppView,
     IPSNavigateContext,
     IPSNavigateParam,
@@ -11,14 +10,9 @@ import {
 import { ModelTool, UIActionTool, Util } from 'ibiz-core';
 import { GlobalService } from 'ibiz-service';
 import { AppGlobalService } from '../app-service';
+import { AppDEUIAction } from './app-ui-action';
 
-export class AppBackEndAction {
-    /**
-     * 模型数据
-     *
-     * @memberof AppBackEndAction
-     */
-    private actionModel!: IPSAppDEUIAction;
+export class AppBackEndAction extends AppDEUIAction{
 
     /**
      * 初始化AppBackEndAction
@@ -26,7 +20,7 @@ export class AppBackEndAction {
      * @memberof AppBackEndAction
      */
     constructor(opts: any, context?: any) {
-        this.actionModel = opts;
+        super(opts,context);
     }
 
     /**
@@ -52,6 +46,10 @@ export class AppBackEndAction {
         srfParentDeName?: string,
         deUIService?: any,
     ) {
+        if (Object.is(this.actionModel?.uILogicAttachMode, 'REPLACE')) {
+            await this.executeDEUILogic(args, context, params, $event, xData, actionContext, srfParentDeName);
+            return;
+        }
         const actionTarget: string | null = this.actionModel.actionTarget;
         if (this.actionModel.enableConfirm && this.actionModel.confirmMsg) {
             let confirmResult: boolean = await new Promise((resolve: any, reject: any) => {
@@ -173,7 +171,7 @@ export class AppBackEndAction {
                                 data,
                                 this.actionModel.showBusyIndicator,
                             )
-                                .then((response: any) => {
+                                .then(async (response: any) => {
                                     if (!response || response.status !== 200) {
                                         actionContext.$throw(response,'AppBackEndAction');
                                         return;
@@ -197,6 +195,9 @@ export class AppBackEndAction {
                                     }
                                     if (this.actionModel.closeEditView) {
                                         actionContext.closeView(null);
+                                    }
+                                    if (Object.is(this.actionModel?.uILogicAttachMode, 'AFTER')) {
+                                        await this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
                                     }
                                     // 后续界面行为
                                     if (this.actionModel.M?.getNextPSUIAction) {
@@ -255,7 +256,7 @@ export class AppBackEndAction {
                 if (!frontPSAppView) {
                     return;
                 }
-                if (frontPSAppView.openMode.indexOf('DRAWER') !== -1) {
+                if (frontPSAppView.openMode?.indexOf('DRAWER') !== -1) {
                     const view: any = {
                         viewname: 'app-view-shell',
                         height: frontPSAppView.height,

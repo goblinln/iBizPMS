@@ -30,7 +30,7 @@ export class AppCalendarService extends ControlServiceBase {
     */
    public async initServiceParam(opts: any) {
        this.controlInstance = opts;
-       this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+       this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
    }
 
    /**
@@ -39,8 +39,8 @@ export class AppCalendarService extends ControlServiceBase {
     * @param {*} [opts={}]
     * @memberof AppCalendarService
     */
-   constructor(opts: any = {}) {
-       super(opts);
+   constructor(opts: any = {}, context?: any) {
+       super(opts, context);
        this.model = new AppCalendarModel(opts);
        this.initServiceParam(opts);
        this.initEventsConfig();

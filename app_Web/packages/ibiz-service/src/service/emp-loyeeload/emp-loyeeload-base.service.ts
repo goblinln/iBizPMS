@@ -82,7 +82,8 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/employeeloads`, _data);
+        const res = await this.http.post(`/employeeloads`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      * @memberof EmpLoyeeloadService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/employeeloads/${_context.employeeload}`);
+        const res = await this.http.delete(`/employeeloads/${_context.employeeload}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/employeeloads/${_context.employeeload}`, _data);
+        const res = await this.http.put(`/employeeloads/${_context.employeeload}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      * @memberof EmpLoyeeloadService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employeeloads/fetchdefault`, _data);
+        const res = await this.http.post(`/employeeloads/fetchdefault`, _data);
+        return res;
     }
     /**
      * FetchGETWOERKLOAD
@@ -153,7 +157,8 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      * @memberof EmpLoyeeloadService
      */
     async FetchGETWOERKLOAD(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employeeloads/fetchgetwoerkload`, _data);
+        const res = await this.http.post(`/employeeloads/fetchgetwoerkload`, _data);
+        return res;
     }
     /**
      * Select
@@ -164,6 +169,7 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      * @memberof EmpLoyeeloadService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/employeeloads/${_context.employeeload}/select`);
+        const res = await this.http.get(`/employeeloads/${_context.employeeload}/select`);
+        return res;
     }
 }

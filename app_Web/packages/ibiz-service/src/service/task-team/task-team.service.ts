@@ -12,27 +12,29 @@ export class TaskTeamService extends TaskTeamBaseService {
      * Creates an instance of TaskTeamService.
      * @memberof TaskTeamService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TaskTeamService')) {
-            return ___ibz___.sc.get('TaskTeamService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TaskTeamService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {TaskTeamService}
      * @memberof TaskTeamService
      */
-    static getInstance(): TaskTeamService {
-        if (!___ibz___.sc.has('TaskTeamService')) {
-            new TaskTeamService();
+    static getInstance(context?: any): TaskTeamService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TaskTeamService` : `TaskTeamService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TaskTeamService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TaskTeamService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default TaskTeamService;

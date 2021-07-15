@@ -445,7 +445,18 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
      * @memberof AccountBugService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return await this.executeAppDeLogic('GetCurUserConcat',_context,_data);
+        try {
+            _data =  await this.executeAppDELogic('GetCurUserConcat',_context,_data);
+            return new HttpResponse(_data, {
+                ok: true,
+                status: 200
+            });
+        }catch (error) {
+            return new HttpResponse({message:error.message}, {
+                ok: false,
+                status: 500,
+            });
+        }
     }
     /**
      * TestScript
@@ -479,9 +490,11 @@ entity.set("status","FINISH").update();`);
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchaccount`, _data);
+            return res;
         }
-        return this.http.post(`/accountbugs/fetchaccount`, _data);
+        const res = await this.http.post(`/accountbugs/fetchaccount`, _data);
+        return res;
     }
     /**
      * FetchMy
@@ -493,9 +506,11 @@ entity.set("status","FINISH").update();`);
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmy`, _data);
+            return res;
         }
-        return this.http.post(`/accountbugs/fetchmy`, _data);
+        const res = await this.http.post(`/accountbugs/fetchmy`, _data);
+        return res;
     }
     /**
      * FetchMyFavorites
@@ -507,8 +522,10 @@ entity.set("status","FINISH").update();`);
      */
     async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmyfavorites`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmyfavorites`, _data);
+            return res;
         }
-        return this.http.post(`/accountbugs/fetchmyfavorites`, _data);
+        const res = await this.http.post(`/accountbugs/fetchmyfavorites`, _data);
+        return res;
     }
 }

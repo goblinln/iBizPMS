@@ -367,6 +367,7 @@
     "name" : "srfmstag"
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "Right2",
     "name" : "移动端发布右滑行为组",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

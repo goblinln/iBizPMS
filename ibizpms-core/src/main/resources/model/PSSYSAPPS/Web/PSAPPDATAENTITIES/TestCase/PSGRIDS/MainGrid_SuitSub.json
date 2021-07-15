@@ -253,6 +253,7 @@
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
+      "codeName" : "SuitSub",
       "name" : "表格主信息（操作栏）_套件",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

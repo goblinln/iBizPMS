@@ -12,27 +12,29 @@ export class UserTplService extends UserTplBaseService {
      * Creates an instance of UserTplService.
      * @memberof UserTplService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('UserTplService')) {
-            return ___ibz___.sc.get('UserTplService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('UserTplService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {UserTplService}
      * @memberof UserTplService
      */
-    static getInstance(): UserTplService {
-        if (!___ibz___.sc.has('UserTplService')) {
-            new UserTplService();
+    static getInstance(context?: any): UserTplService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}UserTplService` : `UserTplService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new UserTplService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('UserTplService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default UserTplService;

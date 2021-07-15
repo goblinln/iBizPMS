@@ -91,7 +91,8 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testcase && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
+            const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
+            return res;
         }
     this.log.warn([`[TestCaseStep]>>>[FetchDefault函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -106,7 +107,8 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
      */
     async FetchVersions(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testcase && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchversions`, _data);
+            const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchversions`, _data);
+            return res;
         }
     this.log.warn([`[TestCaseStep]>>>[FetchVersions函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });

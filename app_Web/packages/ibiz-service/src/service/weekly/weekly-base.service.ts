@@ -75,7 +75,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/weeklies/${_context.weekly}/autocreate`, _data);
+        const res = await this.http.post(`/weeklies/${_context.weekly}/autocreate`, _data);
+        return res;
     }
     /**
      * Create
@@ -93,7 +94,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/weeklies`, _data);
+        const res = await this.http.post(`/weeklies`, _data);
+        return res;
     }
     /**
      * Get
@@ -130,7 +132,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/weeklies/${_context.weekly}/notice`, _data);
+        const res = await this.http.post(`/weeklies/${_context.weekly}/notice`, _data);
+        return res;
     }
     /**
      * Read
@@ -141,7 +144,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/weeklies/${_context.weekly}/read`, _data);
+        const res = await this.http.post(`/weeklies/${_context.weekly}/read`, _data);
+        return res;
     }
     /**
      * Submit
@@ -152,7 +156,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/weeklies/${_context.weekly}/submit`, _data);
+        const res = await this.http.post(`/weeklies/${_context.weekly}/submit`, _data);
+        return res;
     }
     /**
      * Update
@@ -164,7 +169,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/weeklies/${_context.weekly}`, _data);
+        const res = await this.http.put(`/weeklies/${_context.weekly}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -175,7 +181,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @memberof WeeklyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/weeklies/fetchdefault`, _data);
+        const res = await this.http.post(`/weeklies/fetchdefault`, _data);
+        return res;
     }
 
     /**

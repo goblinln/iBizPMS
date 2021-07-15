@@ -12,27 +12,29 @@ export class TestCaseLibCaseStepNestedService extends TestCaseLibCaseStepNestedB
      * Creates an instance of TestCaseLibCaseStepNestedService.
      * @memberof TestCaseLibCaseStepNestedService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TestCaseLibCaseStepNestedService')) {
-            return ___ibz___.sc.get('TestCaseLibCaseStepNestedService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TestCaseLibCaseStepNestedService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {TestCaseLibCaseStepNestedService}
      * @memberof TestCaseLibCaseStepNestedService
      */
-    static getInstance(): TestCaseLibCaseStepNestedService {
-        if (!___ibz___.sc.has('TestCaseLibCaseStepNestedService')) {
-            new TestCaseLibCaseStepNestedService();
+    static getInstance(context?: any): TestCaseLibCaseStepNestedService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TestCaseLibCaseStepNestedService` : `TestCaseLibCaseStepNestedService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TestCaseLibCaseStepNestedService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TestCaseLibCaseStepNestedService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default TestCaseLibCaseStepNestedService;

@@ -217,6 +217,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -228,6 +229,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyWork",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的工作",
     "name" : "MyWork",
     "getPSDEDataQueries" : [ {
@@ -238,6 +240,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyWorkMob",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的工作",
     "name" : "MyWorkMob",
     "getPSDEDataQueries" : [ {
@@ -248,6 +251,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyWorkPm",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的工作（项目经理）",
     "name" : "MyWorkPm",
     "getPSDEDataQueries" : [ {
@@ -258,6 +262,7 @@
     "enableFront" : true
   }, {
     "codeName" : "PersonInfo",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "个人信息-个人贡献",
     "name" : "PersonInfo",
     "getPSDEDataQueries" : [ {
@@ -268,6 +273,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Welcome",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "欢迎",
     "name" : "welcome",
     "getPSDEDataQueries" : [ {

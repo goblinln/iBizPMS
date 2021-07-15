@@ -82,7 +82,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/productsums`, _data);
+        const res = await this.http.post(`/productsums`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      * @memberof ProductSumService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productsums/${_context.productsum}`);
+        const res = await this.http.delete(`/productsums/${_context.productsum}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productsums/${_context.productsum}`, _data);
+        const res = await this.http.put(`/productsums/${_context.productsum}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      * @memberof ProductSumService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productsums/fetchdefault`, _data);
+        const res = await this.http.post(`/productsums/fetchdefault`, _data);
+        return res;
     }
     /**
      * FetchProductBugcnt_QA
@@ -153,7 +157,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      * @memberof ProductSumService
      */
     async FetchProductBugcnt_QA(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productsums/fetchproductbugcnt_qa`, _data);
+        const res = await this.http.post(`/productsums/fetchproductbugcnt_qa`, _data);
+        return res;
     }
     /**
      * FetchProductCreateStory
@@ -164,7 +169,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      * @memberof ProductSumService
      */
     async FetchProductCreateStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productsums/fetchproductcreatestory`, _data);
+        const res = await this.http.post(`/productsums/fetchproductcreatestory`, _data);
+        return res;
     }
     /**
      * FetchProductStoryHoursSum
@@ -175,7 +181,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      * @memberof ProductSumService
      */
     async FetchProductStoryHoursSum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productsums/fetchproductstoryhourssum`, _data);
+        const res = await this.http.post(`/productsums/fetchproductstoryhourssum`, _data);
+        return res;
     }
     /**
      * FetchProductStorySum
@@ -186,7 +193,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      * @memberof ProductSumService
      */
     async FetchProductStorySum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productsums/fetchproductstorysum`, _data);
+        const res = await this.http.post(`/productsums/fetchproductstorysum`, _data);
+        return res;
     }
     /**
      * FetchProductStorycntAndPlancnt
@@ -197,7 +205,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      * @memberof ProductSumService
      */
     async FetchProductStorycntAndPlancnt(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productsums/fetchproductstorycntandplancnt`, _data);
+        const res = await this.http.post(`/productsums/fetchproductstorycntandplancnt`, _data);
+        return res;
     }
     /**
      * FetchProductSumBugType
@@ -208,7 +217,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      * @memberof ProductSumService
      */
     async FetchProductSumBugType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productsums/fetchproductsumbugtype`, _data);
+        const res = await this.http.post(`/productsums/fetchproductsumbugtype`, _data);
+        return res;
     }
     /**
      * Select
@@ -219,6 +229,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      * @memberof ProductSumService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productsums/${_context.productsum}/select`);
+        const res = await this.http.get(`/productsums/${_context.productsum}/select`);
+        return res;
     }
 }

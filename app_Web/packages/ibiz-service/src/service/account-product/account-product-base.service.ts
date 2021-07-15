@@ -206,9 +206,11 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchaccount`, _data);
+            return res;
         }
-        return this.http.post(`/accountproducts/fetchaccount`, _data);
+        const res = await this.http.post(`/accountproducts/fetchaccount`, _data);
+        return res;
     }
     /**
      * FetchMy
@@ -220,8 +222,10 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchmy`, _data);
+            return res;
         }
-        return this.http.post(`/accountproducts/fetchmy`, _data);
+        const res = await this.http.post(`/accountproducts/fetchmy`, _data);
+        return res;
     }
 }

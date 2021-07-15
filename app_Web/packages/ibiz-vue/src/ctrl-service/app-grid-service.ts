@@ -12,7 +12,6 @@ import { AppGridModel } from 'ibiz-vue';
  */
 export class AppGridService extends ControlServiceBase {
 
-
     /**
     * 表格实例对象
     *
@@ -53,7 +52,7 @@ export class AppGridService extends ControlServiceBase {
     public async initServiceParam(opts: any) {
         this.controlInstance = opts;
         if (this.appDeCodeName) {
-            this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+            this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         }
         this.model = new AppGridModel(opts);
     }
@@ -64,8 +63,8 @@ export class AppGridService extends ControlServiceBase {
      * @param {*} [opts={}]
      * @memberof AppGridService
      */
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
         this.initServiceParam(opts);
     }
 

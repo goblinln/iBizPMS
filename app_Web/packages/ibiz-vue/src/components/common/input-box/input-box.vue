@@ -26,6 +26,7 @@
 </template>
 
 <script lang="ts">
+import { Util } from "ibiz-core";
 import { Vue, Component, Prop, Model, Emit } from "vue-property-decorator";
 
 @Component({})
@@ -43,7 +44,6 @@ export default class InputBox extends Vue {
    * @memberof InputBox
    */
   public mounted() {
-    this.addEvent();
     if (this.textareaId) {
       let textarea: any = document.getElementById(this.textareaId);
       if (textarea) {
@@ -153,7 +153,7 @@ export default class InputBox extends Vue {
    */
   set CurrentVal(val: any) {
     let _data: any = val;
-    if (Object.is(this.type, "number") && val && !isNaN(val)) {
+    if (Object.is(this.type, "number") &&  Util.isExistAndNotEmpty(val) && !isNaN(val)) {
       try {
         _data = isNaN(Number(val)) ? null : Number(val);
       } catch (error) {}
@@ -176,28 +176,6 @@ export default class InputBox extends Vue {
       return;
     }
     return $event;
-  }
-
-  /**
-   * 给数值框中的箭头按钮添加事件
-   *
-   * @memberof InputBox
-   */
-  public addEvent() {
-    if (Object.is(this.type, "number")) {
-      // 整个页面渲染完之后再去执行
-      this.$nextTick(() => {
-        let inputNumber: any = document.getElementById(this.numberId);
-        let handlerWrap: any = inputNumber.firstElementChild;
-        handlerWrap.onmouseover = () => {
-          inputNumber.style.paddingRight = "15px";
-          inputNumber.style.transition = "all 0.2s linear";
-        };
-        handlerWrap.onmouseout = () => {
-          inputNumber.style.paddingRight = "0px";
-        };
-      });
-    }
   }
 }
 </script>

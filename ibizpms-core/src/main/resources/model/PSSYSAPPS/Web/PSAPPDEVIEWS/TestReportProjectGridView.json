@@ -631,6 +631,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "UAGroup2_9828",
         "name" : "界面行为组（项目）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

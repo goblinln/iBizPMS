@@ -584,6 +584,7 @@
       "name" : "srfmstag"
     } ],
     "getPSDEUIActionGroup2" : {
+      "codeName" : "Auto123",
       "name" : "移动端周报右滑界面行为组",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",

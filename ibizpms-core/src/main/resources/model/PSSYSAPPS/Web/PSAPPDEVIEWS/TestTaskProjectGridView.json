@@ -921,6 +921,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Main",
         "name" : "主表格操作栏",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

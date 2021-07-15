@@ -84,17 +84,4 @@ export class GridExpBarControlBase extends ExpBarControlBase implements GridExpB
         }
     }
 
-    /**
-    * 部件事件处理
-    *
-    * @memberof GridExpBarControlBase
-    */
-    public onCtrlEvent(controlname: string, action: string, data: any) {
-        if (controlname && Object.is(controlname, this.$xDataControl?.name) && Object.is(action, 'selectiondata')) {
-            this.onSelectionChange(data);
-        } else {
-            super.onCtrlEvent(controlname, action, data);
-        }
-    }
-
 }

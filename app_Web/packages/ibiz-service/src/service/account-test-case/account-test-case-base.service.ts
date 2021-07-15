@@ -338,9 +338,11 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
      */
     async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchaccount`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchaccount`, _data);
+            return res;
         }
-        return this.http.post(`/accounttestcases/fetchaccount`, _data);
+        const res = await this.http.post(`/accounttestcases/fetchaccount`, _data);
+        return res;
     }
     /**
      * FetchMy
@@ -352,9 +354,11 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmy`, _data);
+            return res;
         }
-        return this.http.post(`/accounttestcases/fetchmy`, _data);
+        const res = await this.http.post(`/accounttestcases/fetchmy`, _data);
+        return res;
     }
     /**
      * FetchMyFavorite
@@ -366,8 +370,10 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
      */
     async FetchMyFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmyfavorite`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmyfavorite`, _data);
+            return res;
         }
-        return this.http.post(`/accounttestcases/fetchmyfavorite`, _data);
+        const res = await this.http.post(`/accounttestcases/fetchmyfavorite`, _data);
+        return res;
     }
 }

@@ -106,7 +106,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
         this.initAction = (this.controlInstance.getInitPSControlAction() as IPSControlAction)?.getPSAppDEMethod()?.codeName || 'Get';
         this.finishAction = (this.controlInstance.getFinishPSControlAction() as IPSControlAction)?.getPSAppDEMethod()?.codeName || 'Update';
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppWizardPanelService(this.controlInstance);
+            this.service = new AppWizardPanelService(this.controlInstance, this.context);
             await this.service.loaded();
         }
         this.initActiveForm();

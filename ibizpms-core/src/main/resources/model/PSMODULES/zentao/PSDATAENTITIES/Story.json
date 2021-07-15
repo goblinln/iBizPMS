@@ -1814,6 +1814,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "指定用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -1824,6 +1825,7 @@
     "enableFront" : true
   }, {
     "codeName" : "AssignedToMyStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "指派给我的需求",
     "name" : "AssignedToMyStory",
     "getPSDEDataQueries" : [ {
@@ -1834,6 +1836,7 @@
     "enableFront" : true
   }, {
     "codeName" : "AssignedToMyStoryCalendar",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "指派给我的需求（日历）",
     "name" : "AssignedToMyStoryCalendar",
     "getPSDEDataQueries" : [ {
@@ -1844,6 +1847,7 @@
     "enableFront" : true
   }, {
     "codeName" : "BugStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "Bug相关需求",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -1859,6 +1863,7 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildLinkCompletedStories",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "版本关联\b已完成的需求（选择数据源）\b",
     "name" : "buildLinkCompletedStories",
     "getPSDEDataQueries" : [ {
@@ -1869,6 +1874,7 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildLinkableStories",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "版本可关联的需求（产品内）",
     "name" : "BuildLinkableStories",
     "getPSDEDataQueries" : [ {
@@ -1879,6 +1885,7 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildStories",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "获取版本相关需求",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -1894,6 +1901,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ByModule",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "通过模块查询",
     "name" : "ByModule",
     "getPSDEDataQueries" : [ {
@@ -1904,6 +1912,7 @@
     "enableFront" : true
   }, {
     "codeName" : "CaseStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "相关用例需求",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -1919,6 +1928,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ChildMore",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "子需求（更多）",
     "name" : "ChildMore",
     "getPSDEDataQueries" : [ {
@@ -1929,6 +1939,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -1940,6 +1951,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ESBulk",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
     "getPSDEDataQueries" : [ {
@@ -1950,6 +1962,7 @@
     "enableFront" : true
   }, {
     "codeName" : "GetProductStories",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "获取产品需求",
     "name" : "GetProductStories",
     "getPSDEDataQueries" : [ {
@@ -1960,6 +1973,7 @@
     "enableFront" : true
   }, {
     "codeName" : "My",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -1970,6 +1984,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyAgentStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我代理的需求",
     "name" : "MyAgentStory",
     "getPSDEDataQueries" : [ {
@@ -1980,6 +1995,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyCreate",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我创建的（权限）",
     "name" : "MyCreate",
     "getPSDEDataQueries" : [ {
@@ -1990,6 +2006,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我创建或参与（权限）",
     "name" : "MyCreateOrPartake",
     "getPSDEDataQueries" : [ {
@@ -2000,6 +2017,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyCurOpenedStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "所创建需求数和对应的优先级及状态",
     "name" : "MyCurOpenedStory",
     "getPSDEDataQueries" : [ {
@@ -2010,6 +2028,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyFavorites",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
     "getPSDEDataQueries" : [ {
@@ -2020,6 +2039,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyReProduct",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我相关产品（权限）",
     "name" : "MyReProduct",
     "getPSDEDataQueries" : [ {
@@ -2030,6 +2050,7 @@
     "enableFront" : true
   }, {
     "codeName" : "NotCurPlanLinkStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "计划关联需求(去除已关联)",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -2045,6 +2066,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ParentDefault",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据查询",
     "name" : "ParentDefault",
     "getPSDEDataQueries" : [ {
@@ -2055,6 +2077,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ParentDefaultQ",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据查询",
     "name" : "ParentDefaultQ",
     "getPSDEDataQueries" : [ {
@@ -2065,6 +2088,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectLinkStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目关联需求",
     "name" : "projectLinkStory",
     "getPSDEDataQueries" : [ {
@@ -2075,6 +2099,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectStories",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目相关需求",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -2090,6 +2115,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ReleaseLinkableStories",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "版本可关联的完成的需求",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -2105,6 +2131,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ReleaseStories",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "获取产品发布相关需求",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -2120,6 +2147,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ReportStories",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "通过模块查询",
     "name" : "ReportStories",
     "getPSDEDataQueries" : [ {
@@ -2130,6 +2158,7 @@
     "enableFront" : true
   }, {
     "codeName" : "StoryChild",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "获取产品发布相关需求",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -2145,6 +2174,7 @@
     "enableFront" : true
   }, {
     "codeName" : "StoryRelated",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "获取产品发布相关需求",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -2160,6 +2190,7 @@
     "enableFront" : true
   }, {
     "codeName" : "SubStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "需求细分",
     "name" : "SubStory",
     "getPSDEDataQueries" : [ {
@@ -2170,6 +2201,7 @@
     "enableFront" : true
   }, {
     "codeName" : "TaskRelatedStory",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "任务相关需求",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -2185,6 +2217,7 @@
     "enableFront" : true
   }, {
     "codeName" : "View",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "默认（全部数据）",
     "name" : "VIEW",
     "getPSDEDataQueries" : [ {

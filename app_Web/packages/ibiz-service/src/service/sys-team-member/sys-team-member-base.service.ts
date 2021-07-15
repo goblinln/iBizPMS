@@ -82,7 +82,8 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/systeammembers`, _data);
+        const res = await this.http.post(`/systeammembers`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/systeammembers/${_context.systeammember}`);
+        const res = await this.http.delete(`/systeammembers/${_context.systeammember}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/systeammembers/${_context.systeammember}`, _data);
+        const res = await this.http.put(`/systeammembers/${_context.systeammember}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/systeammembers/fetchdefault`, _data);
+        const res = await this.http.post(`/systeammembers/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/systeammembers/${_context.systeammember}/select`);
+        const res = await this.http.get(`/systeammembers/${_context.systeammember}/select`);
+        return res;
     }
 }

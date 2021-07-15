@@ -82,7 +82,8 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/pssyssfpubs`, _data);
+        const res = await this.http.post(`/pssyssfpubs`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      * @memberof PSSysSFPubService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/pssyssfpubs/${_context.pssyssfpub}`);
+        const res = await this.http.delete(`/pssyssfpubs/${_context.pssyssfpub}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/pssyssfpubs/${_context.pssyssfpub}`, _data);
+        const res = await this.http.put(`/pssyssfpubs/${_context.pssyssfpub}`, _data);
+        return res;
     }
     /**
      * FetchBuild
@@ -142,7 +145,8 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      * @memberof PSSysSFPubService
      */
     async FetchBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/pssyssfpubs/fetchbuild`, _data);
+        const res = await this.http.post(`/pssyssfpubs/fetchbuild`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -153,7 +157,8 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      * @memberof PSSysSFPubService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/pssyssfpubs/fetchdefault`, _data);
+        const res = await this.http.post(`/pssyssfpubs/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -164,6 +169,7 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      * @memberof PSSysSFPubService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssyssfpubs/${_context.pssyssfpub}/select`);
+        const res = await this.http.get(`/pssyssfpubs/${_context.pssyssfpub}/select`);
+        return res;
     }
 }

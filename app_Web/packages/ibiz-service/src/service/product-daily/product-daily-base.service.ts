@@ -75,7 +75,8 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
      * @memberof ProductDailyService
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productdailies/${_context.productdaily}/autocreate`, _data);
+        const res = await this.http.post(`/productdailies/${_context.productdaily}/autocreate`, _data);
+        return res;
     }
     /**
      * Create
@@ -93,7 +94,8 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/productdailies`, _data);
+        const res = await this.http.post(`/productdailies`, _data);
+        return res;
     }
     /**
      * Get
@@ -131,7 +133,8 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productdailies/${_context.productdaily}`, _data);
+        const res = await this.http.put(`/productdailies/${_context.productdaily}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
      * @memberof ProductDailyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productdailies/fetchdefault`, _data);
+        const res = await this.http.post(`/productdailies/fetchdefault`, _data);
+        return res;
     }
 
     /**

@@ -88,6 +88,7 @@
         "imagePath" : "assets/images/myfavoritestory.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "UAGroup4",
         "name" : "更多（我收藏的）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -320,9 +321,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "当前状态",
@@ -355,9 +353,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -391,9 +386,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             } ],
@@ -667,6 +659,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "Auto53_3854",
             "name" : " 移动端右滑（收藏）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -933,6 +926,7 @@
         "imagePath" : "assets/images/add-task-list-card.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "UAGroup3",
         "name" : "指派给我（更多）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -1182,9 +1176,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "任务类型",
@@ -1217,9 +1208,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -1253,9 +1241,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -1312,9 +1297,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -1985,6 +1967,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "UAGroup_8597",
             "name" : "移动端（指派给）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -2399,6 +2382,7 @@
         "imagePath" : "assets/images/mybug.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "UAGroup",
         "name" : "指派给我Bug（更多）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -2661,9 +2645,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "Bug状态",
@@ -2696,9 +2677,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -2732,9 +2710,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -2768,9 +2743,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -2804,9 +2776,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -2835,9 +2804,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -3485,6 +3451,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "Auto71",
             "name" : "移动端操作按钮",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -3898,6 +3865,7 @@
         "imagePath" : "assets/images/add-story-list-card.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "UAGroup3",
         "name" : "更多（指派给我）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -4136,9 +4104,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "当前状态",
@@ -4171,9 +4136,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -4207,9 +4169,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             } ],
@@ -4563,6 +4522,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "Auto53_6317",
             "name" : "移动端右滑（指派给）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -4973,6 +4933,7 @@
         "imagePath" : "assets/images/myfavoritetask.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "UAGroup5",
         "name" : "我的收藏（更多）",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -5215,9 +5176,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "任务类型",
@@ -5250,9 +5208,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -5286,9 +5241,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "needCodeListConfig" : true,
               "showCaption" : true
             }, {
@@ -5345,9 +5297,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -5849,6 +5798,7 @@
             "name" : "srfmstag"
           } ],
           "getPSDEUIActionGroup2" : {
+            "codeName" : "UAGroup_6849",
             "name" : "移动端滑动（收藏）",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -6738,6 +6688,7 @@
         "imagePath" : "assets/images/add-bug-distribution-card.jpg"
       },
       "getPSUIActionGroup" : {
+        "codeName" : "Auto143",
         "name" : "更多",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

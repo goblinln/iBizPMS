@@ -292,8 +292,8 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
     public async ctrlModelInit(args?:any) {
         await super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppCalendarService(this.controlInstance);
-            this.appEntityService = await new GlobalService().getService(this.appDeCodeName);
+            this.service = new AppCalendarService(this.controlInstance, this.context);
+            this.appEntityService = await new GlobalService().getService(this.appDeCodeName, this.context);
         }
         this.initShowLegend();
         this.initActionModel();
@@ -550,7 +550,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         this.$emit("ctrl-event", { controlname: this.controlInstance?.name, action: "beforeload", data: parentdata });
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
-        Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams?this.viewparams:'')));
+        Object.assign(tempViewParams, Util.deepCopy(this.viewparams?this.viewparams:''));
         Object.assign(arg, { viewparams: tempViewParams });
         // 处理events数据
         let _this = this;
@@ -580,7 +580,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         }else{
             this.searchArgCache = arg;
         }
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext:any = Util.deepCopy(this.context);
         const post: Promise<any> = this.service.search(this.loadAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
             if (!response || response.status !== 200) {
@@ -589,6 +589,11 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
             }
             // 默认选中第一项
             this.events = response.data;
+            this.ctrlEvent({
+                controlname: this.name,
+                action: 'load',
+                data: this.events,
+            });
             handleEvents();
             this.scheduleSort();
         }, (response: any) => {
@@ -674,7 +679,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         // 处理event数据
         let event: any = {};
         if(isOriginData){
-            event = JSON.parse(JSON.stringify($event));
+            event = Util.deepCopy($event);
         }else{
             event = Object.assign({title: $event.event.title, start: $event.event.start, end: $event.event.end}, $event.event.extendedProps);
         }
@@ -714,14 +719,14 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         if(!view.viewname){
             return;
         } else if (Object.is(view.placement, 'INDEXVIEWTAB') || Util.isEmpty(view.placement)) {
-            const routePath = ViewTool.buildUpRoutePath(_this.$route, this.context, view.deResParameters, view.parameters, [JSON.parse(JSON.stringify(_context))] , _viewparams);
+            const routePath = ViewTool.buildUpRoutePath(_this.$route, this.context, view.deResParameters, view.parameters, [Util.deepCopy(_context)] , _viewparams);
             _this.$router.push(routePath);
         } else {
             let container: Subject<any> = new Subject();
             if (Object.is(view.placement, 'POPOVER')) {
-                container = _this.$apppopover.openPop(isOriginData ? $event2 : $event.jsEvent, view,JSON.parse(JSON.stringify(_context)), _viewparams);
+                container = _this.$apppopover.openPop(isOriginData ? $event2 : $event.jsEvent, view,Util.deepCopy(_context), _viewparams);
             } else if (Object.is(view.placement, 'POPUPMODAL')) {
-                container = _this.$appmodal.openModal(view,  JSON.parse(JSON.stringify(_context)), _viewparams);
+                container = _this.$appmodal.openModal(view, Util.deepCopy(_context), _viewparams);
             } else if (view.placement.startsWith('DRAWER')) {
                 container = _this.$appdrawer.openDrawer(view,  Util.getViewProps(_context, _viewparams));
             }
@@ -782,7 +787,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
             }
         }
         Object.assign(arg,{viewparams:this.viewparams});
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext:any = Util.deepCopy(this.context);
         this.onControlRequset('onEventDrop', tempContext, arg);
         const post: Promise<any> = this.service.update(itemType, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
@@ -831,7 +836,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
      * @memberof CalendarControlBase
      */
     public async computeNodeState(data:any,appEntityName:string) {
-        let service = await new GlobalService().getService(appEntityName);
+        let service = await new GlobalService().getService(appEntityName, this.context);
         if(this.copyActionModel && Object.keys(this.copyActionModel).length > 0) {
             if(service['Get'] && service['Get'] instanceof Function){
                 let tempContext:any = Util.deepCopy(this.context);

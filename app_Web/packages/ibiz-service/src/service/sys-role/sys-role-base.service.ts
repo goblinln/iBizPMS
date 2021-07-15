@@ -82,7 +82,8 @@ export class SysRoleBaseService extends EntityBaseService<ISysRole> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/sysroles`, _data);
+        const res = await this.http.post(`/sysroles`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class SysRoleBaseService extends EntityBaseService<ISysRole> {
      * @memberof SysRoleService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysroles/${_context.sysrole}`);
+        const res = await this.http.delete(`/sysroles/${_context.sysrole}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class SysRoleBaseService extends EntityBaseService<ISysRole> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysroles/${_context.sysrole}`, _data);
+        const res = await this.http.put(`/sysroles/${_context.sysrole}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class SysRoleBaseService extends EntityBaseService<ISysRole> {
      * @memberof SysRoleService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysroles/fetchdefault`, _data);
+        const res = await this.http.post(`/sysroles/fetchdefault`, _data);
+        return res;
     }
     /**
      * Select
@@ -153,6 +157,7 @@ export class SysRoleBaseService extends EntityBaseService<ISysRole> {
      * @memberof SysRoleService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysroles/${_context.sysrole}/select`);
+        const res = await this.http.get(`/sysroles/${_context.sysrole}/select`);
+        return res;
     }
 }

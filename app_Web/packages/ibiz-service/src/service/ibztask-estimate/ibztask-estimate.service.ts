@@ -12,27 +12,29 @@ export class IBZTaskEstimateService extends IBZTaskEstimateBaseService {
      * Creates an instance of IBZTaskEstimateService.
      * @memberof IBZTaskEstimateService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('IBZTaskEstimateService')) {
-            return ___ibz___.sc.get('IBZTaskEstimateService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('IBZTaskEstimateService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {IBZTaskEstimateService}
      * @memberof IBZTaskEstimateService
      */
-    static getInstance(): IBZTaskEstimateService {
-        if (!___ibz___.sc.has('IBZTaskEstimateService')) {
-            new IBZTaskEstimateService();
+    static getInstance(context?: any): IBZTaskEstimateService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}IBZTaskEstimateService` : `IBZTaskEstimateService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new IBZTaskEstimateService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('IBZTaskEstimateService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default IBZTaskEstimateService;

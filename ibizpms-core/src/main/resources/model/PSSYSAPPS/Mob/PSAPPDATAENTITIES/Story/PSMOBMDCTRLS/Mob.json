@@ -311,6 +311,7 @@
     "name" : "srfmstag"
   } ],
   "getPSDEUIActionGroup2" : {
+    "codeName" : "Auto53",
     "name" : "移动端右滑",
     "getPSUIActionGroupDetails" : [ {
       "detailType" : "DEUIACTION",

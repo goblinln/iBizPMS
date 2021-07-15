@@ -31,8 +31,8 @@ export class AppTreeGridExService extends ControlServiceBase {
     public globalService: GlobalService = new GlobalService();
 
 
-    constructor(opts: any = {}) {
-        super(opts);
+    constructor(opts: any = {}, context?: any) {
+        super(opts, context);
         this.controlInstance = opts;
         this.model = new AppTreeGridExModel(opts);
     }
@@ -104,7 +104,7 @@ export class AppTreeGridExService extends ControlServiceBase {
                 strRealNodeId: strRealNodeId,
                 srfnodeid: srfnodeid,
                 strNodeType: strNodeType,
-                viewparams: JSON.parse(JSON.stringify(data)).viewparams
+                viewparams: Util.deepCopy(data).viewparams
             }
         );
 
@@ -324,7 +324,7 @@ export class AppTreeGridExService extends ControlServiceBase {
                                     strText = entity[majorField?.codeName.toLowerCase()];
                                 }
                                 Object.assign(treeNode, { srfparentdename: deCodeName,srfparentdemapname: appDataEntity?.getPSDEName(), srfparentkey: strId });
-                                let tempContext: any = JSON.parse(JSON.stringify(context));
+                                let tempContext: any = Util.deepCopy(context);
                                 Object.assign(tempContext, { srfparentdename: deCodeName,srfparentdemapname: appDataEntity?.getPSDEName(), srfparentkey: strId, [deCodeName.toLowerCase()]: strId });
                                 Object.assign(treeNode, { srfappctx: tempContext });
                                 Object.assign(treeNode, { [deCodeName.toLowerCase()]: strId });
@@ -522,17 +522,17 @@ export class AppTreeGridExService extends ControlServiceBase {
             Object.assign(searchFilter, { size: 1000 });
         }
         if (context && context.srfparentdename) {
-            Object.assign(searchFilter, { srfparentdename: JSON.parse(JSON.stringify(context)).srfparentdename });
+            Object.assign(searchFilter, { srfparentdename: Util.deepCopy(context).srfparentdename });
         }
         if (context && context.srfparentkey) {
-            Object.assign(searchFilter, { srfparentkey: JSON.parse(JSON.stringify(context)).srfparentkey });
+            Object.assign(searchFilter, { srfparentkey: Util.deepCopy(context).srfparentkey });
         }
         if ((nodeJson as IPSDETreeDataSetNode)?.getSortPSAppDEField() && (nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName && (nodeJson as IPSDETreeDataSetNode)?.sortDir) {
             Object.assign(searchFilter, { sort: `${(nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName.toLowerCase()},${(nodeJson as IPSDETreeDataSetNode).sortDir.toLowerCase()}` });
         }
         const appDataEntity = nodeJson.getPSAppDataEntity() as IPSAppDataEntity;
         await appDataEntity.fill();
-        let appEntityService = await this.globalService.getService(appDataEntity.codeName);
+        let appEntityService = await this.globalService.getService(appDataEntity.codeName, context);
         let list: any[] = [];
         if (appEntityService[(nodeJson as IPSDETreeDataSetNode)?.getPSAppDEDataSet()?.codeName as string] && appEntityService[(nodeJson as IPSDETreeDataSetNode).getPSAppDEDataSet()?.codeName as string] instanceof Function) {
             const response = await appEntityService[(nodeJson as IPSDETreeDataSetNode).getPSAppDEDataSet()?.codeName as string](context, searchFilter, false);
@@ -543,7 +543,7 @@ export class AppTreeGridExService extends ControlServiceBase {
                 }
                 const data: any = response.data;
                 if (Object.keys(data).length > 0) {
-                    list = JSON.parse(JSON.stringify(data));
+                    list = Util.deepCopy(data);
                     return list;
                 } else {
                     return [];
@@ -566,7 +566,7 @@ export class AppTreeGridExService extends ControlServiceBase {
      */
     public handleResNavContext(context: any, filter: any, resNavContext: any) {
         if (resNavContext && Object.keys(resNavContext).length > 0) {
-            let tempContextData: any = JSON.parse(JSON.stringify(context));
+            let tempContextData: any = Util.deepCopy(context);
             let tempViewParams: any = {};
             if (filter && filter.viewparams) {
                 tempViewParams = filter.viewparams;
@@ -658,7 +658,7 @@ export class AppTreeGridExService extends ControlServiceBase {
             let tempViewParams: any = {};
             if (filter && filter.viewparams) {
                 tempViewParams = filter.viewparams;
-                tempViewParamData = JSON.parse(JSON.stringify(filter.viewparams));
+                tempViewParamData = Util.deepCopy(filter.viewparams);
             }
             if (Object.keys(resNavParams).length > 0) {
                 Object.keys(resNavParams).forEach((item: any) => {

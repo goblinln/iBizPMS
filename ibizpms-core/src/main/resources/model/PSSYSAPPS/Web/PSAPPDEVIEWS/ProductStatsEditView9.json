@@ -484,9 +484,7 @@
         "updateDV" : "product",
         "updateDVT" : "CONTEXT",
         "allowEmpty" : true,
-        "emptyCaption" : false,
         "hidden" : true,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "actionGroupExtractMode" : "ITEM",
@@ -566,8 +564,6 @@
             },
             "allowEmpty" : true,
             "emptyCaption" : true,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           }, {
             "actionGroupExtractMode" : "ITEM",
@@ -764,9 +760,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "已计划",
@@ -796,9 +789,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "研发中",
@@ -828,9 +818,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "测试中",
@@ -860,9 +847,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             }, {
               "caption" : "已发布",
@@ -892,9 +876,6 @@
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -1018,9 +999,7 @@
                     "name" : "custom1"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
                   "hidden" : true,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "未过期计划数",
@@ -1043,9 +1022,7 @@
                     "name" : "custom2"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
                   "hidden" : true,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 } ],
                 "getPSEditor" : {
@@ -1065,11 +1042,7 @@
                   "layout" : "TABLE_24COL"
                 },
                 "allowEmpty" : true,
-                "compositeItem" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
-                "showCaption" : false
+                "compositeItem" : true
               }, {
                 "actionType" : "UIACTION",
                 "caption" : "创建计划",
@@ -1262,9 +1235,7 @@
                     "name" : "custom3"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
                   "hidden" : true,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "未完成关联项目数",
@@ -1287,9 +1258,7 @@
                     "name" : "custom4"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
                   "hidden" : true,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 } ],
                 "getPSEditor" : {
@@ -1309,11 +1278,7 @@
                   "layout" : "TABLE_24COL"
                 },
                 "allowEmpty" : true,
-                "compositeItem" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
-                "showCaption" : false
+                "compositeItem" : true
               }, {
                 "codeName" : "rawitem11",
                 "contentType" : "RAW",
@@ -1489,9 +1454,7 @@
                 "width" : 0
               },
               "allowEmpty" : true,
-              "emptyCaption" : false,
               "hidden" : true,
-              "inputTipClosable" : false,
               "showCaption" : true
             } ],
             "getPSLayout" : {
@@ -1584,9 +1547,7 @@
                     "name" : "custom5"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
                   "hidden" : true,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "caption" : "维护中发布数",
@@ -1609,9 +1570,7 @@
                     "name" : "custom6"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : false,
                   "hidden" : true,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 } ],
                 "getPSEditor" : {
@@ -1631,11 +1590,7 @@
                   "layout" : "TABLE_24COL"
                 },
                 "allowEmpty" : true,
-                "compositeItem" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
-                "showCaption" : false
+                "compositeItem" : true
               }, {
                 "actionType" : "UIACTION",
                 "caption" : "创建发布",
@@ -1794,9 +1749,7 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : true,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "hidden" : true
         }, {
           "codeName" : "unendproductplancnt",
           "dataType" : 9,
@@ -1822,9 +1775,7 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : true,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "hidden" : true
         }, {
           "codeName" : "resprojectcnt",
           "dataType" : 9,
@@ -1850,9 +1801,7 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : true,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "hidden" : true
         }, {
           "codeName" : "undoneresprojectcnt",
           "dataType" : 9,
@@ -1878,9 +1827,7 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : true,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "hidden" : true
         }, {
           "codeName" : "releasecnt",
           "dataType" : 9,
@@ -1906,9 +1853,7 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : true,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "hidden" : true
         }, {
           "codeName" : "normalreleasecnt",
           "dataType" : 9,
@@ -1934,9 +1879,7 @@
           },
           "allowEmpty" : true,
           "emptyCaption" : true,
-          "hidden" : true,
-          "inputTipClosable" : false,
-          "showCaption" : false
+          "hidden" : true
         } ],
         "getPSLayout" : {
           "columnCount" : 24,

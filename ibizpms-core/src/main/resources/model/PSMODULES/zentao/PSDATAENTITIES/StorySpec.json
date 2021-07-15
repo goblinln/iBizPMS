@@ -116,6 +116,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -127,6 +128,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Version",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "版本",
     "name" : "Version",
     "getPSDEDataQueries" : [ {

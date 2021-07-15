@@ -328,6 +328,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -349,6 +350,7 @@
     "enableFront" : true
   }, {
     "codeName" : "NoOpenProduct",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "未关闭产品",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -369,6 +371,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectBugType",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目bug类型统计",
     "name" : "ProjectBugType",
     "getPSDEDataQueries" : [ {
@@ -379,6 +382,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectInputStats",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目投入统计",
     "name" : "ProjectInputStats",
     "getPSDEDataQueries" : [ {
@@ -389,6 +393,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectProgress",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目进度",
     "name" : "ProjectProgress",
     "getPSDEDataQueries" : [ {
@@ -399,6 +404,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectQuality",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目质量",
     "name" : "ProjectQuality",
     "getPSDEDataQueries" : [ {
@@ -409,6 +415,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectStoryStageStats",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目需求阶段统计",
     "name" : "ProjectStoryStageStats",
     "getPSDEDataQueries" : [ {
@@ -419,6 +426,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectStoryStatusStats",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目需求状态统计",
     "name" : "ProjectStoryStatusStats",
     "getPSDEDataQueries" : [ {
@@ -429,6 +437,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTaskCountByTaskStatus",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目任务统计(任务状态)",
     "name" : "ProjectTaskCountByTaskStatus",
     "getPSDEDataQueries" : [ {
@@ -439,6 +448,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTaskCountByType",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目任务类型统计",
     "name" : "ProjectTaskCountByType",
     "getPSDEDataQueries" : [ {
@@ -449,6 +459,7 @@
     "enableFront" : true
   }, {
     "codeName" : "TaskTime",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "任务工时消耗剩余查询",
     "name" : "TASKTIME",
     "getPSDEDataQueries" : [ {

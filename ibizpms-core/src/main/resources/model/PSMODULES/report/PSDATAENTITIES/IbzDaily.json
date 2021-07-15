@@ -301,6 +301,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -312,6 +313,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyAllDaily",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的日报（已提交和未提交）",
     "name" : "MyAllDaily",
     "getPSDEDataQueries" : [ {
@@ -322,6 +324,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyDaily",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我收到的日报",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -337,6 +340,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MyNotSubmit",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我的日报",
     "name" : "MyNotSubmit",
     "getPSDEDataQueries" : [ {
@@ -347,6 +351,7 @@
     "enableFront" : true
   }, {
     "codeName" : "MySubmitDaily",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "我提交的日报",
     "name" : "MySubmitDaily",
     "getPSDEDataQueries" : [ {
@@ -357,6 +362,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductDaily",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "产品日报",
     "name" : "ProductDaily",
     "getPSDEDataQueries" : [ {
@@ -367,6 +373,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectDaily",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "项目日报",
     "name" : "ProjectDaily",
     "getPSDEDataQueries" : [ {

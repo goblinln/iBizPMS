@@ -17,8 +17,8 @@ export class AppDeLogicBeginNode extends AppDeLogicNodeBase {
      * 执行节点
      *
      * @static
-     * @param {IPSDELogicNode} logicNode
-     * @param {Map<string, any>} paramsMap
+     * @param {IPSDELogicNode} logicNode 逻辑节点
+     * @param {ActionContext} actionContext 逻辑上下文
      * @memberof AppDeLogicBeginNode
      */
     public async executeNode(logicNode: IPSDELogicNode, actionContext: ActionContext) {

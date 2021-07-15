@@ -449,6 +449,7 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ByPath",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "BYPATH",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -469,6 +470,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -490,6 +492,7 @@
     "enableFront" : true
   }, {
     "codeName" : "ParentModule",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "父模块",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -510,6 +513,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Root",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "根模块",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -530,6 +534,7 @@
     "enableFront" : true
   }, {
     "codeName" : "Root_NoBranch",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "根模块_无分支",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -550,6 +555,7 @@
     "enableFront" : true
   }, {
     "codeName" : "StoryModule",
+    "dataSetType" : "DATAQUERY",
     "logicName" : "StoryModule",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {

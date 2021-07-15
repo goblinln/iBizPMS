@@ -34,7 +34,7 @@ export class CalendarExpViewBase extends ExpViewBase implements CalendarExpViewI
      * @type {Engine}
      * @memberof CalendarExpViewBase
      */
-    public engine: CalendarExpViewEngine = new CalendarExpViewEngine;
+    public engine: CalendarExpViewEngine = new CalendarExpViewEngine();
 
     /**
      * 引擎初始化

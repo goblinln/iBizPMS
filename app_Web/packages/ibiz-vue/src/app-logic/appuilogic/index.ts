@@ -6,6 +6,6 @@ export { AppUILogicDeactionNode } from './uilogic-node/deaction-node';
 export { AppUILogicDeUIActionNode } from './uilogic-node/deuiaction-node';
 export { AppUILogicMsgboxNode } from './uilogic-node/msgbox-node';
 export { AppUILogicPluginNode } from './uilogic-node/plugin-node';
-export { AppUILogicPrepareParamNode } from './uilogic-node/prepare-param-node';
-export { AppUILogicRawCodeNode } from './uilogic-node/raw-code-node';
+export { AppUILogicPrepareParamNode } from './uilogic-node/prepareparam-node';
+export { AppUILogicRawCodeNode } from './uilogic-node/rawcode-node';
 export { AppUILogicViewctrlInvokeNode } from './uilogic-node/viewctrl-invoke-node';

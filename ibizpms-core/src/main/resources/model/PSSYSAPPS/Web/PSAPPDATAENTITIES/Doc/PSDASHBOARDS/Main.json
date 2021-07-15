@@ -338,10 +338,7 @@
                     "cssName" : "panelitem-borad"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
-                  "showCaption" : false
+                  "emptyCaption" : true
                 }, {
                   "codeName" : "title",
                   "dataType" : 25,
@@ -370,8 +367,6 @@
                   },
                   "allowEmpty" : true,
                   "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "codeName" : "version",
@@ -411,8 +406,6 @@
                   },
                   "allowEmpty" : true,
                   "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "needCodeListConfig" : true,
                   "showCaption" : true
                 }, {
@@ -445,8 +438,6 @@
                   },
                   "allowEmpty" : true,
                   "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
                   "actionGroupExtractMode" : "ITEM",
@@ -2476,6 +2467,7 @@
             "layout" : "TABLE_24COL"
           },
           "getPSUIActionGroup" : {
+            "codeName" : "Action",
             "name" : "操作栏",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -3297,10 +3289,7 @@
                     "layout" : "TABLE_24COL"
                   },
                   "allowEmpty" : true,
-                  "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
-                  "showCaption" : false
+                  "emptyCaption" : true
                 } ],
                 "getPSLayout" : {
                   "columnCount" : 24,
@@ -3886,9 +3875,6 @@
                 },
                 "valueItemName" : "project",
                 "allowEmpty" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               }, {
                 "caption" : "所属产品",
@@ -3969,9 +3955,6 @@
                 },
                 "valueItemName" : "product",
                 "allowEmpty" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               }, {
                 "caption" : "所属文档库",
@@ -4000,9 +3983,6 @@
                   "layout" : "TABLE_24COL"
                 },
                 "allowEmpty" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               }, {
                 "caption" : "模块分类",
@@ -4064,9 +4044,6 @@
                 },
                 "valueItemName" : "module",
                 "allowEmpty" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               }, {
                 "caption" : "添加时间",
@@ -4094,10 +4071,8 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "valueFormat" : "YYYY-MM-DD HH:mm:ss",
                 "allowEmpty" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               }, {
                 "caption" : "由谁更新",
@@ -4126,9 +4101,6 @@
                   "layout" : "TABLE_24COL"
                 },
                 "allowEmpty" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               }, {
                 "caption" : "更新时间",
@@ -4156,10 +4128,8 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "valueFormat" : "YYYY-MM-DD HH:mm:ss",
                 "allowEmpty" : true,
-                "emptyCaption" : false,
-                "hidden" : false,
-                "inputTipClosable" : false,
                 "showCaption" : true
               }, {
                 "actionGroupExtractMode" : "ITEM",

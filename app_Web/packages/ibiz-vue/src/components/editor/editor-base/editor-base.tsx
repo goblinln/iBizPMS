@@ -92,6 +92,14 @@ export class EditorBase extends Vue {
      * @memberof EditorBase
      */    
     @Prop() public service?: any;
+
+    /**
+     * 值格式化
+     *
+     * @type {boolean}
+     * @memberof AppDefaultEditor
+     */
+    @Prop() public valueFormat?:any
     
     /**
      * 编辑器组件名称

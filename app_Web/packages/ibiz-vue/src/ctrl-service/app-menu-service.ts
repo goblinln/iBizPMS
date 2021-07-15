@@ -21,8 +21,8 @@ export class AppMenuService extends ControlServiceBase {
      * 
      * @memberof AppMenuService
      */
-    constructor(opts: IPSAppMenu) {
-        super(opts);
+    constructor(opts: IPSAppMenu, context?: any) {
+        super(opts, context);
         this.MenuInstance = opts;
     }
 

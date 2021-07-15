@@ -440,6 +440,7 @@
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
+        "codeName" : "Auto69",
         "name" : "操作列",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",

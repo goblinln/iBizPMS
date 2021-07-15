@@ -82,7 +82,8 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibizproindices`, _data);
+        const res = await this.http.post(`/ibizproindices`, _data);
+        return res;
     }
     /**
      * Get
@@ -119,7 +120,8 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
      * @memberof IbizproIndexService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibizproindices/${_context.ibizproindex}`);
+        const res = await this.http.delete(`/ibizproindices/${_context.ibizproindex}`);
+        return res;
     }
     /**
      * Update
@@ -131,7 +133,8 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibizproindices/${_context.ibizproindex}`, _data);
+        const res = await this.http.put(`/ibizproindices/${_context.ibizproindex}`, _data);
+        return res;
     }
     /**
      * FetchDefault
@@ -142,7 +145,8 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
      * @memberof IbizproIndexService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibizproindices/fetchdefault`, _data);
+        const res = await this.http.post(`/ibizproindices/fetchdefault`, _data);
+        return res;
     }
     /**
      * FetchESquery
@@ -153,7 +157,8 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
      * @memberof IbizproIndexService
      */
     async FetchESquery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibizproindices/fetchesquery`, _data);
+        const res = await this.http.post(`/ibizproindices/fetchesquery`, _data);
+        return res;
     }
     /**
      * FetchIndexDER
@@ -164,7 +169,8 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
      * @memberof IbizproIndexService
      */
     async FetchIndexDER(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibizproindices/fetchindexder`, _data);
+        const res = await this.http.post(`/ibizproindices/fetchindexder`, _data);
+        return res;
     }
     /**
      * Select
@@ -175,6 +181,7 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
      * @memberof IbizproIndexService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizproindices/${_context.ibizproindex}/select`);
+        const res = await this.http.get(`/ibizproindices/${_context.ibizproindex}/select`);
+        return res;
     }
 }
