@@ -14731,7 +14731,7 @@ SELECT t1.id, t1.NAME,t2.product FROM zt_project t1 left join zt_projectproduct 
 
 WHERE t2.product IN ( SELECT t1.root FROM zt_team t1 WHERE t1.type = 'product' 
 AND t1.account =#{srf.datacontext.account} ) 
-	OR t1.pm =#{srf.datacontext.account} 
+	OR t1.pm =#{srf.datacontext.account} or t1.id = 0 
 
 ```
 ### 当前计划项目(CurPlanProject)<div id="Project_CurPlanProject"></div>
