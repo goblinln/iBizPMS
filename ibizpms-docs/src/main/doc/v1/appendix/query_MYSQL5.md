@@ -21933,7 +21933,7 @@ WHERE t21.pm = #{srf.sessioncontext.srfloginname} GROUP BY t1.account
 ### 人员日志(PersonalEstimate)<div id="TaskEstimate_PersonalEstimate"></div>
 ```sql
 select t1.* from (SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`DATE`, t1.`date` AS `DATES`,REPLACE(t1.`date`,'-','') as dayname, t11.`DELETED`, t1.`EVALUATIONCOST`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE` FROM `zt_taskestimate` t1 LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID` LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` )t1
-WHERE t1.`DELETED` = '0' 
+WHERE (t1.`deleted` = '0' or t1.`task` = 0) 
 t1.account = #{srf.datacontext.account} 
 t1.dayname = #{srf.datacontext.dayname} 
 
