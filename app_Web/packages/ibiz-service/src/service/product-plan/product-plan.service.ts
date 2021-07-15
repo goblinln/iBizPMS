@@ -13,13 +13,13 @@ export class ProductPlanService extends ProductPlanBaseService {
      * Creates an instance of ProductPlanService.
      * @memberof ProductPlanService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ProductPlanService')) {
-            return ___ibz___.sc.get('ProductPlanService');
+     constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ProductPlanService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
@@ -29,13 +29,14 @@ export class ProductPlanService extends ProductPlanBaseService {
      * @return {*}  {ProductPlanService}
      * @memberof ProductPlanService
      */
-    static getInstance(): ProductPlanService {
-        if (!___ibz___.sc.has('ProductPlanService')) {
-            new ProductPlanService();
+    static getInstance(context?: any): ProductPlanService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ProductPlanService` : `ProductPlanService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ProductPlanService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ProductPlanService');
+        return ___ibz___.sc.get(cacheKey);
     }
-
+    
     /**
      * ImportPlanTemplet接口方法
      *

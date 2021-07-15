@@ -12,13 +12,13 @@ export class SubProductPlanService extends SubProductPlanBaseService {
      * Creates an instance of SubProductPlanService.
      * @memberof SubProductPlanService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('SubProductPlanService')) {
-            return ___ibz___.sc.get('SubProductPlanService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('SubProductPlanService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
@@ -28,13 +28,14 @@ export class SubProductPlanService extends SubProductPlanBaseService {
      * @return {*}  {SubProductPlanService}
      * @memberof SubProductPlanService
      */
-    static getInstance(): SubProductPlanService {
-        if (!___ibz___.sc.has('SubProductPlanService')) {
-            new SubProductPlanService();
+    static getInstance(context?: any): SubProductPlanService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}SubProductPlanService` : `SubProductPlanService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new SubProductPlanService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('SubProductPlanService');
+        return ___ibz___.sc.get(cacheKey);
     }
-    
+       
     /**
      * GetEnd接口方法
      *

@@ -13,13 +13,13 @@ export class TestCaseService extends TestCaseBaseService {
      * Creates an instance of TestCaseService.
      * @memberof TestCaseService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TestCaseService')) {
-            return ___ibz___.sc.get('TestCaseService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TestCaseService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
@@ -29,13 +29,14 @@ export class TestCaseService extends TestCaseBaseService {
      * @return {*}  {TestCaseService}
      * @memberof TestCaseService
      */
-    static getInstance(): TestCaseService {
-        if (!___ibz___.sc.has('TestCaseService')) {
-            new TestCaseService();
+	static getInstance(context?: any): TestCaseService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TestCaseService` : `TestCaseService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TestCaseService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TestCaseService');
+        return ___ibz___.sc.get(cacheKey);
     }
-
+    
     /**
      * Create
      *

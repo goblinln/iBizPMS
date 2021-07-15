@@ -13,13 +13,13 @@ export class ProductTeamService extends ProductTeamBaseService {
      * Creates an instance of ProductTeamService.
      * @memberof ProductTeamService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ProductTeamService')) {
-            return ___ibz___.sc.get('ProductTeamService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ProductTeamService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
@@ -29,11 +29,12 @@ export class ProductTeamService extends ProductTeamBaseService {
      * @return {*}  {ProductTeamService}
      * @memberof ProductTeamService
      */
-    static getInstance(): ProductTeamService {
-        if (!___ibz___.sc.has('ProductTeamService')) {
-            new ProductTeamService();
+	static getInstance(context?: any): ProductTeamService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ProductTeamService` : `ProductTeamService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ProductTeamService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ProductTeamService');
+        return ___ibz___.sc.get(cacheKey);
     }
 
     /**

@@ -13,13 +13,13 @@ export class TaskService extends TaskBaseService {
      * Creates an instance of TaskService.
      * @memberof TaskService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TaskService')) {
-            return ___ibz___.sc.get('TaskService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TaskService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
@@ -29,13 +29,13 @@ export class TaskService extends TaskBaseService {
      * @return {*}  {TaskService}
      * @memberof TaskService
      */
-    static getInstance(): TaskService {
-        if (!___ibz___.sc.has('TaskService')) {
-            new TaskService();
+	static getInstance(context?: any): TaskService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TaskService` : `TaskService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TaskService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TaskService');
+        return ___ibz___.sc.get(cacheKey);
     }
-
 
     /**
      * Create

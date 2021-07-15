@@ -12,13 +12,13 @@ export class TestReportService extends TestReportBaseService {
      * Creates an instance of TestReportService.
      * @memberof TestReportService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TestReportService')) {
-            return ___ibz___.sc.get('TestReportService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TestReportService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
@@ -28,11 +28,12 @@ export class TestReportService extends TestReportBaseService {
      * @return {*}  {TestReportService}
      * @memberof TestReportService
      */
-    static getInstance(): TestReportService {
-        if (!___ibz___.sc.has('TestReportService')) {
-            new TestReportService();
+	static getInstance(context?: any): TestReportService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TestReportService` : `TestReportService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TestReportService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TestReportService');
+        return ___ibz___.sc.get(cacheKey);
     }
 
     /**
