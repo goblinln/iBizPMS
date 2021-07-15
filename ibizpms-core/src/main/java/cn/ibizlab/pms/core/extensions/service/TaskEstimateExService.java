@@ -30,6 +30,27 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
         return com.baomidou.mybatisplus.core.toolkit.ReflectionKit.getSuperClassGenericType(this.getClass().getSuperclass(), 1);
     }
 
+    @Override
+    public void saveBatch(List<TaskEstimate> list) {
+        Map<Long, Task> taskMap = new HashMap<>();
+        for(TaskEstimate taskEstimate : list) {
+            if(taskMap.get(taskEstimate.getTask()) != null) {
+                Task task = taskMap.get(taskEstimate.getTask());
+                List<TaskEstimate> taskEstimateList = task.getTaskestimate();
+                taskEstimateList.add(taskEstimate);
+            }else {
+                List<TaskEstimate> taskEstimateList = new ArrayList<>();
+                taskEstimateList.add(taskEstimate);
+                Task task = taskService.get(taskEstimate.getTask());
+                task.setTaskestimate(taskEstimateList);
+                taskMap.put(taskEstimate.getTask(), task);
+            }
+        }
+        for(Long task : taskMap.keySet()) {
+            taskService.recordEstimate(taskMap.get(task));
+        }
+    }
+
     /**
      * [PMEvaluation:项目经理评估] 行为扩展
      * @param et
@@ -60,4 +81,3 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
         return et;
     }
 }
-
