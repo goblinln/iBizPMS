@@ -115,9 +115,7 @@ FROM
 	`zt_taskestimate` t1
 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 WHERE
-	t11.project IS NOT NULL 
-	AND t11.project <> '0' 
-	AND t1.date <> '0000-00-00'  and t11.deleted = '0'
+	t1.date <> '0000-00-00'  and (t11.deleted = '0' or t11.deleted is null)
 GROUP BY
 	t1.account,
 	t1.date 
@@ -160,10 +158,8 @@ FROM
 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 	LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
 WHERE
-	t11.project IS NOT NULL 
-	AND t11.project <> '0' 
-	AND t1.date <> '0000-00-00' 
-	AND t11.deleted = '0' 
+	t1.date <> '0000-00-00' 
+	and (t11.deleted = '0' or t11.deleted is null)
 GROUP BY
 	t11.project,
 	t21.`name`,
@@ -223,10 +219,8 @@ t1.dayname =  #{srf.datacontext.dayname}
 			LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 			LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
 		WHERE
-			t11.project IS NOT NULL 
-			AND t11.project <> '0' 
-			AND t1.date <> '0000-00-00' 
-			AND t11.deleted = '0' 
+			t1.date <> '0000-00-00' 
+			and (t11.deleted = '0' or t11.deleted is null)
 		GROUP BY
 			t11.project,
 			t21.`name`,
@@ -377,9 +371,7 @@ FROM
 	`zt_taskestimate` t1
 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 WHERE
-	t11.project IS NOT NULL 
-	AND t11.project <> '0' 
-	AND t1.date <> '0000-00-00'  and t11.deleted = '0'
+	t1.date <> '0000-00-00'  and (t11.deleted = '0' or t11.deleted is null)
 GROUP BY
 	t1.account,
 	t1.date 
@@ -434,10 +426,8 @@ FROM
 		LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 		LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
 	WHERE
-		t11.project IS NOT NULL 
-		AND t11.project <> '0' 
-		AND t1.date <> '0000-00-00' 
-		AND t11.deleted = '0' 
+		t1.date <> '0000-00-00' 
+		and (t11.deleted = '0' or t11.deleted is null)
 	GROUP BY
 		t11.project,
 		t21.`name`,
@@ -17044,9 +17034,7 @@ FROM
 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 	LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
 WHERE
-	t11.project IS NOT NULL 
-	AND t11.project <> '0' 
-	AND t1.date <> '0000-00-00'  and t11.deleted = '0'
+	t1.date <> '0000-00-00'  and (t11.deleted = '0' or t11.deleted is null)
 GROUP BY
 	t11.project,
 	t21.`name`,
@@ -17201,10 +17189,9 @@ FROM
 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 	LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
 WHERE
-	t11.project IS NOT NULL 
-	AND t11.project <> '0' 
-	AND t1.date <> '0000-00-00' 
-	AND t11.deleted = '0' 
+	
+	t1.date <> '0000-00-00' 
+	AND  (t11.deleted = '0'  or t11.deleted is null)
 GROUP BY
 	t11.project,
 	t21.`name`,
@@ -17386,10 +17373,8 @@ FROM
 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 	LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
 WHERE
-	t11.project IS NOT NULL 
-	AND t11.project <> '0' 
-	AND t1.date <> '0000-00-00' 
-	AND t11.deleted = '0' 
+	 t1.date <> '0000-00-00' 
+	AND (t11.deleted = '0'  or t11.deleted  is null)
 GROUP BY
 	t11.project,
 	t21.`name`,
@@ -17549,9 +17534,7 @@ FROM
 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
 	LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID` 
 WHERE
-	t11.project IS NOT NULL 
-	AND t11.project <> '0' 
-	AND t1.date <> '0000-00-00'  and t11.deleted = '0'
+	t1.date <> '0000-00-00'  and (t11.deleted = '0' or t11.deleted is null)
 GROUP BY
 	t11.project,
 	t21.`name`,
