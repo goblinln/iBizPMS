@@ -20617,7 +20617,7 @@ t61.`TITLE` AS `PLANNAME` FROM `zt_task` t1  LEFT JOIN zt_module t11 ON t1.MODUL
 WHERE t1.DELETED = '0' 
 ( t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} ) 
 (t1.parent <= 0 or (t1.parent > 0 and t1.assignedTo not in (select t.assignedTo from zt_task t where  t.deleted = '0' and t.id = t1.parent))) 
-(#{srf.datacontext.formitem} is null or #{srf.datacontext.formitem} = 'ALL' or (#{srf.datacontext.formitem} = 'CY' and t1.`status` = 'doing' ) or (#{srf.datacontext.formitem} = 'HH' and t1.`status` = 'done' )) 
+(#{srf.datacontext.formitem} is null or #{srf.datacontext.formitem} = 'ALL' or (#{srf.datacontext.formitem} = 'CY' and t1.`status` in( 'doing' ,'wait')) or (#{srf.datacontext.formitem} = 'HH' and t1.`status` = 'done' )) 
 
 ```
 ### 指派给我任务（PC）(AssignedToMyTaskPc)<div id="Task_AssignedToMyTaskPc"></div>
@@ -20944,7 +20944,7 @@ t61.`TITLE` AS `PLANNAME` FROM `zt_task` t1  LEFT JOIN zt_module t11 ON t1.MODUL
 WHERE t1.DELETED = '0' 
 (t1.assignedTo = #{srf.sessioncontext.srfloginname} or t1.openedBy =#{srf.sessioncontext.srfloginname}  or FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t1.finishedList) or t1.closedBy = #{srf.sessioncontext.srfloginname} or t1.finishedBy = #{srf.sessioncontext.srfloginname} or t1.canceledBy = #{srf.sessioncontext.srfloginname}) 
 (t1.parent <= 0 or (t1.parent > 0 and not EXISTS (select 1 from zt_task t where  t.deleted = '0' and t.id = t1.parent and (t.assignedTo =#{srf.sessioncontext.srfloginname} or t.openedBy =#{srf.sessioncontext.srfloginname} or t.closedBy = #{srf.sessioncontext.srfloginname} or t.finishedBy = #{srf.sessioncontext.srfloginname} or t.canceledBy =#{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t.finishedList) )))) 
-(#{srf.datacontext.formitem} is null or #{srf.datacontext.formitem} = 'ALL' or (#{srf.datacontext.formitem} = 'CY' and (t1.finishedBy = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname})) or (#{srf.datacontext.formitem} = 'HH' and t1.closedBy = #{srf.sessioncontext.srfloginname})) 
+(#{srf.datacontext.formitem} is null or #{srf.datacontext.formitem} = 'ALL' or (#{srf.datacontext.formitem} = 'CY' and (t1.finishedBy = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t1.finishedList))) or (#{srf.datacontext.formitem} = 'HH' and t1.closedBy = #{srf.sessioncontext.srfloginname})) 
 
 ```
 ### 我完成的任务（汇报）(MyCompleteTask)<div id="Task_MyCompleteTask"></div>

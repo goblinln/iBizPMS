@@ -531,7 +531,7 @@
 					 WHERE 	t1.DELETED = '0'
 						 AND ( t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} )
 						 AND (t1.parent <= 0 or (t1.parent > 0 and t1.assignedTo not in (select t.assignedTo from zt_task t where  t.deleted = '0' and t.id = t1.parent)))
-						 AND (#{srf.datacontext.formitem} is null or #{srf.datacontext.formitem} = 'ALL' or (#{srf.datacontext.formitem} = 'CY' and t1.`status` = 'doing' ) or (#{srf.datacontext.formitem} = 'HH' and t1.`status` = 'done' ))
+						 AND (#{srf.datacontext.formitem} is null or #{srf.datacontext.formitem} = 'ALL' or (#{srf.datacontext.formitem} = 'CY' and t1.`status` in( 'doing' ,'wait')) or (#{srf.datacontext.formitem} = 'HH' and t1.`status` = 'done' ))
 			]]>
     </sql>
     <!--数据查询[AssignedToMyTaskPc]-->
@@ -645,7 +645,7 @@
 					 WHERE 	t1.DELETED = '0'
 						 AND (t1.assignedTo = #{srf.sessioncontext.srfloginname} or t1.openedBy =#{srf.sessioncontext.srfloginname}  or FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t1.finishedList) or t1.closedBy = #{srf.sessioncontext.srfloginname} or t1.finishedBy = #{srf.sessioncontext.srfloginname} or t1.canceledBy = #{srf.sessioncontext.srfloginname})
 						 AND (t1.parent <= 0 or (t1.parent > 0 and not EXISTS (select 1 from zt_task t where  t.deleted = '0' and t.id = t1.parent and (t.assignedTo =#{srf.sessioncontext.srfloginname} or t.openedBy =#{srf.sessioncontext.srfloginname} or t.closedBy = #{srf.sessioncontext.srfloginname} or t.finishedBy = #{srf.sessioncontext.srfloginname} or t.canceledBy =#{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t.finishedList) ))))
-						 AND (#{srf.datacontext.formitem} is null or #{srf.datacontext.formitem} = 'ALL' or (#{srf.datacontext.formitem} = 'CY' and (t1.finishedBy = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname})) or (#{srf.datacontext.formitem} = 'HH' and t1.closedBy = #{srf.sessioncontext.srfloginname}))
+						 AND (#{srf.datacontext.formitem} is null or #{srf.datacontext.formitem} = 'ALL' or (#{srf.datacontext.formitem} = 'CY' and (t1.finishedBy = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t1.finishedList))) or (#{srf.datacontext.formitem} = 'HH' and t1.closedBy = #{srf.sessioncontext.srfloginname}))
 			]]>
     </sql>
     <!--数据查询[MyCompleteTask]-->
