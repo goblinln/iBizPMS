@@ -15340,7 +15340,6 @@ FROM `zt_project` t1
 LEFT JOIN `zt_project` t11 ON t1.`PARENT` = t11.`ID` 
 
 WHERE t1.DELETED = '0' 
-( t1.`ORGID` =  ${srfsessioncontext('srforgid','{"defname":"ORGID","dename":"ZT_PROJECT"}')} ) 
 
 ```
 ### ES批量的导入(ESBulk)<div id="Project_ESBulk"></div>
