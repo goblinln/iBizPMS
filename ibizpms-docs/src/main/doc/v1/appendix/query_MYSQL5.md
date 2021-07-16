@@ -17411,7 +17411,7 @@ GROUP BY
 	t1.`YEAR`,
 	t1.`MONTH` 
 	) T1
-WHERE t1.project=#{srf.webcontext.project} 
+WHERE (t1.project = #{srf.webcontext.project} or (#{srf.webcontext.project} is null and t1.project is null)) 
 t1.`MONTH`=#{srf.webcontext.month} 
 
 ```
