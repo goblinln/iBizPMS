@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
+
+import java.sql.Timestamp;
 import java.util.*;
 
 /**
@@ -36,6 +38,8 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
         List<TaskEstimate> taskEstimateList_0 = new ArrayList<>();
         for(TaskEstimate taskEstimate : list) {
             if(taskEstimate.getTask() == null || taskEstimate.getTask() == 0L) {
+                taskEstimate.setDate(taskEstimate.getDates() != null ? taskEstimate.getDates() : new Timestamp(System.currentTimeMillis()));
+                taskEstimate.setTask(0L);
                 taskEstimateList_0.add(taskEstimate);
                 continue;
             }
