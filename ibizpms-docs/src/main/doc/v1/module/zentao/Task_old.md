@@ -596,6 +596,7 @@ hide footbox
 |由谁关闭(CLOSEDBY)|EQ|
 |关闭原因(CLOSEDREASON)|EQ|
 |任务种别(TASKSPECIES)|EQ|
+|任务种别(TASKSPECIES)|IN|
 |指派日期(ASSIGNEDDATE)|GTANDEQ|
 |优先级(PRI)|EQ|
 |优先级(PRI)|IN|

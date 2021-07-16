@@ -104,6 +104,13 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
             this.getSearchCond().eq("`taskspecies`", n_taskspecies_eq);
         }
     }
+	private String n_taskspecies_in;//[任务种别]
+	public void setN_taskspecies_in(String n_taskspecies_in) {
+        this.n_taskspecies_in = n_taskspecies_in;
+        if(!ObjectUtils.isEmpty(this.n_taskspecies_in)){
+			this.getSearchCond().in("`taskspecies`",this.n_taskspecies_in.split(";"));
+        }
+    }
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
     @JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Timestamp n_assigneddate_gtandeq;//[指派日期]
