@@ -5159,6 +5159,7 @@
                 "codeName" : "deleteCz",
                 "confirmMsg" : "确认要删除，删除操作将不可恢复？",
                 "dataAccessAction" : "DELETE",
+                "dialogResult" : "OK",
                 "fullCodeName" : "Case_deleteCz",
                 "name" : "删除（操作栏）",
                 "getPSAppDEMethod" : {

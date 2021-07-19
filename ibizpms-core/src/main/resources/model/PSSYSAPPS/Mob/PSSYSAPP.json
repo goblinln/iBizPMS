@@ -18274,6 +18274,7 @@
               "codeName" : "deleteMob",
               "confirmMsg" : "确认要删除，删除操作将不可恢复？",
               "dataAccessAction" : "DELETE",
+              "dialogResult" : "OK",
               "fullCodeName" : "Project_deleteMob",
               "name" : "删除（移动端）",
               "getPSAppDEMethod" : {
@@ -19594,6 +19595,7 @@
               "caption" : "删除",
               "codeName" : "deleteMob",
               "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+              "dialogResult" : "OK",
               "fullCodeName" : "Product_deleteMob",
               "name" : "删除（移动端）",
               "getPSAppDEMethod" : {
@@ -30141,6 +30143,7 @@
         "caption" : "删除",
         "codeName" : "deleteMob",
         "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+        "dialogResult" : "OK",
         "fullCodeName" : "Product_deleteMob",
         "name" : "删除（移动端）",
         "getPSAppDEMethod" : {
@@ -33706,6 +33709,7 @@
         "codeName" : "deleteMob",
         "confirmMsg" : "确认要删除，删除操作将不可恢复？",
         "dataAccessAction" : "DELETE",
+        "dialogResult" : "OK",
         "fullCodeName" : "Project_deleteMob",
         "name" : "删除（移动端）",
         "getPSAppDEMethod" : {

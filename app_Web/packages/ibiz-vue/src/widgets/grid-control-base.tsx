@@ -871,7 +871,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                 for (let property of Object.keys(this.rules)) {
                     if (!await this.validate(property, item, index)) {
                         validateState = false;
-                        tempMessage = tempMessage + '<p>' + this.gridItemsModel[index][property].error + '<p>';
+                        tempMessage = tempMessage + '<p>' + this.gridItemsModel[index][property].error + '</p>';
                     }
                 }
             }
@@ -1131,7 +1131,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         }
         if (!await this.validateAll()) {
             if (this.errorMessages && this.errorMessages.length > 0) {
-                this.$throw(this.errorMessages[0], 'save');
+                this.$throw(this.errorMessages[0], 'save', { dangerouslyUseHTMLString: true });
             } else {
                 this.$throw((this.$t('app.commonwords.rulesexception') as string), 'save');
             }

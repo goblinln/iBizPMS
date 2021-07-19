@@ -1025,6 +1025,7 @@
     "caption" : "关联需求",
     "codeName" : "linkstory",
     "dataAccessAction" : "LINKSTORY",
+    "dialogResult" : "OK",
     "frontPSAppView" : "无法获取指定应用视图，标识为[e3b17a7400c9716b07464aaff64fa87b]，请确认实体视图[ZT_STORY][发布下属需求实体数据多项选择视图]已经添加到应用[iBiz软件生产管理（Mob）]中",
     "fullCodeName" : "Release_linkstory",
     "name" : "关联需求",

@@ -599,6 +599,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "提交",
             "codeName" : "submit",
+            "dialogResult" : "OK",
             "fullCodeName" : "IbzDaily_submit",
             "name" : "submit",
             "getPSAppDEMethod" : {

@@ -4268,6 +4268,7 @@
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
     "dataAccessAction" : "DELETE",
+    "dialogResult" : "OK",
     "fullCodeName" : "Story_delete",
     "name" : "删除",
     "getNextPSUIAction" : {

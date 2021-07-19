@@ -2048,6 +2048,7 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "编辑",
                 "codeName" : "EditsuiteDash",
+                "dialogResult" : "OK",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestSuiteEditView.json",
@@ -2085,6 +2086,7 @@
                 "caption" : "删除",
                 "codeName" : "DeleteDash",
                 "confirmMsg" : "您确认要删除该套件吗？",
+                "dialogResult" : "OK",
                 "fullCodeName" : "TestSuite_DeleteDash",
                 "name" : "删除（操作栏）",
                 "getPSAppDEMethod" : {

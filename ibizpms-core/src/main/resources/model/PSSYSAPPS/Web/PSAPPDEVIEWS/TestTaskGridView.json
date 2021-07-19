@@ -870,6 +870,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "概况",
             "codeName" : "OpenInfoView",
+            "dialogResult" : "OK",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",

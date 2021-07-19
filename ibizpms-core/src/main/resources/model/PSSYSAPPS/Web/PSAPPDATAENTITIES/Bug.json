@@ -2816,6 +2816,7 @@
     "actionTarget" : "MULTIKEY",
     "caption" : "关联bug",
     "codeName" : "buildlinkbugs",
+    "dialogResult" : "OK",
     "fullCodeName" : "Bug_buildlinkbugs",
     "name" : "版本批量关联已解决的bug",
     "getNextPSUIAction" : {
@@ -3598,6 +3599,7 @@
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
     "dataAccessAction" : "DELETE",
+    "dialogResult" : "OK",
     "fullCodeName" : "Bug_delete",
     "name" : "删除",
     "getPSAppDEMethod" : {

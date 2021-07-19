@@ -729,6 +729,7 @@
             "caption" : "删除",
             "codeName" : "deleteCz",
             "confirmMsg" : "您确定要删除这条待办吗？",
+            "dialogResult" : "OK",
             "fullCodeName" : "Todo_deleteCz",
             "name" : "todo删除（操作栏）",
             "getNextPSUIAction" : {

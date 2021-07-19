@@ -1372,6 +1372,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "概况",
     "codeName" : "OpenInfoView",
+    "dialogResult" : "OK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",
@@ -1628,6 +1629,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "查看",
     "codeName" : "Look",
+    "dialogResult" : "OK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainTabExpView.json",

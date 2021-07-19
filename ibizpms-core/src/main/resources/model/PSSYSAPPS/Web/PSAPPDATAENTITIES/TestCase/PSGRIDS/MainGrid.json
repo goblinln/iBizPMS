@@ -560,6 +560,7 @@
           "caption" : "转Bug",
           "codeName" : "NewBugByCaseResult",
           "dataAccessAction" : "TOBUG",
+          "dialogResult" : "OK",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",

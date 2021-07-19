@@ -185,6 +185,7 @@
         "caption" : "保存",
         "codeName" : "suitelinkCase",
         "dataAccessAction" : "EDITSUITE",
+        "dialogResult" : "OK",
         "fullCodeName" : "Case_suitelinkCase",
         "name" : "套件关联用例",
         "getPSAppDEMethod" : {

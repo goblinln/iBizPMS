@@ -2667,6 +2667,7 @@
     "caption" : "保存",
     "codeName" : "linkCase",
     "dataAccessAction" : "LINKCASE",
+    "dialogResult" : "OK",
     "fullCodeName" : "Case_linkCase",
     "name" : "关联用例",
     "getPSAppDEMethod" : {
@@ -2900,6 +2901,7 @@
     "caption" : "转Bug",
     "codeName" : "NewBugByTestCaseResult",
     "dataAccessAction" : "TOBUG",
+    "dialogResult" : "OK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugTestEditView.json",
@@ -2971,6 +2973,7 @@
     "caption" : "保存",
     "codeName" : "suitelinkCase",
     "dataAccessAction" : "EDITSUITE",
+    "dialogResult" : "OK",
     "fullCodeName" : "Case_suitelinkCase",
     "name" : "套件关联用例",
     "getPSAppDEMethod" : {
@@ -3394,6 +3397,7 @@
     "caption" : "转Bug",
     "codeName" : "NewBugByCaseResult",
     "dataAccessAction" : "TOBUG",
+    "dialogResult" : "OK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
@@ -3466,6 +3470,7 @@
     "codeName" : "deleteCz",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
     "dataAccessAction" : "DELETE",
+    "dialogResult" : "OK",
     "fullCodeName" : "Case_deleteCz",
     "name" : "删除（操作栏）",
     "getPSAppDEMethod" : {

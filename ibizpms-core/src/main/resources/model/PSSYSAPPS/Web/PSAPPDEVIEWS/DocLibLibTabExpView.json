@@ -273,6 +273,7 @@
         "actionTarget" : "NONE",
         "caption" : "创建文档库",
         "codeName" : "Create",
+        "dialogResult" : "OK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibEditView.json",
@@ -320,6 +321,7 @@
         "actionTarget" : "NONE",
         "caption" : "创建文档",
         "codeName" : "CreateFile",
+        "dialogResult" : "OK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocCreateEditView.json",

@@ -185,6 +185,7 @@
         "caption" : "保存",
         "codeName" : "linkCase",
         "dataAccessAction" : "LINKCASE",
+        "dialogResult" : "OK",
         "fullCodeName" : "Case_linkCase",
         "name" : "关联用例",
         "getPSAppDEMethod" : {
