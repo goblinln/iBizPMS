@@ -213,11 +213,7 @@ export class AppViewPanelBase extends ViewPanelControlBase {
         const panelItems: IPSPanelItem[] = container.getPSPanelItems() || [];
         let layout = container.getPSLayout() as any;
         let layoutMode = container.getPSLayout()?.layout;
-        let css = container.getPSSysCss() as IPSSysCss;
         let containerClass = { 'app-viewpanel-container': true, 'show-caption': container.showCaption };
-        if (css && css.cssName) {
-            Object.assign(containerClass, { [css.cssName]: true });
-        }
         let containerStyle = {
             display: this.detailsModel[container.name]?.visible ? false : 'none',
             width: container.width ? container.width + 'px' : false,
@@ -240,7 +236,7 @@ export class AppViewPanelBase extends ViewPanelControlBase {
                             let detailStyle: any = {
                                 'display': this.detailsModel[item.name]?.visible ? false : 'none',
                             };
-                            if (item.getPSLayoutPos()) {
+                            if (!Object.is(item.itemType,"CONTAINER") && item.getPSLayoutPos()) {
                                 let { grow, height, width } = item.getPSLayoutPos();
                                 detailStyle.flexGrow = grow != -1 ? grow : 0;
                                 detailStyle.height = height > 0 ? height + 'px' : '';
@@ -259,22 +255,18 @@ export class AppViewPanelBase extends ViewPanelControlBase {
             );
         } else {
             // 栅格布局
-            let cssStyle = {
-                width: container.width ? container.width + 'px' : '100%',
-                height: container.height ? container.height + 'px' : ''
-            }
             return (
                 <i-col style={containerStyle} class={containerClass}>
                     {container.showCaption ? <row class="viewpanel-container-header">
                         <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
                     </row> : null}
-                    <row class="viewpanel-container-content" style={cssStyle}>
+                    <row class="viewpanel-container-content">
                         {panelItems.map((item: any, index: number) => {
                             //子样式
                             let detailStyle: any = {
                                 'display': this.detailsModel[item.name]?.visible ? false : 'none',
                             };
-                            if (item.getPSLayoutPos()) {
+                            if (!Object.is(item.itemType,"CONTAINER") && item.getPSLayoutPos()) {
                                 let { height, width } = item.getPSLayoutPos();
                                 detailStyle.height = height > 0 ? height + 'px' : '';
                                 detailStyle.width = width > 0 ? width + 'px' : '';

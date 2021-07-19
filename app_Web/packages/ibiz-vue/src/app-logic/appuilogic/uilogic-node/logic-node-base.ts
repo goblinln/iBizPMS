@@ -1,4 +1,4 @@
-import { Util, Verify } from "ibiz-core";
+import { LogUtil, Util, Verify } from "ibiz-core";
 import { IPSDEUILogicLink, IPSDEUILogicLinkCond, IPSDEUILogicLinkGroupCond, IPSDEUILogicLinkSingleCond } from "@ibiz/dynamic-model-api";
 import { UIActionContext } from "../uiaction-context";
 
@@ -20,12 +20,19 @@ export class AppUILogicNodeBase {
      * @memberof AppUILogicNodeBase
      */
     public computeNextNodes(logicNode: any, actionContext: UIActionContext) {
+        LogUtil.log(`已完成执行${logicNode?.name}节点，操作参数数据如下:`);
+        if(actionContext.paramsMap && (actionContext.paramsMap.size > 0)){
+            for (let [key, value] of actionContext.paramsMap) {
+                LogUtil.log(`${key}:`,value);
+            }
+        }
         let result: any = { nextNodes: [], actionContext };
         if (logicNode && logicNode.getPSDEUILogicLinks() && ((logicNode.getPSDEUILogicLinks() as IPSDEUILogicLink[]).length > 0)) {
             for (let logicLink of (logicNode.getPSDEUILogicLinks() as IPSDEUILogicLink[])) {
                 let nextNode = logicLink.getDstPSDEUILogicNode();
                 // 没有连接条件组或有条件组且满足条件组时执行下一个节点
                 if (!logicLink?.getPSDEUILogicLinkGroupCond?.() || this.computeCond((logicLink.getPSDEUILogicLinkGroupCond() as IPSDEUILogicLinkGroupCond), actionContext)) {
+                    LogUtil.log(`即将执行${nextNode?.name}节点`);
                     result.nextNodes.push(nextNode);
                 }
             }

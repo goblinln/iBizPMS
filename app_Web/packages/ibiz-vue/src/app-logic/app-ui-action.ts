@@ -37,7 +37,7 @@ export class AppDEUIAction {
         if (Object.is(this.actionModel.uILogicType, 'DEUILOGIC')) {
             const appDEUILogic = await getPSAppDEUILogicByModelObject(this.actionModel);
             if (appDEUILogic) {
-                await AppUILogicService.getInstance().onExecute(appDEUILogic, args, context, params, $event, xData, actionContext, srfParentDeName);
+                return await AppUILogicService.getInstance().onExecute(appDEUILogic, args, context, params, $event, xData, actionContext, srfParentDeName);
             } else {
                 LogUtil.warn('未找到实体界面处理逻辑对象');
             }

@@ -3,6 +3,7 @@ import { Http } from '../net/http';
 import { on } from '../dom/dom';
 import { AppServiceBase } from '../../service';
 import { LogUtil } from 'ibiz-core';
+import { IPSAppView } from '@ibiz/dynamic-model-api';
 
 /**
  * Studio Debug工具类
@@ -106,14 +107,13 @@ export class StudioActionUtil {
      * @returns {Promise<void>}
      * @memberof StudioActionUtil
      */
-    public async openStudioConfigView(viewName: string): Promise<void> {
-        const config: any = await this.getConfig(viewName);
-        if (config) {
+    public async openStudioConfigView(viewModel: IPSAppView): Promise<void> {
+        if (viewModel && viewModel.modelid) {
             const params: any = {
                 "appType": "APPSTUDIO",
                 "appKey": this.Environment?.AppId,
                 "dataType": "AppDesign_PSAppViewDesignRedirectView",
-                "srfkey": config.viewtag
+                "srfkey": viewModel.modelid
             };
             if (this.studioWin && this.studioWin.closed === false) {
                 this.studioWin.postMessage({

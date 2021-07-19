@@ -120,7 +120,6 @@ export class TreeExpBarControlBase extends ExpBarControlBase implements TreeExpB
      * @memberof TreeExpBarControlBase
      */
     public async onSelectionChange(args: any[], tag?: string, $event2?: any): Promise<void> {
-        this.dragstate = false;
         if (args.length === 0) {
             this.calcToolbarItemState(true);
             return;
@@ -284,25 +283,6 @@ export class TreeExpBarControlBase extends ExpBarControlBase implements TreeExpB
      */
     public onViewLoad($event: any): void {
         this.$emit("ctrl-event", { controlName: this.controlInstance.name, action: "load", data: $event });
-    }
-
-    /**
-     * 部件事件处理
-     *
-     * @param {*} controlname 部件名称
-     * @param {*} action 事件
-     * @param {*} data 数据
-     * @memberof TreeExpBarControlBase
-     */
-    public onCtrlEvent(controlname: any, action: any, data: any) {
-        if (this.pickupViewPanelInstance && controlname == this.pickupViewPanelInstance.name) {
-            if (action == 'selectionchange') {
-                this.dragstate = false;
-            }
-            this.ctrlEvent({ controlname, action, data });
-        } else {
-            super.onCtrlEvent(controlname, action, data);
-        }
     }
 
 }

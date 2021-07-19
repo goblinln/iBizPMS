@@ -188,7 +188,7 @@ export class UIServiceBase {
      *
      * @memberof UIServiceBase
      */
-    protected excuteAction(
+    protected async excuteAction(
         uIActionTag: string,
         args: any[],
         context: any = {},
@@ -200,7 +200,7 @@ export class UIServiceBase {
     ) {
         if (this.actionMap.has(uIActionTag)) {
             const action = this.actionMap.get(uIActionTag);
-            action.execute(args, context, params, $event, xData, actionContext, srfParentDeName, this);
+            return action.execute(args, context, params, $event, xData, actionContext, srfParentDeName, this);
         } else {
             LogUtil.warn(`当前实例${uIActionTag}界面行为未实现`);
         }

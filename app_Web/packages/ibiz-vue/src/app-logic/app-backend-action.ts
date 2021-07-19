@@ -11,6 +11,7 @@ import { ModelTool, UIActionTool, Util } from 'ibiz-core';
 import { GlobalService } from 'ibiz-service';
 import { AppGlobalService } from '../app-service';
 import { AppDEUIAction } from './app-ui-action';
+import { UIActionResult } from './appuilogic';
 
 export class AppBackEndAction extends AppDEUIAction {
 
@@ -29,7 +30,7 @@ export class AppBackEndAction extends AppDEUIAction {
     constructor(opts: any, context?: any) {
         super(opts, context);
         const method: IPSAppDEMethod = this.actionModel.getPSAppDEMethod() as IPSAppDEMethod;
-        if (method.M.customCode || !method.M.getPSDEServiceAPIMethod){
+        if (method.M.customCode || !method.M.getPSDEServiceAPIMethod) {
             this.isMergeParam = true;
         }
     }
@@ -58,8 +59,7 @@ export class AppBackEndAction extends AppDEUIAction {
         deUIService?: any,
     ) {
         if (Object.is(this.actionModel?.uILogicAttachMode, 'REPLACE')) {
-            await this.executeDEUILogic(args, context, params, $event, xData, actionContext, srfParentDeName);
-            return;
+            return this.executeDEUILogic(args, context, params, $event, xData, actionContext, srfParentDeName);
         }
         const actionTarget: string | null = this.actionModel.actionTarget;
         if (this.actionModel.enableConfirm && this.actionModel.confirmMsg) {
@@ -89,9 +89,9 @@ export class AppBackEndAction extends AppDEUIAction {
             const _this: any = actionContext;
             if (this.actionModel.saveTargetFirst) {
                 const result: any = await xData.save(args, false);
-                if(Object.is(actionTarget, 'SINGLEDATA')){
+                if (Object.is(actionTarget, 'SINGLEDATA')) {
                     Object.assign(args[0], result.data);
-                }else{
+                } else {
                     args = [result.data];
                 }
             }
@@ -218,7 +218,7 @@ export class AppBackEndAction extends AppDEUIAction {
                                         actionContext.closeView(null);
                                     }
                                     if (Object.is(this.actionModel?.uILogicAttachMode, 'AFTER')) {
-                                        await this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
+                                        return this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
                                     }
                                     // 后续界面行为
                                     if (this.actionModel.M?.getNextPSUIAction) {
@@ -235,7 +235,7 @@ export class AppBackEndAction extends AppDEUIAction {
                                             if (nextUIaction) {
                                                 let [tag, appDeName] = nextUIaction.id.split('@');
                                                 if (deUIService) {
-                                                    deUIService.excuteAction(
+                                                    return deUIService.excuteAction(
                                                         tag,
                                                         _args,
                                                         context,
@@ -248,7 +248,7 @@ export class AppBackEndAction extends AppDEUIAction {
                                                     );
                                                 }
                                             } else {
-                                                (AppGlobalService.getInstance() as any).executeGlobalAction(
+                                                return (AppGlobalService.getInstance() as any).executeGlobalAction(
                                                     nextUIaction.id,
                                                     _args,
                                                     context,
@@ -261,7 +261,7 @@ export class AppBackEndAction extends AppDEUIAction {
                                             }
                                         });
                                     } else {
-                                        return args;
+                                        return new UIActionResult({ ok: true, result: args });
                                     }
                                 })
                                 .catch((response: any) => {

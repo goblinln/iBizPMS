@@ -1,4 +1,4 @@
-import { IPSDEUIActionLogic,getDstPSAppDEUIAction } from '@ibiz/dynamic-model-api';
+import { IPSDEUIActionLogic, getDstPSAppDEUIAction, IPSDEUILogicParam } from '@ibiz/dynamic-model-api';
 import { LogUtil } from 'ibiz-core';
 import { UIServiceRegister } from 'ibiz-service';
 import { UIActionContext } from '../uiaction-context';
@@ -23,31 +23,40 @@ export class AppUILogicDeUIActionNode extends AppUILogicNodeBase {
      * @memberof AppUILogicDeUIActionNode
      */
     public async executeNode(logicNode: IPSDEUIActionLogic, actionContext: UIActionContext) {
-        const { data, context, otherParams } = actionContext;
-        const dstEntity = logicNode.getDstPSAppDataEntity();
-        const dstUIAction = await getDstPSAppDEUIAction(logicNode);
-        if (dstEntity && dstUIAction) {
-            try {
-                const targetUIService = await UIServiceRegister.getInstance().getService(context, dstEntity.codeName.toLowerCase());
-                await targetUIService.loaded();
-                await targetUIService.excuteAction(
-                    dstUIAction.uIActionTag,
-                    [data],
-                    context,
-                    otherParams?.viewparams,
-                    otherParams?.event,
-                    otherParams?.control,
-                    otherParams?.container,
-                    otherParams?.parentDeName,
-                );
-                return this.computeNextNodes(logicNode, actionContext);
-            } catch (error) {
-                LogUtil.warn(`调用界面行为异常,${error}`);
+        return new Promise<void>(async (resolve) => {
+            const { data, context, otherParams } = actionContext;
+            const dstEntity = logicNode.getDstPSAppDataEntity();
+            const dstUIAction = await getDstPSAppDEUIAction(logicNode);
+            if (dstEntity && dstUIAction) {
+                try {
+                    const targetUIService = await UIServiceRegister.getInstance().getService(context, dstEntity.codeName.toLowerCase());
+                    await targetUIService.loaded();
+                    const result = await targetUIService.excuteAction(
+                        dstUIAction.uIActionTag,
+                        [data],
+                        context,
+                        otherParams?.viewparams,
+                        otherParams?.event,
+                        otherParams?.control,
+                        otherParams?.container,
+                        otherParams?.parentDeName,
+                    );
+                    const dstParam = actionContext.getParam((logicNode.getDstPSDEUILogicParam() as IPSDEUILogicParam)?.codeName);
+                    if (result && result.ok && result.result) {
+                        Object.assign(dstParam, Array.isArray(result?.result) ? result.result[0] : result.result);
+                        resolve(this.computeNextNodes(logicNode, actionContext));
+                    } else {
+                        LogUtil.warn('调用界面行为异常');
+                        return;
+                    }
+                } catch (error) {
+                    LogUtil.warn(`调用界面行为异常,${error}`);
+                    return;
+                }
+            } else {
+                LogUtil.warn('调用界面行为参数不足');
                 return;
             }
-        } else {
-            LogUtil.warn('调用界面行为参数不足');
-            return;
-        }
+        })
     }
 }

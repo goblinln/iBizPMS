@@ -1,5 +1,6 @@
 export { AppUILogicService } from './uilogic-service';
 export { UIActionContext } from './uiaction-context';
+export { UIActionResult } from './uiaction-result';
 export { AppUILogicNodeBase } from './uilogic-node/logic-node-base';
 export { AppUILogicBeginNode } from './uilogic-node/begin-node';
 export { AppUILogicDeactionNode } from './uilogic-node/deaction-node';

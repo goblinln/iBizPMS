@@ -108,6 +108,10 @@ export default class AppStudioAction extends Vue {
         }
     }
 
+    configView(): void {
+        this.sdc.openStudioConfigView(this.viewInstance);
+    }
+
     mouseenter(e: MouseEvent): void {
         e.stopPropagation();
         this.isSuspension = true;
@@ -168,6 +172,15 @@ export default class AppStudioAction extends Vue {
                                 {this.viewTitle}（{v.name}）
                             </div>
                             <div class='app-studio-debug-actions'>
+                                <i-button
+                                    type='text'
+                                    title={this.$t('components.appstudioaction.configtitle')}
+                                    ghost
+                                    size='small'
+                                    on-click={this.configView}
+                                >
+                                    {this.$t('components.appstudioaction.configbutton')}
+                                </i-button>
                                 <i-button type='text' ghost size='small' on-click={this.openPreview}>
                                     {this.$t('components.appstudioaction.view')}
                                 </i-button>

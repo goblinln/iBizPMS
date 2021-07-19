@@ -197,21 +197,13 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
 
     /**
      * 缓存UUID
-     * (导航部件抛出值时，renderNavView创建视图容器需要UUID来创建一个新的，才能重绘刷新右侧
-     * 目前挡板拖动时,需要将上次抛值所绘的UUID保存下来，防止右侧视图拖拽时更新)
+     * (导航部件抛出值时，renderNavView创建视图容器需要UUID来创建一个新的，才能重绘刷新右侧)
+     * 
      * 
      * @type {*}
      * @memberof ExpBarControlBase
      */
     public cacheUUID: any;
-
-    /**
-     * 拖拽状态
-     * 
-     * @type {boolean}
-     * @memberof ExpBarControlBase
-     */
-    public dragstate: boolean = false;
 
     /**
      * 监听静态参数变化
@@ -659,7 +651,6 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
      * @memberof ExpBarControlBase
      */
     public onSelectionChange(args: any[]): void {
-        this.dragstate = false;
         let tempContext: any = {};
         let tempViewParam: any = {};
         if (args.length === 0) {
@@ -780,8 +771,8 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
      */
     public renderNavView() {
         if (this.selection?.view && !Object.is(this.selection.view.viewname, '')) {
-            if (!this.dragstate) {
-                this.cacheUUID = Util.createUUID();
+            if (!this.cacheUUID || this.cacheUUID.indexOf(this.selection.context.viewpath) == -1) {
+                this.cacheUUID = this.selection.context.viewpath + Util.createUUID();
             }
             let targetCtrlParam: any = {
                 staticProps: {
@@ -862,7 +853,6 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
                 class={['expbarcontrol', `app-${this.$xDataControl.controlType?.toLowerCase()}-exp-bar`, this.renderOptions?.controlClassNames]}
                 v-model={this.split}
                 mode={this.sideBarlayout == 'LEFT' ? 'horizontal' : 'vertical'}
-                on-on-move-start={() => { this.dragstate = true; }}
                 on-on-move-end={this.onSplitChange.bind(this)}>
                 {this.renderContent()}
             </split>

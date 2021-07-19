@@ -96,8 +96,8 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
      */
     public renderPickupViewPanel() {
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.pickupViewPanelInstance);
-        if (!this.cacheUUID) {
-            this.cacheUUID = Util.createUUID();
+        if (!this.cacheUUID || this.cacheUUID.indexOf(this.selection.context.viewpath) == -1) {
+            this.cacheUUID = this.selection.context.viewpath + Util.createUUID();
         }
         Object.assign(targetCtrlParam.dynamicProps, {
             selectedData: this.dynamicProps?.selectedData,
@@ -125,8 +125,8 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
     public renderDefaultNavView() {
         if(this.selection?.view?.viewname){
             // 如果不是在拖拽状态获取新的UUID,如果在拖拽状态则使用拖拽前的UUID，防止拖拽刷新
-            if (!this.dragstate) {
-                this.cacheUUID = Util.createUUID();
+            if (!this.cacheUUID || this.cacheUUID.indexOf(this.selection.context.viewpath) == -1) {
+                this.cacheUUID = this.selection.context.viewpath + Util.createUUID();
             }
             return this.$createElement(this.selection.view.viewname,{
                 key: this.cacheUUID,
@@ -236,7 +236,6 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
                 class={['expbarcontrol', `app-tree-exp-bar`, this.renderOptions?.controlClassNames]}
                 v-model={this.split}
                 mode={this.sideBarlayout == 'LEFT' ? 'horizontal' : 'vertical'}
-                on-on-move-start={()=>{this.dragstate = true}}
                 on-on-move-end={this.onSplitChange.bind(this)}>
                     {this.renderContent(otherClassNames)}
             </split>
