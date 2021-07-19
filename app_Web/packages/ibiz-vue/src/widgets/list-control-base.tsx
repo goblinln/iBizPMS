@@ -188,9 +188,8 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
         }
         const arg: any = { ...opt };
         const page: any = {};
-        const size = this.controlInstance?.pagingSize;
         if (this.isEnablePagingBar) {
-            Object.assign(page, { page: this.curPage - 1, size: size ? size : 20 });
+            Object.assign(page, { page: this.curPage - 1, size: this.limit });
         }
         // 设置排序
         if (Util.isExistAndNotEmpty(this.minorSortDir) && Util.isExistAndNotEmpty(this.minorSortPSDEF)) {

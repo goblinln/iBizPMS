@@ -135,7 +135,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "id",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -164,7 +163,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "lastrundate",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -194,7 +192,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "lastrunner",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -227,7 +224,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testrun__result.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -261,7 +257,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testrun__status.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

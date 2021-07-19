@@ -241,7 +241,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -270,7 +269,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "agentbegin",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -300,7 +298,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "agentend",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

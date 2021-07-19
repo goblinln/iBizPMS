@@ -441,9 +441,7 @@
                 "rawValue" : false
               } ],
               "valueItemName" : "product",
-              "dropDownView" : false,
               "enableAC" : true,
-              "enableLinkView" : false,
               "enablePickupView" : false,
               "forceSelection" : true,
               "showTrigger" : true,

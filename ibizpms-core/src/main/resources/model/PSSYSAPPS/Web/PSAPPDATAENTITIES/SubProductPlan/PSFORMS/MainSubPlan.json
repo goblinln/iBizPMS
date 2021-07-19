@@ -270,7 +270,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "parentname",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -340,7 +339,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "oldtitle",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {

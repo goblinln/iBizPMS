@@ -43,6 +43,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/GetTODOTitle.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     }, {
@@ -54,6 +55,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/ResetBeginEnd.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -399,7 +401,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "指定用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -410,7 +411,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -422,7 +422,6 @@
     "enableFront" : true
   }, {
     "codeName" : "My",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -433,7 +432,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyCreateTodo",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我创建或参与待办",
     "name" : "MyCreateTodo",
     "getPSDEDataQueries" : [ {
@@ -444,7 +442,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyTodo",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的待办",
     "name" : "MyTodo",
     "getPSDEDataQueries" : [ {
@@ -455,7 +452,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyTodoPc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的待办",
     "name" : "MyTodoPc",
     "getPSDEDataQueries" : [ {
@@ -466,7 +462,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyUpcoming",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "MyUpcoming",
     "name" : "MyUpcoming",
     "getPSDEDataQueries" : [ {

@@ -424,7 +424,6 @@
               "valueItemName" : "product",
               "dropDownView" : true,
               "enableAC" : true,
-              "enableLinkView" : false,
               "enablePickupView" : true,
               "forceSelection" : true,
               "showTrigger" : true,
@@ -506,9 +505,7 @@
                 "viewType" : "DEMOBPICKUPVIEW"
               },
               "valueItemName" : "builder",
-              "dropDownView" : false,
               "enableAC" : true,
-              "enableLinkView" : false,
               "enablePickupView" : true,
               "forceSelection" : true,
               "showTrigger" : true,

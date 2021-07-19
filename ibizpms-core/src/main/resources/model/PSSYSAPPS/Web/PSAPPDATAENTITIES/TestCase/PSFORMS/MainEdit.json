@@ -2969,9 +2969,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
             "valueItemName" : "product",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -3080,9 +3078,7 @@
               "viewType" : "DEPICKUPVIEW"
             },
             "valueItemName" : "module",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -3203,9 +3199,7 @@
               "viewType" : "DEPICKUPVIEW"
             },
             "valueItemName" : "story",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -3494,7 +3488,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -3524,7 +3517,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "openeddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -3558,7 +3550,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -3588,7 +3579,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "lastediteddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

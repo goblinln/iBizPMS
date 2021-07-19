@@ -487,7 +487,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -520,7 +519,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

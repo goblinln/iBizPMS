@@ -296,7 +296,6 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
           },
           "valueItemName" : "project",
-          "dropDownView" : false,
           "editable" : false,
           "enableAC" : false,
           "enableLinkView" : true,
@@ -342,7 +341,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -372,7 +370,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "date",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -403,7 +400,6 @@
             "editorType" : "SPAN",
             "name" : "totalestimates",
             "precision" : 2,
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

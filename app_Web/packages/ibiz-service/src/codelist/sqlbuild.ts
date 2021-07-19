@@ -1,4 +1,4 @@
-import { PSSystemDBCfgService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--运行数据库（版本）
  *
@@ -93,7 +93,7 @@ export default class SQLBuild {
      * @type {PSSystemDBCfgService}
      * @memberof SQLBuild
      */
-    public pssystemdbcfgService: PSSystemDBCfgService = new PSSystemDBCfgService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class SQLBuild {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.pssystemdbcfgService.FetchBuild(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('PSSystemDBCfg').then((service: any) => {
+                const promise: Promise<any> = service.FetchBuild(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

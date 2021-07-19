@@ -285,9 +285,7 @@
               "rawValue" : false
             } ],
             "valueItemName" : "project",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -364,9 +362,7 @@
               "rawValue" : false
             } ],
             "valueItemName" : "build",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -839,9 +835,7 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
           },
           "valueItemName" : "mailtopk",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : false,
           "forceSelection" : true,
           "showTrigger" : true,

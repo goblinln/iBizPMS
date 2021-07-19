@@ -83,7 +83,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -120,8 +119,7 @@
           } ],
           "getPSSysImage" : {
             "cssClass" : "flag"
-          },
-          "showCaption" : true
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -157,7 +155,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "buildname",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -175,7 +172,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "date",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -227,8 +223,7 @@
                 "value" : "normal"
               } ],
               "notMode" : false
-            } ],
-            "showCaption" : true
+            } ]
           }, {
             "htmlContent" : "<ion-icon name=\"play\" style=\"color: brown;font-size: 18px;\"></ion-icon>",
             "itemStyle" : "DEFAULT",
@@ -254,15 +249,12 @@
                 "value" : "terminate"
               } ],
               "notMode" : false
-            } ],
-            "showCaption" : true
-          } ],
-          "showCaption" : true
+            } ]
+          } ]
         } ],
         "getPSSysCss" : {
           "cssName" : "mob_list_card"
-        },
-        "showCaption" : true
+        }
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",

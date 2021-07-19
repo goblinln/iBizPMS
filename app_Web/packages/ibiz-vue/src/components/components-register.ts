@@ -219,6 +219,7 @@ import { AppStyle2WFDynaEditView3 } from './view/app-style2-view/app-style2-wfdy
 import { AppStyle2DeReportView } from './view/app-style2-view/app-style2-dereportview';
 import { AppStyle2DePanelView } from './view/app-style2-view/app-style2-depanelview';
 import { AppStyle2MapExpView } from './view/app-style2-view/app-style2-mapexpview';
+import { AppStyle2MapView } from './view/app-style2-view/app-style2-mapview';
 import { AppStyle4PortalView } from './view/app-style4-view/app-style4-portalview';
 import { AppStyle4DePortalView } from './view/app-style4-view/app-style4-deportalview';
 // 部件组件
@@ -487,6 +488,7 @@ export const ComponentsRegister = {
         v.component('app-style2-dereportview', AppStyle2DeReportView);
         v.component('app-style2-mapexpview', AppStyle2MapExpView);
         v.component('app-style2-depanelview', AppStyle2DePanelView);
+        v.component('app-style2-mapview', AppStyle2MapView);
         v.component('app-style4-portalview', AppStyle4PortalView);
         v.component('app-style4-deportalview', AppStyle4DePortalView);
         // 部件组件

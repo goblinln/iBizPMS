@@ -10,11 +10,14 @@
         :maskClosable="maskClosable"
         :className="getClassName()"
     >
-        <p slot="header" :class="type" class="header">
+        <p slot="header" v-if="title" :class="type" class="header">
             <i :class="geticonClass()"></i>
             {{ title }}
         </p>
-        <div style="text-align: center" class="content" v-html="content"></div>
+        <p v-else :class="[type,'body-icon']">
+          <i  :class="geticonClass()"></i>
+        </p>
+        <div class="content" v-html="content"></div>
         <div slot="footer" ref="modelokFooter">
             <template v-for="item in buttonModel">
                 <i-button v-if="item.visibel" :key="item.value" :type="item.type" @click="button_click(item)">
@@ -41,7 +44,7 @@ export default class AppMessageBox extends Vue {
      * @memberof AppMessageBox
      */
     @Prop({ default: 'info' })
-    public type?: 'info' | 'success' | 'warning' | 'error';
+    public type?: 'info' | 'success' | 'warning' | 'error' | 'question';
 
     /**
      * 标题
@@ -167,10 +170,10 @@ export default class AppMessageBox extends Vue {
      * @memberof AppMessageBox
      */
     public buttonModel = [
-        { text: this.$t('app.commonwords.ok'), value: 'ok', type: 'primary', visibel: false },
+        { text: this.$t('components.appmessagebox.ok'), value: 'ok', type: 'primary', visibel: false },
         { text: this.$t('app.commonwords.yes'), value: 'yes', type: 'primary', visibel: false },
         { text: this.$t('app.commonwords.no'), value: 'no', visibel: false },
-        { text: this.$t('app.commonwords.cancel'), value: 'cancel', visibel: false },
+        { text: this.$t('components.appmessagebox.cancel'), value: 'cancel', visibel: false },
     ];
 
     /**
@@ -228,6 +231,9 @@ export default class AppMessageBox extends Vue {
                 break;
             case 'error':
                 classes = classes + 'ivu-icon-ios-close-circle';
+                break;
+            case 'question':
+                classes = classes + 'el-icon-question';
                 break;
         }
         return classes;

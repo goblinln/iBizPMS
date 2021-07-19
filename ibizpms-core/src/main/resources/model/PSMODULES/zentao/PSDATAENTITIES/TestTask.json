@@ -52,6 +52,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDELOGICS/GetProductBuild.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -325,7 +326,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "指定用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -336,7 +336,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -348,7 +347,6 @@
     "enableFront" : true
   }, {
     "codeName" : "My",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -359,7 +357,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyTestTaskPc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的测试单",
     "name" : "MyTestTaskPc",
     "getPSDEDataQueries" : [ {
@@ -370,7 +367,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTestTaskDS",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "项目测试单",
     "name" : "ProjectTestTaskDS",
     "getPSDEDataQueries" : [ {

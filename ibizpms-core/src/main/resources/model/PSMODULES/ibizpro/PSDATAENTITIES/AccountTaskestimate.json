@@ -122,7 +122,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "AllAccountEstimate",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "所有用户工时",
     "name" : "AllAccountEstimate",
     "getPSDEDataQueries" : [ {
@@ -133,7 +132,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {

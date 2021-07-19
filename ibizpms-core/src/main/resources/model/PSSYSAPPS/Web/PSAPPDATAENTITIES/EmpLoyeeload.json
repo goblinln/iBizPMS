@@ -149,6 +149,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateTime",
     "methodType" : "DEACTION",
     "name" : "UpdateTime",
@@ -401,6 +402,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateTime",
     "methodType" : "DEACTION",
     "name" : "UpdateTime",

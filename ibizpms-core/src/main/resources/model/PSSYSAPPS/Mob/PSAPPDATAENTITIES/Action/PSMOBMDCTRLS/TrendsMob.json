@@ -73,7 +73,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "date1",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -91,7 +90,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "actor",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -102,8 +100,7 @@
           "viewFieldName" : "actor",
           "hidden" : false,
           "showCaption" : false
-        } ],
-        "showCaption" : true
+        } ]
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
@@ -128,7 +125,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__type.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -151,7 +147,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__object_type.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -163,13 +158,11 @@
           "convertToCodeItemText" : true,
           "hidden" : false,
           "showCaption" : false
-        } ],
-        "showCaption" : true
+        } ]
       } ],
       "getPSSysCss" : {
         "cssName" : "mob_list_card"
-      },
-      "showCaption" : true
+      }
     } ],
     "mobilePanel" : true,
     "name" : "mdctrl_itempanel",

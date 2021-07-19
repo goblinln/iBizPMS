@@ -235,7 +235,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -247,7 +246,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductTeamInfo",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "产品团队成员信息",
     "name" : "ProductTeamInfo",
     "getPSDEDataQueries" : [ {
@@ -258,7 +256,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectApp",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "项目立项",
     "name" : "ProjectApp",
     "getPSDEDataQueries" : [ {
@@ -269,7 +266,6 @@
     "enableFront" : true
   }, {
     "codeName" : "RowEditDefaultProductTeam",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "产品团队管理",
     "name" : "RowEditDefaultProductTeam",
     "getPSDEDataQueries" : [ {
@@ -280,7 +276,6 @@
     "enableFront" : true
   }, {
     "codeName" : "SpecifyTeam",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "指定团队部门",
     "name" : "SpecifyTeam",
     "getPSDEDataQueries" : [ {

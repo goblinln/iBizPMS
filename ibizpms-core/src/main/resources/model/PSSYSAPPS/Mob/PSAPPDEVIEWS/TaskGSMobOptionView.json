@@ -406,7 +406,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "date",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -426,8 +425,7 @@
                       "colLG" : 2,
                       "colMD" : 2,
                       "layout" : "TABLE_12COL"
-                    },
-                    "showCaption" : true
+                    }
                   }, {
                     "itemStyle" : "DEFAULT",
                     "itemType" : "FIELD",
@@ -435,7 +433,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "consumed",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -455,8 +452,7 @@
                       "colLG" : 2,
                       "colMD" : 2,
                       "layout" : "TABLE_12COL"
-                    },
-                    "showCaption" : true
+                    }
                   }, {
                     "itemStyle" : "DEFAULT",
                     "itemType" : "FIELD",
@@ -464,7 +460,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "left",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -478,8 +473,7 @@
                   } ],
                   "getPSSysCss" : {
                     "cssName" : "mob_list_card"
-                  },
-                  "showCaption" : true
+                  }
                 } ],
                 "name" : "mdctrl_itempanel",
                 "modelid" : "0eea64a68b5d47cce96bc1efbc9e8066",

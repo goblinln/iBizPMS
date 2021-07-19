@@ -639,12 +639,14 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
             return;
         }
         const findApis = (id: any) => {
+            if (!id) {
+                return [];
+            }
             return calendarApi.getEvents().filter((event: any) => {
                 return event.extendedProps.curdata[this.getEventKey(event.extendedProps)] === id;
             });
         }
         const eventId: any = $event.event.extendedProps.curdata[this.getEventKey($event.event.extendedProps)];
-        const backId: any = this.eventid;
         const eventApis: any[] = findApis(eventId);
         eventApis.forEach((api: any) => {
             const classNames: any[] = [...api.classNames];
@@ -653,8 +655,8 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
             }
             api.setProp('classNames', classNames);
         })
-        if (!Object.is(this.eventid, '') && this.eventid !== eventId) {
-            const _eventApis: any[] = findApis(backId);
+        if (this.isSelectFirstDefault && this.eventid != eventId || (!this.isSelectFirstDefault)) {
+            const _eventApis: any[] = findApis(this.eventid);
             _eventApis.forEach((api: any) => {
                 const _temp: any[] = [...api.classNames];
                 const index = _temp.findIndex((className: any) => { return className == 'selected-event'; });
@@ -664,7 +666,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
                 }
             })
         }
-        this.eventid = eventId;
+        this.eventid = this.eventid && this.eventid == eventId && !this.isSelectFirstDefault ? '' : eventId;
     }
 
     /**
@@ -693,6 +695,8 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         if(JSelement){
             this.calendarClass = "calendar";
         }
+        const eventId: any = event.curdata[this.getEventKey(event)];
+        this.selections = this.eventid && this.eventid == eventId ? [] : [event];
         this.handleEventSelectStyle($event);
         // 处理上下文数据
         let _this: any = this;
@@ -709,10 +713,9 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
                 view = this.getEditView(codeName);
             }
         }
-        this.selections = [event];
         // 导航栏中不需要打开视图，只要抛出选中数据
-        if(this.isSelectFirstDefault && event && (Object.keys(event).length >0)){
-            this.$emit("ctrl-event", {controlname: this.controlInstance.name, action: "selectionchange", data: this.selections});
+        this.$emit("ctrl-event", {controlname: this.controlInstance.name, action: "selectionchange", data: this.selections});
+        if (this.isSelectFirstDefault) {
             return;
         }
         // 根据打开模式打开视图

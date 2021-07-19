@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -208,6 +209,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAllDocLibModule_Custom",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AllDocLibModule_Custom",
     "getPSDEDataSet" : {
@@ -217,6 +219,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildModuleByParent",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildModuleByParent",
     "getPSDEDataSet" : {
@@ -226,6 +229,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildModuleByRealParent",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildModuleByRealParent",
     "getPSDEDataSet" : {
@@ -235,6 +239,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -278,6 +283,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ParentModule",
     "getPSDEDataSet" : {
@@ -287,6 +293,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootModuleMuLuByRoot",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RootModuleMuLuByRoot",
     "getPSDEDataSet" : {
@@ -296,6 +303,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootModuleMuLuBysrfparentkey",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RootModuleMuLuBysrfparentkey",
     "getPSDEDataSet" : {
@@ -453,6 +461,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -628,6 +637,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAllDocLibModule_Custom",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AllDocLibModule_Custom",
     "getPSDEDataSet" : {
@@ -637,6 +647,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildModuleByParent",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildModuleByParent",
     "getPSDEDataSet" : {
@@ -646,6 +657,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildModuleByRealParent",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildModuleByRealParent",
     "getPSDEDataSet" : {
@@ -655,6 +667,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -698,6 +711,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ParentModule",
     "getPSDEDataSet" : {
@@ -707,6 +721,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootModuleMuLuByRoot",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RootModuleMuLuByRoot",
     "getPSDEDataSet" : {
@@ -716,6 +731,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootModuleMuLuBysrfparentkey",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RootModuleMuLuBysrfparentkey",
     "getPSDEDataSet" : {

@@ -24,6 +24,7 @@ export default class SpanEditor extends EditorBase {
         await super.initEditor();
         const { editorType: type, editorStyle: style } = this.editorInstance;
         const editorTypeStyle: string = `${type}${style && style != 'DEFAULT' ? '_'+style : ''}`;
+        this.customProps.noValueShowMode = Object.is('FORM', this.containerCtrl?.controlType) ? 'STYLE1' : 'DEFAULT';
         switch (editorTypeStyle) {
               case 'SPAN':
                   await this.initSpan();

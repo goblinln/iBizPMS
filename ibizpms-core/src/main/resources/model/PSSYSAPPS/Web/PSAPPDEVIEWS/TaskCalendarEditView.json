@@ -696,7 +696,6 @@
               "editorType" : "SPAN",
               "editorWidth" : 80.0,
               "name" : "id",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -732,7 +731,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__status.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -777,7 +775,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -810,7 +807,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "estimate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -842,7 +838,6 @@
             "editorType" : "SPAN",
             "name" : "consumed",
             "precision" : 2,
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -874,7 +869,6 @@
             "editorType" : "SPAN",
             "name" : "left",
             "precision" : 2,
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -905,7 +899,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "progressrate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

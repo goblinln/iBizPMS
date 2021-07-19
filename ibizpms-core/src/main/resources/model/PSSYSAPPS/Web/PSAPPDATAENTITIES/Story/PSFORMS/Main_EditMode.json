@@ -406,7 +406,6 @@
               "editorType" : "SPAN",
               "editorWidth" : 40.0,
               "name" : "id",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -438,7 +437,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "title",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -5491,9 +5489,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
             "valueItemName" : "product",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -5634,9 +5630,7 @@
               "viewType" : "DEPICKUPVIEW"
             },
             "valueItemName" : "module",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -5758,9 +5752,7 @@
               "rawValue" : false
             } ],
             "valueItemName" : "parent",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -6153,9 +6145,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
             },
             "valueItemName" : "mailtopk",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -6272,7 +6262,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {

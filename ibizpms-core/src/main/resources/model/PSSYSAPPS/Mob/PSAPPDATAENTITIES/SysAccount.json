@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -46,6 +47,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -78,6 +80,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -92,6 +95,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -108,6 +112,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -118,6 +123,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -167,6 +173,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -485,6 +492,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -499,6 +507,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -531,6 +540,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -545,6 +555,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -561,6 +572,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -571,6 +583,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -619,6 +632,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {

@@ -350,7 +350,6 @@
                       "editorType" : "SPAN",
                       "editorWidth" : 40.0,
                       "name" : "id",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -382,7 +381,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "title",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -3077,7 +3075,6 @@
                         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
                       },
                       "valueItemName" : "lib",
-                      "dropDownView" : false,
                       "editable" : false,
                       "enableAC" : false,
                       "enableLinkView" : true,
@@ -3112,7 +3109,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "modulename",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -3144,7 +3140,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -3177,7 +3172,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__stage.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -3210,7 +3204,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -3243,7 +3236,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__status.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -3272,7 +3264,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "keywords",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -3609,7 +3600,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3641,7 +3631,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "openeddate",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3677,7 +3666,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3709,7 +3697,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "lastediteddate",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {

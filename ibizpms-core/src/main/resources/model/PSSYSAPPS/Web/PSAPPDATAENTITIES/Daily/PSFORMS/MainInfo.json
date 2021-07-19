@@ -191,7 +191,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "ibz_dailyname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -220,7 +219,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "date",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -358,7 +356,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -392,7 +389,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

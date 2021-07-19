@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -136,6 +137,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Sort",
     "methodType" : "DEACTION",
     "name" : "Sort",
@@ -316,6 +318,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -420,6 +423,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Sort",
     "methodType" : "DEACTION",
     "name" : "Sort",

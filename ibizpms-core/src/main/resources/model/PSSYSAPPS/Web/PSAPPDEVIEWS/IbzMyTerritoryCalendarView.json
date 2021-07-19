@@ -143,7 +143,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -162,7 +161,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "title",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -184,7 +182,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -207,7 +204,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -242,8 +238,7 @@
                 "name" : "assignedto 值为空(Nil)"
               } ],
               "notMode" : false
-            } ],
-            "showCaption" : true
+            } ]
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "RAWITEM",
@@ -268,8 +263,7 @@
                 "value" : "closed"
               } ],
               "notMode" : false
-            } ],
-            "showCaption" : true
+            } ]
           }, {
             "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
             "itemStyle" : "DEFAULT",
@@ -300,8 +294,7 @@
                 "name" : "assignedto 值不为空(NotNil)"
               } ],
               "notMode" : false
-            } ],
-            "showCaption" : true
+            } ]
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "FIELD",
@@ -313,7 +306,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -328,8 +320,7 @@
           } ],
           "getPSSysCss" : {
             "cssName" : "mob_list_card"
-          },
-          "showCaption" : false
+          }
         } ],
         "mobilePanel" : true,
         "name" : "buglayoutpanel",
@@ -434,7 +425,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -453,7 +443,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "name",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -475,7 +464,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__status.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -515,8 +503,7 @@
                 "value" : "closed"
               } ],
               "notMode" : false
-            } ],
-            "showCaption" : true
+            } ]
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "RAWITEM",
@@ -539,8 +526,7 @@
                 "value" : "closed"
               } ],
               "notMode" : false
-            } ],
-            "showCaption" : true
+            } ]
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "RAWITEM",
@@ -562,8 +548,7 @@
                 "name" : "assignedto 值为空(Nil)"
               } ],
               "notMode" : false
-            } ],
-            "showCaption" : true
+            } ]
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "FIELD",
@@ -575,7 +560,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -594,7 +578,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "left",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -610,8 +593,7 @@
           } ],
           "getPSSysCss" : {
             "cssName" : "mob_list_card"
-          },
-          "showCaption" : true
+          }
         } ],
         "mobilePanel" : true,
         "name" : "tasklayoutpanel",
@@ -712,7 +694,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Pri.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -731,7 +712,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "name",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -749,7 +729,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "date1",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -771,7 +750,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -794,7 +772,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Todo__status.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -811,8 +788,7 @@
           } ],
           "getPSSysCss" : {
             "cssName" : "mob_list_card"
-          },
-          "showCaption" : true
+          }
         } ],
         "mobilePanel" : true,
         "name" : "todolayoutpanel",
@@ -996,8 +972,7 @@
               "colLG" : 1,
               "colMD" : 1,
               "layout" : "TABLE_12COL"
-            },
-            "showCaption" : true
+            }
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "FIELD",
@@ -1009,7 +984,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -1028,7 +1002,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "role",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -1044,8 +1017,7 @@
           } ],
           "getPSSysCss" : {
             "cssName" : "mob_list_card"
-          },
-          "showCaption" : true
+          }
         } ],
         "mobilePanel" : true,
         "name" : "testtasklayoutpanel",

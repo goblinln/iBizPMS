@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -43,6 +44,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Block",
     "methodType" : "DEACTION",
     "name" : "Block",
@@ -54,6 +56,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -68,6 +71,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -79,6 +83,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -112,6 +117,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -126,6 +132,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -144,6 +151,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkCase",
     "methodType" : "DEACTION",
     "name" : "linkCase",
@@ -155,6 +163,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -172,6 +181,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -182,6 +192,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
@@ -193,6 +204,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkCase",
     "methodType" : "DEACTION",
     "name" : "unlinkCase",
@@ -204,6 +216,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -555,6 +568,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -581,6 +595,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTestTaskPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTestTaskPc",
     "getPSDEDataSet" : {
@@ -590,6 +605,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTestTaskDS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTestTaskDS",
     "getPSDEDataSet" : {
@@ -870,6 +886,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -881,6 +898,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Block",
     "methodType" : "DEACTION",
     "name" : "Block",
@@ -892,6 +910,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -906,6 +925,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -917,6 +937,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -950,6 +971,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -964,6 +986,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -982,6 +1005,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkCase",
     "methodType" : "DEACTION",
     "name" : "linkCase",
@@ -993,6 +1017,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -1010,6 +1035,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -1020,6 +1046,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
@@ -1031,6 +1058,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkCase",
     "methodType" : "DEACTION",
     "name" : "unlinkCase",
@@ -1042,6 +1070,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -1074,6 +1103,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -1100,6 +1130,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTestTaskPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTestTaskPc",
     "getPSDEDataSet" : {
@@ -1109,6 +1140,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTestTaskDS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTestTaskDS",
     "getPSDEDataSet" : {

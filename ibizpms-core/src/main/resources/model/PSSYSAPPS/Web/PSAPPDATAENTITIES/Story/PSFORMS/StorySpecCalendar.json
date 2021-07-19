@@ -387,7 +387,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "id",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -425,7 +424,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__status.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -458,7 +456,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "title",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -551,7 +548,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -585,7 +581,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__stage.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -615,7 +610,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "estimate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

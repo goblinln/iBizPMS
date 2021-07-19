@@ -295,9 +295,7 @@
               "viewType" : "DEMOBPICKUPVIEW"
             },
             "valueItemName" : "assignedto",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,

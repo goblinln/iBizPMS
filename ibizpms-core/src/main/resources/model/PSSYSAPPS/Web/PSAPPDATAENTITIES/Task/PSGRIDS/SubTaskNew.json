@@ -503,7 +503,6 @@
     "getPSEditor" : {
       "editorType" : "SPAN",
       "name" : "isleaf",
-      "editable" : false,
       "enableLinkView" : false
     },
     "allowEmpty" : true
@@ -599,9 +598,7 @@
         "rawValue" : true
       } ],
       "valueItemName" : "story",
-      "dropDownView" : false,
       "enableAC" : true,
-      "enableLinkView" : false,
       "enablePickupView" : false,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -710,9 +707,7 @@
         "rawValue" : true
       } ],
       "valueItemName" : "module",
-      "dropDownView" : false,
       "enableAC" : true,
-      "enableLinkView" : false,
       "enablePickupView" : false,
       "forceSelection" : true,
       "showTrigger" : true,

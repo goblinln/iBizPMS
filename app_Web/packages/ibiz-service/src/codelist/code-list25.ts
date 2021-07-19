@@ -1,4 +1,4 @@
-import { EmployeeService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--真实用户（产品管理）
  *
@@ -93,7 +93,7 @@ export default class CodeList25 {
      * @type {EmployeeService}
      * @memberof CodeList25
      */
-    public employeeService: EmployeeService = new EmployeeService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class CodeList25 {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.employeeService.FetchProduct(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('Employee').then((service: any) => {
+                const promise: Promise<any> = service.FetchProduct(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

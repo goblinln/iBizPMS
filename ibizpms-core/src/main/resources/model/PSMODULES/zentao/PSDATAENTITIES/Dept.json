@@ -135,7 +135,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -147,7 +146,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Root",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "根部门",
     "name" : "ROOT",
     "getPSDEDataQueries" : [ {

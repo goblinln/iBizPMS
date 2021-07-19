@@ -99,7 +99,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {

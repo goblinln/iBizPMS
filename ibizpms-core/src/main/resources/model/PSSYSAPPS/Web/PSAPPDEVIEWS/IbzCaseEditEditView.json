@@ -2916,9 +2916,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
             },
             "valueItemName" : "lib",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -2969,9 +2967,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
             },
             "valueItemName" : "module",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -3181,7 +3177,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -3211,7 +3206,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "openeddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -3245,7 +3239,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -3275,7 +3268,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "lastediteddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

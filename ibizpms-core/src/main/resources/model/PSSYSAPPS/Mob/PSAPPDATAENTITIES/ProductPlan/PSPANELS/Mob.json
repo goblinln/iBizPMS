@@ -42,7 +42,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "title",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -60,7 +59,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "begin",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -78,7 +76,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "end",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -98,7 +95,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "storycnt",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -116,7 +112,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "bugcnt",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -132,8 +127,7 @@
     } ],
     "getPSSysCss" : {
       "cssName" : "mob_list_card"
-    },
-    "showCaption" : true
+    }
   } ],
   "mobilePanel" : true,
   "modelid" : "129261a5f30d22096096b8791b3147be",

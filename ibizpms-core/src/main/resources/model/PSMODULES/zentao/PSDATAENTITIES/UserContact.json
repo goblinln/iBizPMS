@@ -248,7 +248,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "指定用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -259,7 +258,6 @@
     "enableFront" : true
   }, {
     "codeName" : "CurUSERCONTACT",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "抄送联系人",
     "name" : "CurUSERCONTACT",
     "getPSDEDataQueries" : [ {
@@ -270,7 +268,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -282,7 +279,6 @@
     "enableFront" : true
   }, {
     "codeName" : "My",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -293,7 +289,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyUSERCONTACT",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的联系人",
     "name" : "MyUSERCONTACT",
     "getPSDEDataQueries" : [ {

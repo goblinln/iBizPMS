@@ -309,7 +309,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "assigntomebugcnt",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -487,7 +486,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "activebugcnt",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -640,7 +638,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "unconfirmbugcnt",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -793,7 +790,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "notclosedbugcnt",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

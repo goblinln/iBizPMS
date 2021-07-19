@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchLinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchLinkBug",
@@ -42,6 +43,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchLinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchLinkStory",
@@ -52,6 +54,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkBug",
@@ -63,6 +66,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
@@ -74,6 +78,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -106,6 +111,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeActivePlan",
     "methodType" : "DEACTION",
     "name" : "EeActivePlan",
@@ -117,6 +123,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeCancelPlan",
     "methodType" : "DEACTION",
     "name" : "EeCancelPlan",
@@ -128,6 +135,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeClosePlan",
     "methodType" : "DEACTION",
     "name" : "EeClosePlan",
@@ -139,6 +147,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeFinishPlan",
     "methodType" : "DEACTION",
     "name" : "EeFinishPlan",
@@ -150,6 +159,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EePausePlan",
     "methodType" : "DEACTION",
     "name" : "EePausePlan",
@@ -161,6 +171,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeRestartPlan",
     "methodType" : "DEACTION",
     "name" : "EeRestartPlan",
@@ -172,6 +183,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeStartPlan",
     "methodType" : "DEACTION",
     "name" : "EeStartPlan",
@@ -219,6 +231,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetPlanEnd",
     "methodType" : "DEACTION",
     "name" : "GetPlanEnd",
@@ -287,6 +300,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkTask",
     "methodType" : "DEACTION",
     "name" : "LinkTask",
@@ -318,6 +332,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -328,6 +343,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkBug",
     "methodType" : "DEACTION",
     "name" : "UnlinkBug",
@@ -339,6 +355,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
@@ -455,6 +472,7 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchChildPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildPlan",
     "getPSDEDataSet" : {
@@ -464,6 +482,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurProductPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurProductPlan",
     "getPSDEDataSet" : {
@@ -473,6 +492,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurProductPlanStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurProductPlanStory",
     "getPSDEDataSet" : {
@@ -482,6 +502,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -491,6 +512,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaultParent",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DefaultParent",
     "getPSDEDataSet" : {
@@ -500,6 +522,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchPlanCodeList",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "PlanCodeList",
     "getPSDEDataSet" : {
@@ -509,6 +532,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchPlanTasks",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "PlanTasks",
     "getPSDEDataSet" : {
@@ -535,6 +559,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectApp",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectApp",
     "getPSDEDataSet" : {
@@ -561,6 +586,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RootPlan",
     "getPSDEDataSet" : {
@@ -570,6 +596,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TaskPlan",
     "getPSDEDataSet" : {
@@ -812,6 +839,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchLinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchLinkBug",
@@ -822,6 +850,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchLinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchLinkStory",
@@ -832,6 +861,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkBug",
@@ -843,6 +873,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
@@ -854,6 +885,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -886,6 +918,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeActivePlan",
     "methodType" : "DEACTION",
     "name" : "EeActivePlan",
@@ -897,6 +930,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeCancelPlan",
     "methodType" : "DEACTION",
     "name" : "EeCancelPlan",
@@ -908,6 +942,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeClosePlan",
     "methodType" : "DEACTION",
     "name" : "EeClosePlan",
@@ -919,6 +954,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeFinishPlan",
     "methodType" : "DEACTION",
     "name" : "EeFinishPlan",
@@ -930,6 +966,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EePausePlan",
     "methodType" : "DEACTION",
     "name" : "EePausePlan",
@@ -941,6 +978,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeRestartPlan",
     "methodType" : "DEACTION",
     "name" : "EeRestartPlan",
@@ -952,6 +990,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EeStartPlan",
     "methodType" : "DEACTION",
     "name" : "EeStartPlan",
@@ -999,6 +1038,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetPlanEnd",
     "methodType" : "DEACTION",
     "name" : "GetPlanEnd",
@@ -1067,6 +1107,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkTask",
     "methodType" : "DEACTION",
     "name" : "LinkTask",
@@ -1098,6 +1139,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -1108,6 +1150,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkBug",
     "methodType" : "DEACTION",
     "name" : "UnlinkBug",
@@ -1119,6 +1162,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
@@ -1148,6 +1192,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildPlan",
     "getPSDEDataSet" : {
@@ -1157,6 +1202,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurProductPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurProductPlan",
     "getPSDEDataSet" : {
@@ -1166,6 +1212,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurProductPlanStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurProductPlanStory",
     "getPSDEDataSet" : {
@@ -1175,6 +1222,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -1184,6 +1232,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaultParent",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DefaultParent",
     "getPSDEDataSet" : {
@@ -1193,6 +1242,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchPlanCodeList",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "PlanCodeList",
     "getPSDEDataSet" : {
@@ -1202,6 +1252,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchPlanTasks",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "PlanTasks",
     "getPSDEDataSet" : {
@@ -1228,6 +1279,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectApp",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectApp",
     "getPSDEDataSet" : {
@@ -1254,6 +1306,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RootPlan",
     "getPSDEDataSet" : {
@@ -1263,6 +1316,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TaskPlan",
     "getPSDEDataSet" : {

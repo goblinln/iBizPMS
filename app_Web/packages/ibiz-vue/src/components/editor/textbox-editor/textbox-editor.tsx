@@ -52,6 +52,34 @@ export default class TextboxEditor extends EditorBase {
                 this.customProps.mode = (this.editorInstance as any).mode ? (this.editorInstance as any).mode : 'EDIT';
                 break;
         }
+        this.initFormatParams();
+    }
+
+    /**
+     * 初始化格式化参数
+     *
+     * @param {*} value
+     * @memberof TextboxEditor
+     */
+    public initFormatParams() {
+        this.customProps.valueFormat = '';
+        let unitName = this.parentItem?.unitName;
+        let appDeField: IPSAppDEField= this.parentItem?.getPSAppDEField?.();
+        if (appDeField?.stdDataType) {
+            this.customProps.dataType = DataTypes.toString(appDeField.stdDataType);
+        }
+        if (appDeField?.valueFormat) {
+            this.customProps.valueFormat = appDeField?.valueFormat;
+        }
+        if (this.valueFormat) {
+          this.customProps.valueFormat = this.valueFormat;
+        }
+        if (this.editorInstance.editorParams?.valueFormat) {
+          this.customProps.valueFormat = this.editorInstance.editorParams?.valueFormat;
+        }
+        if (unitName) {
+            this.customProps.unitName = unitName;
+        }
     }
 
     /**

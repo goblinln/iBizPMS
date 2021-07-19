@@ -279,6 +279,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                 return dataItem.getPSAppDEField() && !dataItem.getPSAppDEField()?.keyField;
             });
         }
+        this.limit = this.controlInstance?.pagingSize || this.limit;
     }
 
     /**

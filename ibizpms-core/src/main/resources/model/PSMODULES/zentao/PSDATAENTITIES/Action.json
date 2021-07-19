@@ -11,6 +11,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDELOGICS/Comment.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -447,7 +448,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "指定用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -458,7 +458,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -470,7 +469,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MobType",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "MobType",
     "name" : "MobType",
     "getPSDEDataQueries" : [ {
@@ -481,7 +479,6 @@
     "enableFront" : true
   }, {
     "codeName" : "My",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -492,7 +489,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyAction",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的日志（权限）",
     "name" : "MyAction",
     "getPSDEDataQueries" : [ {
@@ -503,7 +499,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyTrends",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "项目动态(我的)",
     "name" : "MyTrends",
     "getPSDEDataQueries" : [ {
@@ -514,7 +509,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductTrends",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "ProductTrends",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -530,7 +524,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectTrends",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "项目动态(项目相关所有)",
     "name" : "ProjectTrends",
     "getPSDEDataQueries" : [ {
@@ -541,7 +534,6 @@
     "enableFront" : true
   }, {
     "codeName" : "QueryUserYEAR",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "查询用户使用年",
     "name" : "QueryUserYEAR",
     "getPSDEDataQueries" : [ {
@@ -552,7 +544,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Type",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Type",
     "name" : "Type",
     "getPSDEDataQueries" : [ {

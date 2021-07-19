@@ -55,19 +55,22 @@ export class AppFrontAction extends AppDEUIAction {
             return;
         }
         const actionTarget: string | null = this.actionModel.actionTarget;
-        if (Object.is(actionTarget, 'SINGLEDATA')) {
-            actionContext.$throw(actionContext.$t('app.commonwords.nosupportsingle'), 'AppFrontAction');
-        } else if (Object.is(actionTarget, 'MULTIDATA')) {
+        if (Object.is(actionTarget, 'MULTIDATA')) {
             actionContext.$throw(actionContext.$t('app.commonwords.nosupportmultile'), 'AppFrontAction');
         } else {
             // 处理数据
             let data: any = {};
+            let tempData: any = {};
             let parentContext: any = {};
             let parentViewParam: any = {};
             const _this: any = actionContext;
             if (this.actionModel.saveTargetFirst) {
                 const result: any = await xData.save(args, false);
-                args = [result.data];
+                if(Object.is(actionTarget, 'SINGLEDATA')){
+                    Object.assign(args[0], result.data);
+                }else{
+                    args = [result.data];
+                }
             }
             const _args: any[] = Util.deepCopy(args);
             if (
@@ -88,6 +91,8 @@ export class AppFrontAction extends AppDEUIAction {
                 }
                 Object.assign(params, { [key!]: `%${key}%` });
                 Object.assign(params, { [majorKey]: `%${majorKey}%` });
+            } else if (Object.is(actionTarget, 'SINGLEDATA')) {
+                data = args[0];
             }
             // 自定义导航参数优先级大于预置导航参数
             if (
@@ -111,7 +116,12 @@ export class AppFrontAction extends AppDEUIAction {
                 parentViewParam = _this.viewparams;
             }
             context = UIActionTool.handleContextParam(actionTarget, _args, parentContext, parentViewParam, context);
-            data = UIActionTool.handleActionParam(actionTarget, _args, parentContext, parentViewParam, params);
+            if (Object.is(actionTarget, 'SINGLEDATA')) {
+                tempData = UIActionTool.handleActionParam(actionTarget, _args, parentContext, parentViewParam, params);
+                Object.assign(data, tempData);
+            } else {
+                data = UIActionTool.handleActionParam(actionTarget, _args, parentContext, parentViewParam, params);
+            }
             context = Object.assign({}, actionContext.context, context);
             // 构建srfparentdename和srfparentkey
             let parentObj: any = {

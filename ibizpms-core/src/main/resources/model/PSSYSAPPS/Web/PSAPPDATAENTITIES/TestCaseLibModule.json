@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -172,6 +173,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot_NoBranch",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Root_NoBranch",
     "getPSDEDataSet" : {
@@ -306,6 +308,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -445,6 +448,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot_NoBranch",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Root_NoBranch",
     "getPSDEDataSet" : {

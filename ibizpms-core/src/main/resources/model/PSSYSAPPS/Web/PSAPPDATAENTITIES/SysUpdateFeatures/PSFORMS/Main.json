@@ -199,9 +199,7 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
           },
           "valueItemName" : "sys_update_logid",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : false,
           "forceSelection" : true,
           "showTrigger" : true,
@@ -382,7 +380,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -411,7 +408,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "createdate",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -444,7 +440,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -473,7 +468,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "updatedate",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

@@ -3088,7 +3088,6 @@
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
                     },
                     "valueItemName" : "project",
-                    "dropDownView" : false,
                     "editable" : false,
                     "enableAC" : false,
                     "enableLinkView" : true,
@@ -3154,7 +3153,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3187,7 +3185,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3220,7 +3217,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__pri.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3249,7 +3245,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "begin",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3278,7 +3273,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "end",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3311,7 +3305,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__status.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {

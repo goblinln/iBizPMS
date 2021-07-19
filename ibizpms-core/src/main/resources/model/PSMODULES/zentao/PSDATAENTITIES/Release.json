@@ -297,7 +297,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -309,7 +308,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ReportRelease",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "测试报告关联发布",
     "name" : "ReportRelease",
     "getPSDEDataQueries" : [ {

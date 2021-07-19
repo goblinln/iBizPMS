@@ -306,7 +306,6 @@
               "name" : "linename",
               "dropDownView" : true,
               "enableAC" : true,
-              "enableLinkView" : false,
               "enablePickupView" : true,
               "forceSelection" : true,
               "showTrigger" : true,
@@ -398,9 +397,7 @@
               "viewType" : "DEMOBPICKUPVIEW"
             },
             "valueItemName" : "po",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -482,9 +479,7 @@
               "viewType" : "DEMOBPICKUPVIEW"
             },
             "valueItemName" : "qd",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -566,9 +561,7 @@
               "viewType" : "DEMOBPICKUPVIEW"
             },
             "valueItemName" : "rd",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,

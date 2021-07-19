@@ -50,6 +50,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -82,6 +83,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "CreateGetInfo",
     "methodType" : "DEACTION",
     "name" : "CreateGetInfo",
@@ -96,6 +98,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EditGetCompleteTask",
     "methodType" : "DEACTION",
     "name" : "EditGetCompleteTask",
@@ -182,6 +185,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -199,6 +203,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -329,6 +334,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyMonthly",
     "getPSDEDataSet" : {
@@ -338,6 +344,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyMonthlyMob",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyMonthlyMob",
     "getPSDEDataSet" : {
@@ -347,6 +354,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReceivedMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReceivedMonthly",
     "getPSDEDataSet" : {
@@ -356,6 +364,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMySubmitMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MySubmitMonthly",
     "getPSDEDataSet" : {
@@ -365,6 +374,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductMonthly",
     "getPSDEDataSet" : {
@@ -374,6 +384,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectMonthly",
     "getPSDEDataSet" : {
@@ -543,6 +554,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -575,6 +587,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "CreateGetInfo",
     "methodType" : "DEACTION",
     "name" : "CreateGetInfo",
@@ -589,6 +602,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EditGetCompleteTask",
     "methodType" : "DEACTION",
     "name" : "EditGetCompleteTask",
@@ -675,6 +689,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -692,6 +707,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -755,6 +771,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyMonthly",
     "getPSDEDataSet" : {
@@ -764,6 +781,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyMonthlyMob",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyMonthlyMob",
     "getPSDEDataSet" : {
@@ -773,6 +791,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReceivedMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReceivedMonthly",
     "getPSDEDataSet" : {
@@ -782,6 +801,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMySubmitMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MySubmitMonthly",
     "getPSDEDataSet" : {
@@ -791,6 +811,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductMonthly",
     "getPSDEDataSet" : {
@@ -800,6 +821,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectMonthly",
     "getPSDEDataSet" : {

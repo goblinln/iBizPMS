@@ -139,7 +139,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "id",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -182,7 +181,6 @@
             "pluginType" : "EDITOR_CUSTOMSTYLE",
             "pluginCode" : "colorspan"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -288,7 +286,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "precondition",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

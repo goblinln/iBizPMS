@@ -128,7 +128,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Casestep__type.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -147,7 +146,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "desc",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -165,7 +163,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "expect",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -179,8 +176,7 @@
         } ],
         "getPSSysCss" : {
           "cssName" : "mob_list_card"
-        },
-        "showCaption" : true
+        }
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",

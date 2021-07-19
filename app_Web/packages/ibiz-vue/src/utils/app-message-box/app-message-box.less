@@ -1,15 +1,58 @@
-.app-modal-confirm {
+.app-modal-ok {
     .ivu-modal-header {
+        padding-left: 32px;
+        padding-top: 28px;
+        border-bottom: 0;
         .header {
-            text-align:center;
+            text-align: left;
             line-height: 26px;
             height: auto;
+            color: #333333;
+            font-weight: 600;
+            font-size: 18px;
             i {
-                font-size: 26px;
+                font-size: 24px;
                 position: relative;
-                top: 2px;
+                top: 1px;
+                margin-right: 8px;
             }
         }
+    }
+    .ivu-modal-body {
+      padding: 0 32px 0 68px;
+      color: #707070;
+      .content {
+        line-height: 1.5;
+        font-size: 16px;
+      }
+      >.body-icon {
+          height: 40px;
+          i {
+            font-size: 24px;
+            position: relative;
+            top: 1px;
+            margin-right: 8px;
+            display: block;
+            position: absolute;
+            left: 32px;
+            top: 40px;
+          }
+      }
+    }
+    .ivu-modal-footer {
+      border-top: 0;
+      padding: 24px 32px 24px 18px;
+      .ivu-btn {
+        width: 80px;
+        height: 34px;
+        font-size: 15px;
+      }
+      .ivu-btn-primary {
+        color: rgb(187,218,254);
+      }
+      .ivu-btn-default {
+        color: rgb(157,157,157);
+      }
     }
 
     .info {
@@ -19,7 +62,7 @@
     }
     .success {
         i {
-            color: #19be6b;
+            color: rgb(25,190,107);
         }
     }
     .warning {
@@ -31,5 +74,10 @@
         i {
             color: #ed4014;
         }
+    }
+    .question {
+      i {
+        color: #DADADA
+      }
     }
 }

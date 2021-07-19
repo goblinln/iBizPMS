@@ -123,7 +123,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -135,7 +134,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Estimate",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "燃尽图预计（含周末）",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {

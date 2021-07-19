@@ -130,7 +130,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -142,7 +141,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductDaily",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "产品日报",
     "name" : "ProductDaily",
     "getPSDEDataQueries" : [ {

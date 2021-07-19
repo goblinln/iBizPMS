@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -136,6 +137,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SyncFromIBIZ",
     "methodType" : "DEACTION",
     "name" : "SyncFromIBIZ",
@@ -165,6 +167,7 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchByPath",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BYPATH",
     "getPSDEDataSet" : {
@@ -191,6 +194,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ParentModule",
     "getPSDEDataSet" : {
@@ -200,6 +204,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ROOT",
     "getPSDEDataSet" : {
@@ -209,6 +214,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot_NoBranch",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Root_NoBranch",
     "getPSDEDataSet" : {
@@ -218,6 +224,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryModule",
     "getPSDEDataSet" : {
@@ -364,6 +371,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -468,6 +476,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SyncFromIBIZ",
     "methodType" : "DEACTION",
     "name" : "SyncFromIBIZ",
@@ -496,6 +505,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByPath",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BYPATH",
     "getPSDEDataSet" : {
@@ -522,6 +532,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ParentModule",
     "getPSDEDataSet" : {
@@ -531,6 +542,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ROOT",
     "getPSDEDataSet" : {
@@ -540,6 +552,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot_NoBranch",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Root_NoBranch",
     "getPSDEDataSet" : {
@@ -549,6 +562,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryModule",
     "getPSDEDataSet" : {

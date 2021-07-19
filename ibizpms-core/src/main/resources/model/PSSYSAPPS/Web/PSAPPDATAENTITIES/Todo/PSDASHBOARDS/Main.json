@@ -308,7 +308,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "name",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3141,7 +3140,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Pri.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3174,7 +3172,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Todo__status.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3207,7 +3204,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TypeAll.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3240,7 +3236,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3269,7 +3264,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "date",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3302,7 +3296,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3336,7 +3329,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BeginendDropList.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3370,7 +3362,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3399,7 +3390,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "assigneddate",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3488,7 +3478,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "date1",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3517,7 +3506,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "config_end",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3562,7 +3550,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "config_day",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3611,7 +3598,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList46.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3659,7 +3645,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList47.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -3688,7 +3673,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "config_beforedays",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {

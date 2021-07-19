@@ -1286,7 +1286,6 @@
                 },
                 "dropDownView" : true,
                 "enableAC" : true,
-                "enableLinkView" : false,
                 "enablePickupView" : true,
                 "forceSelection" : true,
                 "showTrigger" : true,
@@ -1390,7 +1389,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__pri.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -1409,7 +1407,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "name",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -1431,7 +1428,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__status.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -1471,8 +1467,7 @@
                     "value" : "closed"
                   } ],
                   "notMode" : false
-                } ],
-                "showCaption" : true
+                } ]
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "RAWITEM",
@@ -1495,8 +1490,7 @@
                     "value" : "closed"
                   } ],
                   "notMode" : false
-                } ],
-                "showCaption" : true
+                } ]
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "RAWITEM",
@@ -1518,8 +1512,7 @@
                     "name" : "assignedto 值为空(Nil)"
                   } ],
                   "notMode" : false
-                } ],
-                "showCaption" : true
+                } ]
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -1531,7 +1524,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -1550,7 +1542,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "left",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -1566,8 +1557,7 @@
               } ],
               "getPSSysCss" : {
                 "cssName" : "mob_list_card"
-              },
-              "showCaption" : true
+              }
             } ],
             "mobilePanel" : true,
             "name" : "mdctrl_itempanel",
@@ -2893,7 +2883,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__pri.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -2912,7 +2901,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "title",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -2934,7 +2922,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__status.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -2957,7 +2944,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__resolution.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -2992,8 +2978,7 @@
                     "name" : "assignedto 值为空(Nil)"
                   } ],
                   "notMode" : false
-                } ],
-                "showCaption" : true
+                } ]
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "RAWITEM",
@@ -3018,8 +3003,7 @@
                     "value" : "closed"
                   } ],
                   "notMode" : false
-                } ],
-                "showCaption" : true
+                } ]
               }, {
                 "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
                 "itemStyle" : "DEFAULT",
@@ -3050,8 +3034,7 @@
                     "name" : "assignedto 值不为空(NotNil)"
                   } ],
                   "notMode" : false
-                } ],
-                "showCaption" : true
+                } ]
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -3063,7 +3046,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -3078,8 +3060,7 @@
               } ],
               "getPSSysCss" : {
                 "cssName" : "mob_list_card"
-              },
-              "showCaption" : false
+              }
             } ],
             "mobilePanel" : true,
             "name" : "mdctrl_itempanel",
@@ -5286,7 +5267,6 @@
                 },
                 "dropDownView" : true,
                 "enableAC" : true,
-                "enableLinkView" : false,
                 "enablePickupView" : true,
                 "forceSelection" : true,
                 "showTrigger" : true,
@@ -5386,7 +5366,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__pri.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -5405,7 +5384,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "name",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -5427,7 +5405,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__status.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -5467,8 +5444,7 @@
                     "value" : "closed"
                   } ],
                   "notMode" : false
-                } ],
-                "showCaption" : true
+                } ]
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "RAWITEM",
@@ -5491,8 +5467,7 @@
                     "value" : "closed"
                   } ],
                   "notMode" : false
-                } ],
-                "showCaption" : true
+                } ]
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "RAWITEM",
@@ -5514,8 +5489,7 @@
                     "name" : "assignedto 值为空(Nil)"
                   } ],
                   "notMode" : false
-                } ],
-                "showCaption" : true
+                } ]
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -5527,7 +5501,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -5546,7 +5519,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "left",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -5562,8 +5534,7 @@
               } ],
               "getPSSysCss" : {
                 "cssName" : "mob_list_card"
-              },
-              "showCaption" : true
+              }
             } ],
             "mobilePanel" : true,
             "name" : "mdctrl_itempanel",
@@ -6158,8 +6129,7 @@
                   "colMD" : 4,
                   "layout" : "TABLE_12COL"
                 },
-                "rawContent" : "我的任务",
-                "showCaption" : true
+                "rawContent" : "我的任务"
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -6167,7 +6137,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "mytasks",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -6193,8 +6162,7 @@
                   "colMD" : 4,
                   "layout" : "TABLE_12COL"
                 },
-                "rawContent" : "已延期任务",
-                "showCaption" : true
+                "rawContent" : "已延期任务"
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -6202,7 +6170,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "myetasks",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -6228,8 +6195,7 @@
                   "colLG" : 4,
                   "colMD" : 4,
                   "layout" : "TABLE_12COL"
-                },
-                "showCaption" : true
+                }
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -6237,7 +6203,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "mybugs",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -6263,8 +6228,7 @@
                   "colLG" : 4,
                   "colMD" : 4,
                   "layout" : "TABLE_12COL"
-                },
-                "showCaption" : true
+                }
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -6272,7 +6236,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "myebugs",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -6298,8 +6261,7 @@
                   "colLG" : 4,
                   "colMD" : 4,
                   "layout" : "TABLE_12COL"
-                },
-                "showCaption" : true
+                }
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -6307,7 +6269,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "mystorys",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -6333,8 +6294,7 @@
                   "colMD" : 4,
                   "layout" : "TABLE_12COL"
                 },
-                "rawContent" : "{{userCustom.mywork.noCloseProject}}",
-                "showCaption" : true
+                "rawContent" : "{{userCustom.mywork.noCloseProject}}"
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -6342,7 +6302,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "projects",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -6368,8 +6327,7 @@
                   "colMD" : 4,
                   "layout" : "TABLE_12COL"
                 },
-                "rawContent" : "{{userCustom.mywork.deferredProjects}}",
-                "showCaption" : true
+                "rawContent" : "{{userCustom.mywork.deferredProjects}}"
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -6377,7 +6335,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "eprojects",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -6403,8 +6360,7 @@
                   "colMD" : 4,
                   "layout" : "TABLE_12COL"
                 },
-                "rawContent" : "{{userCustom.mywork.noCloseProduct}}",
-                "showCaption" : true
+                "rawContent" : "{{userCustom.mywork.noCloseProduct}}"
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -6412,7 +6368,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "products",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -6431,8 +6386,7 @@
               } ],
               "getPSSysCss" : {
                 "cssName" : "mob_list_card"
-              },
-              "showCaption" : true
+              }
             } ],
             "name" : "mdctrl_itempanel",
             "modelid" : "0112df3e0f06d503f67a36a631250f1b",
@@ -6860,7 +6814,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "date1",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -6878,7 +6831,6 @@
                   "getPSEditor" : {
                     "editorType" : "SPAN",
                     "name" : "actor",
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -6889,8 +6841,7 @@
                   "viewFieldName" : "actor",
                   "hidden" : false,
                   "showCaption" : false
-                } ],
-                "showCaption" : true
+                } ]
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "CONTAINER",
@@ -6915,7 +6866,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__type.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -6938,7 +6888,6 @@
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__object_type.json"
                     },
-                    "editable" : false,
                     "enableLinkView" : false
                   },
                   "getPSLayoutPos" : {
@@ -6950,13 +6899,11 @@
                   "convertToCodeItemText" : true,
                   "hidden" : false,
                   "showCaption" : false
-                } ],
-                "showCaption" : true
+                } ]
               } ],
               "getPSSysCss" : {
                 "cssName" : "mob_list_card"
-              },
-              "showCaption" : true
+              }
             } ],
             "mobilePanel" : true,
             "name" : "mdctrl_itempanel",

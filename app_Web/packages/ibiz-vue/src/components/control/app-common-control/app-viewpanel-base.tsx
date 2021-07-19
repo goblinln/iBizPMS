@@ -84,7 +84,7 @@ export class AppViewPanelBase extends ViewPanelControlBase {
     public onInputDataChange(newVal: any, oldVal: any) {
         if (newVal) {
             this.computedUIData(newVal);
-            this.panelData = Util.deepCopy(newVal);
+            this.data = Util.deepCopy(newVal);
             this.computeButtonState(newVal);
             this.panelLogic({ name: '', newVal: null, oldVal: null });
             this.$forceUpdate();
@@ -109,12 +109,13 @@ export class AppViewPanelBase extends ViewPanelControlBase {
      * @param item
      */
     public renderDetailClass(item: any) {
-        // 映射类名
-        let detailClass: any = this.classObj[item.itemType];
-        if (item?.getPSSysCss?.()) {
-            detailClass += ` ${item.getPSSysCss().cssName}`;
-        }
-        return detailClass;
+         // 映射类名
+         let detailClass: any = this.classObj[item.itemType] || '';
+         detailClass += ` viewpanel-${item.itemType.toLowerCase()}-${item.name.toLowerCase()}`;
+         if (item?.getPSSysCss?.()) {
+             detailClass += ` ${item.getPSSysCss().cssName}`;
+         }
+         return detailClass;
     }
 
     /**
@@ -210,9 +211,6 @@ export class AppViewPanelBase extends ViewPanelControlBase {
 
     public renderContainer(container: IPSPanelContainer) {
         const panelItems: IPSPanelItem[] = container.getPSPanelItems() || [];
-        if (panelItems.length == 0) {
-            return null;
-        }
         let layout = container.getPSLayout() as any;
         let layoutMode = container.getPSLayout()?.layout;
         let css = container.getPSSysCss() as IPSSysCss;
@@ -233,9 +231,9 @@ export class AppViewPanelBase extends ViewPanelControlBase {
             cssStyle += layout.vAlign ? `align-items: ${layout.vAlign};` : '';
             return (
                 <i-col style={containerStyle} class={containerClass}>
-                    <div class="viewpanel-container-header" style={{'display': container.showCaption ? false : 'none'}}>
+                    {container.showCaption ? <div class="viewpanel-container-header">
                         <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
-                    </div>
+                    </div> : null}
                     <div class="viewpanel-container-content" style={cssStyle}>
                         {panelItems.map((item: any, index: number) => {
                             // 子样式
@@ -267,9 +265,9 @@ export class AppViewPanelBase extends ViewPanelControlBase {
             }
             return (
                 <i-col style={containerStyle} class={containerClass}>
-                    <row class="viewpanel-container-header" style={{'display': container.showCaption ? false : 'none'}}>
+                    {container.showCaption ? <row class="viewpanel-container-header">
                         <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
-                    </row>
+                    </row> : null}
                     <row class="viewpanel-container-content" style={cssStyle}>
                         {panelItems.map((item: any, index: number) => {
                             //子样式
@@ -387,16 +385,13 @@ export class AppViewPanelBase extends ViewPanelControlBase {
      */
 
     public renderRawitem(modelJson: IPSPanelRawItem) {
-        let {
-            rawItemWidth,
-            rawItemHeight,
-            contentType,
-            htmlContent,
-            rawContent,
-        } = modelJson;
-        let sizeStyle: any = {};
-        sizeStyle.width = rawItemWidth > 0 ? rawItemWidth + 'px' : '';
-        sizeStyle.height = rawItemHeight > 0 ? rawItemHeight + 'px' : '';
+        let { rawItemHeight, rawItemWidth, contentType, htmlContent, rawContent } = modelJson;
+        let sysCssName = modelJson.getPSSysCss()?.cssName;
+        let sysImage = modelJson.getPSSysImage()?.cssClass;
+        const style: any = {
+            width: rawItemWidth > 0 ? `${rawItemWidth}px` : false,
+            height: rawItemHeight > 0 ? `${rawItemHeight}px` :false,
+        }
         if (rawContent) {
             const items = rawContent.match(/\{{(.+?)\}}/g);
             if (items) {
@@ -412,15 +407,15 @@ export class AppViewPanelBase extends ViewPanelControlBase {
         });
         return (
             <app-rawitem
-                context={this.context}
+                class={sysCssName}
+                style={style}
                 viewparams={this.viewparams}
-                contentStyle={modelJson?.getPSSysCss()?.cssName}
-                sizeStyle={sizeStyle}
+                context={this.context}
                 contentType={contentType}
+                imageClass={sysImage}
                 htmlContent={htmlContent}
-                getPSSysImage={modelJson.getPSSysImage()?.cssClass}
             >
-                {contentType === 'RAW' && tempNode}
+                {Object.is(contentType, 'RAW') && tempNode}
             </app-rawitem>
         );
     }
@@ -483,7 +478,7 @@ export class AppViewPanelBase extends ViewPanelControlBase {
         return (
             <div class={['control',cssName,itemStyle.toLocaleLowerCase()]} style={controlStyle}>
                 {
-                    showCaption ? 
+                    showCaption && caption ? 
                     <div class='control-caption'>
                         <p>
                             {caption}

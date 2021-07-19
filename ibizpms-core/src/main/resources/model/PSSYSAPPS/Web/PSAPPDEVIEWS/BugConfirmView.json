@@ -485,9 +485,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
             },
             "valueItemName" : "mailtopk",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,

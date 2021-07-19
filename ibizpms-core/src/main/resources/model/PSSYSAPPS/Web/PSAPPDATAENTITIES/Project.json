@@ -50,6 +50,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
@@ -83,6 +84,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -133,6 +135,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -148,6 +151,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -199,6 +203,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -214,6 +219,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -229,6 +235,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -244,6 +251,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -309,6 +317,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ManageMembers",
     "methodType" : "DEACTION",
     "name" : "ManageMembers",
@@ -324,6 +333,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "PmsEeProjectTodoTaskCount",
     "methodType" : "DEACTION",
     "name" : "PmsEeProjectTodoTaskCount",
@@ -395,6 +405,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -412,6 +423,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -429,6 +441,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReturnEdit",
     "methodType" : "DEACTION",
     "name" : "ReturnEdit",
@@ -439,6 +452,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -485,6 +499,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkMember",
     "methodType" : "DEACTION",
     "name" : "UnlinkMember",
@@ -514,6 +529,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
@@ -547,6 +563,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateCycle",
     "methodType" : "DEACTION",
     "name" : "UpdateCycle",
@@ -561,6 +578,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateOrder",
     "methodType" : "DEACTION",
     "name" : "UpdateOrder",
@@ -576,6 +594,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateProjectCycle",
     "methodType" : "DEACTION",
     "name" : "UpdateProjectCycle",
@@ -590,6 +609,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -605,6 +625,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
@@ -621,6 +642,7 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Account",
     "getPSDEDataSet" : {
@@ -630,6 +652,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugProject",
     "getPSDEDataSet" : {
@@ -656,6 +679,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDefaultQueryExp",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurDefaultQueryExp",
     "getPSDEDataSet" : {
@@ -665,6 +689,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurPlanProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurPlanProject",
     "getPSDEDataSet" : {
@@ -691,6 +716,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUser",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUser",
     "getPSDEDataSet" : {
@@ -700,6 +726,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUserSa",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUserSa",
     "getPSDEDataSet" : {
@@ -709,6 +736,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -718,6 +746,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDeveloperQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DeveloperQuery",
     "getPSDEDataSet" : {
@@ -727,6 +756,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -736,6 +766,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchInvolvedProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "InvolvedProject",
     "getPSDEDataSet" : {
@@ -745,6 +776,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchInvolvedProject_StoryTaskBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "InvolvedProject_StoryTaskBug",
     "getPSDEDataSet" : {
@@ -754,6 +786,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "My",
     "getPSDEDataSet" : {
@@ -763,6 +796,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyProject",
     "getPSDEDataSet" : {
@@ -772,6 +806,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenByQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenByQuery",
     "getPSDEDataSet" : {
@@ -781,6 +816,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenQuery",
     "getPSDEDataSet" : {
@@ -790,6 +826,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeam",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeam",
     "getPSDEDataSet" : {
@@ -799,6 +836,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryProject",
     "getPSDEDataSet" : {
@@ -808,6 +846,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchUnDoneProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "UnDoneProject",
     "getPSDEDataSet" : {
@@ -1710,6 +1749,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
@@ -1743,6 +1783,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -1793,6 +1834,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -1808,6 +1850,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -1859,6 +1902,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -1874,6 +1918,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -1889,6 +1934,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -1904,6 +1950,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -1969,6 +2016,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ManageMembers",
     "methodType" : "DEACTION",
     "name" : "ManageMembers",
@@ -1984,6 +2032,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "PmsEeProjectTodoTaskCount",
     "methodType" : "DEACTION",
     "name" : "PmsEeProjectTodoTaskCount",
@@ -2055,6 +2104,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -2072,6 +2122,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -2089,6 +2140,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReturnEdit",
     "methodType" : "DEACTION",
     "name" : "ReturnEdit",
@@ -2099,6 +2151,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -2145,6 +2198,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkMember",
     "methodType" : "DEACTION",
     "name" : "UnlinkMember",
@@ -2174,6 +2228,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
@@ -2207,6 +2262,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateCycle",
     "methodType" : "DEACTION",
     "name" : "UpdateCycle",
@@ -2221,6 +2277,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateOrder",
     "methodType" : "DEACTION",
     "name" : "UpdateOrder",
@@ -2236,6 +2293,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateProjectCycle",
     "methodType" : "DEACTION",
     "name" : "UpdateProjectCycle",
@@ -2250,6 +2308,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -2265,6 +2324,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
@@ -2280,6 +2340,7 @@
     "builtinMethod" : true
   }, {
     "codeName" : "FetchAccount",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Account",
     "getPSDEDataSet" : {
@@ -2289,6 +2350,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugProject",
     "getPSDEDataSet" : {
@@ -2315,6 +2377,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDefaultQueryExp",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurDefaultQueryExp",
     "getPSDEDataSet" : {
@@ -2324,6 +2387,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurPlanProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurPlanProject",
     "getPSDEDataSet" : {
@@ -2350,6 +2414,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUser",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUser",
     "getPSDEDataSet" : {
@@ -2359,6 +2424,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUserSa",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUserSa",
     "getPSDEDataSet" : {
@@ -2368,6 +2434,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -2377,6 +2444,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDeveloperQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DeveloperQuery",
     "getPSDEDataSet" : {
@@ -2386,6 +2454,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -2395,6 +2464,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchInvolvedProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "InvolvedProject",
     "getPSDEDataSet" : {
@@ -2404,6 +2474,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchInvolvedProject_StoryTaskBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "InvolvedProject_StoryTaskBug",
     "getPSDEDataSet" : {
@@ -2413,6 +2484,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "My",
     "getPSDEDataSet" : {
@@ -2422,6 +2494,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyProject",
     "getPSDEDataSet" : {
@@ -2431,6 +2504,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenByQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenByQuery",
     "getPSDEDataSet" : {
@@ -2440,6 +2514,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenQuery",
     "getPSDEDataSet" : {
@@ -2449,6 +2524,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeam",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeam",
     "getPSDEDataSet" : {
@@ -2458,6 +2534,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryProject",
     "getPSDEDataSet" : {
@@ -2467,6 +2544,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchUnDoneProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "UnDoneProject",
     "getPSDEDataSet" : {
@@ -2476,6 +2554,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempAccount",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "Account",
     "getPSDEDataSet" : {
@@ -2486,6 +2565,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempBugProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "BugProject",
     "getPSDEDataSet" : {
@@ -2496,6 +2576,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurDefaultQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurDefaultQuery",
     "getPSDEDataSet" : {
@@ -2506,6 +2587,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurDefaultQueryExp",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurDefaultQueryExp",
     "getPSDEDataSet" : {
@@ -2516,6 +2598,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurPlanProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurPlanProject",
     "getPSDEDataSet" : {
@@ -2526,6 +2609,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurProduct",
     "getPSDEDataSet" : {
@@ -2536,6 +2620,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurUser",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurUser",
     "getPSDEDataSet" : {
@@ -2546,6 +2631,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurUserSa",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurUserSa",
     "getPSDEDataSet" : {
@@ -2556,6 +2642,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -2566,6 +2653,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempDeveloperQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DeveloperQuery",
     "getPSDEDataSet" : {
@@ -2576,6 +2664,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -2586,6 +2675,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempInvolvedProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "InvolvedProject",
     "getPSDEDataSet" : {
@@ -2596,6 +2686,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempInvolvedProject_StoryTaskBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "InvolvedProject_StoryTaskBug",
     "getPSDEDataSet" : {
@@ -2606,6 +2697,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMy",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "My",
     "getPSDEDataSet" : {
@@ -2616,6 +2708,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyProject",
     "getPSDEDataSet" : {
@@ -2626,6 +2719,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempOpenByQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "OpenByQuery",
     "getPSDEDataSet" : {
@@ -2636,6 +2730,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempOpenQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "OpenQuery",
     "getPSDEDataSet" : {
@@ -2646,6 +2741,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempProjectTeam",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectTeam",
     "getPSDEDataSet" : {
@@ -2656,6 +2752,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempStoryProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "StoryProject",
     "getPSDEDataSet" : {
@@ -2666,6 +2763,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempUnDoneProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "UnDoneProject",
     "getPSDEDataSet" : {

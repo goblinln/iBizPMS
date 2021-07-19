@@ -12,7 +12,14 @@ import { GlobalService } from 'ibiz-service';
 import { AppGlobalService } from '../app-service';
 import { AppDEUIAction } from './app-ui-action';
 
-export class AppBackEndAction extends AppDEUIAction{
+export class AppBackEndAction extends AppDEUIAction {
+
+    /**
+     * 是否合并参数
+     *
+     * @memberof AppBackEndAction
+     */
+    public isMergeParam: boolean = false;
 
     /**
      * 初始化AppBackEndAction
@@ -20,7 +27,11 @@ export class AppBackEndAction extends AppDEUIAction{
      * @memberof AppBackEndAction
      */
     constructor(opts: any, context?: any) {
-        super(opts,context);
+        super(opts, context);
+        const method: IPSAppDEMethod = this.actionModel.getPSAppDEMethod() as IPSAppDEMethod;
+        if (method.M.customCode || !method.M.getPSDEServiceAPIMethod){
+            this.isMergeParam = true;
+        }
     }
 
     /**
@@ -68,24 +79,23 @@ export class AppBackEndAction extends AppDEUIAction{
                 return;
             }
         }
-        if (Object.is(actionTarget, 'SINGLEDATA')) {
-            actionContext.$throw(actionContext.$t('app.commonwords.nosupportsingle'),'AppBackEndAction');
-        } else if (Object.is(actionTarget, 'MULTIDATA')) {
-            actionContext.$throw(actionContext.$t('app.commonwords.nosupportmultile'),'AppBackEndAction');
+        if (Object.is(actionTarget, 'MULTIDATA')) {
+            actionContext.$throw(actionContext.$t('app.commonwords.nosupportmultile'), 'AppBackEndAction');
         } else {
             let data: any = {};
+            let tempData: any = {};
             let parentContext: any = {};
             let parentViewParam: any = {};
             const _this: any = actionContext;
             if (this.actionModel.saveTargetFirst) {
                 const result: any = await xData.save(args, false);
-                args = [result.data];
+                if(Object.is(actionTarget, 'SINGLEDATA')){
+                    Object.assign(args[0], result.data);
+                }else{
+                    args = [result.data];
+                }
             }
-            const _args: any[] = Util.deepCopy(args);
-            if (
-                this.actionModel.getPSAppDataEntity &&
-                (Object.is(actionTarget, 'SINGLEKEY') || Object.is(actionTarget, 'MULTIKEY'))
-            ) {
+            if (Object.is(actionTarget, 'SINGLEKEY') || Object.is(actionTarget, 'MULTIKEY')) {
                 // todo 后台调用获取主键及主信息属性的name
                 const entityName = this.actionModel.getPSAppDataEntity()?.codeName.toLowerCase();
                 const key = (ModelTool.getAppEntityKeyField(
@@ -94,13 +104,15 @@ export class AppBackEndAction extends AppDEUIAction{
                 const majorKey = (ModelTool.getAppEntityMajorField(
                     this.actionModel.getPSAppDataEntity(),
                 ) as IPSAppDEField)?.name.toLowerCase();
-                if(_args[0]?.[key]){
+                if (args[0]?.[key]) {
                     Object.assign(context, { [entityName!]: `%${key}%` });
-                }else{
+                } else {
                     Object.assign(context, { [entityName!]: `%${entityName}%` });
                 }
                 Object.assign(params, { [key!]: `%${key}%` });
                 Object.assign(params, { [majorKey]: `%${majorKey}%` });
+            } else if (Object.is(actionTarget, 'SINGLEDATA')) {
+                data = args[0];
             }
             // 自定义导航参数优先级大于预置导航参数
             if (
@@ -123,15 +135,18 @@ export class AppBackEndAction extends AppDEUIAction{
             if (_this.viewparams) {
                 parentViewParam = _this.viewparams;
             }
-            context = UIActionTool.handleContextParam(actionTarget, _args, parentContext, parentViewParam, context);
-            data = UIActionTool.handleActionParam(actionTarget, _args, parentContext, parentViewParam, params);
+            context = UIActionTool.handleContextParam(actionTarget, args, parentContext, parentViewParam, context);
+            if (Object.is(actionTarget, 'SINGLEDATA')) {
+                tempData = UIActionTool.handleActionParam(actionTarget, args, parentContext, parentViewParam, params);
+                Object.assign(data, tempData);
+            } else {
+                data = UIActionTool.handleActionParam(actionTarget, args, parentContext, parentViewParam, params);
+            }
             // 多项数据主键转换数据
-            // TODO
-            // if (Object.is(actionTarget, "MULTIKEY") && this.actionModel?.getPSDEAction?.actionType == 'USERCUSTOM') {
             if (Object.is(actionTarget, 'MULTIKEY')) {
                 let tempDataArray: Array<any> = [];
-                if (_args.length > 1 && Object.keys(data).length > 0) {
-                    for (let i = 0; i < _args.length; i++) {
+                if (args.length > 1 && Object.keys(data).length > 0) {
+                    for (let i = 0; i < args.length; i++) {
                         let tempObject: any = {};
                         Object.keys(data).forEach((key: string) => {
                             Object.assign(tempObject, { [key]: data[key].split(',')[i] });
@@ -161,10 +176,11 @@ export class AppBackEndAction extends AppDEUIAction{
                 if (this.actionModel.getPSAppDataEntity() && this.actionModel.getPSAppDEMethod()) {
                     new GlobalService()
                         .getService((this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName)
-                        .then((curService: any) => {
+                        .then(async (curService: any) => {
                             // todo 后台调用实体行为类型缺失getPSDEAction.getActionMode 暂时使用多数据做批操作Batch判断
-                            const methodCodeName = Object.is(actionTarget, 'MULTIKEY') ? (this.actionModel.getPSAppDEMethod() as IPSAppDEMethod)?.codeName + 'Batch' : (this.actionModel.getPSAppDEMethod() as IPSAppDEMethod)?.codeName;
-                            let viewLoadingService = actionContext.viewLoadingService?actionContext.viewLoadingService:{};
+                            const method: IPSAppDEMethod = this.actionModel.getPSAppDEMethod() as IPSAppDEMethod;
+                            const methodCodeName = Object.is(actionTarget, 'MULTIKEY') ? method.codeName + 'Batch' : method?.codeName;
+                            let viewLoadingService = actionContext.viewLoadingService ? actionContext.viewLoadingService : {};
                             viewLoadingService.isLoading = true;
                             curService[methodCodeName](
                                 context,
@@ -172,17 +188,22 @@ export class AppBackEndAction extends AppDEUIAction{
                                 this.actionModel.showBusyIndicator,
                             )
                                 .then(async (response: any) => {
+                                    if (Object.is(actionTarget, 'SINGLEDATA')) {
+                                        Util.clearAdditionalData(tempData, args[0]);
+                                    }
                                     if (!response || response.status !== 200) {
-                                        actionContext.$throw(response,'AppBackEndAction');
+                                        actionContext.$throw(response, 'AppBackEndAction');
                                         return;
+                                    }
+                                    const { data } = response;
+                                    if (this.isMergeParam && args && args.length > 0) {
+                                        Object.assign(args[0], data);
+                                        actionContext.$forceUpdate();
                                     }
                                     viewLoadingService.isLoading = false;
                                     if (this.actionModel.showBusyIndicator) {
                                         if (this.actionModel.successMsg) {
-                                            actionContext.$success(this.actionModel.successMsg,'AppBackEndAction');
-
-                                        } else {
-                                            actionContext.$success(`${this.actionModel.caption}${actionContext.$t('app.commonwords.success')}!`,'AppBackEndAction');
+                                            actionContext.$success(this.actionModel.successMsg, 'AppBackEndAction');
                                         }
                                     }
                                     if (
@@ -210,7 +231,7 @@ export class AppBackEndAction extends AppDEUIAction{
                                         } else {
                                             _args = [...args];
                                         }
-                                        getPSUIActionByModelObject(this.actionModel).then((nextUIaction:any)=>{
+                                        getPSUIActionByModelObject(this.actionModel).then((nextUIaction: any) => {
                                             if (nextUIaction) {
                                                 let [tag, appDeName] = nextUIaction.id.split('@');
                                                 if (deUIService) {
@@ -239,12 +260,14 @@ export class AppBackEndAction extends AppDEUIAction{
                                                 );
                                             }
                                         });
+                                    } else {
+                                        return args;
                                     }
                                 })
                                 .catch((response: any) => {
                                     viewLoadingService.isLoading = false;
                                     if (response) {
-                                        actionContext.$throw(response,'AppBackEndAction');
+                                        actionContext.$throw(response, 'AppBackEndAction');
                                     }
                                 });
                         });
@@ -297,4 +320,5 @@ export class AppBackEndAction extends AppDEUIAction{
             }
         }
     }
+
 }

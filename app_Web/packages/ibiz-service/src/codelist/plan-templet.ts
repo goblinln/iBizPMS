@@ -1,4 +1,4 @@
-import { IbzPlanTempletService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--计划模板
  *
@@ -93,7 +93,7 @@ export default class PlanTemplet {
      * @type {IbzPlanTempletService}
      * @memberof PlanTemplet
      */
-    public ibzplantempletService: IbzPlanTempletService = new IbzPlanTempletService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class PlanTemplet {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.ibzplantempletService.FetchCurUserTemplet(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('IbzPlanTemplet').then((service: any) => {
+                const promise: Promise<any> = service.FetchCurUserTemplet(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

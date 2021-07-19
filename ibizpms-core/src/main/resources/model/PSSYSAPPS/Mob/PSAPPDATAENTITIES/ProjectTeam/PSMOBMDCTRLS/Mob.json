@@ -58,8 +58,7 @@
           "colLG" : 1,
           "colMD" : 1,
           "layout" : "TABLE_12COL"
-        },
-        "showCaption" : true
+        }
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
@@ -71,7 +70,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -90,7 +88,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "role",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -106,8 +103,7 @@
       } ],
       "getPSSysCss" : {
         "cssName" : "mob_list_card"
-      },
-      "showCaption" : true
+      }
     } ],
     "mobilePanel" : true,
     "name" : "mdctrl_itempanel",

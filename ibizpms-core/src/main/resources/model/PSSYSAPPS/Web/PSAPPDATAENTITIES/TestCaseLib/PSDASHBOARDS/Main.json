@@ -316,7 +316,6 @@
                   "editorType" : "SPAN",
                   "editorWidth" : 40.0,
                   "name" : "id",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -348,7 +347,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "name",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -378,7 +376,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "desc",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {

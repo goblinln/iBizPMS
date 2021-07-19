@@ -187,7 +187,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
         },
         "valueItemName" : "product",
-        "dropDownView" : false,
         "editable" : false,
         "enableAC" : false,
         "enableLinkView" : true,
@@ -233,7 +232,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -263,7 +261,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "totalestimates",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -292,7 +289,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "date",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

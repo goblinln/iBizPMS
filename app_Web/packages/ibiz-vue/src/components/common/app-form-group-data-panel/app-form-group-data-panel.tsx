@@ -70,29 +70,31 @@ export default class AppFormGroupDataPanel extends Vue {
      */
     public render(): any {
         const data: any[] = this.detailModel?.anchorPoints;
-        if (data) {
+        if (data) { 
             const items: any[] = [];
-            for (const key in data) {
-                if (Object.prototype.hasOwnProperty.call(data, key)) {
-                    const item = data[key];
-                    const { getPSDEField, codeList, unitName } = item.editor;
+            data.forEach((item: any, index: number) => {
+                const { getPSDEField, codeList, unitName } = item.editor;
+                if (index > 0) {
                     items.push(
-                        <span class="data-item">
-                            {/* {item.isShowCaption ? <span class="caption">{this.getCaption(item)}：</span> : null} */}
-                            <app-span
-                                name={item.name}
-                                value={this.data[item.name]}
-                                data={this.data}
-                                context={this.context}
-                                viewparams={this.viewparams}
-                                dataType={getPSDEField && getPSDEField.dataType ? getPSDEField.dataType : null}
-                                unitName={unitName ? unitName : null}
-                                codeList={codeList ? codeList : null}
-                            ></app-span>
-                        </span>
+                        <span class='seperator'>|</span>
                     );
-                }
-            }
+                };
+                items.push(
+                    <span class="data-item">
+                        <app-span
+                            name={item.name}
+                            value={this.data[item.name]}
+                            noValueShowMode={'STYLE1'}
+                            data={this.data}
+                            context={this.context}
+                            viewparams={this.viewparams}
+                            dataType={getPSDEField && getPSDEField.dataType ? getPSDEField.dataType : null}
+                            unitName={unitName ? unitName : null}
+                            codeList={codeList ? codeList : null}
+                        ></app-span>
+                    </span>
+                );
+            });
             return <span class="form-group-data-panel">{items}</span>;
         }
     }

@@ -11,6 +11,7 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDELOGICS/UpdateLasted.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -118,7 +119,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {

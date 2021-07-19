@@ -11,6 +11,7 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/FixPath.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -32,6 +33,7 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/FixPath.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -64,6 +66,7 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/CurUserIsF.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -448,7 +451,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "AllDocLibModule_Custom",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "自定义文档库的模块",
     "name" : "AllDocLibModule_Custom",
     "getPSDEDataQueries" : [ {
@@ -459,7 +461,6 @@
     "enableFront" : true
   }, {
     "codeName" : "AllDoclibModule",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "所有文档库模块",
     "name" : "AllDoclibModule",
     "getPSDEDataQueries" : [ {
@@ -470,7 +471,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ChildModuleByParent",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "子模块目录",
     "name" : "ChildModuleByParent",
     "getPSDEDataQueries" : [ {
@@ -481,7 +481,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ChildModuleByRealParent",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "文档库分类子模块",
     "name" : "ChildModuleByRealParent",
     "getPSDEDataQueries" : [ {
@@ -492,7 +491,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -504,7 +502,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyFavourites",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的收藏",
     "name" : "MyFavourites",
     "getPSDEDataQueries" : [ {
@@ -515,7 +512,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ParentModule",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "父集合",
     "name" : "ParentModule",
     "getPSDEDataQueries" : [ {
@@ -526,7 +522,6 @@
     "enableFront" : true
   }, {
     "codeName" : "RootModuleMuLu",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "所有根模块目录",
     "name" : "RootModuleMuLu",
     "getPSDEDataQueries" : [ {
@@ -537,7 +532,6 @@
     "enableFront" : true
   }, {
     "codeName" : "RootModuleMuLuByRoot",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "根模块目录",
     "name" : "RootModuleMuLuByRoot",
     "getPSDEDataQueries" : [ {
@@ -548,7 +542,6 @@
     "enableFront" : true
   }, {
     "codeName" : "RootModuleMuLuBysrfparentkey",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "根模块目录动态",
     "name" : "RootModuleMuLuBysrfparentkey",
     "getPSDEDataQueries" : [ {

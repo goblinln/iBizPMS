@@ -1,4 +1,4 @@
-import { ProjectTeamService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--项目团队
  *
@@ -93,7 +93,7 @@ export default class ProjectTeam {
      * @type {ProjectTeamService}
      * @memberof ProjectTeam
      */
-    public projectteamService: ProjectTeamService = new ProjectTeamService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class ProjectTeam {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.projectteamService.FetchSpecifyTeam(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('ProjectTeam').then((service: any) => {
+                const promise: Promise<any> = service.FetchSpecifyTeam(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

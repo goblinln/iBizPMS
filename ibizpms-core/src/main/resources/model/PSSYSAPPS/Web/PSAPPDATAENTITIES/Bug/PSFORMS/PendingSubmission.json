@@ -308,9 +308,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
             "valueItemName" : "product",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -615,9 +613,7 @@
               "viewType" : "DEGRIDVIEW"
             },
             "valueItemName" : "project",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -1151,9 +1147,7 @@
               "viewType" : "DEPICKUPVIEW"
             },
             "valueItemName" : "story",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -1267,9 +1261,7 @@
               "viewType" : "DEPICKUPVIEW"
             },
             "valueItemName" : "task",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,

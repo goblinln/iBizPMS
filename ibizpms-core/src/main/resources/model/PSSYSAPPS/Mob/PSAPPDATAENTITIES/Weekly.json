@@ -50,6 +50,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -82,6 +83,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "CreateGetLastWeekPlanAndWork",
     "methodType" : "DEACTION",
     "name" : "CreateGetLastWeekPlanAndWork",
@@ -96,6 +98,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EditGetLastWeekTaskAndComTask",
     "methodType" : "DEACTION",
     "name" : "EditGetLastWeekTaskAndComTask",
@@ -146,6 +149,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "JugThisWeekCreateWeekly",
     "methodType" : "DEACTION",
     "name" : "JugThisWeekCreateWeekly",
@@ -196,6 +200,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -213,6 +218,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -343,6 +349,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyNotSubmit",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyNotSubmit",
     "getPSDEDataSet" : {
@@ -352,6 +359,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyWeekly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyWeekly",
     "getPSDEDataSet" : {
@@ -361,6 +369,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductTeamMemberWeekly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductTeamMemberWeekly",
     "getPSDEDataSet" : {
@@ -370,6 +379,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectWeekly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectWeekly",
     "getPSDEDataSet" : {
@@ -539,6 +549,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -571,6 +582,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "CreateGetLastWeekPlanAndWork",
     "methodType" : "DEACTION",
     "name" : "CreateGetLastWeekPlanAndWork",
@@ -585,6 +597,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EditGetLastWeekTaskAndComTask",
     "methodType" : "DEACTION",
     "name" : "EditGetLastWeekTaskAndComTask",
@@ -635,6 +648,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "JugThisWeekCreateWeekly",
     "methodType" : "DEACTION",
     "name" : "JugThisWeekCreateWeekly",
@@ -685,6 +699,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -702,6 +717,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -765,6 +781,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyNotSubmit",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyNotSubmit",
     "getPSDEDataSet" : {
@@ -774,6 +791,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyWeekly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyWeekly",
     "getPSDEDataSet" : {
@@ -783,6 +801,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductTeamMemberWeekly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductTeamMemberWeekly",
     "getPSDEDataSet" : {
@@ -792,6 +811,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectWeekly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectWeekly",
     "getPSDEDataSet" : {

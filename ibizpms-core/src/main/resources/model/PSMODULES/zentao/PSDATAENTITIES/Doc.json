@@ -42,6 +42,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDELOGICS/CurUserIsF.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -516,7 +517,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ChildDocLibDoc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "文档库文档（子库）",
     "name" : "ChildDocLibDoc",
     "getPSDEDataQueries" : [ {
@@ -527,7 +527,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -539,7 +538,6 @@
     "enableFront" : true
   }, {
     "codeName" : "DocLibAndDoc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "文档库文档",
     "name" : "DocLibAndDoc",
     "getPSDEDataQueries" : [ {
@@ -550,7 +548,6 @@
     "enableFront" : true
   }, {
     "codeName" : "DocLibDoc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "文档库文档",
     "name" : "DocLibDoc",
     "getPSDEDataQueries" : [ {
@@ -561,7 +558,6 @@
     "enableFront" : true
   }, {
     "codeName" : "DocModuleDoc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "文档库分类文档",
     "name" : "DocModuleDoc",
     "getPSDEDataQueries" : [ {
@@ -572,7 +568,6 @@
     "enableFront" : true
   }, {
     "codeName" : "DocStatus",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "文档统计",
     "name" : "DocStatus",
     "getPSDEDataQueries" : [ {
@@ -583,7 +578,6 @@
     "enableFront" : true
   }, {
     "codeName" : "LastedModify",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "最新更新（与我相关）",
     "name" : "LastedModify",
     "getPSDEDataQueries" : [ {
@@ -594,7 +588,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ModuleDocChild",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "文件夹文档（子目录）",
     "name" : "ModuleDocChild",
     "getPSDEDataQueries" : [ {
@@ -605,7 +598,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyCreateOrUpdateDoc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我创建或更新文档（权限）",
     "name" : "MyCreateOrUpdateDoc",
     "getPSDEDataQueries" : [ {
@@ -616,7 +608,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyFavourite",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的收藏",
     "name" : "MYFAVOURITE",
     "getPSDEDataQueries" : [ {
@@ -627,7 +618,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyFavouritesOnlyDoc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的收藏",
     "name" : "MyFavouritesOnlyDoc",
     "getPSDEDataQueries" : [ {
@@ -638,7 +628,6 @@
     "enableFront" : true
   }, {
     "codeName" : "NotRootDoc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "子目录文档",
     "name" : "NotRootDoc",
     "getPSDEDataQueries" : [ {
@@ -649,7 +638,6 @@
     "enableFront" : true
   }, {
     "codeName" : "RootDoc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "根目录文档",
     "name" : "RootDoc",
     "getPSDEDataQueries" : [ {

@@ -294,7 +294,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "id",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -330,7 +329,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__status.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -375,7 +373,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "title",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -409,7 +406,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -443,7 +439,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -473,7 +468,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "deadline",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

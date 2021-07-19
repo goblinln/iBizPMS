@@ -318,6 +318,7 @@ export class AppDefaultEditor extends Vue {
                 editorComponentName = editorName;
             }
             return this.$createElement(editorComponentName, {
+                class: this.editorInstance?.getPSSysCss()?.cssName,
                 props: {
                     editorInstance: editor,
                     containerCtrl: this.containerCtrl,
@@ -350,7 +351,7 @@ export class AppDefaultEditor extends Vue {
      */
     public render(): any {
         if (this.editorInstance) {
-            return <div>{this.renderByEditorType(this.editorInstance)}</div>;
+            return this.renderByEditorType(this.editorInstance);
         } else {
             return this.$t('app.editor.noexist');
         }

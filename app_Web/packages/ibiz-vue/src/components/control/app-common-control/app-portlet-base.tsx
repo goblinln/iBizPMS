@@ -101,9 +101,12 @@ export class AppPortletBase extends PortletControlBase {
      */
     public renderRawItem() {
         const { rawItemHeight, rawItemWidth, contentType, rawContent, htmlContent } = this.controlInstance as IPSDBRawItemPortletPart;
-        let sysCss = this.controlInstance.getPSSysCss();
-        let sysImage = this.controlInstance.getPSSysImage();
-        let rawStyle = (rawItemHeight > 0 ? `height:${rawItemHeight}px` : '') + (rawItemWidth > 0 ? `width:${rawItemWidth}px` : '');
+        let sysCssName = this.controlInstance.getPSSysCss()?.cssName;
+        let sysImage = this.controlInstance.getPSSysImage()?.cssClass;
+        const style: any = {
+            width: rawItemWidth > 0 ? `${rawItemWidth}px` : false,
+            height: rawItemHeight > 0 ? `${rawItemHeight}px` :false,
+        }
         let newRawContent = rawContent;
         if (newRawContent) {
             const items = newRawContent.match(/\{{(.+?)\}}/g);
@@ -119,8 +122,16 @@ export class AppPortletBase extends PortletControlBase {
             },
         });
         return (
-            <app-rawitem viewparams={this.viewparams} context={this.context} contentStyle={sysCss?.cssName} sizeStyle={rawStyle} contentType={contentType} htmlContent={htmlContent} imageClass={sysImage?.cssClass}>
-                {contentType == 'RAW' && tempNode}
+            <app-rawitem
+                class={sysCssName}
+                style={style}
+                viewparams={this.viewparams}
+                context={this.context}
+                contentType={contentType}
+                imageClass={sysImage}
+                htmlContent={htmlContent}
+            >
+                {Object.is(contentType, 'RAW') && tempNode}
             </app-rawitem>
         );
     }

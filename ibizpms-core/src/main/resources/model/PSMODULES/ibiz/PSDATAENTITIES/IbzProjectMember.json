@@ -298,7 +298,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -310,7 +309,6 @@
     "enableFront" : true
   }, {
     "codeName" : "DeveloperQuery",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "研发人员（启用权限）",
     "name" : "DeveloperQuery",
     "getPSDEDataQueries" : [ {
@@ -321,7 +319,6 @@
     "enableFront" : true
   }, {
     "codeName" : "OpenByQuery",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "当前创建者（启用权限）",
     "name" : "OpenByQuery",
     "getPSDEDataQueries" : [ {
@@ -332,7 +329,6 @@
     "enableFront" : true
   }, {
     "codeName" : "OpenQuery",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "公开（启动权限）",
     "name" : "OpenQuery",
     "getPSDEDataQueries" : [ {

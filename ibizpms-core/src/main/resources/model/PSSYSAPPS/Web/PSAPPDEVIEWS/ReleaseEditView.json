@@ -384,7 +384,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "id",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -439,7 +438,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "productname",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -520,9 +518,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
               },
               "valueItemName" : "build",
-              "dropDownView" : false,
               "enableAC" : true,
-              "enableLinkView" : false,
               "enablePickupView" : false,
               "forceSelection" : true,
               "showTrigger" : true,

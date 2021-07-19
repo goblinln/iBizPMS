@@ -186,9 +186,7 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
           },
           "valueItemName" : "root",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : false,
           "forceSelection" : true,
           "showTrigger" : true,
@@ -394,9 +392,7 @@
             "rawValue" : false
           } ],
           "valueItemName" : "parent",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : false,
           "forceSelection" : true,
           "showTrigger" : true,

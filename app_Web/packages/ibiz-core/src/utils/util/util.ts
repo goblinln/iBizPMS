@@ -588,6 +588,24 @@ export class Util {
         arr.splice(newIndex,0,temp);
     }
 
+    /**
+     * 清除附加数据（源数据里面有的数据在目标数据中都清除）
+     *
+     * @param source 源数据
+     * @param target 目标数据
+     *
+     * @memberof Util
+     */
+     public static clearAdditionalData(source:any,target:any){
+        if(target && (Object.keys(target).length >0) && source && (Object.keys(source).length >0)){
+            Object.keys(source).forEach((key:string) =>{
+                if(target.hasOwnProperty(key)){
+                    delete target[key];
+                }
+            })
+        }
+    }
+
 }
 /**
  * 创建 UUID

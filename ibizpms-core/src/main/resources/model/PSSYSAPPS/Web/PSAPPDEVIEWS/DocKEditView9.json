@@ -214,7 +214,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "keywords",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

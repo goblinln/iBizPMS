@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -128,6 +129,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "MentionTest",
     "methodType" : "DEACTION",
     "name" : "mentionTest",
@@ -138,6 +140,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "OneClickRelease",
     "methodType" : "DEACTION",
     "name" : "OneClickRelease",
@@ -168,6 +171,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -287,6 +291,7 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchBugProductBuild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugProductBuild",
     "getPSDEDataSet" : {
@@ -296,6 +301,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugProductOrProjectBuild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugProductOrProjectBuild",
     "getPSDEDataSet" : {
@@ -305,6 +311,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurProduct",
     "getPSDEDataSet" : {
@@ -348,6 +355,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTestBuild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TestBuild",
     "getPSDEDataSet" : {
@@ -357,6 +365,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTestRounds",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TestRounds",
     "getPSDEDataSet" : {
@@ -366,6 +375,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchUpdateLog",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "UpdateLog",
     "getPSDEDataSet" : {
@@ -584,6 +594,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -680,6 +691,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "MentionTest",
     "methodType" : "DEACTION",
     "name" : "mentionTest",
@@ -690,6 +702,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "OneClickRelease",
     "methodType" : "DEACTION",
     "name" : "OneClickRelease",
@@ -720,6 +733,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -748,6 +762,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugProductBuild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugProductBuild",
     "getPSDEDataSet" : {
@@ -757,6 +772,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugProductOrProjectBuild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugProductOrProjectBuild",
     "getPSDEDataSet" : {
@@ -766,6 +782,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurProduct",
     "getPSDEDataSet" : {
@@ -809,6 +826,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTestBuild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TestBuild",
     "getPSDEDataSet" : {
@@ -818,6 +836,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTestRounds",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TestRounds",
     "getPSDEDataSet" : {
@@ -827,6 +846,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchUpdateLog",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "UpdateLog",
     "getPSDEDataSet" : {

@@ -719,7 +719,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -730,7 +729,6 @@
     "enableFront" : true
   }, {
     "codeName" : "AllList",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "全部产品",
     "name" : "AllList",
     "getPSDEDataQueries" : [ {
@@ -741,7 +739,6 @@
     "enableFront" : true
   }, {
     "codeName" : "AllProduct",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "所有产品",
     "name" : "AllProduct",
     "getPSDEDataQueries" : [ {
@@ -752,7 +749,6 @@
     "enableFront" : true
   }, {
     "codeName" : "CheckNameOrCode",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "校验产品名称或产品代号是否已经存在",
     "name" : "CheckNameOrCode",
     "getPSDEDataQueries" : [ {
@@ -763,7 +759,6 @@
     "enableFront" : true
   }, {
     "codeName" : "CurDefault",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "默认查询",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -779,7 +774,6 @@
     "enableFront" : true
   }, {
     "codeName" : "CurProject",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "当前项目",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -795,7 +789,6 @@
     "enableFront" : true
   }, {
     "codeName" : "CurUer",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "当前用户",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -816,7 +809,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -834,7 +826,6 @@
     "enableFront" : true
   }, {
     "codeName" : "DeveloperQuery",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "参与者（启用权限）",
     "name" : "DeveloperQuery",
     "getPSDEDataQueries" : [ {
@@ -845,7 +836,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ESBulk",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
     "getPSDEDataQueries" : [ {
@@ -856,7 +846,6 @@
     "enableFront" : true
   }, {
     "codeName" : "My",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -867,7 +856,6 @@
     "enableFront" : true
   }, {
     "codeName" : "OpenQuery",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "公开查询（启用权限）",
     "name" : "OpenQuery",
     "getPSDEDataQueries" : [ {
@@ -878,7 +866,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductManagerQuery",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "创建者或更新者（启用权限）",
     "name" : "ProductManagerQuery",
     "getPSDEDataQueries" : [ {
@@ -889,7 +876,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductPM",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "产品总览",
     "name" : "ProductPM",
     "getPSDEDataQueries" : [ {
@@ -900,7 +886,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductTeam",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "产品团队",
     "name" : "ProductTeam",
     "getPSDEDataQueries" : [ {
@@ -911,7 +896,6 @@
     "enableFront" : true
   }, {
     "codeName" : "StoryCurProject",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "当前项目",
     "name" : "StoryCURPROJECT",
     "getPSDEDataQueries" : [ {

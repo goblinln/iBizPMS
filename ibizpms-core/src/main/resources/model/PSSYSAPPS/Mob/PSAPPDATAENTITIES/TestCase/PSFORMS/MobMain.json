@@ -151,7 +151,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "title",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -183,7 +182,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__type.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -216,7 +214,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__stage.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -245,7 +242,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "precondition",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -320,7 +316,6 @@
             "value" : "id",
             "rawValue" : false
           } ],
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -472,7 +467,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Casestep__type.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -491,7 +485,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "desc",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -509,7 +502,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "expect",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -523,8 +515,7 @@
                   } ],
                   "getPSSysCss" : {
                     "cssName" : "mob_list_card"
-                  },
-                  "showCaption" : true
+                  }
                 } ],
                 "mobilePanel" : true,
                 "name" : "mdctrl_itempanel",
@@ -799,7 +790,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "keywords",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -945,7 +935,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "date",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -967,7 +956,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -990,7 +978,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__type.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -1002,8 +989,7 @@
                     "convertToCodeItemText" : true,
                     "hidden" : false,
                     "showCaption" : false
-                  } ],
-                  "showCaption" : true
+                  } ]
                 } ],
                 "mobilePanel" : true,
                 "name" : "mdctrl_itempanel",

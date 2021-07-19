@@ -1,4 +1,4 @@
-import { TestCaseService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--所有用例
  *
@@ -93,7 +93,7 @@ export default class AllCase {
      * @type {TestCaseService}
      * @memberof AllCase
      */
-    public testcaseService: TestCaseService = new TestCaseService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class AllCase {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.testcaseService.FetchDefault(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('TestCase').then((service: any) => {
+                const promise: Promise<any> = service.FetchDefault(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

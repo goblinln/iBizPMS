@@ -1,4 +1,4 @@
-import { SysDepartmentService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--真实部门
  *
@@ -93,7 +93,7 @@ export default class RealDept {
      * @type {SysDepartmentService}
      * @memberof RealDept
      */
-    public sysdepartmentService: SysDepartmentService = new SysDepartmentService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class RealDept {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.sysdepartmentService.FetchDefault(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('SysDepartment').then((service: any) => {
+                const promise: Promise<any> = service.FetchDefault(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

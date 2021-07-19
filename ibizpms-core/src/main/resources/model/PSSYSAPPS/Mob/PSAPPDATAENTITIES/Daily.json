@@ -50,6 +50,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -118,6 +119,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetYeaterdayDailyPlansTaskEdit",
     "methodType" : "DEACTION",
     "name" : "getYeaterdayDailyPlansTaskEdit",
@@ -132,6 +134,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetYesterdayDailyPlansTask",
     "methodType" : "DEACTION",
     "name" : "getYesterdayDailyPlansTask",
@@ -146,6 +149,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkCompleteTask",
     "methodType" : "DEACTION",
     "name" : "LinkCompleteTask",
@@ -196,6 +200,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -213,6 +218,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -343,6 +349,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAllDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAllDaily",
     "getPSDEDataSet" : {
@@ -352,6 +359,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyDaily",
     "getPSDEDataSet" : {
@@ -361,6 +369,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyNotSubmit",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyNotSubmit",
     "getPSDEDataSet" : {
@@ -370,6 +379,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMySubmitDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MySubmitDaily",
     "getPSDEDataSet" : {
@@ -379,6 +389,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductDaily",
     "getPSDEDataSet" : {
@@ -388,6 +399,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectDaily",
     "getPSDEDataSet" : {
@@ -557,6 +569,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -625,6 +638,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetYeaterdayDailyPlansTaskEdit",
     "methodType" : "DEACTION",
     "name" : "getYeaterdayDailyPlansTaskEdit",
@@ -639,6 +653,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetYesterdayDailyPlansTask",
     "methodType" : "DEACTION",
     "name" : "getYesterdayDailyPlansTask",
@@ -653,6 +668,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkCompleteTask",
     "methodType" : "DEACTION",
     "name" : "LinkCompleteTask",
@@ -703,6 +719,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -720,6 +737,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -783,6 +801,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAllDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAllDaily",
     "getPSDEDataSet" : {
@@ -792,6 +811,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyDaily",
     "getPSDEDataSet" : {
@@ -801,6 +821,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyNotSubmit",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyNotSubmit",
     "getPSDEDataSet" : {
@@ -810,6 +831,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMySubmitDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MySubmitDaily",
     "getPSDEDataSet" : {
@@ -819,6 +841,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductDaily",
     "getPSDEDataSet" : {
@@ -828,6 +851,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectDaily",
     "getPSDEDataSet" : {

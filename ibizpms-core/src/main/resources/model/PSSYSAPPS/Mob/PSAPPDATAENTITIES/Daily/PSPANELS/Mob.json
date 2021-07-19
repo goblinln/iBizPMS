@@ -41,7 +41,6 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
         },
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -60,7 +59,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "submittime",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -72,8 +70,7 @@
       "viewFieldName" : "submittime",
       "hidden" : false,
       "showCaption" : false
-    } ],
-    "showCaption" : false
+    } ]
   } ],
   "mobilePanel" : true,
   "modelid" : "4d78ace183b45e7e6ff6b2ec6be25d9a",

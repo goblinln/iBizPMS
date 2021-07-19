@@ -1,4 +1,4 @@
-import { BuildService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--当前产品版本（动态）
  *
@@ -94,7 +94,7 @@ export default class CurProductBuild {
      * @type {BuildService}
      * @memberof CurProductBuild
      */
-    public buildService: BuildService = new BuildService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -135,18 +135,20 @@ export default class CurProductBuild {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.buildService.FetchDefault(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('Build').then((service: any) => {
+                const promise: Promise<any> = service.FetchDefault(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

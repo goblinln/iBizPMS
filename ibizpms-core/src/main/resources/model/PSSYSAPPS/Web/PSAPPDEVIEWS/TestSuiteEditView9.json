@@ -230,7 +230,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

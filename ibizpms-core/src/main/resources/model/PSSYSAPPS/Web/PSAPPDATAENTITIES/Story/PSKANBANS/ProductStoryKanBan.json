@@ -89,7 +89,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "title",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -107,8 +106,7 @@
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
-        },
-        "showCaption" : true
+        }
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
@@ -132,7 +130,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -156,7 +153,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__status.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -176,7 +172,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "estimate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -197,12 +192,9 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "h",
-          "showCaption" : true
-        } ],
-        "showCaption" : true
-      } ],
-      "showCaption" : true
+          "rawContent" : "h"
+        } ]
+      } ]
     }, {
       "caption" : "隐藏项",
       "itemStyle" : "DEFAULT",

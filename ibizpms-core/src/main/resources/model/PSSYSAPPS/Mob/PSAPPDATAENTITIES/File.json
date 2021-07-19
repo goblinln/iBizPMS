@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -46,6 +47,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -60,6 +62,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -74,6 +77,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -88,6 +92,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Ibzdownload",
     "methodType" : "DEACTION",
     "name" : "ibzdownload",
@@ -98,6 +103,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Preview",
     "methodType" : "DEACTION",
     "name" : "Preview",
@@ -128,6 +134,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -138,6 +145,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -153,6 +161,7 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -162,6 +171,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMySubmitFile",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MySubmitFile",
     "getPSDEDataSet" : {
@@ -222,6 +232,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTypeNotBySrfparentkey",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TypeNotBySrfparentkey",
     "getPSDEDataSet" : {
@@ -351,6 +362,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -365,6 +377,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -379,6 +392,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -393,6 +407,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -407,6 +422,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Ibzdownload",
     "methodType" : "DEACTION",
     "name" : "ibzdownload",
@@ -417,6 +433,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Preview",
     "methodType" : "DEACTION",
     "name" : "Preview",
@@ -447,6 +464,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -457,6 +475,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -471,6 +490,7 @@
     "builtinMethod" : true
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -480,6 +500,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMySubmitFile",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MySubmitFile",
     "getPSDEDataSet" : {
@@ -540,6 +561,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTypeNotBySrfparentkey",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TypeNotBySrfparentkey",
     "getPSDEDataSet" : {

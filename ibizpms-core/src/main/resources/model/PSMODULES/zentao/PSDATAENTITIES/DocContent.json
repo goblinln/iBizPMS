@@ -116,7 +116,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurVersion",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "当前版本",
     "name" : "CurVersion",
     "getPSDEDataQueries" : [ {
@@ -127,7 +126,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {

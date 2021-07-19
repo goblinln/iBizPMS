@@ -271,7 +271,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "resultcnt",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -323,7 +322,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "resultfalicnt",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {

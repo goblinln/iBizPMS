@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "activate",
@@ -47,6 +48,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
     "name" : "AllPush",
@@ -61,6 +63,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "AssignTo",
@@ -76,6 +79,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchAssignTo",
     "methodType" : "DEACTION",
     "name" : "BatchAssignTo",
@@ -90,6 +94,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangeBranch",
     "methodType" : "DEACTION",
     "name" : "BatchChangeBranch",
@@ -104,6 +109,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangeModule",
     "methodType" : "DEACTION",
     "name" : "BatchChangeModule",
@@ -118,6 +124,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangePlan",
     "methodType" : "DEACTION",
     "name" : "BatchChangePlan",
@@ -132,6 +139,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangeStage",
     "methodType" : "DEACTION",
     "name" : "BatchChangeStage",
@@ -146,6 +154,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchClose",
     "methodType" : "DEACTION",
     "name" : "BatchClose",
@@ -160,6 +169,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchReview",
     "methodType" : "DEACTION",
     "name" : "BatchReview",
@@ -174,6 +184,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
@@ -189,6 +200,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BugToStory",
     "methodType" : "DEACTION",
     "name" : "BugToStory",
@@ -203,6 +215,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "buildBatchUnlinkStory",
@@ -218,6 +231,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildLinkStory",
     "methodType" : "DEACTION",
     "name" : "buildLinkStory",
@@ -233,6 +247,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "buildUnlinkStory",
@@ -248,6 +263,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Change",
     "methodType" : "DEACTION",
     "name" : "Change",
@@ -264,6 +280,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -278,6 +295,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -293,6 +311,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -329,6 +348,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -343,6 +363,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
     "name" : "GetStorySpec",
@@ -357,6 +378,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetTaskReStory",
     "methodType" : "DEACTION",
     "name" : "GetTaskReStory",
@@ -371,6 +393,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -389,6 +412,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ImportPlanStories",
     "methodType" : "DEACTION",
     "name" : "importPlanStories",
@@ -404,6 +428,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "name" : "LinkStory",
@@ -419,6 +444,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ProjectBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectBatchUnlinkStory",
@@ -434,6 +460,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ProjectLinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectLinkStory",
@@ -449,6 +476,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ProjectUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectUnlinkStory",
@@ -464,6 +492,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Push",
     "methodType" : "DEACTION",
     "name" : "Push",
@@ -478,6 +507,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseBatchUnlinkStory",
@@ -493,6 +523,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseLinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkStory",
@@ -508,6 +539,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnlinkStory",
@@ -523,6 +555,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -541,6 +574,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ResetReviewedBy",
     "methodType" : "DEACTION",
     "name" : "ResetReviewedBy",
@@ -555,6 +589,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Review",
     "methodType" : "DEACTION",
     "name" : "Review",
@@ -570,6 +605,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -586,6 +622,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -600,6 +637,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -614,6 +652,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SyncFromIbiz",
     "methodType" : "DEACTION",
     "name" : "SyncFromIbiz",
@@ -624,6 +663,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -638,6 +678,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
@@ -653,6 +694,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -844,6 +886,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyStory",
     "getPSDEDataSet" : {
@@ -853,6 +896,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyStoryCalendar",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyStoryCalendar",
     "getPSDEDataSet" : {
@@ -862,6 +906,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugStory",
     "getPSDEDataSet" : {
@@ -871,6 +916,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildLinkCompletedStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "buildLinkCompletedStories",
     "getPSDEDataSet" : {
@@ -880,6 +926,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildLinkableStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildLinkableStories",
     "getPSDEDataSet" : {
@@ -889,6 +936,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildStories",
     "getPSDEDataSet" : {
@@ -898,6 +946,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ByModule",
     "getPSDEDataSet" : {
@@ -907,6 +956,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCaseStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CaseStory",
     "getPSDEDataSet" : {
@@ -916,6 +966,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildMore",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildMore",
     "getPSDEDataSet" : {
@@ -925,6 +976,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -934,6 +986,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -943,6 +996,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchGetProductStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "GetProductStories",
     "getPSDEDataSet" : {
@@ -969,6 +1023,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAgentStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAgentStory",
     "getPSDEDataSet" : {
@@ -978,6 +1033,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreate",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreate",
     "getPSDEDataSet" : {
@@ -987,6 +1043,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
@@ -996,6 +1053,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCurOpenedStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCurOpenedStory",
     "getPSDEDataSet" : {
@@ -1022,6 +1080,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReProduct",
     "getPSDEDataSet" : {
@@ -1031,6 +1090,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNotCurPlanLinkStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NotCurPlanLinkStory",
     "getPSDEDataSet" : {
@@ -1040,6 +1100,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ParentDefault",
     "getPSDEDataSet" : {
@@ -1049,6 +1110,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentDefaultQ",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ParentDefaultQ",
     "getPSDEDataSet" : {
@@ -1058,6 +1120,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectLinkStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "projectLinkStory",
     "getPSDEDataSet" : {
@@ -1067,6 +1130,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectStories",
     "getPSDEDataSet" : {
@@ -1076,6 +1140,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseLinkableStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLinkableStories",
     "getPSDEDataSet" : {
@@ -1085,6 +1150,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseStories",
     "getPSDEDataSet" : {
@@ -1094,6 +1160,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReportStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReportStories",
     "getPSDEDataSet" : {
@@ -1103,6 +1170,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryChild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryChild",
     "getPSDEDataSet" : {
@@ -1112,6 +1180,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryRelated",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryRelated",
     "getPSDEDataSet" : {
@@ -1121,6 +1190,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchSubStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "SubStory",
     "getPSDEDataSet" : {
@@ -1130,6 +1200,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskRelatedStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TaskRelatedStory",
     "getPSDEDataSet" : {
@@ -1139,6 +1210,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchView",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "VIEW",
     "getPSDEDataSet" : {
@@ -1689,6 +1761,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "activate",
@@ -1704,6 +1777,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
     "name" : "AllPush",
@@ -1718,6 +1792,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "AssignTo",
@@ -1733,6 +1808,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchAssignTo",
     "methodType" : "DEACTION",
     "name" : "BatchAssignTo",
@@ -1747,6 +1823,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangeBranch",
     "methodType" : "DEACTION",
     "name" : "BatchChangeBranch",
@@ -1761,6 +1838,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangeModule",
     "methodType" : "DEACTION",
     "name" : "BatchChangeModule",
@@ -1775,6 +1853,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangePlan",
     "methodType" : "DEACTION",
     "name" : "BatchChangePlan",
@@ -1789,6 +1868,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangeStage",
     "methodType" : "DEACTION",
     "name" : "BatchChangeStage",
@@ -1803,6 +1883,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchClose",
     "methodType" : "DEACTION",
     "name" : "BatchClose",
@@ -1817,6 +1898,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchReview",
     "methodType" : "DEACTION",
     "name" : "BatchReview",
@@ -1831,6 +1913,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkStory",
@@ -1846,6 +1929,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BugToStory",
     "methodType" : "DEACTION",
     "name" : "BugToStory",
@@ -1860,6 +1944,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "buildBatchUnlinkStory",
@@ -1875,6 +1960,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildLinkStory",
     "methodType" : "DEACTION",
     "name" : "buildLinkStory",
@@ -1890,6 +1976,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "buildUnlinkStory",
@@ -1905,6 +1992,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Change",
     "methodType" : "DEACTION",
     "name" : "Change",
@@ -1921,6 +2009,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -1935,6 +2024,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -1950,6 +2040,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -1986,6 +2077,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -2000,6 +2092,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
     "name" : "GetStorySpec",
@@ -2014,6 +2107,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetTaskReStory",
     "methodType" : "DEACTION",
     "name" : "GetTaskReStory",
@@ -2028,6 +2122,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -2046,6 +2141,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ImportPlanStories",
     "methodType" : "DEACTION",
     "name" : "importPlanStories",
@@ -2061,6 +2157,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "name" : "LinkStory",
@@ -2076,6 +2173,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ProjectBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectBatchUnlinkStory",
@@ -2091,6 +2189,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ProjectLinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectLinkStory",
@@ -2106,6 +2205,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ProjectUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ProjectUnlinkStory",
@@ -2121,6 +2221,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Push",
     "methodType" : "DEACTION",
     "name" : "Push",
@@ -2135,6 +2236,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseBatchUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseBatchUnlinkStory",
@@ -2150,6 +2252,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseLinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkStory",
@@ -2165,6 +2268,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseUnlinkStory",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnlinkStory",
@@ -2180,6 +2284,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -2198,6 +2303,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ResetReviewedBy",
     "methodType" : "DEACTION",
     "name" : "ResetReviewedBy",
@@ -2212,6 +2318,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Review",
     "methodType" : "DEACTION",
     "name" : "Review",
@@ -2227,6 +2334,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -2243,6 +2351,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -2257,6 +2366,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -2271,6 +2381,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SyncFromIbiz",
     "methodType" : "DEACTION",
     "name" : "SyncFromIbiz",
@@ -2281,6 +2392,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -2295,6 +2407,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkStory",
     "methodType" : "DEACTION",
     "name" : "UnlinkStory",
@@ -2310,6 +2423,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -2342,6 +2456,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyStory",
     "getPSDEDataSet" : {
@@ -2351,6 +2466,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyStoryCalendar",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyStoryCalendar",
     "getPSDEDataSet" : {
@@ -2360,6 +2476,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugStory",
     "getPSDEDataSet" : {
@@ -2369,6 +2486,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildLinkCompletedStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "buildLinkCompletedStories",
     "getPSDEDataSet" : {
@@ -2378,6 +2496,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildLinkableStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildLinkableStories",
     "getPSDEDataSet" : {
@@ -2387,6 +2506,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildStories",
     "getPSDEDataSet" : {
@@ -2396,6 +2516,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ByModule",
     "getPSDEDataSet" : {
@@ -2405,6 +2526,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCaseStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CaseStory",
     "getPSDEDataSet" : {
@@ -2414,6 +2536,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildMore",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildMore",
     "getPSDEDataSet" : {
@@ -2423,6 +2546,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -2432,6 +2556,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -2441,6 +2566,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchGetProductStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "GetProductStories",
     "getPSDEDataSet" : {
@@ -2467,6 +2593,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAgentStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAgentStory",
     "getPSDEDataSet" : {
@@ -2476,6 +2603,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreate",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreate",
     "getPSDEDataSet" : {
@@ -2485,6 +2613,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
@@ -2494,6 +2623,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCurOpenedStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCurOpenedStory",
     "getPSDEDataSet" : {
@@ -2520,6 +2650,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReProduct",
     "getPSDEDataSet" : {
@@ -2529,6 +2660,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNotCurPlanLinkStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NotCurPlanLinkStory",
     "getPSDEDataSet" : {
@@ -2538,6 +2670,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ParentDefault",
     "getPSDEDataSet" : {
@@ -2547,6 +2680,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentDefaultQ",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ParentDefaultQ",
     "getPSDEDataSet" : {
@@ -2556,6 +2690,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectLinkStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "projectLinkStory",
     "getPSDEDataSet" : {
@@ -2565,6 +2700,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectStories",
     "getPSDEDataSet" : {
@@ -2574,6 +2710,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseLinkableStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLinkableStories",
     "getPSDEDataSet" : {
@@ -2583,6 +2720,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseStories",
     "getPSDEDataSet" : {
@@ -2592,6 +2730,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReportStories",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReportStories",
     "getPSDEDataSet" : {
@@ -2601,6 +2740,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryChild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryChild",
     "getPSDEDataSet" : {
@@ -2610,6 +2750,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryRelated",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryRelated",
     "getPSDEDataSet" : {
@@ -2619,6 +2760,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchSubStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "SubStory",
     "getPSDEDataSet" : {
@@ -2628,6 +2770,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskRelatedStory",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TaskRelatedStory",
     "getPSDEDataSet" : {
@@ -2637,6 +2780,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchView",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "VIEW",
     "getPSDEDataSet" : {

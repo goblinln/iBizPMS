@@ -214,7 +214,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "name",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -246,7 +245,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Product__status.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -279,7 +277,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Product__type.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -312,7 +309,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -345,7 +341,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -378,7 +373,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -407,7 +401,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "productplancnt",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -435,7 +428,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "activestorycnt",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -463,7 +455,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "buildcnt",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -491,7 +482,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "relatedbugcnt",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -519,7 +509,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "unconfirmbugcnt",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -547,7 +536,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "activebugcnt",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -575,7 +563,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "notclosedbugcnt",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -603,7 +590,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "casecnt",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -780,7 +766,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "date",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -802,7 +787,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -825,7 +809,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__type.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -837,8 +820,7 @@
                     "convertToCodeItemText" : true,
                     "hidden" : false,
                     "showCaption" : false
-                  } ],
-                  "showCaption" : true
+                  } ]
                 } ],
                 "mobilePanel" : true,
                 "name" : "mdctrl_itempanel",

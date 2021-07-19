@@ -233,7 +233,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -265,7 +264,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "openeddate",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -301,7 +299,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -333,7 +330,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "lastediteddate",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

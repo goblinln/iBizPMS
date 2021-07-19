@@ -2,6 +2,7 @@
 <template>
   <div>
     <form-item
+      v-if="isRender"
       :prop="name"
       :error="error"
       :required="required"
@@ -140,6 +141,14 @@ export default class AppFormItem2 extends Vue {
   public required: boolean = false;
 
   /**
+   * 是否渲染
+   *
+   * @type {boolean}
+   * @memberof AppFormItem2
+   */
+  public isRender: boolean = true;
+
+  /**
    * 表单项值规则监控
    *
    * @param {*} newVal
@@ -161,6 +170,23 @@ export default class AppFormItem2 extends Vue {
           return false;
         });
       } catch (error) {}
+    }
+  }
+
+    /**
+     * 监听是否必填属性变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof AppFormItem2
+     */
+  @Watch('required')
+  onRequiredChange(newVal: boolean, oldVal: boolean) {
+    if (oldVal && !newVal) {
+      this.isRender = false;
+      this.$nextTick(() => {
+        this.isRender = true;
+      })
     }
   }
 

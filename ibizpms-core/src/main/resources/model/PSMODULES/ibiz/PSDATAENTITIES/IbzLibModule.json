@@ -11,6 +11,7 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDELOGICS/FixPath.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -32,6 +33,7 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDELOGICS/FixPath.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -203,7 +205,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -215,7 +216,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Root_NoBranch",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "无枝叶",
     "name" : "Root_NoBranch",
     "getPSDEDataQueries" : [ {

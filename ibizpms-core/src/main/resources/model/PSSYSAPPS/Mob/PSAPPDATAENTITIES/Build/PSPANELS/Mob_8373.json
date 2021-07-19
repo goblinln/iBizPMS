@@ -36,7 +36,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "name",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -54,7 +53,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "date",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -68,8 +66,7 @@
     } ],
     "getPSSysCss" : {
       "cssName" : "mob_list_card"
-    },
-    "showCaption" : true
+    }
   } ],
   "mobilePanel" : true,
   "modelid" : "ab0e05cabd92b697ae11899bdfe04590",

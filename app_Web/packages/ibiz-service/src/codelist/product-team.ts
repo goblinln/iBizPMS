@@ -1,4 +1,4 @@
-import { ProductService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--产品团队
  *
@@ -93,7 +93,7 @@ export default class ProductTeam {
      * @type {ProductService}
      * @memberof ProductTeam
      */
-    public productService: ProductService = new ProductService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class ProductTeam {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.productService.FetchCurDefault(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('Product').then((service: any) => {
+                const promise: Promise<any> = service.FetchCurDefault(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

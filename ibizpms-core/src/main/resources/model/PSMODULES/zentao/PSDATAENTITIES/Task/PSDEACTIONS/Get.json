@@ -11,6 +11,7 @@
     },
     "scriptCode" : "entity.set(\"taskestimates\",null);",
     "cloneParam" : false,
+    "enableBackend" : true,
     "ignoreException" : false,
     "internalLogic" : true
   } ],

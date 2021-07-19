@@ -1,7 +1,7 @@
 import { ViewTool, Verify, PanelControlInterface, PanelButtonModel, PanelTabPanelModel, PanelTabPageModel, PanelContainerModel, PanelFieldModel, PanelRawitemModel, PanelControlModel, PanelUserControlModel } from 'ibiz-core';
 import { MainControlBase } from "./main-control-base";
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
-import { IPSPanel, IPSPanelField, IPSPanelItem, IPSPanelItemGroupLogic, IPSPanelItemSingleLogic, IPSPanelTabPage, IPSPanelTabPanel, IPSSysPanelButton, IPSSysPanelContainer, IPSSysPanelField, IPSSysPanelTabPanel } from '@ibiz/dynamic-model-api';
+import { IPSAppDEPanelView, IPSPanel, IPSPanelField, IPSPanelItem, IPSPanelItemGroupLogic, IPSPanelItemSingleLogic, IPSPanelTabPage, IPSPanelTabPanel, IPSSysPanelButton, IPSSysPanelContainer, IPSSysPanelField, IPSSysPanelTabPanel } from '@ibiz/dynamic-model-api';
 
 /**
  * 面板部件基类
@@ -53,14 +53,6 @@ export class ViewPanelControlBase extends MainControlBase {
     public data: any = {};
 
     /**
-     * 面板数据
-     *
-     * @type {*}
-     * @memberof ViewPanelControlBase
-     */
-    public panelData: any = null;
-
-    /**
      * 详情模型集合
      *
      * @type {*}
@@ -90,7 +82,7 @@ export class ViewPanelControlBase extends MainControlBase {
      * @param {*} oldVal
      * @memberof ViewPanelControlBase
      */
-     public onDynamicPropsChange(newVal: any, oldVal: any) {
+    public onDynamicPropsChange(newVal: any, oldVal: any) {
         super.onDynamicPropsChange(newVal, oldVal);
         this.inputData = newVal?.inputData;
     }
@@ -126,6 +118,9 @@ export class ViewPanelControlBase extends MainControlBase {
         if ((this.controlInstance.getRootPSPanelItems() as any)?.length > 0) {
             this.initRules(this.controlInstance.getRootPSPanelItems());
         }
+        this.computedUIData();
+        this.computeButtonState(this.data);
+        this.panelLogic({ name: '', newVal: null, oldVal: null });
     }
 
     /**
@@ -262,7 +257,7 @@ export class ViewPanelControlBase extends MainControlBase {
      * @memberof ViewPanelControlBase
      */
     public opendata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$throw(this.$t('app.warn.unopendata'),'opendata');
+        this.$throw(this.$t('app.warn.unopendata'), 'opendata');
     }
 
     /**
@@ -276,7 +271,7 @@ export class ViewPanelControlBase extends MainControlBase {
      * @memberof ViewPanelControlBase
      */
     public newdata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$throw(this.$t('app.warn.unnewdata'),'newdata');
+        this.$throw(this.$t('app.warn.unnewdata'), 'newdata');
     }
 
     /**
@@ -287,7 +282,7 @@ export class ViewPanelControlBase extends MainControlBase {
      * @memberof ViewPanelControlBase
      */
     public async remove(datas: any[]): Promise<any> {
-        this.$throw(this.$t('app.warn.unremove'),'remove');
+        this.$throw(this.$t('app.warn.unremove'), 'remove');
     }
 
     /**
@@ -297,7 +292,7 @@ export class ViewPanelControlBase extends MainControlBase {
      * @memberof ViewPanelControlBase
      */
     public refresh(args?: any) {
-        this.$throw(this.$t('app.warn.unrefresh'),'refresh');
+        this.$throw(this.$t('app.warn.unrefresh'), 'refresh');
     }
 
     /**
@@ -365,7 +360,7 @@ export class ViewPanelControlBase extends MainControlBase {
      * @memberof ViewPanelControlBase
      */
     public buttonClick(controlName: string, data: any, $event: any) {
-        AppViewLogicService.getInstance().executeViewLogic(`${controlName?.toLowerCase()}_${data.tag}_click`, $event, this, undefined, this.controlInstance.getPSAppViewLogics());
+        AppViewLogicService.getInstance().executeViewLogic(`${controlName?.toLowerCase()}_${data.tag}_click`, $event, this, this.data, this.controlInstance.getPSAppViewLogics());
     }
 
     /**
@@ -440,10 +435,10 @@ export class ViewPanelControlBase extends MainControlBase {
      * @param {*} newVal
      * @memberof ViewPanelControlBase
      */
-    public async computedUIData(newVal: any) {
+    public async computedUIData(newVal?: any) {
         if (this.controlInstance?.getAllPSPanelFields() && this.getDataItems().length > 0) {
             this.getDataItems().forEach((item: any) => {
-                this.data[item.name] = newVal[item.prop];
+                this.data[item.name] = newVal ? newVal[item.prop] : null;
             });
         }
     }
@@ -594,12 +589,17 @@ export class ViewPanelControlBase extends MainControlBase {
     public initItemsActionModel(panelItems: IPSPanelItem[] | null) {
         panelItems?.forEach((item: IPSPanelItem) => {
             const panelItem = item as IPSSysPanelContainer;
-            const panelButtomItem = item as IPSSysPanelButton
+            const panelButtomItem = item as IPSSysPanelButton;
             if ((panelItem?.getPSPanelItems?.() as any)?.length > 0) {
                 this.initItemsActionModel(panelItem.getPSPanelItems());
             } else if (panelItem?.itemType == 'BUTTON' && panelButtomItem.getPSUIAction()) {
                 const appUIAction: any = panelButtomItem.getPSUIAction();
                 this.actionModel[appUIAction.uIActionTag] = Object.assign(appUIAction, { disabled: false, visabled: true, getNoPrivDisplayMode: appUIAction.getNoPrivDisplayMode ? appUIAction.getNoPrivDisplayMode : 6 });
+            } else if (item.itemType == 'TABPANEL') {
+                const tabPages: IPSPanelTabPage[] = (item as IPSSysPanelTabPanel).getPSPanelTabPages() || [];
+                tabPages.forEach((page: IPSPanelTabPage) => {
+                    this.initItemsActionModel(page.getPSPanelItems());
+                })
             }
         })
     }
@@ -619,18 +619,18 @@ export class ViewPanelControlBase extends MainControlBase {
      * @memberof ViewPanelControlBase
      */
     public onInputDataChange(newVal: any, oldVal: any) { }
-    
+
     /**
      * 获取多项数据
      *
      * @returns {any[]}
      * @memberof ViewPanelControlBase
      */
-     public getDatas(): any[] {
-        if (!this.panelData) {
+    public getDatas(): any[] {
+        if (!this.data) {
             return [];
         }
-        return [this.panelData];
+        return [this.data];
     }
 
     /**
@@ -640,6 +640,6 @@ export class ViewPanelControlBase extends MainControlBase {
      * @memberof ViewPanelControlBase
      */
     public getData() {
-        return this.panelData;
+        return this.data;
     }
 }

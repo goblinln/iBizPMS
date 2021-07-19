@@ -10,6 +10,7 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDELOGICS/UpdateLasted.json"
     },
     "cloneParam" : false,
+    "enableBackend" : true,
     "ignoreException" : false,
     "internalLogic" : true
   } ],

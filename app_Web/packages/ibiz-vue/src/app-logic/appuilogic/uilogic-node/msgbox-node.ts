@@ -1,4 +1,4 @@
-import { IPSDEUIMsgBoxLogic } from '@ibiz/dynamic-model-api';
+import { IPSDEUILogicParam, IPSDEUIMsgBoxLogic } from '@ibiz/dynamic-model-api';
 import { Subject } from 'rxjs';
 import { LogUtil } from 'ibiz-core';
 import { AppMessageBoxService } from '../../../app-service';
@@ -26,19 +26,20 @@ export class AppUILogicMsgboxNode extends AppUILogicNodeBase {
     public async executeNode(logicNode: IPSDEUIMsgBoxLogic, actionContext: UIActionContext) {
         return new Promise<void>((resolve) => {
             if (logicNode) {
+                let msgBoxParam: any = actionContext.getParam((logicNode.getMsgBoxParam() as IPSDEUILogicParam)?.codeName);
                 const options = {
                     type: logicNode.msgBoxType?.toLowerCase(),
-                    title: logicNode.title,
-                    content: logicNode.message,
+                    title: msgBoxParam?.title ? msgBoxParam.title : logicNode.title,
+                    content: msgBoxParam?.message ? msgBoxParam.message : logicNode.message,
                     buttonType: logicNode.buttonsType?.toLowerCase(),
                     showMode: logicNode.showMode?.toLowerCase(),
-                    showClose: true,
+                    showClose: false,
                     mask: true,
                     maskClosable: true
                 };
                 const subject: Subject<any> | null = AppMessageBoxService.getInstance().open(options);
                 const subscription = subject?.subscribe((result: any) => {
-                    resolve(this.handleResponse(logicNode, actionContext, result));
+                    resolve(this.handleResponse(logicNode, actionContext, options, result));
                     subscription!.unsubscribe();
                     subject.complete();
                 })
@@ -57,32 +58,15 @@ export class AppUILogicMsgboxNode extends AppUILogicNodeBase {
      * @param {string} result 响应结果
      * @memberof AppUILogicMsgboxNode
      */
-    public handleResponse(logicNode: IPSDEUIMsgBoxLogic, actionContext: UIActionContext, result: string) {
+    public handleResponse(logicNode: IPSDEUIMsgBoxLogic, actionContext: UIActionContext, options: any, result: string) {
         const { buttonsType } = logicNode;
-        switch (buttonsType) {
-            case 'YESNO':
-                if (result && Object.is(result, 'yes')) {
-                    return this.computeNextNodes(logicNode, actionContext);
-                }
-                break;
-            case 'YESNOCANCEL':
-                if (result && Object.is(result, 'yes')) {
-                    return this.computeNextNodes(logicNode, actionContext);
-                }
-                break;
-            case 'OK':
-                if (result && Object.is(result, 'ok')) {
-                    return this.computeNextNodes(logicNode, actionContext);
-                }
-                break;
-            case 'OKCANCEL':
-                if (result && Object.is(result, 'ok')) {
-                    return this.computeNextNodes(logicNode, actionContext);
-                }
-                break;
-            default:
-                LogUtil.warn(`${buttonsType}未实现`);
-                break;
+        if (!Object.is(buttonsType, 'YESNO') && !Object.is(buttonsType, 'YESNOCANCEL') && !Object.is(buttonsType, 'OK') && !Object.is(buttonsType, 'OKCANCEL')) {
+            LogUtil.warn(`${buttonsType}未实现`);
+            return;
         }
+        let msgBoxParam: any = actionContext.getParam((logicNode.getMsgBoxParam() as IPSDEUILogicParam)?.codeName);
+        if (msgBoxParam)
+            msgBoxParam.result = result;
+        return this.computeNextNodes(logicNode, actionContext);
     }
 }

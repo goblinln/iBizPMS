@@ -313,7 +313,6 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
             },
             "valueItemName" : "product",
-            "dropDownView" : false,
             "editable" : false,
             "enableAC" : false,
             "enableLinkView" : true,
@@ -348,7 +347,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -405,7 +403,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "date",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -434,7 +431,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "scmpath",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -462,7 +458,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "filepath",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

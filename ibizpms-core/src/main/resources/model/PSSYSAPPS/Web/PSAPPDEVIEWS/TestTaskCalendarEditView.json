@@ -369,7 +369,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "id",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -405,7 +404,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__status.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -438,7 +436,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -472,7 +469,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__pri.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -502,7 +498,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "begin",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -532,7 +527,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "end",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

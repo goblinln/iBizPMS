@@ -431,7 +431,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "storycnt",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -630,7 +629,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "waitstorycnt",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -661,7 +659,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "plannedstorycnt",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -690,7 +687,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "developingstorycnt",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -719,7 +715,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "testingstorycnt",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -748,7 +743,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "releasedstorycnt",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {

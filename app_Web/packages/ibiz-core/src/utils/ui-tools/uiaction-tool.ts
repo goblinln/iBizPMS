@@ -44,7 +44,7 @@ export class UIActionTool {
      */
     private static formatData(actionTarget: any, args: any,parentContext:any,parentParams:any, _params: any): any {
         let _data: any = {};
-        if (Object.is(actionTarget, 'SINGLEKEY') || Object.is(actionTarget, 'NONE')) {
+        if (Object.is(actionTarget, 'SINGLEKEY') || Object.is(actionTarget, 'NONE') || Object.is(actionTarget, 'SINGLEDATA')) {
             let [arg] = args;
             Object.keys(_params).forEach((name: string) => {
                 let hasProperty = true;
@@ -54,7 +54,7 @@ export class UIActionTool {
                 let value: string | null = _params[name];
                 if (value && typeof(value) === 'string' && value.startsWith('%') && value.endsWith('%')) {
                     const key = value.substring(1, value.length - 1);
-                    if (arg && arg.hasOwnProperty(key) && Object.is(actionTarget, 'SINGLEKEY')) {
+                    if (arg && arg.hasOwnProperty(key) && (Object.is(actionTarget, 'SINGLEKEY') || Object.is(actionTarget, 'SINGLEDATA'))) {
                         value = (arg[key] !== null && arg[key] !== undefined) ? arg[key] : null;
                     } else if(parentContext && parentContext.hasOwnProperty(key)){
                         value = (parentContext[key] !== null && parentContext[key] !== undefined) ? parentContext[key] : null;

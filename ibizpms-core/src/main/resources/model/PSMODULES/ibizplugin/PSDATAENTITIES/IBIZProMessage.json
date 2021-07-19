@@ -154,7 +154,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -166,7 +165,6 @@
     "enableFront" : true
   }, {
     "codeName" : "UserAllMessages",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "用户全部消息",
     "name" : "UserAllMessages",
     "getPSDEDataQueries" : [ {
@@ -177,7 +175,6 @@
     "enableFront" : true
   }, {
     "codeName" : "UserUnreadMessages",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "用户未读信息",
     "name" : "UserUnreadMessages",
     "getPSDEDataQueries" : [ {

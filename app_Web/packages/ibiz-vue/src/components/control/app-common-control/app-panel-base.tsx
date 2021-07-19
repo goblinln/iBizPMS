@@ -374,16 +374,14 @@ export class AppPanelBase extends PanelControlBase {
      */
 
     public renderRawitem(modelJson: any, index: number) {
-        let {
-            rawItemWidth,
-            rawItemHeight,
-            contentType,
-            htmlContent,
-            rawContent,
-        } = modelJson;
-        let sizeStyle: any = {};
-        sizeStyle.width = rawItemWidth > 0 ? rawItemWidth + 'px' : '';
-        sizeStyle.height = rawItemHeight > 0 ? rawItemHeight + 'px' : '';
+        const data: any = this.data;
+        let { rawItemHeight, rawItemWidth, contentType, htmlContent, rawContent } = modelJson;
+        let sysCssName = modelJson.getPSSysCss()?.cssName;
+        let sysImage = modelJson.getPSSysImage()?.cssClass;
+        const style: any = {
+            width: rawItemWidth > 0 ? `${rawItemWidth}px` : false,
+            height: rawItemHeight > 0 ? `${rawItemHeight}px` :false,
+        }
         if (rawContent) {
             const items = rawContent.match(/\{{(.+?)\}}/g);
             if (items) {
@@ -399,15 +397,15 @@ export class AppPanelBase extends PanelControlBase {
         });
         return (
             <app-rawitem
-                context={this.context}
+                class={sysCssName}
+                style={style}
                 viewparams={this.viewparams}
-                contentStyle={modelJson?.getPSSysCss()?.cssName}
-                sizeStyle={sizeStyle}
+                context={this.context}
                 contentType={contentType}
+                imageClass={sysImage}
                 htmlContent={htmlContent}
-                getPSSysImage={modelJson.getPSSysImage()?.cssClass}
             >
-                {contentType === 'RAW' && tempNode}
+                {Object.is(contentType, 'RAW') && tempNode}
             </app-rawitem>
         );
     }

@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -46,6 +47,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -60,6 +62,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -75,6 +78,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -90,6 +94,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -104,6 +109,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -118,6 +124,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -133,6 +140,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -148,6 +156,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -163,6 +172,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -178,6 +188,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -194,6 +205,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -211,6 +223,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -228,6 +241,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -238,6 +252,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -252,6 +267,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -267,6 +283,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
@@ -283,6 +300,7 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchCurTest",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurTest",
     "getPSDEDataSet" : {
@@ -292,6 +310,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -301,6 +320,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault1",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT1",
     "getPSDEDataSet" : {
@@ -310,6 +330,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMob",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Mob",
     "getPSDEDataSet" : {
@@ -319,6 +340,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchVersion",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Version",
     "getPSDEDataSet" : {
@@ -328,6 +350,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchVersions",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Versions",
     "getPSDEDataSet" : {
@@ -449,6 +472,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -463,6 +487,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -477,6 +502,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -492,6 +518,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -507,6 +534,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -521,6 +549,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -535,6 +564,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -550,6 +580,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -565,6 +596,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -580,6 +612,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -595,6 +628,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -611,6 +645,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -628,6 +663,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -645,6 +681,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -655,6 +692,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -669,6 +707,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -684,6 +723,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
@@ -699,6 +739,7 @@
     "builtinMethod" : true
   }, {
     "codeName" : "FetchCurTest",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurTest",
     "getPSDEDataSet" : {
@@ -708,6 +749,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -717,6 +759,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault1",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT1",
     "getPSDEDataSet" : {
@@ -726,6 +769,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMob",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Mob",
     "getPSDEDataSet" : {
@@ -735,6 +779,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchVersion",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Version",
     "getPSDEDataSet" : {
@@ -744,6 +789,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchVersions",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Versions",
     "getPSDEDataSet" : {
@@ -753,6 +799,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurTest",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurTest",
     "getPSDEDataSet" : {
@@ -763,6 +810,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -773,6 +821,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempDefault1",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT1",
     "getPSDEDataSet" : {
@@ -783,6 +832,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMob",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "Mob",
     "getPSDEDataSet" : {
@@ -793,6 +843,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempVersion",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "Version",
     "getPSDEDataSet" : {
@@ -803,6 +854,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempVersions",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "Versions",
     "getPSDEDataSet" : {

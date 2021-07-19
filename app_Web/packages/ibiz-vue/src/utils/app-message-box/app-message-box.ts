@@ -87,36 +87,8 @@ export class AppMessageBox {
      * @memberof AppMessageBox
      */
     public open(options: any): Subject<any> {
-        this.handleDefault(options);
         return this.createVueExample(options)
     }
-
-    /**
-     * 处理options的默认值
-     *
-     * @private
-     * @param {*} options
-     * @memberof AppMessageBox
-     */
-    private handleDefault(options: any) {
-        // 标题没有时显示默认标题
-        if (!options.title) {
-            switch (options.type) {
-                case 'error':
-                    options.title = '错误';
-                    break;
-                case 'success':
-                    options.title = '询问';
-                    break;
-                case 'warning':
-                    options.title = '警告';
-                    break;
-                default:
-                    options.title = '消息';
-            }
-        }
-    }
-
 
     /**
      * 创建vue 实例

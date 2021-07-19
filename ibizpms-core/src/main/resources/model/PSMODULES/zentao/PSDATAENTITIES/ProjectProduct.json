@@ -157,7 +157,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -169,7 +168,6 @@
     "enableFront" : true
   }, {
     "codeName" : "RelationPlan",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "关联计划",
     "name" : "RelationPlan",
     "getPSDEDataQueries" : [ {

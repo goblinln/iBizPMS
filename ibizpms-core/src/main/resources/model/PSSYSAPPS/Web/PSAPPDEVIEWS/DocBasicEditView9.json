@@ -319,7 +319,6 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
           },
           "valueItemName" : "project",
-          "dropDownView" : false,
           "editable" : false,
           "enableAC" : false,
           "enableLinkView" : true,
@@ -399,7 +398,6 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
           },
           "valueItemName" : "product",
-          "dropDownView" : false,
           "editable" : false,
           "enableAC" : false,
           "enableLinkView" : true,
@@ -434,7 +432,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "libname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -488,7 +485,6 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
           },
           "valueItemName" : "module",
-          "dropDownView" : false,
           "editable" : false,
           "enableAC" : false,
           "enableLinkView" : true,
@@ -523,7 +519,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "addeddate",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -552,7 +547,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "editedby",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -580,7 +574,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "editeddate",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

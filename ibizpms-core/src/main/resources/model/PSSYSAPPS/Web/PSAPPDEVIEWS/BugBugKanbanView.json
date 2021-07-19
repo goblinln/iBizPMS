@@ -527,7 +527,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -547,8 +546,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "级别",
-          "showCaption" : true
+          "rawContent" : "级别"
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -560,7 +558,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -582,8 +579,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "优先级",
-          "showCaption" : true
+          "rawContent" : "优先级"
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -595,7 +591,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__pri.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -615,8 +610,7 @@
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
-          },
-          "showCaption" : true
+          }
         }, {
           "caption" : "动态内容",
           "itemStyle" : "DEFAULT",
@@ -667,8 +661,7 @@
                 "colMD" : 4,
                 "layout" : "TABLE_24COL"
               },
-              "rawContent" : "截止日期",
-              "showCaption" : true
+              "rawContent" : "截止日期"
             }, {
               "itemStyle" : "DEFAULT",
               "itemType" : "FIELD",
@@ -676,7 +669,6 @@
               "getPSEditor" : {
                 "editorType" : "SPAN",
                 "name" : "deadline",
-                "editable" : false,
                 "enableLinkView" : false
               },
               "getPSLayoutPos" : {
@@ -694,7 +686,6 @@
               "getPSEditor" : {
                 "editorType" : "SPAN",
                 "name" : "delay",
-                "editable" : false,
                 "enableLinkView" : false
               },
               "getPSLayoutPos" : {
@@ -773,8 +764,7 @@
                   "colMD" : 6,
                   "layout" : "TABLE_24COL"
                 },
-                "rawContent" : "解决日期",
-                "showCaption" : true
+                "rawContent" : "解决日期"
               }, {
                 "itemStyle" : "DEFAULT",
                 "itemType" : "FIELD",
@@ -782,7 +772,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "resolveddate",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -800,7 +789,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "delayresolve",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -827,8 +815,7 @@
                 "viewFieldName" : "DELAYRESOLVE",
                 "hidden" : false,
                 "showCaption" : false
-              } ],
-              "showCaption" : true
+              } ]
             }, {
               "contentType" : "RAW",
               "itemStyle" : "DEFAULT",
@@ -839,8 +826,7 @@
                 "colMD" : 4,
                 "layout" : "TABLE_24COL"
               },
-              "rawContent" : "由谁解决",
-              "showCaption" : true
+              "rawContent" : "由谁解决"
             }, {
               "itemStyle" : "DEFAULT",
               "itemType" : "FIELD",
@@ -852,7 +838,6 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
                 },
-                "editable" : false,
                 "enableLinkView" : false
               },
               "getPSLayoutPos" : {
@@ -903,8 +888,7 @@
                 "colMD" : 4,
                 "layout" : "TABLE_24COL"
               },
-              "rawContent" : "关闭日期",
-              "showCaption" : true
+              "rawContent" : "关闭日期"
             }, {
               "itemStyle" : "DEFAULT",
               "itemType" : "FIELD",
@@ -912,7 +896,6 @@
               "getPSEditor" : {
                 "editorType" : "SPAN",
                 "name" : "closeddate",
-                "editable" : false,
                 "enableLinkView" : false
               },
               "getPSLayoutPos" : {
@@ -935,8 +918,7 @@
                 "colMDOffset" : 2,
                 "layout" : "TABLE_24COL"
               },
-              "rawContent" : "由谁关闭",
-              "showCaption" : true
+              "rawContent" : "由谁关闭"
             }, {
               "itemStyle" : "DEFAULT",
               "itemType" : "FIELD",
@@ -948,7 +930,6 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
                 },
-                "editable" : false,
                 "enableLinkView" : false
               },
               "getPSLayoutPos" : {
@@ -999,8 +980,7 @@
                 "colMD" : 4,
                 "layout" : "TABLE_24COL"
               },
-              "rawContent" : "解决方案",
-              "showCaption" : true
+              "rawContent" : "解决方案"
             }, {
               "itemStyle" : "DEFAULT",
               "itemType" : "FIELD",
@@ -1012,7 +992,6 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
                 },
-                "editable" : false,
                 "enableLinkView" : false
               },
               "getPSLayoutPos" : {
@@ -1048,8 +1027,7 @@
                 "value" : "%SRFCURDATA%"
               } ],
               "notMode" : false
-            } ],
-            "showCaption" : true
+            } ]
           } ],
           "showCaption" : true
         }, {
@@ -1114,8 +1092,7 @@
               "uIActionType" : "DEUIACTION",
               "id" : "AssingToBug@Bug"
             },
-            "tooltip" : "指派",
-            "showCaption" : false
+            "tooltip" : "指派"
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "FIELD",
@@ -1127,7 +1104,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -1141,8 +1117,7 @@
             "convertToCodeItemText" : true,
             "hidden" : false,
             "showCaption" : false
-          } ],
-          "showCaption" : true
+          } ]
         }, {
           "caption" : "隐藏项",
           "itemStyle" : "DEFAULT",
@@ -1276,10 +1251,8 @@
             "viewFieldName" : "STATUS",
             "hidden" : true,
             "showCaption" : false
-          } ],
-          "showCaption" : false
-        } ],
-        "showCaption" : true
+          } ]
+        } ]
       } ],
       "name" : "itemlayoutpanel",
       "modelid" : "58b1827950ea09784b503890c2bb0044",

@@ -311,7 +311,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -343,7 +342,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Pri.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -372,7 +370,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "date1",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -404,7 +401,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/BeginendDropList.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -437,7 +433,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/BeginendDropList.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -470,7 +465,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Type.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -503,7 +497,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Todo__status.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -536,7 +529,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -565,7 +557,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "assigneddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -598,7 +589,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -669,9 +659,7 @@
             "handlerType" : "PickupText",
             "name" : "noticeusers",
             "valueItemName" : "desc",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -821,7 +809,6 @@
                       "getPSEditor" : {
                         "editorType" : "SPAN",
                         "name" : "date",
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -843,7 +830,6 @@
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
                         },
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -866,7 +852,6 @@
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__type.json"
                         },
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -878,8 +863,7 @@
                       "convertToCodeItemText" : true,
                       "hidden" : false,
                       "showCaption" : false
-                    } ],
-                    "showCaption" : true
+                    } ]
                   } ],
                   "mobilePanel" : true,
                   "name" : "mdctrl_itempanel",

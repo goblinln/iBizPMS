@@ -584,8 +584,7 @@
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
             "editorType" : "RAW",
-            "name" : "formitem",
-            "editable" : false
+            "name" : "formitem"
           },
           "getPSLayoutPos" : {
             "colLG" : 8,

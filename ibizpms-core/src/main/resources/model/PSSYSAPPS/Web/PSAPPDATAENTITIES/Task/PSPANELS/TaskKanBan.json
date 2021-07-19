@@ -126,7 +126,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "name",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -145,8 +144,7 @@
       "getPSLayoutPos" : {
         "colMD" : 24,
         "layout" : "TABLE_24COL"
-      },
-      "showCaption" : true
+      }
     }, {
       "caption" : "动态内容",
       "itemStyle" : "DEFAULT",
@@ -168,7 +166,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "deadline",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -186,7 +183,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "delay",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -213,8 +209,7 @@
         "viewFieldName" : "DELAY",
         "hidden" : false,
         "showCaption" : false
-      } ],
-      "showCaption" : false
+      } ]
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
@@ -318,10 +313,8 @@
             "uIActionType" : "DEUIACTION",
             "id" : "AssignTask@Task"
           },
-          "tooltip" : "指派",
-          "showCaption" : false
-        } ],
-        "showCaption" : true
+          "tooltip" : "指派"
+        } ]
       }, {
         "actionType" : "UIACTION",
         "caption" : "转交",
@@ -391,8 +384,7 @@
           "uIActionType" : "DEUIACTION",
           "id" : "Forward@Task"
         },
-        "tooltip" : "转交",
-        "showCaption" : false
+        "tooltip" : "转交"
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
@@ -404,7 +396,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -418,8 +409,7 @@
         "convertToCodeItemText" : true,
         "hidden" : false,
         "showCaption" : false
-      } ],
-      "showCaption" : true
+      } ]
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
@@ -441,7 +431,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "left",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -462,10 +451,8 @@
           "colMD" : 6,
           "layout" : "TABLE_24COL"
         },
-        "rawContent" : "h",
-        "showCaption" : true
-      } ],
-      "showCaption" : true
+        "rawContent" : "h"
+      } ]
     }, {
       "caption" : "隐藏项",
       "itemStyle" : "DEFAULT",
@@ -689,10 +676,8 @@
         "viewFieldName" : "TASKTYPE",
         "hidden" : true,
         "showCaption" : false
-      } ],
-      "showCaption" : false
-    } ],
-    "showCaption" : true
+      } ]
+    } ]
   } ],
   "modelid" : "87f08dbe9b7bb8d4ff1c6c7c9bde37c6",
   "modeltype" : "PSSYSVIEWPANEL"

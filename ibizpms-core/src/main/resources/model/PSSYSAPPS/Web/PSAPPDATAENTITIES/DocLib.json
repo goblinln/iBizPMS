@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -138,6 +139,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -219,6 +221,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ByProduct",
     "getPSDEDataSet" : {
@@ -245,6 +248,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ByProject",
     "getPSDEDataSet" : {
@@ -254,6 +258,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDocLib",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurDocLib",
     "getPSDEDataSet" : {
@@ -280,6 +285,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateDocLib",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateDocLib",
     "getPSDEDataSet" : {
@@ -306,6 +312,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootModuleMuLu",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RootModuleMuLu",
     "getPSDEDataSet" : {
@@ -481,6 +488,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -587,6 +595,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -667,6 +676,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ByProduct",
     "getPSDEDataSet" : {
@@ -693,6 +703,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ByProject",
     "getPSDEDataSet" : {
@@ -702,6 +713,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDocLib",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurDocLib",
     "getPSDEDataSet" : {
@@ -728,6 +740,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateDocLib",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateDocLib",
     "getPSDEDataSet" : {
@@ -754,6 +767,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootModuleMuLu",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RootModuleMuLu",
     "getPSDEDataSet" : {

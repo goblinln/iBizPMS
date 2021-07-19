@@ -111,7 +111,7 @@ export class AppGridBase extends GridControlBase {
             'row-class-name': ({ row, rowIndex }: any) => this.getRowClassName({ row, rowIndex }),
             'cell-class-name': ({ row, column, rowIndex, columnIndex }: any) =>
                 this.getCellClassName({ row, column, rowIndex, columnIndex }),
-            'max-height': this.items?.length > 0 && !Object.is(this.controlInstance.gridStyle, 'USER') ? 'calc(100% - 50px)' : '100%',
+            'max-height': this.items?.length > 0 && !Object.is(this.controlInstance.gridStyle, 'USER') && this.controlInstance.enablePagingBar ? 'calc(100% - 50px)' : '100%',
             stripe: (this.controlInstance?.getParentPSModelObject?.() as IPSAppDEGridView)?.viewStyle == 'STYLE2' ? true : false,
         };
         const aggMode = this.controlInstance?.aggMode;
@@ -297,7 +297,7 @@ export class AppGridBase extends GridControlBase {
             'label-class-name': column.getHeaderPSSysCss()?.cssName,
         };
         const sysImage = column.getPSSysImage();
-        renderParams['width'] = 48;
+        renderParams['width'] = 42;
         renderParams['fixed'] = 'right';
         //绘制
         return this.$createElement('el-table-column', {
@@ -385,7 +385,7 @@ export class AppGridBase extends GridControlBase {
         //参数
         let renderParams: any = {
             'column-key': name,
-            'class-name': column.getCellPSSysCss()?.cssName,
+            'class-name': 'style2-ua-column' + (column.getCellPSSysCss()?.cssName ? '' + column.getCellPSSysCss()?.cssName : ''),
             'label-class-name': column.getHeaderPSSysCss()?.cssName,
             label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             align: align ? align.toLowerCase() : 'center',

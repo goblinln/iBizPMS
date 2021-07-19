@@ -150,7 +150,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -162,7 +161,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductDailyUserTaskStats",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "产品日报用户任务统计",
     "name" : "ProductDailyUserTaskStats",
     "getPSDEDataQueries" : [ {
@@ -173,7 +171,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductMonthlyUserTaskStats",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "产品月报用户任务统计",
     "name" : "ProductMonthlyUserTaskStats",
     "getPSDEDataQueries" : [ {
@@ -184,7 +181,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductWeeklyUserTaskStats",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "产品周报用户任务统计",
     "name" : "ProductWeeklyUserTaskStats",
     "getPSDEDataQueries" : [ {

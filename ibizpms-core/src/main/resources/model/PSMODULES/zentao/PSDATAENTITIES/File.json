@@ -319,7 +319,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -331,7 +330,6 @@
     "enableFront" : true
   }, {
     "codeName" : "DocLibFile",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "文件库查询",
     "name" : "DocLibFile",
     "getPSDEDataQueries" : [ {
@@ -342,7 +340,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MySubmitFile",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我提交的文件（权限）",
     "name" : "MySubmitFile",
     "getPSDEDataQueries" : [ {
@@ -353,7 +350,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductDocLibFile",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "文件库查询",
     "name" : "ProductDocLibFile",
     "getPSDEDataQueries" : [ {
@@ -364,7 +360,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Type",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "动态(根据类型过滤)",
     "name" : "Type",
     "getPSDEDataQueries" : [ {
@@ -375,7 +370,6 @@
     "enableFront" : true
   }, {
     "codeName" : "TypeNotBySrfparentkey",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "查询附件",
     "name" : "TypeNotBySrfparentkey",
     "getPSDEDataQueries" : [ {

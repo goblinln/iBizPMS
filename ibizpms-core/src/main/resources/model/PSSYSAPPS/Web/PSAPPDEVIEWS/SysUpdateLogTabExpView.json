@@ -334,7 +334,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "sys_update_logname",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -362,7 +361,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "update",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -395,7 +393,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SYS_UPDATE_BRANCH.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -428,7 +425,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -526,7 +522,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -555,7 +550,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "createdate",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -588,7 +582,6 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/SysOperator.json"
                   },
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {
@@ -617,7 +610,6 @@
                 "getPSEditor" : {
                   "editorType" : "SPAN",
                   "name" : "updatedate",
-                  "editable" : false,
                   "enableLinkView" : false
                 },
                 "getPSLayoutPos" : {

@@ -958,7 +958,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "projectname",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

@@ -171,7 +171,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "loginname",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -199,7 +198,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "personname",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -227,7 +225,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "sex",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -255,7 +252,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "mdeptname",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -331,7 +327,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "phone",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -359,7 +354,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "email",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -387,7 +381,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "addr",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -415,7 +408,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "avatar",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {

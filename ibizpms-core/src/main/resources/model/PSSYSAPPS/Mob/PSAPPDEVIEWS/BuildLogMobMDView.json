@@ -150,7 +150,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -168,7 +167,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "date",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -182,8 +180,7 @@
         } ],
         "getPSSysCss" : {
           "cssName" : "mob_list_card"
-        },
-        "showCaption" : true
+        }
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",

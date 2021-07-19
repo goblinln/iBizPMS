@@ -122,7 +122,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "name",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -151,7 +150,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "parentname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -184,7 +182,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

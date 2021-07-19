@@ -115,7 +115,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Build",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "版本",
     "name" : "Build",
     "getPSDEDataQueries" : [ {
@@ -126,7 +125,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {

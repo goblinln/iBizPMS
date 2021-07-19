@@ -305,7 +305,6 @@
           },
           "dropDownView" : true,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : true,
           "forceSelection" : true,
           "showTrigger" : true,
@@ -405,7 +404,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__pri.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -424,7 +422,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -442,7 +439,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "begin",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -460,7 +456,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "end",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -482,7 +477,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__status.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -499,8 +493,7 @@
         } ],
         "getPSSysCss" : {
           "cssName" : "mob_list_card"
-        },
-        "showCaption" : true
+        }
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",

@@ -95,6 +95,8 @@ import { AppStyle4PortalViewLayout } from "../../components/layout/app-style4-la
 import { AppStyle4DePortalViewLayout } from "../../components/layout/app-style4-layout/app-style4-deportalview-layout/app-style4-deportalview-layout";
 import { AppDefaultDePanelViewLayout } from '../../components/layout/app-default-layout/app-default-depanelview-layout/app-default-depanelview-layout';
 import { AppStyle2DePanelViewLayout } from '../../components/layout/app-style2-layout/app-style2-depanelview-layout/app-style2-depanelview-layout';
+import { AppStyle2MapViewLayout } from '../../components/layout/app-style2-layout/app-style2-mapview-layout/app-style2-mapview-layout';
+import { AppDefaultHtmlViewLayout } from '../../components/layout/app-default-layout/app-default-htmlview-layout/app-default-htmlview-layout';
 /**
  * 应用组件服务
  * 
@@ -164,6 +166,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEREPORTVIEW-DEFAULT",AppDefaultDeReportViewLayout);
         this.layoutMap.set("DEMAPEXPVIEW-DEFAULT",AppDefaultMapExpViewLayout);
         this.layoutMap.set("DEPANELVIEW-DEFAULT", AppDefaultDePanelViewLayout);
+        this.layoutMap.set("DEHTMLVIEW-DEFAULT", AppDefaultHtmlViewLayout);
         // todo 部件视图布局
         this.layoutMap.set("DEEDITVIEW9-DEFAULT", AppDefaultEditViewLayout);
         this.layoutMap.set("DEGRIDVIEW9-DEFAULT", AppDefaultGridViewLayout);
@@ -216,6 +219,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEREPORTVIEW-STYLE2",AppStyle2DeReportViewLayout);
         this.layoutMap.set("DEMAPEXPVIEW-STYLE2",AppStyle2MapExpViewLayout);
         this.layoutMap.set("DEPANELVIEW-STYLE2", AppStyle2DePanelViewLayout);
+        this.layoutMap.set("DEMAPVIEW-STYLE2",AppStyle2MapViewLayout);
         //  STYLE2部件视图
         this.layoutMap.set("DEEDITVIEW9-STYLE2", AppStyle2EditViewLayout);
         this.layoutMap.set("DEGRIDVIEW9-STYLE2", AppStyle2GridViewLayout);

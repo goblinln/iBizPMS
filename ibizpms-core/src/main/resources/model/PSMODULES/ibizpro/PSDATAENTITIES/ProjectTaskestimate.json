@@ -131,7 +131,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "AccountDetail",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "用户月工时详情",
     "name" : "AccountDetail",
     "getPSDEDataQueries" : [ {
@@ -142,7 +141,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {

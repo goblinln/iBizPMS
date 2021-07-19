@@ -1,4 +1,4 @@
-import { TestTaskService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--测试单（动态）
  *
@@ -93,7 +93,7 @@ export default class TestTask {
      * @type {TestTaskService}
      * @memberof TestTask
      */
-    public testtaskService: TestTaskService = new TestTaskService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class TestTask {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.testtaskService.FetchDefault(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('TestTask').then((service: any) => {
+                const promise: Promise<any> = service.FetchDefault(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

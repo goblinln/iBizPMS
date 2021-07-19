@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -118,6 +119,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -134,6 +136,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -264,6 +267,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAllReportly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAllReportly",
     "getPSDEDataSet" : {
@@ -273,6 +277,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReceived",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReceived",
     "getPSDEDataSet" : {
@@ -282,6 +287,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReportlyMob",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReportlyMob",
     "getPSDEDataSet" : {
@@ -397,6 +403,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -483,6 +490,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -499,6 +507,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -562,6 +571,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAllReportly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAllReportly",
     "getPSDEDataSet" : {
@@ -571,6 +581,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReceived",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReceived",
     "getPSDEDataSet" : {
@@ -580,6 +591,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReportlyMob",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReportlyMob",
     "getPSDEDataSet" : {

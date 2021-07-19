@@ -150,7 +150,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -162,7 +161,6 @@
     "enableFront" : true
   }, {
     "codeName" : "GetRoadmap",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "GetRoadmap",
     "name" : "GetRoadmap",
     "getPSDEDataQueries" : [ {
@@ -173,7 +171,6 @@
     "enableFront" : true
   }, {
     "codeName" : "GetRoadmapS",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "获取产品路线",
     "name" : "GetRoadmapS",
     "getPSDEDataQueries" : [ {
@@ -184,7 +181,6 @@
     "enableFront" : true
   }, {
     "codeName" : "RoadMapYear",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "RoadMapYear",
     "name" : "RoadMapYear",
     "getPSDEDataQueries" : [ {

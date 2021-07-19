@@ -374,7 +374,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "BugModule",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "BugModule",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -395,7 +394,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BugModuleCodeList",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -416,7 +414,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -438,7 +435,6 @@
     "enableFront" : true
   }, {
     "codeName" : "DocModule",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "文档目录",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -459,7 +455,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Line",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "产品线",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -480,7 +475,6 @@
     "enableFront" : true
   }, {
     "codeName" : "StoryModule",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "需求模块",
     "name" : "StoryModule",
     "getPSDEDataQueries" : [ {
@@ -491,7 +485,6 @@
     "enableFront" : true
   }, {
     "codeName" : "TaskModule",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "任务模块",
     "name" : "TaskModule",
     "getPSDEDataQueries" : [ {

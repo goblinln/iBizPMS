@@ -60,6 +60,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -142,6 +143,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -194,6 +196,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -569,6 +572,7 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Account",
     "getPSDEDataSet" : {
@@ -595,6 +599,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "My",
     "getPSDEDataSet" : {
@@ -604,6 +609,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTestTaskPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTestTaskPc",
     "getPSDEDataSet" : {
@@ -929,6 +935,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -1011,6 +1018,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -1063,6 +1071,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -1119,6 +1128,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAccount",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Account",
     "getPSDEDataSet" : {
@@ -1145,6 +1155,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "My",
     "getPSDEDataSet" : {
@@ -1154,6 +1165,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTestTaskPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTestTaskPc",
     "getPSDEDataSet" : {

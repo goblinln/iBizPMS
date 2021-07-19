@@ -391,6 +391,10 @@ function getLocaleResourceBase(){
           myTasksLabel:'待办',
           myMsgsLabel:'消息',
         },
+        appmessagebox: {
+          ok: "确 认",
+          cancel: "取 消"
+        },
         diskFileUpload:{
           fileDrag: '将文件拖到此处，或',
           clickUpload: '点击上传',

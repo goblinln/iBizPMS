@@ -1,4 +1,4 @@
-import { StorySpecService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--当前需求版本（动态）
  *
@@ -94,7 +94,7 @@ export default class CurStory {
      * @type {StorySpecService}
      * @memberof CurStory
      */
-    public storyspecService: StorySpecService = new StorySpecService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -135,18 +135,20 @@ export default class CurStory {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.storyspecService.FetchVersion(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('StorySpec').then((service: any) => {
+                const promise: Promise<any> = service.FetchVersion(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

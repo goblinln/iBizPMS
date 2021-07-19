@@ -219,9 +219,9 @@ export class AppDefaultViewLayout extends Vue {
             cssStyle += layout.vAlign ? `align-items: ${layout.vAlign};` : '';
             return (
                 <i-col style={containerStyle} class={containerClass}>
-                    <div class="viewlayoutpanel-container-header" style={{ 'display': container.showCaption ? false : 'none' }}>
+                    {container.showCaption ? <div class="viewlayoutpanel-container-header">
                         <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
-                    </div>
+                    </div> : null}
                     <div class="viewlayoutpanel-container-content" style={cssStyle}>
                         {panelItems.map((item: any, index: number) => {
                             // 子样式
@@ -253,9 +253,9 @@ export class AppDefaultViewLayout extends Vue {
             let attrs = this.getGridLayoutProps(null, container);
             return (
                 <i-col {...{ props: attrs }} style={containerStyle} class={containerClass}>
-                    <row class="viewlayoutpanel-container-header" style={{ 'display': container.showCaption ? false : 'none' }}>
+                    { container.showCaption ? <row class="viewlayoutpanel-container-header">
                         <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
-                    </row>
+                    </row> : null}
                     <row class="viewlayoutpanel-container-content" style={cssStyle}>
                         {panelItems.map((item: any, index: number) => {
                             let detailStyle: any = {};
@@ -361,16 +361,13 @@ export class AppDefaultViewLayout extends Vue {
      * @memberof AppDefaultViewLayout
      */
     public renderRawitem(modelJson: IPSPanelRawItem) {
-        let {
-            rawItemWidth,
-            rawItemHeight,
-            contentType,
-            htmlContent,
-            rawContent,
-        } = modelJson;
-        let sizeStyle: any = {};
-        sizeStyle.width = rawItemWidth > 0 ? rawItemWidth + 'px' : '';
-        sizeStyle.height = rawItemHeight > 0 ? rawItemHeight + 'px' : '';
+        let { rawItemHeight, rawItemWidth, contentType, htmlContent, rawContent } = modelJson;
+        let sysCssName = modelJson.getPSSysCss()?.cssName;
+        let sysImage = modelJson.getPSSysImage()?.cssClass;
+        const style: any = {
+            width: rawItemWidth > 0 ? `${rawItemWidth}px` : false,
+            height: rawItemHeight > 0 ? `${rawItemHeight}px` :false,
+        }
         if (rawContent) {
             const items = rawContent.match(/\{{(.+?)\}}/g);
             if (items) {
@@ -386,15 +383,15 @@ export class AppDefaultViewLayout extends Vue {
         });
         return (
             <app-rawitem
-                context={this.context}
+                class={sysCssName}
+                style={style}
                 viewparams={this.viewparams}
-                contentStyle={modelJson?.getPSSysCss()?.cssName}
-                sizeStyle={sizeStyle}
+                context={this.context}
                 contentType={contentType}
+                imageClass={sysImage}
                 htmlContent={htmlContent}
-                getPSSysImage={modelJson.getPSSysImage()?.cssClass}
             >
-                {contentType === 'RAW' && tempNode}
+                {Object.is(contentType, 'RAW') && tempNode}
             </app-rawitem>
         );
     }

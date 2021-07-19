@@ -1,4 +1,4 @@
-import { PSSysSFPubService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--后台服务体系（版本）
  *
@@ -93,7 +93,7 @@ export default class BackendBuild {
      * @type {PSSysSFPubService}
      * @memberof BackendBuild
      */
-    public pssyssfpubService: PSSysSFPubService = new PSSysSFPubService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class BackendBuild {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.pssyssfpubService.FetchBuild(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('PSSysSFPub').then((service: any) => {
+                const promise: Promise<any> = service.FetchBuild(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

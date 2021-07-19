@@ -10,6 +10,7 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/UpdateInfo.json"
     },
     "cloneParam" : false,
+    "enableBackend" : true,
     "ignoreException" : false,
     "internalLogic" : true
   } ],

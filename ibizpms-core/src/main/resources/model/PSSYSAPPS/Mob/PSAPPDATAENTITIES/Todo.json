@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -47,6 +48,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "AssignTo",
@@ -62,6 +64,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -76,6 +79,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -109,6 +113,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "CreateCycle",
     "methodType" : "DEACTION",
     "name" : "createCycle",
@@ -197,6 +202,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -207,6 +213,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -221,6 +228,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -387,6 +395,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -413,6 +422,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateTodo",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateTodo",
     "getPSDEDataSet" : {
@@ -422,6 +432,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTodo",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTodo",
     "getPSDEDataSet" : {
@@ -431,6 +442,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTodoPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTodoPc",
     "getPSDEDataSet" : {
@@ -440,6 +452,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUpcoming",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUpcoming",
     "getPSDEDataSet" : {
@@ -692,6 +705,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -707,6 +721,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "AssignTo",
@@ -722,6 +737,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -736,6 +752,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -769,6 +786,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "CreateCycle",
     "methodType" : "DEACTION",
     "name" : "createCycle",
@@ -857,6 +875,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -867,6 +886,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -881,6 +901,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -948,6 +969,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -974,6 +996,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateTodo",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateTodo",
     "getPSDEDataSet" : {
@@ -983,6 +1006,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTodo",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTodo",
     "getPSDEDataSet" : {
@@ -992,6 +1016,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTodoPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTodoPc",
     "getPSDEDataSet" : {
@@ -1001,6 +1026,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUpcoming",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUpcoming",
     "getPSDEDataSet" : {

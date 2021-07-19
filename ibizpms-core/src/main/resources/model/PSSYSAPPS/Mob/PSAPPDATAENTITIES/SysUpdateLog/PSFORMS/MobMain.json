@@ -129,7 +129,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "sys_update_logname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -156,7 +155,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "update",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

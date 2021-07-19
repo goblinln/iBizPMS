@@ -287,9 +287,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct.json"
             },
             "valueItemName" : "root",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,

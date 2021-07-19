@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -47,6 +48,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "assignTo",
@@ -62,6 +64,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkBug",
@@ -73,6 +76,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildBatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "buildBatchUnlinkBug",
@@ -84,6 +88,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildLinkBug",
     "methodType" : "DEACTION",
     "name" : "buildLinkBug",
@@ -99,6 +104,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "buildUnlinkBug",
@@ -114,6 +120,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -128,6 +135,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -143,6 +151,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Confirm",
     "methodType" : "DEACTION",
     "name" : "Confirm",
@@ -158,6 +167,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -192,6 +202,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -206,6 +217,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -224,6 +236,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkBug",
     "methodType" : "DEACTION",
     "name" : "LinkBug",
@@ -239,6 +252,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaaseBatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "ReleaaseBatchUnlinkBug",
@@ -254,6 +268,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseLinkBugbyBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkBugbyBug",
@@ -269,6 +284,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseLinkBugbyLeftBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkBugbyLeftBug",
@@ -284,6 +300,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseUnLinkBugbyLeftBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnLinkBugbyLeftBug",
@@ -299,6 +316,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnlinkBug",
@@ -314,6 +332,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -332,6 +351,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Resolve",
     "methodType" : "DEACTION",
     "name" : "Resolve",
@@ -347,6 +367,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -357,6 +378,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -367,6 +389,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -377,6 +400,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
     "codeName" : "TestScript",
     "methodType" : "DEACTION",
     "name" : "TestScript",
@@ -384,9 +408,12 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/TestScript.json"
     },
-    "builtinMethod" : false
+    "scriptCode" : "var childrenbugs = entity.children(\"ZT_BUG\"); \nif(childrenbugs !=null){\nfor(var i=0 ;i< childrenbugs.length;i++){\nsys.info(childrenbugs[i].get(\"TITLE\"));\n}\n}\nentity.set(\"id\",100).wfstart();\nentity.set(\"status\",\"FINISH\").update();",
+    "builtinMethod" : false,
+    "customCode" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -402,6 +429,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkBug",
     "methodType" : "DEACTION",
     "name" : "UnlinkBug",
@@ -417,6 +445,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -601,6 +630,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyBug",
     "getPSDEDataSet" : {
@@ -610,6 +640,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyBugPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyBugPc",
     "getPSDEDataSet" : {
@@ -619,6 +650,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugsByBuild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugsByBuild",
     "getPSDEDataSet" : {
@@ -628,6 +660,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildBugs",
     "getPSDEDataSet" : {
@@ -637,6 +670,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildLinkResolvedBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "buildLinkResolvedBugs",
     "getPSDEDataSet" : {
@@ -646,6 +680,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildOpenBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildOpenBugs",
     "getPSDEDataSet" : {
@@ -655,6 +690,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBug",
     "getPSDEDataSet" : {
@@ -664,6 +700,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugModule",
     "getPSDEDataSet" : {
@@ -673,6 +710,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugModule_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugModule_Project",
     "getPSDEDataSet" : {
@@ -682,6 +720,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugOpenedBy",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugOpenedBy",
     "getPSDEDataSet" : {
@@ -691,6 +730,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugOpenedBy_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugOpenedBy_Project",
     "getPSDEDataSet" : {
@@ -700,6 +740,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugRES",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugRES",
     "getPSDEDataSet" : {
@@ -709,6 +750,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugRESOLVEDBY",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugRESOLVEDBY",
     "getPSDEDataSet" : {
@@ -718,6 +760,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugRESOLVEDBY_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugRESOLVEDBY_Project",
     "getPSDEDataSet" : {
@@ -727,6 +770,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugResolution_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugResolution_Project",
     "getPSDEDataSet" : {
@@ -736,6 +780,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugSeverity_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugSeverity_Project",
     "getPSDEDataSet" : {
@@ -745,6 +790,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugStatus_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugStatus_Project",
     "getPSDEDataSet" : {
@@ -754,6 +800,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugType_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugType_Project",
     "getPSDEDataSet" : {
@@ -763,6 +810,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUserResolve",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUserResolve",
     "getPSDEDataSet" : {
@@ -772,6 +820,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -781,6 +830,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -807,6 +857,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAgentBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAgentBug",
     "getPSDEDataSet" : {
@@ -816,6 +867,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreate",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreate",
     "getPSDEDataSet" : {
@@ -825,6 +877,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
@@ -834,6 +887,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCurOpenedBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCurOpenedBug",
     "getPSDEDataSet" : {
@@ -860,6 +914,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReProduct",
     "getPSDEDataSet" : {
@@ -869,6 +924,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNotCurPlanLinkBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NotCurPlanLinkBug",
     "getPSDEDataSet" : {
@@ -878,6 +934,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductBugDS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductBugDS",
     "getPSDEDataSet" : {
@@ -887,6 +944,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectBugDS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectBugDS",
     "getPSDEDataSet" : {
@@ -896,6 +954,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectBugs",
     "getPSDEDataSet" : {
@@ -905,6 +964,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseBugs",
     "getPSDEDataSet" : {
@@ -914,6 +974,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseLeftBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLeftBugs",
     "getPSDEDataSet" : {
@@ -923,6 +984,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseLinkableLeftBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLinkableLeftBug",
     "getPSDEDataSet" : {
@@ -932,6 +994,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseLinkableResolvedBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLinkableResolvedBug",
     "getPSDEDataSet" : {
@@ -941,6 +1004,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReportBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReportBugs",
     "getPSDEDataSet" : {
@@ -950,6 +1014,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryFormBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryFormBug",
     "getPSDEDataSet" : {
@@ -959,6 +1024,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskRelatedBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TaskBug",
     "getPSDEDataSet" : {
@@ -1510,6 +1576,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "Activate",
@@ -1525,6 +1592,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "assignTo",
@@ -1540,6 +1608,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "BatchUnlinkBug",
@@ -1551,6 +1620,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildBatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "buildBatchUnlinkBug",
@@ -1562,6 +1632,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildLinkBug",
     "methodType" : "DEACTION",
     "name" : "buildLinkBug",
@@ -1577,6 +1648,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "BuildUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "buildUnlinkBug",
@@ -1592,6 +1664,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -1606,6 +1679,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -1621,6 +1695,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Confirm",
     "methodType" : "DEACTION",
     "name" : "Confirm",
@@ -1636,6 +1711,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -1670,6 +1746,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -1684,6 +1761,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -1702,6 +1780,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkBug",
     "methodType" : "DEACTION",
     "name" : "LinkBug",
@@ -1717,6 +1796,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaaseBatchUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "ReleaaseBatchUnlinkBug",
@@ -1732,6 +1812,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseLinkBugbyBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkBugbyBug",
@@ -1747,6 +1828,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseLinkBugbyLeftBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseLinkBugbyLeftBug",
@@ -1762,6 +1844,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseUnLinkBugbyLeftBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnLinkBugbyLeftBug",
@@ -1777,6 +1860,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseUnlinkBug",
     "methodType" : "DEACTION",
     "name" : "ReleaseUnlinkBug",
@@ -1792,6 +1876,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -1810,6 +1895,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Resolve",
     "methodType" : "DEACTION",
     "name" : "Resolve",
@@ -1825,6 +1911,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -1835,6 +1922,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -1845,6 +1933,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -1855,6 +1944,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
     "codeName" : "TestScript",
     "methodType" : "DEACTION",
     "name" : "TestScript",
@@ -1862,9 +1952,12 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/TestScript.json"
     },
-    "builtinMethod" : false
+    "scriptCode" : "var childrenbugs = entity.children(\"ZT_BUG\"); \nif(childrenbugs !=null){\nfor(var i=0 ;i< childrenbugs.length;i++){\nsys.info(childrenbugs[i].get(\"TITLE\"));\n}\n}\nentity.set(\"id\",100).wfstart();\nentity.set(\"status\",\"FINISH\").update();",
+    "builtinMethod" : false,
+    "customCode" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -1880,6 +1973,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkBug",
     "methodType" : "DEACTION",
     "name" : "UnlinkBug",
@@ -1895,6 +1989,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -1928,6 +2023,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyBug",
     "getPSDEDataSet" : {
@@ -1937,6 +2033,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyBugPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyBugPc",
     "getPSDEDataSet" : {
@@ -1946,6 +2043,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugsByBuild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugsByBuild",
     "getPSDEDataSet" : {
@@ -1955,6 +2053,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildBugs",
     "getPSDEDataSet" : {
@@ -1964,6 +2063,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildLinkResolvedBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "buildLinkResolvedBugs",
     "getPSDEDataSet" : {
@@ -1973,6 +2073,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildOpenBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildOpenBugs",
     "getPSDEDataSet" : {
@@ -1982,6 +2083,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBug",
     "getPSDEDataSet" : {
@@ -1991,6 +2093,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugModule",
     "getPSDEDataSet" : {
@@ -2000,6 +2103,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugModule_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugModule_Project",
     "getPSDEDataSet" : {
@@ -2009,6 +2113,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugOpenedBy",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugOpenedBy",
     "getPSDEDataSet" : {
@@ -2018,6 +2123,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugOpenedBy_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugOpenedBy_Project",
     "getPSDEDataSet" : {
@@ -2027,6 +2133,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugRES",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugRES",
     "getPSDEDataSet" : {
@@ -2036,6 +2143,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugRESOLVEDBY",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugRESOLVEDBY",
     "getPSDEDataSet" : {
@@ -2045,6 +2153,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugRESOLVEDBY_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugRESOLVEDBY_Project",
     "getPSDEDataSet" : {
@@ -2054,6 +2163,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugResolution_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugResolution_Project",
     "getPSDEDataSet" : {
@@ -2063,6 +2173,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugSeverity_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugSeverity_Project",
     "getPSDEDataSet" : {
@@ -2072,6 +2183,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugStatus_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugStatus_Project",
     "getPSDEDataSet" : {
@@ -2081,6 +2193,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBuildProduceBugType_Project",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BuildProduceBugType_Project",
     "getPSDEDataSet" : {
@@ -2090,6 +2203,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUserResolve",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUserResolve",
     "getPSDEDataSet" : {
@@ -2099,6 +2213,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -2108,6 +2223,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -2134,6 +2250,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAgentBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAgentBug",
     "getPSDEDataSet" : {
@@ -2143,6 +2260,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreate",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreate",
     "getPSDEDataSet" : {
@@ -2152,6 +2270,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
@@ -2161,6 +2280,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCurOpenedBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCurOpenedBug",
     "getPSDEDataSet" : {
@@ -2187,6 +2307,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReProduct",
     "getPSDEDataSet" : {
@@ -2196,6 +2317,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNotCurPlanLinkBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NotCurPlanLinkBug",
     "getPSDEDataSet" : {
@@ -2205,6 +2327,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductBugDS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductBugDS",
     "getPSDEDataSet" : {
@@ -2214,6 +2337,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectBugDS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectBugDS",
     "getPSDEDataSet" : {
@@ -2223,6 +2347,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectBugs",
     "getPSDEDataSet" : {
@@ -2232,6 +2357,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseBugs",
     "getPSDEDataSet" : {
@@ -2241,6 +2367,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseLeftBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLeftBugs",
     "getPSDEDataSet" : {
@@ -2250,6 +2377,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseLinkableLeftBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLinkableLeftBug",
     "getPSDEDataSet" : {
@@ -2259,6 +2387,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReleaseLinkableResolvedBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReleaseLinkableResolvedBug",
     "getPSDEDataSet" : {
@@ -2268,6 +2397,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchReportBugs",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ReportBugs",
     "getPSDEDataSet" : {
@@ -2277,6 +2407,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryFormBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryFormBug",
     "getPSDEDataSet" : {
@@ -2286,6 +2417,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskRelatedBug",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TaskBug",
     "getPSDEDataSet" : {

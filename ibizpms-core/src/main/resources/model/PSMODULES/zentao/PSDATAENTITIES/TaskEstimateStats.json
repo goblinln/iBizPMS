@@ -150,7 +150,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ActionMonth",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "日志月",
     "name" : "ActionMonth",
     "getPSDEDataQueries" : [ {
@@ -161,7 +160,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ActionYear",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "日志年",
     "name" : "ActionYear",
     "getPSDEDataQueries" : [ {
@@ -172,7 +170,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {

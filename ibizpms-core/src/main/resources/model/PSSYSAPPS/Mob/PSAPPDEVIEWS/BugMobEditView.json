@@ -517,7 +517,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "productname",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -566,7 +565,6 @@
               "value" : "product",
               "rawValue" : false
             } ],
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -649,7 +647,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "modulename1",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -677,7 +674,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "projectname",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -737,7 +733,6 @@
               "value" : "product",
               "rawValue" : false
             } ],
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -766,7 +761,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "title",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -798,7 +792,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__type.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -831,7 +824,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__severity.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -864,7 +856,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__pri.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -897,7 +888,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__os.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -930,7 +920,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__browser.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -959,7 +948,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "deadline",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -988,7 +976,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "repotype",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1020,7 +1007,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__status.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1053,7 +1039,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__resolution.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1082,7 +1067,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "resolveddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1115,7 +1099,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName_Gird.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -2863,7 +2846,6 @@
                       "getPSEditor" : {
                         "editorType" : "SPAN",
                         "name" : "date",
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -2885,7 +2867,6 @@
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
                         },
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -2908,7 +2889,6 @@
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__type.json"
                         },
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -2920,8 +2900,7 @@
                       "convertToCodeItemText" : true,
                       "hidden" : false,
                       "showCaption" : false
-                    } ],
-                    "showCaption" : true
+                    } ]
                   } ],
                   "mobilePanel" : true,
                   "name" : "mdctrl_itempanel",

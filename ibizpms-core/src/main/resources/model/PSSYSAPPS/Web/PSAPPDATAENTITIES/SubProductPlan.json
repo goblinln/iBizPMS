@@ -260,6 +260,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetPlanEnd",
     "methodType" : "DEACTION",
     "name" : "GetPlanEnd",
@@ -1166,6 +1167,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetPlanEnd",
     "methodType" : "DEACTION",
     "name" : "GetPlanEnd",

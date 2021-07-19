@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -46,6 +47,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -61,6 +63,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -95,6 +98,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -109,6 +113,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -127,6 +132,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -137,6 +143,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -153,6 +160,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "WizardCreate",
     "methodType" : "DEACTION",
     "name" : "WizardCreate",
@@ -181,6 +189,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAllList",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AllList",
     "getPSDEDataSet" : {
@@ -190,6 +199,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAllProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AllProduct",
     "getPSDEDataSet" : {
@@ -199,6 +209,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCheckNameOrCode",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CheckNameOrCode",
     "getPSDEDataSet" : {
@@ -208,6 +219,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurDefault",
     "getPSDEDataSet" : {
@@ -217,6 +229,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CURPROJECT",
     "getPSDEDataSet" : {
@@ -226,6 +239,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUer",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUer",
     "getPSDEDataSet" : {
@@ -235,6 +249,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -244,6 +259,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDeveloperQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DeveloperQuery",
     "getPSDEDataSet" : {
@@ -253,6 +269,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -279,6 +296,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenQuery",
     "getPSDEDataSet" : {
@@ -288,6 +306,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductManagerQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductManagerQuery",
     "getPSDEDataSet" : {
@@ -297,6 +316,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductPM",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductPM",
     "getPSDEDataSet" : {
@@ -306,6 +326,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductTeam",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductTeam",
     "getPSDEDataSet" : {
@@ -315,6 +336,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryCurProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryCURPROJECT",
     "getPSDEDataSet" : {
@@ -856,6 +878,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -870,6 +893,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "methodType" : "DEACTION",
     "name" : "Close",
@@ -885,6 +909,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -919,6 +944,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -933,6 +959,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -951,6 +978,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -961,6 +989,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -977,6 +1006,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "WizardCreate",
     "methodType" : "DEACTION",
     "name" : "WizardCreate",
@@ -1004,6 +1034,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAllList",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AllList",
     "getPSDEDataSet" : {
@@ -1013,6 +1044,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAllProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AllProduct",
     "getPSDEDataSet" : {
@@ -1022,6 +1054,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCheckNameOrCode",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CheckNameOrCode",
     "getPSDEDataSet" : {
@@ -1031,6 +1064,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurDefault",
     "getPSDEDataSet" : {
@@ -1040,6 +1074,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CURPROJECT",
     "getPSDEDataSet" : {
@@ -1049,6 +1084,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUer",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUer",
     "getPSDEDataSet" : {
@@ -1058,6 +1094,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -1067,6 +1104,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDeveloperQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DeveloperQuery",
     "getPSDEDataSet" : {
@@ -1076,6 +1114,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -1102,6 +1141,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenQuery",
     "getPSDEDataSet" : {
@@ -1111,6 +1151,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductManagerQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductManagerQuery",
     "getPSDEDataSet" : {
@@ -1120,6 +1161,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductPM",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductPM",
     "getPSDEDataSet" : {
@@ -1129,6 +1171,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductTeam",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductTeam",
     "getPSDEDataSet" : {
@@ -1138,6 +1181,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryCurProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryCURPROJECT",
     "getPSDEDataSet" : {

@@ -362,9 +362,7 @@
               "rawValue" : true
             } ],
             "valueItemName" : "product",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -566,9 +564,7 @@
               "viewType" : "DEPICKUPVIEW"
             },
             "valueItemName" : "module",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -726,9 +722,7 @@
               "rawValue" : true
             } ],
             "valueItemName" : "project",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -1355,9 +1349,7 @@
               "viewType" : "DEPICKUPVIEW"
             },
             "valueItemName" : "story",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -1471,9 +1463,7 @@
               "viewType" : "DEPICKUPVIEW"
             },
             "valueItemName" : "task",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
@@ -1568,9 +1558,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
             },
             "valueItemName" : "mailtopk",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,

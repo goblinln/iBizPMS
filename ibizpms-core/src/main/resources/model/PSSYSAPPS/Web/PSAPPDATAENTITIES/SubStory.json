@@ -459,6 +459,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetTaskReStory",
     "methodType" : "DEACTION",
     "name" : "GetTaskReStory",
@@ -473,6 +474,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -827,6 +829,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -1274,6 +1277,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreate",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreate",
     "getPSDEDataSet" : {
@@ -1283,6 +1287,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
@@ -1324,6 +1329,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReProduct",
     "getPSDEDataSet" : {
@@ -2509,6 +2515,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetTaskReStory",
     "methodType" : "DEACTION",
     "name" : "GetTaskReStory",
@@ -2523,6 +2530,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -2877,6 +2885,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ToStory",
     "methodType" : "DEACTION",
     "name" : "toStory",
@@ -3165,6 +3174,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreate",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreate",
     "getPSDEDataSet" : {
@@ -3174,6 +3184,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
@@ -3215,6 +3226,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReProduct",
     "getPSDEDataSet" : {

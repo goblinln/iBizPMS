@@ -38,7 +38,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "name",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -59,7 +58,6 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
         },
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -78,7 +76,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "addeddate",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -92,8 +89,7 @@
     } ],
     "getPSSysCss" : {
       "cssName" : "mob_list_card"
-    },
-    "showCaption" : true
+    }
   } ],
   "mobilePanel" : true,
   "modelid" : "8f7046f9c0cf4af4624340919966d9d9",

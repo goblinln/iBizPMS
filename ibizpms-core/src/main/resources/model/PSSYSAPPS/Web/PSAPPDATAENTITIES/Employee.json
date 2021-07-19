@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -46,6 +47,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -78,6 +80,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -92,6 +95,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -108,6 +112,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -118,6 +123,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -218,6 +224,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamM",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeamM",
     "getPSDEDataSet" : {
@@ -227,6 +234,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamMProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeamMProduct",
     "getPSDEDataSet" : {
@@ -236,6 +244,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamTaskUserTemp",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeamTaskUserTemp",
     "getPSDEDataSet" : {
@@ -245,6 +254,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamUserTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeamUserTask",
     "getPSDEDataSet" : {
@@ -254,6 +264,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectteamPk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectteamPk",
     "getPSDEDataSet" : {
@@ -263,6 +274,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryProductTeamPK",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryProductTeamChoice",
     "getPSDEDataSet" : {
@@ -501,6 +513,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -515,6 +528,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -547,6 +561,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -561,6 +576,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -577,6 +593,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -587,6 +604,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -686,6 +704,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamM",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeamM",
     "getPSDEDataSet" : {
@@ -695,6 +714,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamMProduct",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeamMProduct",
     "getPSDEDataSet" : {
@@ -704,6 +724,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamTaskUserTemp",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeamTaskUserTemp",
     "getPSDEDataSet" : {
@@ -713,6 +734,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTeamUserTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTeamUserTask",
     "getPSDEDataSet" : {
@@ -722,6 +744,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectteamPk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectteamPk",
     "getPSDEDataSet" : {
@@ -731,6 +754,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchStoryProductTeamPK",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "StoryProductTeamChoice",
     "getPSDEDataSet" : {

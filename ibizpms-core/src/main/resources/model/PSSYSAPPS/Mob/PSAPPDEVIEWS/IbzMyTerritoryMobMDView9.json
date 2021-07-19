@@ -131,8 +131,7 @@
             "colMD" : 4,
             "layout" : "TABLE_12COL"
           },
-          "rawContent" : "我的任务",
-          "showCaption" : true
+          "rawContent" : "我的任务"
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -140,7 +139,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "mytasks",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -166,8 +164,7 @@
             "colMD" : 4,
             "layout" : "TABLE_12COL"
           },
-          "rawContent" : "已延期任务",
-          "showCaption" : true
+          "rawContent" : "已延期任务"
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -175,7 +172,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "myetasks",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -201,8 +197,7 @@
             "colLG" : 4,
             "colMD" : 4,
             "layout" : "TABLE_12COL"
-          },
-          "showCaption" : true
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -210,7 +205,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "mybugs",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -236,8 +230,7 @@
             "colLG" : 4,
             "colMD" : 4,
             "layout" : "TABLE_12COL"
-          },
-          "showCaption" : true
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -245,7 +238,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "myebugs",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -271,8 +263,7 @@
             "colLG" : 4,
             "colMD" : 4,
             "layout" : "TABLE_12COL"
-          },
-          "showCaption" : true
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -280,7 +271,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "mystorys",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -306,8 +296,7 @@
             "colMD" : 4,
             "layout" : "TABLE_12COL"
           },
-          "rawContent" : "{{userCustom.mywork.noCloseProject}}",
-          "showCaption" : true
+          "rawContent" : "{{userCustom.mywork.noCloseProject}}"
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -315,7 +304,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "projects",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -341,8 +329,7 @@
             "colMD" : 4,
             "layout" : "TABLE_12COL"
           },
-          "rawContent" : "{{userCustom.mywork.deferredProjects}}",
-          "showCaption" : true
+          "rawContent" : "{{userCustom.mywork.deferredProjects}}"
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -350,7 +337,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "eprojects",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -376,8 +362,7 @@
             "colMD" : 4,
             "layout" : "TABLE_12COL"
           },
-          "rawContent" : "{{userCustom.mywork.noCloseProduct}}",
-          "showCaption" : true
+          "rawContent" : "{{userCustom.mywork.noCloseProduct}}"
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -385,7 +370,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "products",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -404,8 +388,7 @@
         } ],
         "getPSSysCss" : {
           "cssName" : "mob_list_card"
-        },
-        "showCaption" : true
+        }
       } ],
       "name" : "mdctrl_itempanel",
       "modelid" : "0112df3e0f06d503f67a36a631250f1b",

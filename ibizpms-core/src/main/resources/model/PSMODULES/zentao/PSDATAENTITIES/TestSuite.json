@@ -216,7 +216,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -228,7 +227,6 @@
     "enableFront" : true
   }, {
     "codeName" : "PublicTestSuite",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "公开套件",
     "name" : "PublicTestSuite",
     "getPSDEDataQueries" : [ {

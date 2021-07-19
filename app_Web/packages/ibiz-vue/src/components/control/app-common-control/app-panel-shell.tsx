@@ -51,6 +51,9 @@ export class AppPanelShell extends Vue {
             on: {
                 'ctrl-event': ({ controlname, action, data }: any) => {
                     this.ctrlEvent({ controlname, action, data });
+                },
+                'closeView': (args: any) => {
+                    this.$emit('closeView', args);
                 }
             }
         })

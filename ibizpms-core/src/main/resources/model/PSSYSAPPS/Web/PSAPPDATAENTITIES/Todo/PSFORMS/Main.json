@@ -630,8 +630,7 @@
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
             "editorType" : "RAW",
-            "name" : "formitem6",
-            "editable" : false
+            "name" : "formitem6"
           },
           "getPSLayoutPos" : {
             "colLG" : 4,
@@ -862,9 +861,7 @@
             "rawValue" : false
           } ],
           "valueItemName" : "idvalue",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : false,
           "forceSelection" : true,
           "showTrigger" : true,
@@ -958,9 +955,7 @@
             "rawValue" : false
           } ],
           "valueItemName" : "idvalue",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : false,
           "forceSelection" : true,
           "showTrigger" : true,
@@ -1054,9 +1049,7 @@
             "rawValue" : false
           } ],
           "valueItemName" : "idvalue",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : false,
           "forceSelection" : true,
           "showTrigger" : true,

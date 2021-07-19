@@ -140,7 +140,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -152,7 +151,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyWork",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的工作",
     "name" : "MyWork",
     "getPSDEDataQueries" : [ {
@@ -163,7 +161,6 @@
     "enableFront" : true
   }, {
     "codeName" : "PersonInfo",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "个人信息-个人贡献",
     "name" : "PersonInfo",
     "getPSDEDataQueries" : [ {

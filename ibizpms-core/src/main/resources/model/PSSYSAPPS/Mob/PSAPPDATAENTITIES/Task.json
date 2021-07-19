@@ -68,6 +68,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "CalcTime",
     "methodType" : "DEACTION",
     "name" : "CalcTime",
@@ -96,6 +97,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -128,6 +130,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ComputeHours4Multiple",
     "methodType" : "DEACTION",
     "name" : "computeHours4Multiple",
@@ -172,6 +175,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -187,6 +191,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -202,6 +207,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Delete",
     "methodType" : "DEACTION",
     "name" : "delete",
@@ -212,6 +218,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "DeleteEstimate",
     "methodType" : "DEACTION",
     "name" : "DeleteEstimate",
@@ -223,6 +230,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EditEstimate",
     "methodType" : "DEACTION",
     "name" : "EditEstimate",
@@ -288,6 +296,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -303,6 +312,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -318,6 +328,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetNextTeamUser",
     "methodType" : "DEACTION",
     "name" : "GetNextTeamUserFinish",
@@ -333,6 +344,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetTeamUserLeftActivity",
     "methodType" : "DEACTION",
     "name" : "GetTeamUserLeftActivity",
@@ -347,6 +359,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetTeamUserLeftStart",
     "methodType" : "DEACTION",
     "name" : "GetTeamUserLeftStart",
@@ -361,6 +374,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -376,6 +390,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -391,6 +406,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -409,6 +425,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "OtherUpdate",
     "methodType" : "DEACTION",
     "name" : "OtherUpdate",
@@ -442,6 +459,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "RecordEstimate",
     "methodType" : "DEACTION",
     "name" : "RecordEstimate",
@@ -457,6 +475,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "RecordTimZeroLeftAfterContinue",
     "methodType" : "DEACTION",
     "name" : "RecordTimZeroLeftAfterContinue",
@@ -467,6 +486,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "RecordTimateZeroLeft",
     "methodType" : "DEACTION",
     "name" : "RecordTimateZeroLeft",
@@ -477,6 +497,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "RecordTimateZeroLeftAfterStart",
     "methodType" : "DEACTION",
     "name" : "RecordTimateZeroLeftAfterStart",
@@ -507,6 +528,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -524,6 +546,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -559,6 +582,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -575,6 +599,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -585,6 +610,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -631,6 +657,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "TaskForward",
     "methodType" : "DEACTION",
     "name" : "taskForward",
@@ -677,6 +704,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateParentStatus",
     "methodType" : "DEACTION",
     "name" : "updateParentStatus",
@@ -691,6 +719,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -706,6 +735,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
@@ -876,6 +906,7 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAccount",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Account",
     "getPSDEDataSet" : {
@@ -885,6 +916,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyTask",
     "getPSDEDataSet" : {
@@ -894,6 +926,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyTaskPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyTaskPc",
     "getPSDEDataSet" : {
@@ -903,6 +936,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugTask",
     "getPSDEDataSet" : {
@@ -912,6 +946,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ByModule",
     "getPSDEDataSet" : {
@@ -921,6 +956,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildDefault",
     "getPSDEDataSet" : {
@@ -930,6 +966,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildDefaultMore",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildDefaultMore",
     "getPSDEDataSet" : {
@@ -939,6 +976,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildTask",
     "getPSDEDataSet" : {
@@ -948,6 +986,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildTaskTree",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildTaskTree",
     "getPSDEDataSet" : {
@@ -957,6 +996,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurFinishTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurFinishTask",
     "getPSDEDataSet" : {
@@ -1000,6 +1040,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaultRow",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DefaultRow",
     "getPSDEDataSet" : {
@@ -1009,6 +1050,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -1035,6 +1077,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMultipleTaskAction",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MultipleTaskAction",
     "getPSDEDataSet" : {
@@ -1044,6 +1087,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "My",
     "getPSDEDataSet" : {
@@ -1053,6 +1097,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAgentTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAgentTask",
     "getPSDEDataSet" : {
@@ -1062,6 +1107,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAllTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAllTask",
     "getPSDEDataSet" : {
@@ -1071,6 +1117,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCompleteTask",
     "getPSDEDataSet" : {
@@ -1080,6 +1127,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskMobDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCompleteTaskMobDaily",
     "getPSDEDataSet" : {
@@ -1089,6 +1137,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskMobMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCompleteTaskMobMonthly",
     "getPSDEDataSet" : {
@@ -1098,6 +1147,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskMonthlyZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCompleteTaskMonthlyZS",
     "getPSDEDataSet" : {
@@ -1107,6 +1157,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCompleteTaskZS",
     "getPSDEDataSet" : {
@@ -1116,6 +1167,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreate",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreate",
     "getPSDEDataSet" : {
@@ -1125,6 +1177,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
@@ -1134,6 +1187,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavorites",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyFavorites",
     "getPSDEDataSet" : {
@@ -1143,6 +1197,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyPlansTaskMobMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyPlansTaskMobMonthly",
     "getPSDEDataSet" : {
@@ -1152,6 +1207,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReProject",
     "getPSDEDataSet" : {
@@ -1161,6 +1217,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTomorrowPlanTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTomorrowPlanTask",
     "getPSDEDataSet" : {
@@ -1170,6 +1227,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTomorrowPlanTaskMobDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTomorrowPlanTaskMobDaily",
     "getPSDEDataSet" : {
@@ -1179,6 +1237,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNextWeekCompleteTaskMobZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NextWeekCompleteTaskMobZS",
     "getPSDEDataSet" : {
@@ -1188,6 +1247,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNextWeekCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NextWeekCompleteTaskZS",
     "getPSDEDataSet" : {
@@ -1197,6 +1257,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNextWeekPlanCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NextWeekPlanCompleteTask",
     "getPSDEDataSet" : {
@@ -1206,6 +1267,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchPlanTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "PlanTask",
     "getPSDEDataSet" : {
@@ -1215,6 +1277,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectAppTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectAppTask",
     "getPSDEDataSet" : {
@@ -1224,6 +1287,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTask",
     "getPSDEDataSet" : {
@@ -1250,6 +1314,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RootTask",
     "getPSDEDataSet" : {
@@ -1259,6 +1324,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskLinkPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TaskLinkPlan",
     "getPSDEDataSet" : {
@@ -1268,6 +1334,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchThisMonthCompleteTaskChoice",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ThisMonthCompleteTaskChoice",
     "getPSDEDataSet" : {
@@ -1277,6 +1344,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchThisWeekCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ThisWeekCompleteTask",
     "getPSDEDataSet" : {
@@ -1286,6 +1354,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchThisWeekCompleteTaskChoice",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ThisWeekCompleteTaskChoice",
     "getPSDEDataSet" : {
@@ -1295,6 +1364,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchThisWeekCompleteTaskMobZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ThisWeekCompleteTaskMobZS",
     "getPSDEDataSet" : {
@@ -1304,6 +1374,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchThisWeekCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ThisWeekCompleteTaskZS",
     "getPSDEDataSet" : {
@@ -1313,6 +1384,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTodoListTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TodoListTask",
     "getPSDEDataSet" : {
@@ -1322,6 +1394,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTypeGroupPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TypeGroupPlan",
     "getPSDEDataSet" : {
@@ -1964,6 +2037,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "CalcTime",
     "methodType" : "DEACTION",
     "name" : "CalcTime",
@@ -1992,6 +2066,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -2024,6 +2099,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ComputeHours4Multiple",
     "methodType" : "DEACTION",
     "name" : "computeHours4Multiple",
@@ -2068,6 +2144,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
@@ -2083,6 +2160,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
@@ -2098,6 +2176,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Delete",
     "methodType" : "DEACTION",
     "name" : "delete",
@@ -2108,6 +2187,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "DeleteEstimate",
     "methodType" : "DEACTION",
     "name" : "DeleteEstimate",
@@ -2119,6 +2199,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "EditEstimate",
     "methodType" : "DEACTION",
     "name" : "EditEstimate",
@@ -2184,6 +2265,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
@@ -2199,6 +2281,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
@@ -2214,6 +2297,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetNextTeamUser",
     "methodType" : "DEACTION",
     "name" : "GetNextTeamUserFinish",
@@ -2229,6 +2313,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetTeamUserLeftActivity",
     "methodType" : "DEACTION",
     "name" : "GetTeamUserLeftActivity",
@@ -2243,6 +2328,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "USERCUSTOM",
     "codeName" : "GetTeamUserLeftStart",
     "methodType" : "DEACTION",
     "name" : "GetTeamUserLeftStart",
@@ -2257,6 +2343,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
@@ -2272,6 +2359,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "BUILTIN",
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
@@ -2287,6 +2375,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
+    "actionType" : "DELOGIC",
     "codeName" : "GetUserConcat",
     "methodType" : "DEACTION",
     "name" : "GetUserConcat",
@@ -2305,6 +2394,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "OtherUpdate",
     "methodType" : "DEACTION",
     "name" : "OtherUpdate",
@@ -2338,6 +2428,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "RecordEstimate",
     "methodType" : "DEACTION",
     "name" : "RecordEstimate",
@@ -2353,6 +2444,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "RecordTimZeroLeftAfterContinue",
     "methodType" : "DEACTION",
     "name" : "RecordTimZeroLeftAfterContinue",
@@ -2363,6 +2455,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "RecordTimateZeroLeft",
     "methodType" : "DEACTION",
     "name" : "RecordTimateZeroLeft",
@@ -2373,6 +2466,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "RecordTimateZeroLeftAfterStart",
     "methodType" : "DEACTION",
     "name" : "RecordTimateZeroLeftAfterStart",
@@ -2403,6 +2497,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
@@ -2420,6 +2515,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
@@ -2455,6 +2551,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -2471,6 +2568,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
     "name" : "sendMessage",
@@ -2481,6 +2579,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "SendMsgPreProcess",
     "methodType" : "DEACTION",
     "name" : "sendMsgPreProcess",
@@ -2527,6 +2626,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "TaskForward",
     "methodType" : "DEACTION",
     "name" : "taskForward",
@@ -2573,6 +2673,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateParentStatus",
     "methodType" : "DEACTION",
     "name" : "updateParentStatus",
@@ -2587,6 +2688,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
@@ -2602,6 +2704,7 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
@@ -2617,6 +2720,7 @@
     "builtinMethod" : true
   }, {
     "codeName" : "FetchAccount",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Account",
     "getPSDEDataSet" : {
@@ -2626,6 +2730,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyTask",
     "getPSDEDataSet" : {
@@ -2635,6 +2740,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAssignedToMyTaskPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "AssignedToMyTaskPc",
     "getPSDEDataSet" : {
@@ -2644,6 +2750,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchBugTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BugTask",
     "getPSDEDataSet" : {
@@ -2653,6 +2760,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ByModule",
     "getPSDEDataSet" : {
@@ -2662,6 +2770,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildDefault",
     "getPSDEDataSet" : {
@@ -2671,6 +2780,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildDefaultMore",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildDefaultMore",
     "getPSDEDataSet" : {
@@ -2680,6 +2790,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildTask",
     "getPSDEDataSet" : {
@@ -2689,6 +2800,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildTaskTree",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildTaskTree",
     "getPSDEDataSet" : {
@@ -2698,6 +2810,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurFinishTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurFinishTask",
     "getPSDEDataSet" : {
@@ -2741,6 +2854,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaultRow",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DefaultRow",
     "getPSDEDataSet" : {
@@ -2750,6 +2864,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -2776,6 +2891,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMultipleTaskAction",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MultipleTaskAction",
     "getPSDEDataSet" : {
@@ -2785,6 +2901,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "My",
     "getPSDEDataSet" : {
@@ -2794,6 +2911,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAgentTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAgentTask",
     "getPSDEDataSet" : {
@@ -2803,6 +2921,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyAllTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyAllTask",
     "getPSDEDataSet" : {
@@ -2812,6 +2931,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCompleteTask",
     "getPSDEDataSet" : {
@@ -2821,6 +2941,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskMobDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCompleteTaskMobDaily",
     "getPSDEDataSet" : {
@@ -2830,6 +2951,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskMobMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCompleteTaskMobMonthly",
     "getPSDEDataSet" : {
@@ -2839,6 +2961,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskMonthlyZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCompleteTaskMonthlyZS",
     "getPSDEDataSet" : {
@@ -2848,6 +2971,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCompleteTaskZS",
     "getPSDEDataSet" : {
@@ -2857,6 +2981,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreate",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreate",
     "getPSDEDataSet" : {
@@ -2866,6 +2991,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
@@ -2875,6 +3001,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavorites",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyFavorites",
     "getPSDEDataSet" : {
@@ -2884,6 +3011,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyPlansTaskMobMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyPlansTaskMobMonthly",
     "getPSDEDataSet" : {
@@ -2893,6 +3021,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReProject",
     "getPSDEDataSet" : {
@@ -2902,6 +3031,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTomorrowPlanTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTomorrowPlanTask",
     "getPSDEDataSet" : {
@@ -2911,6 +3041,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyTomorrowPlanTaskMobDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyTomorrowPlanTaskMobDaily",
     "getPSDEDataSet" : {
@@ -2920,6 +3051,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNextWeekCompleteTaskMobZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NextWeekCompleteTaskMobZS",
     "getPSDEDataSet" : {
@@ -2929,6 +3061,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNextWeekCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NextWeekCompleteTaskZS",
     "getPSDEDataSet" : {
@@ -2938,6 +3071,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNextWeekPlanCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NextWeekPlanCompleteTask",
     "getPSDEDataSet" : {
@@ -2947,6 +3081,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchPlanTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "PlanTask",
     "getPSDEDataSet" : {
@@ -2956,6 +3091,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectAppTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectAppTask",
     "getPSDEDataSet" : {
@@ -2965,6 +3101,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTask",
     "getPSDEDataSet" : {
@@ -2991,6 +3128,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RootTask",
     "getPSDEDataSet" : {
@@ -3000,6 +3138,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskLinkPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TaskLinkPlan",
     "getPSDEDataSet" : {
@@ -3009,6 +3148,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchThisMonthCompleteTaskChoice",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ThisMonthCompleteTaskChoice",
     "getPSDEDataSet" : {
@@ -3018,6 +3158,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchThisWeekCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ThisWeekCompleteTask",
     "getPSDEDataSet" : {
@@ -3027,6 +3168,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchThisWeekCompleteTaskChoice",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ThisWeekCompleteTaskChoice",
     "getPSDEDataSet" : {
@@ -3036,6 +3178,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchThisWeekCompleteTaskMobZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ThisWeekCompleteTaskMobZS",
     "getPSDEDataSet" : {
@@ -3045,6 +3188,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchThisWeekCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ThisWeekCompleteTaskZS",
     "getPSDEDataSet" : {
@@ -3054,6 +3198,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTodoListTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TodoListTask",
     "getPSDEDataSet" : {
@@ -3063,6 +3208,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTypeGroupPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TypeGroupPlan",
     "getPSDEDataSet" : {
@@ -3072,6 +3218,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempAccount",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "Account",
     "getPSDEDataSet" : {
@@ -3082,6 +3229,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempAssignedToMyTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "AssignedToMyTask",
     "getPSDEDataSet" : {
@@ -3092,6 +3240,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempAssignedToMyTaskPc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "AssignedToMyTaskPc",
     "getPSDEDataSet" : {
@@ -3102,6 +3251,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempBugTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "BugTask",
     "getPSDEDataSet" : {
@@ -3112,6 +3262,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempByModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ByModule",
     "getPSDEDataSet" : {
@@ -3122,6 +3273,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempChildDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ChildDefault",
     "getPSDEDataSet" : {
@@ -3132,6 +3284,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempChildDefaultMore",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ChildDefaultMore",
     "getPSDEDataSet" : {
@@ -3142,6 +3295,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempChildTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ChildTask",
     "getPSDEDataSet" : {
@@ -3152,6 +3306,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempChildTaskTree",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ChildTaskTree",
     "getPSDEDataSet" : {
@@ -3162,6 +3317,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurFinishTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurFinishTask",
     "getPSDEDataSet" : {
@@ -3172,6 +3328,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurProjectTaskQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurProjectTaskQuery",
     "getPSDEDataSet" : {
@@ -3182,6 +3339,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -3192,6 +3350,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempDefaultRow",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DefaultRow",
     "getPSDEDataSet" : {
@@ -3202,6 +3361,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempESBulk",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ESBulk",
     "getPSDEDataSet" : {
@@ -3212,6 +3372,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMultipleTaskAction",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MultipleTaskAction",
     "getPSDEDataSet" : {
@@ -3222,6 +3383,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMy",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "My",
     "getPSDEDataSet" : {
@@ -3232,6 +3394,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyAgentTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyAgentTask",
     "getPSDEDataSet" : {
@@ -3242,6 +3405,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyAllTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyAllTask",
     "getPSDEDataSet" : {
@@ -3252,6 +3416,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyCompleteTask",
     "getPSDEDataSet" : {
@@ -3262,6 +3427,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyCompleteTaskMobDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyCompleteTaskMobDaily",
     "getPSDEDataSet" : {
@@ -3272,6 +3438,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyCompleteTaskMobMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyCompleteTaskMobMonthly",
     "getPSDEDataSet" : {
@@ -3282,6 +3449,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyCompleteTaskMonthlyZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyCompleteTaskMonthlyZS",
     "getPSDEDataSet" : {
@@ -3292,6 +3460,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyCompleteTaskZS",
     "getPSDEDataSet" : {
@@ -3302,6 +3471,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyCreate",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyCreate",
     "getPSDEDataSet" : {
@@ -3312,6 +3482,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyCreateOrPartake",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
@@ -3322,6 +3493,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyFavorites",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyFavorites",
     "getPSDEDataSet" : {
@@ -3332,6 +3504,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyPlansTaskMobMonthly",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyPlansTaskMobMonthly",
     "getPSDEDataSet" : {
@@ -3342,6 +3515,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyReProject",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyReProject",
     "getPSDEDataSet" : {
@@ -3352,6 +3526,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyTomorrowPlanTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyTomorrowPlanTask",
     "getPSDEDataSet" : {
@@ -3362,6 +3537,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempMyTomorrowPlanTaskMobDaily",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "MyTomorrowPlanTaskMobDaily",
     "getPSDEDataSet" : {
@@ -3372,6 +3548,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempNextWeekCompleteTaskMobZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "NextWeekCompleteTaskMobZS",
     "getPSDEDataSet" : {
@@ -3382,6 +3559,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempNextWeekCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "NextWeekCompleteTaskZS",
     "getPSDEDataSet" : {
@@ -3392,6 +3570,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempNextWeekPlanCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "NextWeekPlanCompleteTask",
     "getPSDEDataSet" : {
@@ -3402,6 +3581,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempPlanTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "PlanTask",
     "getPSDEDataSet" : {
@@ -3412,6 +3592,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempProjectAppTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectAppTask",
     "getPSDEDataSet" : {
@@ -3422,6 +3603,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempProjectTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectTask",
     "getPSDEDataSet" : {
@@ -3432,6 +3614,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempReportDS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ReportDS",
     "getPSDEDataSet" : {
@@ -3442,6 +3625,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempRootTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "RootTask",
     "getPSDEDataSet" : {
@@ -3452,6 +3636,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempTaskLinkPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "TaskLinkPlan",
     "getPSDEDataSet" : {
@@ -3462,6 +3647,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempThisMonthCompleteTaskChoice",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ThisMonthCompleteTaskChoice",
     "getPSDEDataSet" : {
@@ -3472,6 +3658,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempThisWeekCompleteTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ThisWeekCompleteTask",
     "getPSDEDataSet" : {
@@ -3482,6 +3669,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempThisWeekCompleteTaskChoice",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ThisWeekCompleteTaskChoice",
     "getPSDEDataSet" : {
@@ -3492,6 +3680,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempThisWeekCompleteTaskMobZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ThisWeekCompleteTaskMobZS",
     "getPSDEDataSet" : {
@@ -3502,6 +3691,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempThisWeekCompleteTaskZS",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ThisWeekCompleteTaskZS",
     "getPSDEDataSet" : {
@@ -3512,6 +3702,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempTodoListTask",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "TodoListTask",
     "getPSDEDataSet" : {
@@ -3522,6 +3713,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempTypeGroup",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "TypeGroup",
     "getPSDEDataSet" : {
@@ -3532,6 +3724,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempTypeGroupPlan",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "TypeGroupPlan",
     "getPSDEDataSet" : {

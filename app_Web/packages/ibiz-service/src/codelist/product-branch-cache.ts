@@ -1,4 +1,4 @@
-import { ProductBranchService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--产品平台（动态）_缓存
  *
@@ -94,7 +94,7 @@ export default class ProductBranch_Cache {
      * @type {ProductBranchService}
      * @memberof ProductBranch_Cache
      */
-    public productbranchService: ProductBranchService = new ProductBranchService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -135,18 +135,20 @@ export default class ProductBranch_Cache {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.productbranchService.FetchCurProduct(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('ProductBranch').then((service: any) => {
+                const promise: Promise<any> = service.FetchCurProduct(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

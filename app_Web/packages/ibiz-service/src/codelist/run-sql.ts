@@ -1,4 +1,4 @@
-import { PSSystemDBCfgService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--运行数据库
  *
@@ -93,7 +93,7 @@ export default class RunSQL {
      * @type {PSSystemDBCfgService}
      * @memberof RunSQL
      */
-    public pssystemdbcfgService: PSSystemDBCfgService = new PSSystemDBCfgService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class RunSQL {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.pssystemdbcfgService.FetchDefault(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('PSSystemDBCfg').then((service: any) => {
+                const promise: Promise<any> = service.FetchDefault(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

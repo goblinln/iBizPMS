@@ -1,4 +1,4 @@
-import { TestCaseStepService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--当前用例版本（动态）
  *
@@ -94,7 +94,7 @@ export default class CurCaseVersion {
      * @type {TestCaseStepService}
      * @memberof CurCaseVersion
      */
-    public testcasestepService: TestCaseStepService = new TestCaseStepService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -135,18 +135,20 @@ export default class CurCaseVersion {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.testcasestepService.FetchVersions(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('TestCaseStep').then((service: any) => {
+                const promise: Promise<any> = service.FetchVersions(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

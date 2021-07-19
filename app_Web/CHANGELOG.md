@@ -298,6 +298,34 @@
 
 更新地图显示，[4bc1cce5](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/4bc1cce55f12abfce2fd5ebbb4b84ae6a68cdae7)，[221402f7](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/221402f7f8f2328f49bba923c77f8265a94facb5)（by Shine-zwj）
 
+## 2021-07-08
+
+新增表格分组列支持，[36ec9ab2](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/36ec9ab2acbb5eb797878f9d745a199e4e6a509e)（by Mosher）
+
+新增时间范围表单编辑器，[424be7b7](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/424be7b7d986e641d410a5df652efffc75cfaeb9)（by RedPig97）
+
+新增数值范围编辑器，[54252964](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/54252964e7261b8631edbd66deda44892f983f94)（by Shine-zwj）
+
+更新复合表单项对时间选择器（新）的支持，[1cdec5ff](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/1cdec5ff4cce3b169bf53eb4713dac0fa95d366a)（by RedPig97）
+
+调整表格适配分组列绘制空白列，[0830876f](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/0830876f27b8a6c4bd0ee298a72bf62c4ab494e9)（by Mosher）
+
+更新表单项标签在下方的样式，[5e601a40](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/5e601a4061f2259ad6f9554e3975c40edd82bfbd)（by Mosher）
+
+更新内置MarkDown编辑器和代码编辑框，[491708e6](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/491708e636e74d280ab0f6b02231979a4d1618b2)（by Mosher）
+
+更新MarkDown编辑器和代码编辑框样式，[25076662](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/25076662bd76cb8de50c53b2da38bc3f9768f1b3)（by Mosher）
+
+更新数值范围编辑器样式，[4654c5b8](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/4654c5b814863031e34a7dad46c1e340704e0850)（by Shine-zwj）
+
+优化时间范围样式，[ab70e98b](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/ab70e98b764da247d7457024d46f5e7bf80a23e1)，[d21bc117](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/7d21bc117bb7e6ecbbd85092500e062bb51ae781)（by RedPig97）
+
+修复表格更新项逻辑，[7d2e5b9a](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/7d2e5b9a510202d079f3f5b40ef930bfb8cdca6c)（by KK）
+
+修复数据选择下拉视图样式，[d69f0cb1](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/d69f0cb1f5eebdec803377634982c002069e2ab5)（by RedPig97）
+
+修复嵌入选择视图样式，[5d604d11](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/5d604d11ea1ed2032ad4f1de664623137cb33486)（by RedPig97）
+
 ## 2021-07-09
 
 更新数据选择（下拉视图），[857df67a](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/857df67a33a9d95c0ab7cf907be72eb6344d69da)（by Shine-zwj）
@@ -368,6 +396,42 @@
 
 视图布局面板支持插件，样式调整，[b25175b9](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/b25175b95695a8823df96b40ca6c362ce01642f8)（by Mosher）
 
+## 2021-07-13
+
+新增vue-text-format插件，[7f19f662](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/7f19f6625c90626bd517ef3a5874003580b5cdcd)（by RedPig97）
+
+新增app-span解析值格式化逻辑，[a10b2bfa](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/a10b2bfa9592d75deb7d6b1ac3a6d315a1023ff5)（by RedPig97）
+
+新增表单值格式化，[f79bc361](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f79bc361ff7e89c65656c7ffe93c17e85548eca1)（by RedPig97）
+
+新增表格编辑项值格式化，[1be7b67d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/1be7b67d82f969fc5ab713c54bb268efc872ad83)（by RedPig97）
+
+新增表格数据项值格式化，[ad33e5ab](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/ad33e5abdf1c428cf87416853604e82c6a891d46)（by RedPig97）
+
+新增实体数据服务识别动态方法，[cb72214b](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/cb72214bf77e019ed4d81315144f35f44df42557)，（by tony）
+
+新增树视图节点样式表，[8861ea28](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/8861ea28362c67843a3f0b0e6be434d8c933e8dd)（by RedPig97）
+
+更新实体数据服务缓存机制，[18a31bd](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/18a31bdd4ec0bd25aafe28c14f02f17fee9b13c7)，[78a38401](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/78a38401df6be1e2ef41d3ee36582dd7646eb606)（by tony）
+
+更新表格选择数据改变的抛值名称，[2ac21084](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/2ac210849fffd2bb8cf1e20a46a1702cc4268dc3)（by Shine-zwj）
+
+更新部件代码，[355387bd](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/355387bd93a5b056d9c453b18b5ff995052ec55f)（by Shine-zwj）
+
+更新视图代码，[f82fe9a1](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f82fe9a1976523a45ae8642eda5eb278f155599c)（by Shine-zwj）
+
+更新表格聚合列逻辑、表格项逻辑，[f7ab6ae2](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f7ab6ae2a22f42e5f7c9f3d4a5f875f250c3cf5f)（by Mosher）
+
+调整表格列更新、表单编辑项更新逻辑，[2228c97e](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/1228c97e630387938391c0b8e23b4c88fcb66e98)（by Mosher）
+
+更新表单项更新逻辑，支持调用脚本模式，[3007c1a9](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/3007c1a9ef1fe15bd6108d4250baf9acccbc13dc)（by Mosher）
+
+更新视图消息服务转化视图消息模板逻辑，[143ee46c](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/143ee46c6f09fd3a26964c0f2eb3bf61c890eb9f)（by Mosher）
+
+更新表格获取聚合数据方法增加默认值，[316c1bcb](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/316c1bcbf5ba974539498c00a82d604f559ddcce)（by Mosher）
+
+优化表格行编辑样式，[98248b0c](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/98248b0cd34c70b544d0aa2d3014ee360870a29d)（by RedPig97）
+
 ## 2021-07-14
 
 优化树节点样式表位置，[373b8368](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/tree/373b836860651a0c068ec54ed6ca9f649f34bf70)（by RedPig97）
@@ -407,3 +471,47 @@
 更新视图布局面板标题栏、信息栏绘制逻辑，[78e280b0](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/tree/78e280b0180fa7708c45d0253fd5e96d9daff1fa)（by Mosher）
 
 调整视图布局面板类名添加逻辑、样式调整，[0f6ad77e](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/tree/0f6ad77ea9683eb027e90c87d998b38fbbb46ce1)（by Mosher）
+
+## 2021-07-15
+
+更新树提示信息及绑定样式表，[6311596e](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/6311596ebed47c0cdcad3daa516e33c716abffda)（by Shine-zwj）
+
+更新实体数据服务，[2e8fd8c0](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/2e8fd8c07c3565199f8cfedfe66905ae13146684)（by tony）
+
+更新锚点组件样式，[23dce9f9](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/23dce9f9f117b63b0cfdcf634f53b11bb42fe18b)（by Shine-zwj）
+
+更新实体数据服务基类，[c017594a](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/c017594a433659bdcfe8fe30c51b76714b4a8e69)（by tony）
+
+删除错误视图，[e6e24859](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/e6e24859f5b2aeeaf1d62d876eeee57752dfefca)（by Shine-zwj）
+
+新增组件国际化，[27afb4d8](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/27afb4d8f02c59abaddadb1f8bc7702af0dffe5f)（by RedPig97）
+
+取消弹出框关闭图标，[d449bea3](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/d449bea34972fdea8714301c62ed444d9610b3c9)（by RedPig97）
+
+优化弹出框标题显示逻辑，[4da606eb](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/4da606ebad4a5a48538faa6639cf371a0b027bd8)（by RedPig97）
+
+优化弹出框样式，[ce40c756](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/ce40c756f917b4b54c397bc038c1be324b646b17)（by RedPig97）
+
+新增地图Style2布局，[0e75992a](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/0e75992a9d3537db24181895d2b816703ce61817)，[502ecc00](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/502ecc00fdf8e1e12f0318993f08654d2410be0d)（by Shine-zwj）
+
+修复表单按钮垂直居中，[1dc8b987](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/1dc8b9872d326e9eacc5c77a2b1232ceb83467dd)（by RedPig97）
+
+新增实体属性处理逻辑计算值和默认值类型直接输入值（脚本方式），[aeea513e](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/aeea513e617ba636bc38f47e2c4888cdc8a0066a)（by tony）
+
+新增HTML视图default布局，[7c166175](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/7c166175288a11675edc937a7ac089aa892f12f8)（by Shine-zwj）
+
+修复值格式化不重复问题，[be5d2ff9](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/be5d2ff9ca78989ac4afd6f4814e7909de8b71b4)，[f84cbaa7](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f84cbaa70277df2d96cfc9485f2fd4f6ab08bec5)（by RedPig97）
+
+更新卡片视图与列表视图识别分页配置，[a7cc4991](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/a7cc4991bc159ebb220be98281eff9faf0448109)（by suzichen）
+
+修复日历视图无法取消选中的问题，[6ed723d9](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/6ed723d9a101e1c19c16ec84707ec6e516bece57)（by Mosher）
+
+修复表单项动态空输入逻辑导致表单值置空的问题，[f0ab0817](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f0ab081764ef4b09d91209611758b89e83f63605)（by Mosher）
+
+更新界面逻辑，[4f7de660](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/4f7de6603ce932520cbd754b623141d2f84d0567)，[539aed94](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/539aed941cc92397b080001396db808a87aecaa3)（by tony）
+
+## 2021-07-16
+
+新增数值框格式化支持，[948124c9](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/948124c94635b20c011c87869132a3e48248d30b)（by Mosher）
+
+更新支持编辑器样式表及删除多余层级，[21357ca5](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/21357ca5b0a9e23d7cc7833a8261037cd422d32d)（by Shine-zwj）

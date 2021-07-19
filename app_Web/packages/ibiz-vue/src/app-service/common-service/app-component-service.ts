@@ -155,6 +155,7 @@ export class AppComponentService {
         this.viewMap.set("DEREPORTVIEW_STYLE2",'app-style2-dereportview');
         this.viewMap.set("DEMAPEXPVIEW_STYLE2",'app-style2-mapexpview');
         this.viewMap.set("DEPANELVIEW_STYLE2",'app-style2-depanelview');
+        this.viewMap.set("DEMAPVIEW_STYLE2", 'app-style2-mapview');
         // STYLE3 样式
         this.viewMap.set("APPINDEXVIEW_STYLE3", 'app-style2-indexview');
         // STYLE4 样式

@@ -350,9 +350,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
               },
               "valueItemName" : "line",
-              "dropDownView" : false,
               "enableAC" : true,
-              "enableLinkView" : false,
               "enablePickupView" : false,
               "forceSelection" : true,
               "showTrigger" : true,

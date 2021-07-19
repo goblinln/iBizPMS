@@ -390,6 +390,10 @@ function getLocaleResourceBase(){
           myTasksLabel:'ToDo',
           myMsgsLabel:'Message',
         },
+        appmessagebox: {
+          ok: "OK",
+          cancel: "Cancel"
+        },
         diskFileUpload:{
           fileDrag: 'Drag the file here, or',
           clickUpload: 'Click on the upload',

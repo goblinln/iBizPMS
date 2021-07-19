@@ -61,10 +61,24 @@ export class AppDeLogicService {
         let actionContext = await this.beforeExecute(logic, context, data);
         // 自定义脚本代码
         if (logic && logic.customCode) {
-            if(logic.scriptCode){
-                eval(logic.scriptCode);
+            if (logic.scriptCode) {
+                if (logic && (logic as any)?.logicSubType && Object.is((logic as any).logicSubType, 'DEFIELD')) {
+                    // 适配计算值和默认值类型直接输入值
+                    if ((logic as any)?.dEFLogicMode && (Object.is((logic as any).dEFLogicMode, 'COMPUTE') || Object.is((logic as any).dEFLogicMode, 'DEFAULT'))) {
+                        const result: any = eval(logic.scriptCode);
+                        if ((result !== null) && (result !== undefined)) {
+                            if (logic.M?.getPSAppDEField?.codeName) {
+                                data[logic.M.getPSAppDEField.codeName.toLowerCase()] = result;
+                            }
+                        }
+                    } else {
+                        eval(logic.scriptCode);
+                    }
+                } else {
+                    eval(logic.scriptCode);
+                }
                 return data;
-            }else{
+            } else {
                 LogUtil.warn('自定义代码不能为空');
             }
         } else {

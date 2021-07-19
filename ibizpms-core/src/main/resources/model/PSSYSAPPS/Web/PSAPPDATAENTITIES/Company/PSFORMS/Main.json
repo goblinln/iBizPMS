@@ -157,7 +157,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "name",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -185,7 +184,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "phone",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -213,7 +211,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "fax",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -241,7 +238,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "address",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -269,7 +265,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "zipcode",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -297,7 +292,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "website",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -325,7 +319,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "backyard",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -357,7 +350,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Company__guest.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

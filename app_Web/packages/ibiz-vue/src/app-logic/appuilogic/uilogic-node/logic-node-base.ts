@@ -1,5 +1,5 @@
 import { Util, Verify } from "ibiz-core";
-import { IPSDEUILogicLink, IPSDEUILogicLinkCond, IPSDEUILogicLinkGroupCond } from "@ibiz/dynamic-model-api";
+import { IPSDEUILogicLink, IPSDEUILogicLinkCond, IPSDEUILogicLinkGroupCond, IPSDEUILogicLinkSingleCond } from "@ibiz/dynamic-model-api";
 import { UIActionContext } from "../uiaction-context";
 
 /**
@@ -42,35 +42,38 @@ export class AppUILogicNodeBase {
      * @memberof AppUILogicNodeBase
      */
     public computeCond(logicLinkCond: IPSDEUILogicLinkCond, actionContext: UIActionContext): any {
-        // TODO
-        // if (logicLinkCond.logicType == 'GROUP') {
-        //     const logicLinkGroupCond = logicLinkCond as IPSDELogicLinkGroupCond;
-        //     const childConds: any = logicLinkGroupCond.getPSDELogicLinkConds();
-        //     if (childConds?.length > 0) {
-        //         return Verify.logicForEach(
-        //             childConds,
-        //             (item: any) => {
-        //                 return this.computeCond(item, actionContext);
-        //             },
-        //             logicLinkGroupCond.groupOP,
-        //             !!logicLinkGroupCond.notMode,
-        //         );
-        //     }
-        // } else {
-        //     if (logicLinkCond.logicType == 'SINGLE') {
-        //         const logicLinkSingleCond = logicLinkCond as IPSDELogicLinkSingleCond
-        //         let dstLogicParam = actionContext.getParam(logicLinkSingleCond?.getDstLogicParam?.()?.codeName || actionContext.defaultParamName)
-        //         let dstValue = dstLogicParam[logicLinkSingleCond.dstFieldName.toLowerCase()]
-        //         let targetValue;
-        //         switch (logicLinkSingleCond.paramType) {
-        //             case 'CURTIME':
-        //                 targetValue = Util.dateFormat(new Date(), 'YYYY-MM-DD');
-        //                 break;
-        //             default:
-        //                 targetValue = logicLinkSingleCond.paramValue;
-        //         }
-        //         return Verify.testCond(dstValue, logicLinkSingleCond.condOP, targetValue)
-        //     }
-        // }
+        if (logicLinkCond.logicType == 'GROUP') {
+            const logicLinkGroupCond = logicLinkCond as IPSDEUILogicLinkGroupCond;
+            const childConds: any = logicLinkGroupCond.getPSDEUILogicLinkConds();
+            if (childConds?.length > 0) {
+                return Verify.logicForEach(
+                    childConds,
+                    (item: any) => {
+                        return this.computeCond(item, actionContext);
+                    },
+                    logicLinkGroupCond.groupOP,
+                    !!logicLinkGroupCond.notMode,
+                );
+            }
+        } else {
+            if (logicLinkCond.logicType == 'SINGLE') {
+                const logicLinkSingleCond = logicLinkCond as IPSDEUILogicLinkSingleCond;
+                let dstLogicParam = actionContext.getParam(logicLinkSingleCond?.getDstLogicParam?.()?.codeName || actionContext.defaultParamName)
+                let dstValue = dstLogicParam[logicLinkSingleCond.dstFieldName.toLowerCase()]
+                let targetValue;
+                if(logicLinkSingleCond.paramType){
+                    switch (logicLinkSingleCond.paramType) {
+                        case 'CURTIME':
+                            targetValue = Util.dateFormat(new Date(), 'YYYY-MM-DD');
+                            break;
+                        default:
+                            targetValue = logicLinkSingleCond.paramValue;
+                    }
+                }else{
+                    targetValue = logicLinkSingleCond.paramValue;
+                }
+                return Verify.testCond(dstValue, logicLinkSingleCond.condOP, targetValue)
+            }
+        }
     }
 }

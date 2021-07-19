@@ -61,12 +61,16 @@ export class AppDeLogicNodeBase {
                 let dstLogicParam = actionContext.getParam(logicLinkSingleCond?.getDstLogicParam?.()?.codeName || actionContext.defaultParamName)
                 let dstValue = dstLogicParam[logicLinkSingleCond.dstFieldName.toLowerCase()]
                 let targetValue;
-                switch (logicLinkSingleCond.paramType) {
-                    case 'CURTIME':
-                        targetValue = Util.dateFormat(new Date(), 'YYYY-MM-DD');
-                        break;
-                    default:
-                        targetValue = logicLinkSingleCond.paramValue;
+                if(logicLinkSingleCond.paramType){
+                    switch (logicLinkSingleCond.paramType) {
+                        case 'CURTIME':
+                            targetValue = Util.dateFormat(new Date(), 'YYYY-MM-DD');
+                            break;
+                        default:
+                            targetValue = logicLinkSingleCond.paramValue;
+                    }
+                }else{
+                    targetValue = logicLinkSingleCond.paramValue;
                 }
                 return Verify.testCond(dstValue, logicLinkSingleCond.condOP, targetValue)
             }

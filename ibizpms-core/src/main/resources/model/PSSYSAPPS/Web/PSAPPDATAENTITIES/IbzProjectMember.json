@@ -166,6 +166,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDeveloperQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DeveloperQuery",
     "getPSDEDataSet" : {
@@ -175,6 +176,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenByQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenByQuery",
     "getPSDEDataSet" : {
@@ -184,6 +186,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenQuery",
     "getPSDEDataSet" : {
@@ -438,6 +441,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDeveloperQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DeveloperQuery",
     "getPSDEDataSet" : {
@@ -447,6 +451,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenByQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenByQuery",
     "getPSDEDataSet" : {
@@ -456,6 +461,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchOpenQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "OpenQuery",
     "getPSDEDataSet" : {

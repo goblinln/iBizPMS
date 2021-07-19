@@ -289,14 +289,17 @@ export class AppFormBase extends EditFormControlBase {
     public renderRawitem(modelJson: IPSDEFormRawItem, index: number): any {
         const data: any = this.data;
         let { rawItemHeight, rawItemWidth, contentType, htmlContent, rawContent } = modelJson;
-        let sysCss = modelJson.getPSSysCss();
-        let sysImage = modelJson.getPSSysImage();
-        let sizeStyle = rawItemHeight > 0 && rawItemWidth > 0 ? { width: `${rawItemWidth}px`, height: `${rawItemHeight}px` } : '';
+        let sysCssName = modelJson.getPSSysCss()?.cssName;
+        let sysImage = modelJson.getPSSysImage()?.cssClass;
+        const style: any = {
+            width: rawItemWidth > 0 ? `${rawItemWidth}px` : false,
+            height: rawItemHeight > 0 ? `${rawItemHeight}px` :false,
+        }
         if (rawContent) {
-            const items = rawContent?.match(/\{{(.+?)\}}/g);
+            const items = rawContent.match(/\{{(.+?)\}}/g);
             if (items) {
-                items?.forEach((item: string) => {
-                    rawContent = rawContent?.replace(/\{{(.+?)\}}/, eval(item?.substring(2, item?.length - 2)));
+                items.forEach((item: string) => {
+                    rawContent = rawContent.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
                 });
             }
         }
@@ -307,15 +310,15 @@ export class AppFormBase extends EditFormControlBase {
         });
         return (
             <app-rawitem
+                class={sysCssName}
+                style={style}
                 viewparams={this.viewparams}
                 context={this.context}
-                contentStyle={sysCss?.cssName}
-                sizeStyle={sizeStyle}
                 contentType={contentType}
-                imageClass={sysImage?.cssClass}
+                imageClass={sysImage}
                 htmlContent={htmlContent}
             >
-                {Object.is(contentType, 'RAW') ? tempNode : null}
+                {Object.is(contentType, 'RAW') && tempNode}
             </app-rawitem>
         );
     }

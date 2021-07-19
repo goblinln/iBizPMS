@@ -11,6 +11,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -45,6 +46,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -79,6 +81,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/GetProducts.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -100,6 +103,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -120,6 +124,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendTodoTask.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     }, {
@@ -131,6 +136,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -213,6 +219,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -233,6 +240,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -312,6 +320,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -362,6 +371,7 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -1769,7 +1779,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Account",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "指定用户数据",
     "name" : "Account",
     "getPSDEDataQueries" : [ {
@@ -1780,7 +1789,6 @@
     "enableFront" : true
   }, {
     "codeName" : "AssignedToMyBug",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "指派给我Bug",
     "name" : "AssignedToMyBug",
     "getPSDEDataQueries" : [ {
@@ -1791,7 +1799,6 @@
     "enableFront" : true
   }, {
     "codeName" : "AssignedToMyBugPc",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "指派给我Bug（PC）",
     "name" : "AssignedToMyBugPc",
     "getPSDEDataQueries" : [ {
@@ -1802,7 +1809,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BugsByBuild",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "版本关联bug(遗留的)",
     "name" : "BugsByBuild",
     "getPSDEDataQueries" : [ {
@@ -1813,7 +1819,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildBugs",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "版本关联Bug（已解决）",
     "name" : "BuildBugs",
     "getPSDEDataQueries" : [ {
@@ -1824,7 +1829,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildLinkResolvedBugs",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "版本可关联的已解决的Bugs集合",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -1840,7 +1844,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildOpenBugs",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "版本关联Bug（已解决）",
     "name" : "BuildOpenBugs",
     "getPSDEDataQueries" : [ {
@@ -1851,7 +1854,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBug",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug",
     "name" : "BuildProduceBug",
     "getPSDEDataQueries" : [ {
@@ -1862,7 +1864,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugModule",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug",
     "name" : "BuildProduceBugModule",
     "getPSDEDataQueries" : [ {
@@ -1873,7 +1874,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugModule_Project",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug-创建者分布(项目)",
     "name" : "BuildProduceBugModule_Project",
     "getPSDEDataQueries" : [ {
@@ -1884,7 +1884,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugOpenedBy",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug-创建分类",
     "name" : "BuildProduceBugOpenedBy",
     "getPSDEDataQueries" : [ {
@@ -1895,7 +1894,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugOpenedBy_Project",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug-创建者分布(项目)",
     "name" : "BuildProduceBugOpenedBy_Project",
     "getPSDEDataQueries" : [ {
@@ -1906,7 +1904,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugRES",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug（已解决）",
     "name" : "BuildProduceBugRES",
     "getPSDEDataQueries" : [ {
@@ -1917,7 +1914,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugRESOLVEDBY",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug-解决者分布",
     "name" : "BuildProduceBugRESOLVEDBY",
     "getPSDEDataQueries" : [ {
@@ -1928,7 +1924,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugRESOLVEDBY_Project",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug-解决者分布(项目)",
     "name" : "BuildProduceBugRESOLVEDBY_Project",
     "getPSDEDataQueries" : [ {
@@ -1939,7 +1934,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugResolution_Project",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug-解决方案分布(项目)",
     "name" : "BuildProduceBugResolution_Project",
     "getPSDEDataQueries" : [ {
@@ -1950,7 +1944,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugSeverity_Project",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug-严重程度分布(项目)",
     "name" : "BuildProduceBugSeverity_Project",
     "getPSDEDataQueries" : [ {
@@ -1961,7 +1954,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugStatus_Project",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug-状态分布(项目)",
     "name" : "BuildProduceBugStatus_Project",
     "getPSDEDataQueries" : [ {
@@ -1972,7 +1964,6 @@
     "enableFront" : true
   }, {
     "codeName" : "BuildProduceBugType_Project",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "Build产生的Bug-类型分布(项目)",
     "name" : "BuildProduceBugType_Project",
     "getPSDEDataQueries" : [ {
@@ -1983,7 +1974,6 @@
     "enableFront" : true
   }, {
     "codeName" : "CurUserResolve",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "当前用户解决的Bug",
     "name" : "CurUserResolve",
     "getPSDEDataQueries" : [ {
@@ -1994,7 +1984,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -2006,7 +1995,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ESBulk",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "ES批量的导入",
     "name" : "ESBulk",
     "getPSDEDataQueries" : [ {
@@ -2017,7 +2005,6 @@
     "enableFront" : true
   }, {
     "codeName" : "My",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的数据",
     "name" : "My",
     "getPSDEDataQueries" : [ {
@@ -2028,7 +2015,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyAgentBug",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我代理的Bug",
     "name" : "MyAgentBug",
     "getPSDEDataQueries" : [ {
@@ -2039,7 +2025,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyCreate",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我创建的（权限）",
     "name" : "MyCreate",
     "getPSDEDataQueries" : [ {
@@ -2050,7 +2035,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyCreateOrPartake",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我创建或参与（权限）",
     "name" : "MyCreateOrPartake",
     "getPSDEDataQueries" : [ {
@@ -2061,7 +2045,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyCurOpenedBug",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "累计创建的Bug数",
     "name" : "MyCurOpenedBug",
     "getPSDEDataQueries" : [ {
@@ -2072,7 +2055,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyFavorites",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
     "getPSDEDataQueries" : [ {
@@ -2083,7 +2065,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyReProduct",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我相关的产品（权限）",
     "name" : "MyReProduct",
     "getPSDEDataQueries" : [ {
@@ -2094,7 +2075,6 @@
     "enableFront" : true
   }, {
     "codeName" : "NotCurPlanLinkBug",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "计划关联bug（去除已关联）",
     "majorSortDir" : "DESC",
     "getMajorSortPSDEField" : {
@@ -2110,7 +2090,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProductBugDS",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "产品BUG",
     "name" : "ProductBugDS",
     "getPSDEDataQueries" : [ {
@@ -2121,7 +2100,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectBugDS",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "项目BUG",
     "name" : "ProjectBugDS",
     "getPSDEDataQueries" : [ {
@@ -2132,7 +2110,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ProjectBugs",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "遗留得Bug(项目)",
     "name" : "ProjectBugs",
     "getPSDEDataQueries" : [ {
@@ -2143,7 +2120,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ReleaseBugs",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "发布关联Bug（已解决）",
     "name" : "ReleaseBugs",
     "getPSDEDataQueries" : [ {
@@ -2154,7 +2130,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ReleaseLeftBugs",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "发布关联Bug（已解决）",
     "name" : "ReleaseLeftBugs",
     "getPSDEDataQueries" : [ {
@@ -2165,7 +2140,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ReleaseLinkableLeftBug",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "发布可关联的bug（遗留）",
     "name" : "ReleaseLinkableLeftBug",
     "getPSDEDataQueries" : [ {
@@ -2176,7 +2150,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ReleaseLinkableResolvedBug",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "发布可关联的bug（已解决）",
     "name" : "ReleaseLinkableResolvedBug",
     "getPSDEDataQueries" : [ {
@@ -2187,7 +2160,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ReportBugs",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "发布关联Bug（未解决）",
     "name" : "ReportBugs",
     "getPSDEDataQueries" : [ {
@@ -2198,7 +2170,6 @@
     "enableFront" : true
   }, {
     "codeName" : "StoryFormBug",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "需求来源Bug",
     "name" : "StoryFormBug",
     "getPSDEDataQueries" : [ {
@@ -2209,7 +2180,6 @@
     "enableFront" : true
   }, {
     "codeName" : "TaskRelatedBug",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "任务相关bug",
     "name" : "TaskBug",
     "getPSDEDataQueries" : [ {

@@ -265,7 +265,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "estimate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -296,7 +295,6 @@
             "editorType" : "SPAN",
             "name" : "consumed",
             "precision" : 2,
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -327,7 +325,6 @@
             "editorType" : "SPAN",
             "name" : "left",
             "precision" : 2,
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -357,7 +354,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "eststarted",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -386,7 +382,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "realstarted",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -415,7 +410,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "deadline",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -458,7 +452,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "delay",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

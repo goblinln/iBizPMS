@@ -4,6 +4,7 @@
       v-if="type === 'number'"
       :id="numberId"
       :placeholder="placeholder"
+      :formatter="numberFormat"
       :size="size"
       :precision="precision"
       v-model="CurrentVal"
@@ -125,6 +126,14 @@ export default class InputBox extends Vue {
   @Prop() public autoSize?: any;
 
   /**
+   * 数值格式化
+   *
+   * @type {string}
+   * @memberof InputBox
+   */
+  @Prop() public valueFormat?: any;
+
+  /**
    * 数值框numberId
    */
   public numberId: string = this.$util.createUUID();
@@ -176,6 +185,23 @@ export default class InputBox extends Vue {
       return;
     }
     return $event;
+  }
+
+  /**
+   * 数值值格式化
+   *
+   * @param {*} value
+   * @memberof InputBox
+   */
+  public numberFormat(value: any) {
+    if (!this.valueFormat) {
+      return value;
+    }
+    const _this: any = this;
+    if (!isNaN(parseFloat(value)) && _this.textFormat && _this.textFormat instanceof Function) {
+      return _this.textFormat(parseFloat(value), _this.valueFormat);
+    }
+    return value;
   }
 }
 </script>

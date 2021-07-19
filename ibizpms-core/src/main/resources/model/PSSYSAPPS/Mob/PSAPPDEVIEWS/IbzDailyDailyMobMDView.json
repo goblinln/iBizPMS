@@ -179,7 +179,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__pri.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -198,7 +197,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -220,7 +218,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__status.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -260,8 +257,7 @@
               "value" : "closed"
             } ],
             "notMode" : false
-          } ],
-          "showCaption" : true
+          } ]
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "RAWITEM",
@@ -284,8 +280,7 @@
               "value" : "closed"
             } ],
             "notMode" : false
-          } ],
-          "showCaption" : true
+          } ]
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "RAWITEM",
@@ -307,8 +302,7 @@
               "name" : "assignedto 值为空(Nil)"
             } ],
             "notMode" : false
-          } ],
-          "showCaption" : true
+          } ]
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -320,7 +314,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -339,7 +332,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "left",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -355,8 +347,7 @@
         } ],
         "getPSSysCss" : {
           "cssName" : "mob_list_card"
-        },
-        "showCaption" : true
+        }
       } ],
       "mobilePanel" : true,
       "name" : "mdctrl_itempanel",

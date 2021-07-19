@@ -220,7 +220,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "personname",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -248,7 +247,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "username",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -301,7 +299,6 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
         },
         "valueItemName" : "postid",
-        "dropDownView" : false,
         "editable" : false,
         "enableAC" : false,
         "enableLinkView" : true,

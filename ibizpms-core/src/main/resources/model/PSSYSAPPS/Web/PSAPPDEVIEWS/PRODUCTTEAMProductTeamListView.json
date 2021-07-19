@@ -331,7 +331,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -354,7 +353,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "role",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -402,13 +400,11 @@
             "getPSSysCss" : {
               "cssName" : "team-wszrole"
             },
-            "rawContent" : "未设置角色",
-            "showCaption" : true
+            "rawContent" : "未设置角色"
           } ],
           "getPSSysCss" : {
             "cssName" : "team-fontsize"
-          },
-          "showCaption" : true
+          }
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "CONTAINER",
@@ -431,8 +427,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
-            "rawContent" : "加盟日",
-            "showCaption" : true
+            "rawContent" : "加盟日"
           }, {
             "caption" : "加盟日",
             "itemStyle" : "DEFAULT",
@@ -441,7 +436,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "join",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -464,8 +458,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
-            "rawContent" : "可用工日",
-            "showCaption" : true
+            "rawContent" : "可用工日"
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "FIELD",
@@ -473,7 +466,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "days",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -484,8 +476,7 @@
             "viewFieldName" : "days",
             "hidden" : false,
             "showCaption" : false
-          } ],
-          "showCaption" : false
+          } ]
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "CONTAINER",
@@ -508,8 +499,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
-            "rawContent" : "可用工时/天",
-            "showCaption" : true
+            "rawContent" : "可用工时/天"
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "FIELD",
@@ -517,7 +507,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "hours",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -540,8 +529,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
-            "rawContent" : "总计",
-            "showCaption" : true
+            "rawContent" : "总计"
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "FIELD",
@@ -549,7 +537,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "total",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -562,8 +549,7 @@
             "viewFieldName" : "total",
             "hidden" : false,
             "showCaption" : false
-          } ],
-          "showCaption" : false
+          } ]
         }, {
           "contentType" : "RAW",
           "itemStyle" : "DEFAULT",
@@ -576,8 +562,7 @@
             "colXS" : 2,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "消耗",
-          "showCaption" : true
+          "rawContent" : "消耗"
         }, {
           "caption" : "消耗",
           "itemStyle" : "DEFAULT",
@@ -586,7 +571,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "consumed",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -611,8 +595,7 @@
             "colXS" : 3,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "剩余",
-          "showCaption" : true
+          "rawContent" : "剩余"
         }, {
           "caption" : "剩余工时",
           "itemStyle" : "DEFAULT",
@@ -621,7 +604,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "left",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -646,8 +628,7 @@
             "colXS" : 3,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "预计",
-          "showCaption" : true
+          "rawContent" : "预计"
         }, {
           "caption" : "最初预计",
           "itemStyle" : "DEFAULT",
@@ -656,7 +637,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "estimate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -731,10 +711,8 @@
               "reloadData" : true,
               "id" : "RemoveMember@PRODUCTTEAM"
             },
-            "tooltip" : "移除",
-            "showCaption" : false
-          } ],
-          "showCaption" : false
+            "tooltip" : "移除"
+          } ]
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
@@ -750,8 +728,7 @@
           "viewFieldName" : "id",
           "hidden" : true,
           "showCaption" : false
-        } ],
-        "showCaption" : true
+        } ]
       } ],
       "name" : "list_itempanel",
       "modelid" : "15be549f61f1836de62de98217a2766a",

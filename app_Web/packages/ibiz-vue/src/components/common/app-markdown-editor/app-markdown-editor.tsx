@@ -40,7 +40,7 @@ export default class AppMarkdownEditor extends Vue {
      * @type {*}
      * @memberof AppMarkdownEditor
      */
-    @Prop({ default: 'EDIT' }) public mode?: 'EDIT' | 'PREVIEW' | 'SUBFIELD';
+    @Prop({ default: 'EDIT' }) public mode?: 'EDIT' | 'PREVIEW' | 'SUBFIELD' | 'PREVIEWONLY';
 
     /**
      * 是否显示工具栏
@@ -220,16 +220,16 @@ export default class AppMarkdownEditor extends Vue {
                 class="app-mavon-editor"
                 v-model={this.curVal}
                 defaultOpen={this.mode != 'EDIT' ? 'preview' : this.defaultOpen}
-                subfield={this.mode != 'PREVIEW' && this.subfield}
+                subfield={this.mode == 'SUBFIELD' && this.subfield}
                 autofocus={false}
-                toolbarsFlag={this.mode != 'PREVIEW' && this.showToolbar}
+                toolbarsFlag={this.mode != 'PREVIEWONLY' && this.showToolbar}
                 navigation={this.mode != 'PREVIEW' && this.showCatalog}
                 shortCut={this.mode != 'PREVIEW' && this.shortCut}
                 fontSize={`${this.fontSize}px`}
                 placeholder={this.placeholder}
                 toolbars={this.toolbars}
                 language={this.locale}
-                editable={this.mode == 'PREVIEW' ? false : !this.disabled}
+                editable={this.mode == 'PREVIEWONLY' ? false : !this.disabled}
                 ishljs={this.highLight}
                 boxShadow={this.boxShadow} />
         );

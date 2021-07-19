@@ -374,7 +374,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "id",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -417,7 +416,6 @@
                         "pluginType" : "EDITOR_CUSTOMSTYLE",
                         "pluginCode" : "colorspan"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -523,7 +521,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "precondition",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -5713,7 +5710,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "productname",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -5795,7 +5791,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "modulename1",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -5861,7 +5856,6 @@
                         "rawValue" : true
                       } ],
                       "valueItemName" : "story",
-                      "dropDownView" : false,
                       "editable" : false,
                       "enableAC" : false,
                       "enableLinkView" : true,
@@ -5900,7 +5894,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__type.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -5933,7 +5926,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__stage.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -5967,7 +5959,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__pri.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -6002,7 +5993,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__status.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -6031,7 +6021,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "lastrundate",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -6064,7 +6053,6 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__result.json"
                       },
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -6093,7 +6081,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "keywords",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -6121,7 +6108,6 @@
                     "getPSEditor" : {
                       "editorType" : "SPAN",
                       "name" : "linkcase",
-                      "editable" : false,
                       "enableLinkView" : false
                     },
                     "getPSLayoutPos" : {
@@ -6177,7 +6163,6 @@
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
                         },
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -6207,7 +6192,6 @@
                       "getPSEditor" : {
                         "editorType" : "SPAN",
                         "name" : "openeddate",
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -6241,7 +6225,6 @@
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
                         },
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -6271,7 +6254,6 @@
                       "getPSEditor" : {
                         "editorType" : "SPAN",
                         "name" : "lastediteddate",
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {

@@ -123,7 +123,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -135,7 +134,6 @@
     "enableFront" : true
   }, {
     "codeName" : "GETWOERKLOAD",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "获取员工负载表",
     "name" : "GETWOERKLOAD",
     "getPSDEDataQueries" : [ {

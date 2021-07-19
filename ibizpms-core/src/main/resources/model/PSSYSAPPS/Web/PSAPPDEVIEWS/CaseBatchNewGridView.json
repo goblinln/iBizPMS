@@ -669,9 +669,7 @@
           "viewType" : "DEPICKUPVIEW"
         },
         "valueItemName" : "module",
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : true,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -783,9 +781,7 @@
           "viewType" : "DEPICKUPVIEW"
         },
         "valueItemName" : "story",
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : true,
         "forceSelection" : true,
         "showTrigger" : true,

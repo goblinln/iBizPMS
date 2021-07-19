@@ -1,4 +1,4 @@
-import { ProjectService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--项目（动态）
  *
@@ -93,7 +93,7 @@ export default class ProjectCodeList {
      * @type {ProjectService}
      * @memberof ProjectCodeList
      */
-    public projectService: ProjectService = new ProjectService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class ProjectCodeList {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.projectService.FetchCurProduct(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('Project').then((service: any) => {
+                const promise: Promise<any> = service.FetchCurProduct(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

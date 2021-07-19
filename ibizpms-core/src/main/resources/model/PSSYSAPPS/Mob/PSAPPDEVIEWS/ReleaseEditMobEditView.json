@@ -352,7 +352,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "productname",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -470,7 +469,6 @@
               },
               "dropDownView" : true,
               "enableAC" : true,
-              "enableLinkView" : false,
               "enablePickupView" : true,
               "forceSelection" : true,
               "showTrigger" : true,

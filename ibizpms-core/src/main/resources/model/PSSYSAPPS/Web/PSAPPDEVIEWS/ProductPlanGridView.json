@@ -1558,7 +1558,6 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Date_disable.json"
         },
-        "editable" : false,
         "enableLinkView" : false
       },
       "allowEmpty" : true,
@@ -1634,9 +1633,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
         },
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : false,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -1683,9 +1680,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
         },
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : false,
         "forceSelection" : true,
         "showTrigger" : true,

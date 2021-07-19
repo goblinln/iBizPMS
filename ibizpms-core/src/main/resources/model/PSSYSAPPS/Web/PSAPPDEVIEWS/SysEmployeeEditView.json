@@ -285,7 +285,6 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysOrganization.json"
           },
           "valueItemName" : "orgid",
-          "dropDownView" : false,
           "editable" : false,
           "enableAC" : false,
           "enableLinkView" : true,
@@ -320,7 +319,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "mdeptname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -348,7 +346,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "personname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -376,7 +373,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "nickname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -404,7 +400,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "sex",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -432,7 +427,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "phone",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

@@ -317,7 +317,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/SysOperator.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -346,7 +345,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "createdate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -379,7 +377,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/SysOperator.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -408,7 +405,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "updatedate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

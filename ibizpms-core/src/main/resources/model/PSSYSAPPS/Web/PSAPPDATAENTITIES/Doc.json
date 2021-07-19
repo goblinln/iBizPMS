@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -136,6 +137,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "OnlyCollectDoc",
     "methodType" : "DEACTION",
     "name" : "OnlyCollectDoc",
@@ -150,6 +152,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "OnlyUnCollectDoc",
     "methodType" : "DEACTION",
     "name" : "OnlyUnCollectDoc",
@@ -184,6 +187,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -231,6 +235,7 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchChildDocLibDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildDocLibDoc",
     "getPSDEDataSet" : {
@@ -240,6 +245,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -249,6 +255,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocLibAndDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocLibAndDoc",
     "getPSDEDataSet" : {
@@ -258,6 +265,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocLibDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocLibDoc",
     "getPSDEDataSet" : {
@@ -267,6 +275,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocModuleDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocModuleDoc",
     "getPSDEDataSet" : {
@@ -276,6 +285,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocStatus",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocStatus",
     "getPSDEDataSet" : {
@@ -302,6 +312,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchModuleDocChild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ModuleDocChild",
     "getPSDEDataSet" : {
@@ -345,6 +356,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavouritesOnlyDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyFavouritesOnlyDoc",
     "getPSDEDataSet" : {
@@ -354,6 +366,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNotRootDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NotRootDoc",
     "getPSDEDataSet" : {
@@ -616,6 +629,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -720,6 +734,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "OnlyCollectDoc",
     "methodType" : "DEACTION",
     "name" : "OnlyCollectDoc",
@@ -734,6 +749,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "OnlyUnCollectDoc",
     "methodType" : "DEACTION",
     "name" : "OnlyUnCollectDoc",
@@ -768,6 +784,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -814,6 +831,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildDocLibDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildDocLibDoc",
     "getPSDEDataSet" : {
@@ -823,6 +841,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -832,6 +851,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocLibAndDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocLibAndDoc",
     "getPSDEDataSet" : {
@@ -841,6 +861,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocLibDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocLibDoc",
     "getPSDEDataSet" : {
@@ -850,6 +871,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocModuleDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocModuleDoc",
     "getPSDEDataSet" : {
@@ -859,6 +881,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocStatus",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocStatus",
     "getPSDEDataSet" : {
@@ -885,6 +908,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchModuleDocChild",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ModuleDocChild",
     "getPSDEDataSet" : {
@@ -928,6 +952,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavouritesOnlyDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyFavouritesOnlyDoc",
     "getPSDEDataSet" : {
@@ -937,6 +962,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNotRootDoc",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NotRootDoc",
     "getPSDEDataSet" : {

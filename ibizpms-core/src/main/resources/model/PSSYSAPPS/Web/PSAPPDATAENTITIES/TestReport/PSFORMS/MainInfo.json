@@ -462,7 +462,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "formitemex1",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -496,7 +495,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -529,7 +527,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -693,7 +690,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "title",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -721,7 +717,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "projectname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {

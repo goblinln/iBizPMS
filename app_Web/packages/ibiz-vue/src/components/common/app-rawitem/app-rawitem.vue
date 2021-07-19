@@ -1,13 +1,14 @@
 <template>
-    <div class="rawitem" :style="sizeStyle">
-        <span>{{caption}}</span>
-        <div v-if="Object.is(contentType,'RAW')" :class="contentStyle">
+    <div :class="['rawitem',contentType.toLowerCase()]">
+        <span v-if="caption">{{caption}}</span>
+        <div v-if="Object.is(contentType,'RAW')">
             <slot></slot>
         </div>
-        <div v-else-if="Object.is(contentType,'HTML')" :class="contentStyle" v-html="htmlContent" />
-        <div v-else-if="Object.is(contentType,'IMAGE')" :class="contentStyle">
+        <div v-else-if="Object.is(contentType,'HTML')" v-html="htmlContent" />
+        <div v-else-if="Object.is(contentType,'IMAGE')">
              <i :class="imageClass ? imageClass : ''"></i>
         </div>
+        <app-markdown-editor v-else-if="Object.is(contentType,'MARKDOWN')" mode="PREVIEWONLY" :itemValue={} ></app-markdown-editor>
     </div>
 </template>
 
@@ -64,22 +65,6 @@ export default class AppRawItem extends Vue {
      * @memberof AppRawItem
      */
     @Prop() public caption?: string;
-
-    /**
-     * 内容样式
-     * 
-     * @type {strin}
-     * @memberof AppRawItem
-     */
-    @Prop() public contentStyle!: string;
-
-    /**
-     * 内容宽高
-     * 
-     * @type {strin}
-     * @memberof AppRawItem
-     */
-    @Prop() public sizeStyle!: string;
 
 }
 

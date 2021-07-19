@@ -439,7 +439,6 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
             },
             "valueItemName" : "project",
-            "dropDownView" : false,
             "editable" : false,
             "enableAC" : false,
             "enableLinkView" : true,
@@ -474,7 +473,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "modulename1",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -535,7 +533,6 @@
             } ],
             "placeHolder" : "暂无",
             "valueItemName" : "story",
-            "dropDownView" : false,
             "editable" : false,
             "enableAC" : false,
             "enableLinkView" : true,
@@ -581,7 +578,6 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
               },
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -610,7 +606,6 @@
             "getPSEditor" : {
               "editorType" : "SPAN",
               "name" : "assigneddate",
-              "editable" : false,
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
@@ -654,7 +649,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__type.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -687,7 +681,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__status.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -716,7 +709,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "progressrate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -748,7 +740,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -781,7 +772,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -905,7 +895,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -949,7 +938,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "openeddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1001,7 +989,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1045,7 +1032,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "finisheddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1097,7 +1083,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1141,7 +1126,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "canceleddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1193,7 +1177,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1237,7 +1220,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "closeddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1282,7 +1264,6 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__closed_reason.json"
           },
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -1322,7 +1303,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -1366,7 +1346,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "lastediteddate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

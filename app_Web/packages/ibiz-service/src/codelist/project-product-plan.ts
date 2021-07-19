@@ -1,4 +1,4 @@
-import { ProductPlanService } from "../service";
+import { GlobalService } from "../service";
 /**
  * 代码表--项目产品计划（动态）
  *
@@ -93,7 +93,7 @@ export default class ProjectProductPlan {
      * @type {ProductPlanService}
      * @memberof ProjectProductPlan
      */
-    public productplanService: ProductPlanService = new ProductPlanService();
+    public GlobalService: any = new GlobalService();
 
 
     /**
@@ -134,18 +134,20 @@ export default class ProjectProductPlan {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.productplanService.FetchProjectPlan(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            this.GlobalService.getService('ProductPlan').then((service: any) => {
+                const promise: Promise<any> = service.FetchProjectPlan(context, data);
+                promise.then((response: any) => {
+                    if (response && response.status === 200) {
+                        const data =  response.data;
+                        resolve(this.doItems(data));
+                    } else {
+                        resolve([]);
+                    }
+                }).catch((response: any) => {
+                    console.error(response);
+                    reject(response);
+                });
+            })
         });
     }
 

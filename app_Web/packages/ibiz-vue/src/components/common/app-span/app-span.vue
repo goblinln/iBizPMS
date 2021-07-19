@@ -19,10 +19,9 @@
         :name="name"
     />
     <span class="app-span" v-else>
-      <span v-if="(!text && (text !== 0) && !unitName)">- - -</span>
-      <span v-else-if="(valueFormat && valueFormat.length > 0)">
-          <span class="app-span-value-format" v-format="valueFormat">{{text}}</span>
-          {{ (unitName ? '&nbsp;' + unitName : '') }}
+      <span v-if="(!text && (text !== 0) && !unitName) && Object.is('STYLE1', noValueShowMode)">- - -</span>
+      <span v-else-if="textFormat">
+          <span class="app-span-value-format" v-format="textFormat">{{text}}</span>
       </span>
       <span v-else>
         {{ text + '&nbsp;' + (unitName ? unitName : '') }}
@@ -132,6 +131,14 @@ export default class AppSpan extends Vue {
     @Prop() public viewparams!: any;
 
     /**
+     * 无值显示模式
+     * 
+     * @type {boolean}
+     * @memberof AppSpan
+     */
+    @Prop({default: 'DEFAULT'}) public noValueShowMode?: 'DEFAULT' | 'STYLE1';
+
+    /**
      * 监控表单属性 data 值
      *
      * @memberof AppSpan
@@ -149,6 +156,13 @@ export default class AppSpan extends Vue {
      * @memberof AppSpan
      */
     public text: any = '';
+
+    /**
+     * 显示值格式
+     * @type {*}
+     * @memberof AppSpan
+     */
+    public textFormat: any = '';
 
     /**
      * 编辑器类型
@@ -226,6 +240,16 @@ export default class AppSpan extends Vue {
      * @memberof AppSpan
      */
     public formatData() {
+      if (this.valueFormat) {
+        this.textFormat = this.unitName ? this.valueFormat + '_' + this.unitName : this.valueFormat;
+        //vue-text-format插件重复值修复
+        if(this.valueFormat.includes("*")) {
+          this.$nextTick(()=> {
+            const el: any = this.$el.getElementsByClassName("vue-format-single-fill")[0];
+            el.innerHTML = el.innerHTML.repeat(el.offsetWidth);
+          })
+        }
+      }
       if (Object.is(this.dataType, 'DATETIME') && this.valueFormat.length > 0) {
         this.text = moment(this.value).unix();
       }else {

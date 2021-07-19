@@ -303,7 +303,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "name",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -421,9 +420,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
             },
             "valueItemName" : "mailtopk",
-            "dropDownView" : false,
             "enableAC" : true,
-            "enableLinkView" : false,
             "enablePickupView" : false,
             "forceSelection" : true,
             "showTrigger" : true,

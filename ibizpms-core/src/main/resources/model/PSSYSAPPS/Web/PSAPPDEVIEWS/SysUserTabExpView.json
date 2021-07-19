@@ -402,7 +402,6 @@
                               "getPSEditor" : {
                                 "editorType" : "SPAN",
                                 "name" : "personname",
-                                "editable" : false,
                                 "enableLinkView" : false
                               },
                               "getPSLayoutPos" : {
@@ -419,8 +418,7 @@
                             "getPSSysCss" : {
                               "cssName" : "container-lefttop-margin"
                             },
-                            "width" : 230.0,
-                            "showCaption" : true
+                            "width" : 230.0
                           }, {
                             "itemStyle" : "DEFAULT",
                             "itemType" : "CONTAINER",
@@ -458,13 +456,11 @@
                                   "layout" : "FLEX"
                                 },
                                 "rawContent" : "今天剩余工作总计",
-                                "rawItemHeight" : 40.0,
-                                "showCaption" : true
+                                "rawItemHeight" : 40.0
                               } ],
                               "getPSSysCss" : {
                                 "cssName" : "container-updown-margin"
-                              },
-                              "showCaption" : true
+                              }
                             }, {
                               "itemStyle" : "DEFAULT",
                               "itemType" : "CONTAINER",
@@ -505,8 +501,7 @@
                                     "layout" : "FLEX"
                                   },
                                   "rawContent" : "我的任务",
-                                  "rawItemHeight" : 30.0,
-                                  "showCaption" : true
+                                  "rawItemHeight" : 30.0
                                 }, {
                                   "itemStyle" : "DEFAULT",
                                   "itemType" : "FIELD",
@@ -514,7 +509,6 @@
                                   "getPSEditor" : {
                                     "editorType" : "SPAN",
                                     "name" : "mytasks",
-                                    "editable" : false,
                                     "enableLinkView" : false
                                   },
                                   "getPSLayoutPos" : {
@@ -534,7 +528,6 @@
                                   "getPSEditor" : {
                                     "editorType" : "SPAN",
                                     "name" : "myetasks",
-                                    "editable" : false,
                                     "enableLinkView" : false
                                   },
                                   "getPSLayoutPos" : {
@@ -547,8 +540,7 @@
                                   "viewFieldName" : "myetasks",
                                   "hidden" : false,
                                   "showCaption" : false
-                                } ],
-                                "showCaption" : true
+                                } ]
                               }, {
                                 "itemStyle" : "DEFAULT",
                                 "itemType" : "CONTAINER",
@@ -576,8 +568,7 @@
                                     "layout" : "FLEX"
                                   },
                                   "rawContent" : "我的bug",
-                                  "rawItemHeight" : 30.0,
-                                  "showCaption" : true
+                                  "rawItemHeight" : 30.0
                                 }, {
                                   "itemStyle" : "DEFAULT",
                                   "itemType" : "FIELD",
@@ -585,7 +576,6 @@
                                   "getPSEditor" : {
                                     "editorType" : "SPAN",
                                     "name" : "mybugs",
-                                    "editable" : false,
                                     "enableLinkView" : false
                                   },
                                   "getPSLayoutPos" : {
@@ -605,7 +595,6 @@
                                   "getPSEditor" : {
                                     "editorType" : "SPAN",
                                     "name" : "myebugs",
-                                    "editable" : false,
                                     "enableLinkView" : false
                                   },
                                   "getPSLayoutPos" : {
@@ -618,8 +607,7 @@
                                   "viewFieldName" : "MYEBUGS",
                                   "hidden" : false,
                                   "showCaption" : false
-                                } ],
-                                "showCaption" : true
+                                } ]
                               }, {
                                 "itemStyle" : "DEFAULT",
                                 "itemType" : "CONTAINER",
@@ -647,8 +635,7 @@
                                     "layout" : "FLEX"
                                   },
                                   "rawContent" : "我的需求",
-                                  "rawItemHeight" : 30.0,
-                                  "showCaption" : true
+                                  "rawItemHeight" : 30.0
                                 }, {
                                   "itemStyle" : "DEFAULT",
                                   "itemType" : "FIELD",
@@ -656,7 +643,6 @@
                                   "getPSEditor" : {
                                     "editorType" : "SPAN",
                                     "name" : "mystorys",
-                                    "editable" : false,
                                     "enableLinkView" : false
                                   },
                                   "getPSLayoutPos" : {
@@ -681,10 +667,8 @@
                                   "getPSSysCss" : {
                                     "cssName" : "text-center-red"
                                   },
-                                  "rawContent" : "---",
-                                  "showCaption" : true
-                                } ],
-                                "showCaption" : true
+                                  "rawContent" : "---"
+                                } ]
                               }, {
                                 "itemStyle" : "DEFAULT",
                                 "itemType" : "CONTAINER",
@@ -712,8 +696,7 @@
                                     "layout" : "FLEX"
                                   },
                                   "rawContent" : "未关闭的项目",
-                                  "rawItemHeight" : 30.0,
-                                  "showCaption" : true
+                                  "rawItemHeight" : 30.0
                                 }, {
                                   "itemStyle" : "DEFAULT",
                                   "itemType" : "FIELD",
@@ -721,7 +704,6 @@
                                   "getPSEditor" : {
                                     "editorType" : "SPAN",
                                     "name" : "projects",
-                                    "editable" : false,
                                     "enableLinkView" : false
                                   },
                                   "getPSLayoutPos" : {
@@ -741,7 +723,6 @@
                                   "getPSEditor" : {
                                     "editorType" : "SPAN",
                                     "name" : "eprojects",
-                                    "editable" : false,
                                     "enableLinkView" : false
                                   },
                                   "getPSLayoutPos" : {
@@ -754,8 +735,7 @@
                                   "viewFieldName" : "EPROJECTS",
                                   "hidden" : false,
                                   "showCaption" : false
-                                } ],
-                                "showCaption" : true
+                                } ]
                               }, {
                                 "itemStyle" : "DEFAULT",
                                 "itemType" : "CONTAINER",
@@ -783,8 +763,7 @@
                                     "layout" : "FLEX"
                                   },
                                   "rawContent" : "未关闭的产品",
-                                  "rawItemHeight" : 30.0,
-                                  "showCaption" : true
+                                  "rawItemHeight" : 30.0
                                 }, {
                                   "itemStyle" : "DEFAULT",
                                   "itemType" : "FIELD",
@@ -792,7 +771,6 @@
                                   "getPSEditor" : {
                                     "editorType" : "SPAN",
                                     "name" : "products",
-                                    "editable" : false,
                                     "enableLinkView" : false
                                   },
                                   "getPSLayoutPos" : {
@@ -817,22 +795,17 @@
                                   "getPSSysCss" : {
                                     "cssName" : "text-center-red"
                                   },
-                                  "rawContent" : "---",
-                                  "showCaption" : true
-                                } ],
-                                "showCaption" : true
+                                  "rawContent" : "---"
+                                } ]
                               } ],
                               "getPSSysCss" : {
                                 "cssName" : "container-left-border"
-                              },
-                              "showCaption" : true
-                            } ],
-                            "showCaption" : true
+                              }
+                            } ]
                           } ],
                           "getPSSysCss" : {
                             "cssName" : "container-margin-top-7px"
-                          },
-                          "showCaption" : true
+                          }
                         } ],
                         "name" : "list_itempanel",
                         "modelid" : "c64bedc8276dde3a6895e805c7918d2c",

@@ -235,7 +235,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurProduct",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "CurProduct",
     "name" : "CurProduct",
     "getPSDEDataQueries" : [ {
@@ -246,7 +245,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {

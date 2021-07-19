@@ -10,6 +10,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json"
     },
     "cloneParam" : false,
+    "enableBackend" : true,
     "ignoreException" : false,
     "internalLogic" : true
   } ],

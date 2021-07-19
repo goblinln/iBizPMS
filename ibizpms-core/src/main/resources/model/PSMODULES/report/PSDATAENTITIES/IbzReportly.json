@@ -187,7 +187,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -199,7 +198,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyAllReportly",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我所有的汇报",
     "name" : "MyAllReportly",
     "getPSDEDataQueries" : [ {
@@ -210,7 +208,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyReceived",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我收到的汇报",
     "name" : "MyReceived",
     "getPSDEDataQueries" : [ {
@@ -221,7 +218,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyReportlyMob",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "我的未提交汇报",
     "name" : "MyReportlyMob",
     "getPSDEDataQueries" : [ {

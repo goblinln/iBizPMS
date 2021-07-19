@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -153,6 +154,7 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchByPath",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BYPATH",
     "getPSDEDataSet" : {
@@ -179,6 +181,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ParentModule",
     "getPSDEDataSet" : {
@@ -188,6 +191,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ROOT",
     "getPSDEDataSet" : {
@@ -197,6 +201,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot_NoBranch",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Root_NoBranch",
     "getPSDEDataSet" : {
@@ -206,6 +211,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot_Task",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ROOT_TASK",
     "getPSDEDataSet" : {
@@ -215,6 +221,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskModules",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TaskModules",
     "getPSDEDataSet" : {
@@ -361,6 +368,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -481,6 +489,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchByPath",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "BYPATH",
     "getPSDEDataSet" : {
@@ -507,6 +516,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchParentModule",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ParentModule",
     "getPSDEDataSet" : {
@@ -516,6 +526,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ROOT",
     "getPSDEDataSet" : {
@@ -525,6 +536,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot_NoBranch",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "Root_NoBranch",
     "getPSDEDataSet" : {
@@ -534,6 +546,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRoot_Task",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ROOT_TASK",
     "getPSDEDataSet" : {
@@ -543,6 +556,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTaskModules",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "TaskModules",
     "getPSDEDataSet" : {

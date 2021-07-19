@@ -11,6 +11,7 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/FixPath.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -32,6 +33,7 @@
         "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/FixPath.json"
       },
       "cloneParam" : false,
+      "enableBackend" : true,
       "ignoreException" : false,
       "internalLogic" : true
     } ],
@@ -474,7 +476,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ByPath",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "BYPATH",
     "name" : "BYPATH",
     "getPSDEDataQueries" : [ {
@@ -485,7 +486,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "DEFAULT",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {
@@ -507,7 +507,6 @@
     "enableFront" : true
   }, {
     "codeName" : "ParentModule",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "父模块",
     "name" : "ParentModule",
     "getPSDEDataQueries" : [ {
@@ -518,7 +517,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Root",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "根模块",
     "name" : "ROOT",
     "getPSDEDataQueries" : [ {
@@ -529,7 +527,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Root_NoBranch",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "根模块_无分支",
     "name" : "Root_NoBranch",
     "getPSDEDataQueries" : [ {
@@ -540,7 +537,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Root_Task",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "根模块",
     "name" : "ROOT_TASK",
     "getPSDEDataQueries" : [ {
@@ -551,7 +547,6 @@
     "enableFront" : true
   }, {
     "codeName" : "TaskModules",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "任务模块",
     "majorSortDir" : "ASC",
     "getMajorSortPSDEField" : {

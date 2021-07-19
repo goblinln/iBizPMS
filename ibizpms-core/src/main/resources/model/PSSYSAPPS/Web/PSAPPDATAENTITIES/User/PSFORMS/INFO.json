@@ -200,7 +200,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "realname",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -230,7 +229,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "join",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -264,7 +262,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/RealDept.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -298,7 +295,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Role.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -378,7 +374,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "account",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -407,7 +402,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "email",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -454,7 +448,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "mobile",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -483,7 +476,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "phone",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -512,7 +504,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "qq",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -541,7 +532,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "dingding",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -570,7 +560,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "weixin",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -599,7 +588,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "address",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

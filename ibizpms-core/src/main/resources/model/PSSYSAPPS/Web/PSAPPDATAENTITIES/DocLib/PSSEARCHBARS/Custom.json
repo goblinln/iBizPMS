@@ -126,7 +126,6 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/DOCLIBTYPE.json"
       },
-      "editable" : false,
       "enableLinkView" : false
     },
     "allowEmpty" : true,
@@ -202,9 +201,7 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
       },
-      "dropDownView" : false,
       "enableAC" : true,
-      "enableLinkView" : false,
       "enablePickupView" : false,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -251,9 +248,7 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
       },
-      "dropDownView" : false,
       "enableAC" : true,
-      "enableLinkView" : false,
       "enablePickupView" : false,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -300,9 +295,7 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
-      "dropDownView" : false,
       "enableAC" : true,
-      "enableLinkView" : false,
       "enablePickupView" : false,
       "forceSelection" : true,
       "showTrigger" : true,
@@ -349,9 +342,7 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
-      "dropDownView" : false,
       "enableAC" : true,
-      "enableLinkView" : false,
       "enablePickupView" : false,
       "forceSelection" : true,
       "showTrigger" : true,

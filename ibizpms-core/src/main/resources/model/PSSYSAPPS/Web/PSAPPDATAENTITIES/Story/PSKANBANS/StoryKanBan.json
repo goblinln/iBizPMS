@@ -111,7 +111,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "title",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -129,8 +128,7 @@
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
-        },
-        "showCaption" : true
+        }
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
@@ -154,7 +152,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__pri.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -178,7 +175,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Story__status.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -198,7 +194,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "estimate",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -219,8 +214,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "h",
-          "showCaption" : true
+          "rawContent" : "h"
         }, {
           "actionType" : "UIACTION",
           "caption" : "移除",
@@ -286,12 +280,9 @@
             "reloadData" : true,
             "id" : "ProjectUnlinkStory@Story"
           },
-          "tooltip" : "移除",
-          "showCaption" : false
-        } ],
-        "showCaption" : true
-      } ],
-      "showCaption" : true
+          "tooltip" : "移除"
+        } ]
+      } ]
     }, {
       "caption" : "隐藏项",
       "itemStyle" : "DEFAULT",

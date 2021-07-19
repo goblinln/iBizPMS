@@ -140,10 +140,12 @@ export class AppUILogicService {
        */
      public async executeNextNodes(nextNodes: any[], actionContext: UIActionContext) {
           let result: any = actionContext.data;
-          for (let nextNode of nextNodes) {
-               result = await this.executeNode(nextNode, actionContext);
-               if (result.nextNodes?.length > 0) {
-                    result = await this.executeNextNodes(result.nextNodes, result.actionContext);
+          if (nextNodes && (nextNodes.length > 0)) {
+               for (let nextNode of nextNodes) {
+                    result = await this.executeNode(nextNode, actionContext);
+                    if (result && result?.nextNodes?.length > 0) {
+                         result = await this.executeNextNodes(result.nextNodes, result.actionContext);
+                    }
                }
           }
           return result;

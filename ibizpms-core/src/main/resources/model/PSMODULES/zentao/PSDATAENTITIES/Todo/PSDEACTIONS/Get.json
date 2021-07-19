@@ -10,6 +10,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/GetTODOTitle.json"
     },
     "cloneParam" : false,
+    "enableBackend" : true,
     "ignoreException" : false,
     "internalLogic" : true
   }, {
@@ -21,6 +22,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/ResetBeginEnd.json"
     },
     "cloneParam" : false,
+    "enableBackend" : true,
     "ignoreException" : false,
     "internalLogic" : true
   } ],

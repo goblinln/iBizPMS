@@ -268,12 +268,13 @@ export default class AppDrawerCompponent extends Vue {
         if ($event) {
             return;
         }
-        if (this.subject) {
-            if (this.tempResult && Object.is(this.tempResult.ret, 'OK')) {
-                this.subject.next(this.tempResult);
-            }
-        }
+        
         setTimeout(() => {
+            if (this.subject) {
+                if (this.tempResult && Object.is(this.tempResult.ret, 'OK')) {
+                    this.subject.next(this.tempResult);
+                }
+            }
             document.body.removeChild(this.$el);
             this.$destroy();
             this.subject = null;

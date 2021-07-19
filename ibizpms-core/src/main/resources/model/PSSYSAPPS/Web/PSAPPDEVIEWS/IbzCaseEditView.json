@@ -401,9 +401,7 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
           },
           "valueItemName" : "lib",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : false,
           "forceSelection" : true,
           "showTrigger" : true,
@@ -494,9 +492,7 @@
             "rawValue" : false
           } ],
           "valueItemName" : "module",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : false,
           "forceSelection" : true,
           "showTrigger" : true,

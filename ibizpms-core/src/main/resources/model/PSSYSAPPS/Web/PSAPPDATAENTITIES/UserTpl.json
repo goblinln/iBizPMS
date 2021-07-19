@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -100,6 +101,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "HasDeleted",
     "methodType" : "DEACTION",
     "name" : "hasDeleted",
@@ -130,6 +132,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -176,6 +179,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -202,6 +206,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUserTpl",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUserTpl",
     "getPSDEDataSet" : {
@@ -211,6 +216,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUserTplQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUserTplQuery",
     "getPSDEDataSet" : {
@@ -295,6 +301,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -363,6 +370,7 @@
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "HasDeleted",
     "methodType" : "DEACTION",
     "name" : "hasDeleted",
@@ -393,6 +401,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -438,6 +447,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -464,6 +474,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUserTpl",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUserTpl",
     "getPSDEDataSet" : {
@@ -473,6 +484,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUserTplQuery",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUserTplQuery",
     "getPSDEDataSet" : {

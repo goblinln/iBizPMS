@@ -2278,9 +2278,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
         },
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : false,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -2327,9 +2325,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
         },
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : false,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -2409,9 +2405,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : false,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -2458,9 +2452,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : false,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -2623,9 +2615,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         },
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : false,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -2672,9 +2662,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         },
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : false,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -2752,9 +2740,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : false,
         "forceSelection" : true,
         "showTrigger" : true,
@@ -2801,9 +2787,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
-        "dropDownView" : false,
         "enableAC" : true,
-        "enableLinkView" : false,
         "enablePickupView" : false,
         "forceSelection" : true,
         "showTrigger" : true,

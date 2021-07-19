@@ -161,7 +161,6 @@
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "AllReport",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "汇报汇总",
     "name" : "AllReport",
     "getPSDEDataQueries" : [ {
@@ -172,7 +171,6 @@
     "enableFront" : true
   }, {
     "codeName" : "Default",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "数据集",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
@@ -184,7 +182,6 @@
     "enableFront" : true
   }, {
     "codeName" : "MyReAllReport",
-    "dataSetType" : "DATAQUERY",
     "logicName" : "汇报汇总（我收到的）",
     "name" : "MyReAllReport",
     "getPSDEDataQueries" : [ {

@@ -378,7 +378,6 @@
             "editorType" : "SPAN",
             "name" : "totalestimate",
             "precision" : 2,
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -410,7 +409,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "totalconsumed",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -442,7 +440,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "totalleft",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {

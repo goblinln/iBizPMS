@@ -86,7 +86,6 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
             },
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -105,7 +104,6 @@
           "getPSEditor" : {
             "editorType" : "SPAN",
             "name" : "submittime",
-            "editable" : false,
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
@@ -117,8 +115,7 @@
           "viewFieldName" : "submittime",
           "hidden" : false,
           "showCaption" : false
-        } ],
-        "showCaption" : false
+        } ]
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
@@ -153,8 +150,7 @@
           "viewFieldName" : "worktoday",
           "hidden" : false,
           "showCaption" : false
-        } ],
-        "showCaption" : true
+        } ]
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
@@ -189,13 +185,11 @@
           "viewFieldName" : "planstomorrow",
           "hidden" : false,
           "showCaption" : false
-        } ],
-        "showCaption" : true
+        } ]
       } ],
       "getPSSysCss" : {
         "cssName" : "mob_list_card"
-      },
-      "showCaption" : false
+      }
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "FIELD",

@@ -50,7 +50,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "ibz_weeklyid",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -68,7 +67,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "ibz_weeklyname",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -88,7 +86,6 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
         },
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -106,7 +103,6 @@
       "getPSEditor" : {
         "editorType" : "SPAN",
         "name" : "date",
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {
@@ -128,7 +124,6 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
         },
-        "editable" : false,
         "enableLinkView" : false
       },
       "getPSLayoutPos" : {

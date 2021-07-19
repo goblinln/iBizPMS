@@ -465,9 +465,7 @@
                 "viewType" : "DEMOBPICKUPVIEW"
               },
               "valueItemName" : "assignedto",
-              "dropDownView" : false,
               "enableAC" : true,
-              "enableLinkView" : false,
               "enablePickupView" : true,
               "forceSelection" : true,
               "showTrigger" : true,
@@ -884,7 +882,6 @@
                       "getPSEditor" : {
                         "editorType" : "SPAN",
                         "name" : "date",
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -906,7 +903,6 @@
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
                         },
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -929,7 +925,6 @@
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__type.json"
                         },
-                        "editable" : false,
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
@@ -941,8 +936,7 @@
                       "convertToCodeItemText" : true,
                       "hidden" : false,
                       "showCaption" : false
-                    } ],
-                    "showCaption" : true
+                    } ]
                   } ],
                   "mobilePanel" : true,
                   "name" : "mdctrl_itempanel",

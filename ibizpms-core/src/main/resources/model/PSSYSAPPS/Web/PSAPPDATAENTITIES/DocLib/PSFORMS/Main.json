@@ -246,9 +246,7 @@
             "viewType" : "DEPICKUPVIEW"
           },
           "valueItemName" : "project",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : true,
           "forceSelection" : true,
           "showTrigger" : true,
@@ -332,9 +330,7 @@
             "viewType" : "DEPICKUPVIEW"
           },
           "valueItemName" : "product",
-          "dropDownView" : false,
           "enableAC" : true,
-          "enableLinkView" : false,
           "enablePickupView" : true,
           "forceSelection" : true,
           "showTrigger" : true,

@@ -32,6 +32,7 @@
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -120,6 +121,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -166,6 +168,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUSERCONTACT",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUSERCONTACT",
     "getPSDEDataSet" : {
@@ -175,6 +178,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -201,6 +205,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUSERCONTACT",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUSERCONTACT",
     "getPSDEDataSet" : {
@@ -273,6 +278,7 @@
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -361,6 +367,7 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -406,6 +413,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchCurUSERCONTACT",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "CurUSERCONTACT",
     "getPSDEDataSet" : {
@@ -415,6 +423,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "getPSDEDataSet" : {
@@ -441,6 +450,7 @@
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyUSERCONTACT",
+    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyUSERCONTACT",
     "getPSDEDataSet" : {
