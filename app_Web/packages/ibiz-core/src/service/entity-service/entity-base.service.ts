@@ -443,13 +443,19 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     * @param {*} error 错误数据
     * @memberof EntityBaseService
     */
-    protected handleResponseError(error: Error) {
+     protected handleResponseError(error: any):Promise<HttpResponse> {
         LogUtil.warn(error);
-        const errorMessage = (error?.message?.indexOf('[逻辑错误]') !== -1) ? error.message : '执行行为异常';
-        return new HttpResponse({ message: errorMessage }, {
-            ok: false,
-            status: 500,
-        });
+        return new Promise((resolve: any, reject: any) => {
+            if (error.status && (error.status !== 200)) {
+                reject(error);
+            } else {
+                const errorMessage = (error?.message?.indexOf('[逻辑错误]') !== -1) ? error.message : '执行行为异常';
+                resolve(new HttpResponse({ message: errorMessage }, {
+                    ok: false,
+                    status: 500,
+                }))
+            }
+        })
     }
 
     /**

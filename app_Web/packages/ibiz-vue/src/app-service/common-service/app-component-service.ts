@@ -317,6 +317,7 @@ export class AppComponentService {
         this.editorMap.set("PICKEREX_NOAC_DEFAULT", 'app-picker');
         this.editorMap.set("PICKEREX_LINK_DEFAULT", 'app-picker');
         this.editorMap.set("IPADDRESSTEXTBOX_DEFAULT", "app-input-ip");
+        this.editorMap.set("RAW_DEFAULT", "app-rawitem");
         //兼容移动端编辑器
         this.editorMap.set('MOBTEXT_DEFAULT','input-box');
         this.editorMap.set('MOBPASSWORD_DEFAULT','input-box');

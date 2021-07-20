@@ -1,5 +1,5 @@
-import { getDstPSAppDEAction,IPSDEUIDEActionLogic } from '@ibiz/dynamic-model-api';
-import { LogUtil } from '../../../../../ibiz-core/src';
+import { getDstPSAppDEAction, IPSDEUIDEActionLogic, IPSDEUILogicParam } from '@ibiz/dynamic-model-api';
+import { LogUtil } from 'ibiz-core';
 import { UIActionContext } from '../uiaction-context';
 import { AppUILogicNodeBase } from './logic-node-base';
 /**
@@ -24,13 +24,20 @@ export class AppUILogicDeactionNode extends AppUILogicNodeBase {
     public async executeNode(logicNode: IPSDEUIDEActionLogic, actionContext: UIActionContext) {
         const dstEntity = logicNode.getDstPSAppDataEntity();
         const deAction = await getDstPSAppDEAction(logicNode);
-        const dstParam = actionContext.defaultParam;
+        const dstParam = actionContext.getParam((logicNode.getDstPSDEUILogicParam() as IPSDEUILogicParam)?.codeName);
         if (dstEntity && deAction && dstParam) {
             try {
                 const service = await ___ibz___.gs.getService(dstEntity.codeName);
                 const res = await service[deAction.codeName](actionContext.context, dstParam);
-                if (res && res.ok && res.data) {
-                    Object.assign(dstParam, res.data);
+                if (res) {
+                    if (res.ok) {
+                        if (res.data) {
+                            Object.assign(dstParam, res.data);
+                        }
+                        Object.assign(dstParam, { result: 'success' });
+                    } else {
+                        Object.assign(dstParam, { result: 'fail' });
+                    }
                     return this.computeNextNodes(logicNode, actionContext);
                 } else {
                     LogUtil.warn('调用实体行为异常');

@@ -6,9 +6,10 @@
         </div>
         <div v-else-if="Object.is(contentType,'HTML')" v-html="htmlContent" />
         <div v-else-if="Object.is(contentType,'IMAGE')">
-             <i :class="imageClass ? imageClass : ''"></i>
+            <img v-if="imgUrl" :src="imgUrl"/>
+            <i v-else :class="imageClass ? imageClass : ''"></i>
         </div>
-        <app-markdown-editor v-else-if="Object.is(contentType,'MARKDOWN')" mode="PREVIEWONLY" :itemValue={} ></app-markdown-editor>
+        <app-markdown-editor v-else-if="Object.is(contentType,'MARKDOWN')" mode="PREVIEWONLY" :itemValue="itemValue" ></app-markdown-editor>
     </div>
 </template>
 
@@ -40,23 +41,31 @@ export default class AppRawItem extends Vue {
     * @type {string}
     * @memberof AppRawItem
     */
-    @Prop() public contentType!: string;
+    @Prop({default: 'RAW'}) public contentType!: 'RAW' | 'HTML' | 'IMAGE' | 'MARKDOWN';
 
     /**
      * html内容
      * 
-     * @type {strin}
+     * @type {string}
      * @memberof AppRawItem
      */
     @Prop() public htmlContent?: string;
 
     /**
-     * 图片
+     * 图标
      * 
-     * @type {strin}
+     * @type {string}
      * @memberof AppRawItem
      */
     @Prop() public imageClass?: string;
+
+    /**
+     * 图片
+     * 
+     * @type {string}
+     * @memberof AppRawItem
+     */
+    @Prop() public imgUrl?: string;
 
     /**
      * 标题
@@ -66,6 +75,13 @@ export default class AppRawItem extends Vue {
      */
     @Prop() public caption?: string;
 
+    /**
+     * MARKDOWN编辑器的值
+     * 
+     * @type {*}
+     * @memberof AppRawItem
+     */
+    @Prop() public itemValue?: any;
 }
 
 </script>

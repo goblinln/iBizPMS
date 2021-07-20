@@ -24,7 +24,7 @@ export class AppUILogicDeUIActionNode extends AppUILogicNodeBase {
      */
     public async executeNode(logicNode: IPSDEUIActionLogic, actionContext: UIActionContext) {
         return new Promise<void>(async (resolve) => {
-            const { data, context, otherParams } = actionContext;
+            const { data, context, viewparams, otherParams } = actionContext;
             const dstEntity = logicNode.getDstPSAppDataEntity();
             const dstUIAction = await getDstPSAppDEUIAction(logicNode);
             if (dstEntity && dstUIAction) {
@@ -35,15 +35,22 @@ export class AppUILogicDeUIActionNode extends AppUILogicNodeBase {
                         dstUIAction.uIActionTag,
                         [data],
                         context,
-                        otherParams?.viewparams,
+                        viewparams,
                         otherParams?.event,
                         otherParams?.control,
                         otherParams?.container,
                         otherParams?.parentDeName,
                     );
                     const dstParam = actionContext.getParam((logicNode.getDstPSDEUILogicParam() as IPSDEUILogicParam)?.codeName);
-                    if (result && result.ok && result.result) {
-                        Object.assign(dstParam, Array.isArray(result?.result) ? result.result[0] : result.result);
+                    if (result) {
+                        if (result.ok) {
+                            if (result.result) {
+                                Object.assign(dstParam, Array.isArray(result?.result) ? result.result[0] : result.result);
+                            }
+                            Object.assign(dstParam, { result: 'success' });
+                        } else {
+                            Object.assign(dstParam, { result: 'fail' });
+                        }
                         resolve(this.computeNextNodes(logicNode, actionContext));
                     } else {
                         LogUtil.warn('调用界面行为异常');

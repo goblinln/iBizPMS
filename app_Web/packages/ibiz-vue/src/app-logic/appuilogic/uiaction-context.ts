@@ -1,4 +1,4 @@
-import { IContext } from "ibiz-core";
+import { IContext, IParams, Util } from "ibiz-core";
 import { IPSDEUILogicParam } from "@ibiz/dynamic-model-api";
 
 /**
@@ -15,7 +15,15 @@ export class UIActionContext {
      * @type {IContext}
      * @memberof UIActionContext
      */
-    public context: IContext;
+    private appContext: IContext;
+
+    /**
+     * 视图参数
+     *
+     * @type {IParams}
+     * @memberof UIActionContext
+     */
+    private viewParam: IParams;
 
     /**
      * 数据对象
@@ -50,6 +58,22 @@ export class UIActionContext {
     public defaultParamName: string = '';
 
     /**
+     * 逻辑局部应用上下文参数名称
+     *
+     * @type {string}
+     * @memberof UIActionContext
+     */
+    public navContextParamName: string = '';
+
+    /**
+     * 逻辑局部视图参数名称
+     *
+     * @type {string}
+     * @memberof UIActionContext
+     */
+     public navViewParamParamName: string = '';
+
+    /**
      * 默认逻辑处理参数
      *
      * @readonly
@@ -57,6 +81,58 @@ export class UIActionContext {
      */
     get defaultParam() {
         return this.paramsMap.get(this.defaultParamName);
+    }
+
+    /**
+     * 逻辑上下文参数
+     *
+     * @readonly
+     * @memberof UIActionContext
+     */
+    get navContextParam(){
+        return this.paramsMap.get(this.navContextParamName);
+    }
+
+    /**
+     * 逻辑视图参数
+     *
+     * @readonly
+     * @memberof UIActionContext
+     */
+     get navViewParamParam(){
+        return this.paramsMap.get(this.navViewParamParamName);
+    }
+
+    /**
+     * 上下文数据（包括应用上下文和逻辑局部上下文参数）
+     *
+     * @readonly
+     * @memberof UIActionContext
+     */
+    get context(){
+        if(this.navContextParam){
+            const tempContext = Util.deepCopy(this.appContext);
+            Object.assign(tempContext,this.navContextParam);
+            return tempContext;
+        }else{
+            return this.appContext;
+        }
+    }
+
+    /**
+     * 视图参数数据（包括外部传入视图参数和逻辑局部视图参数）
+     *
+     * @readonly
+     * @memberof UIActionContext
+     */
+    get viewparams(){
+        if(this.navViewParamParam){
+            const tempViewParam = Util.deepCopy(this.viewParam);
+            Object.assign(tempViewParam,this.navViewParamParam);
+            return tempViewParam;
+        }else{
+            return this.viewParam;
+        }
     }
 
     /**
@@ -84,10 +160,10 @@ export class UIActionContext {
      */
     constructor(logic: any, args: any[], context: any = {}, params: any = {},
         $event?: any, xData?: any, actioncontext?: any, srfParentDeName?: string) {
-        this.context = context;
+        this.appContext = context;
+        this.viewParam = params;
         this.data = args && Array.isArray(args) ? args[0] : {};
         this.otherParams = {
-            viewparams: params,
             event: $event,
             control: xData,
             container: actioncontext,
@@ -96,8 +172,11 @@ export class UIActionContext {
         // 初始化界面逻辑处理参数
         if (logic.getPSDEUILogicParams() && (logic.getPSDEUILogicParams() as IPSDEUILogicParam[]).length > 0) {
             for (let logicParam of (logic.getPSDEUILogicParams() as IPSDEUILogicParam[])) {
+                console.log(logicParam);
                 this.paramsMap.set(logicParam.codeName, logicParam.default ? this.data : {})
                 if (logicParam.default) this.defaultParamName = logicParam.codeName;
+                if(logicParam.navContextParam) this.navContextParamName = logicParam.codeName;
+                if(logicParam.navViewParamParam) this.navViewParamParamName = logicParam.codeName;
             }
         }
     }
