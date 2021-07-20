@@ -2526,10 +2526,10 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                         const indexs = this.findRowDataIndex(response.config?.data);
                         if (tempEditItem && indexs.length > 0) {
                             indexs.forEach((_index: any) => {
-                                Object.assign(this.gridItemsModel[_index][tempEditItem.name], { error: new String(detail.fielderrorinfo) });
+                                Object.assign(this.gridItemsModel[_index][tempEditItem.name], { error: new String(detail.fielderrorinfo ? detail.fielderrorinfo : data.message) });
                             })
                         } else {
-                            errorMsg += `${detail.fieldlogicname}${detail.fielderrorinfo}<br/>`;
+                            errorMsg += `${detail.fieldlogicname}${detail.fielderrorinfo ? detail.fielderrorinfo : data.message}<br/>`;
                         }
                     }
                 })

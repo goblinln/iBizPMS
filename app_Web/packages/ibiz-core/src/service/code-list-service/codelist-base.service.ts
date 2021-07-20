@@ -3,6 +3,7 @@ import { LogUtil } from 'ibiz-core';
 import { AppServiceBase } from '../app-service/app-base.service';
 import { EntityBaseService } from '../entity-service/entity-base.service';
 import { AppModelService, GetModelService } from '../model-service/model-service';
+import { DynamicCodeListService } from './dynamic-codelist-service';
 
 /**
  * 代码表服务基类
@@ -254,66 +255,69 @@ export class CodeListServiceBase {
             delete context.srfsessionid;
         }
         return new Promise((resolve: any, reject: any) => {
-            this.getService(tag).then((codelist: any) => {
-                if (Object.is(codelist.predefinedType, "RUNTIME") || Object.is(codelist.predefinedType, "OPERATOR")) {
-                    this.getPredefinedItems(tag).then((res: any) => {
-                        resolve(res);
-                    })
-                    return;
-                }
-                let isEnableCache: boolean = codelist.isEnableCache;
-                let cacheTimeout: any = codelist.cacheTimeout;
-                // 启用缓存
-                if (isEnableCache) {
-                    const callback: Function = (context: any = {}, data: any = {}, tag: string, promise: Promise<any>) => {
-                        const callbackKey: string = `${tag}`;
-                        promise.then((result: any) => {
-                            if (result.length > 0) {
-                                CodeListServiceBase.codelistCached.set(callbackKey, { items: result });
-                                CodeListServiceBase.codelistCache.delete(callbackKey);
-                                return resolve(result);
-                            } else {
-                                return resolve([]);
-                            }
-                        }).catch((result: any) => {
-                            return reject(result);
+            const codelist = new DynamicCodeListService();
+            codelist.loaded(tag, context).then((flag: boolean) => {
+                if (flag) {
+                    if (Object.is(codelist.predefinedType, "RUNTIME") || Object.is(codelist.predefinedType, "OPERATOR")) {
+                        this.getPredefinedItems(tag).then((res: any) => {
+                            resolve(res);
                         })
+                        return;
                     }
-                    // 加载完成,从本地缓存获取
-                    const key: string = `${tag}`;
-                    if (CodeListServiceBase.codelistCached.get(key)) {
-                        let items: any = CodeListServiceBase.codelistCached.get(key).items;
-                        if (items.length > 0) {
-                            if (new Date().getTime() <= codelist.getExpirationTime()) {
-                                return resolve(items);
+                    let isEnableCache: boolean = codelist.isEnableCache;
+                    let cacheTimeout: any = codelist.cacheTimeout;
+                    // 启用缓存
+                    if (isEnableCache) {
+                        const callback: Function = (context: any = {}, data: any = {}, tag: string, promise: Promise<any>) => {
+                            const callbackKey: string = `${tag}`;
+                            promise.then((result: any) => {
+                                if (result.length > 0) {
+                                    CodeListServiceBase.codelistCached.set(callbackKey, { items: result });
+                                    CodeListServiceBase.codelistCache.delete(callbackKey);
+                                    return resolve(result);
+                                } else {
+                                    return resolve([]);
+                                }
+                            }).catch((result: any) => {
+                                return reject(result);
+                            })
+                        }
+                        // 加载完成,从本地缓存获取
+                        const key: string = `${tag}`;
+                        if (CodeListServiceBase.codelistCached.get(key)) {
+                            let items: any = CodeListServiceBase.codelistCached.get(key).items;
+                            if (items.length > 0) {
+                                if (new Date().getTime() <= codelist.getExpirationTime()) {
+                                    return resolve(items);
+                                }
                             }
                         }
-                    }
-                    if (codelist) {
-                        // 加载中，UI又需要数据，解决连续加载同一代码表问题
-                        if (CodeListServiceBase.codelistCache.get(key)) {
-                            callback(context, data, tag, CodeListServiceBase.codelistCache.get(key));
+                        if (codelist) {
+                            // 加载中，UI又需要数据，解决连续加载同一代码表问题
+                            if (CodeListServiceBase.codelistCache.get(key)) {
+                                callback(context, data, tag, CodeListServiceBase.codelistCache.get(key));
+                            } else {
+                                let result: Promise<any> = codelist.getItems(context, data, isloading);
+                                CodeListServiceBase.codelistCache.set(key, result);
+                                codelist.setExpirationTime(new Date().getTime() + cacheTimeout);
+                                callback(context, data, tag, result);
+                            }
+                        }
+                    } else {
+                        if (codelist) {
+                            codelist.getItems(context, data, isloading).then((result: any) => {
+                                resolve(result);
+                            }).catch((error: any) => {
+                                Promise.reject([]);
+                            })
                         } else {
-                            let result: Promise<any> = codelist.getItems(context, data, isloading);
-                            CodeListServiceBase.codelistCache.set(key, result);
-                            codelist.setExpirationTime(new Date().getTime() + cacheTimeout);
-                            callback(context, data, tag, result);
+                            return Promise.reject([]);
                         }
                     }
                 } else {
-                    if (codelist) {
-                        codelist.getItems(context, data, isloading).then((result: any) => {
-                            resolve(result);
-                        }).catch((error: any) => {
-                            Promise.reject([]);
-                        })
-                    } else {
-                        return Promise.reject([]);
-                    }
+                    LogUtil.warn("获取代码表异常");
+                    return Promise.reject([]);
                 }
-            }).catch((error: any) => {
-              LogUtil.warn("获取代码表异常");
-                return Promise.reject([]);
             })
         })
     }

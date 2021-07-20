@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { ViewTool, UIActionTool, Verify, Util, Http } from 'ibiz-core';
 import { exportExcel } from './utils/export/export';
 import { AppPopover, AppModal, AppDrawer } from 'ibiz-vue';
-import { codeListRegister } from 'ibiz-service';
 import TabPageExp from '@components/tab-page-exp/tab-page-exp.vue';
 import AppDataUpload from '@components/app-data-upload/app-data-upload.vue';
 import Breadcrumb from '@components/app-breadcrumb/app-breadcrumb.vue';
@@ -16,9 +15,6 @@ import IBzPlugin from 'ibiz-plugin';
 Vue.use(IBzPlugin);
 Vue.use(ComponentsRegister);
 Vue.use(PluginRegister);
-
-// 全局挂载代码表服务注册中心
-window['codeListRegister'] = codeListRegister;
 
 export const AppComponents = {
   install(v: any, opt: any) {

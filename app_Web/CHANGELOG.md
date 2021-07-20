@@ -515,3 +515,33 @@
 新增数值框格式化支持，[948124c9](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/948124c94635b20c011c87869132a3e48248d30b)（by Mosher）
 
 更新支持编辑器样式表及删除多余层级，[21357ca5](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/21357ca5b0a9e23d7cc7833a8261037cd422d32d)（by Shine-zwj）
+
+## 2021-07-19
+
+更新视图面板部件初始化界面行为模型及事件处理，[e6b707a7](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/e6b707a7e92c0456980458d81d29072525b4d431)（by Mosher）
+
+修复表格行编辑值校验错误信息UI显示问题，[0743bf1e](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/0743bf1e99c1fa7fe645bd1f9b3bd7d012f66b43)（by Shine-zwj）
+
+Debug栏补充打开配置界面，[e3932cbf](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/e3932cbf463a153c18cf25b805c0e37829628136)（by suzichen）
+
+Debug栏配置按钮多语言适配，[e1ee384a](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/e1ee384a8bd474ad5f4bc00cbbd3dd1d604511c0)（by suzichen）
+
+修复布局面板样式重复问题，[2f3cae49](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/2f3cae49e2e47d81943f03174bfebe22a4f0e1be)（by RedPig97）
+
+界面行为增加返回值，[d2df0111](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/d2df0111d07607e20c19e62c0299ad7f12411348)（by tony）
+
+优化界面行为逻辑节点，[f3600412](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f360041286917b2d637ef2f6b7e17e1dfd1dc41c)（by tony）
+
+修复自填模式值属性为空时拿不到主键，[edddb4ca](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/edddb4ca09af5766a5558bcc4f74f808d731a040)（by WodahsOrez）
+
+Debug栏配置按钮属性项错误修复，[aa497ca5](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/aa497ca5c358645586c3d1ea5c4125213a11c446)（by suzichen）
+
+修复导航视图刷新问题，[f0442fea](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f0442feacf6978c397fedcca4906b5129b43dd5b)（by Shine-zwj）
+
+优化界面逻辑界面行为、实体行为逻辑节点，[9b71ca09](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/9b71ca0912b201cb4c68ad89a83ca88586d290a3)（by tony）
+
+新增实体数据服务基类console区输出，[cd3adef2](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/cd3adef21d76b5939446f17d894d625798f66273)（by tony）
+
+更新直接内容编辑器，[406ec9de](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/406ec9de69e47c1481ba804884ad0b19e21128bf)（by Shine-zwj）
+
+更新数据服务异常处理，[65d18f99](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/65d18f9990b2cfca499c711323f92519ba1cb2b9)（by tony）

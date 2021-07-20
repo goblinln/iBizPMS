@@ -667,8 +667,16 @@ export class Verify {
                 rules.push({ type: 'number', min: model.minValue, message: `内容最小值必须为${model.minValue}` });
             }
         } else {
-            if (model.maxLength) {
-                rules.push({ type: 'string', max: model.maxLength, message: `内容最大长度必须为${model.maxLength}` });
+            if (model.M.showMaxLength) {
+              if(model.maxLength) {
+                rules.push({ validator: (rule: any, value: any, callback: any) => {
+                  if(value.length > model.maxLength) {
+                    callback(new Error(`内容最大长度必须为${model.maxLength},当前长度为${value.length}`));
+                  } else {
+                    callback();
+                  }
+                }});
+              }
             }
             if (model.minLength) {
                 rules.push({ type: 'string', min: model.minLength, message: `内容最小长度必须为${model.minLength}` });
