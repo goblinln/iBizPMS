@@ -1488,11 +1488,7 @@
       "modelref" : true,
       "id" : "update"
     },
-    "enableAutoSave" : false,
-    "infoFormMode" : false,
     "noTabHeader" : true,
-    "readOnly" : false,
-    "showFormNavBar" : false,
     "name" : "form",
     "modelid" : "bfa78187a05893d0320e80a36dd25245",
     "modeltype" : "PSDEFORM_EDITFORM"

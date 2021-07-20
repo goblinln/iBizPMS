@@ -68,18 +68,6 @@ export class CodeListServiceBase {
     public entityService: EntityBaseService<any> = new EntityBaseService();
 
     /**
-     * 获取代码表服务
-     *
-     * @protected
-     * @param {string} name 实体名称
-     * @returns {Promise<any>}
-     * @memberof EntityService
-     */
-    public getService(name: string): Promise<any> {
-        return (window as any)['codeListRegister'].getService(name);
-    }
-
-    /**
      * 获取代码表数据
      *
      * @param {*} data 传入数据 {tag: tag, type: codelistType,data: codeList,context:context,viewparam:viewparam}

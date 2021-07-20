@@ -173,11 +173,7 @@
       "modelref" : true,
       "id" : "update"
     },
-    "enableAutoSave" : false,
-    "infoFormMode" : false,
     "noTabHeader" : true,
-    "readOnly" : false,
-    "showFormNavBar" : false,
     "name" : "wizardpanel_form_product",
     "modelid" : "bc6a3654a68c8ca1e8468ad4bd121ca9",
     "modeltype" : "PSDEFORM_EDITFORM"
@@ -778,11 +774,7 @@
       "modelref" : true,
       "id" : "update"
     },
-    "enableAutoSave" : false,
-    "infoFormMode" : false,
     "noTabHeader" : true,
-    "readOnly" : false,
-    "showFormNavBar" : false,
     "name" : "wizardpanel_form_addproduct",
     "modelid" : "fb404505436b04444fee37025273a475",
     "modeltype" : "PSDEFORM_EDITFORM"
@@ -939,11 +931,7 @@
       "modelref" : true,
       "id" : "update"
     },
-    "enableAutoSave" : false,
-    "infoFormMode" : false,
     "noTabHeader" : true,
-    "readOnly" : false,
-    "showFormNavBar" : false,
     "name" : "wizardpanel_form_createstory",
     "modelid" : "1de31b7359af61cc5407c57e88250cf7",
     "modeltype" : "PSDEFORM_EDITFORM"
@@ -1637,11 +1625,7 @@
       "modelref" : true,
       "id" : "update"
     },
-    "enableAutoSave" : false,
-    "infoFormMode" : false,
     "noTabHeader" : true,
-    "readOnly" : false,
-    "showFormNavBar" : false,
     "name" : "wizardpanel_form_addstory",
     "modelid" : "1f8275866feedb1e675ff5fc21e11f59",
     "modeltype" : "PSDEFORM_EDITFORM"

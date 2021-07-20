@@ -4,15 +4,23 @@
         > .viewpanel-container-content {
             padding: 4px;
             .control {
-                .control-caption {
+                >.control-caption {
                     > p {
                         font-size: 16px;
                         font-weight: 600;
                         padding: 4px;
                     }
                     .el-divider.el-divider--horizontal {
-                        margin: 8px 0px;
+                        margin: 0px 0px 8px 0px;
                     }
+                }
+                >.control-with-caption{
+                    height: calc(100% - 41px);
+                    width: 100%;
+                }
+                >.control-without-caption{
+                    height: 100%;
+                    width: 100%;
                 }
             }
         }

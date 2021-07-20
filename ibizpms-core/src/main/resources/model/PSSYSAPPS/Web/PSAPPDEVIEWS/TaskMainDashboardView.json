@@ -2787,11 +2787,8 @@
                             "modelref" : true,
                             "id" : "update"
                           },
-                          "enableAutoSave" : false,
                           "infoFormMode" : true,
                           "noTabHeader" : true,
-                          "readOnly" : false,
-                          "showFormNavBar" : false,
                           "name" : "form",
                           "modelid" : "a270af0e6eddd67d22f882d5505661c1",
                           "modeltype" : "PSDEFORM_EDITFORM"
@@ -5781,11 +5778,8 @@
                 "modelref" : true,
                 "id" : "update"
               },
-              "enableAutoSave" : false,
               "infoFormMode" : true,
               "noTabHeader" : true,
-              "readOnly" : false,
-              "showFormNavBar" : false,
               "name" : "form",
               "modelid" : "c2ac5618a70411dfb2086d42af90f8c8",
               "modeltype" : "PSDEFORM_EDITFORM"
@@ -10732,11 +10726,8 @@
                 "modelref" : true,
                 "id" : "update"
               },
-              "enableAutoSave" : false,
               "infoFormMode" : true,
               "noTabHeader" : false,
-              "readOnly" : false,
-              "showFormNavBar" : false,
               "name" : "form",
               "modelid" : "364fe24d6785b8e9d605dbca4ce1e1d1",
               "modeltype" : "PSDEFORM_EDITFORM"
@@ -11946,11 +11937,8 @@
                 "modelref" : true,
                 "id" : "update"
               },
-              "enableAutoSave" : false,
               "infoFormMode" : true,
               "noTabHeader" : false,
-              "readOnly" : false,
-              "showFormNavBar" : false,
               "name" : "form",
               "modelid" : "3e7755632653be6b4c8af99ad1c280d0",
               "modeltype" : "PSDEFORM_EDITFORM"

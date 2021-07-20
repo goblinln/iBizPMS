@@ -460,7 +460,7 @@ export class AppViewPanelBase extends ViewPanelControlBase {
      * @memberof AppViewPanelBase
      */
     public renderControl(modelJson: IPSPanelControl) {
-        const { showCaption, caption, height, width , itemStyle } = modelJson;
+        const { showCaption, caption, height, width } = modelJson;
         const cssName: any = modelJson.getPSSysCss()?.cssName;
         const controlStyle: any ={
             'height': height ? height + 'px' : false,
@@ -468,7 +468,7 @@ export class AppViewPanelBase extends ViewPanelControlBase {
         }
         const controlModelJson: any = modelJson.getPSControl();
         return (
-            <div class={['control',cssName,itemStyle.toLocaleLowerCase()]} style={controlStyle}>
+            <div class={['control',cssName,controlModelJson?.controlType?.toLocaleLowerCase()]} style={controlStyle}>
                 {
                     showCaption && caption ? 
                     <div class='control-caption'>

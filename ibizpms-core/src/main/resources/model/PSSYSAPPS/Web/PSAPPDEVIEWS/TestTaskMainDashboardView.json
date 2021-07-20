@@ -409,11 +409,7 @@
                 "modelref" : true,
                 "id" : "update"
               },
-              "enableAutoSave" : false,
-              "infoFormMode" : false,
               "noTabHeader" : true,
-              "readOnly" : false,
-              "showFormNavBar" : false,
               "name" : "form",
               "modelid" : "89a1b280f369d055342797cdce72f10f",
               "modeltype" : "PSDEFORM_EDITFORM"
@@ -3386,11 +3382,8 @@
                 "modelref" : true,
                 "id" : "update"
               },
-              "enableAutoSave" : false,
               "infoFormMode" : true,
               "noTabHeader" : true,
-              "readOnly" : false,
-              "showFormNavBar" : false,
               "name" : "form",
               "modelid" : "1bf6d87e18568234ac123d18dce25ca4",
               "modeltype" : "PSDEFORM_EDITFORM"

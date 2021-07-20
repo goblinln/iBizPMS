@@ -2015,11 +2015,8 @@
     "modelref" : true,
     "id" : "update"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : true,
   "noTabHeader" : true,
-  "readOnly" : false,
-  "showFormNavBar" : false,
   "modelid" : "89cae565fa64af59f018a68269ca1d9e",
   "modeltype" : "PSDEFORM_EDITFORM"
 }
