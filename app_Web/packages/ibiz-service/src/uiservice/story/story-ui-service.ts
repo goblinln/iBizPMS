@@ -1,4 +1,4 @@
-import { AppCenterService } from 'ibiz-vue';
+import { AppCenterService, UIActionResult } from 'ibiz-vue';
 import { StoryUIServiceBase } from './story-ui-service-base';
 
 /**
@@ -77,6 +77,9 @@ export default class StoryUIService extends StoryUIServiceBase {
       } else {
           super.excuteAction(uIActionTag, args, context, params, $event, xData, actionContext, srfParentDeName);
       }
+      return new Promise((resolve: any, reject: any) => {
+        resolve(new UIActionResult({ ok: true, result: {} }))
+      })
     }
 
     /**

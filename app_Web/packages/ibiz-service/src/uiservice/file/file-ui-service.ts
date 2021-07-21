@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { UIActionResult } from 'ibiz-vue';
 import { UIActionTool, Util } from 'ibiz-core';
 import { FileUIServiceBase } from './file-ui-service-base';
 
@@ -182,6 +183,9 @@ export default class FileUIService extends FileUIServiceBase {
         } else {
             super.excuteAction(uIActionTag, args, context, params, $event, xData, actionContext, srfParentDeName);
         }
+        return new Promise((resolve: any, reject: any) => {
+            resolve(new UIActionResult({ ok: true, result: {} }))
+        })
     }
 
     /**

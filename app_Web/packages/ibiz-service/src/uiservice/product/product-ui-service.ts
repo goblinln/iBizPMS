@@ -1,5 +1,5 @@
 import { AppServiceBase } from 'ibiz-core';
-import { AppCenterService } from 'ibiz-vue';
+import { AppCenterService, UIActionResult } from 'ibiz-vue';
 import { ProductUIServiceBase } from './product-ui-service-base';
 
 /**
@@ -78,6 +78,9 @@ export default class ProductUIService extends ProductUIServiceBase {
         } else {
             super.excuteAction(uIActionTag, args, context, params, $event, xData, actionContext, srfParentDeName);
         }
+        return new Promise((resolve: any, reject: any) => {
+            resolve(new UIActionResult({ ok: true, result: {} }))
+        })
     }
 
     /**
