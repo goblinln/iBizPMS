@@ -30,7 +30,7 @@ export class AppBackEndAction extends AppDEUIAction {
     constructor(opts: any, context?: any) {
         super(opts, context);
         const method: IPSAppDEMethod = this.actionModel.getPSAppDEMethod() as IPSAppDEMethod;
-        if (method.M.customCode || !method.M.getPSDEServiceAPIMethod) {
+        if (method?.M && (method.M.customCode || !method.M.getPSDEServiceAPIMethod)) {
             this.isMergeParam = true;
         }
     }

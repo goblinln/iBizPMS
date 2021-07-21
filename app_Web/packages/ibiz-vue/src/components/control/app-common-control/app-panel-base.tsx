@@ -245,7 +245,7 @@ export class AppPanelBase extends PanelControlBase {
                                 let { grow, height, width, itemType } = item.getPSLayoutPos();
                                 detailStyle.flexGrow = grow != -1 ? grow : 0;
                                 detailStyle.height = height > 0 ? height + 'px' : '';
-                                detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' ? '' : '100%';
+                                detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' || itemType == 'FIELD' ? '' : '100%';
                             }
                             // 自定义类名
                             const controlClassName = this.renderDetailClass(item);
@@ -276,7 +276,7 @@ export class AppPanelBase extends PanelControlBase {
                             if (!Object.is(itemType,"CONTAINER") && item.getPSLayoutPos()) {
                                 let { height, width } = item.getPSLayoutPos();
                                 detailStyle.height = height > 0 ? height + 'px' : '';
-                                detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' ? '' : '100%';
+                                detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' || itemType == 'FIELD' ? '' : '100%';
                             }
                             // 栅格布局
                             let attrs = this.getGridLayoutProps(container, item);
