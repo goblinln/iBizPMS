@@ -287,8 +287,7 @@
           "viewFieldName" : "DELAY",
           "hidden" : false,
           "showCaption" : false
-        } ],
-        "showCaption" : true
+        } ]
       }, {
         "caption" : "已解决状态",
         "itemStyle" : "DEFAULT",
@@ -424,8 +423,7 @@
           "convertToCodeItemText" : true,
           "hidden" : false,
           "showCaption" : false
-        } ],
-        "showCaption" : true
+        } ]
       }, {
         "caption" : "已关闭状态",
         "itemStyle" : "DEFAULT",
@@ -516,8 +514,7 @@
           "convertToCodeItemText" : true,
           "hidden" : false,
           "showCaption" : false
-        } ],
-        "showCaption" : true
+        } ]
       }, {
         "caption" : "解决方案",
         "itemStyle" : "DEFAULT",
@@ -578,8 +575,7 @@
           "convertToCodeItemText" : true,
           "hidden" : false,
           "showCaption" : false
-        } ],
-        "showCaption" : true
+        } ]
       }, {
         "contentType" : "HTML",
         "itemStyle" : "DEFAULT",
@@ -603,8 +599,7 @@
           } ],
           "notMode" : false
         } ]
-      } ],
-      "showCaption" : true
+      } ]
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",

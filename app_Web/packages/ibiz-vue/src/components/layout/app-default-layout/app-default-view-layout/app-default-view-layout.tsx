@@ -217,8 +217,8 @@ export class AppDefaultViewLayout extends Vue {
             Object.assign(containerClass, { [css.cssName]: true });
         }
         let containerStyle = {
-            width: container.width ? container.width + 'px' : false,
-            height: container.height ? container.height + 'px' : '100%',
+            width: container.width ? container.width + 'px' : '100%',
+            height: container.height ? container.height + 'px' : '',
         }
         // FLEX布局
         if (layout && layoutMode == 'FLEX') {
@@ -235,9 +235,9 @@ export class AppDefaultViewLayout extends Vue {
                         {panelItems.map((item: any, index: number) => {
                             // 子样式
                             let detailStyle: any = {};
-                            let { height, width } = item;
+                            let { height, width, itemType } = item;
                             detailStyle.height = height > 0 ? height + 'px' : '';
-                            detailStyle.width = width > 0 ? width + 'px' : '';
+                            detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' ? '' : '100%';
                             if (item.getPSLayoutPos()) {
                                 let grow = item.getPSLayoutPos();
                                 detailStyle.flexGrow = grow != -1 ? grow : 0;
@@ -268,9 +268,9 @@ export class AppDefaultViewLayout extends Vue {
                     <row class="viewlayoutpanel-container-content" style={cssStyle}>
                         {panelItems.map((item: any, index: number) => {
                             let detailStyle: any = {};
-                            let { height, width } = item;
+                            let { height, width, itemType } = item;
                             detailStyle.height = height > 0 ? height + 'px' : '';
-                            detailStyle.width = width > 0 ? width + 'px' : '';
+                            detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' ? '' : '100%';
                             // 栅格布局
                             let attrs = this.getGridLayoutProps(container, item);
                             // 自定义类名
@@ -374,8 +374,8 @@ export class AppDefaultViewLayout extends Vue {
         let sysCssName = modelJson.getPSSysCss()?.cssName;
         let sysImage = modelJson.getPSSysImage()?.cssClass;
         const style: any = {
-            width: rawItemWidth > 0 ? `${rawItemWidth}px` : false,
-            height: rawItemHeight > 0 ? `${rawItemHeight}px` :false,
+            width: rawItemWidth > 0 ? `${rawItemWidth}px` : '',
+            height: rawItemHeight > 0 ? `${rawItemHeight}px` : '',
         }
         if (rawContent) {
             const items = rawContent.match(/\{{(.+?)\}}/g);

@@ -218,7 +218,7 @@ export class AppPanelBase extends PanelControlBase {
         }
         let containerStyle = {
             width: container.width ? container.width + 'px' : false,
-            height: container.height ? container.height + 'px' : '100%',
+            height: container.height ? container.height + 'px' : '',
         }
         if (this.detailsModel[container.name] && !this.detailsModel[container.name].visible) {
             Object.assign(containerStyle, { display: 'none' });
@@ -242,10 +242,10 @@ export class AppPanelBase extends PanelControlBase {
                                 Object.assign(detailStyle, { display: 'none' });
                             }
                             if (!Object.is(item.itemType,"CONTAINER") && item.getPSLayoutPos()) {
-                                let { grow, height, width } = item.getPSLayoutPos();
+                                let { grow, height, width, itemType } = item.getPSLayoutPos();
                                 detailStyle.flexGrow = grow != -1 ? grow : 0;
                                 detailStyle.height = height > 0 ? height + 'px' : '';
-                                detailStyle.width = width > 0 ? width + 'px' : '';
+                                detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' ? '' : '100%';
                             }
                             // 自定义类名
                             const controlClassName = this.renderDetailClass(item);
@@ -267,15 +267,16 @@ export class AppPanelBase extends PanelControlBase {
                     </row> : null}
                     <row class="viewpanel-container-content">
                         {panelItems.map((item: any, index: number) => {
+                            const { itemType } = item;
                             //子样式
                             let detailStyle: any = { };
                             if (this.detailsModel[container.name] && !this.detailsModel[container.name].visible) {
                                 Object.assign(detailStyle, { display: 'none' });
                             }
-                            if (!Object.is(item.itemType,"CONTAINER") && item.getPSLayoutPos()) {
+                            if (!Object.is(itemType,"CONTAINER") && item.getPSLayoutPos()) {
                                 let { height, width } = item.getPSLayoutPos();
                                 detailStyle.height = height > 0 ? height + 'px' : '';
-                                detailStyle.width = width > 0 ? width + 'px' : '';
+                                detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' ? '' : '100%';
                             }
                             // 栅格布局
                             let attrs = this.getGridLayoutProps(container, item);
@@ -308,7 +309,7 @@ export class AppPanelBase extends PanelControlBase {
             tooltip,
         } = modelJson;
         const buttonStyle = {
-            height: height && height > 0 ? height + 'px' : false,
+            height: height && height > 0 ? height + 'px' : '',
         };
         const icon = modelJson.getPSSysImage();
         const uiAction = modelJson.getPSUIAction() as IPSUIAction;
@@ -387,8 +388,8 @@ export class AppPanelBase extends PanelControlBase {
         let sysCssName = modelJson.getPSSysCss()?.cssName;
         let sysImage = modelJson.getPSSysImage()?.cssClass;
         const style: any = {
-            width: rawItemWidth > 0 ? `${rawItemWidth}px` : false,
-            height: rawItemHeight > 0 ? `${rawItemHeight}px` :false,
+            width: rawItemWidth > 0 ? `${rawItemWidth}px` : '100%',
+            height: rawItemHeight > 0 ? `${rawItemHeight}px` : '',
         }
         if (rawContent) {
             const items = rawContent.match(/\{{(.+?)\}}/g);
@@ -469,8 +470,8 @@ export class AppPanelBase extends PanelControlBase {
         const { showCaption, caption, height, width } = modelJson;
         const cssName: any = modelJson.getPSSysCss()?.cssName;
         const controlStyle: any ={
-            'height': height ? height + 'px' : false,
-            'width': width ? width + 'px' : false,
+            'height': height ? height + 'px' : '',
+            'width': width ? width + 'px' : '100%',
         }
         const controlModelJson: any = modelJson.getPSControl();
         return (
@@ -554,7 +555,7 @@ export class AppPanelBase extends PanelControlBase {
         let { width, height, layoutMode } = this.controlInstance;
         let controlStyle: any = {};
         controlStyle.width = width > 0 ? width + 'px' : '100%';
-        controlStyle.height = height > 0 ? height + 'px' : false;
+        controlStyle.height = height > 0 ? height + 'px' : '100%';
         if (layoutMode == 'FLEX') {
             controlStyle.display = 'flex';
         }

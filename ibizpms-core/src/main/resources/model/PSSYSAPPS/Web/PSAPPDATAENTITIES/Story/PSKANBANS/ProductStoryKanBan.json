@@ -283,8 +283,7 @@
         "viewFieldName" : "ISCHILD",
         "hidden" : true,
         "showCaption" : false
-      } ],
-      "showCaption" : true
+      } ]
     } ],
     "name" : "itemlayoutpanel",
     "modelid" : "6eb77d5e09d06f843a76afdce1cfe48e",
