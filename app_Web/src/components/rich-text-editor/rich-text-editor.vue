@@ -302,7 +302,7 @@ export default class RichTextEditor extends Vue {
     /**
      * 注入实体服务
      */
-    public userTplService: UserTplService = new UserTplService();
+    public userTplService: UserTplService = new UserTplService(this.context);
 
     /**
      * 应用模板集合
