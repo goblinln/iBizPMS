@@ -46,7 +46,7 @@ export class AppModal {
      * @private
      * @memberof AppModal
      */
-     private router: any;
+    private router: any;
 
     /**
      * Creates an instance of AppModal.
@@ -93,17 +93,18 @@ export class AppModal {
      * @param {{ viewname: string, title: string, width?: number, height?: number,isfullscreen?:boolean }} view 视图数据
      * @param {*} [context={}] 应用上下文参数
      * @param {*} [viewparams={}] 视图参数
+     * @param {*} [navdatas=[]] 导航数据
      * @param {string} uuid 标识
      * @returns {Subject<any>}
      * @memberof AppModal
      */
-    private createVueExample(view: { viewname: string, title: string, width?: number, height?: number, isfullscreen?: boolean, customClass?: string }, context: any = {}, viewparams: any = {}, uuid: string): Subject<any> {
+    private createVueExample(view: { viewname: string, title: string, width?: number, height?: number, isfullscreen?: boolean, customClass?: string }, context: any = {}, viewparams: any = {}, navdatas: Array<any> = [], uuid: string): Subject<any> {
         const self: any = this;
-        if(!self.store || !self.i18n) {
+        if (!self.store || !self.i18n) {
             self.initBasicData();
         }
         try {
-            let props = { view: view, viewdata: context, viewparams: viewparams, uuid: uuid };
+            let props = { view: view, viewdata: context, viewparams: viewparams, navdatas: navdatas, uuid: uuid };
             let component = AppModalCompponent;
             const vm = new Vue({
                 store: this.store,
@@ -132,15 +133,16 @@ export class AppModal {
      * @param {any[]} parameters 当前应用视图参数对象
      * @param {any[]} args 多项数据
      * @param {*} [data={}] 行为参数
+     * @param {any[]} navdatas 导航数据
      * @returns {Subject<any>}
      * @memberof AppModal
      */
-    public openModal(view: { viewname: string, title: string, width?: number, height?: number,isfullscreen?:boolean, customClass?: string }, context: any = {}, data: any = {}): Subject<any> {
+    public openModal(view: { viewname: string, title: string, width?: number, height?: number, isfullscreen?: boolean, customClass?: string }, context: any = {}, data: any = {}, navdatas: Array<any> = []): Subject<any> {
         try {
             let viewdata: any = {};
             Object.assign(viewdata, JSON.parse(JSON.stringify(context)));
             const uuid = this.getUUID();
-            const subject = this.createVueExample(view, viewdata, data, uuid);
+            const subject = this.createVueExample(view, viewdata, data, navdatas, uuid);
             return subject;
         } catch (error) {
             LogUtil.log(error);

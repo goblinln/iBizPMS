@@ -217,9 +217,6 @@ export class AppBackEndAction extends AppDEUIAction {
                                     if (this.actionModel.closeEditView) {
                                         actionContext.closeView(null);
                                     }
-                                    if (Object.is(this.actionModel?.uILogicAttachMode, 'AFTER')) {
-                                        return this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
-                                    }
                                     // 后续界面行为
                                     if (this.actionModel.M?.getNextPSUIAction) {
                                         const { data: result } = response;
@@ -261,7 +258,11 @@ export class AppBackEndAction extends AppDEUIAction {
                                             }
                                         });
                                     } else {
-                                        return new UIActionResult({ ok: true, result: args });
+                                        if (Object.is(this.actionModel?.uILogicAttachMode, 'AFTER')) {
+                                            return this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
+                                        } else {
+                                            return new UIActionResult({ ok: true, result: args });
+                                        }
                                     }
                                 })
                                 .catch((response: any) => {
@@ -290,7 +291,7 @@ export class AppBackEndAction extends AppDEUIAction {
                     if (frontPSAppView && frontPSAppView.modelPath) {
                         Object.assign(context, { viewpath: frontPSAppView.modelPath });
                     }
-                    const appdrawer = actionContext.$appdrawer.openDrawer(view, Util.getViewProps(context, data));
+                    const appdrawer = actionContext.$appdrawer.openDrawer(view, Util.getViewProps(context, data, args));
                     appdrawer.subscribe((result: any) => {
                         if (result && Object.is(result.ret, 'OK')) {
                             Object.assign(data, { srfactionparam: result.datas });
@@ -307,7 +308,7 @@ export class AppBackEndAction extends AppDEUIAction {
                     if (frontPSAppView && frontPSAppView.modelPath) {
                         Object.assign(context, { viewpath: frontPSAppView.modelPath });
                     }
-                    const appmodal = actionContext.$appmodal.openModal(view, context, data);
+                    const appmodal = actionContext.$appmodal.openModal(view, context, data, args);
                     appmodal.subscribe((result: any) => {
                         if (result && Object.is(result.ret, 'OK')) {
                             Object.assign(data, { srfactionparam: result.datas });

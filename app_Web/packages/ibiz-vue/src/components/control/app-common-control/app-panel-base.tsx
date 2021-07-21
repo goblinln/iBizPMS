@@ -1,7 +1,7 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
 import { debounce, Util } from 'ibiz-core';
 import { PanelControlBase } from '../../../widgets';
-import { IPSCodeListEditor, IPSPanel, IPSPanelItem, IPSPanelTabPage, IPSSysPanelField, IPSUIAction } from '@ibiz/dynamic-model-api';
+import { IPSDEViewPanel, IPSPanel, IPSPanelButton, IPSPanelContainer, IPSPanelControl, IPSPanelItem, IPSPanelRawItem, IPSPanelTabPage, IPSPanelTabPanel, IPSSysCss, IPSSysPanelField, IPSUIAction } from '@ibiz/dynamic-model-api';
 
 /**
  * 面板部件基类
@@ -58,6 +58,20 @@ export class AppPanelBase extends PanelControlBase {
     }
 
     /**
+     * 监听数据对象
+     *
+     * @memberof AppPanelBase
+     */
+     @Watch('data', { deep: true })
+     public onDataChange(newVal: any, oldVal: any) {
+         if (newVal) {
+            this.computeButtonState(newVal);
+            this.panelLogic({ name: '', newVal: null, oldVal: null });
+            this.$forceUpdate();
+         }
+     }
+
+    /**
      * 销毁视图回调
      *
      * @memberof AppPanelBase
@@ -76,33 +90,16 @@ export class AppPanelBase extends PanelControlBase {
     public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void { }
 
     /**
-     * 监听数据对象
-     *
-     * @memberof AppPanelBase
-     */
-    @Watch('inputData', { deep: true })
-    public onInputDataChange(newVal: any, oldVal: any) {
-        if (newVal) {
-            this.computedUIData(newVal);
-            this.panelData = Util.deepCopy(newVal);
-            this.computeButtonState(newVal);
-            this.panelLogic({ name: '', newVal: null, oldVal: null });
-            this.$forceUpdate();
-        }
-    }
-
-    /**
      * FLEX布局时类名映射
      *
      * @memberof AppPanelBase
      */
     public classObj: any = {
-        BUTTON: 'app-layoutpanel-button',
-        CONTAINER: 'app-layoutpanel-container',
-        FIELD: 'app-layoutpanel-field',
-        RAWITEM: 'app-layoutpanel-rowitem',
-        TABPAGE: 'app-layoutpanel-tabpage',
-        TABPANEL: 'app-layoutpanel-tabpanel',
+        BUTTON: 'app-viewpanel-button',
+        FIELD: 'app-viewpanel-field',
+        RAWITEM: 'app-viewpanel-rowitem',
+        TABPAGE: 'app-viewpanel-tabpage',
+        TABPANEL: 'app-viewpanel-tabpanel',
     };
 
     /**
@@ -110,12 +107,13 @@ export class AppPanelBase extends PanelControlBase {
      * @param item
      */
     public renderDetailClass(item: any) {
-        // 映射类名
-        let detailClass: any = this.classObj[item.itemType];
-        if (item?.getPSSysCss?.()) {
-            detailClass += ` ${item.getPSSysCss().cssName}`;
-        }
-        return detailClass;
+         // 映射类名
+         let detailClass: any = this.classObj[item.itemType] || '';
+         detailClass += ` viewpanel-${item.itemType.toLowerCase()}-${item.name.toLowerCase()}`;
+         if (item?.getPSSysCss?.()) {
+             detailClass += ` ${item.getPSSysCss().cssName}`;
+         }
+         return detailClass;
     }
 
     /**
@@ -167,87 +165,17 @@ export class AppPanelBase extends PanelControlBase {
 
     public renderRootPSPanelItems(controlInstance: IPSPanel) {
         return controlInstance.getRootPSPanelItems()?.map((container: any, index: number) => {
-            return this.renderByDetailType(container, index);
+            return this.renderByDetailType(container,true);
         });
-    }
-
-    /**
-     * 绘制面板成员集合
-     *
-     * @memberof AppPanelBase
-     */
-
-    public renderPanelItems(container: any) {
-        if (!container.getPSPanelItems() || container.getPSPanelItems().length == 0) {
-            return null;
-        }
-        let layoutMode = container.getPSLayout()?.layout;
-        // FLEX布局
-        if (layoutMode == 'FLEX') {
-            let cssStyle: string = 'width: 100%; height: 100%; overflow: auto; display: flex;';
-            cssStyle += container.getPSLayout().dir ? `flex-direction: ${container.getPSLayout().dir};` : '';
-            cssStyle += container.getPSLayout().align ? `justify-content: ${container.getPSLayout().align};` : '';
-            cssStyle += container.getPSLayout().vAlign ? `align-items: ${container.getPSLayout().vAlign};` : '';
-            return (
-                <div style={cssStyle}>
-                    {container.getPSPanelItems().map((item: any, index: number) => {
-                        // 子样式
-                        let detailStyle: any = {
-                            'display': this.detailsModel[item.name]?.visible ? false : 'none',
-                        };
-                        if (item.getPSLayoutPos()) {
-                            let { grow, height, width } = item.getPSLayoutPos();
-                            detailStyle.flexGrow = grow != -1 ? grow : 0;
-                            detailStyle.height = height > 0 ? height + 'px' : '';
-                            detailStyle.width = width > 0 ? width + 'px' : '';
-                        }
-                        // 自定义类名
-                        const controlClassName = this.renderDetailClass(item);
-                        return (
-                            <div style={detailStyle} class={controlClassName}>
-                                {this.renderByDetailType(item, index)}
-                            </div>
-                        );
-                    })}
-                </div>
-            );
-        } else {
-            // 栅格布局
-            return (
-                <row style="height:100%;">
-                    {container.getPSPanelItems().map((item: any, index: number) => {
-                        //子样式
-                        let detailStyle: any = {
-                            'display': this.detailsModel[item.name]?.visible ? false : 'none',
-                        };
-                        if (item.getPSLayoutPos()) {
-                            let { height, width } = item.getPSLayoutPos();
-                            detailStyle.height = height > 0 ? height + 'px' : '';
-                            detailStyle.width = width > 0 ? width + 'px' : '';
-                        }
-                        // 栅格布局
-                        let attrs = this.getGridLayoutProps(container, item);
-                        // 自定义类名
-                        const controlClassName = this.renderDetailClass(item);
-                        return (
-                            <i-col {...{ props: attrs }} style={detailStyle} class={controlClassName}>
-                                {this.renderByDetailType(item, index)}
-                            </i-col>
-                        );
-                    })}
-                </row>
-            );
-        }
     }
 
     /**
      * 根据detailType绘制对应detail
      *
      * @param {*} modelJson
-     * @param {number} index
      * @memberof AppPanelBase
      */
-    public renderByDetailType(modelJson: any, index: number) {
+    public renderByDetailType(modelJson: any,isRootContainer?: boolean) {
         if (modelJson.getPSSysPFPlugin()) {
             const pluginInstance: any = this.PluginFactory.getPluginInstance("CONTROLITEM", modelJson.getPSSysPFPlugin().pluginCode);
             if (pluginInstance) {
@@ -256,17 +184,19 @@ export class AppPanelBase extends PanelControlBase {
         } else {
             switch (modelJson.itemType) {
                 case 'CONTAINER':
-                    return this.renderContainer(modelJson, index);
+                    return this.renderContainer(modelJson,isRootContainer);
                 case 'BUTTON':
-                    return this.renderButton(modelJson, index);
+                    return this.renderButton(modelJson);
                 case 'FIELD':
-                    return this.renderField(modelJson, index);
+                    return this.renderField(modelJson);
                 case 'RAWITEM':
-                    return this.renderRawitem(modelJson, index);
+                    return this.renderRawitem(modelJson);
                 case 'TABPANEL':
-                    return this.renderTabPanel(modelJson, index);
+                    return this.renderTabPanel(modelJson);
                 case 'TABPAGE':
-                    return this.renderTabPage(modelJson, index);
+                    return this.renderTabPage(modelJson);
+                case 'CONTROL':
+                    return this.renderControl(modelJson);
             }
         }
     }
@@ -277,8 +207,90 @@ export class AppPanelBase extends PanelControlBase {
      * @memberof AppPanelBase
      */
 
-    public renderContainer(modelJson: any, index: number) {
-        return this.renderPanelItems(modelJson);
+    public renderContainer(container: IPSPanelContainer,isRootContainer: boolean = false) {
+        const panelItems: IPSPanelItem[] = container.getPSPanelItems() || [];
+        let layout = container.getPSLayout() as any;
+        let layoutMode = container.getPSLayout()?.layout;
+        let css = container.getPSSysCss() as IPSSysCss;
+        let containerClass = { 'app-viewpanel-container': true, 'show-caption': container.showCaption };
+        if (isRootContainer && css && css.cssName) {
+            Object.assign(containerClass, { [css.cssName]: true });
+        }
+        let containerStyle = {
+            width: container.width ? container.width + 'px' : false,
+            height: container.height ? container.height + 'px' : '100%',
+        }
+        if (this.detailsModel[container.name] && !this.detailsModel[container.name].visible) {
+            Object.assign(containerStyle, { display: 'none' });
+        }
+        // FLEX布局
+        if (layout && layoutMode == 'FLEX') {
+            let cssStyle: string = 'overflow: auto; display: flex;';
+            cssStyle += layout.dir ? `flex-direction: ${layout.dir};` : '';
+            cssStyle += layout.align ? `justify-content: ${layout.align};` : '';
+            cssStyle += layout.vAlign ? `align-items: ${layout.vAlign};` : '';
+            return (
+                <i-col style={containerStyle} class={containerClass}>
+                    {container.showCaption ? <div class="viewpanel-container-header">
+                        <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
+                    </div> : null}
+                    <div class="viewpanel-container-content" style={cssStyle}>
+                        {panelItems.map((item: any, index: number) => {
+                            // 子样式
+                            let detailStyle: any = { };
+                            if (this.detailsModel[container.name] && !this.detailsModel[container.name].visible) {
+                                Object.assign(detailStyle, { display: 'none' });
+                            }
+                            if (!Object.is(item.itemType,"CONTAINER") && item.getPSLayoutPos()) {
+                                let { grow, height, width } = item.getPSLayoutPos();
+                                detailStyle.flexGrow = grow != -1 ? grow : 0;
+                                detailStyle.height = height > 0 ? height + 'px' : '';
+                                detailStyle.width = width > 0 ? width + 'px' : '';
+                            }
+                            // 自定义类名
+                            const controlClassName = this.renderDetailClass(item);
+                            return (
+                                <div style={detailStyle} class={controlClassName}>
+                                    {this.renderByDetailType(item)}
+                                </div>
+                            );
+                        })}
+                    </div>
+                </i-col>
+            );
+        } else {
+            // 栅格布局
+            return (
+                <i-col style={containerStyle} class={containerClass}>
+                    {container.showCaption ? <row class="viewpanel-container-header">
+                        <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
+                    </row> : null}
+                    <row class="viewpanel-container-content">
+                        {panelItems.map((item: any, index: number) => {
+                            //子样式
+                            let detailStyle: any = { };
+                            if (this.detailsModel[container.name] && !this.detailsModel[container.name].visible) {
+                                Object.assign(detailStyle, { display: 'none' });
+                            }
+                            if (!Object.is(item.itemType,"CONTAINER") && item.getPSLayoutPos()) {
+                                let { height, width } = item.getPSLayoutPos();
+                                detailStyle.height = height > 0 ? height + 'px' : '';
+                                detailStyle.width = width > 0 ? width + 'px' : '';
+                            }
+                            // 栅格布局
+                            let attrs = this.getGridLayoutProps(container, item);
+                            // 自定义类名
+                            const controlClassName = this.renderDetailClass(item);
+                            return (
+                                <i-col {...{ props: attrs }} style={detailStyle} class={controlClassName}>
+                                    {this.renderByDetailType(item)}
+                                </i-col>
+                            );
+                        })}
+                    </row>
+                </i-col>
+            );
+        }
     }
 
     /**
@@ -287,11 +299,10 @@ export class AppPanelBase extends PanelControlBase {
      * @memberof AppPanelBase
      */
 
-    public renderButton(modelJson: any, index: number) {
+    public renderButton(modelJson: IPSPanelButton) {
         let {
             caption,
             showCaption,
-            xDataControlName,
             name,
             height,
             tooltip,
@@ -301,12 +312,11 @@ export class AppPanelBase extends PanelControlBase {
         };
         const icon = modelJson.getPSSysImage();
         const uiAction = modelJson.getPSUIAction() as IPSUIAction;
-        const labelPSSysCss = modelJson?.getLabelPSSysCss?.();
         return (
             <app-panel-button
                 buttonStyle={buttonStyle}
-                caption={this.$tl(uiAction.getCapPSLanguageRes()?.lanResTag, caption)}
-                tooltip={this.$tl(uiAction.getTooltipPSLanguageRes()?.lanResTag, tooltip)}
+                caption={this.$tl(uiAction?.getCapPSLanguageRes()?.lanResTag, caption)}
+                tooltip={this.$tl(uiAction?.getTooltipPSLanguageRes()?.lanResTag, tooltip)}
                 icon={
                     icon?.cssClass
                         ? icon.cssClass
@@ -316,7 +326,6 @@ export class AppPanelBase extends PanelControlBase {
                 }
                 showCaption={showCaption}
                 disabled={this.detailsModel[name]?.disabled}
-                lableStyle={labelPSSysCss?.cssName}
                 on-onClick={($event: any) => {
                   debounce(this.buttonClick,[this.controlInstance.name, { tag: name }, $event],this);
                 }}
@@ -330,7 +339,7 @@ export class AppPanelBase extends PanelControlBase {
      * @memberof AppPanelBase
      */
 
-    public renderField(modelJson: IPSSysPanelField, index: number) {
+    public renderField(modelJson: IPSSysPanelField) {
         let { name, caption, hidden, showCaption } = modelJson;
         const editor: any = modelJson.getPSEditor();
         let labelPos = 'LEFT';
@@ -373,8 +382,7 @@ export class AppPanelBase extends PanelControlBase {
      * @memberof AppPanelBase
      */
 
-    public renderRawitem(modelJson: any, index: number) {
-        const data: any = this.data;
+    public renderRawitem(modelJson: IPSPanelRawItem) {
         let { rawItemHeight, rawItemWidth, contentType, htmlContent, rawContent } = modelJson;
         let sysCssName = modelJson.getPSSysCss()?.cssName;
         let sysImage = modelJson.getPSSysImage()?.cssClass;
@@ -416,20 +424,20 @@ export class AppPanelBase extends PanelControlBase {
      * @memberof AppPanelBase
      */
 
-    public renderTabPanel(modelJson: any, index: number) {
-        let { name, getPSPanelTabPages } = modelJson;
-        let activatedPage = this.detailsModel[name]?.activatedPage;
+    public renderTabPanel(modelJson: IPSPanelTabPanel) {
+        let activatedPage = this.detailsModel[modelJson.name]?.activatedPage;
+        const tabPages: IPSPanelTabPage[] = modelJson.getPSPanelTabPages() || [];
         return (
             <i-col class={this.renderDetailClass(modelJson)}>
                 <el-tabs
                     v-model={activatedPage}
-                    on-tab-click={($event: any) => debounce(this.handleTabPanelClick,[name, $event],this)}
+                    on-tab-click={($event: any) => debounce(this.handleTabPanelClick,[modelJson.name, $event],this)}
                     class={this.renderDetailClass(modelJson)}
                 >
-                    {getPSPanelTabPages &&
-                        getPSPanelTabPages.map((item: any, index: number) => {
-                            return this.renderTabPage(item, index);
-                        })}
+                    {tabPages.length > 0 ?
+                        tabPages.map((item: IPSPanelTabPage, index: number) => {
+                            return this.renderTabPage(item);
+                        }) : null}
                 </el-tabs>
             </i-col>
         );
@@ -440,17 +448,93 @@ export class AppPanelBase extends PanelControlBase {
      *
      * @memberof AppPanelBase
      */
-
-    public renderTabPage(modelJson: IPSPanelTabPage, index: number) {
-        let label = this.$tl(modelJson.getCapPSLanguageRes()?.lanResTag, modelJson.caption) || '分页';
+    public renderTabPage(modelJson: IPSPanelTabPage) {
+        let label = this.$tl(modelJson.getCapPSLanguageRes?.()?.lanResTag, modelJson.caption) || '分页';
         const panelItems: IPSPanelItem[] = modelJson.getPSPanelItems() || [];
         return (
             <el-tab-pane label={label} name={modelJson.name} class={this.renderDetailClass(modelJson)}>
                 {panelItems.map((item: IPSPanelItem, index: number) => {
-                        return this.renderByDetailType(item, index);
-                    })}
+                    return this.renderByDetailType(item)
+                })}
             </el-tab-pane>
         );
+    }
+
+    /**
+     * 绘制面板Control
+     *
+     * @memberof AppPanelBase
+     */
+    public renderControl(modelJson: IPSPanelControl) {
+        const { showCaption, caption, height, width } = modelJson;
+        const cssName: any = modelJson.getPSSysCss()?.cssName;
+        const controlStyle: any ={
+            'height': height ? height + 'px' : false,
+            'width': width ? width + 'px' : false,
+        }
+        const controlModelJson: any = modelJson.getPSControl();
+        return (
+            <div class={['control',cssName,controlModelJson?.controlType?.toLocaleLowerCase()]} style={controlStyle}>
+                {
+                    showCaption && caption ? 
+                    <div class='control-caption'>
+                        <p>
+                            {caption}
+                        </p>
+                        <el-divider></el-divider>
+                    </div>
+                    : null
+                }
+                <div class={{ 'control-with-caption': showCaption, 'control-without-caption': !showCaption }}>{this.renderByControlType(controlModelJson)}</div>
+            </div>
+        )
+    }
+
+    /**
+     * 根据controlType绘制对应control
+     *
+     * @param {*} modelJson
+     * @memberof AppPanelBase
+     */
+    public renderByControlType(modelJson: any) {
+        switch (modelJson.controlType) {
+            case 'VIEWPANEL':
+                return this.renderViewPanel(modelJson);
+        }
+    }
+
+    /**
+     * 绘制ViewPanel
+     * 
+     * @param {*} control
+     * @memberof AppPanelBase
+     */
+    public renderViewPanel(modelJson: IPSDEViewPanel) {
+        let controlAppView = modelJson.getEmbeddedPSAppDEView();
+        if (!controlAppView) {
+            return;
+        }
+        const { modelFilePath, name } = controlAppView;
+        let tempContext: any = Object.assign(Util.deepCopy(this.context), { viewpath: modelFilePath });
+        return this.$createElement('app-view-shell', {
+            props: {
+                staticProps: {
+                    portletState: this.viewState,
+                    viewDefaultUsage: false,
+                    viewModelData: controlAppView
+                },
+                dynamicProps: {
+                    viewdata: JSON.stringify(tempContext),
+                    viewparam: JSON.stringify(this.viewparams),
+                },
+            },
+            on: {
+                'viewIsMounted': () => {
+                    this.setIsMounted(controlAppView?.name);
+                }
+            },
+            ref: name,
+        });
     }
 
     /**
@@ -464,18 +548,18 @@ export class AppPanelBase extends PanelControlBase {
             return null;
         }
         let controlClassNames = {
-            'app-layoutpanel': true,
+            'app-viewpanel': true,
             ...this.renderOptions.controlClassNames,
         };
         let { width, height, layoutMode } = this.controlInstance;
         let controlStyle: any = {};
         controlStyle.width = width > 0 ? width + 'px' : '100%';
-        controlStyle.height = height > 0 ? height + 'px' : '100%';
+        controlStyle.height = height > 0 ? height + 'px' : false;
         if (layoutMode == 'FLEX') {
             controlStyle.display = 'flex';
         }
         return (
-            <div class="panel-container" style={{'width': '100%' }}>
+            <div class="viewpanel-container" style={{'width': '100%' }}>
                 <row class={controlClassNames} style={controlStyle}>
                     {this.renderRootPSPanelItems(this.controlInstance)}
                 </row>

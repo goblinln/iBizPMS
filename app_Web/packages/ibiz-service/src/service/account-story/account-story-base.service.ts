@@ -352,11 +352,11 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
         try {
         if (_context.sysaccount && _context.accountstory) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountstories/${_context.accountstory}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         const res = await this.http.get(`/accountstories/${_context.accountstory}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -396,11 +396,11 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
         try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchaccount`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
             return res;
         }
         const res = await this.http.post(`/accountstories/fetchaccount`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -418,11 +418,11 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
         try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchmy`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
             return res;
         }
         const res = await this.http.post(`/accountstories/fetchmy`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -440,11 +440,11 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
         try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchmyfavorites`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavorites');
             return res;
         }
         const res = await this.http.post(`/accountstories/fetchmyfavorites`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavorites');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

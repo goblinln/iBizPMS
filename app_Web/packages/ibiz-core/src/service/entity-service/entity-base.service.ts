@@ -349,11 +349,15 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     * @protected
     * @param {*} _context 应用上下文
     * @param {*} _data 当前数据
+    * @param {string} methodName 方法名
     * @memberof EntityBaseService
     */
-    protected async beforeExecuteAction(_context: any, _data: any) {
+    protected async beforeExecuteAction(_context: any, _data: any, methodName?: string) {
         // 执行实体属性值变更逻辑
         _data = await this.executeOnChangePSAppDEFLogic(_context, _data);
+        if (methodName) {
+            LogUtil.log(`执行实体属性值变更逻辑，[方法名称]：${methodName}，[处理后的数据]:`, _data);
+        }
         return _data;
     }
 
@@ -363,11 +367,15 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     * @protected
     * @param {*} _context 应用上下文
     * @param {*} _data 当前数据
+    * @param {string} methodName 方法名
     * @memberof EntityBaseService
     */
-    protected async afterExecuteAction(_context: any, _data: any) {
+    protected async afterExecuteAction(_context: any, _data: any, methodName?: string) {
         // 执行实体属性值计算逻辑
         _data = await this.executeComputePSAppDEFLogic(_context, _data);
+        if (methodName) {
+            LogUtil.log(`执行实体属性值计算逻辑，[方法名称]：${methodName}，[处理后的数据]:`, _data);
+        }
         return _data;
     }
 
@@ -377,13 +385,17 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     * @protected
     * @param {*} _context 应用上下文
     * @param {*} dataSet 当前数据集合
+    * @param {string} methodName 方法名
     * @memberof EntityBaseService
     */
-    protected async afterExecuteActionBatch(_context: any, dataSet: Array<any>) {
+    protected async afterExecuteActionBatch(_context: any, dataSet: Array<any>, methodName?: string) {
         if (dataSet && dataSet.length > 0) {
             for (let i = 0; i < dataSet.length; i++) {
                 dataSet[i] = await this.afterExecuteAction(_context, dataSet[i]);
             }
+        }
+        if (methodName) {
+            LogUtil.log(`执行实体属性值计算逻辑，[方法名称]：${methodName}，[处理后的数据]:`, dataSet);
         }
         return dataSet;
     }
@@ -443,7 +455,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     * @param {*} error 错误数据
     * @memberof EntityBaseService
     */
-     protected handleResponseError(error: any):Promise<HttpResponse> {
+    protected handleResponseError(error: any): Promise<HttpResponse> {
         LogUtil.warn(error);
         return new Promise((resolve: any, reject: any) => {
             if (error.status && (error.status !== 200)) {

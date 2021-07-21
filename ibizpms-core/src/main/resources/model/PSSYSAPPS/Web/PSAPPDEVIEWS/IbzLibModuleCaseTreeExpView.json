@@ -13,6 +13,7 @@
     "engineType" : "TreeExpView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "treeexpbar",
       "name" : "TREEEXPBAR",
       "paramType" : "CTRL"
     } ]

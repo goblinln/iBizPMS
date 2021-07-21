@@ -370,16 +370,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Activate');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/activate`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Activate');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/activate`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[Activate函数]异常`]);
@@ -400,16 +398,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/assignto`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/assignto`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[AssignTo函数]异常`]);
@@ -430,16 +426,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Cancel');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/cancel`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Cancel');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/cancel`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[Cancel函数]异常`]);
@@ -460,16 +454,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Close');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/close`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Close');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/close`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[Close函数]异常`]);
@@ -490,16 +482,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'ConfirmStoryChange');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/confirmstorychange`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'ConfirmStoryChange');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/confirmstorychange`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[ConfirmStoryChange函数]异常`]);
@@ -520,7 +510,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -528,12 +518,11 @@ export class TaskBaseService extends EntityBaseService<ITask> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -541,7 +530,6 @@ export class TaskBaseService extends EntityBaseService<ITask> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/tasks`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[Create函数]异常`]);
@@ -562,16 +550,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Finish');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/finish`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Finish');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/finish`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[Finish函数]异常`]);
@@ -592,7 +578,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
         }
@@ -600,7 +586,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         }
         if (_context.project && _context.task) {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
         }
@@ -680,16 +666,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Pause');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/pause`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Pause');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/pause`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[Pause函数]异常`]);
@@ -734,16 +718,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Restart');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/restart`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Restart');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/restart`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[Restart函数]异常`]);
@@ -764,16 +746,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Start');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/start`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Start');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/start`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[Start函数]异常`]);
@@ -794,16 +774,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'TaskFavorites');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'TaskFavorites');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[TaskFavorites函数]异常`]);
@@ -824,16 +802,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'TaskNFavorites');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/tasknfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'TaskNFavorites');
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/tasknfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[TaskNFavorites函数]异常`]);
@@ -854,16 +830,14 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/projects/${_context.project}/tasks/${_context.task}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Task]>>>[Update函数]异常`]);
@@ -884,12 +858,12 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/fetchcurprojecttaskquery`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCurProjectTaskQuery');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/fetchcurprojecttaskquery`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCurProjectTaskQuery');
             return res;
         }
     this.log.warn([`[Task]>>>[FetchCurProjectTaskQuery函数]异常`]);
@@ -910,12 +884,12 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
     this.log.warn([`[Task]>>>[FetchDefault函数]异常`]);
@@ -936,12 +910,12 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/fetchgantt`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchGantt');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/fetchgantt`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchGantt');
             return res;
         }
     this.log.warn([`[Task]>>>[FetchGantt函数]异常`]);
@@ -962,12 +936,12 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/fetchreport`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchReport');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/fetchreport`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchReport');
             return res;
         }
     this.log.warn([`[Task]>>>[FetchReport函数]异常`]);

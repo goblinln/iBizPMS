@@ -13,9 +13,11 @@
     "engineType" : "MobChartView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "chart",
       "name" : "CHART",
       "paramType" : "CTRL"
     }, {
+      "ctrlName" : "searchform",
       "name" : "SEARCHFORM",
       "paramType" : "CTRL"
     } ]

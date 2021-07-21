@@ -13,6 +13,7 @@
     "engineType" : "MobEditView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "form",
       "name" : "FORM",
       "paramType" : "CTRL"
     } ]
@@ -647,12 +648,15 @@
                 "engineType" : "MobMDView9",
                 "name" : "engine",
                 "getPSUIEngineParams" : [ {
+                  "appViewLogicName" : "opendata",
                   "name" : "OPENDATA",
                   "paramType" : "LOGIC"
                 }, {
+                  "ctrlName" : "mdctrl",
                   "name" : "MDCTRL",
                   "paramType" : "CTRL"
                 }, {
+                  "appViewLogicName" : "newdata",
                   "name" : "NEWDATA",
                   "paramType" : "LOGIC"
                 } ]
@@ -2222,12 +2226,15 @@
                 "engineType" : "MobMDView9",
                 "name" : "engine",
                 "getPSUIEngineParams" : [ {
+                  "appViewLogicName" : "opendata",
                   "name" : "OPENDATA",
                   "paramType" : "LOGIC"
                 }, {
+                  "ctrlName" : "mdctrl",
                   "name" : "MDCTRL",
                   "paramType" : "CTRL"
                 }, {
+                  "appViewLogicName" : "newdata",
                   "name" : "NEWDATA",
                   "paramType" : "LOGIC"
                 } ]

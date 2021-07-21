@@ -140,7 +140,7 @@ export class TreeExpBarControlBase extends ExpBarControlBase implements TreeExpB
             }
             let { tempContext, tempViewparam } = this.computeNavParams(arg);
             this.selection = {};
-            Object.assign(tempContext, { viewpath: refview.viewModelData.modelFilePath });
+            Object.assign(tempContext, { viewpath: refview.viewModelData.modelPath });
             Object.assign(this.selection, { view: { viewname: 'app-view-shell' }, context: tempContext, viewparam: tempViewparam });
             this.calcToolbarItemState(false);
             this.$forceUpdate();
@@ -283,6 +283,23 @@ export class TreeExpBarControlBase extends ExpBarControlBase implements TreeExpB
      */
     public onViewLoad($event: any): void {
         this.$emit("ctrl-event", { controlName: this.controlInstance.name, action: "load", data: $event });
+    }
+
+    /**
+     * 部件事件处理
+     *
+     * @param {*} controlname 部件名称
+     * @param {*} action 事件
+     * @param {*} data 数据
+     * @memberof TreeExpBarControlBase
+     */
+    public onCtrlEvent(controlname: any, action: any, data: any) {
+        //  选择视图面板逻辑特殊处理
+        if (this.pickupViewPanelInstance && controlname == this.pickupViewPanelInstance.name) {
+            this.ctrlEvent({ controlname, action, data });
+        } else {
+            super.onCtrlEvent(controlname, action, data);
+        }
     }
 
 }

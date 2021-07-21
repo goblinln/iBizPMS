@@ -77,7 +77,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -85,7 +85,6 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/productsums`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -102,7 +101,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/productsums/${_context.productsum}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -153,9 +152,8 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/productsums/${_context.productsum}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -172,7 +170,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productsums/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -189,7 +187,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     async FetchProductBugcnt_QA(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productsums/fetchproductbugcnt_qa`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductBugcnt_QA');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -206,7 +204,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     async FetchProductCreateStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productsums/fetchproductcreatestory`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductCreateStory');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -223,7 +221,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     async FetchProductStoryHoursSum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productsums/fetchproductstoryhourssum`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductStoryHoursSum');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -240,7 +238,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     async FetchProductStorySum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productsums/fetchproductstorysum`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductStorySum');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -257,7 +255,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     async FetchProductStorycntAndPlancnt(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productsums/fetchproductstorycntandplancnt`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductStorycntAndPlancnt');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -274,7 +272,7 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     async FetchProductSumBugType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productsums/fetchproductsumbugtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductSumBugType');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

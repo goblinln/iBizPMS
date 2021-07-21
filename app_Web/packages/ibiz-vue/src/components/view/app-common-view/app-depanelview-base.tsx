@@ -74,6 +74,11 @@ export class AppDePanelViewBase extends DePanelViewBase {
      */
     public renderMainContent() {
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.panelInstance);
+        if (this.panelInstance) {
+            Object.assign(targetCtrlParam.dynamicProps, {
+                navdatas: this.navdatas
+            });
+        }
         return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.panelInstance?.name, on: targetCtrlEvent });
     }
 

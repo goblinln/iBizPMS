@@ -136,7 +136,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         try {
         if (_context.sysaccount && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -144,7 +144,6 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[UserTpl]>>>[Create函数]异常`]);
@@ -165,7 +164,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         try {
         if (_context.sysaccount && _context.usertpl) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
     this.log.warn([`[UserTpl]>>>[Get函数]异常`]);
@@ -228,9 +227,8 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         try {
         if (_context.sysaccount && _context.usertpl) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[UserTpl]>>>[Update函数]异常`]);
@@ -251,7 +249,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls/fetchaccount`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
             return res;
         }
     this.log.warn([`[UserTpl]>>>[FetchAccount函数]异常`]);
@@ -272,7 +270,7 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls/fetchmy`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
             return res;
         }
     this.log.warn([`[UserTpl]>>>[FetchMy函数]异常`]);

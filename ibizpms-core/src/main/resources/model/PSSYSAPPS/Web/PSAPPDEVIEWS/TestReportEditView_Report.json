@@ -13,6 +13,7 @@
     "engineType" : "EditView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "form",
       "name" : "FORM",
       "paramType" : "CTRL"
     }, {
@@ -209,6 +210,7 @@
               "engineType" : "ChartView9",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "ctrlName" : "chart",
                 "name" : "CHART",
                 "paramType" : "CTRL"
               } ]
@@ -462,6 +464,7 @@
               "engineType" : "GridView",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "ctrlName" : "grid",
                 "name" : "GRID",
                 "paramType" : "CTRL"
               } ]

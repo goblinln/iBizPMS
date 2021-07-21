@@ -13,6 +13,7 @@
     "engineType" : "MobEditView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "form",
       "name" : "FORM",
       "paramType" : "CTRL"
     } ]
@@ -877,6 +878,7 @@
               "engineType" : "MobMEditView9",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "ctrlName" : "meditviewpanel",
                 "name" : "MEDITVIEWPANEL",
                 "paramType" : "CTRL"
               } ]

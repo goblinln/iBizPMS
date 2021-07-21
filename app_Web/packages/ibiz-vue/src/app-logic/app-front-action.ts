@@ -10,7 +10,7 @@ import {
     IPSNavigateContext,
     IPSNavigateParam
 } from '@ibiz/dynamic-model-api';
-import { ModelTool, StringUtil, UIActionTool, Util } from 'ibiz-core';
+import { LogUtil, ModelTool, StringUtil, UIActionTool, Util } from 'ibiz-core';
 import { Subject } from 'rxjs';
 import { AppGlobalService } from '../app-service';
 import { appPopup } from '../utils';
@@ -175,10 +175,56 @@ export class AppFrontAction extends AppDEUIAction {
     ): Promise<any> {
         // 打开HTML
         return new Promise(async (resolve: any, reject: any) => {
+            //打开视图后续逻辑
+            const openViewNextLogic: any = async (actionModel: any, actionContext: any, xData: any, resultDatas?: any) => {
+                if (actionModel.reloadData && xData && xData.refresh && xData.refresh instanceof Function) {
+                    xData.refresh(args);
+                }
+                if (actionModel.closeEditView) {
+                    actionContext.closeView(null);
+                }
+                // 后续界面行为
+                if (this.actionModel.M?.getNextPSUIAction) {
+                    const nextUIaction: any = await getPSUIActionByModelObject(this.actionModel);
+                    if (nextUIaction.getPSAppDataEntity()) {
+                        let [tag, appDeName] = (nextUIaction as IPSAppDEUIAction).id.split('@');
+                        if (deUIService) {
+                            return deUIService.excuteAction(
+                                tag,
+                                resultDatas,
+                                context,
+                                params,
+                                $event,
+                                xData,
+                                actionContext,
+                                undefined,
+                                deUIService,
+                            );
+                        }
+                    } else {
+                        return (AppGlobalService.getInstance() as any).executeGlobalAction(
+                            nextUIaction.id,
+                            resultDatas,
+                            context,
+                            params,
+                            $event,
+                            xData,
+                            actionContext,
+                            undefined,
+                        );
+                    }
+                } else {
+                    if (Object.is(actionModel?.uILogicAttachMode, 'AFTER')) {
+                        return this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
+                    } else {
+                        return new UIActionResult({ ok: true, result: resultDatas });
+                    }
+                }
+            };
             if (Object.is(this.actionModel.frontProcessType, 'OPENHTMLPAGE') && this.actionModel.htmlPageUrl) {
                 const url = StringUtil.fillStrData(this.actionModel.htmlPageUrl, context, data);
                 window.open(url, '_blank');
-                resolve(new UIActionResult({ok:true,result:data}));
+                resolve(new UIActionResult({ ok: true, result: data }));
                 // 打开顶级视图，打开顶级视图或向导（模态）
             } else if (
                 Object.is(this.actionModel.frontProcessType, 'TOP') ||
@@ -243,51 +289,6 @@ export class AppFrontAction extends AppDEUIAction {
                         Object.assign(context, { viewpath: frontPSAppView.modelPath });
                     }
                 }
-                //打开视图后续逻辑
-                const openViewNextLogic: any = async (actionModel: any, actionContext: any, xData: any, resultDatas?: any) => {
-                    if (Object.is(actionModel?.uILogicAttachMode, 'AFTER')) {
-                        return this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
-                    }
-                    if (actionModel.reloadData && xData && xData.refresh && xData.refresh instanceof Function) {
-                        xData.refresh(args);
-                    }
-                    if (actionModel.closeEditView) {
-                        actionContext.closeView(null);
-                    }
-                    // 后续界面行为
-                    if (this.actionModel.M?.getNextPSUIAction) {
-                        const nextUIaction: any = await getPSUIActionByModelObject(this.actionModel);
-                        if (nextUIaction.getPSAppDataEntity()) {
-                            let [tag, appDeName] = (nextUIaction as IPSAppDEUIAction).id.split('@');
-                            if (deUIService) {
-                                return deUIService.excuteAction(
-                                    tag,
-                                    resultDatas,
-                                    context,
-                                    params,
-                                    $event,
-                                    xData,
-                                    actionContext,
-                                    undefined,
-                                    deUIService,
-                                );
-                            }
-                        } else {
-                            return (AppGlobalService.getInstance() as any).executeGlobalAction(
-                                nextUIaction.id,
-                                resultDatas,
-                                context,
-                                params,
-                                $event,
-                                xData,
-                                actionContext,
-                                undefined,
-                            );
-                        }
-                    } else {
-                        return new UIActionResult({ok:true,result:resultDatas});
-                    }
-                };
                 // 打开重定向视图
                 if (frontPSAppView.redirectView) {
                     const data = args[0];
@@ -339,7 +340,7 @@ export class AppFrontAction extends AppDEUIAction {
                         width: frontPSAppView.width,
                         title: actionContext.$tl(frontPSAppView.getCapPSLanguageRes()?.lanResTag, frontPSAppView.caption),
                     };
-                    let container: Subject<any> = actionContext.$appmodal.openModal(view, context, data);
+                    let container: Subject<any> = actionContext.$appmodal.openModal(view, context, data, args);
                     container.subscribe((result: any) => {
                         if (!result || !Object.is(result.ret, 'OK')) {
                             return;
@@ -356,7 +357,7 @@ export class AppFrontAction extends AppDEUIAction {
                     };
                     let container: Subject<any> = actionContext.$appdrawer.openDrawer(
                         view,
-                        Util.getViewProps(context, data),
+                        Util.getViewProps(context, data, args),
                     );
                     container.subscribe((result: any) => {
                         if (!result || !Object.is(result.ret, 'OK')) {
@@ -374,7 +375,7 @@ export class AppFrontAction extends AppDEUIAction {
                     };
                     const container = appPopup.openDrawer(
                         view,
-                        Util.getViewProps(context, data),
+                        Util.getViewProps(context, data, args),
                     );
                     container.subscribe((result: any) => {
                         if (!result || !Object.is(result.ret, 'OK')) {
@@ -390,7 +391,7 @@ export class AppFrontAction extends AppDEUIAction {
                         title: actionContext.$tl(frontPSAppView.getCapPSLanguageRes()?.lanResTag, frontPSAppView.caption),
                         placement: frontPSAppView.openMode,
                     };
-                    let container: Subject<any> = actionContext.$apppopover.openPop($event, view, context, data);
+                    let container: Subject<any> = actionContext.$apppopover.openPop($event, view, context, data, 'left-end', true, args);
                     container.subscribe((result: any) => {
                         if (!result || !Object.is(result.ret, 'OK')) {
                             return;
@@ -405,10 +406,8 @@ export class AppFrontAction extends AppDEUIAction {
                 }
                 // 用户自定义
             } else {
-                actionContext.$warning(
-                    `${this.actionModel.caption}${actionContext.$t('app.nosupport.uncustom')}`,
-                    'oPenView',
-                );
+                LogUtil.warn(`${this.actionModel.caption}自定义界面行为空执行`);
+                resolve(openViewNextLogic(this.actionModel, actionContext, xData, data));
             }
         })
     }

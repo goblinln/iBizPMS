@@ -99,7 +99,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -107,7 +107,6 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/ibzplantemplets`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -124,7 +123,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
         }
@@ -165,7 +164,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
     async GetPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}/getplan`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'GetPlan');
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
         }
@@ -201,9 +200,8 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/ibzplantemplets/${_context.ibzplantemplet}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -220,7 +218,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
     async FetchCurUserTemplet(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzplantemplets/fetchcurusertemplet`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCurUserTemplet');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -237,7 +235,7 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzplantemplets/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

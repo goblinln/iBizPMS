@@ -28,5 +28,4 @@ export { AppTreeViewBase } from "./app-treeview-base";
 export { AppWizardPanelBase } from "./app-wizardpanel-base";
 export { AppStateWizardPanelBase } from './app-statewizard-panel-base';
 export { AppMapExpBarBase } from './app-map-exp-bar-base';
-export { AppViewPanelBase } from './app-viewpanel-base';
-export { AppPanelShell } from './app-panel-shell';
+export { AppDrtabBase } from './app-drtab-base';

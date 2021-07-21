@@ -639,7 +639,10 @@ export class AppFormBase extends EditFormControlBase {
         let formId =
             this.controlInstance.getPSAppDataEntity()?.codeName?.toLowerCase() +
             this.controlInstance.codeName?.toLowerCase();
-        const controlHeight = this.controlInstance.height != 0 ? this.controlInstance.height + 'px' : 'auto';
+        let controlStyle = {
+            width: this.controlInstance.width ? this.controlInstance.width + 'px' : '',
+            height: this.controlInstance.height ? this.controlInstance.height + 'px' : ''
+        };
         const viewType = (this.controlInstance.getParentPSModelObject() as IPSAppDEView).viewType;
         return (
             <i-form
@@ -647,11 +650,11 @@ export class AppFormBase extends EditFormControlBase {
                 class={{ ...controlClassNames, 'app-form': true }}
                 ref={this.controlInstance.name}
                 id={formId}
-                style={`height:${controlHeight};`}
+                style={controlStyle}
                 on-on-validate={this.formItemValidate.bind(this)}
             >
                 <input style='display:none;' />
-                {this.groupAnchorDatas.length > 0 ? <app-anchor viewType={viewType} anchorDatas={this.groupAnchorDatas}></app-anchor> : null}
+                {this.showFormNavBar && this.groupAnchorDatas.length > 0 ? <app-anchor viewType={viewType} anchorDatas={this.groupAnchorDatas}></app-anchor> : null}
                 <row>{this.renderFormContent()}</row>
             </i-form>
         );

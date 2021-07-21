@@ -135,7 +135,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         try {
         if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -143,7 +143,6 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/productteams`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductTeam]>>>[Create函数]异常`]);
@@ -164,7 +163,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         try {
         if (_context.product && _context.productteam) {
             const res = await this.http.get(`/products/${_context.product}/productteams/${_context.productteam}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
     this.log.warn([`[ProductTeam]>>>[Get函数]异常`]);
@@ -227,9 +226,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         try {
         if (_context.product && _context.productteam) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/products/${_context.product}/productteams/${_context.productteam}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductTeam]>>>[Update函数]异常`]);
@@ -250,7 +248,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         try {
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductTeamInfo');
             return res;
         }
     this.log.warn([`[ProductTeam]>>>[FetchProductTeamInfo函数]异常`]);
@@ -271,7 +269,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         try {
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchSpecifyTeam');
             return res;
         }
     this.log.warn([`[ProductTeam]>>>[FetchSpecifyTeam函数]异常`]);

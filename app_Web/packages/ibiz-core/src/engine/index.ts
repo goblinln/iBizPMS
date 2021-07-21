@@ -53,3 +53,4 @@ export { WizardViewEngine } from './wizard-view-engine';
 export { DataPanelEngine } from './data-panel-engine';
 export { ReportViewEngine } from './report-view-engine';
 export { MapExpViewEngine } from './map-exp-view-engine';
+export { CommonViewEngine } from './common-view-engine';

@@ -13,6 +13,7 @@
     "engineType" : "MobMDView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "mdctrl",
       "name" : "MDCTRL",
       "paramType" : "CTRL"
     } ]

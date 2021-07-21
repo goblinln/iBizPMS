@@ -165,7 +165,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         try {
         if (_context.test && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -173,7 +173,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/tests/${_context.test}/testmodules`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestModule]>>>[Create函数]异常`]);
@@ -194,7 +193,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         try {
         if (_context.test && _context.testmodule) {
             const res = await this.http.get(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
     this.log.warn([`[TestModule]>>>[Get函数]异常`]);
@@ -257,9 +256,8 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         try {
         if (_context.test && _context.testmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/tests/${_context.test}/testmodules/${_context.testmodule}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestModule]>>>[Update函数]异常`]);
@@ -280,7 +278,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         try {
         if (_context.test && true) {
             const res = await this.http.post(`/tests/${_context.test}/testmodules/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
     this.log.warn([`[TestModule]>>>[FetchDefault函数]异常`]);

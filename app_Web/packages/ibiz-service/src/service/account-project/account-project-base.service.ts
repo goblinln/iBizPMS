@@ -196,11 +196,11 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
         try {
         if (_context.sysaccount && _context.accountproject) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountprojects/${_context.accountproject}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         const res = await this.http.get(`/accountprojects/${_context.accountproject}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -218,11 +218,11 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
         try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchaccount`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
             return res;
         }
         const res = await this.http.post(`/accountprojects/fetchaccount`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAccount');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -240,11 +240,11 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
         try {
         if (_context.sysaccount && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchmy`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
             return res;
         }
         const res = await this.http.post(`/accountprojects/fetchmy`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

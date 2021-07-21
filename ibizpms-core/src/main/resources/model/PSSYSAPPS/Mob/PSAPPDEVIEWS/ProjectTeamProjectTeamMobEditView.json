@@ -13,6 +13,7 @@
     "engineType" : "MobEditView9",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "form",
       "name" : "FORM",
       "paramType" : "CTRL"
     } ]

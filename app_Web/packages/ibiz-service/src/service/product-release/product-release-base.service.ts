@@ -129,9 +129,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         try {
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Activate');
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/activate`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[Activate函数]异常`]);
@@ -152,7 +151,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         try {
         if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -160,7 +159,6 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/productreleases`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[Create函数]异常`]);
@@ -181,7 +179,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         try {
         if (_context.product && _context.productrelease) {
             const res = await this.http.get(`/products/${_context.product}/productreleases/${_context.productrelease}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[Get函数]异常`]);
@@ -224,9 +222,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         try {
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[LinkBug函数]异常`]);
@@ -247,9 +244,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         try {
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LinkBugbyLeftBug');
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkbugbyleftbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[LinkBugbyLeftBug函数]异常`]);
@@ -270,9 +266,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         try {
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkstory`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[LinkStory函数]异常`]);
@@ -313,9 +308,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         try {
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Terminate');
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/terminate`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[Terminate函数]异常`]);
@@ -336,9 +330,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         try {
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/products/${_context.product}/productreleases/${_context.productrelease}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[Update函数]异常`]);
@@ -359,7 +352,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         try {
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/productreleases/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
     this.log.warn([`[ProductRelease]>>>[FetchDefault函数]异常`]);

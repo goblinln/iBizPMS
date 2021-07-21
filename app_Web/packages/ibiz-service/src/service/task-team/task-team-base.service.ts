@@ -111,12 +111,12 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
         try {
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
     this.log.warn([`[TaskTeam]>>>[FetchDefault函数]异常`]);

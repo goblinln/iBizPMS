@@ -911,7 +911,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         const parentdata: any = {};
         this.ctrlEvent({ controlname: this.name, action: "beforeload", data: parentdata });
         Object.assign(arg, parentdata);
-        let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
+        let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : opt ? opt : {};
         Object.assign(tempViewParams, Util.deepCopy(this.viewparams));
         // 多实例查询数据处理
         let appEnvironment = AppServiceBase.getInstance().getAppEnvironment();
@@ -2557,7 +2557,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
     public computeTargetCtrlData(controlInstance: any, item?: any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
         Object.assign(targetCtrlParam.dynamicProps, {
-            inputData: item,
+            navdatas: [item],
         })
         Object.assign(targetCtrlParam.staticProps, {
             transformData: this.transformData,

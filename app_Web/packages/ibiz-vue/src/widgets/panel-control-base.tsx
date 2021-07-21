@@ -1,8 +1,7 @@
-import { ViewTool, Verify, PanelControlInterface } from 'ibiz-core';
 import { MDControlBase } from "./md-control-base";
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
-import { IPSPanel, IPSPanelField, IPSPanelItem, IPSPanelItemGroupLogic, IPSPanelItemSingleLogic, IPSSysPanelButton, IPSSysPanelContainer, IPSSysPanelField } from '@ibiz/dynamic-model-api';
-
+import { ViewTool, Verify, PanelControlInterface, PanelButtonModel, PanelTabPanelModel, PanelTabPageModel, PanelContainerModel, PanelFieldModel, PanelRawitemModel, PanelControlModel, PanelUserControlModel } from 'ibiz-core';
+import { IPSPanel, IPSPanelField, IPSPanelItem, IPSPanelItemGroupLogic, IPSPanelItemSingleLogic, IPSPanelTabPage, IPSPanelTabPanel, IPSSysPanelButton, IPSSysPanelContainer, IPSSysPanelField, IPSSysPanelTabPanel } from '@ibiz/dynamic-model-api';
 /**
  * 面板部件基类
  *
@@ -29,12 +28,12 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
     public controlInstance!: IPSPanel;
 
     /**
-     * 面板服务对象
+     * 代码表服务
      *
      * @type {*}
      * @memberof PanelControlBase
      */
-    public service !: any;
+    public codeListService: any;
 
     /**
      * 数据
@@ -43,14 +42,6 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      * @memberof PanelControlBase
      */
     public data: any = {};
-
-    /**
-     * 面板数据
-     *
-     * @type {*}
-     * @memberof PanelControlBase
-     */
-    public panelData: any = null;
 
     /**
      * 详情模型集合
@@ -68,23 +59,14 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
     public allPanelItemGroupLogic: any[] = [];
 
     /**
-     * 面板数据对象
-     *
-     * @type {*}
-     * @memberof PanelControlBase
-     */
-    public inputData?: any;
-
-    /**
      * 监听部件动态参数变化
      *
      * @param {*} newVal
      * @param {*} oldVal
      * @memberof PanelControlBase
      */
-     public onDynamicPropsChange(newVal: any, oldVal: any) {
+    public onDynamicPropsChange(newVal: any, oldVal: any) {
         super.onDynamicPropsChange(newVal, oldVal);
-        this.inputData = newVal?.inputData;
     }
 
     /**
@@ -118,6 +100,9 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
         if ((this.controlInstance.getRootPSPanelItems() as any)?.length > 0) {
             this.initRules(this.controlInstance.getRootPSPanelItems());
         }
+        this.computedUIData();
+        this.computeButtonState(this.data);
+        this.panelLogic({ name: '', newVal: null, oldVal: null });
     }
 
     /**
@@ -158,7 +143,6 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
         if (this.appStateEvent) {
             this.appStateEvent.unsubscribe();
         }
-        this.onInputDataChange(this.inputData, undefined);
     }
 
     /**
@@ -178,6 +162,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
                     itemType: panelItem.itemType,
                     visible: true,
                 };
+                let model: any;
                 switch (panelItem.itemType) {
                     case 'BUTTON':
                         const panelButtomItem = panelItem as IPSSysPanelButton
@@ -192,18 +177,48 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
                                 disabled: false
                             }
                         });
+                        model = new PanelButtonModel(detailModel);
                         break;
                     case 'TABPANEL':
+                        const tabPages: IPSPanelTabPage[] = (panelItem as IPSPanelTabPanel).getPSPanelTabPages() || [];
+                        const pageNames: any[] = [];
+                        if (tabPages.length > 0) {
+                            tabPages.forEach((page: IPSPanelTabPage) => {
+                                pageNames.push({ name: page.name });
+                            })
+                        }
                         Object.assign(detailModel, {
-                            tabPages: [
-                                // todo
-                            ]
-                        })
+                            tabPages: pageNames
+                        });
+                        model = new PanelTabPanelModel(detailModel);
+                        break;
+                    case 'TABPAGE':
+                        model = new PanelTabPageModel(detailModel);
+                        break;
+                    case 'CONTAINER':
+                        model = new PanelContainerModel(detailModel);
+                        break;
+                    case 'FIELD':
+                        model = new PanelFieldModel(detailModel);
+                        break;
+                    case 'RAWITEM':
+                        model = new PanelRawitemModel(detailModel);
+                        break;
+                    case 'CONTROL':
+                        model = new PanelControlModel(detailModel);
+                        break;
+                    case 'USERCONTROL':
+                        model = new PanelUserControlModel(detailModel);
                         break;
                 }
-                this.$set(this.detailsModel, panelItem.name, detailModel);
-                if (Object.is(panelItem.itemType, 'CONTAINER')) {
-                    this.initDetailsModel((panelItem as IPSSysPanelContainer)?.getPSPanelItems?.());
+                this.$set(this.detailsModel, panelItem.name, model);
+                if ((panelItem as any).getPSPanelItems?.()?.length > 0) {
+                    this.initDetailsModel((panelItem as any)?.getPSPanelItems?.());
+                }
+                if ((panelItem as any).getPSPanelTabPages?.()?.length > 0) {
+                    (panelItem as any).getPSPanelTabPages?.().forEach((tabpage: any) => {
+                        this.initDetailsModel(tabpage?.getPSPanelItems?.() || []);
+                    })
                 }
                 if (panelItem.getPSPanelItemGroupLogics()) {
                     this.allPanelItemGroupLogic.push({ name: panelItem.name, panelItemGroupLogic: panelItem.getPSPanelItemGroupLogics() })
@@ -223,7 +238,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      * @memberof PanelControlBase
      */
     public opendata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$throw(this.$t('app.warn.unopendata'),'opendata');
+        this.$throw(this.$t('app.warn.unopendata'), 'opendata');
     }
 
     /**
@@ -237,7 +252,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      * @memberof PanelControlBase
      */
     public newdata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$throw(this.$t('app.warn.unnewdata'),'newdata');
+        this.$throw(this.$t('app.warn.unnewdata'), 'newdata');
     }
 
     /**
@@ -248,7 +263,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      * @memberof PanelControlBase
      */
     public async remove(datas: any[]): Promise<any> {
-        this.$throw(this.$t('app.warn.unremove'),'remove');
+        this.$throw(this.$t('app.warn.unremove'), 'remove');
     }
 
     /**
@@ -258,7 +273,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      * @memberof PanelControlBase
      */
     public refresh(args?: any) {
-        this.$throw(this.$t('app.warn.unrefresh'),'refresh');
+        this.$throw(this.$t('app.warn.unrefresh'), 'refresh');
     }
 
     /**
@@ -314,7 +329,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      * @memberof PanelControlBase
      */
     public handleTabPanelClick(name: string, $event: any) {
-        this.detailsModel[name].clickPage($event.name);
+        this.detailsModel[name]?.clickPage($event.name);
     }
 
     /**
@@ -326,7 +341,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      * @memberof PanelControlBase
      */
     public buttonClick(controlName: string, data: any, $event: any) {
-        AppViewLogicService.getInstance().executeViewLogic(`${controlName?.toLowerCase()}_${data.tag}_click`, $event, this, undefined, this.controlInstance.getPSAppViewLogics());
+        AppViewLogicService.getInstance().executeViewLogic(`${controlName?.toLowerCase()}_${data.tag}_click`, $event, this, this.data, this.controlInstance.getPSAppViewLogics());
     }
 
     /**
@@ -401,11 +416,14 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      * @param {*} newVal
      * @memberof PanelControlBase
      */
-    public async computedUIData(newVal: any) {
+    public async computedUIData(newVal?: any) {
         if (this.controlInstance?.getAllPSPanelFields() && this.getDataItems().length > 0) {
             this.getDataItems().forEach((item: any) => {
-                this.data[item.name] = newVal[item.prop];
+                this.$set(this.data, item.name, null);
             });
+        }
+        if (this.navdatas && (this.navdatas.length > 0)) {
+            this.data = this.navdatas[0];
         }
     }
 
@@ -425,7 +443,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
             if ((arr[i] as any)?.getPSPanelItems?.()) _result = this.findField((arr[i] as any)?.getPSPanelItems?.(), name)
             if (_result != null) return _result;
         }
-        return _result
+        return _result;
     }
 
     /**
@@ -555,12 +573,17 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
     public initItemsActionModel(panelItems: IPSPanelItem[] | null) {
         panelItems?.forEach((item: IPSPanelItem) => {
             const panelItem = item as IPSSysPanelContainer;
-            const panelButtomItem = item as IPSSysPanelButton
+            const panelButtomItem = item as IPSSysPanelButton;
             if ((panelItem?.getPSPanelItems?.() as any)?.length > 0) {
                 this.initItemsActionModel(panelItem.getPSPanelItems());
             } else if (panelItem?.itemType == 'BUTTON' && panelButtomItem.getPSUIAction()) {
                 const appUIAction: any = panelButtomItem.getPSUIAction();
                 this.actionModel[appUIAction.uIActionTag] = Object.assign(appUIAction, { disabled: false, visabled: true, getNoPrivDisplayMode: appUIAction.getNoPrivDisplayMode ? appUIAction.getNoPrivDisplayMode : 6 });
+            } else if (item.itemType == 'TABPANEL') {
+                const tabPages: IPSPanelTabPage[] = (item as IPSSysPanelTabPanel).getPSPanelTabPages() || [];
+                tabPages.forEach((page: IPSPanelTabPage) => {
+                    this.initItemsActionModel(page.getPSPanelItems());
+                })
             }
         })
     }
@@ -580,18 +603,18 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      * @memberof PanelControlBase
      */
     public onInputDataChange(newVal: any, oldVal: any) { }
-    
+
     /**
      * 获取多项数据
      *
      * @returns {any[]}
      * @memberof PanelControlBase
      */
-     public getDatas(): any[] {
-        if (!this.panelData) {
+    public getDatas(): any[] {
+        if (!this.data) {
             return [];
         }
-        return [this.panelData];
+        return [this.data];
     }
 
     /**
@@ -601,6 +624,6 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      * @memberof PanelControlBase
      */
     public getData() {
-        return this.panelData;
+        return this.data;
     }
 }

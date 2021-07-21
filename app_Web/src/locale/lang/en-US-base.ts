@@ -154,7 +154,10 @@ function getAppLocale(){
                 updateerror: "Form item update failed",  
                 valueverif:"Please input ",
                 updateAction: "Update", 
-                createAction: "Create",      
+                createAction: "Create",
+                compositeitem: {
+                    datepicker: 'The end time cannot be less than the start time',
+                },     
             },
             gridexpbar: {
                 title: "Table navigation bar",

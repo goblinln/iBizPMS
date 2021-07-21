@@ -179,7 +179,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         try {
         if (_context.product && _context.project && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -187,12 +187,11 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -200,12 +199,11 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/productplans`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -213,7 +211,6 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/productplans`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[Create函数]异常`]);
@@ -234,17 +231,17 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         try {
         if (_context.product && _context.project && _context.productplan) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.productplan) {
             const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.product && _context.productplan) {
             const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[Get函数]异常`]);
@@ -299,23 +296,20 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         try {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'ImportPlanTemplet');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/importplantemplet`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'ImportPlanTemplet');
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/importplantemplet`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'ImportPlanTemplet');
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/importplantemplet`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[ImportPlanTemplet函数]异常`]);
@@ -336,23 +330,20 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         try {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/linkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/linkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LinkBug');
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/linkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[LinkBug函数]异常`]);
@@ -373,23 +364,20 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         try {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/linkstory`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/linkstory`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LinkStory');
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/linkstory`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[LinkStory函数]异常`]);
@@ -438,23 +426,20 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         try {
         if (_context.product && _context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/projects/${_context.project}/productplans/${_context.productplan}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/products/${_context.product}/productplans/${_context.productplan}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[Update函数]异常`]);
@@ -475,17 +460,17 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/fetchproductquery`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductQuery');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/fetchproductquery`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductQuery');
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/fetchproductquery`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductQuery');
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[FetchProductQuery函数]异常`]);
@@ -506,17 +491,17 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/fetchprojectplan`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectPlan');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/fetchprojectplan`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectPlan');
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/fetchprojectplan`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectPlan');
             return res;
         }
     this.log.warn([`[ProductPlan]>>>[FetchProjectPlan函数]异常`]);

@@ -77,7 +77,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -85,7 +85,6 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/useryearworkstats`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -102,7 +101,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -119,7 +118,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async GetDevInfomation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/getdevinfomation`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'GetDevInfomation');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -154,7 +153,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async GetPoInfomation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/getpoinfomation`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'GetPoInfomation');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -171,7 +170,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async GetQaInfomation(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/useryearworkstats/${_context.useryearworkstats}/getqainfomation`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'GetQaInfomation');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -220,9 +219,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/useryearworkstats/${_context.useryearworkstats}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -255,7 +253,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/useryearworkstats/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -272,7 +270,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async FetchMonthFinishTaskAndBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/useryearworkstats/fetchmonthfinishtaskandbug`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMonthFinishTaskAndBug');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -289,7 +287,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async FetchMonthOpenedBugAndCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/useryearworkstats/fetchmonthopenedbugandcase`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMonthOpenedBugAndCase');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -306,7 +304,7 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async FetchMonthOpenedStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/useryearworkstats/fetchmonthopenedstory`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMonthOpenedStory');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

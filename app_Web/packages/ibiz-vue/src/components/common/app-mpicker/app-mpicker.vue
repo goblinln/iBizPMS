@@ -1,7 +1,12 @@
 <template>
-    <div>
+    <div class="app-mpicker">
         <div style="position: relative;width: 100%;">
-            <el-select :value="curValue" multiple filterable remote :remote-method="onSearch" size="small" style="width:100%;" @change="onSelect" @remove-tag="onRemove" :disabled="disabled">
+            <el-select :value="curValue" multiple filterable remote :loading="loading" :remote-method="onSearch" size="small" style="width:100%;" @change="onSelect" @remove-tag="onRemove" :disabled="disabled">
+                <template v-if="loading" slot="empty">
+                    <li class="loading">
+                        <i class="el-icon-loading"></i>
+                    </li>
+                </template>
                 <el-option v-for="(item, index) in items" :key="index" :label="item[deMajorField]" :value="item[deKeyField]"></el-option>
             </el-select>
             <span style="position: absolute;right: 5px;color: #c0c4cc;top: 0;font-size: 13px;">
@@ -140,6 +145,14 @@ export default class AppMpicker extends Vue {
     public selectItems: Array<any> = [];
 
     /**
+     * 下拉远程加载状态
+     * 
+     * @type {boolean}
+     * @memberof AppMpicker
+     */
+    public loading: boolean = false;
+
+    /**
      * 监听curvalue值
      * @param newVal 
      * @param val 
@@ -212,13 +225,16 @@ export default class AppMpicker extends Vue {
         } else if(!this.acParams.interfaceName) {
             this.$throw(miss+'interfaceName','onSearch');
         } else {
+          this.loading = true;
           this.service.getItems(this.acParams.serviceName,this.acParams.interfaceName, _context, _param).then((response: any) => {
+              this.loading = false;
               if (!response) {
                   this.$throw(requestException,'onSearch');
               } else {
                   this.items = [...response];
               }
           }).catch((error: any) => {
+              this.loading = false;
               LogUtil.log(error);
           });
         }

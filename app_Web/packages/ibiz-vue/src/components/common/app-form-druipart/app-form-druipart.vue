@@ -467,7 +467,7 @@ export default class AppFormDRUIPart extends Vue {
                 }
             }
             // 表单保存完成
-            if (Object.is($event.type, "save")) {
+            if (Object.is($event.type, "save") && !Object.is($event?.action, "autoSave")) {
                 this.refreshDRUIPart($event.data);
             }
             // 表单项更新

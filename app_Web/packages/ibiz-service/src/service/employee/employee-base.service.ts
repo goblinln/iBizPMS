@@ -159,7 +159,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/employees/${_context.employee}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -176,7 +176,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
     async FetchBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/employees/fetchbug`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBug');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -193,7 +193,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
     async FetchContact(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/employees/fetchcontact`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchContact');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -210,7 +210,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/employees/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -227,7 +227,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
     async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/employees/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -244,7 +244,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
     async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/employees/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -261,7 +261,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
     async FetchTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/employees/fetchtask`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchTask');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -278,7 +278,7 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
     async FetchTaskMulti(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/employees/fetchtaskmulti`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchTaskMulti');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

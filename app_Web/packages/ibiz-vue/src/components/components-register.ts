@@ -118,8 +118,6 @@ import { AppDefaultGridColumn } from './common/app-grid-column/app-grid-column';
 import AppMarkdownEditor from './common/app-markdown-editor/app-markdown-editor';
 import AppNumberRange from './common/app-number-range/app-number-range.vue';
 import AppAnchor from './common/app-anchor/app-anchor.vue';
-import { AppDefaultViewPanel } from './control/app-default-viewpanel/app-default-viewpanel';
-import { AppPanelShell } from './control/app-common-control';
 // 视图组件
 import { AppViewShell } from '../view-container/app-view-shell';
 import { AppDefaultIndexView } from './view/app-default-view/app-default-indexview';
@@ -533,8 +531,6 @@ export const ComponentsRegister = {
         v.component('app-default-map', AppDefaultMap);
         v.component('app-default-report-panel', AppDefaultReportPanel);
         v.component('app-default-map-exp-bar', AppDefaultMapExpBar);
-        v.component('app-default-viewpanel', AppDefaultViewPanel);
-        v.component('app-panel-shell', AppPanelShell);
         // 注册指令
         v.directive('notification-signal', NotificationSignal);
     }

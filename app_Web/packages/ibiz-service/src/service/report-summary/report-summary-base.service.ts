@@ -77,7 +77,7 @@ export class ReportSummaryBaseService extends EntityBaseService<IReportSummary> 
     async FetchAll(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/reportsummaries/fetchall`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAll');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

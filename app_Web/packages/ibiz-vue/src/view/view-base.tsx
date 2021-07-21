@@ -42,6 +42,14 @@ export class ViewBase extends Vue implements ViewInterface {
     public viewparam!: any;
 
     /**
+     * 导航数据（用于数据穿透）
+     *
+     * @type {*}
+     * @memberof ViewBase
+     */
+     public navdatas!: any;
+
+    /**
      * 视图loading服务
      *
      * @type {ViewLoadingService}
@@ -307,6 +315,10 @@ export class ViewBase extends Vue implements ViewInterface {
                     }
                 }, 0);
             }
+        }
+        // 处理navdatas
+        if(newVal.navdatas && newVal.navdatas !== oldVal?.navdatas){
+            this.navdatas = newVal.navdatas;
         }
     }
 

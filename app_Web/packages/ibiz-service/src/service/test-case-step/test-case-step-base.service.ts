@@ -93,7 +93,7 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
         try {
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
     this.log.warn([`[TestCaseStep]>>>[FetchDefault函数]异常`]);
@@ -114,7 +114,7 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
         try {
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchversions`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchVersions');
             return res;
         }
     this.log.warn([`[TestCaseStep]>>>[FetchVersions函数]异常`]);

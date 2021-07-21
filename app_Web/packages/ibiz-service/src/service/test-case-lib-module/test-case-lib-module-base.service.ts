@@ -123,7 +123,7 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
         try {
         if (_context.testcaselib && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -131,7 +131,6 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/testcaselibs/${_context.testcaselib}/testcaselibmodules`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestCaseLibModule]>>>[Create函数]异常`]);
@@ -152,7 +151,7 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
         try {
         if (_context.testcaselib && _context.testcaselibmodule) {
             const res = await this.http.get(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/${_context.testcaselibmodule}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
     this.log.warn([`[TestCaseLibModule]>>>[Get函数]异常`]);
@@ -215,9 +214,8 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
         try {
         if (_context.testcaselib && _context.testcaselibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/${_context.testcaselibmodule}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestCaseLibModule]>>>[Update函数]异常`]);
@@ -238,7 +236,7 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
         try {
         if (_context.testcaselib && true) {
             const res = await this.http.post(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
     this.log.warn([`[TestCaseLibModule]>>>[FetchDefault函数]异常`]);

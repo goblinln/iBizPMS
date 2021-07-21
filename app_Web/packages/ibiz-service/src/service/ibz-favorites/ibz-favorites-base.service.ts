@@ -77,7 +77,7 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -85,7 +85,6 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/ibzfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -102,7 +101,7 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/ibzfavorites/${_context.ibzfavorites}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -153,9 +152,8 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/ibzfavorites/${_context.ibzfavorites}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -172,7 +170,7 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzfavorites/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

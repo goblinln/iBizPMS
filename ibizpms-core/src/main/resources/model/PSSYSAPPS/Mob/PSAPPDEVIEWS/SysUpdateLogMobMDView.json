@@ -14,12 +14,15 @@
     "engineType" : "MobMDView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "appViewLogicName" : "opendata",
       "name" : "OPENDATA",
       "paramType" : "LOGIC"
     }, {
+      "ctrlName" : "mdctrl",
       "name" : "MDCTRL",
       "paramType" : "CTRL"
     }, {
+      "appViewLogicName" : "newdata",
       "name" : "NEWDATA",
       "paramType" : "LOGIC"
     } ]

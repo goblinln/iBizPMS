@@ -382,9 +382,8 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'CaseFavorite');
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/casefavorite`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestCase]>>>[CaseFavorite函数]异常`]);
@@ -405,9 +404,8 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'CaseNFavorite');
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/casenfavorite`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestCase]>>>[CaseNFavorite函数]异常`]);
@@ -428,7 +426,7 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -436,7 +434,6 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/tests/${_context.test}/testcases`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestCase]>>>[Create函数]异常`]);
@@ -457,7 +454,7 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && _context.testcase) {
             const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         if (res.ok && res.status === 200) {
             await this.fillMinor(_context, res.data);
         }
@@ -526,9 +523,8 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'RunCases');
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/runcases`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestCase]>>>[RunCases函数]异常`]);
@@ -549,9 +545,8 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'TestRunCases');
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testruncases`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestCase]>>>[TestRunCases函数]异常`]);
@@ -572,9 +567,8 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/tests/${_context.test}/testcases/${_context.testcase}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestCase]>>>[Update函数]异常`]);
@@ -595,9 +589,8 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'testsuitelinkCase');
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testsuitelinkcase`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestCase]>>>[testsuitelinkCase函数]异常`]);
@@ -618,7 +611,7 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/fetchcursuite`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCurSuite');
             return res;
         }
     this.log.warn([`[TestCase]>>>[FetchCurSuite函数]异常`]);
@@ -639,7 +632,7 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/fetchcurtesttask`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCurTestTask');
             return res;
         }
     this.log.warn([`[TestCase]>>>[FetchCurTestTask函数]异常`]);
@@ -660,7 +653,7 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
     this.log.warn([`[TestCase]>>>[FetchDefault函数]异常`]);
@@ -681,7 +674,7 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/fetchnotcurtestsuite`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchNotCurTestSuite');
             return res;
         }
     this.log.warn([`[TestCase]>>>[FetchNotCurTestSuite函数]异常`]);
@@ -702,7 +695,7 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         try {
         if (_context.test && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/fetchnotcurtesttask`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchNotCurTestTask');
             return res;
         }
     this.log.warn([`[TestCase]>>>[FetchNotCurTestTask函数]异常`]);

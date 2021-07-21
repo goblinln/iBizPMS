@@ -1074,7 +1074,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
      public computeTargetCtrlData(controlInstance: any, item?: any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
         Object.assign(targetCtrlParam.dynamicProps, {
-            inputData: item?.curdata,
+            navdatas: [item?.curdata],
         })
         Object.assign(targetCtrlParam.staticProps, {
             transformData: this.transformData,

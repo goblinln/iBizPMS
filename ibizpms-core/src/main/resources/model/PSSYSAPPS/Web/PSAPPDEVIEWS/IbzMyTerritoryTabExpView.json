@@ -164,6 +164,7 @@
           "engineType" : "PortalView",
           "name" : "engine",
           "getPSUIEngineParams" : [ {
+            "ctrlName" : "dashboard",
             "name" : "DASHBOARD",
             "paramType" : "CTRL"
           } ]
@@ -307,6 +308,7 @@
                       "engineType" : "ListView9",
                       "name" : "engine",
                       "getPSUIEngineParams" : [ {
+                        "ctrlName" : "list",
                         "name" : "LIST",
                         "paramType" : "CTRL"
                       } ]
@@ -1051,6 +1053,7 @@
                         "engineType" : "ListExpView",
                         "name" : "engine",
                         "getPSUIEngineParams" : [ {
+                          "ctrlName" : "listexpbar",
                           "name" : "LISTEXPBAR",
                           "paramType" : "CTRL"
                         } ]
@@ -1420,6 +1423,7 @@
                         "engineType" : "ListExpView",
                         "name" : "engine",
                         "getPSUIEngineParams" : [ {
+                          "ctrlName" : "listexpbar",
                           "name" : "LISTEXPBAR",
                           "paramType" : "CTRL"
                         } ]
@@ -1724,6 +1728,7 @@
                         "engineType" : "ListExpView",
                         "name" : "engine",
                         "getPSUIEngineParams" : [ {
+                          "ctrlName" : "listexpbar",
                           "name" : "LISTEXPBAR",
                           "paramType" : "CTRL"
                         } ]
@@ -2215,12 +2220,15 @@
                                 "engineType" : "GridView",
                                 "name" : "engine",
                                 "getPSUIEngineParams" : [ {
+                                  "appViewLogicName" : "opendata",
                                   "name" : "OPENDATA",
                                   "paramType" : "LOGIC"
                                 }, {
+                                  "appViewLogicName" : "newdata",
                                   "name" : "NEWDATA",
                                   "paramType" : "LOGIC"
                                 }, {
+                                  "ctrlName" : "grid",
                                   "name" : "GRID",
                                   "paramType" : "CTRL"
                                 } ]
@@ -2896,12 +2904,15 @@
                       "engineType" : "ListView",
                       "name" : "engine",
                       "getPSUIEngineParams" : [ {
+                        "ctrlName" : "list",
                         "name" : "LIST",
                         "paramType" : "CTRL"
                       }, {
+                        "appViewLogicName" : "opendata",
                         "name" : "OPENDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "appViewLogicName" : "newdata",
                         "name" : "NEWDATA",
                         "paramType" : "LOGIC"
                       } ]
@@ -4618,12 +4629,15 @@
                       "engineType" : "GridView9",
                       "name" : "engine",
                       "getPSUIEngineParams" : [ {
+                        "appViewLogicName" : "opendata",
                         "name" : "OPENDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "appViewLogicName" : "newdata",
                         "name" : "NEWDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "ctrlName" : "grid",
                         "name" : "GRID",
                         "paramType" : "CTRL"
                       } ]
@@ -5213,12 +5227,15 @@
                       "engineType" : "GridView9",
                       "name" : "engine",
                       "getPSUIEngineParams" : [ {
+                        "appViewLogicName" : "opendata",
                         "name" : "OPENDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "appViewLogicName" : "newdata",
                         "name" : "NEWDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "ctrlName" : "grid",
                         "name" : "GRID",
                         "paramType" : "CTRL"
                       } ]
@@ -5940,12 +5957,15 @@
                       "engineType" : "GridView9",
                       "name" : "engine",
                       "getPSUIEngineParams" : [ {
+                        "appViewLogicName" : "opendata",
                         "name" : "OPENDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "appViewLogicName" : "newdata",
                         "name" : "NEWDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "ctrlName" : "grid",
                         "name" : "GRID",
                         "paramType" : "CTRL"
                       } ]
@@ -6554,12 +6574,15 @@
                       "engineType" : "GridView9",
                       "name" : "engine",
                       "getPSUIEngineParams" : [ {
+                        "appViewLogicName" : "opendata",
                         "name" : "OPENDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "appViewLogicName" : "newdata",
                         "name" : "NEWDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "ctrlName" : "grid",
                         "name" : "GRID",
                         "paramType" : "CTRL"
                       } ]
@@ -7174,12 +7197,15 @@
                       "engineType" : "GridView",
                       "name" : "engine",
                       "getPSUIEngineParams" : [ {
+                        "appViewLogicName" : "opendata",
                         "name" : "OPENDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "appViewLogicName" : "newdata",
                         "name" : "NEWDATA",
                         "paramType" : "LOGIC"
                       }, {
+                        "ctrlName" : "grid",
                         "name" : "GRID",
                         "paramType" : "CTRL"
                       } ]

@@ -77,7 +77,7 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -85,7 +85,6 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/ibzproprojectusertasks`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -102,7 +101,7 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/ibzproprojectusertasks/${_context.ibzproprojectusertask}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -153,9 +152,8 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/ibzproprojectusertasks/${_context.ibzproprojectusertask}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -172,7 +170,7 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzproprojectusertasks/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -189,7 +187,7 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
     async FetchProjectDailyTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzproprojectusertasks/fetchprojectdailytask`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectDailyTask');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -206,7 +204,7 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
     async FetchProjectMonthlyTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzproprojectusertasks/fetchprojectmonthlytask`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectMonthlyTask');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -223,7 +221,7 @@ export class IbzproProjectUserTaskBaseService extends EntityBaseService<IIbzproP
     async FetchProjectWeeklyTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzproprojectusertasks/fetchprojectweeklytask`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectWeeklyTask');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

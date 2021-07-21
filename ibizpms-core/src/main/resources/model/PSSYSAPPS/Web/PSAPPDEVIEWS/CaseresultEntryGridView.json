@@ -14,6 +14,7 @@
     "engineType" : "GridView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "grid",
       "name" : "GRID",
       "paramType" : "CTRL"
     } ]

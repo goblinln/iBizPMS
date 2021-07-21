@@ -14,9 +14,11 @@
     "engineType" : "PickupGridView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "grid",
       "name" : "GRID",
       "paramType" : "CTRL"
     }, {
+      "ctrlName" : "searchform",
       "name" : "SEARCHFORM",
       "paramType" : "CTRL"
     } ]

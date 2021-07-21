@@ -230,6 +230,13 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
       * @memberof DataViewControlBase
       */
      public moveflag: boolean = false;
+    
+    /**
+     * 数据项代码表数据
+     * 
+     * @memberof DataViewControlBase
+     */
+    public codelistMap: Map<string, any[]> = new Map();
 
     /**
      * 监听静态参数变化
@@ -307,7 +314,6 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
         this.transformData = this.transformData.bind(this);
         this.remove = this.remove.bind(this);
         this.refresh = this.refresh.bind(this);
-
         if (this.viewState) {
             this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
                 if (!Object.is(this.name, tag)) {
@@ -318,6 +324,24 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                 }
                 if (Object.is(action, 'filter')) {
                     this.refresh(data);
+                }
+            });
+        }
+        this.initDataItemCodelist();
+    }
+
+    /**
+     * 初始化数据项代码表
+     * 
+     * @memberof DataViewControlBase
+     */
+     public initDataItemCodelist() {
+        let cardViewItems: IPSDEDataViewItem[] | null = this.controlInstance.getPSDEDataViewItems();
+        if (cardViewItems && cardViewItems.length > 0) {
+            cardViewItems.forEach(async (item: IPSDEDataViewItem) => {
+                if (item.getPSCodeList()) {
+                    const codelistItems: any[] = await this.codeListService.getDataItems({tag: item.getPSCodeList()?.codeName, type: item.getPSCodeList()?.codeListType, context: this.context});
+                    this.codelistMap.set(item.name.toLowerCase(), codelistItems);
                 }
             });
         }
@@ -379,7 +403,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
         const parentdata: any = {};
         this.$emit('ctrl-event', { controlname: this.controlInstance.name, action: 'beforeload', data: parentdata });
         Object.assign(arg, parentdata);
-        let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
+        let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : opt ? opt : {};
         Object.assign(tempViewParams, Util.deepCopy(this.viewparams));
         Object.assign(arg, { viewparams: tempViewParams }, opt);
         if (this.service) {
@@ -419,6 +443,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                     this.items.forEach((item: any) => {
                         Object.assign(item, this.getActionState(item));
                     });
+                    this.codelistTranslator();
                     this.$emit('ctrl-event', {
                         controlname: this.controlInstance.name,
                         action: 'load',
@@ -797,7 +822,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
     public computeTargetCtrlData(controlInstance: any, item?: any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
         Object.assign(targetCtrlParam.dynamicProps, {
-            inputData: item,
+            navdatas: [item],
         });
         Object.assign(targetCtrlParam.staticProps, {
             transformData: this.transformData,
@@ -952,9 +977,14 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @memberof DataViewControlBase
      */
     public renderCard(h: any, args: any, dataViewItem: IPSDEDataViewItem) {
+        const style: any = {
+            width: this.controlInstance.cardWidth > 0 ? `${this.controlInstance.cardWidth}px` : false,
+            height: this.controlInstance.cardHeight > 0 ? `${this.controlInstance.cardHeight}px` : false,
+        }
         return (
             <el-card
                 shadow='always'
+                body-style={style}
                 class={[args.isselected === true ? 'isselected' : false, 'single-card-data']}
                 nativeOnClick={() => debounce(this.handleClick,[args],this)}
                 nativeOnDblclick={() => debounce(this.handleDblClick,[args],this)}
@@ -1238,5 +1268,28 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
         let targetData: any = this.transformData(data);
         ViewTool.calcActionItemAuthState(targetData, tempActionModel, this.appUIService);
         return tempActionModel;
+    }
+
+    /**
+     * 代码表翻译
+     * 
+     * @memberof DataViewControlBase
+     */
+    public codelistTranslator() {
+        if (this.items?.length > 0) {
+            this.items.forEach((item: any) => {
+                for (const key in item) {
+                    if (item.hasOwnProperty(key)) {
+                        const codelistItems: any[] | undefined= this.codelistMap.get(key);
+                        if (codelistItems && codelistItems.length > 0) {
+                            const codelistItem = codelistItems.find((_codelistItem: any) => Object.is(_codelistItem.value,item[key]));
+                            if (codelistItem) {
+                                item[key] = codelistItem.text;
+                            }
+                        }
+                    }
+                }
+            })
+        }
     }
 }

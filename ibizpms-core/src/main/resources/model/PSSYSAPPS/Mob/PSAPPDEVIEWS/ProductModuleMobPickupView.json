@@ -14,6 +14,7 @@
     "engineType" : "MobPickupView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "pickupviewpanel",
       "name" : "PICKUPVIEWPANEL",
       "paramType" : "CTRL"
     } ]
@@ -36,6 +37,7 @@
         "engineType" : "MobPickupMDView",
         "name" : "engine",
         "getPSUIEngineParams" : [ {
+          "ctrlName" : "mdctrl",
           "name" : "MDCTRL",
           "paramType" : "CTRL"
         } ]

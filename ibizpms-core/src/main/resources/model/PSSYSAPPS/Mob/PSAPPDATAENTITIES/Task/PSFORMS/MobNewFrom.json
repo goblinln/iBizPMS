@@ -742,6 +742,7 @@
             "engineType" : "MobMEditView9",
             "name" : "engine",
             "getPSUIEngineParams" : [ {
+              "ctrlName" : "meditviewpanel",
               "name" : "MEDITVIEWPANEL",
               "paramType" : "CTRL"
             } ]

@@ -1,6 +1,6 @@
 <template>
     <div class="app-picker-select-view">
-        <Dropdown :visible="visible" trigger="custom" transfer placement="bottom-start" style="left:0px;width: 100%" @on-clickoutside="() => {triggerMenu(false);}" >
+        <Dropdown :visible="visible" trigger="custom" transfer-class-name="app-picker-select-view-transfer" transfer placement="bottom-start" style="left:0px;width: 100%" @on-clickoutside="() => {triggerMenu(false);}" >
           <Input v-if="isSingleSelect" v-model="queryValue" class="tree-input" type="text" :placeholder="placeholder ? placeholder : $t('components.apppickerselectview.placeholder')" :disabled="disabled" @on-change="OnInputChange" @on-focus="()=>{triggerMenu(true);}" >
               <template v-slot:suffix>
                   <i v-if="queryValue && !disabled" class='el-icon-circle-close' @click="onClear"></i>
@@ -26,7 +26,7 @@
 
                 }"
                 @viewdataschange="onViewdatasChange"
-                style="height:100%;">
+                :style="{height:'100%',width: pickViewWidth}">
               </component>
           </DropdownMenu>
         </Dropdown>
@@ -235,6 +235,14 @@ export default class AppPickerSelectView extends Vue {
     public visible: boolean = false;
 
     /**
+     * 选择视图宽度
+     *
+     * @type {string}
+     * @memberof AppPickerSelectView
+     */
+    public pickViewWidth: string = 'auto';
+
+    /**
      * 父视图数据
      *
      * @type {string}
@@ -376,6 +384,15 @@ export default class AppPickerSelectView extends Vue {
      */
     public created() {
         this.onActivedataChange(this.data, undefined);
+    }
+
+    /**
+     * 生命周期
+     *
+     * @memberof AppPickerSelectView
+     */
+    public mounted() {
+        this.pickViewWidth = (this.$el as any).offsetWidth + 'px';
     }
 
     /**

@@ -386,7 +386,7 @@ export class Util {
         if (!appDERSPaths || appDERSPaths.length === 0) {
             return [];
         }
-        let counter:number = 0;
+        let counter: number = 0;
         for (const appDERSPath of appDERSPaths) {
             let tempData: any = { isInclude: true, data: [] };
             for (const singleAppDERSPath of appDERSPath) {
@@ -396,11 +396,11 @@ export class Util {
                     tempData.data.push({ pathName: this.srfpluralize(majorPSAppDataEntity.codeName).toLowerCase(), parameterName: majorPSAppDataEntity.codeName.toLowerCase() });
                 }
             }
-            counter ++;
+            counter++;
             if (tempData.isInclude) {
                 return tempData.data;
             } else {
-                if(counter === appDERSPaths.length){
+                if (counter === appDERSPaths.length) {
                     return [];
                 }
             }
@@ -549,8 +549,8 @@ export class Util {
      * @returns
      * @memberof Util
      */
-    public static getViewProps(context: any, viewparams: any) {
-        return { viewdata: JSON.stringify(context), viewparam: JSON.stringify(viewparams) };
+    public static getViewProps(context: any, viewparams: any, navdatas: Array<any> = []) {
+        return { viewdata: JSON.stringify(context), viewparam: JSON.stringify(viewparams), navdatas: navdatas };
     }
 
     /**
@@ -581,11 +581,11 @@ export class Util {
      * @param {number} newIndex 改变之后再新数组中的索引
      * @memberof Util
      */
-    public static changeIndex(arr: any, oldIndex: number, newIndex: number){
+    public static changeIndex(arr: any, oldIndex: number, newIndex: number) {
         // 移除原元素
-        let temp = arr.splice(oldIndex,1)[0];
+        let temp = arr.splice(oldIndex, 1)[0];
         // 插入新位置
-        arr.splice(newIndex,0,temp);
+        arr.splice(newIndex, 0, temp);
     }
 
     /**
@@ -596,10 +596,10 @@ export class Util {
      *
      * @memberof Util
      */
-     public static clearAdditionalData(source:any,target:any){
-        if(target && (Object.keys(target).length >0) && source && (Object.keys(source).length >0)){
-            Object.keys(source).forEach((key:string) =>{
-                if(target.hasOwnProperty(key)){
+    public static clearAdditionalData(source: any, target: any) {
+        if (target && (Object.keys(target).length > 0) && source && (Object.keys(source).length > 0)) {
+            Object.keys(source).forEach((key: string) => {
+                if (target.hasOwnProperty(key)) {
                     delete target[key];
                 }
             })
@@ -627,7 +627,7 @@ export function createUUID(): string {
  * 设置sessionStorage数据
  *
  */
- export const setSessionStorage: Function = (key: string, value: any) => {
+export const setSessionStorage: Function = (key: string, value: any) => {
     if (!value) {
         return;
     }
@@ -654,11 +654,11 @@ export const getSessionStorage: Function = (key: string) => {
  * 删除sessionStorage数据
  *
  */
- export const removeSessionStorage: Function = (key: string) => {
+export const removeSessionStorage: Function = (key: string) => {
     if (!key) {
         return;
     }
-    if(sessionStorage.getItem(key)){
+    if (sessionStorage.getItem(key)) {
         sessionStorage.removeItem(key);
     }
 }
@@ -673,12 +673,12 @@ export const getSessionStorage: Function = (key: string) => {
  * @static
  * @memberof Util
  */
- export const debounce: Function = (fun: any,params: any[],context: any,delay: number = 300) => {
-  let now: any = Date.now();
-  if (!fun.last || now - fun.last >= delay) {
-    if (typeof fun === 'function') {
-        fun.apply(context,params);
+export const debounce: Function = (fun: any, params: any[], context: any, delay: number = 300) => {
+    let now: any = Date.now();
+    if (!fun.last || now - fun.last >= delay) {
+        if (typeof fun === 'function') {
+            fun.apply(context, params);
+        }
+        fun.last = now;
     }
-    fun.last = now;
-  }
 }

@@ -15,6 +15,7 @@
     "engineType" : "EditView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "form",
       "name" : "FORM",
       "paramType" : "CTRL"
     }, {
@@ -607,6 +608,7 @@
                   "engineType" : "ChartView9",
                   "name" : "engine",
                   "getPSUIEngineParams" : [ {
+                    "ctrlName" : "chart",
                     "name" : "CHART",
                     "paramType" : "CTRL"
                   } ]
@@ -903,6 +905,7 @@
                   "engineType" : "ChartView9",
                   "name" : "engine",
                   "getPSUIEngineParams" : [ {
+                    "ctrlName" : "chart",
                     "name" : "CHART",
                     "paramType" : "CTRL"
                   } ]
@@ -1199,6 +1202,7 @@
                   "engineType" : "ChartView9",
                   "name" : "engine",
                   "getPSUIEngineParams" : [ {
+                    "ctrlName" : "chart",
                     "name" : "CHART",
                     "paramType" : "CTRL"
                   } ]
@@ -1540,12 +1544,15 @@
                   "engineType" : "GridView9",
                   "name" : "engine",
                   "getPSUIEngineParams" : [ {
+                    "appViewLogicName" : "opendata",
                     "name" : "OPENDATA",
                     "paramType" : "LOGIC"
                   }, {
+                    "appViewLogicName" : "newdata",
                     "name" : "NEWDATA",
                     "paramType" : "LOGIC"
                   }, {
+                    "ctrlName" : "grid",
                     "name" : "GRID",
                     "paramType" : "CTRL"
                   } ]
@@ -2054,12 +2061,15 @@
                   "engineType" : "GridView",
                   "name" : "engine",
                   "getPSUIEngineParams" : [ {
+                    "appViewLogicName" : "opendata",
                     "name" : "OPENDATA",
                     "paramType" : "LOGIC"
                   }, {
+                    "appViewLogicName" : "newdata",
                     "name" : "NEWDATA",
                     "paramType" : "LOGIC"
                   }, {
+                    "ctrlName" : "grid",
                     "name" : "GRID",
                     "paramType" : "CTRL"
                   } ]
@@ -2503,12 +2513,15 @@
                   "engineType" : "GridView",
                   "name" : "engine",
                   "getPSUIEngineParams" : [ {
+                    "appViewLogicName" : "opendata",
                     "name" : "OPENDATA",
                     "paramType" : "LOGIC"
                   }, {
+                    "appViewLogicName" : "newdata",
                     "name" : "NEWDATA",
                     "paramType" : "LOGIC"
                   }, {
+                    "ctrlName" : "grid",
                     "name" : "GRID",
                     "paramType" : "CTRL"
                   } ]
@@ -2951,6 +2964,7 @@
               "engineType" : "PortalView",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "ctrlName" : "dashboard",
                 "name" : "DASHBOARD",
                 "paramType" : "CTRL"
               } ]
@@ -3979,6 +3993,7 @@
               "engineType" : "PortalView",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "ctrlName" : "dashboard",
                 "name" : "DASHBOARD",
                 "paramType" : "CTRL"
               } ]
@@ -5024,6 +5039,7 @@
               "engineType" : "PortalView",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "ctrlName" : "dashboard",
                 "name" : "DASHBOARD",
                 "paramType" : "CTRL"
               } ]

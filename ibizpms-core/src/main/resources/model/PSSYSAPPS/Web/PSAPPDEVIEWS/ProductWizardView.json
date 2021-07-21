@@ -14,6 +14,7 @@
     "engineType" : "WizardView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "wizardpanel",
       "name" : "WIZARDPANEL",
       "paramType" : "CTRL"
     } ]

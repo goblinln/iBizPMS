@@ -615,7 +615,7 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                 );
             }
         } else {
-            this.$warning(this.$t('app.nosupport.unassign'), 'opendata');
+            LogUtil.warn(this.$t('app.nosupport.unassign'), 'opendata');
         }
     }
 
@@ -964,10 +964,10 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                     this.$warning(`${dataview.title}${this.$t('app.nosupport.unopen')}`, 'newdata');
                 }
             } else {
-                this.$warning(this.$t('app.nosupport.unassign'), 'newdata');
+                LogUtil.warn(this.$t('app.nosupport.unassign'), 'newdata');
             }
         } else {
-            this.$warning(this.$t('app.nosupport.unassign'), 'newdata');
+            LogUtil.warn(this.$t('app.nosupport.unassign'), 'newdata');
         }
     }
 }

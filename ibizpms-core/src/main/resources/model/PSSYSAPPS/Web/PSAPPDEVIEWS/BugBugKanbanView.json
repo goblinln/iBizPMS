@@ -14,12 +14,15 @@
     "engineType" : "KanBanView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "kanban",
       "name" : "KANBAN",
       "paramType" : "CTRL"
     }, {
+      "appViewLogicName" : "opendata",
       "name" : "OPENDATA",
       "paramType" : "LOGIC"
     }, {
+      "appViewLogicName" : "newdata",
       "name" : "NEWDATA",
       "paramType" : "LOGIC"
     } ]

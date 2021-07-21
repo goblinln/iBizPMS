@@ -77,7 +77,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -85,7 +85,6 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/bugstats`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -102,7 +101,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/bugstats/${_context.bugstats}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -153,9 +152,8 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/bugstats/${_context.bugstats}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -172,7 +170,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async FetchBugCountInResolution(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/bugstats/fetchbugcountinresolution`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBugCountInResolution');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -189,7 +187,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async FetchBugResolvedBy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/bugstats/fetchbugresolvedby`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBugResolvedBy');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -206,7 +204,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async FetchBugResolvedGird(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/bugstats/fetchbugresolvedgird`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBugResolvedGird');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -223,7 +221,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async FetchBugassignedTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/bugstats/fetchbugassignedto`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBugassignedTo');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -240,7 +238,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/bugstats/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -257,7 +255,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async FetchProductBugResolutionStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/bugstats/fetchproductbugresolutionstats`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductBugResolutionStats');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -274,7 +272,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async FetchProductBugStatusSum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/bugstats/fetchproductbugstatussum`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductBugStatusSum');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -291,7 +289,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async FetchProductCreateBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/bugstats/fetchproductcreatebug`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductCreateBug');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -308,7 +306,7 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     async FetchProjectBugStatusCount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/bugstats/fetchprojectbugstatuscount`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectBugStatusCount');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

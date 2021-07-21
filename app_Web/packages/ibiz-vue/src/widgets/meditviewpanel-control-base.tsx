@@ -73,7 +73,7 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
      * @type {any[]}
      * @memberof MEditViewPanelControlBase
      */
-     public showBottomButton: boolean = true;
+     public showButton: boolean = true;
 
     /**
      * 部件模型数据初始化
@@ -121,8 +121,8 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
         const emView = this.controlInstance.getEmbeddedPSAppView() as IPSAppView;
         const emViewEntity = emView?.getPSAppDataEntity();
         const ctrlParams = this.controlInstance.getPSControlParam()?.ctrlParams;
-        if (ctrlParams && ctrlParams.SHOWBOTTOMBUTTON) {
-          this.showBottomButton = Object.is(ctrlParams.SHOWBOTTOMBUTTON,"false") ? false : true;
+        if (ctrlParams && ctrlParams.SHOWBUTTON) {
+          this.showButton = Object.is(ctrlParams.SHOWBUTTON,"false") ? false : true;
         }
         if (emView && emViewEntity){
             this.deResParameters = Util.formatAppDERSPath(this.context, (emView as IPSAppDEView).getPSAppDERSPaths());

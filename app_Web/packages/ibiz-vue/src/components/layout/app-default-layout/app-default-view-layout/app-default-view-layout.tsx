@@ -48,7 +48,7 @@ export class AppDefaultViewLayout extends Vue {
      * 
      * @memberof AppDefaultViewLayout
      */
-    public viewIsshowToolbar: boolean = ModelTool.findPSControlByType("TOOLBAR", this.viewInstance.getPSControls()) ? true : false;
+    public viewIsshowToolbar: boolean = false;
 
     /**
      * 视图模型数据
@@ -69,6 +69,15 @@ export class AppDefaultViewLayout extends Vue {
         } else {
             return true;
         }
+    }
+
+    /**
+     * Vue生命周期，实例创建完成
+     *
+     * @memberof AppDefaultViewLayout
+     */
+    created(){
+        this.viewIsshowToolbar = ModelTool.findPSControlByType("TOOLBAR", this.viewInstance.getPSControls()) ? true : false;
     }
 
     /**
@@ -156,7 +165,7 @@ export class AppDefaultViewLayout extends Vue {
     public renderRootPSPanelItems(viewLayoutPanel: any) {
         return <row class="app-viewlayout-panel" style={{ 'height': '100%' }}>
             {viewLayoutPanel.getRootPSPanelItems()?.map((container: any, index: number) => {
-                return this.renderByDetailType(container);
+                return this.renderByDetailType(container,true);
             })}
         </row>
     }
@@ -167,7 +176,7 @@ export class AppDefaultViewLayout extends Vue {
      * @param {*} modelJson
      * @memberof AppDefaultViewLayout
      */
-    public renderByDetailType(modelJson: any) {
+    public renderByDetailType(modelJson: any, isRootContainer?: boolean, parent?: any) {
         if (modelJson.getPSSysPFPlugin()) {
             const pluginInstance: any = PluginService.getInstance().getPluginInstance("CONTROLITEM", modelJson.getPSSysPFPlugin().pluginCode);
             if (pluginInstance) {
@@ -176,7 +185,7 @@ export class AppDefaultViewLayout extends Vue {
         }
         switch (modelJson.itemType) {
             case 'CONTAINER':
-                return this.renderContainer(modelJson);
+                return this.renderContainer(modelJson, isRootContainer);
             case 'TABPANEL':
                 return this.renderTabPanel(modelJson);
             case 'TABPAGE':
@@ -186,7 +195,7 @@ export class AppDefaultViewLayout extends Vue {
             case 'RAWITEM':
                 return this.renderRawitem(modelJson);
             case 'CTRLPOS':
-                return this.renderCtrlPos(modelJson);
+                return this.renderCtrlPos(modelJson, parent);
         }
     }
 
@@ -195,7 +204,7 @@ export class AppDefaultViewLayout extends Vue {
      *
      * @memberof AppDefaultViewLayout
      */
-    public renderContainer(container: IPSPanelContainer) {
+    public renderContainer(container: IPSPanelContainer, isRootContainer: boolean = false) {
         const panelItems: IPSPanelItem[] = container.getPSPanelItems() || [];
         if (panelItems.length == 0) {
             return null;
@@ -204,7 +213,7 @@ export class AppDefaultViewLayout extends Vue {
         let layoutMode = container.getPSLayout()?.layout;
         let css = container.getPSSysCss() as IPSSysCss;
         let containerClass = { 'app-viewlayoutpanel-container': true, 'show-caption': container.showCaption };
-        if (css && css.cssName) {
+        if (isRootContainer && css && css.cssName) {
             Object.assign(containerClass, { [css.cssName]: true });
         }
         let containerStyle = {
@@ -237,7 +246,7 @@ export class AppDefaultViewLayout extends Vue {
                             const controlClassName = this.renderDetailClass(item);
                             return (
                                 <div style={detailStyle} class={controlClassName}>
-                                    {this.renderByDetailType(item)}
+                                    {this.renderByDetailType(item, false, container)}
                                 </div>
                             );
                         })}
@@ -268,7 +277,7 @@ export class AppDefaultViewLayout extends Vue {
                             const controlClassName = this.renderDetailClass(item);
                             return (
                                 <i-col {...{ props: attrs }} style={detailStyle} class={controlClassName}>
-                                    {this.renderByDetailType(item)}
+                                    {this.renderByDetailType(item, false, container)}
                                 </i-col>
                             );
                         })}
@@ -401,8 +410,20 @@ export class AppDefaultViewLayout extends Vue {
      *
      * @memberof AppDefaultViewLayout
      */
-    public renderCtrlPos(modelJson: any) {
-        return this.$slots[`layout-${modelJson.name}`];
+    public renderCtrlPos(modelJson: any, parent?: any) {
+        const { width, height, name } = modelJson;
+        if (parent) {
+            return this.$slots[`layout-${name}`];
+        } else {
+            let ctrlStyle = { width: width ? width + 'px' : '100%' };
+            if (height) {
+                Object.assign(ctrlStyle, { height: height + 'px' });
+            }
+            let ctrlCss = modelJson.getPSSysCss?.()?.cssName || '';
+            return <div class={ctrlCss} style={ctrlStyle}>
+                {this.$slots[`layout-${name}`]}
+            </div>
+        }
     }
 
     /**

@@ -95,7 +95,7 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         try {
         if (_context.sysupdatelog && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -103,11 +103,10 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -115,7 +114,6 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/sysupdatefeatures`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -133,11 +131,11 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         try {
         if (_context.sysupdatelog && _context.sysupdatefeatures) {
             const res = await this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         const res = await this.http.get(`/sysupdatefeatures/${_context.sysupdatefeatures}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -199,15 +197,13 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         try {
         if (_context.sysupdatelog && _context.sysupdatefeatures) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/sysupdatefeatures/${_context.sysupdatefeatures}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -225,11 +221,11 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         try {
         if (_context.sysupdatelog && true) {
             const res = await this.http.post(`/sysupdatelogs/${_context.sysupdatelog}/sysupdatefeatures/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         const res = await this.http.post(`/sysupdatefeatures/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

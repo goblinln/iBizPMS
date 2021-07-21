@@ -97,7 +97,7 @@ export class TestReultBaseService extends EntityBaseService<ITestReult> {
         try {
         if (_context.test && _context.testcase && _context.testreult) {
             const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
     this.log.warn([`[TestReult]>>>[Get函数]异常`]);

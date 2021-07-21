@@ -95,30 +95,26 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         try {
         if (_context.product && _context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Collect');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Collect');
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Collect');
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Collect');
             const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[DocLibModule]>>>[Collect函数]异常`]);
@@ -139,7 +135,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         try {
         if (_context.product && _context.project && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -147,12 +143,11 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -160,12 +155,11 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -173,12 +167,11 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -186,7 +179,6 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[DocLibModule]>>>[Create函数]异常`]);
@@ -207,22 +199,22 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         try {
         if (_context.product && _context.project && _context.doclib && _context.doclibmodule) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.doclib && _context.doclibmodule) {
             const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.product && _context.doclib && _context.doclibmodule) {
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.doclib && _context.doclibmodule) {
             const res = await this.http.get(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
     this.log.warn([`[DocLibModule]>>>[Get函数]异常`]);
@@ -315,30 +307,26 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         try {
         if (_context.product && _context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
             const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[DocLibModule]>>>[UnCollect函数]异常`]);
@@ -359,30 +347,26 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         try {
         if (_context.product && _context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.product && _context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.doclib && _context.doclibmodule) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[DocLibModule]>>>[Update函数]异常`]);
@@ -403,22 +387,22 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         try {
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAllDir');
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAllDir');
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAllDir');
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAllDir');
             return res;
         }
     this.log.warn([`[DocLibModule]>>>[FetchAllDir函数]异常`]);
@@ -439,22 +423,22 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         try {
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDir');
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDir');
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDir');
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDir');
             return res;
         }
     this.log.warn([`[DocLibModule]>>>[FetchDir函数]异常`]);
@@ -475,22 +459,22 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         try {
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
             return res;
         }
     this.log.warn([`[DocLibModule]>>>[FetchMyFavourites函数]异常`]);

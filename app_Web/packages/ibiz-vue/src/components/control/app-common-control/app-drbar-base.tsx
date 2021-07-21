@@ -62,7 +62,7 @@ export class AppDrbarBase extends DrbarControlBase {
      *
      * @memberof AppDrbarBase
      */
-    public destroyed(){
+    public destroyed() {
         this.ctrlDestroyed();
     }
 
@@ -73,7 +73,7 @@ export class AppDrbarBase extends DrbarControlBase {
      * @memberof AppDrbarBase
      */
     @Emit('ctrl-event')
-    public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void {}
+    public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void { }
 
     /**
      * 绘制关系界面
@@ -81,7 +81,7 @@ export class AppDrbarBase extends DrbarControlBase {
      * @return {*} 
      * @memberof AppDrbarBase
      */
-    public renderDrView(){
+    public renderDrView() {
         if (this.selection && this.selection.view) {
             let viewData: any = Util.deepCopy(this.context);
             let viewParam: any = Util.deepCopy(this.viewparams);
@@ -91,18 +91,21 @@ export class AppDrbarBase extends DrbarControlBase {
             if (this.selection.localViewParam) {
                 Object.assign(viewParam, this.selection.localViewParam);
             }
+            if (this.selection.view.getPSAppView?.()) {
+                Object.assign(viewData, { viewpath: this.selection.view.getPSAppView()?.modelPath });
+            }
             return this.$createElement('app-view-shell', {
-                props: { 
+                props: {
                     staticProps: {
                         viewDefaultUsage: false,
-                        viewModelData: this.selection.view.getPSAppView?.(),
                         appDeCodeName: this.appDeCodeName,
                     },
-                    dynamicProps:{
-                        viewdata: JSON.stringify(viewData), 
-                        viewparam: JSON.stringify(viewParam), 
+                    dynamicProps: {
+                        viewdata: JSON.stringify(viewData),
+                        viewparam: JSON.stringify(viewParam),
                     }
                 },
+                key: Util.createUUID(),
                 class: "viewcontainer2",
                 on: {
                 }
@@ -122,17 +125,17 @@ export class AppDrbarBase extends DrbarControlBase {
         }
         const { controlClassNames } = this.renderOptions;
         return (
-            <layout class={{...controlClassNames, 'app-dr-bar': true}}>
+            <layout class={{ ...controlClassNames, 'app-dr-bar': true }}>
                 <sider width={this.width}>
                     <el-menu
                         default-openeds={this.defaultOpeneds}
                         default-active={this.items[0]?.id}
                         on-select={(event: any) => debounce(this.onSelect, [event], this)}>
-                        <app-sider-menus menus={this.items}/>
+                        <app-sider-menus menus={this.items} />
                     </el-menu>
                 </sider>
                 <content style={{ width: `calc(100% - ${this.width + 1}px)` }}>
-                    <div class="main-data" style={[ this.selection && Object.is(this.selection.id, this.formName) ? '' : { 'display': 'none', 'visibility': 'visible' } ]}>
+                    <div class="main-data" style={[this.selection && Object.is(this.selection.id, this.formName) ? '' : { 'display': 'none', 'visibility': 'visible' }]}>
                         {this.$parent.$slots.mainform}
                     </div>
                     {this.renderDrView()}

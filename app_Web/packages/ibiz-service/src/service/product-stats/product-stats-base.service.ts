@@ -111,7 +111,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -119,7 +119,6 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/productstats`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -136,7 +135,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/productstats/${_context.productstats}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -171,7 +170,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     async GetTestStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/productstats/${_context.productstats}/getteststats`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'GetTestStats');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -204,9 +203,8 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/productstats/${_context.productstats}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -223,7 +221,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productstats/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -240,7 +238,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     async FetchNoOpenProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productstats/fetchnoopenproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchNoOpenProduct');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -257,7 +255,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     async FetchProdctQuantiGird(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productstats/fetchprodctquantigird`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProdctQuantiGird');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -274,7 +272,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     async FetchProductInputTable(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productstats/fetchproductinputtable`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductInputTable');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -291,7 +289,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     async FetchProductcompletionstatistics(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/productstats/fetchproductcompletionstatistics`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductcompletionstatistics');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

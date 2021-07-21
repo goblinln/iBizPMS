@@ -103,12 +103,15 @@
             "engineType" : "ListView9",
             "name" : "engine",
             "getPSUIEngineParams" : [ {
+              "ctrlName" : "list",
               "name" : "LIST",
               "paramType" : "CTRL"
             }, {
+              "appViewLogicName" : "opendata",
               "name" : "OPENDATA",
               "paramType" : "LOGIC"
             }, {
+              "appViewLogicName" : "newdata",
               "name" : "NEWDATA",
               "paramType" : "LOGIC"
             } ]
@@ -559,12 +562,15 @@
             "engineType" : "ListView9",
             "name" : "engine",
             "getPSUIEngineParams" : [ {
+              "ctrlName" : "list",
               "name" : "LIST",
               "paramType" : "CTRL"
             }, {
+              "appViewLogicName" : "opendata",
               "name" : "OPENDATA",
               "paramType" : "LOGIC"
             }, {
+              "appViewLogicName" : "newdata",
               "name" : "NEWDATA",
               "paramType" : "LOGIC"
             } ]
@@ -2221,12 +2227,15 @@
             "engineType" : "ListView",
             "name" : "engine",
             "getPSUIEngineParams" : [ {
+              "ctrlName" : "list",
               "name" : "LIST",
               "paramType" : "CTRL"
             }, {
+              "appViewLogicName" : "opendata",
               "name" : "OPENDATA",
               "paramType" : "LOGIC"
             }, {
+              "appViewLogicName" : "newdata",
               "name" : "NEWDATA",
               "paramType" : "LOGIC"
             } ]
@@ -4416,6 +4425,7 @@
             "engineType" : "EditView9",
             "name" : "engine",
             "getPSUIEngineParams" : [ {
+              "ctrlName" : "form",
               "name" : "FORM",
               "paramType" : "CTRL"
             }, {

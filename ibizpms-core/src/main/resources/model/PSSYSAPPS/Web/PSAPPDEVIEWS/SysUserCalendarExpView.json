@@ -13,6 +13,7 @@
     "engineType" : "CalendarExpView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "calendarexpbar",
       "name" : "CALENDAREXPBAR",
       "paramType" : "CTRL"
     } ]

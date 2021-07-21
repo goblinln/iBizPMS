@@ -151,7 +151,7 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
     public computeTargetCtrlData(controlInstance: any, item?: any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
         Object.assign(targetCtrlParam.dynamicProps, {
-            inputData: item,
+            navdatas: [item],
             actionModel: this.actionModel,
         })
         Object.assign(targetCtrlParam.staticProps, {

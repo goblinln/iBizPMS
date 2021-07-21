@@ -77,7 +77,7 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/sysaccounts/${_context.sysaccount}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -94,7 +94,7 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
     async CountMyContribution(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/sysaccounts/countmycontribution`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'CountMyContribution');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -111,7 +111,7 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
     async CountMyWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/sysaccounts/countmywork`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'CountMyWork');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

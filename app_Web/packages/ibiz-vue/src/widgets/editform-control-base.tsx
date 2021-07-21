@@ -3,8 +3,9 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { FormButtonModel, FormDruipartModel, FormGroupPanelModel, FormIFrameModel, FormItemModel, FormPageModel, FormPartModel, FormRawItemModel, FormTabPageModel, FormTabPanelModel, FormUserControlModel, ModelTool, Util, Verify, ViewTool, EditFormControlInterface } from 'ibiz-core';
 import { FormControlBase } from './form-control-base';
 import { AppFormService } from '../ctrl-service';
+import moment from 'moment';
 import { AppCenterService, AppViewLogicService } from '../app-service';
-import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFDLogic, IPSDEFDSingleLogic, IPSDEFIUpdateDetail, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemUpdate, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFDLogic, IPSDEFDSingleLogic, IPSDEFIUpdateDetail, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemUpdate, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSUIActionGroupDetail, IPSDEFormItemEx } from '@ibiz/dynamic-model-api';
 
 /**
  * 编辑表单部件基类
@@ -46,6 +47,14 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
      * @memberof EditFormControlBase
      */
     public isAutoSave?: any;
+
+    /**
+     * 是否显示导航栏
+     *
+     * @type {*}
+     * @memberof EditFormControlBase
+     */
+    public showFormNavBar?: boolean;
 
     /**
      * 部件行为--submit
@@ -223,6 +232,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
             this.service = new AppFormService(this.controlInstance, this.context);
             await this.service.loaded();
         }
+        this.showFormNavBar = this.controlInstance.showFormNavBar;
         this.isAutoSave = this.controlInstance.enableAutoSave;
         this.loaddraftAction = this.controlInstance.getGetDraftPSControlAction?.()?.actionName;
         this.updateAction = this.controlInstance.getUpdatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Update";
@@ -418,7 +428,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                 data: data,
             });
             this.$nextTick(() => {
-                this.formState.next({ type: 'save', data: data });
+                this.formState.next({ type: 'save',action: 'autoSave', data: data });
             });
         }).catch((response: any) => {
             this.onControlResponse('autoSave', response);
@@ -1470,9 +1480,38 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                         // 编辑器基础值规则
                         ...editorRules
                     ]
+                } else if (detail.detailType == 'FORMITEM' && detail.getPSEditor()?.editorType != 'HIDDEN' && detail.compositeItem) {
+                    let compositeItemRules = this.getCompositeItemRules(detail);
+                    this.rules[detail.name] = [
+                        // 复合表单项基础值规则
+                        ...compositeItemRules,
+                    ]
                 }
             }
         }
+    }
+
+    /**
+     * 复合表单项值规则
+     * 
+     * @param detail 复合表单项
+     */
+     public getCompositeItemRules(detail: IPSDEEditFormItem) {
+        let rules: Array<any> = [];
+        if (detail.compositeItem && detail.getPSEditor()?.editorType == 'DATEPICKER') {
+            const formItems = (detail as IPSDEFormItemEx).getPSDEFormItems();
+            if (formItems && formItems.length > 1) {
+                rules.push(
+                    {
+                        validator: (rule: any, value: any, callback: any) => {
+                            return this.data[formItems[0].name] && this.data[formItems[1].name] && moment(this.data[formItems[0].name]).isAfter(this.data[formItems[1].name]) ? false : true;
+                        },
+                        message: this.$t('app.formpage.compositeitem.datepicker'),
+                    }
+                )
+            }
+        }
+        return rules;
     }
 
     /**

@@ -77,7 +77,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -85,7 +85,6 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/ibzmyterritories`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -102,7 +101,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -201,9 +200,8 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/ibzmyterritories/${_context.ibzmyterritory}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -220,7 +218,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzmyterritories/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -237,7 +235,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     async FetchMyWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzmyterritories/fetchmywork`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyWork');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -254,7 +252,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     async FetchMyWorkMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzmyterritories/fetchmyworkmob`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyWorkMob');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -271,7 +269,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     async FetchMyWorkPm(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzmyterritories/fetchmyworkpm`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyWorkPm');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -288,7 +286,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     async FetchPersonInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzmyterritories/fetchpersoninfo`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchPersonInfo');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -305,7 +303,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     async FetchWelcome(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/ibzmyterritories/fetchwelcome`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchWelcome');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

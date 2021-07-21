@@ -204,7 +204,7 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
             data: parentdata,
         });
         Object.assign(arg, parentdata);
-        let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
+        let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : opt ? opt : {};
         if (this.viewparams) {
             Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
         }
@@ -540,7 +540,7 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
     public computeTargetCtrlData(controlInstance: any, item?: any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
         Object.assign(targetCtrlParam.dynamicProps, {
-            inputData: item,
+            navdatas: [item],
         })
         Object.assign(targetCtrlParam.staticProps, {
             transformData: this.transformData,

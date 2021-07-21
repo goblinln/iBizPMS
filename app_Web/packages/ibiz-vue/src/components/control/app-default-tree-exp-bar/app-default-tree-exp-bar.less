@@ -79,9 +79,25 @@
             .has-search {
                 margin-top: 10px;
             }
-            .container-header >.search-container{
-                padding-bottom: 10px;
-                border-bottom: 1px solid #E4E4E4;
+            .container-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap;
+                .search-container {
+                    height: 48px;
+                    padding: 10px 10px 10px 0;
+                }
+                .toolbar-container{
+                    padding: 4px;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    align-items: center;
+                }
+                .quick-group-container {
+                    padding-top: 8px;
+                    padding-right: 20px;
+                }
             }
             .treeview {
                 >.context-menu-container >.el-tree {

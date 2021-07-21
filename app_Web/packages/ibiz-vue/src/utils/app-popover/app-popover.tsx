@@ -168,11 +168,11 @@ export class AppPopover {
             render(h: CreateElement) {
                 const content: any = this.content;
                 container.style.zIndex = (self.zIndex - 1).toString();
-                let customStyle: any = {'z-index': self.zIndex};
-                if(Util.isNumber(this.width)){
+                let customStyle: any = { 'z-index': self.zIndex };
+                if (Util.isNumber(this.width)) {
                     customStyle.width = this.width + 'px';
                 }
-                if(Util.isNumber(this.height)){
+                if (Util.isNumber(this.height)) {
                     customStyle.height = this.height + 'px';
                 }
                 return <div v-show="self.showPopper" style={customStyle} class={`app-popover app-popper${customClass ? ' ' + customClass : ''}`} on-click={this.click} on-mouseleave={this.mouseout}>{(self.showPopper && content) ? content(h) : null}</div>;
@@ -192,7 +192,7 @@ export class AppPopover {
      * @returns {Observable<any>}
      * @memberof AppPopover
      */
-    public openPop(event: any, view: any, context: any = {}, data: any, position?: Placement, isAutoClose?: boolean): Observable<any> {
+    public openPop(event: any, view: any, context: any = {}, data: any, position?: Placement, isAutoClose?: boolean, navdatas: Array<any> = []): Observable<any> {
         const subject = new Subject<any>();
         if (!event) {
             console.error(view.$t('components.appmessagepopover.errorreturn'));
@@ -203,8 +203,8 @@ export class AppPopover {
         this.openPopover(event, (h: CreateElement) => {
             return h(view.viewname, {
                 props: {
-                    staticProps: { viewDefaultUsage: false, noViewCaption: true},
-                    dynamicProps: { viewdata: JSON.stringify(context), viewparam: JSON.stringify(data) }
+                    staticProps: { viewDefaultUsage: false, noViewCaption: true },
+                    dynamicProps: { viewdata: JSON.stringify(context), viewparam: JSON.stringify(data), navdatas: navdatas }
                 },
                 on: {
                     close: (result: any) => {
@@ -256,7 +256,7 @@ export class AppPopover {
         });
         this.vueExample.$forceUpdate();
     }
-    
+
     /**
      * 打开悬浮窗(自定义modefiers)
      *
@@ -270,12 +270,12 @@ export class AppPopover {
      * @param {any[]} [modifiers=[]]
      * @memberof AppPopover
      */
-     public openPopover2(event: any, content?: (h: CreateElement) => any, position: Placement = 'left-end', isAutoClose: boolean = true, isMoveOutClose: boolean = false, width?: number, height?: number, customClass?: any, modifiers: any[] = []): void {
+    public openPopover2(event: any, content?: (h: CreateElement) => any, position: Placement = 'left-end', isAutoClose: boolean = true, isMoveOutClose: boolean = false, width?: number, height?: number, customClass?: any, modifiers: any[] = []): void {
         // 阻止事件冒泡
         event.stopPropagation();
         const element: Element = event.toElement || event.srcElement;
         if (!this.vueExample) {
-            this.initVueExample(customClass,'openPopover2');
+            this.initVueExample(customClass, 'openPopover2');
         }
         this.popperDestroy();
         const zIndex = this.vueExample.$store.getters.getZIndex();
@@ -325,7 +325,7 @@ export class AppPopover {
             this.popperExample.destroy();
             if (this.zIndex !== 0) {
                 this.zIndex = 0;
-            }      
+            }
             this.showPopper = false;
             this.vueExample.$forceUpdate();
         }

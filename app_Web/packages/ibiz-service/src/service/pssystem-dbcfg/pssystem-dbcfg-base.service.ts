@@ -77,7 +77,7 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -85,7 +85,6 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/pssystemdbcfgs`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -102,7 +101,7 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/pssystemdbcfgs/${_context.pssystemdbcfg}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -153,9 +152,8 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/pssystemdbcfgs/${_context.pssystemdbcfg}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -172,7 +170,7 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
     async FetchBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/pssystemdbcfgs/fetchbuild`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBuild');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -189,7 +187,7 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/pssystemdbcfgs/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

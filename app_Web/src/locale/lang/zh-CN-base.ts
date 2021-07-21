@@ -152,7 +152,10 @@ function getAppLocale(){
                 updateerror: "表单项更新失败",   
                 valueverif:"请输入",
                 updateAction: "变更",
-                createAction: "创建",    
+                createAction: "创建",
+                compositeitem: {
+                    datepicker: '结束时间不能小于开始时间',
+                },
             },
             gridexpbar: {
                 title: "表格导航栏",

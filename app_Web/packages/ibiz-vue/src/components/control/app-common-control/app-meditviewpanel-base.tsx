@@ -177,7 +177,7 @@ export class AppMEditViewPanelBase extends MEditViewPanelControlBase{
         return (
             <div class={{...controlClassNames,'multieditviewpanel': true}}>
                 {this.items.length > 0 ? this.renderContent() : null}
-                {this.showBottomButton ?
+                {this.showButton ?
                 <i-button type="primary" on-click={()=>debounce(this.handleAdd,[],this)} style="float: right;">
                     {this.$t('app.local.add')}
                 </i-button>:null}

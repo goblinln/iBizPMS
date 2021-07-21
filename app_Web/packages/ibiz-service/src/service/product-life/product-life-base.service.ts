@@ -93,7 +93,7 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         try {
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/productlives/fetchroadmapyear`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchRoadMapYear');
             return res;
         }
     this.log.warn([`[ProductLife]>>>[FetchRoadMapYear函数]异常`]);
@@ -114,7 +114,7 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         try {
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/productlives/fetchroadmap`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchRoadmap');
             return res;
         }
     this.log.warn([`[ProductLife]>>>[FetchRoadmap函数]异常`]);

@@ -198,7 +198,7 @@ export class AppComponentService {
         this.controlMap.set("CHART_NEW", 'app-default-chart');
         this.controlMap.set("CHARTEXPBAR_DEFAULT", 'app-default-chart-exp-bar');
         this.controlMap.set("DATAVIEW_DEFAULT", 'app-default-dataview');
-        this.controlMap.set("PANEL_DEFAULT", 'app-panel-shell');
+        this.controlMap.set("PANEL_DEFAULT", 'app-default-panel');
         this.controlMap.set("CALENDAR_DEFAULT", 'app-default-calendar');
         this.controlMap.set("KANBAN_DEFAULT", 'app-default-kanban');
         this.controlMap.set("DASHBOARD_DEFAULT", 'app-default-dashboard');

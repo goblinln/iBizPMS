@@ -663,7 +663,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         const parentdata: any = {};
         this.ctrlEvent({ controlname: this.controlInstance.name, action: 'beforeload', data: parentdata });
         Object.assign(arg, parentdata);
-        let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
+        let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : opt ? opt : {};
         Object.assign(tempViewParams, Util.deepCopy(this.viewparams));
         Object.assign(arg, { viewparams: tempViewParams });
         Object.assign(arg, { page: 0, size: 1000 });

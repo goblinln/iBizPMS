@@ -14,6 +14,7 @@
     "engineType" : "MobPickupTreeView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "tree",
       "name" : "TREE",
       "paramType" : "CTRL"
     } ]

@@ -466,23 +466,20 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Activate');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/activate`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Activate');
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/activate`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Activate');
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/activate`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[Activate函数]异常`]);
@@ -503,23 +500,20 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/assignto`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/assignto`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/assignto`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[AssignTo函数]异常`]);
@@ -540,23 +534,20 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'BugFavorites');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/bugfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'BugFavorites');
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/bugfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'BugFavorites');
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/bugfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[BugFavorites函数]异常`]);
@@ -577,23 +568,20 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'BugNFavorites');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/bugnfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'BugNFavorites');
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/bugnfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'BugNFavorites');
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/bugnfavorites`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[BugNFavorites函数]异常`]);
@@ -614,23 +602,20 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'BuildUnlinkBug');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/buildunlinkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'BuildUnlinkBug');
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/buildunlinkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'BuildUnlinkBug');
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/buildunlinkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[BuildUnlinkBug函数]异常`]);
@@ -651,23 +636,20 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Confirm');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/confirm`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Confirm');
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/confirm`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Confirm');
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/confirm`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[Confirm函数]异常`]);
@@ -688,7 +670,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -696,12 +678,11 @@ export class BugBaseService extends EntityBaseService<IBug> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -709,12 +690,11 @@ export class BugBaseService extends EntityBaseService<IBug> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/tests/${_context.test}/bugs`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -722,7 +702,6 @@ export class BugBaseService extends EntityBaseService<IBug> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/bugs`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[Create函数]异常`]);
@@ -743,17 +722,17 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && _context.bug) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.test && _context.bug) {
             const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.bug) {
             const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
     this.log.warn([`[Bug]>>>[Get函数]异常`]);
@@ -830,23 +809,20 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'PlanUnlinkBug');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/planunlinkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'PlanUnlinkBug');
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/planunlinkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'PlanUnlinkBug');
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/planunlinkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[PlanUnlinkBug函数]异常`]);
@@ -867,23 +843,20 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'RelaseUnlinkBug');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/relaseunlinkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'RelaseUnlinkBug');
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/relaseunlinkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'RelaseUnlinkBug');
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/relaseunlinkbug`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[RelaseUnlinkBug函数]异常`]);
@@ -932,23 +905,20 @@ export class BugBaseService extends EntityBaseService<IBug> {
         try {
         if (_context.product && _context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Resolve');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/resolve`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Resolve');
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/resolve`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Resolve');
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/resolve`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[Resolve函数]异常`]);
@@ -991,23 +961,20 @@ entity.set("status","FINISH").update();`);
         try {
         if (_context.product && _context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/tests/${_context.test}/bugs/${_context.bug}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/projects/${_context.project}/bugs/${_context.bug}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[Bug]>>>[Update函数]异常`]);
@@ -1028,17 +995,17 @@ entity.set("status","FINISH").update();`);
         try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.test && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
     this.log.warn([`[Bug]>>>[FetchDefault函数]异常`]);
@@ -1059,17 +1026,17 @@ entity.set("status","FINISH").update();`);
         try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/fetchproductbug`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductBug');
             return res;
         }
         if (_context.test && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/fetchproductbug`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductBug');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/fetchproductbug`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductBug');
             return res;
         }
     this.log.warn([`[Bug]>>>[FetchProductBug函数]异常`]);
@@ -1090,17 +1057,17 @@ entity.set("status","FINISH").update();`);
         try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/fetchprojectbug`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectBug');
             return res;
         }
         if (_context.test && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/fetchprojectbug`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectBug');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/fetchprojectbug`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectBug');
             return res;
         }
     this.log.warn([`[Bug]>>>[FetchProjectBug函数]异常`]);

@@ -93,17 +93,17 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
         try {
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchVersion');
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchVersion');
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/storyspecs/fetchversion`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchVersion');
             return res;
         }
     this.log.warn([`[StorySpec]>>>[FetchVersion函数]异常`]);

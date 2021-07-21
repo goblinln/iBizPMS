@@ -177,6 +177,14 @@ export class ControlBase extends Vue implements ControlInterface {
     public controlId: string = '';
 
     /**
+     * 外部传入数据对象
+     *
+     * @type {*}
+     * @memberof ControlBase
+     */
+     public navdatas?: any;
+
+    /**
      * 部件事件抛出方法
      *
      * @param {{ controlname: string; action: string; data: any }} { controlname, action, data }
@@ -314,6 +322,9 @@ export class ControlBase extends Vue implements ControlInterface {
         }
         if (newVal?.viewparams && newVal.viewparams !== oldVal?.viewparams) {
             this.viewparams = newVal.viewparams;
+        }
+        if (newVal?.navdatas && newVal.navdatas !== oldVal?.navdatas) {
+            this.navdatas = newVal.navdatas;
         }
     }
 

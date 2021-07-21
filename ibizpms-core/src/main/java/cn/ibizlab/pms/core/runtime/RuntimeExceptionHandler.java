@@ -30,7 +30,11 @@ public class RuntimeExceptionHandler {
                 fieldError.put("fieldname", entityFieldError.getFieldName());
                 fieldError.put("fieldlogicname", entityFieldError.getFieldLogicName());
                 fieldError.put("fielderrortype", entityFieldError.getErrorType());
-                fieldError.put("fielderrorinfo", entityFieldError.getErrorInfo());
+                if (entityFieldError.getPSDEFValueRule() != null) {
+                    fieldError.put("fielderrorinfo", entityFieldError.getPSDEFValueRule().getRuleInfo());
+                } else {
+                    fieldError.put("fielderrorinfo", entityFieldError.getErrorInfo());
+                }
                 array.add(fieldError);
             }
         }

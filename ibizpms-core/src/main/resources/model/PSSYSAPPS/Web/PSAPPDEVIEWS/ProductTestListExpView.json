@@ -13,6 +13,7 @@
     "engineType" : "ListExpView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "listexpbar",
       "name" : "LISTEXPBAR",
       "paramType" : "CTRL"
     } ]

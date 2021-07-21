@@ -13,6 +13,7 @@
     "engineType" : "PortalView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "dashboard",
       "name" : "DASHBOARD",
       "paramType" : "CTRL"
     } ]
@@ -133,6 +134,7 @@
               "engineType" : "EditView",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "ctrlName" : "form",
                 "name" : "FORM",
                 "paramType" : "CTRL"
               }, {
@@ -822,6 +824,7 @@
               "engineType" : "ListView9",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "ctrlName" : "list",
                 "name" : "LIST",
                 "paramType" : "CTRL"
               } ]

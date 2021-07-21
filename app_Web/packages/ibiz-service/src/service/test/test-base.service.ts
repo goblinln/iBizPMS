@@ -207,7 +207,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/tests/${_context.test}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -240,7 +240,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
     async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/tests/fetchcurdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCurDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

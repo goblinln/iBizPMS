@@ -41,8 +41,13 @@
     <div v-else-if="Object.is(editorType, 'dropdown')" class='app-picker'>
         <el-select ref="appPicker" remote :remote-method="(query) => this.onSearch(query, null, true)" :value="refvalue" size='small' filterable
             @change="onSelect" :disabled="disabled" style='width:100%;' clearable popper-class="app-picker-dropdown"
-            @clear="onClear" @visible-change="onSelectOpen"
+            @clear="onClear" @visible-change="onSelectOpen" :loading="loading" 
             :placeholder="placeholder">
+            <template v-if="loading" slot="empty">
+                <li class="loading">
+                    <i class="el-icon-loading"></i>
+                </li>
+            </template>
             <template v-if="items">
                 <template v-for="(_item,index) in items">
                     <el-option  v-if="!_item.tag" :key="`${_item[deKeyField]}${index}${parentCodeName}`" :value="_item[deKeyField]" :label="_item[deMajorField]" :disabled="_item.disabled"></el-option>
@@ -219,7 +224,6 @@ export default class AppPicker extends Vue {
      */
     @Prop() public actionDetails?:Array<any>;
 
-
     /**
      * 值
      *
@@ -297,6 +301,14 @@ export default class AppPicker extends Vue {
      * @memberof AppPicker
      */
     public dropdownDom:any = {};
+
+    /**
+     * 下拉远程加载状态
+     * 
+     * @type {boolean}
+     * @memberof AppPicker
+     */
+    public loading: boolean = false;
 
     /**
      * 获取关联数据项值
@@ -439,7 +451,9 @@ export default class AppPicker extends Vue {
         } else if(!this.acParams.interfaceName) {
             // this.$throw(miss+'interfaceName','onSearch');
         } else {
+          this.loading = true;
           this.service.getItems(this.acParams.serviceName,this.acParams.interfaceName, _context, _param).then((response: any) => {
+              this.loading = false;
               if (!response) {
                   // this.$throw(requestException,'onSearch');
               } else {
@@ -455,6 +469,7 @@ export default class AppPicker extends Vue {
                   callback(this.items);
               }
           }).catch((error: any) => {
+              this.loading = false;
               if (callback) {
                   callback([]);
               }

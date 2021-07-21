@@ -287,12 +287,15 @@
               "engineType" : "MobMDView9",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "appViewLogicName" : "opendata",
                 "name" : "OPENDATA",
                 "paramType" : "LOGIC"
               }, {
+                "ctrlName" : "mdctrl",
                 "name" : "MDCTRL",
                 "paramType" : "CTRL"
               }, {
+                "appViewLogicName" : "newdata",
                 "name" : "NEWDATA",
                 "paramType" : "LOGIC"
               } ]
@@ -991,12 +994,15 @@
               "engineType" : "MobMDView9",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "appViewLogicName" : "opendata",
                 "name" : "OPENDATA",
                 "paramType" : "LOGIC"
               }, {
+                "ctrlName" : "mdctrl",
                 "name" : "MDCTRL",
                 "paramType" : "CTRL"
               }, {
+                "appViewLogicName" : "newdata",
                 "name" : "NEWDATA",
                 "paramType" : "LOGIC"
               } ]
@@ -1797,12 +1803,15 @@
               "engineType" : "MobMDView9",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "appViewLogicName" : "opendata",
                 "name" : "OPENDATA",
                 "paramType" : "LOGIC"
               }, {
+                "ctrlName" : "mdctrl",
                 "name" : "MDCTRL",
                 "paramType" : "CTRL"
               }, {
+                "appViewLogicName" : "newdata",
                 "name" : "NEWDATA",
                 "paramType" : "LOGIC"
               } ]
@@ -3372,12 +3381,15 @@
               "engineType" : "MobMDView9",
               "name" : "engine",
               "getPSUIEngineParams" : [ {
+                "appViewLogicName" : "opendata",
                 "name" : "OPENDATA",
                 "paramType" : "LOGIC"
               }, {
+                "ctrlName" : "mdctrl",
                 "name" : "MDCTRL",
                 "paramType" : "CTRL"
               }, {
+                "appViewLogicName" : "newdata",
                 "name" : "NEWDATA",
                 "paramType" : "LOGIC"
               } ]

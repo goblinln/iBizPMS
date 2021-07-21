@@ -13,9 +13,11 @@
     "engineType" : "EditView2",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "drbar",
       "name" : "DRBAR",
       "paramType" : "CTRL"
     }, {
+      "ctrlName" : "form",
       "name" : "FORM",
       "paramType" : "CTRL"
     }, {

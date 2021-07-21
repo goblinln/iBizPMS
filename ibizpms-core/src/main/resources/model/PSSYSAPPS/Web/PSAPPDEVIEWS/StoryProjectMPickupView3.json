@@ -14,6 +14,7 @@
     "engineType" : "MPickupView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "pickupviewpanel",
       "name" : "PICKUPVIEWPANEL",
       "paramType" : "CTRL"
     } ]
@@ -48,6 +49,7 @@
         "engineType" : "PickupGridView",
         "name" : "engine",
         "getPSUIEngineParams" : [ {
+          "ctrlName" : "grid",
           "name" : "GRID",
           "paramType" : "CTRL"
         } ]

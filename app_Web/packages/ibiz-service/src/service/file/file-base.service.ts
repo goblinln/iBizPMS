@@ -320,231 +320,231 @@ export class FileBaseService extends EntityBaseService<IFile> {
         try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.test && _context.testcase && _context.testreult && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.test && _context.testcase && _context.testcasestep && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.project && _context.testtask && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.project && _context.testreport && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.project && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.project && _context.bug && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.project && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.test && _context.testreport && true) {
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.test && _context.bug && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.project && _context.testtask && true) {
             const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.project && _context.testreport && true) {
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.project && _context.build && true) {
             const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.project && _context.bug && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.project && _context.productplan && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.productrelease && true) {
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.test && _context.testtask && true) {
             const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.doclib && _context.doc && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.sysaccount && _context.todo && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.sysaccount && _context.doc && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.weekly && true) {
             const res = await this.http.post(`/weeklies/${_context.weekly}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.todo && true) {
             const res = await this.http.post(`/todos/${_context.todo}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.testsuite && true) {
             const res = await this.http.post(`/testsuites/${_context.testsuite}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.testcaselib && true) {
             const res = await this.http.post(`/testcaselibs/${_context.testcaselib}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.reportly && true) {
             const res = await this.http.post(`/reportlies/${_context.reportly}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.monthly && true) {
             const res = await this.http.post(`/monthlies/${_context.monthly}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.doc && true) {
             const res = await this.http.post(`/docs/${_context.doc}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         if (_context.daily && true) {
             const res = await this.http.post(`/dailies/${_context.daily}/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
             return res;
         }
         const res = await this.http.post(`/files/fetchproduct`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -562,231 +562,231 @@ export class FileBaseService extends EntityBaseService<IFile> {
         try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.test && _context.testcase && _context.testreult && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.test && _context.testcase && _context.testcasestep && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.project && _context.testtask && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.project && _context.testreport && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.project && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.project && _context.bug && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.project && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.test && _context.testreport && true) {
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.test && _context.bug && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.project && _context.testtask && true) {
             const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.project && _context.testreport && true) {
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.project && _context.build && true) {
             const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.project && _context.bug && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.project && _context.productplan && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.productrelease && true) {
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.test && _context.testtask && true) {
             const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.doclib && _context.doc && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.sysaccount && _context.todo && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.sysaccount && _context.doc && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.weekly && true) {
             const res = await this.http.post(`/weeklies/${_context.weekly}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.todo && true) {
             const res = await this.http.post(`/todos/${_context.todo}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.testsuite && true) {
             const res = await this.http.post(`/testsuites/${_context.testsuite}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.testcaselib && true) {
             const res = await this.http.post(`/testcaselibs/${_context.testcaselib}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.reportly && true) {
             const res = await this.http.post(`/reportlies/${_context.reportly}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.monthly && true) {
             const res = await this.http.post(`/monthlies/${_context.monthly}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.doc && true) {
             const res = await this.http.post(`/docs/${_context.doc}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         if (_context.daily && true) {
             const res = await this.http.post(`/dailies/${_context.daily}/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
             return res;
         }
         const res = await this.http.post(`/files/fetchproject`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -804,231 +804,231 @@ export class FileBaseService extends EntityBaseService<IFile> {
         try {
         if (_context.product && _context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.test && _context.testcase && _context.testreult && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.test && _context.testcase && _context.testcasestep && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.project && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.project && _context.testtask && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.project && _context.testreport && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.project && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.project && _context.task && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.project && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.project && _context.bug && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.project && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.project && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.doclib && _context.doc && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.test && _context.testreport && true) {
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.test && _context.testcase && true) {
             const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.test && _context.bug && true) {
             const res = await this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.project && _context.testtask && true) {
             const res = await this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.project && _context.testreport && true) {
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.project && _context.story && true) {
             const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.project && _context.task && true) {
             const res = await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.project && _context.build && true) {
             const res = await this.http.post(`/projects/${_context.project}/builds/${_context.build}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.project && _context.bug && true) {
             const res = await this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.project && _context.productplan && true) {
             const res = await this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.project && _context.doclib && true) {
             const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.story && true) {
             const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.productrelease && true) {
             const res = await this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.productplan && true) {
             const res = await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.build && true) {
             const res = await this.http.post(`/products/${_context.product}/builds/${_context.build}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && _context.doclib && true) {
             const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.test && _context.testtask && true) {
             const res = await this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.doclib && _context.doc && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.sysaccount && _context.todo && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.sysaccount && _context.doc && true) {
             const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.weekly && true) {
             const res = await this.http.post(`/weeklies/${_context.weekly}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.todo && true) {
             const res = await this.http.post(`/todos/${_context.todo}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.testsuite && true) {
             const res = await this.http.post(`/testsuites/${_context.testsuite}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.testcaselib && true) {
             const res = await this.http.post(`/testcaselibs/${_context.testcaselib}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.reportly && true) {
             const res = await this.http.post(`/reportlies/${_context.reportly}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.product && true) {
             const res = await this.http.post(`/products/${_context.product}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.monthly && true) {
             const res = await this.http.post(`/monthlies/${_context.monthly}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.doc && true) {
             const res = await this.http.post(`/docs/${_context.doc}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.doclib && true) {
             const res = await this.http.post(`/doclibs/${_context.doclib}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         if (_context.daily && true) {
             const res = await this.http.post(`/dailies/${_context.daily}/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
             return res;
         }
         const res = await this.http.post(`/files/fetchtype`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchType');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

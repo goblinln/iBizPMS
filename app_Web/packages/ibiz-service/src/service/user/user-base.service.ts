@@ -127,7 +127,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
@@ -135,7 +135,6 @@ export class UserBaseService extends EntityBaseService<IUser> {
             delete _data.srffrontuf;
         }
         const res = await this.http.post(`/users`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -152,7 +151,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/users/${_context.user}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -169,7 +168,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async GetByCommiter(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.get(`/users/${_context.user}/getbycommiter`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'GetByCommiter');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -236,9 +235,8 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
         const res = await this.http.put(`/users/${_context.user}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -255,7 +253,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async FetchBugUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/users/fetchbuguser`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBugUser');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -272,7 +270,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/users/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -289,7 +287,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async FetchGetByCommiter(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/users/fetchgetbycommiter`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchGetByCommiter');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -306,7 +304,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async FetchProjectTeamM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/users/fetchprojectteamm`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamM');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -323,7 +321,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async FetchProjectTeamUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/users/fetchprojectteamuser`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamUser');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -340,7 +338,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async FetchProjectTeamUserTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/users/fetchprojectteamusertask`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamUserTask');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -357,7 +355,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async FetchTaskTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         try {
         const res = await this.http.post(`/users/fetchtaskteam`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchTaskTeam');
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -96,8 +96,8 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
      */
     public renderPickupViewPanel() {
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.pickupViewPanelInstance);
-        if (!this.cacheUUID || this.cacheUUID.indexOf(this.selection.context.viewpath) == -1) {
-            this.cacheUUID = this.selection.context.viewpath + Util.createUUID();
+        if (!this.cacheUUID) {
+            this.cacheUUID = Util.createUUID();
         }
         Object.assign(targetCtrlParam.dynamicProps, {
             selectedData: this.dynamicProps?.selectedData,

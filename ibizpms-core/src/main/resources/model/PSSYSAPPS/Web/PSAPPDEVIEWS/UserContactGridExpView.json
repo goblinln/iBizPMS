@@ -13,6 +13,7 @@
     "engineType" : "GridExpView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "gridexpbar",
       "name" : "GRIDEXPBAR",
       "paramType" : "CTRL"
     } ]

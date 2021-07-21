@@ -172,7 +172,6 @@ export class UIActionContext {
         // 初始化界面逻辑处理参数
         if (logic.getPSDEUILogicParams() && (logic.getPSDEUILogicParams() as IPSDEUILogicParam[]).length > 0) {
             for (let logicParam of (logic.getPSDEUILogicParams() as IPSDEUILogicParam[])) {
-                console.log(logicParam);
                 this.paramsMap.set(logicParam.codeName, logicParam.default ? this.data : {})
                 if (logicParam.default) this.defaultParamName = logicParam.codeName;
                 if(logicParam.navContextParam) this.navContextParamName = logicParam.codeName;

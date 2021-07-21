@@ -112,7 +112,7 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         try {
         if (_context.product && _context.project && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -120,12 +120,11 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -133,12 +132,11 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/tests/${_context.test}/testreports`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
@@ -146,7 +144,6 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
                 delete _data.srffrontuf;
             }
             const res = await this.http.post(`/projects/${_context.project}/testreports`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[Create函数]异常`]);
@@ -167,17 +164,17 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         try {
         if (_context.product && _context.project && _context.testreport) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.test && _context.testreport) {
             const res = await this.http.get(`/tests/${_context.test}/testreports/${_context.testreport}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.testreport) {
             const res = await this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}`);
-        res.data = await this.afterExecuteAction(_context,res?.data);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
     this.log.warn([`[TestReport]>>>[Get函数]异常`]);
@@ -232,23 +229,20 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         try {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitProjectDuringReport');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/initprojectduringreport`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitProjectDuringReport');
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/initprojectduringreport`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitProjectDuringReport');
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/initprojectduringreport`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[InitProjectDuringReport函数]异常`]);
@@ -269,23 +263,20 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         try {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitProjectReport');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/initprojectreport`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitProjectReport');
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/initprojectreport`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitProjectReport');
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/initprojectreport`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[InitProjectReport函数]异常`]);
@@ -306,23 +297,20 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         try {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReport');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreport`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReport');
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/inittesttaskreport`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReport');
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreport`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[InitTestTaskReport函数]异常`]);
@@ -343,23 +331,20 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         try {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReportMulti');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreportmulti`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReportMulti');
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/inittesttaskreportmulti`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'InitTestTaskReportMulti');
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreportmulti`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[InitTestTaskReportMulti函数]异常`]);
@@ -380,23 +365,20 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         try {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LoadTestReportBasic');
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}/loadtestreportbasic`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LoadTestReportBasic');
             const res = await this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/loadtestreportbasic`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'LoadTestReportBasic');
             const res = await this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/loadtestreportbasic`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[LoadTestReportBasic函数]异常`]);
@@ -445,23 +427,20 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         try {
         if (_context.product && _context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/testreports/${_context.testreport}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.test && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/tests/${_context.test}/testreports/${_context.testreport}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
         if (_context.project && _context.testreport) {
         _data = await this.obtainMinor(_context, _data);
-        _data = await this.beforeExecuteAction(_context,_data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
             const res = await this.http.put(`/projects/${_context.project}/testreports/${_context.testreport}`, _data);
-        res.data = await this.afterExecuteAction(_context,res?.data);
             return res;
         }
     this.log.warn([`[TestReport]>>>[Update函数]异常`]);
@@ -482,17 +461,17 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         try {
         if (_context.product && _context.project && true) {
             const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/testreports/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.test && true) {
             const res = await this.http.post(`/tests/${_context.test}/testreports/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
         if (_context.project && true) {
             const res = await this.http.post(`/projects/${_context.project}/testreports/fetchdefault`, _data);
-        res.data = await this.afterExecuteActionBatch(_context,res?.data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
             return res;
         }
     this.log.warn([`[TestReport]>>>[FetchDefault函数]异常`]);

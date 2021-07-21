@@ -13,6 +13,7 @@
     "engineType" : "MobPickupView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
+      "ctrlName" : "pickupviewpanel",
       "name" : "PICKUPVIEWPANEL",
       "paramType" : "CTRL"
     } ]
@@ -36,6 +37,7 @@
         "engineType" : "MobPickupTreeView",
         "name" : "engine",
         "getPSUIEngineParams" : [ {
+          "ctrlName" : "tree",
           "name" : "TREE",
           "paramType" : "CTRL"
         } ]

@@ -1,7 +1,7 @@
 <template>
-        <modal 
-        ref='curmodal'
-        class-name='app-modal'
+    <modal
+        ref="curmodal"
+        class-name="app-modal"
         v-model="isShow"
         :fullscreen="isfullscreen"
         :title="title"
@@ -10,57 +10,69 @@
         :width="width"
         :styles="style"
         :zIndex="zIndex"
-        @on-visible-change="onVisibleChange($event)">
+        @on-visible-change="onVisibleChange($event)"
+    >
         <component
             :is="viewname"
             class="viewcontainer2"
-            :dynamicProps="{viewdata: JSON.stringify(viewdata) , viewparam:JSON.stringify(viewparams)}"
-            :staticProps="{viewDefaultUsage: false, viewModelData: view.viewModelData, noViewCaption: true}"
+            :dynamicProps="{
+                viewdata: JSON.stringify(viewdata),
+                viewparam: JSON.stringify(viewparams),
+                navdatas: navdatas,
+            }"
+            :staticProps="{ viewDefaultUsage: false, viewModelData: view.viewModelData, noViewCaption: true }"
             @viewdataschange="dataChange($event)"
             @viewdatasactivated="viewDatasActivated($event)"
             @close="close($event)"
             :ref="viewname"
-            ></component>
+        ></component>
     </modal>
 </template>
 <script lang="ts">
-import { Vue, Component, Prop, Provide, Emit, Watch } from "vue-property-decorator";
-import { Subject } from "rxjs";
+import { Vue, Component, Prop, Provide, Emit, Watch } from 'vue-property-decorator';
+import { Subject } from 'rxjs';
 @Component({
-    components: {}
+    components: {},
 })
 export default class AppModalCompponent extends Vue {
-
     /**
      * 视图UI参数
      *
      * @type {any}
      * @memberof AppModal
-     */ 
-    @Prop() public view !:any;
+     */
+    @Prop() public view!: any;
 
     /**
      * 视图上下文参数
      *
      * @type {any}
      * @memberof AppModal
-     */ 
-    @Prop({default:{}}) public viewdata?:any;
+     */
+    @Prop({ default: {} }) public viewdata?: any;
 
     /**
      * 视图参数
      *
      * @type {any}
      * @memberof AppModal
-     */ 
-    @Prop({default:{}}) public viewparams?:any;
+     */
+    @Prop({ default: {} }) public viewparams?: any;
+
+    /**
+     * 导航数据
+     *
+     * @type {*}
+     * @memberof AppModal
+     */
+    @Prop({ default: [] }) public navdatas?: any;
 
     /**
      * 数据传递对象
      *
      * @type {any}
      * @memberof AppModal
-     */ 
+     */
     public subject: null | Subject<any> = new Subject<any>();
 
     /**
@@ -69,70 +81,70 @@ export default class AppModalCompponent extends Vue {
      * @type {boolean}
      * @memberof AppModal
      */
-    public isShow:boolean = false;
+    public isShow: boolean = false;
 
     /**
      * 是否满屏
      *
      * @type {boolean}
      * @memberof AppModal
-     */    
-    public isfullscreen:boolean = false;
+     */
+    public isfullscreen: boolean = false;
 
     /**
      * 零时结果
      *
      * @type {any}
      * @memberof AppModal
-     */  
-    public tempResult:any = { ret: '' };
+     */
+    public tempResult: any = { ret: '' };
 
     /**
      * 视图名称
      *
      * @type {string}
      * @memberof AppModal
-     */ 
-    public viewname:string = '';
+     */
+    public viewname: string = '';
 
     /**
      * 视图标题
      *
      * @type {string}
      * @memberof AppModal
-     */ 
-    public title:string = '';
+     */
+    public title: string = '';
 
     /**
      * 视图宽度
      *
      * @type {number}
      * @memberof AppModal
-     */ 
-    public width:number = 0;
+     */
+    public width: number = 0;
 
     /**
      * 视图层级
      *
      * @type {any}
      * @memberof AppModal
-     */ 
-    public zIndex:any = null;
+     */
+    public zIndex: any = null;
 
     /**
      * 视图样式
      *
      * @type {any}
      * @memberof AppModal
-     */ 
-    public style:any = {};
+     */
+    public style: any = {};
 
     /**
      * 获取数据传递对象
      *
      * @memberof AppModal
-     */ 
-    public getSubject(){
+     */
+    public getSubject() {
         return this.subject;
     }
 
@@ -153,24 +165,24 @@ export default class AppModalCompponent extends Vue {
      * Vue生命周期created
      *
      * @memberof AppModal
-     */ 
-    public  created() {
+     */
+    public created() {
         this.viewname = this.view.viewname;
         this.title = this.view.title;
-        this.isfullscreen = this.view.isfullscreen?this.view.isfullscreen:false;
-        if(this.isfullscreen){
+        this.isfullscreen = this.view.isfullscreen ? this.view.isfullscreen : false;
+        if (this.isfullscreen) {
             this.isfullscreen = true;
-             Object.assign(this.style, { height: 'auto' });
-        }else{
-            if ((!this.view.width || this.view.width === 0 || Object.is(this.view.width, '0px'))) {
-            let width = 600;
-            if (window && window.innerWidth > 100) {
-                if (window.innerWidth > 100) {
-                    width = window.innerWidth - 100;
-                } else {
-                    width = window.innerWidth;
+            Object.assign(this.style, { height: 'auto' });
+        } else {
+            if (!this.view.width || this.view.width === 0 || Object.is(this.view.width, '0px')) {
+                let width = 600;
+                if (window && window.innerWidth > 100) {
+                    if (window.innerWidth > 100) {
+                        width = window.innerWidth - 100;
+                    } else {
+                        width = window.innerWidth;
+                    }
                 }
-            }
                 this.width = width;
             } else {
                 this.width = this.view.width;
@@ -185,7 +197,7 @@ export default class AppModalCompponent extends Vue {
      * Vue生命周期mounted
      *
      * @memberof AppModal
-     */ 
+     */
     public mounted() {
         const curmodal: any = this.$refs.curmodal;
         curmodal.handleGetModalIndex = () => {
@@ -203,14 +215,14 @@ export default class AppModalCompponent extends Vue {
      * Vue生命周期beforeDestroy
      *
      * @memberof AppModal
-     */ 
-    public beforeDestroy() { }
+     */
+    public beforeDestroy() {}
 
     /**
      * 视图关闭
      *
      * @memberof AppModal
-     */ 
+     */
     public close(result: any) {
         if (result && Array.isArray(result) && result.length > 0) {
             if (this.zIndex) {
@@ -226,7 +238,7 @@ export default class AppModalCompponent extends Vue {
      * 视图数据变化
      *
      * @memberof AppModal
-     */ 
+     */
     public dataChange(result: any) {
         this.tempResult = { ret: '' };
         if (result && Array.isArray(result) && result.length > 0) {
@@ -238,18 +250,18 @@ export default class AppModalCompponent extends Vue {
      * 视图数据激活
      *
      * @memberof AppModal
-     */ 
+     */
     public viewDatasActivated(result: any) {
         if (result && Array.isArray(result) && result.length > 0) {
             this.close(result);
         }
     }
-    
+
     /**
      * 模态显示隐藏切换回调
      *
      * @memberof AppModal
-     */ 
+     */
     public onVisibleChange($event: any) {
         const component: any = this.$refs[this.viewname];
         if (component) {
@@ -269,7 +281,7 @@ export default class AppModalCompponent extends Vue {
             //         }
             //     });
             // } else {
-                this.handleShowState($event);
+            this.handleShowState($event);
             // }
         }
     }
@@ -278,7 +290,7 @@ export default class AppModalCompponent extends Vue {
      * 处理数据，向外抛值
      *
      * @memberof AppModal
-     */ 
+     */
     public handleShowState($event: any) {
         if ($event) {
             return;
@@ -290,9 +302,8 @@ export default class AppModalCompponent extends Vue {
             document.body.removeChild(this.$el);
             this.$destroy();
             this.subject = null;
-        }, 500)
+        }, 500);
     }
-
 }
 </script>
 <style lang="less" scoped>
