@@ -1,4 +1,4 @@
-import { EmployeeService } from "../service";
+import { SysEmployeeService } from "../service";
 /**
  * 代码表--用户真实名称（动态-产品团队选择）
  *
@@ -90,10 +90,10 @@ export default class UserRealNameProductTeam {
     /**
      * 人员应用实体服务对象
      *
-     * @type {EmployeeService}
+     * @type {SysEmployeeService}
      * @memberof UserRealNameProductTeam
      */
-    public employeeService: EmployeeService = new EmployeeService();
+    public sysemployeeService: SysEmployeeService = new SysEmployeeService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class UserRealNameProductTeam {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.employeeService.FetchProduct(context, data);
+            const promise: Promise<any> = this.sysemployeeService.FetchProduct(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

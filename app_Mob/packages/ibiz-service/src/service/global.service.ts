@@ -32,11 +32,11 @@ export class GlobalService {
     /**
      * 人员服务
      *
-     * @return {Employee}
+     * @return {SysEmployee}
      * @memberof GlobalService
      */
-    async getEmployeeService() {
-        return (await import('./employee/employee.service')).default.getInstance();
+    async getSysEmployeeService() {
+        return (await import('./sys-employee/sys-employee.service')).default.getInstance();
     }
     /**
      * 任务团队服务

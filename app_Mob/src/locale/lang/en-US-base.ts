@@ -1,5 +1,5 @@
 import monthly_en_US from '@locale/lanres/monthly/monthly_en_US';
-import employee_en_US from '@locale/lanres/employee/employee_en_US';
+import sysemployee_en_US from '@locale/lanres/sys-employee/sys-employee_en_US';
 import taskteam_en_US from '@locale/lanres/task-team/task-team_en_US';
 import ibzmyterritory_en_US from '@locale/lanres/ibz-my-territory/ibz-my-territory_en_US';
 import action_en_US from '@locale/lanres/action/action_en_US';
@@ -386,7 +386,7 @@ export default {
         }
     },
     monthly: monthly_en_US,
-    employee: employee_en_US,
+    sysemployee: sysemployee_en_US,
     taskteam: taskteam_en_US,
     ibzmyterritory: ibzmyterritory_en_US,
     action: action_en_US,

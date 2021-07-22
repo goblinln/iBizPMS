@@ -55,7 +55,7 @@ export class UIServiceRegister {
      */
     protected init(): void {
                 UIServiceRegister.allUIServiceMap.set('monthly', () => import('../uiservice/monthly/monthly-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('employee', () => import('../uiservice/employee/employee-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('sysemployee', () => import('../uiservice/sys-employee/sys-employee-ui-service'));
         UIServiceRegister.allUIServiceMap.set('taskteam', () => import('../uiservice/task-team/task-team-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzmyterritory', () => import('../uiservice/ibz-my-territory/ibz-my-territory-ui-service'));
         UIServiceRegister.allUIServiceMap.set('action', () => import('../uiservice/action/action-ui-service'));

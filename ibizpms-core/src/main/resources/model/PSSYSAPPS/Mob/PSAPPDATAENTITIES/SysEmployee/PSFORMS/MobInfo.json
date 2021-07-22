@@ -186,7 +186,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "usercode",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -194,9 +193,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "姓名",
@@ -217,7 +213,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "personname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -225,9 +220,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "账号",
@@ -248,7 +240,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "username",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -256,9 +247,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "单位",
@@ -279,7 +267,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "orgname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -287,9 +274,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "部门",
@@ -310,7 +294,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "mdeptname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -318,9 +301,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "业务编码",
@@ -341,7 +321,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "bcode",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -349,9 +328,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "昵称别名",
@@ -372,7 +348,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "nickname",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -380,9 +355,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "性别",
@@ -403,7 +375,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "sex",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -411,9 +382,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "电话",
@@ -434,7 +402,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "phone",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -442,9 +409,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "社交账号",
@@ -465,7 +429,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "avatar",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -473,9 +436,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       }, {
         "caption" : "邮件",
@@ -496,7 +456,6 @@
         "getPSEditor" : {
           "editorType" : "SPAN",
           "name" : "email",
-          "editable" : false,
           "enableLinkView" : false
         },
         "getPSLayoutPos" : {
@@ -504,9 +463,6 @@
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : false,
-        "inputTipClosable" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
@@ -539,11 +495,8 @@
     "modelref" : true,
     "id" : "update"
   },
-  "enableAutoSave" : false,
   "infoFormMode" : true,
   "noTabHeader" : true,
-  "readOnly" : false,
-  "showFormNavBar" : false,
   "modelid" : "ebeaec29b58c0e23aa54dff661df32d2",
   "modeltype" : "PSDEFORM_EDITFORM"
 }

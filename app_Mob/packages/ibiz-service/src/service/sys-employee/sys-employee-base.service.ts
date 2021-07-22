@@ -148,24 +148,6 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
         return this.condCache.get('view');
     }
     /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/sysemployees`, _data);
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -178,63 +160,26 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
         return res;
     }
     /**
-     * GetDraft
+     * FetchBug
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof SysEmployeeService
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/sysemployees/getdraft`, _data);
-        return res;
+    async FetchBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/sysemployees/fetchbug`, _data);
     }
     /**
-     * Remove
+     * FetchContact
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof SysEmployeeService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysemployees/${_context.sysemployee}`);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysemployees/${_context.sysemployee}`, _data);
-    }
-    /**
-     * FetchBugUser
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async FetchBugUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchbuguser`, _data);
-    }
-    /**
-     * FetchContActList
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async FetchContActList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchcontactlist`, _data);
+    async FetchContact(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/sysemployees/fetchcontact`, _data);
     }
     /**
      * FetchDefault
@@ -248,124 +193,47 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
         return this.http.post(`/sysemployees/fetchdefault`, _data);
     }
     /**
-     * FetchProductTeamM
+     * FetchProduct
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof SysEmployeeService
      */
-    async FetchProductTeamM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchproductteamm`, _data);
+    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/sysemployees/fetchproduct`, _data);
     }
     /**
-     * FetchProjectTeamM
+     * FetchProject
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof SysEmployeeService
      */
-    async FetchProjectTeamM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchprojectteamm`, _data);
+    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/sysemployees/fetchproject`, _data);
     }
     /**
-     * FetchProjectTeamMProduct
+     * FetchTask
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof SysEmployeeService
      */
-    async FetchProjectTeamMProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchprojectteammproduct`, _data);
+    async FetchTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/sysemployees/fetchtask`, _data);
     }
     /**
-     * FetchProjectTeamTaskUserTemp
+     * FetchTaskMulti
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof SysEmployeeService
      */
-    async FetchProjectTeamTaskUserTemp(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchprojectteamtaskusertemp`, _data);
-    }
-    /**
-     * FetchProjectTeamUser
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async FetchProjectTeamUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchprojectteamuser`, _data);
-    }
-    /**
-     * FetchProjectTeamUserTask
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async FetchProjectTeamUserTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchprojectteamusertask`, _data);
-    }
-    /**
-     * FetchProjectteamPk
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async FetchProjectteamPk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchprojectteampk`, _data);
-    }
-    /**
-     * FetchStoryProductTeamPK
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async FetchStoryProductTeamPK(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchstoryproductteampk`, _data);
-    }
-    /**
-     * FetchTaskMTeam
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async FetchTaskMTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchtaskmteam`, _data);
-    }
-    /**
-     * FetchTaskTeam
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async FetchTaskTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchtaskteam`, _data);
-    }
-    /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysEmployeeService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysemployees/${_context.sysemployee}/select`);
+    async FetchTaskMulti(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/sysemployees/fetchtaskmulti`, _data);
     }
 }

@@ -212,91 +212,91 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'employees/:employee?/views/headportraitmobeditview',
+                    path: 'sysemployees/:sysemployee?/views/headportraitmobeditview',
                     meta: {
-                        caption: 'entities.employee.views.headportraitmobeditview.caption',
+                        caption: 'entities.sysemployee.views.headportraitmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'employees', parameterName: 'employee' },
+                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
                             { pathName: 'views', parameterName: 'headportraitmobeditview' },
                         ],
-                        resource:'employee',
+                        resource:'sysemployee',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'employees/:employee?/views/mpkmobpickuptreeview',
+                    path: 'sysemployees/:sysemployee?/views/mpkmobpickuptreeview',
                     meta: {
-                        caption: 'entities.employee.views.mpkmobpickuptreeview.caption',
+                        caption: 'entities.sysemployee.views.mpkmobpickuptreeview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'employees', parameterName: 'employee' },
+                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
                             { pathName: 'views', parameterName: 'mpkmobpickuptreeview' },
                         ],
-                        resource:'employee',
+                        resource:'sysemployee',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'employees/:employee?/views/treemobpickupview',
+                    path: 'sysemployees/:sysemployee?/views/treemobpickupview',
                     meta: {
-                        caption: 'entities.employee.views.treemobpickupview.caption',
+                        caption: 'entities.sysemployee.views.treemobpickupview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'employees', parameterName: 'employee' },
+                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
                             { pathName: 'views', parameterName: 'treemobpickupview' },
                         ],
-                        resource:'employee',
+                        resource:'sysemployee',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'employees/:employee?/views/mobpickuptreeview',
+                    path: 'sysemployees/:sysemployee?/views/mobpickuptreeview',
                     meta: {
-                        caption: 'entities.employee.views.mobpickuptreeview.caption',
+                        caption: 'entities.sysemployee.views.mobpickuptreeview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'employees', parameterName: 'employee' },
+                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
                             { pathName: 'views', parameterName: 'mobpickuptreeview' },
                         ],
-                        resource:'employee',
+                        resource:'sysemployee',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'employees/:employee?/views/usertreemobmpickupview',
+                    path: 'sysemployees/:sysemployee?/views/usertreemobmpickupview',
                     meta: {
-                        caption: 'entities.employee.views.usertreemobmpickupview.caption',
+                        caption: 'entities.sysemployee.views.usertreemobmpickupview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'employees', parameterName: 'employee' },
+                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
                             { pathName: 'views', parameterName: 'usertreemobmpickupview' },
                         ],
-                        resource:'employee',
+                        resource:'sysemployee',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'employees/:employee?/views/loginmobeditview',
+                    path: 'sysemployees/:sysemployee?/views/loginmobeditview',
                     meta: {
-                        caption: 'entities.employee.views.loginmobeditview.caption',
+                        caption: 'entities.sysemployee.views.loginmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'employees', parameterName: 'employee' },
+                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
                             { pathName: 'views', parameterName: 'loginmobeditview' },
                         ],
-                        resource:'employee',
+                        resource:'sysemployee',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -15451,7 +15451,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeeheadportraitmobeditview',
                     meta: {
-                        caption: 'entities.employee.views.headportraitmobeditview.caption',
+                        caption: 'entities.sysemployee.views.headportraitmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -15681,7 +15681,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeempkmobpickuptreeview',
                     meta: {
-                        caption: 'entities.employee.views.mpkmobpickuptreeview.caption',
+                        caption: 'entities.sysemployee.views.mpkmobpickuptreeview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -15912,7 +15912,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeetreemobpickupview',
                     meta: {
-                        caption: 'entities.employee.views.treemobpickupview.caption',
+                        caption: 'entities.sysemployee.views.treemobpickupview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -16173,7 +16173,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeemobpickuptreeview',
                     meta: {
-                        caption: 'entities.employee.views.mobpickuptreeview.caption',
+                        caption: 'entities.sysemployee.views.mobpickuptreeview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -16186,7 +16186,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeeusertreemobmpickupview',
                     meta: {
-                        caption: 'entities.employee.views.usertreemobmpickupview.caption',
+                        caption: 'entities.sysemployee.views.usertreemobmpickupview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -18100,7 +18100,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeeloginmobeditview',
                     meta: {
-                        caption: 'entities.employee.views.loginmobeditview.caption',
+                        caption: 'entities.sysemployee.views.loginmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },

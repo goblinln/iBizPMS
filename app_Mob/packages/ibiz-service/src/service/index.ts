@@ -1,6 +1,6 @@
 export { GlobalService } from './global.service';
 export * from './monthly/monthly.service';
-export * from './employee/employee.service';
+export * from './sys-employee/sys-employee.service';
 export * from './task-team/task-team.service';
 export * from './ibz-my-territory/ibz-my-territory.service';
 export * from './action/action.service';

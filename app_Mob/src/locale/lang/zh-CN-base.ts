@@ -1,5 +1,5 @@
 import monthly_zh_CN from '@locale/lanres/monthly/monthly_zh_CN';
-import employee_zh_CN from '@locale/lanres/employee/employee_zh_CN';
+import sysemployee_zh_CN from '@locale/lanres/sys-employee/sys-employee_zh_CN';
 import taskteam_zh_CN from '@locale/lanres/task-team/task-team_zh_CN';
 import ibzmyterritory_zh_CN from '@locale/lanres/ibz-my-territory/ibz-my-territory_zh_CN';
 import action_zh_CN from '@locale/lanres/action/action_zh_CN';
@@ -386,7 +386,7 @@ export default {
         }
     },
     monthly: monthly_zh_CN,
-    employee: employee_zh_CN,
+    sysemployee: sysemployee_zh_CN,
     taskteam: taskteam_zh_CN,
     ibzmyterritory: ibzmyterritory_zh_CN,
     action: action_zh_CN,

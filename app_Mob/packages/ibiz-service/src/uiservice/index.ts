@@ -1,5 +1,5 @@
 export * from './monthly/monthly-ui-service';
-export * from './employee/employee-ui-service';
+export * from './sys-employee/sys-employee-ui-service';
 export * from './task-team/task-team-ui-service';
 export * from './ibz-my-territory/ibz-my-territory-ui-service';
 export * from './action/action-ui-service';

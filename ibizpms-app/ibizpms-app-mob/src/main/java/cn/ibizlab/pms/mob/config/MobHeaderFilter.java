@@ -49,7 +49,7 @@ public class MobHeaderFilter extends ZuulFilter {
     public boolean shouldFilter() {
         RequestContext ctx = RequestContext.getCurrentContext();
         String requestURI = ctx.getRequest().getRequestURI();
-        if (pathMatcher.match("/employees/**", requestURI))
+        if (pathMatcher.match("/sysemployees/**", requestURI))
             return true;
         if (pathMatcher.match("/systeams/**", requestURI))
             return true;
@@ -70,7 +70,7 @@ public class MobHeaderFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         RequestContext ctx = RequestContext.getCurrentContext();
 		String requestURI = ctx.getRequest().getRequestURI();
-        if (pathMatcher.match("/employees/**", requestURI)){
+        if (pathMatcher.match("/sysemployees/**", requestURI)){
 			ctx.addZuulRequestHeader("srfsystemid", env.getProperty("ibiz.ref.service.ibzou-api.system","f7ad7e05-9031-11eb-b882-00163e06e68c"));
             if (env.getProperty("ibiz.ref.service.ibzou-api.super", Boolean.class, false)) {
                 AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();

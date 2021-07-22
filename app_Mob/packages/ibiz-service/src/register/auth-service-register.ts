@@ -54,7 +54,7 @@ export class AuthServiceRegister{
      */
     protected init(): void {
                 AuthServiceRegister.allAuthServiceMap.set('monthly', () => import('../authservice/monthly/monthly-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('employee', () => import('../authservice/employee/employee-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('sysemployee', () => import('../authservice/sys-employee/sys-employee-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('taskteam', () => import('../authservice/task-team/task-team-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzmyterritory', () => import('../authservice/ibz-my-territory/ibz-my-territory-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('action', () => import('../authservice/action/action-auth-service'));

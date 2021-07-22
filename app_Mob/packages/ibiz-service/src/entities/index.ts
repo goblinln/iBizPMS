@@ -1,5 +1,5 @@
 export * from './monthly/monthly';
-export * from './employee/employee';
+export * from './sys-employee/sys-employee';
 export * from './task-team/task-team';
 export * from './ibz-my-territory/ibz-my-territory';
 export * from './action/action';

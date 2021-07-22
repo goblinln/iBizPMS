@@ -72,7 +72,7 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibzemp:
-      path: /employees/**
+      path: /sysemployees/**
       serviceId: ${ibiz.ref.service.ibzou-api.name:ibzou-api}
       stripPrefix: false
     zt_taskteam:

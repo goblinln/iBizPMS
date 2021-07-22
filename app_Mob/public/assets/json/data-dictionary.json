@@ -46,7 +46,7 @@
         "srfkey": "UserRealName_valueofid",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"Employee",
+        "appdataentity":"SysEmployee",
         "appdedataset":"FetchDefault",
         "items": []
     }, 
@@ -207,7 +207,7 @@
         "srfkey": "UserRealNameProject",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"Employee",
+        "appdataentity":"SysEmployee",
         "appdedataset":"FetchProject",
         "items": []
     }, 
@@ -509,7 +509,7 @@
         "srfkey": "UserRealNameUnAssignTo_Gird",
         "emptytext": "未指派",
         "codelisttype":"dynamic",
-        "appdataentity":"Employee",
+        "appdataentity":"SysEmployee",
         "appdedataset":"FetchDefault",
         "items": []
     }, 
@@ -737,7 +737,7 @@
         "srfkey": "UserRealName_Gird",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"Employee",
+        "appdataentity":"SysEmployee",
         "appdedataset":"FetchDefault",
         "items": []
     }, 
@@ -1707,7 +1707,7 @@
         "srfkey": "UserRealNameProductTeam",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"Employee",
+        "appdataentity":"SysEmployee",
         "appdedataset":"FetchProduct",
         "items": []
     }, 
@@ -1831,7 +1831,7 @@
         "srfkey": "UserRealNameTaskTeam",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"Employee",
+        "appdataentity":"SysEmployee",
         "appdedataset":"FetchTask",
         "items": []
     }, 
@@ -6100,7 +6100,7 @@
         "srfkey": "UserRealName",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"Employee",
+        "appdataentity":"SysEmployee",
         "appdedataset":"FetchDefault",
         "items": []
     }, 

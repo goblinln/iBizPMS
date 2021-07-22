@@ -1,5 +1,5 @@
 export * from './imonthly';
-export * from './iemployee';
+export * from './isys-employee';
 export * from './itask-team';
 export * from './iibz-my-territory';
 export * from './iaction';
