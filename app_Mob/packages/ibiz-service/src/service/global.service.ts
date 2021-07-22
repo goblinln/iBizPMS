@@ -23,20 +23,20 @@ export class GlobalService {
     /**
      * 月报服务
      *
-     * @return {IbzMonthly}
+     * @return {Monthly}
      * @memberof GlobalService
      */
-    async getIbzMonthlyService() {
-        return (await import('./ibz-monthly/ibz-monthly.service')).default.getInstance();
+    async getMonthlyService() {
+        return (await import('./monthly/monthly.service')).default.getInstance();
     }
     /**
      * 人员服务
      *
-     * @return {SysEmployee}
+     * @return {Employee}
      * @memberof GlobalService
      */
-    async getSysEmployeeService() {
-        return (await import('./sys-employee/sys-employee.service')).default.getInstance();
+    async getEmployeeService() {
+        return (await import('./employee/employee.service')).default.getInstance();
     }
     /**
      * 任务团队服务
@@ -122,11 +122,11 @@ export class GlobalService {
     /**
      * 汇报服务
      *
-     * @return {IbzReportly}
+     * @return {Reportly}
      * @memberof GlobalService
      */
-    async getIbzReportlyService() {
-        return (await import('./ibz-reportly/ibz-reportly.service')).default.getInstance();
+    async getReportlyService() {
+        return (await import('./reportly/reportly.service')).default.getInstance();
     }
     /**
      * 文档内容服务
@@ -156,7 +156,7 @@ export class GlobalService {
         return (await import('./project-stats/project-stats.service')).default.getInstance();
     }
     /**
-     * 任务团队服务
+     * 任务团队（嵌套）服务
      *
      * @return {Ibztaskteam}
      * @memberof GlobalService
@@ -165,7 +165,7 @@ export class GlobalService {
         return (await import('./ibztaskteam/ibztaskteam.service')).default.getInstance();
     }
     /**
-     * 任务预计服务
+     * 任务团队（嵌套）服务
      *
      * @return {IbzTaskestimate}
      * @memberof GlobalService
@@ -257,11 +257,11 @@ export class GlobalService {
     /**
      * 日报服务
      *
-     * @return {IbzDaily}
+     * @return {Daily}
      * @memberof GlobalService
      */
-    async getIbzDailyService() {
-        return (await import('./ibz-daily/ibz-daily.service')).default.getInstance();
+    async getDailyService() {
+        return (await import('./daily/daily.service')).default.getInstance();
     }
     /**
      * 文档库服务
@@ -345,6 +345,15 @@ export class GlobalService {
         return (await import('./sys-update-log/sys-update-log.service')).default.getInstance();
     }
     /**
+     * 系统用户服务
+     *
+     * @return {SysAccount}
+     * @memberof GlobalService
+     */
+    async getSysAccountService() {
+        return (await import('./sys-account/sys-account.service')).default.getInstance();
+    }
+    /**
      * 用户服务
      *
      * @return {User}
@@ -374,11 +383,11 @@ export class GlobalService {
     /**
      * 汇报服务
      *
-     * @return {IbzReport}
+     * @return {ReportSummary}
      * @memberof GlobalService
      */
-    async getIbzReportService() {
-        return (await import('./ibz-report/ibz-report.service')).default.getInstance();
+    async getReportSummaryService() {
+        return (await import('./report-summary/report-summary.service')).default.getInstance();
     }
     /**
      * 产品统计服务
@@ -462,13 +471,13 @@ export class GlobalService {
         return (await import('./test/test.service')).default.getInstance();
     }
     /**
-     * 周报服务
+     * 个人周报服务
      *
-     * @return {IbzWeekly}
+     * @return {Weekly}
      * @memberof GlobalService
      */
-    async getIbzWeeklyService() {
-        return (await import('./ibz-weekly/ibz-weekly.service')).default.getInstance();
+    async getWeeklyService() {
+        return (await import('./weekly/weekly.service')).default.getInstance();
     }
     /**
      * 项目团队服务

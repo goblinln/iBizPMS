@@ -24,7 +24,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
     protected APPDENAMEPLURAL = 'Products';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name','productsn','code',];
+    protected quickSearchFields = ['name','id','code',];
     protected selectContextParam = {
     };
 

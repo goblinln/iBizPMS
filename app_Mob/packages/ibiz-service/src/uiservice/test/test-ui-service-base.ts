@@ -80,6 +80,7 @@ export class TestUIServiceBase extends UIServiceBase {
      * @memberof  TestUIServiceBase
      */  
     protected initViewFuncMap(){
+        this.allViewFuncMap.set(':','');
     }
 
 }

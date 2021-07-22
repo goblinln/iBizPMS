@@ -25,6 +25,7 @@ export class IbztaskteamBaseService extends EntityBaseService<IIbztaskteam> {
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];
     protected selectContextParam = {
+        task: 'root',
     };
 
     newEntity(data: IIbztaskteam): Ibztaskteam {
@@ -41,6 +42,13 @@ export class IbztaskteamBaseService extends EntityBaseService<IIbztaskteam> {
 
     async getLocal(context: IContext, srfKey: string): Promise<IIbztaskteam> {
         const entity = this.cache.get(context, srfKey);
+        if (entity && entity.root && entity.root !== '') {
+            const s = await ___ibz___.gs.getTaskService();
+            const data = await s.getLocal2(context, entity.root);
+            if (data) {
+                entity.root = data.id;
+            }
+        }
         return entity!;
     }
 
@@ -49,6 +57,13 @@ export class IbztaskteamBaseService extends EntityBaseService<IIbztaskteam> {
     }
 
     async getDraftLocal(_context: IContext, entity: IIbztaskteam = {}): Promise<IIbztaskteam> {
+        if (_context.task && _context.task !== '') {
+            const s = await ___ibz___.gs.getTaskService();
+            const data = await s.getLocal2(_context, _context.task);
+            if (data) {
+                entity.root = data.id;
+            }
+        }
         return new Ibztaskteam(entity);
     }
 

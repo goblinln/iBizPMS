@@ -58,4 +58,25 @@ export default {
     lineName:  commonLogic.appcommonhandle("产品线",null),
     line:  commonLogic.appcommonhandle("id",null),
   },
+	views: {
+		testmobmdview: {
+			caption: commonLogic.appcommonhandle("测试",null),
+		},
+	},
+	mobdef_searchform: {
+		details: {
+			formpage1: commonLogic.appcommonhandle("常规条件",null), 
+			n_name_like: commonLogic.appcommonhandle("产品名称",null), 
+			n_status_eq: commonLogic.appcommonhandle("状态",null), 
+			n_type_eq: commonLogic.appcommonhandle("产品类型",null), 
+		},
+		uiactions: {
+		},
+	},
+	testmobmdviewmdctrl_batchtoolbar_toolbar: {
+		deuiaction1: {
+			caption: commonLogic.appcommonhandle("Remove",null),
+			tip: 'deuiaction1',
+		},
+	},
 };

@@ -59,9 +59,6 @@ export default {
     line: "id",
   },
 	views: {
-		testmobmdview: {
-			caption: commonLogic.appcommonhandle("测试",null),
-		},
 		mobtabexpview: {
 			caption: commonLogic.appcommonhandle("测试",null),
 		},
@@ -214,12 +211,6 @@ export default {
 			tip: '关闭',
 		},
 		deuiaction2: {
-			caption: commonLogic.appcommonhandle("删除",null),
-			tip: '删除',
-		},
-	},
-	testmobmdviewmdctrl_batchtoolbar_toolbar: {
-		deuiaction1: {
 			caption: commonLogic.appcommonhandle("删除",null),
 			tip: '删除',
 		},

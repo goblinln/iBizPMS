@@ -81,7 +81,6 @@ export class ProductUIServiceBase extends UIServiceBase {
      */  
     protected initViewFuncMap(){
         this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('MOBPICKUPVIEW:','MOBPICKUPVIEW');
         this.allViewFuncMap.set('MOBMDATAVIEW:','MOBMDATAVIEW');
         this.allViewFuncMap.set(':','');

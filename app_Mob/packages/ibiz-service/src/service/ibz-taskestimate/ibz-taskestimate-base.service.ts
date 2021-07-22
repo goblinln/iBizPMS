@@ -22,7 +22,7 @@ export class IbzTaskestimateBaseService extends EntityBaseService<IIbzTaskestima
     protected APPDENAME = 'IbzTaskestimate';
     protected APPDENAMEPLURAL = 'IbzTaskestimates';
     protected APPDEKEY = 'id';
-    protected APPDETEXT = 'id';
+    protected APPDETEXT = 'account';
     protected quickSearchFields = ['id',];
     protected selectContextParam = {
     };

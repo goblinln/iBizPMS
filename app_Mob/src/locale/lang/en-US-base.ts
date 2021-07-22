@@ -1,5 +1,5 @@
-import ibzmonthly_en_US from '@locale/lanres/ibz-monthly/ibz-monthly_en_US';
-import sysemployee_en_US from '@locale/lanres/sys-employee/sys-employee_en_US';
+import monthly_en_US from '@locale/lanres/monthly/monthly_en_US';
+import employee_en_US from '@locale/lanres/employee/employee_en_US';
 import taskteam_en_US from '@locale/lanres/task-team/task-team_en_US';
 import ibzmyterritory_en_US from '@locale/lanres/ibz-my-territory/ibz-my-territory_en_US';
 import action_en_US from '@locale/lanres/action/action_en_US';
@@ -9,7 +9,7 @@ import ibzfavorites_en_US from '@locale/lanres/ibz-favorites/ibz-favorites_en_US
 import syspost_en_US from '@locale/lanres/sys-post/sys-post_en_US';
 import sysdepartment_en_US from '@locale/lanres/sys-department/sys-department_en_US';
 import testcasestep_en_US from '@locale/lanres/test-case-step/test-case-step_en_US';
-import ibzreportly_en_US from '@locale/lanres/ibz-reportly/ibz-reportly_en_US';
+import reportly_en_US from '@locale/lanres/reportly/reportly_en_US';
 import doccontent_en_US from '@locale/lanres/doc-content/doc-content_en_US';
 import testmodule_en_US from '@locale/lanres/test-module/test-module_en_US';
 import projectstats_en_US from '@locale/lanres/project-stats/project-stats_en_US';
@@ -24,7 +24,7 @@ import productbranch_en_US from '@locale/lanres/product-branch/product-branch_en
 import productrelease_en_US from '@locale/lanres/product-release/product-release_en_US';
 import testcase_en_US from '@locale/lanres/test-case/test-case_en_US';
 import projectmodule_en_US from '@locale/lanres/project-module/project-module_en_US';
-import ibzdaily_en_US from '@locale/lanres/ibz-daily/ibz-daily_en_US';
+import daily_en_US from '@locale/lanres/daily/daily_en_US';
 import doclib_en_US from '@locale/lanres/doc-lib/doc-lib_en_US';
 import dynafilter_en_US from '@locale/lanres/dyna-filter/dyna-filter_en_US';
 import module_en_US from '@locale/lanres/module/module_en_US';
@@ -34,10 +34,11 @@ import product_en_US from '@locale/lanres/product/product_en_US';
 import productplan_en_US from '@locale/lanres/product-plan/product-plan_en_US';
 import doc_en_US from '@locale/lanres/doc/doc_en_US';
 import sysupdatelog_en_US from '@locale/lanres/sys-update-log/sys-update-log_en_US';
+import sysaccount_en_US from '@locale/lanres/sys-account/sys-account_en_US';
 import user_en_US from '@locale/lanres/user/user_en_US';
 import dynadashboard_en_US from '@locale/lanres/dyna-dashboard/dyna-dashboard_en_US';
 import productmodule_en_US from '@locale/lanres/product-module/product-module_en_US';
-import ibzreport_en_US from '@locale/lanres/ibz-report/ibz-report_en_US';
+import reportsummary_en_US from '@locale/lanres/report-summary/report-summary_en_US';
 import productstats_en_US from '@locale/lanres/product-stats/product-stats_en_US';
 import usercontact_en_US from '@locale/lanres/user-contact/user-contact_en_US';
 import sysupdatefeatures_en_US from '@locale/lanres/sys-update-features/sys-update-features_en_US';
@@ -47,7 +48,7 @@ import sysorganization_en_US from '@locale/lanres/sys-organization/sys-organizat
 import doclibmodule_en_US from '@locale/lanres/doc-lib-module/doc-lib-module_en_US';
 import testtask_en_US from '@locale/lanres/test-task/test-task_en_US';
 import test_en_US from '@locale/lanres/test/test_en_US';
-import ibzweekly_en_US from '@locale/lanres/ibz-weekly/ibz-weekly_en_US';
+import weekly_en_US from '@locale/lanres/weekly/weekly_en_US';
 import ibzprojectteam_en_US from '@locale/lanres/ibzprojectteam/ibzprojectteam_en_US';
 import story_en_US from '@locale/lanres/story/story_en_US';
 import productline_en_US from '@locale/lanres/product-line/product-line_en_US';
@@ -384,8 +385,8 @@ export default {
             submitSuccess:'Submit data successfully'
         }
     },
-    ibzmonthly: ibzmonthly_en_US,
-    sysemployee: sysemployee_en_US,
+    monthly: monthly_en_US,
+    employee: employee_en_US,
     taskteam: taskteam_en_US,
     ibzmyterritory: ibzmyterritory_en_US,
     action: action_en_US,
@@ -395,7 +396,7 @@ export default {
     syspost: syspost_en_US,
     sysdepartment: sysdepartment_en_US,
     testcasestep: testcasestep_en_US,
-    ibzreportly: ibzreportly_en_US,
+    reportly: reportly_en_US,
     doccontent: doccontent_en_US,
     testmodule: testmodule_en_US,
     projectstats: projectstats_en_US,
@@ -410,7 +411,7 @@ export default {
     productrelease: productrelease_en_US,
     testcase: testcase_en_US,
     projectmodule: projectmodule_en_US,
-    ibzdaily: ibzdaily_en_US,
+    daily: daily_en_US,
     doclib: doclib_en_US,
     dynafilter: dynafilter_en_US,
     module: module_en_US,
@@ -420,10 +421,11 @@ export default {
     productplan: productplan_en_US,
     doc: doc_en_US,
     sysupdatelog: sysupdatelog_en_US,
+    sysaccount: sysaccount_en_US,
     user: user_en_US,
     dynadashboard: dynadashboard_en_US,
     productmodule: productmodule_en_US,
-    ibzreport: ibzreport_en_US,
+    reportsummary: reportsummary_en_US,
     productstats: productstats_en_US,
     usercontact: usercontact_en_US,
     sysupdatefeatures: sysupdatefeatures_en_US,
@@ -433,7 +435,7 @@ export default {
     doclibmodule: doclibmodule_en_US,
     testtask: testtask_en_US,
     test: test_en_US,
-    ibzweekly: ibzweekly_en_US,
+    weekly: weekly_en_US,
     ibzprojectteam: ibzprojectteam_en_US,
     story: story_en_US,
     productline: productline_en_US,

@@ -28,143 +28,99 @@ export abstract class IbzTaskestimateBase extends EntityBase implements IIbzTask
         this.id = val;
     }
     get srfmajortext() {
-        return this.id;
+        return this.account;
     }
     set srfmajortext(val: any) {
-        this.id = val;
+        this.account = val;
     }
+    /**
+     * 最初预计
+     */
+    estimate?: any;
     /**
      * 归属组织
      */
     org?: any;
     /**
-     * 月（显示）
+     * 由谁更新
      */
-    monthname?: any;
+    updateby?: any;
     /**
-     * 归属部门
+     * 用户
      */
-    dept?: any;
+    username?: any;
     /**
-     * 年
+     * 加盟日
      */
-    year?: any;
+    join?: any;
+    /**
+     * 可用工时/天
+     */
+    hours?: any;
     /**
      * 用户
      */
     account?: any;
     /**
+     * 排序
+     */
+    order?: any;
+    /**
      * 预计剩余
      */
     left?: any;
-    /**
-     * 总计消耗
-     */
-    consumed?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 评估成本
-     */
-    evaluationcost?: any;
-    /**
-     * 月（排序）
-     */
-    monthorder?: any;
-    /**
-     * 附件
-     */
-    files?: any;
-    /**
-     * 编号
-     */
-    id?: any;
-    /**
-     * 评估状态
-     */
-    evaluationstatus?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 年（显示）
-     */
-    yearname?: any;
-    /**
-     * 日期
-     */
-    date?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 评估工时
-     */
-    evaluationtime?: any;
-    /**
-     * 投入成本
-     */
-    inputcost?: any;
-    /**
-     * 日期
-     */
-    dates?: any;
     /**
      * 归属部门名
      */
     deptname?: any;
     /**
-     * 任务预计编号
+     * 由谁创建
      */
-    taskestimatesn?: any;
+    createby?: any;
     /**
-     * 月
+     * 总计消耗
      */
-    month?: any;
+    consumed?: any;
     /**
-     * work
-     */
-    work?: any;
-    /**
-     * 评估说明
-     */
-    evaluationdesc?: any;
-    /**
-     * 任务种别
+     * 受限用户
      *
-     * @type {('plan' | 'cycle' | 'temp')} plan: 计划任务, cycle: 周期任务, temp: 临时任务
+     * @type {('yes' | 'no')} yes: 是, no: 否
      */
-    taskspecies?: 'plan' | 'cycle' | 'temp';
+    limited?: 'yes' | 'no';
     /**
-     * 任务名称
+     * 角色
      */
-    taskname?: any;
+    role?: any;
     /**
-     * 所属项目
+     * 归属部门
      */
-    projectname?: any;
+    dept?: any;
     /**
-     * 任务类型
+     * 编号
+     */
+    id?: any;
+    /**
+     * 可用工日
+     */
+    days?: any;
+    /**
+     * 总计可用
+     */
+    total?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 团队类型
      *
-     * @type {('design' | 'devel' | 'test' | 'study' | 'discuss' | 'ui' | 'affair' | 'serve' | 'misc')} design: 设计, devel: 开发, test: 测试, study: 研究, discuss: 讨论, ui: 界面, affair: 事务, serve: 服务, misc: 其他
+     * @type {('project' | 'task' | 'product')} project: 项目团队, task: 任务团队, product: 产品团队
      */
-    type?: 'design' | 'devel' | 'test' | 'study' | 'discuss' | 'ui' | 'affair' | 'serve' | 'misc';
+    type?: 'project' | 'task' | 'product';
     /**
-     * 任务删除标识
+     * 编号
      */
-    deleted?: any;
-    /**
-     * 项目
-     */
-    project?: any;
-    /**
-     * 任务
-     */
-    task?: any;
+    root?: any;
 
     /**
      * 重置实体数据
@@ -176,6 +132,6 @@ export abstract class IbzTaskestimateBase extends EntityBase implements IIbzTask
     reset(data: any = {}): void {
         super.reset(data);
         this.id = data.id || data.srfkey;
-        this.id = data.id || data.srfmajortext;
+        this.account = data.account || data.srfmajortext;
     }
 }

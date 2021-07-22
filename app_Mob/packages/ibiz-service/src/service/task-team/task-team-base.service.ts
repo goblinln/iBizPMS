@@ -24,6 +24,7 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];
     protected selectContextParam = {
+        task: 'root',
     };
 
     newEntity(data: ITaskTeam): TaskTeam {
@@ -40,6 +41,13 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ITaskTeam> {
         const entity = this.cache.get(context, srfKey);
+        if (entity && entity.root && entity.root !== '') {
+            const s = await ___ibz___.gs.getTaskService();
+            const data = await s.getLocal2(context, entity.root);
+            if (data) {
+                entity.root = data.id;
+            }
+        }
         return entity!;
     }
 
@@ -48,6 +56,13 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
     }
 
     async getDraftLocal(_context: IContext, entity: ITaskTeam = {}): Promise<ITaskTeam> {
+        if (_context.task && _context.task !== '') {
+            const s = await ___ibz___.gs.getTaskService();
+            const data = await s.getLocal2(_context, _context.task);
+            if (data) {
+                entity.root = data.id;
+            }
+        }
         return new TaskTeam(entity);
     }
 
@@ -82,5 +97,22 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
 
     protected getViewCond() {
         return this.condCache.get('view');
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskTeamService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskteams/fetchdefault`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

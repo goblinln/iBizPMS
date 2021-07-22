@@ -62,244 +62,279 @@ const router = new Router({
             component:viewShell,
             children: [
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/views/createmobeditview',
+                    path: 'monthlies/:monthly?/views/createmobeditview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.createmobeditview.caption',
+                        caption: 'entities.monthly.views.createmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'views', parameterName: 'createmobeditview' },
                         ],
-                        resource:'ibzmonthly',
+                        resource:'monthly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/views/myreceivedmobtabexpview',
+                    path: 'monthlies/:monthly?/views/myreceivedmobtabexpview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.myreceivedmobtabexpview.caption',
+                        caption: 'entities.monthly.views.myreceivedmobtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'views', parameterName: 'myreceivedmobtabexpview' },
                         ],
-                        resource:'ibzmonthly',
+                        resource:'monthly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/views/myreceivedmobeditview',
+                    path: 'monthlies/:monthly?/views/myreceivedmobeditview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.myreceivedmobeditview.caption',
+                        caption: 'entities.monthly.views.myreceivedmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'views', parameterName: 'myreceivedmobeditview' },
                         ],
-                        resource:'ibzmonthly',
+                        resource:'monthly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/views/editmobeditview',
+                    path: 'monthlies/:monthly?/views/editmobeditview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.editmobeditview.caption',
+                        caption: 'entities.monthly.views.editmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'views', parameterName: 'editmobeditview' },
                         ],
-                        resource:'ibzmonthly',
+                        resource:'monthly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/views/mobeditview',
+                    path: 'monthlies/:monthly?/views/mobeditview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.mobeditview.caption',
+                        caption: 'entities.monthly.views.mobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'views', parameterName: 'mobeditview' },
                         ],
-                        resource:'ibzmonthly',
+                        resource:'monthly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/views/myreceivedmobmdview',
+                    path: 'monthlies/:monthly?/views/myreceivedmobmdview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.myreceivedmobmdview.caption',
+                        caption: 'entities.monthly.views.myreceivedmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'views', parameterName: 'myreceivedmobmdview' },
                         ],
-                        resource:'ibzmonthly',
+                        resource:'monthly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/views/maininfomobtabexpview',
+                    path: 'monthlies/:monthly?/views/maininfomobtabexpview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.maininfomobtabexpview.caption',
+                        caption: 'entities.monthly.views.maininfomobtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'views', parameterName: 'maininfomobtabexpview' },
                         ],
-                        resource:'ibzmonthly',
+                        resource:'monthly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/views/monthlymobmdview',
+                    path: 'monthlies/:monthly?/views/monthlymobmdview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.monthlymobmdview.caption',
+                        caption: 'entities.monthly.views.monthlymobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'views', parameterName: 'monthlymobmdview' },
                         ],
-                        resource:'ibzmonthly',
+                        resource:'monthly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/views/maininfomobeditview',
+                    path: 'monthlies/:monthly?/views/maininfomobeditview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.maininfomobeditview.caption',
+                        caption: 'entities.monthly.views.maininfomobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'views', parameterName: 'maininfomobeditview' },
                         ],
-                        resource:'ibzmonthly',
+                        resource:'monthly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/views/mysubmitmobmdview',
+                    path: 'monthlies/:monthly?/views/mysubmitmobmdview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.mysubmitmobmdview.caption',
+                        caption: 'entities.monthly.views.mysubmitmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'views', parameterName: 'mysubmitmobmdview' },
                         ],
-                        resource:'ibzmonthly',
+                        resource:'monthly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'sysemployees/:sysemployee?/views/headportraitmobeditview',
+                    path: 'employees/:employee?/views/headportraitmobeditview',
                     meta: {
-                        caption: 'entities.sysemployee.views.headportraitmobeditview.caption',
+                        caption: 'entities.employee.views.headportraitmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
+                            { pathName: 'employees', parameterName: 'employee' },
                             { pathName: 'views', parameterName: 'headportraitmobeditview' },
                         ],
-                        resource:'sysemployee',
+                        resource:'employee',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'sysemployees/:sysemployee?/views/mpkmobpickuptreeview',
+                    path: 'employees/:employee?/views/mpkmobpickuptreeview',
                     meta: {
-                        caption: 'entities.sysemployee.views.mpkmobpickuptreeview.caption',
+                        caption: 'entities.employee.views.mpkmobpickuptreeview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
+                            { pathName: 'employees', parameterName: 'employee' },
                             { pathName: 'views', parameterName: 'mpkmobpickuptreeview' },
                         ],
-                        resource:'sysemployee',
+                        resource:'employee',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'sysemployees/:sysemployee?/views/treemobpickupview',
+                    path: 'employees/:employee?/views/treemobpickupview',
                     meta: {
-                        caption: 'entities.sysemployee.views.treemobpickupview.caption',
+                        caption: 'entities.employee.views.treemobpickupview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
+                            { pathName: 'employees', parameterName: 'employee' },
                             { pathName: 'views', parameterName: 'treemobpickupview' },
                         ],
-                        resource:'sysemployee',
+                        resource:'employee',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'sysemployees/:sysemployee?/views/mobpickuptreeview',
+                    path: 'employees/:employee?/views/mobpickuptreeview',
                     meta: {
-                        caption: 'entities.sysemployee.views.mobpickuptreeview.caption',
+                        caption: 'entities.employee.views.mobpickuptreeview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
+                            { pathName: 'employees', parameterName: 'employee' },
                             { pathName: 'views', parameterName: 'mobpickuptreeview' },
                         ],
-                        resource:'sysemployee',
+                        resource:'employee',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'sysemployees/:sysemployee?/views/usertreemobmpickupview',
+                    path: 'employees/:employee?/views/usertreemobmpickupview',
                     meta: {
-                        caption: 'entities.sysemployee.views.usertreemobmpickupview.caption',
+                        caption: 'entities.employee.views.usertreemobmpickupview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
+                            { pathName: 'employees', parameterName: 'employee' },
                             { pathName: 'views', parameterName: 'usertreemobmpickupview' },
                         ],
-                        resource:'sysemployee',
+                        resource:'employee',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'sysemployees/:sysemployee?/views/loginmobeditview',
+                    path: 'employees/:employee?/views/loginmobeditview',
                     meta: {
-                        caption: 'entities.sysemployee.views.loginmobeditview.caption',
+                        caption: 'entities.employee.views.loginmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'sysemployees', parameterName: 'sysemployee' },
+                            { pathName: 'employees', parameterName: 'employee' },
                             { pathName: 'views', parameterName: 'loginmobeditview' },
                         ],
-                        resource:'sysemployee',
+                        resource:'employee',
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/tasks/:task?/taskteams/:taskteam?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.taskteam.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'taskteams', parameterName: 'taskteam' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'taskteam',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/taskteams/:taskteam?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.taskteam.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'taskteams', parameterName: 'taskteam' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'taskteam',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'taskteams/:taskteam?/views/mobmdview9',
@@ -407,6 +442,459 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/testtasks/:testtask?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/stories/:story?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/tasks/:task?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/builds/:build?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/bugs/:bug?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/productplans/:productplan?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/bugs/:bug?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/testtasks/:testtask?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/stories/:story?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/productplans/:productplan?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productreleases/:productrelease?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productreleases', parameterName: 'productrelease' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productplans/:productplan?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testtasks/:testtask?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'doclibs/:doclib?/docs/:doc?/actions/:action?/views/mobmdview9',
                     meta: {
                         caption: 'entities.action.views.mobmdview9.caption',
@@ -415,6 +903,72 @@ const router = new Router({
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'doclibs', parameterName: 'doclib' },
                             { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'weeklies/:weekly?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'todos/:todo?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmdview9' },
                         ],
@@ -440,13 +994,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzreportlies/:ibzreportly?/actions/:action?/views/mobmdview9',
+                    path: 'reportlies/:reportly?/actions/:action?/views/mobmdview9',
                     meta: {
                         caption: 'entities.action.views.mobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzreportlies', parameterName: 'ibzreportly' },
+                            { pathName: 'reportlies', parameterName: 'reportly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmdview9' },
                         ],
@@ -456,13 +1010,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/actions/:action?/views/mobmdview9',
+                    path: 'projects/:project?/actions/:action?/views/mobmdview9',
                     meta: {
                         caption: 'entities.action.views.mobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmdview9' },
                         ],
@@ -472,13 +1026,29 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/actions/:action?/views/mobmdview9',
+                    path: 'products/:product?/actions/:action?/views/mobmdview9',
                     meta: {
                         caption: 'entities.action.views.mobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'monthlies/:monthly?/actions/:action?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmdview9' },
                         ],
@@ -520,13 +1090,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'todos/:todo?/actions/:action?/views/mobmdview9',
+                    path: 'dailies/:daily?/actions/:action?/views/mobmdview9',
                     meta: {
                         caption: 'entities.action.views.mobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmdview9' },
                         ],
@@ -536,13 +1106,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/mobmdview9',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/mobmdview9',
                     meta: {
                         caption: 'entities.action.views.mobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmdview9' },
                         ],
@@ -567,6 +1137,459 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/testtasks/:testtask?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/stories/:story?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/tasks/:task?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/builds/:build?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/bugs/:bug?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/productplans/:productplan?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/bugs/:bug?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/testtasks/:testtask?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/stories/:story?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/productplans/:productplan?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productreleases/:productrelease?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productreleases', parameterName: 'productrelease' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productplans/:productplan?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testtasks/:testtask?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'doclibs/:doclib?/docs/:doc?/actions/:action?/views/allmobmdview9',
                     meta: {
                         caption: 'entities.action.views.allmobmdview9.caption',
@@ -575,6 +1598,72 @@ const router = new Router({
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'doclibs', parameterName: 'doclib' },
                             { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'weeklies/:weekly?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'todos/:todo?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'allmobmdview9' },
                         ],
@@ -600,13 +1689,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzreportlies/:ibzreportly?/actions/:action?/views/allmobmdview9',
+                    path: 'reportlies/:reportly?/actions/:action?/views/allmobmdview9',
                     meta: {
                         caption: 'entities.action.views.allmobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzreportlies', parameterName: 'ibzreportly' },
+                            { pathName: 'reportlies', parameterName: 'reportly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'allmobmdview9' },
                         ],
@@ -616,13 +1705,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/actions/:action?/views/allmobmdview9',
+                    path: 'projects/:project?/actions/:action?/views/allmobmdview9',
                     meta: {
                         caption: 'entities.action.views.allmobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'allmobmdview9' },
                         ],
@@ -632,13 +1721,29 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/actions/:action?/views/allmobmdview9',
+                    path: 'products/:product?/actions/:action?/views/allmobmdview9',
                     meta: {
                         caption: 'entities.action.views.allmobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'allmobmdview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'monthlies/:monthly?/actions/:action?/views/allmobmdview9',
+                    meta: {
+                        caption: 'entities.action.views.allmobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'allmobmdview9' },
                         ],
@@ -680,13 +1785,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'todos/:todo?/actions/:action?/views/allmobmdview9',
+                    path: 'dailies/:daily?/actions/:action?/views/allmobmdview9',
                     meta: {
                         caption: 'entities.action.views.allmobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'allmobmdview9' },
                         ],
@@ -696,13 +1801,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/allmobmdview9',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/allmobmdview9',
                     meta: {
                         caption: 'entities.action.views.allmobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'allmobmdview9' },
                         ],
@@ -727,6 +1832,459 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/testtasks/:testtask?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/stories/:story?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/tasks/:task?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/builds/:build?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/bugs/:bug?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/productplans/:productplan?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/bugs/:bug?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/testtasks/:testtask?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/stories/:story?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/productplans/:productplan?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productreleases/:productrelease?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productreleases', parameterName: 'productrelease' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productplans/:productplan?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testtasks/:testtask?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'doclibs/:doclib?/docs/:doc?/actions/:action?/views/moremobmdview',
                     meta: {
                         caption: 'entities.action.views.moremobmdview.caption',
@@ -735,6 +2293,72 @@ const router = new Router({
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'doclibs', parameterName: 'doclib' },
                             { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'weeklies/:weekly?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'todos/:todo?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'moremobmdview' },
                         ],
@@ -760,13 +2384,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzreportlies/:ibzreportly?/actions/:action?/views/moremobmdview',
+                    path: 'reportlies/:reportly?/actions/:action?/views/moremobmdview',
                     meta: {
                         caption: 'entities.action.views.moremobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzreportlies', parameterName: 'ibzreportly' },
+                            { pathName: 'reportlies', parameterName: 'reportly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'moremobmdview' },
                         ],
@@ -776,13 +2400,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/actions/:action?/views/moremobmdview',
+                    path: 'projects/:project?/actions/:action?/views/moremobmdview',
                     meta: {
                         caption: 'entities.action.views.moremobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'moremobmdview' },
                         ],
@@ -792,13 +2416,29 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/actions/:action?/views/moremobmdview',
+                    path: 'products/:product?/actions/:action?/views/moremobmdview',
                     meta: {
                         caption: 'entities.action.views.moremobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'moremobmdview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'monthlies/:monthly?/actions/:action?/views/moremobmdview',
+                    meta: {
+                        caption: 'entities.action.views.moremobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'moremobmdview' },
                         ],
@@ -840,13 +2480,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'todos/:todo?/actions/:action?/views/moremobmdview',
+                    path: 'dailies/:daily?/actions/:action?/views/moremobmdview',
                     meta: {
                         caption: 'entities.action.views.moremobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'moremobmdview' },
                         ],
@@ -856,13 +2496,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/moremobmdview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/moremobmdview',
                     meta: {
                         caption: 'entities.action.views.moremobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'moremobmdview' },
                         ],
@@ -887,6 +2527,459 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/testtasks/:testtask?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/stories/:story?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/tasks/:task?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/builds/:build?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/bugs/:bug?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/productplans/:productplan?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/bugs/:bug?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/testtasks/:testtask?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/stories/:story?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/productplans/:productplan?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productreleases/:productrelease?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productreleases', parameterName: 'productrelease' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productplans/:productplan?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testtasks/:testtask?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'doclibs/:doclib?/docs/:doc?/actions/:action?/views/mobmapview',
                     meta: {
                         caption: 'entities.action.views.mobmapview.caption',
@@ -895,6 +2988,72 @@ const router = new Router({
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'doclibs', parameterName: 'doclib' },
                             { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'weeklies/:weekly?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'todos/:todo?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmapview' },
                         ],
@@ -920,13 +3079,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzreportlies/:ibzreportly?/actions/:action?/views/mobmapview',
+                    path: 'reportlies/:reportly?/actions/:action?/views/mobmapview',
                     meta: {
                         caption: 'entities.action.views.mobmapview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzreportlies', parameterName: 'ibzreportly' },
+                            { pathName: 'reportlies', parameterName: 'reportly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmapview' },
                         ],
@@ -936,13 +3095,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzmonthlies/:ibzmonthly?/actions/:action?/views/mobmapview',
+                    path: 'projects/:project?/actions/:action?/views/mobmapview',
                     meta: {
                         caption: 'entities.action.views.mobmapview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzmonthlies', parameterName: 'ibzmonthly' },
+                            { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmapview' },
                         ],
@@ -952,13 +3111,29 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/actions/:action?/views/mobmapview',
+                    path: 'products/:product?/actions/:action?/views/mobmapview',
                     meta: {
                         caption: 'entities.action.views.mobmapview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mobmapview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'monthlies/:monthly?/actions/:action?/views/mobmapview',
+                    meta: {
+                        caption: 'entities.action.views.mobmapview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmapview' },
                         ],
@@ -1000,13 +3175,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'todos/:todo?/actions/:action?/views/mobmapview',
+                    path: 'dailies/:daily?/actions/:action?/views/mobmapview',
                     meta: {
                         caption: 'entities.action.views.mobmapview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmapview' },
                         ],
@@ -1016,13 +3191,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/mobmapview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/mobmapview',
                     meta: {
                         caption: 'entities.action.views.mobmapview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmapview' },
                         ],
@@ -1244,64 +3419,80 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzreportlies/:ibzreportly?/views/maininfomobeditview',
+                    path: 'reportlies/:reportly?/views/maininfomobeditview',
                     meta: {
-                        caption: 'entities.ibzreportly.views.maininfomobeditview.caption',
+                        caption: 'entities.reportly.views.maininfomobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzreportlies', parameterName: 'ibzreportly' },
+                            { pathName: 'reportlies', parameterName: 'reportly' },
                             { pathName: 'views', parameterName: 'maininfomobeditview' },
                         ],
-                        resource:'ibzreportly',
+                        resource:'reportly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzreportlies/:ibzreportly?/views/createmobeditview',
+                    path: 'reportlies/:reportly?/views/createmobeditview',
                     meta: {
-                        caption: 'entities.ibzreportly.views.createmobeditview.caption',
+                        caption: 'entities.reportly.views.createmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzreportlies', parameterName: 'ibzreportly' },
+                            { pathName: 'reportlies', parameterName: 'reportly' },
                             { pathName: 'views', parameterName: 'createmobeditview' },
                         ],
-                        resource:'ibzreportly',
+                        resource:'reportly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzreportlies/:ibzreportly?/views/reportlymobmdview',
+                    path: 'reportlies/:reportly?/views/reportlymobmdview',
                     meta: {
-                        caption: 'entities.ibzreportly.views.reportlymobmdview.caption',
+                        caption: 'entities.reportly.views.reportlymobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzreportlies', parameterName: 'ibzreportly' },
+                            { pathName: 'reportlies', parameterName: 'reportly' },
                             { pathName: 'views', parameterName: 'reportlymobmdview' },
                         ],
-                        resource:'ibzreportly',
+                        resource:'reportly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzreportlies/:ibzreportly?/views/mobeditview',
+                    path: 'reportlies/:reportly?/views/mobeditview',
                     meta: {
-                        caption: 'entities.ibzreportly.views.mobeditview.caption',
+                        caption: 'entities.reportly.views.mobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzreportlies', parameterName: 'ibzreportly' },
+                            { pathName: 'reportlies', parameterName: 'reportly' },
                             { pathName: 'views', parameterName: 'mobeditview' },
                         ],
-                        resource:'ibzreportly',
+                        resource:'reportly',
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'tests/:test?/testmodules/:testmodule?/views/mobpickupview',
+                    meta: {
+                        caption: 'entities.testmodule.views.mobpickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'mobpickupview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'testmodules/:testmodule?/views/mobpickupview',
@@ -1319,6 +3510,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'tests/:test?/testmodules/:testmodule?/views/mobpickupmdview',
+                    meta: {
+                        caption: 'entities.testmodule.views.mobpickupmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testmodules', parameterName: 'testmodule' },
+                            { pathName: 'views', parameterName: 'mobpickupmdview' },
+                        ],
+                        resource:'testmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'testmodules/:testmodule?/views/mobpickupmdview',
                     meta: {
                         caption: 'entities.testmodule.views.mobpickupmdview.caption',
@@ -1334,6 +3541,41 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/projects/:project?/tasks/:task?/ibztaskteams/:ibztaskteam?/views/mobeditview9',
+                    meta: {
+                        caption: 'entities.ibztaskteam.views.mobeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'ibztaskteams', parameterName: 'ibztaskteam' },
+                            { pathName: 'views', parameterName: 'mobeditview9' },
+                        ],
+                        resource:'ibztaskteam',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/ibztaskteams/:ibztaskteam?/views/mobeditview9',
+                    meta: {
+                        caption: 'entities.ibztaskteam.views.mobeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'ibztaskteams', parameterName: 'ibztaskteam' },
+                            { pathName: 'views', parameterName: 'mobeditview9' },
+                        ],
+                        resource:'ibztaskteam',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'ibztaskteams/:ibztaskteam?/views/mobeditview9',
                     meta: {
                         caption: 'entities.ibztaskteam.views.mobeditview9.caption',
@@ -1347,6 +3589,41 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/tasks/:task?/ibztaskteams/:ibztaskteam?/views/mobmeditview9',
+                    meta: {
+                        caption: 'entities.ibztaskteam.views.mobmeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'ibztaskteams', parameterName: 'ibztaskteam' },
+                            { pathName: 'views', parameterName: 'mobmeditview9' },
+                        ],
+                        resource:'ibztaskteam',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/ibztaskteams/:ibztaskteam?/views/mobmeditview9',
+                    meta: {
+                        caption: 'entities.ibztaskteam.views.mobmeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'ibztaskteams', parameterName: 'ibztaskteam' },
+                            { pathName: 'views', parameterName: 'mobmeditview9' },
+                        ],
+                        resource:'ibztaskteam',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'ibztaskteams/:ibztaskteam?/views/mobmeditview9',
@@ -1940,6 +4217,688 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/docs/:doc?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/testcasesteps/:testcasestep?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'testcasesteps', parameterName: 'testcasestep' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/testtasks/:testtask?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/stories/:story?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/tasks/:task?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/builds/:build?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/bugs/:bug?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/productplans/:productplan?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/bugs/:bug?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/testtasks/:testtask?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/stories/:story?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/productplans/:productplan?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productreleases/:productrelease?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productreleases', parameterName: 'productrelease' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productplans/:productplan?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testtasks/:testtask?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'weeklies/:weekly?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'todos/:todo?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testsuites/:testsuite?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'testsuites', parameterName: 'testsuite' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'reportlies/:reportly?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'reportlies', parameterName: 'reportly' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'monthlies/:monthly?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'monthlies', parameterName: 'monthly' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'dailies/:daily?/files/:file?/views/mobmdview9',
+                    meta: {
+                        caption: 'entities.file.views.mobmdview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'dailies', parameterName: 'daily' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'mobmdview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'files/:file?/views/mobmdview9',
@@ -2543,199 +5502,248 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/dailymobmdview',
+                    path: 'dailies/:daily?/views/dailymobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailymobmdview.caption',
+                        caption: 'entities.daily.views.dailymobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'dailymobmdview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/dailyreportsubmitmobmdview',
+                    path: 'dailies/:daily?/views/dailyreportsubmitmobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailyreportsubmitmobmdview.caption',
+                        caption: 'entities.daily.views.dailyreportsubmitmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'dailyreportsubmitmobmdview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/dailycreatemobeditview',
+                    path: 'dailies/:daily?/views/dailycreatemobeditview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailycreatemobeditview.caption',
+                        caption: 'entities.daily.views.dailycreatemobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'dailycreatemobeditview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/dailymobeditview',
+                    path: 'dailies/:daily?/views/dailymobeditview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailymobeditview.caption',
+                        caption: 'entities.daily.views.dailymobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'dailymobeditview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/dailycompletetaskmobmdview',
+                    path: 'dailies/:daily?/views/dailycompletetaskmobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailycompletetaskmobmdview.caption',
+                        caption: 'entities.daily.views.dailycompletetaskmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'dailycompletetaskmobmdview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/reportreceivedmobmdview',
+                    path: 'dailies/:daily?/views/reportreceivedmobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.reportreceivedmobmdview.caption',
+                        caption: 'entities.daily.views.reportreceivedmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'reportreceivedmobmdview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/dailymobtabexpview',
+                    path: 'dailies/:daily?/views/dailymobtabexpview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailymobtabexpview.caption',
+                        caption: 'entities.daily.views.dailymobtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'dailymobtabexpview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/mydailymobtabexpview',
+                    path: 'dailies/:daily?/views/mydailymobtabexpview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.mydailymobtabexpview.caption',
+                        caption: 'entities.daily.views.mydailymobtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'mydailymobtabexpview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/mobeditview',
+                    path: 'dailies/:daily?/views/mobeditview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.mobeditview.caption',
+                        caption: 'entities.daily.views.mobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'mobeditview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/mymobmdview',
+                    path: 'dailies/:daily?/views/mymobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.mymobmdview.caption',
+                        caption: 'entities.daily.views.mymobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'mymobmdview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/myremobeditview',
+                    path: 'dailies/:daily?/views/myremobeditview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.myremobeditview.caption',
+                        caption: 'entities.daily.views.myremobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'myremobeditview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/dailyplanstomorrowtaskmobmdview',
+                    path: 'dailies/:daily?/views/dailyplanstomorrowtaskmobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailyplanstomorrowtaskmobmdview.caption',
+                        caption: 'entities.daily.views.dailyplanstomorrowtaskmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'dailyplanstomorrowtaskmobmdview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzdailies/:ibzdaily?/views/dailyinfomobeditview',
+                    path: 'dailies/:daily?/views/dailyinfomobeditview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailyinfomobeditview.caption',
+                        caption: 'entities.daily.views.dailyinfomobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzdailies', parameterName: 'ibzdaily' },
+                            { pathName: 'dailies', parameterName: 'daily' },
                             { pathName: 'views', parameterName: 'dailyinfomobeditview' },
                         ],
-                        resource:'ibzdaily',
+                        resource:'daily',
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/views/projectdoclibmobtreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.projectdoclibmobtreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'projectdoclibmobtreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/projectdoclibmobtreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.projectdoclibmobtreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'projectdoclibmobtreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/projectdoclibmobtreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.projectdoclibmobtreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'projectdoclibmobtreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'doclibs/:doclib?/views/projectdoclibmobtreeview',
@@ -2753,6 +5761,55 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/views/mobproducttreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.mobproducttreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'mobproducttreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/mobproducttreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.mobproducttreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'mobproducttreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/mobproducttreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.mobproducttreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'mobproducttreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'doclibs/:doclib?/views/mobproducttreeview',
                     meta: {
                         caption: 'entities.doclib.views.mobproducttreeview.caption',
@@ -2766,6 +5823,55 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/projects/:project?/doclibs/:doclib?/views/mobeditview',
+                    meta: {
+                        caption: 'entities.doclib.views.mobeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'mobeditview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/mobeditview',
+                    meta: {
+                        caption: 'entities.doclib.views.mobeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'mobeditview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/mobeditview',
+                    meta: {
+                        caption: 'entities.doclib.views.mobeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'mobeditview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'doclibs/:doclib?/views/mobeditview',
@@ -5909,21 +9015,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/views/testmobmdview',
-                    meta: {
-                        caption: 'entities.product.views.testmobmdview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'views', parameterName: 'testmobmdview' },
-                        ],
-                        resource:'product',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'products/:product?/views/mobtabexpview',
                     meta: {
                         caption: 'entities.product.views.mobtabexpview.caption',
@@ -6610,31 +9701,31 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzreports/:ibzreport?/views/mobmdview',
+                    path: 'reportsummaries/:reportsummary?/views/mobmdview',
                     meta: {
-                        caption: 'entities.ibzreport.views.mobmdview.caption',
+                        caption: 'entities.reportsummary.views.mobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzreports', parameterName: 'ibzreport' },
+                            { pathName: 'reportsummaries', parameterName: 'reportsummary' },
                             { pathName: 'views', parameterName: 'mobmdview' },
                         ],
-                        resource:'ibzreport',
+                        resource:'reportsummary',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzreports/:ibzreport?/views/myremobmdview',
+                    path: 'reportsummaries/:reportsummary?/views/myremobmdview',
                     meta: {
-                        caption: 'entities.ibzreport.views.myremobmdview.caption',
+                        caption: 'entities.reportsummary.views.myremobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzreports', parameterName: 'ibzreport' },
+                            { pathName: 'reportsummaries', parameterName: 'reportsummary' },
                             { pathName: 'views', parameterName: 'myremobmdview' },
                         ],
-                        resource:'ibzreport',
+                        resource:'reportsummary',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -8645,6 +11736,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/newmobeditview',
+                    meta: {
+                        caption: 'entities.todo.views.newmobeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'newmobeditview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'todos/:todo?/views/newmobeditview',
                     meta: {
                         caption: 'entities.todo.views.newmobeditview.caption',
@@ -8658,6 +11765,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/mobmdview',
+                    meta: {
+                        caption: 'entities.todo.views.mobmdview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'mobmdview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'todos/:todo?/views/mobmdview',
@@ -8675,6 +11798,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/moboptionview',
+                    meta: {
+                        caption: 'entities.todo.views.moboptionview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'moboptionview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'todos/:todo?/views/moboptionview',
                     meta: {
                         caption: 'entities.todo.views.moboptionview.caption',
@@ -8688,6 +11827,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/moblistview',
+                    meta: {
+                        caption: 'entities.todo.views.moblistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'moblistview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'todos/:todo?/views/moblistview',
@@ -8718,6 +11873,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/mobeditview',
+                    meta: {
+                        caption: 'entities.todo.views.mobeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'mobeditview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'todos/:todo?/views/mobeditview',
@@ -9383,166 +12554,181 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/mobeditview',
+                    path: 'tests/:test?/views/testmobmdview',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobeditview.caption',
+                        caption: 'entities.test.views.testmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'views', parameterName: 'testmobmdview' },
+                        ],
+                        resource:'test',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'weeklies/:weekly?/views/mobeditview',
+                    meta: {
+                        caption: 'entities.weekly.views.mobeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'mobeditview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/mobmdview',
+                    path: 'weeklies/:weekly?/views/mobmdview',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobmdview.caption',
+                        caption: 'entities.weekly.views.mobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'mobmdview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/usr2mobtabexpview',
+                    path: 'weeklies/:weekly?/views/usr2mobtabexpview',
                     meta: {
-                        caption: 'entities.ibzweekly.views.usr2mobtabexpview.caption',
+                        caption: 'entities.weekly.views.usr2mobtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'usr2mobtabexpview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/mobeditviewmian',
+                    path: 'weeklies/:weekly?/views/mobeditviewmian',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobeditviewmian.caption',
+                        caption: 'entities.weekly.views.mobeditviewmian.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'mobeditviewmian' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/mobeditviewmainmytijiao',
+                    path: 'weeklies/:weekly?/views/mobeditviewmainmytijiao',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobeditviewmainmytijiao.caption',
+                        caption: 'entities.weekly.views.mobeditviewmainmytijiao.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'mobeditviewmainmytijiao' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/mobeditviewmainreceived',
+                    path: 'weeklies/:weekly?/views/mobeditviewmainreceived',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobeditviewmainreceived.caption',
+                        caption: 'entities.weekly.views.mobeditviewmainreceived.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'mobeditviewmainreceived' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/usr2mobtabexpviewmytijiao',
+                    path: 'weeklies/:weekly?/views/usr2mobtabexpviewmytijiao',
                     meta: {
-                        caption: 'entities.ibzweekly.views.usr2mobtabexpviewmytijiao.caption',
+                        caption: 'entities.weekly.views.usr2mobtabexpviewmytijiao.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'usr2mobtabexpviewmytijiao' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/usr2mobtabexpviewmyreceived',
+                    path: 'weeklies/:weekly?/views/usr2mobtabexpviewmyreceived',
                     meta: {
-                        caption: 'entities.ibzweekly.views.usr2mobtabexpviewmyreceived.caption',
+                        caption: 'entities.weekly.views.usr2mobtabexpviewmyreceived.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'usr2mobtabexpviewmyreceived' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/mobeditviewcreate',
+                    path: 'weeklies/:weekly?/views/mobeditviewcreate',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobeditviewcreate.caption',
+                        caption: 'entities.weekly.views.mobeditviewcreate.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'mobeditviewcreate' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/usr2mobeditview',
+                    path: 'weeklies/:weekly?/views/usr2mobeditview',
                     meta: {
-                        caption: 'entities.ibzweekly.views.usr2mobeditview.caption',
+                        caption: 'entities.weekly.views.usr2mobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'usr2mobeditview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/usr2mobmdview',
+                    path: 'weeklies/:weekly?/views/usr2mobmdview',
                     meta: {
-                        caption: 'entities.ibzweekly.views.usr2mobmdview.caption',
+                        caption: 'entities.weekly.views.usr2mobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'usr2mobmdview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -12073,7 +15259,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklymobeditview',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobeditview.caption',
+                        caption: 'entities.weekly.views.mobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12086,7 +15272,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklymobmdview',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobmdview.caption',
+                        caption: 'entities.weekly.views.mobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12144,7 +15330,7 @@ const router = new Router({
                 {
                     path: 'views/producttestmobmdview',
                     meta: {
-                        caption: 'entities.product.views.testmobmdview.caption',
+                        caption: 'entities.test.views.testmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12185,7 +15371,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklyusr2mobtabexpview',
                     meta: {
-                        caption: 'entities.ibzweekly.views.usr2mobtabexpview.caption',
+                        caption: 'entities.weekly.views.usr2mobtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12198,7 +15384,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailydailymobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailymobmdview.caption',
+                        caption: 'entities.daily.views.dailymobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12224,7 +15410,7 @@ const router = new Router({
                 {
                     path: 'views/ibzreportlymaininfomobeditview',
                     meta: {
-                        caption: 'entities.ibzreportly.views.maininfomobeditview.caption',
+                        caption: 'entities.reportly.views.maininfomobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12237,7 +15423,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailydailyreportsubmitmobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailyreportsubmitmobmdview.caption',
+                        caption: 'entities.daily.views.dailyreportsubmitmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12265,7 +15451,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeeheadportraitmobeditview',
                     meta: {
-                        caption: 'entities.sysemployee.views.headportraitmobeditview.caption',
+                        caption: 'entities.employee.views.headportraitmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12351,7 +15537,7 @@ const router = new Router({
                 {
                     path: 'views/ibzmonthlycreatemobeditview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.createmobeditview.caption',
+                        caption: 'entities.monthly.views.createmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12495,7 +15681,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeempkmobpickuptreeview',
                     meta: {
-                        caption: 'entities.sysemployee.views.mpkmobpickuptreeview.caption',
+                        caption: 'entities.employee.views.mpkmobpickuptreeview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12575,7 +15761,7 @@ const router = new Router({
                 {
                     path: 'views/ibzmonthlymyreceivedmobtabexpview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.myreceivedmobtabexpview.caption',
+                        caption: 'entities.monthly.views.myreceivedmobtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12670,7 +15856,7 @@ const router = new Router({
                 {
                     path: 'views/ibzreportlycreatemobeditview',
                     meta: {
-                        caption: 'entities.ibzreportly.views.createmobeditview.caption',
+                        caption: 'entities.reportly.views.createmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12726,7 +15912,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeetreemobpickupview',
                     meta: {
-                        caption: 'entities.sysemployee.views.treemobpickupview.caption',
+                        caption: 'entities.employee.views.treemobpickupview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12812,7 +15998,7 @@ const router = new Router({
                 {
                     path: 'views/ibzmonthlymyreceivedmobeditview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.myreceivedmobeditview.caption',
+                        caption: 'entities.monthly.views.myreceivedmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12851,7 +16037,7 @@ const router = new Router({
                 {
                     path: 'views/ibzreportlyreportlymobmdview',
                     meta: {
-                        caption: 'entities.ibzreportly.views.reportlymobmdview.caption',
+                        caption: 'entities.reportly.views.reportlymobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12864,7 +16050,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklymobeditviewmian',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobeditviewmian.caption',
+                        caption: 'entities.weekly.views.mobeditviewmian.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -12987,7 +16173,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeemobpickuptreeview',
                     meta: {
-                        caption: 'entities.sysemployee.views.mobpickuptreeview.caption',
+                        caption: 'entities.employee.views.mobpickuptreeview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13000,7 +16186,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeeusertreemobmpickupview',
                     meta: {
-                        caption: 'entities.sysemployee.views.usertreemobmpickupview.caption',
+                        caption: 'entities.employee.views.usertreemobmpickupview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13144,7 +16330,7 @@ const router = new Router({
                 {
                     path: 'views/ibzmonthlyeditmobeditview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.editmobeditview.caption',
+                        caption: 'entities.monthly.views.editmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13157,7 +16343,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklymobeditviewmainmytijiao',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobeditviewmainmytijiao.caption',
+                        caption: 'entities.weekly.views.mobeditviewmainmytijiao.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13170,7 +16356,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailydailycreatemobeditview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailycreatemobeditview.caption',
+                        caption: 'entities.daily.views.dailycreatemobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13183,7 +16369,7 @@ const router = new Router({
                 {
                     path: 'views/ibzmonthlymobeditview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.mobeditview.caption',
+                        caption: 'entities.monthly.views.mobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13226,7 +16412,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailydailymobeditview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailymobeditview.caption',
+                        caption: 'entities.daily.views.dailymobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13493,7 +16679,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailydailycompletetaskmobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailycompletetaskmobmdview.caption',
+                        caption: 'entities.daily.views.dailycompletetaskmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13581,7 +16767,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailyreportreceivedmobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.reportreceivedmobmdview.caption',
+                        caption: 'entities.daily.views.reportreceivedmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13652,7 +16838,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklymobeditviewmainreceived',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobeditviewmainreceived.caption',
+                        caption: 'entities.weekly.views.mobeditviewmainreceived.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13665,7 +16851,7 @@ const router = new Router({
                 {
                     path: 'views/ibzmonthlymyreceivedmobmdview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.myreceivedmobmdview.caption',
+                        caption: 'entities.monthly.views.myreceivedmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13723,7 +16909,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailydailymobtabexpview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailymobtabexpview.caption',
+                        caption: 'entities.daily.views.dailymobtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13749,7 +16935,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailymydailymobtabexpview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.mydailymobtabexpview.caption',
+                        caption: 'entities.daily.views.mydailymobtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13777,7 +16963,7 @@ const router = new Router({
                 {
                     path: 'views/ibzmonthlymaininfomobtabexpview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.maininfomobtabexpview.caption',
+                        caption: 'entities.monthly.views.maininfomobtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -13930,7 +17116,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklyusr2mobtabexpviewmytijiao',
                     meta: {
-                        caption: 'entities.ibzweekly.views.usr2mobtabexpviewmytijiao.caption',
+                        caption: 'entities.weekly.views.usr2mobtabexpviewmytijiao.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14100,7 +17286,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklyusr2mobtabexpviewmyreceived',
                     meta: {
-                        caption: 'entities.ibzweekly.views.usr2mobtabexpviewmyreceived.caption',
+                        caption: 'entities.weekly.views.usr2mobtabexpviewmyreceived.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14126,7 +17312,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklymobeditviewcreate',
                     meta: {
-                        caption: 'entities.ibzweekly.views.mobeditviewcreate.caption',
+                        caption: 'entities.weekly.views.mobeditviewcreate.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14180,7 +17366,7 @@ const router = new Router({
                 {
                     path: 'views/ibzmonthlymonthlymobmdview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.monthlymobmdview.caption',
+                        caption: 'entities.monthly.views.monthlymobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14221,7 +17407,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklyusr2mobeditview',
                     meta: {
-                        caption: 'entities.ibzweekly.views.usr2mobeditview.caption',
+                        caption: 'entities.weekly.views.usr2mobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14408,7 +17594,7 @@ const router = new Router({
                 {
                     path: 'views/ibzmonthlymaininfomobeditview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.maininfomobeditview.caption',
+                        caption: 'entities.monthly.views.maininfomobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14421,7 +17607,7 @@ const router = new Router({
                 {
                     path: 'views/ibzmonthlymysubmitmobmdview',
                     meta: {
-                        caption: 'entities.ibzmonthly.views.mysubmitmobmdview.caption',
+                        caption: 'entities.monthly.views.mysubmitmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14539,7 +17725,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailymobeditview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.mobeditview.caption',
+                        caption: 'entities.daily.views.mobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14625,7 +17811,7 @@ const router = new Router({
                 {
                     path: 'views/ibzweeklyusr2mobmdview',
                     meta: {
-                        caption: 'entities.ibzweekly.views.usr2mobmdview.caption',
+                        caption: 'entities.weekly.views.usr2mobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14746,7 +17932,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailymymobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.mymobmdview.caption',
+                        caption: 'entities.daily.views.mymobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14774,7 +17960,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailymyremobeditview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.myremobeditview.caption',
+                        caption: 'entities.daily.views.myremobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -14914,7 +18100,7 @@ const router = new Router({
                 {
                     path: 'views/sysemployeeloginmobeditview',
                     meta: {
-                        caption: 'entities.sysemployee.views.loginmobeditview.caption',
+                        caption: 'entities.employee.views.loginmobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -15013,7 +18199,7 @@ const router = new Router({
                 {
                     path: 'views/ibzreportmobmdview',
                     meta: {
-                        caption: 'entities.ibzreport.views.mobmdview.caption',
+                        caption: 'entities.reportsummary.views.mobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -15097,7 +18283,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailydailyplanstomorrowtaskmobmdview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailyplanstomorrowtaskmobmdview.caption',
+                        caption: 'entities.daily.views.dailyplanstomorrowtaskmobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -15488,7 +18674,7 @@ const router = new Router({
                 {
                     path: 'views/ibzreportlymobeditview',
                     meta: {
-                        caption: 'entities.ibzreportly.views.mobeditview.caption',
+                        caption: 'entities.reportly.views.mobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -15587,7 +18773,7 @@ const router = new Router({
                 {
                     path: 'views/ibzdailydailyinfomobeditview',
                     meta: {
-                        caption: 'entities.ibzdaily.views.dailyinfomobeditview.caption',
+                        caption: 'entities.daily.views.dailyinfomobeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
@@ -15811,7 +18997,7 @@ const router = new Router({
                 {
                     path: 'views/ibzreportmyremobmdview',
                     meta: {
-                        caption: 'entities.ibzreport.views.myremobmdview.caption',
+                        caption: 'entities.reportsummary.views.myremobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },

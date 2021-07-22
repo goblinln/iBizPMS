@@ -2,6 +2,7 @@ import { CodeListService } from '../app/codelist-service';
 import { EntityBaseService, IContext, HttpResponse } from 'ibiz-core';
 import { ITask, Task } from '../../entities';
 import keys from '../../entities/task/task-keys';
+import { clone, mergeDeepLeft } from 'ramda';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
 import { GetUserConcatLogic } from '../../logic/entity/task/get-user-concat/get-user-concat-logic';
@@ -69,6 +70,27 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         return new Task(entity);
     }
 
+    protected async fillMinor(_context: IContext, _data: ITask): Promise<any> {
+        if (_data.ibztaskteams) {
+            await this.setMinorLocal('Ibztaskteam', _context, _data.ibztaskteams);
+            delete _data.ibztaskteams;
+        }
+        this.addLocal(_context, _data);
+        return _data;
+    }
+
+    protected async obtainMinor(_context: IContext, _data: ITask = new Task()): Promise<ITask> {
+        const res = await this.GetTemp(_context, _data);
+        if (res.ok) {
+            _data = mergeDeepLeft(_data, this.filterEntityData(res.data)) as any;
+        }
+        const ibztaskteamsList = await this.getMinorLocal('Ibztaskteam', _context, { root: _data.id });
+        if (ibztaskteamsList?.length > 0) {
+            _data.ibztaskteams = ibztaskteamsList;
+        }
+        return _data;
+    }
+
     /**
      * 深度拷贝「默认支持」
      *
@@ -79,9 +101,26 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      */
     async DeepCopyTemp(context: any = {}, data: any = {}): Promise<HttpResponse> {
         let entity: any;
+        const oldData = clone(data);
         const result = await this.CopyTemp(context, data);
         if (result.ok) {
             entity = result.data;
+            {
+                let items: any[] = [];
+                const s = await ___ibz___.gs.getIbztaskteamService();
+                items = await s.selectLocal(context, { root: oldData.id });
+                if (items) {
+                    for (let i = 0; i < items.length; i++) {
+                        const item = items[i];
+                        const res = await s.DeepCopyTemp({ ...context, task: entity.srfkey }, item);
+                        if (!res.ok) {
+                            throw new Error(
+                                `「Task(${oldData.srfkey})」关联实体「Ibztaskteam(${item.srfkey})」拷贝失败。`,
+                            );
+                        }
+                    }
+                }
+            }
         }
         return new HttpResponse(entity);
     }
@@ -473,10 +512,16 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && _context.project && _context.task) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}`);
+        if (res.ok && res.status === 200) {
+            await this.fillMinor(_context, res.data);
+        }
             return res;
         }
         if (_context.project && _context.task) {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}`);
+        if (res.ok && res.status === 200) {
+            await this.fillMinor(_context, res.data);
+        }
             return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
@@ -494,12 +539,18 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/getdraft`, _data);
+        if (res.ok && res.status === 200) {
+            await this.fillMinor(_context, res.data);
+        }
             return res;
         }
         if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/projects/${_context.project}/tasks/getdraft`, _data);
+        if (res.ok && res.status === 200) {
+            await this.fillMinor(_context, res.data);
+        }
             return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });

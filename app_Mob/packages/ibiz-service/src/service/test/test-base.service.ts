@@ -24,7 +24,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
     protected APPDENAMEPLURAL = 'Tests';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name','productsn','code',];
+    protected quickSearchFields = ['name','id','code',];
     protected selectContextParam = {
     };
 

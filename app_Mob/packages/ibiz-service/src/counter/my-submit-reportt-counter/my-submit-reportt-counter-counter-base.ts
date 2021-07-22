@@ -63,11 +63,6 @@ export class MySubmitReporttCounterCounterServiceBase extends CounterService {
      * @memberof  MySubmitReporttCounterCounterServiceBase
      */
     public async fetchCounterData(context:any,data:any){
-        let _appEntityService:any = await this.appEntityService.getService('IbzReport');
-        if (_appEntityService['MyReportINotSubmit'] && _appEntityService['MyReportINotSubmit'] instanceof Function) {
-            let result = await _appEntityService['MyReportINotSubmit'](context,data);
-            this.counterData = result.data;
-        }
     }
 
     /**

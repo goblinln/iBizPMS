@@ -1,5 +1,5 @@
-import ibzmonthly_zh_CN from '@locale/lanres/ibz-monthly/ibz-monthly_zh_CN';
-import sysemployee_zh_CN from '@locale/lanres/sys-employee/sys-employee_zh_CN';
+import monthly_zh_CN from '@locale/lanres/monthly/monthly_zh_CN';
+import employee_zh_CN from '@locale/lanres/employee/employee_zh_CN';
 import taskteam_zh_CN from '@locale/lanres/task-team/task-team_zh_CN';
 import ibzmyterritory_zh_CN from '@locale/lanres/ibz-my-territory/ibz-my-territory_zh_CN';
 import action_zh_CN from '@locale/lanres/action/action_zh_CN';
@@ -9,7 +9,7 @@ import ibzfavorites_zh_CN from '@locale/lanres/ibz-favorites/ibz-favorites_zh_CN
 import syspost_zh_CN from '@locale/lanres/sys-post/sys-post_zh_CN';
 import sysdepartment_zh_CN from '@locale/lanres/sys-department/sys-department_zh_CN';
 import testcasestep_zh_CN from '@locale/lanres/test-case-step/test-case-step_zh_CN';
-import ibzreportly_zh_CN from '@locale/lanres/ibz-reportly/ibz-reportly_zh_CN';
+import reportly_zh_CN from '@locale/lanres/reportly/reportly_zh_CN';
 import doccontent_zh_CN from '@locale/lanres/doc-content/doc-content_zh_CN';
 import testmodule_zh_CN from '@locale/lanres/test-module/test-module_zh_CN';
 import projectstats_zh_CN from '@locale/lanres/project-stats/project-stats_zh_CN';
@@ -24,7 +24,7 @@ import productbranch_zh_CN from '@locale/lanres/product-branch/product-branch_zh
 import productrelease_zh_CN from '@locale/lanres/product-release/product-release_zh_CN';
 import testcase_zh_CN from '@locale/lanres/test-case/test-case_zh_CN';
 import projectmodule_zh_CN from '@locale/lanres/project-module/project-module_zh_CN';
-import ibzdaily_zh_CN from '@locale/lanres/ibz-daily/ibz-daily_zh_CN';
+import daily_zh_CN from '@locale/lanres/daily/daily_zh_CN';
 import doclib_zh_CN from '@locale/lanres/doc-lib/doc-lib_zh_CN';
 import dynafilter_zh_CN from '@locale/lanres/dyna-filter/dyna-filter_zh_CN';
 import module_zh_CN from '@locale/lanres/module/module_zh_CN';
@@ -34,10 +34,11 @@ import product_zh_CN from '@locale/lanres/product/product_zh_CN';
 import productplan_zh_CN from '@locale/lanres/product-plan/product-plan_zh_CN';
 import doc_zh_CN from '@locale/lanres/doc/doc_zh_CN';
 import sysupdatelog_zh_CN from '@locale/lanres/sys-update-log/sys-update-log_zh_CN';
+import sysaccount_zh_CN from '@locale/lanres/sys-account/sys-account_zh_CN';
 import user_zh_CN from '@locale/lanres/user/user_zh_CN';
 import dynadashboard_zh_CN from '@locale/lanres/dyna-dashboard/dyna-dashboard_zh_CN';
 import productmodule_zh_CN from '@locale/lanres/product-module/product-module_zh_CN';
-import ibzreport_zh_CN from '@locale/lanres/ibz-report/ibz-report_zh_CN';
+import reportsummary_zh_CN from '@locale/lanres/report-summary/report-summary_zh_CN';
 import productstats_zh_CN from '@locale/lanres/product-stats/product-stats_zh_CN';
 import usercontact_zh_CN from '@locale/lanres/user-contact/user-contact_zh_CN';
 import sysupdatefeatures_zh_CN from '@locale/lanres/sys-update-features/sys-update-features_zh_CN';
@@ -47,7 +48,7 @@ import sysorganization_zh_CN from '@locale/lanres/sys-organization/sys-organizat
 import doclibmodule_zh_CN from '@locale/lanres/doc-lib-module/doc-lib-module_zh_CN';
 import testtask_zh_CN from '@locale/lanres/test-task/test-task_zh_CN';
 import test_zh_CN from '@locale/lanres/test/test_zh_CN';
-import ibzweekly_zh_CN from '@locale/lanres/ibz-weekly/ibz-weekly_zh_CN';
+import weekly_zh_CN from '@locale/lanres/weekly/weekly_zh_CN';
 import ibzprojectteam_zh_CN from '@locale/lanres/ibzprojectteam/ibzprojectteam_zh_CN';
 import story_zh_CN from '@locale/lanres/story/story_zh_CN';
 import productline_zh_CN from '@locale/lanres/product-line/product-line_zh_CN';
@@ -384,8 +385,8 @@ export default {
             submitSuccess:'提交数据成功'
         }
     },
-    ibzmonthly: ibzmonthly_zh_CN,
-    sysemployee: sysemployee_zh_CN,
+    monthly: monthly_zh_CN,
+    employee: employee_zh_CN,
     taskteam: taskteam_zh_CN,
     ibzmyterritory: ibzmyterritory_zh_CN,
     action: action_zh_CN,
@@ -395,7 +396,7 @@ export default {
     syspost: syspost_zh_CN,
     sysdepartment: sysdepartment_zh_CN,
     testcasestep: testcasestep_zh_CN,
-    ibzreportly: ibzreportly_zh_CN,
+    reportly: reportly_zh_CN,
     doccontent: doccontent_zh_CN,
     testmodule: testmodule_zh_CN,
     projectstats: projectstats_zh_CN,
@@ -410,7 +411,7 @@ export default {
     productrelease: productrelease_zh_CN,
     testcase: testcase_zh_CN,
     projectmodule: projectmodule_zh_CN,
-    ibzdaily: ibzdaily_zh_CN,
+    daily: daily_zh_CN,
     doclib: doclib_zh_CN,
     dynafilter: dynafilter_zh_CN,
     module: module_zh_CN,
@@ -420,10 +421,11 @@ export default {
     productplan: productplan_zh_CN,
     doc: doc_zh_CN,
     sysupdatelog: sysupdatelog_zh_CN,
+    sysaccount: sysaccount_zh_CN,
     user: user_zh_CN,
     dynadashboard: dynadashboard_zh_CN,
     productmodule: productmodule_zh_CN,
-    ibzreport: ibzreport_zh_CN,
+    reportsummary: reportsummary_zh_CN,
     productstats: productstats_zh_CN,
     usercontact: usercontact_zh_CN,
     sysupdatefeatures: sysupdatefeatures_zh_CN,
@@ -433,7 +435,7 @@ export default {
     doclibmodule: doclibmodule_zh_CN,
     testtask: testtask_zh_CN,
     test: test_zh_CN,
-    ibzweekly: ibzweekly_zh_CN,
+    weekly: weekly_zh_CN,
     ibzprojectteam: ibzprojectteam_zh_CN,
     story: story_zh_CN,
     productline: productline_zh_CN,

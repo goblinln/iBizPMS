@@ -148,6 +148,266 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions`, _data);
+        }
+        if (_context.project && _context.doclib && _context.doc && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions`, _data);
+        }
+        if (_context.product && _context.project && _context.story && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions`, _data);
+        }
+        if (_context.product && _context.project && _context.task && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions`, _data);
+        }
+        if (_context.product && _context.project && _context.build && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions`, _data);
+        }
+        if (_context.project && _context.story && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions`, _data);
+        }
+        if (_context.project && _context.task && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions`, _data);
+        }
+        if (_context.project && _context.build && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions`, _data);
+        }
+        if (_context.project && _context.doclib && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions`, _data);
+        }
+        if (_context.product && _context.project && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/actions`, _data);
+        }
+        if (_context.product && _context.story && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions`, _data);
+        }
+        if (_context.product && _context.build && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -157,6 +417,46 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions`, _data);
+        }
+        if (_context.sysaccount && _context.todo && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions`, _data);
+        }
+        if (_context.sysaccount && _context.doc && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions`, _data);
+        }
+        if (_context.weekly && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/weeklies/${_context.weekly}/actions`, _data);
+        }
+        if (_context.todo && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/todos/${_context.todo}/actions`, _data);
         }
         if (_context.testsuite && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -168,7 +468,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/testsuites/${_context.testsuite}/actions`, _data);
         }
-        if (_context.ibzreportly && true) {
+        if (_context.reportly && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -176,9 +476,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions`, _data);
+            return this.http.post(`/reportlies/${_context.reportly}/actions`, _data);
         }
-        if (_context.ibzmonthly && true) {
+        if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -186,9 +486,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions`, _data);
+            return this.http.post(`/projects/${_context.project}/actions`, _data);
         }
-        if (_context.ibzdaily && true) {
+        if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -196,7 +496,17 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions`, _data);
+            return this.http.post(`/products/${_context.product}/actions`, _data);
+        }
+        if (_context.monthly && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/monthlies/${_context.monthly}/actions`, _data);
         }
         if (_context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -218,7 +528,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/doclibs/${_context.doclib}/actions`, _data);
         }
-        if (_context.todo && true) {
+        if (_context.daily && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -226,9 +536,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/todos/${_context.todo}/actions`, _data);
+            return this.http.post(`/dailies/${_context.daily}/actions`, _data);
         }
-        if (_context.ibzweekly && true) {
+        if (_context.sysaccount && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -236,16 +546,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/actions`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -256,24 +559,148 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.doclib && _context.doc && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.project && _context.testtask && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.project && _context.story && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.project && _context.task && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.project && _context.build && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.project && _context.bug && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.project && _context.productplan && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.project && _context.doclib && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.doclib && _context.doc && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.test && _context.testcase && _context.action) {
+            const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.test && _context.bug && _context.action) {
+            const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.testtask && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.story && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.task && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.build && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.bug && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.productplan && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.doclib && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.project && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.story && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.productrelease && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.productplan && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.build && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.doclib && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.test && _context.testtask && _context.action) {
+            const res = await this.http.get(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/${_context.action}`);
+            return res;
+        }
         if (_context.doclib && _context.doc && _context.action) {
             const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.sysaccount && _context.todo && _context.action) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.sysaccount && _context.doc && _context.action) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.weekly && _context.action) {
+            const res = await this.http.get(`/weeklies/${_context.weekly}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.todo && _context.action) {
+            const res = await this.http.get(`/todos/${_context.todo}/actions/${_context.action}`);
             return res;
         }
         if (_context.testsuite && _context.action) {
             const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/${_context.action}`);
             return res;
         }
-        if (_context.ibzreportly && _context.action) {
-            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`);
+        if (_context.reportly && _context.action) {
+            const res = await this.http.get(`/reportlies/${_context.reportly}/actions/${_context.action}`);
             return res;
         }
-        if (_context.ibzmonthly && _context.action) {
-            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`);
+        if (_context.project && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/actions/${_context.action}`);
             return res;
         }
-        if (_context.ibzdaily && _context.action) {
-            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`);
+        if (_context.product && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.monthly && _context.action) {
+            const res = await this.http.get(`/monthlies/${_context.monthly}/actions/${_context.action}`);
             return res;
         }
         if (_context.doc && _context.action) {
@@ -284,16 +711,15 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/doclibs/${_context.doclib}/actions/${_context.action}`);
             return res;
         }
-        if (_context.todo && _context.action) {
-            const res = await this.http.get(`/todos/${_context.todo}/actions/${_context.action}`);
+        if (_context.daily && _context.action) {
+            const res = await this.http.get(`/dailies/${_context.daily}/actions/${_context.action}`);
             return res;
         }
-        if (_context.ibzweekly && _context.action) {
-            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`);
+        if (_context.sysaccount && _context.action) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}`);
             return res;
         }
-        const res = await this.http.get(`/actions/${_context.action}`);
-        return res;
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -304,10 +730,190 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.doclib && _context.doc && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.project && _context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.project && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.project && _context.build && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.test && _context.testcase && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.test && _context.bug && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.testtask && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.build && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.bug && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.productplan && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.doclib && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.productrelease && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.productplan && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.build && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.doclib && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.test && _context.testtask && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/getdraft`, _data);
+            return res;
+        }
         if (_context.doclib && _context.doc && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.sysaccount && _context.todo && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.sysaccount && _context.doc && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.weekly && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/weeklies/${_context.weekly}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.todo && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/todos/${_context.todo}/actions/getdraft`, _data);
             return res;
         }
         if (_context.testsuite && true) {
@@ -316,22 +922,28 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.ibzreportly && true) {
+        if (_context.reportly && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/getdraft`, _data);
+            const res = await this.http.get(`/reportlies/${_context.reportly}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.ibzmonthly && true) {
+        if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/getdraft`, _data);
+            const res = await this.http.get(`/projects/${_context.project}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.ibzdaily && true) {
+        if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/getdraft`, _data);
+            const res = await this.http.get(`/products/${_context.product}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.monthly && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/monthlies/${_context.monthly}/actions/getdraft`, _data);
             return res;
         }
         if (_context.doc && true) {
@@ -346,22 +958,19 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/doclibs/${_context.doclib}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.todo && true) {
+        if (_context.daily && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/todos/${_context.todo}/actions/getdraft`, _data);
+            const res = await this.http.get(`/dailies/${_context.daily}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.ibzweekly && true) {
+        if (_context.sysaccount && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/getdraft`, _data);
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/actions/getdraft`, _data);
             return res;
         }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/actions/getdraft`, _data);
-        return res;
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Update
@@ -372,25 +981,149 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.doclib && _context.doc && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.project && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.project && _context.task && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        }
+        if (_context.test && _context.testcase && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tests/${_context.test}/testcases/${_context.testcase}/actions/${_context.action}`, _data);
+        }
+        if (_context.test && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.testtask && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.task && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.productplan && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.doclib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.project && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/projects/${_context.project}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.productrelease && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.productplan && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.doclib && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
+        }
+        if (_context.test && _context.testtask && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
+        }
         if (_context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        }
+        if (_context.sysaccount && _context.todo && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/${_context.action}`, _data);
+        }
+        if (_context.sysaccount && _context.doc && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/${_context.action}`, _data);
+        }
+        if (_context.weekly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/weeklies/${_context.weekly}/actions/${_context.action}`, _data);
+        }
+        if (_context.todo && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/todos/${_context.todo}/actions/${_context.action}`, _data);
         }
         if (_context.testsuite && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/testsuites/${_context.testsuite}/actions/${_context.action}`, _data);
         }
-        if (_context.ibzreportly && _context.action) {
+        if (_context.reportly && _context.action) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`, _data);
+            return this.http.put(`/reportlies/${_context.reportly}/actions/${_context.action}`, _data);
         }
-        if (_context.ibzmonthly && _context.action) {
+        if (_context.project && _context.action) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`, _data);
+            return this.http.put(`/projects/${_context.project}/actions/${_context.action}`, _data);
         }
-        if (_context.ibzdaily && _context.action) {
+        if (_context.product && _context.action) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`, _data);
+            return this.http.put(`/products/${_context.product}/actions/${_context.action}`, _data);
+        }
+        if (_context.monthly && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/monthlies/${_context.monthly}/actions/${_context.action}`, _data);
         }
         if (_context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -400,92 +1133,408 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
         }
-        if (_context.todo && _context.action) {
+        if (_context.daily && _context.action) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/todos/${_context.todo}/actions/${_context.action}`, _data);
+            return this.http.put(`/dailies/${_context.daily}/actions/${_context.action}`, _data);
         }
-        if (_context.ibzweekly && _context.action) {
+        if (_context.sysaccount && _context.action) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`, _data);
+            return this.http.put(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/actions/${_context.action}`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchDefault
+     * FetchAccount
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.project && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.project && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchaccount`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchaccount`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchaccount`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchdefault`, _data);
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchaccount`, _data);
         }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchdefault`, _data);
+        if (_context.sysaccount && _context.todo && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchaccount`, _data);
         }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchdefault`, _data);
+        if (_context.sysaccount && _context.doc && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchaccount`, _data);
         }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchdefault`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchdefault`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchdefault`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchaccount`, _data);
         }
         if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchdefault`, _data);
+            return this.http.post(`/todos/${_context.todo}/actions/fetchaccount`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchdefault`, _data);
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchaccount`, _data);
         }
-        return this.http.post(`/actions/fetchdefault`, _data);
+        if (_context.reportly && true) {
+            return this.http.post(`/reportlies/${_context.reportly}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchaccount`, _data);
+        }
+        if (_context.monthly && true) {
+            return this.http.post(`/monthlies/${_context.monthly}/actions/fetchaccount`, _data);
+        }
+        if (_context.doc && true) {
+            return this.http.post(`/docs/${_context.doc}/actions/fetchaccount`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchaccount`, _data);
+        }
+        if (_context.daily && true) {
+            return this.http.post(`/dailies/${_context.daily}/actions/fetchaccount`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchaccount`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchMobType
+     * FetchMain
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchMobType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchMain(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.project && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.project && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmain`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchmain`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmain`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmobtype`, _data);
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmain`, _data);
         }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmobtype`, _data);
+        if (_context.sysaccount && _context.todo && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchmain`, _data);
         }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchmobtype`, _data);
+        if (_context.sysaccount && _context.doc && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmain`, _data);
         }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchmobtype`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchmobtype`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchmobtype`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchmobtype`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchmain`, _data);
         }
         if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchmobtype`, _data);
+            return this.http.post(`/todos/${_context.todo}/actions/fetchmain`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmobtype`, _data);
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmain`, _data);
         }
-        return this.http.post(`/actions/fetchmobtype`, _data);
+        if (_context.reportly && true) {
+            return this.http.post(`/reportlies/${_context.reportly}/actions/fetchmain`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchmain`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchmain`, _data);
+        }
+        if (_context.monthly && true) {
+            return this.http.post(`/monthlies/${_context.monthly}/actions/fetchmain`, _data);
+        }
+        if (_context.doc && true) {
+            return this.http.post(`/docs/${_context.doc}/actions/fetchmain`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchmain`, _data);
+        }
+        if (_context.daily && true) {
+            return this.http.post(`/dailies/${_context.daily}/actions/fetchmain`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmain`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmy`, _data);
+        }
+        if (_context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.project && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.project && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmy`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchmy`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmy`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmy`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmy`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmy`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmy`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmy`, _data);
+        }
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmy`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmy`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
+        }
+        if (_context.doclib && _context.doc && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmy`, _data);
+        }
+        if (_context.sysaccount && _context.todo && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchmy`, _data);
+        }
+        if (_context.sysaccount && _context.doc && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmy`, _data);
+        }
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchmy`, _data);
+        }
+        if (_context.todo && true) {
+            return this.http.post(`/todos/${_context.todo}/actions/fetchmy`, _data);
+        }
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmy`, _data);
+        }
+        if (_context.reportly && true) {
+            return this.http.post(`/reportlies/${_context.reportly}/actions/fetchmy`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchmy`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchmy`, _data);
+        }
+        if (_context.monthly && true) {
+            return this.http.post(`/monthlies/${_context.monthly}/actions/fetchmy`, _data);
+        }
+        if (_context.doc && true) {
+            return this.http.post(`/docs/${_context.doc}/actions/fetchmy`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchmy`, _data);
+        }
+        if (_context.daily && true) {
+            return this.http.post(`/dailies/${_context.daily}/actions/fetchmy`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmy`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchMyTrends
@@ -496,20 +1545,113 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async FetchMyTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.project && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.project && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchmytrends`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.sysaccount && _context.todo && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchmytrends`, _data);
+        }
+        if (_context.sysaccount && _context.doc && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchmytrends`, _data);
+        }
+        if (_context.todo && true) {
+            return this.http.post(`/todos/${_context.todo}/actions/fetchmytrends`, _data);
         }
         if (_context.testsuite && true) {
             return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmytrends`, _data);
         }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchmytrends`, _data);
+        if (_context.reportly && true) {
+            return this.http.post(`/reportlies/${_context.reportly}/actions/fetchmytrends`, _data);
         }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchmytrends`, _data);
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchmytrends`, _data);
         }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchmytrends`, _data);
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchmytrends`, _data);
+        }
+        if (_context.monthly && true) {
+            return this.http.post(`/monthlies/${_context.monthly}/actions/fetchmytrends`, _data);
         }
         if (_context.doc && true) {
             return this.http.post(`/docs/${_context.doc}/actions/fetchmytrends`, _data);
@@ -517,164 +1659,274 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.doclib && true) {
             return this.http.post(`/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
         }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchmytrends`, _data);
+        if (_context.daily && true) {
+            return this.http.post(`/dailies/${_context.daily}/actions/fetchmytrends`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmytrends`, _data);
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmytrends`, _data);
         }
-        return this.http.post(`/actions/fetchmytrends`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchProductTrends
+     * FetchProduct
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchProductTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchproduct`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
         }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproducttrends`, _data);
+        if (_context.sysaccount && _context.todo && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchproduct`, _data);
         }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchproducttrends`, _data);
+        if (_context.sysaccount && _context.doc && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchproduct`, _data);
         }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchproducttrends`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchproducttrends`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchproducttrends`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchproducttrends`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchproduct`, _data);
         }
         if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchproducttrends`, _data);
+            return this.http.post(`/todos/${_context.todo}/actions/fetchproduct`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchproducttrends`, _data);
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproduct`, _data);
         }
-        return this.http.post(`/actions/fetchproducttrends`, _data);
+        if (_context.reportly && true) {
+            return this.http.post(`/reportlies/${_context.reportly}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchproduct`, _data);
+        }
+        if (_context.monthly && true) {
+            return this.http.post(`/monthlies/${_context.monthly}/actions/fetchproduct`, _data);
+        }
+        if (_context.doc && true) {
+            return this.http.post(`/docs/${_context.doc}/actions/fetchproduct`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        }
+        if (_context.daily && true) {
+            return this.http.post(`/dailies/${_context.daily}/actions/fetchproduct`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchproduct`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchProjectTrends
+     * FetchProject
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchProjectTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.testtask && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.task && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.bug && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproject`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchproject`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.project && true) {
+            return this.http.post(`/products/${_context.product}/projects/${_context.project}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchproject`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchprojecttrends`, _data);
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproject`, _data);
         }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchprojecttrends`, _data);
+        if (_context.sysaccount && _context.todo && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchproject`, _data);
         }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchprojecttrends`, _data);
+        if (_context.sysaccount && _context.doc && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchproject`, _data);
         }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchprojecttrends`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchprojecttrends`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchprojecttrends`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchprojecttrends`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchproject`, _data);
         }
         if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchprojecttrends`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchprojecttrends`, _data);
-        }
-        return this.http.post(`/actions/fetchprojecttrends`, _data);
-    }
-    /**
-     * FetchQueryUserYEAR
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchQueryUserYEAR(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchqueryuseryear`, _data);
+            return this.http.post(`/todos/${_context.todo}/actions/fetchproject`, _data);
         }
         if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchqueryuseryear`, _data);
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproject`, _data);
         }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchqueryuseryear`, _data);
+        if (_context.reportly && true) {
+            return this.http.post(`/reportlies/${_context.reportly}/actions/fetchproject`, _data);
         }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchqueryuseryear`, _data);
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchproject`, _data);
         }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchqueryuseryear`, _data);
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchproject`, _data);
         }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchqueryuseryear`, _data);
-        }
-        return this.http.post(`/actions/fetchqueryuseryear`, _data);
-    }
-    /**
-     * FetchType
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchtype`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchtype`, _data);
+        if (_context.monthly && true) {
+            return this.http.post(`/monthlies/${_context.monthly}/actions/fetchproject`, _data);
         }
         if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchtype`, _data);
+            return this.http.post(`/docs/${_context.doc}/actions/fetchproject`, _data);
         }
         if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchtype`, _data);
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchproject`, _data);
         }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchtype`, _data);
+        if (_context.daily && true) {
+            return this.http.post(`/dailies/${_context.daily}/actions/fetchproject`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchtype`, _data);
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchproject`, _data);
         }
-        return this.http.post(`/actions/fetchtype`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }
