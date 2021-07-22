@@ -14600,8 +14600,9 @@
     "messageType" : "INFO",
     "name" : "测试移动端上方视图消息",
     "position" : "TOP",
-    "removeMode" : 0,
-    "enableRemove" : false
+    "removeMode" : 2,
+    "title" : "上方测试标题",
+    "enableRemove" : true
   }, {
     "codeName" : "TestBodyViewMsg",
     "message" : "测试移动端内容区视图消息",
