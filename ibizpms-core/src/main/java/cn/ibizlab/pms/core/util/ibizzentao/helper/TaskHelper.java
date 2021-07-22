@@ -1824,6 +1824,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
                 continue;
             }
             newTask.setEststarted(new Timestamp(date.getTime()));
+            newTask.setDeadline(new Timestamp(date.getTime()));
             newTask.setConfigbegin(new Timestamp(date.getTime()));
             this.baseMapper.insert(newTask);
             actionHelper.create(StaticDict.Action__object_type.TASK.getValue(), newTask.getId(), StaticDict.Action__type.OPENED.getValue(),
