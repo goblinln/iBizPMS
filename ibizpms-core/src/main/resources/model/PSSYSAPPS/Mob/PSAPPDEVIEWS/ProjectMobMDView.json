@@ -94,6 +94,10 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewMsgGroup" : {
+    "modelref" : true,
+    "id" : "TestMobVMGroup"
+  },
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
     "realTitle" : "产品移动端编辑视图（新建）",

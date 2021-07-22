@@ -14568,6 +14568,54 @@
     "utilPSDEName" : "DYNADASHBOARD",
     "utilType" : "DYNADASHBOARD"
   } ],
+  "getAllPSAppViewMsgGroups" : [ {
+    "codeName" : "TestMobVMGroup",
+    "name" : "测试移动端视图消息组",
+    "getPSAppViewMsgGroupDetails" : [ {
+      "name" : "测试移动端上方视图消息",
+      "getPSAppViewMsg" : {
+        "modelref" : true,
+        "id" : "TestTopViewMsg"
+      },
+      "position" : "TOP"
+    }, {
+      "name" : "测试移动端内容区视图消息",
+      "getPSAppViewMsg" : {
+        "modelref" : true,
+        "id" : "TestBodyViewMsg"
+      },
+      "position" : "BODY"
+    }, {
+      "name" : "测试移动端下方视图消息",
+      "getPSAppViewMsg" : {
+        "modelref" : true,
+        "id" : "TestBottomViewMsg"
+      },
+      "position" : "BOTTOM"
+    } ]
+  } ],
+  "getAllPSAppViewMsgs" : [ {
+    "codeName" : "TestTopViewMsg",
+    "message" : "测试移动端上方视图消息",
+    "name" : "测试移动端上方视图消息",
+    "position" : "TOP",
+    "removeMode" : 0,
+    "enableRemove" : false
+  }, {
+    "codeName" : "TestBodyViewMsg",
+    "message" : "测试移动端内容区视图消息",
+    "name" : "测试移动端内容区视图消息",
+    "position" : "BODY",
+    "removeMode" : 0,
+    "enableRemove" : false
+  }, {
+    "codeName" : "TestBottomViewMsg",
+    "message" : "测试移动端下方视图消息",
+    "name" : "测试移动端下方视图消息",
+    "position" : "BOTTOM",
+    "removeMode" : 0,
+    "enableRemove" : false
+  } ],
   "getAllPSAppViews" : [ {
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPINDEXVIEWS/AppIndexView.json",
@@ -17582,6 +17630,10 @@
           "editMode" : true
         }
       } ],
+      "getPSAppViewMsgGroup" : {
+        "modelref" : true,
+        "id" : "TestMobVMGroup"
+      },
       "getPSAppViewRefs" : [ {
         "name" : "NEWDATA",
         "realTitle" : "产品移动端编辑视图（新建）",
