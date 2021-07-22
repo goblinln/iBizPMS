@@ -12,27 +12,29 @@ export class SysPostService extends SysPostBaseService {
      * Creates an instance of SysPostService.
      * @memberof SysPostService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('SysPostService')) {
-            return ___ibz___.sc.get('SysPostService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('SysPostService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {SysPostService}
      * @memberof SysPostService
      */
-    static getInstance(): SysPostService {
-        if (!___ibz___.sc.has('SysPostService')) {
-            new SysPostService();
+    static getInstance(context?: any): SysPostService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}SysPostService` : `SysPostService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new SysPostService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('SysPostService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default SysPostService;

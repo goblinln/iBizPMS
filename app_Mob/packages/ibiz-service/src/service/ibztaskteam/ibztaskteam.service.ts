@@ -12,27 +12,29 @@ export class IbztaskteamService extends IbztaskteamBaseService {
      * Creates an instance of IbztaskteamService.
      * @memberof IbztaskteamService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('IbztaskteamService')) {
-            return ___ibz___.sc.get('IbztaskteamService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('IbztaskteamService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {IbztaskteamService}
      * @memberof IbztaskteamService
      */
-    static getInstance(): IbztaskteamService {
-        if (!___ibz___.sc.has('IbztaskteamService')) {
-            new IbztaskteamService();
+    static getInstance(context?: any): IbztaskteamService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}IbztaskteamService` : `IbztaskteamService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new IbztaskteamService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('IbztaskteamService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default IbztaskteamService;

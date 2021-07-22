@@ -18,6 +18,7 @@ export class DynaFilterBaseService extends EntityBaseService<IDynaFilter> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'DynaFilter';
     protected APPDENAMEPLURAL = 'DynaFilters';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/DynaFilter.json';
     protected APPDEKEY = 'dynafilterid';
     protected APPDETEXT = 'dynafiltername';
     protected quickSearchFields = ['dynafiltername',];
@@ -74,6 +75,11 @@ export class DynaFilterBaseService extends EntityBaseService<IDynaFilter> {
      * @memberof DynaFilterService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/dynafilters/${_context.dynafilter}/select`);
+        try {
+        const res = await this.http.get(`/dynafilters/${_context.dynafilter}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

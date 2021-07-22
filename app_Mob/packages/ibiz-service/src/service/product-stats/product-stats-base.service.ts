@@ -20,6 +20,7 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'ProductStats';
     protected APPDENAMEPLURAL = 'ProductStats';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];
@@ -108,14 +109,20 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/productstats`, _data);
+        const res = await this.http.post(`/productstats`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -126,8 +133,13 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/productstats/${_context.productstats}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -138,10 +150,14 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/productstats/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetTestStats
@@ -152,8 +168,13 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async GetTestStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/productstats/${_context.productstats}/getteststats`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'GetTestStats');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -164,7 +185,12 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productstats/${_context.productstats}`);
+        try {
+        const res = await this.http.delete(`/productstats/${_context.productstats}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -175,8 +201,14 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productstats/${_context.productstats}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/productstats/${_context.productstats}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -187,7 +219,13 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productstats/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/productstats/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchNoOpenProduct
@@ -198,7 +236,13 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchNoOpenProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productstats/fetchnoopenproduct`, _data);
+        try {
+        const res = await this.http.post(`/productstats/fetchnoopenproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchNoOpenProduct');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProdctQuantiGird
@@ -209,7 +253,13 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchProdctQuantiGird(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productstats/fetchprodctquantigird`, _data);
+        try {
+        const res = await this.http.post(`/productstats/fetchprodctquantigird`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProdctQuantiGird');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProductInputTable
@@ -220,7 +270,13 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchProductInputTable(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productstats/fetchproductinputtable`, _data);
+        try {
+        const res = await this.http.post(`/productstats/fetchproductinputtable`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductInputTable');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProductcompletionstatistics
@@ -231,7 +287,13 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async FetchProductcompletionstatistics(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productstats/fetchproductcompletionstatistics`, _data);
+        try {
+        const res = await this.http.post(`/productstats/fetchproductcompletionstatistics`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProductcompletionstatistics');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -242,6 +304,11 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      * @memberof ProductStatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productstats/${_context.productstats}/select`);
+        try {
+        const res = await this.http.get(`/productstats/${_context.productstats}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

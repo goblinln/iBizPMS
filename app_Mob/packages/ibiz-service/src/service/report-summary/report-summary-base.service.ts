@@ -18,6 +18,7 @@ export class ReportSummaryBaseService extends EntityBaseService<IReportSummary> 
     protected APPNAME = 'Mob';
     protected APPDENAME = 'ReportSummary';
     protected APPDENAMEPLURAL = 'ReportSummaries';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json';
     protected APPDEKEY = 'ibzdailyid';
     protected APPDETEXT = 'ibzdailyname';
     protected quickSearchFields = ['ibzdailyname',];
@@ -74,6 +75,12 @@ export class ReportSummaryBaseService extends EntityBaseService<IReportSummary> 
      * @memberof ReportSummaryService
      */
     async FetchAll(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/reportsummaries/fetchall`, _data);
+        try {
+        const res = await this.http.post(`/reportsummaries/fetchall`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchAll');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

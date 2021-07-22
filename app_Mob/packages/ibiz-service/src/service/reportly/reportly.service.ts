@@ -12,27 +12,29 @@ export class ReportlyService extends ReportlyBaseService {
      * Creates an instance of ReportlyService.
      * @memberof ReportlyService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ReportlyService')) {
-            return ___ibz___.sc.get('ReportlyService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ReportlyService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {ReportlyService}
      * @memberof ReportlyService
      */
-    static getInstance(): ReportlyService {
-        if (!___ibz___.sc.has('ReportlyService')) {
-            new ReportlyService();
+    static getInstance(context?: any): ReportlyService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ReportlyService` : `ReportlyService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ReportlyService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ReportlyService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default ReportlyService;

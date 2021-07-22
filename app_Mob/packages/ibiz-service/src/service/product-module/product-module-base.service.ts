@@ -20,6 +20,7 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
     protected APPNAME = 'Mob';
     protected APPDENAME = 'ProductModule';
     protected APPDENAMEPLURAL = 'ProductModules';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductModule.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];
@@ -169,17 +170,24 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      * @memberof ProductModuleService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/products/${_context.product}/productmodules`, _data);
+            const res = await this.http.post(`/products/${_context.product}/productmodules`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -190,11 +198,17 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      * @memberof ProductModuleService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.productmodule) {
             const res = await this.http.get(`/products/${_context.product}/productmodules/${_context.productmodule}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -205,13 +219,18 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      * @memberof ProductModuleService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/products/${_context.product}/productmodules/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -222,10 +241,16 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      * @memberof ProductModuleService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.productmodule) {
-            return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}`);
+            const res = await this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}`);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -236,11 +261,18 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      * @memberof ProductModuleService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.productmodule) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productmodules/${_context.productmodule}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/products/${_context.product}/productmodules/${_context.productmodule}`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -251,9 +283,16 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      * @memberof ProductModuleService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productmodules/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${_context.product}/productmodules/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

@@ -12,27 +12,29 @@ export class TestTaskService extends TestTaskBaseService {
      * Creates an instance of TestTaskService.
      * @memberof TestTaskService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('TestTaskService')) {
-            return ___ibz___.sc.get('TestTaskService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('TestTaskService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {TestTaskService}
      * @memberof TestTaskService
      */
-    static getInstance(): TestTaskService {
-        if (!___ibz___.sc.has('TestTaskService')) {
-            new TestTaskService();
+    static getInstance(context?: any): TestTaskService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}TestTaskService` : `TestTaskService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new TestTaskService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('TestTaskService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default TestTaskService;

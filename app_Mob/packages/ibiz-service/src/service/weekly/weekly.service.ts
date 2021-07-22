@@ -12,27 +12,29 @@ export class WeeklyService extends WeeklyBaseService {
      * Creates an instance of WeeklyService.
      * @memberof WeeklyService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('WeeklyService')) {
-            return ___ibz___.sc.get('WeeklyService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('WeeklyService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {WeeklyService}
      * @memberof WeeklyService
      */
-    static getInstance(): WeeklyService {
-        if (!___ibz___.sc.has('WeeklyService')) {
-            new WeeklyService();
+    static getInstance(context?: any): WeeklyService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}WeeklyService` : `WeeklyService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new WeeklyService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('WeeklyService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default WeeklyService;

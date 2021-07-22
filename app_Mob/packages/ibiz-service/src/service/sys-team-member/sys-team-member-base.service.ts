@@ -18,6 +18,7 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
     protected APPNAME = 'Mob';
     protected APPDENAME = 'SysTeamMember';
     protected APPDENAMEPLURAL = 'SysTeamMembers';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysTeamMember.json';
     protected APPDEKEY = 'teammemberid';
     protected APPDETEXT = 'teamid';
     protected quickSearchFields = ['teamid',];
@@ -74,14 +75,20 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/systeammembers`, _data);
+        const res = await this.http.post(`/systeammembers`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -92,8 +99,13 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/systeammembers/${_context.systeammember}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -104,10 +116,14 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/systeammembers/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -118,7 +134,12 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/systeammembers/${_context.systeammember}`);
+        try {
+        const res = await this.http.delete(`/systeammembers/${_context.systeammember}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -129,8 +150,14 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/systeammembers/${_context.systeammember}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/systeammembers/${_context.systeammember}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -141,7 +168,13 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/systeammembers/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/systeammembers/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -152,6 +185,11 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
      * @memberof SysTeamMemberService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/systeammembers/${_context.systeammember}/select`);
+        try {
+        const res = await this.http.get(`/systeammembers/${_context.systeammember}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

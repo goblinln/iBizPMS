@@ -12,27 +12,29 @@ export class IBZPROJECTTEAMService extends IBZPROJECTTEAMBaseService {
      * Creates an instance of IBZPROJECTTEAMService.
      * @memberof IBZPROJECTTEAMService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('IBZPROJECTTEAMService')) {
-            return ___ibz___.sc.get('IBZPROJECTTEAMService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('IBZPROJECTTEAMService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {IBZPROJECTTEAMService}
      * @memberof IBZPROJECTTEAMService
      */
-    static getInstance(): IBZPROJECTTEAMService {
-        if (!___ibz___.sc.has('IBZPROJECTTEAMService')) {
-            new IBZPROJECTTEAMService();
+    static getInstance(context?: any): IBZPROJECTTEAMService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}IBZPROJECTTEAMService` : `IBZPROJECTTEAMService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new IBZPROJECTTEAMService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('IBZPROJECTTEAMService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default IBZPROJECTTEAMService;

@@ -20,6 +20,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'User';
     protected APPDENAMEPLURAL = 'Users';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/User.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'realname';
     protected quickSearchFields = ['realname',];
@@ -124,14 +125,20 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/users`, _data);
+        const res = await this.http.post(`/users`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -142,8 +149,13 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/users/${_context.user}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetByCommiter
@@ -154,8 +166,13 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async GetByCommiter(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/users/${_context.user}/getbycommiter`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'GetByCommiter');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -166,10 +183,14 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/users/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -180,7 +201,12 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/users/${_context.user}`);
+        try {
+        const res = await this.http.delete(`/users/${_context.user}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * SyncAccount
@@ -191,7 +217,12 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async SyncAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/users/${_context.user}/syncaccount`, _data);
+        try {
+        const res = await this.http.post(`/users/${_context.user}/syncaccount`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -202,8 +233,14 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/users/${_context.user}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/users/${_context.user}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchBugUser
@@ -214,7 +251,13 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchBugUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/users/fetchbuguser`, _data);
+        try {
+        const res = await this.http.post(`/users/fetchbuguser`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBugUser');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -225,7 +268,13 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/users/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/users/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchGetByCommiter
@@ -236,7 +285,13 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchGetByCommiter(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/users/fetchgetbycommiter`, _data);
+        try {
+        const res = await this.http.post(`/users/fetchgetbycommiter`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchGetByCommiter');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectTeamM
@@ -247,7 +302,13 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchProjectTeamM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/users/fetchprojectteamm`, _data);
+        try {
+        const res = await this.http.post(`/users/fetchprojectteamm`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamM');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectTeamUser
@@ -258,7 +319,13 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchProjectTeamUser(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/users/fetchprojectteamuser`, _data);
+        try {
+        const res = await this.http.post(`/users/fetchprojectteamuser`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamUser');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectTeamUserTask
@@ -269,7 +336,13 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchProjectTeamUserTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/users/fetchprojectteamusertask`, _data);
+        try {
+        const res = await this.http.post(`/users/fetchprojectteamusertask`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamUserTask');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchTaskTeam
@@ -280,7 +353,13 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async FetchTaskTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/users/fetchtaskteam`, _data);
+        try {
+        const res = await this.http.post(`/users/fetchtaskteam`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchTaskTeam');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -291,7 +370,12 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @memberof UserService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/users/${_context.user}/select`);
+        try {
+        const res = await this.http.get(`/users/${_context.user}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 
     /**
@@ -305,6 +389,7 @@ export class UserBaseService extends EntityBaseService<IUser> {
      */
     public async SyncAccountBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/users/syncaccountbatch`,_data);
+        const res = await this.http.post(`/users/syncaccountbatch`,_data);
+        return res;
     }
 }

@@ -18,6 +18,7 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'ProductLine';
     protected APPDENAMEPLURAL = 'ProductLines';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductLine.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['productlinename',];
@@ -74,14 +75,20 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
      * @memberof ProductLineService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/productlines`, _data);
+        const res = await this.http.post(`/productlines`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -92,8 +99,13 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
      * @memberof ProductLineService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/productlines/${_context.productline}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -104,10 +116,14 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
      * @memberof ProductLineService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/productlines/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -118,7 +134,12 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
      * @memberof ProductLineService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productlines/${_context.productline}`);
+        try {
+        const res = await this.http.delete(`/productlines/${_context.productline}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -129,8 +150,14 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
      * @memberof ProductLineService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productlines/${_context.productline}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/productlines/${_context.productline}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -141,6 +168,12 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
      * @memberof ProductLineService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productlines/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/productlines/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

@@ -18,6 +18,7 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
     protected APPNAME = 'Mob';
     protected APPDENAME = 'SysDepartment';
     protected APPDENAMEPLURAL = 'SysDepartments';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysDepartment.json';
     protected APPDEKEY = 'deptid';
     protected APPDETEXT = 'deptname';
     protected quickSearchFields = ['deptname',];
@@ -74,14 +75,20 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/sysdepartments`, _data);
+        const res = await this.http.post(`/sysdepartments`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -92,8 +99,13 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/sysdepartments/${_context.sysdepartment}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -104,10 +116,14 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/sysdepartments/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -118,7 +134,12 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysdepartments/${_context.sysdepartment}`);
+        try {
+        const res = await this.http.delete(`/sysdepartments/${_context.sysdepartment}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -129,8 +150,14 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysdepartments/${_context.sysdepartment}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/sysdepartments/${_context.sysdepartment}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -141,7 +168,13 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysdepartments/fetchdefault`, _data);
+        try {
+        const res = await this.http.get(`/sysdepartments/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -152,6 +185,11 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysdepartments/${_context.sysdepartment}/select`);
+        try {
+        const res = await this.http.get(`/sysdepartments/${_context.sysdepartment}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

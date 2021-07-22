@@ -12,27 +12,29 @@ export class UserService extends UserBaseService {
      * Creates an instance of UserService.
      * @memberof UserService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('UserService')) {
-            return ___ibz___.sc.get('UserService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('UserService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {UserService}
      * @memberof UserService
      */
-    static getInstance(): UserService {
-        if (!___ibz___.sc.has('UserService')) {
-            new UserService();
+    static getInstance(context?: any): UserService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}UserService` : `UserService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new UserService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('UserService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default UserService;

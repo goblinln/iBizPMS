@@ -12,27 +12,29 @@ export class DynaDashboardService extends DynaDashboardBaseService {
      * Creates an instance of DynaDashboardService.
      * @memberof DynaDashboardService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('DynaDashboardService')) {
-            return ___ibz___.sc.get('DynaDashboardService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('DynaDashboardService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {DynaDashboardService}
      * @memberof DynaDashboardService
      */
-    static getInstance(): DynaDashboardService {
-        if (!___ibz___.sc.has('DynaDashboardService')) {
-            new DynaDashboardService();
+    static getInstance(context?: any): DynaDashboardService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}DynaDashboardService` : `DynaDashboardService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new DynaDashboardService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('DynaDashboardService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default DynaDashboardService;

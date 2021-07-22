@@ -12,27 +12,29 @@ export class ReportSummaryService extends ReportSummaryBaseService {
      * Creates an instance of ReportSummaryService.
      * @memberof ReportSummaryService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ReportSummaryService')) {
-            return ___ibz___.sc.get('ReportSummaryService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ReportSummaryService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {ReportSummaryService}
      * @memberof ReportSummaryService
      */
-    static getInstance(): ReportSummaryService {
-        if (!___ibz___.sc.has('ReportSummaryService')) {
-            new ReportSummaryService();
+    static getInstance(context?: any): ReportSummaryService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ReportSummaryService` : `ReportSummaryService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ReportSummaryService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ReportSummaryService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default ReportSummaryService;

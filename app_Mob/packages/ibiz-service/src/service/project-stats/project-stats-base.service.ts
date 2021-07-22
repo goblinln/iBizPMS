@@ -20,6 +20,7 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'ProjectStats';
     protected APPDENAMEPLURAL = 'ProjectStats';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectStats.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];
@@ -132,14 +133,20 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/projectstats`, _data);
+        const res = await this.http.post(`/projectstats`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -150,8 +157,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/projectstats/${_context.projectstats}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -162,10 +174,14 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/projectstats/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * ProjectQualitySum
@@ -176,7 +192,12 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async ProjectQualitySum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/${_context.projectstats}/projectqualitysum`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/${_context.projectstats}/projectqualitysum`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -187,7 +208,12 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/projectstats/${_context.projectstats}`);
+        try {
+        const res = await this.http.delete(`/projectstats/${_context.projectstats}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -198,8 +224,14 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projectstats/${_context.projectstats}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/projectstats/${_context.projectstats}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -210,7 +242,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchNoOpenProduct
@@ -221,7 +259,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchNoOpenProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchnoopenproduct`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchnoopenproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchNoOpenProduct');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectBugType
@@ -232,7 +276,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectBugType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchprojectbugtype`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchprojectbugtype`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectBugType');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectInputStats
@@ -243,7 +293,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectInputStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchprojectinputstats`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchprojectinputstats`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectInputStats');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectProgress
@@ -254,7 +310,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectProgress(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchprojectprogress`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchprojectprogress`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectProgress');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectQuality
@@ -265,7 +327,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectQuality(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchprojectquality`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchprojectquality`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectQuality');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectStoryStageStats
@@ -276,7 +344,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectStoryStageStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchprojectstorystagestats`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchprojectstorystagestats`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectStoryStageStats');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectStoryStatusStats
@@ -287,7 +361,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectStoryStatusStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchprojectstorystatusstats`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchprojectstorystatusstats`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectStoryStatusStats');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectTaskCountByTaskStatus
@@ -298,7 +378,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectTaskCountByTaskStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchprojecttaskcountbytaskstatus`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchprojecttaskcountbytaskstatus`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTaskCountByTaskStatus');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectTaskCountByType
@@ -309,7 +395,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchProjectTaskCountByType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchprojecttaskcountbytype`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchprojecttaskcountbytype`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTaskCountByType');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchTaskTime
@@ -320,7 +412,13 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async FetchTaskTime(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectstats/fetchtasktime`, _data);
+        try {
+        const res = await this.http.post(`/projectstats/fetchtasktime`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchTaskTime');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -331,6 +429,11 @@ export class ProjectStatsBaseService extends EntityBaseService<IProjectStats> {
      * @memberof ProjectStatsService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/projectstats/${_context.projectstats}/select`);
+        try {
+        const res = await this.http.get(`/projectstats/${_context.projectstats}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

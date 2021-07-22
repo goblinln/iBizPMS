@@ -4,7 +4,6 @@ import { IStory, Story } from '../../entities';
 import keys from '../../entities/story/story-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { GetCurUserConcatLogic } from '../../logic/entity/story/get-cur-user-concat/get-cur-user-concat-logic';
 
 /**
  * 需求服务对象基类
@@ -21,6 +20,7 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'Story';
     protected APPDENAMEPLURAL = 'Stories';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title','id',];
@@ -366,19 +366,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/activate`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Activate');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/activate`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/activate`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Activate');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/activate`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/activate`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Activate');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/activate`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Activate函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * AssignTo
@@ -389,19 +400,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/assignto`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'AssignTo');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/assignto`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[AssignTo函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * BuildUnlinkStory
@@ -412,19 +434,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async BuildUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/buildunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'BuildUnlinkStory');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/buildunlinkstory`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/buildunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'BuildUnlinkStory');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/buildunlinkstory`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/buildunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'BuildUnlinkStory');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/buildunlinkstory`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[BuildUnlinkStory函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Change
@@ -435,19 +468,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Change(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/change`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Change');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/change`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/change`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Change');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/change`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/change`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Change');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/change`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Change函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Close
@@ -458,19 +502,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/close`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Close');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/close`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/close`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Close');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/close`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/close`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Close');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/close`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Close函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Create
@@ -481,37 +536,48 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories`, _data);
+            return res;
         }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/projects/${_context.project}/stories`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/stories`, _data);
+            return res;
         }
         if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/products/${_context.product}/stories`, _data);
+            const res = await this.http.post(`/products/${_context.product}/stories`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -522,19 +588,27 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.story) {
             const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.product && _context.story) {
             const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetByVersion
@@ -545,16 +619,24 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async GetByVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/getbyversion`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/getbyversion`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/getbyversion`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/getbyversion`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/getbyversion`, _data);
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/getbyversion`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[GetByVersion函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -565,6 +647,7 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -583,7 +666,11 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             const res = await this.http.get(`/products/${_context.product}/stories/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetUserConcat
@@ -594,9 +681,18 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetCurUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+        try {
+            _data =  await this.executeAppDELogic('GetCurUserConcat',_context,_data);
+            return new HttpResponse(_data, {
+                ok: true,
+                status: 200
+            });
+        }catch (error) {
+            return new HttpResponse({message:error.message}, {
+                ok: false,
+                status: 500,
+            });
+        }
     }
     /**
      * PlanUnlinkStory
@@ -607,19 +703,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async PlanUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/planunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'PlanUnlinkStory');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/planunlinkstory`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/planunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'PlanUnlinkStory');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/planunlinkstory`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/planunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'PlanUnlinkStory');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/planunlinkstory`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[PlanUnlinkStory函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * ProjectUnlinkStory
@@ -630,19 +737,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async ProjectUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/projectunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'ProjectUnlinkStory');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/projectunlinkstory`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/projectunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'ProjectUnlinkStory');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/projectunlinkstory`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/projectunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'ProjectUnlinkStory');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/projectunlinkstory`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[ProjectUnlinkStory函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * ReleaseUnlinkStory
@@ -653,19 +771,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async ReleaseUnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/releaseunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'ReleaseUnlinkStory');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/releaseunlinkstory`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/releaseunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'ReleaseUnlinkStory');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/releaseunlinkstory`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/releaseunlinkstory`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'ReleaseUnlinkStory');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/releaseunlinkstory`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[ReleaseUnlinkStory函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -676,16 +805,24 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
-            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`);
+            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`);
+            return res;
         }
         if (_context.project && _context.story) {
-            return this.http.delete(`/projects/${_context.project}/stories/${_context.story}`);
+            const res = await this.http.delete(`/projects/${_context.project}/stories/${_context.story}`);
+            return res;
         }
         if (_context.product && _context.story) {
-            return this.http.delete(`/products/${_context.product}/stories/${_context.story}`);
+            const res = await this.http.delete(`/products/${_context.product}/stories/${_context.story}`);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Review
@@ -696,19 +833,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/review`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Review');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/review`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/review`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Review');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/review`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/review`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Review');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/review`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Review函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * StoryFavorites
@@ -719,19 +867,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async StoryFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storyfavorites`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'StoryFavorites');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storyfavorites`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/storyfavorites`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'StoryFavorites');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/storyfavorites`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storyfavorites`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'StoryFavorites');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/storyfavorites`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[StoryFavorites函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * StoryNFavorites
@@ -742,19 +901,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storynfavorites`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'StoryNFavorites');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}/storynfavorites`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/storynfavorites`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'StoryNFavorites');
+            const res = await this.http.post(`/projects/${_context.project}/stories/${_context.story}/storynfavorites`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storynfavorites`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'StoryNFavorites');
+            const res = await this.http.post(`/products/${_context.product}/stories/${_context.story}/storynfavorites`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[StoryNFavorites函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -765,19 +935,30 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/stories/${_context.story}`, _data);
+            return res;
         }
         if (_context.project && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/stories/${_context.story}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/projects/${_context.project}/stories/${_context.story}`, _data);
+            return res;
         }
         if (_context.product && _context.story) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/products/${_context.product}/stories/${_context.story}`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -788,16 +969,27 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+            return res;
         }
         if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/stories/fetchdefault`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+            return res;
         }
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchdefault`, _data);
+            const res = await this.http.post(`/products/${_context.product}/stories/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchParentDefault
@@ -808,16 +1000,27 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async FetchParentDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchparentdefault`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchparentdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchParentDefault');
+            return res;
         }
         if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/stories/fetchparentdefault`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/fetchparentdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchParentDefault');
+            return res;
         }
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchparentdefault`, _data);
+            const res = await this.http.post(`/products/${_context.product}/stories/fetchparentdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchParentDefault');
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[FetchParentDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProjectStories
@@ -828,16 +1031,27 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async FetchProjectStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchprojectstories`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchprojectstories`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectStories');
+            return res;
         }
         if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/stories/fetchprojectstories`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/fetchprojectstories`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectStories');
+            return res;
         }
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchprojectstories`, _data);
+            const res = await this.http.post(`/products/${_context.product}/stories/fetchprojectstories`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectStories');
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[FetchProjectStories函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchStoryRelated
@@ -848,16 +1062,27 @@ export class StoryBaseService extends EntityBaseService<IStory> {
      * @memberof StoryService
      */
     async FetchStoryRelated(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchstoryrelated`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/fetchstoryrelated`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchStoryRelated');
+            return res;
         }
         if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/stories/fetchstoryrelated`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/fetchstoryrelated`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchStoryRelated');
+            return res;
         }
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
+            const res = await this.http.post(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchStoryRelated');
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[FetchStoryRelated函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 
     /**
@@ -872,17 +1097,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/activatebatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/activatebatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/activatebatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/activatebatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/activatebatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/stories/activatebatch`,_data);
+            return res;
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[ActivateBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -897,17 +1126,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/assigntobatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/assigntobatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/assigntobatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/assigntobatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/assigntobatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/stories/assigntobatch`,_data);
+            return res;
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[AssignToBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -922,17 +1155,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BuildUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/buildunlinkstorybatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/buildunlinkstorybatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/buildunlinkstorybatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/buildunlinkstorybatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/buildunlinkstorybatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/stories/buildunlinkstorybatch`,_data);
+            return res;
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[BuildUnlinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -947,17 +1184,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/changebatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/changebatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/changebatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/changebatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/changebatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/stories/changebatch`,_data);
+            return res;
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[ChangeBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -972,17 +1213,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/closebatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/closebatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/closebatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/closebatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/closebatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/stories/closebatch`,_data);
+            return res;
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[CloseBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -997,17 +1242,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async PlanUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/planunlinkstorybatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/planunlinkstorybatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/planunlinkstorybatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/planunlinkstorybatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/planunlinkstorybatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/stories/planunlinkstorybatch`,_data);
+            return res;
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[PlanUnlinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -1022,17 +1271,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ProjectUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/projectunlinkstorybatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/projectunlinkstorybatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/projectunlinkstorybatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/projectunlinkstorybatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/projectunlinkstorybatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/stories/projectunlinkstorybatch`,_data);
+            return res;
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[ProjectUnlinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -1047,17 +1300,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ReleaseUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/releaseunlinkstorybatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/releaseunlinkstorybatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/releaseunlinkstorybatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/releaseunlinkstorybatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/releaseunlinkstorybatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/stories/releaseunlinkstorybatch`,_data);
+            return res;
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[ReleaseUnlinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -1072,16 +1329,20 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ReviewBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/reviewbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/stories/reviewbatch`,_data);
+            return res;
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/reviewbatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/stories/reviewbatch`,_data);
+            return res;
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/reviewbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/stories/reviewbatch`,_data);
+            return res;
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[ReviewBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

@@ -18,6 +18,7 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'SysAccount';
     protected APPDENAMEPLURAL = 'SysAccounts';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysAccount.json';
     protected APPDEKEY = 'userid';
     protected APPDETEXT = 'personname';
     protected quickSearchFields = ['personname',];
@@ -74,8 +75,13 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
      * @memberof SysAccountService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/sysaccounts/${_context.sysaccount}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * CountMyContribution
@@ -86,7 +92,13 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
      * @memberof SysAccountService
      */
     async CountMyContribution(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysaccounts/countmycontribution`, _data);
+        try {
+        const res = await this.http.post(`/sysaccounts/countmycontribution`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'CountMyContribution');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * CountMyWork
@@ -97,6 +109,12 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
      * @memberof SysAccountService
      */
     async CountMyWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysaccounts/countmywork`, _data);
+        try {
+        const res = await this.http.post(`/sysaccounts/countmywork`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'CountMyWork');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

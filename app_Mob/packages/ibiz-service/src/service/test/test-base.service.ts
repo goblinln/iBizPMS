@@ -4,8 +4,6 @@ import { ITest, Test } from '../../entities';
 import keys from '../../entities/test/test-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { CancelProductTopLogic } from '../../logic/entity/test/cancel-product-top/cancel-product-top-logic';
-import { ProductTopLogic } from '../../logic/entity/test/product-top/product-top-logic';
 
 /**
  * 产品服务对象基类
@@ -22,6 +20,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'Test';
     protected APPDENAMEPLURAL = 'Tests';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name','id','code',];
@@ -190,7 +189,12 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async CancelTestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/tests/${_context.test}/canceltesttop`, _data);
+        try {
+        const res = await this.http.post(`/tests/${_context.test}/canceltesttop`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -201,8 +205,13 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/tests/${_context.test}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * TestTop
@@ -213,7 +222,12 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async TestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/tests/${_context.test}/testtop`, _data);
+        try {
+        const res = await this.http.post(`/tests/${_context.test}/testtop`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchCurDefault
@@ -224,6 +238,12 @@ export class TestBaseService extends EntityBaseService<ITest> {
      * @memberof TestService
      */
     async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/tests/fetchcurdefault`, _data);
+        try {
+        const res = await this.http.post(`/tests/fetchcurdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCurDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

@@ -20,6 +20,7 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'Module';
     protected APPDENAMEPLURAL = 'Modules';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/Module.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];
@@ -140,14 +141,20 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/modules`, _data);
+        const res = await this.http.post(`/modules`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Fix
@@ -158,7 +165,12 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async Fix(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/modules/${_context.module}/fix`, _data);
+        try {
+        const res = await this.http.post(`/modules/${_context.module}/fix`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -169,8 +181,13 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/modules/${_context.module}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -181,10 +198,14 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/modules/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -195,7 +216,12 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/modules/${_context.module}`);
+        try {
+        const res = await this.http.delete(`/modules/${_context.module}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -206,8 +232,14 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/modules/${_context.module}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/modules/${_context.module}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchBugModule
@@ -218,7 +250,13 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchBugModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/modules/fetchbugmodule`, _data);
+        try {
+        const res = await this.http.post(`/modules/fetchbugmodule`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBugModule');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchBugModuleCodeList
@@ -229,7 +267,13 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchBugModuleCodeList(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/modules/fetchbugmodulecodelist`, _data);
+        try {
+        const res = await this.http.post(`/modules/fetchbugmodulecodelist`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBugModuleCodeList');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -240,7 +284,13 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/modules/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/modules/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDocModule
@@ -251,7 +301,13 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchDocModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/modules/fetchdocmodule`, _data);
+        try {
+        const res = await this.http.post(`/modules/fetchdocmodule`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDocModule');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchLine
@@ -262,7 +318,13 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchLine(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/modules/fetchline`, _data);
+        try {
+        const res = await this.http.post(`/modules/fetchline`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchLine');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchStoryModule
@@ -273,7 +335,13 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchStoryModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/modules/fetchstorymodule`, _data);
+        try {
+        const res = await this.http.post(`/modules/fetchstorymodule`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchStoryModule');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchTaskModule
@@ -284,7 +352,13 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async FetchTaskModule(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/modules/fetchtaskmodule`, _data);
+        try {
+        const res = await this.http.post(`/modules/fetchtaskmodule`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchTaskModule');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -295,7 +369,12 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @memberof ModuleService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/modules/${_context.module}/select`);
+        try {
+        const res = await this.http.get(`/modules/${_context.module}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 
     /**
@@ -309,6 +388,7 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      */
     public async FixBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/modules/fixbatch`,_data);
+        const res = await this.http.post(`/modules/fixbatch`,_data);
+        return res;
     }
 }

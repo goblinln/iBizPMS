@@ -12,27 +12,29 @@ export class IbzFavoritesService extends IbzFavoritesBaseService {
      * Creates an instance of IbzFavoritesService.
      * @memberof IbzFavoritesService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('IbzFavoritesService')) {
-            return ___ibz___.sc.get('IbzFavoritesService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('IbzFavoritesService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {IbzFavoritesService}
      * @memberof IbzFavoritesService
      */
-    static getInstance(): IbzFavoritesService {
-        if (!___ibz___.sc.has('IbzFavoritesService')) {
-            new IbzFavoritesService();
+    static getInstance(context?: any): IbzFavoritesService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}IbzFavoritesService` : `IbzFavoritesService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new IbzFavoritesService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('IbzFavoritesService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default IbzFavoritesService;

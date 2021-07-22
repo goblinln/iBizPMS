@@ -18,6 +18,7 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'SysTeam';
     protected APPDENAMEPLURAL = 'SysTeams';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysTeam.json';
     protected APPDEKEY = 'teamid';
     protected APPDETEXT = 'teamname';
     protected quickSearchFields = ['teamname',];
@@ -74,14 +75,20 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      * @memberof SysTeamService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/systeams`, _data);
+        const res = await this.http.post(`/systeams`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -92,8 +99,13 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      * @memberof SysTeamService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/systeams/${_context.systeam}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -104,10 +116,14 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      * @memberof SysTeamService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/systeams/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -118,7 +134,12 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      * @memberof SysTeamService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/systeams/${_context.systeam}`);
+        try {
+        const res = await this.http.delete(`/systeams/${_context.systeam}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -129,8 +150,14 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      * @memberof SysTeamService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/systeams/${_context.systeam}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/systeams/${_context.systeam}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -141,7 +168,13 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      * @memberof SysTeamService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/systeams/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/systeams/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -152,6 +185,11 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
      * @memberof SysTeamService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/systeams/${_context.systeam}/select`);
+        try {
+        const res = await this.http.get(`/systeams/${_context.systeam}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

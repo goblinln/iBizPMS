@@ -18,6 +18,7 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
     protected APPNAME = 'Mob';
     protected APPDENAME = 'DynaDashboard';
     protected APPDENAMEPLURAL = 'DynaDashboards';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/DynaDashboard.json';
     protected APPDEKEY = 'dynadashboardid';
     protected APPDETEXT = 'dynadashboardname';
     protected quickSearchFields = ['dynadashboardname',];
@@ -74,14 +75,20 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
      * @memberof DynaDashboardService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/dynadashboards`, _data);
+        const res = await this.http.post(`/dynadashboards`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -92,8 +99,13 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
      * @memberof DynaDashboardService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/dynadashboards/${_context.dynadashboard}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -104,10 +116,14 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
      * @memberof DynaDashboardService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/dynadashboards/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -118,7 +134,12 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
      * @memberof DynaDashboardService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/dynadashboards/${_context.dynadashboard}`);
+        try {
+        const res = await this.http.delete(`/dynadashboards/${_context.dynadashboard}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -129,8 +150,14 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
      * @memberof DynaDashboardService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/dynadashboards/${_context.dynadashboard}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/dynadashboards/${_context.dynadashboard}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -141,7 +168,13 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
      * @memberof DynaDashboardService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dynadashboards/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/dynadashboards/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -152,6 +185,11 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
      * @memberof DynaDashboardService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/dynadashboards/${_context.dynadashboard}/select`);
+        try {
+        const res = await this.http.get(`/dynadashboards/${_context.dynadashboard}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

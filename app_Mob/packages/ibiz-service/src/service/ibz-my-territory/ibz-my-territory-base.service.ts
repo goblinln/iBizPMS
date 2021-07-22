@@ -2,7 +2,6 @@ import { CodeListService } from '../app/codelist-service';
 import { EntityBaseService, IContext, HttpResponse } from 'ibiz-core';
 import { IIbzMyTerritory, IbzMyTerritory } from '../../entities';
 import keys from '../../entities/ibz-my-territory/ibz-my-territory-keys';
-import { MyTerritoryCountLogic } from '../../logic/entity/ibz-my-territory/my-territory-count/my-territory-count-logic';
 
 /**
  * 我的地盘服务对象基类
@@ -19,6 +18,7 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
     protected APPNAME = 'Mob';
     protected APPDENAME = 'IbzMyTerritory';
     protected APPDENAMEPLURAL = 'IbzMyTerritories';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMyTerritory.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'realname';
     protected quickSearchFields = ['realname',];
@@ -75,14 +75,20 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzmyterritories`, _data);
+        const res = await this.http.post(`/ibzmyterritories`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -93,8 +99,13 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -105,10 +116,14 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzmyterritories/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * MobMenuCount
@@ -119,8 +134,12 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async MobMenuCount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/ibzmyterritories/mobmenucount`);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * MyFavoriteCount
@@ -131,8 +150,12 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async MyFavoriteCount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/ibzmyterritories/myfavoritecount`);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * MyTerritoryCount
@@ -143,8 +166,12 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async MyTerritoryCount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.post(`/ibzmyterritories/myterritorycount`);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -155,7 +182,12 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzmyterritories/${_context.ibzmyterritory}`);
+        try {
+        const res = await this.http.delete(`/ibzmyterritories/${_context.ibzmyterritory}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -166,8 +198,14 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzmyterritories/${_context.ibzmyterritory}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/ibzmyterritories/${_context.ibzmyterritory}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -178,7 +216,13 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/ibzmyterritories/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchMyWork
@@ -189,7 +233,13 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchMyWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchmywork`, _data);
+        try {
+        const res = await this.http.post(`/ibzmyterritories/fetchmywork`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyWork');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchMyWorkMob
@@ -200,7 +250,13 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchMyWorkMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchmyworkmob`, _data);
+        try {
+        const res = await this.http.post(`/ibzmyterritories/fetchmyworkmob`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyWorkMob');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchMyWorkPm
@@ -211,7 +267,13 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchMyWorkPm(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchmyworkpm`, _data);
+        try {
+        const res = await this.http.post(`/ibzmyterritories/fetchmyworkpm`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyWorkPm');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchPersonInfo
@@ -222,7 +284,13 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchPersonInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchpersoninfo`, _data);
+        try {
+        const res = await this.http.post(`/ibzmyterritories/fetchpersoninfo`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchPersonInfo');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchWelcome
@@ -233,7 +301,13 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async FetchWelcome(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzmyterritories/fetchwelcome`, _data);
+        try {
+        const res = await this.http.post(`/ibzmyterritories/fetchwelcome`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchWelcome');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -244,6 +318,11 @@ export class IbzMyTerritoryBaseService extends EntityBaseService<IIbzMyTerritory
      * @memberof IbzMyTerritoryService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}/select`);
+        try {
+        const res = await this.http.get(`/ibzmyterritories/${_context.ibzmyterritory}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

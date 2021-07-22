@@ -20,6 +20,7 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'SysEmployee';
     protected APPDENAMEPLURAL = 'SysEmployees';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json';
     protected APPDEKEY = 'userid';
     protected APPDETEXT = 'personname';
     protected quickSearchFields = ['personname',];
@@ -156,8 +157,13 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/sysemployees/${_context.sysemployee}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchBug
@@ -168,7 +174,13 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchbug`, _data);
+        try {
+        const res = await this.http.post(`/sysemployees/fetchbug`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchBug');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchContact
@@ -179,7 +191,13 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchContact(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchcontact`, _data);
+        try {
+        const res = await this.http.post(`/sysemployees/fetchcontact`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchContact');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -190,7 +208,13 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/sysemployees/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProduct
@@ -201,7 +225,13 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchproduct`, _data);
+        try {
+        const res = await this.http.post(`/sysemployees/fetchproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProduct');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchProject
@@ -212,7 +242,13 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchproject`, _data);
+        try {
+        const res = await this.http.post(`/sysemployees/fetchproject`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProject');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchTask
@@ -223,7 +259,13 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchtask`, _data);
+        try {
+        const res = await this.http.post(`/sysemployees/fetchtask`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchTask');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchTaskMulti
@@ -234,6 +276,12 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
      * @memberof SysEmployeeService
      */
     async FetchTaskMulti(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysemployees/fetchtaskmulti`, _data);
+        try {
+        const res = await this.http.post(`/sysemployees/fetchtaskmulti`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchTaskMulti');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

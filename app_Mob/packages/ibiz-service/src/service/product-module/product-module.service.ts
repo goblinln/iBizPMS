@@ -12,27 +12,29 @@ export class ProductModuleService extends ProductModuleBaseService {
      * Creates an instance of ProductModuleService.
      * @memberof ProductModuleService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ProductModuleService')) {
-            return ___ibz___.sc.get('ProductModuleService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ProductModuleService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {ProductModuleService}
      * @memberof ProductModuleService
      */
-    static getInstance(): ProductModuleService {
-        if (!___ibz___.sc.has('ProductModuleService')) {
-            new ProductModuleService();
+    static getInstance(context?: any): ProductModuleService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ProductModuleService` : `ProductModuleService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ProductModuleService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ProductModuleService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default ProductModuleService;

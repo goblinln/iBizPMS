@@ -18,6 +18,7 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'SysPost';
     protected APPDENAMEPLURAL = 'SysPosts';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysPost.json';
     protected APPDEKEY = 'postid';
     protected APPDETEXT = 'postname';
     protected quickSearchFields = ['postname',];
@@ -74,14 +75,20 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      * @memberof SysPostService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/sysposts`, _data);
+        const res = await this.http.post(`/sysposts`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -92,8 +99,13 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      * @memberof SysPostService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/sysposts/${_context.syspost}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -104,10 +116,14 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      * @memberof SysPostService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/sysposts/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -118,7 +134,12 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      * @memberof SysPostService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysposts/${_context.syspost}`);
+        try {
+        const res = await this.http.delete(`/sysposts/${_context.syspost}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -129,8 +150,14 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      * @memberof SysPostService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysposts/${_context.syspost}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/sysposts/${_context.syspost}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -141,7 +168,13 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      * @memberof SysPostService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysposts/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/sysposts/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -152,6 +185,11 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
      * @memberof SysPostService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysposts/${_context.syspost}/select`);
+        try {
+        const res = await this.http.get(`/sysposts/${_context.syspost}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

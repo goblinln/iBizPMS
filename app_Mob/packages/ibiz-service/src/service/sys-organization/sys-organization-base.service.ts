@@ -18,6 +18,7 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
     protected APPNAME = 'Mob';
     protected APPDENAME = 'SysOrganization';
     protected APPDENAMEPLURAL = 'SysOrganizations';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysOrganization.json';
     protected APPDEKEY = 'orgid';
     protected APPDETEXT = 'orgname';
     protected quickSearchFields = ['orgname',];
@@ -74,14 +75,20 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/sysorganizations`, _data);
+        const res = await this.http.post(`/sysorganizations`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -92,8 +99,13 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/sysorganizations/${_context.sysorganization}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -104,10 +116,14 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/sysorganizations/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -118,7 +134,12 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysorganizations/${_context.sysorganization}`);
+        try {
+        const res = await this.http.delete(`/sysorganizations/${_context.sysorganization}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -129,8 +150,14 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysorganizations/${_context.sysorganization}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/sysorganizations/${_context.sysorganization}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -141,7 +168,13 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysorganizations/fetchdefault`, _data);
+        try {
+        const res = await this.http.get(`/sysorganizations/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -152,6 +185,11 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
      * @memberof SysOrganizationService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysorganizations/${_context.sysorganization}/select`);
+        try {
+        const res = await this.http.get(`/sysorganizations/${_context.sysorganization}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

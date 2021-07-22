@@ -18,6 +18,7 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'DocContent';
     protected APPDENAMEPLURAL = 'DocContents';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocContent.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];
@@ -74,14 +75,20 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/doccontents`, _data);
+        const res = await this.http.post(`/doccontents`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -92,8 +99,13 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/doccontents/${_context.doccontent}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -104,10 +116,14 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/doccontents/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -118,7 +134,12 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/doccontents/${_context.doccontent}`);
+        try {
+        const res = await this.http.delete(`/doccontents/${_context.doccontent}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -129,8 +150,14 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/doccontents/${_context.doccontent}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/doccontents/${_context.doccontent}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchCurVersion
@@ -141,7 +168,13 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async FetchCurVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/doccontents/fetchcurversion`, _data);
+        try {
+        const res = await this.http.post(`/doccontents/fetchcurversion`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCurVersion');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -152,7 +185,13 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/doccontents/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/doccontents/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -163,6 +202,11 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
      * @memberof DocContentService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/doccontents/${_context.doccontent}/select`);
+        try {
+        const res = await this.http.get(`/doccontents/${_context.doccontent}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

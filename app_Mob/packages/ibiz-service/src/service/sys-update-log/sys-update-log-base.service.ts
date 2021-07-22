@@ -18,6 +18,7 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'SysUpdateLog';
     protected APPDENAMEPLURAL = 'SysUpdateLogs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateLog.json';
     protected APPDEKEY = 'sysupdatelogid';
     protected APPDETEXT = 'sysupdatelogname';
     protected quickSearchFields = ['sysupdatelogname',];
@@ -74,14 +75,20 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/sysupdatelogs`, _data);
+        const res = await this.http.post(`/sysupdatelogs`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -92,8 +99,13 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/sysupdatelogs/${_context.sysupdatelog}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -104,10 +116,14 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/sysupdatelogs/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetLastUpdateInfo
@@ -118,7 +134,12 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async GetLastUpdateInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/getlastupdateinfo`, _data);
+        try {
+        const res = await this.http.put(`/sysupdatelogs/${_context.sysupdatelog}/getlastupdateinfo`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -129,7 +150,12 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysupdatelogs/${_context.sysupdatelog}`);
+        try {
+        const res = await this.http.delete(`/sysupdatelogs/${_context.sysupdatelog}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -140,8 +166,14 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysupdatelogs/${_context.sysupdatelog}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/sysupdatelogs/${_context.sysupdatelog}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -152,7 +184,13 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysupdatelogs/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/sysupdatelogs/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -163,7 +201,12 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @memberof SysUpdateLogService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/select`);
+        try {
+        const res = await this.http.get(`/sysupdatelogs/${_context.sysupdatelog}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 
     /**
@@ -177,6 +220,7 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      */
     public async GetLastUpdateInfoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/sysupdatelogs/getlastupdateinfobatch`,_data);
+        const res = await this.http.post(`/sysupdatelogs/getlastupdateinfobatch`,_data);
+        return res;
     }
 }

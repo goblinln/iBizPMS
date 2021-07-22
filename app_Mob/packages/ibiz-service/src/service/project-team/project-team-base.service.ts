@@ -20,6 +20,7 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'ProjectTeam';
     protected APPDENAMEPLURAL = 'ProjectTeams';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProjectTeam.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];
@@ -143,27 +144,36 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams`, _data);
+            return res;
         }
         if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/projects/${_context.project}/projectteams`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/projectteams`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -174,15 +184,22 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.projectteam) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.projectteam) {
             const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -193,6 +210,7 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -205,7 +223,11 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             const res = await this.http.get(`/projects/${_context.project}/projectteams/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -216,13 +238,20 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.projectteam) {
-            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            return res;
         }
         if (_context.project && _context.projectteam) {
-            return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            const res = await this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -233,15 +262,24 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.projectteam) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
+            return res;
         }
         if (_context.project && _context.projectteam) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchCntEst
@@ -252,13 +290,22 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async FetchCntEst(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams/fetchcntest`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams/fetchcntest`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCntEst');
+            return res;
         }
         if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchCntEst');
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[FetchCntEst函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchSpecifyTeam
@@ -269,12 +316,21 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @memberof ProjectTeamService
      */
     async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchSpecifyTeam');
+            return res;
         }
         if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchSpecifyTeam');
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[FetchSpecifyTeam函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

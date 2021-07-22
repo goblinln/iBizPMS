@@ -20,6 +20,7 @@ export class DocBaseService extends EntityBaseService<IDoc> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'Doc';
     protected APPDENAMEPLURAL = 'Docs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];
@@ -165,27 +166,42 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Collect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Collect');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Collect');
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Collect');
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+            return res;
         }
         if (_context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Collect');
+            const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+            return res;
         }
         if (_context.sysaccount && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/collect`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Collect');
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/collect`, _data);
+            return res;
         }
-        return this.http.post(`/docs/${_context.doc}/collect`, _data);
+        const res = await this.http.post(`/docs/${_context.doc}/collect`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Create
@@ -196,64 +212,80 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs`, _data);
+            return res;
         }
         if (_context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/doclibs/${_context.doclib}/docs`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/docs`, _data);
+            return res;
         }
         if (_context.sysaccount && true) {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
             }
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs`, _data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/docs`, _data);
+        const res = await this.http.post(`/docs`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -264,28 +296,38 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc) {
             const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.project && _context.doclib && _context.doc) {
             const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.product && _context.doclib && _context.doc) {
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.doclib && _context.doc) {
             const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         if (_context.sysaccount && _context.doc) {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
             return res;
         }
         const res = await this.http.get(`/docs/${_context.doc}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDocStatus
@@ -296,27 +338,42 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async GetDocStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'GetDocStatus');
+            const res = await this.http.get(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'GetDocStatus');
+            const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'GetDocStatus');
+            const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+            return res;
         }
         if (_context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'GetDocStatus');
+            const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+            return res;
         }
         if (_context.sysaccount && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.get(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/getdocstatus`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'GetDocStatus');
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/getdocstatus`, _data);
+            return res;
         }
-        return this.http.get(`/docs/${_context.doc}/getdocstatus`, _data);
+        const res = await this.http.get(`/docs/${_context.doc}/getdocstatus`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -327,6 +384,7 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -361,6 +419,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/docs/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -371,22 +432,32 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc) {
-            return this.http.delete(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            const res = await this.http.delete(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            return res;
         }
         if (_context.project && _context.doclib && _context.doc) {
-            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            const res = await this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            return res;
         }
         if (_context.product && _context.doclib && _context.doc) {
-            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            const res = await this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            return res;
         }
         if (_context.doclib && _context.doc) {
-            return this.http.delete(`/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            const res = await this.http.delete(`/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            return res;
         }
         if (_context.sysaccount && _context.doc) {
-            return this.http.delete(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}`);
+            const res = await this.http.delete(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}`);
+            return res;
         }
-        return this.http.delete(`/docs/${_context.doc}`);
+        const res = await this.http.delete(`/docs/${_context.doc}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * UnCollect
@@ -397,27 +468,42 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async UnCollect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+            return res;
         }
         if (_context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
+            const res = await this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+            return res;
         }
         if (_context.sysaccount && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/uncollect`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'UnCollect');
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/uncollect`, _data);
+            return res;
         }
-        return this.http.post(`/docs/${_context.doc}/uncollect`, _data);
+        const res = await this.http.post(`/docs/${_context.doc}/uncollect`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -428,28 +514,44 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+            return res;
         }
         if (_context.project && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+            return res;
         }
         if (_context.product && _context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+            return res;
         }
         if (_context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+            return res;
         }
         if (_context.sysaccount && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+            const res = await this.http.put(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}`, _data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/docs/${_context.doc}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/docs/${_context.doc}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchLastedModify
@@ -460,22 +562,38 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchLastedModify(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchLastedModify');
+            return res;
         }
         if (_context.project && _context.doclib && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchLastedModify');
+            return res;
         }
         if (_context.product && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchLastedModify');
+            return res;
         }
         if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchLastedModify');
+            return res;
         }
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchlastedmodify`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchlastedmodify`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchLastedModify');
+            return res;
         }
-        return this.http.post(`/docs/fetchlastedmodify`, _data);
+        const res = await this.http.post(`/docs/fetchlastedmodify`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchLastedModify');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchMy
@@ -486,22 +604,38 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
+            return res;
         }
         if (_context.project && _context.doclib && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
+            return res;
         }
         if (_context.product && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
+            return res;
         }
         if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
+            return res;
         }
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchmy`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
+            return res;
         }
-        return this.http.post(`/docs/fetchmy`, _data);
+        const res = await this.http.post(`/docs/fetchmy`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMy');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchMyFavourites
@@ -512,22 +646,38 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchMyFavourites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
+            return res;
         }
         if (_context.project && _context.doclib && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
+            return res;
         }
         if (_context.product && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
+            return res;
         }
         if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
+            return res;
         }
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchmyfavourites`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchmyfavourites`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
+            return res;
         }
-        return this.http.post(`/docs/fetchmyfavourites`, _data);
+        const res = await this.http.post(`/docs/fetchmyfavourites`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchMyFavourites');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchRootDoc
@@ -538,22 +688,38 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async FetchRootDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.product && _context.project && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchRootDoc');
+            return res;
         }
         if (_context.project && _context.doclib && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchRootDoc');
+            return res;
         }
         if (_context.product && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchRootDoc');
+            return res;
         }
         if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchRootDoc');
+            return res;
         }
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchrootdoc`, _data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchrootdoc`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchRootDoc');
+            return res;
         }
-        return this.http.post(`/docs/fetchrootdoc`, _data);
+        const res = await this.http.post(`/docs/fetchrootdoc`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchRootDoc');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 
     /**
@@ -568,26 +734,32 @@ export class DocBaseService extends EntityBaseService<IDoc> {
     public async CollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+            return res;
         }
         if(_context.project && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+            return res;
         }
         if(_context.product && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+            return res;
         }
         if(_context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+            return res;
         }
         if(_context.sysaccount && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/collectbatch`,_data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/collectbatch`,_data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/docs/collectbatch`,_data);
+        const res = await this.http.post(`/docs/collectbatch`,_data);
+        return res;
     }
 
     /**
@@ -602,26 +774,32 @@ export class DocBaseService extends EntityBaseService<IDoc> {
     public async GetDocStatusBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+            return res;
         }
         if(_context.project && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+            return res;
         }
         if(_context.product && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+            return res;
         }
         if(_context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+            return res;
         }
         if(_context.sysaccount && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/getdocstatusbatch`,_data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/getdocstatusbatch`,_data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/docs/getdocstatusbatch`,_data);
+        const res = await this.http.post(`/docs/getdocstatusbatch`,_data);
+        return res;
     }
 
     /**
@@ -636,25 +814,31 @@ export class DocBaseService extends EntityBaseService<IDoc> {
     public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.project && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/projects/${_context.project}/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+            return res;
         }
         if(_context.project && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+            const res = await this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+            return res;
         }
         if(_context.product && _context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+            const res = await this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+            return res;
         }
         if(_context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+            const res = await this.http.post(`/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+            return res;
         }
         if(_context.sysaccount && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/uncollectbatch`,_data);
+            const res = await this.http.post(`/sysaccounts/${_context.sysaccount}/docs/uncollectbatch`,_data);
+            return res;
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/docs/uncollectbatch`,_data);
+        const res = await this.http.post(`/docs/uncollectbatch`,_data);
+        return res;
     }
 }

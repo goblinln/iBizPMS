@@ -20,6 +20,7 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'Daily';
     protected APPDENAMEPLURAL = 'Dailies';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/Daily.json';
     protected APPDEKEY = 'ibzdailyid';
     protected APPDETEXT = 'ibzdailyname';
     protected quickSearchFields = ['ibzdailyname',];
@@ -116,7 +117,12 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/autocreate`, _data);
+        try {
+        const res = await this.http.post(`/dailies/${_context.daily}/autocreate`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Create
@@ -127,14 +133,20 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/dailies`, _data);
+        const res = await this.http.post(`/dailies`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -145,8 +157,13 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/dailies/${_context.daily}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -157,10 +174,14 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/dailies/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Notice
@@ -171,7 +192,12 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/notice`, _data);
+        try {
+        const res = await this.http.post(`/dailies/${_context.daily}/notice`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Read
@@ -182,7 +208,12 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/read`, _data);
+        try {
+        const res = await this.http.post(`/dailies/${_context.daily}/read`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Submit
@@ -193,7 +224,12 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/submit`, _data);
+        try {
+        const res = await this.http.post(`/dailies/${_context.daily}/submit`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -204,8 +240,14 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/dailies/${_context.daily}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/dailies/${_context.daily}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -216,7 +258,13 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      * @memberof DailyService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/dailies/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 
     /**
@@ -230,7 +278,8 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/dailies/autocreatebatch`,_data);
+        const res = await this.http.post(`/dailies/autocreatebatch`,_data);
+        return res;
     }
 
     /**
@@ -244,7 +293,8 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     public async NoticeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/dailies/noticebatch`,_data);
+        const res = await this.http.post(`/dailies/noticebatch`,_data);
+        return res;
     }
 
     /**
@@ -258,7 +308,8 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/dailies/readbatch`,_data);
+        const res = await this.http.post(`/dailies/readbatch`,_data);
+        return res;
     }
 
     /**
@@ -272,6 +323,7 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/dailies/submitbatch`,_data);
+        const res = await this.http.post(`/dailies/submitbatch`,_data);
+        return res;
     }
 }

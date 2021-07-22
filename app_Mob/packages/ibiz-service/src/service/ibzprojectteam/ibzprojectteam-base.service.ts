@@ -21,6 +21,7 @@ export class IBZPROJECTTEAMBaseService extends EntityBaseService<IIBZPROJECTTEAM
     protected APPNAME = 'Mob';
     protected APPDENAME = 'IBZPROJECTTEAM';
     protected APPDENAMEPLURAL = 'IBZPROJECTTEAMs';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];

@@ -18,6 +18,7 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'TestCaseStep';
     protected APPDENAMEPLURAL = 'TestCaseSteps';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCaseStep.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'expect';
     protected quickSearchFields = ['expect',];
@@ -89,10 +90,17 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
      * @memberof TestCaseStepService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.test && _context.testcase && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
+            const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestCaseStep]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchVersions
@@ -103,9 +111,16 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
      * @memberof TestCaseStepService
      */
     async FetchVersions(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         if (_context.test && _context.testcase && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchversions`, _data);
+            const res = await this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchversions`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchVersions');
+            return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestCaseStep]>>>[FetchVersions函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

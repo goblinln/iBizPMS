@@ -12,27 +12,29 @@ export class SysAccountService extends SysAccountBaseService {
      * Creates an instance of SysAccountService.
      * @memberof SysAccountService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('SysAccountService')) {
-            return ___ibz___.sc.get('SysAccountService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('SysAccountService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {SysAccountService}
      * @memberof SysAccountService
      */
-    static getInstance(): SysAccountService {
-        if (!___ibz___.sc.has('SysAccountService')) {
-            new SysAccountService();
+    static getInstance(context?: any): SysAccountService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}SysAccountService` : `SysAccountService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new SysAccountService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('SysAccountService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default SysAccountService;

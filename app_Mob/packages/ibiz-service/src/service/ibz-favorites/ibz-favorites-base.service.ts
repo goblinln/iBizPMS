@@ -18,6 +18,7 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'IbzFavorites';
     protected APPDENAMEPLURAL = 'IbzFavorites';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzFavorites.json';
     protected APPDEKEY = 'ibzfavoritesid';
     protected APPDETEXT = 'ibzfavoritesname';
     protected quickSearchFields = ['ibzfavoritesname',];
@@ -74,14 +75,20 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
         }
         if (_data.srffrontuf != null) {
             delete _data.srffrontuf;
         }
-        return this.http.post(`/ibzfavorites`, _data);
+        const res = await this.http.post(`/ibzfavorites`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Get
@@ -92,8 +99,13 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         const res = await this.http.get(`/ibzfavorites/${_context.ibzfavorites}`);
+        res.data = await this.afterExecuteAction(_context,res?.data,'Get');
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * GetDraft
@@ -104,10 +116,14 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzfavorites/getdraft`, _data);
         return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Remove
@@ -118,7 +134,12 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzfavorites/${_context.ibzfavorites}`);
+        try {
+        const res = await this.http.delete(`/ibzfavorites/${_context.ibzfavorites}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Update
@@ -129,8 +150,14 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzfavorites/${_context.ibzfavorites}`, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/ibzfavorites/${_context.ibzfavorites}`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * FetchDefault
@@ -141,7 +168,13 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzfavorites/fetchdefault`, _data);
+        try {
+        const res = await this.http.post(`/ibzfavorites/fetchdefault`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchDefault');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
     /**
      * Select
@@ -152,6 +185,11 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
      * @memberof IbzFavoritesService
      */
     async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzfavorites/${_context.ibzfavorites}/select`);
+        try {
+        const res = await this.http.get(`/ibzfavorites/${_context.ibzfavorites}/select`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
     }
 }

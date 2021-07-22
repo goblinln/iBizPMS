@@ -12,27 +12,29 @@ export class ActionService extends ActionBaseService {
      * Creates an instance of ActionService.
      * @memberof ActionService
      */
-    constructor() {
-        super();
-        // 全局唯一实例，new 返回已存在实例。确保全局单例!
-        if (___ibz___.sc.has('ActionService')) {
-            return ___ibz___.sc.get('ActionService');
+    constructor(opts?: any) {
+        const { context: context, tag: cacheKey } = opts;
+        super(context);
+        if (___ibz___.sc.has(cacheKey)) {
+            return ___ibz___.sc.get(cacheKey);
         }
-        ___ibz___.sc.set('ActionService', this);
+        ___ibz___.sc.set(cacheKey, this);
     }
 
     /**
      * 获取实例
      *
      * @static
+     * @param 应用上下文
      * @return {*}  {ActionService}
      * @memberof ActionService
      */
-    static getInstance(): ActionService {
-        if (!___ibz___.sc.has('ActionService')) {
-            new ActionService();
+    static getInstance(context?: any): ActionService {
+        const cacheKey: string = context?.srfdynainstid ? `${context.srfdynainstid}ActionService` : `ActionService`;
+        if (!___ibz___.sc.has(cacheKey)) {
+            new ActionService({ context: context, tag: cacheKey });
         }
-        return ___ibz___.sc.get('ActionService');
+        return ___ibz___.sc.get(cacheKey);
     }
 }
 export default ActionService;

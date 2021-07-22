@@ -21,6 +21,7 @@ export class IbztaskteamBaseService extends EntityBaseService<IIbztaskteam> {
     protected APPNAME = 'Mob';
     protected APPDENAME = 'Ibztaskteam';
     protected APPDENAMEPLURAL = 'ibztaskteams';
+    protected dynaModelFilePath:string = 'PSSYSAPPS/Mob/PSAPPDATAENTITIES/ibztaskteam.json';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'account';
     protected quickSearchFields = ['account',];
