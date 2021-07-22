@@ -156,7 +156,7 @@ export default {
         // 非实体视图
         views: {
             appindexview: {
-                caption: commonLogic.appcommonhandle("iBiz软件生产管理",null),
+                caption: commonLogic.appcommonhandle("iBiz软件生产管理1",null),
             },
             appportalview: {
                 caption: commonLogic.appcommonhandle("工作台",null),
