@@ -781,7 +781,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         }
 
 //        String sql = String.format("select * from zt_task where parent = %1$s and status <> 'cancel' and deleted = '0'", et.getId());
-        List<Task> list = this.list(new QueryWrapper<Task>().eq("parent", et.getId()).ne("status", "cancel").eq("deleted", "0"));
+        List<Task> list = this.list(new QueryWrapper<Task>().eq("parent", et.getId()).ne("status", "cancel").eq("deleted", "0").isNotNull("Consumed"));
 //        List<JSONObject> list = taskService.select(sql, null);
         if (list.size() == 0) {
             return;
