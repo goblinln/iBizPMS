@@ -3,7 +3,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 172.16.240.110:8849
+        server-addr: 172.16.240.110:8848
         enabled: true
 
 eureka:

@@ -29,11 +29,11 @@ spec:
         - name: SERVER_PORT
           value: "30120"
         - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR
-          value: "172.16.240.110:8849"
+          value: "172.16.240.110:8848"
         - name: SPRING_REDIS_HOST
           value: "172.16.240.110"
         - name: SPRING_REDIS_PORT
-          value: "6380"
+          value: "6379"
         - name: SPRING_REDIS_DATABASE
           value: "0"
         - name: SPRING_DATASOURCE_USERNAME
@@ -53,9 +53,9 @@ spec:
         - name: JOBS_ADMINNAME
           value: "admin"      
         - name: JOBS_ADMIN-ADDRESS
-          value: "http://172.16.240.110:10001"      
+          value: "http://172.16.240.110:10000"      
         - name: NACOS
-          value: "172.16.240.110:8849"      
+          value: "172.16.240.110:8848"      
         - name: JOBS_ADMINPASSWORD
           value: "123456"      
         - name: JOBS_APP-NAME
