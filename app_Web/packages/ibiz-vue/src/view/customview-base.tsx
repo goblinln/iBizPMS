@@ -1,5 +1,5 @@
 import { IPSAppDataEntity, IPSAppDECustomView, IPSAppDEField, IPSAppViewEngine, IPSControl, IPSDEToolbar, IPSDEToolbarItem } from '@ibiz/dynamic-model-api';
-import { CommonViewEngine, CustomViewInterface, debounce, ModelTool } from 'ibiz-core';
+import { CommonViewEngine, CustomViewInterface, throttle, ModelTool } from 'ibiz-core';
 import { MainViewBase } from "./mainview-base";
 
 
@@ -61,7 +61,7 @@ export class CustomViewBase extends MainViewBase implements CustomViewInterface 
           isViewLoading={this.viewLoadingService?.isLoading}
           toolbarModels={targetViewToolbarItems}
           on-item-click={(data: any, $event: any) => {
-            debounce(this.handleItemClick, [data, $event], this);
+            throttle(this.handleItemClick, [data, $event], this);
           }}
         ></view-toolbar>
       );

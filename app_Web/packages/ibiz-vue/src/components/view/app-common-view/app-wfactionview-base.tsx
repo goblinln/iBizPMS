@@ -1,5 +1,5 @@
 import { Prop, Watch } from 'vue-property-decorator';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { WFActionViewBase } from '../../../view';
 import { AppLayoutService } from '../../../app-service';
 
@@ -78,9 +78,9 @@ export class AppWFActionViewBase extends WFActionViewBase {
             this.renderMainContent(),
             <card slot="button" dis-hover bordered={false} class='footer'>
                 <row style=" text-align: right ">
-                <i-button type='primary' on-click={(...params: any[]) => debounce(this.onClickOk,params,this)}>{this.$t('app.commonwords.ok')}</i-button>
+                <i-button type='primary' on-click={(...params: any[]) => throttle(this.onClickOk,params,this)}>{this.$t('app.commonwords.ok')}</i-button>
                     &nbsp;&nbsp;
-                <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)}>{this.$t('app.commonwords.cancel')}</i-button>
+                <i-button on-click={(...params: any[]) => throttle(this.onClickCancel,params,this)}>{this.$t('app.commonwords.cancel')}</i-button>
                 </row>
             </card>  
         ]);

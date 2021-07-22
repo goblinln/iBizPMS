@@ -80,7 +80,7 @@ export class ControlServiceBase {
      * @readonly
      * @memberof ControlServiceBase
      */
-     get appDeCodeName(){
+    get appDeCodeName() {
         return this.controlInstance?.getPSAppDataEntity()?.codeName || '';
     }
 
@@ -90,7 +90,7 @@ export class ControlServiceBase {
      * @readonly
      * @memberof ControlServiceBase
      */
-     get deName(){
+    get deName() {
         return this.controlInstance?.getPSAppDataEntity()?.getPSDEName() || '';
     }
 
@@ -100,7 +100,7 @@ export class ControlServiceBase {
      * @readonly
      * @memberof ControlServiceBase
      */
-    get appDeKeyFieldName(){
+    get appDeKeyFieldName() {
         return (ModelTool.getAppEntityKeyField(this.controlInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';
     }
 
@@ -110,7 +110,7 @@ export class ControlServiceBase {
      * @readonly
      * @memberof ControlServiceBase
      */
-    get appDeMajorFieldName(){
+    get appDeMajorFieldName() {
         return (ModelTool.getAppEntityMajorField(this.controlInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';
     }
 
@@ -230,7 +230,7 @@ export class ControlServiceBase {
      * @memberof ControlServiceBase
      */
     public handleResponseData(action: string, data: any = {}, isCreate?: boolean, codelistArray?: any) {
-        if(data.srfopprivs){
+        if (data.srfopprivs) {
             this.getStore().commit('authresource/setSrfappdeData', { key: `${this.deName}-${data[this.appDeKeyFieldName.toLowerCase()]}`, value: data.srfopprivs });
         }
         let model: any = this.getMode();
@@ -240,19 +240,23 @@ export class ControlServiceBase {
         let item: any = {};
         let dataItems: any[] = model.getDataItems();
         dataItems.forEach(dataitem => {
-            if (dataitem && (dataitem?.dataType !== "QUERYPARAM")) {
-                let val = data.hasOwnProperty(dataitem.prop) ? data[dataitem.prop] : null;
-                if (val === null) {
-                    val = data.hasOwnProperty(dataitem.name) ? data[dataitem.name] : null;
-                }
-                if ((isCreate === undefined || isCreate === null) && Object.is(dataitem.dataType, 'GUID') && Object.is(dataitem.name, 'srfkey') && (val && !Object.is(val, ''))) {
-                    isCreate = true;
-                }
-                item[dataitem.name] = val;
-                // 转化代码表
-                if (codelistArray && dataitem.codelist) {
-                    if (codelistArray.get(dataitem.codelist.tag) && codelistArray.get(dataitem.codelist.tag).get(val)) {
-                        item[dataitem.name] = codelistArray.get(dataitem.codelist.tag).get(val);
+            if (dataitem.customCode) {
+                item[dataitem.name] = this.handleScriptCode(data, dataitem, dataitem.scriptCode);
+            } else {
+                if (dataitem && (dataitem?.dataType !== "QUERYPARAM")) {
+                    let val = data.hasOwnProperty(dataitem.prop) ? data[dataitem.prop] : null;
+                    if (val === null) {
+                        val = data.hasOwnProperty(dataitem.name) ? data[dataitem.name] : null;
+                    }
+                    if ((isCreate === undefined || isCreate === null) && Object.is(dataitem.dataType, 'GUID') && Object.is(dataitem.name, 'srfkey') && (val && !Object.is(val, ''))) {
+                        isCreate = true;
+                    }
+                    item[dataitem.name] = val;
+                    // 转化代码表
+                    if (codelistArray && dataitem.codelist) {
+                        if (codelistArray.get(dataitem.codelist.tag) && codelistArray.get(dataitem.codelist.tag).get(val)) {
+                            item[dataitem.name] = codelistArray.get(dataitem.codelist.tag).get(val);
+                        }
                     }
                 }
             }
@@ -312,6 +316,20 @@ export class ControlServiceBase {
         } else {
             return [];
         }
+    }
+
+    /**
+     * 处理部件数据项自定义脚本
+     * 
+     * @param data 当前数据
+     * @param scriptCode 自定义脚本
+     * @memberof ControlServiceBase
+     */
+    public handleScriptCode(data: any, dataitem: any, scriptCode: string) {
+        if (scriptCode.indexOf('return') !== -1) {
+            scriptCode = scriptCode.replace(new RegExp('return', "g"), `data.${dataitem.name} =`);
+        }
+        return eval(scriptCode);
     }
 
     /**

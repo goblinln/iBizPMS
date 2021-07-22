@@ -10,7 +10,7 @@ import {
     IPSDEGridGroupColumn,
     IPSDEGridFieldColumn
 } from '@ibiz/dynamic-model-api';
-import { debounce, ModelTool, Util } from 'ibiz-core';
+import { throttle, ModelTool, Util } from 'ibiz-core';
 import { Prop, Watch, Emit } from 'vue-property-decorator';
 import { GridControlBase } from '../../../widgets';
 
@@ -157,10 +157,10 @@ export class AppGridBase extends GridControlBase {
      */
     public computeGridEvents() {
         let events: any = {
-            'row-click': (row: any, column: any, event: any) => debounce(this.rowClick,[row, column, event],this),
-            'row-dblclick': (row: any) => debounce(this.rowDBLClick,[row],this),
-            select: (selection: any, row: any) => debounce(this.select,[selection, row],this),
-            'select-all': (selection: any) => debounce(this.selectAll,[selection],this),
+            'row-click': (row: any, column: any, event: any) => throttle(this.rowClick,[row, column, event],this),
+            'row-dblclick': (row: any) => throttle(this.rowDBLClick,[row],this),
+            select: (selection: any, row: any) => throttle(this.select,[selection, row],this),
+            'select-all': (selection: any) => throttle(this.selectAll,[selection],this),
         };
         //  支持排序
         if (!this.controlInstance?.noSort) {
@@ -360,7 +360,7 @@ export class AppGridBase extends GridControlBase {
                                 disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                 class={columnClass}
                                 on-click={($event: any) => {
-                                    debounce(this.handleActionButtonClick,[row, $event, _column, uiactionDetail],this);
+                                    throttle(this.handleActionButtonClick,[row, $event, _column, uiactionDetail],this);
                                 }}
                             >
                                 {uiactionDetail.showIcon ? <menu-icon item={uiaction} /> : null}
@@ -453,7 +453,7 @@ export class AppGridBase extends GridControlBase {
                                         title={this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag, uiaction.caption)}
                                         disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                         on-click={($event: any) => {
-                                          debounce(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
+                                          throttle(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
                                         }}
                                     >
                                         {uiactionDetail.showIcon ? (
@@ -475,7 +475,7 @@ export class AppGridBase extends GridControlBase {
                                         class={columnClass}
                                         disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                         on-click={($event: any) => {
-                                          debounce(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
+                                          throttle(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
                                         }}
                                     >
                                         {uiactionDetail.showIcon ? (
@@ -637,7 +637,7 @@ export class AppGridBase extends GridControlBase {
                     {this.controlInstance.enableColFilter ? columnPopTip : null}
                     {this.renderBatchToolbar()}
                     <span class='page-button'>
-                        <i-button icon='md-refresh' title={this.$t('app.grid.refresh')} on-click={() => debounce(this.pageRefresh,[],this)}></i-button>
+                        <i-button icon='md-refresh' title={this.$t('app.grid.refresh')} on-click={() => throttle(this.pageRefresh,[],this)}></i-button>
                     </span>
                     {pageText}
                 </page>

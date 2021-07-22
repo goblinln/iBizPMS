@@ -1,5 +1,5 @@
 import { MainViewBase } from "./mainview-base";
-import { OptionViewEngine, ModelTool, debounce, OptViewInterface } from 'ibiz-core';
+import { OptionViewEngine, ModelTool, throttle, OptViewInterface } from 'ibiz-core';
 import { IPSAppDEEditView, IPSDEForm } from "@ibiz/dynamic-model-api";
 
 /**
@@ -85,9 +85,9 @@ export class OptViewBase extends MainViewBase implements OptViewInterface {
     public renderFooter() {
         return <template slot="footer">
             <div style=" text-align: right " dis-hover bordered={false} class="option-view-footer-actions">
-                <i-button type='primary' on-click={(...params: any[]) => debounce(this.onClickOk,params,this)}>{this.containerModel.view_okbtn.text}</i-button>
+                <i-button type='primary' on-click={(...params: any[]) => throttle(this.onClickOk,params,this)}>{this.containerModel.view_okbtn.text}</i-button>
                     &nbsp;&nbsp;
-                    <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)}>{this.containerModel.view_cancelbtn.text}</i-button>
+                    <i-button on-click={(...params: any[]) => throttle(this.onClickCancel,params,this)}>{this.containerModel.view_cancelbtn.text}</i-button>
             </div>
         </template>
     }

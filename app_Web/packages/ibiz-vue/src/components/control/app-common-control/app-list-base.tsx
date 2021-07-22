@@ -1,5 +1,5 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { debounce, ModelTool, Util } from 'ibiz-core';
+import { throttle, ModelTool, Util } from 'ibiz-core';
 import { ListControlBase } from '../../../widgets';
 import { IPSDEListItem, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
@@ -178,8 +178,8 @@ export class AppListBase extends ListControlBase {
         return <div
             key={index}
             class={['app-list-item', item.isselected === true ? 'isSelect' : ''].join(' ')}
-            on-click={() => debounce(this.handleClick,[item],this)}
-            on-dblclick={() => debounce(this.handleDblClick,[item],this)}
+            on-click={() => throttle(this.handleClick,[item],this)}
+            on-dblclick={() => throttle(this.handleDblClick,[item],this)}
         >
             {this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListContent(item, listItem)}
         </div>
@@ -203,8 +203,8 @@ export class AppListBase extends ListControlBase {
                             {item.children.map((item: any) => {
                                 return <div
                                     class={['app-list-item', { 'isSelect': item.isselected === true ? true : false }]}
-                                    on-click={() => debounce(this.handleClick,[item],this)}
-                                    on-dblclick={() => debounce(this.handleDblClick,[item],this)}
+                                    on-click={() => throttle(this.handleClick,[item],this)}
+                                    on-dblclick={() => throttle(this.handleDblClick,[item],this)}
                                 >
                                     {this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderListContent(item, listItem)}
                                 </div>
@@ -229,7 +229,7 @@ export class AppListBase extends ListControlBase {
         return UIActionGroupDetails.map((uiactionDetail: IPSUIActionGroupDetail, index: number) => {
             const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
             if (uiaction && item[uiaction.uIActionTag].visabled) {
-                return <a key={index} style='display: inline-block;margin: 0 12px;' disabled={item[uiaction.uIActionTag].disabled} on-click={($event: any) => { debounce(this.handleActionClick,[item, $event, listItem, uiactionDetail],this) }}>
+                return <a key={index} style='display: inline-block;margin: 0 12px;' disabled={item[uiaction.uIActionTag].disabled} on-click={($event: any) => { throttle(this.handleActionClick,[item, $event, listItem, uiactionDetail],this) }}>
                     {uiactionDetail.showIcon ? <i class={uiaction.getPSSysImage()?.cssClass} style='margin-right:2px;'></i> : ''}
                     <span>{uiactionDetail.showCaption ? this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag, uiaction.caption) : ""}</span>
                 </a>;

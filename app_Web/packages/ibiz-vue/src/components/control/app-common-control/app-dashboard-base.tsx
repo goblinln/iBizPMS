@@ -1,5 +1,5 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { debounce, LayoutTool, Util } from 'ibiz-core';
+import { throttle, LayoutTool, Util } from 'ibiz-core';
 import { DashboardControlBase } from '../../../widgets';
 import { IPSDBPortletPart, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
@@ -239,7 +239,7 @@ export class AppDashboardBase extends DashboardControlBase {
             <div class={{ ...controlClassNames, dashboard: true }}>
                 {this.isEnableCustomized && (
                     <row>
-                        <app-build on-handleClick={(...params: any[]) => debounce(this.handleClick,params,this)}></app-build>
+                        <app-build on-handleClick={(...params: any[]) => throttle(this.handleClick,params,this)}></app-build>
                     </row>
                 )}
                 {this.dashboardType == 'default' && this.renderStaticDashboard()}

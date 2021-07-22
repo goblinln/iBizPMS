@@ -62,9 +62,14 @@ export class AppListModel {
             const dataitem: IPSDEListDataItem = item as IPSDEListDataItem;
             let tempModel: any = {};
             tempModel.name = dataitem.name.toLowerCase();
-            if (dataitem?.getPSAppDEField && dataitem?.getPSAppDEField()) {
-                tempModel.prop = dataitem.getPSAppDEField()?.codeName?.toLowerCase();
-                tempModel.dataType = DataTypes.toString((dataitem.getPSAppDEField() as IPSAppDEField).stdDataType);
+            if (dataitem.customCode) {
+                tempModel.customCode = true;
+                tempModel.scriptCode = dataitem.scriptCode;
+            } else {
+                if (dataitem?.getPSAppDEField && dataitem?.getPSAppDEField()) {
+                    tempModel.prop = dataitem.getPSAppDEField()?.codeName?.toLowerCase();
+                    tempModel.dataType = DataTypes.toString((dataitem.getPSAppDEField() as IPSAppDEField).stdDataType);
+                }
             }
             modelArray.push(tempModel);
             // 附加界面主键
@@ -78,14 +83,14 @@ export class AppListModel {
         })
         //搜索表单
         const searchFormInstance: IPSDESearchForm = ModelTool.findPSControlByType("SEARCHFORM", (this.ListInstance.getParentPSModelObject() as IPSAppDEListView).getPSControls() || []);
-        if(searchFormInstance) {
-          (searchFormInstance.getPSDEFormItems?.() || []).forEach((formItem: IPSDEFormItem)=>{
-              let temp: any = { name: formItem.id, prop: formItem.id };
-              if(formItem.getPSAppDEField?.()){
-                  temp.dataType = 'QUERYPARAM';
-              }
-              modelArray.push(temp);
-          });
+        if (searchFormInstance) {
+            (searchFormInstance.getPSDEFormItems?.() || []).forEach((formItem: IPSDEFormItem) => {
+                let temp: any = { name: formItem.id, prop: formItem.id };
+                if (formItem.getPSAppDEField?.()) {
+                    temp.dataType = 'QUERYPARAM';
+                }
+                modelArray.push(temp);
+            });
         }
         // 关联主实体的主键 
         // if (!appDataEntity?.major && appDataEntity?.getMinorPSAppDERSs()) {

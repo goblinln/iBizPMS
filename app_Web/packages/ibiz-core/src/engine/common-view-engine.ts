@@ -1,4 +1,4 @@
-import { Util } from "../utils";
+import { LogUtil, Util } from "../utils";
 import { ViewEngine } from "./view-engine";
 
 /**
@@ -10,11 +10,11 @@ import { ViewEngine } from "./view-engine";
 export class CommonViewEngine extends ViewEngine {
 
     /**
-     * 视图引擎Map
+     * 部件引擎集合
      *
      * @memberof CommonViewEngine
      */
-    public viewEngineMap: Map<string, any> = new Map();
+    public ctrlEngineArray: Array<any> = [];
 
     /**
      * 视图部件Map
@@ -30,9 +30,9 @@ export class CommonViewEngine extends ViewEngine {
      * @memberof CommonViewEngine
      */
     public init(options: any = {}): void {
-        super.init(options);
         this.initViewControlMap(options.ctrl);
-        this.initViewEngineMap(options.engine);
+        this.initCtrlEngineArray(options.engine);
+        super.init(options);
     }
 
     /**
@@ -41,13 +41,12 @@ export class CommonViewEngine extends ViewEngine {
      * @param {*} options
      * @memberof CommonViewEngine
      */
-    public initViewEngineMap(options: any) {
+    public initCtrlEngineArray(options: any) {
         if (options && options.length > 0) {
+            this.ctrlEngineArray = [];
             options.forEach((element: any) => {
                 const result = this.handleViewEngineParams(element);
-                if (result && result.targetCtrlName) {
-                    this.viewEngineMap.set(result.targetCtrlName, result);
-                }
+                this.ctrlEngineArray.push(result);
             });
         }
     }
@@ -73,7 +72,16 @@ export class CommonViewEngine extends ViewEngine {
      * @memberof CommonViewEngine
      */
     public load(opts: any = {}): void {
-
+        // 处理搜索部件加载并搜索（参数可指定触发部件）
+        if (this.ctrlEngineArray.length > 0) {
+            for (let element of this.ctrlEngineArray) {
+                if (element.triggerCtrlName && Object.is(element.triggerCtrlName, 'VIEW')) {
+                    if (element.triggerType && Object.is(element.triggerType, 'CtrlLoadAndSearch')) {
+                        this.setViewState2({ tag: element.targetCtrlName, action: 'loaddraft', viewdata: Util.deepCopy(opts) });
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -86,12 +94,12 @@ export class CommonViewEngine extends ViewEngine {
      */
     public onCtrlEvent(ctrlName: string, eventName: string, args: any): void {
         super.onCtrlEvent(ctrlName, eventName, args);
-        // 执行处理关联部件加载触发器类型触发逻辑
+        // 处理部件加载（参数可指定触发部件）
         if (Object.is(eventName, 'search') || Object.is(eventName, 'load')) {
-            if (this.viewEngineMap.size > 0) {
-                for (let element of this.viewEngineMap.values()) {
+            if (this.ctrlEngineArray.length > 0) {
+                for (let element of this.ctrlEngineArray) {
                     if (element.triggerCtrlName && Object.is(element.triggerCtrlName, ctrlName)) {
-                        if (element.triggerType && Object.is(element.triggerType, 'CtrlLoadTrigger')) {
+                        if (element.triggerType && Object.is(element.triggerType, 'CtrlLoad')) {
                             this.setViewState2({ tag: element.targetCtrlName, action: 'load', viewdata: Util.deepCopy(args) });
                         }
                     }
@@ -109,19 +117,40 @@ export class CommonViewEngine extends ViewEngine {
     public handleViewEngineParams(args: any) {
         switch (args.engineType) {
             case 'CtrlLoadTrigger':
-                return this.handleCtrlLoadTrigger(args.getPSUIEngineParams);
+                return this.handleCtrlLoad(args.getPSUIEngineParams);
+            case 'CtrlLoad':
+                return this.handleCtrlLoad(args.getPSUIEngineParams);
+            case 'CtrlLoadAndSearch':
+                return this.CtrlLoadAndSearch(args.getPSUIEngineParams);
             default:
+                LogUtil.warn(`${args.engineType}暂未支持`);
                 break;
         }
     }
 
     /**
-     * 处理关联部件使用类型为加载触发器引擎参数
+     * 处理搜索部件加载并搜索（参数可指定触发部件）
      *
      * @param {*} args 引擎参数
      * @memberof CommonViewEngine
      */
-    public handleCtrlLoadTrigger(args: any) {
+    public CtrlLoadAndSearch(args: any) {
+        if (!args || args.length < 1) {
+            return null;
+        }
+        const targetCtrl = args.find((item: any) => {
+            return item.name === 'CTRL' && item.paramType === 'CTRL';
+        })
+        return { triggerCtrlName: 'VIEW', triggerType: 'CtrlLoadAndSearch', targetCtrlName: targetCtrl.ctrlName };
+    }
+
+    /**
+     * 处理部件加载（参数可指定触发部件）
+     *
+     * @param {*} args 引擎参数
+     * @memberof CommonViewEngine
+     */
+    public handleCtrlLoad(args: any) {
         if (!args || args.length < 1) {
             return null;
         }
@@ -131,7 +160,7 @@ export class CommonViewEngine extends ViewEngine {
         const targetCtrl = args.find((item: any) => {
             return item.name === 'CTRL' && item.paramType === 'CTRL';
         })
-        return { triggerCtrlName: triggerCtrl.ctrlName, triggerType: 'CtrlLoadTrigger', targetCtrlName: targetCtrl.ctrlName };
+        return { triggerCtrlName: triggerCtrl.ctrlName, triggerType: 'CtrlLoad', targetCtrlName: targetCtrl.ctrlName };
     }
 
 }

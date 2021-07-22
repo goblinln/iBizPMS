@@ -1,6 +1,6 @@
 import { CreateElement } from 'vue';
 import { Prop, Watch } from 'vue-property-decorator';
-import { Util, debounce } from 'ibiz-core';
+import { Util, throttle } from 'ibiz-core';
 import { PickupView2Base } from '../../../view/pickupview2-base';
 import { AppLayoutService } from '../../..';
 
@@ -82,9 +82,9 @@ export class AppPickupView2Base extends PickupView2Base {
             return (
                 <card dis-hover={true} bordered={false} class="footer">
                     <row style={{ "textAlign": 'right' }}>
-                        <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => debounce(this.onClickOk,params,this)}>{this.containerModel?.view_okbtn?.text}</i-button>
+                        <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => throttle(this.onClickOk,params,this)}>{this.containerModel?.view_okbtn?.text}</i-button>
                             &nbsp;&nbsp;
-                        <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
+                        <i-button on-click={(...params: any[]) => throttle(this.onClickCancel,params,this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
                     </row>
                 </card>
             )

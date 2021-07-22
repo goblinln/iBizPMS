@@ -5,7 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
-import { Util, ViewTool, ModelTool, LogUtil, debounce, CalendarControlInterface } from 'ibiz-core';
+import { Util, ViewTool, ModelTool, LogUtil, throttle, CalendarControlInterface } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { GlobalService } from 'ibiz-service';
 import { AppCalendarService } from '../ctrl-service';
@@ -947,7 +947,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
                     class="quick-toolbar"
                     trigger="custom"
                     visible={true}
-                    on-on-click={($event: any, $event2: any) => debounce(this.itemClick,[$event, $event2],this)}>
+                    on-on-click={($event: any, $event2: any) => throttle(this.itemClick,[$event, $event2],this)}>
                         <dropdown-menu slot="list">
                             {this.quickToolbarItems.map((item: any) => {
                                 return (

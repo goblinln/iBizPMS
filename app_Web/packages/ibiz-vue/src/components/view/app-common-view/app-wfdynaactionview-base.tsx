@@ -1,6 +1,6 @@
 import { Prop, Watch } from 'vue-property-decorator';
 import { CreateElement } from 'vue';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { WFDynaActionViewBase } from '../../../view';
 import { AppLayoutService } from '../../../app-service';
 
@@ -85,9 +85,9 @@ export class AppWFDynaActionViewBase extends WFDynaActionViewBase {
             this.renderMainContent(),
             <card slot="button" dis-hover bordered={false} class='footer'>
                 <row style=" text-align: right ">
-                <i-button type='primary' on-click={(...params: any[]) => debounce(this.onClickOk,params,this)} loading={this.viewLoadingService.isLoading}>{this.$t('app.commonwords.ok')}</i-button>
+                <i-button type='primary' on-click={(...params: any[]) => throttle(this.onClickOk,params,this)} loading={this.viewLoadingService.isLoading}>{this.$t('app.commonwords.ok')}</i-button>
                     &nbsp;&nbsp;
-                <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)} loading={this.viewLoadingService.isLoading}>{this.$t('app.commonwords.cancel')}</i-button>
+                <i-button on-click={(...params: any[]) => throttle(this.onClickCancel,params,this)} loading={this.viewLoadingService.isLoading}>{this.$t('app.commonwords.cancel')}</i-button>
                 </row>
             </card>  
         ]);

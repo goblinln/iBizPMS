@@ -1,5 +1,5 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { StateWizardPanelControlBase } from '../../../widgets';
 import { IPSDEEditForm, IPSDEWizard, IPSDEWizardEditForm, IPSDEWizardStep } from '@ibiz/dynamic-model-api';
 
@@ -82,7 +82,7 @@ export class AppStateWizardPanelBase extends StateWizardPanelControlBase {
                 arg: `${stepForm}_popover`
             }],
             on: {
-                click: () => debounce(this.stepTitleClick,[stepForm],this)
+                click: () => throttle(this.stepTitleClick,[stepForm],this)
             }
         }, [
             <span>{this.activeForm != stepForm && !this.historyForms.includes(stepForm) ? <i class="el-icon-lock"></i> : null}{ step.title }</span>
@@ -100,7 +100,7 @@ export class AppStateWizardPanelBase extends StateWizardPanelControlBase {
             return (
                 <div class="view-steps">
                     <div class="background-box"></div>
-                    <div class="steps_icon" on-click={() => debounce(this.handleClick,['PRE'],this)}><i class="el-icon-arrow-left"></i></div>
+                    <div class="steps_icon" on-click={() => throttle(this.handleClick,['PRE'],this)}><i class="el-icon-arrow-left"></i></div>
                     <el-steps class="wizard-steps" active={this.wizardForms.indexOf(this.activeForm) + 1} finish-status="success" align-center>
                         {wizardSteps.map((step: IPSDEWizardStep) => {
                             const stepForm = this.getStepForm(step);
@@ -111,7 +111,7 @@ export class AppStateWizardPanelBase extends StateWizardPanelControlBase {
                             );
                         })}
                     </el-steps>
-                    <div class="steps_icon" on-click={() => debounce(this.handleClick,['NEXT'],this)}><i class="el-icon-arrow-right"></i></div>
+                    <div class="steps_icon" on-click={() => throttle(this.handleClick,['NEXT'],this)}><i class="el-icon-arrow-right"></i></div>
                 </div>
             );
         }
@@ -151,8 +151,8 @@ export class AppStateWizardPanelBase extends StateWizardPanelControlBase {
                             <div class="app-state-wizard-container">
                                 <div class="app-state-wizard-header">
                                     <div class="app-state-wizard-header-extra">
-                                        <i class='ivu-icon ivu-icon-md-open' size="18" on-click={() => debounce(this.handleOpen,[form.name],this)}></i>
-                                        <i class='ivu-icon ivu-icon-md-close' size="18" on-click={() => debounce(this.handleClose,[form.name],this)}></i>
+                                        <i class='ivu-icon ivu-icon-md-open' size="18" on-click={() => throttle(this.handleOpen,[form.name],this)}></i>
+                                        <i class='ivu-icon ivu-icon-md-close' size="18" on-click={() => throttle(this.handleClose,[form.name],this)}></i>
                                     </div>
                                 </div>
                                 <div class="popover-title">{ form.logicName }</div>
@@ -176,9 +176,9 @@ export class AppStateWizardPanelBase extends StateWizardPanelControlBase {
     public renderStepsFooter(name: string) {
         return (
             <footer class="app-state-wizard-footer">
-                {this.isVisiable(name, 'PREV') ? <i-button on-click={(...params: any[]) => debounce(this.onClickPrev,params,this)} type="primary"><i class="ivu-icon ivu-icon-ios-arrow-back" /></i-button> : null}
-                {this.isVisiable(name, 'NEXT') ? <i-button on-click={(...params: any[]) => debounce(this.onClickNext,params,this)} type="primary" long>{this.$t('app.wizardpanel.next')}</i-button> : null}
-                {this.isVisiable(name, 'FINISH') ? <i-button on-click={(...params: any[]) => debounce(this.onClickFinish,params,this)} type="primary" long>{this.$t('app.wizardpanel.complete')}</i-button> : null}
+                {this.isVisiable(name, 'PREV') ? <i-button on-click={(...params: any[]) => throttle(this.onClickPrev,params,this)} type="primary"><i class="ivu-icon ivu-icon-ios-arrow-back" /></i-button> : null}
+                {this.isVisiable(name, 'NEXT') ? <i-button on-click={(...params: any[]) => throttle(this.onClickNext,params,this)} type="primary" long>{this.$t('app.wizardpanel.next')}</i-button> : null}
+                {this.isVisiable(name, 'FINISH') ? <i-button on-click={(...params: any[]) => throttle(this.onClickFinish,params,this)} type="primary" long>{this.$t('app.wizardpanel.complete')}</i-button> : null}
             </footer>
         );
     }

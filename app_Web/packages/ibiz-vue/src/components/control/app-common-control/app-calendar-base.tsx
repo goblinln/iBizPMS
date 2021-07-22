@@ -1,7 +1,7 @@
 import { Prop, Watch,Emit } from 'vue-property-decorator';
 import { CalendarControlBase } from '../../../widgets/calendar-control-base';
 import FullCalendar from '@fullcalendar/vue';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
 
 /**
@@ -87,7 +87,7 @@ export class AppCalendarBase extends CalendarControlBase{
                     "event-disabled": !this.isShowlegend[item.itemType]
                 }
                 return (
-                    <div class={itemClass} on-click={() => { debounce(this.legendTrigger,[item.itemType as string],this);}}>
+                    <div class={itemClass} on-click={() => { throttle(this.legendTrigger,[item.itemType as string],this);}}>
                         <div class="lengend-icon" style={"background: "+ item.bKColor}></div>
                         <span style={"color:" + item.color}>{item.name}</span>
                     </div>
@@ -111,7 +111,7 @@ export class AppCalendarBase extends CalendarControlBase{
                     context={Util.deepCopy(this.context)}
                     viewparams={Util.deepCopy(this.viewparams)}
                     on-eventClick={(tempEvent: any) => {
-                        debounce(this.onEventClick,[tempEvent,true],this);
+                        throttle(this.onEventClick,[tempEvent,true],this);
                     }}
                     events={this.searchEvents}>
                 </app-calendar-timeline>
@@ -134,9 +134,9 @@ export class AppCalendarBase extends CalendarControlBase{
                 defaultDate={this.defaultDate}
                 eventRender={this.eventRender}
                 navLinks={this.quickToolbarItems?.length>0 ? true : false}
-                navLinkDayClick={(...params: any[]) => debounce(this.onDayClick,params,this)}
-                on-dateClick={(...params: any[]) => debounce(this.onDateClick,params,this)}
-                on-eventClick={(...params: any[]) => debounce(this.onEventClick,params,this)}
+                navLinkDayClick={(...params: any[]) => throttle(this.onDayClick,params,this)}
+                on-dateClick={(...params: any[]) => throttle(this.onDateClick,params,this)}
+                on-eventClick={(...params: any[]) => throttle(this.onEventClick,params,this)}
                 on-eventDrop={this.onEventDrop}
                 defaultView={this.defaultView}
                 >
@@ -194,7 +194,7 @@ export class AppCalendarBase extends CalendarControlBase{
                       data={item}
                       renderContent={this.renderContextMenu.bind(this)}>
                           <el-card
-                              nativeOn-click={() => {debounce(this.onTimeLineClick, [item], this)}}
+                              nativeOn-click={() => {throttle(this.onTimeLineClick, [item], this)}}
                               class={{...item.className , 'is-select': item.isSelect ? true : false}}>
                                   {calendarItem && calendarItem.getPSLayoutPanel() ? 
                                       this.renderItemPanel(item,calendarItem) : 

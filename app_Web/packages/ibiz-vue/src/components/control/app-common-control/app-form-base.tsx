@@ -1,5 +1,5 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { debounce, LayoutTool, Util } from 'ibiz-core';
+import { throttle, LayoutTool, Util } from 'ibiz-core';
 import { EditFormControlBase } from '../../../widgets';
 import {
     IPSAppDEUIAction,
@@ -421,7 +421,7 @@ export class AppFormBase extends EditFormControlBase {
                     type='primary'
                     class={controlClassNames}
                     style={btnClass}
-                    on-click={($event: any) => debounce(this.onFormItemActionClick,[{formdetail:modelJson, event: $event }],this)}
+                    on-click={($event: any) => throttle(this.onFormItemActionClick,[{formdetail:modelJson, event: $event }],this)}
                     disabled={this.detailsModel[modelJson.name]?.disabled}
                 >
                     {sysImage ? (
@@ -554,8 +554,8 @@ export class AppFormBase extends EditFormControlBase {
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}
                 controlInstance={this.controlInstance}
-                on-groupUIActionClick={(...params: any[]) => debounce(this.handleActionClick,params,this)}
-                on-managecontainerclick={(...params: any[]) => debounce(this.manageContainerClick,params,this)}
+                on-groupUIActionClick={(...params: any[]) => throttle(this.handleActionClick,params,this)}
+                on-managecontainerclick={(...params: any[]) => throttle(this.manageContainerClick,params,this)}
                 context={this.context}
                 viewparams={this.viewparams}
                 data={this.data}
@@ -613,7 +613,7 @@ export class AppFormBase extends EditFormControlBase {
                         name={tabsName}
                         value={this.detailsModel[name]?.activatedPage}
                         on-on-click={(e: any) => {
-                          debounce(this.detailsModel[name]?.clickPage,[e],this);
+                          throttle(this.detailsModel[name]?.clickPage,[e],this);
                         }}
                     >
                         {formPages.map((item: any, index: number) => {

@@ -1,5 +1,5 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { SearchBarControlBase } from '../../../widgets/searchbar-control-base';
 import { IPSEditor, IPSSearchBarFilter } from '@ibiz/dynamic-model-api';
 
@@ -178,7 +178,7 @@ export class AppSearchBarBase extends SearchBarControlBase {
                                     )
                                 })}
                             </el-select> : null}
-                    <i-button type="primary" on-click={(...params: any[]) => debounce(this.onSearch,params,this)}>{this.$t('app.searchbutton.search')}</i-button>
+                    <i-button type="primary" on-click={(...params: any[]) => throttle(this.onSearch,params,this)}>{this.$t('app.searchbutton.search')}</i-button>
                     <i-button on-click={this.onReset.bind(this)}>{this.$t('app.searchbutton.reset')}</i-button>
                     <poptip
                         ref="propip"
@@ -192,8 +192,8 @@ export class AppSearchBarBase extends SearchBarControlBase {
                             <div slot="content">
                                 <i-input v-model={this.saveItemName} placeholder=""></i-input>
                                 <div class="save-action">
-                                    <i-button on-click={(...params: any[]) => debounce(this.onCancel,params,this)}>{this.$t('app.commonwords.cancel')}</i-button>
-                                    <i-button type="primary" on-click={(...params: any[]) => debounce(this.onOk,params,this)}>{this.$t('app.commonwords.save')}</i-button>
+                                    <i-button on-click={(...params: any[]) => throttle(this.onCancel,params,this)}>{this.$t('app.commonwords.cancel')}</i-button>
+                                    <i-button type="primary" on-click={(...params: any[]) => throttle(this.onOk,params,this)}>{this.$t('app.commonwords.save')}</i-button>
                                 </div>
                             </div>
                     </poptip>

@@ -1,5 +1,5 @@
 import { IPSDEFormTabPanel } from '@ibiz/dynamic-model-api';
-import { debounce } from 'ibiz-core';
+import { throttle } from 'ibiz-core';
 import { Vue, Component, Prop, Inject, Watch } from 'vue-property-decorator';
 import { AppDefaultFormDetail } from '../app-default-form-detail/app-default-form-detail';
 
@@ -45,7 +45,7 @@ export class AppDefaultFormTabPanel extends AppDefaultFormDetail {
                 class={{'app-tabpanel-flex': layoutmode == 'FLEX',...detailClassNames}}
                 value={this.runtimeModel.activatedPage}
                 on-on-click={(e: any) => {
-                  debounce(this.runtimeModel?.clickPage,[e],this);
+                  throttle(this.runtimeModel?.clickPage,[e],this);
                 }}
             >
                 {this.$slots.default}

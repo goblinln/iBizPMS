@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs';
 import { GlobalService, UIServiceRegister } from 'ibiz-service';
-import { debounce, LogUtil, MainViewInterface, ModelTool, Util, ViewTool } from 'ibiz-core';
+import { throttle, LogUtil, MainViewInterface, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { ViewBase } from './view-base';
 import {
     IPSAppDataEntity,
@@ -204,7 +204,7 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
                 isViewLoading={this.viewLoadingService?.isLoading}
                 toolbarModels={this.toolbarModels}
                 on-item-click={(data: any, $event: any) => {
-                    debounce(this.handleItemClick, [data, $event], this);
+                    throttle(this.handleItemClick, [data, $event], this);
                 }}
             ></view-toolbar>
         );

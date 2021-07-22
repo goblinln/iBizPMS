@@ -1,4 +1,4 @@
-import { ViewTool, Util, LogUtil, debounce, DataViewControlInterface } from 'ibiz-core';
+import { ViewTool, Util, LogUtil, throttle, DataViewControlInterface } from 'ibiz-core';
 import {
     IPSDEDataView,
     IPSDEDataViewItem,
@@ -438,7 +438,6 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                             this.items.push(...datas);
                         }
                     }
-                    this.isControlLoaded = true;
                     this.isAddBehind = false;
                     this.items.forEach((item: any) => {
                         Object.assign(item, this.getActionState(item));
@@ -469,7 +468,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                     }
                 },
                 (response: any) => {
-                    this.ctrlEndLoading();
+                    this.onControlResponse('load', response);
                     this.$throw(response,'load');
                 },
             );
@@ -880,7 +879,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                             {super.renderBatchToolbar()}
                         </div>
                         <div class='dataview-pagination-icon'>
-                            <icon type='md-code-working' on-click={($event: any) => debounce(this.onClick,[$event],this)} />
+                            <icon type='md-code-working' on-click={($event: any) => throttle(this.onClick,[$event],this)} />
                         </div>
                     </row>
                 </div>
@@ -986,8 +985,8 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                 shadow='always'
                 body-style={style}
                 class={[args.isselected === true ? 'isselected' : false, 'single-card-data']}
-                nativeOnClick={() => debounce(this.handleClick,[args],this)}
-                nativeOnDblclick={() => debounce(this.handleDblClick,[args],this)}
+                nativeOnClick={() => throttle(this.handleClick,[args],this)}
+                nativeOnDblclick={() => throttle(this.handleDblClick,[args],this)}
             >
                 {this.controlInstance.getItemPSLayoutPanel()
                     ? this.renderItemPSLayoutPanel(args)
@@ -1067,7 +1066,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                                 type='info'
                                 disabled={args[uiaction.uIActionTag].disabled}
                                 on-click={($event: any) => {
-                                    debounce(this.handleActionClick,[args, $event, dataViewItem, uiactionDetail],this);
+                                    throttle(this.handleActionClick,[args, $event, dataViewItem, uiactionDetail],this);
                                 }}
                             >
                                 {uiactionDetail.showIcon ? (
@@ -1100,7 +1099,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                     sortField={this.sortField}
                     sortDir={this.sortDir}
                     entityName={appDataEntity?.codeName}
-                    on-clickSort={(val: any) => debounce(this.sortClick,[val],this)}
+                    on-clickSort={(val: any) => throttle(this.sortClick,[val],this)}
                 ></app-sort-bar>
             );
         }

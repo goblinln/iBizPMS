@@ -1,5 +1,5 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { Util, ModelTool, debounce } from 'ibiz-core';
+import { Util, ModelTool, throttle } from 'ibiz-core';
 import { TreeControlBase } from '../../../widgets';
 import { IPSDETreeNode, IPSDEContextMenu } from '@ibiz/dynamic-model-api';
 
@@ -153,7 +153,7 @@ export class AppTreeViewBase extends TreeControlBase {
                     <div
                         class={['tree-node',cssName]}
                         on-dblclick={() => {
-                            debounce(this.doDefaultAction, [node], this);
+                            throttle(this.doDefaultAction, [node], this);
                         }}
                     >
                         {iconElement ? <span class='icon'>{iconElement}&nbsp;</span> : null}

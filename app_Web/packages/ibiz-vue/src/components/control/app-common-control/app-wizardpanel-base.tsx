@@ -1,5 +1,5 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { WizardPanelControlBase } from '../../../widgets';
 import { IPSDEEditForm, IPSDEWizard, IPSDEWizardEditForm, IPSDEWizardStep, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
@@ -117,9 +117,9 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
         const finish = this.$tl((wizard.getFinishCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, finishCaption);
         return (
             <footer class="app-wizard-footer">
-                {!this.isHidden('PREV') ? <i-button on-click={(...params: any[]) => debounce(this.onClickPrev, params, this)} type="primary">{prev}</i-button> : null}
-                {!this.isHidden('NEXT') ? <i-button on-click={(...params: any[]) => debounce(this.onClickNext, params, this)} type="primary">{next}</i-button> : null}
-                {!this.isHidden('FINISH') ? <i-button on-click={(...params: any[]) => debounce(this.onClickFinish, params, this)} type="primary">{finish}</i-button> : null}
+                {!this.isHidden('PREV') ? <i-button on-click={(...params: any[]) => throttle(this.onClickPrev, params, this)} type="primary">{prev}</i-button> : null}
+                {!this.isHidden('NEXT') ? <i-button on-click={(...params: any[]) => throttle(this.onClickNext, params, this)} type="primary">{next}</i-button> : null}
+                {!this.isHidden('FINISH') ? <i-button on-click={(...params: any[]) => throttle(this.onClickFinish, params, this)} type="primary">{finish}</i-button> : null}
             </footer>
         );
     }

@@ -1,5 +1,5 @@
 import { IPSAppDEWFDynaEditView, IPSAppView, IPSDEDRTab, IPSDEDRTabPage, IPSDEForm, IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { WFDynaEditViewEngine, Util, ModelTool, GetModelService, AppModelService, LogUtil, debounce, WFDynaEditViewInterface } from 'ibiz-core';
+import { WFDynaEditViewEngine, Util, ModelTool, GetModelService, AppModelService, LogUtil, throttle, WFDynaEditViewInterface } from 'ibiz-core';
 import { AppCenterService } from '../app-service';
 import { MainViewBase } from './mainview-base';
 
@@ -153,7 +153,7 @@ export class WFDynaEditViewBase extends MainViewBase implements WFDynaEditViewIn
                         this.linkModel.map((linkItem: any) => {
                             return (
                                 <tooltip transfer={true} max-width={600} >
-                                    <i-button on-click={(event: any) => { debounce(this.dynamic_toolbar_click,[linkItem, event],this) }} loading={this.viewLoadingService.isLoading}>
+                                    <i-button on-click={(event: any) => { throttle(this.dynamic_toolbar_click,[linkItem, event],this) }} loading={this.viewLoadingService.isLoading}>
                                         <span class='caption'>{linkItem.sequenceFlowName}</span>
                                     </i-button>
                                     <div slot='content'>{linkItem.sequenceFlowName}</div>

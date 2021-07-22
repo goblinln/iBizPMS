@@ -1,5 +1,5 @@
 import { IPSAppDEPickupView, IPSDEPickupViewPanel, IPSDETreeGridExParam, IPSTreeExpBar } from '@ibiz/dynamic-model-api';
-import { ModelTool, debounce, MPickupView2Engine, MPickUpView2Interface, Util } from 'ibiz-core';
+import { ModelTool, throttle, MPickupView2Engine, MPickUpView2Interface, Util } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 
@@ -181,17 +181,17 @@ export class MPickUpView2Base extends MainViewBase implements MPickUpView2Interf
         const style2 =
             <template slot="footer">
                 {this.isShowButton && <div style={{ 'textAlign': 'right' }}>
-                    <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => debounce(this.onClickOk, params, this)}>{this.containerModel?.view_okbtn?.text}</i-button>
+                    <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => throttle(this.onClickOk, params, this)}>{this.containerModel?.view_okbtn?.text}</i-button>
                     &nbsp;&nbsp;
-                <i-button on-click={(...params: any[]) => debounce(this.onClickCancel, params, this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
+                <i-button on-click={(...params: any[]) => throttle(this.onClickCancel, params, this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
                 </div>}
             </template>
         const defaultStyle =
             <card dis-hover={true} bordered={false} class="footer">
                 <row style={{ 'textAlign': 'right' }}>
-                    <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => debounce(this.onClickOk, params, this)}>{this.containerModel?.view_okbtn?.text}</i-button>
+                    <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => throttle(this.onClickOk, params, this)}>{this.containerModel?.view_okbtn?.text}</i-button>
                       &nbsp;&nbsp;
-                  <i-button on-click={(...params: any[]) => debounce(this.onClickCancel, params, this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
+                  <i-button on-click={(...params: any[]) => throttle(this.onClickCancel, params, this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
                 </row>
             </card>
         return viewStyle === 'STYLE2' ? style2 : defaultStyle;
@@ -207,20 +207,20 @@ export class MPickUpView2Base extends MainViewBase implements MPickUpView2Interf
             <div class="buttons">
                 <i-button type="primary" title={this.containerModel?.view_rightbtn.text}
                     disabled={this.containerModel?.view_rightbtn.disabled}
-                    on-click={(...params: any[]) => debounce(this.onCLickRight, params, this)}>
+                    on-click={(...params: any[]) => throttle(this.onCLickRight, params, this)}>
                     <i class="el-icon-arrow-right"></i>
                 </i-button>
                 <i-button type="primary" title={this.containerModel?.view_leftbtn.text}
                     disabled={this.containerModel?.view_leftbtn.disabled}
-                    on-click={(...params: any[]) => debounce(this.onCLickLeft, params, this)}>
+                    on-click={(...params: any[]) => throttle(this.onCLickLeft, params, this)}>
                     <i class="el-icon-arrow-left"></i>
                 </i-button>
                 <i-button type="primary" title={this.containerModel?.view_allrightbtn.text}
-                    on-click={(...params: any[]) => debounce(this.onCLickAllRight, params, this)}>
+                    on-click={(...params: any[]) => throttle(this.onCLickAllRight, params, this)}>
                     <i class="el-icon-d-arrow-right"></i>
                 </i-button>
                 <i-button type="primary" title={this.containerModel?.view_allleftbtn.text}
-                    on-click={(...params: any[]) => debounce(this.onCLickAllLeft, params, this)}>
+                    on-click={(...params: any[]) => throttle(this.onCLickAllLeft, params, this)}>
                     <i class="el-icon-d-arrow-left"></i>
                 </i-button>
             </div>
@@ -235,7 +235,7 @@ export class MPickUpView2Base extends MainViewBase implements MPickUpView2Interf
     public renderMpickerSelect() {
         return <div class="mpicker-select">
             {this.viewSelections.map((item: any, index: number) => {
-                return <div key={index} class={{ 'select': item._select, 'picker-item': true }} on-click={() => debounce(this.selectionsClick, [item], this)} on-dblclick={() => debounce(this.selectionsDBLClick, [item], this)}>
+                return <div key={index} class={{ 'select': item._select, 'picker-item': true }} on-click={() => throttle(this.selectionsClick, [item], this)} on-dblclick={() => throttle(this.selectionsDBLClick, [item], this)}>
                     <span>{item.srfmajortext}</span>
                 </div>
             })}

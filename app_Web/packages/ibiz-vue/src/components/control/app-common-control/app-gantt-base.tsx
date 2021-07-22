@@ -1,6 +1,6 @@
 import { GanttControlBase } from '../../../widgets';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 
 /**
  * 甘特部件基类
@@ -92,7 +92,7 @@ export class AppGanttBase extends GanttControlBase {
                         tasks={this.tasks}
                         options={this.options}
                         dynamic-style={this.dynamicStyle}
-                        on-taskList-item-dblclick={($event: any) => debounce(this.taskClick,[$event],this)}
+                        on-taskList-item-dblclick={($event: any) => throttle(this.taskClick,[$event],this)}
                         on-task-item-expand={(task: any) => this.taskItemExpand(task)}>
                     </gantt-elastic> : 
                     <div class="app-data-empty">{this.$t('app.commonwords.nodata')}</div>

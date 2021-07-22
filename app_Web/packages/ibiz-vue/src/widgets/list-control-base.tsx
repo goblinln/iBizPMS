@@ -232,7 +232,6 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
                     _this.totalRecord = response.total;
                     _this.items.push(...datas);
                 }
-                _this.isControlLoaded = true;
                 _this.isAddBehind = false;
                 _this.items.forEach((item: any) => {
                     Object.assign(item, _this.getActionState(item));

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
 import { IPSAppCounterRef, IPSAppView, IPSControl, IPSDETBGroupItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface, debounce } from 'ibiz-core';
+import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface, throttle } from 'ibiz-core';
 import { CounterServiceRegister, ViewMessageService } from 'ibiz-service';
 import { AppNavHistory, NavDataService, ViewLoadingService } from '../app-service';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
@@ -567,7 +567,7 @@ export class ViewBase extends Vue implements ViewInterface {
                     isViewLoading={this.viewLoadingService?.isLoading}
                     toolbarModels={targetViewToolbarItems}
                     on-item-click={(data: any, $event: any) => {
-                        debounce(this.handleItemClick, [data, $event], this);
+                        throttle(this.handleItemClick, [data, $event], this);
                     }}
                 ></view-toolbar>
             );

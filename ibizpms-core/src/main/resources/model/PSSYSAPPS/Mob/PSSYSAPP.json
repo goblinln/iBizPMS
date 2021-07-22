@@ -14616,8 +14616,8 @@
     "messageType" : "WARN",
     "name" : "测试移动端下方视图消息",
     "position" : "BOTTOM",
-    "removeMode" : 0,
-    "enableRemove" : false
+    "removeMode" : 1,
+    "enableRemove" : true
   } ],
   "getAllPSAppViews" : [ {
     "modelref" : true,

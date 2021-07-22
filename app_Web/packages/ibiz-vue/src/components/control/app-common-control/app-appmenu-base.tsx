@@ -1,4 +1,4 @@
-import { Util, LogUtil, debounce  } from 'ibiz-core';
+import { Util, LogUtil, throttle  } from 'ibiz-core';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { AppMenuControlBase } from '../../../widgets';
 
@@ -359,7 +359,7 @@ export class AppmenuBase extends AppMenuControlBase {
                                     return !item.hidden?this.$createElement('card', {
                                         class: 'app-middle-menu-item',
                                         nativeOn: {
-                                            click: () => { debounce(this.click,[item],this) }
+                                            click: () => { throttle(this.click,[item],this) }
                                         },
                                         scopedSlots: {
                                             default: () => {
@@ -405,7 +405,7 @@ export class AppmenuBase extends AppMenuControlBase {
                 },
                 ref: 'eltree',
                 on: {
-                    'node-click': ((e: any) => debounce(this.menuTreeClick,[e],this))
+                    'node-click': ((e: any) => throttle(this.menuTreeClick,[e],this))
                 },
                 scopedSlots:{
                     default : ({node, data}:any)=>{

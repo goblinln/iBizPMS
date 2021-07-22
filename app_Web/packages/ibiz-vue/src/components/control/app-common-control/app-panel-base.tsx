@@ -1,5 +1,5 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { PanelControlBase } from '../../../widgets';
 import { IPSDEViewPanel, IPSPanel, IPSPanelButton, IPSPanelContainer, IPSPanelControl, IPSPanelItem, IPSPanelRawItem, IPSPanelTabPage, IPSPanelTabPanel, IPSSysCss, IPSSysPanelField, IPSUIAction } from '@ibiz/dynamic-model-api';
 
@@ -328,7 +328,7 @@ export class AppPanelBase extends PanelControlBase {
                 showCaption={showCaption}
                 disabled={this.detailsModel[name]?.disabled}
                 on-onClick={($event: any) => {
-                  debounce(this.buttonClick,[this.controlInstance.name, { tag: name }, $event],this);
+                  throttle(this.buttonClick,[this.controlInstance.name, { tag: name }, $event],this);
                 }}
             ></app-panel-button>
         );
@@ -432,7 +432,7 @@ export class AppPanelBase extends PanelControlBase {
             <i-col class={this.renderDetailClass(modelJson)}>
                 <el-tabs
                     v-model={activatedPage}
-                    on-tab-click={($event: any) => debounce(this.handleTabPanelClick,[modelJson.name, $event],this)}
+                    on-tab-click={($event: any) => throttle(this.handleTabPanelClick,[modelJson.name, $event],this)}
                     class={this.renderDetailClass(modelJson)}
                 >
                     {tabPages.length > 0 ?

@@ -1,5 +1,5 @@
 import { IPSAppDEWFDynaExpGridView, IPSDEGrid, IPSDESearchForm } from '@ibiz/dynamic-model-api';
-import { WFDynaExpGridViewEngine, Util, ModelTool, debounce, WFDynaExpGridInterface } from 'ibiz-core';
+import { WFDynaExpGridViewEngine, Util, ModelTool, throttle, WFDynaExpGridInterface } from 'ibiz-core';
 import { GlobalService } from 'ibiz-service';
 import { MainViewBase } from './mainview-base';
 
@@ -163,7 +163,7 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
             {
                 this.linkModel.map((linkItem: any, index: number) => {
                     return <tooltip transfer={true} max-width={600} key="index">
-                        <i-button disabled={linkItem.disabled} on-click={($event: any) => { debounce(this.dynamic_toolbar_click, [linkItem, $event], this) }} loading={this.viewLoadingService.isLoading}>
+                        <i-button disabled={linkItem.disabled} on-click={($event: any) => { throttle(this.dynamic_toolbar_click, [linkItem, $event], this) }} loading={this.viewLoadingService.isLoading}>
                             <span class='caption'>{linkItem.sequenceFlowName}</span>
                         </i-button>
                         <div slot='content'>{linkItem.sequenceFlowName}</div>
@@ -182,7 +182,7 @@ export class WfDynaExpGridViewBase extends MainViewBase implements WFDynaExpGrid
         const { codeName } = this.viewInstance;
         return <split id={codeName.toLowerCase()} v-model={this.split} mode="horizontal">
             <div slot='left'>
-                <el-tree ref="tree" data={this.wfStepModel} node-key="userTaskId" highlight-current={true} props={this.defaultProps} on-node-click={(...params: any[]) => debounce(this.handleNodeClick, params, this)} scopedSlots={{
+                <el-tree ref="tree" data={this.wfStepModel} node-key="userTaskId" highlight-current={true} props={this.defaultProps} on-node-click={(...params: any[]) => throttle(this.handleNodeClick, params, this)} scopedSlots={{
                     default: ({ node, data }: any) => {
                         return <span class="custom-tree-node">
                             <span class="tree-node-label">{data.userTaskName}</span>

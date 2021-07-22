@@ -1,4 +1,4 @@
-import { debounce } from 'ibiz-core';
+import { throttle } from 'ibiz-core';
 import { Component, Prop } from 'vue-property-decorator';
 import { IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { AppDefaultSearchFormDetail } from '../app-default-searchform-detail/app-default-searchform-detail';
@@ -63,7 +63,7 @@ export class AppDefaultGroupPanel extends AppDefaultSearchFormDetail {
                 isManageContainer={this.runtimeModel?.isManageContainer}
                 uiActionGroup={this.runtimeModel?.uiActionGroup}
                 class={detailClassNames}
-                on-groupuiactionclick={(e: any)=>{debounce(this.groupUIActionClick,[e],this)}}
+                on-groupuiactionclick={(e: any)=>{throttle(this.groupUIActionClick,[e],this)}}
                 style={this.runtimeModel?.visible ? '' : 'display: none;'}
             >
                 {this.$slots.default}

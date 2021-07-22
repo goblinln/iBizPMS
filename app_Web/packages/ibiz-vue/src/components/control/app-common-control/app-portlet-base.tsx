@@ -1,6 +1,6 @@
 
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { PortletControlBase } from '../../../widgets';
 import { AppViewLogicService } from '../../../app-service';
 import { IPSDBAppViewPortletPart, IPSDBCustomPortletPart, IPSDBHtmlPortletPart, IPSDBRawItemPortletPart, IPSLanguageRes, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
@@ -161,7 +161,7 @@ export class AppPortletBase extends PortletControlBase {
                 <view-toolbar
                     toolbarModels={this.toolbarModels}
                     on-item-click={(data: any, $event: any) => {
-                        debounce(this.handleItemClick, [data, $event], this);
+                        throttle(this.handleItemClick, [data, $event], this);
                     }}
                 ></view-toolbar>
             </div>
@@ -179,7 +179,7 @@ export class AppPortletBase extends PortletControlBase {
             viewState={this.viewState}
             uiService={this.appUIService}
             items={this.actionBarModelData}
-            on-itemClick={(...params: any[]) => debounce(this.handleItemClick, params, this)}
+            on-itemClick={(...params: any[]) => throttle(this.handleItemClick, params, this)}
         ></app-actionbar>;
     }
 
@@ -338,7 +338,7 @@ export class AppPortletBase extends PortletControlBase {
                 const tooltipCaption = this.$tl(uiAction?.getTooltipPSLanguageRes()?.lanResTag, uiAction?.caption || uiAction?.name);
                 // 显示内容
                 // todo 界面行为显示this.actionModel?.[uiactionName]?.visabled 
-                let contentElement = <a on-click={(e: any) => { debounce(this.handleActionClick, [e, actionDetail], this) }} v-show={true} >
+                let contentElement = <a on-click={(e: any) => { throttle(this.handleActionClick, [e, actionDetail], this) }} v-show={true} >
                     {this.renderIcon(actionDetail)}
                     {showCaption ? caption : null}
                 </a>

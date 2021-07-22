@@ -1,6 +1,6 @@
 import { CreateElement } from 'vue';
 import { Prop, Watch } from 'vue-property-decorator';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { PickupView3Base } from '../../../view/pickupview3-base';
 import { AppLayoutService } from '../../../app-service';
 import { IPSDEPickupViewPanel } from '@ibiz/dynamic-model-api';
@@ -72,9 +72,9 @@ export class AppPickupView3Base extends PickupView3Base {
             return (
                 <card dis-hover={true} bordered={false} class="footer">
                     <row style={{ "textAlign": 'right' }}>
-                        <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => debounce(this.onClickOk,params,this)}>{this.containerModel?.view_okbtn?.text}</i-button>
+                        <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => throttle(this.onClickOk,params,this)}>{this.containerModel?.view_okbtn?.text}</i-button>
                             &nbsp;&nbsp;
-                        <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
+                        <i-button on-click={(...params: any[]) => throttle(this.onClickCancel,params,this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
                     </row>
                 </card>
             )
@@ -99,7 +99,7 @@ export class AppPickupView3Base extends PickupView3Base {
         const tabName = `${this.appDeCodeName}_${this.viewInstance.viewType}_${this.viewInstance.name}`;
         return (
             <div class="pickupview3-tabs-container" slot="default">
-                <tabs value={this.activedPickupViewPanel} class="pickupview3-tabs" name={tabName} on-on-click={($event: any) => debounce(this.tabPanelClick,[$event],this)} >
+                <tabs value={this.activedPickupViewPanel} class="pickupview3-tabs" name={tabName} on-on-click={($event: any) => throttle(this.tabPanelClick,[$event],this)} >
                     {this.pickupViewPanelModels.map((panel: IPSDEPickupViewPanel) => {
                         return this.renderPickupViewPanelTab(panel, tabName);
                     })}

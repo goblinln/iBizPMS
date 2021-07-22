@@ -555,14 +555,43 @@ export class FormControlBase extends MainControlBase implements FormControlInter
             return formItem.getPSAppDEField()?.name == fieldName;
         })
     }
+    
+    /**
+     * 处理部件UI请求
+     *
+     * @param {string} action 行为名称
+     * @param {*} context 上下文
+     * @param {*} viewparam 视图参数
+     * @memberof FormControlBase
+     */
+     public onControlRequset(action: string, context: any, viewparam: any) {
+        if (!Object.is(action, 'updateFormItems')) {
+            this.ctrlBeginLoading();
+        }
+    }
 
     /**
      * 处理部件UI响应
      *
+     * @param {string} action 行为名称
+     * @param {*} response 响应
      * @memberof FormControlBase
      */
     public onControlResponse(action: string, response: any) {
-        super.onControlResponse(action, response);
+        if (!Object.is(action, 'updateFormItems')) {
+            this.ctrlEndLoading();
+        }
+        if (Object.is(action, 'load')) {
+            this.isControlLoaded = true;
+        }
+        if (response && response.status && response.status == 403) {
+            this.enableControlUIAuth = false;
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'authlimit',
+                data: response,
+            });
+        }
         if (response && response.status && response.status != 200 && response.data) {
             const data: any = response.data;
             if (data.code && Object.is(AppErrorCode.INPUTERROR, data.code) && data.details?.length > 0) {
@@ -571,9 +600,9 @@ export class FormControlBase extends MainControlBase implements FormControlInter
                     if (Object.is(EntityFieldErrorCode.ERROR_VALUERULE, detail.fielderrortype) && detail.fieldname) {
                         const tempFormItem: any = this.findFormItemByField(detail.fieldname);
                         if (tempFormItem) {
-                            Object.assign(this.detailsModel[tempFormItem.name], { error: new String(detail.fielderrorinfo) });
+                            Object.assign(this.detailsModel[tempFormItem.name], { error: new String(detail.fielderrorinfo ? detail.fielderrorinfo : data.message) });
                         }else{
-                            errorMsg += `${detail.fieldlogicname}${detail.fielderrorinfo}<br/>`;
+                            errorMsg += `${detail.fieldlogicname}${detail.fielderrorinfo ? detail.fielderrorinfo : data.message}<br/>`;
                         }
                     }
                 })

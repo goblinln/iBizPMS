@@ -265,7 +265,6 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
                     this.items.push(...datas);
                 }
             }
-            this.isControlLoaded = true;
             this.isAddBehind = false;
             this.setGroups();
             this.$emit("ctrl-event", { controlname: "kanban", action: "load", data: this.items });

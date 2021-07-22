@@ -1,5 +1,5 @@
 import { IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { DrtabControlBase } from '../../../widgets/drtab-control-base';
 
@@ -150,7 +150,7 @@ export class AppDrtabBase extends DrtabControlBase {
         const editItemCaption = this.$tl((this.controlInstance.getEditItemCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, this.controlInstance.editItemCaption);
         return (
             <div class={{ ...controlClassNames, 'drtab': true }} >
-                <tabs animated={false} class={{"app-dr-tab": true, 'is-disabled': !this.isShowSlot && this.drtabItems.length > 0 && this.drtabItems[0].disabled }} name={codeName} on-on-click={(...params: any[]) => debounce(this.tabPanelClick,params,this)}>
+                <tabs animated={false} class={{"app-dr-tab": true, 'is-disabled': !this.isShowSlot && this.drtabItems.length > 0 && this.drtabItems[0].disabled }} name={codeName} on-on-click={(...params: any[]) => throttle(this.tabPanelClick,params,this)}>
                     {this.isShowSlot ? 
                         <tab-pane index={0} name='mainform' tab={codeName} label={editItemCaption}>
                             <div class='main-data'>

@@ -1,4 +1,4 @@
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { Prop, Watch, Emit } from 'vue-property-decorator';
 import { ContextMenuBase } from '../../../widgets/contextmenu-base';
 import { AppControlBase } from './app-controlbase';
@@ -176,7 +176,7 @@ export class AppContextMenuBase extends ContextMenuBase {
                 class={{ 'tree-right-menu': true, ...controlClassNames }}
                 trigger="custom" 
                 visible={true} 
-                on-on-click={($event: any) => debounce(this.itemClick,[{tag: $event}],this)}>
+                on-on-click={($event: any) => throttle(this.itemClick,[{tag: $event}],this)}>
                 <dropdown-menu slot="list">
                     {getPSDEToolbarItems?.map((item: any) => {
                         return this.renderToolbarItems(item)

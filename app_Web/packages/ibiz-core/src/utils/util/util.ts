@@ -664,7 +664,7 @@ export const removeSessionStorage: Function = (key: string) => {
 }
 
 /**
- * 防抖
+ * 节流
  *
  * @param {any} fun 函数
  * @param {any} params 参数
@@ -673,7 +673,7 @@ export const removeSessionStorage: Function = (key: string) => {
  * @static
  * @memberof Util
  */
-export const debounce: Function = (fun: any, params: any[], context: any, delay: number = 300) => {
+export const throttle: Function = (fun: any, params: any[], context: any, delay: number = 300) => {
     let now: any = Date.now();
     if (!fun.last || now - fun.last >= delay) {
         if (typeof fun === 'function') {

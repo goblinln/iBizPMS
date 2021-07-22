@@ -1,5 +1,5 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
-import { debounce, Util } from 'ibiz-core'
+import { throttle, Util } from 'ibiz-core'
 import { KanbanControlBase } from '../../../widgets';
 import { IPSUIAction, IPSUIActionGroup, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
@@ -105,7 +105,7 @@ export class AppKanbanBase extends KanbanControlBase {
                 on-change={($event: any) => this.onDragChange($event, group?.value)}>
                 {
                     !group.folding ?
-                        <div class="dataview-group-folading-kanban" on-click={() => debounce(this.onClick,[group, index],this)}>
+                        <div class="dataview-group-folading-kanban" on-click={() => throttle(this.onClick,[group, index],this)}>
                             <div class="unfold-icon">
                                 <i class="el-icon-s-unfold" title={this.$t('components.content.open')}></i>
                             </div>
@@ -136,7 +136,7 @@ export class AppKanbanBase extends KanbanControlBase {
                             if (uiAction) {
                                 return (
                                     <div class="group-action-item">
-                                        <i-button long on-click={($event: any) => debounce(this.uiActionClick,[uiActionDetail, $event, group],this)}>
+                                        <i-button long on-click={($event: any) => throttle(this.uiActionClick,[uiActionDetail, $event, group],this)}>
                                             {uiAction.getPSSysImage()?.imagePath ? <img class="app-kanban-icon" src={uiAction.getPSSysImage()?.imagePath} /> : null}
                                             {uiAction.getPSSysImage()?.cssClass ? <i class={[uiAction.getPSSysImage()?.cssClass, "app-kanban-icon"]}></i> : null}
                                             <span class="caption">{this.$tl(uiAction.getCapPSLanguageRes()?.lanResTag, uiAction.caption)}</span>
@@ -179,7 +179,7 @@ export class AppKanbanBase extends KanbanControlBase {
             group.folding ?
                 <div class="dataview-group-content" style={groupStyle}>
                     <div class={["dataview-group-header", this.controlInstance?.getGroupPSSysCss()?.cssName]}>
-                        <div class="fold-icon" on-click={() => debounce(this.onClick,[group, index],this)}>
+                        <div class="fold-icon" on-click={() => throttle(this.onClick,[group, index],this)}>
                             <i class="el-icon-s-fold" title={this.$t('components.content.close')}></i>
                         </div>
                         <span class="fold-text">
@@ -192,7 +192,7 @@ export class AppKanbanBase extends KanbanControlBase {
                             {
                                 group.items.map((item: any) => {
                                     return (
-                                        <div class={['dataview-group-item', { 'is-select': item.isselected }]} on-click={() => debounce(this.handleClick,[item],this)} on-dblclick={() => debounce(this.handleDblClick,[item],this)}>
+                                        <div class={['dataview-group-item', { 'is-select': item.isselected }]} on-click={() => throttle(this.handleClick,[item],this)} on-dblclick={() => throttle(this.handleDblClick,[item],this)}>
                                             { this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderItemContent(item)}
                                         </div>
                                     )

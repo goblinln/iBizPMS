@@ -183,7 +183,6 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
                     const items = Util.deepCopy(response.data);
                     this.doItems(items);
                 }
-                this.isControlLoaded = true;
                 this.ctrlEvent({ controlname: this.controlInstance.name, action: "load", data: this.items });
             }).catch((response: any) => {
                 this.onControlResponse('load', response);

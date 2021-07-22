@@ -1,5 +1,5 @@
 import { IPSDEFormGroupPanel, IPSUIActionGroupDetail, IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { debounce } from 'ibiz-core';
+import { throttle } from 'ibiz-core';
 import { Component, Prop } from 'vue-property-decorator';
 import { AppDefaultFormDetail } from '../app-default-form-detail/app-default-form-detail';
 
@@ -73,8 +73,8 @@ export class AppDefaultGroupPanel extends AppDefaultFormDetail {
                 isManageContainer={this.runtimeModel?.isManageContainer}
                 uiActionGroup={this.runtimeModel?.uiActionGroup}
                 class={{...detailClassNames, [`form-group-${detailStyle.toLowerCase()}`]: true}}
-                on-groupuiactionclick={(e: any)=>{debounce(this.groupUIActionClick,[e],this)}}
-                on-managecontainerclick={() => { debounce(this.$emit,['managecontainerclick', this.runtimeModel.name],this) }}
+                on-groupuiactionclick={(e: any)=>{throttle(this.groupUIActionClick,[e],this)}}
+                on-managecontainerclick={() => { throttle(this.$emit,['managecontainerclick', this.runtimeModel.name],this) }}
                 style={this.runtimeModel?.visible ? '' : 'display: none;'}
                 scopedSlots={{
                     default: () => {

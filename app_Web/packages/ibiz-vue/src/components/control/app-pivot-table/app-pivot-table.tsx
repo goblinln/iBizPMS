@@ -156,7 +156,7 @@ export class AppPivotTable extends AppGridBase {
                 this.getAggData();
             }          
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             this.$throw(response,'load');
         });
     }

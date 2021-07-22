@@ -1,5 +1,5 @@
 import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSAppView, IPSCodeItem, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSSysImage, IPSLanguageRes, IPSSysMap, IPSDEChart } from '@ibiz/dynamic-model-api';
-import { CodeListServiceBase, debounce, ExpBarControlInterface, LogUtil, ModelTool, Util, ViewTool } from 'ibiz-core';
+import { CodeListServiceBase, throttle, ExpBarControlInterface, LogUtil, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service';
 import { MainControlBase } from './main-control-base';
 
@@ -566,7 +566,7 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
      * @memberof ExpBarControlBase
      */
     public renderToolbar() {
-        return (<view-toolbar slot='toolbar' toolbarModels={this.toolbarModels} on-item-click={(data: any, $event: any) => { debounce(this.handleItemClick,[data, $event],this) }}></view-toolbar>);
+        return (<view-toolbar slot='toolbar' toolbarModels={this.toolbarModels} on-item-click={(data: any, $event: any) => { throttle(this.handleItemClick,[data, $event],this) }}></view-toolbar>);
     }
 
     /**

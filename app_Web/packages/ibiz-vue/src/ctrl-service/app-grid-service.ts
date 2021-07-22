@@ -443,12 +443,12 @@ export class AppGridService extends ControlServiceBase {
         if (!mode && mode.getDataItems instanceof Function) {
             return data;
         }
-        let formItemItems: any[] = mode.getDataItems();
+        let dataItems: any[] = mode.getDataItems();
         let requestData: any = {};
         if (isMerge && (data && data.viewparams)) {
             Object.assign(requestData, data.viewparams);
         }
-        formItemItems.forEach((item: any) => {
+        dataItems.forEach((item: any) => {
             if (item && item.dataType && Object.is(item.dataType, 'FRONTKEY')) {
                 if (item && item.prop) {
                     requestData[item.prop] = context[item.name];
@@ -483,8 +483,8 @@ export class AppGridService extends ControlServiceBase {
         if (!mode && mode.getDataItems instanceof Function) {
             return name;
         }
-        let formItemItems: any[] = mode.getDataItems();
-        formItemItems.forEach((item: any) => {
+        let dataItems: any[] = mode.getDataItems();
+        dataItems.forEach((item: any) => {
             if (item.prop === name) {
                 itemName = item.name;
             }

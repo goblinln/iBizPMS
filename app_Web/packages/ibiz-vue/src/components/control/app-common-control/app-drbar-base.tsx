@@ -1,4 +1,4 @@
-import { debounce, Util } from 'ibiz-core';
+import { throttle, Util } from 'ibiz-core';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { DrbarControlBase } from '../../../widgets/drbar-control-base';
 
@@ -130,7 +130,7 @@ export class AppDrbarBase extends DrbarControlBase {
                     <el-menu
                         default-openeds={this.defaultOpeneds}
                         default-active={this.items[0]?.id}
-                        on-select={(event: any) => debounce(this.onSelect, [event], this)}>
+                        on-select={(event: any) => throttle(this.onSelect, [event], this)}>
                         <app-sider-menus menus={this.items} />
                     </el-menu>
                 </sider>

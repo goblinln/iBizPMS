@@ -237,7 +237,7 @@ export class AppDefaultViewLayout extends Vue {
                             let detailStyle: any = {};
                             let { height, width, itemType } = item;
                             detailStyle.height = height > 0 ? height + 'px' : '';
-                            detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' ? '' : '100%';
+                            detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' || itemType == 'FIELD' ? '' : '100%';
                             if (item.getPSLayoutPos()) {
                                 let grow = item.getPSLayoutPos();
                                 detailStyle.flexGrow = grow != -1 ? grow : 0;
@@ -270,7 +270,7 @@ export class AppDefaultViewLayout extends Vue {
                             let detailStyle: any = {};
                             let { height, width, itemType } = item;
                             detailStyle.height = height > 0 ? height + 'px' : '';
-                            detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' ? '' : '100%';
+                            detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' || itemType == 'FIELD' ? '' : '100%';
                             // 栅格布局
                             let attrs = this.getGridLayoutProps(container, item);
                             // 自定义类名
