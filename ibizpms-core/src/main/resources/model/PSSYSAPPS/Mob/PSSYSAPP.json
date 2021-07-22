@@ -14597,6 +14597,7 @@
   "getAllPSAppViewMsgs" : [ {
     "codeName" : "TestTopViewMsg",
     "message" : "测试移动端上方视图消息",
+    "messageType" : "INFO",
     "name" : "测试移动端上方视图消息",
     "position" : "TOP",
     "removeMode" : 0,
@@ -14604,6 +14605,7 @@
   }, {
     "codeName" : "TestBodyViewMsg",
     "message" : "测试移动端内容区视图消息",
+    "messageType" : "ERROR",
     "name" : "测试移动端内容区视图消息",
     "position" : "BODY",
     "removeMode" : 0,
@@ -14611,6 +14613,7 @@
   }, {
     "codeName" : "TestBottomViewMsg",
     "message" : "测试移动端下方视图消息",
+    "messageType" : "WARN",
     "name" : "测试移动端下方视图消息",
     "position" : "BOTTOM",
     "removeMode" : 0,
