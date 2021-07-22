@@ -790,10 +790,10 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         double consumed = 0;
         double left = 0;
         for (Task task1 : list) {
-            estimate += task1.getEstimate();
-            consumed += task1.getConsumed();
+            estimate += task1.getEstimate() != null ? task1.getEstimate() : 0.0;
+            consumed += task1.getConsumed() != null ? task1.getConsumed()  : 0.0;
             if (!StaticDict.Task__status.CLOSED.getValue().equals(task1.getStatus())) {
-                left += task1.getLeft();
+                left += task1.getLeft() != null ? task1.getLeft() : 0.0;
             }
         }
         Task task = new Task();
