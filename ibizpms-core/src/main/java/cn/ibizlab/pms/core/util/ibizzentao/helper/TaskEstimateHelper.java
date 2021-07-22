@@ -74,7 +74,7 @@ public class TaskEstimateHelper extends ZTBaseHelper<TaskEstimateMapper, TaskEst
 
         et.setAccount(AuthenticationUser.getAuthenticationUser().getUsername());
         this.internalUpdate(et);
-        double consumed = task.getConsumed()+et.getConsumed() - oldEstimate.getConsumed();
+        double consumed = (task.getConsumed() != null ? task.getConsumed() : 0.0) + et.getConsumed() - oldEstimate.getConsumed();
         List<JSONObject> lastEstimate = taskEstimateService.select(String.format("select * from zt_TaskEstimate where task = %1$s ORDER BY id desc",task.getId()),null);
         double left = (lastEstimate.size() != 0 && et.getId() == lastEstimate.get(0).getLongValue(FIELD_ID) ) ? et.getLeft() : task.getLeft();
         LocalDateTime now = LocalDateTime.now();
@@ -152,7 +152,7 @@ public class TaskEstimateHelper extends ZTBaseHelper<TaskEstimateMapper, TaskEst
         if (estimateLists.size() != 0){
             lastEstimate = JSONObject.toJavaObject(estimateLists.get(0),TaskEstimate.class);
         }
-        double consumed = task.getConsumed() - taskEstimate.getConsumed();
+        double consumed = (task.getConsumed() != null ? task.getConsumed() : 0.0) - taskEstimate.getConsumed();
         double left = lastEstimate != null && lastEstimate.getLeft() != 0 ? lastEstimate.getLeft() : taskEstimate.getLeft();
         Task data = new Task();
         data.setConsumed(consumed);
