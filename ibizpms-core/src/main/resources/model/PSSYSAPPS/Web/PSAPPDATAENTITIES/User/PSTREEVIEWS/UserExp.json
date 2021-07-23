@@ -63,6 +63,17 @@
     "uIActionTarget" : "NONE",
     "xDataControlName" : "treeexpbar_tree"
   } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_load"
+  } ],
   "getPSControls" : [ {
     "codeName" : "TreeExpViewcompany_cm",
     "controlType" : "CONTEXTMENU",
@@ -73,6 +84,27 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "company_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "company_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "company_cm_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "company_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "company_cm_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "company_cm_deuiaction2_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "company_cm"
     },
@@ -354,6 +386,27 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "company_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "company_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "company_cm_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "company_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "company_cm_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "company_cm_deuiaction2_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "company_cm"
       },

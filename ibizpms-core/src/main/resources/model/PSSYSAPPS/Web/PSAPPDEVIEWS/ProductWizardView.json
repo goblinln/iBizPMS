@@ -66,6 +66,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "wizardpanel"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "FINISH",
+      "logicTag" : "wizardpanel",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_wizardpanel",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -115,6 +125,17 @@
         "enableDEFieldPrivilege" : false,
         "id" : "wizardpanel_form_Product"
       },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SAVE",
+        "logicTag" : "wizardpanel_form_Product",
+        "logicType" : "CUSTOM",
+        "name" : "wizardpanel_formsave"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "wizardpanel_form_Product",
+        "logicType" : "CUSTOM",
+        "name" : "wizardpanel_formload"
+      } ],
       "getPSControlParam" : {
         "getPSDEWizardForm" : {
           "modelref" : true,
@@ -298,6 +319,17 @@
         "enableDEFieldPrivilege" : false,
         "id" : "wizardpanel_form_AddProduct"
       },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SAVE",
+        "logicTag" : "wizardpanel_form_AddProduct",
+        "logicType" : "CUSTOM",
+        "name" : "wizardpanel_formsave"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "wizardpanel_form_AddProduct",
+        "logicType" : "CUSTOM",
+        "name" : "wizardpanel_formload"
+      } ],
       "getPSControlParam" : {
         "getPSDEWizardForm" : {
           "modelref" : true,
@@ -877,6 +909,17 @@
         "enableDEFieldPrivilege" : false,
         "id" : "wizardpanel_form_CreateStory"
       },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SAVE",
+        "logicTag" : "wizardpanel_form_CreateStory",
+        "logicType" : "CUSTOM",
+        "name" : "wizardpanel_formsave"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "wizardpanel_form_CreateStory",
+        "logicType" : "CUSTOM",
+        "name" : "wizardpanel_formload"
+      } ],
       "getPSControlParam" : {
         "getPSDEWizardForm" : {
           "modelref" : true,
@@ -1034,6 +1077,17 @@
         "enableDEFieldPrivilege" : false,
         "id" : "wizardpanel_form_AddStory"
       },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SAVE",
+        "logicTag" : "wizardpanel_form_AddStory",
+        "logicType" : "CUSTOM",
+        "name" : "wizardpanel_formsave"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "wizardpanel_form_AddStory",
+        "logicType" : "CUSTOM",
+        "name" : "wizardpanel_formload"
+      } ],
       "getPSControlParam" : {
         "getPSDEWizardForm" : {
           "modelref" : true,

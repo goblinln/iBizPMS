@@ -149,6 +149,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器（获取年度动作）"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;SAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

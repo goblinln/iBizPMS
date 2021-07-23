@@ -20,6 +20,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEDataExport" : {
     "modelref" : true,
     "id" : "DataExport"

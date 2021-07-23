@@ -225,6 +225,16 @@
             "enableDEFieldPrivilege" : false,
             "id" : "搜索表单处理器"
           },
+          "getPSControlLogics" : [ {
+            "eventNames" : "SEARCH;LOAD",
+            "logicTag" : "searchform",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_searchform",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
@@ -708,6 +718,16 @@
             "enableDEFieldPrivilege" : false,
             "id" : "列表控件处理器"
           },
+          "getPSControlLogics" : [ {
+            "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+            "logicTag" : "mdctrl",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_mdctrl",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,

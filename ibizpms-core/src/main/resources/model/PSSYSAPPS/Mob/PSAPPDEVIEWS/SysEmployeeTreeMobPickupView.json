@@ -129,6 +129,16 @@
           "enableDEFieldPrivilege" : false,
           "id" : "树视图处理器"
         },
+        "getPSControlLogics" : [ {
+          "eventNames" : "LOAD;CLICK;SELECTCHANGE",
+          "logicTag" : "tree",
+          "logicType" : "APPVIEWENGINE",
+          "name" : "engine_tree",
+          "getPSAppViewEngine" : {
+            "modelref" : true,
+            "id" : "engine"
+          }
+        } ],
         "getPSControlParam" : {
           "autoLoad" : true,
           "showBusyIndicator" : true,
@@ -1098,6 +1108,16 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD",
+      "logicTag" : "pickupviewpanel",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_pickupviewpanel",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
     }

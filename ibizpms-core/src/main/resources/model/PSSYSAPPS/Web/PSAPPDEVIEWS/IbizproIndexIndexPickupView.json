@@ -199,6 +199,16 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "pickupviewpanel",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_pickupviewpanel",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
     }

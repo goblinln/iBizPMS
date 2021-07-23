@@ -173,6 +173,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectBurn.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1_computeburn",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_computeburn_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_computeburn_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
@@ -418,6 +429,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "图形控件处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;BEFORELOAD",
+      "logicTag" : "chart",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_chart",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "height" : 0.0,
       "autoLoad" : true,

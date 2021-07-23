@@ -286,6 +286,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;BEFORELOAD;SAVE;BEFORESAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -1486,6 +1496,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "列表控件处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+                  "logicTag" : "mdctrl",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_mdctrl",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -3172,6 +3192,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "列表控件处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+                  "logicTag" : "mdctrl",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_mdctrl",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -4579,6 +4609,67 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1_changestorydetailmob",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction1_changestorydetailmob_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1_changestorydetailmob_click"
+      }
+    }, {
+      "eventArg" : "deuiaction1_assigntomob",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction1_assigntomob_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1_assigntomob_click"
+      }
+    }, {
+      "eventArg" : "deuiaction1_reviewstorymob",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction1_reviewstorymob_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1_reviewstorymob_click"
+      }
+    }, {
+      "eventArg" : "deuiaction1_closestorymob",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction1_closestorymob_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1_closestorymob_click"
+      }
+    }, {
+      "eventArg" : "deuiaction1_openbaseinfoeditviewmob",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction1_openbaseinfoeditviewmob_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1_openbaseinfoeditviewmob_click"
+      }
+    }, {
+      "eventArg" : "deuiaction1_deletemob",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction1_deletemob_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1_deletemob_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
     },

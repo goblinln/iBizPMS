@@ -40,6 +40,17 @@
     },
     "xDataControlName" : "treeexpbar_tree"
   } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_load"
+  } ],
   "getPSControls" : [ {
     "codeName" : "ByProjectTreeExpViewall_cm",
     "controlType" : "CONTEXTMENU",
@@ -50,6 +61,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "all_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "all_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "all_cm_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "all_cm"
     },
@@ -325,6 +347,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "all_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "all_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "all_cm_deuiaction1_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "all_cm"
       },

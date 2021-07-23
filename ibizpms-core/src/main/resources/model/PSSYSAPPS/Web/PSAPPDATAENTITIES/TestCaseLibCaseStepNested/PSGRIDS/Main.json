@@ -57,6 +57,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibCaseStepNested.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",

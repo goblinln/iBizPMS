@@ -89,6 +89,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
@@ -237,6 +248,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "grid",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_grid",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -737,6 +758,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD;SAVE",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

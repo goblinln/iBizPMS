@@ -11,6 +11,17 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "calendarexpbar_calendar",
+    "logicType" : "CUSTOM",
+    "name" : "calendarexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "calendarexpbar_calendar",
+    "logicType" : "CUSTOM",
+    "name" : "calendarexpbar_load"
+  } ],
   "getPSSysCalendarItems" : [ {
     "bKColor" : "rgba(254, 228, 90, 1)",
     "getBeginTimePSAppDEField" : {

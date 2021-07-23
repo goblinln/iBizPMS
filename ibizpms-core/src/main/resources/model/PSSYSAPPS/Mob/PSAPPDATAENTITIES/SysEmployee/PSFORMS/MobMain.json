@@ -24,6 +24,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;BEFORELOAD;SAVE;BEFORESAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srfupdatedate",
     "hidden" : true,

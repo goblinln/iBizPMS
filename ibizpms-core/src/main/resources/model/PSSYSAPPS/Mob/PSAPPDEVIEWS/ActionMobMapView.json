@@ -63,6 +63,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "map"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWCLICK;LOAD;BEFORELOAD",
+      "logicTag" : "map",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_map",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

@@ -24,6 +24,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;BEFORELOAD;SAVE;BEFORESAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srforikey",
     "hidden" : true,
@@ -513,6 +523,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "列表控件处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+                "logicTag" : "mdctrl",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_mdctrl",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,

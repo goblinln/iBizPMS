@@ -24,6 +24,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItemUpdates" : [ {
     "codeName" : "GetUserConcat",
     "name" : "获取联系人",
@@ -1439,6 +1449,16 @@
             "enableDEFieldPrivilege" : false,
             "id" : "数据表格处理器"
           },
+          "getPSControlLogics" : [ {
+            "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+            "logicTag" : "grid",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_grid",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,

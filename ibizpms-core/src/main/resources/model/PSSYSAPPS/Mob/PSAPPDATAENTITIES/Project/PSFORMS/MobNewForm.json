@@ -24,6 +24,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;BEFORELOAD;SAVE;BEFORESAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItemUpdates" : [ {
     "codeName" : "UpdateProjectCycle",
     "name" : "更新项目周期",

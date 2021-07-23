@@ -127,6 +127,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestSuite.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+    "logicTag" : "mdctrl",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_mdctrl",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
     "name" : "name"

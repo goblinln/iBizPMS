@@ -246,6 +246,67 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction3_testreport",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_testreport_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_testreport_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3_reports",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_reports_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_reports_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3_projectcreate",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_projectcreate_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_projectcreate_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction4_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
@@ -737,6 +798,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "grid",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_grid",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

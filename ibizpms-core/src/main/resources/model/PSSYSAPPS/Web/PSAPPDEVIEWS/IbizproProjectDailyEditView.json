@@ -129,6 +129,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;SAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -763,6 +773,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -1440,6 +1460,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -2117,6 +2147,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -2794,6 +2834,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -3471,6 +3521,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -4148,6 +4208,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -4825,6 +4895,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -5502,6 +5582,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -6179,6 +6269,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -6843,6 +6943,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -7112,6 +7222,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "搜索表单处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "SEARCH;LOAD;SAVE",
+                "logicTag" : "searchform",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_searchform",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,

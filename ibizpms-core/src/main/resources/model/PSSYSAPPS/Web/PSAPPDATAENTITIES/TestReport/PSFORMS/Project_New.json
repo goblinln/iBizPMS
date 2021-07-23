@@ -24,6 +24,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItemUpdates" : [ {
     "codeName" : "GetInfoTestTask",
     "name" : "获取测试单相应信息",

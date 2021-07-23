@@ -149,6 +149,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "选项表单处理器（关闭任务）"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;SAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -551,6 +561,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "列表控件处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+                  "logicTag" : "mdctrl",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_mdctrl",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,

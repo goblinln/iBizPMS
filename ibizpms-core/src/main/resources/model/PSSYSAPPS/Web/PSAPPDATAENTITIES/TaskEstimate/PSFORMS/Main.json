@@ -24,6 +24,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItemVRs" : [ {
     "checkMode" : 3,
     "name" : "表单项值规则",

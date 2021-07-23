@@ -28,6 +28,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Monthly.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+    "logicTag" : "mdctrl",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_mdctrl",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 5,
     "format" : "YYYY-MM-DD",

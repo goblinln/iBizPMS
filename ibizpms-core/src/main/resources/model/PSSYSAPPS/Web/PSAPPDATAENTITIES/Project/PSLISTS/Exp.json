@@ -33,6 +33,17 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "listexpbar_list",
+    "logicType" : "CUSTOM",
+    "name" : "listexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "listexpbar_list",
+    "logicType" : "CUSTOM",
+    "name" : "listexpbar_load"
+  } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
     "name" : "srfmajortext",

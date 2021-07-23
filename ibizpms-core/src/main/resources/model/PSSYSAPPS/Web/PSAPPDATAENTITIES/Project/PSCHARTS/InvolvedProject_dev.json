@@ -45,6 +45,16 @@
     } ],
     "id" : "0"
   } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;BEFORELOAD",
+    "logicTag" : "chart",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_chart",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEChartLegend" : {
     "index" : 0,
     "legendPos" : "RIGHT",

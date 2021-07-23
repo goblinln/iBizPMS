@@ -9,6 +9,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWCLICK;LOAD;BEFORELOAD",
+    "logicTag" : "map",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_map",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSSysMapItems" : [ {
     "bKColor" : "rgba(234, 126, 126, 1)",
     "borderColor" : "rgba(71, 2, 2, 1)",

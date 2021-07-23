@@ -20,6 +20,17 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_load"
+  } ],
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,

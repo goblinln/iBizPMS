@@ -148,6 +148,17 @@
     },
     "xDataControlName" : "treeexpbar_tree"
   } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_load"
+  } ],
   "getPSControls" : [ {
     "codeName" : "TaskTreeExpViewbranchs_cm",
     "controlType" : "CONTEXTMENU",
@@ -158,6 +169,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "branchs_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "branchs_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "branchs_cm_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "branchs_cm"
     },
@@ -205,6 +227,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "productnotroot_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "productnotroot_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "productnotroot_cm_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "productnotroot_cm"
     },
@@ -252,6 +285,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "all_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "all_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "all_cm_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "all_cm"
     },
@@ -299,6 +343,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "module_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "module_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "module_cm_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "module_cm"
     },
@@ -346,6 +401,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "rootmodule_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "rootmodule_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "rootmodule_cm_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "rootmodule_cm"
     },
@@ -393,6 +459,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "root_nobranch_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "root_nobranch_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "root_nobranch_cm_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "root_nobranch_cm"
     },
@@ -440,6 +517,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "projectmodule_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "projectmodule_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "projectmodule_cm_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "projectmodule_cm"
     },
@@ -891,6 +979,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "all_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "all_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "all_cm_deuiaction1_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "all_cm"
       },
@@ -986,6 +1085,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "branchs_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "branchs_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "branchs_cm_deuiaction1_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "branchs_cm"
       },
@@ -1200,6 +1310,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "projectmodule_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "projectmodule_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "projectmodule_cm_deuiaction1_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "projectmodule_cm"
       },
@@ -1337,6 +1458,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "rootmodule_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "rootmodule_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "rootmodule_cm_deuiaction1_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "rootmodule_cm"
       },
@@ -1474,6 +1606,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "productnotroot_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "productnotroot_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "productnotroot_cm_deuiaction1_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "productnotroot_cm"
       },
@@ -1611,6 +1754,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "module_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "module_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "module_cm_deuiaction1_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "module_cm"
       },
@@ -1748,6 +1902,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "root_nobranch_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "root_nobranch_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "root_nobranch_cm_deuiaction1_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "root_nobranch_cm"
       },

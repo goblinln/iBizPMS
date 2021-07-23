@@ -114,6 +114,47 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductTeam.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction3_managermember",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_managermember_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_managermember_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction4_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
@@ -809,6 +850,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "list",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_list",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

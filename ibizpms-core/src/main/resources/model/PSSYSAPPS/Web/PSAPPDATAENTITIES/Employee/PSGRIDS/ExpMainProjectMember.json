@@ -20,6 +20,17 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "gridexpbar_grid",
+    "logicType" : "CUSTOM",
+    "name" : "gridexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "gridexpbar_grid",
+    "logicType" : "CUSTOM",
+    "name" : "gridexpbar_load"
+  } ],
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",

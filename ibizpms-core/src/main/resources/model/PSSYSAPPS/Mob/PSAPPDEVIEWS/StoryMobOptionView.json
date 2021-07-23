@@ -138,6 +138,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "移动端选项表单处理器(按照计划关联)"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;SAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

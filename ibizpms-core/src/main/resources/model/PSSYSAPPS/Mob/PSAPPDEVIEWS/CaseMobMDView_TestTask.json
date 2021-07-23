@@ -184,6 +184,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -401,6 +411,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar2",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar2_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar2_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR2"
     },
@@ -776,6 +797,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+      "logicTag" : "mdctrl",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_mdctrl",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

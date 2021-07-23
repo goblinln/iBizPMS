@@ -24,6 +24,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItemUpdates" : [ {
     "codeName" : "ByVersionUpdateContext",
     "name" : "根据版本更新正文信息",
@@ -407,6 +417,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "列表控件处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "list",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_list",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,

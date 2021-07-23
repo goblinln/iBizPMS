@@ -298,6 +298,16 @@
     "uIActionTarget" : "SINGLEKEY",
     "xDataControlName" : "tree"
   } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;CLICK;SELECTCHANGE",
+    "logicTag" : "tree",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_tree",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSControls" : [ {
     "codeName" : "ProjectDocLibMobTreeViewchilddoclibmodule_cm",
     "controlType" : "CONTEXTMENU",
@@ -308,6 +318,27 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "childdoclibmodule_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "childdoclibmodule_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "childdoclibmodule_cm_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "childdoclibmodule_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "childdoclibmodule_cm_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "childdoclibmodule_cm_deuiaction2_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "childdoclibmodule_cm"
     },
@@ -413,6 +444,27 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "doclib_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "doclib_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "doclib_cm_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "doclib_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "doclib_cm_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "doclib_cm_deuiaction2_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "doclib_cm"
     },
@@ -518,6 +570,27 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "doclibdoc_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "doclibdoc_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "doclibdoc_cm_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "doclibdoc_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "doclibdoc_cm_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "doclibdoc_cm_deuiaction2_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "doclibdoc_cm"
     },
@@ -633,6 +706,27 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "rootdoclibmodule_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "rootdoclibmodule_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "rootdoclibmodule_cm_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "rootdoclibmodule_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "rootdoclibmodule_cm_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "rootdoclibmodule_cm_deuiaction2_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "rootdoclibmodule_cm"
     },
@@ -738,6 +832,27 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "moduledoc_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "moduledoc_cm_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "moduledoc_cm_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "moduledoc_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "moduledoc_cm_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "moduledoc_cm_deuiaction2_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "moduledoc_cm"
     },
@@ -853,6 +968,27 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "file_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "file_cm_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "file_cm_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTag" : "file_cm",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "file_cm_deuiaction3_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "file_cm_deuiaction3_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "file_cm"
     },
@@ -1221,6 +1357,27 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "doclibdoc_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "doclibdoc_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "doclibdoc_cm_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "doclibdoc_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "doclibdoc_cm_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "doclibdoc_cm_deuiaction2_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "doclibdoc_cm"
       },
@@ -1399,6 +1556,27 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "file_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "file_cm_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "file_cm_deuiaction2_click"
+        }
+      }, {
+        "eventArg" : "deuiaction3",
+        "eventNames" : "CLICK",
+        "logicTag" : "file_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "file_cm_deuiaction3_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "file_cm_deuiaction3_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "file_cm"
       },
@@ -1568,6 +1746,27 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "rootdoclibmodule_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "rootdoclibmodule_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "rootdoclibmodule_cm_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "rootdoclibmodule_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "rootdoclibmodule_cm_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "rootdoclibmodule_cm_deuiaction2_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "rootdoclibmodule_cm"
       },
@@ -1713,6 +1912,27 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "doclib_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "doclib_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "doclib_cm_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "doclib_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "doclib_cm_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "doclib_cm_deuiaction2_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "doclib_cm"
       },
@@ -1858,6 +2078,27 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "moduledoc_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "moduledoc_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "moduledoc_cm_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "moduledoc_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "moduledoc_cm_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "moduledoc_cm_deuiaction2_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "moduledoc_cm"
       },
@@ -2013,6 +2254,27 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLibModule.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "childdoclibmodule_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "childdoclibmodule_cm_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "childdoclibmodule_cm_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "childdoclibmodule_cm",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "childdoclibmodule_cm_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "childdoclibmodule_cm_deuiaction2_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "childdoclibmodule_cm"
       },

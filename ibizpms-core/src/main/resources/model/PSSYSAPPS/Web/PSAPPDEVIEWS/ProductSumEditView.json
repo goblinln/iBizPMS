@@ -145,6 +145,67 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductSum.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "tbitem3",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem3_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem3_click"
+      }
+    }, {
+      "eventArg" : "tbitem4",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem4_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem4_click"
+      }
+    }, {
+      "eventArg" : "tbitem5",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem5_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem5_click"
+      }
+    }, {
+      "eventArg" : "tbitem7",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem7_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem7_click"
+      }
+    }, {
+      "eventArg" : "tbitem9",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem9_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem9_click"
+      }
+    }, {
+      "eventArg" : "tbitem10",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem10_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem10_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
@@ -427,6 +488,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;SAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

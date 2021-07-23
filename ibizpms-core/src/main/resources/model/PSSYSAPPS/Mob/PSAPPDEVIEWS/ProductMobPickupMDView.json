@@ -325,6 +325,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+      "logicTag" : "mdctrl",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_mdctrl",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -340,6 +350,17 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "mdctrl_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "mdctrl_batchtoolbar_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "mdctrl_batchtoolbar_deuiaction1_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "mdctrl_batchtoolbar"
       },

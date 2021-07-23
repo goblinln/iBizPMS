@@ -118,6 +118,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "calendarexpbar"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "calendarexpbar",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_calendarexpbar",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "width" : 890.0,
       "autoLoad" : true,
@@ -141,6 +151,17 @@
         "enableDEFieldPrivilege" : false,
         "id" : "calendarexpbar_calendar"
       },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SELECTIONCHANGE",
+        "logicTag" : "calendarexpbar_calendar",
+        "logicType" : "CUSTOM",
+        "name" : "calendarexpbar_selectionchange"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "calendarexpbar_calendar",
+        "logicType" : "CUSTOM",
+        "name" : "calendarexpbar_load"
+      } ],
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,

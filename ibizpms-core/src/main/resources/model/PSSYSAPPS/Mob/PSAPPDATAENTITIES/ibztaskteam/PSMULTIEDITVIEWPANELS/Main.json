@@ -25,6 +25,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ibztaskteam.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;DATACHANGE;BEFORESAVE;SAVE",
+    "logicTag" : "meditviewpanel",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_meditviewpanel",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "FRONT",

@@ -12,6 +12,16 @@
     "modelref" : true,
     "id" : "DYNADASHBOARD"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD",
+    "logicTag" : "dashboard",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_dashboard",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSLayout" : {
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
@@ -552,6 +562,16 @@
             "enableDEFieldPrivilege" : false,
             "id" : "列表控件处理器"
           },
+          "getPSControlLogics" : [ {
+            "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+            "logicTag" : "mdctrl",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_mdctrl",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
@@ -1795,6 +1815,16 @@
             "enableDEFieldPrivilege" : false,
             "id" : "列表控件处理器"
           },
+          "getPSControlLogics" : [ {
+            "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+            "logicTag" : "mdctrl",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_mdctrl",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
@@ -1810,6 +1840,17 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
             },
+            "getPSControlLogics" : [ {
+              "eventArg" : "deuiaction1",
+              "eventNames" : "CLICK",
+              "logicTag" : "mdctrl_quicktoolbar",
+              "logicType" : "APPVIEWLOGIC",
+              "name" : "mdctrl_quicktoolbar_deuiaction1_click",
+              "getPSAppViewLogic" : {
+                "modelref" : true,
+                "id" : "mdctrl_quicktoolbar_deuiaction1_click"
+              }
+            } ],
             "getPSControlParam" : {
               "id" : "mdctrl_quicktoolbar"
             },
@@ -3278,6 +3319,16 @@
             "enableDEFieldPrivilege" : false,
             "id" : "列表控件处理器"
           },
+          "getPSControlLogics" : [ {
+            "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+            "logicTag" : "mdctrl",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_mdctrl",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
@@ -4405,6 +4456,16 @@
             "enableDEFieldPrivilege" : false,
             "id" : "列表控件处理器"
           },
+          "getPSControlLogics" : [ {
+            "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+            "logicTag" : "mdctrl",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_mdctrl",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
@@ -5678,6 +5739,16 @@
             "enableDEFieldPrivilege" : false,
             "id" : "列表控件处理器"
           },
+          "getPSControlLogics" : [ {
+            "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+            "logicTag" : "mdctrl",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_mdctrl",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
@@ -6485,6 +6556,16 @@
             "enableDEFieldPrivilege" : false,
             "id" : "列表控件处理器"
           },
+          "getPSControlLogics" : [ {
+            "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+            "logicTag" : "mdctrl",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_mdctrl",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,
@@ -7011,6 +7092,16 @@
             "enableDEFieldPrivilege" : false,
             "id" : "列表控件处理器"
           },
+          "getPSControlLogics" : [ {
+            "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+            "logicTag" : "mdctrl",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_mdctrl",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
           "getPSControlParam" : {
             "autoLoad" : true,
             "showBusyIndicator" : true,

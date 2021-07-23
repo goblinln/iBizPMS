@@ -26,6 +26,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "list",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_list",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
     "name" : "action"

@@ -133,6 +133,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1_refresh",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_refresh_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_refresh_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
@@ -553,6 +564,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据视图处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "kanban",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_kanban",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

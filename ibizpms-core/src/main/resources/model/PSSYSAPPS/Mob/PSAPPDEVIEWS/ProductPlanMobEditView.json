@@ -199,6 +199,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;BEFORELOAD;SAVE;BEFORESAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -775,6 +785,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "列表控件处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+                  "logicTag" : "mdctrl",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_mdctrl",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -2182,6 +2202,27 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1_mobmainedit",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction1_mobmainedit_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1_mobmainedit_click"
+      }
+    }, {
+      "eventArg" : "deuiaction1_mobdelete",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction1_mobdelete_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1_mobdelete_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
     },

@@ -8,6 +8,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Company.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD",
+    "logicTag" : "dashboard",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_dashboard",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSLayout" : {
     "columnCount" : 24,
     "layout" : "TABLE_24COL"

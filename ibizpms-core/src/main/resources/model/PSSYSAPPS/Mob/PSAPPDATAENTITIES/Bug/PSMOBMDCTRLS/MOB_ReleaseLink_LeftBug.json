@@ -36,6 +36,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+    "logicTag" : "mdctrl",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_mdctrl",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 1,
     "name" : "id"

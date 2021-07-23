@@ -46,6 +46,16 @@
     "uIActionTarget" : "NONE",
     "xDataControlName" : "form"
   } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srfupdatedate",
     "hidden" : true,

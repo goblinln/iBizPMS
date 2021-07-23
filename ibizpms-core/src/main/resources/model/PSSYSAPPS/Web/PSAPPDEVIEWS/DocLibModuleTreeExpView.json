@@ -99,6 +99,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "treeexpbar"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "treeexpbar",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_treeexpbar",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "width" : 250.0,
       "autoLoad" : true,
@@ -212,6 +222,17 @@
         "enableDEFieldPrivilege" : false,
         "id" : "树视图处理器"
       },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SELECTIONCHANGE",
+        "logicTag" : "treeexpbar_tree",
+        "logicType" : "CUSTOM",
+        "name" : "treeexpbar_selectionchange"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "treeexpbar_tree",
+        "logicType" : "CUSTOM",
+        "name" : "treeexpbar_load"
+      } ],
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,
@@ -227,6 +248,17 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
         },
+        "getPSControlLogics" : [ {
+          "eventArg" : "deuiaction1",
+          "eventNames" : "CLICK",
+          "logicTag" : "allmodule_cm",
+          "logicType" : "APPVIEWLOGIC",
+          "name" : "allmodule_cm_deuiaction1_click",
+          "getPSAppViewLogic" : {
+            "modelref" : true,
+            "id" : "allmodule_cm_deuiaction1_click"
+          }
+        } ],
         "getPSControlParam" : {
           "id" : "allmodule_cm"
         },
@@ -426,6 +458,17 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLibModule.json"
           },
+          "getPSControlLogics" : [ {
+            "eventArg" : "deuiaction1",
+            "eventNames" : "CLICK",
+            "logicTag" : "allmodule_cm",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "allmodule_cm_deuiaction1_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "allmodule_cm_deuiaction1_click"
+            }
+          } ],
           "getPSControlParam" : {
             "id" : "allmodule_cm"
           },

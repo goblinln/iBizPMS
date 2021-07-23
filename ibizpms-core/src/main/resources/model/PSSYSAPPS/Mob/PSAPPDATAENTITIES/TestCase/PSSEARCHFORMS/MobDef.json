@@ -9,6 +9,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SEARCH;LOAD",
+    "logicTag" : "searchform",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_searchform",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "n_title_like",
     "dataType" : 25,

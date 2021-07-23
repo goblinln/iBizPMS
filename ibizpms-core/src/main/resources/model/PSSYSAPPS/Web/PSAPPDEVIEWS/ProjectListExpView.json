@@ -64,6 +64,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "listexpbar"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "listexpbar",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_listexpbar",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "width" : 200.0,
       "autoLoad" : true,
@@ -174,6 +184,17 @@
         "enableDEFieldPrivilege" : false,
         "id" : "列表控件处理器"
       },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SELECTIONCHANGE",
+        "logicTag" : "listexpbar_list",
+        "logicType" : "CUSTOM",
+        "name" : "listexpbar_selectionchange"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "listexpbar_list",
+        "logicType" : "CUSTOM",
+        "name" : "listexpbar_load"
+      } ],
       "getPSControlParam" : {
         "autoLoad" : true,
         "showBusyIndicator" : true,

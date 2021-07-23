@@ -76,6 +76,16 @@
     "uIActionTarget" : "SINGLEKEY",
     "xDataControlName" : "list"
   } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "list",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_list",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSControls" : [ {
     "codeName" : "LeftSidebarListViewlist_quicktoolbar",
     "controlType" : "TOOLBAR",
@@ -86,6 +96,27 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "list_quicktoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "list_quicktoolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "list_quicktoolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "list_quicktoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "list_quicktoolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "list_quicktoolbar_deuiaction2_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "list_quicktoolbar"
     },

@@ -151,6 +151,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;DATACHANGE;BEFORESAVE;SAVE",
+      "logicTag" : "meditviewpanel",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_meditviewpanel",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

@@ -8,6 +8,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SEARCH;LOAD;SAVE",
+    "logicTag" : "searchform",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_searchform",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormPages" : [ {
     "caption" : "常规条件",
     "codeName" : "formpage1",

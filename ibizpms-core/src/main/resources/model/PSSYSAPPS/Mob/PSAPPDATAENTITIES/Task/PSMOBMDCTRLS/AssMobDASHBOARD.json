@@ -401,6 +401,16 @@
     "uIActionTarget" : "SINGLEKEY",
     "xDataControlName" : "mdctrl"
   } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+    "logicTag" : "mdctrl",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_mdctrl",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSControls" : [ {
     "codeName" : "AssMobMDView9mdctrl_quicktoolbar",
     "controlType" : "TOOLBAR",
@@ -411,6 +421,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "mdctrl_quicktoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "mdctrl_quicktoolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "mdctrl_quicktoolbar_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "mdctrl_quicktoolbar"
     },

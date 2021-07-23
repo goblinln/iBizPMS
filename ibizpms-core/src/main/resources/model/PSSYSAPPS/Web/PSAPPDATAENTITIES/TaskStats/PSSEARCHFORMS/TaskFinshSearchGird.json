@@ -8,6 +8,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SEARCH;LOAD;SAVE",
+    "logicTag" : "searchform",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_searchform",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "n_dept_eq",
     "dataType" : 25,

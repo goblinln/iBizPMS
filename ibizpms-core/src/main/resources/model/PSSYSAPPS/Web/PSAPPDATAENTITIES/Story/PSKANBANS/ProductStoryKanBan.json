@@ -299,6 +299,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "kanban",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_kanban",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEDataViewDataItems" : [ {
     "dataType" : 25,
     "name" : "module",

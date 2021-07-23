@@ -135,6 +135,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "图形控件处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;BEFORELOAD",
+      "logicTag" : "chart",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_chart",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

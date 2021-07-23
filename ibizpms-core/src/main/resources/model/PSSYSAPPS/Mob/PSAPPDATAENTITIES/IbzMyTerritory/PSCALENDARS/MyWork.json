@@ -11,6 +11,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMyTerritory.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD",
+    "logicTag" : "calendar",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_calendar",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSSysCalendarItems" : [ {
     "bKColor" : "rgba(254, 228, 90, 1)",
     "getBeginTimePSAppDEField" : {

@@ -593,6 +593,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "list",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_list",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

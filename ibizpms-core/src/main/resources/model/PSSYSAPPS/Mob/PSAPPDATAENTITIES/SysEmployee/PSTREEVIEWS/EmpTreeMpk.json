@@ -20,6 +20,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;CLICK;SELECTCHANGE",
+    "logicTag" : "tree",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_tree",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,

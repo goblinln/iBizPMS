@@ -351,6 +351,137 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBIZProKeyword.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "tbitem3",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem3_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem3_click"
+      }
+    }, {
+      "eventArg" : "tbitem4",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem4_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem4_click"
+      }
+    }, {
+      "eventArg" : "tbitem5",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem5_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem5_click"
+      }
+    }, {
+      "eventArg" : "tbitem6",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem6_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem6_click"
+      }
+    }, {
+      "eventArg" : "tbitem24",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem24_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem24_click"
+      }
+    }, {
+      "eventArg" : "tbitem25",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem25_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem25_click"
+      }
+    }, {
+      "eventArg" : "tbitem8",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem8_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem8_click"
+      }
+    }, {
+      "eventArg" : "tbitem13",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem13_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem13_click"
+      }
+    }, {
+      "eventArg" : "tbitem11",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem11_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem11_click"
+      }
+    }, {
+      "eventArg" : "tbitem21",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem21_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem21_click"
+      }
+    }, {
+      "eventArg" : "tbitem23",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem23_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem23_click"
+      }
+    }, {
+      "eventArg" : "tbitem19",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem19_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem19_click"
+      }
+    }, {
+      "eventArg" : "tbitem18",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_tbitem18_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_tbitem18_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
@@ -858,6 +989,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "grid",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_grid",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -981,6 +1122,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "搜索表单处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD;SAVE",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

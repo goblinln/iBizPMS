@@ -53,6 +53,17 @@
     },
     "xDataControlName" : "listexpbar_list"
   } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "listexpbar_list",
+    "logicType" : "CUSTOM",
+    "name" : "listexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "listexpbar_list",
+    "logicType" : "CUSTOM",
+    "name" : "listexpbar_load"
+  } ],
   "getPSControls" : [ {
     "codeName" : "ListExpViewlistexpbar_list_quicktoolbar",
     "controlType" : "TOOLBAR",
@@ -63,6 +74,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "listexpbar_list_quicktoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "listexpbar_list_quicktoolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "listexpbar_list_quicktoolbar_deuiaction1_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "listexpbar_list_quicktoolbar"
     },

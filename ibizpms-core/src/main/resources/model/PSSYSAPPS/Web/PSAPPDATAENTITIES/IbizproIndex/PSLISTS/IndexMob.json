@@ -22,6 +22,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproIndex.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "list",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_list",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
     "getFrontPSCodeList" : {

@@ -44,6 +44,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "dashboard"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD",
+      "logicTag" : "dashboard",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_dashboard",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,

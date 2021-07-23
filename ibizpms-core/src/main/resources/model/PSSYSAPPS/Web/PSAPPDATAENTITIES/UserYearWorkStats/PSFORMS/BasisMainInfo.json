@@ -24,6 +24,16 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserYearWorkStats.json"
   },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
   "getPSDEFormItemUpdates" : [ {
     "codeName" : "UpdateTitleByYear",
     "name" : "UpdateTitleByYear",
@@ -614,6 +624,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "图形控件处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "LOAD;BEFORELOAD",
+                  "logicTag" : "chart",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_chart",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -911,6 +931,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "图形控件处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "LOAD;BEFORELOAD",
+                  "logicTag" : "chart",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_chart",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -1213,6 +1243,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "图形控件处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "LOAD;BEFORELOAD",
+                  "logicTag" : "chart",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_chart",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -1617,6 +1657,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "数据表格处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                  "logicTag" : "grid",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_grid",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -2132,6 +2182,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "数据表格处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                  "logicTag" : "grid",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_grid",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -2584,6 +2644,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "数据表格处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                  "logicTag" : "grid",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_grid",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -2873,6 +2943,16 @@
               "enableDEFieldPrivilege" : false,
               "id" : "dashboard"
             },
+            "getPSControlLogics" : [ {
+              "eventNames" : "LOAD",
+              "logicTag" : "dashboard",
+              "logicType" : "APPVIEWENGINE",
+              "name" : "engine_dashboard",
+              "getPSAppViewEngine" : {
+                "modelref" : true,
+                "id" : "engine"
+              }
+            } ],
             "getPSControlParam" : {
               "autoLoad" : true,
               "showBusyIndicator" : true,
@@ -3902,6 +3982,16 @@
               "enableDEFieldPrivilege" : false,
               "id" : "dashboard"
             },
+            "getPSControlLogics" : [ {
+              "eventNames" : "LOAD",
+              "logicTag" : "dashboard",
+              "logicType" : "APPVIEWENGINE",
+              "name" : "engine_dashboard",
+              "getPSAppViewEngine" : {
+                "modelref" : true,
+                "id" : "engine"
+              }
+            } ],
             "getPSControlParam" : {
               "autoLoad" : true,
               "showBusyIndicator" : true,
@@ -4948,6 +5038,16 @@
               "enableDEFieldPrivilege" : false,
               "id" : "dashboard"
             },
+            "getPSControlLogics" : [ {
+              "eventNames" : "LOAD",
+              "logicTag" : "dashboard",
+              "logicType" : "APPVIEWENGINE",
+              "name" : "engine_dashboard",
+              "getPSAppViewEngine" : {
+                "modelref" : true,
+                "id" : "engine"
+              }
+            } ],
             "getPSControlParam" : {
               "autoLoad" : true,
               "showBusyIndicator" : true,

@@ -35,6 +35,17 @@
     "uIActionTarget" : "NONE",
     "xDataControlName" : "wizardpanel_form_AddProduct"
   } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "SAVE",
+    "logicTag" : "wizardpanel_form_AddProduct",
+    "logicType" : "CUSTOM",
+    "name" : "wizardpanel_formsave"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "wizardpanel_form_AddProduct",
+    "logicType" : "CUSTOM",
+    "name" : "wizardpanel_formload"
+  } ],
   "getPSDEFormItems" : [ {
     "id" : "srfupdatedate",
     "hidden" : true,

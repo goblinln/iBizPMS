@@ -172,6 +172,37 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction3_manager",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_manager_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_manager_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3_create",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_create_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_create_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
@@ -446,6 +477,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "列表控件处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "list",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_list",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -461,6 +502,27 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
       },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_quicktoolbar_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_quicktoolbar_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_quicktoolbar_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_quicktoolbar_deuiaction2_click"
+        }
+      } ],
       "getPSControlParam" : {
         "id" : "list_quicktoolbar"
       },

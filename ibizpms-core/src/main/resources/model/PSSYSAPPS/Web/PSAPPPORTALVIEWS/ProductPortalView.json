@@ -156,6 +156,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "listexpbar"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+                "logicTag" : "listexpbar",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_listexpbar",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "width" : 200.0,
                 "autoLoad" : true,
@@ -286,6 +296,17 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "列表控件处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "SELECTIONCHANGE",
+                  "logicTag" : "listexpbar_list",
+                  "logicType" : "CUSTOM",
+                  "name" : "listexpbar_selectionchange"
+                }, {
+                  "eventNames" : "LOAD",
+                  "logicTag" : "listexpbar_list",
+                  "logicType" : "CUSTOM",
+                  "name" : "listexpbar_load"
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -301,6 +322,17 @@
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
                   },
+                  "getPSControlLogics" : [ {
+                    "eventArg" : "deuiaction1",
+                    "eventNames" : "CLICK",
+                    "logicTag" : "listexpbar_list_quicktoolbar",
+                    "logicType" : "APPVIEWLOGIC",
+                    "name" : "listexpbar_list_quicktoolbar_deuiaction1_click",
+                    "getPSAppViewLogic" : {
+                      "modelref" : true,
+                      "id" : "listexpbar_list_quicktoolbar_deuiaction1_click"
+                    }
+                  } ],
                   "getPSControlParam" : {
                     "id" : "listexpbar_list_quicktoolbar"
                   },
@@ -680,6 +712,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,
@@ -1490,6 +1532,16 @@
                 "enableDEFieldPrivilege" : false,
                 "id" : "数据表格处理器"
               },
+              "getPSControlLogics" : [ {
+                "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+                "logicTag" : "grid",
+                "logicType" : "APPVIEWENGINE",
+                "name" : "engine_grid",
+                "getPSAppViewEngine" : {
+                  "modelref" : true,
+                  "id" : "engine"
+                }
+              } ],
               "getPSControlParam" : {
                 "autoLoad" : true,
                 "showBusyIndicator" : true,

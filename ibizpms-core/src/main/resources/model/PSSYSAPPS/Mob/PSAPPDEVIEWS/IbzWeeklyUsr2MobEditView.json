@@ -177,6 +177,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "编辑表单处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;BEFORELOAD;SAVE;BEFORESAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
@@ -754,6 +764,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "列表控件处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+                  "logicTag" : "mdctrl",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_mdctrl",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -2434,6 +2454,16 @@
                   "enableDEFieldPrivilege" : false,
                   "id" : "列表控件处理器"
                 },
+                "getPSControlLogics" : [ {
+                  "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+                  "logicTag" : "mdctrl",
+                  "logicType" : "APPVIEWENGINE",
+                  "name" : "engine_mdctrl",
+                  "getPSAppViewEngine" : {
+                    "modelref" : true,
+                    "id" : "engine"
+                  }
+                } ],
                 "getPSControlParam" : {
                   "autoLoad" : true,
                   "showBusyIndicator" : true,
@@ -3955,6 +3985,27 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
     },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction2_click"
+      }
+    } ],
     "getPSControlParam" : {
       "id" : "RIGHTTOOLBAR"
     },

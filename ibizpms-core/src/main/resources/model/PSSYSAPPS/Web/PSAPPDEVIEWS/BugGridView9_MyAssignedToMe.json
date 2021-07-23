@@ -360,6 +360,16 @@
       "enableDEFieldPrivilege" : false,
       "id" : "数据表格处理器"
     },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "grid",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_grid",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
     "getPSControlParam" : {
       "autoLoad" : true,
       "showBusyIndicator" : true,
