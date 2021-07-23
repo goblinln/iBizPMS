@@ -1,5 +1,6 @@
 import { clone, equals, isEmpty, isNil, mergeDeepLeft, where } from 'ramda';
 import { ascSort, createUUID, descSort, generateOrderValue, notNilEmpty } from 'qx-util';
+import { IPSAppDataEntity, IPSAppDEField, IPSAppDELogic, IPSAppDEMethod } from '@ibiz/dynamic-model-api';
 import { Entity } from '../../entities';
 import { IContext, IEntityBase, IEntityLocalDataService, IHttpResponse, IParams } from '../../interface';
 import { acc } from '../../modules/message-center/app-communications-center';
@@ -7,6 +8,8 @@ import { Http, HttpResponse, LogUtil } from '../../utils';
 import { PSDEDQCondEngine } from '../../utils/de-dq-cond';
 import { EntityCache } from '../../utils/entity-cache/entity-cache';
 import { SearchFilter } from '../../utils/search-filter/search-filter';
+import { AppDeLogicService } from '../../logic';
+import { GetModelService } from '../model-service/model-service';
 
 /**
  * 实体服务基类
@@ -24,6 +27,15 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected log = LogUtil;
+
+    /**
+     * 应用上下文
+     *
+     * @protected
+     * @memberof EntityBaseService
+     */
+    protected context: any;
+
     /**
      * 实体全部属性
      *
@@ -33,6 +45,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     protected get keys(): string[] {
         return [];
     }
+
     /**
      * 应用实体名称
      *
@@ -40,6 +53,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPDENAME = '';
+
     /**
      * 应用实体名称复数形式
      *
@@ -47,6 +61,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPDENAMEPLURAL = '';
+
     /**
      * 应用实体主键
      *
@@ -54,6 +69,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPDEKEY = '';
+
     /**
      * 应用实体主文本
      *
@@ -61,6 +77,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPDETEXT = '';
+
 
     /**
      * 系统名称
@@ -77,6 +94,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPNAME = '';
+
     /**
      * 当前实体服务支持快速搜索的属性
      *
@@ -85,6 +103,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected quickSearchFields: string[] = [];
+
     /**
      * 根据关系，select查询时填充额外条件。
      *
@@ -93,6 +112,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected selectContextParam: any = null;
+
     /**
      * 搜索条件引擎实例缓存
      *
@@ -101,12 +121,14 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected condCache: Map<string, PSDEDQCondEngine> = new Map();
+
     /**
      * 是否启用acc通知
      *
      * @memberof EntityBaseService
      */
     private isEnableAcc = true;
+
     /**
      * http请求服务
      *
@@ -123,6 +145,330 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected cache: EntityCache<T> = new EntityCache();
+
+    /**
+     * 实体处理逻辑服务类
+     *
+     * @protected
+     * @type {AppDeLogicService}
+     * @memberof EntityBaseService
+     */
+    protected appDeLogicService: AppDeLogicService = AppDeLogicService.getInstance();
+
+    /**
+    * 应用实体动态模型文件路径
+    *
+    * @protected
+    * @type {string}
+    * @memberof EntityBaseService
+    */
+    protected dynaModelFilePath: string = '';
+
+    /**
+    * 应用实体模型
+    *
+    * @protected
+    * @type {IPSAppDataEntity}
+    * @memberof EntityBaseService
+    */
+    protected appDeModel !: IPSAppDataEntity;
+
+    /**
+    * 实体处理逻辑Map
+    *
+    * @protected
+    * @type {Map<string,any>}
+    * @memberof EntityBaseService
+    */
+    protected appDeLogicMap: Map<string, any> = new Map();
+
+    /**
+    * 实体属性处理逻辑Map
+    *
+    * @protected
+    * @type {Map<string,any>}
+    * @memberof EntityBaseService
+    */
+    protected appDeFieldLogicMap: Map<string, any> = new Map();
+
+    /**
+     * Creates an instance of EntityBaseService.
+     * @memberof EntityBaseService
+     */
+    constructor(opts?: any) {
+        this.context = opts;
+    }
+
+    /**
+    * 加载动态数据模型
+    *
+    * @protected
+    * @param context 应用上下文
+    * @param data 额外数据
+    * @memberof EntityBaseService
+    */
+    protected async loaded(context: any = {}, data: any = {}) {
+        await this.initAppDeModel(context, data);
+        this.initAppDELogicMap();
+        this.initAppDEFieldLogicMap();
+        this.initAppDEDynaMethods();
+    }
+
+    /**
+    * 初始化应用实体模型数据
+    *
+    * @protected
+    * @type {Map<string,any>}
+    * @memberof EntityBaseService
+    */
+    protected async initAppDeModel(context: any = {}, data: any = {}) {
+        if (!this.appDeModel && this.dynaModelFilePath) {
+            this.appDeModel = await (await GetModelService(context)).getPSAppDataEntity(this.dynaModelFilePath);
+        }
+    }
+
+    /**
+    * 初始化实体处理逻辑Map
+    *
+    * @protected
+    * @memberof EntityBaseService
+    */
+    protected initAppDELogicMap() {
+        if ((this.appDeLogicMap.size === 0) && this.appDeModel && this.appDeModel.getAllPSAppDELogics()) {
+            this.appDeModel.getAllPSAppDELogics()?.forEach((item: IPSAppDELogic) => {
+                this.appDeLogicMap.set(item.codeName, item);
+            })
+        }
+    }
+
+    /**
+    * 初始化实体属性处理逻辑Map
+    *
+    * @protected
+    * @memberof EntityBaseService
+    */
+    protected initAppDEFieldLogicMap() {
+        const allAppDEFields: IPSAppDEField[] | null = this.appDeModel?.getAllPSAppDEFields();
+        if (allAppDEFields && (allAppDEFields.length > 0) && (this.appDeFieldLogicMap.size === 0)) {
+            allAppDEFields.forEach((item: IPSAppDEField) => {
+                if (item.getComputePSAppDEFLogic()) {
+                    let computePSAppDEFLogics = this.appDeFieldLogicMap.get('ComputePSAppDEFLogic');
+                    if (!computePSAppDEFLogics) {
+                        computePSAppDEFLogics = [];
+                        this.appDeFieldLogicMap.set('ComputePSAppDEFLogic', computePSAppDEFLogics);
+                    }
+                    computePSAppDEFLogics.push(item.getComputePSAppDEFLogic());
+                }
+                if (item.getOnChangePSAppDEFLogic()) {
+                    let changePSAppDEFLogics = this.appDeFieldLogicMap.get('ChangePSAppDEFLogic');
+                    if (!changePSAppDEFLogics) {
+                        changePSAppDEFLogics = [];
+                        this.appDeFieldLogicMap.set('ChangePSAppDEFLogic', changePSAppDEFLogics);
+                    }
+                    changePSAppDEFLogics.push(item.getOnChangePSAppDEFLogic());
+                }
+                if (item.getDefaultValuePSAppDEFLogic()) {
+                    let defaultValuePSAppDEFLogics = this.appDeFieldLogicMap.get('DefaultValuePSAppDEFLogic');
+                    if (!defaultValuePSAppDEFLogics) {
+                        defaultValuePSAppDEFLogics = [];
+                        this.appDeFieldLogicMap.set('DefaultValuePSAppDEFLogic', defaultValuePSAppDEFLogics);
+                    }
+                    defaultValuePSAppDEFLogics.push(item.getOnChangePSAppDEFLogic());
+                }
+            })
+        }
+    }
+
+    /**
+    * 初始化实体动态方法
+    *
+    * @protected
+    * @memberof EntityBaseService
+    */
+    protected initAppDEDynaMethods() {
+        // TODO
+        // if(this.appDeModel && this.appDeModel.getAllPSAppDEMethods() && (this.appDeModel.getAllPSAppDEMethods() as IPSAppDEMethod[]).length >0){
+        //     this.appDeModel.getAllPSAppDEMethods()?.forEach((appDEMethod:IPSAppDEMethod) =>{
+        //         if(appDEMethod && appDEMethod.isDynaInstModel){
+        //             this.initAppDEDynaMethod(appDEMethod);
+        //         }
+        //     })
+        // }
+    }
+
+    /**
+    * 初始化实体动态方法
+    *
+    * @protected
+    * @memberof EntityBaseService
+    */
+    protected initAppDEDynaMethod(appDEMethod: IPSAppDEMethod) {
+        (this as any)[appDEMethod.codeName] = (context: any, data: any) => {
+            // TODO
+        }
+    }
+
+    /**
+    * 执行实体处理逻辑
+    *
+    * @protected
+    * @param {string} tag 逻辑标识
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async executeAppDELogic(tag: string, _context: any, _data: any) {
+        try {
+            return await this.appDeLogicService.onExecute(this.appDeLogicMap.get(tag), _context, _data);
+        } catch (error) {
+            throw new Error(`执行实体处理逻辑异常，[逻辑错误]${error.message}`)
+        }
+
+    }
+
+    /**
+    * 执行实体属性处理逻辑
+    *
+    * @protected
+    * @param {*} model 模型对象
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async executeAppDEFieldLogic(model: any, _context: any, _data: any) {
+        try {
+            return await this.appDeLogicService.onExecute(model, _context, _data);
+        } catch (error) {
+            throw new Error(`执行实体属性处理逻辑异常，[逻辑错误]${error.message}`)
+        }
+    }
+
+    /**
+    * 执行实体行为之前
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @param {string} methodName 方法名
+    * @memberof EntityBaseService
+    */
+    protected async beforeExecuteAction(_context: any, _data: any, methodName?: string) {
+        // 执行实体属性值变更逻辑
+        _data = await this.executeOnChangePSAppDEFLogic(_context, _data);
+        if (methodName) {
+            LogUtil.log(`执行实体属性值变更逻辑，[方法名称]：${methodName}，[处理后的数据]:`, _data);
+        }
+        return _data;
+    }
+
+    /**
+    * 执行实体行为之后
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @param {string} methodName 方法名
+    * @memberof EntityBaseService
+    */
+    protected async afterExecuteAction(_context: any, _data: any, methodName?: string) {
+        // 执行实体属性值计算逻辑
+        _data = await this.executeComputePSAppDEFLogic(_context, _data);
+        if (methodName) {
+            LogUtil.log(`执行实体属性值计算逻辑，[方法名称]：${methodName}，[处理后的数据]:`, _data);
+        }
+        return _data;
+    }
+
+    /**
+    * 执行实体行为之后批处理（主要用于数据集处理）
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} dataSet 当前数据集合
+    * @param {string} methodName 方法名
+    * @memberof EntityBaseService
+    */
+    protected async afterExecuteActionBatch(_context: any, dataSet: Array<any>, methodName?: string) {
+        if (dataSet && dataSet.length > 0) {
+            for (let i = 0; i < dataSet.length; i++) {
+                dataSet[i] = await this.afterExecuteAction(_context, dataSet[i]);
+            }
+        }
+        if (methodName) {
+            LogUtil.log(`执行实体属性值计算逻辑，[方法名称]：${methodName}，[处理后的数据]:`, dataSet);
+        }
+        return dataSet;
+    }
+
+    /**
+    * 执行实体属性值计算逻辑
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async executeComputePSAppDEFLogic(_context: any, _data: any) {
+        let computePSAppDEFLogics = this.appDeFieldLogicMap.get('ComputePSAppDEFLogic');
+        if (computePSAppDEFLogics && computePSAppDEFLogics.length > 0) {
+            for (let i = 0; i < computePSAppDEFLogics.length; i++) {
+                _data = await this.executeAppDEFieldLogic(computePSAppDEFLogics[i], _context, _data);
+            }
+        }
+        return _data;
+    }
+
+    /**
+    * 执行实体属性默认值逻辑
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async executeDefaultValuePSAppDEFLogic(_context: any, _data: any) {
+
+    }
+
+    /**
+    * 执行实体属性值变更逻辑
+    *
+    * @protected
+    * @param {*} _context 应用上下文
+    * @param {*} _data 当前数据
+    * @memberof EntityBaseService
+    */
+    protected async executeOnChangePSAppDEFLogic(_context: any, _data: any) {
+        let changePSAppDEFLogics = this.appDeFieldLogicMap.get('ChangePSAppDEFLogic');
+        if (changePSAppDEFLogics && changePSAppDEFLogics.length > 0) {
+            for (let i = 0; i < changePSAppDEFLogics.length; i++) {
+                _data = await this.executeAppDEFieldLogic(changePSAppDEFLogics[i], _context, _data);
+            }
+        }
+        return _data;
+    }
+
+    /**
+    * 处理响应错误
+    *
+    * @protected
+    * @param {*} error 错误数据
+    * @memberof EntityBaseService
+    */
+    protected handleResponseError(error: any): Promise<HttpResponse> {
+        LogUtil.warn(error);
+        return new Promise((resolve: any, reject: any) => {
+            if (error.status && (error.status !== 200)) {
+                reject(error);
+            } else {
+                const errorMessage = (error?.message?.indexOf('[逻辑错误]') !== -1) ? error.message : '执行行为异常';
+                resolve(new HttpResponse({ message: errorMessage }, {
+                    ok: false,
+                    status: 500,
+                }))
+            }
+        })
+    }
 
     /**
      * 发送应用中心消息
@@ -181,7 +527,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @return {*}  {Promise<void>}
      * @memberof EntityBaseService
      */
-    protected async before(_action: string, _context: IContext, _data: any): Promise<void> {}
+    protected async before(_action: string, _context: IContext, _data: any): Promise<void> { }
 
     /**
      * 行为执行之后
@@ -193,7 +539,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @return {*}  {Promise<void>}
      * @memberof EntityBaseService
      */
-    protected async after(_action: string, _context: IContext, _data: any): Promise<void> {}
+    protected async after(_action: string, _context: IContext, _data: any): Promise<void> { }
 
     /**
      * 根据主关系填充外键数据
@@ -204,7 +550,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @return {*}  {Promise<void>}
      * @memberof EntityBaseService
      */
-    protected async fillRelationalDataMajor(_context: IContext, _entity: T): Promise<void> {}
+    protected async fillRelationalDataMajor(_context: IContext, _entity: T): Promise<void> { }
 
     /**
      * 根据从关系填充外键数据
@@ -215,7 +561,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @return {*}  {Promise<void>}
      * @memberof EntityBaseService
      */
-    protected async fillRelationalDataMinor(_context: IContext, _entity: T): Promise<void> {}
+    protected async fillRelationalDataMinor(_context: IContext, _entity: T): Promise<void> { }
 
     /**
      * 填充从实体本地数据
@@ -262,7 +608,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     protected async setMinorLocal(entityName: string, context: IContext, items: any[]): Promise<boolean> {
         if (items && items.length > 0) {
-            const service: EntityBaseService<T> = await ___ibz___.gs[`get${entityName}Service`]();
+            const service: EntityBaseService<T> = await ___ibz___.gs.getService(entityName);
             return service.setLocals(context, items);
         }
         return false;
@@ -285,7 +631,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         params?: IParams,
         dataSet?: string,
     ): Promise<T[]> {
-        const service: EntityBaseService<T> = await ___ibz___.gs[`get${entityName}Service`]();
+        const service: EntityBaseService<T> = await ___ibz___.gs.getService(entityName);
         return service.getLocals(context, params, dataSet);
     }
 
@@ -355,7 +701,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @param {T} _data
      * @return {*}  {T}
      */
-     newEntity(_data: T): T {
+    newEntity(_data: T): T {
         throw new Error('「newEntity」方法未实现');
     }
 
@@ -472,8 +818,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     async selectLocal(context: IContext, params: IParams = {}): Promise<T[]> {
-        
-        let items = await this.cache.getList(context);
+        let items = await this.cache.getList(context).sort((a: any, b: any) => a.srfordervalue - b.srfordervalue);
         if (notNilEmpty(params) || notNilEmpty(context)) {
             // 查询数据条件集
             const data: any = {};
@@ -542,7 +887,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         cond: PSDEDQCondEngine | null,
         filter: SearchFilter,
         queryParamKeys: string[] = this.quickSearchFields,
-    ): Promise<T[]> {
+    ): Promise<HttpResponse> {
         let list = [];
         // 走查询条件
         if (cond) {
@@ -582,10 +927,15 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         }
         const { page, size } = filter;
         const start = page * size;
-        const end = (page + 1) * size - 1;
-        const items = list.slice(start, end).map(item => clone(item));
+        const end = (page + 1) * size;
+        const items = list.slice(start, end).map((item: any) => clone(item));
         LogUtil.warn('search', cond, items);
-        return items;
+        const headers = new Headers({
+            'x-page': page.toString(),
+            'x-per-page': size.toString(),
+            'x-total': list.length.toString()
+        });
+        return new HttpResponse(items, { headers });
     }
 
     /**
@@ -598,9 +948,8 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @return {*}  {Promise<IHttpResponse>}
      * @memberof EntityBaseService
      */
-    protected async searchAppLocal(cond: PSDEDQCondEngine | null, filter: SearchFilter): Promise<IHttpResponse> {
-        const list = await this.searchLocal(cond, filter);
-        return new HttpResponse(list);
+    protected searchAppLocal(cond: PSDEDQCondEngine | null, filter: SearchFilter): Promise<IHttpResponse> {
+        return this.searchLocal(cond, filter);
     }
 
     /**
@@ -885,7 +1234,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @returns {Promise<any>}
      * @memberof EntityBaseService
      */
-    public async FetchTempDefault(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    public async FetchTempDefault(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         try {
             if (context && context.srfsessionkey) {
                 const tempData = await this.getLocals(context);
@@ -1050,7 +1399,41 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async getDynaWorkflow(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${context.srfdynainstid}/${this.APPDENAMEPLURAL.toLowerCase()}/process-definitions`,
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${context.srfdynainstid}/${this.APPDENAME.toLowerCase()}/process-definitions`,
+            isloading,
+        );
+    }
+
+    /**
+     * 获取标准工作流版本信息
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @param {*} [localdata]
+     * @returns {Promise<any>}
+     * @memberof EntityService
+     */
+    public async getStandWorkflow(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+        return Http.getInstance().get(
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions2`,
+            isloading,
+        );
+    }
+
+    /**
+     * 获取副本工作流版本信息
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @param {*} [localdata]
+     * @returns {Promise<any>}
+     * @memberof EntityService
+     */
+    public async getCopyWorkflow(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+        return Http.getInstance().get(
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${context.instTag}/${context.instTag2}/${this.APPDENAME.toLowerCase()}/process-definitions`,
             isloading,
         );
     }
@@ -1070,7 +1453,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         Object.assign(requestData, { activedata: data });
         Object.assign(requestData, localdata);
         return Http.getInstance().post(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${data[this.APPDEKEY]
             }/process-instances`,
             requestData,
             isloading,
@@ -1166,7 +1549,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async WFGetWorkFlow(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/process-definitions`,
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions`,
         );
     }
 
@@ -1181,7 +1564,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async WFGetWFStep(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/process-definitions-nodes`,
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions-nodes`,
         );
     }
 
@@ -1195,9 +1578,10 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityService
      */
     public async GetWFLink(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
-        return Http.getInstance().get(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+        return Http.getInstance().post(
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
             }/usertasks/${data['taskDefinitionKey']}/ways`,
+            { 'activedata': data.activedata }
         );
     }
 
@@ -1212,7 +1596,22 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async getWFLinks(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/process-definitions/${data['processDefinitionKey']}/usertasks/${data['taskDefinitionKey']}/ways`,
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions/${data['processDefinitionKey']}/usertasks/${data['taskDefinitionKey']}/ways`,
+        );
+    }
+
+    /**
+     * getWFStep接口方法(根据当前步骤和任务获取工作流步骤数据（如：流程表单等）)
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof EntityService
+     */
+    public async getWFStep(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+        return Http.getInstance().get(
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions/${data['processDefinitionKey']}/usertasks/${data['taskDefinitionKey']}`,
         );
     }
 
@@ -1227,7 +1626,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async wfSubmitBatch(context: any = {}, data: any = {}, localdata: any, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/process-definitions/${localdata['processDefinitionKey']}/usertasks/${localdata['taskDefinitionKey']}/ways/${localdata['sequenceFlowId']}/submit`,
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions/${localdata['processDefinitionKey']}/usertasks/${localdata['taskDefinitionKey']}/ways/${localdata['sequenceFlowId']}/submit`,
             data,
         );
     }
@@ -1243,7 +1642,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async GetWFHistory(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
             }/process-instances/alls/history`,
         );
     }
@@ -1257,9 +1656,9 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @returns {Promise<any>}
      * @memberof EntityService
      */
-     public async BeforeSign(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+    public async BeforeSign(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
             }/tasks/${data.taskId}/beforesign`,
             data
         );
@@ -1274,9 +1673,9 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @returns {Promise<any>}
      * @memberof EntityService
      */
-     public async TransFerTask(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+    public async TransFerTask(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
             }/tasks/${data.taskId}/transfer`,
             data
         );
@@ -1291,10 +1690,27 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @returns {Promise<any>}
      * @memberof EntityService
      */
-     public async SendBack(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+    public async SendBack(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
             }/tasks/${data.taskId}/sendback`,
+            data
+        );
+    }
+
+    /**
+     * 抄送
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof EntityService
+     */
+    public async sendCopy(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+        return Http.getInstance().post(
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            }/tasks/${data.taskId}/sendcopy`,
             data
         );
     }
@@ -1308,9 +1724,9 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @returns {Promise<any>}
      * @memberof EntityService
      */
-     public async ReadTask(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+    public async ReadTask(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
             }/tasks/${data.taskId}/read`,
             { activedata: data }
         );
@@ -1334,7 +1750,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         Object.assign(requestData, { activedata: data });
         Object.assign(requestData, localdata);
         return Http.getInstance().post(
-            `/wfcore/${this.SYSTEMNAME.toLowerCase()}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY.toLowerCase()]}/tasks/${localdata['taskId']
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${data[this.APPDEKEY.toLowerCase()]}/tasks/${localdata['taskId']
             }`,
             requestData
         );
