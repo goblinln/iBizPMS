@@ -515,6 +515,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibCasesteps.json"
             },
             "getPSControlParam" : { },
+            "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
@@ -782,6 +783,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },

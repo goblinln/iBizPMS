@@ -550,6 +550,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
         },
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -669,6 +670,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

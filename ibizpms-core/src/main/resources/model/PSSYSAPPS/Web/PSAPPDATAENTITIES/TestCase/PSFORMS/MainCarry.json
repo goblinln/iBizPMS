@@ -828,6 +828,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStepNested.json"
             },
             "getPSControlParam" : { },
+            "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
@@ -1449,6 +1450,7 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
                 },
                 "getPSControlParam" : { },
+                "layoutBodyOnly" : true,
                 "layoutPanel" : true,
                 "useDefaultLayout" : true
               },

@@ -1056,6 +1056,7 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
                   },
                   "getPSControlParam" : { },
+                  "layoutBodyOnly" : true,
                   "layoutPanel" : true,
                   "useDefaultLayout" : true
                 },
@@ -1749,6 +1750,7 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
                   },
                   "getPSControlParam" : { },
+                  "layoutBodyOnly" : true,
                   "layoutPanel" : true,
                   "useDefaultLayout" : true
                 },
@@ -2437,6 +2439,7 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
                   },
                   "getPSControlParam" : { },
+                  "layoutBodyOnly" : true,
                   "layoutPanel" : true,
                   "useDefaultLayout" : true
                 },
@@ -3522,6 +3525,7 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
                   },
                   "getPSControlParam" : { },
+                  "layoutBodyOnly" : true,
                   "layoutPanel" : true,
                   "useDefaultLayout" : true
                 },
@@ -4242,6 +4246,7 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
                   },
                   "getPSControlParam" : { },
+                  "layoutBodyOnly" : true,
                   "layoutPanel" : true,
                   "useDefaultLayout" : true
                 },
@@ -4300,6 +4305,7 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -4469,6 +4475,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

@@ -554,6 +554,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

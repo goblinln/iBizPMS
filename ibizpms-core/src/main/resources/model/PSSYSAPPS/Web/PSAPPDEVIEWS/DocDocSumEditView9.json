@@ -249,6 +249,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

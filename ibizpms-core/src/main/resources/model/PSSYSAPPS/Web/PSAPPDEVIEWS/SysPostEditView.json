@@ -637,6 +637,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysPost.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

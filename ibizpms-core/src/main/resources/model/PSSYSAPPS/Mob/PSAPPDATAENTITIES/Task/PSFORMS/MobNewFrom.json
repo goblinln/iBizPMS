@@ -1097,6 +1097,7 @@
               "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ibztaskteam.json"
             },
             "getPSControlParam" : { },
+            "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },

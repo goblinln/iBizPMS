@@ -813,6 +813,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -1237,6 +1238,7 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
                 },
                 "getPSControlParam" : { },
+                "layoutBodyOnly" : true,
                 "layoutPanel" : true,
                 "useDefaultLayout" : true
               },
@@ -1548,6 +1550,7 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
                 },
                 "getPSControlParam" : { },
+                "layoutBodyOnly" : true,
                 "layoutPanel" : true,
                 "useDefaultLayout" : true
               },
@@ -1965,6 +1968,7 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
                 },
                 "getPSControlParam" : { },
+                "layoutBodyOnly" : true,
                 "layoutPanel" : true,
                 "useDefaultLayout" : true
               },
@@ -2627,6 +2631,7 @@
                           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                         },
                         "getPSControlParam" : { },
+                        "layoutBodyOnly" : true,
                         "layoutPanel" : true,
                         "useDefaultLayout" : true
                       },
@@ -2743,6 +2748,7 @@
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json"
                   },
                   "getPSControlParam" : { },
+                  "layoutBodyOnly" : true,
                   "layoutPanel" : true,
                   "useDefaultLayout" : true
                 },
@@ -3129,6 +3135,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -5049,6 +5056,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -5789,6 +5797,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -6416,6 +6425,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountStory.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -7106,6 +7116,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -7573,6 +7584,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysUpdateLog.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },

@@ -1046,6 +1046,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProductUserTask.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -1637,6 +1638,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProductUserTask.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -2228,6 +2230,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProductUserTask.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -2819,6 +2822,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProductUserTask.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -3410,6 +3414,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProductUserTask.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -4001,6 +4006,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProductUserTask.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -4592,6 +4598,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProductUserTask.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -5183,6 +5190,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProductUserTask.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -5774,6 +5782,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzproProductUserTask.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -6389,6 +6398,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -6490,6 +6500,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

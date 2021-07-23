@@ -739,6 +739,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
             "getPSControlParam" : { },
+            "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
@@ -1436,6 +1437,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
             },
             "getPSControlParam" : { },
+            "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
@@ -2237,6 +2239,7 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskEstimate.json"
             },
             "getPSControlParam" : { },
+            "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
@@ -2369,6 +2372,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

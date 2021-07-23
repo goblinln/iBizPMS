@@ -366,6 +366,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeam.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

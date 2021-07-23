@@ -731,6 +731,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProduct.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

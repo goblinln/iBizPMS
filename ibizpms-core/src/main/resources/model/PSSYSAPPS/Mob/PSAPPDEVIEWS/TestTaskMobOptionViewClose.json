@@ -776,6 +776,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "getPSControlParam" : { },
+                "layoutBodyOnly" : true,
                 "layoutPanel" : true,
                 "useDefaultLayout" : true
               },
@@ -2087,6 +2088,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

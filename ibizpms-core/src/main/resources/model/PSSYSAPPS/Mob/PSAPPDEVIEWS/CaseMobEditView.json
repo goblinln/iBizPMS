@@ -842,6 +842,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCaseStep.json"
                 },
                 "getPSControlParam" : { },
+                "layoutBodyOnly" : true,
                 "layoutPanel" : true,
                 "useDefaultLayout" : true
               },
@@ -1351,6 +1352,7 @@
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
                 "getPSControlParam" : { },
+                "layoutBodyOnly" : true,
                 "layoutPanel" : true,
                 "useDefaultLayout" : true
               },
@@ -2677,6 +2679,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCase.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

@@ -1220,6 +1220,7 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -1337,6 +1338,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

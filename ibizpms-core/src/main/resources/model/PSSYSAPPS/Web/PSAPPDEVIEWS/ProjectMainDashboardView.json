@@ -754,6 +754,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -3077,6 +3078,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProjectMember.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -3699,6 +3701,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -6533,6 +6536,7 @@
                           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
                         },
                         "getPSControlParam" : { },
+                        "layoutBodyOnly" : true,
                         "layoutPanel" : true,
                         "useDefaultLayout" : true
                       },
@@ -6951,6 +6955,7 @@
                           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
                         },
                         "getPSControlParam" : { },
+                        "layoutBodyOnly" : true,
                         "layoutPanel" : true,
                         "useDefaultLayout" : true
                       },
@@ -7614,6 +7619,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -7671,6 +7677,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

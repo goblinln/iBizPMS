@@ -751,6 +751,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -1371,6 +1372,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -1413,6 +1415,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

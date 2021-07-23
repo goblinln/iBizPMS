@@ -731,6 +731,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Reportly.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

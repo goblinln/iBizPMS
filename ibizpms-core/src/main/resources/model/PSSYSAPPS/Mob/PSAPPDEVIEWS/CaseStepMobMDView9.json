@@ -356,6 +356,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestCaseStep.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

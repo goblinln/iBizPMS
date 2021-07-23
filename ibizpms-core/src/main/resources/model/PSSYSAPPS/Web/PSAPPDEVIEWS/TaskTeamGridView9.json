@@ -597,6 +597,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

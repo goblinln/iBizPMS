@@ -437,6 +437,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserTpl.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

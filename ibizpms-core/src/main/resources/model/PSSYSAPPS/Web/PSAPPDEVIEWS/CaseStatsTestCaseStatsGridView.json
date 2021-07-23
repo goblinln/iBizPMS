@@ -664,6 +664,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStats.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

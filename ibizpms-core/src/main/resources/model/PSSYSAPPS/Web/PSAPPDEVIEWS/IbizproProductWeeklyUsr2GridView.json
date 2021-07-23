@@ -902,6 +902,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

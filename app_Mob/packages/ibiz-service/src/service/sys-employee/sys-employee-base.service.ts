@@ -149,6 +149,30 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
         return this.condCache.get('view');
     }
     /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        const res = await this.http.post(`/sysemployees`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -160,6 +184,58 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
         try {
         const res = await this.http.get(`/sysemployees/${_context.sysemployee}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/sysemployees/getdraft`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.delete(`/sysemployees/${_context.sysemployee}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/sysemployees/${_context.sysemployee}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -251,6 +327,108 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
             }
     }
     /**
+     * FetchProjectTeamM
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async FetchProjectTeamM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/sysemployees/fetchprojectteamm`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamM');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * FetchProjectTeamMProduct
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async FetchProjectTeamMProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/sysemployees/fetchprojectteammproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamMProduct');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * FetchProjectTeamTaskUserTemp
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async FetchProjectTeamTaskUserTemp(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/sysemployees/fetchprojectteamtaskusertemp`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamTaskUserTemp');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * FetchProjectTeamUserTask
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async FetchProjectTeamUserTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/sysemployees/fetchprojectteamusertask`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamUserTask');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * FetchProjectteamPk
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async FetchProjectteamPk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/sysemployees/fetchprojectteampk`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectteamPk');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * FetchStoryProductTeamPK
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async FetchStoryProductTeamPK(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/sysemployees/fetchstoryproductteampk`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchStoryProductTeamPK');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
      * FetchTask
      *
      * @param {*} [_context={}]
@@ -279,6 +457,22 @@ export class SysEmployeeBaseService extends EntityBaseService<ISysEmployee> {
         try {
         const res = await this.http.post(`/sysemployees/fetchtaskmulti`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchTaskMulti');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysEmployeeService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.get(`/sysemployees/${_context.sysemployee}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

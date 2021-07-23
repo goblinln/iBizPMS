@@ -950,6 +950,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzProjectMember.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

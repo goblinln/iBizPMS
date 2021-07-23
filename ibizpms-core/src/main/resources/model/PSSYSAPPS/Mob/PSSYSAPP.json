@@ -4142,19 +4142,6 @@
     "group" : true,
     "id" : "d25a9e58be16f27e8e61f784a1c74ea5"
   }, {
-    "caption" : "刷新",
-    "codeName" : "Refresh",
-    "fullCodeName" : "Refresh",
-    "name" : "表格界面_刷新操作",
-    "getPSSysImage" : {
-      "glyph" : "xf021@FontAwesome",
-      "cssClass" : "fa fa-refresh"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "SYS",
-    "uIActionTag" : "Refresh",
-    "uIActionType" : "DEUIACTION"
-  }, {
     "getCapPSLanguageRes" : {
       "lanResTag" : "TBB.TEXT.*.NEW"
     },
@@ -5544,6 +5531,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -7824,6 +7812,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -8655,6 +8644,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -9341,6 +9331,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMyTerritory.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -10749,6 +10740,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -12227,6 +12219,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -13288,6 +13281,7 @@
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -17630,6 +17624,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
         },
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -18639,6 +18634,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
         },
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -19040,6 +19036,7 @@
         "controlType" : "VIEWLAYOUTPANEL",
         "name" : "layoutpanel",
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -20005,6 +20002,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
         },
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -20255,6 +20253,7 @@
         "controlType" : "VIEWLAYOUTPANEL",
         "name" : "layoutpanel",
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -20558,6 +20557,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateLog.json"
         },
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -20771,6 +20771,7 @@
               "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/User.json"
             },
             "getPSControlParam" : { },
+            "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
@@ -20817,6 +20818,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/User.json"
         },
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -21463,6 +21465,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
         },
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -22058,6 +22061,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
         },
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -22204,6 +22208,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
         },
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -27458,10 +27463,8 @@
       } ],
       "getAllPSAppDEActions" : [ {
         "actionMode" : "CHECKKEY",
-        "actionType" : "BUILTIN",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
-        "name" : "CheckKey",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/CheckKey.json"
@@ -27470,13 +27473,15 @@
           "modelref" : true,
           "id" : "CREATE"
         },
-        "builtinMethod" : true
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "CheckKey"
+        },
+        "builtinMethod" : false
       }, {
         "actionMode" : "CREATE",
-        "actionType" : "BUILTIN",
         "codeName" : "Create",
         "methodType" : "DEACTION",
-        "name" : "Create",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Create.json"
@@ -27485,7 +27490,11 @@
           "modelref" : true,
           "id" : "CREATE"
         },
-        "builtinMethod" : true
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "EMPLOYEE__DEACTION__CREATE"
+        },
+        "builtinMethod" : false
       }, {
         "actionMode" : "READ",
         "codeName" : "Get",
@@ -27506,10 +27515,8 @@
         "builtinMethod" : false
       }, {
         "actionMode" : "GETDRAFT",
-        "actionType" : "BUILTIN",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
-        "name" : "GetDraft",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/GetDraft.json"
@@ -27518,14 +27525,16 @@
           "modelref" : true,
           "id" : "CREATE"
         },
-        "builtinMethod" : true
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "builtinMethod" : false
       }, {
         "actionMode" : "DELETE",
-        "actionType" : "BUILTIN",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
-        "name" : "Remove",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Remove.json"
@@ -27534,25 +27543,29 @@
           "modelref" : true,
           "id" : "DELETE"
         },
-        "builtinMethod" : true,
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "EMPLOYEE__DEACTION__REMOVE"
+        },
+        "builtinMethod" : false,
         "enableBatchAction" : true
       }, {
         "actionMode" : "UNKNOWN",
-        "actionType" : "BUILTIN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
-        "name" : "Save",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Save.json"
         },
-        "builtinMethod" : true
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "Save"
+        },
+        "builtinMethod" : false
       }, {
         "actionMode" : "UPDATE",
-        "actionType" : "BUILTIN",
         "codeName" : "Update",
         "methodType" : "DEACTION",
-        "name" : "Update",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Update.json"
@@ -27561,7 +27574,11 @@
           "modelref" : true,
           "id" : "UPDATE"
         },
-        "builtinMethod" : true
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "EMPLOYEE__DEACTION__UPDATE"
+        },
+        "builtinMethod" : false
       } ],
       "getAllPSAppDEDataSets" : [ {
         "codeName" : "FetchBug",
@@ -27650,62 +27667,98 @@
         "builtinMethod" : false
       }, {
         "codeName" : "FetchProjectTeamM",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "ProjectTeamM",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectTeamM"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchProjectTeamM"
+        },
         "builtinMethod" : false
       }, {
         "codeName" : "FetchProjectTeamMProduct",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "ProjectTeamMProduct",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectTeamMProduct"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchProjectTeamMProduct"
+        },
         "builtinMethod" : false
       }, {
         "codeName" : "FetchProjectTeamTaskUserTemp",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "ProjectTeamTaskUserTemp",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectTeamTaskUserTemp"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchProjectTeamTaskUserTemp"
+        },
         "builtinMethod" : false
       }, {
         "codeName" : "FetchProjectTeamUserTask",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "ProjectTeamUserTask",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectTeamUserTask"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchProjectTeamUserTask"
+        },
         "builtinMethod" : false
       }, {
         "codeName" : "FetchProjectteamPk",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "ProjectteamPk",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectteamPk"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchProjectteamPk"
+        },
         "builtinMethod" : false
       }, {
         "codeName" : "FetchStoryProductTeamPK",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "StoryProductTeamChoice",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "StoryProductTeamPK"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "NONE"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchStoryProductTeamPK"
         },
         "builtinMethod" : false
       }, {
@@ -27939,10 +27992,8 @@
       } ],
       "getAllPSAppDEMethods" : [ {
         "actionMode" : "CHECKKEY",
-        "actionType" : "BUILTIN",
         "codeName" : "CheckKey",
         "methodType" : "DEACTION",
-        "name" : "CheckKey",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/CheckKey.json"
@@ -27951,13 +28002,15 @@
           "modelref" : true,
           "id" : "CREATE"
         },
-        "builtinMethod" : true
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "CheckKey"
+        },
+        "builtinMethod" : false
       }, {
         "actionMode" : "CREATE",
-        "actionType" : "BUILTIN",
         "codeName" : "Create",
         "methodType" : "DEACTION",
-        "name" : "Create",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Create.json"
@@ -27966,7 +28019,11 @@
           "modelref" : true,
           "id" : "CREATE"
         },
-        "builtinMethod" : true
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "EMPLOYEE__DEACTION__CREATE"
+        },
+        "builtinMethod" : false
       }, {
         "actionMode" : "READ",
         "codeName" : "Get",
@@ -27987,10 +28044,8 @@
         "builtinMethod" : false
       }, {
         "actionMode" : "GETDRAFT",
-        "actionType" : "BUILTIN",
         "codeName" : "GetDraft",
         "methodType" : "DEACTION",
-        "name" : "GetDraft",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/GetDraft.json"
@@ -27999,14 +28054,16 @@
           "modelref" : true,
           "id" : "CREATE"
         },
-        "builtinMethod" : true
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "builtinMethod" : false
       }, {
         "actionMode" : "DELETE",
-        "actionType" : "BUILTIN",
         "batchActionMode" : 1,
         "codeName" : "Remove",
         "methodType" : "DEACTION",
-        "name" : "Remove",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Remove.json"
@@ -28015,25 +28072,29 @@
           "modelref" : true,
           "id" : "DELETE"
         },
-        "builtinMethod" : true,
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "EMPLOYEE__DEACTION__REMOVE"
+        },
+        "builtinMethod" : false,
         "enableBatchAction" : true
       }, {
         "actionMode" : "UNKNOWN",
-        "actionType" : "BUILTIN",
         "codeName" : "Save",
         "methodType" : "DEACTION",
-        "name" : "Save",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Save.json"
         },
-        "builtinMethod" : true
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "Save"
+        },
+        "builtinMethod" : false
       }, {
         "actionMode" : "UPDATE",
-        "actionType" : "BUILTIN",
         "codeName" : "Update",
         "methodType" : "DEACTION",
-        "name" : "Update",
         "getPSDEAction" : {
           "modelref" : true,
           "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDEACTIONS/Update.json"
@@ -28042,7 +28103,11 @@
           "modelref" : true,
           "id" : "UPDATE"
         },
-        "builtinMethod" : true
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "EMPLOYEE__DEACTION__UPDATE"
+        },
+        "builtinMethod" : false
       }, {
         "codeName" : "FetchBug",
         "methodType" : "FETCH",
@@ -28130,62 +28195,98 @@
         "builtinMethod" : false
       }, {
         "codeName" : "FetchProjectTeamM",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "ProjectTeamM",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectTeamM"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchProjectTeamM"
+        },
         "builtinMethod" : false
       }, {
         "codeName" : "FetchProjectTeamMProduct",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "ProjectTeamMProduct",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectTeamMProduct"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchProjectTeamMProduct"
+        },
         "builtinMethod" : false
       }, {
         "codeName" : "FetchProjectTeamTaskUserTemp",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "ProjectTeamTaskUserTemp",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectTeamTaskUserTemp"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchProjectTeamTaskUserTemp"
+        },
         "builtinMethod" : false
       }, {
         "codeName" : "FetchProjectTeamUserTask",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "ProjectTeamUserTask",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectTeamUserTask"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchProjectTeamUserTask"
+        },
         "builtinMethod" : false
       }, {
         "codeName" : "FetchProjectteamPk",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "ProjectteamPk",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectteamPk"
         },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchProjectteamPk"
+        },
         "builtinMethod" : false
       }, {
         "codeName" : "FetchStoryProductTeamPK",
-        "dataSetType" : "DATAQUERY",
         "methodType" : "FETCH",
-        "name" : "StoryProductTeamChoice",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "StoryProductTeamPK"
+        },
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "NONE"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "FetchStoryProductTeamPK"
         },
         "builtinMethod" : false
       }, {
@@ -28257,6 +28358,18 @@
         "methodType" : "FILTERACTION",
         "name" : "FILTERUPDATE",
         "builtinMethod" : true
+      }, {
+        "codeName" : "Select",
+        "methodType" : "SELECT",
+        "getPSDEOPPriv" : {
+          "modelref" : true,
+          "id" : "READ"
+        },
+        "getPSDEServiceAPIMethod" : {
+          "modelref" : true,
+          "id" : "Select"
+        },
+        "builtinMethod" : false
       } ],
       "getAllPSDEOPPrivs" : [ {
         "logicName" : "建立",

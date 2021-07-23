@@ -370,6 +370,7 @@
     "controlType" : "VIEWLAYOUTPANEL",
     "name" : "layoutpanel",
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

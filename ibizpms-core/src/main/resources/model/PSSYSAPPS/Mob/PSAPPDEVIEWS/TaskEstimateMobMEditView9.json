@@ -471,6 +471,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

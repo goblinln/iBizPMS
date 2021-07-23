@@ -611,6 +611,7 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
         "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
@@ -727,6 +728,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

@@ -447,6 +447,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

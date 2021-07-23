@@ -2342,6 +2342,7 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountStory.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -2464,6 +2465,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzFavorites.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

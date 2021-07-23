@@ -914,6 +914,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Weekly.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

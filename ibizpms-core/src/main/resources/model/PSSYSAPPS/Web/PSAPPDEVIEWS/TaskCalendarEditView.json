@@ -2119,6 +2119,7 @@
                                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
                                 },
                                 "getPSControlParam" : { },
+                                "layoutBodyOnly" : true,
                                 "layoutPanel" : true,
                                 "useDefaultLayout" : true
                               },
@@ -3755,6 +3756,7 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
                 },
                 "getPSControlParam" : { },
+                "layoutBodyOnly" : true,
                 "layoutPanel" : true,
                 "useDefaultLayout" : true
               },
@@ -4468,6 +4470,7 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
                 },
                 "getPSControlParam" : { },
+                "layoutBodyOnly" : true,
                 "layoutPanel" : true,
                 "useDefaultLayout" : true
               },
@@ -5887,6 +5890,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

@@ -449,6 +449,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -969,6 +970,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -1816,6 +1818,7 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountStory.json"
               },
               "getPSControlParam" : { },
+              "layoutBodyOnly" : true,
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
@@ -1870,6 +1873,7 @@
     "controlType" : "VIEWLAYOUTPANEL",
     "name" : "layoutpanel",
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

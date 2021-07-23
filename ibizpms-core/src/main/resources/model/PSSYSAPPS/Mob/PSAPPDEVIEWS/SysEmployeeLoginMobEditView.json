@@ -633,6 +633,7 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysEmployee.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },

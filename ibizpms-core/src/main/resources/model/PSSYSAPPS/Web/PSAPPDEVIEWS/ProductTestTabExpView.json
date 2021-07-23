@@ -709,6 +709,7 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
           },
           "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
           "layoutPanel" : true,
           "useDefaultLayout" : true
         },
@@ -894,6 +895,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
     "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
