@@ -149,7 +149,7 @@
     "orMode" : "STR",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchProject"
+      "id" : "FetchProjectTeamUserTask"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

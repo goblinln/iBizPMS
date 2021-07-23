@@ -208,7 +208,7 @@
         "emptytext": "未定义",
         "codelisttype":"dynamic",
         "appdataentity":"SysEmployee",
-        "appdedataset":"FetchProject",
+        "appdedataset":"FetchProjectTeamUserTask",
         "items": []
     }, 
     {
