@@ -14677,14 +14677,14 @@
       "name" : "测试移动端内容区视图消息2",
       "getPSAppViewMsg" : {
         "modelref" : true,
-        "id" : "ViewMsg"
+        "id" : "TestBodyViewMsg2"
       },
       "position" : "BODY"
     }, {
-      "name" : "测试移动端内容区视图消息3",
+      "name" : "测试移动端内容区视图消息4",
       "getPSAppViewMsg" : {
         "modelref" : true,
-        "id" : "ViewMsg2"
+        "id" : "TestBodyViewMsg4"
       },
       "position" : "BODY"
     }, {
@@ -14697,8 +14697,15 @@
     } ]
   } ],
   "getAllPSAppViewMsgs" : [ {
-    "codeName" : "ViewMsg",
-    "message" : "测试移动端内容区视图消息2",
+    "codeName" : "TestBodyViewMsg4",
+    "message" : "测试移动端内容区视图消息4-未定义类型",
+    "name" : "测试移动端内容区视图消息4",
+    "position" : "BODY",
+    "removeMode" : 0,
+    "enableRemove" : false
+  }, {
+    "codeName" : "TestBodyViewMsg2",
+    "message" : "测试移动端内容区视图消息2-常规类型",
     "messageType" : "INFO",
     "name" : "测试移动端内容区视图消息2",
     "position" : "BODY",
@@ -14714,31 +14721,8 @@
     "title" : "上方测试标题",
     "enableRemove" : true
   }, {
-    "cacheTimeout" : -1,
-    "codeName" : "ViewMsg2",
-    "getContentPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "dynamicMode" : 1,
-    "message" : "实体数据集default",
-    "messageType" : "WARN",
-    "name" : "测试移动端内容区视图消息3",
-    "getPSAppDEDataSet" : {
-      "modelref" : true,
-      "id" : "FetchCurDefaultQuery"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
-    },
-    "position" : "BODY",
-    "removeMode" : 0,
-    "enableCache" : false,
-    "enableRemove" : false
-  }, {
     "codeName" : "TestBodyViewMsg",
-    "message" : "测试移动端内容区视图消息",
+    "message" : "测试移动端内容区视图消息-错误类型",
     "messageType" : "ERROR",
     "name" : "测试移动端内容区视图消息",
     "position" : "BODY",
@@ -14747,7 +14731,7 @@
   }, {
     "codeName" : "TestBottomViewMsg",
     "message" : "测试移动端下方视图消息",
-    "messageType" : "WARN",
+    "messageType" : "ERROR",
     "name" : "测试移动端下方视图消息",
     "position" : "BOTTOM",
     "removeMode" : 1,
