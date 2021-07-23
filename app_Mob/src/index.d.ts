@@ -1,4 +1,4 @@
-import { UIServiceRegister, AuthServiceRegister, UtilServiceRegister, CounterServiceRegister, CodeListRegister} from 'ibiz-service';
+import { UIServiceRegister, AuthServiceRegister, UtilServiceRegister, CounterServiceRegister} from 'ibiz-service';
 import {  UIStateService } from 'ibiz-vue';
 declare global {
     interface Window {
@@ -6,7 +6,6 @@ declare global {
         authServiceRegister: AuthServiceRegister,
         utilServiceRegister: UtilServiceRegister,
         counterServiceRegister: CounterServiceRegister,
-        codeListRegister:CodeListRegister,
     }
 }
 
