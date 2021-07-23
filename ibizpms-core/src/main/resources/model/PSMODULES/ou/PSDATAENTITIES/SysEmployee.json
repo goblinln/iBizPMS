@@ -409,7 +409,7 @@
     "enableBackend" : true,
     "enableFront" : true
   }, {
-    "codeName" : "ProjectTeamUser1",
+    "codeName" : "ProjectTeamUser",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUser",
     "getPSDEDataQueries" : [ {

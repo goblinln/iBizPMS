@@ -73,7 +73,7 @@ public class SysEmployeeAspect {
         else if (action.equals("searchProjectTeamTaskUserTemp")) {
             return getDataEntityRuntime().aroundDataSet("ProjectTeamTaskUserTemp", point);
         }
-        else if (action.equals("searchProjectTeamUser1")) {
+        else if (action.equals("searchProjectTeamUser")) {
             return getDataEntityRuntime().aroundDataSet("ProjectTeamUser", point);
         }
         else if (action.equals("searchProjectTeamUserTask")) {

@@ -223,7 +223,7 @@
     "name" : "FetchProjectTeamUser",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "ProjectTeamUser1"
+      "id" : "ProjectTeamUser"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -751,7 +751,7 @@
     "name" : "FetchProjectTeamUser",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "ProjectTeamUser1"
+      "id" : "ProjectTeamUser"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,

@@ -121,7 +121,7 @@ public class SysEmployeeFallback implements FallbackFactory<SysEmployeeFeignClie
             }
 
 
-            public Page<SysEmployee> searchProjectTeamUser1(SysEmployeeSearchContext context) {
+            public Page<SysEmployee> searchProjectTeamUser(SysEmployeeSearchContext context) {
                 throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
             }
 
