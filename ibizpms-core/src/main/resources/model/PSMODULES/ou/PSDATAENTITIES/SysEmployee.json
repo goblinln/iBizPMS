@@ -409,17 +409,15 @@
     "enableBackend" : true,
     "enableFront" : true
   }, {
-    "codeName" : "ProjectTeamUser",
-    "dataSetType" : "CODELIST",
+    "codeName" : "ProjectTeamUser1",
     "logicName" : "项目团队成员",
     "name" : "ProjectTeamUser",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "ProjectTeamUser"
     } ],
-    "predefinedType" : "CODELIST",
     "enableBackend" : true,
-    "enableFront" : false
+    "enableFront" : true
   }, {
     "codeName" : "ProjectTeamUserTask",
     "logicName" : "项目团队成员",

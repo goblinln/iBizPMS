@@ -107,7 +107,7 @@ public class EmployeeResource {
 	@ApiOperation(value = "获取项目团队成员", tags = {"人员" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/employees/fetchproject")
 	public ResponseEntity<List<EmployeeDTO>> fetchproject(@RequestBody SysEmployeeSearchContext context) {
-        Page<SysEmployee> domains = sysemployeeService.searchProjectTeamUser(context) ;
+        Page<SysEmployee> domains = sysemployeeService.searchProjectTeamUser1(context) ;
         List<EmployeeDTO> list = employeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

@@ -134,7 +134,7 @@ public class SysEmployeeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         if (iPSDEDataSet.getName().equals("ProjectTeamTaskUserTemp"))
             return sysemployeeService.searchProjectTeamTaskUserTemp(searchContext);    
         if (iPSDEDataSet.getName().equals("ProjectTeamUser"))
-            return sysemployeeService.searchProjectTeamUser(searchContext);    
+            return sysemployeeService.searchProjectTeamUser1(searchContext);    
         if (iPSDEDataSet.getName().equals("ProjectTeamUserTask"))
             return sysemployeeService.searchProjectTeamUserTask(searchContext);    
         if (iPSDEDataSet.getName().equals("ProjectteamPk"))
