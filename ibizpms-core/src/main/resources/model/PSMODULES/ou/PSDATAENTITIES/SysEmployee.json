@@ -419,7 +419,7 @@
     } ],
     "predefinedType" : "CODELIST",
     "enableBackend" : true,
-    "enableFront" : true
+    "enableFront" : false
   }, {
     "codeName" : "ProjectTeamUserTask",
     "logicName" : "项目团队成员",
