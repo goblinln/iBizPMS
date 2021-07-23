@@ -14687,6 +14687,20 @@
       },
       "position" : "BODY"
     }, {
+      "name" : "测试移动端内容区视图消息2",
+      "getPSAppViewMsg" : {
+        "modelref" : true,
+        "id" : "ViewMsg"
+      },
+      "position" : "BODY"
+    }, {
+      "name" : "测试移动端内容区视图消息3",
+      "getPSAppViewMsg" : {
+        "modelref" : true,
+        "id" : "ViewMsg2"
+      },
+      "position" : "BODY"
+    }, {
       "name" : "测试移动端下方视图消息",
       "getPSAppViewMsg" : {
         "modelref" : true,
@@ -14696,6 +14710,14 @@
     } ]
   } ],
   "getAllPSAppViewMsgs" : [ {
+    "codeName" : "ViewMsg",
+    "message" : "测试移动端内容区视图消息2",
+    "messageType" : "INFO",
+    "name" : "测试移动端内容区视图消息2",
+    "position" : "BODY",
+    "removeMode" : 2,
+    "enableRemove" : true
+  }, {
     "codeName" : "TestTopViewMsg",
     "message" : "测试移动端上方视图消息",
     "messageType" : "INFO",
@@ -14704,6 +14726,25 @@
     "removeMode" : 2,
     "title" : "上方测试标题",
     "enableRemove" : true
+  }, {
+    "cacheTimeout" : -1,
+    "codeName" : "ViewMsg2",
+    "dynamicMode" : 1,
+    "message" : "实体数据集default",
+    "messageType" : "WARN",
+    "name" : "测试移动端内容区视图消息3",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "position" : "BODY",
+    "removeMode" : 0,
+    "enableCache" : false,
+    "enableRemove" : false
   }, {
     "codeName" : "TestBodyViewMsg",
     "message" : "测试移动端内容区视图消息",
