@@ -14698,7 +14698,7 @@
   } ],
   "getAllPSAppViewMsgs" : [ {
     "codeName" : "TestBodyViewMsg4",
-    "message" : "测试移动端内容区视图消息4-未定义类型",
+    "message" : "测试移动端内容区视图消息33-警告类型",
     "messageType" : "WARN",
     "name" : "测试移动端内容区视图消息4",
     "position" : "BODY",
@@ -14706,7 +14706,7 @@
     "enableRemove" : false
   }, {
     "codeName" : "TestBodyViewMsg2",
-    "message" : "测试移动端内容区视图消息2-常规类型",
+    "message" : "测试移动端内容区视图消息22-常规类型",
     "messageType" : "INFO",
     "name" : "测试移动端内容区视图消息2",
     "position" : "BODY",
@@ -14723,7 +14723,7 @@
     "enableRemove" : true
   }, {
     "codeName" : "TestBodyViewMsg",
-    "message" : "测试移动端内容区视图消息-错误类型",
+    "message" : "测试移动端内容区视图消息11-错误类型",
     "messageType" : "ERROR",
     "name" : "测试移动端内容区视图消息",
     "position" : "BODY",
