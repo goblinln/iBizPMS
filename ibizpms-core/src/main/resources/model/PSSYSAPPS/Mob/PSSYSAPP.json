@@ -14717,8 +14717,8 @@
     "cacheTimeout" : -1,
     "codeName" : "ViewMsg2",
     "getContentPSAppDEField" : {
-      "name" : "HOURS",
-      "codeName" : "Hours"
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "dynamicMode" : 1,
     "message" : "实体数据集default",
