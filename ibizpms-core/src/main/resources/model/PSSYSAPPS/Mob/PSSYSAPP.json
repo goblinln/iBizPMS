@@ -14699,6 +14699,7 @@
   "getAllPSAppViewMsgs" : [ {
     "codeName" : "TestBodyViewMsg4",
     "message" : "测试移动端内容区视图消息4-未定义类型",
+    "messageType" : "WARN",
     "name" : "测试移动端内容区视图消息4",
     "position" : "BODY",
     "removeMode" : 0,
