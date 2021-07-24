@@ -86,6 +86,9 @@ export class AppDefaultPickUpMDView extends MobPickUpMDViewBase {
             this.renderContent(),
             this.renderQuickSearch(),
             this.renderMainContent(),
+            this.renderTopMessage(),
+            this.renderBodyMessage(),
+            this.renderBottomMessage(),            
         ]);
     }
 

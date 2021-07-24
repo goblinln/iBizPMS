@@ -85,6 +85,9 @@ export class AppDefaultMobPickUpTreeView extends MobPickupTreeViewBase {
         }, [
             this.renderContent(),
             this.renderMainContent(),
+            this.renderTopMessage(),
+            this.renderBodyMessage(),
+            this.renderBottomMessage(),            
         ]);
     }
 

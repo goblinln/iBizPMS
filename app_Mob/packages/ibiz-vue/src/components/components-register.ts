@@ -98,6 +98,8 @@ export const ComponentsRegister = {
         v.component('app-search-editor', () => import('../components/common/app-search-editor/app-search-editor.vue'));
         // ICON
         v.component('app-mob-icon', () => import('../components/common/app-mob-icon/app-mob-icon.vue'));
+        // 视图消息
+        v.component('app-mob-alert', () => import('../components/common/app-mob-alert/app-mob-alert.vue'));        
 
         // 编辑器 BEGIN
         // 评分器

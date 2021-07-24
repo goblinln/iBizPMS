@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
 import { Util, ViewTool, ThirdPartyService, ViewContext, ViewState, AppServiceBase, GetModelService, AppModelService, ModelTool, AppCapacitorService } from 'ibiz-core';
-import { CounterServiceRegister } from 'ibiz-service';
+import { CounterServiceRegister, ViewMessageService } from 'ibiz-service';
 import { IPSAppView, IPSControl, IPSAppDEView, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { NavDataService } from '../app-service';
 /**
@@ -320,6 +320,14 @@ export class ViewBase extends Vue {
     public modelService !: AppModelService;
 
     /**
+     * 视图消息服务
+     *
+     * @type {AppModelService}
+     * @memberof ControlBase
+     */
+    public viewMessageService: ViewMessageService = new ViewMessageService();
+
+    /**
      * 监听动态参数变化
      *
      * @param {*} newVal
@@ -449,6 +457,7 @@ export class ViewBase extends Vue {
             // 初始化时需要计算context和viewparams
             this.parseViewParam();
             if (this.staticProps && this.staticProps.modeldata) {
+                await this.initViewMessageService(this.staticProps.modeldata);
                 await this.initCounterService(this.staticProps.modeldata);
                 await this.initAppUIService();
             }
@@ -554,6 +563,16 @@ export class ViewBase extends Vue {
         Object.assign(this.model, { srfCaption: this.viewInstance.getCapPSLanguageRes() ? this.$tl((this.viewInstance.getCapPSLanguageRes() as IPSLanguageRes).lanResTag, this.viewInstance.caption) : this.viewInstance.caption });
         Object.assign(this.model, { srfTitle: this.viewInstance.getTitlePSLanguageRes() ? this.$tl((this.viewInstance.getTitlePSLanguageRes() as IPSLanguageRes).lanResTag, this.viewInstance.title) : this.viewInstance.title });
         Object.assign(this.model, { srfSubTitle: this.viewInstance.getSubCapPSLanguageRes() ? this.$tl((this.viewInstance.getSubCapPSLanguageRes() as IPSLanguageRes).lanResTag, this.viewInstance.subCaption) : this.viewInstance.subCaption });
+    }
+
+    /**
+     * 初始化视图消息服务
+     *
+     * @memberof ViewBase
+     */
+    public async initViewMessageService(param: any) {
+        const viewMsgGroup: any = (param as IPSAppView).getPSAppViewMsgGroup?.();
+        await this.viewMessageService.initBasicParam(viewMsgGroup, this.context, this.viewparams);
     }
 
     /**
@@ -986,7 +1005,22 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public renderTopMessage() {
-        return (null);
+        const msgDetails: any[] = this.viewMessageService.getViewMsgDetails('TOP');
+        if (msgDetails.length == 0) {
+            return null;
+        }
+        return (
+            <div slot="topMessage" class="view-top-message">
+                <app-mob-alert
+                    position="TOP"
+                    messageDetails={msgDetails}
+                    context={Util.deepCopy(this.context)}
+                    viewparam={Util.deepCopy(this.viewparams)}
+                    infoGroup={this.viewInstance.getPSAppViewMsgGroup()?.codeName}
+                    viewname={this.viewInstance.codeName.toLowerCase()}
+                ></app-mob-alert>
+            </div>
+        );
     }
 
     /**
@@ -995,7 +1029,22 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public renderBodyMessage() {
-        return (null);
+        const msgDetails: any[] = this.viewMessageService.getViewMsgDetails('BODY');
+        if (msgDetails.length == 0) {
+            return null;
+        }
+        return (
+            <div slot="bodyMessage" class="view-body-message">
+                <app-mob-alert
+                    position="BODY"
+                    messageDetails={msgDetails}
+                    context={Util.deepCopy(this.context)}
+                    viewparam={Util.deepCopy(this.viewparams)}
+                    infoGroup={this.viewInstance.getPSAppViewMsgGroup()?.codeName}
+                    viewname={this.viewInstance.codeName.toLowerCase()}
+                ></app-mob-alert>
+            </div>
+        );
     }
 
     /**
@@ -1004,7 +1053,22 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public renderBottomMessage() {
-        return (null);
+        const msgDetails: any[] = this.viewMessageService.getViewMsgDetails('BOTTOM');
+        if (msgDetails.length == 0) {
+            return null;
+        }
+        return (
+            <div slot="bottomMessage" class="view-bottom-message">
+                <app-mob-alert
+                    position="BOTTOM"
+                    messageDetails={msgDetails}
+                    context={Util.deepCopy(this.context)}
+                    viewparam={Util.deepCopy(this.viewparams)}
+                    infoGroup={this.viewInstance.getPSAppViewMsgGroup()?.codeName}
+                    viewname={this.viewInstance.codeName.toLowerCase()}
+                ></app-mob-alert>
+            </div>
+        );
     }
 
     /**
@@ -1098,6 +1162,7 @@ export class ViewBase extends Vue {
     public renderContent() {
         const id = this.viewInstance.codeName;
         return <ion-content ref="ionScroll" id={id} slot="content" scroll-y={this.enableControlUIAuth as string}>
+            {this.renderBodyMessage()}
             {this.renderMainContent()}
         </ion-content>      
      }

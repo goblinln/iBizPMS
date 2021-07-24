@@ -85,6 +85,9 @@ export class AppDefaultPickUpView extends MobPickUpViewBase {
         }, [
             this.renderViewHeaderCaptionBar(),
             this.renderContent(),
+            this.renderTopMessage(),
+            this.renderBodyMessage(),
+            this.renderBottomMessage(),            
             this.renderMainContent(),
             this.renderFooter()
         ]);

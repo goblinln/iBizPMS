@@ -38,6 +38,7 @@ export class AppDefaultViewLayout extends Vue {
             {this.$slots.toolbar}
             {this.$slots.quicksearch}
             {this.$slots.quickGroupSearch}
+            {this.$slots.topMessage}
         </ion-header>
     }
 
@@ -69,6 +70,7 @@ export class AppDefaultViewLayout extends Vue {
             {this.$slots.mobbottommenu}
             {this.$slots.footer}
             {this.$slots.scrollTool}
+            {this.$slots.bottomMessage}
         </ion-footer>
     }
 

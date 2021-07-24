@@ -67,6 +67,9 @@ export class AppDefaultMobEditView3 extends MobEditView3Base {
         }, [
             this.renderViewHeaderCaptionBar(),
             this.renderContent(),
+            this.renderTopMessage(),
+            this.renderBodyMessage(),
+            this.renderBottomMessage(),            
             this.renderMainContent(),
             this.renderToolBar()
         ]);

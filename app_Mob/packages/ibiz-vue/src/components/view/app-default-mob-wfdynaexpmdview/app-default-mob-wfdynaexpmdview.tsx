@@ -86,6 +86,9 @@ export class AppDefaultMobWfDynaExpMDView extends MobWFDynaExpMdViewBase {
              this.renderExpMdViewToolbar(),
              this.renderViewHeaderCaptionBar(),
              this.renderViewContent(),
+             this.renderTopMessage(),
+             this.renderBodyMessage(),
+             this.renderBottomMessage(),             
              this.renderMainContent(),
          ]);
      }  

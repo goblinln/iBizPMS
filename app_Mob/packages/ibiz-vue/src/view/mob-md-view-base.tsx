@@ -98,6 +98,7 @@ export class MobMDViewBase extends MDViewBase {
     public renderViewContent() {
         const id = this.viewInstance.codeName;
         return <ion-content ref="ionScroll" id={id} scroll-y={this.enableControlUIAuth as string} scroll-events={true} slot="ioncontent"  on-ionScroll={this.onScroll.bind(this)} on-ionScrollEnd={this.onScrollEnd.bind(this)}>
+            {this.renderBodyMessage()}
             {this.renderPullDownRefresh()}
             {this.renderMainContent()}
         </ion-content>

@@ -21,6 +21,7 @@ export class AppDefaultMobTabExpViewLayout extends AppDefaultViewLayout{
             {this.$slots.quicksearch}
             {this.$slots.quickGroupSearch}
             {this.$slots.segment}
+            {this.$slots.topMessage} 
         </ion-header>
     }
 }

@@ -1,134 +1,46 @@
-import { ViewMessage, EntityBaseService } from 'ibiz-core';
+import { IPSAppDEDataSetViewMsg, IPSAppMsgTempl, IPSAppViewMsg, IPSAppViewMsgGroup, IPSAppViewMsgGroupDetail } from '@ibiz/dynamic-model-api';
+import { Util } from 'ibiz-core';
+import { DynamicViewMessageService } from './dynamic-view-message-service';
+
 /**
- * 视图消息
+ * 视图消息服务
  *
  * @export
- * @class ViewMessage
+ * @class ViewMessageService
  */
 export class ViewMessageService {
 
     /**
-     * 单例变量声明
+     * 视图消息集合实例对象
      *
-     * @private
-     * @static
-     * @type {ViewMessageService}
+     * @type {IPSAppViewMsgGroup}
      * @memberof ViewMessageService
      */
-    private static ViewMessage: ViewMessageService;
+    protected viewMessageGroup!: IPSAppViewMsgGroup;
 
     /**
-     * 实体数据服务对象
+     * 视图消息集合
      *
-     * @protected
-     * @type {EntityService}
+     * @type {any[]}
      * @memberof ViewMessageService
      */
-    protected entityService:EntityBaseService<any> = new EntityBaseService();
+    protected viewMessageDetails: any[] = [];
 
     /**
-     * 视图消息标识
+     * 应用上下文
      *
-     * @type {string}
+     * @type {*}
      * @memberof ViewMessageService
      */
-    public id:string ="";
+    public context: any;
 
     /**
-     * 视图消息名称
+     * 视图参数
      *
-     * @type {string}
+     * @type {*}
      * @memberof ViewMessageService
      */
-    public name:string ="";
-
-    /**
-     * 视图消息代码名称
-     *
-     * @type {string}
-     * @memberof ViewMessageService
-     */
-    public codename:string ="";
-
-    /**
-     * 视图消息标题
-     *
-     * @type {string}
-     * @memberof ViewMessageService
-     */
-    public title:string ="";
-
-    /**
-     * 视图消息内容
-     *
-     * @type {string}
-     * @memberof ViewMessageService
-     */
-    public content:string ="";
-
-    /**
-     * 视图消息关闭模式(0:无关闭，1:默认关闭，2：本次关闭)
-     *
-     * @type {number}
-     * @memberof ViewMessageService
-     */
-    public closeMode:number = 0;
-
-    /**
-     * 视图消息位置
-     *
-     * @type {string}
-     * @memberof ViewMessageService
-     */
-    public position:string ="";
-
-    /**
-     * 视图消息类型
-     *
-     * @type {string}
-     * @memberof ViewMessageService
-     */
-    public type:string = "info";
-
-    /**
-     * 视图消息是否支持删除
-     *
-     * @type {boolean}
-     * @memberof ViewMessageService
-     */
-    public isEnableRemove:boolean = true;
-
-    /**
-     * 视图消息排序值
-     *
-     * @type {boolean}
-     * @memberof ViewMessageService
-     */
-    public order:number = 1;
-
-    /**
-     * 动态模式
-     *
-     * @type {string}
-     * @memberof ViewMessageService
-     */
-    public dynamicMode:string = "STATIC";
-
-    /**
-     * 消息类型(可选值：TEXT/HTML)
-     *
-     * @type {string}
-     * @memberof ViewMessageService
-     */
-    public messageType:string = "TEXT";
-
-    /**
-     * 是否含有消息模板
-     *
-     * @type {boolean}
-     * @memberof ViewMessageService
-     */
-    public hasMessageTemp:boolean = false;
+    public viewparams: any;
 
     /**
      * 视图消息缓存(加载中)
@@ -147,26 +59,24 @@ export class ViewMessageService {
     public static messageCached:Map<string,any> = new Map();
 
     /**
-     * 初始化实例
+     * 获取视图消息实例
      * 
+     * @param position 视图消息位置
      * @memberof ViewMessageService
      */
-    constructor(opts: any = {}) {
-        this.initBasicParam();
-    }
-
-    /**
-     * 获取 ViewMessageService 单例对象
-     *
-     * @static
-     * @returns {ViewMessageService}
-     * @memberof ViewMessageService
-     */
-    public static getInstance(): ViewMessageService {
-        if (!ViewMessageService.ViewMessage) {
-            ViewMessageService.ViewMessage = new ViewMessageService();
+    public getViewMsgDetails(position?: string): any[] {
+        if (!position) {
+            return this.viewMessageDetails;
         }
-        return this.ViewMessage;
+        if (position == 'TOP') {
+            return this.viewMessageDetails.filter((detail: any) => {
+                return detail.position == 'TOP' || detail.position == 'POPUP';
+            });
+        } else {
+            return this.viewMessageDetails.filter((detail: any) => {
+                return detail.position == position;
+            });
+        }
     }
 
     /**
@@ -174,77 +84,107 @@ export class ViewMessageService {
      * 
      * @memberof ViewMessageService
      */
-    public initBasicParam(){}
-
-    /**
-     * 获取视图消息服务
-     *
-     * @protected
-     * @param {string} name 视图消息codename
-     * @returns {Promise<any>}
-     * @memberof ViewMessageService
-     */
-    public getService(name: string): Promise<any> {
-        return (window as any)['messageServiceRegister'].getService(name);
+    public async initBasicParam(opts: IPSAppViewMsgGroup, context?: any, viewparams?: any) {
+        this.viewMessageGroup = opts;
+        this.context = context;
+        this.viewparams = viewparams;
+        await this.initViewMsgDetails();
     }
 
     /**
-     * 通过tag获取视图消息
+     * 初始化视图消息集合
      * 
-     * @param {tag:string} 视图消息标识
-     * @param {context:any} 导航上下文
-     * @param {viewparam:any} 导航参数
      * @memberof ViewMessageService
      */
-    public async getViewMessageByTag(tag:string,context:any = {},viewparam:any = {}){
-        let messageService:any = await this.getService(tag);
-        if(messageService.dynamicMode && Object.is(messageService.dynamicMode,"STATIC")){
-            return messageService.getStaticViewMessage(context,viewparam);
-        }else{
-            return messageService.getDynamicViewMessage(tag,messageService,context,viewparam);
+    public async initViewMsgDetails() {
+        const viewMsgGroupDetails: Array<IPSAppViewMsgGroupDetail> = this.viewMessageGroup?.getPSAppViewMsgGroupDetails?.() || [];
+        if (viewMsgGroupDetails.length == 0) {
+            return [];
+        }
+        for (let i = 0; i<viewMsgGroupDetails.length; i++) {
+            const viewMsg = viewMsgGroupDetails[i].getPSAppViewMsg() as IPSAppViewMsg;
+            let items: any[] = [];
+            if (viewMsg.dynamicMode == 0) { //  动态模式为 静态
+                items = await this.initStaticViewMessage(viewMsg);
+            } else if (viewMsg.dynamicMode == 1) {  //  动态模式为 实体数据集
+                items = await this.initDynamicViewMessage(viewMsg as IPSAppDEDataSetViewMsg, this.context, this.viewparams);
+            }
+            this.viewMessageDetails.push(...items);
         }
     }
 
     /**
-     * 转化消息模板标题和内容
-     *      
-     * @target {*} target 返回目标数据
-     * @param {*} context 应用上下文
-     * @param {*} viewparam 视图参数
-     * @param {*} item 源数据
+     * 初始化动态模式（静态）类型视图消息
      * 
+     * @param {IPSAppViewMsg} 动态模式（静态）类型视图消息实例
      * @memberof ViewMessageService
      */
-    public translateMessageTemp(target:any,context:any,viewparam:any,item?:any){
+    public async initStaticViewMessage(detail: IPSAppViewMsg): Promise<any[]> {
+        const _this: any = this;
+        return new Promise((resolve: any, reject: any) => {
+            let viewMessage: any = {
+                position: detail.position || 'TOP',
+                name: detail.name,
+                codeName: detail.codeName?.toLowerCase(),
+                type: detail.messageType,
+                title: detail.title,
+                titleLanResTag: detail.titleLanResTag || detail.getTitlePSLanguageRes()?.lanResTag,
+                content: detail.message,
+                removeMode: detail.removeMode,
+                enableRemove: detail.enableRemove,
+            };
+            _this.translateMessageTemp(viewMessage, detail);
+            resolve([viewMessage]);
+        })
         
     }
 
     /**
-     * 获取动态模式（静态）类型视图消息
+     * 转化动态模式（静态）类型视图消息模板标题和内容
+     *      
+     * @target {*} target 返回目标数据
+     * @param {IPSAppViewMsg} 动态模式（静态）视图消息实例
      * 
      * @memberof ViewMessageService
      */
-    public getStaticViewMessage(context:any,viewparam:any):Array<ViewMessage>{
-        let returnViewMessage:ViewMessage ={
-            id:this.id,
-            name:this.name,
-            codename:this.codename,
-            title:this.title,
-            content:this.content,
-            closeMode:this.closeMode,
-            position:this.position,
-            type:this.type,
-            isEnableRemove:this.isEnableRemove,
-            order:this.order,
-            dynamicMode:this.dynamicMode,
-            messageType:this.messageType
-        };
-        this.translateMessageTemp(returnViewMessage,context,viewparam);
-        return [returnViewMessage];
+    public translateMessageTemp(target: any, detail: IPSAppViewMsg) {
+        const format = (content: any) => {
+            if (!Util.isExistAndNotEmpty(content)) {
+                return content;
+            }
+            const params: any[] = content.match(/\${(.+?)\}/g) || [];
+            if (params.length > 0) {
+                params.forEach((param: any) => {
+                    let _param: any = param.substring(2, param.length - 1).toLowerCase();
+                    const arr: string[] = _param.split('.');
+                    if (arr.length == 2) {
+                        switch (arr[0]) {
+                            case 'context':
+                                content = this.context ? content.replace(param, this.context[arr[1]]) : content;
+                                break;
+                            case 'viewparams':
+                                content = this.viewparams ? content.replace(param, this.viewparams[arr[1]]) : content;
+                                break;
+                        }
+                    }
+                })
+            }
+            return content;
+        }
+        const appMsgTempl: IPSAppMsgTempl = detail.getPSAppMsgTempl?.() as IPSAppMsgTempl;
+        if (!appMsgTempl) {
+            return;
+        }
+        Object.assign(target, {
+            messageType: appMsgTempl.contentType == 'HTML' ? 'HTML' : 'TEXT',
+            title: format(appMsgTempl.subject),
+            titleLanResTag: appMsgTempl.getSubPSLanguageRes()?.lanResTag,
+            content: format(appMsgTempl.content)
+        });
     }
 
     /**
-     * 获取动态模式（实体数据集合）类型视图消息
+     * 初始化动态模式（实体数据集合）类型视图消息
      *
      * @param {any} tag 视图消息标识
      * @param {any} messageService 消息服务
@@ -252,17 +192,20 @@ export class ViewMessageService {
      * @returns {Promise<any[]>}
      * @memberof ViewMessageService
      */
-    public getDynamicViewMessage(tag:string,messageService: any,context:any = {}, data: any = {}, isloading?: boolean): Promise<any[]> {
+    public async initDynamicViewMessage(detail: IPSAppDEDataSetViewMsg, context: any = {}, data: any = {}, isloading?: boolean): Promise<any[]> {
         if(context && context.srfsessionid){
             delete context.srfsessionid;
         }
+        //  动态模式（实体数据集合）类型视图消息服务
+        const dynamicViewMsgService: DynamicViewMessageService = new DynamicViewMessageService(detail);
         return new Promise((resolve:any,reject:any) =>{
-            let isEnableCache:boolean = messageService.isEnableCache;
-            let cacheTimeout:any = messageService.cacheTimeout;
+            let isEnableCache: boolean = (detail as any).enableCache;
+            let cacheTimeout :any = (detail as any).cacheTimeout;
+            const tag: any = detail.codeName;
             // 启用缓存
             if(isEnableCache){
-                const callback:Function = (context:any ={},data:any ={},tag:string,promise:Promise<any>) =>{
-                    const callbackKey:string = `${JSON.stringify(context)}-${JSON.stringify(data)}-${tag}`;
+                const callback: Function = (context:any ={}, data:any ={}, tag:string, promise:Promise<any>) =>{
+                    const callbackKey:string = `${tag}`;
                     promise.then((result:any) =>{
                         if(result.length > 0){
                             ViewMessageService.messageCached.set(callbackKey,{items:result});
@@ -275,39 +218,40 @@ export class ViewMessageService {
                         return reject(result);
                     })
                 }
-                const key:string = `${JSON.stringify(context)}-${JSON.stringify(data)}-${tag}`;
+                const key:string = `${tag}`;
                 // 加载完成,从本地缓存获取
                 if(ViewMessageService.messageCached.get(key)){
                     let items:any = ViewMessageService.messageCached.get(key).items;
-                    if(items.length >0){
-                        if(new Date().getTime() <= messageService.getExpirationTime()){
+                    if(items.length > 0){
+                        if(new Date().getTime() <= dynamicViewMsgService.getExpirationTime()){
                             return resolve(items); 
                         }
                     }
                 }
-                if (messageService) {
-                    // 加载中，UI又需要数据，解决连续加载同一代码表问题
+                // 加载中，UI又需要数据，解决连续加载同一消息服务问题
+                if (dynamicViewMsgService) {
                     if(ViewMessageService.messageCache.get(key)){
-                        callback(context,data,tag,ViewMessageService.messageCache.get(key));
+                        callback(context, data, tag, ViewMessageService.messageCache.get(key));
                     }else{
-                        let result:Promise<any> = messageService.getItems(context,data,isloading);
+                        let result: Promise<any> = dynamicViewMsgService.getItems(context, data, isloading);
                         ViewMessageService.messageCache.set(key,result);
-                        messageService.setExpirationTime(new Date().getTime() + cacheTimeout);
-                        callback(context,data,tag,result);
+                        dynamicViewMsgService.setExpirationTime(new Date().getTime() + cacheTimeout);
+                        callback(context, data, tag, result);
                     }
                 }
             }else{
-                if (messageService) {
-                    messageService.getItems(context,data,isloading).then((result:any) =>{
+                if (dynamicViewMsgService) {
+                    dynamicViewMsgService.getItems(context,data,isloading).then((result:any) =>{
                         resolve(result);
                     }).catch((error:any) =>{
                         Promise.reject([]);
                     })
-                }else{
+                } else {
                     return Promise.reject([]);
                 } 
             }
         })
-    } 
+
+    }
 
 }

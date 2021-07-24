@@ -1,0 +1,28 @@
+.app-mob-alert{
+  font-size: 15px;
+  .alert{
+    &[type="info"]{
+      background-color: #1989fa;
+      color: #fff;
+    }
+    &[type="error"]{
+      background-color: #ee0a24;
+      color: #fff;
+    }
+    &[type="warning"]{
+      background-color: #ff976a;
+      color: #fff;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    .content{
+      display: flex;
+      flex-direction: column;
+      .title{
+        font-weight: bold;
+      }
+    }
+  }
+}

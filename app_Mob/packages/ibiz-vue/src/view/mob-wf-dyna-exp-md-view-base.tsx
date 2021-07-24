@@ -105,6 +105,7 @@ export class MobWFDynaExpMdViewBase extends MDViewBase {
      */
     public renderViewContent() {
         return <ion-content ref="ionScroll" slot="ioncontent" scroll-events={true} on-ionScroll={this.onScroll.bind(this)} on-ionScrollEnd={this.onScrollEnd.bind(this)}>
+            {this.renderBodyMessage()}
             {this.renderMainContent()}
         </ion-content>
     }

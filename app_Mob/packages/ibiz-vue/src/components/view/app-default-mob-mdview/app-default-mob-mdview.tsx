@@ -85,6 +85,9 @@ export class AppDefaultMobMdView extends MobMDViewBase {
         }, [
             this.renderViewHeaderCaptionBar(),
             this.renderViewHeaderButton(),
+            this.renderTopMessage(),
+            this.renderBodyMessage(),
+            this.renderBottomMessage(),            
             this.renderSearchForm(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),

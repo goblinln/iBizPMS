@@ -94,6 +94,9 @@ export class AppDefaultMobListExpView extends MobListExpViewBase {
             }, [
                 this.renderViewHeaderCaptionBar(),
                 this.renderContent(),
+                this.renderTopMessage(),
+                this.renderBodyMessage(),
+                this.renderBottomMessage(),                
                 this.renderMainContent()
         ]);
     }

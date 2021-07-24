@@ -85,6 +85,9 @@ export class AppDefaultMobCalendarView extends MobCalendarViewBase {
             props: { viewInstance: this.viewInstance }
         }, [
             this.renderViewHeaderCaptionBar(),
+            this.renderTopMessage(),
+            this.renderBodyMessage(),
+            this.renderBottomMessage(),            
             this.renderContent(),
             this.renderMainContent(),
             this.renderToolBar()

@@ -94,6 +94,9 @@ export class AppDefaultMobMapView extends MobMapViewBase {
             }, [
                 this.renderViewHeaderCaptionBar(),
                 this.renderViewContent(),
+                this.renderTopMessage(),
+                this.renderBodyMessage(),
+                this.renderBottomMessage(),                
                 this.renderMainContent()
         ]);
     }

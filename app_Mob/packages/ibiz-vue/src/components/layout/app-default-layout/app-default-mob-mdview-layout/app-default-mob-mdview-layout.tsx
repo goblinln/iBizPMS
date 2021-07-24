@@ -20,6 +20,7 @@ export class AppDefaultMobMdViewLayout extends AppDefaultViewLayout {
             {this.$slots.quickGroupSearch}
             {this.$slots.mdviewtools}
             {this.$slots.expmdviewtoolbar}
+            {this.$slots.topMessage}            
         </ion-header>: <div></div>
     }
 
