@@ -4,5 +4,13 @@
   "codeName" : "CreateGetInfo",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/CreateGetInfo.json",
   "logicName" : "新建时获取信息",
-  "name" : "CreateGetInfo"
+  "name" : "CreateGetInfo",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

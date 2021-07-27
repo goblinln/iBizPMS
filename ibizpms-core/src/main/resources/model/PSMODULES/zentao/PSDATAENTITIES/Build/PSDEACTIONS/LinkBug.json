@@ -4,5 +4,13 @@
   "codeName" : "LinkBug",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkBug.json",
   "logicName" : "关联Bug",
-  "name" : "linkBug"
+  "name" : "linkBug",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

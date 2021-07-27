@@ -5,6 +5,14 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildUnlinkStorys.json",
   "logicName" : "版本解除关联需求",
   "name" : "buildUnlinkStorys",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/buildUnlinkStorys.json"

@@ -1975,7 +1975,6 @@
     "id" : "update"
   },
   "enableRootSelect" : false,
-  "enableSearchDefault" : true,
   "outputIconDefault" : false,
   "rootVisible" : false,
   "modelid" : "4edd6263fd8d1443b94d9da4b9d51ca0",

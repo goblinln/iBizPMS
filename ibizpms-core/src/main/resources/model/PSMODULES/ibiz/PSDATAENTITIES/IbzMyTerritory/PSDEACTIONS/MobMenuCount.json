@@ -5,6 +5,14 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MobMenuCount.json",
   "logicName" : "移动端菜单计数器",
   "name" : "MobMenuCount",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MobMenuCount.json"

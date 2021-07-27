@@ -82,6 +82,14 @@ export class CommonViewEngine extends ViewEngine {
                 }
             }
         }
+        // 处理部件加载（参数可指定触发部件）无指定触发部件时由容器触发
+        if (this.ctrlEngineArray.length > 0) {
+            for (let element of this.ctrlEngineArray) {
+                if (element.triggerType && Object.is(element.triggerType, 'CtrlLoad') && !element.triggerCtrlName) {
+                    this.setViewState2({ tag: element.targetCtrlName, action: 'load', viewdata: Util.deepCopy(opts) });
+                }
+            }
+        }
     }
 
     /**
@@ -160,7 +168,7 @@ export class CommonViewEngine extends ViewEngine {
         const targetCtrl = args.find((item: any) => {
             return item.name === 'CTRL' && item.paramType === 'CTRL';
         })
-        return { triggerCtrlName: triggerCtrl.ctrlName, triggerType: 'CtrlLoad', targetCtrlName: targetCtrl.ctrlName };
+        return { triggerCtrlName: triggerCtrl?.ctrlName, triggerType: 'CtrlLoad', targetCtrlName: targetCtrl.ctrlName };
     }
 
 }

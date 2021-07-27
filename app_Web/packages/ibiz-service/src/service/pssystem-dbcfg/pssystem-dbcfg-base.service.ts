@@ -25,20 +25,16 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'PSSystemDBCfg');
+    }
+
     newEntity(data: IPSSystemDBCfg): PSSystemDBCfg {
         return new PSSystemDBCfg(data);
     }
 
-    async addLocal(context: IContext, entity: IPSSystemDBCfg): Promise<IPSSystemDBCfg | null> {
-        return this.cache.add(context, new PSSystemDBCfg(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IPSSystemDBCfg): Promise<IPSSystemDBCfg | null> {
-        return super.createLocal(context, new PSSystemDBCfg(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IPSSystemDBCfg> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

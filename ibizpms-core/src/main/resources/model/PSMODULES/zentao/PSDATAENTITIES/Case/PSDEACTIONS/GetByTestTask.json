@@ -4,5 +4,13 @@
   "codeName" : "GetByTestTask",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetByTestTask.json",
   "logicName" : "根据测试单获取或者状态",
-  "name" : "GetByTestTask"
+  "name" : "GetByTestTask",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

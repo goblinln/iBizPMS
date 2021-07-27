@@ -677,8 +677,35 @@ export const throttle: Function = (fun: any, params: any[], context: any, delay:
     let now: any = Date.now();
     if (!fun.last || now - fun.last >= delay) {
         if (typeof fun === 'function') {
-            fun.apply(context, params);
+            return fun.apply(context, params);
         }
         fun.last = now;
     }
 }
+
+const map = new WeakMap();
+
+/**
+ * 防抖
+ *
+ * @param {any} fun 函数
+ * @param {any} params 参数
+ * @param {number} wait 延迟时间，默认300
+ * @static
+ * @memberof Util
+ */
+export const debounce: Function = (fun: any, params: any, wait: number = 300) => {
+    if (typeof fun === 'function') {
+        if (map.has(fun)) {
+            const num = map.get(fun);
+            clearTimeout(num);
+        }
+        map.set(
+            fun,
+            setTimeout(() => {
+                map.delete(fun);
+                fun(params);
+            }, wait),
+        );
+    }
+};

@@ -4,5 +4,13 @@
   "codeName" : "GetYeaterdayDailyPlansTaskEdit",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetYeaterdayDailyPlansTaskEdit.json",
   "logicName" : "获取前一天日报计划参与任务（编辑）",
-  "name" : "getYeaterdayDailyPlansTaskEdit"
+  "name" : "getYeaterdayDailyPlansTaskEdit",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

@@ -4,5 +4,13 @@
   "codeName" : "ResetReviewedBy",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ResetReviewedBy.json",
   "logicName" : "重置由谁评审",
-  "name" : "ResetReviewedBy"
+  "name" : "ResetReviewedBy",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

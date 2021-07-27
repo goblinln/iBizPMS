@@ -5,6 +5,14 @@
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json",
   "logicName" : "我收到的汇报（计数器）",
   "name" : "ReportIReceived",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/ReportIReceived.json"

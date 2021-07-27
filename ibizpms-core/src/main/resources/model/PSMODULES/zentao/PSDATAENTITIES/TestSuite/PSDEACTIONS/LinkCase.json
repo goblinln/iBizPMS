@@ -4,5 +4,13 @@
   "codeName" : "LinkCase",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/LinkCase.json",
   "logicName" : "关联测试",
-  "name" : "linkCase"
+  "name" : "linkCase",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

@@ -4,5 +4,13 @@
   "codeName" : "BatchLinkBug",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchLinkBug.json",
   "logicName" : "批关联BUG",
-  "name" : "BatchLinkBug"
+  "name" : "BatchLinkBug",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

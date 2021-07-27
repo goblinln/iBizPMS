@@ -5,5 +5,13 @@
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/PushUserMonthly.json",
   "logicName" : "定时推送待阅提醒用户月报",
   "name" : "PushUserMonthly",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "userCat" : "CAT1"
 }

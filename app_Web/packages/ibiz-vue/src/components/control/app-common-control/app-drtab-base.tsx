@@ -117,11 +117,11 @@ export class AppDrtabBase extends DrtabControlBase {
                 Object.assign(viewParam,tabPage.localViewParam);
             }
         }
+        Object.assign(viewData, { viewpath: tabPage.getPSAppView()?.modelPath })
         return this.$createElement('app-view-shell', {
             props: { 
                 staticProps: {
                     viewDefaultUsage: false,
-                    viewModelData: tabPage.getPSAppView(),
                     appDeCodeName: this.appDeCodeName,
                 },
                 dynamicProps:{
@@ -129,6 +129,7 @@ export class AppDrtabBase extends DrtabControlBase {
                     viewparam: JSON.stringify(viewParam), 
                 }
             },
+            key: Util.createUUID(),
             class: "viewcontainer2",
             on: {
             }

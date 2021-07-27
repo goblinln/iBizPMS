@@ -5,6 +5,14 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEACTIONS/GetPoInfomation.json",
   "logicName" : "获取产品经理相关数据",
   "name" : "GetPoInfomation",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  },
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetPOInfomation.json"

@@ -4,5 +4,13 @@
   "codeName" : "BatchChangeStage",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeStage.json",
   "logicName" : "批量变更阶段",
-  "name" : "BatchChangeStage"
+  "name" : "BatchChangeStage",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

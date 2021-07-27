@@ -27,20 +27,16 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IbzProjectMember');
+    }
+
     newEntity(data: IIbzProjectMember): IbzProjectMember {
         return new IbzProjectMember(data);
     }
 
-    async addLocal(context: IContext, entity: IIbzProjectMember): Promise<IIbzProjectMember | null> {
-        return this.cache.add(context, new IbzProjectMember(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIbzProjectMember): Promise<IIbzProjectMember | null> {
-        return super.createLocal(context, new IbzProjectMember(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIbzProjectMember> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

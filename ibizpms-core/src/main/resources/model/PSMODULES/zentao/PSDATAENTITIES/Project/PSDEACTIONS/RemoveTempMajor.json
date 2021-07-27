@@ -7,8 +7,16 @@
   "logicName" : "RemoveTempMajor",
   "name" : "RemoveTempMajor",
   "orderValue" : 23,
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELDS"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "tempDataMode" : 1,
+  "batchAction" : true,
   "builtinAction" : true,
-  "enableBatchAction" : true,
   "enableTempData" : true
 }

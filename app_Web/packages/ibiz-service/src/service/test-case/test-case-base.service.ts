@@ -29,20 +29,16 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         test: 'product',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'TestCase');
+    }
+
     newEntity(data: ITestCase): TestCase {
         return new TestCase(data);
     }
 
-    async addLocal(context: IContext, entity: ITestCase): Promise<ITestCase | null> {
-        return this.cache.add(context, new TestCase(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITestCase): Promise<ITestCase | null> {
-        return super.createLocal(context, new TestCase(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITestCase> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.product && entity.product !== '') {
             const s = await ___ibz___.gs.getTestService();
             const data = await s.getLocal2(context, entity.product);

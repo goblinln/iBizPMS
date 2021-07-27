@@ -4,5 +4,13 @@
   "codeName" : "RecordTimZeroLeftAfterContinue",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json",
   "logicName" : "继续任务时填入预计剩余为0设置为进行中",
-  "name" : "RecordTimZeroLeftAfterContinue"
+  "name" : "RecordTimZeroLeftAfterContinue",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

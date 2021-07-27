@@ -4,5 +4,13 @@
   "codeName" : "BatchAssignTo",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchAssignTo.json",
   "logicName" : "批量指派",
-  "name" : "BatchAssignTo"
+  "name" : "BatchAssignTo",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

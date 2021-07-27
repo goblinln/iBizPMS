@@ -11,3 +11,5 @@ export { AppModelService } from './model-service/model-service';
 export { GetModelService } from './model-service/model-service';
 export { SandboxService } from './model-service/sandbox/sandbox-service';
 export { SandboxInstance } from './model-service/sandbox/sandbox-instance';
+export { EntityDBService } from './entity-db-service/entity-db.service';
+export { DBService } from './db-service/db.service';

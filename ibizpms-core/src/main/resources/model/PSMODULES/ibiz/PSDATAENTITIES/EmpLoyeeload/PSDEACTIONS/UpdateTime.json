@@ -4,5 +4,13 @@
   "codeName" : "UpdateTime",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDEACTIONS/UpdateTime.json",
   "logicName" : "UpdateTime",
-  "name" : "UpdateTime"
+  "name" : "UpdateTime",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

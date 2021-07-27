@@ -5,5 +5,13 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzCase/PSDEACTIONS/Save.json",
   "logicName" : "Save",
   "name" : "Save",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "builtinAction" : true
 }

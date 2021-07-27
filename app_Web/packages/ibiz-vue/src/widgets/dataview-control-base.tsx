@@ -304,6 +304,20 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
     }
 
     /**
+     * 初始化数据映射
+     * 
+     * @memberof ListControlBase
+     */
+     public initDataMap() {
+        const dataItems: IPSDEDataViewDataItem[] | null = this.controlInstance.getPSDEDataViewDataItems();
+        if (dataItems && dataItems.length > 0) {
+            dataItems.forEach((dataItem: IPSDEDataViewDataItem) => {
+                this.dataMap.set(dataItem.name,{ customCode: dataItem.customCode ? true : false });
+            });
+        };
+    }
+
+    /**
      * 数据视图部件初始化
      *
      * @memberof DataViewControlBase
@@ -429,7 +443,9 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                     if (Object.keys(data).length > 0) {
                         let datas = Util.deepCopy(data);
                         datas.map((item: any) => {
-                            Object.assign(item, { isselected: false });
+                            if (!item.srfchecked) {
+                                Object.assign(item, { srfchecked: 0 });
+                            }
                         });
                         this.totalRecord = response.total;
                         if (isReset) {
@@ -692,11 +708,11 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @memberof DataViewControlBase
      */
     public handleClick(args: any) {
-        args.isselected = !args.isselected;
+        args.srfchecked = Number(!args.srfchecked);
         if (this.isSingleSelect) {
             this.items.forEach((item: any) => {
                 if (item.srfkey !== args.srfkey) {
-                    item.isselected = false;
+                    item.srfchecked = 0;
                 }
             });
         }
@@ -711,7 +727,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
     public selectchange() {
         this.selections = [];
         this.items.map((item: any) => {
-            if (item.isselected) {
+            if (item.srfchecked === 1) {
                 this.selections.push(item);
             }
         });
@@ -829,6 +845,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
             newdata: this.newdata,
             remove: this.remove,
             refresh: this.refresh,
+            dataMap: this.dataMap,
         });
         targetCtrlEvent['ctrl-event'] = ({
             controlname,
@@ -984,7 +1001,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
             <el-card
                 shadow='always'
                 body-style={style}
-                class={[args.isselected === true ? 'isselected' : false, 'single-card-data']}
+                class={[args.srfchecked === 1 ? 'isselected' : false, 'single-card-data']}
                 nativeOnClick={() => throttle(this.handleClick,[args],this)}
                 nativeOnDblclick={() => throttle(this.handleDblClick,[args],this)}
             >

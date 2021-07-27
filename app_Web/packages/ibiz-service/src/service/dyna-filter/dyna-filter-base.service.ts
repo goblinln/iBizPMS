@@ -25,20 +25,16 @@ export class DynaFilterBaseService extends EntityBaseService<IDynaFilter> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'DynaFilter');
+    }
+
     newEntity(data: IDynaFilter): DynaFilter {
         return new DynaFilter(data);
     }
 
-    async addLocal(context: IContext, entity: IDynaFilter): Promise<IDynaFilter | null> {
-        return this.cache.add(context, new DynaFilter(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IDynaFilter): Promise<IDynaFilter | null> {
-        return super.createLocal(context, new DynaFilter(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IDynaFilter> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

@@ -4,5 +4,13 @@
   "codeName" : "UpdateParentStatus",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json",
   "logicName" : "更新父任务状态",
-  "name" : "updateParentStatus"
+  "name" : "updateParentStatus",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

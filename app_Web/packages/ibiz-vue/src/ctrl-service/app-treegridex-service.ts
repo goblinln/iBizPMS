@@ -527,11 +527,11 @@ export class AppTreeGridExService extends ControlServiceBase {
         if (context && context.srfparentkey) {
             Object.assign(searchFilter, { srfparentkey: Util.deepCopy(context).srfparentkey });
         }
+        const appDataEntity = nodeJson.getPSAppDataEntity() as IPSAppDataEntity;
+        await appDataEntity.fill();
         if ((nodeJson as IPSDETreeDataSetNode)?.getSortPSAppDEField() && (nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName && (nodeJson as IPSDETreeDataSetNode)?.sortDir) {
             Object.assign(searchFilter, { sort: `${(nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName.toLowerCase()},${(nodeJson as IPSDETreeDataSetNode).sortDir.toLowerCase()}` });
         }
-        const appDataEntity = nodeJson.getPSAppDataEntity() as IPSAppDataEntity;
-        await appDataEntity.fill();
         let appEntityService = await this.globalService.getService(appDataEntity.codeName, context);
         let list: any[] = [];
         if (appEntityService[(nodeJson as IPSDETreeDataSetNode)?.getPSAppDEDataSet()?.codeName as string] && appEntityService[(nodeJson as IPSDETreeDataSetNode).getPSAppDEDataSet()?.codeName as string] instanceof Function) {

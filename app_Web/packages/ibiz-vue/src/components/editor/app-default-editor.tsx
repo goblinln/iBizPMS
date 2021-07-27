@@ -179,7 +179,7 @@ export class AppDefaultEditor extends Vue {
      * @memberof AppDefaultEditor
      */
     public AppDefaultEditorModels: Map<string, string[]> = new Map([
-        ['autocomplete-editor', ['AC'] ],
+        ['autocomplete-editor', ['AC','AC_FS','AC_NOBUTTON','AC_FS_NOBUTTON']],
         ['raw-editor', ['RAW'] ],
         ['stepper-editor', ['STEPPER'] ],
         ['slider-editor', ['SLIDER'] ],
@@ -275,7 +275,6 @@ export class AppDefaultEditor extends Vue {
         ['code-editor', [
             'CODE',
         ]],
-
     ]);
 
     /**

@@ -7,6 +7,14 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -17,6 +25,14 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -28,9 +44,17 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1",
-    "builtinAction" : true,
-    "enableBatchAction" : true
+    "batchAction" : true,
+    "builtinAction" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
@@ -39,6 +63,14 @@
     "logicName" : "Get",
     "name" : "Get",
     "orderValue" : 31,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -48,6 +80,14 @@
     "logicName" : "GetDraft",
     "name" : "GetDraft",
     "orderValue" : 41,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -56,6 +96,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Activate.json",
     "logicName" : "状态变更（激活）",
     "name" : "Activate",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CUSTOM",
@@ -64,6 +112,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/BatchUnlinkBug.json",
     "logicName" : "批量解除关联Bug",
     "name" : "BatchUnlinkBug",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CUSTOM",
@@ -72,6 +128,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/ChangeStatus.json",
     "logicName" : "状态变更",
     "name" : "ChangeStatus",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CHECKKEY",
@@ -80,6 +144,15 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/CheckKey.json",
     "logicName" : "CheckKey",
     "name" : "CheckKey",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -88,6 +161,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBug.json",
     "logicName" : "关联Bug",
     "name" : "linkBug",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CUSTOM",
@@ -96,6 +177,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyBug.json",
     "logicName" : "关联Bug（解决Bug）",
     "name" : "LinkBugbyBug",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CUSTOM",
@@ -104,6 +193,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyLeftBug.json",
     "logicName" : "关联Bug（遗留Bug）",
     "name" : "LinkBugbyLeftBug",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CUSTOM",
@@ -112,6 +209,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkStory.json",
     "logicName" : "关联需求",
     "name" : "linkStory",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CUSTOM",
@@ -120,6 +225,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/MobReleaseCounter.json",
     "logicName" : "移动端发布计数器",
     "name" : "MobReleaseCounter",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "getPSDELogic" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDELOGICS/MobReleaseCounter.json"
@@ -130,7 +243,15 @@
     "codeName" : "OneClickRelease",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/OneClickRelease.json",
     "logicName" : "一键发布",
-    "name" : "OneClickRelease"
+    "name" : "OneClickRelease",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    }
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
@@ -139,8 +260,16 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
-    "builtinAction" : true,
-    "enableBatchAction" : true
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITIES"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "batchAction" : true,
+    "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
@@ -148,6 +277,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Terminate.json",
     "logicName" : "状态变更（停止维护）",
     "name" : "Terminate",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CUSTOM",
@@ -156,6 +293,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/UnlinkBug.json",
     "logicName" : "解除关联Bug",
     "name" : "UnlinkBug",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CUSTOM",
@@ -163,7 +308,15 @@
     "codeName" : "UnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/UnlinkStory.json",
     "logicName" : "解除关联需求",
-    "name" : "UnlinkStory"
+    "name" : "UnlinkStory",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    }
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
@@ -303,6 +456,14 @@
       "modelref" : true,
       "id" : "Default"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -314,6 +475,14 @@
       "modelref" : true,
       "id" : "ReportRelease"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -1624,6 +1793,10 @@
     "stdDataType" : 25,
     "stringLength" : 8,
     "valueFormat" : "%1$s",
+    "getValuePSDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -1753,6 +1926,10 @@
     "stdDataType" : 25,
     "stringLength" : 150,
     "valueFormat" : "%1$s",
+    "getValuePSDEField" : {
+      "name" : "BUILD",
+      "codeName" : "Build"
+    },
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {

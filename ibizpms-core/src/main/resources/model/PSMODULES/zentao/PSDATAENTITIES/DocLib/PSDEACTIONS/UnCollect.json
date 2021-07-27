@@ -4,5 +4,13 @@
   "codeName" : "UnCollect",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/UnCollect.json",
   "logicName" : "取消收藏",
-  "name" : "UnCollect"
+  "name" : "UnCollect",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

@@ -13,7 +13,7 @@ import { IPSDETree, IPSDETreeNode, IPSDEToolbarItem, IPSDECMUIActionItem, IPSDEU
  * @class TreeControlBase
  * @extends {MDControlBase}
  */
-export class TreeControlBase extends MDControlBase implements TreeControlInterface{
+export class TreeControlBase extends MDControlBase implements TreeControlInterface {
     /**
      * 部件模型实例对象
      *
@@ -33,10 +33,18 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
     /**
      * 枝干节点是否可用（具有数据能力，可抛出）
      *
-     * @type {string}
+     * @type {boolean}
      * @memberof TreeControlBase
      */
     public isBranchAvailable: boolean = true;
+
+    /**
+     * 是否开启树拖拽节点功能
+     * 
+     * @type {boolean}
+     * @memberof TreeControlBase
+     */
+    public draggable: boolean = true;
 
     /**
      * 已选中数据集合
@@ -61,6 +69,22 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
      * @memberof TreeControlBase
      */
     public currentselectedNode: any = {};
+
+    /**
+     * 拖拽中的节点的完整树数据
+     *
+     * @type {*}
+     * @memberof TreeControlBase
+     */
+    public draggingNode: any;
+
+    /**
+     * 缓存拖拽节点界面行为的结果集
+     * 
+     * @type {*}
+     * @memberof TreeControlBase
+     */
+    public cacheDragNodeMap: Map<string, string> = new Map();
 
     /**
      * 数据展开主键
@@ -104,7 +128,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
      */
     public onDynamicPropsChange(newVal: any, oldVal: any) {
         super.onDynamicPropsChange(newVal, oldVal);
-        if(newVal?.selectedData && newVal.selectedData != oldVal?.selectedData){
+        if (newVal?.selectedData && newVal.selectedData != oldVal?.selectedData) {
             this.selectedData = newVal.selectedData;
             this.onSelectedDataValueChange(newVal.selectedData)
         }
@@ -131,7 +155,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
         this.service = new AppTreeService(this.controlInstance, this.context);
-        this.initActionModel();   
+        this.initActionModel();
     }
 
     /**
@@ -142,13 +166,13 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
     public initActionModel() {
         const allTreeNodes = this.controlInstance.getPSDETreeNodes() || [];
         let tempModel: any = {};
-        if(allTreeNodes?.length>0 ) {
+        if (allTreeNodes?.length > 0) {
             allTreeNodes.forEach((item: IPSDETreeNode) => {
-                if(item?.getPSDEContextMenu()) {
+                if (item?.getPSDEContextMenu()) {
                     let toobarItems: any = item.getPSDEContextMenu()?.getPSDEToolbarItems();
-                    if (toobarItems.length > 0) {     
+                    if (toobarItems.length > 0) {
                         toobarItems.forEach((toolbarItem: IPSDEToolbarItem) => {
-                            this.initActionModelItem(toolbarItem,item,tempModel)
+                            this.initActionModelItem(toolbarItem, item, tempModel)
                         })
                     }
                 }
@@ -166,28 +190,28 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
      * @param tempModel 界面行为模型对象
      * @memberof TreeControlBase
      */
-    public initActionModelItem(toolbarItem: IPSDEToolbarItem,item: IPSDETreeNode,tempModel: any){
+    public initActionModelItem(toolbarItem: IPSDEToolbarItem, item: IPSDETreeNode, tempModel: any) {
         let tempItem: any = {
             name: toolbarItem.name,
             ctrlname: item.getPSDEContextMenu()?.name,
             nodeOwner: item.nodeType
         }
-        if(toolbarItem.itemType == 'DEUIACTION') {
-            const uiAction:IPSDEUIAction = (toolbarItem as IPSDECMUIActionItem).getPSUIAction() as IPSDEUIAction;
+        if (toolbarItem.itemType == 'DEUIACTION') {
+            const uiAction: IPSDEUIAction = (toolbarItem as IPSDECMUIActionItem).getPSUIAction() as IPSDEUIAction;
             if (uiAction) {
-              tempItem.type = uiAction.uIActionType;
-              tempItem.tag = uiAction.uIActionTag;
-              tempItem.visabled = true;
-              tempItem.disabled = false;
-              if(uiAction?.actionTarget && uiAction?.actionTarget != ""){
-                  tempItem.actiontarget = uiAction.actionTarget;
-              }
-              if(uiAction.noPrivDisplayMode) {
-                  tempItem.noprivdisplaymode = uiAction.noPrivDisplayMode;
-              }
-              if(uiAction.dataAccessAction) {
-                  tempItem.dataaccaction = uiAction.dataAccessAction;
-              }
+                tempItem.type = uiAction.uIActionType;
+                tempItem.tag = uiAction.uIActionTag;
+                tempItem.visabled = true;
+                tempItem.disabled = false;
+                if (uiAction?.actionTarget && uiAction?.actionTarget != "") {
+                    tempItem.actiontarget = uiAction.actionTarget;
+                }
+                if (uiAction.noPrivDisplayMode) {
+                    tempItem.noprivdisplaymode = uiAction.noPrivDisplayMode;
+                }
+                if (uiAction.dataAccessAction) {
+                    tempItem.dataaccaction = uiAction.dataAccessAction;
+                }
             }
         }
         tempItem.imgclass = toolbarItem.showIcon && toolbarItem.getPSSysImage() ? toolbarItem.getPSSysImage()?.cssClass : '';
@@ -195,9 +219,9 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         tempItem.title = toolbarItem.tooltip;
         tempModel[`${item.nodeType}_${toolbarItem.name}`] = tempItem;
         const toolbarItems = (toolbarItem as IPSDETBUIActionItem)?.getPSDEToolbarItems() || [];
-        if(toolbarItems?.length > 0){
-            for(let toolBarChild of toolbarItems){
-                this.initActionModelItem(toolBarChild,item,tempModel)               
+        if (toolbarItems?.length > 0) {
+            for (let toolBarChild of toolbarItems) {
+                this.initActionModelItem(toolBarChild, item, tempModel)
             }
         }
     }
@@ -274,7 +298,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
             .then((response: any) => {
                 this.onControlResponse('load', response);
                 if (!response || response.status !== 200) {
-                    this.$throw(response.info,'load');
+                    this.$throw(response.info, 'load');
                     resolve([]);
                     return;
                 }
@@ -287,13 +311,13 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
                 this.ctrlEvent({
                     controlname: this.name,
                     action: 'load',
-                    data: _items,
+                    data: _items.filter((item: any) => item.enablecheck )
                 });
             })
             .catch((response: any) => {
                 this.onControlResponse('load', response);
                 resolve([]);
-                this.$throw(response,'load');
+                this.$throw(response, 'load');
             });
     }
 
@@ -309,7 +333,8 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         // 处理多选数据
         if (!this.isSingleSelect) {
             // let leafNodes = checkedState.checkedNodes.filter((item: any) => item.leaf);
-            this.selectedNodes = Util.deepCopy(checkedState.checkedNodes);
+            const checkedNodes: any[] = Util.deepCopy(checkedState.checkedNodes);
+            this.selectedNodes = checkedNodes.filter((checkedNode: any) => checkedNode.enablecheck);
             this.ctrlEvent({
                 controlname: this.name,
                 action: 'selectionchange',
@@ -334,7 +359,13 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         }
         // 只处理最底层子节点
         if (this.isBranchAvailable || data.leaf) {
-            this.currentselectedNode = Util.deepCopy(data);
+            //  修改之前节点的选中状态值
+            if (this.currentselectedNode && Object.keys(this.currentselectedNode).length > 0) {
+                this.currentselectedNode.srfchecked = 0;
+            }
+            //  添加选中状态值
+            data.srfchecked = 1;
+            this.currentselectedNode = data;
             // 单选直接替换
             if (this.isSingleSelect) {
                 this.selectedNodes = [this.currentselectedNode];
@@ -382,13 +413,13 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
     public refresh_node(curContext: any, arg: any = {}, parentnode?: boolean): void {
         const { srfnodeid: id } = arg;
         Object.assign(arg, { viewparams: this.viewparams });
-        let tempContext:any = Util.deepCopy(curContext);
+        let tempContext: any = Util.deepCopy(curContext);
         this.onControlRequset('refresh_node', tempContext, arg);
         const get: Promise<any> = this.service.getNodes(tempContext, arg);
         get.then((response: any) => {
             this.onControlResponse('refresh_node', response);
             if (!response || response.status !== 200) {
-                this.$throw(response.info,'refresh_node');
+                this.$throw(response.info, 'refresh_node');
                 return;
             }
             const _items = [...response.data];
@@ -402,7 +433,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
             this.setDefaultSelection(_items);
         }).catch((response: any) => {
             this.onControlResponse('refresh_node', response);
-            this.$throw(response,'refresh_node');
+            this.$throw(response, 'refresh_node');
         });
     }
 
@@ -550,13 +581,13 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
      * @memberof TreeControlBase
      */
     public onCtrlEvent(controlname: string, action: string, data: any, selectedNode?: any) {
-        if(action == 'contextMenuItemClick'){
+        if (action == 'contextMenuItemClick') {
             AppViewLogicService.getInstance().executeViewLogic(`${controlname}_${data}_click`, undefined, this, selectedNode.curData, this.controlInstance?.getPSAppViewLogics() || []);
-        }else{
+        } else {
             this.ctrlEvent({ controlname, action, data });
         }
     }
-    
+
     /**
      * 自定义树节点筛选操作逻辑
      *
@@ -624,9 +655,9 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
                 if (this.selectedNodes && this.selectedNodes.length > 0) {
                     this.selectedNodes.forEach((select: any) => {
                         index = items.findIndex((item: any) => {
-                            if(Util.isEmpty(item.srfkey)){
+                            if (Util.isEmpty(item.srfkey)) {
                                 return select.id == item.id;
-                            }else{
+                            } else {
                                 return select.srfkey == item.srfkey;
                             }
                         });
@@ -707,7 +738,6 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         tree.setCurrentKey(data.id);
     }
 
-
     /**
      * selectedData选中值变化
      *
@@ -717,16 +747,160 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
     public onSelectedDataValueChange(newVal: any) {
         this.echoselectedNodes = newVal ? this.isSingleSelect ? [JSON.parse(newVal)[0]] : JSON.parse(newVal) : [];
         this.selectedNodes = [];
-        if(this.controlIsLoaded && this.echoselectedNodes.length > 0){
+        if (this.controlIsLoaded && this.echoselectedNodes.length > 0) {
             const { name } = this.controlInstance;
             let AllnodesObj = (this.$refs[name] as any).store.nodesMap;
-            let AllnodesArray : any[] = [];
+            let AllnodesArray: any[] = [];
             for (const key in AllnodesObj) {
-              if (AllnodesObj.hasOwnProperty(key)) {
-                AllnodesArray.push(AllnodesObj[key].data);
-              }
+                if (AllnodesObj.hasOwnProperty(key)) {
+                    AllnodesArray.push(AllnodesObj[key].data);
+                }
             }
             this.setDefaultSelection(AllnodesArray);
         }
+    }
+
+    /**
+     * 节点能否被拖拽
+     * 
+     * @param node 拖拽节点
+     * @returns 要拖拽的节点能否被拖拽
+     */
+    public allowDrag(node: any) {
+        return new Promise((resolve: any, reject: any) => {
+            if (node.data?.allowDrag || node.data?.allowOrder) {
+                this.draggingNode = Util.deepCopy(node);
+                resolve(true);
+            } else {
+                resolve(false);
+            }
+        });
+    }
+
+    /**
+     * 能否放入目标节点
+     * 
+     * @param draggingNode 正在拖拽的节点
+     * @param dropNode 目标节点
+     * @param type 'prev'|'inner'|'next' 拖拽到相对目标节点的位置（前，插入，后）
+     * @returns 拖拽的节点能否放置到目标节点
+     * @memberof TreeControlBase
+     */
+    public allowDrop(draggingNode: any, dropNode: any, type: string) {
+        return new Promise((resolve: any, reject: any) => {
+			if ((dropNode.data?.allowDrop || dropNode.data?.allowOrder) && !Object.is('inner', type)) {
+                if (this.ctrlTriggerLogicMap.get('allowdrop')) {
+                    const draggingNodeData = draggingNode.data;
+                    const dropNodeData = dropNode.data;
+                    if (this.cacheDragNodeMap && this.cacheDragNodeMap.get(draggingNode.data?.id + dropNode.data?.id)) {
+                        const isAllowDrop = this.cacheDragNodeMap.get(draggingNode.data.id + dropNode.data.id) == 'true' ? true : false;
+                        return resolve(isAllowDrop);
+                    }
+                    this.ctrlTriggerLogicMap.get('allowdrop').executeAsyncUILogic({
+                        context: dropNodeData.srfappctx,
+                        viewparams: this.viewparams,
+                        data: [{draggingNode: draggingNodeData.curData, dropNode: dropNodeData.curData}],
+                        event: null,
+                        xData: this,
+                        actionContext: this,
+                        srfParentDeName: dropNodeData.srfparentdename
+                    }).then((res: any) => {
+                        if(res && res.srfret){
+                            if (dropNode.data?.allowDrop) {
+                                this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'true');
+                                resolve(true);
+                            } else if (dropNode.data?.allowOrder && Object.is(this.draggingNode.parent?.id, dropNode.parent?.id)) {
+                                this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'true');
+                                resolve(true);
+                            } else {
+                                this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'false');
+                                resolve(false);
+                            }
+                        }else{
+                            this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'false');
+                            resolve(false);
+                        }
+                    });
+                } else {
+                    if (dropNode.data?.allowDrop) {
+                        resolve(true);
+                    } else if (dropNode.data?.allowOrder && Object.is(this.draggingNode.parent?.id, dropNode.parent?.id)) {
+                        resolve(true);
+                    } else {
+                        resolve(false);
+                    }
+                }
+            } else {
+                resolve(false);
+            } 
+        });
+    }
+
+    /**
+     * 树节点值变化
+     * 
+     * @param value 变化值
+     * @param node 节点数据
+     * @param event 额外参数
+     * @memberof TreeControlBase   
+     */
+    public nodeValueChange(value: string, node: any, event: any) {
+        this.$set(node.data, 'text', value);
+        this.$set(node.data, 'srfmajortext', value);
+        if (node.data.curData && node.data.nodeTextField) {
+            this.$set(node.data.curData, node.data.nodeTextField, value);
+        }
+    }
+
+    /**
+     * 保存并刷新
+     * 
+     * @param node 节点
+     * @param event 额外参数
+     * @memberof TreeControlBase
+     */
+    public async saveAndRefresh(node: any, event: any) {
+        const nodeData = node.data;
+        if (Object.is(nodeData.nodeType, 'STATIC')) {
+            return
+        }
+        let tempContext: any = this.computecurNodeContext(node);
+        let service: any = await new GlobalService().getService(nodeData.appEntityName, this.context);
+        let viewparams = Util.deepCopy(this.viewparams);
+        this.onControlRequset('saveAndRefresh', tempContext, viewparams);
+        this.service.update('Update', tempContext, nodeData.curData, service).then((response: any) => {
+            this.onControlResponse('saveAndRefresh', response);
+            if (!response.status || response.status !== 200) {
+                this.$throw(response, 'update');
+            } else {
+                this.$success((nodeData.srfmajortext ? nodeData.srfmajortext : '') + '变更' + (this.$t('app.commonwords.success') as string), 'update');
+            }
+            this.refreshEditNodeParent(node);
+        }).catch((response: any) => {
+            this.onControlResponse('saveAndRefresh', response);
+            this.$throw(response, 'update');
+            this.refreshEditNodeParent(node);
+        });
+    }
+    
+    /**
+     * 刷新编辑节点的父节点
+     * 
+     * @param editNode 编辑节点
+     * @memberof TreeControlBase
+     */
+    public refreshEditNodeParent(editNode: any) {
+        let curNode: any = {};
+        const { parent: _parent } = editNode;
+        curNode = Util.deepObjectMerge(curNode, _parent);
+        let tempContext: any = {};
+        if (curNode.data && curNode.data.srfappctx) {
+            Object.assign(tempContext, curNode.data.srfappctx);
+        } else {
+            Object.assign(tempContext, this.context);
+        }
+        const id: string = _parent.key ? _parent.key : '#';
+        const param: any = { srfnodeid: id };
+        this.refresh_node(tempContext, param, false);
     }
 }

@@ -17,7 +17,7 @@ export const install = function (config: IBzDynamicConfig): void {
         gs: new GlobalService(),
         sc: new Map(),
     };
-    window.IBzDynamicConfig = {};
+    window.IBzDynamicConfig = { dbName: 'DefaultDB', dbVersion: 1 };
     if (!config) {
         return;
     }
@@ -25,6 +25,12 @@ export const install = function (config: IBzDynamicConfig): void {
     const cfg = window.IBzDynamicConfig;
     if (config.baseUrl) {
         cfg.baseUrl = config.baseUrl;
+    }
+    if (config.dbName) {
+        cfg.dbName = config.dbName;
+    }
+    if (config.dbVersion) {
+        cfg.dbVersion = config.dbVersion;
     }
 };
 

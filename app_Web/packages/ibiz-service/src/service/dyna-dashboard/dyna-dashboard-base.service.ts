@@ -25,20 +25,16 @@ export class DynaDashboardBaseService extends EntityBaseService<IDynaDashboard> 
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'DynaDashboard');
+    }
+
     newEntity(data: IDynaDashboard): DynaDashboard {
         return new DynaDashboard(data);
     }
 
-    async addLocal(context: IContext, entity: IDynaDashboard): Promise<IDynaDashboard | null> {
-        return this.cache.add(context, new DynaDashboard(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IDynaDashboard): Promise<IDynaDashboard | null> {
-        return super.createLocal(context, new DynaDashboard(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IDynaDashboard> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

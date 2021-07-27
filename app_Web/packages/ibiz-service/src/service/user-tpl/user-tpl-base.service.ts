@@ -27,20 +27,16 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'UserTpl');
+    }
+
     newEntity(data: IUserTpl): UserTpl {
         return new UserTpl(data);
     }
 
-    async addLocal(context: IContext, entity: IUserTpl): Promise<IUserTpl | null> {
-        return this.cache.add(context, new UserTpl(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IUserTpl): Promise<IUserTpl | null> {
-        return super.createLocal(context, new UserTpl(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IUserTpl> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

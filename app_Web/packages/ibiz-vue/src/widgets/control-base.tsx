@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Subscription } from 'rxjs';
-import { AppModelService, AppServiceBase, ControlInterface, GetModelService, Util } from 'ibiz-core';
+import { AppCtrlEventEngine, AppCustomEngine, AppModelService, AppServiceBase, AppTimerEngine, ControlInterface, GetModelService, Util } from 'ibiz-core';
 import { CounterServiceRegister } from 'ibiz-service';
 import { PluginService } from 'ibiz-vue';
 import { IPSControl, IPSAppCounterRef } from '@ibiz/dynamic-model-api';
@@ -173,7 +173,7 @@ export class ControlBase extends Vue implements ControlInterface {
      * 部件ID
      * 
      * @memberof ControlBase
-     */   
+     */
     public controlId: string = '';
 
     /**
@@ -182,7 +182,14 @@ export class ControlBase extends Vue implements ControlInterface {
      * @type {*}
      * @memberof ControlBase
      */
-     public navdatas?: any;
+    public navdatas?: any;
+
+    /**
+     * 界面触发逻辑Map
+     * 
+     * @memberof ControlBase
+     */
+     public ctrlTriggerLogicMap: Map<string, any> = new Map();
 
     /**
      * 部件事件抛出方法
@@ -219,7 +226,7 @@ export class ControlBase extends Vue implements ControlInterface {
         const { controlType, codeName } = this.controlInstance;
         // 部件类名
         const controlClassNames: any = {
-            'control-container':true,
+            'control-container': true,
             [controlType?.toLowerCase()]: true,
             [Util.srfFilePath2(codeName)]: true,
         };
@@ -449,6 +456,7 @@ export class ControlBase extends Vue implements ControlInterface {
         this.showBusyIndicator = this.controlInstance.showBusyIndicator;
         this.initRenderOptions();
         await this.initCounterService(this.controlInstance);
+        await this.initControlLogic(this.controlInstance);
     }
 
     /**
@@ -537,6 +545,38 @@ export class ControlBase extends Vue implements ControlInterface {
                     this.counterServiceArray.push(tempData);
                 }
             }
+        }
+    }
+
+    /**
+     * 初始化部件逻辑
+     * 
+     * @memberof ControlBase
+     */
+    public async initControlLogic(opts: any) {
+        if (opts.getPSControlLogics() && opts.getPSControlLogics().length > 0) {
+            opts.getPSControlLogics().forEach((element: any) => {
+                // 目标逻辑类型类型为实体界面逻辑、系统预置界面逻辑、前端扩展插件、脚本代码
+                if (element && element.triggerType && (Object.is(element.logicType, 'DEUILOGIC') ||
+                    Object.is(element.logicType, 'SYSVIEWLOGIC') ||
+                    Object.is(element.logicType, 'PFPLUGIN') ||
+                    Object.is(element.logicType, 'SCRIPT'))) {
+                    switch (element.triggerType) {
+                        case 'CUSTOM':
+                            this.ctrlTriggerLogicMap.set(element.name.toLowerCase(), new AppCustomEngine(element));
+                            break;
+                        case 'CTRLEVENT':
+                            this.ctrlTriggerLogicMap.set(element.name.toLowerCase(), new AppCtrlEventEngine(element));
+                            break;
+                        case 'TIMER':
+                            this.ctrlTriggerLogicMap.set(element.name.toLowerCase(), new AppTimerEngine(element));
+                            break;
+                        default:
+                            console.log(`${element.triggerType}类型暂未支持`);
+                            break;
+                    }
+                }
+            });
         }
     }
 }

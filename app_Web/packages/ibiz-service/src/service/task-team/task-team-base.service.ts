@@ -28,20 +28,16 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
         task: 'root',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'TaskTeam');
+    }
+
     newEntity(data: ITaskTeam): TaskTeam {
         return new TaskTeam(data);
     }
 
-    async addLocal(context: IContext, entity: ITaskTeam): Promise<ITaskTeam | null> {
-        return this.cache.add(context, new TaskTeam(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITaskTeam): Promise<ITaskTeam | null> {
-        return super.createLocal(context, new TaskTeam(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITaskTeam> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.root && entity.root !== '') {
             const s = await ___ibz___.gs.getTaskService();
             const data = await s.getLocal2(context, entity.root);

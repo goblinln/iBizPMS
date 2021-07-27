@@ -4,5 +4,13 @@
   "codeName" : "PushSumProjectWeekly",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/PushSumProjectWeekly.json",
   "logicName" : "定时推送项目周报",
-  "name" : "pushSumProjectWeekly"
+  "name" : "pushSumProjectWeekly",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

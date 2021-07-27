@@ -4,5 +4,13 @@
   "codeName" : "BatchChangeBranch",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeBranch.json",
   "logicName" : "批量变更平台/分支",
-  "name" : "BatchChangeBranch"
+  "name" : "BatchChangeBranch",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

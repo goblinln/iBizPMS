@@ -4,5 +4,13 @@
   "codeName" : "UnlinkProduct",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkProduct.json",
   "logicName" : "解除关联产品",
-  "name" : "UnlinkProduct"
+  "name" : "UnlinkProduct",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

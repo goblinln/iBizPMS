@@ -194,6 +194,11 @@ export class ViewContainerBase extends Vue {
                 this.modeldata = await ((await GetModelService(this.context)).getPSAppView(this.dynaModelFilePath)) as IPSAppView;
             }
         }
+        //  未找到模型数据跳转404页面
+        if (Util.isEmpty(this.modeldata)) {
+            this.$router.push('/404');
+            return;
+        }
         // 视图壳加载视图数据
         await this.modeldata?.fill?.(true);
         this.initViewContext({ modeldata: this.modeldata });

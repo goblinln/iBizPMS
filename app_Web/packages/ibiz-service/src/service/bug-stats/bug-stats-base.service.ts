@@ -25,20 +25,16 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'BugStats');
+    }
+
     newEntity(data: IBugStats): BugStats {
         return new BugStats(data);
     }
 
-    async addLocal(context: IContext, entity: IBugStats): Promise<IBugStats | null> {
-        return this.cache.add(context, new BugStats(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IBugStats): Promise<IBugStats | null> {
-        return super.createLocal(context, new BugStats(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IBugStats> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

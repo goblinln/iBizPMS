@@ -7,6 +7,14 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "UPDATE",
@@ -16,6 +24,14 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "DELETE",
@@ -26,8 +42,16 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "builtinAction" : true,
-    "enableBatchAction" : true
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "batchAction" : true,
+    "builtinAction" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
@@ -36,6 +60,14 @@
     "logicName" : "Get",
     "name" : "Get",
     "orderValue" : 31,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -45,6 +77,14 @@
     "logicName" : "GetDraft",
     "name" : "GetDraft",
     "orderValue" : 41,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CHECKKEY",
@@ -53,6 +93,15 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/CheckKey.json",
     "logicName" : "CheckKey",
     "name" : "CheckKey",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -61,6 +110,14 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json",
     "logicName" : "我未提交的（计数器）",
     "name" : "MyReportINotSubmit",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "getPSDELogic" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/MyReportINotSubmit.json"
@@ -72,6 +129,14 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json",
     "logicName" : "我收到的汇报（计数器）",
     "name" : "ReportIReceived",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "getPSDELogic" : {
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/ReportIReceived.json"
@@ -83,6 +148,14 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
@@ -167,6 +240,14 @@
       "modelref" : true,
       "id" : "AllReport"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -177,6 +258,14 @@
       "modelref" : true,
       "id" : "Default"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -188,6 +277,14 @@
       "modelref" : true,
       "id" : "MyReAllReport"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   } ],

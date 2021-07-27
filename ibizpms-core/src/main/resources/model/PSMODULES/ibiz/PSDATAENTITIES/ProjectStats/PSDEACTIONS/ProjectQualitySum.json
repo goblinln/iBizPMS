@@ -5,6 +5,14 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/ProjectQualitySum.json",
   "logicName" : "项目质量表聚合逻辑",
   "name" : "ProjectQualitySum",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDELOGICS/ProjectQualitySum.json"

@@ -5,5 +5,13 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/EditComment.json",
   "logicName" : "编辑备注信息",
   "name" : "editComment",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "userCat" : "CAT1"
 }

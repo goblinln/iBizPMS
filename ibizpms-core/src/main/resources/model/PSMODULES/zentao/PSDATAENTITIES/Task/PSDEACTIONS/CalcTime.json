@@ -4,5 +4,13 @@
   "codeName" : "CalcTime",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json",
   "logicName" : "计算总耗时",
-  "name" : "CalcTime"
+  "name" : "CalcTime",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

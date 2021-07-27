@@ -29,20 +29,16 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
         project: 'project',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Build');
+    }
+
     newEntity(data: IBuild): Build {
         return new Build(data);
     }
 
-    async addLocal(context: IContext, entity: IBuild): Promise<IBuild | null> {
-        return this.cache.add(context, new Build(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IBuild): Promise<IBuild | null> {
-        return super.createLocal(context, new Build(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IBuild> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.product && entity.product !== '') {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(context, entity.product);

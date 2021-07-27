@@ -11,3 +11,4 @@ export * from './utils';
 export * from './app-logic'; 
 export { ComponentsRegister } from './components/components-register';
 export * from './directives';
+export { vueinstall } from './vueinstall';

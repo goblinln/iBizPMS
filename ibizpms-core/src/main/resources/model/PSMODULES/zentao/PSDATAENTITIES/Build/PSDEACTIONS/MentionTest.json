@@ -4,5 +4,13 @@
   "codeName" : "MentionTest",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/MentionTest.json",
   "logicName" : "提交测试",
-  "name" : "mentionTest"
+  "name" : "mentionTest",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

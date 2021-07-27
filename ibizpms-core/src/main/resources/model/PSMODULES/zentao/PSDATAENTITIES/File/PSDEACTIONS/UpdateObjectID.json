@@ -4,5 +4,13 @@
   "codeName" : "UpdateObjectID",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/UpdateObjectID.json",
   "logicName" : "更新文件",
-  "name" : "updateObjectID"
+  "name" : "updateObjectID",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

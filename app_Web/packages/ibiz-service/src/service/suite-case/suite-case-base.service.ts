@@ -25,20 +25,16 @@ export class SuiteCaseBaseService extends EntityBaseService<ISuiteCase> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SuiteCase');
+    }
+
     newEntity(data: ISuiteCase): SuiteCase {
         return new SuiteCase(data);
     }
 
-    async addLocal(context: IContext, entity: ISuiteCase): Promise<ISuiteCase | null> {
-        return this.cache.add(context, new SuiteCase(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISuiteCase): Promise<ISuiteCase | null> {
-        return super.createLocal(context, new SuiteCase(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISuiteCase> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

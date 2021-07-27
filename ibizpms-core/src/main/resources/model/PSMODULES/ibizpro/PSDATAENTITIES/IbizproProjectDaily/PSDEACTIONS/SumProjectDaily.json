@@ -4,5 +4,13 @@
   "codeName" : "SumProjectDaily",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/SumProjectDaily.json",
   "logicName" : "汇总项目日报",
-  "name" : "SumProjectDaily"
+  "name" : "SumProjectDaily",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

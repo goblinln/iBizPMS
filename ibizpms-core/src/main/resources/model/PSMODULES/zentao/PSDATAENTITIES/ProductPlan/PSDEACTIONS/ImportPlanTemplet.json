@@ -4,5 +4,13 @@
   "codeName" : "ImportPlanTemplet",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/ImportPlanTemplet.json",
   "logicName" : "导入计划模板",
-  "name" : "ImportPlanTemplet"
+  "name" : "ImportPlanTemplet",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

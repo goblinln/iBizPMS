@@ -25,20 +25,16 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IBIZProKeyword');
+    }
+
     newEntity(data: IIBIZProKeyword): IBIZProKeyword {
         return new IBIZProKeyword(data);
     }
 
-    async addLocal(context: IContext, entity: IIBIZProKeyword): Promise<IIBIZProKeyword | null> {
-        return this.cache.add(context, new IBIZProKeyword(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIBIZProKeyword): Promise<IIBIZProKeyword | null> {
-        return super.createLocal(context, new IBIZProKeyword(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIBIZProKeyword> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

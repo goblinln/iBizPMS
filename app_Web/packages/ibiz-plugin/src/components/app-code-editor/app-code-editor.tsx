@@ -54,6 +54,15 @@ export class AppCodeEditor extends Vue {
     isReadOnly!: boolean;
 
     /**
+     * 是否显示小地图
+     *
+     * @type {boolean}
+     * @memberof AppCodeEditor
+     */
+    @Prop({type: Boolean, default: true})
+    isMinimap!: boolean;
+
+    /**
      * 当前使用语言
      *
      * @type {string}
@@ -67,7 +76,7 @@ export class AppCodeEditor extends Vue {
      * @type {string[]}
      * @memberof AppCodeEditor
      */
-    languages: string[] = ['json', 'javascript', 'typescript', 'css', 'less', 'sass', 'java'];
+    languages: string[] = ['json', 'javascript', 'typescript', 'css', 'less', 'sass', 'java', 'sql'];
 
     /**
      * 代码编辑器对象
@@ -149,6 +158,7 @@ export class AppCodeEditor extends Vue {
                 theme: this.theme,
                 language: this.presentLanguage,
                 readOnly: this.isReadOnly,
+                minimap: { enabled: this.isMinimap },
             });
             this.registerEvent();
             window.addEventListener('resize', this.resize);
@@ -162,7 +172,7 @@ export class AppCodeEditor extends Vue {
      * @memberof AppCodeEditor
      */
     registerEvent() {
-        if(!this.isReadOnly){
+        if (!this.isReadOnly) {
             this.codeEditor.onDidBlurEditorText(
                 //数据发生改变
                 (event: any) => {

@@ -27,20 +27,16 @@ export class DeptBaseService extends EntityBaseService<IDept> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Dept');
+    }
+
     newEntity(data: IDept): Dept {
         return new Dept(data);
     }
 
-    async addLocal(context: IContext, entity: IDept): Promise<IDept | null> {
-        return this.cache.add(context, new Dept(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IDept): Promise<IDept | null> {
-        return super.createLocal(context, new Dept(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IDept> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

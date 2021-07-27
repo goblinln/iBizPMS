@@ -4,5 +4,13 @@
   "codeName" : "BugCreateCase",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/BugCreateCase.json",
   "logicName" : "建用例",
-  "name" : "bugCreateCase"
+  "name" : "bugCreateCase",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

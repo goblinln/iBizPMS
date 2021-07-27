@@ -5,6 +5,14 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json",
   "logicName" : "需求收藏",
   "name" : "StoryFavorites",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/StoryFavorites.json"

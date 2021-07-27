@@ -7,6 +7,10 @@
   "logicName" : "Remove",
   "name" : "Remove",
   "orderValue" : 21,
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELDS"
+  },
   "getPSDEActionParams" : [ {
     "name" : "INDEXID",
     "getPSDEField" : {
@@ -16,8 +20,12 @@
     "stdDataType" : 1,
     "valueType" : "INPUTVALUE"
   } ],
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "paramMode" : 2,
+  "batchAction" : true,
   "builtinAction" : true,
-  "customParam" : true,
-  "enableBatchAction" : true
+  "customParam" : true
 }

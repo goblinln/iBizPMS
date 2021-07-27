@@ -27,20 +27,16 @@ export class PlanTempletDetailBaseService extends EntityBaseService<IPlanTemplet
         ibzplantemplet: 'plantempletid',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'PlanTempletDetail');
+    }
+
     newEntity(data: IPlanTempletDetail): PlanTempletDetail {
         return new PlanTempletDetail(data);
     }
 
-    async addLocal(context: IContext, entity: IPlanTempletDetail): Promise<IPlanTempletDetail | null> {
-        return this.cache.add(context, new PlanTempletDetail(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IPlanTempletDetail): Promise<IPlanTempletDetail | null> {
-        return super.createLocal(context, new PlanTempletDetail(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IPlanTempletDetail> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.plantempletid && entity.plantempletid !== '') {
             const s = await ___ibz___.gs.getIbzPlanTempletService();
             const data = await s.getLocal2(context, entity.plantempletid);

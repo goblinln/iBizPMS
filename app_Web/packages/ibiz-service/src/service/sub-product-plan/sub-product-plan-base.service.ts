@@ -27,20 +27,16 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SubProductPlan');
+    }
+
     newEntity(data: ISubProductPlan): SubProductPlan {
         return new SubProductPlan(data);
     }
 
-    async addLocal(context: IContext, entity: ISubProductPlan): Promise<ISubProductPlan | null> {
-        return this.cache.add(context, new SubProductPlan(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISubProductPlan): Promise<ISubProductPlan | null> {
-        return super.createLocal(context, new SubProductPlan(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISubProductPlan> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

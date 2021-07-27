@@ -5,5 +5,13 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/MobLinkCase.json",
   "logicName" : "移动端关联需求",
   "name" : "MobLinkCase",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "userCat" : "CAT1"
 }

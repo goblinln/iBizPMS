@@ -27,20 +27,16 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Employee');
+    }
+
     newEntity(data: IEmployee): Employee {
         return new Employee(data);
     }
 
-    async addLocal(context: IContext, entity: IEmployee): Promise<IEmployee | null> {
-        return this.cache.add(context, new Employee(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IEmployee): Promise<IEmployee | null> {
-        return super.createLocal(context, new Employee(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IEmployee> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 
@@ -149,6 +145,30 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
         return this.condCache.get('view');
     }
     /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Create');
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        const res = await this.http.post(`/employees`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -160,6 +180,58 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
         try {
         const res = await this.http.get(`/employees/${_context.employee}`);
         res.data = await this.afterExecuteAction(_context,res?.data,'Get');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/employees/getdraft`, _data);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.delete(`/employees/${_context.employee}`);
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        _data = await this.obtainMinor(_context, _data);
+        _data = await this.beforeExecuteAction(_context,_data,'Update');
+        const res = await this.http.put(`/employees/${_context.employee}`, _data);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);
@@ -251,6 +323,108 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
             }
     }
     /**
+     * FetchProjectTeamM
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchProjectTeamM(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/employees/fetchprojectteamm`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamM');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * FetchProjectTeamMProduct
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchProjectTeamMProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/employees/fetchprojectteammproduct`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamMProduct');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * FetchProjectTeamTaskUserTemp
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchProjectTeamTaskUserTemp(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/employees/fetchprojectteamtaskusertemp`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamTaskUserTemp');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * FetchProjectTeamUserTask
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchProjectTeamUserTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/employees/fetchprojectteamusertask`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectTeamUserTask');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * FetchProjectteamPk
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchProjectteamPk(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/employees/fetchprojectteampk`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchProjectteamPk');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * FetchStoryProductTeamPK
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchStoryProductTeamPK(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.post(`/employees/fetchstoryproductteampk`, _data);
+        res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchStoryProductTeamPK');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
      * FetchTask
      *
      * @param {*} [_context={}]
@@ -279,6 +453,22 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
         try {
         const res = await this.http.post(`/employees/fetchtaskmulti`, _data);
         res.data = await this.afterExecuteActionBatch(_context,res?.data,'FetchTaskMulti');
+        return res;
+            } catch (error) {
+                return this.handleResponseError(error);
+            }
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        try {
+        const res = await this.http.get(`/employees/${_context.employee}/select`);
         return res;
             } catch (error) {
                 return this.handleResponseError(error);

@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { CodeListServiceBase, throttle, MDControlInterface, ModelTool } from 'ibiz-core'
+import { CodeListServiceBase, throttle, MDControlInterface, ModelTool, Util } from 'ibiz-core'
 import { MainControlBase } from './main-control-base';
 import { GlobalService } from 'ibiz-service';
 import { AppCenterService, AppViewLogicService } from '../app-service';
@@ -210,6 +210,13 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
     public loaddraftAction: string = "";
 
     /**
+     * 数据映射（数据项名称和UI名称的映射）
+     * 
+     * @memberof MDControlBase
+     */
+    public dataMap: Map<string, any> = new Map();
+
+    /**
      * 获取视图样式
      *
      * @readonly
@@ -265,6 +272,7 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
             this.batchToolbarInstance = ModelTool.findPSControlByName(`${name}_batchtoolbar`, this.controlInstance.getPSControls())
         }
         this.initToolBarModels();
+        this.initDataMap();
     }
 
     /**
@@ -449,4 +457,62 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
         </span>
     }
 
+    /**
+     * 初始化数据映射
+     * 
+     * @memberof MDControlBase
+     */
+    public initDataMap() {}
+
+    /**
+     * 将数据项数据转化为UI数据
+     * 
+     * @param data 源数据
+     */
+    public dataItemTransition(data: any[]) {
+        let _data: any[] = Util.deepCopy(data);
+        if (data.length > 0) {
+            data.forEach((item: any, index: number) => {
+                for (const key in item) {
+                    const itemUI: any = this.dataMap.get(key);
+                    if (itemUI && !Object.is(itemUI.itemUIName, key)) {
+                        delete _data[index][key];
+                        Object.assign(_data[index],{ [itemUI.itemUIName]: item[key]});
+                    };
+                };
+            });
+        };
+        return _data;
+    }
+
+    /**
+     * 将项UI数据转为数据项数据
+     * 
+     * @param data 多数据部件数据
+     */
+    public itemUIDataTransition(data: any[]) {
+        let _data: any[] = Util.deepCopy(data);
+        let dataItems: any[] = [];
+        if (_data) {
+            for (const [dataItemName, itemUI] of this.dataMap) {
+                if (!Object.is(dataItemName, itemUI.itemUIName)) {
+                    dataItems.push(dataItemName);
+                };
+            };
+            data.forEach((item: any, index: number) => {
+                if (dataItems.length > 0) {
+                    for (const key in item) {
+                        dataItems.forEach((dataItemName: any) => {
+                            const itemUI: any = this.dataMap.get(dataItemName);
+                            if (itemUI && Object.is(itemUI.itemUIName, key)) {
+                                delete _data[index][key];
+                                Object.assign(_data[index],{ [dataItemName]: item[key]});
+                            }
+                        })
+                    };
+                };
+            });
+        };
+        return _data;
+    }
 }

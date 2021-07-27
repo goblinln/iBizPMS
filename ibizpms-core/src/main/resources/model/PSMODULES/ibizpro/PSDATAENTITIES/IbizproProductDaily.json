@@ -7,6 +7,14 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "UPDATE",
@@ -16,6 +24,14 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "DELETE",
@@ -26,8 +42,16 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "builtinAction" : true,
-    "enableBatchAction" : true
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "batchAction" : true,
+    "builtinAction" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
@@ -36,6 +60,14 @@
     "logicName" : "Get",
     "name" : "Get",
     "orderValue" : 31,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -45,6 +77,14 @@
     "logicName" : "GetDraft",
     "name" : "GetDraft",
     "orderValue" : 41,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CHECKKEY",
@@ -53,6 +93,15 @@
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/CheckKey.json",
     "logicName" : "CheckKey",
     "name" : "CheckKey",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -60,7 +109,15 @@
     "codeName" : "ManualCreateDaily",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/ManualCreateDaily.json",
     "logicName" : "手动生成产品日报",
-    "name" : "ManualCreateDaily"
+    "name" : "ManualCreateDaily",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    }
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
@@ -68,6 +125,14 @@
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -75,7 +140,15 @@
     "codeName" : "StatsProductDaily",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/StatsProductDaily.json",
     "logicName" : "汇总产品日报",
-    "name" : "StatsProductDaily"
+    "name" : "StatsProductDaily",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    }
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
@@ -136,6 +209,14 @@
       "modelref" : true,
       "id" : "Default"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -147,6 +228,14 @@
       "modelref" : true,
       "id" : "ProductDaily"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -745,6 +834,10 @@
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s",
+    "getValuePSDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {

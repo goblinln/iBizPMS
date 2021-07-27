@@ -5,6 +5,14 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/DocLibModuleNFavorite.json",
   "logicName" : "取消收藏",
   "name" : "DocLibModuleNFavorite",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DoclibModuleNFavorite.json"

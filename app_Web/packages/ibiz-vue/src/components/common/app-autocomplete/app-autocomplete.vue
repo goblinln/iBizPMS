@@ -1,33 +1,35 @@
 <template>
-    <el-autocomplete 
-      class='text-value' 
-      :value-key="deMajorField" 
-      :disabled="disabled" 
-      v-model="curvalue" 
-      size='small'
-      :trigger-on-focus="true" 
-      :fetch-suggestions="onSearch" 
-      :sort="sort"
-      @select="onACSelect"
-      @input="onInput" 
-      @blur="onBlur" 
-      style='width:100%;'>
+    <el-autocomplete
+        class="text-value"
+        :disabled="disabled"
+        v-model="curvalue"
+        size="small"
+        :readonly="Object.is('AC_FS', editorType) || Object.is('AC_FS_NOBUTTON', editorType) ? true : false"
+        :trigger-on-focus="Object.is('AC_NOBUTTON', editorType) ? false : true"
+        :fetch-suggestions="onSearch"
+        :sort="sort"
+        @select="onACSelect"
+        @input="onInput"
+        @blur="onBlur"
+        style="width: 100%"
+    >
         <template v-slot:suffix>
-            <i v-if="curvalue && !disabled" class='el-icon-circle-close' @click="onClear"></i>
-            <i class="el-icon-arrow-down"></i>
+            <i v-if="curvalue && !disabled && !(Object.is('AC_NOBUTTON', editorType) || Object.is('AC_FS_NOBUTTON', editorType))" class="el-icon-circle-close" @click="onClear"></i>
+            <i v-if="!(Object.is('AC_NOBUTTON', editorType) || Object.is('AC_FS_NOBUTTON', editorType))" class="el-icon-arrow-down"></i>
+        </template>
+        <template slot-scope="{ item }">
+            <span v-if="!dataItems">{{ item[deMajorField] }}</span>
+            <span v-if="dataItems">{{ item.text }}</span>
         </template>
     </el-autocomplete>
 </template>
 
 <script lang='ts'>
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
-import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Util } from 'ibiz-core';
 
-@Component({
-})
+@Component({})
 export default class AppAutocomplete extends Vue {
-
     /**
      * 表单数据
      *
@@ -58,7 +60,7 @@ export default class AppAutocomplete extends Vue {
      * @type {*}
      * @memberof AppFormDRUIPart
      */
-    @Prop({default: ()=>{} }) public acParams?: any;
+    @Prop({ default: () => {} }) public acParams?: any;
 
     /**
      * 表单服务
@@ -74,7 +76,7 @@ export default class AppAutocomplete extends Vue {
      * @type {string}
      * @memberof AppAutocomplete
      */
-    @Prop({default: 'srfmajortext'}) public deMajorField!: string;
+    @Prop({ default: 'srfmajortext' }) public deMajorField!: string;
 
     /**
      * 应用实体主键属性名称
@@ -82,7 +84,7 @@ export default class AppAutocomplete extends Vue {
      * @type {string}
      * @memberof AppAutocomplete
      */
-    @Prop({default: 'srfkey'}) public deKeyField!: string;
+    @Prop({ default: 'srfkey' }) public deKeyField!: string;
 
     /**
      * 是否启用
@@ -102,27 +104,19 @@ export default class AppAutocomplete extends Vue {
 
     /**
      * 局部上下文导航参数
-     * 
+     *
      * @type {any}
      * @memberof AppAutocomplete
      */
-    @Prop() public localContext!:any;
+    @Prop() public localContext!: any;
 
     /**
      * 局部导航参数
-     * 
+     *
      * @type {any}
      * @memberof AppAutocomplete
      */
-    @Prop() public localParam!:any;
-
-    /**
-     * 值项名称
-     *
-     * @type {string}
-     * @memberof AppAutocomplete
-     */
-    @Prop() public valueitem?: string;
+    @Prop() public localParam!: any;
 
     /**
      * 排序
@@ -132,6 +126,13 @@ export default class AppAutocomplete extends Vue {
      */
     @Prop() public sort?: string;
 
+    /**
+     * 数据项
+     *
+     * @type {Array<any>}
+     * @memberof AppAutocomplete
+     */
+    @Prop() public dataItems?: Array<any>;
 
     /**
      * 值
@@ -148,6 +149,14 @@ export default class AppAutocomplete extends Vue {
      * @memberof AppAutocomplete
      */
     public curvalue: string = '';
+
+    /**
+     * 编辑器类型
+     * 
+     * @type {string}
+     * @memberof AppAutocomplete
+     */
+    @Prop() public editorType!: string; 
 
     /**
      * 远程请求url 地址
@@ -180,15 +189,16 @@ export default class AppAutocomplete extends Vue {
      * @param {*} oldVal
      * @memberof AppAutocomplete
      */
-    @Watch('value',{immediate: true})
+    @Watch('value', { immediate: true })
     public onValueChange(newVal: any, oldVal: any) {
         this.curvalue = newVal;
     }
 
     /**
      * 执行搜索数据
-     * @param query 
-     * @param callback 
+     * @param query
+     * @param callback
+     * @memberof AppAutocomplete
      */
     public onSearch(query: any, callback: any): void {
         // 公共参数处理
@@ -206,51 +216,80 @@ export default class AppAutocomplete extends Vue {
             query = '';
         }
         this.inputState = false;
-        if(this.sort && !Object.is(this.sort, "")) {
+        if (this.sort && !Object.is(this.sort, '')) {
             Object.assign(_param, { sort: this.sort });
         }
         Object.assign(_param, { query: query });
         // 错误信息国际化
-        let error: string = (this.$t('components.appautocomplete.error') as any);
-        let miss: string = (this.$t('components.appautocomplete.miss') as any);
-        let requestException: string = (this.$t('components.appautocomplete.requestexception') as any);
+        let error: string = this.$t('components.appautocomplete.error') as any;
+        let miss: string = this.$t('components.appautocomplete.miss') as any;
+        let requestException: string = this.$t('components.appautocomplete.requestexception') as any;
 
-        if(!this.service){
-            this.$throw(miss+'service','onSearch');
-        } else if(!this.acParams.serviceName) {
-            this.$throw(miss+'serviceName','onSearch');
-        } else if(!this.acParams.interfaceName) {
-            this.$throw(miss+'interfaceName','onSearch');
+        if (!this.service) {
+            this.$throw(miss + 'service', 'onSearch');
+        } else if (!this.acParams.serviceName) {
+            this.$throw(miss + 'serviceName', 'onSearch');
+        } else if (!this.acParams.interfaceName) {
+            this.$throw(miss + 'interfaceName', 'onSearch');
         } else {
-          this.service.getItems(this.acParams.serviceName,this.acParams.interfaceName, _context, _param).then((response: any) => {
-              if (!response) {
-                  this.$throw(requestException,'onSearch');
-              } else {
-                  this.items = [...response];
-              }
-              if (callback) {
-                  callback(this.items);
-              }
-          }).catch((error: any) => {
-              if (callback) {
-                  callback([]);
-              }
-          });
-        } 
+            this.service
+                .getItems(this.acParams.serviceName, this.acParams.interfaceName, _context, _param)
+                .then((response: any) => {
+                    if (!response) {
+                        this.$throw(requestException, 'onSearch');
+                    } else {
+                        this.items = this.handleDataItems([...response]);
+                    }
+                    if (callback) {
+                        callback(this.items);
+                    }
+                })
+                .catch((error: any) => {
+                    if (callback) {
+                        callback([]);
+                    }
+                });
+        }
+    }
+
+    /**
+     * 处理数据项转化
+     *
+     * @memberof AppAutocomplete
+     */
+    public handleDataItems(opts: any) {
+        if (this.dataItems && this.dataItems.length > 0) {
+            if (opts && opts.length > 0) {
+                for(let element  of opts){
+                    for (let item of this.dataItems as Array<any>) {
+                        if (!item.customCode) {
+                            if (item.getPSAppDEField()?.codeName) {
+                                element[item.name] = element[item.getPSAppDEField().codeName.toLowerCase()];
+                            }
+                        }
+                    }
+                    // 先计算非脚本的数据项，防止数据有误
+                    for (let item of this.dataItems as Array<any>) {
+                        if (item.customCode) {
+                            let data = element;
+                            element[item.name] = eval(`${item.scriptCode}`);
+                        }
+                    }
+                }
+            }
+        }
+        return opts;
     }
 
     /**
      * 选中数据回调
-     * @param item 
+     * @memberof AppAutocomplete
      */
     public onACSelect(item: any): void {
-      if (this.name) {
-          this.$emit('formitemvaluechange', { name: this.name, value: item[this.deMajorField] });
-      }
-      if (this.valueitem) {
-          this.$emit('formitemvaluechange', { name: this.valueitem, value: item[this.deKeyField] });
-      }
-  }
+        if (this.name) {
+            this.$emit('formitemvaluechange', { name: this.name, value: item[this.deMajorField] });
+        }
+    }
 
     /**
      * 输入过程中
@@ -265,7 +304,7 @@ export default class AppAutocomplete extends Vue {
 
     /**
      * 失去焦点事件
-     * @param e 
+     * @param e
      */
     public onBlur(e: any): void {
         let val: string = e.target.value;
@@ -282,13 +321,9 @@ export default class AppAutocomplete extends Vue {
         if (this.name) {
             this.$emit('formitemvaluechange', { name: this.name, value: '' });
         }
-        if (this.valueitem) {
-            this.$emit('formitemvaluechange', { name: this.valueitem, value: '' });
-        }
         this.$forceUpdate();
     }
 
-    
     /**
      * 公共参数处理
      *
@@ -298,24 +333,23 @@ export default class AppAutocomplete extends Vue {
      */
     public handlePublicParams(arg: any): boolean {
         if (!this.data) {
-            this.$throw((this.$t('components.AppAutocomplete.formdataException') as any),'handlePublicParams');
+            this.$throw(this.$t('components.AppAutocomplete.formdataException') as any, 'handlePublicParams');
             return false;
         }
         // 合并表单参数
-        arg.param = this.viewparams ? JSON.parse(JSON.stringify(this.viewparams)) : {};
-        arg.context = this.context ? JSON.parse(JSON.stringify(this.context)) : {};
+        arg.param = this.viewparams ? Util.deepCopy(this.viewparams) : {};
+        arg.context = this.context ? Util.deepCopy(this.context) : {};
         // 附加参数处理
-        if (this.localContext && Object.keys(this.localContext).length >0) {
-            let _context = this.$util.computedNavData(this.data,arg.context,arg.param,this.localContext);
-            Object.assign(arg.context,_context);
+        if (this.localContext && Object.keys(this.localContext).length > 0) {
+            let _context = Util.computedNavData(this.data, arg.context, arg.param, this.localContext);
+            Object.assign(arg.context, _context);
         }
-        if (this.localParam && Object.keys(this.localParam).length >0) {
-            let _param = this.$util.computedNavData(this.data,arg.param,arg.param,this.localParam);
-            Object.assign(arg.param,_param);
+        if (this.localParam && Object.keys(this.localParam).length > 0) {
+            let _param = Util.computedNavData(this.data, arg.param, arg.param, this.localParam);
+            Object.assign(arg.param, _param);
         }
         return true;
     }
-
 }
 </script>
 

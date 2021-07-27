@@ -4,5 +4,13 @@
   "codeName" : "GetTaskReStory",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetTaskReStory.json",
   "logicName" : "任务相关需求草稿方法",
-  "name" : "GetTaskReStory"
+  "name" : "GetTaskReStory",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

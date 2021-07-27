@@ -4,5 +4,13 @@
   "codeName" : "PMEvaluation",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/PMEvaluation.json",
   "logicName" : "项目经理评估",
-  "name" : "PMEvaluation"
+  "name" : "PMEvaluation",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

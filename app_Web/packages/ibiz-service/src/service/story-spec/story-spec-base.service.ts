@@ -26,20 +26,16 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
         story: 'story',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'StorySpec');
+    }
+
     newEntity(data: IStorySpec): StorySpec {
         return new StorySpec(data);
     }
 
-    async addLocal(context: IContext, entity: IStorySpec): Promise<IStorySpec | null> {
-        return this.cache.add(context, new StorySpec(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IStorySpec): Promise<IStorySpec | null> {
-        return super.createLocal(context, new StorySpec(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IStorySpec> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.story && entity.story !== '') {
             const s = await ___ibz___.gs.getStoryService();
             const data = await s.getLocal2(context, entity.story);

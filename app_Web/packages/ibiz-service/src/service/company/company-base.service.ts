@@ -25,20 +25,16 @@ export class CompanyBaseService extends EntityBaseService<ICompany> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Company');
+    }
+
     newEntity(data: ICompany): Company {
         return new Company(data);
     }
 
-    async addLocal(context: IContext, entity: ICompany): Promise<ICompany | null> {
-        return this.cache.add(context, new Company(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ICompany): Promise<ICompany | null> {
-        return super.createLocal(context, new Company(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ICompany> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

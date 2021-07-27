@@ -4,5 +4,13 @@
   "codeName" : "StatsProductMonthly",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductMonthly/PSDEACTIONS/StatsProductMonthly.json",
   "logicName" : "汇总产品月报",
-  "name" : "StatsProductMonthly"
+  "name" : "StatsProductMonthly",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

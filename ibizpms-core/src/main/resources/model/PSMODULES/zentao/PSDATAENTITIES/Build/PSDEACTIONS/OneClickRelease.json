@@ -4,5 +4,13 @@
   "codeName" : "OneClickRelease",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/OneClickRelease.json",
   "logicName" : "一键发布",
-  "name" : "OneClickRelease"
+  "name" : "OneClickRelease",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

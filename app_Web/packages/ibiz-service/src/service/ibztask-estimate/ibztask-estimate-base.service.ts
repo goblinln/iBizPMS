@@ -28,20 +28,16 @@ export class IBZTaskEstimateBaseService extends EntityBaseService<IIBZTaskEstima
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IBZTaskEstimate');
+    }
+
     newEntity(data: IIBZTaskEstimate): IBZTaskEstimate {
         return new IBZTaskEstimate(data);
     }
 
-    async addLocal(context: IContext, entity: IIBZTaskEstimate): Promise<IIBZTaskEstimate | null> {
-        return this.cache.add(context, new IBZTaskEstimate(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIBZTaskEstimate): Promise<IIBZTaskEstimate | null> {
-        return super.createLocal(context, new IBZTaskEstimate(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIBZTaskEstimate> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

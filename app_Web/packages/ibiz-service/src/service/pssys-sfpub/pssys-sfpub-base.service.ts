@@ -25,20 +25,16 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'PSSysSFPub');
+    }
+
     newEntity(data: IPSSysSFPub): PSSysSFPub {
         return new PSSysSFPub(data);
     }
 
-    async addLocal(context: IContext, entity: IPSSysSFPub): Promise<IPSSysSFPub | null> {
-        return this.cache.add(context, new PSSysSFPub(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IPSSysSFPub): Promise<IPSSysSFPub | null> {
-        return super.createLocal(context, new PSSysSFPub(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IPSSysSFPub> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

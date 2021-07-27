@@ -27,20 +27,16 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'UserContact');
+    }
+
     newEntity(data: IUserContact): UserContact {
         return new UserContact(data);
     }
 
-    async addLocal(context: IContext, entity: IUserContact): Promise<IUserContact | null> {
-        return this.cache.add(context, new UserContact(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IUserContact): Promise<IUserContact | null> {
-        return super.createLocal(context, new UserContact(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IUserContact> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

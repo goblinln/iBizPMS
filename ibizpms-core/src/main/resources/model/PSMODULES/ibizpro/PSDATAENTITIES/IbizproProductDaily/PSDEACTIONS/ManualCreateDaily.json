@@ -4,5 +4,13 @@
   "codeName" : "ManualCreateDaily",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/ManualCreateDaily.json",
   "logicName" : "手动生成产品日报",
-  "name" : "ManualCreateDaily"
+  "name" : "ManualCreateDaily",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

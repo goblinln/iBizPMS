@@ -352,7 +352,6 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      */
     public isHideHeader: boolean = false;
 
-
     /**
      * 导入模型
      *
@@ -477,7 +476,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             for (const editColumn of allEditColumns) {
                 let editorRules = [];
                 if (editColumn) {
-                    editorRules = Verify.buildVerConditions(editColumn);
+                    editorRules = Verify.buildVerConditions(editColumn.getPSEditor());
                 }
                 let otherRules = staticRules[editColumn.name] || [];
                 this.rules[editColumn.name] = [
@@ -539,6 +538,25 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         this.initAllExportColumns();
         this.initRules();
         this.initImportDataModel();
+    }
+
+    /**
+     * 初始化数据映射
+     * 
+     * @memberof GridControlBase
+     */
+    public initDataMap() {
+        const gridColumns: IPSDEGridColumn[] | null = this.controlInstance.getPSDEGridColumns();
+        if (gridColumns && gridColumns.length > 0) {
+            gridColumns.forEach((gridColumn: IPSDEGridColumn) => {
+                if (gridColumn.dataItemName) {
+                    const dataItem: IPSDEGridDataItem | undefined= this.controlInstance.getPSDEGridDataItems()?.find((_dataItem: IPSDEGridDataItem) => Object.is(gridColumn.dataItemName, _dataItem.name));
+                    if (dataItem) {
+                        this.dataMap.set(dataItem.name,{ itemUIName: gridColumn.name });
+                    };
+                };
+            });
+        };
     }
 
     /**
@@ -615,7 +633,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                     let editItem: IPSDEGridEditItem = ModelTool.getGridItemByCodeName(columnInstance.codeName, this.controlInstance) as IPSDEGridEditItem;
                     //表格列
                     const column = {
-                        name: columnInstance.name.toLowerCase(),
+                        name: columnInstance.name,
                         label: this.$tl(columnInstance.getCapPSLanguageRes()?.lanResTag, columnInstance.caption),
                         langtag: columnInstance.getCapPSLanguageRes()?.lanResTag,
                         show: !columnInstance.hideDefault,
@@ -942,7 +960,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             }
             const data: any = response.data;
             this.totalRecord = response.total;
-            this.items = Util.deepCopy(data);
+            this.items = this.dataItemTransition(data);
             // 清空selections,gridItemsModel
             this.selections = [];
             this.gridItemsModel = [];
@@ -971,6 +989,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                                 models.forEach((model: any) => {
                                     emptyItem[model.name] = null;
                                 });
+                                emptyItem.srfchecked = 1;
                                 this.ctrlEvent({ controlname: _this.name, action: "selectionchange", data: [emptyItem] });
                             }
                         } else {
@@ -999,10 +1018,40 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             if (this.isEnableGroup) {
                 this.group();
             }
+            this.$nextTick(() => {
+                this.resetGridLayout();
+            })
         }).catch((response: any) => {
             this.onControlResponse('load', response);
             this.$throw(response, 'load');
         });
+    }
+
+    /**
+     * 重置表格布局
+     *
+     * @memberof GridControlBase
+     */
+    public resetGridLayout() {
+        const grid = (this.$refs[this.gridRefName] as any)?.$el;
+        if (!grid) {
+            return;
+        }
+        const headerHeight = grid.querySelector('.el-table__header-wrapper')?.scrollHeight || null;
+        //  头部高度为45时不作处理（默认已适配45px）
+        if (headerHeight == 45) {
+            return;
+        }
+        //  设置内容区高度
+        const body = grid.querySelector('.el-table__body-wrapper');
+        if (headerHeight && body) {
+            body.style.setProperty('height', `calc(100% - ${headerHeight}px)`);
+        }
+        //  设置固定列内容区高度
+        const fixBody = grid.querySelector('.el-table__fixed-right .el-table__fixed-body-wrapper');
+        if (headerHeight && fixBody) {
+            fixBody.style.setProperty('height', `calc(100% - ${headerHeight}px)`);
+        }
     }
 
     /**
@@ -1141,7 +1190,8 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         let errorItems: any = [];
         let errorMessage: any = [];
         const appDeCodeName: any = this.controlInstance.getPSAppDataEntity()?.codeName;
-        for (const item of _this.items) {
+        const items: any[] = this.itemUIDataTransition(_this.items);
+        for (const item of items) {
             try {
                 if (Object.is(item.rowDataState, 'create')) {
                     if (!this.createAction) {
@@ -1644,8 +1694,15 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             if (!selection) {
                 return;
             }
-            this.selections = [...Util.deepCopy(selection)];
+            this.selections = [...selection];
         }
+        this.items.forEach((item: any) => {
+            if (this.selections.indexOf(item) === -1) {
+                item.srfchecked = 0;
+            } else {
+                item.srfchecked = 1;
+            }
+        })
         this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: this.selections });
     }
 
@@ -1735,8 +1792,15 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             if (!selection) {
                 return;
             }
-            this.selections = [...Util.deepCopy(selection)];
+            this.selections = [...selection];
         }
+        this.items.forEach((item: any) => {
+            if (this.selections.indexOf(item) === -1) {
+                item.srfchecked = 0;
+            } else {
+                item.srfchecked = 1;
+            }
+        })
         this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: this.selections });
     }
 
@@ -1775,6 +1839,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             return;
         }
         this.selections = [];
+        row.srfchecked = 1;
         if (this.gridRowActiveMode == 1 && !isSelectColumn) {
             this.ctrlEvent({ controlname: this.name, action: "rowclick", data: Util.deepCopy(row) });
             this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: [Util.deepCopy(row)] });
@@ -1808,7 +1873,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         if (!$event || this.actualIsOpenEdit || Object.is(this.gridRowActiveMode, 0)) {
             return;
         }
-        this.ctrlEvent({ controlname: this.name, action: "rowdblclick", data: Util.deepCopy($event) });
+        this.ctrlEvent({ controlname: this.name, action: "rowdblclick", data: $event });
     }
 
     /**
@@ -2322,8 +2387,8 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                     }
                 })
                 const columnInstance: IPSDEGridColumn | undefined = this.allColumnsInstance.find((_column: any) => {
-                    return Object.is(column.property, _column.codeName.toLowerCase());
-                })
+                    return Object.is(column.property, _column.name);
+                });
                 const values = data.map((item: any) => Number(item[columnInstance && columnInstance.aggField ? columnInstance.aggField.toLowerCase() : column.property]));
                 if (!values.every((value: any) => isNaN(value)) && columnInstance) {
                     if (Object.is(columnInstance.aggMode, "SUM")) {
@@ -2510,12 +2575,39 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
     }
 
     /**
+     * 处理部件UI请求
+     *
+     * @param {string} action 行为名称
+     * @param {*} context 上下文
+     * @param {*} viewparam 视图参数
+     * @memberof GridControlBase
+     */
+     public onControlRequset(action: string, context: any, viewparam: any) {
+        if (!Object.is(action, 'updateGridEditItem')) {
+            this.ctrlBeginLoading();
+        }
+    }
+
+    /**
      * 处理部件UI响应
      *
      * @memberof GridControlBase
      */
     public onControlResponse(action: string, response: any) {
-        super.onControlResponse(action, response);
+        if (!Object.is(action, 'updateGridEditItem')) {
+            this.ctrlEndLoading();
+        }
+        if (Object.is(action, 'load')) {
+            this.isControlLoaded = true;
+        }
+        if (response && response.status && response.status == 403) {
+            this.enableControlUIAuth = false;
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'authlimit',
+                data: response,
+            });
+        }
         if (response && response.status && response.status != 200 && response.data) {
             const data: any = response.data;
             if (data.code && Object.is(AppErrorCode.INPUTERROR, data.code) && data.details?.length > 0) {
@@ -2572,5 +2664,4 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         };
         return { targetCtrlName, targetCtrlParam, targetCtrlEvent };
     }
-
 }

@@ -128,7 +128,7 @@ export class AppTreeViewBase extends TreeControlBase {
         if (data.html) {
             textElement = <span domPropsInnerHTML={data.html}></span>;
         } else {
-            textElement = <span>{Object.is(data.nodeType,"STATIC") ? this.$tl(data.lanResTag,data.text) : data.text}</span>
+            textElement = <span>{Object.is(data.nodeType, "STATIC") ? this.$tl(data.lanResTag, data.text) : data.text}</span>
         }
 
         // 计数器 
@@ -151,7 +151,7 @@ export class AppTreeViewBase extends TreeControlBase {
             >
                 <tooltip transfer style='width: 100%;' max-width={2000} placement='right'>
                     <div
-                        class={['tree-node',cssName]}
+                        class={['tree-node', cssName]}
                         on-dblclick={() => {
                             throttle(this.doDefaultAction, [node], this);
                         }}
@@ -184,7 +184,7 @@ export class AppTreeViewBase extends TreeControlBase {
         return (
             <div class={{ 'design-tree-container': true, ...controlClassNames }}>
                 <context-menu-container>
-                    <el-tree
+                    <app-element-tree
                         ref={this.name}
                         class='design-tree'
                         node-key='id'
@@ -199,17 +199,22 @@ export class AppTreeViewBase extends TreeControlBase {
                                 children: 'children',
                             }
                         }}
+                        draggable={this.draggable}
+                        allow-drag={(node: any) => { return throttle(this.allowDrag, [node], this) }}
+                        allow-drop={(draggingNode: any, dropNode: any, type: string) => { return this.allowDrop(draggingNode, dropNode, type) }}
+                        on-edit-value-change={(value: string, node: any, event: any) => { this.nodeValueChange(value, node, event) }}
+                        on-close-edit={(node: any, event: any) => { this.saveAndRefresh(node, event)}}
                         load={this.load.bind(this)}
                         highlight-current={true}
                         expand-on-click-node={false}
-                        on-check={(data:any,checkedState:any) =>{this.onCheck(data,checkedState)}}
+                        on-check={(data: any, checkedState: any) => { this.onCheck(data, checkedState) }}
                         on-current-change={this.selectionChange.bind(this)}
                         filter-node-method={this.filterNode.bind(this)}
                         empty-text={this.$t('app.commonwords.nodata')}
                         scopedSlots={{
                             default: this.renderNode.bind(this)
                         }}
-                    ></el-tree>
+                    ></app-element-tree>
                 </context-menu-container>
             </div>
         );

@@ -118,6 +118,7 @@ import { AppDefaultGridColumn } from './common/app-grid-column/app-grid-column';
 import AppMarkdownEditor from './common/app-markdown-editor/app-markdown-editor';
 import AppNumberRange from './common/app-number-range/app-number-range.vue';
 import AppAnchor from './common/app-anchor/app-anchor.vue';
+import AppElTree from './common/app-element-tree/app-element-tree.vue';
 // 视图组件
 import { AppViewShell } from '../view-container/app-view-shell';
 import { AppDefaultIndexView } from './view/app-default-view/app-default-indexview';
@@ -264,6 +265,7 @@ import { AppDefaultDrbar } from './control/app-default-drbar/app-default-drbar';
 import { AppDefaultMap } from './control/app-default-map/app-default-map';
 import { AppDefaultReportPanel } from './control/app-default-reportpanel/app-default-reportpanel';
 import { AppDefaultMapExpBar } from './control/app-default-map-exp-bar/app-default-map-exp-bar';
+import { AppDefaultViewPanel } from './control/app-default-viewpanel/app-default-viewpanel';
 import { NotificationSignal } from '../directives';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
@@ -386,6 +388,7 @@ export const ComponentsRegister = {
         v.component('app-grid-column', AppDefaultGridColumn);
         v.component('draggable', draggable);
         v.component('app-markdown-editor', AppMarkdownEditor);
+        v.component('app-element-tree',AppElTree);
 
         // 视图组件
         v.component('app-view-shell', AppViewShell);
@@ -531,6 +534,7 @@ export const ComponentsRegister = {
         v.component('app-default-map', AppDefaultMap);
         v.component('app-default-report-panel', AppDefaultReportPanel);
         v.component('app-default-map-exp-bar', AppDefaultMapExpBar);
+        v.component('app-default-view-panel', AppDefaultViewPanel);
         // 注册指令
         v.directive('notification-signal', NotificationSignal);
     }

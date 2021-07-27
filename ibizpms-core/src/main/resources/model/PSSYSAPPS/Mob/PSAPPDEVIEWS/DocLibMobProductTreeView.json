@@ -2505,7 +2505,6 @@
       "id" : "update"
     },
     "enableRootSelect" : false,
-    "enableSearchDefault" : true,
     "outputIconDefault" : true,
     "rootVisible" : false,
     "name" : "tree",

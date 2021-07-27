@@ -27,20 +27,16 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'TestCaseLib');
+    }
+
     newEntity(data: ITestCaseLib): TestCaseLib {
         return new TestCaseLib(data);
     }
 
-    async addLocal(context: IContext, entity: ITestCaseLib): Promise<ITestCaseLib | null> {
-        return this.cache.add(context, new TestCaseLib(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITestCaseLib): Promise<ITestCaseLib | null> {
-        return super.createLocal(context, new TestCaseLib(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITestCaseLib> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

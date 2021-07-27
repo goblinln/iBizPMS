@@ -4,5 +4,13 @@
   "codeName" : "GetLastUpdateInfo",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDEACTIONS/GetLastUpdateInfo.json",
   "logicName" : "获取最新更新信息",
-  "name" : "getLastUpdateInfo"
+  "name" : "getLastUpdateInfo",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

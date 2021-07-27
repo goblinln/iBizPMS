@@ -6,9 +6,17 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/RemoveModule.json",
   "logicName" : "删除模块",
   "name" : "RemoveModule",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELDS"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDELOGICS/RemoveModule.json"
   },
-  "enableBatchAction" : true
+  "batchAction" : true
 }

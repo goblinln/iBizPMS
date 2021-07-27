@@ -5,6 +5,14 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/MobProjectBuildCounter.json",
   "logicName" : "移动端项目版本计数器",
   "name" : "MobProjectBuildCounter",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDELOGICS/MobProjectBuildCounter.json"

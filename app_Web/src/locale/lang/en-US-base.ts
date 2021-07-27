@@ -234,6 +234,14 @@ function getAppLocale(){
                     login: "Login",
                 },
             },
+            viewpanel: {
+                noconfig: {
+                    getaction: "The panel gets data behavior is not configured"
+                },
+                error: {
+                    notgetservice: "Can't get entity service"
+                }
+            },
             editor: {
               noexist: "Editor instance does not exist!",
               nooutput: "The base class does not output",

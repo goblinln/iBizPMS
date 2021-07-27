@@ -7,6 +7,14 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -17,6 +25,14 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -28,8 +44,16 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "builtinAction" : true,
-    "enableBatchAction" : true
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "batchAction" : true,
+    "builtinAction" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
@@ -51,6 +75,14 @@
     "logicName" : "Get",
     "name" : "Get",
     "orderValue" : 31,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -60,6 +92,14 @@
     "logicName" : "GetDraft",
     "name" : "GetDraft",
     "orderValue" : 41,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -67,7 +107,15 @@
     "codeName" : "ByVersionUpdateContext",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/ByVersionUpdateContext.json",
     "logicName" : "根据版本更新正文信息",
-    "name" : "ByVersionUpdateContext"
+    "name" : "ByVersionUpdateContext",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    }
   }, {
     "actionMode" : "CHECKKEY",
     "actionType" : "BUILTIN",
@@ -75,6 +123,15 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/CheckKey.json",
     "logicName" : "CheckKey",
     "name" : "CheckKey",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -82,28 +139,60 @@
     "codeName" : "Collect",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Collect.json",
     "logicName" : "收藏",
-    "name" : "Collect"
+    "name" : "Collect",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    }
   }, {
     "actionMode" : "READ",
     "actionType" : "USERCUSTOM",
     "codeName" : "GetDocStatus",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDocStatus.json",
     "logicName" : "行为",
-    "name" : "GetDocStatus"
+    "name" : "GetDocStatus",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    }
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "OnlyCollectDoc",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyCollectDoc.json",
     "logicName" : "仅收藏文档",
-    "name" : "OnlyCollectDoc"
+    "name" : "OnlyCollectDoc",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    }
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "OnlyUnCollectDoc",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyUnCollectDoc.json",
     "logicName" : "仅取消收藏文档",
-    "name" : "OnlyUnCollectDoc"
+    "name" : "OnlyUnCollectDoc",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    }
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
@@ -111,6 +200,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -118,7 +215,15 @@
     "codeName" : "UnCollect",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/UnCollect.json",
     "logicName" : "取消收藏",
-    "name" : "UnCollect"
+    "name" : "UnCollect",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    }
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
@@ -523,6 +628,14 @@
       "modelref" : true,
       "id" : "ChildDocLibDoc"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -533,6 +646,14 @@
       "modelref" : true,
       "id" : "Default"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
@@ -544,6 +665,14 @@
       "modelref" : true,
       "id" : "DocLibAndDoc"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -554,6 +683,14 @@
       "modelref" : true,
       "id" : "DocLibDoc"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -564,6 +701,14 @@
       "modelref" : true,
       "id" : "DocModuleDoc"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -574,6 +719,14 @@
       "modelref" : true,
       "id" : "DocStatus"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -584,6 +737,14 @@
       "modelref" : true,
       "id" : "LastedModify"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -594,6 +755,14 @@
       "modelref" : true,
       "id" : "ModuleDocChild"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -604,6 +773,14 @@
       "modelref" : true,
       "id" : "MyCreateOrUpdateDoc"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -614,6 +791,14 @@
       "modelref" : true,
       "id" : "MyFavourite"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -624,6 +809,14 @@
       "modelref" : true,
       "id" : "MyFavouritesOnlyDoc"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -634,6 +827,14 @@
       "modelref" : true,
       "id" : "NotRootDoc"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   }, {
@@ -644,6 +845,14 @@
       "modelref" : true,
       "id" : "RootDoc"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -2146,6 +2355,10 @@
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s",
+    "getValuePSDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2214,6 +2427,10 @@
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s",
+    "getValuePSDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2282,6 +2499,10 @@
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s",
+    "getValuePSDEField" : {
+      "name" : "LIB",
+      "codeName" : "Lib"
+    },
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2350,6 +2571,10 @@
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s",
+    "getValuePSDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    },
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {

@@ -4,5 +4,13 @@
   "codeName" : "BugToStory",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BugToStory.json",
   "logicName" : "bug转需求",
-  "name" : "BugToStory"
+  "name" : "BugToStory",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

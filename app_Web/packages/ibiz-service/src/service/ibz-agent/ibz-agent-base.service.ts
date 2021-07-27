@@ -25,20 +25,16 @@ export class IbzAgentBaseService extends EntityBaseService<IIbzAgent> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IbzAgent');
+    }
+
     newEntity(data: IIbzAgent): IbzAgent {
         return new IbzAgent(data);
     }
 
-    async addLocal(context: IContext, entity: IIbzAgent): Promise<IIbzAgent | null> {
-        return this.cache.add(context, new IbzAgent(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIbzAgent): Promise<IIbzAgent | null> {
-        return super.createLocal(context, new IbzAgent(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIbzAgent> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

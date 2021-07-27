@@ -27,20 +27,16 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SubTask');
+    }
+
     newEntity(data: ISubTask): SubTask {
         return new SubTask(data);
     }
 
-    async addLocal(context: IContext, entity: ISubTask): Promise<ISubTask | null> {
-        return this.cache.add(context, new SubTask(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISubTask): Promise<ISubTask | null> {
-        return super.createLocal(context, new SubTask(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISubTask> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

@@ -27,20 +27,16 @@ export class TestBaseService extends EntityBaseService<ITest> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Test');
+    }
+
     newEntity(data: ITest): Test {
         return new Test(data);
     }
 
-    async addLocal(context: IContext, entity: ITest): Promise<ITest | null> {
-        return this.cache.add(context, new Test(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITest): Promise<ITest | null> {
-        return super.createLocal(context, new Test(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITest> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

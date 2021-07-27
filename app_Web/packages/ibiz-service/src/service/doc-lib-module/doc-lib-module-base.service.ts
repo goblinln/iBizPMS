@@ -26,20 +26,16 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         doclib: 'root',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'DocLibModule');
+    }
+
     newEntity(data: IDocLibModule): DocLibModule {
         return new DocLibModule(data);
     }
 
-    async addLocal(context: IContext, entity: IDocLibModule): Promise<IDocLibModule | null> {
-        return this.cache.add(context, new DocLibModule(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IDocLibModule): Promise<IDocLibModule | null> {
-        return super.createLocal(context, new DocLibModule(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IDocLibModule> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.root && entity.root !== '') {
             const s = await ___ibz___.gs.getDocLibService();
             const data = await s.getLocal2(context, entity.root);

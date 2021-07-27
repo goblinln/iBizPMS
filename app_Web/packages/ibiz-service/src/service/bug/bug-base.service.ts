@@ -29,20 +29,16 @@ export class BugBaseService extends EntityBaseService<IBug> {
         test: 'product',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Bug');
+    }
+
     newEntity(data: IBug): Bug {
         return new Bug(data);
     }
 
-    async addLocal(context: IContext, entity: IBug): Promise<IBug | null> {
-        return this.cache.add(context, new Bug(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IBug): Promise<IBug | null> {
-        return super.createLocal(context, new Bug(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IBug> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.project && entity.project !== '') {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(context, entity.project);

@@ -4,5 +4,13 @@
   "codeName" : "BatchChangePlan",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangePlan.json",
   "logicName" : "批量关联计划",
-  "name" : "BatchChangePlan"
+  "name" : "BatchChangePlan",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

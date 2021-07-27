@@ -28,20 +28,16 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
         project: 'root',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'ProjectModule');
+    }
+
     newEntity(data: IProjectModule): ProjectModule {
         return new ProjectModule(data);
     }
 
-    async addLocal(context: IContext, entity: IProjectModule): Promise<IProjectModule | null> {
-        return this.cache.add(context, new ProjectModule(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IProjectModule): Promise<IProjectModule | null> {
-        return super.createLocal(context, new ProjectModule(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IProjectModule> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.root && entity.root !== '') {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(context, entity.root);

@@ -25,20 +25,16 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'ProductWeekly');
+    }
+
     newEntity(data: IProductWeekly): ProductWeekly {
         return new ProductWeekly(data);
     }
 
-    async addLocal(context: IContext, entity: IProductWeekly): Promise<IProductWeekly | null> {
-        return this.cache.add(context, new ProductWeekly(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IProductWeekly): Promise<IProductWeekly | null> {
-        return super.createLocal(context, new ProductWeekly(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IProductWeekly> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

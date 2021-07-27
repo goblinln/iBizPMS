@@ -6,5 +6,13 @@
   "logicName" : "Update",
   "name" : "Update",
   "orderValue" : 11,
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  },
   "builtinAction" : true
 }

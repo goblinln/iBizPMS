@@ -243,6 +243,10 @@ export class AppTreeService extends ControlServiceBase {
                     nodeType: nodeJson.treeNodeType,
                     lanResTag: nodeJson.getNamePSLanguageRes()?.lanResTag,
                     isUseLangRes: false,
+                    allowDrag: nodeJson.allowDrag,
+                    allowDrop: nodeJson.allowDrop,
+                    allowEditText: nodeJson.allowEditText,
+                    allowOrder: nodeJson.allowOrder,
                     srfappctx: context,
                     srfmajortext: (nodeJson as IPSDETreeStaticNode)?.text,
                     enablecheck: nodeJson.enableCheck,
@@ -359,10 +363,12 @@ export class AppTreeService extends ControlServiceBase {
                                 // 设置实体主信息属性
                                 let strText: string = '';
                                 if ((nodeJson as IPSDETreeDataSetNode)?.getTextPSAppDEField()) {
-                                    const codeName: any = (nodeJson as IPSDETreeDataSetNode).getTextPSAppDEField()?.codeName.toLowerCase()
+                                    const codeName: any = (nodeJson as IPSDETreeDataSetNode).getTextPSAppDEField()?.codeName.toLowerCase();
+                                    Object.assign(treeNode, { nodeTextField: codeName });
                                     strText = entity[codeName];
                                 } else {
                                     let majorField = ModelTool.getAppEntityMajorField(appDataEntity) as IPSAppDEField;
+                                    Object.assign(treeNode, { nodeTextField: majorField?.codeName.toLowerCase() });
                                     strText = entity[majorField?.codeName.toLowerCase()];
                                 }
                                 Object.assign(treeNode, { srfparentdename: deCodeName, srfparentdemapname: appDataEntity?.getPSDEName(), srfparentkey: strId });
@@ -390,6 +396,18 @@ export class AppTreeService extends ControlServiceBase {
                                 }
                                 if (nodeJson.disableSelect) {
                                     Object.assign(treeNode, { disabled: true });
+                                }
+                                if (nodeJson.allowDrag) {
+                                    Object.assign(treeNode, { allowDrag: true });
+                                }
+                                if (nodeJson.allowDrop) {
+                                    Object.assign(treeNode, { allowDrop: true });
+                                }
+                                if (nodeJson.allowEditText) {
+                                    Object.assign(treeNode, { allowEditText: true });
+                                }
+                                if (nodeJson.allowOrder) {
+                                    Object.assign(treeNode, { allowOrder: true });
                                 }
                                 if (nodeJson.getPSSysCss()?.cssName) {
                                     Object.assign(treeNode, { cssName: nodeJson.getPSSysCss()?.cssName });
@@ -482,11 +500,11 @@ export class AppTreeService extends ControlServiceBase {
         if (context && context.srfparentkey) {
             Object.assign(searchFilter, { srfparentkey: Util.deepCopy(context).srfparentkey });
         }
+        const appDataEntity = nodeJson.getPSAppDataEntity() as IPSAppDataEntity;
+        await appDataEntity.fill();
         if ((nodeJson as IPSDETreeDataSetNode)?.getSortPSAppDEField() && (nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName && (nodeJson as IPSDETreeDataSetNode)?.sortDir) {
             Object.assign(searchFilter, { sort: `${(nodeJson as IPSDETreeDataSetNode).getSortPSAppDEField()?.codeName.toLowerCase()},${(nodeJson as IPSDETreeDataSetNode).sortDir.toLowerCase()}` });
         }
-        const appDataEntity = nodeJson.getPSAppDataEntity() as IPSAppDataEntity;
-        await appDataEntity.fill();
         let appEntityService = await this.globalService.getService(appDataEntity?.codeName, context);
         let list: any[] = [];
         if (appEntityService[(nodeJson as IPSDETreeDataSetNode)?.getPSAppDEDataSet()?.codeName as string] && appEntityService[(nodeJson as IPSDETreeDataSetNode).getPSAppDEDataSet()?.codeName as string] instanceof Function) {
@@ -576,6 +594,18 @@ export class AppTreeService extends ControlServiceBase {
                 }
                 if (nodeJson.disableSelect) {
                     Object.assign(node, { disabled: true });
+                }
+                if (nodeJson.allowDrag) {
+                    Object.assign(node, { allowDrag: true });
+                }
+                if (nodeJson.allowDrop) {
+                    Object.assign(node, { allowDrop: true });
+                }
+                if (nodeJson.allowEditText) {
+                    Object.assign(node, { allowEditText: true });
+                }
+                if (nodeJson.allowOrder) {
+                    Object.assign(node, { allowOrder: true });
                 }
                 if (nodeJson.expanded) {
                     Object.assign(node, { expanded: nodeJson.expandFirstOnly ? bFirst : true });
@@ -796,5 +826,32 @@ export class AppTreeService extends ControlServiceBase {
             })
         }
         return params;
+    }
+
+    /**
+     * 修改数据
+     *
+     * @param {string} action
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {*} [service]
+     * @param {boolean} [isWorkflow] 
+     * @returns {Promise<any>}
+     * @memberof AppTreeService
+     */
+     public update(action: string, context: any, data: any, service: any, isWorkflow?: boolean): Promise<any> {
+        return new Promise((resolve: any, reject: any) => {
+            let result: Promise<any>;
+            if (service[action] && service[action] instanceof Function) {
+                result = service[action](context, data);
+            } else {
+                result = service.Update(context, data);
+            }
+            result.then((response) => {
+                resolve(response);
+            }).catch(response => {
+                reject(response);
+            });
+        });
     }
 }

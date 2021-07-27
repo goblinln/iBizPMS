@@ -256,7 +256,9 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
             if (Object.keys(data).length > 0) {
                 let datas = Util.deepCopy(data);
                 datas.map((item: any) => {
-                    Object.assign(item, { isselected: false });
+                    if (!item.srfchecked) {
+                        Object.assign(item, { srfchecked: 0 });
+                    }
                 });
                 this.totalRecord = response.total;
                 if (isReset) {
@@ -535,10 +537,10 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
      * @memberof KanbanControlBase
      */
     public handleClick(args: any) {
-        args.isselected = !args.isselected;
+        args.srfchecked = Number(!args.srfchecked);
         this.items.forEach((item: any) => {
             if (item.srfkey !== args.srfkey) {
-                item.isselected = false;
+                item.srfchecked = 0;
             }
         })
         this.selectchange();
@@ -551,10 +553,10 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
      * @memberof KanbanControlBase
      */
     public handleDblClick(args: any) {
-        args.isselected = true;
+        args.srfchecked = 1;
         this.items.forEach((item: any) => {
             if (item.srfkey !== args.srfkey) {
-                item.isselected = false;
+                item.srfchecked = 0;
             }
         })
         this.$emit("ctrl-event", { controlname: "kanban", action: "rowdblclick", data: args });
@@ -568,7 +570,7 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
     public selectchange() {
         this.selections = [];
         this.items.map((item: any) => {
-            if (item.isselected) {
+            if (item.srfchecked === 1) {
                 this.selections.push(item);
             }
         });

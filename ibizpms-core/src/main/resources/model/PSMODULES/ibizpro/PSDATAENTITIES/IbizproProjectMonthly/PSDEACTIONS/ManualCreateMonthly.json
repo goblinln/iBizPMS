@@ -4,5 +4,13 @@
   "codeName" : "ManualCreateMonthly",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly/PSDEACTIONS/ManualCreateMonthly.json",
   "logicName" : "手动生成项目月报",
-  "name" : "ManualCreateMonthly"
+  "name" : "ManualCreateMonthly",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

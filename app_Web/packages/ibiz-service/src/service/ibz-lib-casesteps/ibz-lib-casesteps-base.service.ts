@@ -25,20 +25,16 @@ export class IbzLibCasestepsBaseService extends EntityBaseService<IIbzLibCaseste
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IbzLibCasesteps');
+    }
+
     newEntity(data: IIbzLibCasesteps): IbzLibCasesteps {
         return new IbzLibCasesteps(data);
     }
 
-    async addLocal(context: IContext, entity: IIbzLibCasesteps): Promise<IIbzLibCasesteps | null> {
-        return this.cache.add(context, new IbzLibCasesteps(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIbzLibCasesteps): Promise<IIbzLibCasesteps | null> {
-        return super.createLocal(context, new IbzLibCasesteps(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIbzLibCasesteps> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

@@ -4,5 +4,13 @@
   "codeName" : "SyncAccount",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/SyncAccount.json",
   "logicName" : "同步账号",
-  "name" : "SyncAccount"
+  "name" : "SyncAccount",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

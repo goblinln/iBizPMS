@@ -98,6 +98,50 @@ export class AppGridBase extends GridControlBase {
     }
 
     /**
+     * 计算表格行样式
+     *
+     * @memberof AppGridBase
+     */
+    public  calcGridRowStyle(row: any, rowIndex: number) {
+        if (this.ctrlTriggerLogicMap.get('calcrowstyle')) {
+            return this.ctrlTriggerLogicMap.get('calcrowstyle').executeUILogic({ row, rowIndex });
+        }
+    }
+
+    /**
+     * 计算表格单元格样式
+     *
+     * @memberof AppGridBase
+     */
+    public  calcGridCellStyle(row: any, column: any, rowIndex: number, columnIndex: number) {
+        if (this.ctrlTriggerLogicMap.get('calccellstyle')) {
+            return this.ctrlTriggerLogicMap.get('calccellstyle').executeUILogic({ row, column, rowIndex, columnIndex });
+        }
+    }
+
+    /**
+     * 计算表格头行样式
+     *
+     * @memberof AppGridBase
+     */
+     public  calcGridHeaderRowStyle(row: any, rowIndex: number) {
+        if (this.ctrlTriggerLogicMap.get('calcheaderrowstyle')) {
+            return this.ctrlTriggerLogicMap.get('calcheaderrowstyle').executeUILogic({ row, rowIndex });
+        }
+    }
+
+    /**
+     * 计算表格头单元格样式
+     *
+     * @memberof AppGridBase
+     */
+    public  calcGridHeaderCellStyle(row: any, column: any, rowIndex: number, columnIndex: number) {
+        if (this.ctrlTriggerLogicMap.get('calcheadercellstyle')) {
+            return this.ctrlTriggerLogicMap.get('calcheadercellstyle').executeUILogic({ row, column, rowIndex, columnIndex });
+        }
+    }
+
+    /**
      * 计算表格参数
      *
      * @memberof AppGridBase
@@ -109,6 +153,12 @@ export class AppGridBase extends GridControlBase {
             'high-light-current-row': this.controlInstance?.singleSelect,
             'show-header': !this.controlInstance.hideHeader && !Object.is(this.controlInstance.gridStyle, 'USER'),
             'row-class-name': ({ row, rowIndex }: any) => this.getRowClassName({ row, rowIndex }),
+            'row-style': ({ row, rowIndex }: any) => this.calcGridRowStyle(row, rowIndex),
+            'cell-style': ({ row, column, rowIndex, columnIndex }: any) =>
+            this.calcGridCellStyle(row, column, rowIndex, columnIndex),
+            'header-row-style': ({ row, rowIndex }: any) => this.calcGridHeaderRowStyle(row, rowIndex),
+            'header-cell-style': ({ row, column, rowIndex, columnIndex }: any) =>
+            this.calcGridHeaderCellStyle(row, column, rowIndex, columnIndex),
             'cell-class-name': ({ row, column, rowIndex, columnIndex }: any) =>
                 this.getCellClassName({ row, column, rowIndex, columnIndex }),
             'max-height': this.items?.length > 0 && !Object.is(this.controlInstance.gridStyle, 'USER') && this.controlInstance.enablePagingBar ? 'calc(100% - 50px)' : '100%',
@@ -242,7 +292,7 @@ export class AppGridBase extends GridControlBase {
         }
         return allColumnsInstance.map((item: IPSDEGridColumn) => {
             //隐藏表格项
-            if (item.hideDefault || item.hiddenDataItem || !this.getColumnState(item.name.toLowerCase())) {
+            if (item.hideDefault || item.hiddenDataItem || !this.getColumnState(item.name)) {
                 return null;
             }
             const plugin: IPSSysPFPlugin = item.getPSSysPFPlugin() as IPSSysPFPlugin;
@@ -272,8 +322,7 @@ export class AppGridBase extends GridControlBase {
      * @memberof AppGridBase
      */
     public renderUAColumn(column: IPSDEGridUAColumn) {
-        const UIActionGroupDetails: Array<IPSUIActionGroupDetail> = column.getPSDEUIActionGroup()?.getPSUIActionGroupDetails() || [];
-        if (UIActionGroupDetails?.length > 2 && this.viewStyle == 'DEFAULT') {
+        if (this.viewStyle == 'DEFAULT' && column.columnStyle == "EXPAND") {
             return this.renderDefaultUAColumn(column);
         } else {
             return this.renderStyle2UAColumn(column);

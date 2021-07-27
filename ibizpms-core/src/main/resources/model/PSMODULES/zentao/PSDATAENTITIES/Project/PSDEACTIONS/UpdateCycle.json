@@ -4,5 +4,13 @@
   "codeName" : "UpdateCycle",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UpdateCycle.json",
   "logicName" : "根据结束日期更新可用工作日",
-  "name" : "UpdateCycle"
+  "name" : "UpdateCycle",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

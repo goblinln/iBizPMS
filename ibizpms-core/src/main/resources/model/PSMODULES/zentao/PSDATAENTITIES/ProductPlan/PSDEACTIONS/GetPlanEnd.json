@@ -4,5 +4,13 @@
   "codeName" : "GetPlanEnd",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/GetPlanEnd.json",
   "logicName" : "计算计划结束时间",
-  "name" : "GetPlanEnd"
+  "name" : "GetPlanEnd",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

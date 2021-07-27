@@ -44,6 +44,13 @@ export class AppDefaultViewLayout extends Vue {
     @Prop() public modelService!: any;
 
     /**
+     * 视图布局面板
+     * 
+     * @memberof AppDefaultViewLayout
+     */
+    public viewLayoutPanel?: IPSViewLayoutPanel | null;
+
+    /**
      * 是否展示视图工具栏
      * 
      * @memberof AppDefaultViewLayout
@@ -78,6 +85,7 @@ export class AppDefaultViewLayout extends Vue {
      */
     created(){
         this.viewIsshowToolbar = ModelTool.findPSControlByType("TOOLBAR", this.viewInstance.getPSControls()) ? true : false;
+        this.viewLayoutPanel = this.viewInstance.getPSViewLayoutPanel();
     }
 
     /**
@@ -134,7 +142,6 @@ export class AppDefaultViewLayout extends Vue {
      * @memberof AppDefaultViewLayout
      */
     public render(h: any) {
-        const viewLayoutPanel: IPSViewLayoutPanel | null = this.viewInstance.getPSViewLayoutPanel();
         let viewClass = {
             'view-container': true,
             'view-default': true,
@@ -151,9 +158,23 @@ export class AppDefaultViewLayout extends Vue {
                     viewparams={this.viewparams}
                     viewName={this.viewInstance.codeName.toLowerCase()}
                     viewTitle={this.model?.srfCaption} />
-                {(viewLayoutPanel && viewLayoutPanel.useDefaultLayout) ? this.renderContent() : this.renderRootPSPanelItems(viewLayoutPanel)}
+                {(this.viewLayoutPanel && this.viewLayoutPanel.useDefaultLayout) ? this.renderContent() : this.renderViewLayoutPanel()}
             </div>
         );
+    }
+
+    /**
+     * 绘制视图布局面板
+     *
+     * @memberof AppDefaultViewLayout
+     */
+    public renderViewLayoutPanel() {
+        if ((this.viewLayoutPanel as any)?.layoutBodyOnly) {
+            return this.renderLayouBodyOnly();
+        } else {
+            return this.renderRootPSPanelItems();
+        }
+        
     }
 
     /**
@@ -161,13 +182,43 @@ export class AppDefaultViewLayout extends Vue {
      *
      * @memberof AppDefaultViewLayout
      */
-
-    public renderRootPSPanelItems(viewLayoutPanel: any) {
+    public renderRootPSPanelItems() {
         return <row class="app-viewlayout-panel" style={{ 'height': '100%' }}>
-            {viewLayoutPanel.getRootPSPanelItems()?.map((container: any, index: number) => {
+            {this.viewLayoutPanel?.getRootPSPanelItems()?.map((container: any, index: number) => {
                 return this.renderByDetailType(container,true);
             })}
         </row>
+    }
+
+     /**
+     * 仅布局内容区模式绘制
+     *
+     * @memberof AppDefaultViewLayout
+     */
+    public renderLayouBodyOnly() {
+        let cardClass = {
+            'view-card': true,
+            'view-no-caption': !this.showCaption,
+            'view-no-toolbar': !this.viewIsshowToolbar || (this.viewIsshowToolbar && !this.$slots.toolbar),
+        };
+        return (
+            <card class={cardClass} disHover={true} bordered={false}>
+                {(this.showCaption || (this.viewIsshowToolbar && this.$slots.toolbar)) && (
+                    <div slot='title' class='header-container' key='view-header'>
+                        {[this.showCaption ? <span class='caption-info'>{this.$slots['layout-captionbar'] ? this.$slots['layout-captionbar'] : this.model.srfCaption}</span> : null,
+            this.viewIsshowToolbar ? <div class='toolbar-container'>
+                {this.$slots.toolbar}
+            </div> : null]}
+                    </div>
+                )}
+                {this.$slots.topMessage}
+                <div class='content-container'>
+                    {this.$slots.bodyMessage}
+                    {this.renderRootPSPanelItems()}
+                </div>
+                {this.$slots.bottomMessage}
+            </card>
+        );
     }
 
     /**

@@ -281,7 +281,6 @@
     "id" : "update"
   },
   "enableRootSelect" : false,
-  "enableSearchDefault" : false,
   "outputIconDefault" : true,
   "rootVisible" : false,
   "modelid" : "427c5ea805ab5c9b76a8c53bc5afd5ea",

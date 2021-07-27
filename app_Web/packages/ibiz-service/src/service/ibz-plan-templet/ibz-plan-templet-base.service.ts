@@ -27,20 +27,16 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IbzPlanTemplet');
+    }
+
     newEntity(data: IIbzPlanTemplet): IbzPlanTemplet {
         return new IbzPlanTemplet(data);
     }
 
-    async addLocal(context: IContext, entity: IIbzPlanTemplet): Promise<IIbzPlanTemplet | null> {
-        return this.cache.add(context, new IbzPlanTemplet(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIbzPlanTemplet): Promise<IIbzPlanTemplet | null> {
-        return super.createLocal(context, new IbzPlanTemplet(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIbzPlanTemplet> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

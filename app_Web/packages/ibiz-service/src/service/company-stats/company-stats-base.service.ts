@@ -25,20 +25,16 @@ export class CompanyStatsBaseService extends EntityBaseService<ICompanyStats> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'CompanyStats');
+    }
+
     newEntity(data: ICompanyStats): CompanyStats {
         return new CompanyStats(data);
     }
 
-    async addLocal(context: IContext, entity: ICompanyStats): Promise<ICompanyStats | null> {
-        return this.cache.add(context, new CompanyStats(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ICompanyStats): Promise<ICompanyStats | null> {
-        return super.createLocal(context, new CompanyStats(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ICompanyStats> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

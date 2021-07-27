@@ -25,20 +25,16 @@ export class SysRoleBaseService extends EntityBaseService<ISysRole> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SysRole');
+    }
+
     newEntity(data: ISysRole): SysRole {
         return new SysRole(data);
     }
 
-    async addLocal(context: IContext, entity: ISysRole): Promise<ISysRole | null> {
-        return this.cache.add(context, new SysRole(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISysRole): Promise<ISysRole | null> {
-        return super.createLocal(context, new SysRole(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISysRole> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

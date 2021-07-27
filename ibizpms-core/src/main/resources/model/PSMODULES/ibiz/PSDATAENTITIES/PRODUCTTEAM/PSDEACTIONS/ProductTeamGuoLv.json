@@ -4,5 +4,13 @@
   "codeName" : "ProductTeamGuoLv",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/ProductTeamGuoLv.json",
   "logicName" : "PmsEe团队管理过滤",
-  "name" : "ProductTeamGuoLv"
+  "name" : "ProductTeamGuoLv",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

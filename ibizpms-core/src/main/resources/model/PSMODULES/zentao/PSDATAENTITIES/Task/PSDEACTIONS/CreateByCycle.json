@@ -4,5 +4,13 @@
   "codeName" : "CreateByCycle",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json",
   "logicName" : "创建周期任务",
-  "name" : "createByCycle"
+  "name" : "createByCycle",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

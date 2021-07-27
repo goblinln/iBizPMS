@@ -4,5 +4,13 @@
   "codeName" : "JugThisWeekCreateWeekly",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/JugThisWeekCreateWeekly.json",
   "logicName" : "判断本周是否创建过周报",
-  "name" : "JugThisWeekCreateWeekly"
+  "name" : "JugThisWeekCreateWeekly",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

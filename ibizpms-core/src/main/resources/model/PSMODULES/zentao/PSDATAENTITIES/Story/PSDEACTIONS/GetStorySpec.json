@@ -4,5 +4,13 @@
   "codeName" : "GetStorySpec",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpec.json",
   "logicName" : "获取需求描述",
-  "name" : "GetStorySpec"
+  "name" : "GetStorySpec",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

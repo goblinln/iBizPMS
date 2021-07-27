@@ -4,5 +4,13 @@
   "codeName" : "SendMsgPreProcess",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/SendMsgPreProcess.json",
   "logicName" : "发送消息前置处理",
-  "name" : "sendMsgPreProcess"
+  "name" : "sendMsgPreProcess",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

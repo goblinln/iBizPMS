@@ -28,20 +28,16 @@ export class DocBaseService extends EntityBaseService<IDoc> {
         doclib: 'lib',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Doc');
+    }
+
     newEntity(data: IDoc): Doc {
         return new Doc(data);
     }
 
-    async addLocal(context: IContext, entity: IDoc): Promise<IDoc | null> {
-        return this.cache.add(context, new Doc(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IDoc): Promise<IDoc | null> {
-        return super.createLocal(context, new Doc(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IDoc> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.lib && entity.lib !== '') {
             const s = await ___ibz___.gs.getDocLibService();
             const data = await s.getLocal2(context, entity.lib);

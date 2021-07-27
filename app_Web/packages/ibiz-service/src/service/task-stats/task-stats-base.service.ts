@@ -25,20 +25,16 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'TaskStats');
+    }
+
     newEntity(data: ITaskStats): TaskStats {
         return new TaskStats(data);
     }
 
-    async addLocal(context: IContext, entity: ITaskStats): Promise<ITaskStats | null> {
-        return this.cache.add(context, new TaskStats(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITaskStats): Promise<ITaskStats | null> {
-        return super.createLocal(context, new TaskStats(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITaskStats> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

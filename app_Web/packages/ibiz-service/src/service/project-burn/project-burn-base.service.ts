@@ -26,20 +26,16 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
         project: 'project',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'ProjectBurn');
+    }
+
     newEntity(data: IProjectBurn): ProjectBurn {
         return new ProjectBurn(data);
     }
 
-    async addLocal(context: IContext, entity: IProjectBurn): Promise<IProjectBurn | null> {
-        return this.cache.add(context, new ProjectBurn(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IProjectBurn): Promise<IProjectBurn | null> {
-        return super.createLocal(context, new ProjectBurn(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IProjectBurn> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.project && entity.project !== '') {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(context, entity.project);

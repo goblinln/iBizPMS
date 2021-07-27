@@ -27,20 +27,16 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Todo');
+    }
+
     newEntity(data: ITodo): Todo {
         return new Todo(data);
     }
 
-    async addLocal(context: IContext, entity: ITodo): Promise<ITodo | null> {
-        return this.cache.add(context, new Todo(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITodo): Promise<ITodo | null> {
-        return super.createLocal(context, new Todo(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITodo> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

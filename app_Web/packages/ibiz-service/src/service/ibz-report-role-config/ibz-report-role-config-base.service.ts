@@ -25,20 +25,16 @@ export class IbzReportRoleConfigBaseService extends EntityBaseService<IIbzReport
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IbzReportRoleConfig');
+    }
+
     newEntity(data: IIbzReportRoleConfig): IbzReportRoleConfig {
         return new IbzReportRoleConfig(data);
     }
 
-    async addLocal(context: IContext, entity: IIbzReportRoleConfig): Promise<IIbzReportRoleConfig | null> {
-        return this.cache.add(context, new IbzReportRoleConfig(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIbzReportRoleConfig): Promise<IIbzReportRoleConfig | null> {
-        return super.createLocal(context, new IbzReportRoleConfig(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIbzReportRoleConfig> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

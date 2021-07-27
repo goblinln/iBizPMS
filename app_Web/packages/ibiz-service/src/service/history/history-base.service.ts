@@ -28,20 +28,16 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         action: 'action',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'History');
+    }
+
     newEntity(data: IHistory): History {
         return new History(data);
     }
 
-    async addLocal(context: IContext, entity: IHistory): Promise<IHistory | null> {
-        return this.cache.add(context, new History(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IHistory): Promise<IHistory | null> {
-        return super.createLocal(context, new History(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IHistory> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.action && entity.action !== '') {
             const s = await ___ibz___.gs.getActionService();
             const data = await s.getLocal2(context, entity.action);

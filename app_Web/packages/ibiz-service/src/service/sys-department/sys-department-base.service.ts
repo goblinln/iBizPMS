@@ -25,20 +25,16 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SysDepartment');
+    }
+
     newEntity(data: ISysDepartment): SysDepartment {
         return new SysDepartment(data);
     }
 
-    async addLocal(context: IContext, entity: ISysDepartment): Promise<ISysDepartment | null> {
-        return this.cache.add(context, new SysDepartment(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISysDepartment): Promise<ISysDepartment | null> {
-        return super.createLocal(context, new SysDepartment(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISysDepartment> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

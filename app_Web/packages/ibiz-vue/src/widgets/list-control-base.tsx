@@ -2,7 +2,7 @@ import { ViewTool, Util, ListControlInterface } from 'ibiz-core';
 import { MDControlBase } from "./md-control-base";
 import { AppViewLogicService } from '../app-service';
 import { AppListService } from '../ctrl-service';
-import { IPSDEList, IPSDEListItem, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSDEList, IPSDEListDataItem, IPSDEListItem, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 列表部件基类
@@ -168,11 +168,23 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
                         }
                     }
                 }
-
             }
         }
     }
 
+    /**
+     * 初始化数据映射
+     * 
+     * @memberof ListControlBase
+     */
+    public initDataMap() {
+        const dataItems: IPSDEListDataItem[] | null = this.controlInstance.getPSDEListDataItems();
+        if (dataItems && dataItems.length > 0) {
+            dataItems.forEach((dataItem: IPSDEListDataItem) => {
+                this.dataMap.set(dataItem.name,{ customCode: dataItem.customCode ? true : false });
+            });
+        };
+    }
 
     /**
      * 列表数据加载
@@ -227,7 +239,9 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
                 if (data && data.length > 0) {
                     let datas = JSON.parse(JSON.stringify(data));
                     datas.map((item: any) => {
-                        Object.assign(item, { isselected: false });
+                        if (!item.srfchecked) {
+                            Object.assign(item, { srfchecked: 0 });
+                        }
                     });
                     _this.totalRecord = response.total;
                     _this.items.push(...datas);
@@ -433,7 +447,7 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
      */
      public clearSelection() {
         this.items.map((item: any) => {
-            Object.assign(item, { isselected: false });
+            Object.assign(item, { srfchecked: 0 });
         });
     }
 
@@ -471,7 +485,7 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
         if (this.isSingleSelect) {
             this.clearSelection();
         }
-        args.isselected = !args.isselected;
+        args.srfchecked = Number(!args.srfchecked);
         this.selectchange();
     }
 
@@ -483,7 +497,7 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
      public selectchange() {
         this.selections = [];
         this.items.map((item: any) => {
-            if (item.isselected) {
+            if (item.srfchecked === 1) {
                 this.selections.push(item);
             }
         });
@@ -547,7 +561,7 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
             newdata: this.newdata,
             remove: this.remove,
             refresh: this.refresh,
-
+            dataMap: this.dataMap,
         })
         targetCtrlEvent['ctrl-event'] = ({ controlname, action, data }: { controlname: string, action: string, data: any }) => {
             this.onCtrlEvent(controlname, action, { item: item, data: data });

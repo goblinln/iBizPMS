@@ -26,20 +26,16 @@ export class TestCaseLibCaseStepNestedBaseService extends EntityBaseService<ITes
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'TestCaseLibCaseStepNested');
+    }
+
     newEntity(data: ITestCaseLibCaseStepNested): TestCaseLibCaseStepNested {
         return new TestCaseLibCaseStepNested(data);
     }
 
-    async addLocal(context: IContext, entity: ITestCaseLibCaseStepNested): Promise<ITestCaseLibCaseStepNested | null> {
-        return this.cache.add(context, new TestCaseLibCaseStepNested(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITestCaseLibCaseStepNested): Promise<ITestCaseLibCaseStepNested | null> {
-        return super.createLocal(context, new TestCaseLibCaseStepNested(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITestCaseLibCaseStepNested> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

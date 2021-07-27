@@ -6,6 +6,14 @@
   "logicName" : "GetTemp",
   "name" : "GetTemp",
   "orderValue" : 32,
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  },
   "tempDataMode" : 2,
   "builtinAction" : true,
   "enableTempData" : true

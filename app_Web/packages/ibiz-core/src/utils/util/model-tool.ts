@@ -237,7 +237,7 @@ export class ModelTool {
         const appDeKeyCodeName = ModelTool.getAppEntityKeyField(appDe)?.codeName;
         if(editor?.getPSAppDEACMode?.()){
             let acMode: IPSAppDEACMode = editor.getPSAppDEACMode();
-            let keyName = acMode?.getValuePSAppDEField()?.codeName;
+            let keyName = acMode?.M?.getValuePSAppDEField?.codeName;
             if(!keyName || Object.is(keyName, appDeKeyCodeName)){
                 return appDe?.codeName?.toLowerCase() || undefined;
             } else {

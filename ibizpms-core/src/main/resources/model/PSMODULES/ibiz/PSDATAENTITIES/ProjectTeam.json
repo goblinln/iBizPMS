@@ -7,6 +7,14 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CREATE",
@@ -16,6 +24,14 @@
     "logicName" : "CreateTemp",
     "name" : "CreateTemp",
     "orderValue" : 2,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "tempDataMode" : 2,
     "builtinAction" : true,
     "enableTempData" : true
@@ -27,6 +43,14 @@
     "logicName" : "CreateTempMajor",
     "name" : "CreateTempMajor",
     "orderValue" : 3,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "tempDataMode" : 1,
     "builtinAction" : true,
     "enableTempData" : true
@@ -38,6 +62,14 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "UPDATE",
@@ -47,6 +79,14 @@
     "logicName" : "UpdateTemp",
     "name" : "UpdateTemp",
     "orderValue" : 12,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "tempDataMode" : 2,
     "builtinAction" : true,
     "enableTempData" : true
@@ -58,6 +98,14 @@
     "logicName" : "UpdateTempMajor",
     "name" : "UpdateTempMajor",
     "orderValue" : 13,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "tempDataMode" : 1,
     "builtinAction" : true,
     "enableTempData" : true
@@ -70,8 +118,16 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "builtinAction" : true,
-    "enableBatchAction" : true
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "batchAction" : true,
+    "builtinAction" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
@@ -81,9 +137,17 @@
     "logicName" : "RemoveTemp",
     "name" : "RemoveTemp",
     "orderValue" : 22,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "tempDataMode" : 2,
+    "batchAction" : true,
     "builtinAction" : true,
-    "enableBatchAction" : true,
     "enableTempData" : true
   }, {
     "actionMode" : "DELETE",
@@ -94,9 +158,17 @@
     "logicName" : "RemoveTempMajor",
     "name" : "RemoveTempMajor",
     "orderValue" : 23,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
     "tempDataMode" : 1,
+    "batchAction" : true,
     "builtinAction" : true,
-    "enableBatchAction" : true,
     "enableTempData" : true
   }, {
     "actionMode" : "READ",
@@ -106,6 +178,14 @@
     "logicName" : "Get",
     "name" : "Get",
     "orderValue" : 31,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "READ",
@@ -115,6 +195,14 @@
     "logicName" : "GetTemp",
     "name" : "GetTemp",
     "orderValue" : 32,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "tempDataMode" : 2,
     "builtinAction" : true,
     "enableTempData" : true
@@ -126,6 +214,14 @@
     "logicName" : "GetTempMajor",
     "name" : "GetTempMajor",
     "orderValue" : 33,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "tempDataMode" : 1,
     "builtinAction" : true,
     "enableTempData" : true
@@ -150,6 +246,14 @@
     "logicName" : "GetDraft",
     "name" : "GetDraft",
     "orderValue" : 41,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -159,6 +263,14 @@
     "logicName" : "GetDraftTemp",
     "name" : "GetDraftTemp",
     "orderValue" : 43,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "tempDataMode" : 2,
     "builtinAction" : true,
     "enableTempData" : true
@@ -170,6 +282,14 @@
     "logicName" : "GetDraftTempMajor",
     "name" : "GetDraftTempMajor",
     "orderValue" : 45,
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    },
     "tempDataMode" : 1,
     "builtinAction" : true,
     "enableTempData" : true
@@ -180,6 +300,15 @@
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/CheckKey.json",
     "logicName" : "CheckKey",
     "name" : "CheckKey",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
     "builtinAction" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -187,7 +316,15 @@
     "codeName" : "GetUserRole",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetUserRole.json",
     "logicName" : "获取成员角色",
-    "name" : "GetUserRole"
+    "name" : "GetUserRole",
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITY"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "ENTITY"
+    }
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
@@ -196,8 +333,16 @@
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
-    "builtinAction" : true,
-    "enableBatchAction" : true
+    "getPSDEActionInput" : {
+      "name" : "输入对象",
+      "type" : "ENTITIES"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "返回对象",
+      "type" : "VOID"
+    },
+    "batchAction" : true,
+    "builtinAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
@@ -383,6 +528,14 @@
       "modelref" : true,
       "id" : "Default"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true,
@@ -395,6 +548,14 @@
       "modelref" : true,
       "id" : "ProjectTeamPm"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -406,6 +567,14 @@
       "modelref" : true,
       "id" : "RowEditDefault"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -417,6 +586,14 @@
       "modelref" : true,
       "id" : "SpecifyTeam"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -428,6 +605,14 @@
       "modelref" : true,
       "id" : "TaskCntEstimateConsumedLeft"
     } ],
+    "getPSDEDataSetInput" : {
+      "name" : "输入对象",
+      "type" : "FILTER"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "返回对象",
+      "type" : "PAGE"
+    },
     "enableBackend" : true,
     "enableFront" : true,
     "enableTempData" : true
@@ -1569,6 +1754,10 @@
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s",
+    "getValuePSDEField" : {
+      "name" : "ROOT",
+      "codeName" : "Root"
+    },
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {

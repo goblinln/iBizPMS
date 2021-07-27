@@ -25,20 +25,16 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Taskestimatestats');
+    }
+
     newEntity(data: ITaskestimatestats): Taskestimatestats {
         return new Taskestimatestats(data);
     }
 
-    async addLocal(context: IContext, entity: ITaskestimatestats): Promise<ITaskestimatestats | null> {
-        return this.cache.add(context, new Taskestimatestats(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITaskestimatestats): Promise<ITaskestimatestats | null> {
-        return super.createLocal(context, new Taskestimatestats(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITaskestimatestats> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

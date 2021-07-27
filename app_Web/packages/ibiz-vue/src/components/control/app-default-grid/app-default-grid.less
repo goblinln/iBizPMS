@@ -98,6 +98,9 @@
           min-height: 45px;
           max-height: 100px;
           height: auto;
+          >table.el-table__header {
+              min-height: 45px;
+          }
       }
       .el-table__footer-wrapper {
           min-height: 45px;
@@ -180,6 +183,118 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  .ivu-poptip.page-column{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 3;
+    background-color: #57A3FD;;
+    height: 45px;
+    width: 48px;
+    box-shadow: -2px 0px 3px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    &::before{
+      content: "";
+      background-color: #F6F6F6;
+      position: absolute;
+      width: 40px;
+      height: 50px;
+      border-radius: 0 50% 0 0;
+      top: -2px;
+      right: 6px;
+      box-shadow: -10px 0 0 0px #F6F6F6;
+    }
+    &::after{
+      content: "";
+      background-color: #f6f6f6;
+      position: absolute;
+      width: 20px;
+      height: 40px;
+      border-radius: 33% 50% 0 0;
+      top: 8px;
+      right: -4px;
+      -webkit-box-shadow: 0 10px 0 0px#F6F6F6;
+      box-shadow: 0 10px 0 0px#F6F6F6;
+      pointer-events: none;
+    }
+    .ivu-poptip-rel{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      .ivu-icon{
+        color: #666666;
+        &:hover{
+          color: #57A3FD;
+        }
+      }
+    }
+    &.show-poptip {
+      >.ivu-poptip-rel{
+        i{
+          color: #FFFFFF;
+          &:hover {
+            color: #FFFFFF;
+          }
+        }
+      }
+      /* 动画代码 */
+      @keyframes openbook1 {
+        0% {transform: translate(0,0);}
+        100% {transform: translate(-60px,0px);}
+      }
+      /* 动画代码 */
+      @keyframes openbook2 {
+        0% {transform: translate(0,0);}
+        100% {transform: translate(-60px,60px);}
+      }
+      &::before {
+        animation-name: openbook1;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+      &::after {
+        animation-name: openbook2;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+    }
+    &.hide-poptip {
+      >.ivu-poptip-rel{
+        i{
+          color: #666666;
+        }
+      }
+      /* 动画代码 */
+      @keyframes closebook1 {
+        0% {transform: translate(-60px,0px);}
+        100% {transform: translate(0,0);}
+      }
+      /* 动画代码 */
+      @keyframes closebook2 {
+        0% {transform: translate(-60px,60px);}
+        100% {transform: translate(0,0);}
+      }
+      &::before {
+        animation-name: closebook1;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+      &::after {
+        animation-name: closebook2;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+    }
   }
 }
 .ivu-modal-content {

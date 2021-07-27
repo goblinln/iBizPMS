@@ -25,20 +25,16 @@ export class SysOrganizationBaseService extends EntityBaseService<ISysOrganizati
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SysOrganization');
+    }
+
     newEntity(data: ISysOrganization): SysOrganization {
         return new SysOrganization(data);
     }
 
-    async addLocal(context: IContext, entity: ISysOrganization): Promise<ISysOrganization | null> {
-        return this.cache.add(context, new SysOrganization(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISysOrganization): Promise<ISysOrganization | null> {
-        return super.createLocal(context, new SysOrganization(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISysOrganization> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

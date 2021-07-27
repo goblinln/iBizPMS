@@ -6,6 +6,14 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestsuitelinkCase.json",
   "logicName" : "套件关联",
   "name" : "testsuitelinkCase",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITIES"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "userCat" : "CAT1",
-  "enableBatchAction" : true
+  "batchAction" : true
 }

@@ -5,5 +5,14 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop/PSDEACTIONS/CheckKey.json",
   "logicName" : "CheckKey",
   "name" : "CheckKey",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "stdDataType" : 9,
+    "type" : "SIMPLE"
+  },
   "builtinAction" : true
 }

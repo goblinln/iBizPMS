@@ -4,5 +4,13 @@
   "codeName" : "EditGetCompleteTask",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/EditGetCompleteTask.json",
   "logicName" : "编辑时获取完成任务",
-  "name" : "EditGetCompleteTask"
+  "name" : "EditGetCompleteTask",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

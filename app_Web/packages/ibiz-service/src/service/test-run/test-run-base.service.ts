@@ -25,20 +25,16 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'TestRun');
+    }
+
     newEntity(data: ITestRun): TestRun {
         return new TestRun(data);
     }
 
-    async addLocal(context: IContext, entity: ITestRun): Promise<ITestRun | null> {
-        return this.cache.add(context, new TestRun(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITestRun): Promise<ITestRun | null> {
-        return super.createLocal(context, new TestRun(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITestRun> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

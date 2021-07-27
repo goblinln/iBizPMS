@@ -10,6 +10,7 @@ import { EntityCache } from '../../utils/entity-cache/entity-cache';
 import { SearchFilter } from '../../utils/search-filter/search-filter';
 import { AppDeLogicService } from '../../logic';
 import { GetModelService } from '../model-service/model-service';
+import { EntityDBService } from '../entity-db-service/entity-db.service';
 
 /**
  * 实体服务基类
@@ -77,7 +78,6 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     protected APPDETEXT = '';
-
 
     /**
      * 系统名称
@@ -156,57 +156,87 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     protected appDeLogicService: AppDeLogicService = AppDeLogicService.getInstance();
 
     /**
-    * 应用实体动态模型文件路径
-    *
-    * @protected
-    * @type {string}
-    * @memberof EntityBaseService
-    */
+     * 应用实体动态模型文件路径
+     *
+     * @protected
+     * @type {string}
+     * @memberof EntityBaseService
+     */
     protected dynaModelFilePath: string = '';
 
     /**
-    * 应用实体模型
-    *
-    * @protected
-    * @type {IPSAppDataEntity}
-    * @memberof EntityBaseService
-    */
-    protected appDeModel !: IPSAppDataEntity;
+     * 应用实体模型
+     *
+     * @protected
+     * @type {IPSAppDataEntity}
+     * @memberof EntityBaseService
+     */
+    protected appDeModel!: IPSAppDataEntity;
 
     /**
-    * 实体处理逻辑Map
-    *
-    * @protected
-    * @type {Map<string,any>}
-    * @memberof EntityBaseService
-    */
+     * 实体处理逻辑Map
+     *
+     * @protected
+     * @type {Map<string,any>}
+     * @memberof EntityBaseService
+     */
     protected appDeLogicMap: Map<string, any> = new Map();
 
     /**
-    * 实体属性处理逻辑Map
-    *
-    * @protected
-    * @type {Map<string,any>}
-    * @memberof EntityBaseService
-    */
+     * 实体属性处理逻辑Map
+     *
+     * @protected
+     * @type {Map<string,any>}
+     * @memberof EntityBaseService
+     */
     protected appDeFieldLogicMap: Map<string, any> = new Map();
 
     /**
-     * Creates an instance of EntityBaseService.
-     * @memberof EntityBaseService
+     * 存储模式
+     *
+     * @author chitanda
+     * @date 2021-07-22 18:07:19
+     * @type {(0 | 1 | 3)} 无本地存储 | 仅本地存储 | 本地及远程存储
      */
-    constructor(opts?: any) {
+    readonly storageMode: 0 | 1 | 3 = 0;
+    get isLocalStore(): boolean {
+        return this.storageMode === 1;
+    }
+    /**
+     * 数据库
+     *
+     * @author chitanda
+     * @date 2021-07-22 17:07:42
+     * @type {DBService<T>}
+     */
+    db!: EntityDBService<T>;
+
+    constructor(opts?: any, dbName?: string, storageMode?: 0 | 1 | 3) {
         this.context = opts;
+        if (notNilEmpty(storageMode)) {
+            this.storageMode = storageMode!;
+        }
+        if (this.isLocalStore && dbName) {
+            this.db = new EntityDBService<T>(
+                dbName,
+                (data: any): T => {
+                    return this.newEntity(data);
+                },
+                (entity: T): any => {
+                    return this.filterEntityData(entity);
+                },
+            );
+        }
     }
 
     /**
-    * 加载动态数据模型
-    *
-    * @protected
-    * @param context 应用上下文
-    * @param data 额外数据
-    * @memberof EntityBaseService
-    */
+     * 加载动态数据模型
+     *
+     * @protected
+     * @param context 应用上下文
+     * @param data 额外数据
+     * @memberof EntityBaseService
+     */
     protected async loaded(context: any = {}, data: any = {}) {
         await this.initAppDeModel(context, data);
         this.initAppDELogicMap();
@@ -215,12 +245,12 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     }
 
     /**
-    * 初始化应用实体模型数据
-    *
-    * @protected
-    * @type {Map<string,any>}
-    * @memberof EntityBaseService
-    */
+     * 初始化应用实体模型数据
+     *
+     * @protected
+     * @type {Map<string,any>}
+     * @memberof EntityBaseService
+     */
     protected async initAppDeModel(context: any = {}, data: any = {}) {
         if (!this.appDeModel && this.dynaModelFilePath) {
             this.appDeModel = await (await GetModelService(context)).getPSAppDataEntity(this.dynaModelFilePath);
@@ -228,28 +258,28 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     }
 
     /**
-    * 初始化实体处理逻辑Map
-    *
-    * @protected
-    * @memberof EntityBaseService
-    */
+     * 初始化实体处理逻辑Map
+     *
+     * @protected
+     * @memberof EntityBaseService
+     */
     protected initAppDELogicMap() {
-        if ((this.appDeLogicMap.size === 0) && this.appDeModel && this.appDeModel.getAllPSAppDELogics()) {
+        if (this.appDeLogicMap.size === 0 && this.appDeModel && this.appDeModel.getAllPSAppDELogics()) {
             this.appDeModel.getAllPSAppDELogics()?.forEach((item: IPSAppDELogic) => {
                 this.appDeLogicMap.set(item.codeName, item);
-            })
+            });
         }
     }
 
     /**
-    * 初始化实体属性处理逻辑Map
-    *
-    * @protected
-    * @memberof EntityBaseService
-    */
+     * 初始化实体属性处理逻辑Map
+     *
+     * @protected
+     * @memberof EntityBaseService
+     */
     protected initAppDEFieldLogicMap() {
         const allAppDEFields: IPSAppDEField[] | null = this.appDeModel?.getAllPSAppDEFields();
-        if (allAppDEFields && (allAppDEFields.length > 0) && (this.appDeFieldLogicMap.size === 0)) {
+        if (allAppDEFields && allAppDEFields.length > 0 && this.appDeFieldLogicMap.size === 0) {
             allAppDEFields.forEach((item: IPSAppDEField) => {
                 if (item.getComputePSAppDEFLogic()) {
                     let computePSAppDEFLogics = this.appDeFieldLogicMap.get('ComputePSAppDEFLogic');
@@ -275,16 +305,16 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
                     }
                     defaultValuePSAppDEFLogics.push(item.getOnChangePSAppDEFLogic());
                 }
-            })
+            });
         }
     }
 
     /**
-    * 初始化实体动态方法
-    *
-    * @protected
-    * @memberof EntityBaseService
-    */
+     * 初始化实体动态方法
+     *
+     * @protected
+     * @memberof EntityBaseService
+     */
     protected initAppDEDynaMethods() {
         // TODO
         // if(this.appDeModel && this.appDeModel.getAllPSAppDEMethods() && (this.appDeModel.getAllPSAppDEMethods() as IPSAppDEMethod[]).length >0){
@@ -297,61 +327,60 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     }
 
     /**
-    * 初始化实体动态方法
-    *
-    * @protected
-    * @memberof EntityBaseService
-    */
+     * 初始化实体动态方法
+     *
+     * @protected
+     * @memberof EntityBaseService
+     */
     protected initAppDEDynaMethod(appDEMethod: IPSAppDEMethod) {
         (this as any)[appDEMethod.codeName] = (context: any, data: any) => {
             // TODO
-        }
+        };
     }
 
     /**
-    * 执行实体处理逻辑
-    *
-    * @protected
-    * @param {string} tag 逻辑标识
-    * @param {*} _context 应用上下文
-    * @param {*} _data 当前数据
-    * @memberof EntityBaseService
-    */
+     * 执行实体处理逻辑
+     *
+     * @protected
+     * @param {string} tag 逻辑标识
+     * @param {*} _context 应用上下文
+     * @param {*} _data 当前数据
+     * @memberof EntityBaseService
+     */
     protected async executeAppDELogic(tag: string, _context: any, _data: any) {
         try {
             return await this.appDeLogicService.onExecute(this.appDeLogicMap.get(tag), _context, _data);
         } catch (error) {
-            throw new Error(`执行实体处理逻辑异常，[逻辑错误]${error.message}`)
+            throw new Error(`执行实体处理逻辑异常，[逻辑错误]${error.message}`);
         }
-
     }
 
     /**
-    * 执行实体属性处理逻辑
-    *
-    * @protected
-    * @param {*} model 模型对象
-    * @param {*} _context 应用上下文
-    * @param {*} _data 当前数据
-    * @memberof EntityBaseService
-    */
+     * 执行实体属性处理逻辑
+     *
+     * @protected
+     * @param {*} model 模型对象
+     * @param {*} _context 应用上下文
+     * @param {*} _data 当前数据
+     * @memberof EntityBaseService
+     */
     protected async executeAppDEFieldLogic(model: any, _context: any, _data: any) {
         try {
             return await this.appDeLogicService.onExecute(model, _context, _data);
         } catch (error) {
-            throw new Error(`执行实体属性处理逻辑异常，[逻辑错误]${error.message}`)
+            throw new Error(`执行实体属性处理逻辑异常，[逻辑错误]${error.message}`);
         }
     }
 
     /**
-    * 执行实体行为之前
-    *
-    * @protected
-    * @param {*} _context 应用上下文
-    * @param {*} _data 当前数据
-    * @param {string} methodName 方法名
-    * @memberof EntityBaseService
-    */
+     * 执行实体行为之前
+     *
+     * @protected
+     * @param {*} _context 应用上下文
+     * @param {*} _data 当前数据
+     * @param {string} methodName 方法名
+     * @memberof EntityBaseService
+     */
     protected async beforeExecuteAction(_context: any, _data: any, methodName?: string) {
         // 执行实体属性值变更逻辑
         _data = await this.executeOnChangePSAppDEFLogic(_context, _data);
@@ -362,14 +391,14 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     }
 
     /**
-    * 执行实体行为之后
-    *
-    * @protected
-    * @param {*} _context 应用上下文
-    * @param {*} _data 当前数据
-    * @param {string} methodName 方法名
-    * @memberof EntityBaseService
-    */
+     * 执行实体行为之后
+     *
+     * @protected
+     * @param {*} _context 应用上下文
+     * @param {*} _data 当前数据
+     * @param {string} methodName 方法名
+     * @memberof EntityBaseService
+     */
     protected async afterExecuteAction(_context: any, _data: any, methodName?: string) {
         // 执行实体属性值计算逻辑
         _data = await this.executeComputePSAppDEFLogic(_context, _data);
@@ -380,14 +409,14 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     }
 
     /**
-    * 执行实体行为之后批处理（主要用于数据集处理）
-    *
-    * @protected
-    * @param {*} _context 应用上下文
-    * @param {*} dataSet 当前数据集合
-    * @param {string} methodName 方法名
-    * @memberof EntityBaseService
-    */
+     * 执行实体行为之后批处理（主要用于数据集处理）
+     *
+     * @protected
+     * @param {*} _context 应用上下文
+     * @param {*} dataSet 当前数据集合
+     * @param {string} methodName 方法名
+     * @memberof EntityBaseService
+     */
     protected async afterExecuteActionBatch(_context: any, dataSet: Array<any>, methodName?: string) {
         if (dataSet && dataSet.length > 0) {
             for (let i = 0; i < dataSet.length; i++) {
@@ -401,13 +430,13 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     }
 
     /**
-    * 执行实体属性值计算逻辑
-    *
-    * @protected
-    * @param {*} _context 应用上下文
-    * @param {*} _data 当前数据
-    * @memberof EntityBaseService
-    */
+     * 执行实体属性值计算逻辑
+     *
+     * @protected
+     * @param {*} _context 应用上下文
+     * @param {*} _data 当前数据
+     * @memberof EntityBaseService
+     */
     protected async executeComputePSAppDEFLogic(_context: any, _data: any) {
         let computePSAppDEFLogics = this.appDeFieldLogicMap.get('ComputePSAppDEFLogic');
         if (computePSAppDEFLogics && computePSAppDEFLogics.length > 0) {
@@ -419,25 +448,23 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     }
 
     /**
-    * 执行实体属性默认值逻辑
-    *
-    * @protected
-    * @param {*} _context 应用上下文
-    * @param {*} _data 当前数据
-    * @memberof EntityBaseService
-    */
-    protected async executeDefaultValuePSAppDEFLogic(_context: any, _data: any) {
-
-    }
+     * 执行实体属性默认值逻辑
+     *
+     * @protected
+     * @param {*} _context 应用上下文
+     * @param {*} _data 当前数据
+     * @memberof EntityBaseService
+     */
+    protected async executeDefaultValuePSAppDEFLogic(_context: any, _data: any) {}
 
     /**
-    * 执行实体属性值变更逻辑
-    *
-    * @protected
-    * @param {*} _context 应用上下文
-    * @param {*} _data 当前数据
-    * @memberof EntityBaseService
-    */
+     * 执行实体属性值变更逻辑
+     *
+     * @protected
+     * @param {*} _context 应用上下文
+     * @param {*} _data 当前数据
+     * @memberof EntityBaseService
+     */
     protected async executeOnChangePSAppDEFLogic(_context: any, _data: any) {
         let changePSAppDEFLogics = this.appDeFieldLogicMap.get('ChangePSAppDEFLogic');
         if (changePSAppDEFLogics && changePSAppDEFLogics.length > 0) {
@@ -449,25 +476,30 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     }
 
     /**
-    * 处理响应错误
-    *
-    * @protected
-    * @param {*} error 错误数据
-    * @memberof EntityBaseService
-    */
+     * 处理响应错误
+     *
+     * @protected
+     * @param {*} error 错误数据
+     * @memberof EntityBaseService
+     */
     protected handleResponseError(error: any): Promise<HttpResponse> {
         LogUtil.warn(error);
         return new Promise((resolve: any, reject: any) => {
-            if (error.status && (error.status !== 200)) {
+            if (error.status && error.status !== 200) {
                 reject(error);
             } else {
-                const errorMessage = (error?.message?.indexOf('[逻辑错误]') !== -1) ? error.message : '执行行为异常';
-                resolve(new HttpResponse({ message: errorMessage }, {
-                    ok: false,
-                    status: 500,
-                }))
+                const errorMessage = error?.message?.indexOf('[逻辑错误]') !== -1 ? error.message : '执行行为异常';
+                resolve(
+                    new HttpResponse(
+                        { message: errorMessage },
+                        {
+                            ok: false,
+                            status: 500,
+                        },
+                    ),
+                );
             }
-        })
+        });
     }
 
     /**
@@ -527,7 +559,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @return {*}  {Promise<void>}
      * @memberof EntityBaseService
      */
-    protected async before(_action: string, _context: IContext, _data: any): Promise<void> { }
+    protected async before(_action: string, _context: IContext, _data: any): Promise<void> {}
 
     /**
      * 行为执行之后
@@ -539,7 +571,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @return {*}  {Promise<void>}
      * @memberof EntityBaseService
      */
-    protected async after(_action: string, _context: IContext, _data: any): Promise<void> { }
+    protected async after(_action: string, _context: IContext, _data: any): Promise<void> {}
 
     /**
      * 根据主关系填充外键数据
@@ -550,7 +582,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @return {*}  {Promise<void>}
      * @memberof EntityBaseService
      */
-    protected async fillRelationalDataMajor(_context: IContext, _entity: T): Promise<void> { }
+    protected async fillRelationalDataMajor(_context: IContext, _entity: T): Promise<void> {}
 
     /**
      * 根据从关系填充外键数据
@@ -561,7 +593,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @return {*}  {Promise<void>}
      * @memberof EntityBaseService
      */
-    protected async fillRelationalDataMinor(_context: IContext, _entity: T): Promise<void> { }
+    protected async fillRelationalDataMinor(_context: IContext, _entity: T): Promise<void> {}
 
     /**
      * 填充从实体本地数据
@@ -715,7 +747,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     async addLocal(context: IContext, entity: T): Promise<T | null> {
-        return this.cache.add(context, entity as any);
+        if (this.isLocalStore) {
+            return this.db.create(context, this.newEntity(entity));
+        } else {
+            return this.cache.add(context, this.newEntity(entity));
+        }
     }
 
     /**
@@ -745,7 +781,10 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     async getLocal2(context: IContext, srfKey: string): Promise<T> {
-        return this.cache.get(context, srfKey) as any;
+        if (this.isLocalStore) {
+            return this.db.get(context, srfKey);
+        }
+        return this.cache.get(context, srfKey)!;
     }
 
     /**
@@ -757,8 +796,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @return {*}  {Promise<T | null>}
      * @memberof EntityBaseService
      */
-    async getLocal(context: IContext, srfKey: string): Promise<T | null> {
-        return this.cache.get(context, srfKey);
+    async getLocal(context: IContext, srfKey: string): Promise<T> {
+        if (this.isLocalStore) {
+            return this.db.get(context, srfKey);
+        }
+        return this.cache.get(context, srfKey)!;
     }
 
     /**
@@ -771,7 +813,12 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     async updateLocal(context: IContext, entity: T): Promise<T> {
-        const data: any = this.cache.update(context, entity);
+        let data: any = null;
+        if (this.isLocalStore) {
+            data = await this.db.update(context, this.newEntity(entity));
+        } else {
+            data = this.cache.update(context, this.newEntity(entity));
+        }
         if (data) {
             this.sendAppMessage('update', data);
         }
@@ -788,7 +835,12 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     async removeLocal(context: IContext, srfKey: string): Promise<T> {
-        const data: any = this.cache.delete(context, srfKey);
+        let data: any = null;
+        if (this.isLocalStore) {
+            data = await this.db.remove(context, srfKey);
+        } else {
+            data = this.cache.delete(context, srfKey);
+        }
         if (data) {
             this.sendAppMessage('remove', data);
         }
@@ -818,7 +870,13 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     async selectLocal(context: IContext, params: IParams = {}): Promise<T[]> {
-        let items = await this.cache.getList(context).sort((a: any, b: any) => a.srfordervalue - b.srfordervalue);
+        let items: T[] = [];
+        if (this.isLocalStore) {
+            items = await this.db.search(context);
+        } else {
+            items = this.cache.getList(context);
+        }
+        items = ascSort(items, 'srfordervalue');
         if (notNilEmpty(params) || notNilEmpty(context)) {
             // 查询数据条件集
             const data: any = {};
@@ -891,7 +949,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         let list = [];
         // 走查询条件
         if (cond) {
-            list = this.cache.getList(filter.context);
+            if (this.isLocalStore) {
+                list = await this.db.search(filter.context);
+            } else {
+                list = this.cache.getList(filter.context);
+            }
             if (list?.length > 0) {
                 list = list.filter(obj => cond.test(obj, filter));
             }
@@ -933,7 +995,7 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         const headers = new Headers({
             'x-page': page.toString(),
             'x-per-page': size.toString(),
-            'x-total': list.length.toString()
+            'x-total': list.length.toString(),
         });
         return new HttpResponse(items, { headers });
     }
@@ -1061,9 +1123,9 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     async FetchDefault(context: IContext, params?: IParams): Promise<IHttpResponse> {
         try {
             await this.before('FetchDefault', context, params);
-            const items = await this.selectLocal(context, params);
-            await this.after('FetchDefault', context, items);
-            return new HttpResponse(items);
+            const res = await this.searchLocal(null, new SearchFilter(context, params));
+            await this.after('FetchDefault', context, res.data);
+            return res;
         } catch (err) {
             return new HttpResponse(err, {
                 ok: false,
@@ -1238,12 +1300,12 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         try {
             if (context && context.srfsessionkey) {
                 const tempData = await this.getLocals(context);
-                return { "status": 200, "data": tempData };
+                return { status: 200, data: tempData };
             } else {
-                return { "status": 200, "data": [] };
+                return { status: 200, data: [] };
             }
-        } catch (error: any) {
-            return { "status": 200, "data": [] };
+        } catch (error) {
+            return { status: 200, data: [] };
         }
     }
 
@@ -1256,6 +1318,9 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityBaseService
      */
     async checkDataTemp(context: IContext, srfkey: string): Promise<boolean> {
+        if (this.isLocalStore) {
+            return this.db.checkData(context, srfkey);
+        }
         return this.cache.checkData(context, srfkey);
     }
 
@@ -1287,7 +1352,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
     public async ImportData(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         let _data: Array<any> = [];
         if (data && data.importData) _data = data.importData;
-        return Http.getInstance().post(`/${this.APPDENAMEPLURAL.toLowerCase()}/import?config=${data.name}`, _data, isloading);
+        return Http.getInstance().post(
+            `/${this.APPDENAMEPLURAL.toLowerCase()}/import?config=${data.name}`,
+            _data,
+            isloading,
+        );
     }
 
     /**
@@ -1339,7 +1408,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityService
      */
     public async removeBatch(context: any = {}, data: any, isloading?: boolean): Promise<any> {
-        return Http.getInstance().delete(`/${this.APPDENAMEPLURAL.toLowerCase()}/batch`, isloading, data[this.APPDEKEY]);
+        return Http.getInstance().delete(
+            `/${this.APPDENAMEPLURAL.toLowerCase()}/batch`,
+            isloading,
+            data[this.APPDEKEY],
+        );
     }
 
     /**
@@ -1399,7 +1472,9 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async getDynaWorkflow(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${context.srfdynainstid}/${this.APPDENAME.toLowerCase()}/process-definitions`,
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${
+                context.srfdynainstid
+            }/${this.APPDENAME.toLowerCase()}/process-definitions`,
             isloading,
         );
     }
@@ -1416,7 +1491,9 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async getStandWorkflow(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions2`,
+            `/wfcore/${
+                context.srfsystemid
+            }-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions2`,
             isloading,
         );
     }
@@ -1433,7 +1510,9 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async getCopyWorkflow(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${context.instTag}/${context.instTag2}/${this.APPDENAME.toLowerCase()}/process-definitions`,
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${context.instTag}/${
+                context.instTag2
+            }/${this.APPDENAME.toLowerCase()}/process-definitions`,
             isloading,
         );
     }
@@ -1453,7 +1532,8 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         Object.assign(requestData, { activedata: data });
         Object.assign(requestData, localdata);
         return Http.getInstance().post(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${data[this.APPDEKEY]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
+                data[this.APPDEKEY]
             }/process-instances`,
             requestData,
             isloading,
@@ -1470,7 +1550,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityService
      */
     public async WFClose(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
-        return Http.getInstance().post(`/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfclose`, data, isloading);
+        return Http.getInstance().post(
+            `/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfclose`,
+            data,
+            isloading,
+        );
     }
 
     /**
@@ -1483,7 +1567,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityService
      */
     public async WFMarkRead(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
-        return Http.getInstance().post(`/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfmarkread`, data, isloading);
+        return Http.getInstance().post(
+            `/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfmarkread`,
+            data,
+            isloading,
+        );
     }
 
     /**
@@ -1496,7 +1584,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityService
      */
     public async WFGoto(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
-        return Http.getInstance().post(`/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfgoto`, data, isloading);
+        return Http.getInstance().post(
+            `/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfgoto`,
+            data,
+            isloading,
+        );
     }
 
     /**
@@ -1509,7 +1601,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityService
      */
     public async WFRollback(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
-        return Http.getInstance().post(`/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfrollback`, data, isloading);
+        return Http.getInstance().post(
+            `/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfrollback`,
+            data,
+            isloading,
+        );
     }
 
     /**
@@ -1522,7 +1618,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityService
      */
     public async WFRestart(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
-        return Http.getInstance().post(`/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfrestart`, data, isloading);
+        return Http.getInstance().post(
+            `/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfrestart`,
+            data,
+            isloading,
+        );
     }
 
     /**
@@ -1535,7 +1635,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      * @memberof EntityService
      */
     public async WFReassign(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
-        return Http.getInstance().post(`/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfreassign`, data, isloading);
+        return Http.getInstance().post(
+            `/${this.APPDENAMEPLURAL.toLowerCase()}/${data[this.APPDEKEY]}/wfreassign`,
+            data,
+            isloading,
+        );
     }
 
     /**
@@ -1549,7 +1653,9 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async WFGetWorkFlow(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions`,
+            `/wfcore/${
+                context.srfsystemid
+            }-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions`,
         );
     }
 
@@ -1564,7 +1670,9 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async WFGetWFStep(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions-nodes`,
+            `/wfcore/${
+                context.srfsystemid
+            }-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions-nodes`,
         );
     }
 
@@ -1579,9 +1687,10 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async GetWFLink(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
+                context[this.APPDENAME.toLowerCase()]
             }/usertasks/${data['taskDefinitionKey']}/ways`,
-            { 'activedata': data.activedata }
+            { activedata: data.activedata },
         );
     }
 
@@ -1596,7 +1705,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async getWFLinks(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions/${data['processDefinitionKey']}/usertasks/${data['taskDefinitionKey']}/ways`,
+            `/wfcore/${
+                context.srfsystemid
+            }-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions/${
+                data['processDefinitionKey']
+            }/usertasks/${data['taskDefinitionKey']}/ways`,
         );
     }
 
@@ -1611,7 +1724,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async getWFStep(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions/${data['processDefinitionKey']}/usertasks/${data['taskDefinitionKey']}`,
+            `/wfcore/${
+                context.srfsystemid
+            }-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions/${
+                data['processDefinitionKey']
+            }/usertasks/${data['taskDefinitionKey']}`,
         );
     }
 
@@ -1626,7 +1743,11 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async wfSubmitBatch(context: any = {}, data: any = {}, localdata: any, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions/${localdata['processDefinitionKey']}/usertasks/${localdata['taskDefinitionKey']}/ways/${localdata['sequenceFlowId']}/submit`,
+            `/wfcore/${
+                context.srfsystemid
+            }-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/process-definitions/${
+                localdata['processDefinitionKey']
+            }/usertasks/${localdata['taskDefinitionKey']}/ways/${localdata['sequenceFlowId']}/submit`,
             data,
         );
     }
@@ -1642,7 +1763,8 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async GetWFHistory(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().get(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
+                context[this.APPDENAME.toLowerCase()]
             }/process-instances/alls/history`,
         );
     }
@@ -1658,9 +1780,10 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async BeforeSign(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
+                context[this.APPDENAME.toLowerCase()]
             }/tasks/${data.taskId}/beforesign`,
-            data
+            data,
         );
     }
 
@@ -1675,9 +1798,10 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async TransFerTask(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
+                context[this.APPDENAME.toLowerCase()]
             }/tasks/${data.taskId}/transfer`,
-            data
+            data,
         );
     }
 
@@ -1692,9 +1816,10 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async SendBack(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
+                context[this.APPDENAME.toLowerCase()]
             }/tasks/${data.taskId}/sendback`,
-            data
+            data,
         );
     }
 
@@ -1709,9 +1834,10 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async sendCopy(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
+                context[this.APPDENAME.toLowerCase()]
             }/tasks/${data.taskId}/sendcopy`,
-            data
+            data,
         );
     }
 
@@ -1726,9 +1852,10 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
      */
     public async ReadTask(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
         return Http.getInstance().post(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${context[this.APPDENAME.toLowerCase()]
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
+                context[this.APPDENAME.toLowerCase()]
             }/tasks/${data.taskId}/read`,
-            { activedata: data }
+            { activedata: data },
         );
     }
 
@@ -1750,9 +1877,10 @@ export class EntityBaseService<T extends IEntityBase> implements IEntityLocalDat
         Object.assign(requestData, { activedata: data });
         Object.assign(requestData, localdata);
         return Http.getInstance().post(
-            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${data[this.APPDEKEY.toLowerCase()]}/tasks/${localdata['taskId']
-            }`,
-            requestData
+            `/wfcore/${context.srfsystemid}-app-${this.APPNAME.toLowerCase()}/${this.APPDENAME.toLowerCase()}/${
+                data[this.APPDEKEY.toLowerCase()]
+            }/tasks/${localdata['taskId']}`,
+            requestData,
         );
     }
 

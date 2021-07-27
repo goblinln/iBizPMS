@@ -25,20 +25,16 @@ export class SysTeamBaseService extends EntityBaseService<ISysTeam> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SysTeam');
+    }
+
     newEntity(data: ISysTeam): SysTeam {
         return new SysTeam(data);
     }
 
-    async addLocal(context: IContext, entity: ISysTeam): Promise<ISysTeam | null> {
-        return this.cache.add(context, new SysTeam(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISysTeam): Promise<ISysTeam | null> {
-        return super.createLocal(context, new SysTeam(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISysTeam> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

@@ -26,20 +26,16 @@ export class SysUpdateFeaturesBaseService extends EntityBaseService<ISysUpdateFe
         sysupdatelog: 'sysupdatelogid',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SysUpdateFeatures');
+    }
+
     newEntity(data: ISysUpdateFeatures): SysUpdateFeatures {
         return new SysUpdateFeatures(data);
     }
 
-    async addLocal(context: IContext, entity: ISysUpdateFeatures): Promise<ISysUpdateFeatures | null> {
-        return this.cache.add(context, new SysUpdateFeatures(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISysUpdateFeatures): Promise<ISysUpdateFeatures | null> {
-        return super.createLocal(context, new SysUpdateFeatures(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISysUpdateFeatures> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.sysupdatelogid && entity.sysupdatelogid !== '') {
             const s = await ___ibz___.gs.getSysUpdateLogService();
             const data = await s.getLocal2(context, entity.sysupdatelogid);

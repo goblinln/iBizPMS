@@ -4,5 +4,13 @@
   "codeName" : "RecordTimateZeroLeft",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json",
   "logicName" : "预计剩余为0进行中",
-  "name" : "RecordTimateZeroLeft"
+  "name" : "RecordTimateZeroLeft",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

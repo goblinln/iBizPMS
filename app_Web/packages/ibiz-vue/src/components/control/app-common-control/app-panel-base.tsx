@@ -343,6 +343,10 @@ export class AppPanelBase extends PanelControlBase {
     public renderField(modelJson: IPSSysPanelField) {
         let { name, caption, hidden, showCaption } = modelJson;
         const editor: any = modelJson.getPSEditor();
+        let customCode: boolean = false;
+        if (this.dataMap && this.dataMap.get(name)) {
+            customCode = this.dataMap.get(name).customCode;
+        }
         let labelPos = 'LEFT';
         return (
             !hidden && (
@@ -357,7 +361,7 @@ export class AppPanelBase extends PanelControlBase {
                     itemRules={this.rules[editor.name]}
                     required={this.detailsModel[modelJson.name]?.required}
                 >
-                    {editor && (
+                    {editor && !customCode &&(
                         <app-default-editor
                             value={this.data[editor.name]}
                             editorInstance={editor}
@@ -372,6 +376,13 @@ export class AppPanelBase extends PanelControlBase {
                             }}
                         />
                     )}
+                    {
+                        customCode && this.$createElement('div', {
+                            domProps: {
+                                innerHTML: this.data[name],
+                            },
+                        })
+                    }
                 </app-panel-field>
             )
         );

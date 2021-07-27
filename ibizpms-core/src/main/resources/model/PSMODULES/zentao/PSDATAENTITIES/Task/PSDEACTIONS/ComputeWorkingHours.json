@@ -4,5 +4,13 @@
   "codeName" : "ComputeWorkingHours",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json",
   "logicName" : "更新工作时间",
-  "name" : "computeWorkingHours"
+  "name" : "computeWorkingHours",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

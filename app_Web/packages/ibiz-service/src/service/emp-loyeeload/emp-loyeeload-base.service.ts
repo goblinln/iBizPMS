@@ -25,20 +25,16 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'EmpLoyeeload');
+    }
+
     newEntity(data: IEmpLoyeeload): EmpLoyeeload {
         return new EmpLoyeeload(data);
     }
 
-    async addLocal(context: IContext, entity: IEmpLoyeeload): Promise<IEmpLoyeeload | null> {
-        return this.cache.add(context, new EmpLoyeeload(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IEmpLoyeeload): Promise<IEmpLoyeeload | null> {
-        return super.createLocal(context, new EmpLoyeeload(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IEmpLoyeeload> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

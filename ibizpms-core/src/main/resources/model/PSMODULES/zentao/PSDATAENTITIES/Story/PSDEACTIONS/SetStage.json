@@ -4,5 +4,13 @@
   "codeName" : "SetStage",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json",
   "logicName" : "设置需求阶段",
-  "name" : "setStage"
+  "name" : "setStage",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

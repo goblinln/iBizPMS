@@ -4,5 +4,13 @@
   "codeName" : "SendMessage",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/SendMessage.json",
   "logicName" : "行为",
-  "name" : "sendMessage"
+  "name" : "sendMessage",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

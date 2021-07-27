@@ -77,7 +77,7 @@ export class AppUILogicService {
                LogUtil.warn('没有开始节点');
                return;
           }
-          return this.executeNode(startNode, actionContext);
+          return await this.executeNode(startNode, actionContext);
      }
 
      /**

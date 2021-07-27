@@ -4,5 +4,13 @@
   "codeName" : "CreateHis",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/CreateHis.json",
   "logicName" : "创建历史日志",
-  "name" : "CreateHis"
+  "name" : "CreateHis",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

@@ -34,3 +34,4 @@ export { MapControlBase } from './map-control-base';
 export { ReportPanelControlBase } from './reportpanel-control-base';
 export { DrbarControlBase } from './drbar-control-base';
 export { MapExpBarControlBase } from './map-exp-bar-control-base';
+export { ViewPanelControlBase } from './viewpanel-control-base';

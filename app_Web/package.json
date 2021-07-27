@@ -26,6 +26,7 @@
         "@fullcalendar/vue": "^4.4.0",
         "@ibiz/drawer-vue": "^0.0.7",
         "@popperjs/core": "^2.9.2",
+        "dexie": "^3.0.3",
         "dingtalk-jsapi": "^2.13.23",
         "async-validator": "^3.5.1",
         "axios": "^0.21.1",
@@ -63,7 +64,7 @@
         "@interactjs/actions": "^1.10.11",
         "@interactjs/modifiers": "^1.10.11",
         "@interactjs/dev-tools": "^1.10.11",
-        "@ibiz/dynamic-model-api": "0.0.28",
+        "@ibiz/dynamic-model-api": "0.0.30",
         "@ibiz/model-location": "^0.0.4",
         "ibiz-studio-components-vue": "^0.0.1-alpha.9",
         "xlsx": "^0.16.9"

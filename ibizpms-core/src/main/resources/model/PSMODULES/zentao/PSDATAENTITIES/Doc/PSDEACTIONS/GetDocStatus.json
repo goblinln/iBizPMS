@@ -4,5 +4,13 @@
   "codeName" : "GetDocStatus",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDocStatus.json",
   "logicName" : "行为",
-  "name" : "GetDocStatus"
+  "name" : "GetDocStatus",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

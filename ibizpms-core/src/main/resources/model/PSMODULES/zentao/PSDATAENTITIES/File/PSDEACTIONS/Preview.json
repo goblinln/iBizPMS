@@ -4,5 +4,13 @@
   "codeName" : "Preview",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/Preview.json",
   "logicName" : "预览",
-  "name" : "Preview"
+  "name" : "Preview",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

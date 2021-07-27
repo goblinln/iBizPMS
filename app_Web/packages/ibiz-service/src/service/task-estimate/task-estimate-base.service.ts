@@ -28,20 +28,16 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         task: 'task',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'TaskEstimate');
+    }
+
     newEntity(data: ITaskEstimate): TaskEstimate {
         return new TaskEstimate(data);
     }
 
-    async addLocal(context: IContext, entity: ITaskEstimate): Promise<ITaskEstimate | null> {
-        return this.cache.add(context, new TaskEstimate(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITaskEstimate): Promise<ITaskEstimate | null> {
-        return super.createLocal(context, new TaskEstimate(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITaskEstimate> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.task && entity.task !== '') {
             const s = await ___ibz___.gs.getTaskService();
             const data = await s.getLocal2(context, entity.task);

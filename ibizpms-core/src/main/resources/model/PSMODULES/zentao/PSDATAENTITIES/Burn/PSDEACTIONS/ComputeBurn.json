@@ -4,5 +4,13 @@
   "codeName" : "ComputeBurn",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/ComputeBurn.json",
   "logicName" : "更新燃尽图",
-  "name" : "ComputeBurn"
+  "name" : "ComputeBurn",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

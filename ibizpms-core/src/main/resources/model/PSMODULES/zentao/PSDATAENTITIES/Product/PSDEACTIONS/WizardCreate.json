@@ -4,5 +4,13 @@
   "codeName" : "WizardCreate",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/WizardCreate.json",
   "logicName" : "向导使用",
-  "name" : "WizardCreate"
+  "name" : "WizardCreate",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

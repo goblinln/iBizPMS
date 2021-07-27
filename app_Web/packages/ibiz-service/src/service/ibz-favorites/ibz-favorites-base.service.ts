@@ -25,20 +25,16 @@ export class IbzFavoritesBaseService extends EntityBaseService<IIbzFavorites> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IbzFavorites');
+    }
+
     newEntity(data: IIbzFavorites): IbzFavorites {
         return new IbzFavorites(data);
     }
 
-    async addLocal(context: IContext, entity: IIbzFavorites): Promise<IIbzFavorites | null> {
-        return this.cache.add(context, new IbzFavorites(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIbzFavorites): Promise<IIbzFavorites | null> {
-        return super.createLocal(context, new IbzFavorites(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIbzFavorites> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

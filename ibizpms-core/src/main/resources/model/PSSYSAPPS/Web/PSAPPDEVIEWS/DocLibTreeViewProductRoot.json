@@ -3163,7 +3163,6 @@
       "id" : "update"
     },
     "enableRootSelect" : false,
-    "enableSearchDefault" : false,
     "outputIconDefault" : true,
     "rootVisible" : false,
     "name" : "tree",

@@ -4,5 +4,13 @@
   "codeName" : "ComputeBeginAndEnd",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json",
   "logicName" : "计算开始时间和完成时间",
-  "name" : "computeBeginAndEnd"
+  "name" : "computeBeginAndEnd",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

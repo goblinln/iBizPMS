@@ -25,20 +25,16 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SysAccount');
+    }
+
     newEntity(data: ISysAccount): SysAccount {
         return new SysAccount(data);
     }
 
-    async addLocal(context: IContext, entity: ISysAccount): Promise<ISysAccount | null> {
-        return this.cache.add(context, new SysAccount(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISysAccount): Promise<ISysAccount | null> {
-        return super.createLocal(context, new SysAccount(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISysAccount> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

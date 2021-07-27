@@ -27,20 +27,16 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Product');
+    }
+
     newEntity(data: IProduct): Product {
         return new Product(data);
     }
 
-    async addLocal(context: IContext, entity: IProduct): Promise<IProduct | null> {
-        return this.cache.add(context, new Product(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IProduct): Promise<IProduct | null> {
-        return super.createLocal(context, new Product(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IProduct> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

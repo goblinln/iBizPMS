@@ -481,7 +481,6 @@
   "totalDataItemName" : "total",
   "treeGridMode" : 2,
   "enableRootSelect" : false,
-  "enableSearchDefault" : false,
   "outputIconDefault" : false,
   "rootVisible" : false,
   "modelid" : "9a6cae3896699f86c265d4a4a65b2aa5",

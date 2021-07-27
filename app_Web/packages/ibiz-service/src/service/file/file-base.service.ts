@@ -27,20 +27,16 @@ export class FileBaseService extends EntityBaseService<IFile> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'File');
+    }
+
     newEntity(data: IFile): File {
         return new File(data);
     }
 
-    async addLocal(context: IContext, entity: IFile): Promise<IFile | null> {
-        return this.cache.add(context, new File(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IFile): Promise<IFile | null> {
-        return super.createLocal(context, new File(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IFile> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

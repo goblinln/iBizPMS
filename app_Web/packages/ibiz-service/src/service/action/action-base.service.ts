@@ -27,20 +27,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Action');
+    }
+
     newEntity(data: IAction): Action {
         return new Action(data);
     }
 
-    async addLocal(context: IContext, entity: IAction): Promise<IAction | null> {
-        return this.cache.add(context, new Action(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IAction): Promise<IAction | null> {
-        return super.createLocal(context, new Action(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IAction> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

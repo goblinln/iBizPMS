@@ -108,7 +108,26 @@ export class MPickupViewEngine extends ViewEngine {
      * @memberof MPickupViewEngine
      */
     public onLoad(ctrlName: string, args: any[]): void {
-        this.view.containerModel[`view_${ctrlName}`].datas = [...JSON.parse(JSON.stringify(args))];
+        //  多次加载整合数据（适配树）
+        const deDuplicate = (items: any[]) => {
+            const back: any[] = [];
+            const datas = this.view.containerModel[`view_${ctrlName}`].datas || [];
+            if (datas?.length > 0) {
+                datas.forEach((data: any) => {
+                    back.push(data.srfkey);
+                })
+            }
+            const filterArray = items.filter((item: any) => {
+                if (item.srfkey && back.indexOf(item.srfkey) === -1) {
+                    back.push(item.srfkey);
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+            return filterArray.concat(datas);
+        }
+        this.view.containerModel[`view_${ctrlName}`].datas = [...JSON.parse(JSON.stringify(deDuplicate(args)))];
     }
 
     /**

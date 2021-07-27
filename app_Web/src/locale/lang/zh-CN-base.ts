@@ -231,6 +231,14 @@ function getAppLocale(){
                     login: "登录",
                 },
             },
+            viewpanel: {
+                noconfig: {
+                    getaction: "未配置面板获取数据行为"
+                },
+                error: {
+                    notgetservice: "未获取到实体服务"
+                }
+            },
             editor: {
               noexist: "editor实例不存在！",
               nooutput: "基类不输出",

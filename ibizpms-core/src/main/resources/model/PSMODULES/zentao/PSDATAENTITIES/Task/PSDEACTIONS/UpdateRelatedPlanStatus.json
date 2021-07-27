@@ -4,5 +4,13 @@
   "codeName" : "UpdateRelatedPlanStatus",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json",
   "logicName" : "更新父任务计划状态",
-  "name" : "updateRelatedPlanStatus"
+  "name" : "updateRelatedPlanStatus",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

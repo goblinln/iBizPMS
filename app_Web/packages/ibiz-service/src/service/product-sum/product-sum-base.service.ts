@@ -25,20 +25,16 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'ProductSum');
+    }
+
     newEntity(data: IProductSum): ProductSum {
         return new ProductSum(data);
     }
 
-    async addLocal(context: IContext, entity: IProductSum): Promise<IProductSum | null> {
-        return this.cache.add(context, new ProductSum(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IProductSum): Promise<IProductSum | null> {
-        return super.createLocal(context, new ProductSum(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IProductSum> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

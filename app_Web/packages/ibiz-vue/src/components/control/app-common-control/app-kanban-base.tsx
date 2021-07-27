@@ -192,7 +192,7 @@ export class AppKanbanBase extends KanbanControlBase {
                             {
                                 group.items.map((item: any) => {
                                     return (
-                                        <div class={['dataview-group-item', { 'is-select': item.isselected }]} on-click={() => throttle(this.handleClick,[item],this)} on-dblclick={() => throttle(this.handleDblClick,[item],this)}>
+                                        <div class={['dataview-group-item', { 'is-select': item.srfchecked === 1 ? true : false }]} on-click={() => throttle(this.handleClick,[item],this)} on-dblclick={() => throttle(this.handleDblClick,[item],this)}>
                                             { this.controlInstance.getItemPSLayoutPanel() ? this.renderItemPSLayoutPanel(item) : this.renderItemContent(item)}
                                         </div>
                                     )

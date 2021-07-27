@@ -29,20 +29,16 @@ export class TaskTeamNestedBaseService extends EntityBaseService<ITaskTeamNested
         task: 'root',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'TaskTeamNested');
+    }
+
     newEntity(data: ITaskTeamNested): TaskTeamNested {
         return new TaskTeamNested(data);
     }
 
-    async addLocal(context: IContext, entity: ITaskTeamNested): Promise<ITaskTeamNested | null> {
-        return this.cache.add(context, new TaskTeamNested(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ITaskTeamNested): Promise<ITaskTeamNested | null> {
-        return super.createLocal(context, new TaskTeamNested(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ITaskTeamNested> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.root && entity.root !== '') {
             const s = await ___ibz___.gs.getTaskService();
             const data = await s.getLocal2(context, entity.root);

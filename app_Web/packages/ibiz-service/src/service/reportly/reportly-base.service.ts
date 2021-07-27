@@ -25,20 +25,16 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Reportly');
+    }
+
     newEntity(data: IReportly): Reportly {
         return new Reportly(data);
     }
 
-    async addLocal(context: IContext, entity: IReportly): Promise<IReportly | null> {
-        return this.cache.add(context, new Reportly(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IReportly): Promise<IReportly | null> {
-        return super.createLocal(context, new Reportly(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IReportly> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

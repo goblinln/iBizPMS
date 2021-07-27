@@ -25,20 +25,16 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Weekly');
+    }
+
     newEntity(data: IWeekly): Weekly {
         return new Weekly(data);
     }
 
-    async addLocal(context: IContext, entity: IWeekly): Promise<IWeekly | null> {
-        return this.cache.add(context, new Weekly(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IWeekly): Promise<IWeekly | null> {
-        return super.createLocal(context, new Weekly(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IWeekly> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

@@ -5,5 +5,13 @@
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/CreateUserMonthly.json",
   "logicName" : "定时生成用户月报",
   "name" : "CreateUserMonthly",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  },
   "userCat" : "CAT1"
 }

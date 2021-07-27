@@ -403,7 +403,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
      */
     public getNextForm() {
         if (this.formParam && this.formParam['srfnextform']) {
-            return `${this.controlInstance.name}_form_${this.formParam['srfnextform']}`;
+            return `${this.controlInstance.name}_form_${this.formParam['srfnextform'].toLowerCase()}`;
         } else {
             let index = this.wizardForms.indexOf(this.activeForm);
             if (index >= 0) {

@@ -526,7 +526,6 @@
     "totalDataItemName" : "total",
     "treeGridMode" : 2,
     "enableRootSelect" : false,
-    "enableSearchDefault" : false,
     "outputIconDefault" : false,
     "rootVisible" : false,
     "name" : "gantt",

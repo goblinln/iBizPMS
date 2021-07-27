@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { Util } from "ibiz-core";
+import { Util, debounce } from "ibiz-core";
 import { Vue, Component, Prop, Model, Emit } from "vue-property-decorator";
 
 @Component({})
@@ -170,7 +170,17 @@ export default class InputBox extends Vue {
     if (Object.is(_data, "")) {
       _data = null;
     }
-    this.$emit("change", _data);
+    debounce(this.emitChangeEvent, _data, 300);
+  }
+
+  /**
+   * 触发change事件
+   *
+   * @param {*} data
+   * @memberof InputBox
+   */
+  emitChangeEvent(data: any) {
+      this.$emit('change', data);
   }
 
   /**

@@ -4,5 +4,13 @@
   "codeName" : "SyncFromIBIZ",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEACTIONS/SyncFromIBIZ.json",
   "logicName" : "同步Ibz平台模块",
-  "name" : "SyncFromIBIZ"
+  "name" : "SyncFromIBIZ",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

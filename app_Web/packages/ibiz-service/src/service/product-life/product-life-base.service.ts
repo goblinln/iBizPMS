@@ -26,20 +26,16 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         product: 'product',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'ProductLife');
+    }
+
     newEntity(data: IProductLife): ProductLife {
         return new ProductLife(data);
     }
 
-    async addLocal(context: IContext, entity: IProductLife): Promise<IProductLife | null> {
-        return this.cache.add(context, new ProductLife(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IProductLife): Promise<IProductLife | null> {
-        return super.createLocal(context, new ProductLife(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IProductLife> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.product && entity.product !== '') {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(context, entity.product);

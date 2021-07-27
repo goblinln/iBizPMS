@@ -4,5 +4,13 @@
   "codeName" : "EditGetLastWeekTaskAndComTask",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/EditGetLastWeekTaskAndComTask.json",
   "logicName" : "编辑获取上周计划完成任务和本周已完成任务",
-  "name" : "EditGetLastWeekTaskAndComTask"
+  "name" : "EditGetLastWeekTaskAndComTask",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

@@ -144,6 +144,11 @@ export class ViewToolbar extends Vue {
     protected renderMenuItem(item: any): any {
         const targetCounterService:any = Util.findElementByField(this.counterServiceArray,'path',item.uiaction?.getPSAppCounter?.()?.modelPath)?.service;
         if(item.visabled){
+            if (item.itemType == 'RAWITEM') {
+                return <tooltip transfer={true} max-width='600' disabled={!item.tooltip}>
+                    {this.renderRawItem(item)}
+                </tooltip>
+            }
             return (
                 <tooltip transfer={true} max-width='600' disabled={!item.tooltip}>
                     {item.uiaction && Object.is(item.uiaction.uIActionTag, 'ExportExcel') ? (
@@ -267,7 +272,7 @@ export class ViewToolbar extends Vue {
             if (Object.is(item.itemType, 'ITEMS') && item.items && item.items.length > 0) {
                 return (
                     <dropdown v-show={item.visabled} trigger='click'>
-                        <tooltip transfer={true} max-width='600'>
+                        <tooltip transfer={true} max-width='600' disabled={!item.tooltip}>
                             <i-button class={this.getToolBarItemClass(item)} loading={this.isViewLoading}>
                                 {item.icon ? <menu-icon item={item} /> : null}
                                 {item.caption ? <span class='caption'>{item.caption}</span> : null}
@@ -280,6 +285,40 @@ export class ViewToolbar extends Vue {
             }
             return this.renderMenuItem(item);
         });
+    }
+
+    /**
+     * 渲染直接内容
+     *
+     * @protected
+     * @returns {*}
+     * @memberof ViewToolbar
+     */
+    public renderRawItem(item: any) {
+        let { style, rawContent, htmlContent, rawType, getPSSysImage } = item;
+        if (rawContent) {
+            const items = rawContent.match(/\{{(.+?)\}}/g);
+            if (items) {
+                items.forEach((item: string) => {
+                    rawContent = rawContent.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
+                });
+            }
+        }
+        const tempNode = this.$createElement('div', {
+            domProps: {
+                innerHTML: rawContent,
+            },
+        });
+        return (
+            <app-rawitem
+                class={item.class}
+                style={style}
+                imageClass={getPSSysImage}
+                contentType={rawType}
+                htmlContent={htmlContent}>
+                {Object.is(rawType, 'RAW') && tempNode}
+            </app-rawitem>
+        )
     }
 
     /**

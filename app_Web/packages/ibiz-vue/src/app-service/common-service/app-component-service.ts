@@ -225,6 +225,7 @@ export class AppComponentService {
         this.controlMap.set("REPORTPANEL_DEFAULT", 'app-default-report-panel');
         this.controlMap.set("MAPEXPBAR_DEFAULT", 'app-default-map-exp-bar');
         this.controlMap.set("DASHBOARD_STYLE4", 'app-default-dashboard');
+        this.controlMap.set("VIEWPANEL_DEFAULT", 'app-default-view-panel');
         // 注册部件插件标识
         this.controlMap.set("CUSTOM_LEFTNAVLIST", 'app-custom-leftnavlist');
         this.controlMap.set("GRID_RENDER_TreeGrid", 'app-grid-render-tree-grid');
@@ -318,6 +319,9 @@ export class AppComponentService {
         this.editorMap.set("PICKEREX_LINK_DEFAULT", 'app-picker');
         this.editorMap.set("IPADDRESSTEXTBOX_DEFAULT", "app-input-ip");
         this.editorMap.set("RAW_DEFAULT", "app-rawitem");
+        this.editorMap.set("AC_FS_DEFAULT", 'app-autocomplete');
+        this.editorMap.set("AC_NOBUTTON_DEFAULT", 'app-autocomplete');
+        this.editorMap.set("AC_FS_NOBUTTON_DEFAULT", 'app-autocomplete');
         //兼容移动端编辑器
         this.editorMap.set('MOBTEXT_DEFAULT','input-box');
         this.editorMap.set('MOBPASSWORD_DEFAULT','input-box');

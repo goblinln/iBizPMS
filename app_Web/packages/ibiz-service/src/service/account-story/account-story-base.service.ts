@@ -27,20 +27,16 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'AccountStory');
+    }
+
     newEntity(data: IAccountStory): AccountStory {
         return new AccountStory(data);
     }
 
-    async addLocal(context: IContext, entity: IAccountStory): Promise<IAccountStory | null> {
-        return this.cache.add(context, new AccountStory(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IAccountStory): Promise<IAccountStory | null> {
-        return super.createLocal(context, new AccountStory(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IAccountStory> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

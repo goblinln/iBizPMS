@@ -25,20 +25,16 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'ProjectMonthly');
+    }
+
     newEntity(data: IProjectMonthly): ProjectMonthly {
         return new ProjectMonthly(data);
     }
 
-    async addLocal(context: IContext, entity: IProjectMonthly): Promise<IProjectMonthly | null> {
-        return this.cache.add(context, new ProjectMonthly(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IProjectMonthly): Promise<IProjectMonthly | null> {
-        return super.createLocal(context, new ProjectMonthly(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IProjectMonthly> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

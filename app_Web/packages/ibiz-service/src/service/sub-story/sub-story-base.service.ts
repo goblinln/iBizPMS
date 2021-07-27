@@ -27,20 +27,16 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SubStory');
+    }
+
     newEntity(data: ISubStory): SubStory {
         return new SubStory(data);
     }
 
-    async addLocal(context: IContext, entity: ISubStory): Promise<ISubStory | null> {
-        return this.cache.add(context, new SubStory(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISubStory): Promise<ISubStory | null> {
-        return super.createLocal(context, new SubStory(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISubStory> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

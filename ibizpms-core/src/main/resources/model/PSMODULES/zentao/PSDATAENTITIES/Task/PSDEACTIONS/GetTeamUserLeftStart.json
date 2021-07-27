@@ -4,5 +4,13 @@
   "codeName" : "GetTeamUserLeftStart",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftStart.json",
   "logicName" : "获取团队成员剩余工时（开始或继续）",
-  "name" : "GetTeamUserLeftStart"
+  "name" : "GetTeamUserLeftStart",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

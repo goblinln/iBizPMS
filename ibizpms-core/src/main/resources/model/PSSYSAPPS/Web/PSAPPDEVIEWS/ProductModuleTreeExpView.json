@@ -2338,7 +2338,6 @@
         "id" : "update"
       },
       "enableRootSelect" : false,
-      "enableSearchDefault" : true,
       "outputIconDefault" : false,
       "rootVisible" : false,
       "name" : "treeexpbar_tree",

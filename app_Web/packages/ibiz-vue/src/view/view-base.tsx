@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
-import { IPSAppCounterRef, IPSAppView, IPSControl, IPSDETBGroupItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSLanguageRes } from '@ibiz/dynamic-model-api';
+import { IPSAppCounterRef, IPSAppView, IPSControl, IPSDETBGroupItem, IPSDETBRawItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface, throttle } from 'ibiz-core';
 import { CounterServiceRegister, ViewMessageService } from 'ibiz-service';
 import { AppNavHistory, NavDataService, ViewLoadingService } from '../app-service';
@@ -664,6 +664,20 @@ export class ViewBase extends Vue implements ViewInterface {
             getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
             actionLevel: (item as any).actionLevel
         };
+        if (item.itemType == 'RAWITEM') {
+            Object.assign(tempModel, {
+                rawType: (item as IPSDETBRawItem).contentType,
+                rawContent: (item as IPSDETBRawItem).rawContent,
+                htmlContent: (item as IPSDETBRawItem).htmlContent,
+                style: {}
+            })
+            if (item.height) {
+                Object.assign(tempModel.style, { height: item.height + 'px' });
+            }
+            if (item.width) {
+                Object.assign(tempModel.style, { width: item.width + 'px' });
+            }
+        }
         return tempModel;
     }
 
@@ -1291,16 +1305,18 @@ export class ViewBase extends Vue implements ViewInterface {
      */
     public renderCaptionBar() {
         const captionBar: any = ModelTool.findPSControlByName('captionbar', this.viewInstance.getPSControls());
-        return (
-            <div slot="layout-captionbar" class="app-captionbar-container">
-                <app-default-captionbar
-                    viewModelData={this.viewInstance}
-                    modelData={captionBar}
-                    context={this.context}
-                    viewparam={this.viewparam}
-                ></app-default-captionbar>
-            </div>
-        );
+        if (this.viewInstance.showCaptionBar) {
+            return (
+                <div slot="layout-captionbar" class="app-captionbar-container">
+                    <app-default-captionbar
+                        viewModelData={this.viewInstance}
+                        modelData={captionBar}
+                        context={this.context}
+                        viewparam={this.viewparam}
+                    ></app-default-captionbar>
+                </div>
+            );
+        }
     }
 
     /**

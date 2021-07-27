@@ -177,7 +177,7 @@ export class AppListBase extends ListControlBase {
     public renderNoGroup(item: any, listItem: IPSDEListItem,index: number) {
         return <div
             key={index}
-            class={['app-list-item', item.isselected === true ? 'isSelect' : ''].join(' ')}
+            class={['app-list-item', item.srfchecked === 1 ? 'isSelect' : ''].join(' ')}
             on-click={() => throttle(this.handleClick,[item],this)}
             on-dblclick={() => throttle(this.handleDblClick,[item],this)}
         >
@@ -202,7 +202,7 @@ export class AppListBase extends ListControlBase {
                         <div style='margin: 0 0 0 32px;'>
                             {item.children.map((item: any) => {
                                 return <div
-                                    class={['app-list-item', { 'isSelect': item.isselected === true ? true : false }]}
+                                    class={['app-list-item', { 'isSelect': item.srfchecked === 1 ? true : false }]}
                                     on-click={() => throttle(this.handleClick,[item],this)}
                                     on-dblclick={() => throttle(this.handleDblClick,[item],this)}
                                 >

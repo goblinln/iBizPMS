@@ -45,6 +45,11 @@ public class IgnorePrivInterceptor implements RequestInterceptor {
             Enumeration<String> headerNames = request.getHeaderNames();
             requestTemplate.header("Authorization", Collections.emptyList());
             requestTemplate.header("Authorization", "Bearer " + getToken());
+        }else {
+            requestTemplate.header("Authorization", Collections.emptyList());
+            requestTemplate.header("Authorization", "Bearer " + getToken());
+            requestTemplate.header("srforgid", Collections.emptyList());
+            requestTemplate.header("srforgid", this.authenticationInfo.getUser().getOrgid());
         }
     }
 

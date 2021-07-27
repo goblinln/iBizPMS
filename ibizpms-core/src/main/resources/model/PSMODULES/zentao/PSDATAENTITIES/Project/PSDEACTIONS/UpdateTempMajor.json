@@ -6,6 +6,14 @@
   "logicName" : "UpdateTempMajor",
   "name" : "UpdateTempMajor",
   "orderValue" : 13,
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  },
   "tempDataMode" : 1,
   "builtinAction" : true,
   "enableTempData" : true

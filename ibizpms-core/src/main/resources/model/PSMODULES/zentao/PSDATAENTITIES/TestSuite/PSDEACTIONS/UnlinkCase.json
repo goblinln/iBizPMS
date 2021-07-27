@@ -4,5 +4,13 @@
   "codeName" : "UnlinkCase",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/UnlinkCase.json",
   "logicName" : "未关联测试",
-  "name" : "unlinkCase"
+  "name" : "unlinkCase",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

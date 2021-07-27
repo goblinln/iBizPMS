@@ -25,20 +25,16 @@ export class IBIZProPluginBaseService extends EntityBaseService<IIBIZProPlugin> 
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IBIZProPlugin');
+    }
+
     newEntity(data: IIBIZProPlugin): IBIZProPlugin {
         return new IBIZProPlugin(data);
     }
 
-    async addLocal(context: IContext, entity: IIBIZProPlugin): Promise<IIBIZProPlugin | null> {
-        return this.cache.add(context, new IBIZProPlugin(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIBIZProPlugin): Promise<IIBIZProPlugin | null> {
-        return super.createLocal(context, new IBIZProPlugin(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIBIZProPlugin> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

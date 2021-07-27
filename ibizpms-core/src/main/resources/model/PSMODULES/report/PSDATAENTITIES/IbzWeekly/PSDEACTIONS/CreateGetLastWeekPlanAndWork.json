@@ -4,5 +4,13 @@
   "codeName" : "CreateGetLastWeekPlanAndWork",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json",
   "logicName" : "获取上周周报的下周计划",
-  "name" : "CreateGetLastWeekPlanAndWork"
+  "name" : "CreateGetLastWeekPlanAndWork",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

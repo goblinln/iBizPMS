@@ -620,9 +620,9 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
      */
     public onTimeLineClick(item: any){
         this.events.forEach((event: any) =>{
-            event.isSelect = false;
+            event.srfchecked = 0;
         })
-        item.isSelect = !item.isSelect;
+        item.srfchecked = Number(!item.srfchecked);
         this.onEventClick(item, true);
         this.$forceUpdate();
     }
@@ -696,6 +696,12 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
             this.calendarClass = "calendar";
         }
         const eventId: any = event.curdata[this.getEventKey(event)];
+        let tempItem = this.events.find((_item: any) => { return _item.curdata[this.getEventKey(_item)] == eventId });
+        if (this.eventid && this.eventid == eventId) {
+            if (tempItem) tempItem.curdata.srfchecked = 0;
+        } else {
+            if (tempItem) tempItem.curdata.srfchecked = 1;
+        }
         this.selections = this.eventid && this.eventid == eventId ? [] : [event];
         this.handleEventSelectStyle($event);
         // 处理上下文数据
@@ -751,6 +757,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
      */
     public refresh(args?:any) {
         if(Object.is(this.calendarType, 'TIMELINE')){
+            this.searchArgCache = {}
             this.searchEvents();
         } else if (this.ctrlParams) {
 	        let calendarTimeLine: any = this.$refs['appCalendarTimeline'];
@@ -854,6 +861,38 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
         }
         return this.copyActionModel;
     }
+    
+    /**
+     * 计算日历日程样式
+     * 
+     * @param info 
+     */
+    public handleEventStyle(info?: any) {
+        if (!info) {
+            return;
+        }
+        const calendarApi: any = (this.$refs[this.controlInstance?.codeName] as any)?.getApi();
+        if (!calendarApi) {
+            return;
+        }
+        const data = info.event.extendedProps.curdata;
+        let calendarItem: IPSSysCalendarItem = (((this.controlInstance as IPSSysCalendar).getPSSysCalendarItems() || []) as Array<IPSSysCalendarItem>).find((_item: IPSSysCalendarItem) => {
+            return _item.itemType == data.itemType;
+        }) as IPSSysCalendarItem;
+        const cssName = calendarItem?.getPSSysCss?.()?.cssName;
+        const calendarEvents: any[] = calendarApi.getEvents().filter((event: any) => {
+            return event.extendedProps.curdata[this.getEventKey(event.extendedProps)] === data[this.getEventKey(info.event.extendedProps)];
+        });
+        if (cssName && calendarEvents.length > 0) {
+            calendarEvents.forEach((event: any) => {
+                const classNames: any[] = [...event.classNames];
+                if (classNames.findIndex((className: any) => { return className == cssName; }) === -1) {
+                    classNames.push(cssName);
+                    event.setProp('classNames', classNames);
+                }
+            })
+        }
+    }
 
     /**
      * 事件绘制回调
@@ -866,6 +905,7 @@ export class CalendarControlBase extends MDControlBase implements CalendarContro
           this.isSelectFirst = false;
           this.onEventClick(info);
         }
+        this.handleEventStyle(info);
         let data = Object.assign({title: info.event.title, start: info.event.start, end: info.event.end}, info.event.extendedProps);
         info.el.addEventListener('contextmenu', (event: MouseEvent) => {
             this.copyActionModel = {};

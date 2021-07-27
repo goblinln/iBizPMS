@@ -4,5 +4,13 @@
   "codeName" : "Ibzdownload",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/Ibzdownload.json",
   "logicName" : "下载",
-  "name" : "ibzdownload"
+  "name" : "ibzdownload",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

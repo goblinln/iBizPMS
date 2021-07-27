@@ -25,20 +25,16 @@ export class IbizproIndexBaseService extends EntityBaseService<IIbizproIndex> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IbizproIndex');
+    }
+
     newEntity(data: IIbizproIndex): IbizproIndex {
         return new IbizproIndex(data);
     }
 
-    async addLocal(context: IContext, entity: IIbizproIndex): Promise<IIbizproIndex | null> {
-        return this.cache.add(context, new IbizproIndex(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIbizproIndex): Promise<IIbizproIndex | null> {
-        return super.createLocal(context, new IbizproIndex(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIbizproIndex> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

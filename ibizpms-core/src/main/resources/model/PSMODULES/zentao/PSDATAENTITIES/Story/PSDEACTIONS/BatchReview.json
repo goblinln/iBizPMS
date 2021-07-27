@@ -4,5 +4,13 @@
   "codeName" : "BatchReview",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchReview.json",
   "logicName" : "批量评审",
-  "name" : "BatchReview"
+  "name" : "BatchReview",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

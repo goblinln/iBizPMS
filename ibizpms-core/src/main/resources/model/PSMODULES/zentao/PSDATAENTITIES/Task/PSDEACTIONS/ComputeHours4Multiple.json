@@ -4,5 +4,13 @@
   "codeName" : "ComputeHours4Multiple",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json",
   "logicName" : "更新父任务时间",
-  "name" : "computeHours4Multiple"
+  "name" : "computeHours4Multiple",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

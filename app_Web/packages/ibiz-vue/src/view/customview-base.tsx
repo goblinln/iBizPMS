@@ -39,6 +39,22 @@ export class CustomViewBase extends MainViewBase implements CustomViewInterface 
     await super.viewModelInit();
   }
 
+    /**
+     * 初始化工具栏数据
+     *
+     * @memberof MainViewBase
+     */
+  public initViewToolBar() {
+    const targetViewToolbarItems: any[] = [];
+    const viewToolBar: IPSDEToolbar = ModelTool.findPSControlByName('toolbar', this.viewInstance.getPSControls());
+    if (viewToolBar && viewToolBar.getPSDEToolbarItems()) {
+      viewToolBar.getPSDEToolbarItems()?.forEach((toolbarItem: IPSDEToolbarItem) => {
+        targetViewToolbarItems.push(this.initToolBarItems(toolbarItem));
+      });
+    }
+    this.toolbarModels = targetViewToolbarItems;
+  }
+
   /**
    * 绘制目标部件
    * 
@@ -93,7 +109,9 @@ export class CustomViewBase extends MainViewBase implements CustomViewInterface 
     if (this.viewInstance.getPSControls() && (this.viewInstance.getPSControls() as IPSControl[]).length > 0) {
       const ctrlArray: Array<any> = [];
       (this.viewInstance.getPSControls() as IPSControl[]).forEach((item: IPSControl) => {
-        ctrlArray.push({ name: item.name, ctrl: (this.$refs[item.name] as any).ctrl });
+        if (!Object.is(item.controlType, 'TOOLBAR')) {
+          ctrlArray.push({ name: item.name, ctrl: (this.$refs[item.name] as any).ctrl });
+        }
       })
       Object.assign(engineOptions, { ctrl: ctrlArray });
     }

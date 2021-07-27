@@ -4,5 +4,13 @@
   "codeName" : "GetPlan",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetPlan.json",
   "logicName" : "获取计划",
-  "name" : "getPlan"
+  "name" : "getPlan",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

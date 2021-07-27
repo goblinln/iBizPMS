@@ -10,6 +10,7 @@ import { initNoticeHandler, Interceptors } from '@/utils';
 import  {Print} from '@/utils/print';
 import i18n from '@/locale';
 import { install } from 'ibiz-service';
+import { vueinstall  } from 'ibiz-vue';
 import { installPlugin } from '@/plugin/app-plugin-service';
 import { Environment } from '@/environments/environment';
 import format from 'vue-text-format'
@@ -41,6 +42,7 @@ import { translate } from '@/locale/local-util';
 const win: any = window;
 win.axios = axios;
 install({baseUrl:Environment.BaseUrl});
+vueinstall();
 installPlugin();
 initNoticeHandler();
 

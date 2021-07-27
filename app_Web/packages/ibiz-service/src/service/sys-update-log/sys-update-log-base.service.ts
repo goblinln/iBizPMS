@@ -25,20 +25,16 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SysUpdateLog');
+    }
+
     newEntity(data: ISysUpdateLog): SysUpdateLog {
         return new SysUpdateLog(data);
     }
 
-    async addLocal(context: IContext, entity: ISysUpdateLog): Promise<ISysUpdateLog | null> {
-        return this.cache.add(context, new SysUpdateLog(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISysUpdateLog): Promise<ISysUpdateLog | null> {
-        return super.createLocal(context, new SysUpdateLog(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISysUpdateLog> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

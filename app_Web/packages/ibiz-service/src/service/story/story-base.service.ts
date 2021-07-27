@@ -28,20 +28,16 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         product: 'product',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Story');
+    }
+
     newEntity(data: IStory): Story {
         return new Story(data);
     }
 
-    async addLocal(context: IContext, entity: IStory): Promise<IStory | null> {
-        return this.cache.add(context, new Story(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IStory): Promise<IStory | null> {
-        return super.createLocal(context, new Story(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IStory> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.product && entity.product !== '') {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(context, entity.product);

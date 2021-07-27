@@ -28,20 +28,16 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
         product: 'product',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'ProductBranch');
+    }
+
     newEntity(data: IProductBranch): ProductBranch {
         return new ProductBranch(data);
     }
 
-    async addLocal(context: IContext, entity: IProductBranch): Promise<IProductBranch | null> {
-        return this.cache.add(context, new ProductBranch(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IProductBranch): Promise<IProductBranch | null> {
-        return super.createLocal(context, new ProductBranch(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IProductBranch> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.product && entity.product !== '') {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(context, entity.product);

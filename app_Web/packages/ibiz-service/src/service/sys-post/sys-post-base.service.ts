@@ -25,20 +25,16 @@ export class SysPostBaseService extends EntityBaseService<ISysPost> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'SysPost');
+    }
+
     newEntity(data: ISysPost): SysPost {
         return new SysPost(data);
     }
 
-    async addLocal(context: IContext, entity: ISysPost): Promise<ISysPost | null> {
-        return this.cache.add(context, new SysPost(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: ISysPost): Promise<ISysPost | null> {
-        return super.createLocal(context, new SysPost(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<ISysPost> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

@@ -25,20 +25,16 @@ export class PSSysAppBaseService extends EntityBaseService<IPSSysApp> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'PSSysApp');
+    }
+
     newEntity(data: IPSSysApp): PSSysApp {
         return new PSSysApp(data);
     }
 
-    async addLocal(context: IContext, entity: IPSSysApp): Promise<IPSSysApp | null> {
-        return this.cache.add(context, new PSSysApp(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IPSSysApp): Promise<IPSSysApp | null> {
-        return super.createLocal(context, new PSSysApp(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IPSSysApp> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

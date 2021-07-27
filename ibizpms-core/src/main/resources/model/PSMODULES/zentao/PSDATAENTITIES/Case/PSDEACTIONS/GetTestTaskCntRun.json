@@ -4,5 +4,13 @@
   "codeName" : "GetTestTaskCntRun",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetTestTaskCntRun.json",
   "logicName" : "获取测试单执行结果",
-  "name" : "GetTestTaskCntRun"
+  "name" : "GetTestTaskCntRun",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

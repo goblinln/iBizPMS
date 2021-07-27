@@ -27,20 +27,16 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Monthly');
+    }
+
     newEntity(data: IMonthly): Monthly {
         return new Monthly(data);
     }
 
-    async addLocal(context: IContext, entity: IMonthly): Promise<IMonthly | null> {
-        return this.cache.add(context, new Monthly(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IMonthly): Promise<IMonthly | null> {
-        return super.createLocal(context, new Monthly(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IMonthly> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

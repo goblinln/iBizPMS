@@ -1,7 +1,8 @@
 import { MDControlBase } from "./md-control-base";
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
-import { ViewTool, Verify, PanelControlInterface, PanelButtonModel, PanelTabPanelModel, PanelTabPageModel, PanelContainerModel, PanelFieldModel, PanelRawitemModel, PanelControlModel, PanelUserControlModel } from 'ibiz-core';
+import { ViewTool, Verify, PanelControlInterface, PanelButtonModel, PanelTabPanelModel, PanelTabPageModel, PanelContainerModel, PanelFieldModel, PanelRawitemModel, PanelControlModel, PanelUserControlModel, LogUtil, Util } from 'ibiz-core';
 import { IPSPanel, IPSPanelField, IPSPanelItem, IPSPanelItemGroupLogic, IPSPanelItemSingleLogic, IPSPanelTabPage, IPSPanelTabPanel, IPSSysPanelButton, IPSSysPanelContainer, IPSSysPanelField, IPSSysPanelTabPanel } from '@ibiz/dynamic-model-api';
+import { GlobalService } from 'ibiz-service';
 /**
  * 面板部件基类
  *
@@ -83,6 +84,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
         this.newdata = newVal?.newdata || this.newdata;
         this.remove = newVal?.remove || this.remove;
         this.refresh = newVal?.refresh || this.refresh;
+        this.dataMap = newVal?.dataMap;
         // 初始化面板详情模型集合
         this.detailsModel = {};
         this.allPanelItemGroupLogic = [];
@@ -422,8 +424,58 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
                 this.$set(this.data, item.name, null);
             });
         }
-        if (this.navdatas && (this.navdatas.length > 0)) {
-            this.data = this.navdatas[0];
+        await this.computeLoadState();
+    }
+
+    /**
+     * 计算数据加载模式
+     *
+     * @memberof PanelControlBase
+     */
+    public async computeLoadState() {
+        const dataMode = this.controlInstance.dataMode;
+        if (dataMode === 0) {
+            //  0：不获取，使用传入数据
+            if (this.navdatas && (this.navdatas.length > 0)) {
+                this.data = this.navdatas[0];
+            }
+        } else if (dataMode === 1) {
+            //  1：存在传入数据时，不获取
+            if (this.navdatas && this.navdatas.length > 0) {
+                if (this.navdatas && (this.navdatas.length > 0)) {
+                    this.data = this.navdatas[0];
+                }
+            } else {
+                await this.loadPanelData();
+            }
+        } else if (dataMode === 2) {
+            //  2：始终获取
+            await this.loadPanelData();
+        }
+    }
+
+    /**
+     * 加载数据
+     *
+     * @memberof PanelControlBase
+     */
+    public async loadPanelData() {
+        const action = this.controlInstance.getGetPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || '';
+        if (!action) {
+            LogUtil.warn(this.$t('app.viewpanel.nofconfig.getaction'));
+        }
+        const service = await new GlobalService().getService(this.appDeCodeName, this.context).catch((error: any) => {
+            LogUtil.warn(this.$t('app.viewpanel.error.notgetservice'));
+        });
+        if (service && service[action] && service[action] instanceof Function) {
+            try {
+                const response: any = await service[action](Util.deepCopy(this.data), Util.deepCopy(this.context));
+                if (response && response.status == 200 && response.data) {
+                    this.data = response.data;
+                }
+            } catch (response: any) {
+                this.$throw(response, 'load');
+            }
         }
     }
 

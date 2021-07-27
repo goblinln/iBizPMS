@@ -4,5 +4,13 @@
   "codeName" : "ToStory",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ToStory.json",
   "logicName" : "转需求",
-  "name" : "toStory"
+  "name" : "toStory",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

@@ -1,6 +1,6 @@
-import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 import { DataTypes, ModelTool, Util } from 'ibiz-core';
-import { IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSAppDEView, IPSAppView, IPSDEGrid, IPSDEGridColumn, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEUIAction, IPSEditor } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSAppDEView, IPSAppView, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEUIAction, IPSEditor } from '@ibiz/dynamic-model-api';
 
 @Component({})
 export class AppDefaultGridColumn extends Vue {
@@ -191,9 +191,21 @@ export class AppDefaultGridColumn extends Vue {
                 data={this.row[name]}>
             </app-format-data>)
         } else {
-            return (
-                <span>{this.row[name]}</span>
-            )
+            const dataItem: IPSDEGridDataItem | undefined = this.gridInstance.getPSDEGridDataItems()?.find((item: IPSDEGridDataItem) => { return item.name === this.columnInstance.dataItemName; });
+            if (dataItem?.customCode) {
+                return (
+                    this.$createElement('div', {
+                        domProps: {
+                            innerHTML: this.row[name],
+                        },
+                    })
+                )
+            } else {
+                return (
+                    <span>{this.row[name]}</span>
+                )
+            }
+
         }
     }
 

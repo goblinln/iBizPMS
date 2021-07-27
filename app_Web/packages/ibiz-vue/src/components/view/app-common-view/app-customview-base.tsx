@@ -81,7 +81,10 @@ export class AppCustomViewBase extends CustomViewBase {
             props: { viewInstance: this.viewInstance, model: this.model, modelService: this.modelService, viewparams: this.viewparams, context: this.context }
         }, [
             this.renderToolBar(),
-            ...this.renderViewControls()
+            this.renderTopMessage(),
+            this.renderBodyMessage(),
+            ...this.renderViewControls(),
+            this.renderBottomMessage()
         ]);
     }
 

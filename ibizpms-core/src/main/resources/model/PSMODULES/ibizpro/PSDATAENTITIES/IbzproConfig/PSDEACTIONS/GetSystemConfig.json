@@ -4,5 +4,13 @@
   "codeName" : "GetSystemConfig",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzproConfig/PSDEACTIONS/GetSystemConfig.json",
   "logicName" : "获取系统配置",
-  "name" : "GetSystemConfig"
+  "name" : "GetSystemConfig",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "ENTITY"
+  }
 }

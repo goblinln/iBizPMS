@@ -25,20 +25,16 @@ export class ReportSummaryBaseService extends EntityBaseService<IReportSummary> 
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'ReportSummary');
+    }
+
     newEntity(data: IReportSummary): ReportSummary {
         return new ReportSummary(data);
     }
 
-    async addLocal(context: IContext, entity: IReportSummary): Promise<IReportSummary | null> {
-        return this.cache.add(context, new ReportSummary(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IReportSummary): Promise<IReportSummary | null> {
-        return super.createLocal(context, new ReportSummary(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IReportSummary> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

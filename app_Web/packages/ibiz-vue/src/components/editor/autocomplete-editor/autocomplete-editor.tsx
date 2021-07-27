@@ -1,6 +1,6 @@
-import { IPSAutoComplete } from '@ibiz/dynamic-model-api';
+import { IPSAppDEACMode, IPSAutoComplete, IPSDEACModeDataItem } from '@ibiz/dynamic-model-api';
 import { ModelTool } from 'ibiz-core';
-import { Vue, Component, Prop, Inject } from 'vue-property-decorator';
+import { Component, Prop } from 'vue-property-decorator';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { EditorBase } from '../editor-base/editor-base';
 
@@ -21,7 +21,7 @@ export default class AutocompleteEditor extends EditorBase {
      * @type {*}
      * @memberof EditorBase
      */
-     @Prop() editorInstance!: IPSAutoComplete;
+    @Prop() editorInstance!: IPSAutoComplete;
 
     /**
      * 编辑器初始化
@@ -30,7 +30,11 @@ export default class AutocompleteEditor extends EditorBase {
      */
     public async initEditor() {
         await super.initEditor();
-        // todo lxm getPSAppDEACMode和getPSAppDEDataSet获取不到
+        if (this.editorInstance.getPSAppDEACMode() &&
+            (this.editorInstance.getPSAppDEACMode() as IPSAppDEACMode).getPSDEACModeDataItems() &&
+            ((this.editorInstance.getPSAppDEACMode() as IPSAppDEACMode).getPSDEACModeDataItems() as IPSDEACModeDataItem[]).length > 0) {
+            this.customProps.dataItems = (this.editorInstance.getPSAppDEACMode() as IPSAppDEACMode).getPSDEACModeDataItems();
+        }
         this.customProps.acParams = ModelTool.getAcParams(this.editorInstance);
         this.customProps.deMajorField = ModelTool.getEditorMajorName(this.editorInstance);
         this.customProps.deKeyField = ModelTool.getEditorKeyName(this.editorInstance);
@@ -46,7 +50,7 @@ export default class AutocompleteEditor extends EditorBase {
         if (!this.editorIsLoaded) {
             return null;
         }
-        return this.$createElement(this.editorComponentName,{
+        return this.$createElement(this.editorComponentName, {
             props: {
                 name: this.editorInstance.name,
                 value: this.value,
@@ -54,6 +58,7 @@ export default class AutocompleteEditor extends EditorBase {
                 data: this.contextData,
                 service: this.service,
                 context: this.context,
+                editorType: this.editorInstance.editorType,
                 viewparams: this.viewparams,
                 valueitem: this.parentItem?.valueItemName || '',
                 ...this.customProps,

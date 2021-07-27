@@ -28,20 +28,16 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         product: 'root',
     };
 
+    constructor(opts?: any) {
+        super(opts, 'ProductTeam');
+    }
+
     newEntity(data: IProductTeam): ProductTeam {
         return new ProductTeam(data);
     }
 
-    async addLocal(context: IContext, entity: IProductTeam): Promise<IProductTeam | null> {
-        return this.cache.add(context, new ProductTeam(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IProductTeam): Promise<IProductTeam | null> {
-        return super.createLocal(context, new ProductTeam(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IProductTeam> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         if (entity && entity.root && entity.root !== '') {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(context, entity.root);

@@ -7,7 +7,15 @@
   "logicName" : "Remove",
   "name" : "Remove",
   "orderValue" : 21,
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "KEYFIELDS"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "userCat" : "CAT1",
-  "builtinAction" : true,
-  "enableBatchAction" : true
+  "batchAction" : true,
+  "builtinAction" : true
 }

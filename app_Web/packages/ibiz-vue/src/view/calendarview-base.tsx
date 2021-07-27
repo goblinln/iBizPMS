@@ -134,16 +134,19 @@ export class CalendarViewBase extends MDViewBase implements CalendarViewInterfac
         if (!action) {
             return;
         }
-        switch (action) {
-            case "beforeload":
+        if (ctrlName && Object.is(ctrlName, this.calendarInstance.controlType?.toLowerCase())) {
+            if (Object.is(action,"beforeload")) {
                 this.onBeforeLoad(data);
-                break;
-            case "search":
-                this.searchform_search(data);
-                break;
-            case "load":
-                this.searchform_load(data);
-                break;
+            }
+        } else if(ctrlName && Object.is(ctrlName,this.searchFormInstance?.name)) {
+            switch (action) {
+                case "search":
+                    this.searchform_search(data);
+                    break;
+                case "load":
+                    this.searchform_load(data);
+                    break;
+            }
         }
         super.onCtrlEvent(ctrlName, action, data);
     }

@@ -25,20 +25,16 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'Group');
+    }
+
     newEntity(data: IGroup): Group {
         return new Group(data);
     }
 
-    async addLocal(context: IContext, entity: IGroup): Promise<IGroup | null> {
-        return this.cache.add(context, new Group(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IGroup): Promise<IGroup | null> {
-        return super.createLocal(context, new Group(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IGroup> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

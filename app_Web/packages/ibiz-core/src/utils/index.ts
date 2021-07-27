@@ -6,6 +6,7 @@ export { DataTypes } from './util/data-types';
 export { LayoutTool } from './util/layout-tool';
 export { ModelUtil } from './util/model-util';
 export { UIActionTool } from './ui-tools/uiaction-tool';
+export { AppEmbeddedUILogic } from './ui-tools/app-embedded-uilogic';
 export { ViewTool } from './ui-tools/view-tool';
 export { TimerUtil } from './util/timer-util';
 export { Http } from './net/http';

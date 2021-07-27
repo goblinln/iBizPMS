@@ -4,5 +4,13 @@
   "codeName" : "LinkCompleteTask",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/LinkCompleteTask.json",
   "logicName" : "关联完成任务",
-  "name" : "LinkCompleteTask"
+  "name" : "LinkCompleteTask",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

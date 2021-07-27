@@ -4,5 +4,13 @@
   "codeName" : "SendToread",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendToread.json",
   "logicName" : "发送待阅",
-  "name" : "sendToread"
+  "name" : "sendToread",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }

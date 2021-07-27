@@ -5,6 +5,14 @@
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json",
   "logicName" : "我未提交的（计数器）",
   "name" : "MyReportINotSubmit",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  },
   "getPSDELogic" : {
     "modelref" : true,
     "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/MyReportINotSubmit.json"

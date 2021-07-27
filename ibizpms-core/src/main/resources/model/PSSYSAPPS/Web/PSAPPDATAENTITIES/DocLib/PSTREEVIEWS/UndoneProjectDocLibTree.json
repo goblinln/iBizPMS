@@ -444,7 +444,6 @@
     "id" : "update"
   },
   "enableRootSelect" : false,
-  "enableSearchDefault" : false,
   "outputIconDefault" : true,
   "rootVisible" : false,
   "modelid" : "42e202e3f7f2a2e4b45a3ab1414e6158",

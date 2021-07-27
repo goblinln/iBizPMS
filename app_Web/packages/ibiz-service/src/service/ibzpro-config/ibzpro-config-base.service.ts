@@ -25,20 +25,16 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
     protected selectContextParam = {
     };
 
+    constructor(opts?: any) {
+        super(opts, 'IbzproConfig');
+    }
+
     newEntity(data: IIbzproConfig): IbzproConfig {
         return new IbzproConfig(data);
     }
 
-    async addLocal(context: IContext, entity: IIbzproConfig): Promise<IIbzproConfig | null> {
-        return this.cache.add(context, new IbzproConfig(entity) as any);
-    }
-
-    async createLocal(context: IContext, entity: IIbzproConfig): Promise<IIbzproConfig | null> {
-        return super.createLocal(context, new IbzproConfig(entity) as any);
-    }
-
     async getLocal(context: IContext, srfKey: string): Promise<IIbzproConfig> {
-        const entity = this.cache.get(context, srfKey);
+        const entity = await super.getLocal(context, srfKey);
         return entity!;
     }
 

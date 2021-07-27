@@ -4,5 +4,13 @@
   "codeName" : "MarkDone",
   "dynaModelFilePath" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage/PSDEACTIONS/MarkDone.json",
   "logicName" : "标记已完成",
-  "name" : "MarkDone"
+  "name" : "MarkDone",
+  "getPSDEActionInput" : {
+    "name" : "输入对象",
+    "type" : "ENTITY"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "返回对象",
+    "type" : "VOID"
+  }
 }
