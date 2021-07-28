@@ -5,7 +5,7 @@
       :type="type"
       :color="color"
       :format="format"
-      :show-text="showText"
+      :show-text="realShowText"
       :stroke-width="parseInt(strokeWidth)"
     ></el-progress>
   </div>
@@ -71,7 +71,7 @@ export default class AppProgress extends Vue {
    * @type {string}
    * @memberof AppProgress
    */
-  @Prop({ default: true }) public showText!: boolean;
+  @Prop({ default: 'true' }) public showText!: string;
 
   /**
    * 进度条的宽度，单位 px
@@ -79,6 +79,24 @@ export default class AppProgress extends Vue {
    * @memberof AppProgress
    */
   @Prop({ default: '6' }) public strokeWidth!: string;
+
+  /**
+   * 是否显示文本
+   *
+   * @memberof AppProgress
+   */
+  get realShowText() {
+    if (this.showText) {
+      if (Object.is(this.showText,'false')) {
+        return false;
+      } else if (Object.is(this.showText,'true')) {
+        return true;
+      } else {
+        return Boolean(this.showText)
+      }
+    }
+    return true
+  }
 
   /**
    * 当前值（百分比形式）

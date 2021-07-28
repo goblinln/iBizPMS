@@ -10,7 +10,7 @@ import { GlobalService } from 'ibiz-service';
  * @class PanelControlBase
  * @extends {MDControlBase}
  */
-export class PanelControlBase extends MDControlBase implements PanelControlInterface{
+export class PanelControlBase extends MDControlBase implements PanelControlInterface {
 
     /**
      * 值规则对象
@@ -437,13 +437,13 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
         if (dataMode === 0) {
             //  0：不获取，使用传入数据
             if (this.navdatas && (this.navdatas.length > 0)) {
-                this.data = this.navdatas[0];
+                this.fillPanelData(this.navdatas[0]);
             }
         } else if (dataMode === 1) {
             //  1：存在传入数据时，不获取
             if (this.navdatas && this.navdatas.length > 0) {
                 if (this.navdatas && (this.navdatas.length > 0)) {
-                    this.data = this.navdatas[0];
+                    this.fillPanelData(this.navdatas[0]);
                 }
             } else {
                 await this.loadPanelData();
@@ -469,33 +469,14 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
         });
         if (service && service[action] && service[action] instanceof Function) {
             try {
-                const response: any = await service[action](Util.deepCopy(this.context),this.data);
+                const response: any = await service[action](Util.deepCopy(this.context), this.data);
                 if (response && response.status == 200 && response.data) {
-                    this.data = response.data;
+                    this.fillPanelData(response.data);
                 }
             } catch (response: any) {
                 this.$throw(response, 'load');
             }
         }
-    }
-
-    /**
-     * 获取name找到对应field
-     *
-     * @returns {any[]}
-     * @memberof AppPanelModel
-     */
-    public findField(arr: Array<IPSPanelItem> | null, name: string): any {
-        let _result = null;
-        if (!arr) {
-            return
-        }
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i].name == name) return arr[i];
-            if ((arr[i] as any)?.getPSPanelItems?.()) _result = this.findField((arr[i] as any)?.getPSPanelItems?.(), name)
-            if (_result != null) return _result;
-        }
-        return _result;
     }
 
     /**
@@ -506,14 +487,25 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
       */
     public getDataItems(): any[] {
         let arr: any = [];
-        this.controlInstance.M?.getAllPSPanelFields?.forEach((datafield: IPSPanelField) => {
-            let field: any = this.findField(this.controlInstance.getRootPSPanelItems(), datafield.id);
+        this.controlInstance.M?.getAllPSPanelFields?.forEach((datafield: any) => {
             let obj: any = {};
-            obj.name = field?.name.toLowerCase();
-            obj.prop = field?.viewFieldName?.toLowerCase();
+            obj.name = datafield?.id?.toLowerCase();
+            obj.prop = datafield?.viewFieldName?.toLowerCase();
             arr.push(obj);
         });
-        return arr
+        return arr;
+    }
+
+    /**
+     * 填充面板数据
+     *
+     * @param {*} data
+     * @memberof PanelControlBase
+     */
+    public fillPanelData(data: any) {
+        this.getDataItems().forEach((item: any) => {
+            this.data[item.name] = data?.[item.prop];
+        });
     }
 
     /**

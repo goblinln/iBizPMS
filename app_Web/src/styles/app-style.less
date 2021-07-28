@@ -357,6 +357,26 @@
     font-weight: 900;
     text-align: center;
 }
+    .el-table__body-wrapper {
+  .treegrid-column-align {
+    >div.cell {
+      padding-left: 24px;
+      > .el-table__expand-icon {
+        margin-left: -23px;
+      }
+      > .el-table__indent {
+        padding-left: 0px !important;
+      }
+    }
+  }
+  .el-table__row--level-1 {
+    .treegrid-column-align {
+      >div.cell { 
+        padding-left: 4px;
+      }
+    }
+  }
+}
     .main-basic-info-layout {
   >.ivu-row {
     .ivu-col {
