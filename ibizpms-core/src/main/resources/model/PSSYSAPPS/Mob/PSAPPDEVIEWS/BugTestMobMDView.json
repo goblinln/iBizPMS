@@ -471,15 +471,20 @@
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "id" : "pri"
+        "id" : "pri",
+        "viewFieldName" : "pri"
       }, {
-        "id" : "title"
+        "id" : "title",
+        "viewFieldName" : "title"
       }, {
-        "id" : "status"
+        "id" : "status",
+        "viewFieldName" : "status"
       }, {
-        "id" : "resolution"
+        "id" : "resolution",
+        "viewFieldName" : "resolution"
       }, {
-        "id" : "assignedto"
+        "id" : "assignedto",
+        "viewFieldName" : "assignedto"
       } ],
       "codeName" : "Mob",
       "controlType" : "PANEL",

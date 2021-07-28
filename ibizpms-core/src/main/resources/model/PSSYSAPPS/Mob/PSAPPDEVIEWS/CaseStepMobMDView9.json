@@ -88,11 +88,14 @@
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "id" : "type"
+        "id" : "type",
+        "viewFieldName" : "type"
       }, {
-        "id" : "desc"
+        "id" : "desc",
+        "viewFieldName" : "desc"
       }, {
-        "id" : "expect"
+        "id" : "expect",
+        "viewFieldName" : "expect"
       } ],
       "codeName" : "Mob",
       "controlType" : "PANEL",

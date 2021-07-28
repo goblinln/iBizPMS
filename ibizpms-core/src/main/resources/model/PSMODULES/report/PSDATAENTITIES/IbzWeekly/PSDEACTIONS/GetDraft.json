@@ -25,11 +25,11 @@
   "orderValue" : 41,
   "getPSDEActionInput" : {
     "name" : "输入对象",
-    "type" : "ENTITY"
+    "type" : "DOMAIN"
   },
   "getPSDEActionReturn" : {
     "name" : "返回对象",
-    "type" : "ENTITY"
+    "type" : "DOMAIN"
   },
   "builtinAction" : true
 }

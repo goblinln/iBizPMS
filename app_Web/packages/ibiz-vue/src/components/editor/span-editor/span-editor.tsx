@@ -61,6 +61,9 @@ export default class SpanEditor extends EditorBase {
         if (appDeField?.stdDataType) {
             this.customProps.dataType = DataTypes.toString(appDeField.stdDataType);
         }
+        if (Object.is('PANEL', this.containerCtrl)) {
+            this.customProps.dataType = 'VARCHAR';
+        }
         if (appDeField?.valueFormat) {
             this.customProps.valueFormat = appDeField?.valueFormat;
         }

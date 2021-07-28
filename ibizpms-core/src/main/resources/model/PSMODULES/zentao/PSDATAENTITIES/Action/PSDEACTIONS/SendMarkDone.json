@@ -7,7 +7,7 @@
   "name" : "sendMarkDone",
   "getPSDEActionInput" : {
     "name" : "输入对象",
-    "type" : "ENTITY"
+    "type" : "DOMAIN"
   },
   "getPSDEActionReturn" : {
     "name" : "返回对象",

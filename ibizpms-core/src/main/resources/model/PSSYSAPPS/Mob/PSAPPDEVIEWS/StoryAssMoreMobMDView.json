@@ -331,18 +331,24 @@
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "id" : "pri"
+        "id" : "pri",
+        "viewFieldName" : "pri"
       }, {
-        "id" : "title"
+        "id" : "title",
+        "viewFieldName" : "title"
       }, {
-        "id" : "assignedto"
+        "id" : "assignedto",
+        "viewFieldName" : "assignedto"
       }, {
-        "id" : "status"
+        "id" : "status",
+        "viewFieldName" : "status"
       }, {
-        "id" : "stage"
+        "id" : "stage",
+        "viewFieldName" : "stage"
       }, {
         "id" : "isfavorites",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "isfavorites"
       } ],
       "codeName" : "Mob",
       "controlType" : "PANEL",

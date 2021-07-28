@@ -1,10 +1,13 @@
 {
   "getAllPSPanelFields" : [ {
-    "id" : "date"
+    "id" : "date",
+    "viewFieldName" : "date"
   }, {
-    "id" : "consumed"
+    "id" : "consumed",
+    "viewFieldName" : "consumed"
   }, {
-    "id" : "left"
+    "id" : "left",
+    "viewFieldName" : "left"
   } ],
   "codeName" : "MobEstimate",
   "controlType" : "PANEL",

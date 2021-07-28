@@ -86,8 +86,10 @@ export default class AppProgress extends Vue {
    * @memberof AppProgress
    */
   get currentVal() {
-    let value = this.value === null ? 0 : this.value;
-    return ((parseInt(value) - this.min) / (this.max - this.min)) * 100;
+    if (this.value) {
+      let value = this.value === null ? 0 : parseInt(this.value);
+      return ((value - this.min) / (this.max - this.min)) * 100;
+    }
   }
 
   /**
@@ -96,7 +98,7 @@ export default class AppProgress extends Vue {
    * @memberof AppProgress
    */
   public format(percentage: number) {
-    return this.value ? this.value + " (" + percentage + "%)" : "";
+    return this.value ? this.value + " (" + percentage.toFixed(0) + "%)" : "";
   }
 
   public mounted() {

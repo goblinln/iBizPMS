@@ -19,21 +19,29 @@
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
   "getItemPSLayoutPanel" : {
     "getAllPSPanelFields" : [ {
-      "id" : "mytasks"
+      "id" : "mytasks",
+      "viewFieldName" : "mytasks"
     }, {
-      "id" : "myetasks"
+      "id" : "myetasks",
+      "viewFieldName" : "myetasks"
     }, {
-      "id" : "mybugs"
+      "id" : "mybugs",
+      "viewFieldName" : "mybugs"
     }, {
-      "id" : "myebugs"
+      "id" : "myebugs",
+      "viewFieldName" : "myebugs"
     }, {
-      "id" : "mystorys"
+      "id" : "mystorys",
+      "viewFieldName" : "mystorys"
     }, {
-      "id" : "projects"
+      "id" : "projects",
+      "viewFieldName" : "projects"
     }, {
-      "id" : "eprojects"
+      "id" : "eprojects",
+      "viewFieldName" : "eprojects"
     }, {
-      "id" : "products"
+      "id" : "products",
+      "viewFieldName" : "products"
     } ],
     "codeName" : "MyWorkMob",
     "controlType" : "PANEL",

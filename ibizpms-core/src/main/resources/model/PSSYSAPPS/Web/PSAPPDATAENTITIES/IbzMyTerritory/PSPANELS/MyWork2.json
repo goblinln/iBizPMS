@@ -1,22 +1,31 @@
 {
   "getAllPSPanelFields" : [ {
-    "id" : "account"
+    "id" : "account",
+    "viewFieldName" : "account"
   }, {
-    "id" : "mytasks"
+    "id" : "mytasks",
+    "viewFieldName" : "MYTASKS"
   }, {
-    "id" : "myetasks"
+    "id" : "myetasks",
+    "viewFieldName" : "myetasks"
   }, {
-    "id" : "mybugs"
+    "id" : "mybugs",
+    "viewFieldName" : "MYBUGS"
   }, {
-    "id" : "myebugs"
+    "id" : "myebugs",
+    "viewFieldName" : "MYEBUGS"
   }, {
-    "id" : "mystorys"
+    "id" : "mystorys",
+    "viewFieldName" : "MYSTORYS"
   }, {
-    "id" : "projects"
+    "id" : "projects",
+    "viewFieldName" : "PROJECTS"
   }, {
-    "id" : "eprojects"
+    "id" : "eprojects",
+    "viewFieldName" : "EPROJECTS"
   }, {
-    "id" : "products"
+    "id" : "products",
+    "viewFieldName" : "PRODUCTS"
   } ],
   "codeName" : "MyWork2",
   "controlType" : "PANEL",

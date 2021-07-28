@@ -11,7 +11,7 @@
   },
   "getPSDEActionReturn" : {
     "name" : "返回对象",
-    "type" : "ENTITY"
+    "type" : "DOMAIN"
   },
   "transactionMode" : "NONE",
   "customParam" : true

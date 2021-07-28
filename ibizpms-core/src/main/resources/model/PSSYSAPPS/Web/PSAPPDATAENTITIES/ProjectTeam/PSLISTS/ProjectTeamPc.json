@@ -18,26 +18,36 @@
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getItemPSLayoutPanel" : {
     "getAllPSPanelFields" : [ {
-      "id" : "account"
+      "id" : "account",
+      "viewFieldName" : "account"
     }, {
-      "id" : "role"
+      "id" : "role",
+      "viewFieldName" : "role"
     }, {
-      "id" : "join"
+      "id" : "join",
+      "viewFieldName" : "join"
     }, {
-      "id" : "days"
+      "id" : "days",
+      "viewFieldName" : "days"
     }, {
-      "id" : "hours"
+      "id" : "hours",
+      "viewFieldName" : "hours"
     }, {
-      "id" : "total"
+      "id" : "total",
+      "viewFieldName" : "total"
     }, {
-      "id" : "consumed"
+      "id" : "consumed",
+      "viewFieldName" : "consumed"
     }, {
-      "id" : "left"
+      "id" : "left",
+      "viewFieldName" : "left"
     }, {
-      "id" : "estimate"
+      "id" : "estimate",
+      "viewFieldName" : "estimate"
     }, {
       "id" : "id",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "id"
     } ],
     "codeName" : "ProjectTeamPc",
     "controlType" : "PANEL",

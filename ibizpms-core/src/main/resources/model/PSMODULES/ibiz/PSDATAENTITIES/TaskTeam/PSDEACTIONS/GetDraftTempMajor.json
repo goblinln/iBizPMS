@@ -8,11 +8,11 @@
   "orderValue" : 45,
   "getPSDEActionInput" : {
     "name" : "输入对象",
-    "type" : "ENTITY"
+    "type" : "DOMAIN"
   },
   "getPSDEActionReturn" : {
     "name" : "返回对象",
-    "type" : "ENTITY"
+    "type" : "DOMAIN"
   },
   "tempDataMode" : 1,
   "builtinAction" : true,

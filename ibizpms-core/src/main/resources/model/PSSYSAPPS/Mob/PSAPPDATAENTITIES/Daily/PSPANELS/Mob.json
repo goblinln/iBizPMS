@@ -1,8 +1,10 @@
 {
   "getAllPSPanelFields" : [ {
-    "id" : "account"
+    "id" : "account",
+    "viewFieldName" : "account"
   }, {
-    "id" : "submittime"
+    "id" : "submittime",
+    "viewFieldName" : "submittime"
   } ],
   "codeName" : "Mob",
   "controlType" : "PANEL",

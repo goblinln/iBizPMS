@@ -574,11 +574,14 @@
                 "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
                 "getItemPSLayoutPanel" : {
                   "getAllPSPanelFields" : [ {
-                    "id" : "type"
+                    "id" : "type",
+                    "viewFieldName" : "type"
                   }, {
-                    "id" : "desc"
+                    "id" : "desc",
+                    "viewFieldName" : "desc"
                   }, {
-                    "id" : "expect"
+                    "id" : "expect",
+                    "viewFieldName" : "expect"
                   } ],
                   "codeName" : "Mob",
                   "controlType" : "PANEL",
@@ -1060,11 +1063,14 @@
                 "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
                 "getItemPSLayoutPanel" : {
                   "getAllPSPanelFields" : [ {
-                    "id" : "date"
+                    "id" : "date",
+                    "viewFieldName" : "date"
                   }, {
-                    "id" : "actor"
+                    "id" : "actor",
+                    "viewFieldName" : "actor"
                   }, {
-                    "id" : "actions"
+                    "id" : "actions",
+                    "viewFieldName" : "actions"
                   } ],
                   "codeName" : "Mob",
                   "controlType" : "PANEL",

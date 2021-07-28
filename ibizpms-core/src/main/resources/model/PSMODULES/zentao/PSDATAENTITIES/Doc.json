@@ -9,11 +9,12 @@
     "orderValue" : 1,
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN",
+      "output" : true
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "VOID"
     },
     "userCat" : "CAT1",
     "builtinAction" : true
@@ -27,11 +28,12 @@
     "orderValue" : 11,
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN",
+      "output" : true
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "VOID"
     },
     "userCat" : "CAT1",
     "builtinAction" : true
@@ -81,7 +83,7 @@
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "builtinAction" : true
   }, {
@@ -94,11 +96,11 @@
     "orderValue" : 41,
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "builtinAction" : true
   }, {
@@ -110,7 +112,7 @@
     "name" : "ByVersionUpdateContext",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -125,7 +127,7 @@
     "name" : "CheckKey",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -142,7 +144,7 @@
     "name" : "Collect",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -161,7 +163,7 @@
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     }
   }, {
     "actionMode" : "CUSTOM",
@@ -172,7 +174,7 @@
     "name" : "OnlyCollectDoc",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -187,7 +189,7 @@
     "name" : "OnlyUnCollectDoc",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -202,7 +204,7 @@
     "name" : "Save",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -218,7 +220,7 @@
     "name" : "UnCollect",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",

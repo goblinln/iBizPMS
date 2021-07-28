@@ -19,11 +19,14 @@
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
   "getItemPSLayoutPanel" : {
     "getAllPSPanelFields" : [ {
-      "id" : "date"
+      "id" : "date",
+      "viewFieldName" : "date"
     }, {
-      "id" : "consumed"
+      "id" : "consumed",
+      "viewFieldName" : "consumed"
     }, {
-      "id" : "left"
+      "id" : "left",
+      "viewFieldName" : "left"
     } ],
     "codeName" : "MobEstimate",
     "controlType" : "PANEL",

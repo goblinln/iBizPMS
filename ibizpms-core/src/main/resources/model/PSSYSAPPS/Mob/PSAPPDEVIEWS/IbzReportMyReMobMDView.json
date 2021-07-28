@@ -209,19 +209,25 @@
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "id" : "account"
+        "id" : "account",
+        "viewFieldName" : "account"
       }, {
-        "id" : "submittime"
+        "id" : "submittime",
+        "viewFieldName" : "submittime"
       }, {
-        "id" : "worktoday"
+        "id" : "worktoday",
+        "viewFieldName" : "worktoday"
       }, {
-        "id" : "planstomorrow"
+        "id" : "planstomorrow",
+        "viewFieldName" : "planstomorrow"
       }, {
         "id" : "type",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "type"
       }, {
         "id" : "issubmit",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "issubmit"
       } ],
       "codeName" : "MySubmit",
       "controlType" : "PANEL",

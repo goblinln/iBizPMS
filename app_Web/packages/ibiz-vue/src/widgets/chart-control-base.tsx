@@ -959,14 +959,14 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                         // 序列属性存在时
                         // 序列代码表存在时,翻译tempSeriesValues的键值对
                         if (singleSeries.seriesCodeList) {
-                            const seriesCodeList: Map<string, any> = allCodeList.get(singleSeries.seriesCodeList.codeName);
+                            const seriesCodeList: Map<string, any> = allCodeList.get(singleSeries.seriesCodeList.tag);
                             let tempSeriesValueItem = tempSeriesValues.get(
                                 seriesCodeList.get(item[singleSeries.seriesIdField]),
                             );
                             if (!tempSeriesValueItem) {
                                 tempSeriesValues.set(
                                     seriesCodeList.get(item[singleSeries.seriesIdField]),
-                                    seriesCodeList.get(item[singleSeries.seriesIdField]),
+                                    seriesCodeList.get(item[singleSeries.seriesNameField])
                                 );
                             }
                         } else {
@@ -974,7 +974,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                             if (!tempSeriesValueItem) {
                                 tempSeriesValues.set(
                                     item[singleSeries.seriesIdField],
-                                    item[singleSeries.seriesNameField],
+                                    item[singleSeries.seriesNameField]
                                 );
                             }
                         }
@@ -997,7 +997,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                 this.completeDataSet(tempChartSetData, singleSeries, allCodeList);
                 // 序列代码表存在时,补全序列
                 if (singleSeries.seriesCodeList) {
-                    const seriesCodeList: Map<string, any> = allCodeList.get(singleSeries.seriesCodeList.codeName);
+                    const seriesCodeList: Map<string, any> = allCodeList.get(singleSeries.seriesCodeList.tag);
                     tempSeriesValues = new Map();
                     seriesCodeList?.forEach((item: any) => {
                         tempSeriesValues.set(item, item);

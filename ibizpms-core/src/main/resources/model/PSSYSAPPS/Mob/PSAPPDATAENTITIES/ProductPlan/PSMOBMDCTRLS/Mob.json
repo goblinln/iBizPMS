@@ -19,15 +19,20 @@
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
   "getItemPSLayoutPanel" : {
     "getAllPSPanelFields" : [ {
-      "id" : "title"
+      "id" : "title",
+      "viewFieldName" : "title"
     }, {
-      "id" : "begin"
+      "id" : "begin",
+      "viewFieldName" : "begin"
     }, {
-      "id" : "end"
+      "id" : "end",
+      "viewFieldName" : "end"
     }, {
-      "id" : "storycnt"
+      "id" : "storycnt",
+      "viewFieldName" : "storycnt"
     }, {
-      "id" : "bugcnt"
+      "id" : "bugcnt",
+      "viewFieldName" : "bugcnt"
     } ],
     "codeName" : "Mob",
     "controlType" : "PANEL",

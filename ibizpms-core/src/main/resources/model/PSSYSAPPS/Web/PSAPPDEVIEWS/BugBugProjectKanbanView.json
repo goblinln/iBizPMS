@@ -485,53 +485,73 @@
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "id" : "name"
+        "id" : "name",
+        "viewFieldName" : "TITLE"
       }, {
-        "id" : "severity"
+        "id" : "severity",
+        "viewFieldName" : "severity"
       }, {
-        "id" : "pri"
+        "id" : "pri",
+        "viewFieldName" : "PRI"
       }, {
-        "id" : "deadline"
+        "id" : "deadline",
+        "viewFieldName" : "DEADLINE"
       }, {
-        "id" : "delay"
+        "id" : "delay",
+        "viewFieldName" : "DELAY"
       }, {
-        "id" : "resolveddate"
+        "id" : "resolveddate",
+        "viewFieldName" : "RESOLVEDDATE"
       }, {
-        "id" : "delayresolve"
+        "id" : "delayresolve",
+        "viewFieldName" : "DELAYRESOLVE"
       }, {
-        "id" : "resolvedby"
+        "id" : "resolvedby",
+        "viewFieldName" : "RESOLVEDBY"
       }, {
-        "id" : "closeddate"
+        "id" : "closeddate",
+        "viewFieldName" : "CLOSEDDATE"
       }, {
-        "id" : "closedby"
+        "id" : "closedby",
+        "viewFieldName" : "CLOSEDBY"
       }, {
-        "id" : "resolution"
+        "id" : "resolution",
+        "viewFieldName" : "RESOLUTION"
       }, {
-        "id" : "assignedto"
+        "id" : "assignedto",
+        "viewFieldName" : "ASSIGNEDTO"
       }, {
         "id" : "product",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "PRODUCT"
       }, {
         "id" : "project",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "PROJECT"
       }, {
         "id" : "confirmed",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "CONFIRMED"
       }, {
         "id" : "isfavorites",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "ISFAVORITES"
       }, {
         "id" : "module",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "MODULE"
       }, {
         "id" : "srfkey",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "id"
       }, {
         "id" : "story",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "STORY"
       }, {
         "id" : "status",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "STATUS"
       } ],
       "codeName" : "BugKanBan",
       "controlType" : "PANEL",

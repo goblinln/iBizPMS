@@ -19,9 +19,11 @@
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
   "getItemPSLayoutPanel" : {
     "getAllPSPanelFields" : [ {
-      "id" : "name"
+      "id" : "name",
+      "viewFieldName" : "name"
     }, {
-      "id" : "date"
+      "id" : "date",
+      "viewFieldName" : "date"
     } ],
     "codeName" : "Mob_8373",
     "controlType" : "PANEL",

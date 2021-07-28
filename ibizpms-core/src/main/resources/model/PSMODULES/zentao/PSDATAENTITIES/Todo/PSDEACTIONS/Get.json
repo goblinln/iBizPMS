@@ -37,7 +37,7 @@
   },
   "getPSDEActionReturn" : {
     "name" : "返回对象",
-    "type" : "ENTITY"
+    "type" : "DOMAIN"
   },
   "builtinAction" : true
 }

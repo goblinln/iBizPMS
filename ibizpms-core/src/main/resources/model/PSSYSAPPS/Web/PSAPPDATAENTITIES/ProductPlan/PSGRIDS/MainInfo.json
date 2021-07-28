@@ -176,6 +176,9 @@
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
     "caption" : "编号",
+    "getCellPSSysCss" : {
+      "cssName" : "treegrid-column-align"
+    },
     "codeName" : "id",
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "id",

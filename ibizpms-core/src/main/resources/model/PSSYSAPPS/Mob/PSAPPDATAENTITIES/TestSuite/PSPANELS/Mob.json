@@ -1,10 +1,13 @@
 {
   "getAllPSPanelFields" : [ {
-    "id" : "name"
+    "id" : "name",
+    "viewFieldName" : "name"
   }, {
-    "id" : "addedby"
+    "id" : "addedby",
+    "viewFieldName" : "addedby"
   }, {
-    "id" : "addeddate"
+    "id" : "addeddate",
+    "viewFieldName" : "addeddate"
   } ],
   "codeName" : "Mob",
   "controlType" : "PANEL",

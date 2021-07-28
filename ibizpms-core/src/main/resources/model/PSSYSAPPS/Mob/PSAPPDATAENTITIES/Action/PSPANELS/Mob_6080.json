@@ -1,12 +1,16 @@
 {
   "getAllPSPanelFields" : [ {
-    "id" : "date1"
+    "id" : "date1",
+    "viewFieldName" : "date1"
   }, {
-    "id" : "actor"
+    "id" : "actor",
+    "viewFieldName" : "actor"
   }, {
-    "id" : "actions"
+    "id" : "actions",
+    "viewFieldName" : "actions"
   }, {
-    "id" : "objecttype"
+    "id" : "objecttype",
+    "viewFieldName" : "objecttype"
   } ],
   "codeName" : "Mob_6080",
   "controlType" : "PANEL",

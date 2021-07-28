@@ -870,15 +870,20 @@
               "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
               "getItemPSLayoutPanel" : {
                 "getAllPSPanelFields" : [ {
-                  "id" : "mytodocnt"
+                  "id" : "mytodocnt",
+                  "viewFieldName" : "mytodocnt"
                 }, {
-                  "id" : "mystorys"
+                  "id" : "mystorys",
+                  "viewFieldName" : "mystorys"
                 }, {
-                  "id" : "mytasks"
+                  "id" : "mytasks",
+                  "viewFieldName" : "mytasks"
                 }, {
-                  "id" : "mybugs"
+                  "id" : "mybugs",
+                  "viewFieldName" : "mybugs"
                 }, {
-                  "id" : "myfavoritebugs"
+                  "id" : "myfavoritebugs",
+                  "viewFieldName" : "MYFAVORITEBUGS"
                 } ],
                 "codeName" : "PersonInfoMianBan",
                 "controlType" : "PANEL",

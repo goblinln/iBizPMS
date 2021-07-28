@@ -8,7 +8,7 @@
   "name" : "testsuitelinkCase",
   "getPSDEActionInput" : {
     "name" : "输入对象",
-    "type" : "ENTITIES"
+    "type" : "DOMAINS"
   },
   "getPSDEActionReturn" : {
     "name" : "返回对象",

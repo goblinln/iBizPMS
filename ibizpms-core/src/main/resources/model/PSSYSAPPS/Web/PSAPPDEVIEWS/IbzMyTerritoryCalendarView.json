@@ -96,15 +96,20 @@
       },
       "getPSLayoutPanel" : {
         "getAllPSPanelFields" : [ {
-          "id" : "pri"
+          "id" : "pri",
+          "viewFieldName" : "pri"
         }, {
-          "id" : "title"
+          "id" : "title",
+          "viewFieldName" : "title"
         }, {
-          "id" : "status"
+          "id" : "status",
+          "viewFieldName" : "status"
         }, {
-          "id" : "resolution"
+          "id" : "resolution",
+          "viewFieldName" : "resolution"
         }, {
-          "id" : "assignedto"
+          "id" : "assignedto",
+          "viewFieldName" : "assignedto"
         } ],
         "codeName" : "Mob",
         "controlType" : "PANEL",
@@ -378,15 +383,20 @@
       },
       "getPSLayoutPanel" : {
         "getAllPSPanelFields" : [ {
-          "id" : "pri"
+          "id" : "pri",
+          "viewFieldName" : "pri"
         }, {
-          "id" : "name"
+          "id" : "name",
+          "viewFieldName" : "name"
         }, {
-          "id" : "status"
+          "id" : "status",
+          "viewFieldName" : "status"
         }, {
-          "id" : "assignedto"
+          "id" : "assignedto",
+          "viewFieldName" : "assignedto"
         }, {
-          "id" : "left"
+          "id" : "left",
+          "viewFieldName" : " left"
         } ],
         "codeName" : "Mob",
         "controlType" : "PANEL",
@@ -647,15 +657,20 @@
       },
       "getPSLayoutPanel" : {
         "getAllPSPanelFields" : [ {
-          "id" : "pri"
+          "id" : "pri",
+          "viewFieldName" : "pri"
         }, {
-          "id" : "name"
+          "id" : "name",
+          "viewFieldName" : "name"
         }, {
-          "id" : "date1"
+          "id" : "date1",
+          "viewFieldName" : "date1"
         }, {
-          "id" : "begin"
+          "id" : "begin",
+          "viewFieldName" : "begin"
         }, {
-          "id" : "status"
+          "id" : "status",
+          "viewFieldName" : "status"
         } ],
         "codeName" : "Mob",
         "controlType" : "PANEL",
@@ -933,9 +948,11 @@
       },
       "getPSLayoutPanel" : {
         "getAllPSPanelFields" : [ {
-          "id" : "account"
+          "id" : "account",
+          "viewFieldName" : "account"
         }, {
-          "id" : "role"
+          "id" : "role",
+          "viewFieldName" : "role"
         } ],
         "codeName" : "Mob",
         "controlType" : "PANEL",

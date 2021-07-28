@@ -9,11 +9,12 @@
     "orderValue" : 1,
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN",
+      "output" : true
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "VOID"
     },
     "userCat" : "CAT1",
     "builtinAction" : true
@@ -27,11 +28,12 @@
     "orderValue" : 11,
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN",
+      "output" : true
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "VOID"
     },
     "userCat" : "CAT1",
     "builtinAction" : true
@@ -82,7 +84,7 @@
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "builtinAction" : true
   }, {
@@ -108,11 +110,11 @@
     "orderValue" : 41,
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "builtinAction" : true
   }, {
@@ -124,7 +126,7 @@
     "name" : "BatchLinkBug",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -139,7 +141,7 @@
     "name" : "BatchLinkStory",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -154,7 +156,7 @@
     "name" : "BatchUnlinkBug",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -170,7 +172,7 @@
     "name" : "BatchUnlinkStory",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -186,7 +188,7 @@
     "name" : "CheckKey",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -203,7 +205,7 @@
     "name" : "EeActivePlan",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -219,7 +221,7 @@
     "name" : "EeCancelPlan",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -235,7 +237,7 @@
     "name" : "EeClosePlan",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -251,7 +253,7 @@
     "name" : "EeFinishPlan",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -267,7 +269,7 @@
     "name" : "EePausePlan",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -283,7 +285,7 @@
     "name" : "EeRestartPlan",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -299,7 +301,7 @@
     "name" : "EeStartPlan",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -319,7 +321,7 @@
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -338,7 +340,7 @@
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     }
   }, {
     "actionMode" : "CUSTOM",
@@ -349,7 +351,7 @@
     "name" : "ImportPlanTemplet",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -364,7 +366,7 @@
     "name" : "LinkBug",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -380,7 +382,7 @@
     "name" : "LinkStory",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -396,7 +398,7 @@
     "name" : "LinkTask",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -412,7 +414,7 @@
     "name" : "MobProductPlanCounter",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -431,7 +433,7 @@
     "name" : "Save",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -447,7 +449,7 @@
     "name" : "UnlinkBug",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",
@@ -463,7 +465,7 @@
     "name" : "UnlinkStory",
     "getPSDEActionInput" : {
       "name" : "输入对象",
-      "type" : "ENTITY"
+      "type" : "DOMAIN"
     },
     "getPSDEActionReturn" : {
       "name" : "返回对象",

@@ -394,6 +394,7 @@ export class AppPanelBase extends PanelControlBase {
                             containerCtrl={this.controlInstance}
                             parentItem={modelJson}
                             contextData={this.data}
+                            valueFormat={modelJson.valueFormat}
                             context={this.context}
                             viewparams={this.viewparams}
                             disabled={this.detailsModel[modelJson.name]?.disabled}

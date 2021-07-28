@@ -135,7 +135,7 @@ export class AppDeLogicPrepareParamNode extends AppDeLogicNodeBase {
             expression = this.translateExpression(expression);
             return eval(expression);
         } catch (error) {
-            LogUtil.warn(`表达式计算异常`);
+            LogUtil.warn(`表达式计算异常: ${error}`);
             return undefined;
         }
     }

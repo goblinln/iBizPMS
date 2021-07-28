@@ -1,14 +1,19 @@
 {
   "getAllPSPanelFields" : [ {
-    "id" : "pri"
+    "id" : "pri",
+    "viewFieldName" : "pri"
   }, {
-    "id" : "title"
+    "id" : "title",
+    "viewFieldName" : "title"
   }, {
-    "id" : "type"
+    "id" : "type",
+    "viewFieldName" : "type"
   }, {
-    "id" : "status1"
+    "id" : "status1",
+    "viewFieldName" : "status1"
   }, {
-    "id" : "lastrunresult"
+    "id" : "lastrunresult",
+    "viewFieldName" : "lastrunresult"
   } ],
   "codeName" : "Mob",
   "controlType" : "PANEL",

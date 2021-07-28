@@ -63,17 +63,22 @@
         "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
         "getItemPSLayoutPanel" : {
           "getAllPSPanelFields" : [ {
-            "id" : "name"
+            "id" : "name",
+            "viewFieldName" : "name"
           }, {
             "id" : "marker",
-            "hidden" : true
+            "hidden" : true,
+            "viewFieldName" : "marker"
           }, {
-            "id" : "buildname"
+            "id" : "buildname",
+            "viewFieldName" : "buildname"
           }, {
-            "id" : "date"
+            "id" : "date",
+            "viewFieldName" : "date"
           }, {
             "id" : "status",
-            "hidden" : true
+            "hidden" : true,
+            "viewFieldName" : "status"
           } ],
           "codeName" : "Mob",
           "controlType" : "PANEL",

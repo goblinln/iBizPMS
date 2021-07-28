@@ -32,57 +32,76 @@
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "getItemPSLayoutPanel" : {
     "getAllPSPanelFields" : [ {
-      "id" : "name"
+      "id" : "name",
+      "viewFieldName" : "NAME"
     }, {
-      "id" : "deadline"
+      "id" : "deadline",
+      "viewFieldName" : "DEADLINE"
     }, {
-      "id" : "delay"
+      "id" : "delay",
+      "viewFieldName" : "DELAY"
     }, {
-      "id" : "assignedto"
+      "id" : "assignedto",
+      "viewFieldName" : "ASSIGNEDTO"
     }, {
-      "id" : "left"
+      "id" : "left",
+      "viewFieldName" : "left"
     }, {
       "id" : "project",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "PROJECT"
     }, {
       "id" : "module",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "MODULE"
     }, {
       "id" : "srfkey",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "id"
     }, {
       "id" : "story",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "STORY"
     }, {
       "id" : "pri",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "PRI"
     }, {
       "id" : "desc",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "DESC"
     }, {
       "id" : "mailto",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "MAILTO"
     }, {
       "id" : "parent",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "PARENT"
     }, {
       "id" : "eststarted",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "ESTSTARTED"
     }, {
       "id" : "consumed",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "CONSUMED"
     }, {
       "id" : "color",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "COLOR"
     }, {
       "id" : "isfavorites",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : " ISFAVORITES"
     }, {
       "id" : "status1",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "STATUS1"
     }, {
       "id" : "tasktype",
-      "hidden" : true
+      "hidden" : true,
+      "viewFieldName" : "TASKTYPE"
     } ],
     "codeName" : "TaskKanBan",
     "controlType" : "PANEL",

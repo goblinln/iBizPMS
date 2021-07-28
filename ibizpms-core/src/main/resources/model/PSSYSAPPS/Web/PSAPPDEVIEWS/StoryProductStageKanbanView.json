@@ -216,28 +216,37 @@
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "getItemPSLayoutPanel" : {
       "getAllPSPanelFields" : [ {
-        "id" : "title"
+        "id" : "title",
+        "viewFieldName" : "TITLE"
       }, {
-        "id" : "pri"
+        "id" : "pri",
+        "viewFieldName" : "pri"
       }, {
-        "id" : "status"
+        "id" : "status",
+        "viewFieldName" : "status"
       }, {
-        "id" : "estimate"
+        "id" : "estimate",
+        "viewFieldName" : "estimate"
       }, {
         "id" : "srfkey",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "id"
       }, {
         "id" : "stage",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "stage"
       }, {
         "id" : "story",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "story"
       }, {
         "id" : "isfavorites",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "ISFAVORITES"
       }, {
         "id" : "ischild",
-        "hidden" : true
+        "hidden" : true,
+        "viewFieldName" : "ISCHILD"
       } ],
       "codeName" : "ProductStoryKanBan",
       "controlType" : "PANEL",
