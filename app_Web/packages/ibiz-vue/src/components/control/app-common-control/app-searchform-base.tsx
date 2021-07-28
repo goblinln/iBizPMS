@@ -542,6 +542,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
                 ref={this.controlInstance.name}
                 id={formId}
                 on-on-valuidate={this.formItemValidate.bind(this)}
+                nativeOnkeyup={this.onKeyUp.bind(this)}
             >
                 <input style='display:none;' />
                 <row>
@@ -566,8 +567,8 @@ export class AppSearchFormBase extends SearchFormControlBase {
                                             label={item.name}
                                             value={item.value}
                                             >
-                                                <div on-click={() => { if (this.selectItem == item.value) { this.data = JSON.parse(JSON.stringify(item.data)); } }}>
-                                                    <span>{item.name}</span>
+                                                <div class="searchform-action-item" on-click={() => { if (this.selectItem == item.value) { this.data = JSON.parse(JSON.stringify(item.data)); } }}>
+                                                    <span title={item.name}>{item.name}</span>
                                                     <i class="el-icon-close" on-click={(e: any) => throttle(this.removeHistoryItem,[e, item],this)}/>
                                                 </div>
                                             </el-option>

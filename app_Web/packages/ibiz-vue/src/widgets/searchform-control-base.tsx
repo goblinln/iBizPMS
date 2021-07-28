@@ -1,7 +1,8 @@
 import { IPSApplication, IPSAppUtil, IPSControlHandler } from '@ibiz/dynamic-model-api';
 import { EditFormControlBase } from './editform-control-base';
 import moment from 'moment';
-import { GetModelService, LogUtil, SearchFormControlInterface } from 'ibiz-core';
+import { GetModelService, LogUtil, SearchFormControlInterface, Util } from 'ibiz-core';
+import { CodeListTranslator } from '../app-service';
 /**
  * 搜索表单部件基类
  *
@@ -10,6 +11,14 @@ import { GetModelService, LogUtil, SearchFormControlInterface } from 'ibiz-core'
  * @extends {EditFormControlBase}
  */
 export class SearchFormControlBase extends EditFormControlBase implements SearchFormControlInterface {
+
+    /**
+     * 代码表翻译器实例
+     * 
+     * @typedef {CodeListTranslator}
+     * @memberof SearchFormControlBase
+     */
+    public codeListTranslator: CodeListTranslator = new CodeListTranslator();
 
     /**
      * 是否展开搜索表单
@@ -362,10 +371,14 @@ export class SearchFormControlBase extends EditFormControlBase implements Search
      * @return {*}
      * @memberof SearchFormControlBase
      */
-    public onSave(name?: string) {
+    public async onSave(name?: string) {
+        if (Util.isEmptyObject(this.data)) {
+            LogUtil.warn(this.$t('app.searchform.nosearchparam'));
+            return;
+        }
         let time = moment();
         this.historyItems.push({
-            name: (name ? name : time.format('YYYY-MM-DD HH:mm:ss')),
+            name: await this.getSaveName(name),
             value: time.unix().toString(),
             data: JSON.parse(JSON.stringify(this.data))
         })
@@ -378,12 +391,12 @@ export class SearchFormControlBase extends EditFormControlBase implements Search
             utilServiceName: this.utilServiceName,
             ...this.viewparams
         });
-        let post = this.service.saveModel(this.utilServiceName, this.context, param);
-        post.then((response: any) => {
+        try {
+            const response = await this.service.saveModel(this.utilServiceName, this.context, param);
             this.ctrlEvent({ controlname: this.controlInstance.name, action: "save", data: response.data });
-        }).catch((response: any) => {
-            LogUtil.log(response);
-        });
+        } catch(error: any) {
+            LogUtil.error(error);
+        }
     }
 
     /**
@@ -407,5 +420,76 @@ export class SearchFormControlBase extends EditFormControlBase implements Search
      */
     public onReset() {
         this.loadDraft({}, 'RESET');
+    }
+
+    /**
+     * 开启自动搜索时，值变更触发搜索
+     * 
+     * @param $event 
+     * @memberof SearchFormControlBase
+     */
+    public onFormItemValueChange($event: { name: string, value: any }): void {
+        super.onFormItemValueChange($event);
+        //  自动搜索
+        if ((this.controlInstance as any).enableAutoSearch) {
+            this.onSearch();
+        }
+    }
+
+    /**
+     * 监听回车事件
+     * 
+     * @memberof SearchFormControlBase
+     */
+    public onKeyUp(event: any) {
+        const e = event || window.event;
+        //  回车触发搜索
+        if (e && e.keyCode == '13') {
+            this.onSearch();
+        }
+    }
+
+    /**
+     * 保存查询条件时获取保存名称
+     * 
+     * @memberof SearchFormControlBase
+     */
+    public async getSaveName(name?: string): Promise<string> {
+        if (name) {
+            return name;
+        }
+        for (const key of Object.keys(this.data)) {
+            if (key.search(/n_\\S*_\\S*/) && Util.isExistAndNotEmpty(this.data[key])) {
+                const field = this.controlInstance.findPSDEFormItem(key)?.getPSAppDEField?.();
+                if (field) {
+                    const editItem = this.findFormItemByField(field.name);
+                    let value = await this.formatCodelistValue(this.data[key], editItem);
+                    if (editItem) {
+                        name += `${name == '' ? '' : ', '}${field.logicName}: ${value}`;
+                    }
+                }
+            }
+        }
+        return name || moment().unix().toString();
+    }
+
+    /**
+     * 转化代码表值
+     * 
+     * @memberof SearchFormControlBase
+     */
+    public async formatCodelistValue(value: any, item: any): Promise<any> {
+        const codeList = item.getPSEditor?.()?.getPSAppCodeList?.();
+        if (codeList) {
+            try {
+                let response = await this.codeListTranslator.getCodeListText(value, codeList, this, Util.deepCopy(this.context), Util.deepCopy(this.viewparams));
+                if (response) {
+                    return response;
+                }
+            } catch {
+                return value;
+            }
+        }
+        return value;
     }
 }

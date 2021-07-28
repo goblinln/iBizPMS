@@ -206,6 +206,7 @@ function getAppLocale(){
                 custom: "Store custom queries",
                 title: "Name",
                 globalerrortip:"Please check if the information is incorrect",
+                nosearchparam: "No search param"
             },
             wizardpanel: {
                 back: "Back",

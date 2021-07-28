@@ -628,6 +628,30 @@ export class Util {
         }
     }
 
+    /**
+     * 是否为空对象（包括值）
+     *
+     * @param source 源对象
+     * @memberof Util
+     */
+    public static isEmptyObject(source: any): boolean {
+        if (this.isEmpty(source)) {
+            return true;
+        } else {
+            if (source.toString() === "[object Object]") {
+                let flag: boolean = true;
+                for (const key of Object.keys(source)) {
+                    if (!this.isEmptyObject(source[key])) {
+                        flag = false;
+                    }
+                }
+                return flag;
+            } else {
+                return false;
+            }
+        }
+    }
+
 }
 /**
  * 创建 UUID

@@ -497,26 +497,27 @@ export class AppGridBase extends GridControlBase {
                         if (Util.isEmpty(actionModel) || actionModel.visabled) {
                             if (!uiactionDetail.showCaption) {
                                 return (
-                                    <a
-                                        class={columnClass}
-                                        title={this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag, uiaction.caption)}
-                                        disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
-                                        on-click={($event: any) => {
-                                          throttle(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
-                                        }}
-                                    >
-                                        {uiactionDetail.showIcon ? (
-                                            <i
-                                                class={
-                                                    uiaction && uiaction.getPSSysImage()?.cssClass
-                                                        ? uiaction.getPSSysImage()?.cssClass
-                                                        : 'fa fa-save'
-                                                }
-                                            ></i>
-                                        ) : (
-                                            ''
-                                        )}
-                                    </a>
+                                    <span title={this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag, uiaction.caption)}>
+                                        <a
+                                            class={columnClass}
+                                            disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
+                                            on-click={($event: any) => {
+                                            throttle(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
+                                            }}
+                                        >
+                                            {uiactionDetail.showIcon ? (
+                                                <i
+                                                    class={
+                                                        uiaction && uiaction.getPSSysImage()?.cssClass
+                                                            ? uiaction.getPSSysImage()?.cssClass
+                                                            : 'fa fa-save'
+                                                    }
+                                                ></i>
+                                            ) : (
+                                                ''
+                                            )}
+                                        </a>
+                                    </span>
                                 );
                             } else {
                                 return (

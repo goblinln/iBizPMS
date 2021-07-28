@@ -469,7 +469,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
         });
         if (service && service[action] && service[action] instanceof Function) {
             try {
-                const response: any = await service[action](Util.deepCopy(this.data), Util.deepCopy(this.context));
+                const response: any = await service[action](Util.deepCopy(this.context),this.data);
                 if (response && response.status == 200 && response.data) {
                     this.data = response.data;
                 }

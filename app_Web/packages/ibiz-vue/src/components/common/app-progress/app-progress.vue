@@ -6,7 +6,7 @@
       :color="color"
       :format="format"
       :show-text="showText"
-      :stroke-width="strokeWidth"
+      :stroke-width="parseInt(strokeWidth)"
     ></el-progress>
   </div>
 </template>
@@ -78,7 +78,7 @@ export default class AppProgress extends Vue {
    * @type {number}
    * @memberof AppProgress
    */
-  @Prop({ default: 6 }) public strokeWidth!: number;
+  @Prop({ default: '6' }) public strokeWidth!: string;
 
   /**
    * 当前值（百分比形式）
@@ -96,7 +96,7 @@ export default class AppProgress extends Vue {
    * @memberof AppProgress
    */
   public format(percentage: number) {
-    return this.value + " (" + percentage + "%)";
+    return this.value ? this.value + " (" + percentage + "%)" : "";
   }
 
   public mounted() {

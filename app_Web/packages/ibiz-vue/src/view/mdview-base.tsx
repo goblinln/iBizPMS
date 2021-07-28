@@ -39,7 +39,15 @@ export class MDViewBase extends MainViewBase implements MDViewInterface {
     public query: string = '';
 
     /**
-     * 是否展开搜索表单
+     * 是否展开搜索表单（接收参数）
+     * 
+     * @type {boolean}
+     * @memberof MDViewBase
+     */
+    public expandSearchForm: boolean = false;
+
+    /**
+     * 实际是否展开搜索表单
      *
      * @type {boolean}
      * @memberof MDViewBase
@@ -247,8 +255,40 @@ export class MDViewBase extends MainViewBase implements MDViewInterface {
         super.viewInit();
         // 初始化属性值
         this.query = '';
-        this.isExpandSearchForm = this.viewInstance?.expandSearchForm ? true : false;
+        this.expandSearchForm = this.viewInstance?.expandSearchForm ? true : false;
         this.initQuickSearchPlaceholder();
+    }
+
+    /**
+     * 视图挂载
+     * 
+     * @memberof MDViewBase
+     */
+    public viewMounted() {
+        super.viewMounted();
+        this.handleDefaultExpandSearchForm()
+    }
+
+    /**
+     * 处理默认展开搜索表单
+     * 
+     * @memberof MDViewBase
+     */
+    public handleDefaultExpandSearchForm() {
+        //  默认展开搜索表单
+        if (this.expandSearchForm) {
+            //  搜索表单以弹框展示
+            if (this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) {
+                this.$nextTick(() => {
+                    const element = document.querySelector('button.filter');
+                    if (element) {
+                        (element as HTMLElement).click();
+                    }
+                })
+            } else {
+                this.isExpandSearchForm = this.expandSearchForm;
+            }
+        }
     }
 
     /**

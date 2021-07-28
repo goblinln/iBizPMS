@@ -203,6 +203,7 @@ function getAppLocale(){
                 },
                 custom: "存储自定义查询",
                 globalerrortip:"填写信息有误，请检查",
+                nosearchparam: "无搜索条件"
             },
             wizardpanel: {
                 back: "上一步",
