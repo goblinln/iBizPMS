@@ -50,7 +50,7 @@ public class IBZProStory extends EntityMP implements Serializable {
      * 版本号
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "`VERSION`")
+    @TableField(value = "version")
     @JSONField(name = "version")
     @JsonProperty("version")
     @ApiModelProperty("版本号")
@@ -58,7 +58,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 来源备注
      */
-    @TableField(value = "`SOURCENOTE`")
+    @TableField(value = "sourcenote")
     @JSONField(name = "sourcenote")
     @JsonProperty("sourcenote")
     @ApiModelProperty("来源备注")
@@ -66,7 +66,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 抄送给
      */
-    @TableField(value = "`MAILTO`")
+    @TableField(value = "mailto")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
     @ApiModelProperty("抄送给")
@@ -74,7 +74,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 设置阶段者
      */
-    @TableField(value = "`STAGEDBY`")
+    @TableField(value = "stagedby")
     @JSONField(name = "stagedby")
     @JsonProperty("stagedby")
     @ApiModelProperty("设置阶段者")
@@ -83,7 +83,7 @@ public class IBZProStory extends EntityMP implements Serializable {
      * 已删除
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID)
-    @TableField(value = "`DELETED`")
+    @TableField(value = "deleted")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -92,7 +92,7 @@ public class IBZProStory extends EntityMP implements Serializable {
      * 来源对象名称
      */
     @DEField(name = "ibiz_sourcename")
-    @TableField(value = "`IBIZ_SOURCENAME`")
+    @TableField(value = "ibiz_sourcename")
     @JSONField(name = "ibiz_sourcename")
     @JsonProperty("ibiz_sourcename")
     @ApiModelProperty("来源对象名称")
@@ -100,7 +100,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 优先级
      */
-    @TableField(value = "`PRI`")
+    @TableField(value = "pri")
     @JSONField(name = "pri")
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
@@ -108,7 +108,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 需求阶段
      */
-    @TableField(value = "`STAGE`")
+    @TableField(value = "stage")
     @JSONField(name = "stage")
     @JsonProperty("stage")
     @ApiModelProperty("需求阶段")
@@ -116,7 +116,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 由谁关闭
      */
-    @TableField(value = "`CLOSEDBY`")
+    @TableField(value = "closedby")
     @JSONField(name = "closedby")
     @JsonProperty("closedby")
     @ApiModelProperty("由谁关闭")
@@ -132,7 +132,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 关闭日期	
      */
-    @TableField(value = "`CLOSEDDATE`")
+    @TableField(value = "closeddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "closeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("closeddate")
@@ -141,7 +141,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 相关需求
      */
-    @TableField(value = "`LINKSTORIES`")
+    @TableField(value = "linkstories")
     @JSONField(name = "linkstories")
     @JsonProperty("linkstories")
     @ApiModelProperty("相关需求")
@@ -149,7 +149,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 需求类型
      */
-    @TableField(value = "`TYPE`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("需求类型")
@@ -157,7 +157,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 重复需求
      */
-    @TableField(value = "`DUPLICATESTORY`")
+    @TableField(value = "duplicatestory")
     @JSONField(name = "duplicatestory")
     @JsonProperty("duplicatestory")
     @ApiModelProperty("重复需求")
@@ -165,7 +165,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 平台
      */
-    @TableField(value = "`BRANCH`")
+    @TableField(value = "branch")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("平台")
@@ -173,7 +173,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 关键词
      */
-    @TableField(value = "`KEYWORDS`")
+    @TableField(value = "keywords")
     @JSONField(name = "keywords")
     @JsonProperty("keywords")
     @ApiModelProperty("关键词")
@@ -181,7 +181,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 需求细分
      */
-    @TableField(value = "`CHILDSTORIES`")
+    @TableField(value = "childstories")
     @JSONField(name = "childstories")
     @JsonProperty("childstories")
     @ApiModelProperty("需求细分")
@@ -190,7 +190,7 @@ public class IBZProStory extends EntityMP implements Serializable {
      * 创建日期
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`OPENEDDATE`", fill = FieldFill.INSERT)
+    @TableField(value = "openeddate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "openeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("openeddate")
@@ -199,7 +199,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 转Bug
      */
-    @TableField(value = "`TOBUG`")
+    @TableField(value = "tobug")
     @JSONField(name = "tobug")
     @JsonProperty("tobug")
     @ApiModelProperty("转Bug")
@@ -216,7 +216,7 @@ public class IBZProStory extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -224,7 +224,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 关闭原因
      */
-    @TableField(value = "`CLOSEDREASON`")
+    @TableField(value = "closedreason")
     @JSONField(name = "closedreason")
     @JsonProperty("closedreason")
     @ApiModelProperty("关闭原因")
@@ -240,7 +240,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 来源Bug
      */
-    @TableField(value = "`FROMBUG`")
+    @TableField(value = "frombug")
     @JSONField(name = "frombug")
     @JsonProperty("frombug")
     @ApiModelProperty("来源Bug")
@@ -248,7 +248,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 最后修改者
      */
-    @TableField(value = "`LASTEDITEDBY`")
+    @TableField(value = "lasteditedby")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
     @ApiModelProperty("最后修改者")
@@ -256,7 +256,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 指派日期
      */
-    @TableField(value = "`ASSIGNEDDATE`")
+    @TableField(value = "assigneddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "assigneddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("assigneddate")
@@ -265,7 +265,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 子状态
      */
-    @TableField(value = "`SUBSTATUS`")
+    @TableField(value = "substatus")
     @JSONField(name = "substatus")
     @JsonProperty("substatus")
     @ApiModelProperty("子状态")
@@ -274,7 +274,7 @@ public class IBZProStory extends EntityMP implements Serializable {
      * 来源对象标识
      */
     @DEField(name = "ibiz_sourceid")
-    @TableField(value = "`IBIZ_SOURCEID`")
+    @TableField(value = "ibiz_sourceid")
     @JSONField(name = "ibiz_sourceid")
     @JsonProperty("ibiz_sourceid")
     @ApiModelProperty("来源对象标识")
@@ -282,7 +282,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 需求名称
      */
-    @TableField(value = "`TITLE`")
+    @TableField(value = "title")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("需求名称")
@@ -290,7 +290,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 最后修改日期
      */
-    @TableField(value = "`LASTEDITEDDATE`")
+    @TableField(value = "lastediteddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastediteddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastediteddate")
@@ -300,7 +300,7 @@ public class IBZProStory extends EntityMP implements Serializable {
      * 来源对象
      */
     @DEField(name = "ibiz_sourceobject")
-    @TableField(value = "`IBIZ_SOURCEOBJECT`")
+    @TableField(value = "ibiz_sourceobject")
     @JSONField(name = "ibiz_sourceobject")
     @JsonProperty("ibiz_sourceobject")
     @ApiModelProperty("来源对象")
@@ -309,7 +309,7 @@ public class IBZProStory extends EntityMP implements Serializable {
      * IBIZ标识
      */
     @DEField(name = "ibiz_id")
-    @TableField(value = "`IBIZ_ID`")
+    @TableField(value = "ibiz_id")
     @JSONField(name = "ibizid")
     @JsonProperty("ibizid")
     @ApiModelProperty("IBIZ标识")
@@ -325,7 +325,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 由谁评审
      */
-    @TableField(value = "`REVIEWEDBY`")
+    @TableField(value = "reviewedby")
     @JSONField(name = "reviewedby")
     @JsonProperty("reviewedby")
     @ApiModelProperty("由谁评审")
@@ -333,7 +333,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 指派给
      */
-    @TableField(value = "`ASSIGNEDTO`")
+    @TableField(value = "assignedto")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
     @ApiModelProperty("指派给")
@@ -342,7 +342,7 @@ public class IBZProStory extends EntityMP implements Serializable {
      * 需求来源
      */
     @DEField(defaultValue = "iBiz")
-    @TableField(value = "`SOURCE`")
+    @TableField(value = "source")
     @JSONField(name = "source")
     @JsonProperty("source")
     @ApiModelProperty("需求来源")
@@ -350,7 +350,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 预计工时
      */
-    @TableField(value = "`ESTIMATE`")
+    @TableField(value = "estimate")
     @JSONField(name = "estimate")
     @JsonProperty("estimate")
     @ApiModelProperty("预计工时")
@@ -358,7 +358,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @TableField(value = "`OPENEDBY`")
+    @TableField(value = "openedby")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
     @ApiModelProperty("由谁创建")
@@ -366,7 +366,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 评审时间
      */
-    @TableField(value = "`REVIEWEDDATE`")
+    @TableField(value = "revieweddate")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "revieweddate", format = "yyyy-MM-dd")
     @JsonProperty("revieweddate")
@@ -375,7 +375,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 颜色
      */
-    @TableField(value = "`COLOR`")
+    @TableField(value = "color")
     @JSONField(name = "color")
     @JsonProperty("color")
     @ApiModelProperty("颜色")
@@ -383,7 +383,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 状态
      */
-    @TableField(value = "`STATUS`")
+    @TableField(value = "status")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("状态")
@@ -391,7 +391,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 编号
      */
-    @TableField(value = "`PRODUCT`")
+    @TableField(value = "product")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("编号")
@@ -399,7 +399,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * id
      */
-    @TableField(value = "`MODULE`")
+    @TableField(value = "module")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("id")

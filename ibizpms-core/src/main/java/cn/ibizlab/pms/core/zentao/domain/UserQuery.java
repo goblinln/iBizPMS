@@ -50,7 +50,7 @@ public class UserQuery extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -58,7 +58,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * shortcut
      */
-    @TableField(value = "`SHORTCUT`")
+    @TableField(value = "shortcut")
     @JSONField(name = "shortcut")
     @JsonProperty("shortcut")
     @ApiModelProperty("shortcut")
@@ -66,7 +66,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * 用户查询编号
      */
-    @TableField(value = "`USERQUERYSN`")
+    @TableField(value = "userquerysn")
     @JSONField(name = "userquerysn")
     @JsonProperty("userquerysn")
     @ApiModelProperty("用户查询编号")
@@ -74,7 +74,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * sql
      */
-    @TableField(value = "`SQL`")
+    @TableField(value = "sql")
     @JSONField(name = "sql")
     @JsonProperty("sql")
     @ApiModelProperty("sql")
@@ -82,7 +82,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * title
      */
-    @TableField(value = "`TITLE`")
+    @TableField(value = "title")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("title")
@@ -90,7 +90,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * module
      */
-    @TableField(value = "`MODULE`")
+    @TableField(value = "module")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("module")
@@ -98,7 +98,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * form
      */
-    @TableField(value = "`FORM`")
+    @TableField(value = "form")
     @JSONField(name = "form")
     @JsonProperty("form")
     @ApiModelProperty("form")
@@ -106,7 +106,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * account
      */
-    @TableField(value = "`ACCOUNT`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("account")

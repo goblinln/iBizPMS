@@ -50,7 +50,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
+    @TableField(value = "createdate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -60,7 +60,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
+    @TableField(value = "updateman")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -68,7 +68,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
     /**
      * 年
      */
-    @TableField(value = "`YEAR`")
+    @TableField(value = "year")
     @JSONField(name = "year")
     @JsonProperty("year")
     @ApiModelProperty("年")
@@ -76,7 +76,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
     /**
      * 结束统计
      */
-    @TableField(value = "`ENDDATESTATS`")
+    @TableField(value = "enddatestats")
     @JSONField(name = "enddatestats")
     @JsonProperty("enddatestats")
     @ApiModelProperty("结束统计")
@@ -85,7 +85,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @TableField(value = "createman", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -93,7 +93,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
     /**
      * 任务
      */
-    @TableField(value = "`TASKS`")
+    @TableField(value = "tasks")
     @JSONField(name = "tasks")
     @JsonProperty("tasks")
     @ApiModelProperty("任务")
@@ -102,7 +102,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
      * 项目周报名称
      */
     @DEField(name = "ibzpro_projectweeklyname")
-    @TableField(value = "`IBZPRO_PROJECTWEEKLYNAME`")
+    @TableField(value = "ibzpro_projectweeklyname")
     @JSONField(name = "projectweeklyname")
     @JsonProperty("projectweeklyname")
     @ApiModelProperty("项目周报名称")
@@ -110,7 +110,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
     /**
      * 周
      */
-    @TableField(value = "`WEEK`")
+    @TableField(value = "week")
     @JSONField(name = "week")
     @JsonProperty("week")
     @ApiModelProperty("周")
@@ -119,7 +119,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
      * 项目周报标识
      */
     @DEField(name = "ibzpro_projectweeklyid", isKeyField = true)
-    @TableId(value = "`IBZPRO_PROJECTWEEKLYID`", type = IdType.ASSIGN_UUID)
+    @TableId(value = "ibzpro_projectweeklyid", type = IdType.ASSIGN_UUID)
     @JSONField(name = "projectweeklyid")
     @JsonProperty("projectweeklyid")
     @ApiModelProperty("项目周报标识")
@@ -127,7 +127,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
     /**
      * 项目负责人
      */
-    @TableField(value = "`PM`")
+    @TableField(value = "pm")
     @JSONField(name = "pm")
     @JsonProperty("pm")
     @ApiModelProperty("项目负责人")
@@ -135,7 +135,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
     /**
      * 日期
      */
-    @TableField(value = "`DATE`")
+    @TableField(value = "date")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -144,7 +144,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
     /**
      * 总工时
      */
-    @TableField(value = "`TOTALESTIMATES`")
+    @TableField(value = "totalestimates")
     @JSONField(name = "totalestimates")
     @JsonProperty("totalestimates")
     @ApiModelProperty("总工时")
@@ -152,7 +152,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
     /**
      * 开始统计
      */
-    @TableField(value = "`BEGINDATESTATS`")
+    @TableField(value = "begindatestats")
     @JSONField(name = "begindatestats")
     @JsonProperty("begindatestats")
     @ApiModelProperty("开始统计")
@@ -161,7 +161,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
+    @TableField(value = "updatedate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -170,7 +170,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
     /**
      * 月
      */
-    @TableField(value = "`MONTH`")
+    @TableField(value = "month")
     @JSONField(name = "month")
     @JsonProperty("month")
     @ApiModelProperty("月")
@@ -186,7 +186,7 @@ public class IbizproProjectWeekly extends EntityMP implements Serializable {
     /**
      * 项目编号
      */
-    @TableField(value = "`PROJECT`")
+    @TableField(value = "project")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("项目编号")

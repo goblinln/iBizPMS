@@ -50,7 +50,7 @@ public class Todo extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -59,7 +59,7 @@ public class Todo extends EntityMP implements Serializable {
      * 所有者
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`ACCOUNT`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("所有者")
@@ -99,7 +99,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 待办编号
      */
-    @TableField(value = "`TODOSN`")
+    @TableField(value = "todosn")
     @JSONField(name = "todosn")
     @JsonProperty("todosn")
     @ApiModelProperty("待办编号")
@@ -107,7 +107,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 关闭时间
      */
-    @TableField(value = "`CLOSEDDATE`")
+    @TableField(value = "closeddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "closeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("closeddate")
@@ -117,7 +117,7 @@ public class Todo extends EntityMP implements Serializable {
      * 由谁关闭
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CLOSEDBY`")
+    @TableField(value = "closedby")
     @JSONField(name = "closedby")
     @JsonProperty("closedby")
     @ApiModelProperty("由谁关闭")
@@ -125,7 +125,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 类型
      */
-    @TableField(value = "`TYPE`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("类型")
@@ -134,7 +134,7 @@ public class Todo extends EntityMP implements Serializable {
      * 结束
      */
     @DEField(defaultValue = "1800")
-    @TableField(value = "`END`")
+    @TableField(value = "end")
     @JSONField(name = "end")
     @JsonProperty("end")
     @ApiModelProperty("结束")
@@ -143,7 +143,7 @@ public class Todo extends EntityMP implements Serializable {
      * 描述
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`DESC`")
+    @TableField(value = "desc")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("描述")
@@ -152,7 +152,7 @@ public class Todo extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`UPDATEBY`")
+    @TableField(value = "updateby")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -169,7 +169,7 @@ public class Todo extends EntityMP implements Serializable {
      * 归属组织名
      */
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
+    @TableField(value = "orgname")
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
     @ApiModelProperty("归属组织名")
@@ -178,7 +178,7 @@ public class Todo extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORG`")
+    @TableField(value = "org")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -186,7 +186,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 由谁完成
      */
-    @TableField(value = "`FINISHEDBY`")
+    @TableField(value = "finishedby")
     @JSONField(name = "finishedby")
     @JsonProperty("finishedby")
     @ApiModelProperty("由谁完成")
@@ -195,7 +195,7 @@ public class Todo extends EntityMP implements Serializable {
      * 开始
      */
     @DEField(defaultValue = "600")
-    @TableField(value = "`BEGIN`")
+    @TableField(value = "begin")
     @JSONField(name = "begin")
     @JsonProperty("begin")
     @ApiModelProperty("开始")
@@ -204,7 +204,7 @@ public class Todo extends EntityMP implements Serializable {
      * 关联编号
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`IDVALUE`")
+    @TableField(value = "idvalue")
     @JSONField(name = "idvalue")
     @JsonProperty("idvalue")
     @ApiModelProperty("关联编号")
@@ -213,7 +213,7 @@ public class Todo extends EntityMP implements Serializable {
      * 由谁指派
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`ASSIGNEDBY`")
+    @TableField(value = "assignedby")
     @JSONField(name = "assignedby")
     @JsonProperty("assignedby")
     @ApiModelProperty("由谁指派")
@@ -222,7 +222,7 @@ public class Todo extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPT`")
+    @TableField(value = "dept")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -254,7 +254,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 完成时间
      */
-    @TableField(value = "`FINISHEDDATE`")
+    @TableField(value = "finisheddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "finisheddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("finisheddate")
@@ -264,7 +264,7 @@ public class Todo extends EntityMP implements Serializable {
      * 周期
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`CYCLE`")
+    @TableField(value = "cycle")
     @JSONField(name = "cycle")
     @JsonProperty("cycle")
     @ApiModelProperty("周期")
@@ -289,7 +289,7 @@ public class Todo extends EntityMP implements Serializable {
      * 指派给
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`ASSIGNEDTO`")
+    @TableField(value = "assignedto")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
     @ApiModelProperty("指派给")
@@ -298,7 +298,7 @@ public class Todo extends EntityMP implements Serializable {
      * 状态
      */
     @DEField(defaultValue = "wait")
-    @TableField(value = "`STATUS`")
+    @TableField(value = "status")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("状态")
@@ -314,7 +314,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 待办名称
      */
-    @TableField(value = "`NAME`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("待办名称")
@@ -322,7 +322,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 指派日期
      */
-    @TableField(value = "`ASSIGNEDDATE`")
+    @TableField(value = "assigneddate")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "assigneddate", format = "yyyy-MM-dd")
     @JsonProperty("assigneddate")
@@ -340,7 +340,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 费用
      */
-    @TableField(value = "`COST`")
+    @TableField(value = "cost")
     @JSONField(name = "cost")
     @JsonProperty("cost")
     @ApiModelProperty("费用")
@@ -349,7 +349,7 @@ public class Todo extends EntityMP implements Serializable {
      * 优先级
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`PRI`")
+    @TableField(value = "pri")
     @JSONField(name = "pri")
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
@@ -357,7 +357,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 日期
      */
-    @TableField(value = "`DATE`")
+    @TableField(value = "date")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -375,7 +375,7 @@ public class Todo extends EntityMP implements Serializable {
      * 私人事务
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`PRIVATE`")
+    @TableField(value = "private")
     @JSONField(name = "ibizprivate")
     @JsonProperty("ibizprivate")
     @ApiModelProperty("私人事务")
@@ -384,7 +384,7 @@ public class Todo extends EntityMP implements Serializable {
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
+    @TableField(value = "deptname")
     @JSONField(name = "deptname")
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
@@ -393,7 +393,7 @@ public class Todo extends EntityMP implements Serializable {
      * config
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CONFIG`")
+    @TableField(value = "config")
     @JSONField(name = "config")
     @JsonProperty("config")
     @ApiModelProperty("config")

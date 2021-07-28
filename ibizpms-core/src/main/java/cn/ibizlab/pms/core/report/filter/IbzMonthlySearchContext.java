@@ -67,7 +67,7 @@ public class IbzMonthlySearchContext extends QueryWrapperContext<IbzMonthly> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`IBZ_MONTHLYNAME`", query)
+                     wrapper.like("ibz_monthlyname", query)
             );
 		 }
 	}

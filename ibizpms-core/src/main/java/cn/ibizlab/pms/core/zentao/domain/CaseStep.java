@@ -58,7 +58,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPT`")
+    @TableField(value = "dept")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -83,7 +83,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 归属组织名
      */
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
+    @TableField(value = "orgname")
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
     @ApiModelProperty("归属组织名")
@@ -92,7 +92,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
+    @TableField(value = "deptname")
     @JSONField(name = "deptname")
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
@@ -101,7 +101,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 用例步骤类型
      */
     @DEField(defaultValue = "step")
-    @TableField(value = "`TYPE`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("用例步骤类型")
@@ -110,7 +110,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`CREATEBY`")
+    @TableField(value = "createby")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -119,7 +119,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 用例版本
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`VERSION`")
+    @TableField(value = "version")
     @JSONField(name = "version")
     @JsonProperty("version")
     @ApiModelProperty("用例版本")
@@ -128,7 +128,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -137,7 +137,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 步骤
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`DESC`")
+    @TableField(value = "desc")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("步骤")
@@ -145,7 +145,7 @@ public class CaseStep extends EntityMP implements Serializable {
     /**
      * 用例步骤编号
      */
-    @TableField(value = "`CASESTEPSN`")
+    @TableField(value = "casestepsn")
     @JSONField(name = "casestepsn")
     @JsonProperty("casestepsn")
     @ApiModelProperty("用例步骤编号")
@@ -154,7 +154,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 预期
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`EXPECT`")
+    @TableField(value = "expect")
     @JSONField(name = "expect")
     @JsonProperty("expect")
     @ApiModelProperty("预期")
@@ -171,7 +171,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`UPDATEBY`")
+    @TableField(value = "updateby")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -188,7 +188,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORG`")
+    @TableField(value = "org")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -197,7 +197,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 用例
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`CASE`")
+    @TableField(value = "case")
     @JSONField(name = "ibizcase")
     @JsonProperty("ibizcase")
     @ApiModelProperty("用例")
@@ -206,7 +206,7 @@ public class CaseStep extends EntityMP implements Serializable {
      * 分组用例步骤的组编号
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`PARENT`")
+    @TableField(value = "parent")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("分组用例步骤的组编号")

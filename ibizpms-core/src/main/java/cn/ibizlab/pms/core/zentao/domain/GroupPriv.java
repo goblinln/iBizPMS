@@ -50,7 +50,7 @@ public class GroupPriv extends EntityMP implements Serializable {
      * group
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`GROUP`")
+    @TableField(value = "group")
     @JSONField(name = "group")
     @JsonProperty("group")
     @ApiModelProperty("group")
@@ -58,7 +58,7 @@ public class GroupPriv extends EntityMP implements Serializable {
     /**
      * method
      */
-    @TableField(value = "`METHOD`")
+    @TableField(value = "method")
     @JSONField(name = "method")
     @JsonProperty("method")
     @ApiModelProperty("method")
@@ -67,7 +67,7 @@ public class GroupPriv extends EntityMP implements Serializable {
      * 主键
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
+    @TableId(value = "id", type = IdType.ASSIGN_UUID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("主键")
@@ -75,7 +75,7 @@ public class GroupPriv extends EntityMP implements Serializable {
     /**
      * module
      */
-    @TableField(value = "`MODULE`")
+    @TableField(value = "module")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("module")

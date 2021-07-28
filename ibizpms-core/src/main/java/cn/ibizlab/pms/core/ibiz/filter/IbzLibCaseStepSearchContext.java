@@ -52,7 +52,7 @@ public class IbzLibCaseStepSearchContext extends QueryWrapperContext<IbzLibCaseS
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`EXPECT`", query)
+                     wrapper.like("expect", query)
             );
 		 }
 	}

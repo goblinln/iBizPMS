@@ -49,7 +49,7 @@ public class ImConferenceaction extends EntityMP implements Serializable {
     /**
      * rid
      */
-    @TableField(value = "`RID`")
+    @TableField(value = "rid")
     @JSONField(name = "rid")
     @JsonProperty("rid")
     @ApiModelProperty("rid")
@@ -57,7 +57,7 @@ public class ImConferenceaction extends EntityMP implements Serializable {
     /**
      * type
      */
-    @TableField(value = "`TYPE`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("type")
@@ -66,7 +66,7 @@ public class ImConferenceaction extends EntityMP implements Serializable {
      * user
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`USER`")
+    @TableField(value = "user")
     @JSONField(name = "user")
     @JsonProperty("user")
     @ApiModelProperty("user")
@@ -75,7 +75,7 @@ public class ImConferenceaction extends EntityMP implements Serializable {
      * date
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "`DATE`")
+    @TableField(value = "date")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("date")
@@ -85,7 +85,7 @@ public class ImConferenceaction extends EntityMP implements Serializable {
      * id
      */
     @DEField(defaultValue = "0", isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")

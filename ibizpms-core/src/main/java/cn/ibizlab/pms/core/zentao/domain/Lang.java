@@ -49,7 +49,7 @@ public class Lang extends EntityMP implements Serializable {
     /**
      * module
      */
-    @TableField(value = "`MODULE`")
+    @TableField(value = "module")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("module")
@@ -58,7 +58,7 @@ public class Lang extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -66,7 +66,7 @@ public class Lang extends EntityMP implements Serializable {
     /**
      * key
      */
-    @TableField(value = "`KEY`")
+    @TableField(value = "key")
     @JSONField(name = "key")
     @JsonProperty("key")
     @ApiModelProperty("key")
@@ -74,7 +74,7 @@ public class Lang extends EntityMP implements Serializable {
     /**
      * section
      */
-    @TableField(value = "`SECTION`")
+    @TableField(value = "section")
     @JSONField(name = "section")
     @JsonProperty("section")
     @ApiModelProperty("section")
@@ -82,7 +82,7 @@ public class Lang extends EntityMP implements Serializable {
     /**
      * lang
      */
-    @TableField(value = "`LANG`")
+    @TableField(value = "lang")
     @JSONField(name = "lang")
     @JsonProperty("lang")
     @ApiModelProperty("lang")
@@ -90,7 +90,7 @@ public class Lang extends EntityMP implements Serializable {
     /**
      * system
      */
-    @TableField(value = "`SYSTEM`")
+    @TableField(value = "system")
     @JSONField(name = "system")
     @JsonProperty("system")
     @ApiModelProperty("system")
@@ -98,7 +98,7 @@ public class Lang extends EntityMP implements Serializable {
     /**
      * value
      */
-    @TableField(value = "`VALUE`")
+    @TableField(value = "value")
     @JSONField(name = "value")
     @JsonProperty("value")
     @ApiModelProperty("value")

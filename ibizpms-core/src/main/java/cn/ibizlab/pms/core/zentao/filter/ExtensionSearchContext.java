@@ -47,7 +47,7 @@ public class ExtensionSearchContext extends QueryWrapperContext<Extension> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`NAME`", query)
+                     wrapper.like("name", query)
             );
 		 }
 	}

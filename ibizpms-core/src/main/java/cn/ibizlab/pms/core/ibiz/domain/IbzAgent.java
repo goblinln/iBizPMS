@@ -50,7 +50,7 @@ public class IbzAgent extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
+    @TableField(value = "updateman")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -59,7 +59,7 @@ public class IbzAgent extends EntityMP implements Serializable {
      * 创建人姓名
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`CREATEMANNAME`")
+    @TableField(value = "createmanname")
     @JSONField(name = "createmanname")
     @JsonProperty("createmanname")
     @ApiModelProperty("创建人姓名")
@@ -67,7 +67,7 @@ public class IbzAgent extends EntityMP implements Serializable {
     /**
      * 代理结束日期
      */
-    @TableField(value = "`AGENTEND`")
+    @TableField(value = "agentend")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "agentend", format = "yyyy-MM-dd")
     @JsonProperty("agentend")
@@ -77,7 +77,7 @@ public class IbzAgent extends EntityMP implements Serializable {
      * 代理标识
      */
     @DEField(name = "ibz_agentid", isKeyField = true)
-    @TableId(value = "`IBZ_AGENTID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "ibz_agentid", type = IdType.ASSIGN_ID)
     @JSONField(name = "ibzagentid")
     @JsonProperty("ibzagentid")
     @ApiModelProperty("代理标识")
@@ -86,7 +86,7 @@ public class IbzAgent extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @TableField(value = "createman", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -95,7 +95,7 @@ public class IbzAgent extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
+    @TableField(value = "updatedate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -104,7 +104,7 @@ public class IbzAgent extends EntityMP implements Serializable {
     /**
      * 代理用户
      */
-    @TableField(value = "`AGENTUSER`")
+    @TableField(value = "agentuser")
     @JSONField(name = "agentuser")
     @JsonProperty("agentuser")
     @ApiModelProperty("代理用户")
@@ -113,7 +113,7 @@ public class IbzAgent extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
+    @TableField(value = "createdate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -122,7 +122,7 @@ public class IbzAgent extends EntityMP implements Serializable {
     /**
      * 代理开始日期
      */
-    @TableField(value = "`AGENTBEGIN`")
+    @TableField(value = "agentbegin")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "agentbegin", format = "yyyy-MM-dd")
     @JsonProperty("agentbegin")
@@ -132,7 +132,7 @@ public class IbzAgent extends EntityMP implements Serializable {
      * 代理名称
      */
     @DEField(name = "ibz_agentname")
-    @TableField(value = "`IBZ_AGENTNAME`")
+    @TableField(value = "ibz_agentname")
     @JSONField(name = "ibzagentname")
     @JsonProperty("ibzagentname")
     @ApiModelProperty("代理名称")

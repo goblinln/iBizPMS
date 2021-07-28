@@ -74,7 +74,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
      * 由谁取消
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CANCELEDBY`")
+    @TableField(value = "canceledby")
     @JSONField(name = "canceledby")
     @JsonProperty("canceledby")
     @ApiModelProperty("由谁取消")
@@ -99,7 +99,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -140,7 +140,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
      * 由谁关闭
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CLOSEDBY`")
+    @TableField(value = "closedby")
     @JSONField(name = "closedby")
     @JsonProperty("closedby")
     @ApiModelProperty("由谁关闭")
@@ -149,7 +149,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`OPENEDBY`")
+    @TableField(value = "openedby")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
     @ApiModelProperty("由谁创建")
@@ -158,7 +158,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
      * 访问控制
      */
     @DEField(defaultValue = "open")
-    @TableField(value = "`ACL`")
+    @TableField(value = "acl")
     @JSONField(name = "acl")
     @JsonProperty("acl")
     @ApiModelProperty("访问控制")
@@ -175,7 +175,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`UPDATEBY`")
+    @TableField(value = "updateby")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -191,7 +191,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     /**
      * 项目名称
      */
-    @TableField(value = "`NAME`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("项目名称")

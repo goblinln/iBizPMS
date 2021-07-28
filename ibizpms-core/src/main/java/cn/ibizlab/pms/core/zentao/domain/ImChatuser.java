@@ -50,7 +50,7 @@ public class ImChatuser extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -59,7 +59,7 @@ public class ImChatuser extends EntityMP implements Serializable {
      * order
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`ORDER`")
+    @TableField(value = "order")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("order")
@@ -67,7 +67,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     /**
      * freeze
      */
-    @TableField(value = "`FREEZE`")
+    @TableField(value = "freeze")
     @JSONField(name = "freeze")
     @JsonProperty("freeze")
     @ApiModelProperty("freeze")
@@ -75,7 +75,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     /**
      * star
      */
-    @TableField(value = "`STAR`")
+    @TableField(value = "star")
     @JSONField(name = "star")
     @JsonProperty("star")
     @ApiModelProperty("star")
@@ -83,7 +83,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     /**
      * hide
      */
-    @TableField(value = "`HIDE`")
+    @TableField(value = "hide")
     @JSONField(name = "hide")
     @JsonProperty("hide")
     @ApiModelProperty("hide")
@@ -92,7 +92,7 @@ public class ImChatuser extends EntityMP implements Serializable {
      * join
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "`JOIN`")
+    @TableField(value = "join")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "join", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("join")
@@ -102,7 +102,7 @@ public class ImChatuser extends EntityMP implements Serializable {
      * user
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`USER`")
+    @TableField(value = "user")
     @JSONField(name = "user")
     @JsonProperty("user")
     @ApiModelProperty("user")
@@ -110,7 +110,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     /**
      * mute
      */
-    @TableField(value = "`MUTE`")
+    @TableField(value = "mute")
     @JSONField(name = "mute")
     @JsonProperty("mute")
     @ApiModelProperty("mute")
@@ -118,7 +118,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     /**
      * cgid
      */
-    @TableField(value = "`CGID`")
+    @TableField(value = "cgid")
     @JSONField(name = "cgid")
     @JsonProperty("cgid")
     @ApiModelProperty("cgid")
@@ -127,7 +127,7 @@ public class ImChatuser extends EntityMP implements Serializable {
      * quit
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "`QUIT`")
+    @TableField(value = "quit")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "quit", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("quit")
@@ -136,7 +136,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     /**
      * category
      */
-    @TableField(value = "`CATEGORY`")
+    @TableField(value = "category")
     @JSONField(name = "category")
     @JsonProperty("category")
     @ApiModelProperty("category")

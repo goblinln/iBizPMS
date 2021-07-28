@@ -47,7 +47,7 @@ public class IBZProTranslatorSearchContext extends QueryWrapperContext<IBZProTra
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`IBZPRO_TRANSLATORNAME`", query)
+                     wrapper.like("ibzpro_translatorname", query)
             );
 		 }
 	}

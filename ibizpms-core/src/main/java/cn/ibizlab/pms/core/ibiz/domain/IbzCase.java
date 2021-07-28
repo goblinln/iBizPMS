@@ -49,7 +49,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * 最后修改者
      */
-    @TableField(value = "`LASTEDITEDBY`")
+    @TableField(value = "lasteditedby")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
     @ApiModelProperty("最后修改者")
@@ -58,7 +58,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * path
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`PATH`")
+    @TableField(value = "path")
     @JSONField(name = "path")
     @JsonProperty("path")
     @ApiModelProperty("path")
@@ -67,7 +67,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 用例编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("用例编号")
@@ -76,7 +76,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * scriptedBy
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`SCRIPTEDBY`")
+    @TableField(value = "scriptedby")
     @JSONField(name = "scriptedby")
     @JsonProperty("scriptedby")
     @ApiModelProperty("scriptedBy")
@@ -85,7 +85,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 用例类型
      */
     @DEField(defaultValue = "feature")
-    @TableField(value = "`TYPE`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("用例类型")
@@ -93,7 +93,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * scriptStatus
      */
-    @TableField(value = "`SCRIPTSTATUS`")
+    @TableField(value = "scriptstatus")
     @JSONField(name = "scriptstatus")
     @JsonProperty("scriptstatus")
     @ApiModelProperty("scriptStatus")
@@ -102,7 +102,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 适用阶段
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`STAGE`")
+    @TableField(value = "stage")
     @JSONField(name = "stage")
     @JsonProperty("stage")
     @ApiModelProperty("适用阶段")
@@ -111,7 +111,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 创建日期
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`OPENEDDATE`", fill = FieldFill.INSERT)
+    @TableField(value = "openeddate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "openeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("openeddate")
@@ -120,7 +120,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * 修改日期
      */
-    @TableField(value = "`LASTEDITEDDATE`")
+    @TableField(value = "lastediteddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastediteddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastediteddate")
@@ -130,7 +130,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * auto
      */
     @DEField(defaultValue = "no")
-    @TableField(value = "`AUTO`")
+    @TableField(value = "auto")
     @JSONField(name = "auto")
     @JsonProperty("auto")
     @ApiModelProperty("auto")
@@ -138,7 +138,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * 用例标题
      */
-    @TableField(value = "`TITLE`")
+    @TableField(value = "title")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("用例标题")
@@ -147,7 +147,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * howRun
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`HOWRUN`")
+    @TableField(value = "howrun")
     @JSONField(name = "howrun")
     @JsonProperty("howrun")
     @ApiModelProperty("howRun")
@@ -156,7 +156,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 优先级
      */
     @DEField(defaultValue = "3")
-    @TableField(value = "`PRI`")
+    @TableField(value = "pri")
     @JSONField(name = "pri")
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
@@ -173,7 +173,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 关键词
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`KEYWORDS`")
+    @TableField(value = "keywords")
     @JSONField(name = "keywords")
     @JsonProperty("keywords")
     @ApiModelProperty("关键词")
@@ -182,7 +182,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * scriptLocation
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`SCRIPTLOCATION`")
+    @TableField(value = "scriptlocation")
     @JSONField(name = "scriptlocation")
     @JsonProperty("scriptlocation")
     @ApiModelProperty("scriptLocation")
@@ -191,7 +191,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 用例版本
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`VERSION`")
+    @TableField(value = "version")
     @JSONField(name = "version")
     @JsonProperty("version")
     @ApiModelProperty("用例版本")
@@ -200,7 +200,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 状态
      */
     @DEField(defaultValue = "wait")
-    @TableField(value = "`STATUS`")
+    @TableField(value = "status")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("状态")
@@ -209,7 +209,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 前置条件
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`PRECONDITION`")
+    @TableField(value = "precondition")
     @JSONField(name = "precondition")
     @JsonProperty("precondition")
     @ApiModelProperty("前置条件")
@@ -218,7 +218,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 已删除
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID)
-    @TableField(value = "`DELETED`")
+    @TableField(value = "deleted")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -227,7 +227,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 排序
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`ORDER`")
+    @TableField(value = "order")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序")
@@ -236,7 +236,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`OPENEDBY`")
+    @TableField(value = "openedby")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
     @ApiModelProperty("由谁创建")
@@ -244,7 +244,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * scriptedDate
      */
-    @TableField(value = "`SCRIPTEDDATE`")
+    @TableField(value = "scripteddate")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "scripteddate", format = "yyyy-MM-dd")
     @JsonProperty("scripteddate")
@@ -270,7 +270,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * id
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`MODULE`")
+    @TableField(value = "module")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("id")
@@ -279,7 +279,7 @@ public class IbzCase extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`LIB`")
+    @TableField(value = "lib")
     @JSONField(name = "lib")
     @JsonProperty("lib")
     @ApiModelProperty("编号")

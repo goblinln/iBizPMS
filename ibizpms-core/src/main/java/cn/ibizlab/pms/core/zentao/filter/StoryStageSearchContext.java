@@ -52,7 +52,7 @@ public class StoryStageSearchContext extends QueryWrapperContext<StoryStage> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`STORY`", query)
+                     wrapper.like("story", query)
             );
 		 }
 	}

@@ -52,7 +52,7 @@ public class UserYearWorkStatsSearchContext extends QueryWrapperContext<UserYear
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like(" CONCAT_WS('',(DATE_FORMAT(now(),'%Y')),'年工作内容统计一览表 —— ',t1.realname)", query)
+                     wrapper.like("title", query)
             );
 		 }
 	}

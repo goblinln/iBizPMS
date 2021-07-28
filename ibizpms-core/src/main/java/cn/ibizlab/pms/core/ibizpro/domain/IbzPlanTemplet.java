@@ -50,7 +50,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
+    @TableField(value = "createdate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -59,7 +59,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
     /**
      * 计划
      */
-    @TableField(value = "`PLANS`")
+    @TableField(value = "plans")
     @JSONField(name = "plans")
     @JsonProperty("plans")
     @ApiModelProperty("计划")
@@ -67,7 +67,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
     /**
      * 权限
      */
-    @TableField(value = "`ACL`")
+    @TableField(value = "acl")
     @JSONField(name = "acl")
     @JsonProperty("acl")
     @ApiModelProperty("权限")
@@ -76,7 +76,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
      * 创建人姓名
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`CREATEMANNAME`")
+    @TableField(value = "createmanname")
     @JSONField(name = "createmanname")
     @JsonProperty("createmanname")
     @ApiModelProperty("创建人姓名")
@@ -84,7 +84,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
     /**
      * 产品
      */
-    @TableField(value = "`PRODUCT`")
+    @TableField(value = "product")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品")
@@ -93,7 +93,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
      * 产品计划模板标识
      */
     @DEField(name = "ibz_plantempletid", isKeyField = true)
-    @TableId(value = "`IBZ_PLANTEMPLETID`", type = IdType.ASSIGN_UUID)
+    @TableId(value = "ibz_plantempletid", type = IdType.ASSIGN_UUID)
     @JSONField(name = "ibzplantempletid")
     @JsonProperty("ibzplantempletid")
     @ApiModelProperty("产品计划模板标识")
@@ -102,7 +102,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
+    @TableField(value = "updateman")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -111,7 +111,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
      * 模板名称
      */
     @DEField(name = "ibz_plantempletname")
-    @TableField(value = "`IBZ_PLANTEMPLETNAME`")
+    @TableField(value = "ibz_plantempletname")
     @JSONField(name = "ibzplantempletname")
     @JsonProperty("ibzplantempletname")
     @ApiModelProperty("模板名称")
@@ -120,7 +120,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
+    @TableField(value = "updatedate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -130,7 +130,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @TableField(value = "createman", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")

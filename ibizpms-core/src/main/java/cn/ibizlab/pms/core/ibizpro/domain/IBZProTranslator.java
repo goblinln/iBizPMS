@@ -50,7 +50,7 @@ public class IBZProTranslator extends EntityMP implements Serializable {
      * 业务值转换名称
      */
     @DEField(name = "ibzpro_translatorname")
-    @TableField(value = "`IBZPRO_TRANSLATORNAME`")
+    @TableField(value = "ibzpro_translatorname")
     @JSONField(name = "ibzprotranslatorname")
     @JsonProperty("ibzprotranslatorname")
     @ApiModelProperty("业务值转换名称")
@@ -59,7 +59,7 @@ public class IBZProTranslator extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
+    @TableField(value = "updatedate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -69,7 +69,7 @@ public class IBZProTranslator extends EntityMP implements Serializable {
      * 组织部门标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPTID`")
+    @TableField(value = "deptid")
     @JSONField(name = "deptid")
     @JsonProperty("deptid")
     @ApiModelProperty("组织部门标识")
@@ -78,7 +78,7 @@ public class IBZProTranslator extends EntityMP implements Serializable {
      * 业务值转换标识
      */
     @DEField(name = "ibzpro_translatorid", isKeyField = true)
-    @TableId(value = "`IBZPRO_TRANSLATORID`", type = IdType.ASSIGN_UUID)
+    @TableId(value = "ibzpro_translatorid", type = IdType.ASSIGN_UUID)
     @JSONField(name = "ibzprotranslatorid")
     @JsonProperty("ibzprotranslatorid")
     @ApiModelProperty("业务值转换标识")
@@ -87,7 +87,7 @@ public class IBZProTranslator extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
+    @TableField(value = "createdate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -97,7 +97,7 @@ public class IBZProTranslator extends EntityMP implements Serializable {
      * 组织机构标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORGID`")
+    @TableField(value = "orgid")
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
     @ApiModelProperty("组织机构标识")
@@ -106,7 +106,7 @@ public class IBZProTranslator extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
+    @TableField(value = "updateman")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -115,7 +115,7 @@ public class IBZProTranslator extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @TableField(value = "createman", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")

@@ -49,7 +49,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     /**
      * 模板内容
      */
-    @TableField(value = "`CONTENT`")
+    @TableField(value = "content")
     @JSONField(name = "content")
     @JsonProperty("content")
     @ApiModelProperty("模板内容")
@@ -58,7 +58,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @TableField(value = "createman", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -67,7 +67,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
      * 系统模板标识
      */
     @DEField(name = "ibzpro_systplid", isKeyField = true)
-    @TableId(value = "`IBZPRO_SYSTPLID`", type = IdType.ASSIGN_UUID)
+    @TableId(value = "ibzpro_systplid", type = IdType.ASSIGN_UUID)
     @JSONField(name = "ibzprosystplid")
     @JsonProperty("ibzprosystplid")
     @ApiModelProperty("系统模板标识")
@@ -76,7 +76,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
+    @TableField(value = "createdate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -86,7 +86,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
      * 是否公开
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`PUBLIC`")
+    @TableField(value = "public")
     @JSONField(name = "ibizpublic")
     @JsonProperty("ibizpublic")
     @ApiModelProperty("是否公开")
@@ -95,7 +95,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
+    @TableField(value = "updateman")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -104,7 +104,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
+    @TableField(value = "updatedate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -114,7 +114,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
      * 系统模板名称
      */
     @DEField(name = "ibzpro_systplname")
-    @TableField(value = "`IBZPRO_SYSTPLNAME`")
+    @TableField(value = "ibzpro_systplname")
     @JSONField(name = "ibzprosystplname")
     @JsonProperty("ibzprosystplname")
     @ApiModelProperty("系统模板名称")
@@ -123,7 +123,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
      * IBIZ模板类型
      */
     @DEField(defaultValue = "freemarker")
-    @TableField(value = "`TPLTYPE`")
+    @TableField(value = "tpltype")
     @JSONField(name = "tpltype")
     @JsonProperty("tpltype")
     @ApiModelProperty("IBIZ模板类型")
@@ -132,7 +132,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
      * 来源对象
      */
     @DEField(name = "ibiz_sourceobject")
-    @TableField(value = "`IBIZ_SOURCEOBJECT`")
+    @TableField(value = "ibiz_sourceobject")
     @JSONField(name = "ibiz_sourceobject")
     @JsonProperty("ibiz_sourceobject")
     @ApiModelProperty("来源对象")
@@ -140,7 +140,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     /**
      * id
      */
-    @TableField(value = "`FILE`")
+    @TableField(value = "file")
     @JSONField(name = "file")
     @JsonProperty("file")
     @ApiModelProperty("id")

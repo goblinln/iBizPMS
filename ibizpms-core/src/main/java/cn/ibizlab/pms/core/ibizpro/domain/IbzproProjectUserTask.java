@@ -50,7 +50,7 @@ public class IbzproProjectUserTask extends EntityMP implements Serializable {
      * work
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`WORK`")
+    @TableField(value = "work")
     @JSONField(name = "work")
     @JsonProperty("work")
     @ApiModelProperty("work")
@@ -67,7 +67,7 @@ public class IbzproProjectUserTask extends EntityMP implements Serializable {
      * 用户
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`ACCOUNT`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("用户")
@@ -76,7 +76,7 @@ public class IbzproProjectUserTask extends EntityMP implements Serializable {
      * 总计消耗
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`CONSUMED`")
+    @TableField(value = "consumed")
     @JSONField(name = "consumed")
     @JsonProperty("consumed")
     @ApiModelProperty("总计消耗")
@@ -84,7 +84,7 @@ public class IbzproProjectUserTask extends EntityMP implements Serializable {
     /**
      * 日期
      */
-    @TableField(value = "`DATE`")
+    @TableField(value = "date")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -102,7 +102,7 @@ public class IbzproProjectUserTask extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -136,7 +136,7 @@ public class IbzproProjectUserTask extends EntityMP implements Serializable {
     /**
      * 任务
      */
-    @TableField(value = "`TASK`")
+    @TableField(value = "task")
     @JSONField(name = "task")
     @JsonProperty("task")
     @ApiModelProperty("任务")
@@ -145,7 +145,7 @@ public class IbzproProjectUserTask extends EntityMP implements Serializable {
      * 预计剩余
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`LEFT`")
+    @TableField(value = "left")
     @JSONField(name = "left")
     @JsonProperty("left")
     @ApiModelProperty("预计剩余")

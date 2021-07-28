@@ -49,7 +49,7 @@ public class ImConference extends EntityMP implements Serializable {
     /**
      * status
      */
-    @TableField(value = "`STATUS`")
+    @TableField(value = "status")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("status")
@@ -57,7 +57,7 @@ public class ImConference extends EntityMP implements Serializable {
     /**
      * cgid
      */
-    @TableField(value = "`CGID`")
+    @TableField(value = "cgid")
     @JSONField(name = "cgid")
     @JsonProperty("cgid")
     @ApiModelProperty("cgid")
@@ -66,7 +66,7 @@ public class ImConference extends EntityMP implements Serializable {
      * openedBy
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`OPENEDBY`")
+    @TableField(value = "openedby")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
     @ApiModelProperty("openedBy")
@@ -75,7 +75,7 @@ public class ImConference extends EntityMP implements Serializable {
      * openedDate
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "`OPENEDDATE`")
+    @TableField(value = "openeddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "openeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("openeddate")
@@ -85,7 +85,7 @@ public class ImConference extends EntityMP implements Serializable {
      * id
      */
     @DEField(defaultValue = "0", isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -93,7 +93,7 @@ public class ImConference extends EntityMP implements Serializable {
     /**
      * rid
      */
-    @TableField(value = "`RID`")
+    @TableField(value = "rid")
     @JSONField(name = "rid")
     @JsonProperty("rid")
     @ApiModelProperty("rid")
@@ -101,7 +101,7 @@ public class ImConference extends EntityMP implements Serializable {
     /**
      * participants
      */
-    @TableField(value = "`PARTICIPANTS`")
+    @TableField(value = "participants")
     @JSONField(name = "participants")
     @JsonProperty("participants")
     @ApiModelProperty("participants")

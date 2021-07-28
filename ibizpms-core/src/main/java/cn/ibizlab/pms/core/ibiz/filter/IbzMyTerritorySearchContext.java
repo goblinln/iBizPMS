@@ -62,7 +62,7 @@ public class IbzMyTerritorySearchContext extends QueryWrapperContext<IbzMyTerrit
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`REALNAME`", query)
+                     wrapper.like("realname", query)
             );
 		 }
 	}

@@ -67,7 +67,7 @@ public class IbzProReportlyActionSearchContext extends QueryWrapperContext<IbzPr
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`ACTOR`", query)
+                     wrapper.like("actor", query)
             );
 		 }
 	}

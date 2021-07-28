@@ -50,7 +50,7 @@ public class Block extends EntityMP implements Serializable {
      * 高度
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`HEIGHT`")
+    @TableField(value = "height")
     @JSONField(name = "height")
     @JsonProperty("height")
     @ApiModelProperty("高度")
@@ -58,7 +58,7 @@ public class Block extends EntityMP implements Serializable {
     /**
      * params
      */
-    @TableField(value = "`PARAMS`")
+    @TableField(value = "params")
     @JSONField(name = "params")
     @JsonProperty("params")
     @ApiModelProperty("params")
@@ -66,7 +66,7 @@ public class Block extends EntityMP implements Serializable {
     /**
      * 区块名称
      */
-    @TableField(value = "`TITLE`")
+    @TableField(value = "title")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("区块名称")
@@ -75,7 +75,7 @@ public class Block extends EntityMP implements Serializable {
      * 排序
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`ORDER`")
+    @TableField(value = "order")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序")
@@ -83,7 +83,7 @@ public class Block extends EntityMP implements Serializable {
     /**
      * 来源区块
      */
-    @TableField(value = "`BLOCK`")
+    @TableField(value = "block")
     @JSONField(name = "block")
     @JsonProperty("block")
     @ApiModelProperty("来源区块")
@@ -91,7 +91,7 @@ public class Block extends EntityMP implements Serializable {
     /**
      * 所属用户
      */
-    @TableField(value = "`ACCOUNT`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("所属用户")
@@ -100,7 +100,7 @@ public class Block extends EntityMP implements Serializable {
      * 位置
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`GRID`")
+    @TableField(value = "grid")
     @JSONField(name = "grid")
     @JsonProperty("grid")
     @ApiModelProperty("位置")
@@ -108,7 +108,7 @@ public class Block extends EntityMP implements Serializable {
     /**
      * 所属模块
      */
-    @TableField(value = "`MODULE`")
+    @TableField(value = "module")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("所属模块")
@@ -117,7 +117,7 @@ public class Block extends EntityMP implements Serializable {
      * 隐藏
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`HIDDEN`")
+    @TableField(value = "hidden")
     @JSONField(name = "hidden")
     @JsonProperty("hidden")
     @ApiModelProperty("隐藏")
@@ -125,7 +125,7 @@ public class Block extends EntityMP implements Serializable {
     /**
      * 来源模块
      */
-    @TableField(value = "`SOURCE`")
+    @TableField(value = "source")
     @JSONField(name = "source")
     @JsonProperty("source")
     @ApiModelProperty("来源模块")
@@ -134,7 +134,7 @@ public class Block extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")

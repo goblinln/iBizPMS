@@ -62,7 +62,7 @@ public class IBZProSequenceSearchContext extends QueryWrapperContext<IBZProSeque
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`IBZPRO_SEQUENCENAME`", query)
+                     wrapper.like("ibzpro_sequencename", query)
             );
 		 }
 	}

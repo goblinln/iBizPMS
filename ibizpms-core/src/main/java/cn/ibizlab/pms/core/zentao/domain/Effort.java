@@ -49,7 +49,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * user
      */
-    @TableField(value = "`USER`")
+    @TableField(value = "user")
     @JSONField(name = "user")
     @JsonProperty("user")
     @ApiModelProperty("user")
@@ -58,7 +58,7 @@ public class Effort extends EntityMP implements Serializable {
      * idvalue
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`IDVALUE`")
+    @TableField(value = "idvalue")
     @JSONField(name = "idvalue")
     @JsonProperty("idvalue")
     @ApiModelProperty("idvalue")
@@ -66,7 +66,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * status
      */
-    @TableField(value = "`STATUS`")
+    @TableField(value = "status")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("status")
@@ -75,7 +75,7 @@ public class Effort extends EntityMP implements Serializable {
      * end
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "`END`")
+    @TableField(value = "end")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "end", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("end")
@@ -84,7 +84,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * date
      */
-    @TableField(value = "`DATE`")
+    @TableField(value = "date")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd")
     @JsonProperty("date")
@@ -93,7 +93,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * name
      */
-    @TableField(value = "`NAME`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("name")
@@ -101,7 +101,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * desc
      */
-    @TableField(value = "`DESC`")
+    @TableField(value = "desc")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("desc")
@@ -109,7 +109,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * todo
      */
-    @TableField(value = "`TODO`")
+    @TableField(value = "todo")
     @JSONField(name = "todo")
     @JsonProperty("todo")
     @ApiModelProperty("todo")
@@ -117,7 +117,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * type
      */
-    @TableField(value = "`TYPE`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("type")
@@ -126,7 +126,7 @@ public class Effort extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -135,7 +135,7 @@ public class Effort extends EntityMP implements Serializable {
      * begin
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "`BEGIN`")
+    @TableField(value = "begin")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "begin", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("begin")

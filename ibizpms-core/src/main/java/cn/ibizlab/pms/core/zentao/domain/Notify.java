@@ -49,7 +49,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * createdDate
      */
-    @TableField(value = "`CREATEDDATE`")
+    @TableField(value = "createddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
@@ -58,7 +58,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * ccList
      */
-    @TableField(value = "`CCLIST`")
+    @TableField(value = "cclist")
     @JSONField(name = "cclist")
     @JsonProperty("cclist")
     @ApiModelProperty("ccList")
@@ -66,7 +66,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * failReason
      */
-    @TableField(value = "`FAILREASON`")
+    @TableField(value = "failreason")
     @JSONField(name = "failreason")
     @JsonProperty("failreason")
     @ApiModelProperty("failReason")
@@ -74,7 +74,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * action
      */
-    @TableField(value = "`ACTION`")
+    @TableField(value = "action")
     @JSONField(name = "action")
     @JsonProperty("action")
     @ApiModelProperty("action")
@@ -83,7 +83,7 @@ public class Notify extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -91,7 +91,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * createdBy
      */
-    @TableField(value = "`CREATEDBY`")
+    @TableField(value = "createdby")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
     @ApiModelProperty("createdBy")
@@ -100,7 +100,7 @@ public class Notify extends EntityMP implements Serializable {
      * status
      */
     @DEField(defaultValue = "wait")
-    @TableField(value = "`STATUS`")
+    @TableField(value = "status")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("status")
@@ -108,7 +108,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * subject
      */
-    @TableField(value = "`SUBJECT`")
+    @TableField(value = "subject")
     @JSONField(name = "subject")
     @JsonProperty("subject")
     @ApiModelProperty("subject")
@@ -116,7 +116,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * objectID
      */
-    @TableField(value = "`OBJECTID`")
+    @TableField(value = "objectid")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")
     @ApiModelProperty("objectID")
@@ -124,7 +124,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * data
      */
-    @TableField(value = "`DATA`")
+    @TableField(value = "data")
     @JSONField(name = "data")
     @JsonProperty("data")
     @ApiModelProperty("data")
@@ -132,7 +132,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * 通知编号
      */
-    @TableField(value = "`NOTIFYSN`")
+    @TableField(value = "notifysn")
     @JSONField(name = "notifysn")
     @JsonProperty("notifysn")
     @ApiModelProperty("通知编号")
@@ -140,7 +140,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * toList
      */
-    @TableField(value = "`TOLIST`")
+    @TableField(value = "tolist")
     @JSONField(name = "tolist")
     @JsonProperty("tolist")
     @ApiModelProperty("toList")
@@ -148,7 +148,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * sendTime
      */
-    @TableField(value = "`SENDTIME`")
+    @TableField(value = "sendtime")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "sendtime", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("sendtime")
@@ -157,7 +157,7 @@ public class Notify extends EntityMP implements Serializable {
     /**
      * objectType
      */
-    @TableField(value = "`OBJECTTYPE`")
+    @TableField(value = "objecttype")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
     @ApiModelProperty("objectType")

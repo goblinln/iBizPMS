@@ -49,7 +49,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * BID
      */
-    @TableField(value = "`BID`")
+    @TableField(value = "bid")
     @JSONField(name = "bid")
     @JsonProperty("bid")
     @ApiModelProperty("BID")
@@ -57,7 +57,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * AVersion
      */
-    @TableField(value = "`AVERSION`")
+    @TableField(value = "aversion")
     @JSONField(name = "aversion")
     @JsonProperty("aversion")
     @ApiModelProperty("AVersion")
@@ -65,7 +65,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * BType
      */
-    @TableField(value = "`BTYPE`")
+    @TableField(value = "btype")
     @JSONField(name = "btype")
     @JsonProperty("btype")
     @ApiModelProperty("BType")
@@ -73,7 +73,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * project
      */
-    @TableField(value = "`PROJECT`")
+    @TableField(value = "project")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("project")
@@ -81,7 +81,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * extra
      */
-    @TableField(value = "`EXTRA`")
+    @TableField(value = "extra")
     @JSONField(name = "extra")
     @JsonProperty("extra")
     @ApiModelProperty("extra")
@@ -89,7 +89,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * relation
      */
-    @TableField(value = "`RELATION`")
+    @TableField(value = "relation")
     @JSONField(name = "relation")
     @JsonProperty("relation")
     @ApiModelProperty("relation")
@@ -98,7 +98,7 @@ public class Relation extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -106,7 +106,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * program
      */
-    @TableField(value = "`PROGRAM`")
+    @TableField(value = "program")
     @JSONField(name = "program")
     @JsonProperty("program")
     @ApiModelProperty("program")
@@ -114,7 +114,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * BVersion
      */
-    @TableField(value = "`BVERSION`")
+    @TableField(value = "bversion")
     @JSONField(name = "bversion")
     @JsonProperty("bversion")
     @ApiModelProperty("BVersion")
@@ -122,7 +122,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * AType
      */
-    @TableField(value = "`ATYPE`")
+    @TableField(value = "atype")
     @JSONField(name = "atype")
     @JsonProperty("atype")
     @ApiModelProperty("AType")
@@ -130,7 +130,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * product
      */
-    @TableField(value = "`PRODUCT`")
+    @TableField(value = "product")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("product")
@@ -138,7 +138,7 @@ public class Relation extends EntityMP implements Serializable {
     /**
      * AID
      */
-    @TableField(value = "`AID`")
+    @TableField(value = "aid")
     @JSONField(name = "aid")
     @JsonProperty("aid")
     @ApiModelProperty("AID")

@@ -49,7 +49,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     /**
      * 任务名
      */
-    @TableField(value = "`NAME`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("任务名")
@@ -74,7 +74,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
      * 主键
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("主键")
@@ -98,7 +98,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     /**
      * 指派给
      */
-    @TableField(value = "`ASSIGNEDTO`")
+    @TableField(value = "assignedto")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
     @ApiModelProperty("指派给")
@@ -114,7 +114,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     /**
      * 是否指派
      */
-    @TableField(value = "`ASSIGN`")
+    @TableField(value = "assign")
     @JSONField(name = "assign")
     @JsonProperty("assign")
     @ApiModelProperty("是否指派")
@@ -164,7 +164,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     /**
      * 项目编号
      */
-    @TableField(value = "`PROJECT`")
+    @TableField(value = "project")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("项目编号")

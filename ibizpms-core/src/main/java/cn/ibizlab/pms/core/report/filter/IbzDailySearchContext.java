@@ -88,7 +88,7 @@ public class IbzDailySearchContext extends QueryWrapperContext<IbzDaily> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`IBZ_DAILYNAME`", query)
+                     wrapper.like("ibz_dailyname", query)
             );
 		 }
 	}

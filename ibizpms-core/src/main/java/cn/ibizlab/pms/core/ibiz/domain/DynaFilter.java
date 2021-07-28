@@ -50,7 +50,7 @@ public class DynaFilter extends EntityMP implements Serializable {
      * 动态搜索栏标识
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`DYNAFILTERID`", type = IdType.ASSIGN_UUID)
+    @TableId(value = "dynafilterid", type = IdType.ASSIGN_UUID)
     @JSONField(name = "dynafilterid")
     @JsonProperty("dynafilterid")
     @ApiModelProperty("动态搜索栏标识")
@@ -59,7 +59,7 @@ public class DynaFilter extends EntityMP implements Serializable {
      * 组织部门标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPTID`")
+    @TableField(value = "deptid")
     @JSONField(name = "deptid")
     @JsonProperty("deptid")
     @ApiModelProperty("组织部门标识")
@@ -68,7 +68,7 @@ public class DynaFilter extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
+    @TableField(value = "updateman")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -76,7 +76,7 @@ public class DynaFilter extends EntityMP implements Serializable {
     /**
      * 表单名称
      */
-    @TableField(value = "`FORMNAME`")
+    @TableField(value = "formname")
     @JSONField(name = "formname")
     @JsonProperty("formname")
     @ApiModelProperty("表单名称")
@@ -85,7 +85,7 @@ public class DynaFilter extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
+    @TableField(value = "updatedate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -95,7 +95,7 @@ public class DynaFilter extends EntityMP implements Serializable {
      * 组织机构标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORGID`")
+    @TableField(value = "orgid")
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
     @ApiModelProperty("组织机构标识")
@@ -104,7 +104,7 @@ public class DynaFilter extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
+    @TableField(value = "createdate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -113,7 +113,7 @@ public class DynaFilter extends EntityMP implements Serializable {
     /**
      * 实体名称
      */
-    @TableField(value = "`DENAME`")
+    @TableField(value = "dename")
     @JSONField(name = "dename")
     @JsonProperty("dename")
     @ApiModelProperty("实体名称")
@@ -121,7 +121,7 @@ public class DynaFilter extends EntityMP implements Serializable {
     /**
      * 动态搜索栏名称
      */
-    @TableField(value = "`DYNAFILTERNAME`")
+    @TableField(value = "dynafiltername")
     @JSONField(name = "dynafiltername")
     @JsonProperty("dynafiltername")
     @ApiModelProperty("动态搜索栏名称")
@@ -129,7 +129,7 @@ public class DynaFilter extends EntityMP implements Serializable {
     /**
      * 数据
      */
-    @TableField(value = "`DATA`")
+    @TableField(value = "data")
     @JSONField(name = "data")
     @JsonProperty("data")
     @ApiModelProperty("数据")
@@ -138,7 +138,7 @@ public class DynaFilter extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @TableField(value = "createman", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")

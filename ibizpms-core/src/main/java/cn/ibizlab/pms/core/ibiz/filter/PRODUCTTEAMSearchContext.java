@@ -96,7 +96,7 @@ public class PRODUCTTEAMSearchContext extends QueryWrapperContext<PRODUCTTEAM> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`ACCOUNT`", query)
+                     wrapper.like("account", query)
             );
 		 }
 	}

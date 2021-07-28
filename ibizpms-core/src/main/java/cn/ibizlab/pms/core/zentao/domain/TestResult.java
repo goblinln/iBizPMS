@@ -50,7 +50,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`CREATEBY`")
+    @TableField(value = "createby")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -59,7 +59,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORG`")
+    @TableField(value = "org")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -67,7 +67,7 @@ public class TestResult extends EntityMP implements Serializable {
     /**
      * 最后执行人
      */
-    @TableField(value = "`LASTRUNNER`")
+    @TableField(value = "lastrunner")
     @JSONField(name = "lastrunner")
     @JsonProperty("lastrunner")
     @ApiModelProperty("最后执行人")
@@ -75,7 +75,7 @@ public class TestResult extends EntityMP implements Serializable {
     /**
      * 用例版本
      */
-    @TableField(value = "`VERSION`")
+    @TableField(value = "version")
     @JSONField(name = "version")
     @JsonProperty("version")
     @ApiModelProperty("用例版本")
@@ -84,7 +84,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPT`")
+    @TableField(value = "dept")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -93,7 +93,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 步骤结果
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`STEPRESULTS`")
+    @TableField(value = "stepresults")
     @JSONField(name = "stepresults")
     @JsonProperty("stepresults")
     @ApiModelProperty("步骤结果")
@@ -102,7 +102,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 测试结果
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CASERESULT`")
+    @TableField(value = "caseresult")
     @JSONField(name = "caseresult")
     @JsonProperty("caseresult")
     @ApiModelProperty("测试结果")
@@ -111,7 +111,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 归属组织名
      */
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
+    @TableField(value = "orgname")
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
     @ApiModelProperty("归属组织名")
@@ -120,7 +120,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`UPDATEBY`")
+    @TableField(value = "updateby")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -129,7 +129,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 结果文件
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`XML`")
+    @TableField(value = "xml")
     @JSONField(name = "xml")
     @JsonProperty("xml")
     @ApiModelProperty("结果文件")
@@ -145,7 +145,7 @@ public class TestResult extends EntityMP implements Serializable {
     /**
      * 测试结果编号
      */
-    @TableField(value = "`TESTRESULTSN`")
+    @TableField(value = "testresultsn")
     @JSONField(name = "testresultsn")
     @JsonProperty("testresultsn")
     @ApiModelProperty("测试结果编号")
@@ -154,7 +154,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 持续时间
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`DURATION`")
+    @TableField(value = "duration")
     @JSONField(name = "duration")
     @JsonProperty("duration")
     @ApiModelProperty("持续时间")
@@ -162,7 +162,7 @@ public class TestResult extends EntityMP implements Serializable {
     /**
      * 测试时间
      */
-    @TableField(value = "`DATE`")
+    @TableField(value = "date")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("date")
@@ -172,7 +172,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
+    @TableField(value = "deptname")
     @JSONField(name = "deptname")
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
@@ -181,7 +181,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -238,7 +238,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 构建任务
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`JOB`")
+    @TableField(value = "job")
     @JSONField(name = "job")
     @JsonProperty("job")
     @ApiModelProperty("构建任务")
@@ -247,7 +247,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 用例
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`CASE`")
+    @TableField(value = "case")
     @JSONField(name = "ibizcase")
     @JsonProperty("ibizcase")
     @ApiModelProperty("用例")
@@ -256,7 +256,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 测试执行
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`RUN`")
+    @TableField(value = "run")
     @JSONField(name = "run")
     @JsonProperty("run")
     @ApiModelProperty("测试执行")
@@ -265,7 +265,7 @@ public class TestResult extends EntityMP implements Serializable {
      * 代码编译
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`COMPILE`")
+    @TableField(value = "compile")
     @JSONField(name = "compile")
     @JsonProperty("compile")
     @ApiModelProperty("代码编译")

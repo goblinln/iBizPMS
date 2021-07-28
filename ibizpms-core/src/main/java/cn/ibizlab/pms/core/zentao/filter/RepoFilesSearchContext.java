@@ -47,7 +47,7 @@ public class RepoFilesSearchContext extends QueryWrapperContext<RepoFiles> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`ACTION`", query)
+                     wrapper.like("action", query)
             );
 		 }
 	}

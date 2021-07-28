@@ -47,7 +47,7 @@ public class DynaFilterSearchContext extends QueryWrapperContext<DynaFilter> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`DYNAFILTERNAME`", query)
+                     wrapper.like("dynafiltername", query)
             );
 		 }
 	}

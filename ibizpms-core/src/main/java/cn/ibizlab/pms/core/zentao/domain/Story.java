@@ -50,7 +50,7 @@ public class Story extends EntityMP implements Serializable {
      * 指派给
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`ASSIGNEDTO`")
+    @TableField(value = "assignedto")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
     @ApiModelProperty("指派给")
@@ -75,7 +75,7 @@ public class Story extends EntityMP implements Serializable {
      * 细分需求
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CHILDSTORIES`")
+    @TableField(value = "childstories")
     @JSONField(name = "childstories")
     @JsonProperty("childstories")
     @ApiModelProperty("细分需求")
@@ -84,7 +84,7 @@ public class Story extends EntityMP implements Serializable {
      * IBIZ标识
      */
     @DEField(name = "ibiz_id")
-    @TableField(value = "`IBIZ_ID`")
+    @TableField(value = "ibiz_id")
     @JSONField(name = "ibiz_id")
     @JsonProperty("ibiz_id")
     @ApiModelProperty("IBIZ标识")
@@ -93,7 +93,7 @@ public class Story extends EntityMP implements Serializable {
      * 所属计划
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`PLAN`")
+    @TableField(value = "plan")
     @JSONField(name = "plan")
     @JsonProperty("plan")
     @ApiModelProperty("所属计划")
@@ -102,7 +102,7 @@ public class Story extends EntityMP implements Serializable {
      * 版本号
      */
     @DEField(defaultValue = "1")
-    @TableField(value = "`VERSION`")
+    @TableField(value = "version")
     @JSONField(name = "version")
     @JsonProperty("version")
     @ApiModelProperty("版本号")
@@ -110,7 +110,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 指派日期
      */
-    @TableField(value = "`ASSIGNEDDATE`")
+    @TableField(value = "assigneddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "assigneddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("assigneddate")
@@ -119,7 +119,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 故事点
      */
-    @TableField(value = "`STORYPOINTS`")
+    @TableField(value = "storypoints")
     @JSONField(name = "storypoints")
     @JsonProperty("storypoints")
     @ApiModelProperty("故事点")
@@ -127,7 +127,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 来源对象名称
      */
-    @TableField(value = "`SOURCENAME`")
+    @TableField(value = "sourcename")
     @JSONField(name = "sourcename")
     @JsonProperty("sourcename")
     @ApiModelProperty("来源对象名称")
@@ -135,7 +135,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 需求提供时间
      */
-    @TableField(value = "`STORYPROVIDEDATE`")
+    @TableField(value = "storyprovidedate")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "storyprovidedate", format = "yyyy-MM-dd")
     @JsonProperty("storyprovidedate")
@@ -153,7 +153,7 @@ public class Story extends EntityMP implements Serializable {
      * 优先级
      */
     @DEField(defaultValue = "3")
-    @TableField(value = "`PRI`")
+    @TableField(value = "pri")
     @JSONField(name = "pri")
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
@@ -161,7 +161,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 来源对象标识
      */
-    @TableField(value = "`SOURCEID`")
+    @TableField(value = "sourceid")
     @JSONField(name = "sourceid")
     @JsonProperty("sourceid")
     @ApiModelProperty("来源对象标识")
@@ -170,7 +170,7 @@ public class Story extends EntityMP implements Serializable {
      * 相关需求
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`LINKSTORIES`")
+    @TableField(value = "linkstories")
     @JSONField(name = "linkstories")
     @JsonProperty("linkstories")
     @ApiModelProperty("相关需求")
@@ -187,7 +187,7 @@ public class Story extends EntityMP implements Serializable {
      * 当前状态
      */
     @DEField(defaultValue = "draft")
-    @TableField(value = "`STATUS`")
+    @TableField(value = "status")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("当前状态")
@@ -204,7 +204,7 @@ public class Story extends EntityMP implements Serializable {
      * 预计工时
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`ESTIMATE`")
+    @TableField(value = "estimate")
     @JSONField(name = "estimate")
     @JsonProperty("estimate")
     @ApiModelProperty("预计工时")
@@ -220,7 +220,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 评审时间
      */
-    @TableField(value = "`REVIEWEDDATE`")
+    @TableField(value = "revieweddate")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "revieweddate", format = "yyyy-MM-dd")
     @JsonProperty("revieweddate")
@@ -230,7 +230,7 @@ public class Story extends EntityMP implements Serializable {
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
+    @TableField(value = "deptname")
     @JSONField(name = "deptname")
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
@@ -238,7 +238,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 需求名称
      */
-    @TableField(value = "`TITLE`")
+    @TableField(value = "title")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("需求名称")
@@ -255,7 +255,7 @@ public class Story extends EntityMP implements Serializable {
      * 来源备注
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`SOURCENOTE`")
+    @TableField(value = "sourcenote")
     @JSONField(name = "sourcenote")
     @JsonProperty("sourcenote")
     @ApiModelProperty("来源备注")
@@ -271,7 +271,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 由谁评审
      */
-    @TableField(value = "`REVIEWEDBY`")
+    @TableField(value = "reviewedby")
     @JSONField(name = "reviewedby")
     @JsonProperty("reviewedby")
     @ApiModelProperty("由谁评审")
@@ -279,7 +279,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 子状态
      */
-    @TableField(value = "`SUBSTATUS`")
+    @TableField(value = "substatus")
     @JSONField(name = "substatus")
     @JsonProperty("substatus")
     @ApiModelProperty("子状态")
@@ -288,7 +288,7 @@ public class Story extends EntityMP implements Serializable {
      * 设置阶段者
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`STAGEDBY`")
+    @TableField(value = "stagedby")
     @JSONField(name = "stagedby")
     @JsonProperty("stagedby")
     @ApiModelProperty("设置阶段者")
@@ -305,7 +305,7 @@ public class Story extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`OPENEDBY`")
+    @TableField(value = "openedby")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
     @ApiModelProperty("由谁创建")
@@ -314,7 +314,7 @@ public class Story extends EntityMP implements Serializable {
      * 创建日期
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`OPENEDDATE`", fill = FieldFill.INSERT)
+    @TableField(value = "openeddate", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "openeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("openeddate")
@@ -324,7 +324,7 @@ public class Story extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -333,7 +333,7 @@ public class Story extends EntityMP implements Serializable {
      * 来源对象
      */
     @DEField(name = "ibiz_sourceobject")
-    @TableField(value = "`IBIZ_SOURCEOBJECT`")
+    @TableField(value = "ibiz_sourceobject")
     @JSONField(name = "ibiz_sourceobject")
     @JsonProperty("ibiz_sourceobject")
     @ApiModelProperty("来源对象")
@@ -342,7 +342,7 @@ public class Story extends EntityMP implements Serializable {
      * 需求来源
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`SOURCE`")
+    @TableField(value = "source")
     @JSONField(name = "source")
     @JsonProperty("source")
     @ApiModelProperty("需求来源")
@@ -350,7 +350,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 需求最晚完成时间
      */
-    @TableField(value = "`STORYLATESTFINISHEDDATE`")
+    @TableField(value = "storylatestfinisheddate")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "storylatestfinisheddate", format = "yyyy-MM-dd")
     @JsonProperty("storylatestfinisheddate")
@@ -376,7 +376,7 @@ public class Story extends EntityMP implements Serializable {
      * 关闭原因
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CLOSEDREASON`")
+    @TableField(value = "closedreason")
     @JSONField(name = "closedreason")
     @JsonProperty("closedreason")
     @ApiModelProperty("关闭原因")
@@ -385,7 +385,7 @@ public class Story extends EntityMP implements Serializable {
      * 标题颜色
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`COLOR`")
+    @TableField(value = "color")
     @JSONField(name = "color")
     @JsonProperty("color")
     @ApiModelProperty("标题颜色")
@@ -401,7 +401,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 抄送给
      */
-    @TableField(value = "`MAILTO`")
+    @TableField(value = "mailto")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
     @ApiModelProperty("抄送给")
@@ -418,7 +418,7 @@ public class Story extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPT`")
+    @TableField(value = "dept")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -426,7 +426,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 来源对象
      */
-    @TableField(value = "`SOURCEOBJECT`")
+    @TableField(value = "sourceobject")
     @JSONField(name = "sourceobject")
     @JsonProperty("sourceobject")
     @ApiModelProperty("来源对象")
@@ -436,7 +436,7 @@ public class Story extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "`DELETED`")
+    @TableField(value = "deleted")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -445,7 +445,7 @@ public class Story extends EntityMP implements Serializable {
      * 关键词
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`KEYWORDS`")
+    @TableField(value = "keywords")
     @JSONField(name = "keywords")
     @JsonProperty("keywords")
     @ApiModelProperty("关键词")
@@ -454,7 +454,7 @@ public class Story extends EntityMP implements Serializable {
      * 最后修改
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`LASTEDITEDBY`")
+    @TableField(value = "lasteditedby")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
     @ApiModelProperty("最后修改")
@@ -463,7 +463,7 @@ public class Story extends EntityMP implements Serializable {
      * 所处阶段
      */
     @DEField(defaultValue = "wait")
-    @TableField(value = "`STAGE`")
+    @TableField(value = "stage")
     @JSONField(name = "stage")
     @JsonProperty("stage")
     @ApiModelProperty("所处阶段")
@@ -479,7 +479,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 关闭日期	
      */
-    @TableField(value = "`CLOSEDDATE`")
+    @TableField(value = "closeddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "closeddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("closeddate")
@@ -497,7 +497,7 @@ public class Story extends EntityMP implements Serializable {
      * 来源对象名称
      */
     @DEField(name = "ibiz_sourcename")
-    @TableField(value = "`IBIZ_SOURCENAME`")
+    @TableField(value = "ibiz_sourcename")
     @JSONField(name = "ibiz_sourcename")
     @JsonProperty("ibiz_sourcename")
     @ApiModelProperty("来源对象名称")
@@ -530,7 +530,7 @@ public class Story extends EntityMP implements Serializable {
      * 归属组织名
      */
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
+    @TableField(value = "orgname")
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
     @ApiModelProperty("归属组织名")
@@ -538,7 +538,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 需求编号
      */
-    @TableField(value = "`STORYSN`")
+    @TableField(value = "storysn")
     @JSONField(name = "storysn")
     @JsonProperty("storysn")
     @ApiModelProperty("需求编号")
@@ -555,7 +555,7 @@ public class Story extends EntityMP implements Serializable {
      * 由谁关闭
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CLOSEDBY`")
+    @TableField(value = "closedby")
     @JSONField(name = "closedby")
     @JsonProperty("closedby")
     @ApiModelProperty("由谁关闭")
@@ -580,7 +580,7 @@ public class Story extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORG`")
+    @TableField(value = "org")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -589,7 +589,7 @@ public class Story extends EntityMP implements Serializable {
      * 需求类型
      */
     @DEField(defaultValue = "story")
-    @TableField(value = "`TYPE`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("需求类型")
@@ -598,7 +598,7 @@ public class Story extends EntityMP implements Serializable {
      * 最后修改日期
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`LASTEDITEDDATE`")
+    @TableField(value = "lastediteddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "lastediteddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("lastediteddate")
@@ -608,7 +608,7 @@ public class Story extends EntityMP implements Serializable {
      * 来源对象标识
      */
     @DEField(name = "ibiz_sourceid")
-    @TableField(value = "`IBIZ_SOURCEID`")
+    @TableField(value = "ibiz_sourceid")
     @JSONField(name = "ibiz_sourceid")
     @JsonProperty("ibiz_sourceid")
     @ApiModelProperty("来源对象标识")
@@ -624,7 +624,7 @@ public class Story extends EntityMP implements Serializable {
     /**
      * 需求提供人
      */
-    @TableField(value = "`STORYPROVIDER`")
+    @TableField(value = "storyprovider")
     @JSONField(name = "storyprovider")
     @JsonProperty("storyprovider")
     @ApiModelProperty("需求提供人")
@@ -681,7 +681,7 @@ public class Story extends EntityMP implements Serializable {
      * 来源Bug
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`FROMBUG`")
+    @TableField(value = "frombug")
     @JSONField(name = "frombug")
     @JsonProperty("frombug")
     @ApiModelProperty("来源Bug")
@@ -690,7 +690,7 @@ public class Story extends EntityMP implements Serializable {
      * 父需求
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`PARENT`")
+    @TableField(value = "parent")
     @JSONField(name = "parent")
     @JsonProperty("parent")
     @ApiModelProperty("父需求")
@@ -699,7 +699,7 @@ public class Story extends EntityMP implements Serializable {
      * 所属模块
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`MODULE`")
+    @TableField(value = "module")
     @JSONField(name = "module")
     @JsonProperty("module")
     @ApiModelProperty("所属模块")
@@ -708,7 +708,7 @@ public class Story extends EntityMP implements Serializable {
      * 所属产品
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`PRODUCT`")
+    @TableField(value = "product")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("所属产品")
@@ -717,7 +717,7 @@ public class Story extends EntityMP implements Serializable {
      * 重复需求ID
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`DUPLICATESTORY`")
+    @TableField(value = "duplicatestory")
     @JSONField(name = "duplicatestory")
     @JsonProperty("duplicatestory")
     @ApiModelProperty("重复需求ID")
@@ -726,7 +726,7 @@ public class Story extends EntityMP implements Serializable {
      * 平台/分支
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`BRANCH`")
+    @TableField(value = "branch")
     @JSONField(name = "branch")
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")
@@ -735,7 +735,7 @@ public class Story extends EntityMP implements Serializable {
      * 转Bug
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`TOBUG`")
+    @TableField(value = "tobug")
     @JSONField(name = "tobug")
     @JsonProperty("tobug")
     @ApiModelProperty("转Bug")

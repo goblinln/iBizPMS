@@ -57,7 +57,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * nickname
      */
-    @TableField(value = "`NICKNAME`")
+    @TableField(value = "nickname")
     @JSONField(name = "nickname")
     @JsonProperty("nickname")
     @ApiModelProperty("nickname")
@@ -66,7 +66,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * fails
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`FAILS`")
+    @TableField(value = "fails")
     @JSONField(name = "fails")
     @JsonProperty("fails")
     @ApiModelProperty("fails")
@@ -75,7 +75,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * 访问次数
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`VISITS`")
+    @TableField(value = "visits")
     @JSONField(name = "visits")
     @JsonProperty("visits")
     @ApiModelProperty("访问次数")
@@ -83,7 +83,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 电话
      */
-    @TableField(value = "`PHONE`")
+    @TableField(value = "phone")
     @JSONField(name = "phone")
     @JsonProperty("phone")
     @ApiModelProperty("电话")
@@ -115,7 +115,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 职位
      */
-    @TableField(value = "`ROLE`")
+    @TableField(value = "role")
     @JSONField(name = "role")
     @JsonProperty("role")
     @ApiModelProperty("职位")
@@ -123,7 +123,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 真实姓名
      */
-    @TableField(value = "`REALNAME`")
+    @TableField(value = "realname")
     @JSONField(name = "realname")
     @JsonProperty("realname")
     @ApiModelProperty("真实姓名")
@@ -131,7 +131,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * clientStatus
      */
-    @TableField(value = "`CLIENTSTATUS`")
+    @TableField(value = "clientstatus")
     @JSONField(name = "clientstatus")
     @JsonProperty("clientstatus")
     @ApiModelProperty("clientStatus")
@@ -140,7 +140,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * 最后登录
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`LAST`")
+    @TableField(value = "last")
     @JSONField(name = "last")
     @JsonProperty("last")
     @ApiModelProperty("最后登录")
@@ -148,7 +148,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * zipcode
      */
-    @TableField(value = "`ZIPCODE`")
+    @TableField(value = "zipcode")
     @JSONField(name = "zipcode")
     @JsonProperty("zipcode")
     @ApiModelProperty("zipcode")
@@ -156,7 +156,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * skype
      */
-    @TableField(value = "`SKYPE`")
+    @TableField(value = "skype")
     @JSONField(name = "skype")
     @JsonProperty("skype")
     @ApiModelProperty("skype")
@@ -173,7 +173,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * 入职日期
      */
     @DEField(defaultValue = "0000-00-00")
-    @TableField(value = "`JOIN`")
+    @TableField(value = "join")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "join", format = "yyyy-MM-dd")
     @JsonProperty("join")
@@ -183,7 +183,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * score
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`SCORE`")
+    @TableField(value = "score")
     @JSONField(name = "score")
     @JsonProperty("score")
     @ApiModelProperty("score")
@@ -192,7 +192,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * 所属部门
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`DEPT`")
+    @TableField(value = "dept")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("所属部门")
@@ -200,7 +200,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 账户
      */
-    @TableField(value = "`ACCOUNT`")
+    @TableField(value = "account")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("账户")
@@ -224,7 +224,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 源代码账户
      */
-    @TableField(value = "`COMMITER`")
+    @TableField(value = "commiter")
     @JSONField(name = "commiter")
     @JsonProperty("commiter")
     @ApiModelProperty("源代码账户")
@@ -232,7 +232,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 手机
      */
-    @TableField(value = "`MOBILE`")
+    @TableField(value = "mobile")
     @JSONField(name = "mobile")
     @JsonProperty("mobile")
     @ApiModelProperty("手机")
@@ -241,7 +241,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * locked
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "`LOCKED`")
+    @TableField(value = "locked")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "locked", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("locked")
@@ -258,7 +258,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 通讯地址
      */
-    @TableField(value = "`ADDRESS`")
+    @TableField(value = "address")
     @JSONField(name = "address")
     @JsonProperty("address")
     @ApiModelProperty("通讯地址")
@@ -275,7 +275,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * scoreLevel
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "`SCORELEVEL`")
+    @TableField(value = "scorelevel")
     @JSONField(name = "scorelevel")
     @JsonProperty("scorelevel")
     @ApiModelProperty("scoreLevel")
@@ -283,7 +283,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 密码
      */
-    @TableField(value = "`PASSWORD`")
+    @TableField(value = "password")
     @JSONField(name = "password")
     @JsonProperty("password")
     @ApiModelProperty("密码")
@@ -299,7 +299,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * ranzhi
      */
-    @TableField(value = "`RANZHI`")
+    @TableField(value = "ranzhi")
     @JSONField(name = "ranzhi")
     @JsonProperty("ranzhi")
     @ApiModelProperty("ranzhi")
@@ -323,7 +323,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * slack
      */
-    @TableField(value = "`SLACK`")
+    @TableField(value = "slack")
     @JSONField(name = "slack")
     @JsonProperty("slack")
     @ApiModelProperty("slack")
@@ -339,7 +339,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 微信
      */
-    @TableField(value = "`WEIXIN`")
+    @TableField(value = "weixin")
     @JSONField(name = "weixin")
     @JsonProperty("weixin")
     @ApiModelProperty("微信")
@@ -363,7 +363,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * whatsapp
      */
-    @TableField(value = "`WHATSAPP`")
+    @TableField(value = "whatsapp")
     @JSONField(name = "whatsapp")
     @JsonProperty("whatsapp")
     @ApiModelProperty("whatsapp")
@@ -371,7 +371,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * QQ
      */
-    @TableField(value = "`QQ`")
+    @TableField(value = "qq")
     @JSONField(name = "qq")
     @JsonProperty("qq")
     @ApiModelProperty("QQ")
@@ -379,7 +379,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 男女
      */
-    @TableField(value = "`GENDER`")
+    @TableField(value = "gender")
     @JSONField(name = "gender")
     @JsonProperty("gender")
     @ApiModelProperty("男女")
@@ -388,7 +388,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * clientLang
      */
     @DEField(defaultValue = "zh-cn")
-    @TableField(value = "`CLIENTLANG`")
+    @TableField(value = "clientlang")
     @JSONField(name = "clientlang")
     @JsonProperty("clientlang")
     @ApiModelProperty("clientLang")
@@ -397,7 +397,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * 逻辑删除标志
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID)
-    @TableField(value = "`DELETED`")
+    @TableField(value = "deleted")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("逻辑删除标志")
@@ -414,7 +414,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * birthday
      */
     @DEField(defaultValue = "0000-00-00")
-    @TableField(value = "`BIRTHDAY`")
+    @TableField(value = "birthday")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "birthday", format = "yyyy-MM-dd")
     @JsonProperty("birthday")
@@ -423,7 +423,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * ip
      */
-    @TableField(value = "`IP`")
+    @TableField(value = "ip")
     @JSONField(name = "ip")
     @JsonProperty("ip")
     @ApiModelProperty("ip")
@@ -439,7 +439,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 邮箱
      */
-    @TableField(value = "`EMAIL`")
+    @TableField(value = "email")
     @JSONField(name = "email")
     @JsonProperty("email")
     @ApiModelProperty("邮箱")
@@ -447,7 +447,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 钉钉
      */
-    @TableField(value = "`DINGDING`")
+    @TableField(value = "dingding")
     @JSONField(name = "dingding")
     @JsonProperty("dingding")
     @ApiModelProperty("钉钉")
@@ -455,7 +455,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * avatar
      */
-    @TableField(value = "`AVATAR`")
+    @TableField(value = "avatar")
     @JSONField(name = "avatar")
     @JsonProperty("avatar")
     @ApiModelProperty("avatar")
@@ -464,7 +464,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
      * ID
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("ID")

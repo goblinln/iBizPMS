@@ -65,7 +65,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 由谁解决
      */
-    @TableField(value = "`RESOLVEDBY`")
+    @TableField(value = "resolvedby")
     @JSONField(name = "resolvedby")
     @JsonProperty("resolvedby")
     @ApiModelProperty("由谁解决")
@@ -121,7 +121,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 指派给
      */
-    @TableField(value = "`ASSIGNEDTO`")
+    @TableField(value = "assignedto")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
     @ApiModelProperty("指派给")
@@ -172,7 +172,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 项目名称
      */
-    @TableField(value = "`PROJECTNAME`")
+    @TableField(value = "projectname")
     @JSONField(name = "projectname")
     @JsonProperty("projectname")
     @ApiModelProperty("项目名称")
@@ -189,7 +189,7 @@ public class BugStats extends EntityMP implements Serializable {
      * 标识
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("标识")
@@ -238,7 +238,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 名称
      */
-    @TableField(value = "`TITLE`")
+    @TableField(value = "title")
     @JSONField(name = "title")
     @JsonProperty("title")
     @ApiModelProperty("名称")
@@ -286,7 +286,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @TableField(value = "`OPENEDBY`")
+    @TableField(value = "openedby")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
     @ApiModelProperty("由谁创建")
@@ -334,7 +334,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 编号
      */
-    @TableField(value = "`PRODUCT`")
+    @TableField(value = "product")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("编号")
@@ -342,7 +342,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 项目编号
      */
-    @TableField(value = "`PROJECT`")
+    @TableField(value = "project")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("项目编号")

@@ -49,7 +49,7 @@ public class ImQueue extends EntityMP implements Serializable {
     /**
      * processDate
      */
-    @TableField(value = "`PROCESSDATE`")
+    @TableField(value = "processdate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "processdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("processdate")
@@ -58,7 +58,7 @@ public class ImQueue extends EntityMP implements Serializable {
     /**
      * addDate
      */
-    @TableField(value = "`ADDDATE`")
+    @TableField(value = "adddate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "adddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("adddate")
@@ -67,7 +67,7 @@ public class ImQueue extends EntityMP implements Serializable {
     /**
      * content
      */
-    @TableField(value = "`CONTENT`")
+    @TableField(value = "content")
     @JSONField(name = "content")
     @JsonProperty("content")
     @ApiModelProperty("content")
@@ -75,7 +75,7 @@ public class ImQueue extends EntityMP implements Serializable {
     /**
      * type
      */
-    @TableField(value = "`TYPE`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("type")
@@ -84,7 +84,7 @@ public class ImQueue extends EntityMP implements Serializable {
      * id
      */
     @DEField(defaultValue = "0", isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -92,7 +92,7 @@ public class ImQueue extends EntityMP implements Serializable {
     /**
      * status
      */
-    @TableField(value = "`STATUS`")
+    @TableField(value = "status")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("status")
@@ -100,7 +100,7 @@ public class ImQueue extends EntityMP implements Serializable {
     /**
      * result
      */
-    @TableField(value = "`RESULT`")
+    @TableField(value = "result")
     @JSONField(name = "result")
     @JsonProperty("result")
     @ApiModelProperty("result")

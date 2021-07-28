@@ -49,7 +49,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * dirs
      */
-    @TableField(value = "`DIRS`")
+    @TableField(value = "dirs")
     @JSONField(name = "dirs")
     @JsonProperty("dirs")
     @ApiModelProperty("dirs")
@@ -58,7 +58,7 @@ public class Extension extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -66,7 +66,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * status
      */
-    @TableField(value = "`STATUS`")
+    @TableField(value = "status")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("status")
@@ -74,7 +74,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * code
      */
-    @TableField(value = "`CODE`")
+    @TableField(value = "code")
     @JSONField(name = "code")
     @JsonProperty("code")
     @ApiModelProperty("code")
@@ -82,7 +82,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * depends
      */
-    @TableField(value = "`DEPENDS`")
+    @TableField(value = "depends")
     @JSONField(name = "depends")
     @JsonProperty("depends")
     @ApiModelProperty("depends")
@@ -91,7 +91,7 @@ public class Extension extends EntityMP implements Serializable {
      * type
      */
     @DEField(defaultValue = "extension")
-    @TableField(value = "`TYPE`")
+    @TableField(value = "type")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("type")
@@ -99,7 +99,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * files
      */
-    @TableField(value = "`FILES`")
+    @TableField(value = "files")
     @JSONField(name = "files")
     @JsonProperty("files")
     @ApiModelProperty("files")
@@ -107,7 +107,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * zentaoCompatible
      */
-    @TableField(value = "`ZENTAOCOMPATIBLE`")
+    @TableField(value = "zentaocompatible")
     @JSONField(name = "zentaocompatible")
     @JsonProperty("zentaocompatible")
     @ApiModelProperty("zentaoCompatible")
@@ -115,7 +115,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * license
      */
-    @TableField(value = "`LICENSE`")
+    @TableField(value = "license")
     @JSONField(name = "license")
     @JsonProperty("license")
     @ApiModelProperty("license")
@@ -123,7 +123,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * name
      */
-    @TableField(value = "`NAME`")
+    @TableField(value = "name")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("name")
@@ -131,7 +131,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * installedTime
      */
-    @TableField(value = "`INSTALLEDTIME`")
+    @TableField(value = "installedtime")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "installedtime", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("installedtime")
@@ -140,7 +140,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * site
      */
-    @TableField(value = "`SITE`")
+    @TableField(value = "site")
     @JSONField(name = "site")
     @JsonProperty("site")
     @ApiModelProperty("site")
@@ -148,7 +148,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * author
      */
-    @TableField(value = "`AUTHOR`")
+    @TableField(value = "author")
     @JSONField(name = "author")
     @JsonProperty("author")
     @ApiModelProperty("author")
@@ -156,7 +156,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * desc
      */
-    @TableField(value = "`DESC`")
+    @TableField(value = "desc")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("desc")
@@ -164,7 +164,7 @@ public class Extension extends EntityMP implements Serializable {
     /**
      * version
      */
-    @TableField(value = "`VERSION`")
+    @TableField(value = "version")
     @JSONField(name = "version")
     @JsonProperty("version")
     @ApiModelProperty("version")
