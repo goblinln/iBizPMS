@@ -50,7 +50,7 @@ public class History extends EntityMP implements Serializable {
      * 归属组织名
      */
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "orgname")
+    @TableField(value = "`ORGNAME`")
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
     @ApiModelProperty("归属组织名")
@@ -59,7 +59,7 @@ public class History extends EntityMP implements Serializable {
      * 不同
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "diff")
+    @TableField(value = "`DIFF`")
     @JSONField(name = "diff")
     @JsonProperty("diff")
     @ApiModelProperty("不同")
@@ -68,7 +68,7 @@ public class History extends EntityMP implements Serializable {
      * 字段
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "field")
+    @TableField(value = "`FIELD`")
     @JSONField(name = "field")
     @JsonProperty("field")
     @ApiModelProperty("字段")
@@ -77,7 +77,7 @@ public class History extends EntityMP implements Serializable {
      * 新值
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "new")
+    @TableField(value = "`NEW`")
     @JSONField(name = "ibiznew")
     @JsonProperty("ibiznew")
     @ApiModelProperty("新值")
@@ -86,7 +86,7 @@ public class History extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "createby")
+    @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -95,7 +95,7 @@ public class History extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
+    @TableField(value = "`ORG`")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -103,7 +103,7 @@ public class History extends EntityMP implements Serializable {
     /**
      * 操作历史编号
      */
-    @TableField(value = "historysn")
+    @TableField(value = "`HISTORYSN`")
     @JSONField(name = "historysn")
     @JsonProperty("historysn")
     @ApiModelProperty("操作历史编号")
@@ -112,7 +112,7 @@ public class History extends EntityMP implements Serializable {
      * 旧值
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "old")
+    @TableField(value = "`OLD`")
     @JSONField(name = "old")
     @JsonProperty("old")
     @ApiModelProperty("旧值")
@@ -121,7 +121,7 @@ public class History extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
+    @TableField(value = "`DEPT`")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -130,7 +130,7 @@ public class History extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
+    @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -139,7 +139,7 @@ public class History extends EntityMP implements Serializable {
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "deptname")
+    @TableField(value = "`DEPTNAME`")
     @JSONField(name = "deptname")
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
@@ -148,7 +148,7 @@ public class History extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -157,7 +157,7 @@ public class History extends EntityMP implements Serializable {
      * 关联日志
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "action")
+    @TableField(value = "`ACTION`")
     @JSONField(name = "action")
     @JsonProperty("action")
     @ApiModelProperty("关联日志")

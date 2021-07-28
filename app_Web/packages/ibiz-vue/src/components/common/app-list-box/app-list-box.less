@@ -1,0 +1,48 @@
+.app-list-box {
+    .el-radio-group {
+        padding-top: 6px;
+        display: flex;
+        flex-direction: column;
+        .el-radio {
+            padding: 4px 0px;
+            .el-radio__inner {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                position: relative;
+                top: 0;
+                left: 0;
+                border: 1px solid #dcdee2;
+                border-radius: 2px;
+                background-color: #fff;
+                transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            }
+            .el-radio__input.is-checked {
+                .el-radio__inner {
+                    border-color: #2d8cf0;
+                    background-color: #2d8cf0;
+                }
+                .el-radio__inner::after {          
+                    content: "";
+                    display: table;
+                    width: 4px;
+                    height: 8px;
+                    position: absolute;
+                    top: 2px;
+                    left: 5px;
+                    border: 2px solid #fff;
+                    border-radius: 0%;
+                    background-color: #2d8cf0;
+                    border-top: 0;
+                    border-left: 0;
+                    transform: rotate(45deg) scale(1);
+                    transition: all .2s ease-in-out;
+                }
+            }
+        }
+    }
+    .ivu-checkbox-group {
+        display: flex;
+        flex-direction: column;
+    }
+}

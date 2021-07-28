@@ -50,7 +50,7 @@ public class Product extends EntityMP implements Serializable {
      * 组织标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "orgid")
+    @TableField(value = "`orgid`")
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
     @ApiModelProperty("组织标识")
@@ -59,7 +59,7 @@ public class Product extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "updatedate")
+    @TableField(value = "`updatedate`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -85,7 +85,7 @@ public class Product extends EntityMP implements Serializable {
      * 测试负责人
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "qd")
+    @TableField(value = "`qd`")
     @JSONField(name = "qd")
     @JsonProperty("qd")
     @ApiModelProperty("测试负责人")
@@ -93,7 +93,7 @@ public class Product extends EntityMP implements Serializable {
     /**
      * 产品分类
      */
-    @TableField(value = "productclass")
+    @TableField(value = "`productclass`")
     @JSONField(name = "productclass")
     @JsonProperty("productclass")
     @ApiModelProperty("产品分类")
@@ -110,7 +110,7 @@ public class Product extends EntityMP implements Serializable {
      * 访问控制
      */
     @DEField(defaultValue = "open")
-    @TableField(value = "acl")
+    @TableField(value = "`acl`")
     @JSONField(name = "acl")
     @JsonProperty("acl")
     @ApiModelProperty("访问控制")
@@ -118,7 +118,7 @@ public class Product extends EntityMP implements Serializable {
     /**
      * 产品名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`name`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("产品名称")
@@ -158,7 +158,7 @@ public class Product extends EntityMP implements Serializable {
     /**
      * 产品编号
      */
-    @TableField(value = "productsn")
+    @TableField(value = "`productsn`")
     @JSONField(name = "productsn")
     @JsonProperty("productsn")
     @ApiModelProperty("产品编号")
@@ -167,7 +167,7 @@ public class Product extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(value = "`id`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -177,7 +177,7 @@ public class Product extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`deleted`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -202,7 +202,7 @@ public class Product extends EntityMP implements Serializable {
      * 分组白名单
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "whitelist")
+    @TableField(value = "`whitelist`")
     @JSONField(name = "whitelist")
     @JsonProperty("whitelist")
     @ApiModelProperty("分组白名单")
@@ -211,7 +211,7 @@ public class Product extends EntityMP implements Serializable {
      * 部门标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "mdeptid")
+    @TableField(value = "`mdeptid`")
     @JSONField(name = "mdeptid")
     @JsonProperty("mdeptid")
     @ApiModelProperty("部门标识")
@@ -228,7 +228,7 @@ public class Product extends EntityMP implements Serializable {
      * 发布负责人
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "rd")
+    @TableField(value = "`rd`")
     @JSONField(name = "rd")
     @JsonProperty("rd")
     @ApiModelProperty("发布负责人")
@@ -253,7 +253,7 @@ public class Product extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "updateman")
+    @TableField(value = "`updateman`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -261,7 +261,7 @@ public class Product extends EntityMP implements Serializable {
     /**
      * 支持产品汇报
      */
-    @TableField(value = "supproreport")
+    @TableField(value = "`supproreport`")
     @JSONField(name = "supproreport")
     @JsonProperty("supproreport")
     @ApiModelProperty("支持产品汇报")
@@ -270,7 +270,7 @@ public class Product extends EntityMP implements Serializable {
      * 排序
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "order")
+    @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序")
@@ -279,7 +279,7 @@ public class Product extends EntityMP implements Serializable {
      * 产品类型
      */
     @DEField(defaultValue = "normal")
-    @TableField(value = "type")
+    @TableField(value = "`type`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("产品类型")
@@ -288,7 +288,7 @@ public class Product extends EntityMP implements Serializable {
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "mdeptname")
+    @TableField(value = "`mdeptname`")
     @JSONField(name = "mdeptname")
     @JsonProperty("mdeptname")
     @ApiModelProperty("归属部门名")
@@ -297,7 +297,7 @@ public class Product extends EntityMP implements Serializable {
      * 产品负责人
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "po")
+    @TableField(value = "`po`")
     @JSONField(name = "po")
     @JsonProperty("po")
     @ApiModelProperty("产品负责人")
@@ -314,7 +314,7 @@ public class Product extends EntityMP implements Serializable {
      * 产品描述	
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "desc")
+    @TableField(value = "`desc`")
     @JSONField(name = "desc")
     @JsonProperty("desc")
     @ApiModelProperty("产品描述	")
@@ -323,7 +323,7 @@ public class Product extends EntityMP implements Serializable {
      * 状态
      */
     @DEField(defaultValue = "normal")
-    @TableField(value = "status")
+    @TableField(value = "`status`")
     @JSONField(name = "status")
     @JsonProperty("status")
     @ApiModelProperty("状态")
@@ -348,7 +348,7 @@ public class Product extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "createdby")
+    @TableField(value = "`createdby`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
     @ApiModelProperty("由谁创建")
@@ -365,7 +365,7 @@ public class Product extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "createman", fill = FieldFill.INSERT)
+    @TableField(value = "`createman`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -374,7 +374,7 @@ public class Product extends EntityMP implements Serializable {
      * 当前系统版本
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "createdversion")
+    @TableField(value = "`createdversion`")
     @JSONField(name = "createdversion")
     @JsonProperty("createdversion")
     @ApiModelProperty("当前系统版本")
@@ -415,7 +415,7 @@ public class Product extends EntityMP implements Serializable {
      * IBIZ标识
      */
     @DEField(name = "ibiz_id")
-    @TableField(value = "ibiz_id")
+    @TableField(value = "`ibiz_id`")
     @JSONField(name = "ibiz_id")
     @JsonProperty("ibiz_id")
     @ApiModelProperty("IBIZ标识")
@@ -423,7 +423,7 @@ public class Product extends EntityMP implements Serializable {
     /**
      * 子状态
      */
-    @TableField(value = "substatus")
+    @TableField(value = "`substatus`")
     @JSONField(name = "substatus")
     @JsonProperty("substatus")
     @ApiModelProperty("子状态")
@@ -431,7 +431,7 @@ public class Product extends EntityMP implements Serializable {
     /**
      * 产品代号
      */
-    @TableField(value = "code")
+    @TableField(value = "`code`")
     @JSONField(name = "code")
     @JsonProperty("code")
     @ApiModelProperty("产品代号")
@@ -456,7 +456,7 @@ public class Product extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updateby")
+    @TableField(value = "`updateby`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -473,7 +473,7 @@ public class Product extends EntityMP implements Serializable {
      * 归属组织名
      */
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "orgname")
+    @TableField(value = "`orgname`")
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
     @ApiModelProperty("归属组织名")
@@ -482,7 +482,7 @@ public class Product extends EntityMP implements Serializable {
      * 创建日期
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "createddate", fill = FieldFill.INSERT)
+    @TableField(value = "`createddate`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createddate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createddate")
@@ -515,7 +515,7 @@ public class Product extends EntityMP implements Serializable {
     /**
      * id
      */
-    @TableField(value = "line")
+    @TableField(value = "`line`")
     @JSONField(name = "line")
     @JsonProperty("line")
     @ApiModelProperty("id")

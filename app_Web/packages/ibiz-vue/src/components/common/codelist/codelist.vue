@@ -168,7 +168,7 @@ export default class CodeList extends Vue {
      * @memberof CodeList
      */
     public getIconClass(item: any){
-        return item?.getPSSysImage?.cssClass;
+        return item?._data?.getPSSysImage?.cssClass;
     }
 
     /**
@@ -178,7 +178,7 @@ export default class CodeList extends Vue {
      * @memberof CodeList
      */
     public isIconImage(item: any){
-        return !!(item?.getPSSysImage?.imagePath || item.icon);
+        return !!(item?._data?.getPSSysImage?.imagePath || item?._data?.icon);
     }
 
     /**
@@ -188,7 +188,7 @@ export default class CodeList extends Vue {
      * @memberof CodeList
      */
     public getTextClass(item: any){
-        return item?.textCls || item?.getPSSysCss?.cssName;
+        return item?._data?.textCls || item?._data?.getPSSysCss?.cssName;
     }
 
     /**

@@ -57,7 +57,7 @@ public class IbzPlanTempletSearchContext extends QueryWrapperContext<IbzPlanTemp
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("ibz_plantempletname", query)
+                     wrapper.like("t1.`IBZ_PLANTEMPLETNAME`", query)
             );
 		 }
 	}

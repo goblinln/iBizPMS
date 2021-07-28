@@ -185,7 +185,7 @@ export class AppDefaultViewLayout extends Vue {
     public renderRootPSPanelItems() {
         return <row class="app-viewlayout-panel" style={{ 'height': '100%' }}>
             {this.viewLayoutPanel?.getRootPSPanelItems()?.map((container: any, index: number) => {
-                return this.renderByDetailType(container,true);
+                return this.renderByDetailType(container);
             })}
         </row>
     }
@@ -227,7 +227,7 @@ export class AppDefaultViewLayout extends Vue {
      * @param {*} modelJson
      * @memberof AppDefaultViewLayout
      */
-    public renderByDetailType(modelJson: any, isRootContainer?: boolean, parent?: any) {
+    public renderByDetailType(modelJson: any, parent?: any) {
         if (modelJson.getPSSysPFPlugin()) {
             const pluginInstance: any = PluginService.getInstance().getPluginInstance("CONTROLITEM", modelJson.getPSSysPFPlugin().pluginCode);
             if (pluginInstance) {
@@ -236,7 +236,7 @@ export class AppDefaultViewLayout extends Vue {
         }
         switch (modelJson.itemType) {
             case 'CONTAINER':
-                return this.renderContainer(modelJson, isRootContainer);
+                return this.renderContainer(modelJson);
             case 'TABPANEL':
                 return this.renderTabPanel(modelJson);
             case 'TABPAGE':
@@ -263,76 +263,100 @@ export class AppDefaultViewLayout extends Vue {
         let layout = container.getPSLayout() as any;
         let layoutMode = container.getPSLayout()?.layout;
         let css = container.getPSSysCss() as IPSSysCss;
-        let containerClass = { 'app-viewlayoutpanel-container': true, 'show-caption': container.showCaption };
+        let containerClass = {
+            'app-viewlayoutpanel-container': true,
+            [`viewlayoutpanel-container-${container.name.toLowerCase()}`]: true,
+            'show-caption': container.showCaption
+        };
         if (isRootContainer && css && css.cssName) {
             Object.assign(containerClass, { [css.cssName]: true });
         }
         let containerStyle = {
-            width: container.width ? container.width + 'px' : '100%',
+            width: container.width ? container.width + 'px' : '',
             height: container.height ? container.height + 'px' : '',
         }
         // FLEX布局
         if (layout && layoutMode == 'FLEX') {
-            let cssStyle: string = 'overflow: auto; display: flex;';
-            cssStyle += layout.dir ? `flex-direction: ${layout.dir};` : '';
-            cssStyle += layout.align ? `justify-content: ${layout.align};` : '';
-            cssStyle += layout.vAlign ? `align-items: ${layout.vAlign};` : '';
+            const containerGrow = (container.getPSLayoutPos() as any)?.grow;
+            Object.assign(containerStyle, {
+                'overflow': 'auto',
+                'display': 'flex',
+                'flex-grow': containerGrow && containerGrow != -1 ? containerGrow : 0
+            });
+            const { dir, align, vAlign } = layout;
+            if (dir) {
+                Object.assign(containerStyle, { 'flex-direction': dir });
+            }
+            if (align) {
+                Object.assign(containerStyle, { 'justify-content': align });
+            }
+            if (vAlign) {
+                Object.assign(containerStyle, { 'align-items': vAlign });
+            }
             return (
                 <i-col style={containerStyle} class={containerClass}>
                     {container.showCaption ? <div class="viewlayoutpanel-container-header">
                         <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
                     </div> : null}
-                    <div class="viewlayoutpanel-container-content" style={cssStyle}>
-                        {panelItems.map((item: any, index: number) => {
-                            // 子样式
-                            let detailStyle: any = {};
-                            let { height, width, itemType } = item;
-                            detailStyle.height = height > 0 ? height + 'px' : '';
-                            detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' || itemType == 'FIELD' ? '' : '100%';
-                            if (item.getPSLayoutPos()) {
-                                let grow = item.getPSLayoutPos();
-                                detailStyle.flexGrow = grow != -1 ? grow : 0;
-                            }
-                            // 自定义类名
-                            const controlClassName = this.renderDetailClass(item);
-                            return (
-                                <div style={detailStyle} class={controlClassName}>
-                                    {this.renderByDetailType(item, false, container)}
-                                </div>
-                            );
-                        })}
-                    </div>
+                    {panelItems.map((item: any, index: number) => {
+                        // 子样式
+                        let { height, width, itemType } = item;
+                        let detailStyle: any = {};
+                        if (height) {
+                            detailStyle.height = height + 'px';
+                        }
+                        switch (itemType) {
+                            case 'CONTAINER':
+                                return this.renderByDetailType(item, container);
+                            case 'CTRLPOS':
+                                detailStyle.width = width ? width + 'px' : '100%';
+                                break;
+                        }
+                        if (item.getPSLayoutPos()) {
+                            let grow = item.getPSLayoutPos()?.grow;
+                            detailStyle.flexGrow = grow != -1 ? grow : 0;
+                        }
+                        // 自定义类名
+                        const controlClassName = this.renderDetailClass(item);
+                        return (
+                            <div style={detailStyle} class={controlClassName}>
+                                {this.renderByDetailType(item, container)}
+                            </div>
+                        );
+                    })}
                 </i-col>
             );
         } else {
             // 栅格布局
-            let cssStyle = {
-                width: container.width ? container.width + 'px' : '100%',
-                height: container.height ? container.height + 'px' : ''
-            }
             let attrs = this.getGridLayoutProps(null, container);
             return (
                 <i-col {...{ props: attrs }} style={containerStyle} class={containerClass}>
                     { container.showCaption ? <row class="viewlayoutpanel-container-header">
                         <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
                     </row> : null}
-                    <row class="viewlayoutpanel-container-content" style={cssStyle}>
-                        {panelItems.map((item: any, index: number) => {
-                            let detailStyle: any = {};
-                            let { height, width, itemType } = item;
-                            detailStyle.height = height > 0 ? height + 'px' : '';
-                            detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' || itemType == 'FIELD' ? '' : '100%';
-                            // 栅格布局
-                            let attrs = this.getGridLayoutProps(container, item);
-                            // 自定义类名
-                            const controlClassName = this.renderDetailClass(item);
-                            return (
-                                <i-col {...{ props: attrs }} style={detailStyle} class={controlClassName}>
-                                    {this.renderByDetailType(item, false, container)}
-                                </i-col>
-                            );
-                        })}
-                    </row>
+                    {panelItems.map((item: any, index: number) => {
+                        let { height, width, itemType } = item;
+                        let detailStyle: any = {};
+                        if (height) {
+                            detailStyle.height = height + 'px';
+                        }
+                        switch (itemType) {
+                            case 'CONTAINER':
+                                return this.renderByDetailType(item, container);
+                            case 'CTRLPOS':
+                                detailStyle.width = width ? width + 'px' : '100%';
+                                break;
+                        }
+                        // 栅格布局
+                        let attrs = this.getGridLayoutProps(container, item);
+                        // 自定义类名
+                        const controlClassName = this.renderDetailClass(item);
+                        return (
+                            <i-col {...{ props: attrs }} style={detailStyle} class={controlClassName}>
+                                {this.renderByDetailType(item, container)}
+                            </i-col>
+                        );
+                    })}
                 </i-col>
 
             );

@@ -49,7 +49,7 @@ public class IbzFavorites extends EntityMP implements Serializable {
     /**
      * 类型
      */
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("类型")
@@ -58,7 +58,7 @@ public class IbzFavorites extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "createman", fill = FieldFill.INSERT)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -67,7 +67,7 @@ public class IbzFavorites extends EntityMP implements Serializable {
      * 收藏标识
      */
     @DEField(name = "ibz_favoritesid", isKeyField = true)
-    @TableId(value = "ibz_favoritesid", type = IdType.ASSIGN_UUID)
+    @TableId(value = "`IBZ_FAVORITESID`", type = IdType.ASSIGN_UUID)
     @JSONField(name = "ibzfavoritesid")
     @JsonProperty("ibzfavoritesid")
     @ApiModelProperty("收藏标识")
@@ -76,7 +76,7 @@ public class IbzFavorites extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "createdate", fill = FieldFill.INSERT)
+    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -86,7 +86,7 @@ public class IbzFavorites extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "updateman")
+    @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -94,7 +94,7 @@ public class IbzFavorites extends EntityMP implements Serializable {
     /**
      * 数据对象标识
      */
-    @TableField(value = "objectid")
+    @TableField(value = "`OBJECTID`")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")
     @ApiModelProperty("数据对象标识")
@@ -102,7 +102,7 @@ public class IbzFavorites extends EntityMP implements Serializable {
     /**
      * 收藏用户
      */
-    @TableField(value = "account")
+    @TableField(value = "`ACCOUNT`")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("收藏用户")
@@ -111,7 +111,7 @@ public class IbzFavorites extends EntityMP implements Serializable {
      * 收藏名称
      */
     @DEField(name = "ibz_favoritesname")
-    @TableField(value = "ibz_favoritesname")
+    @TableField(value = "`IBZ_FAVORITESNAME`")
     @JSONField(name = "ibzfavoritesname")
     @JsonProperty("ibzfavoritesname")
     @ApiModelProperty("收藏名称")
@@ -120,7 +120,7 @@ public class IbzFavorites extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "updatedate")
+    @TableField(value = "`UPDATEDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")

@@ -188,6 +188,28 @@ export class Util {
     }
 
     /**
+     * 是否存在数据(空对象和空数组算无值)
+     *
+     * @static
+     * @param {*} value
+     * @returns {boolean}
+     * @memberof Util
+     */
+     public static isExistData(value: any): boolean {
+        if (this.isEmpty(value)) {
+            return false;
+        } else {
+            if (value && Array.isArray(value)) {
+                return (value.length > 0) ? true : false;
+            } else if (value && (Object.prototype.toString.call(value) === '[object Object]')) {
+                return (Object.keys(value).length > 0) ? true : false;
+            } else {
+                return this.isExist(value) ? true : false;
+            }
+        }
+    }
+
+    /**
      * 转换为矩阵参数
      *
      * @static

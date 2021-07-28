@@ -67,7 +67,7 @@ public class SysUpdateFeaturesSearchContext extends QueryWrapperContext<SysUpdat
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("sys_update_featuresname", query)
+                     wrapper.like("t1.`SYS_UPDATE_FEATURESNAME`", query)
             );
 		 }
 	}

@@ -63,6 +63,15 @@ export class AppCodeEditor extends Vue {
     isMinimap!: boolean;
 
     /**
+     * 是否能够更换语言
+     *
+     * @type {boolean}
+     * @memberof AppCodeEditor
+     */
+    @Prop({ type: Boolean, default: true })
+    isChangeLanguage!: boolean;
+
+    /**
      * 当前使用语言
      *
      * @type {string}
@@ -263,6 +272,7 @@ export class AppCodeEditor extends Vue {
                         <i-select
                             v-model={this.presentLanguage}
                             style='width:110px'
+                            disabled={!this.isChangeLanguage}
                             on-on-change={this.onLanguageChange}
                         >
                             {this.languages.map((language: string) => {

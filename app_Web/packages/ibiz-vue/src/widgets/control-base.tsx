@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Subscription } from 'rxjs';
-import { AppCtrlEventEngine, AppCustomEngine, AppModelService, AppServiceBase, AppTimerEngine, ControlInterface, GetModelService, Util } from 'ibiz-core';
+import { AppCtrlEventEngine, AppCustomEngine, AppModelService, AppServiceBase, AppTimerEngine, ControlInterface, GetModelService, LogUtil, Util } from 'ibiz-core';
 import { CounterServiceRegister } from 'ibiz-service';
 import { PluginService } from 'ibiz-vue';
 import { IPSControl, IPSAppCounterRef } from '@ibiz/dynamic-model-api';
@@ -104,6 +104,22 @@ export class ControlBase extends Vue implements ControlInterface {
     public viewparams: any = {};
 
     /**
+     * 拷贝应用上下文
+     *
+     * @type {*}
+     * @memberof ControlBase
+     */
+     public copyContext: any = {};
+
+     /**
+      * 拷贝视图参数
+      *
+      * @type {*}
+      * @memberof ControlBase
+      */
+     public copyViewparams: any = {};
+
+    /**
      * 模型数据是否加载完成
      * 
      * @memberof ControlBase
@@ -189,7 +205,7 @@ export class ControlBase extends Vue implements ControlInterface {
      * 
      * @memberof ControlBase
      */
-     public ctrlTriggerLogicMap: Map<string, any> = new Map();
+    public ctrlTriggerLogicMap: Map<string, any> = new Map();
 
     /**
      * 部件事件抛出方法
@@ -326,12 +342,31 @@ export class ControlBase extends Vue implements ControlInterface {
     public onDynamicPropsChange(newVal: any, oldVal: any) {
         if (newVal?.context && newVal.context !== oldVal?.context) {
             this.context = newVal.context;
+            this.copyContext = Util.deepCopy(newVal.context);
         }
         if (newVal?.viewparams && newVal.viewparams !== oldVal?.viewparams) {
             this.viewparams = newVal.viewparams;
+            this.copyViewparams = Util.deepCopy(newVal.viewparams);
         }
         if (newVal?.navdatas && newVal.navdatas !== oldVal?.navdatas) {
             this.navdatas = newVal.navdatas;
+        }
+    }
+
+    /**
+     * 监听导航数据参数变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof ControlBase
+     */
+    public setNavdatas(args: any) {
+        this.navdatas = args;
+        if(Util.isExistData(this.navdatas)){
+            this.handleCustomCtrlData();
+        }else{
+            this.context = Util.deepCopy(this.copyContext);
+            this.viewparams = Util.deepCopy(this.copyViewparams);
         }
     }
 
@@ -464,7 +499,20 @@ export class ControlBase extends Vue implements ControlInterface {
      *
      * @memberof ControlBase
      */
-    public ctrlInit(args?: any) { }
+    public ctrlInit(args?: any) { 
+        if (this.viewState) {
+            this.viewStateEvent = this.viewState.subscribe(
+                ({ tag, action, data }: { tag: string; action: string; data: any }) => {
+                    if (!Object.is(tag, this.name)) {
+                        return;
+                    }
+                    if (Object.is('reset', action)) {
+                        this.onReset();
+                    }
+                },
+            );
+        }
+    }
 
     /**
      * 部件挂载
@@ -578,5 +626,101 @@ export class ControlBase extends Vue implements ControlInterface {
                 }
             });
         }
+    }
+
+    /**
+     * 处理自定义部件导航数据
+     *
+     * @memberof ControlBase
+     */
+    public handleCustomCtrlData() {
+        const customCtrlNavContexts = this.controlInstance.getPSControlNavContexts();
+        const customCtrlParams = this.controlInstance.getPSControlNavParams();
+        if (customCtrlNavContexts && (customCtrlNavContexts.length > 0)) {
+            customCtrlNavContexts.forEach((item: any) => {
+                let tempContext: any = {};
+                let curNavContext: any = item;
+                this.handleCustomDataLogic(curNavContext, tempContext, item.key);
+                Object.assign(this.context, tempContext);
+            })
+        }
+        if (customCtrlParams && (customCtrlParams.length > 0)) {
+            customCtrlParams.forEach((item: any) => {
+                let tempParam: any = {};
+                let curNavParam: any = item;
+                this.handleCustomDataLogic(curNavParam, tempParam, item.key);
+                Object.assign(this.viewparams, tempParam);
+            })
+        }
+    }
+
+    /**
+     * 处理部件自定义导航参数逻辑
+     *
+     * @memberof ControlBase
+     */
+    public handleCustomDataLogic(curNavData: any, tempData: any, item: string) {
+        const navDatas: any = Array.isArray(this.navdatas) ? this.navdatas[0] : this.navdatas;
+        // 直接值直接赋值
+        if (curNavData.rawValue) {
+            if (Object.is(curNavData.value, "null") || Object.is(curNavData.value, "")) {
+                Object.defineProperty(tempData, item.toLowerCase(), {
+                    value: null,
+                    writable: true,
+                    enumerable: true,
+                    configurable: true
+                });
+            } else {
+                Object.defineProperty(tempData, item.toLowerCase(), {
+                    value: curNavData.value,
+                    writable: true,
+                    enumerable: true,
+                    configurable: true
+                });
+            }
+        } else {
+            // 先从导航上下文取数，没有再从导航参数（URL）取数，如果导航上下文和导航参数都没有则为null
+            if (this.context[(curNavData.value).toLowerCase()] != null) {
+                Object.defineProperty(tempData, item.toLowerCase(), {
+                    value: this.context[(curNavData.value).toLowerCase()],
+                    writable: true,
+                    enumerable: true,
+                    configurable: true
+                });
+                return;
+            } else if (this.viewparams[(curNavData.value).toLowerCase()] != null) {
+                Object.defineProperty(tempData, item.toLowerCase(), {
+                    value: this.viewparams[(curNavData.value).toLowerCase()],
+                    writable: true,
+                    enumerable: true,
+                    configurable: true
+                });
+                return;
+            } else if (navDatas[(curNavData.value).toLowerCase()] != null) {
+                Object.defineProperty(tempData, item.toLowerCase(), {
+                    value: navDatas[(curNavData.value).toLowerCase()],
+                    writable: true,
+                    enumerable: true,
+                    configurable: true
+                });
+                return;
+            } else {
+                Object.defineProperty(tempData, item.toLowerCase(), {
+                    value: null,
+                    writable: true,
+                    enumerable: true,
+                    configurable: true
+                });
+            }
+        }
+    }
+
+    /**
+     * 重置
+     *
+     * @memberof ControlBase
+     */
+    public onReset() {
+        LogUtil.warn(`${this.controlInstance.name}重置功能暂未实现`);
     }
 }

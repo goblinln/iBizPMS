@@ -123,6 +123,10 @@ export class AppTreeViewBase extends TreeControlBase {
         }
 
         const cssName = data.cssName ? data.cssName : "";
+        const nodeStyle= {
+            'width': '100%',
+            'padding-left': node.parent?.data?.enablecheck && !node.data?.enablecheck ? '22px' : '0px',
+        }
         // 绘制显示文本
         let textElement = null;
         if (data.html) {
@@ -142,7 +146,7 @@ export class AppTreeViewBase extends TreeControlBase {
             <context-menu
                 ref={data.id}
                 isBlocked={true}
-                contextMenuStyle={{ width: '100%' }}
+                contextMenuStyle={nodeStyle}
                 data={node}
                 renderContent={this.renderContextMenu.bind(this)}
                 on-showContext={(e: any) => {

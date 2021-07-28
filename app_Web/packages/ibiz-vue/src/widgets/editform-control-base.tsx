@@ -634,6 +634,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                         this.$throw((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message, 'wfstart');
                         return;
                     }
+                    AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
                     this.$success((this.$t('app.formpage.workflow.startsuccess') as string), 'wfstart');
                     resolve(response);
                 }).catch((response: any) => {
@@ -1012,7 +1013,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
     /**
       * 置空对象
       *
-      * @param {*} _datas 滞空对象属性
+      * @param {*} _datas 置空对象
       * @memberof EditFormControlBase
       */
     public ResetData(_datas: any) {
@@ -1023,6 +1024,18 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
                 }
             });
         }
+    }
+
+    /**
+     * 重置
+     *
+     * @memberof EditFormControlBase
+     */
+     public onReset() {
+        this.ResetData(this.data);
+        this.$nextTick(() => {
+            this.formState.next({ type: 'load', data: this.data });
+        });
     }
 
     /**

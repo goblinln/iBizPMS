@@ -208,7 +208,9 @@ export class AppDefaultEditor extends Vue {
         ['checkbox-editor', [
             'RADIOBUTTONLIST', 
             'CHECKBOX', 
-            'CHECKBOXLIST'
+            'CHECKBOXLIST',
+            'LISTBOX',
+            'LISTBOXPICKUP',
         ] ],
         ['dropdown-list-editor', [
             'DROPDOWNLIST', 

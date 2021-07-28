@@ -165,7 +165,7 @@ export class AppPanelBase extends PanelControlBase {
 
     public renderRootPSPanelItems(controlInstance: IPSPanel) {
         return controlInstance.getRootPSPanelItems()?.map((container: any, index: number) => {
-            return this.renderByDetailType(container,true);
+            return this.renderByDetailType(container);
         });
     }
 
@@ -175,7 +175,7 @@ export class AppPanelBase extends PanelControlBase {
      * @param {*} modelJson
      * @memberof AppPanelBase
      */
-    public renderByDetailType(modelJson: any,isRootContainer?: boolean) {
+    public renderByDetailType(modelJson: any) {
         if (modelJson.getPSSysPFPlugin()) {
             const pluginInstance: any = this.PluginFactory.getPluginInstance("CONTROLITEM", modelJson.getPSSysPFPlugin().pluginCode);
             if (pluginInstance) {
@@ -184,7 +184,7 @@ export class AppPanelBase extends PanelControlBase {
         } else {
             switch (modelJson.itemType) {
                 case 'CONTAINER':
-                    return this.renderContainer(modelJson,isRootContainer);
+                    return this.renderContainer(modelJson);
                 case 'BUTTON':
                     return this.renderButton(modelJson);
                 case 'FIELD':
@@ -207,45 +207,69 @@ export class AppPanelBase extends PanelControlBase {
      * @memberof AppPanelBase
      */
 
-    public renderContainer(container: IPSPanelContainer,isRootContainer: boolean = false) {
+    public renderContainer(container: IPSPanelContainer) {
         const panelItems: IPSPanelItem[] = container.getPSPanelItems() || [];
         let layout = container.getPSLayout() as any;
         let layoutMode = container.getPSLayout()?.layout;
         let css = container.getPSSysCss() as IPSSysCss;
-        let containerClass = { 'app-viewpanel-container': true, 'show-caption': container.showCaption };
-        if (isRootContainer && css && css.cssName) {
+        let containerClass = {
+            'app-viewpanel-container': true,
+            [`viewpanel-container-${container.name.toLowerCase()}`]: true,
+            'show-caption': container.showCaption
+        };
+        if (css && css.cssName) {
             Object.assign(containerClass, { [css.cssName]: true });
         }
-        let containerStyle = {
-            width: container.width ? container.width + 'px' : false,
-            height: container.height ? container.height + 'px' : '',
+        let containerStyle = {};
+        if (container.width) {
+            Object.assign(containerStyle, { width: container.width + 'px' });
+        }
+        if (container.height) {
+            Object.assign(containerStyle, { height: container.height + 'px' });
         }
         if (this.detailsModel[container.name] && !this.detailsModel[container.name].visible) {
             Object.assign(containerStyle, { display: 'none' });
         }
         // FLEX布局
         if (layout && layoutMode == 'FLEX') {
-            let cssStyle: string = 'overflow: auto; display: flex;';
-            cssStyle += layout.dir ? `flex-direction: ${layout.dir};` : '';
-            cssStyle += layout.align ? `justify-content: ${layout.align};` : '';
-            cssStyle += layout.vAlign ? `align-items: ${layout.vAlign};` : '';
+            const containerGrow = (container.getPSLayoutPos() as any)?.grow;
+            Object.assign(containerStyle, {
+                'overflow': 'auto',
+                'display': 'flex',
+                'flex-grow': containerGrow && containerGrow != -1 ? containerGrow : 0
+            });
+            const { dir, align, vAlign } = layout;
+            if (dir) {
+                Object.assign(containerStyle, { 'flex-direction': dir });
+            }
+            if (align) {
+                Object.assign(containerStyle, { 'justify-content': align });
+            }
+            if (vAlign) {
+                Object.assign(containerStyle, { 'align-items': vAlign });
+            }
             return (
                 <i-col style={containerStyle} class={containerClass}>
                     {container.showCaption ? <div class="viewpanel-container-header">
                         <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
                     </div> : null}
-                    <div class="viewpanel-container-content" style={cssStyle}>
                         {panelItems.map((item: any, index: number) => {
-                            // 子样式
-                            let detailStyle: any = { };
-                            if (this.detailsModel[container.name] && !this.detailsModel[container.name].visible) {
-                                Object.assign(detailStyle, { display: 'none' });
+                           // 子样式
+                            let { height, width, itemType } = item;
+                            let detailStyle: any = {};
+                            if (height) {
+                                detailStyle.height = height + 'px';
                             }
-                            if (!Object.is(item.itemType,"CONTAINER") && item.getPSLayoutPos()) {
-                                let { grow, height, width, itemType } = item.getPSLayoutPos();
+                            switch (itemType) {
+                                case 'CONTAINER':
+                                    return this.renderByDetailType(item);
+                                case 'CTRLPOS':
+                                    detailStyle.width = width ? width + 'px' : '100%';
+                                    break;
+                            }
+                            if (item.getPSLayoutPos()) {
+                                let grow = item.getPSLayoutPos()?.grow;
                                 detailStyle.flexGrow = grow != -1 ? grow : 0;
-                                detailStyle.height = height > 0 ? height + 'px' : '';
-                                detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' || itemType == 'FIELD' ? '' : '100%';
                             }
                             // 自定义类名
                             const controlClassName = this.renderDetailClass(item);
@@ -255,40 +279,42 @@ export class AppPanelBase extends PanelControlBase {
                                 </div>
                             );
                         })}
-                    </div>
                 </i-col>
             );
         } else {
+            let attrs = this.getGridLayoutProps(null, container);
             // 栅格布局
             return (
-                <i-col style={containerStyle} class={containerClass}>
+                <i-col {...{ props: attrs }} style={containerStyle} class={containerClass}>
                     {container.showCaption ? <row class="viewpanel-container-header">
                         <span>{this.$tl(container.getCapPSLanguageRes?.()?.lanResTag, container.caption)}</span>
                     </row> : null}
-                    <row class="viewpanel-container-content">
-                        {panelItems.map((item: any, index: number) => {
-                            const { itemType } = item;
-                            //子样式
-                            let detailStyle: any = { };
-                            if (this.detailsModel[container.name] && !this.detailsModel[container.name].visible) {
-                                Object.assign(detailStyle, { display: 'none' });
-                            }
-                            if (!Object.is(itemType,"CONTAINER") && item.getPSLayoutPos()) {
-                                let { height, width } = item.getPSLayoutPos();
-                                detailStyle.height = height > 0 ? height + 'px' : '';
-                                detailStyle.width = width > 0 ? width + 'px' : itemType == 'BUTTON' || itemType == 'RAWITEM' || itemType == 'FIELD' ? '' : '100%';
-                            }
-                            // 栅格布局
-                            let attrs = this.getGridLayoutProps(container, item);
-                            // 自定义类名
-                            const controlClassName = this.renderDetailClass(item);
-                            return (
-                                <i-col {...{ props: attrs }} style={detailStyle} class={controlClassName}>
-                                    {this.renderByDetailType(item)}
-                                </i-col>
-                            );
-                        })}
-                    </row>
+                    {panelItems.map((item: any, index: number) => {
+                        let { height, width, itemType } = item;
+                        let detailStyle: any = {};
+                        if (this.detailsModel[container.name] && !this.detailsModel[container.name].visible) {
+                            Object.assign(detailStyle, { display: 'none' });
+                        }
+                        if (height) {
+                            detailStyle.height = height + 'px';
+                        }
+                        switch (itemType) {
+                            case 'CONTAINER':
+                                return this.renderByDetailType(item);
+                            case 'CTRLPOS':
+                                detailStyle.width = width ? width + 'px' : '100%';
+                                break;
+                        }
+                        // 栅格布局
+                        let attrs = this.getGridLayoutProps(container, item);
+                        // 自定义类名
+                        const controlClassName = this.renderDetailClass(item);
+                        return (
+                            <i-col {...{ props: attrs }} style={detailStyle} class={controlClassName}>
+                                {this.renderByDetailType(item)}
+                            </i-col>
+                        );
+                    })}
                 </i-col>
             );
         }

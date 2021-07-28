@@ -193,8 +193,8 @@ export class ControlServiceBase {
         const handleResult: any = (action: string, response: any, isCreate: boolean, codelistArray?: any) => {
             if (response.data instanceof Array) {
                 result = [];
-                response.data.forEach((item: any) => {
-                    result.push(this.handleResponseData(action, item, isCreate, codelistArray));
+                response.data.forEach((item: any, index: number) => {
+                    result.push(this.handleResponseData(action, item, isCreate, codelistArray, index));
                 });
             } else {
                 result = this.handleResponseData(action, response.data, isCreate, codelistArray);
@@ -229,7 +229,7 @@ export class ControlServiceBase {
      * @param {*} response
      * @memberof ControlServiceBase
      */
-    public handleResponseData(action: string, data: any = {}, isCreate?: boolean, codelistArray?: any) {
+    public handleResponseData(action: string, data: any = {}, isCreate?: boolean, codelistArray?: any, index?: number) {
         if (data.srfopprivs) {
             this.getStore().commit('authresource/setSrfappdeData', { key: `${this.deName}-${data[this.appDeKeyFieldName.toLowerCase()]}`, value: data.srfopprivs });
         }
@@ -241,7 +241,7 @@ export class ControlServiceBase {
         let dataItems: any[] = model.getDataItems();
         dataItems.forEach(dataitem => {
             if (dataitem.customCode) {
-                item[dataitem.name] = this.handleScriptCode(data, dataitem, dataitem.scriptCode);
+                item[dataitem.name] = this.handleScriptCode(data, dataitem, dataitem.scriptCode, index);
             } else {
                 if (dataitem && (dataitem?.dataType !== "QUERYPARAM")) {
                     let val = data.hasOwnProperty(dataitem.prop) ? data[dataitem.prop] : null;
@@ -325,7 +325,7 @@ export class ControlServiceBase {
      * @param scriptCode 自定义脚本
      * @memberof ControlServiceBase
      */
-    public handleScriptCode(data: any, dataitem: any, scriptCode: string) {
+    public handleScriptCode(data: any, dataitem: any, scriptCode: string, rowIndex?: number) {
         if (scriptCode.indexOf('return') !== -1) {
             scriptCode = scriptCode.replace(new RegExp('return', "g"), `data.${dataitem.name} =`);
         }

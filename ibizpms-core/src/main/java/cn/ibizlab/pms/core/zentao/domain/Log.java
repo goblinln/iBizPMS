@@ -49,7 +49,7 @@ public class Log extends EntityMP implements Serializable {
     /**
      * url
      */
-    @TableField(value = "url")
+    @TableField(value = "`URL`")
     @JSONField(name = "url")
     @JsonProperty("url")
     @ApiModelProperty("url")
@@ -57,7 +57,7 @@ public class Log extends EntityMP implements Serializable {
     /**
      * action
      */
-    @TableField(value = "action")
+    @TableField(value = "`ACTION`")
     @JSONField(name = "action")
     @JsonProperty("action")
     @ApiModelProperty("action")
@@ -65,7 +65,7 @@ public class Log extends EntityMP implements Serializable {
     /**
      * contentType
      */
-    @TableField(value = "contenttype")
+    @TableField(value = "`CONTENTTYPE`")
     @JSONField(name = "contenttype")
     @JsonProperty("contenttype")
     @ApiModelProperty("contentType")
@@ -73,7 +73,7 @@ public class Log extends EntityMP implements Serializable {
     /**
      * objectID
      */
-    @TableField(value = "objectid")
+    @TableField(value = "`OBJECTID`")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")
     @ApiModelProperty("objectID")
@@ -81,7 +81,7 @@ public class Log extends EntityMP implements Serializable {
     /**
      * date
      */
-    @TableField(value = "date")
+    @TableField(value = "`DATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("date")
@@ -90,7 +90,7 @@ public class Log extends EntityMP implements Serializable {
     /**
      * result
      */
-    @TableField(value = "result")
+    @TableField(value = "`RESULT`")
     @JSONField(name = "result")
     @JsonProperty("result")
     @ApiModelProperty("result")
@@ -98,7 +98,7 @@ public class Log extends EntityMP implements Serializable {
     /**
      * objectType
      */
-    @TableField(value = "objecttype")
+    @TableField(value = "`OBJECTTYPE`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
     @ApiModelProperty("objectType")
@@ -107,7 +107,7 @@ public class Log extends EntityMP implements Serializable {
      * id
      */
     @DEField(defaultValue = "0", isKeyField = true)
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -115,7 +115,7 @@ public class Log extends EntityMP implements Serializable {
     /**
      * data
      */
-    @TableField(value = "data")
+    @TableField(value = "`DATA`")
     @JSONField(name = "data")
     @JsonProperty("data")
     @ApiModelProperty("data")

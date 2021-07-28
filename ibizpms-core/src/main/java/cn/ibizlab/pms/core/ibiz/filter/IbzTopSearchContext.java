@@ -57,7 +57,7 @@ public class IbzTopSearchContext extends QueryWrapperContext<IbzTop> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("ibz_topname", query)
+                     wrapper.like("t1.`IBZ_TOPNAME`", query)
             );
 		 }
 	}

@@ -109,7 +109,7 @@ public class ReleaseSearchContext extends QueryWrapperContext<Release> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("name", query)
+                     wrapper.like("t1.`NAME`", query)
             );
 		 }
 	}

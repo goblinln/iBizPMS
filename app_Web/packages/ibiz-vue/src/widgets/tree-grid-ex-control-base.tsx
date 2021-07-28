@@ -243,7 +243,7 @@ export class TreeGridExControlBase extends MDControlBase implements TreeGridExCo
             let trs: any = this.$el.getElementsByClassName('treegrid' + this.itemNum[item.id]);
             if (trs && trs.length > 0) {
                 let icons: any = trs[0].getElementsByClassName('el-table__expand-icon');
-                icons[0].click();
+                icons[0]?.click();
             }
         }
     }

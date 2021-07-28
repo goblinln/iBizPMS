@@ -50,7 +50,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
      * 系统更新功能名称
      */
     @DEField(name = "sys_update_featuresname")
-    @TableField(value = "sys_update_featuresname")
+    @TableField(value = "`SYS_UPDATE_FEATURESNAME`")
     @JSONField(name = "sysupdatefeaturesname")
     @JsonProperty("sysupdatefeaturesname")
     @ApiModelProperty("系统更新功能名称")
@@ -59,7 +59,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "updatedate")
+    @TableField(value = "`UPDATEDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -69,7 +69,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "createman", fill = FieldFill.INSERT)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -78,7 +78,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "updateman")
+    @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -86,7 +86,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     /**
      * 更新类型
      */
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("更新类型")
@@ -95,7 +95,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "createdate", fill = FieldFill.INSERT)
+    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -104,7 +104,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     /**
      * 更新功能
      */
-    @TableField(value = "upfeatures")
+    @TableField(value = "`UPFEATURES`")
     @JSONField(name = "upfeatures")
     @JsonProperty("upfeatures")
     @ApiModelProperty("更新功能")
@@ -113,7 +113,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
      * 系统更新功能标识
      */
     @DEField(name = "sys_update_featuresid", isKeyField = true)
-    @TableId(value = "sys_update_featuresid", type = IdType.ASSIGN_UUID)
+    @TableId(value = "`SYS_UPDATE_FEATURESID`", type = IdType.ASSIGN_UUID)
     @JSONField(name = "sysupdatefeaturesid")
     @JsonProperty("sysupdatefeaturesid")
     @ApiModelProperty("系统更新功能标识")
@@ -121,7 +121,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     /**
      * 展示顺序
      */
-    @TableField(value = "displayorder")
+    @TableField(value = "`DISPLAYORDER`")
     @JSONField(name = "displayorder")
     @JsonProperty("displayorder")
     @ApiModelProperty("展示顺序")
@@ -129,7 +129,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
     /**
      * 功能描述
      */
-    @TableField(value = "featuresdesc")
+    @TableField(value = "`FEATURESDESC`")
     @JSONField(name = "featuresdesc")
     @JsonProperty("featuresdesc")
     @ApiModelProperty("功能描述")
@@ -146,7 +146,7 @@ public class SysUpdateFeatures extends EntityMP implements Serializable {
      * 系统更新日志标识
      */
     @DEField(name = "sys_update_logid")
-    @TableField(value = "sys_update_logid")
+    @TableField(value = "`SYS_UPDATE_LOGID`")
     @JSONField(name = "sysupdatelogid")
     @JsonProperty("sysupdatelogid")
     @ApiModelProperty("系统更新日志标识")

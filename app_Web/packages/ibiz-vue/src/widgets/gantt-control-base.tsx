@@ -253,7 +253,7 @@ export class GanttControlBase extends MDControlBase implements GanttControlInter
      * @param {*} [task={}] 节点数据
      * @memberof GanttControlBase
      */
-    public load(task: any = {}) {
+    public load(task: any = {}, isRefresh: boolean = false) {
         const params: any = {
             srfnodeid: task && task.id ? task.id : "#",
             srfnodefilter: ''
@@ -282,7 +282,11 @@ export class GanttControlBase extends MDControlBase implements GanttControlInter
                 this.$throw(response,'load');
                 return;
             }
-            this.tasks = [...this.tasks, ...response.data];
+            if (isRefresh) {
+              this.tasks = [...response.data];
+            } else {
+              this.tasks = [...this.tasks, ...response.data];
+            }
             response.data.forEach((item: any) => {
                 if(!item.collapsed) {
                     this.load(item);
@@ -306,7 +310,7 @@ export class GanttControlBase extends MDControlBase implements GanttControlInter
      * @memberof GanttControlBase
      */
     public refresh(args?: any) {
-        this.load();
+        this.load({},true);
     }
 
     /**

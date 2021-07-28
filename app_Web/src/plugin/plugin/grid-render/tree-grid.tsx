@@ -191,9 +191,11 @@ export class TreeGrid extends AppDefaultGrid {
                         const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
                         if(row[uiaction.uIActionTag]?.visabled){
                             return (
-                                <a title={uiaction?.caption ? uiaction.caption : ""} class={index == 0 ? "grid-first-uiaction" : "grid-uiaction-divider"} disabled={row[uiaction.uIActionTag].disabled} style={{'display': 'block'}} on-click={($event: any) => { this.handleActionClick(row, $event, _column, uiactionDetail) }} >
-                                    {uiactionDetail.showIcon ? <i class={uiaction?.getPSSysImage()?.cssClass ? uiaction?.getPSSysImage()?.cssClass : "fa fa-save"}></i> : ""}
-                                </a>
+                                <span title={uiaction?.caption ? uiaction.caption : ""}>
+                                    <a  class={index == 0 ? "grid-first-uiaction" : "grid-uiaction-divider"} disabled={row[uiaction.uIActionTag].disabled} on-click={($event: any) => { this.handleActionClick(row, $event, _column, uiactionDetail) }} >
+                                        {uiactionDetail.showIcon ? <i class={uiaction?.getPSSysImage()?.cssClass ? uiaction?.getPSSysImage()?.cssClass : "fa fa-save"} ></i> : ""}
+                                    </a>
+                                </span>
                             )
                         }else{
                             return null;

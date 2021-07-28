@@ -1,6 +1,6 @@
 import { IPSAppDEField, IPSCodeListEditor } from '@ibiz/dynamic-model-api';
 import { ModelTool } from 'ibiz-core';
-import { Vue, Component } from 'vue-property-decorator';
+import { Component } from 'vue-property-decorator';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { EditorBase } from '../editor-base/editor-base';
 
@@ -34,13 +34,22 @@ export default class CheckboxEditor extends EditorBase {
             // 选项框列表
             case 'CHECKBOXLIST':
                 break;
+            // 列表框
+            case 'LISTBOX':
+                this.initParams();
+                break;
+            // 列表框选择
+            case 'LISTBOXPICKUP':
+                this.initParams();
+                break;
         }
         let codeList = (this.editorInstance as IPSCodeListEditor)?.getPSAppCodeList?.();
         if(codeList) {
             Object.assign(this.customProps, {
                 tag: codeList.codeName,
                 codelistType: codeList.codeListType,
-                codeList:codeList,
+                codeList: codeList,
+                valueSeparator: codeList.valueSeparator,
                 mode: codeList?.orMode?.toLowerCase() || 'str'
             });
         }
@@ -54,6 +63,24 @@ export default class CheckboxEditor extends EditorBase {
      */
     public handleChange($event: any){
         this.editorChange({name: this.editorInstance.name, value: $event})
+    }
+
+    /**
+     * 初始化参数
+     * 
+     * @memberof CheckboxEditor
+     */
+    public initParams() {
+        let params: any = {
+            service: this.service,
+            formState: this.contextState,
+            editorType: this.editorInstance.editorType,
+            acParams: ModelTool.getAcParams(this.editorInstance),
+            deMajorField: ModelTool.getEditorMajorName(this.editorInstance),
+            deKeyField: ModelTool.getEditorKeyName(this.editorInstance),
+            multiple: this.editorInstance.editorParams?.['multiple'] ? JSON.parse(this.editorInstance.editorParams['multiple'] as string) : false,
+        }
+        Object.assign(this.customProps, params); 
     }
 
     /**
@@ -78,7 +105,10 @@ export default class CheckboxEditor extends EditorBase {
                 contextState: this.contextState,
                 ...this.customProps,
             },
-            on: { change: this.handleChange },
+            on: { 
+                change: this.handleChange,
+                formitemvaluechange: this.editorChange,
+            },
             style: this.customStyle,
         });
     }

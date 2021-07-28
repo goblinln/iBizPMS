@@ -269,6 +269,16 @@ export class MEditViewPanelControlBase extends MDControlBase implements MEditVie
     }
 
     /**
+     * 刷新
+     *
+     * @param {*} [args] 额外参数
+     * @memberof MEditViewPanelControlBase
+     */
+    public refresh(args?: any) {
+        this.load(args);
+    }
+
+    /**
      * 处理数据
      *
      * @public

@@ -65,7 +65,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     /**
      * 备注
      */
-    @TableField(value = "comment")
+    @TableField(value = "`COMMENT`")
     @JSONField(name = "comment")
     @JsonProperty("comment")
     @ApiModelProperty("备注")
@@ -98,7 +98,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
      * 归属组织名
      */
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "orgname")
+    @TableField(value = "`ORGNAME`")
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
     @ApiModelProperty("归属组织名")
@@ -107,7 +107,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -116,7 +116,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
      * 日期
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "date", fill = FieldFill.INSERT)
+    @TableField(value = "`DATE`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("date")
@@ -134,7 +134,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "org")
+    @TableField(value = "`ORG`")
     @JSONField(name = "org")
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
@@ -142,7 +142,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     /**
      * 附加值
      */
-    @TableField(value = "extra")
+    @TableField(value = "`EXTRA`")
     @JSONField(name = "extra")
     @JsonProperty("extra")
     @ApiModelProperty("附加值")
@@ -150,7 +150,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     /**
      * 操作者
      */
-    @TableField(value = "actor")
+    @TableField(value = "`ACTOR`")
     @JSONField(name = "actor")
     @JsonProperty("actor")
     @ApiModelProperty("操作者")
@@ -158,7 +158,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     /**
      * 系统日志编号
      */
-    @TableField(value = "actionsn")
+    @TableField(value = "`ACTIONSN`")
     @JSONField(name = "actionsn")
     @JsonProperty("actionsn")
     @ApiModelProperty("系统日志编号")
@@ -166,7 +166,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     /**
      * 动作
      */
-    @TableField(value = "action")
+    @TableField(value = "`ACTION`")
     @JSONField(name = "action")
     @JsonProperty("action")
     @ApiModelProperty("动作")
@@ -190,7 +190,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     /**
      * 项目
      */
-    @TableField(value = "project")
+    @TableField(value = "`PROJECT`")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("项目")
@@ -199,7 +199,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "deptname")
+    @TableField(value = "`DEPTNAME`")
     @JSONField(name = "deptname")
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
@@ -231,7 +231,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     /**
      * 产品
      */
-    @TableField(value = "product")
+    @TableField(value = "`PRODUCT`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品")
@@ -240,7 +240,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "dept")
+    @TableField(value = "`DEPT`")
     @JSONField(name = "dept")
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
@@ -249,7 +249,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
      * 已读
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "read")
+    @TableField(value = "`READ`")
     @JSONField(name = "read")
     @JsonProperty("read")
     @ApiModelProperty("已读")
@@ -265,7 +265,7 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     /**
      * 对象类型
      */
-    @TableField(value = "objecttype")
+    @TableField(value = "`OBJECTTYPE`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
     @ApiModelProperty("对象类型")

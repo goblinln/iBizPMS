@@ -49,7 +49,7 @@ public class UserGroup extends EntityMP implements Serializable {
     /**
      * account
      */
-    @TableField(value = "account")
+    @TableField(value = "`ACCOUNT`")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("account")
@@ -58,7 +58,7 @@ public class UserGroup extends EntityMP implements Serializable {
      * group
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "group")
+    @TableField(value = "`GROUP`")
     @JSONField(name = "group")
     @JsonProperty("group")
     @ApiModelProperty("group")
@@ -67,7 +67,7 @@ public class UserGroup extends EntityMP implements Serializable {
      * 主键
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.ASSIGN_UUID)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("主键")

@@ -1,0 +1,47 @@
+.view-default.view-container {
+    > .view-card.mdview-card {
+        > .ivu-card-head{
+            padding: 0;
+            > .header-container{
+                > .caption-container {
+                    flex: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    .caption-info {
+                        font-weight: 600;
+                        color: var(--view-font-color-bright);
+                        flex-shrink: 0;
+                    }
+                    .quick-group-container {
+                        margin-left: 12px;
+                        > .app-quick-group {
+                            background-color: transparent;
+                        }
+                    }
+                }
+                .quick-group-container,.quick-search-input{
+                    float: left;
+                    margin-top: 6px;
+                    margin-bottom: 6px;
+                }
+                >.bar-container  {
+                    flex: auto;
+                    margin-bottom: 4px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    .ivu-input-group.ivu-input-group-default {
+                        margin-top: 4px !important;
+                    }
+                    > .toolbar-container{
+                        margin-top: 2px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -322,6 +322,8 @@ export class AppComponentService {
         this.editorMap.set("AC_FS_DEFAULT", 'app-autocomplete');
         this.editorMap.set("AC_NOBUTTON_DEFAULT", 'app-autocomplete');
         this.editorMap.set("AC_FS_NOBUTTON_DEFAULT", 'app-autocomplete');
+        this.editorMap.set("LISTBOX_DEFAULT", 'app-list-box');
+        this.editorMap.set("LISTBOXPICKUP_DEFAULT", 'app-list-box');
         //兼容移动端编辑器
         this.editorMap.set('MOBTEXT_DEFAULT','input-box');
         this.editorMap.set('MOBPASSWORD_DEFAULT','input-box');
@@ -379,6 +381,7 @@ export class AppComponentService {
         this.editorMap.set("FILEUPLOADER_CAMERA", "app-file-upload-camera");
         this.editorMap.set("FILEUPLOADER_USEWORKTEMP", "text-file-upload");
         this.editorMap.set("PICKER_COMMONMICROCOM", "app-common-microcom");
+        this.editorMap.set("SLIDER_PROGRESS", 'app-progress');
        // 注册编辑器
         this.editorMap.set("MDROPDOWNLIST_MpickerList", "app-mdropdownlist-mpicker-list");
         this.editorMap.set("TEXTBOX_casedesc", "app-textbox-casedesc");

@@ -57,7 +57,7 @@ public class ProjectStorySearchContext extends QueryWrapperContext<ProjectStory>
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("org", query)
+                     wrapper.like("t1.`ORG`", query)
             );
 		 }
 	}

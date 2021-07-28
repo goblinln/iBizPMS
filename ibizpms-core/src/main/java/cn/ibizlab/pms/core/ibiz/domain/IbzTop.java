@@ -50,7 +50,7 @@ public class IbzTop extends EntityMP implements Serializable {
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "createdate", fill = FieldFill.INSERT)
+    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("createdate")
@@ -60,7 +60,7 @@ public class IbzTop extends EntityMP implements Serializable {
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "updateman")
+    @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
     @ApiModelProperty("更新人")
@@ -68,7 +68,7 @@ public class IbzTop extends EntityMP implements Serializable {
     /**
      * 排序
      */
-    @TableField(value = "objectorder")
+    @TableField(value = "`OBJECTORDER`")
     @JSONField(name = "objectorder")
     @JsonProperty("objectorder")
     @ApiModelProperty("排序")
@@ -77,7 +77,7 @@ public class IbzTop extends EntityMP implements Serializable {
      * 标识
      */
     @DEField(name = "ibz_topid", isKeyField = true)
-    @TableId(value = "ibz_topid", type = IdType.ASSIGN_UUID)
+    @TableId(value = "`IBZ_TOPID`", type = IdType.ASSIGN_UUID)
     @JSONField(name = "ibztopid")
     @JsonProperty("ibztopid")
     @ApiModelProperty("标识")
@@ -85,7 +85,7 @@ public class IbzTop extends EntityMP implements Serializable {
     /**
      * 数据对象标识
      */
-    @TableField(value = "objectid")
+    @TableField(value = "`OBJECTID`")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")
     @ApiModelProperty("数据对象标识")
@@ -94,7 +94,7 @@ public class IbzTop extends EntityMP implements Serializable {
      * 置顶名称
      */
     @DEField(name = "ibz_topname")
-    @TableField(value = "ibz_topname")
+    @TableField(value = "`IBZ_TOPNAME`")
     @JSONField(name = "ibztopname")
     @JsonProperty("ibztopname")
     @ApiModelProperty("置顶名称")
@@ -103,7 +103,7 @@ public class IbzTop extends EntityMP implements Serializable {
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "updatedate")
+    @TableField(value = "`UPDATEDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("updatedate")
@@ -113,7 +113,7 @@ public class IbzTop extends EntityMP implements Serializable {
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "createman", fill = FieldFill.INSERT)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
@@ -121,7 +121,7 @@ public class IbzTop extends EntityMP implements Serializable {
     /**
      * 置顶用户
      */
-    @TableField(value = "account")
+    @TableField(value = "`ACCOUNT`")
     @JSONField(name = "account")
     @JsonProperty("account")
     @ApiModelProperty("置顶用户")
@@ -129,7 +129,7 @@ public class IbzTop extends EntityMP implements Serializable {
     /**
      * 类型
      */
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("类型")

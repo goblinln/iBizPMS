@@ -42,6 +42,7 @@ import DropdownListMpicker from './common/dropdown-list-mpicker/dropdown-list-mp
 import AppRate from './common/app-rate/app-rate.vue'
 import AppSwitch from './common/app-switch/app-switch.vue'
 import AppSlider from './common/app-slider/app-slider.vue'
+import AppProgress from './common/app-progress/app-progress.vue'
 import AppStepper from './common/app-stepper/app-stepper.vue'
 import DatePickerRange from './common/date-picker-range/date-picker-range.vue'
 import AppRangeDate from './common/app-range-date/app-range-date.vue'
@@ -119,6 +120,7 @@ import AppMarkdownEditor from './common/app-markdown-editor/app-markdown-editor'
 import AppNumberRange from './common/app-number-range/app-number-range.vue';
 import AppAnchor from './common/app-anchor/app-anchor.vue';
 import AppElTree from './common/app-element-tree/app-element-tree.vue';
+import AppListBox from './common/app-list-box/app-list-box.vue';
 // 视图组件
 import { AppViewShell } from '../view-container/app-view-shell';
 import { AppDefaultIndexView } from './view/app-default-view/app-default-indexview';
@@ -269,6 +271,7 @@ import { AppDefaultViewPanel } from './control/app-default-viewpanel/app-default
 import { NotificationSignal } from '../directives';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
+        v.component('app-list-box', AppListBox);
         v.component('app-anchor', AppAnchor);
         v.component('app-number-range', AppNumberRange);
         v.component('app-calendar-timeline', AppCalendarTimeline);
@@ -329,6 +332,7 @@ export const ComponentsRegister = {
         v.component('app-rate', AppRate);
         v.component('app-switch', AppSwitch);
         v.component('app-slider', AppSlider);
+        v.component('app-progress', AppProgress);
         v.component('app-stepper', AppStepper);
         v.component('app-portal-design', AppPortalDesign);
         v.component('date-picker-range', DatePickerRange);

@@ -157,12 +157,15 @@ export class CodeListServiceBase {
         items.forEach((element: IPSCodeItem) => {
             const codelistItem = {
                 label: element.text,
-                text: element.text,
+                text: element.text
+            };
+            Object.assign(codelistItem,element);
+            Object.assign(codelistItem,{
                 value: codeItemValueNumber ? Number(element.value) : element.value,
                 id: element.value,
                 color: element.color,
                 codename: element.codeName
-            }
+            });
             if(translate && element?.getTextPSLanguageRes?.()?.lanResTag){
                 codelistItem.text = translate(element.getTextPSLanguageRes()?.lanResTag ,element.text)
                 codelistItem.label = translate(element.getTextPSLanguageRes()?.lanResTag ,element.text)

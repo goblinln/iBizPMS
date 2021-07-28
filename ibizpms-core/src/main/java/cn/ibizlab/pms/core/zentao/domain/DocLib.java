@@ -49,7 +49,7 @@ public class DocLib extends EntityMP implements Serializable {
     /**
      * 文档类型
      */
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("文档类型")
@@ -74,7 +74,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 收藏者
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "collector")
+    @TableField(value = "`COLLECTOR`")
     @JSONField(name = "collector")
     @JsonProperty("collector")
     @ApiModelProperty("收藏者")
@@ -83,7 +83,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 归属组织名
      */
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "orgname")
+    @TableField(value = "`ORGNAME`")
     @JSONField(name = "orgname")
     @JsonProperty("orgname")
     @ApiModelProperty("归属组织名")
@@ -92,7 +92,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "updatemanname")
+    @TableField(value = "`UPDATEMANNAME`")
     @JSONField(name = "updatemanname")
     @JsonProperty("updatemanname")
     @ApiModelProperty("由谁更新")
@@ -101,7 +101,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 部门标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "mdeptid")
+    @TableField(value = "`MDEPTID`")
     @JSONField(name = "mdeptid")
     @JsonProperty("mdeptid")
     @ApiModelProperty("部门标识")
@@ -110,7 +110,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 组织标识
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "orgid")
+    @TableField(value = "`ORGID`")
     @JSONField(name = "orgid")
     @JsonProperty("orgid")
     @ApiModelProperty("组织标识")
@@ -119,7 +119,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 权限
      */
     @DEField(defaultValue = "default")
-    @TableField(value = "acl")
+    @TableField(value = "`ACL`")
     @JSONField(name = "acl")
     @JsonProperty("acl")
     @ApiModelProperty("权限")
@@ -137,7 +137,7 @@ public class DocLib extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`DELETED`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
@@ -145,7 +145,7 @@ public class DocLib extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @TableField(value = "updateby")
+    @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
@@ -154,7 +154,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 分组
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "groups")
+    @TableField(value = "`GROUPS`")
     @JSONField(name = "groups")
     @JsonProperty("groups")
     @ApiModelProperty("分组")
@@ -171,7 +171,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 编号
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")
@@ -180,7 +180,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "deptname")
+    @TableField(value = "`DEPTNAME`")
     @JSONField(name = "deptname")
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
@@ -189,7 +189,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 用户
      */
     @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "users")
+    @TableField(value = "`USERS`")
     @JSONField(name = "users")
     @JsonProperty("users")
     @ApiModelProperty("用户")
@@ -198,7 +198,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 是否是主库
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "main")
+    @TableField(value = "`MAIN`")
     @JSONField(name = "main")
     @JsonProperty("main")
     @ApiModelProperty("是否是主库")
@@ -206,7 +206,7 @@ public class DocLib extends EntityMP implements Serializable {
     /**
      * 文档库名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("文档库名称")
@@ -223,7 +223,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "createby")
+    @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
@@ -240,7 +240,7 @@ public class DocLib extends EntityMP implements Serializable {
     /**
      * 文档库编号
      */
-    @TableField(value = "doclibsn")
+    @TableField(value = "`DOCLIBSN`")
     @JSONField(name = "doclibsn")
     @JsonProperty("doclibsn")
     @ApiModelProperty("文档库编号")
@@ -249,7 +249,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 排序
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "order")
+    @TableField(value = "`ORDER`")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("排序")
@@ -274,7 +274,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 项目库
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "project")
+    @TableField(value = "`PROJECT`")
     @JSONField(name = "project")
     @JsonProperty("project")
     @ApiModelProperty("项目库")
@@ -283,7 +283,7 @@ public class DocLib extends EntityMP implements Serializable {
      * 产品库
      */
     @DEField(defaultValue = "0")
-    @TableField(value = "product")
+    @TableField(value = "`PRODUCT`")
     @JSONField(name = "product")
     @JsonProperty("product")
     @ApiModelProperty("产品库")

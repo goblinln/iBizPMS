@@ -49,7 +49,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * admins
      */
-    @TableField(value = "admins")
+    @TableField(value = "`ADMINS`")
     @JSONField(name = "admins")
     @JsonProperty("admins")
     @ApiModelProperty("admins")
@@ -57,7 +57,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * 传真
      */
-    @TableField(value = "fax")
+    @TableField(value = "`FAX`")
     @JSONField(name = "fax")
     @JsonProperty("fax")
     @ApiModelProperty("传真")
@@ -67,7 +67,7 @@ public class Company extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`DELETED`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("逻辑删除标志")
@@ -75,7 +75,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * 公司编号
      */
-    @TableField(value = "companysn")
+    @TableField(value = "`COMPANYSN`")
     @JSONField(name = "companysn")
     @JsonProperty("companysn")
     @ApiModelProperty("公司编号")
@@ -83,7 +83,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * 官网
      */
-    @TableField(value = "website")
+    @TableField(value = "`WEBSITE`")
     @JSONField(name = "website")
     @JsonProperty("website")
     @ApiModelProperty("官网")
@@ -92,7 +92,7 @@ public class Company extends EntityMP implements Serializable {
      * id
      */
     @DEField(isKeyField = true)
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -100,7 +100,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * 邮政编码
      */
-    @TableField(value = "zipcode")
+    @TableField(value = "`ZIPCODE`")
     @JSONField(name = "zipcode")
     @JsonProperty("zipcode")
     @ApiModelProperty("邮政编码")
@@ -108,7 +108,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * 通讯地址
      */
-    @TableField(value = "address")
+    @TableField(value = "`ADDRESS`")
     @JSONField(name = "address")
     @JsonProperty("address")
     @ApiModelProperty("通讯地址")
@@ -116,7 +116,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * 内网
      */
-    @TableField(value = "backyard")
+    @TableField(value = "`BACKYARD`")
     @JSONField(name = "backyard")
     @JsonProperty("backyard")
     @ApiModelProperty("内网")
@@ -124,7 +124,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * 公司名称
      */
-    @TableField(value = "name")
+    @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
     @ApiModelProperty("公司名称")
@@ -132,7 +132,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * 匿名登陆
      */
-    @TableField(value = "guest")
+    @TableField(value = "`GUEST`")
     @JSONField(name = "guest")
     @JsonProperty("guest")
     @ApiModelProperty("匿名登陆")
@@ -140,7 +140,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * 联系电话
      */
-    @TableField(value = "phone")
+    @TableField(value = "`PHONE`")
     @JSONField(name = "phone")
     @JsonProperty("phone")
     @ApiModelProperty("联系电话")

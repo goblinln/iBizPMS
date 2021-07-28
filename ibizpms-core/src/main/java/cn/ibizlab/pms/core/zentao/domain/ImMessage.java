@@ -49,7 +49,7 @@ public class ImMessage extends EntityMP implements Serializable {
     /**
      * user
      */
-    @TableField(value = "user")
+    @TableField(value = "`USER`")
     @JSONField(name = "user")
     @JsonProperty("user")
     @ApiModelProperty("user")
@@ -57,7 +57,7 @@ public class ImMessage extends EntityMP implements Serializable {
     /**
      * gid
      */
-    @TableField(value = "gid")
+    @TableField(value = "`GID`")
     @JSONField(name = "gid")
     @JsonProperty("gid")
     @ApiModelProperty("gid")
@@ -66,7 +66,7 @@ public class ImMessage extends EntityMP implements Serializable {
      * id
      */
     @DEField(defaultValue = "0", isKeyField = true)
-    @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
@@ -75,7 +75,7 @@ public class ImMessage extends EntityMP implements Serializable {
      * date
      */
     @DEField(defaultValue = "0000-00-00 00:00:00")
-    @TableField(value = "date")
+    @TableField(value = "`DATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
     @JsonProperty("date")
@@ -86,7 +86,7 @@ public class ImMessage extends EntityMP implements Serializable {
      */
     @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
     @TableLogic(value = "0", delval = "1")
-    @TableField(value = "deleted")
+    @TableField(value = "`DELETED`")
     @JSONField(name = "deleted")
     @JsonProperty("deleted")
     @ApiModelProperty("逻辑删除标志")
@@ -94,7 +94,7 @@ public class ImMessage extends EntityMP implements Serializable {
     /**
      * data
      */
-    @TableField(value = "data")
+    @TableField(value = "`DATA`")
     @JSONField(name = "data")
     @JsonProperty("data")
     @ApiModelProperty("data")
@@ -102,7 +102,7 @@ public class ImMessage extends EntityMP implements Serializable {
     /**
      * type
      */
-    @TableField(value = "type")
+    @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
     @ApiModelProperty("type")
@@ -110,7 +110,7 @@ public class ImMessage extends EntityMP implements Serializable {
     /**
      * content
      */
-    @TableField(value = "content")
+    @TableField(value = "`CONTENT`")
     @JSONField(name = "content")
     @JsonProperty("content")
     @ApiModelProperty("content")
@@ -118,7 +118,7 @@ public class ImMessage extends EntityMP implements Serializable {
     /**
      * cgid
      */
-    @TableField(value = "cgid")
+    @TableField(value = "`CGID`")
     @JSONField(name = "cgid")
     @JsonProperty("cgid")
     @ApiModelProperty("cgid")
@@ -126,7 +126,7 @@ public class ImMessage extends EntityMP implements Serializable {
     /**
      * order
      */
-    @TableField(value = "order")
+    @TableField(value = "`ORDER`")
     @JSONField(name = "order")
     @JsonProperty("order")
     @ApiModelProperty("order")
@@ -134,7 +134,7 @@ public class ImMessage extends EntityMP implements Serializable {
     /**
      * contentType
      */
-    @TableField(value = "contenttype")
+    @TableField(value = "`CONTENTTYPE`")
     @JSONField(name = "contenttype")
     @JsonProperty("contenttype")
     @ApiModelProperty("contentType")

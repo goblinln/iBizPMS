@@ -573,6 +573,12 @@ export class ViewBase extends Vue implements ViewInterface {
             );
         } else {
             let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(control);
+            Object.assign(targetCtrlParam, {
+                dynamicProps: {
+                    viewparams: Util.deepCopy(this.viewparams),
+                    context: Util.deepCopy(this.context)
+                }
+            });
             return this.$createElement(targetCtrlName, { slot: `layout-${control.name}`, props: targetCtrlParam, ref: control?.name, on: targetCtrlEvent });
         }
     }

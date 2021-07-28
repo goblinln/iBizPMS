@@ -57,7 +57,7 @@ public class SysUpdateLogSearchContext extends QueryWrapperContext<SysUpdateLog>
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("sys_update_logname", query)
+                     wrapper.like("t1.`SYS_UPDATE_LOGNAME`", query)
             );
 		 }
 	}

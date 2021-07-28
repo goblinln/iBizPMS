@@ -103,12 +103,23 @@ export class CommonViewEngine extends ViewEngine {
     public onCtrlEvent(ctrlName: string, eventName: string, args: any): void {
         super.onCtrlEvent(ctrlName, eventName, args);
         // 处理部件加载（参数可指定触发部件）
-        if (Object.is(eventName, 'search') || Object.is(eventName, 'load')) {
+        if (Object.is(eventName, 'search') ||
+            Object.is(eventName, 'load') ||
+            Object.is(eventName, 'selectionchange')) {
             if (this.ctrlEngineArray.length > 0) {
                 for (let element of this.ctrlEngineArray) {
                     if (element.triggerCtrlName && Object.is(element.triggerCtrlName, ctrlName)) {
                         if (element.triggerType && Object.is(element.triggerType, 'CtrlLoad')) {
-                            this.setViewState2({ tag: element.targetCtrlName, action: 'load', viewdata: Util.deepCopy(args) });
+                            if (this.view) {
+                                if (this.view.$refs[element.targetCtrlName] && this.view.$refs[element.targetCtrlName].ctrl) {
+                                    this.view.$refs[element.targetCtrlName].ctrl.setNavdatas(Util.deepCopy(args));
+                                }
+                                if (Util.isExistData(args)) {
+                                    this.setViewState2({ tag: element.targetCtrlName, action: 'load', viewdata: Util.deepCopy(args) });
+                                } else {
+                                    this.setViewState2({ tag: element.targetCtrlName, action: 'reset', viewdata: Util.deepCopy(args) });
+                                }
+                            }
                         }
                     }
                 }

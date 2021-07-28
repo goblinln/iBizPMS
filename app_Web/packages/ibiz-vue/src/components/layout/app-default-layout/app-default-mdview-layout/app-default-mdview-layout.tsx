@@ -23,10 +23,11 @@ export class AppDefaultMDViewLayout extends AppDefaultViewLayout {
                 {this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.model.srfCaption}</span> : null}
                 {this.$slots.quickGroupSearch}
             </div>,
+            this.$slots.quickSearch || (this.viewIsshowToolbar && this.$slots.toolbar) ?
             <div class="bar-container">
                 {this.$slots.quickSearch}
                 {this.viewIsshowToolbar ? this.$slots.toolbar : null}
-            </div>
+            </div> : null
         ]
     }
 
@@ -39,6 +40,7 @@ export class AppDefaultMDViewLayout extends AppDefaultViewLayout {
         const noHeader = !this.showCaption && !this.viewIsshowToolbar && !this.$slots.quickGroupSearch && !this.$slots.quickSearch
         let cardClass = {
             'view-card': true,
+            'mdview-card': true,
             'view-no-caption': !this.showCaption,
             'view-no-toolbar': !this.viewIsshowToolbar,
             'view-no-header': noHeader

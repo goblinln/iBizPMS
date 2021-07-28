@@ -62,7 +62,7 @@ public class IbzReportlySearchContext extends QueryWrapperContext<IbzReportly> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("ibz_reportlyname", query)
+                     wrapper.like("t1.`IBZ_REPORTLYNAME`", query)
             );
 		 }
 	}
