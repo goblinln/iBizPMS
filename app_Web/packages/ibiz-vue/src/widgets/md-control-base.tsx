@@ -91,6 +91,17 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
     public curPage: number = 1;
 
     /**
+     * 多数据部件数据激活模式
+     * 0 不激活
+     * 1 单击激活
+     * 2 双击激活
+     *
+     * @type {(number | 0 | 1 | 2)}
+     * @memberof GridControlBase
+     */
+    public mDCtrlActiveMode: number | 0 | 1 | 2 = 2;
+
+    /**
      * 数据
      *
      * @type {any[]}
@@ -244,6 +255,7 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
     public onStaticPropsChange(newVal: any, oldVal: any) {
         this.isSingleSelect = newVal.isSingleSelect !== false;
         this.isSelectFirstDefault = newVal.isSelectFirstDefault === true;
+        this.mDCtrlActiveMode = newVal.mDCtrlActiveMode ? newVal.mDCtrlActiveMode : 2;
         super.onStaticPropsChange(newVal, oldVal);
     }
 

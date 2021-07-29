@@ -670,7 +670,8 @@ export class Verify {
             if (model.M.showMaxLength) {
               if(model.maxLength) {
                 rules.push({ validator: (rule: any, value: any, callback: any) => {
-                  if(value.length > model.maxLength) {
+                  const length = Util.isExistAndNotEmpty(value) ? value.length : 0;
+                  if(length > model.maxLength) {
                     callback(new Error(`内容最大长度必须为${model.maxLength},当前长度为${value.length}`));
                   } else {
                     callback();

@@ -179,9 +179,19 @@ export class AppUITriggerEngine {
                 case 'calcheadercellstyle':
                     return AppEmbeddedUILogic.calcRowStyle(opts, scriptCode);
                 default:
-                    break;
+                    return this.executeDefaultScriptLogic(opts, scriptCode);
             }
         }
+    }
+
+    /**
+     * 执行默认脚本逻辑
+     * @memberof AppUITriggerEngine
+     */
+    public executeDefaultScriptLogic(opts: any, scriptCode: string) {
+        const { arg } = opts;
+        eval(scriptCode);
+        return arg;
     }
 
     /**

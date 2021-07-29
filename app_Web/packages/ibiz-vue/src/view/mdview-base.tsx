@@ -406,6 +406,9 @@ export class MDViewBase extends MainViewBase implements MDViewInterface {
                 isExpandSearchForm: this.isExpandSearchForm
             });
         }
+        Object.assign(targetCtrlParam.staticProps, {
+            mDCtrlActiveMode: this.viewInstance.mDCtrlActiveMode,
+        });
         return { targetCtrlName: targetCtrlName, targetCtrlParam: targetCtrlParam, targetCtrlEvent: targetCtrlEvent };
     }
 

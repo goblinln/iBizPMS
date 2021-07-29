@@ -1,7 +1,7 @@
 /**
  * 应用内置逻辑
  */
-export class AppEmbeddedUILogic {
+ export class AppEmbeddedUILogic {
     /**
      * 计算表格行样式
      *
@@ -9,7 +9,8 @@ export class AppEmbeddedUILogic {
      */
     public static calcRowStyle(opts: any, scriptCode: string) {
         let result: any;
-        const { row, rowIndex } = opts;
+        const { arg } = opts;
+        const { row, rowIndex } = arg;
         eval(scriptCode);
         return result;
     }
@@ -21,7 +22,8 @@ export class AppEmbeddedUILogic {
      */
     public static calcCellStyle(opts: any, scriptCode: string) {
         let result: any;
-        const { row, column, rowIndex, columnIndex } = opts;
+        const { arg } = opts;
+        const { row, column, rowIndex, columnIndex } = arg;
         eval(scriptCode);
         return result;
     }
@@ -33,7 +35,8 @@ export class AppEmbeddedUILogic {
      */
     public static calcHeaderRowStyle(opts: any, scriptCode: string) {
         let result: any;
-        const { row, rowIndex } = opts;
+        const { arg } = opts;
+        const { row, rowIndex } = arg;
         eval(scriptCode);
         return result;
     }
@@ -45,7 +48,8 @@ export class AppEmbeddedUILogic {
      */
     public static calcHeaderCellStyle(opts: any, scriptCode: string) {
         let result: any;
-        const { row, column, rowIndex, columnIndex } = opts;
+        const { arg } = opts;
+        const { row, column, rowIndex, columnIndex } = arg;
         eval(scriptCode);
         return result;
     }

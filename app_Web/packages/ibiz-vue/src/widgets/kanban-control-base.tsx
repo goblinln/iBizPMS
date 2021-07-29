@@ -537,6 +537,10 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
      * @memberof KanbanControlBase
      */
     public handleClick(args: any) {
+        if (this.mDCtrlActiveMode === 1) {
+            this.ctrlEvent({ controlname: this.name, action: 'rowclick', data: args });
+            return;
+        }
         args.srfchecked = Number(!args.srfchecked);
         this.items.forEach((item: any) => {
             if (item.srfkey !== args.srfkey) {
@@ -553,13 +557,15 @@ export class KanbanControlBase extends MDControlBase implements KanbanControlInt
      * @memberof KanbanControlBase
      */
     public handleDblClick(args: any) {
-        args.srfchecked = 1;
-        this.items.forEach((item: any) => {
-            if (item.srfkey !== args.srfkey) {
-                item.srfchecked = 0;
-            }
-        })
-        this.$emit("ctrl-event", { controlname: "kanban", action: "rowdblclick", data: args });
+        if (this.mDCtrlActiveMode !== 0) {
+            args.srfchecked = 1;
+            this.items.forEach((item: any) => {
+                if (item.srfkey !== args.srfkey) {
+                    item.srfchecked = 0;
+                }
+            })
+            this.$emit("ctrl-event", { controlname: "kanban", action: "rowdblclick", data: args });
+        }
     }
 
     /**

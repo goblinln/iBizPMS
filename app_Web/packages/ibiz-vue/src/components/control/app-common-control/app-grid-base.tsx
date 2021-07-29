@@ -93,8 +93,8 @@ export class AppGridBase extends GridControlBase {
      * @memberof AppGridBase
      */
     public showPoptip(show: boolean) {
-      let cls: string = show?"ivu-poptip page-column show-poptip":"ivu-poptip page-column hide-poptip";
-      (this.$refs.pageColumn as any).$el.setAttribute("class",cls);
+        let cls: string = show ? "ivu-poptip page-column show-poptip" : "ivu-poptip page-column hide-poptip";
+        (this.$refs.pageColumn as any).$el.setAttribute("class", cls);
     }
 
     /**
@@ -102,9 +102,9 @@ export class AppGridBase extends GridControlBase {
      *
      * @memberof AppGridBase
      */
-    public  calcGridRowStyle(row: any, rowIndex: number) {
+    public calcGridRowStyle(row: any, rowIndex: number) {
         if (this.ctrlTriggerLogicMap.get('calcrowstyle')) {
-            return this.ctrlTriggerLogicMap.get('calcrowstyle').executeUILogic({ row, rowIndex });
+            return this.ctrlTriggerLogicMap.get('calcrowstyle').executeUILogic({ arg: { row, rowIndex } });
         }
     }
 
@@ -113,9 +113,9 @@ export class AppGridBase extends GridControlBase {
      *
      * @memberof AppGridBase
      */
-    public  calcGridCellStyle(row: any, column: any, rowIndex: number, columnIndex: number) {
+    public calcGridCellStyle(row: any, column: any, rowIndex: number, columnIndex: number) {
         if (this.ctrlTriggerLogicMap.get('calccellstyle')) {
-            return this.ctrlTriggerLogicMap.get('calccellstyle').executeUILogic({ row, column, rowIndex, columnIndex });
+            return this.ctrlTriggerLogicMap.get('calccellstyle').executeUILogic({ arg: { row, column, rowIndex, columnIndex } });
         }
     }
 
@@ -124,9 +124,9 @@ export class AppGridBase extends GridControlBase {
      *
      * @memberof AppGridBase
      */
-     public  calcGridHeaderRowStyle(row: any, rowIndex: number) {
+    public calcGridHeaderRowStyle(row: any, rowIndex: number) {
         if (this.ctrlTriggerLogicMap.get('calcheaderrowstyle')) {
-            return this.ctrlTriggerLogicMap.get('calcheaderrowstyle').executeUILogic({ row, rowIndex });
+            return this.ctrlTriggerLogicMap.get('calcheaderrowstyle').executeUILogic({ arg: { row, rowIndex } });
         }
     }
 
@@ -135,9 +135,9 @@ export class AppGridBase extends GridControlBase {
      *
      * @memberof AppGridBase
      */
-    public  calcGridHeaderCellStyle(row: any, column: any, rowIndex: number, columnIndex: number) {
+    public calcGridHeaderCellStyle(row: any, column: any, rowIndex: number, columnIndex: number) {
         if (this.ctrlTriggerLogicMap.get('calcheadercellstyle')) {
-            return this.ctrlTriggerLogicMap.get('calcheadercellstyle').executeUILogic({ row, column, rowIndex, columnIndex });
+            return this.ctrlTriggerLogicMap.get('calcheadercellstyle').executeUILogic({ arg: { row, column, rowIndex, columnIndex } });
         }
     }
 
@@ -155,10 +155,10 @@ export class AppGridBase extends GridControlBase {
             'row-class-name': ({ row, rowIndex }: any) => this.getRowClassName({ row, rowIndex }),
             'row-style': ({ row, rowIndex }: any) => this.calcGridRowStyle(row, rowIndex),
             'cell-style': ({ row, column, rowIndex, columnIndex }: any) =>
-            this.calcGridCellStyle(row, column, rowIndex, columnIndex),
+                this.calcGridCellStyle(row, column, rowIndex, columnIndex),
             'header-row-style': ({ row, rowIndex }: any) => this.calcGridHeaderRowStyle(row, rowIndex),
             'header-cell-style': ({ row, column, rowIndex, columnIndex }: any) =>
-            this.calcGridHeaderCellStyle(row, column, rowIndex, columnIndex),
+                this.calcGridHeaderCellStyle(row, column, rowIndex, columnIndex),
             'cell-class-name': ({ row, column, rowIndex, columnIndex }: any) =>
                 this.getCellClassName({ row, column, rowIndex, columnIndex }),
             'max-height': this.items?.length > 0 && !Object.is(this.controlInstance.gridStyle, 'USER') && this.controlInstance.enablePagingBar ? 'calc(100% - 50px)' : '100%',
@@ -207,10 +207,10 @@ export class AppGridBase extends GridControlBase {
      */
     public computeGridEvents() {
         let events: any = {
-            'row-click': (row: any, column: any, event: any) => throttle(this.rowClick,[row, column, event],this),
-            'row-dblclick': (row: any) => throttle(this.rowDBLClick,[row],this),
-            select: (selection: any, row: any) => throttle(this.select,[selection, row],this),
-            'select-all': (selection: any) => throttle(this.selectAll,[selection],this),
+            'row-click': (row: any, column: any, event: any) => throttle(this.rowClick, [row, column, event], this),
+            'row-dblclick': (row: any) => throttle(this.rowDBLClick, [row], this),
+            select: (selection: any, row: any) => throttle(this.select, [selection, row], this),
+            'select-all': (selection: any) => throttle(this.selectAll, [selection], this),
         };
         //  支持排序
         if (!this.controlInstance?.noSort) {
@@ -276,7 +276,7 @@ export class AppGridBase extends GridControlBase {
         if (!panel) {
             return;
         }
-        let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(panel, this.remoteData) ;
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(panel, this.remoteData);
         return this.$createElement(targetCtrlName, { slot: 'append', props: targetCtrlParam, on: targetCtrlEvent, ref: panel.name });
     }
 
@@ -409,7 +409,7 @@ export class AppGridBase extends GridControlBase {
                                 disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                 class={columnClass}
                                 on-click={($event: any) => {
-                                    throttle(this.handleActionButtonClick,[row, $event, _column, uiactionDetail],this);
+                                    throttle(this.handleActionButtonClick, [row, $event, _column, uiactionDetail], this);
                                 }}
                             >
                                 {uiactionDetail.showIcon ? <menu-icon item={uiaction} /> : null}
@@ -502,7 +502,7 @@ export class AppGridBase extends GridControlBase {
                                             class={columnClass}
                                             disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                             on-click={($event: any) => {
-                                            throttle(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
+                                                throttle(this.handleActionClick, [row, $event, _column, uiactionDetail], this);
                                             }}
                                         >
                                             {uiactionDetail.showIcon ? (
@@ -525,7 +525,7 @@ export class AppGridBase extends GridControlBase {
                                         class={columnClass}
                                         disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                         on-click={($event: any) => {
-                                          throttle(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
+                                            throttle(this.handleActionClick, [row, $event, _column, uiactionDetail], this);
                                         }}
                                     >
                                         {uiactionDetail.showIcon ? (
@@ -653,15 +653,15 @@ export class AppGridBase extends GridControlBase {
                     {this.allColumns.map((col: any) => {
                         return (
                             col.columnType != "UAGRIDCOLUMN" ?
-                            <div>
-                                <el-checkbox
-                                    key={col.name}
-                                    v-model={col.show}
-                                    on-change={this.onColChange.bind(this)}
-                                >
-                                    {col.label}
-                                </el-checkbox>
-                            </div> : null
+                                <div>
+                                    <el-checkbox
+                                        key={col.name}
+                                        v-model={col.show}
+                                        on-change={this.onColChange.bind(this)}
+                                    >
+                                        {col.label}
+                                    </el-checkbox>
+                                </div> : null
                         );
                     })}
                 </div>
@@ -687,7 +687,7 @@ export class AppGridBase extends GridControlBase {
                     {this.controlInstance.enableColFilter ? columnPopTip : null}
                     {this.renderBatchToolbar()}
                     <span class='page-button'>
-                        <i-button icon='md-refresh' title={this.$t('app.grid.refresh')} on-click={() => throttle(this.pageRefresh,[],this)}></i-button>
+                        <i-button icon='md-refresh' title={this.$t('app.grid.refresh')} on-click={() => throttle(this.pageRefresh, [], this)}></i-button>
                     </span>
                     {pageText}
                 </page>
@@ -702,30 +702,30 @@ export class AppGridBase extends GridControlBase {
      */
     public renderColumnFilter() {
         if (this.viewStyle == 'DEFAULT') {
-            let ifShow = !!this.allColumnsInstance.find((item: IPSDEGridColumn)=> item.columnType == 'UAGRIDCOLUMN' && item.columnStyle == 'EXPAND');
-            if(!ifShow){
+            let ifShow = !!this.allColumnsInstance.find((item: IPSDEGridColumn) => item.columnType == 'UAGRIDCOLUMN' && item.columnStyle == 'EXPAND');
+            if (!ifShow) {
                 return
             }
-            return <poptip transfer ref='pageColumn' placement='bottom-end' class='page-column' on-on-popper-show={()=>this.showPoptip(true)} on-on-popper-hide={()=>this.showPoptip(false)} popper-class="view-default"> 
+            return <poptip transfer ref='pageColumn' placement='bottom-end' class='page-column' on-on-popper-show={() => this.showPoptip(true)} on-on-popper-hide={() => this.showPoptip(false)} popper-class="view-default">
                 <icon type="md-options" />
                 <div slot='content'>
                     <draggable value={this.allColumns} animation={300} handle='.handle-icon' on-change={({ moved }: any) => {
-                        Util.changeIndex(this.allColumns,moved.oldIndex,moved.newIndex);
-                        Util.changeIndex(this.allColumnsInstance,moved.oldIndex,moved.newIndex);
+                        Util.changeIndex(this.allColumns, moved.oldIndex, moved.newIndex);
+                        Util.changeIndex(this.allColumnsInstance, moved.oldIndex, moved.newIndex);
                     }}>
                         {this.allColumns.map((col: any) => {
                             return (
                                 col.columnType != "UAGRIDCOLUMN" ?
-                                <div class='page-column-item'>
-                                    <el-checkbox
-                                        key={col.name}
-                                        v-model={col.show}
-                                        on-change={this.onColChange.bind(this)}
-                                    >
-                                        {col.label}
-                                    </el-checkbox>
-                                    <icon type="md-menu handle-icon" />
-                                </div> : null
+                                    <div class='page-column-item'>
+                                        <el-checkbox
+                                            key={col.name}
+                                            v-model={col.show}
+                                            on-change={this.onColChange.bind(this)}
+                                        >
+                                            {col.label}
+                                        </el-checkbox>
+                                        <icon type="md-menu handle-icon" />
+                                    </div> : null
                             );
                         })}
                     </draggable>
@@ -808,7 +808,7 @@ export class AppGridBase extends GridControlBase {
             <div class={{ ...controlClassNames, grid: true }}>
                 <i-form>
                     {this.items?.length > 0 ? this.renderGridContent(h) : <div class="app-grid-empty-content">
-                      {this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
+                        {this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
                     </div>}
                     {this.controlInstance?.enablePagingBar && !Object.is(this.controlInstance?.gridStyle, 'USER') ? this.renderPagingBar(h) : ''}
                     {this.items?.length > 0 ? this.renderColumnFilter() : null}

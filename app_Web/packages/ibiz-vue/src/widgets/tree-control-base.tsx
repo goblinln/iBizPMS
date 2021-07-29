@@ -311,7 +311,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
                 this.ctrlEvent({
                     controlname: this.name,
                     action: 'load',
-                    data: _items.filter((item: any) => item.enablecheck )
+                    data: _items.filter((item: any) => item.enablecheck)
                 });
             })
             .catch((response: any) => {
@@ -770,26 +770,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         return new Promise((resolve: any, reject: any) => {
             if (node.data?.allowDrag || node.data?.allowOrder) {
                 this.draggingNode = Util.deepCopy(node);
-                if (this.ctrlTriggerLogicMap.get('allowdrag')) {
-                    const nodeData = node.data;
-                    this.ctrlTriggerLogicMap.get('allowdrag').executeAsyncUILogic({
-                        context: nodeData.srfappctx,
-                        viewparams: this.viewparams,
-                        data: [nodeData.curData],
-                        event: null,
-                        xData: this,
-                        actionContext: this,
-                        srfParentDeName: nodeData.srfparentdename
-                    }).then((res: any) => {
-                        if(res && res.srfret){
-                            resolve(true);
-                        }else{
-                            resolve(false);
-                        }
-                    });
-                } else {
-                    resolve(true);
-                }
+                resolve(true);
             } else {
                 resolve(false);
             }
@@ -807,39 +788,40 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
      */
     public allowDrop(draggingNode: any, dropNode: any, type: string) {
         return new Promise((resolve: any, reject: any) => {
-			if ((dropNode.data?.allowDrop || dropNode.data?.allowOrder) && !Object.is('inner', type)) {
-                if (this.ctrlTriggerLogicMap.get('allowdrop')) {
+            if ((dropNode.data?.allowDrop || dropNode.data?.allowOrder) && !Object.is('inner', type)) {
+                if (this.ctrlTriggerLogicMap.get('calcnodeallowdrop')) {
                     const draggingNodeData = draggingNode.data;
                     const dropNodeData = dropNode.data;
                     if (this.cacheDragNodeMap && this.cacheDragNodeMap.get(draggingNode.data?.id + dropNode.data?.id)) {
                         const isAllowDrop = this.cacheDragNodeMap.get(draggingNode.data.id + dropNode.data.id) == 'true' ? true : false;
                         return resolve(isAllowDrop);
                     }
-                    this.ctrlTriggerLogicMap.get('allowdrop').executeAsyncUILogic({
+                    let arg: any = { draggingNode: draggingNodeData.curData, dropNode: dropNodeData.curData };
+                    this.ctrlTriggerLogicMap.get('calcnodeallowdrop').executeUILogic({
                         context: dropNodeData.srfappctx,
                         viewparams: this.viewparams,
-                        data: [{draggingNode: draggingNodeData.curData, dropNode: dropNodeData.curData}],
+                        data: [arg],
                         event: null,
                         xData: this,
                         actionContext: this,
-                        srfParentDeName: dropNodeData.srfparentdename
-                    }).then((res: any) => {
-                        if(res && res.srfret){
-                            if (dropNode.data?.allowDrop) {
-                                this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'true');
-                                resolve(true);
-                            } else if (dropNode.data?.allowOrder && Object.is(this.draggingNode.parent?.id, dropNode.parent?.id)) {
-                                this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'true');
-                                resolve(true);
-                            } else {
-                                this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'false');
-                                resolve(false);
-                            }
-                        }else{
+                        srfParentDeName: dropNodeData.srfparentdename,
+                        arg: Object.assign(arg, { data: [arg] })
+                    })
+                    if (arg && arg.srfret) {
+                        if (dropNode.data?.allowDrop) {
+                            this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'true');
+                            resolve(true);
+                        } else if (dropNode.data?.allowOrder && Object.is(this.draggingNode.parent?.id, dropNode.parent?.id)) {
+                            this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'true');
+                            resolve(true);
+                        } else {
                             this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'false');
                             resolve(false);
                         }
-                    });
+                    } else {
+                        this.cacheDragNodeMap.set(draggingNode.data.id + dropNode.data.id, 'false');
+                        resolve(false);
+                    }
                 } else {
                     if (dropNode.data?.allowDrop) {
                         resolve(true);
@@ -851,7 +833,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
                 }
             } else {
                 resolve(false);
-            } 
+            }
         });
     }
 
@@ -901,7 +883,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
             this.refreshEditNodeParent(node);
         });
     }
-    
+
     /**
      * 刷新编辑节点的父节点
      * 

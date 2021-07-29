@@ -708,6 +708,10 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @memberof DataViewControlBase
      */
     public handleClick(args: any) {
+        if (this.mDCtrlActiveMode === 1) {
+            this.ctrlEvent({ controlname: this.controlInstance.name, action: 'rowclick', data: args });
+            return;
+        }
         args.srfchecked = Number(!args.srfchecked);
         if (this.isSingleSelect) {
             this.items.forEach((item: any) => {
@@ -756,7 +760,9 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @memberof DataViewControlBase
      */
     public handleDblClick(args: any) {
-        this.$emit('ctrl-event', { controlname: this.controlInstance.name, action: 'rowdblclick', data: args });
+        if (this.mDCtrlActiveMode !== 0) {
+            this.$emit('ctrl-event', { controlname: this.controlInstance.name, action: 'rowdblclick', data: args });
+        }
     }
 
     /**

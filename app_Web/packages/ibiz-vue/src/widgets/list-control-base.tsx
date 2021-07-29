@@ -482,6 +482,10 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
      * @memberof ListControlBase
      */
     public handleClick(args: any) {
+        if (this.mDCtrlActiveMode === 1) {
+            this.ctrlEvent({ controlname: this.name, action: 'rowclick', data: args });
+            return;
+        }
         if (this.isSingleSelect) {
             this.clearSelection();
         }
@@ -515,7 +519,9 @@ export class ListControlBase extends MDControlBase implements ListControlInterfa
      * @memberof ListControlBase
      */
     public handleDblClick(args: any) {
-        this.ctrlEvent({ controlname: this.name as string, action: 'rowdblclick', data: args });
+        if (this.mDCtrlActiveMode !== 0) {
+            this.ctrlEvent({ controlname: this.name as string, action: 'rowdblclick', data: args });
+        }
     }
 
     /**

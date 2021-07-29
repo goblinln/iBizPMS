@@ -140,6 +140,7 @@ export class MDViewEngine extends ViewEngine {
      */
     public MDCtrlEvent(eventName: string, args: any): void {
         if (Object.is(eventName, 'rowclick')) {
+            this.doEdit(args);
         }
         if (Object.is(eventName, 'rowdblclick')) {
             this.doEdit(args);
