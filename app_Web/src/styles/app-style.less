@@ -152,7 +152,7 @@
      margin-right: 6px;
      margin-left: 6px;
 }
-        .team-card{
+    .team-card{
 	>.view-content >.content-wrapper >.app-list >div:not(.empty-data-tip){
 		display: flex;
 		flex-wrap: wrap;
@@ -161,15 +161,15 @@
 		>.app-list-item{
 			border-bottom: none;
 			width: 33%;
-			>.panel-container >.app-layoutpanel >.ivu-row{
+			>.viewpanel-container >.app-viewpanel {
 				box-shadow: 1px 1px 5px rgb(209, 205, 205);
 				margin: 10px;
 				padding: 10px;
 				padding-left: 20px;
 				border-radius: 6px;
 				width: auto;
-				>.app-layoutpanel-container{
-					.app-layoutpanel-field{
+				>.app-viewpanel-container{
+					.app-viewpanel-field{
 						margin-bottom: 5px;
 						>.item-field{
 							>.item-field-content{
@@ -182,7 +182,7 @@
 						}
           }
 				}
-        .app-layoutpanel-rowitem{
+        .app-viewpanel-rowitem{
           font-weight: bolder;
         }
 			}	
@@ -193,9 +193,9 @@
       color:rgba(203, 195, 195, 1)
     }
     .team-fontsize{
-	margin-bottom: 10px;
-	>.ivu-row{
-		>.app-layoutpanel-field:first-child{
+	  margin-bottom: 10px;
+    overflow: hidden !important;
+		>.app-viewpanel-field:first-child{
 			font-size: 18px;
 			font-weight: bold;
 			height: 62px;
@@ -215,12 +215,11 @@
 				}
 			}
 		}
-		>.app-layoutpanel-field:nth-child(2), .app-layoutpanel-rowitem{
+		>.app-viewpanel-field:nth-child(2), .app-viewpanel-rowitem{
 			position: absolute;
     		top: 44px;
     		left: 54px;
 		}
-	}
 }
 
     .medit-arrow {

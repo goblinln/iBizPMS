@@ -629,10 +629,6 @@
       },
       "allowEmpty" : true
     } ],
-    "getPSSysPFPlugin" : {
-      "pluginType" : "GRID_RENDER",
-      "pluginCode" : "saveBatch"
-    },
     "pagingSize" : 100,
     "getRemovePSControlAction" : {
       "actionName" : "Remove",
