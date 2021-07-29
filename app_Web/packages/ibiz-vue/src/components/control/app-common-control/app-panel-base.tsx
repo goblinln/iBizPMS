@@ -260,6 +260,9 @@ export class AppPanelBase extends PanelControlBase {
                             if (height) {
                                 detailStyle.height = height + 'px';
                             }
+                            if (this.detailsModel[item.name] && !this.detailsModel[item.name].visible) {
+                                Object.assign(detailStyle, { display: 'none' });
+                            }
                             switch (itemType) {
                                 case 'CONTAINER':
                                     return this.renderByDetailType(item);
@@ -292,7 +295,7 @@ export class AppPanelBase extends PanelControlBase {
                     {panelItems.map((item: any, index: number) => {
                         let { height, width, itemType } = item;
                         let detailStyle: any = {};
-                        if (this.detailsModel[container.name] && !this.detailsModel[container.name].visible) {
+                        if (this.detailsModel[item.name] && !this.detailsModel[item.name].visible) {
                             Object.assign(detailStyle, { display: 'none' });
                         }
                         if (height) {

@@ -770,7 +770,26 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
         return new Promise((resolve: any, reject: any) => {
             if (node.data?.allowDrag || node.data?.allowOrder) {
                 this.draggingNode = Util.deepCopy(node);
-                resolve(true);
+                if (this.ctrlTriggerLogicMap.get('allowdrag')) {
+                    const nodeData = node.data;
+                    this.ctrlTriggerLogicMap.get('allowdrag').executeAsyncUILogic({
+                        context: nodeData.srfappctx,
+                        viewparams: this.viewparams,
+                        data: [nodeData.curData],
+                        event: null,
+                        xData: this,
+                        actionContext: this,
+                        srfParentDeName: nodeData.srfparentdename
+                    }).then((res: any) => {
+                        if(res && res.srfret){
+                            resolve(true);
+                        }else{
+                            resolve(false);
+                        }
+                    });
+                } else {
+                    resolve(true);
+                }
             } else {
                 resolve(false);
             }
