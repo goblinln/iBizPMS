@@ -13667,7 +13667,7 @@ t1.`ID`,
 t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
-(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
+(case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 	case when ( To_Days( t1.`end` ) - To_Days( t1.`begin`) ) is null then null else ( To_Days( t1.`end` ) - To_Days( t1.`begin` ) ) + 1 end  AS `DURATION`,
 t1.`TITLE` as `TITLE`
@@ -13699,7 +13699,7 @@ t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
-(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
+(case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 t1.`TITLE`
 FROM `zt_productplan` t1 
@@ -13730,7 +13730,7 @@ t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
-(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
+(case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 t1.`TITLE`
 FROM `zt_productplan` t1 
@@ -13762,7 +13762,7 @@ t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
-(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
+(case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 t1.`TITLE`
 FROM `zt_productplan` t1 
@@ -13834,7 +13834,7 @@ WHERE  t.product = t1.product and
 	t1.`PARENT`,
 	t11.`TITLE` AS `PARENTNAME`,
 	t1.`PRODUCT`,
-	( CASE WHEN t1.parent = - 1 THEN 'parent' WHEN t1.parent > 0 THEN 'chlid' ELSE 'normal' END ) AS `STATUSS`,
+	(case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 	(
 	(
 SELECT
@@ -13977,7 +13977,7 @@ t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
-(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
+(case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 t1.`TITLE`
 FROM `zt_productplan` t1 
@@ -14024,7 +14024,7 @@ t1.`ID`,
 t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
-(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
+(case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 	case when ( To_Days( t1.`end` ) - To_Days( t1.`begin`) ) is null then null else ( To_Days( t1.`end` ) - To_Days( t1.`begin` ) ) + 1 end  AS `DURATION`,
 t1.`TITLE` as `TITLE`
@@ -14057,7 +14057,7 @@ t1.`ORDER` AS `ORDERNUM`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
-(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
+(case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 case when (t11.`TITLE` is not null) then CONCAT('/',t11.`TITLE`,'/',t1.`TITLE`) else CONCAT('/',t1.`TITLE`) end as TITLE ,case when t1.parent <= 0 then t1.`begin` else CONCAT_WS('',t11.`begin`,'-',t1.`begin`) end as BEGINTIME 
 FROM `zt_productplan` t1 
@@ -14090,7 +14090,7 @@ t1.`PARENT`,
 t11.`TITLE` AS `PARENTNAME`,
 t1.`PRODUCT`,
 t1.`STATUS`,
-(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`,
+(case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
 t1.`TITLE`
 FROM `zt_productplan` t1 

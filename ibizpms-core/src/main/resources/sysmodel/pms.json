@@ -31382,7 +31382,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
-    "expression":"(case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end)",
+    "expression":"(case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
