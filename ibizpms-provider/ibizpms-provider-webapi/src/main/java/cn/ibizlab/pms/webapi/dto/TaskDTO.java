@@ -491,8 +491,9 @@ public class TaskDTO extends DTOBase implements Serializable {
      */
     @JSONField(name = "statusorder")
     @JsonProperty("statusorder")
+    @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("排序")
-    private Integer statusorder;
+    private Long statusorder;
 
     /**
      * 属性 [MAILTOCONACT]

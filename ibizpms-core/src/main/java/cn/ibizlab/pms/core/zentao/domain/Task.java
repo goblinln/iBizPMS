@@ -453,7 +453,7 @@ public class Task extends EntityMP implements Serializable {
     @JSONField(name = "statusorder")
     @JsonProperty("statusorder")
     @ApiModelProperty("排序")
-    private Integer statusorder;
+    private Long statusorder;
     /**
      * 联系人
      */

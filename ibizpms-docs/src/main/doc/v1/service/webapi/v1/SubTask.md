@@ -22755,7 +22755,7 @@ POST
 | 44 | desc | String | 允许 | 任务描述 |
 | 45 | eststarted | Timestamp | 允许 | 预计开始<br>时间格式：yyyy-MM-dd |
 | 46 | deadline | Timestamp | 允许 | 截止日期<br>时间格式：yyyy-MM-dd |
-| 47 | statusorder | Integer | 允许 | 排序 |
+| 47 | statusorder | Long | 允许 | 排序 |
 | 48 | mailtoconact | String | 允许 | 联系人 |
 | 49 | deleted | String | 允许 | 已删除 |
 | 50 | cycle | Integer | 允许 | 周期 |

@@ -72,7 +72,7 @@ hide members
 |任务描述|DESC|LONGTEXT|&nbsp;|
 |预计开始|ESTSTARTED|DATE|&nbsp;|
 |截止日期|DEADLINE|DATE|&nbsp;|
-|排序|STATUSORDER|INT|&nbsp;SELECT
+|排序|STATUSORDER|BIGINT|&nbsp;SELECT
 	t1.id,
 	t1.`ASSIGN`,
 	t1.`ASSIGNEDDATE`,

@@ -249210,7 +249210,7 @@ CREATE TABLE `T_SYS_UPDATE_LOG`(
 | ASSIGN        | 是否指派  | VARCHAR      |   100   | &nbsp; |
 | PARENT        | 父任务  |       |   8   | &nbsp; |
 | STORYVERSION        | 需求版本  | INTEGER      |   6   | &nbsp; |
-| STATUSORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
+| STATUSORDER        | 排序  |       |   -1   | &nbsp; |
 | MODULENAME        | 所属模块  | VARCHAR      |   60   | &nbsp; |
 | CONFIG_WEEK        | 周期设置周几  | VARCHAR      |   2,000   | &nbsp; |
 | CANCELEDDATE        | 取消时间  | DATETIME      |   -1   | &nbsp; |
