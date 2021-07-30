@@ -42,13 +42,13 @@ public class ProductPlanHelper extends ZTBaseHelper<ProductPlanMapper, ProductPl
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean create(ProductPlan et) {
-        if(et.getParent() != null && et.getParent() > 0) {
-            Long parent = et.getParent();
-            ProductPlan productPlan = this.get(parent);
-            et.setProduct(productPlan.getProduct());
-            productPlan.setParent(-1L);
-            this.edit(productPlan);
-        }
+        // if(et.getParent() != null && et.getParent() > 0) {
+        //     Long parent = et.getParent();
+        //     ProductPlan productPlan = this.get(parent);
+        //     et.setProduct(productPlan.getProduct());
+        //     productPlan.setParent(-1L);
+        //     this.edit(productPlan);
+        // }
         fileHelper.processImgURL(et, null, null);
         if (!this.retBool(this.baseMapper.insert(et))) {
             return false;
