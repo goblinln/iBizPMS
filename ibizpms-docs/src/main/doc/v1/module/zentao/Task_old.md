@@ -72,7 +72,56 @@ hide members
 |任务描述|DESC|LONGTEXT|&nbsp;|
 |预计开始|ESTSTARTED|DATE|&nbsp;|
 |截止日期|DEADLINE|DATE|&nbsp;|
-|排序|STATUSORDER|INT|&nbsp;|
+|排序|STATUSORDER|INT|&nbsp;SELECT
+	t1.id,
+	t1.`ASSIGN`,
+	t1.`ASSIGNEDDATE`,
+	t1.`ASSIGNEDTO`,
+	t1.`CANCELEDBY`,
+	t1.`CANCELEDDATE`,
+	t1.`CLOSEDBY`,
+	t1.`CLOSEDDATE`,
+	t1.`CLOSEDREASON`,
+	t1.`COLOR`,
+	t1.`CONSUMED`,
+	t1.`DEADLINE`,
+	'' AS `DELAY`,
+	t1.`DELETED`,
+	t1.`ESTIMATE`,
+	t1.`ESTSTARTED`,
+	t1.`FINISHEDBY`,
+	t1.`FINISHEDDATE`,
+	( SELECT count( t.`id` ) FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` ) AS `MULTIPLE`,
+CASE
+	WHEN t1.`status` = 'wait' THEN
+	CONCAT_WS( '', 60,t1.`PRI`, LPAD( t1.id, 8, 0 ) ) 
+	WHEN t1.`status` = 'doing' THEN
+	CONCAT_WS( '', 50,t1.`PRI`, LPAD( t1.id, 8, 0 ) ) 
+	WHEN t1.`status` = 'done' THEN
+	CONCAT_WS( '', 40,t1.`PRI`, LPAD( t1.id, 8, 0 ) ) 
+	WHEN t1.`status` = 'closed' THEN
+	CONCAT_WS( '', 30,t1.`PRI`, LPAD( t1.id, 8, 0 ) ) 
+	WHEN t1.`status` = 'cancel' THEN
+	CONCAT_WS( '', 20,t1.`PRI`, LPAD( t1.id, 8, 0 ) ) ELSE CONCAT_WS( '', 10,t1.pri, LPAD( t1.id, 8, 0 ) ) 
+	END AS `TASKSN`,
+	(
+	SELECT
+		( COUNT( t.IBZ_FAVORITESID ) ) AS ISFAVORITES 
+	FROM
+		T_IBZ_FAVORITES t 
+	WHERE
+		t.TYPE = 'task' 
+		AND t.ACCOUNT = #{srf.sessioncontext.srfloginname} 
+		AND t.OBJECTID = t1.id ) AS `ISFAVORITES`,t1.`LASTEDITEDBY`,t1.`LASTEDITEDDATE`,t1.`LEFT`,t1.`MODULE`,t11.`NAME` AS `MODULENAME`,t1.`NAME`,t1.`PARENT`,t1.`PRI`,'' AS `PROGRESSRATE`,t1.`PROJECT`,t1.`REALSTARTED`,t1.`STATUS`,'' AS `STATUS1`,0 AS `STATUSORDER`,	t1.`STORY`,t21.`TITLE` AS `STORYNAME`,'' AS `TASKTYPE`,t21.`version` AS `storyVersions`,t1.`storyVersion` AS `storyVersion`,t21.`status` AS `storyStatus`,t41.`name` AS projectname,t51.`name` AS productname 
+FROM
+	`zt_task` t1
+	LEFT JOIN `zt_module` t11 ON t1.`MODULE` = t11.`ID`
+	LEFT JOIN `zt_story` t21 ON t1.`STORY` = t21.`ID`
+	LEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID`
+	LEFT JOIN `zt_project` t41 ON t1.`PROJECT` = t41.`ID`
+	LEFT JOIN `zt_product` t51 ON t21.`PRODUCT` = t51.`ID`
+	LEFT JOIN `zt_task` t61 ON t1.`PARENT` = t61.`ID` 
+ORDER BY SUBSTRING(TASKSN,1,2) desc,SUBSTRING(TASKSN,3,1) asc, SUBSTRING(TASKSN,4,8) desc|
 |联系人|MAILTOCONACT|TEXT|&nbsp;|
 |已删除|DELETED|TEXT|&nbsp;|
 |周期|CYCLE|INT|&nbsp;|

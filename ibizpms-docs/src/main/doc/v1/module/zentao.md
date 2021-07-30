@@ -58,6 +58,9 @@ class 文档库 {
 class effort {
 }
 
+class 实体2 {
+}
+
 class entry {
 }
 
@@ -508,6 +511,7 @@ hide members
 |ZT_DOCCONTENT|[文档内容](zentao/DocContent.md)|主实体|&nbsp;|
 |ZT_DOCLIB|[文档库](zentao/DocLib.md)|主实体|&nbsp;|
 |ZT_EFFORT|[effort](zentao/Effort.md)|主实体|&nbsp;|
+|ENTITY2|[实体2](zentao/Entity2.md)|主实体|&nbsp;|
 |ZT_ENTRY|[entry](zentao/Entry.md)|主实体|&nbsp;|
 |ZT_EXTENSION|[extension](zentao/Extension.md)|主实体|&nbsp;|
 |ZT_FILE|[附件](zentao/File.md)|主实体|&nbsp;|

@@ -269,6 +269,9 @@ class 文档库 {
 class effort {
 }
 
+class 实体2 {
+}
+
 class entry {
 }
 

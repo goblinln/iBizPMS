@@ -9050,6 +9050,113 @@
  }
     ,
     {
+    "entity_name":"ENTITY2",
+    "logic_name":"实体2",
+    "code_name":"Entity2",
+    "table_name":"T_ENTITY2",
+    "system_id":"pms",
+    "system_name":"iBiz产品生产管理系统",
+    "module_id":"zentao",
+    "module_name":"基础管理模块",
+    "fields":[
+    {
+    "fieldname":"ENTITY2NAME" ,
+    "codename":"Entity2Name",
+    "field_logic_name":"实体2名称",
+    "entity_name":"ENTITY2",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":200,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":1
+    },
+    {
+    "fieldname":"ENTITY2ID" ,
+    "codename":"Entity2Id",
+    "field_logic_name":"实体2标识",
+    "entity_name":"ENTITY2",
+    "field_type":"GUID",
+    "nullable":0,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "key_field":1,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"CREATEMAN" ,
+    "codename":"CreateMan",
+    "field_logic_name":"建立人",
+    "entity_name":"ENTITY2",
+    "field_type":"TEXT",
+    "dict":"SysOperator",
+    "nullable":0,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":60,
+    "predefined":"CREATEMAN",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"CREATEDATE" ,
+    "codename":"CreateDate",
+    "field_logic_name":"建立时间",
+    "entity_name":"ENTITY2",
+    "field_type":"DATETIME",
+    "nullable":0,
+    "physical_field":1,
+    "data_type":"DATETIME",
+    "data_length":8,
+    "predefined":"CREATEDATE",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"UPDATEMAN" ,
+    "codename":"UpdateMan",
+    "field_logic_name":"更新人",
+    "entity_name":"ENTITY2",
+    "field_type":"TEXT",
+    "dict":"SysOperator",
+    "nullable":0,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":60,
+    "predefined":"UPDATEMAN",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"UPDATEDATE" ,
+    "codename":"UpdateDate",
+    "field_logic_name":"更新时间",
+    "entity_name":"ENTITY2",
+    "field_type":"DATETIME",
+    "nullable":0,
+    "physical_field":1,
+    "data_type":"DATETIME",
+    "data_length":8,
+    "predefined":"UPDATEDATE",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    }
+    ],
+    "subEntitys":[
+    ],
+    "parentEntitys":[
+    ]
+ }
+    ,
+    {
     "entity_name":"ZT_ENTRY",
     "logic_name":"entry",
     "code_name":"Entry",
@@ -44259,7 +44366,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"case when t1.`status` = 'wait' then 10 when t1.`status` = 'doing' then 20 when  t1.`status` = 'done' then 30 when  t1.`status` = 'closed' then 40 when  t1.`status` = 'cancel' then 50  else 60 end",
+    "expression":"CASE 	WHEN t1.`status` = 'wait' THEN 	CONCAT_WS( '', 60,t1.`PRI`, LPAD( t1.id, 8, 0 ) )  	WHEN t1.`status` = 'doing' THEN 	CONCAT_WS( '', 50,t1.`PRI`, LPAD( t1.id, 8, 0 ) )  	WHEN t1.`status` = 'done' THEN 	CONCAT_WS( '', 40,t1.`PRI`, LPAD( t1.id, 8, 0 ) )  	WHEN t1.`status` = 'closed' THEN 	CONCAT_WS( '', 30,t1.`PRI`, LPAD( t1.id, 8, 0 ) )  	WHEN t1.`status` = 'cancel' THEN 	CONCAT_WS( '', 20,t1.`PRI`, LPAD( t1.id, 8, 0 ) ) ELSE CONCAT_WS( '', 10,t1.pri, LPAD( t1.id, 8, 0 ) )  	END",
     "key_field":0,
     "show_order":1000,
     "major_field":0
