@@ -684,6 +684,7 @@ hide footbox
 |相关需求(STORY)|EQ|
 |父任务(PARENT)|EQ|
 |父任务(PARENT)|GTANDEQ|
+|父任务(PARENT)|LTANDEQ|
 |来源Bug(FROMBUG)|EQ|
 
 ## 导入模式

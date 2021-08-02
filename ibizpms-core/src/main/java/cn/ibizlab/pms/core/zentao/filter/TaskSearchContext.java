@@ -387,6 +387,13 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
             this.getSearchCond().ge("`parent`", n_parent_gtandeq);
         }
     }
+	private Long n_parent_ltandeq;//[父任务]
+	public void setN_parent_ltandeq(Long n_parent_ltandeq) {
+        this.n_parent_ltandeq = n_parent_ltandeq;
+        if(!ObjectUtils.isEmpty(this.n_parent_ltandeq)){
+            this.getSearchCond().le("`parent`", n_parent_ltandeq);
+        }
+    }
 	private Long n_frombug_eq;//[来源Bug]
 	public void setN_frombug_eq(Long n_frombug_eq) {
         this.n_frombug_eq = n_frombug_eq;
