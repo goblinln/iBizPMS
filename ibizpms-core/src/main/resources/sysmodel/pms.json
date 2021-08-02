@@ -31362,7 +31362,7 @@
     {
     "fieldname":"BEGIN" ,
     "codename":"Begin",
-    "field_logic_name":"开始日期",
+    "field_logic_name":"预计开始日期",
     "entity_name":"ZT_PRODUCTPLAN",
     "field_type":"DATE",
     "nullable":1,
@@ -31404,7 +31404,7 @@
     {
     "fieldname":"END" ,
     "codename":"End",
-    "field_logic_name":"结束日期",
+    "field_logic_name":"预计结束日期",
     "entity_name":"ZT_PRODUCTPLAN",
     "field_type":"DATE",
     "nullable":1,
@@ -31771,6 +31771,32 @@
     "data_type":"VARCHAR",
     "data_length":200,
     "expression":"%1$s",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"BEGINACT" ,
+    "codename":"Beginact",
+    "field_logic_name":"实际开始日期",
+    "entity_name":"ZT_PRODUCTPLAN",
+    "field_type":"DATE",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"DATETIME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"ENDACT" ,
+    "codename":"Endact",
+    "field_logic_name":"实际结束日期",
+    "entity_name":"ZT_PRODUCTPLAN",
+    "field_type":"DATE",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"DATETIME",
     "key_field":0,
     "show_order":1000,
     "major_field":0

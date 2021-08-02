@@ -104,13 +104,13 @@ public class ProductPlan extends EntityMP implements Serializable {
     @ApiModelProperty("编号")
     private Long id;
     /**
-     * 开始日期
+     * 预计开始日期
      */
     @TableField(value = "`begin`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "begin", format = "yyyy-MM-dd")
     @JsonProperty("begin")
-    @ApiModelProperty("开始日期")
+    @ApiModelProperty("预计开始日期")
     private Timestamp begin;
     /**
      * 状态
@@ -130,13 +130,13 @@ public class ProductPlan extends EntityMP implements Serializable {
     @ApiModelProperty("描述")
     private String desc;
     /**
-     * 结束日期
+     * 预计结束日期
      */
     @TableField(value = "`end`")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "end", format = "yyyy-MM-dd")
     @JsonProperty("end")
-    @ApiModelProperty("结束日期")
+    @ApiModelProperty("预计结束日期")
     private Timestamp end;
     /**
      * 延期
@@ -337,6 +337,24 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JsonProperty("ordernum")
     @ApiModelProperty("排序")
     private String ordernum;
+    /**
+     * 实际开始日期
+     */
+    @TableField(value = "`beginact`")
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "beginact", format = "yyyy-MM-dd")
+    @JsonProperty("beginact")
+    @ApiModelProperty("实际开始日期")
+    private Timestamp beginact;
+    /**
+     * 实际结束日期
+     */
+    @TableField(value = "`endact`")
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "endact", format = "yyyy-MM-dd")
+    @JsonProperty("endact")
+    @ApiModelProperty("实际结束日期")
+    private Timestamp endact;
 
     /**
      * 
@@ -373,7 +391,7 @@ public class ProductPlan extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [开始日期]
+     * 设置 [预计开始日期]
      */
     public void setBegin(Timestamp begin) {
         this.begin = begin;
@@ -381,7 +399,7 @@ public class ProductPlan extends EntityMP implements Serializable {
     }
 
     /**
-     * 格式化日期 [开始日期]
+     * 格式化日期 [预计开始日期]
      */
     public String formatBegin() {
         if (this.begin == null) {
@@ -399,7 +417,7 @@ public class ProductPlan extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [结束日期]
+     * 设置 [预计结束日期]
      */
     public void setEnd(Timestamp end) {
         this.end = end;
@@ -407,7 +425,7 @@ public class ProductPlan extends EntityMP implements Serializable {
     }
 
     /**
-     * 格式化日期 [结束日期]
+     * 格式化日期 [预计结束日期]
      */
     public String formatEnd() {
         if (this.end == null) {
@@ -456,6 +474,42 @@ public class ProductPlan extends EntityMP implements Serializable {
         this.modify("product", product);
     }
 
+    /**
+     * 设置 [实际开始日期]
+     */
+    public void setBeginact(Timestamp beginact) {
+        this.beginact = beginact;
+        this.modify("beginact", beginact);
+    }
+
+    /**
+     * 格式化日期 [实际开始日期]
+     */
+    public String formatBeginact() {
+        if (this.beginact == null) {
+            return null;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(beginact);
+    }
+    /**
+     * 设置 [实际结束日期]
+     */
+    public void setEndact(Timestamp endact) {
+        this.endact = endact;
+        this.modify("endact", endact);
+    }
+
+    /**
+     * 格式化日期 [实际结束日期]
+     */
+    public String formatEndact() {
+        if (this.endact == null) {
+            return null;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(endact);
+    }
 
     @Override
     public Serializable getDefaultKey(boolean gen) {

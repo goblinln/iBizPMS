@@ -107,7 +107,7 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
     @JSONField(name = "begin" , format="yyyy-MM-dd")
     @JsonProperty("begin")
-    @ApiModelProperty("开始日期")
+    @ApiModelProperty("预计开始日期")
     private Timestamp begin;
 
     /**
@@ -137,7 +137,7 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
     @JSONField(name = "end" , format="yyyy-MM-dd")
     @JsonProperty("end")
-    @ApiModelProperty("结束日期")
+    @ApiModelProperty("预计结束日期")
     private Timestamp end;
 
     /**
@@ -373,6 +373,26 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @ApiModelProperty("排序")
     private String ordernum;
 
+    /**
+     * 属性 [BEGINACT]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "beginact" , format="yyyy-MM-dd")
+    @JsonProperty("beginact")
+    @ApiModelProperty("实际开始日期")
+    private Timestamp beginact;
+
+    /**
+     * 属性 [ENDACT]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "endact" , format="yyyy-MM-dd")
+    @JsonProperty("endact")
+    @ApiModelProperty("实际结束日期")
+    private Timestamp endact;
+
 
     /**
      * 设置 [TITLE]
@@ -444,6 +464,22 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     public void setProduct(Long  product){
         this.product = product ;
         this.modify("product",product);
+    }
+
+    /**
+     * 设置 [BEGINACT]
+     */
+    public void setBeginact(Timestamp  beginact){
+        this.beginact = beginact ;
+        this.modify("beginact",beginact);
+    }
+
+    /**
+     * 设置 [ENDACT]
+     */
+    public void setEndact(Timestamp  endact){
+        this.endact = endact ;
+        this.modify("endact",endact);
     }
 
 

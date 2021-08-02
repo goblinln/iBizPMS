@@ -1837,10 +1837,10 @@ POST
 | 5 | delaytaskscnt | Integer | 允许 | 延迟任务数 |
 | 6 | oldtitle | String | 允许 | 上一次计划名称 |
 | 7 | id | Long | 不可 | 编号 |
-| 8 | begin | Timestamp | 允许 | 开始日期<br>时间格式：yyyy-MM-dd |
+| 8 | begin | Timestamp | 允许 | 预计开始日期<br>时间格式：yyyy-MM-dd |
 | 9 | statuss | String | 允许 | 状态 |
 | 10 | desc | String | 允许 | 描述 |
-| 11 | end | Timestamp | 允许 | 结束日期<br>时间格式：yyyy-MM-dd |
+| 11 | end | Timestamp | 允许 | 预计结束日期<br>时间格式：yyyy-MM-dd |
 | 12 | delay | String | 允许 | 延期 |
 | 13 | duration | String | 允许 | 持续时间 |
 | 14 | beginstr | String | 允许 | 开始日期 |
@@ -1865,7 +1865,9 @@ POST
 | 33 | product | Long | 允许 | 产品 |
 | 34 | begintime | String | 允许 | 开始时间 |
 | 35 | ordernum | String | 允许 | 排序 |
-| 36 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 36 | beginact | Timestamp | 允许 | 实际开始日期<br>时间格式：yyyy-MM-dd |
+| 37 | endact | Timestamp | 允许 | 实际结束日期<br>时间格式：yyyy-MM-dd |
+| 38 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### ProductPlanSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |
