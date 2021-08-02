@@ -57,7 +57,7 @@ public class ProductLife extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
@@ -111,7 +111,7 @@ public class ProductLife extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
@@ -128,6 +128,7 @@ public class ProductLife extends EntityMP implements Serializable {
     /**
      * 里程碑
      */
+    @DEField(dict = "YesNo3")
     @TableField(value = "`MARKER`")
     @JSONField(name = "marker")
     @JsonProperty("marker")

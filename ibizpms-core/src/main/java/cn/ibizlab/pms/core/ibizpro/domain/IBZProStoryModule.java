@@ -76,7 +76,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")
@@ -103,7 +103,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
@@ -112,7 +112,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     /**
      * 需求模块类型
      */
-    @DEField(name = "ibiz_storytype")
+    @DEField(name = "ibiz_storytype", dict = "Ibizpro_storymodule__type")
     @TableField(value = "`IBIZ_STORYTYPE`")
     @JSONField(name = "ibiz_storytype")
     @JsonProperty("ibiz_storytype")
@@ -139,7 +139,7 @@ public class IBZProStoryModule extends EntityMP implements Serializable {
     /**
      * 类型
      */
-    @DEField(defaultValue = "story")
+    @DEField(defaultValue = "story", dict = "Module__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")

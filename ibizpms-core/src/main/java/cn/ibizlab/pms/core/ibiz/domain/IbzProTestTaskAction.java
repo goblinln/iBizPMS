@@ -115,6 +115,7 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     /**
      * 对象类型
      */
+    @DEField(dict = "Action__object_type")
     @TableField(value = "`OBJECTTYPE`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
@@ -183,6 +184,7 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     /**
      * 动作
      */
+    @DEField(dict = "Action__type")
     @TableField(value = "`ACTION`")
     @JSONField(name = "action")
     @JsonProperty("action")
@@ -248,6 +250,7 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     /**
      * 操作者
      */
+    @DEField(dict = "UserRealName")
     @TableField(value = "`ACTOR`")
     @JSONField(name = "actor")
     @JsonProperty("actor")
@@ -256,7 +259,7 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     /**
      * 已读
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "Action__read")
     @TableField(value = "`READ`")
     @JSONField(name = "read")
     @JsonProperty("read")

@@ -57,7 +57,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
@@ -85,7 +85,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     /**
      * 是否公开
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "YesNo2")
     @TableField(value = "`PUBLIC`")
     @JSONField(name = "ibizpublic")
     @JsonProperty("ibizpublic")
@@ -94,7 +94,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
@@ -122,7 +122,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     /**
      * IBIZ模板类型
      */
-    @DEField(defaultValue = "freemarker")
+    @DEField(defaultValue = "freemarker", dict = "Ibz__systpl__type")
     @TableField(value = "`TPLTYPE`")
     @JSONField(name = "tpltype")
     @JsonProperty("tpltype")
@@ -131,7 +131,7 @@ public class IBZProSysTpl extends EntityMP implements Serializable {
     /**
      * 来源对象
      */
-    @DEField(name = "ibiz_sourceobject")
+    @DEField(name = "ibiz_sourceobject", dict = "Ibizpro_story__sourceobject")
     @TableField(value = "`IBIZ_SOURCEOBJECT`")
     @JSONField(name = "ibiz_sourceobject")
     @JsonProperty("ibiz_sourceobject")

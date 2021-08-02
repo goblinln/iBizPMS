@@ -102,6 +102,7 @@ public class ImMessage extends EntityMP implements Serializable {
     /**
      * type
      */
+    @DEField(dict = "Im_message__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -134,6 +135,7 @@ public class ImMessage extends EntityMP implements Serializable {
     /**
      * contentType
      */
+    @DEField(dict = "Im_message__contentType")
     @TableField(value = "`CONTENTTYPE`")
     @JSONField(name = "contenttype")
     @JsonProperty("contenttype")

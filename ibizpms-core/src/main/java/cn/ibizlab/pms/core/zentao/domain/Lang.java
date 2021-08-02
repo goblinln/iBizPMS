@@ -90,6 +90,7 @@ public class Lang extends EntityMP implements Serializable {
     /**
      * system
      */
+    @DEField(dict = "Action__read")
     @TableField(value = "`SYSTEM`")
     @JSONField(name = "system")
     @JsonProperty("system")

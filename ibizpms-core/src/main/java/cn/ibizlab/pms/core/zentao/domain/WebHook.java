@@ -167,6 +167,7 @@ public class WebHook extends EntityMP implements Serializable {
     /**
      * sendType
      */
+    @DEField(dict = "Webhook__sendType")
     @TableField(value = "`SENDTYPE`")
     @JSONField(name = "sendtype")
     @JsonProperty("sendtype")

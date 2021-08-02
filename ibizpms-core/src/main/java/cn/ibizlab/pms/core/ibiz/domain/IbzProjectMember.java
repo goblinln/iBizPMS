@@ -157,7 +157,7 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     /**
      * 访问控制
      */
-    @DEField(defaultValue = "open")
+    @DEField(defaultValue = "open", dict = "Project__acl")
     @TableField(value = "`ACL`")
     @JSONField(name = "acl")
     @JsonProperty("acl")

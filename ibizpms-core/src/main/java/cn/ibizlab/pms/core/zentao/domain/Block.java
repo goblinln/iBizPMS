@@ -83,6 +83,7 @@ public class Block extends EntityMP implements Serializable {
     /**
      * 来源区块
      */
+    @DEField(dict = "Block__source_block")
     @TableField(value = "`BLOCK`")
     @JSONField(name = "block")
     @JsonProperty("block")
@@ -108,6 +109,7 @@ public class Block extends EntityMP implements Serializable {
     /**
      * 所属模块
      */
+    @DEField(dict = "Block__module")
     @TableField(value = "`MODULE`")
     @JSONField(name = "module")
     @JsonProperty("module")
@@ -116,7 +118,7 @@ public class Block extends EntityMP implements Serializable {
     /**
      * 隐藏
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "YesNo2")
     @TableField(value = "`HIDDEN`")
     @JSONField(name = "hidden")
     @JsonProperty("hidden")
@@ -125,6 +127,7 @@ public class Block extends EntityMP implements Serializable {
     /**
      * 来源模块
      */
+    @DEField(dict = "Block__source")
     @TableField(value = "`SOURCE`")
     @JSONField(name = "source")
     @JsonProperty("source")

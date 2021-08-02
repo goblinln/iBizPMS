@@ -49,6 +49,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     /**
      * 是否提交
      */
+    @DEField(dict = "YesNo")
     @TableField(value = "`ISSUBMIT`")
     @JSONField(name = "issubmit")
     @JsonProperty("issubmit")
@@ -74,6 +75,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     /**
      * 抄送给
      */
+    @DEField(dict = "UserRealName_Gird")
     @TableField(value = "`MAILTO`")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
@@ -90,6 +92,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     /**
      * 下周计划任务
      */
+    @DEField(dict = "MyPlanTask")
     @TableField(value = "`NEXTWEEKTASK`")
     @JSONField(name = "nextweektask")
     @JsonProperty("nextweektask")
@@ -124,7 +127,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
@@ -133,7 +136,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     /**
      * 状态
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "ReportStatus")
     @TableField(value = "`REPORTSTATUS`")
     @JSONField(name = "reportstatus")
     @JsonProperty("reportstatus")
@@ -158,6 +161,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     /**
      * 汇报给
      */
+    @DEField(dict = "UserRealName_Gird")
     @TableField(value = "`REPORTTO`")
     @JSONField(name = "reportto")
     @JsonProperty("reportto")
@@ -175,6 +179,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     /**
      * 用户
      */
+    @DEField(dict = "UserRealName")
     @TableField(value = "`ACCOUNT`")
     @JSONField(name = "account")
     @JsonProperty("account")
@@ -183,6 +188,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     /**
      * 本周完成任务
      */
+    @DEField(dict = "CodeList")
     @TableField(value = "`THISWEEKTASK`")
     @JSONField(name = "thisweektask")
     @JsonProperty("thisweektask")
@@ -208,7 +214,7 @@ public class IbzWeekly extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")

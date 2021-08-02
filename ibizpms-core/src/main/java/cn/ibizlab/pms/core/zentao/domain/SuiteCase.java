@@ -58,7 +58,7 @@ public class SuiteCase extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")
@@ -85,7 +85,7 @@ public class SuiteCase extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")

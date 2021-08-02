@@ -94,7 +94,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 抄送给
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`MAILTO`")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
@@ -119,7 +119,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
@@ -128,7 +128,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
@@ -156,7 +156,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 优先级
      */
-    @DEField(defaultValue = "3")
+    @DEField(defaultValue = "3", dict = "Testtask__pri")
     @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
@@ -182,7 +182,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")
@@ -227,7 +227,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 当前状态
      */
-    @DEField(defaultValue = "wait")
+    @DEField(defaultValue = "wait", dict = "Testtask__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
@@ -236,7 +236,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
@@ -253,7 +253,7 @@ public class TestTask extends EntityMP implements Serializable {
     /**
      * 负责人
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealNameProductTeam")
     @TableField(value = "`OWNER`")
     @JSONField(name = "owner")
     @JsonProperty("owner")

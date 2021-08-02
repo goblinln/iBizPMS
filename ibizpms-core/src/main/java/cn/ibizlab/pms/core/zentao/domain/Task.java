@@ -49,7 +49,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 由谁取消
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`CANCELEDBY`")
     @JSONField(name = "canceledby")
     @JsonProperty("canceledby")
@@ -58,7 +58,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 周期类型
      */
-    @DEField(name = "config_type")
+    @DEField(name = "config_type", dict = "CycleType")
     @TableField(value = "`CONFIG_TYPE`")
     @JSONField(name = "configtype")
     @JsonProperty("configtype")
@@ -128,7 +128,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 标题颜色
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Task__color")
     @TableField(value = "`COLOR`")
     @JSONField(name = "color")
     @JsonProperty("color")
@@ -146,7 +146,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 由谁完成
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName_Gird")
     @TableField(value = "`FINISHEDBY`")
     @JSONField(name = "finishedby")
     @JsonProperty("finishedby")
@@ -230,7 +230,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
@@ -275,7 +275,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 由谁关闭
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`CLOSEDBY`")
     @JSONField(name = "closedby")
     @JsonProperty("closedby")
@@ -334,7 +334,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 关闭原因
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Task__closed_reason")
     @TableField(value = "`CLOSEDREASON`")
     @JSONField(name = "closedreason")
     @JsonProperty("closedreason")
@@ -343,6 +343,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 任务种别
      */
+    @DEField(dict = "TaskSpecies")
     @TableField(value = "`TASKSPECIES`")
     @JSONField(name = "taskspecies")
     @JsonProperty("taskspecies")
@@ -379,7 +380,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 优先级
      */
-    @DEField(defaultValue = "3")
+    @DEField(defaultValue = "3", dict = "Task__pri")
     @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
@@ -388,7 +389,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 最后修改
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`LASTEDITEDBY`")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
@@ -406,7 +407,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 任务状态
      */
-    @DEField(defaultValue = "wait")
+    @DEField(defaultValue = "wait", dict = "Task__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
@@ -456,7 +457,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 任务类型
      */
-    @DEField(defaultValue = "devel")
+    @DEField(defaultValue = "devel", dict = "Task__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -465,7 +466,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 指派给
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`ASSIGNEDTO`")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
@@ -500,7 +501,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
@@ -571,7 +572,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 抄送给
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`MAILTO`")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
@@ -598,7 +599,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`OPENEDBY`")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
@@ -624,7 +625,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 周期设置月
      */
-    @DEField(name = "config_month")
+    @DEField(name = "config_month", dict = "CodeList47")
     @TableField(value = "`CONFIG_MONTH`")
     @JSONField(name = "configmonth")
     @JsonProperty("configmonth")
@@ -673,7 +674,7 @@ public class Task extends EntityMP implements Serializable {
     /**
      * 周期设置周几
      */
-    @DEField(name = "config_week")
+    @DEField(name = "config_week", dict = "CodeList46")
     @TableField(value = "`CONFIG_WEEK`")
     @JSONField(name = "configweek")
     @JsonProperty("configweek")

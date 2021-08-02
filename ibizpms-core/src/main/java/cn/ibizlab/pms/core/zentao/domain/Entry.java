@@ -94,6 +94,7 @@ public class Entry extends EntityMP implements Serializable {
     /**
      * freePasswd
      */
+    @DEField(dict = "Action__read")
     @TableField(value = "`FREEPASSWD`")
     @JSONField(name = "freepasswd")
     @JsonProperty("freepasswd")

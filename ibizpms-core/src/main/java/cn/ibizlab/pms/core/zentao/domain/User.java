@@ -174,6 +174,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 职位
      */
+    @DEField(dict = "Role")
     @TableField(value = "`ROLE`")
     @JSONField(name = "role")
     @JsonProperty("role")
@@ -209,6 +210,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * clientStatus
      */
+    @DEField(dict = "User__clientStatus")
     @TableField(value = "`CLIENTSTATUS`")
     @JSONField(name = "clientstatus")
     @JsonProperty("clientstatus")
@@ -242,6 +244,7 @@ public class User extends EntityMP implements Serializable {
     /**
      * 性别
      */
+    @DEField(dict = "User__gender")
     @TableField(value = "`GENDER`")
     @JSONField(name = "gender")
     @JsonProperty("gender")

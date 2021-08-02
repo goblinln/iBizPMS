@@ -364,6 +364,7 @@ public class UserYearWorkStats extends EntityMP implements Serializable {
     /**
      * 部门编号
      */
+    @DEField(dict = "RealDept")
     @TableField(value = "`DEPT`")
     @JSONField(name = "dept")
     @JsonProperty("dept")

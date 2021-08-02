@@ -177,6 +177,7 @@ public class Doc extends EntityMP implements Serializable {
     /**
      * 文档类型
      */
+    @DEField(dict = "Doc__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -203,7 +204,7 @@ public class Doc extends EntityMP implements Serializable {
     /**
      * 权限
      */
-    @DEField(defaultValue = "open")
+    @DEField(defaultValue = "open", dict = "Doc__acl")
     @TableField(value = "`ACL`")
     @JSONField(name = "acl")
     @JsonProperty("acl")
@@ -293,7 +294,7 @@ public class Doc extends EntityMP implements Serializable {
     /**
      * 由谁添加
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`ADDEDBY`")
     @JSONField(name = "addedby")
     @JsonProperty("addedby")
@@ -310,7 +311,7 @@ public class Doc extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")

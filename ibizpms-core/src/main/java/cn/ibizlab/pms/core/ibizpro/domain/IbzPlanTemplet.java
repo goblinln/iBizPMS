@@ -67,6 +67,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
     /**
      * 权限
      */
+    @DEField(dict = "PlanAcl")
     @TableField(value = "`ACL`")
     @JSONField(name = "acl")
     @JsonProperty("acl")
@@ -101,7 +102,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
@@ -129,7 +130,7 @@ public class IbzPlanTemplet extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")

@@ -58,6 +58,7 @@ public class UserQuery extends EntityMP implements Serializable {
     /**
      * shortcut
      */
+    @DEField(dict = "Action__read")
     @TableField(value = "`SHORTCUT`")
     @JSONField(name = "shortcut")
     @JsonProperty("shortcut")

@@ -115,6 +115,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 职位
      */
+    @DEField(dict = "Role")
     @TableField(value = "`ROLE`")
     @JSONField(name = "role")
     @JsonProperty("role")
@@ -379,6 +380,7 @@ public class IbzMyTerritory extends EntityMP implements Serializable {
     /**
      * 男女
      */
+    @DEField(dict = "User__gender")
     @TableField(value = "`GENDER`")
     @JSONField(name = "gender")
     @JsonProperty("gender")

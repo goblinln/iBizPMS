@@ -161,6 +161,7 @@ public class ProductSum extends EntityMP implements Serializable {
     /**
      * 产品负责人
      */
+    @DEField(dict = "UserRealName_Gird")
     @TableField(value = "`PO`")
     @JSONField(name = "po")
     @JsonProperty("po")

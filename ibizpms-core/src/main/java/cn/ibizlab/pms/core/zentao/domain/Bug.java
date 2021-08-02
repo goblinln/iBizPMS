@@ -49,7 +49,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 严重程度
      */
-    @DEField(defaultValue = "3")
+    @DEField(defaultValue = "3", dict = "Bug__severity")
     @TableField(value = "`SEVERITY`")
     @JSONField(name = "severity")
     @JsonProperty("severity")
@@ -118,7 +118,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 指派给
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealNameUnAssignTo_Gird")
     @TableField(value = "`ASSIGNEDTO`")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
@@ -127,7 +127,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 解决方案
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Bug__resolution")
     @TableField(value = "`RESOLUTION`")
     @JSONField(name = "resolution")
     @JsonProperty("resolution")
@@ -188,7 +188,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 由谁关闭
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`CLOSEDBY`")
     @JSONField(name = "closedby")
     @JsonProperty("closedby")
@@ -197,7 +197,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 浏览器
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Bug__browser")
     @TableField(value = "`BROWSER`")
     @JSONField(name = "browser")
     @JsonProperty("browser")
@@ -241,7 +241,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 是否确认
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "YesNo2")
     @TableField(value = "`CONFIRMED`")
     @JSONField(name = "confirmed")
     @JsonProperty("confirmed")
@@ -258,7 +258,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
@@ -267,7 +267,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`OPENEDBY`")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
@@ -331,7 +331,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 标题颜色
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Bug__color")
     @TableField(value = "`COLOR`")
     @JSONField(name = "color")
     @JsonProperty("color")
@@ -357,7 +357,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * Bug类型
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Bug__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -366,7 +366,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * Bug状态
      */
-    @DEField(defaultValue = "active")
+    @DEField(defaultValue = "active", dict = "Bug__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
@@ -375,7 +375,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 影响版本
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "CurProductBuild")
     @TableField(value = "`OPENEDBUILD`")
     @JSONField(name = "openedbuild")
     @JsonProperty("openedbuild")
@@ -453,7 +453,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
@@ -505,7 +505,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 解决者
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName_Gird")
     @TableField(value = "`RESOLVEDBY`")
     @JSONField(name = "resolvedby")
     @JsonProperty("resolvedby")
@@ -523,7 +523,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 解决版本
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "CurProductBuild")
     @TableField(value = "`RESOLVEDBUILD`")
     @JSONField(name = "resolvedbuild")
     @JsonProperty("resolvedbuild")
@@ -541,7 +541,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 优先级
      */
-    @DEField(defaultValue = "3")
+    @DEField(defaultValue = "3", dict = "Bug__pri")
     @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
@@ -550,7 +550,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 操作系统
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Bug__os")
     @TableField(value = "`OS`")
     @JSONField(name = "os")
     @JsonProperty("os")
@@ -576,7 +576,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 最后修改者
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`LASTEDITEDBY`")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
@@ -703,7 +703,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 平台/分支
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "ProductBranch")
     @TableField(value = "`BRANCH`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
@@ -730,7 +730,7 @@ public class Bug extends EntityMP implements Serializable {
     /**
      * 相关需求
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "RelatedStory")
     @TableField(value = "`STORY`")
     @JSONField(name = "story")
     @JsonProperty("story")

@@ -57,6 +57,7 @@ public class Group extends EntityMP implements Serializable {
     /**
      * acl
      */
+    @DEField(dict = "UserRealName")
     @TableField(value = "`ACL`")
     @JSONField(name = "acl")
     @JsonProperty("acl")

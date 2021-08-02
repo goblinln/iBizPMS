@@ -49,7 +49,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
@@ -104,6 +104,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 范围
      */
+    @DEField(dict = "ConfigScope")
     @TableField(value = "`SCOPE`")
     @JSONField(name = "scope")
     @JsonProperty("scope")
@@ -112,6 +113,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 类型
      */
+    @DEField(dict = "ConfigGroup")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -120,6 +122,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 管理现状
      */
+    @DEField(dict = "ConfigManagementstatus")
     @TableField(value = "`MANAGEMENTSTATUS`")
     @JSONField(name = "managementstatus")
     @JsonProperty("managementstatus")
@@ -128,6 +131,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 是否启用
      */
+    @DEField(dict = "YesNo")
     @TableField(value = "`VAILD`")
     @JSONField(name = "vaild")
     @JsonProperty("vaild")
@@ -136,7 +140,7 @@ public class IbzproConfig extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")

@@ -98,6 +98,7 @@ public class EmpLoyeeload extends EntityMP implements Serializable {
     /**
      * 指派给
      */
+    @DEField(dict = "UserRealName_Gird")
     @TableField(value = "`ASSIGNEDTO`")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")

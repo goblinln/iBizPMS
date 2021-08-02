@@ -58,7 +58,7 @@ public class Release extends EntityMP implements Serializable {
     /**
      * 里程碑
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "YesNo")
     @TableField(value = "`MARKER`")
     @JSONField(name = "marker")
     @JsonProperty("marker")
@@ -162,7 +162,7 @@ public class Release extends EntityMP implements Serializable {
     /**
      * 状态
      */
-    @DEField(defaultValue = "normal")
+    @DEField(defaultValue = "normal", dict = "Release__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
@@ -231,7 +231,7 @@ public class Release extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
@@ -257,7 +257,7 @@ public class Release extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")

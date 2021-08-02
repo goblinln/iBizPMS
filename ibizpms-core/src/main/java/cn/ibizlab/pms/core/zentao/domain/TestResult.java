@@ -49,7 +49,7 @@ public class TestResult extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")
@@ -67,6 +67,7 @@ public class TestResult extends EntityMP implements Serializable {
     /**
      * 最后执行人
      */
+    @DEField(dict = "UserRealName")
     @TableField(value = "`LASTRUNNER`")
     @JSONField(name = "lastrunner")
     @JsonProperty("lastrunner")
@@ -101,7 +102,7 @@ public class TestResult extends EntityMP implements Serializable {
     /**
      * 测试结果
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Testresult__result")
     @TableField(value = "`CASERESULT`")
     @JSONField(name = "caseresult")
     @JsonProperty("caseresult")
@@ -119,7 +120,7 @@ public class TestResult extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")

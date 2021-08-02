@@ -123,6 +123,7 @@ public class ProjectStats extends EntityMP implements Serializable {
     /**
      * 状态
      */
+    @DEField(dict = "Project__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")

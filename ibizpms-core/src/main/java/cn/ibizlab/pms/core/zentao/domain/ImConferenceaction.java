@@ -57,6 +57,7 @@ public class ImConferenceaction extends EntityMP implements Serializable {
     /**
      * type
      */
+    @DEField(dict = "Im_conferenceaction__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")

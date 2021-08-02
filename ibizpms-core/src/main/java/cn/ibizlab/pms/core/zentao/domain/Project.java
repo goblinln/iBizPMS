@@ -92,7 +92,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 访问控制
      */
-    @DEField(defaultValue = "open")
+    @DEField(defaultValue = "open", dict = "Project__acl")
     @TableField(value = "`ACL`")
     @JSONField(name = "acl")
     @JsonProperty("acl")
@@ -209,7 +209,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 项目负责人
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`PM`")
     @JSONField(name = "pm")
     @JsonProperty("pm")
@@ -278,7 +278,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 发布负责人
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`RD`")
     @JSONField(name = "rd")
     @JsonProperty("rd")
@@ -303,7 +303,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
@@ -345,7 +345,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 优先级
      */
-    @DEField(defaultValue = "1")
+    @DEField(defaultValue = "1", dict = "Project__pri")
     @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
@@ -505,7 +505,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * statge
      */
-    @DEField(defaultValue = "1")
+    @DEField(defaultValue = "1", dict = "Project__statge")
     @TableField(value = "`STATGE`")
     @JSONField(name = "statge")
     @JsonProperty("statge")
@@ -538,7 +538,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 支持项目汇报
      */
-    @DEField(defaultValue = "1")
+    @DEField(defaultValue = "1", dict = "YesNo")
     @TableField(value = "`SUPPROREPORT`")
     @JSONField(name = "supproreport")
     @JsonProperty("supproreport")
@@ -556,7 +556,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * isCat
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "YesNo")
     @TableField(value = "`ISCAT`")
     @JSONField(name = "iscat")
     @JsonProperty("iscat")
@@ -600,7 +600,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 项目类型
      */
-    @DEField(defaultValue = "sprint")
+    @DEField(defaultValue = "sprint", dict = "Project__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -625,7 +625,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 产品负责人
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`PO`")
     @JSONField(name = "po")
     @JsonProperty("po")
@@ -650,7 +650,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 项目状态
      */
-    @DEField(defaultValue = "wait")
+    @DEField(defaultValue = "wait", dict = "Project__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
@@ -710,7 +710,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`OPENEDBY`")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
@@ -727,7 +727,7 @@ public class Project extends EntityMP implements Serializable {
     /**
      * 测试负责人
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`QD`")
     @JSONField(name = "qd")
     @JsonProperty("qd")

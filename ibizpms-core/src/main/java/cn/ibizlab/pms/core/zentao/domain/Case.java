@@ -68,7 +68,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 标题颜色
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Testcase__color")
     @TableField(value = "`COLOR`")
     @JSONField(name = "color")
     @JsonProperty("color")
@@ -104,7 +104,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 结果
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Testcase__result")
     @TableField(value = "`LASTRUNRESULT`")
     @JSONField(name = "lastrunresult")
     @JsonProperty("lastrunresult")
@@ -190,7 +190,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 用例版本
      */
-    @DEField(defaultValue = "1")
+    @DEField(defaultValue = "1", dict = "CurCaseVersion")
     @TableField(value = "`VERSION`")
     @JSONField(name = "version")
     @JsonProperty("version")
@@ -199,7 +199,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * scriptedBy
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`SCRIPTEDBY`")
     @JSONField(name = "scriptedby")
     @JsonProperty("scriptedby")
@@ -208,7 +208,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName_Gird")
     @TableField(value = "`OPENEDBY`")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")
@@ -217,7 +217,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 用例类型
      */
-    @DEField(defaultValue = "feature")
+    @DEField(defaultValue = "feature", dict = "Testcase__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -234,7 +234,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 用例状态
      */
-    @DEField(defaultValue = "normal")
+    @DEField(defaultValue = "normal", dict = "Testcase__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
@@ -286,7 +286,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * frequency
      */
-    @DEField(defaultValue = "1")
+    @DEField(defaultValue = "1", dict = "Case__frequency")
     @TableField(value = "`FREQUENCY`")
     @JSONField(name = "frequency")
     @JsonProperty("frequency")
@@ -303,7 +303,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 最后修改者
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`LASTEDITEDBY`")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
@@ -321,7 +321,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 由谁评审
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`REVIEWEDBY`")
     @JSONField(name = "reviewedby")
     @JsonProperty("reviewedby")
@@ -382,7 +382,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 优先级
      */
-    @DEField(defaultValue = "3")
+    @DEField(defaultValue = "3", dict = "Testcase__pri")
     @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
@@ -391,7 +391,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 适用阶段
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Testcase__stage")
     @TableField(value = "`STAGE`")
     @JSONField(name = "stage")
     @JsonProperty("stage")
@@ -444,7 +444,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 工具/框架
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Testcase__frame")
     @TableField(value = "`FRAME`")
     @JSONField(name = "frame")
     @JsonProperty("frame")
@@ -496,7 +496,7 @@ public class Case extends EntityMP implements Serializable {
     /**
      * 执行人
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName_Gird")
     @TableField(value = "`LASTRUNNER`")
     @JSONField(name = "lastrunner")
     @JsonProperty("lastrunner")

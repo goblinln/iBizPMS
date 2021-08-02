@@ -67,6 +67,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     /**
      * freeze
      */
+    @DEField(dict = "Action__read")
     @TableField(value = "`FREEZE`")
     @JSONField(name = "freeze")
     @JsonProperty("freeze")
@@ -75,6 +76,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     /**
      * star
      */
+    @DEField(dict = "Action__read")
     @TableField(value = "`STAR`")
     @JSONField(name = "star")
     @JsonProperty("star")
@@ -83,6 +85,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     /**
      * hide
      */
+    @DEField(dict = "Action__read")
     @TableField(value = "`HIDE`")
     @JSONField(name = "hide")
     @JsonProperty("hide")
@@ -110,6 +113,7 @@ public class ImChatuser extends EntityMP implements Serializable {
     /**
      * mute
      */
+    @DEField(dict = "Action__read")
     @TableField(value = "`MUTE`")
     @JSONField(name = "mute")
     @JsonProperty("mute")

@@ -74,6 +74,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 设置阶段者
      */
+    @DEField(dict = "UserRealName")
     @TableField(value = "`STAGEDBY`")
     @JSONField(name = "stagedby")
     @JsonProperty("stagedby")
@@ -100,6 +101,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 优先级
      */
+    @DEField(dict = "Story__pri")
     @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
@@ -108,6 +110,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 需求阶段
      */
+    @DEField(dict = "Story__stage")
     @TableField(value = "`STAGE`")
     @JSONField(name = "stage")
     @JsonProperty("stage")
@@ -149,6 +152,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 需求类型
      */
+    @DEField(dict = "Story__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -299,7 +303,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 来源对象
      */
-    @DEField(name = "ibiz_sourceobject")
+    @DEField(name = "ibiz_sourceobject", dict = "Ibizpro_story__sourceobject")
     @TableField(value = "`IBIZ_SOURCEOBJECT`")
     @JSONField(name = "ibiz_sourceobject")
     @JsonProperty("ibiz_sourceobject")
@@ -341,7 +345,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 需求来源
      */
-    @DEField(defaultValue = "iBiz")
+    @DEField(defaultValue = "iBiz", dict = "Story__source")
     @TableField(value = "`SOURCE`")
     @JSONField(name = "source")
     @JsonProperty("source")
@@ -375,6 +379,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 颜色
      */
+    @DEField(dict = "Story__color")
     @TableField(value = "`COLOR`")
     @JSONField(name = "color")
     @JsonProperty("color")
@@ -383,6 +388,7 @@ public class IBZProStory extends EntityMP implements Serializable {
     /**
      * 状态
      */
+    @DEField(dict = "Story__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")

@@ -130,7 +130,7 @@ public class TestSuite extends EntityMP implements Serializable {
     /**
      * 最后编辑人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`LASTEDITEDBY`")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
@@ -139,7 +139,7 @@ public class TestSuite extends EntityMP implements Serializable {
     /**
      * 类型
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Testsuite__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -158,7 +158,7 @@ public class TestSuite extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName_Gird")
     @TableField(value = "`ADDEDBY`")
     @JSONField(name = "addedby")
     @JsonProperty("addedby")

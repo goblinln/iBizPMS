@@ -68,6 +68,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 完成任务
      */
+    @DEField(dict = "MyCompleteTask")
     @TableField(value = "`TODAYTASK`")
     @JSONField(name = "todaytask")
     @JsonProperty("todaytask")
@@ -84,6 +85,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 明日计划任务
      */
+    @DEField(dict = "MyPlanTask")
     @TableField(value = "`TOMORROWPLANSTASK`")
     @JSONField(name = "tomorrowplanstask")
     @JsonProperty("tomorrowplanstask")
@@ -92,6 +94,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 汇报给
      */
+    @DEField(dict = "UserRealName_Gird")
     @TableField(value = "`REPORTTO`")
     @JSONField(name = "reportto")
     @JsonProperty("reportto")
@@ -100,7 +103,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
@@ -119,7 +122,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 是否提交
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "YesNo")
     @TableField(value = "`ISSUBMIT`")
     @JSONField(name = "issubmit")
     @JsonProperty("issubmit")
@@ -162,7 +165,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 状态
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "ReportStatus")
     @TableField(value = "`REPORTSTATUS`")
     @JSONField(name = "reportstatus")
     @JsonProperty("reportstatus")
@@ -179,7 +182,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
@@ -196,6 +199,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 抄送给
      */
+    @DEField(dict = "UserRealName_Gird")
     @TableField(value = "`MAILTO`")
     @JSONField(name = "mailto")
     @JsonProperty("mailto")
@@ -213,6 +217,7 @@ public class IbzDaily extends EntityMP implements Serializable {
     /**
      * 用户
      */
+    @DEField(dict = "UserRealName")
     @TableField(value = "`ACCOUNT`")
     @JSONField(name = "account")
     @JsonProperty("account")

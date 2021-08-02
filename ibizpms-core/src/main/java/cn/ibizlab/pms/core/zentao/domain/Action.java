@@ -157,7 +157,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 对象类型
      */
-    @DEField(preType = DEPredefinedFieldType.PARENTTYPE)
+    @DEField(preType = DEPredefinedFieldType.PARENTTYPE, dict = "Action__object_type")
     @TableField(value = "`OBJECTTYPE`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
@@ -200,7 +200,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
@@ -209,7 +209,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 已读
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "Action__read")
     @TableField(value = "`READ`")
     @JSONField(name = "read")
     @JsonProperty("read")
@@ -218,7 +218,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
@@ -227,6 +227,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 动作
      */
+    @DEField(dict = "Action__type")
     @TableField(value = "`ACTION`")
     @JSONField(name = "action")
     @JsonProperty("action")
@@ -303,6 +304,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * 操作者
      */
+    @DEField(dict = "UserRealName")
     @TableField(value = "`ACTOR`")
     @JSONField(name = "actor")
     @JsonProperty("actor")

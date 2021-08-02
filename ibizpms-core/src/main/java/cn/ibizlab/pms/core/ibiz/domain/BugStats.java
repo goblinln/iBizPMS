@@ -65,6 +65,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 由谁解决
      */
+    @DEField(dict = "UserRealName_Gird")
     @TableField(value = "`RESOLVEDBY`")
     @JSONField(name = "resolvedby")
     @JsonProperty("resolvedby")
@@ -121,6 +122,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 指派给
      */
+    @DEField(dict = "UserRealName_Gird")
     @TableField(value = "`ASSIGNEDTO`")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
@@ -286,6 +288,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
+    @DEField(dict = "UserRealName_Gird")
     @TableField(value = "`OPENEDBY`")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")

@@ -132,6 +132,7 @@ public class Company extends EntityMP implements Serializable {
     /**
      * 匿名登陆
      */
+    @DEField(dict = "Company__guest")
     @TableField(value = "`GUEST`")
     @JSONField(name = "guest")
     @JsonProperty("guest")

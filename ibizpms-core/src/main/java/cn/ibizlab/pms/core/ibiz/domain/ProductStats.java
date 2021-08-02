@@ -148,6 +148,7 @@ public class ProductStats extends EntityMP implements Serializable {
     /**
      * 产品类型
      */
+    @DEField(dict = "Product__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -204,6 +205,7 @@ public class ProductStats extends EntityMP implements Serializable {
     /**
      * 状态
      */
+    @DEField(dict = "Product__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")

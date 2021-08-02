@@ -57,6 +57,7 @@ public class ImMessagestatus extends EntityMP implements Serializable {
     /**
      * status
      */
+    @DEField(dict = "Im_messagestatus__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")

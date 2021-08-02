@@ -59,7 +59,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")
@@ -68,7 +68,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
@@ -96,7 +96,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
     /**
      * 更新平台
      */
-    @DEField(defaultValue = "MOB")
+    @DEField(defaultValue = "MOB", dict = "SYS_UPDATE_BRANCH")
     @TableField(value = "`UPDATEBRANCH`")
     @JSONField(name = "updatebranch")
     @JsonProperty("updatebranch")
@@ -122,7 +122,7 @@ public class SysUpdateLog extends EntityMP implements Serializable {
     /**
      * 最新更新
      */
-    @DEField(defaultValue = "1")
+    @DEField(defaultValue = "1", dict = "YesNo3")
     @TableField(value = "`LATESTUPDATE`")
     @JSONField(name = "latestupdate")
     @JsonProperty("latestupdate")

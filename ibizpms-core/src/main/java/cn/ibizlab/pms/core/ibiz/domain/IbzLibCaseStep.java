@@ -57,6 +57,7 @@ public class IbzLibCaseStep extends EntityMP implements Serializable {
     /**
      * 类型
      */
+    @DEField(dict = "Casestep__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")

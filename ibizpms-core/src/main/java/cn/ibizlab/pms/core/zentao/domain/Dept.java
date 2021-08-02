@@ -49,6 +49,7 @@ public class Dept extends EntityMP implements Serializable {
     /**
      * 负责人
      */
+    @DEField(dict = "UserRealName")
     @TableField(value = "`MANAGER`")
     @JSONField(name = "manager")
     @JsonProperty("manager")

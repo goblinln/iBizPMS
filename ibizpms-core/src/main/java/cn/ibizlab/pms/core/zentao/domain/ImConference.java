@@ -49,6 +49,7 @@ public class ImConference extends EntityMP implements Serializable {
     /**
      * status
      */
+    @DEField(dict = "Im_conference__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")

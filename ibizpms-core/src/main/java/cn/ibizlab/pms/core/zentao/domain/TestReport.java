@@ -92,7 +92,7 @@ public class TestReport extends EntityMP implements Serializable {
     /**
      * 参与人员
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealNameProductTeam")
     @TableField(value = "`MEMBERS`")
     @JSONField(name = "members")
     @JsonProperty("members")
@@ -101,7 +101,7 @@ public class TestReport extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName_Gird")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
@@ -119,7 +119,7 @@ public class TestReport extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName_Gird")
     @TableField(value = "`CREATEDBY`")
     @JSONField(name = "createdby")
     @JsonProperty("createdby")
@@ -161,7 +161,7 @@ public class TestReport extends EntityMP implements Serializable {
     /**
      * 测试单
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "TestTask")
     @TableField(value = "`TASKS`")
     @JSONField(name = "tasks")
     @JsonProperty("tasks")
@@ -187,7 +187,7 @@ public class TestReport extends EntityMP implements Serializable {
     /**
      * 对象类型
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Testreport__object_type")
     @TableField(value = "`OBJECTTYPE`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
@@ -269,7 +269,7 @@ public class TestReport extends EntityMP implements Serializable {
     /**
      * 负责人
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealNameProductTeam")
     @TableField(value = "`OWNER`")
     @JSONField(name = "owner")
     @JsonProperty("owner")

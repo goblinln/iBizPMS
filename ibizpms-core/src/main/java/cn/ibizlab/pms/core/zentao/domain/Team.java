@@ -120,7 +120,7 @@ public class Team extends EntityMP implements Serializable {
     /**
      * 团队类型
      */
-    @DEField(defaultValue = "project")
+    @DEField(defaultValue = "project", dict = "Team__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -174,7 +174,7 @@ public class Team extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
@@ -201,7 +201,7 @@ public class Team extends EntityMP implements Serializable {
     /**
      * 受限用户
      */
-    @DEField(defaultValue = "no")
+    @DEField(defaultValue = "no", dict = "YesNo3")
     @TableField(value = "`LIMITED`")
     @JSONField(name = "limited")
     @JsonProperty("limited")
@@ -210,7 +210,7 @@ public class Team extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")

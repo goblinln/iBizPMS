@@ -101,6 +101,7 @@ public class UserTpl extends EntityMP implements Serializable {
     /**
      * type
      */
+    @DEField(dict = "UserTplType")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -109,7 +110,7 @@ public class UserTpl extends EntityMP implements Serializable {
     /**
      * account
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`ACCOUNT`")
     @JSONField(name = "account")
     @JsonProperty("account")
@@ -126,7 +127,7 @@ public class UserTpl extends EntityMP implements Serializable {
     /**
      * 公开
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "YesNo")
     @TableField(value = "`PUBLIC`")
     @JSONField(name = "ibizpublic")
     @JsonProperty("ibizpublic")
@@ -135,7 +136,7 @@ public class UserTpl extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")

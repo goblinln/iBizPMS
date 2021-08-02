@@ -49,6 +49,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * 最后修改者
      */
+    @DEField(dict = "UserRealName")
     @TableField(value = "`LASTEDITEDBY`")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")
@@ -84,7 +85,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * 用例类型
      */
-    @DEField(defaultValue = "feature")
+    @DEField(defaultValue = "feature", dict = "Testcase__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -101,7 +102,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * 适用阶段
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "Testcase__stage")
     @TableField(value = "`STAGE`")
     @JSONField(name = "stage")
     @JsonProperty("stage")
@@ -155,7 +156,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * 优先级
      */
-    @DEField(defaultValue = "3")
+    @DEField(defaultValue = "3", dict = "Testcase__pri")
     @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
@@ -190,7 +191,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * 用例版本
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "CurCaseVersion")
     @TableField(value = "`VERSION`")
     @JSONField(name = "version")
     @JsonProperty("version")
@@ -199,7 +200,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * 状态
      */
-    @DEField(defaultValue = "wait")
+    @DEField(defaultValue = "wait", dict = "Testcase__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
@@ -235,7 +236,7 @@ public class IbzCase extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`OPENEDBY`")
     @JSONField(name = "openedby")
     @JsonProperty("openedby")

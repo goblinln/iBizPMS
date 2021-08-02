@@ -76,7 +76,7 @@ public class IbzLibModule extends EntityMP implements Serializable {
     /**
      * branch
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "ProductBranch_Cache")
     @TableField(value = "`BRANCH`")
     @JSONField(name = "branch")
     @JsonProperty("branch")
@@ -102,7 +102,7 @@ public class IbzLibModule extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
@@ -129,7 +129,7 @@ public class IbzLibModule extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`CREATEBY`")
     @JSONField(name = "createby")
     @JsonProperty("createby")

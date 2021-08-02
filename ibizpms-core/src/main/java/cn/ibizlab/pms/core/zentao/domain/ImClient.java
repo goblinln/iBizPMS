@@ -99,6 +99,7 @@ public class ImClient extends EntityMP implements Serializable {
     /**
      * status
      */
+    @DEField(dict = "Im_client__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")

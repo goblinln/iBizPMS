@@ -103,7 +103,7 @@ public class ImChat extends EntityMP implements Serializable {
     /**
      * public
      */
-    @DEField(name = "public")
+    @DEField(name = "public", dict = "Action__read")
     @TableField(value = "`PUBLIC`")
     @JSONField(name = "ibizpublic")
     @JsonProperty("ibizpublic")

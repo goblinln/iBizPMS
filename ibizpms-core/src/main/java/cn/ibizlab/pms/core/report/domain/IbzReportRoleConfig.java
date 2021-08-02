@@ -67,7 +67,7 @@ public class IbzReportRoleConfig extends EntityMP implements Serializable {
     /**
      * 角色
      */
-    @DEField(name = "report_role")
+    @DEField(name = "report_role", dict = "AllRole")
     @TableField(value = "`REPORT_ROLE`")
     @JSONField(name = "report_role")
     @JsonProperty("report_role")
@@ -76,6 +76,7 @@ public class IbzReportRoleConfig extends EntityMP implements Serializable {
     /**
      * 类型
      */
+    @DEField(dict = "ReportType")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -104,7 +105,7 @@ public class IbzReportRoleConfig extends EntityMP implements Serializable {
     /**
      * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN, dict = "SysOperator")
     @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
     @JSONField(name = "createman")
     @JsonProperty("createman")
@@ -113,7 +114,7 @@ public class IbzReportRoleConfig extends EntityMP implements Serializable {
     /**
      * 更新人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN, dict = "SysOperator")
     @TableField(value = "`UPDATEMAN`")
     @JSONField(name = "updateman")
     @JsonProperty("updateman")

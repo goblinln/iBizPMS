@@ -58,7 +58,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 所有者
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`ACCOUNT`")
     @JSONField(name = "account")
     @JsonProperty("account")
@@ -125,6 +125,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 类型
      */
+    @DEField(dict = "Type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -133,7 +134,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 结束
      */
-    @DEField(defaultValue = "1800")
+    @DEField(defaultValue = "1800", dict = "BeginendDropList")
     @TableField(value = "`END`")
     @JSONField(name = "end")
     @JsonProperty("end")
@@ -151,7 +152,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 由谁更新
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`UPDATEBY`")
     @JSONField(name = "updateby")
     @JsonProperty("updateby")
@@ -194,7 +195,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 开始
      */
-    @DEField(defaultValue = "600")
+    @DEField(defaultValue = "600", dict = "BeginendDropList")
     @TableField(value = "`BEGIN`")
     @JSONField(name = "begin")
     @JsonProperty("begin")
@@ -212,7 +213,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 由谁指派
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`ASSIGNEDBY`")
     @JSONField(name = "assignedby")
     @JsonProperty("assignedby")
@@ -288,7 +289,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 指派给
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "#EMPTY", dict = "UserRealName")
     @TableField(value = "`ASSIGNEDTO`")
     @JSONField(name = "assignedto")
     @JsonProperty("assignedto")
@@ -297,7 +298,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 状态
      */
-    @DEField(defaultValue = "wait")
+    @DEField(defaultValue = "wait", dict = "Todo__status")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
@@ -348,7 +349,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 优先级
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "Pri")
     @TableField(value = "`PRI`")
     @JSONField(name = "pri")
     @JsonProperty("pri")
@@ -374,7 +375,7 @@ public class Todo extends EntityMP implements Serializable {
     /**
      * 私人事务
      */
-    @DEField(defaultValue = "0")
+    @DEField(defaultValue = "0", dict = "Private_choose")
     @TableField(value = "`PRIVATE`")
     @JSONField(name = "ibizprivate")
     @JsonProperty("ibizprivate")

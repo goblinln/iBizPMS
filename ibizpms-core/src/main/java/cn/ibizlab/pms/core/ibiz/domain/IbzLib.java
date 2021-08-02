@@ -95,7 +95,7 @@ public class IbzLib extends EntityMP implements Serializable {
     /**
      * 由谁创建
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME, dict = "UserRealName")
     @TableField(value = "`ADDEDBY`")
     @JSONField(name = "addedby")
     @JsonProperty("addedby")
@@ -121,7 +121,7 @@ public class IbzLib extends EntityMP implements Serializable {
     /**
      * 类型
      */
-    @DEField(defaultValue = "library")
+    @DEField(defaultValue = "library", dict = "Testsuite__type")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
@@ -130,7 +130,7 @@ public class IbzLib extends EntityMP implements Serializable {
     /**
      * 最后编辑人
      */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME, dict = "UserRealName")
     @TableField(value = "`LASTEDITEDBY`")
     @JSONField(name = "lasteditedby")
     @JsonProperty("lasteditedby")

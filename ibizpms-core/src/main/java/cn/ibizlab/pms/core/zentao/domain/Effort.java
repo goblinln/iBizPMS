@@ -66,6 +66,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * status
      */
+    @DEField(dict = "Case__frequency")
     @TableField(value = "`STATUS`")
     @JSONField(name = "status")
     @JsonProperty("status")
@@ -109,6 +110,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * todo
      */
+    @DEField(dict = "Company__guest")
     @TableField(value = "`TODO`")
     @JSONField(name = "todo")
     @JsonProperty("todo")
@@ -117,6 +119,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * type
      */
+    @DEField(dict = "Case__frequency")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")
