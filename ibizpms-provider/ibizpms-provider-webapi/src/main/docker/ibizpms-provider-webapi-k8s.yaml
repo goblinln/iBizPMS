@@ -22,7 +22,52 @@ spec:
         image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-provider-webapi:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8081
+        - containerPort: 30120
+        env:
+        - name: SPRING_CLOUD_NACOS_DISCOVERY_IP
+          value: "172.16.240.111"      
+        - name: SERVER_PORT
+          value: "30120"
+        - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR
+          value: "172.16.240.110:8848"
+        - name: SPRING_REDIS_HOST
+          value: "172.16.240.110"
+        - name: SPRING_REDIS_PORT
+          value: "6379"
+        - name: SPRING_REDIS_DATABASE
+          value: "0"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "a_LAB01_96184aff4"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "f1@@c@@9"
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://172.16.186.185:3306/a_LAB01_96184aff4?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&allowMultiQueries=true&serverTimezone=GMT%2B8"
+        - name: SPRING_DATASOURCE_DRIVER-CLASS-NAME
+          value: "com.mysql.jdbc.Driver"
+        - name: SPRING_DATASOURCE_DEFAULTSCHEMA
+          value: "a_LAB01_96184aff4"
+        - name: PORTMAP
+          value: "29998:29998"      
+        - name: IBIZ_AUTH_LADP
+          value: "true"      
+        - name: JOBS_ADMINNAME
+          value: "admin"      
+        - name: JOBS_ADMIN-ADDRESS
+          value: "http://172.16.240.110:10000"      
+        - name: NACOS
+          value: "172.16.240.110:8848"      
+        - name: JOBS_ADMINPASSWORD
+          value: "123456"      
+        - name: JOBS_APP-NAME
+          value: "ibzpms"      
+        - name: ZUUL_ROUTES_IBZEMP_SERVICEID
+          value: "pms-webapi"      
+        - name: JOBS_APP-PORT
+          value: "29998"      
+        - name: JOBS_APP-IP
+          value: "172.16.240.110"      
+        - name: CAS
+          value: "https://passport.ibizlab.cn"      
         volumeMounts:
         - name: data
           mountPath: /app/file
@@ -42,9 +87,9 @@ spec:
   type: NodePort
   ports:
   - name: http
-    port: 8081
-    targetPort: 8081
-    nodePort: 8081
+    port: 30120
+    targetPort: 30120
+    nodePort: 30120
     protocol: TCP
   selector:
     app: ibizpms-provider-webapi
