@@ -202,6 +202,7 @@ hide footbox
 |ProjectPlan|项目计划列表([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_ProjectPlan))|否|&nbsp;|
 |RootPlan|根计划([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_RootPlan))|否|&nbsp;|
 |TaskPlan|任务计划([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_TaskPlan))|否|&nbsp;|
+|TaskPlanRoot|任务计划（根计划）([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_TaskPlanRoot))|否|&nbsp;|
 |VIEW|默认（全部数据）([MYSQL5](../../appendix/query_MYSQL5.md#ProductPlan_View))|否|&nbsp;|
 
 * **数据集合**
@@ -218,6 +219,7 @@ hide footbox
 |ProjectPlan|项目计划列表|ProjectPlan|否|&nbsp;|
 |RootPlan|跟计划|RootPlan|否|&nbsp;|
 |TaskPlan|任务计划|TaskPlan|否|&nbsp;|
+|TaskPlanRoot|任务计划（根计划）|TaskPlanRoot|否|&nbsp;|
 
 ## 查询模式
 | 属性      |    搜索模式     |

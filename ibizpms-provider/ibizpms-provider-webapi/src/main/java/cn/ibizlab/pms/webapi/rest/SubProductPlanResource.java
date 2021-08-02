@@ -659,6 +659,29 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductPlan-searchTaskPlanRoot-all')")
+	@ApiOperation(value = "根据产品计划获取任务计划（根计划）", tags = {"产品计划" } ,notes = "根据产品计划获取任务计划（根计划）")
+    @RequestMapping(method= RequestMethod.GET , value="/productplans/{productplan_id}/subproductplans/fetchtaskplanroot")
+	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanTaskPlanRootByProductPlan(@PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
+        context.setN_parent_eq(productplan_id);
+        Page<ProductPlan> domains = productplanService.searchTaskPlanRoot(context) ;
+        List<SubProductPlanDTO> list = subproductplanMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductPlan-searchTaskPlanRoot-all')")
+	@ApiOperation(value = "根据产品计划查询任务计划（根计划）", tags = {"产品计划" } ,notes = "根据产品计划查询任务计划（根计划）")
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchtaskplanroot")
+	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanTaskPlanRootByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
+        context.setN_parent_eq(productplan_id);
+        Page<ProductPlan> domains = productplanService.searchTaskPlanRoot(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
     @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductPlan-Create-all')")
     @ApiOperation(value = "根据产品产品计划建立产品计划", tags = {"产品计划" },  notes = "根据产品产品计划建立产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans")
@@ -1268,6 +1291,29 @@ public class SubProductPlanResource {
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanTaskPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
         context.setN_parent_eq(productplan_id);
         Page<ProductPlan> domains = productplanService.searchTaskPlan(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductPlan-searchTaskPlanRoot-all')")
+	@ApiOperation(value = "根据产品产品计划获取任务计划（根计划）", tags = {"产品计划" } ,notes = "根据产品产品计划获取任务计划（根计划）")
+    @RequestMapping(method= RequestMethod.GET , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchtaskplanroot")
+	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanTaskPlanRootByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,ProductPlanSearchContext context) {
+        context.setN_parent_eq(productplan_id);
+        Page<ProductPlan> domains = productplanService.searchTaskPlanRoot(context) ;
+        List<SubProductPlanDTO> list = subproductplanMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-ProductPlan-searchTaskPlanRoot-all')")
+	@ApiOperation(value = "根据产品产品计划查询任务计划（根计划）", tags = {"产品计划" } ,notes = "根据产品产品计划查询任务计划（根计划）")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchtaskplanroot")
+	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanTaskPlanRootByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
+        context.setN_parent_eq(productplan_id);
+        Page<ProductPlan> domains = productplanService.searchTaskPlanRoot(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
