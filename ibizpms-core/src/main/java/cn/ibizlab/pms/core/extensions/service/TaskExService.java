@@ -139,6 +139,7 @@ public class TaskExService extends TaskServiceImpl {
             }
             et.setTaskestimates(null);
         }
+        et.setConsumed(et.getConsumed() != null ? et.getConsumed() : 0.0D);
         return et;
     }
 
