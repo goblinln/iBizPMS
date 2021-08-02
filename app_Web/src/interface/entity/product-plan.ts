@@ -63,7 +63,7 @@ export interface ProductPlan {
     id?: any;
 
     /**
-     * 开始日期
+     * 预计开始日期
      *
      * @returns {*}
      * @memberof ProductPlan
@@ -87,7 +87,7 @@ export interface ProductPlan {
     desc?: any;
 
     /**
-     * 结束日期
+     * 预计结束日期
      *
      * @returns {*}
      * @memberof ProductPlan
@@ -285,4 +285,20 @@ export interface ProductPlan {
      * @memberof ProductPlan
      */
     ordernum?: any;
+
+    /**
+     * 实际开始日期
+     *
+     * @returns {*}
+     * @memberof ProductPlan
+     */
+    beginact?: any;
+
+    /**
+     * 实际结束日期
+     *
+     * @returns {*}
+     * @memberof ProductPlan
+     */
+    endact?: any;
 }

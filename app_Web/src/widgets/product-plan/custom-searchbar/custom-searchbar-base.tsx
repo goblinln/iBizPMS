@@ -101,7 +101,7 @@ export class CustomSearchbarBase extends MainControlBase {
             disabled: false
         },
         'begingteq': {
-            label: '开始日期',
+            label: '预计开始日期',
             localetag: 'entities.productplan.fields.begin',
             name: 'begingteq',
             prop: 'begin',
@@ -125,7 +125,7 @@ export class CustomSearchbarBase extends MainControlBase {
             disabled: false
         },
         'endlteq': {
-            label: '结束日期',
+            label: '预计结束日期',
             localetag: 'entities.productplan.fields.end',
             name: 'endlteq',
             prop: 'end',

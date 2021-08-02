@@ -209,6 +209,11 @@ div::-webkit-scrollbar-thumb {
             background: rgba(var(--view-background-color-active-rgb), 0.5) !important;
         }
 
+        //  适配滚动条宽度
+        > .el-table__fixed, > .el-table__fixed-right {
+            height: calc(100% - 6px) !important;
+        }
+        
         > .el-table__header-wrapper,
         .el-table__fixed-header-wrapper {
             height: 30px;

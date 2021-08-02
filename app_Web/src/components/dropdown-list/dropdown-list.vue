@@ -2,10 +2,12 @@
     <div class="dropdown-list-container">
         <i-select
             v-if="!hasChildren"
+            ref="dropdownList"
             :transfer="true"
             class="dropdown-list"
             v-model="currentVal"
             :disabled="disabled"
+            :not-found-text="loading ? $t('components.dropDownList.loading') : $t('components.dropDownList.nulltext')"
             :filterable="filterable"
             @on-open-change="onClick"
             :placeholder="$t('components.dropDownList.placeholder')"
@@ -106,6 +108,14 @@ export default class DropDownList extends Vue {
      * @memberof DropDownList
      */
     public value: any = null;
+
+    /**
+     * 是否加载动态代码表数据
+     * 
+     * @type {*}
+     * @memberof DropDownList
+     */
+    public loading: boolean = false;
 
     /**
      * 代码表标识
@@ -419,6 +429,8 @@ export default class DropDownList extends Vue {
     public onClick($event: any) {
         if ($event) {
             if (this.tag && Object.is(this.codelistType, 'DYNAMIC')) {
+                this.items = [];
+                this.loading = true;
                 // 公共参数处理
                 let data: any = {};
                 this.handlePublicParams(data);
@@ -429,6 +441,7 @@ export default class DropDownList extends Vue {
                     .getItems(this.tag, _context, _param)
                     .then((res: any) => {
                         this.formatCodeList(res);
+                        this.loading = false;
                     })
                     .catch((error: any) => {
                         console.log(`----${this.tag}----${this.$t('app.commonWords.codeNotExist') as string}`);
@@ -446,6 +459,10 @@ export default class DropDownList extends Vue {
     public clear($event: any) {
         if (this.currentVal) {
             this.currentVal = null;
+            let dropdownList: any = this.$refs['dropdownList'];
+            if(dropdownList){
+                dropdownList.setQuery(null);
+            }
         }
     }
     /**

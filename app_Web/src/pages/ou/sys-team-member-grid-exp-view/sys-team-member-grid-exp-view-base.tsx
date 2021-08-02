@@ -227,5 +227,23 @@ export class SysTeamMemberGridExpViewBase extends GridExpViewBase {
      */
     public viewUID: string = 'ou-sys-team-member-grid-exp-view';
 
+    /**
+     * 导航数据部件选中数据
+     *
+     * @type {*}
+     * @memberof SysTeamMemberGridExpView
+     */
+    public selectionData: any[] = [];
+
+    /**
+     * 获取数据
+     *
+     * @type {string}
+     * @memberof SysTeamMemberGridExpView
+     */
+    public getDatas() {
+        return this.selectionData;
+    }
+
 
 }

@@ -222,5 +222,23 @@ export class SysDepartmentGridExpViewBase extends GridExpViewBase {
      */
     public viewUID: string = 'ou-sys-department-grid-exp-view';
 
+    /**
+     * 导航数据部件选中数据
+     *
+     * @type {*}
+     * @memberof SysDepartmentGridExpView
+     */
+    public selectionData: any[] = [];
+
+    /**
+     * 获取数据
+     *
+     * @type {string}
+     * @memberof SysDepartmentGridExpView
+     */
+    public getDatas() {
+        return this.selectionData;
+    }
+
 
 }

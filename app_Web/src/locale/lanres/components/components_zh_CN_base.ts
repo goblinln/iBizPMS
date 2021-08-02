@@ -144,6 +144,8 @@ export default {
     },
     dropDownList: {
         placeholder: '请选择...',
+        loading: '加载中...',
+        nulltext: '无匹配数据',
     },
     dropDownListDynamic: {
         placeholder: '请选择...',

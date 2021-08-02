@@ -3,33 +3,9 @@ services:
   ibizpms-provider-webapi:
     image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-provider-webapi:latest
     ports:
-      - "30120:30120"
-      - "29998:29998"
+      - "8081:8081"
     networks:
       - agent_network
-    environment:
-      - SPRING_CLOUD_NACOS_DISCOVERY_IP=172.16.240.111
-      - SERVER_PORT=30120
-      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=172.16.240.110:8848
-      - SPRING_REDIS_HOST=172.16.240.110
-      - SPRING_REDIS_PORT=6379
-      - SPRING_REDIS_DATABASE=0
-      - SPRING_DATASOURCE_USERNAME=a_LAB01_96184aff4
-      - SPRING_DATASOURCE_PASSWORD=f1@@c@@9
-      - SPRING_DATASOURCE_URL=jdbc:mysql://172.16.186.185:3306/a_LAB01_96184aff4?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&allowMultiQueries=true&serverTimezone=GMT%2B8
-      - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.jdbc.Driver
-      - SPRING_DATASOURCE_DEFAULTSCHEMA=a_LAB01_96184aff4
-      - PORTMAP=29998:29998
-      - IBIZ_AUTH_LADP=true
-      - JOBS_ADMINNAME=admin
-      - JOBS_ADMIN-ADDRESS=http://172.16.240.110:10000
-      - NACOS=172.16.240.110:8848
-      - JOBS_ADMINPASSWORD=123456
-      - JOBS_APP-NAME=ibzpms
-      - ZUUL_ROUTES_IBZEMP_SERVICEID=pms-webapi
-      - JOBS_APP-PORT=29998
-      - JOBS_APP-IP=172.16.240.110
-      - CAS=https://passport.ibizlab.cn
     deploy:
       resources:
            limits:

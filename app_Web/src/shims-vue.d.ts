@@ -13,3 +13,4 @@ declare module 'vuedraggable';
 declare module 'ibiz-vue-pivottable';
 declare module 'events';
 declare module 'marked';
+declare module 'sortablejs';

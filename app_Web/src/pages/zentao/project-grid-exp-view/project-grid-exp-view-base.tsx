@@ -222,5 +222,23 @@ export class ProjectGridExpViewBase extends GridExpViewBase {
      */
     public viewUID: string = 'zentao-project-grid-exp-view';
 
+    /**
+     * 导航数据部件选中数据
+     *
+     * @type {*}
+     * @memberof ProjectGridExpView
+     */
+    public selectionData: any[] = [];
+
+    /**
+     * 获取数据
+     *
+     * @type {string}
+     * @memberof ProjectGridExpView
+     */
+    public getDatas() {
+        return this.selectionData;
+    }
+
 
 }

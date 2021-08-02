@@ -2,6 +2,7 @@ import { Prop } from 'vue-property-decorator';
 import { Watch } from '@/studio-core';
 import { ViewTool } from '@/utils';
 import { MDControlBase } from './MDControlBase';
+import Sortable from 'sortablejs';
 import { Environment } from '@/environments/environment';
 
 /**
@@ -95,6 +96,13 @@ export class GridControlBase extends MDControlBase {
      * @memberof GridControlBase
      */
     public deRules: any;
+
+    /**
+     * 拷贝数据（用于处理树数据）
+     * 
+     * @memberof GridControlBase
+     */
+    public copydata: any[] = [];
 
     /**
      * 当前编辑行数据
@@ -417,7 +425,7 @@ export class GridControlBase extends MDControlBase {
      * @returns
      * @memberof GridControlBase
      */
-    public async save(args: any[], params?: any, $event?: any, xData?: any) {
+    public async save(args: any[], params?: any, $event?: any, xData?: any, showBusyIndicator: boolean = true) {
         if (!(await this.validateAll())) {
             if (this.errorMessages && this.errorMessages.length > 0) {
                 this.$Notice.error({ title: this.$t('app.commonWords.wrong') as string, desc: this.errorMessages[0] });
@@ -477,7 +485,7 @@ export class GridControlBase extends MDControlBase {
         }
         this.$emit('save', successItems);
         this.refresh([]);
-        if (errorItems.length === 0 && !this.isformDruipart) {
+        if (errorItems.length === 0 && !this.isformDruipart && showBusyIndicator) {
             this.$Notice.success({ title: '', desc: this.$t('app.commonWords.saveSuccess') as string });
         } else {
             errorItems.forEach((item: any, index: number) => {
@@ -644,6 +652,7 @@ export class GridControlBase extends MDControlBase {
             if (_this.isEnableGroup && _this.group && _this.group instanceof Function) {
                 _this.group();
             }
+            this.copyData();
         }).catch((response: any) => {
             if (response && response.status === 401) {
                 return;
@@ -1704,5 +1713,132 @@ export class GridControlBase extends MDControlBase {
             falg.isPast = true;
         }
         return falg;
+    }
+
+    /**
+     * 部件挂载完毕
+     * 
+     * @memberof GridControlBase
+     */
+    public ctrlMounted() {
+        super.ctrlMounted();
+        this.rowDrop();
+    }
+
+    /**
+     * 拷贝数据
+     * 
+     * @memberof GridControlBase
+     */
+    public copyData() {
+        this.copydata = [];
+        if (this.items.length > 0) {
+            const copyData: any[] = [];
+            this.items.forEach((item: any) => {
+                copyData.push(item);
+                if (item.items?.length > 0) {
+                    item.items.forEach((_item: any) => {
+                        copyData.push(_item);
+                    });
+                }
+            });
+            this.copydata = this.$util.deepCopy(copyData);
+        }
+    }
+
+    /**
+     * 行拖拽
+     * 
+     * @memberof GridControlBase
+     */
+    public rowDrop() {
+        const tbody = document.querySelector('.el-table__body-wrapper tbody');
+        const _this = this;
+        Sortable.create(tbody, {
+            onEnd({ newIndex, oldIndex }: any) {
+                let dragSuccess: boolean = false;
+                let newGridData = _this.$util.deepCopy(_this.copydata);
+                if (_this.minorSortPSDEF) {
+                    if (_this.copydata.length == _this.items.length) {
+                        // 不是树表格
+                        _this.sortData(newGridData, newIndex, oldIndex);
+                        dragSuccess = true;
+                    } else if (_this.copydata.length > _this.items.length) {
+                        // 树表格
+                        if (parseInt(newGridData[oldIndex].parent) > 0) {
+                            // 拖拽子节点 (只能在当前父节点下拖拽)
+                            const id = parseInt(newGridData[oldIndex].parent);
+                            const parentIndex = newGridData.findIndex((data: any) => id == data.id);
+                            if (parentIndex != -1 && newGridData[parentIndex].items?.length > 1) {
+                                if (parentIndex < oldIndex && oldIndex <= parentIndex + newGridData[parentIndex].items.length) {
+                                    _this.sortData(newGridData, newIndex, oldIndex);
+                                    dragSuccess = true;
+                                }
+                            }
+                        } else {
+                            // 拖拽非子节点（不能拖拽到子节点上）
+                            if (parseInt(newGridData[newIndex].parent) <= 0) {
+                                _this.sortData(newGridData, newIndex, oldIndex);
+                                dragSuccess = true;
+                            }
+                        }
+                        // 拖拽成功后将数据重新处理为树形数据
+                        if (dragSuccess) {
+                            let parentArray: any[] = [];
+                            newGridData.forEach((data: any) => {
+                                if (parseInt(data.parent) <= 0) {
+                                    parentArray.push(data);
+                                }
+                            });
+                            parentArray.forEach((item: any) => {
+                                if (item.items?.length > 0) {
+                                    const items: any[] = [];
+                                    newGridData.forEach((data: any) => {
+                                        if (data.parent == item.id) {
+                                            items.push(data);
+                                        }
+                                    });
+                                    item.items = items;
+                                }
+                            });
+                            newGridData = _this.$util.deepCopy(parentArray);
+                        }
+                    }
+                }
+                const items: any[] = _this.items;
+                _this.items = [];
+                _this.$nextTick(() => {
+                    if (dragSuccess) {
+                        _this.items = newGridData;
+                        _this.save([], {} ,{}, {}, false).then(() => {
+                            _this.refresh();
+                        });
+                    } else {
+                        _this.items = items;
+                        if (!_this.minorSortPSDEF) {
+                            console.warn('未配置排序属性');
+                        } else {
+                            console.warn('排序失败');
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    /**
+     * 根据拖拽结果对数据排序
+     * 
+     * @param newGridData 表格数据
+     * @param newIndex 拖拽后下标
+     * @param oldIndex 拖拽前下标
+     */
+    public sortData(newGridData: any[],newIndex: number, oldIndex: number) {
+        const currRow = newGridData.splice(oldIndex, 1)[0];
+        newGridData.splice(newIndex, 0, currRow);
+        newGridData.forEach((item: any, index: number) => {
+            item[this.minorSortPSDEF] = this.copydata[index][this.minorSortPSDEF];
+            item['rowDataState'] = 'update';
+        });
     }
 }

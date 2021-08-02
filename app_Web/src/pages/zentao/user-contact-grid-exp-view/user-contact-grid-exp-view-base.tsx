@@ -222,5 +222,23 @@ export class UserContactGridExpViewBase extends GridExpViewBase {
      */
     public viewUID: string = 'zentao-user-contact-grid-exp-view';
 
+    /**
+     * 导航数据部件选中数据
+     *
+     * @type {*}
+     * @memberof UserContactGridExpView
+     */
+    public selectionData: any[] = [];
+
+    /**
+     * 获取数据
+     *
+     * @type {string}
+     * @memberof UserContactGridExpView
+     */
+    public getDatas() {
+        return this.selectionData;
+    }
+
 
 }

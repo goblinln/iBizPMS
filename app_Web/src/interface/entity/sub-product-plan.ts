@@ -63,7 +63,7 @@ export interface SubProductPlan {
     id?: any;
 
     /**
-     * 开始日期
+     * 预计开始日期
      *
      * @returns {*}
      * @memberof SubProductPlan
@@ -87,7 +87,7 @@ export interface SubProductPlan {
     desc?: any;
 
     /**
-     * 结束日期
+     * 预计结束日期
      *
      * @returns {*}
      * @memberof SubProductPlan
@@ -285,4 +285,20 @@ export interface SubProductPlan {
      * @memberof SubProductPlan
      */
     ordernum?: any;
+
+    /**
+     * 实际开始日期
+     *
+     * @returns {*}
+     * @memberof SubProductPlan
+     */
+    beginact?: any;
+
+    /**
+     * 实际结束日期
+     *
+     * @returns {*}
+     * @memberof SubProductPlan
+     */
+    endact?: any;
 }

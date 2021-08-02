@@ -222,5 +222,23 @@ export class SysPostGridExpViewBase extends GridExpViewBase {
      */
     public viewUID: string = 'ou-sys-post-grid-exp-view';
 
+    /**
+     * 导航数据部件选中数据
+     *
+     * @type {*}
+     * @memberof SysPostGridExpView
+     */
+    public selectionData: any[] = [];
+
+    /**
+     * 获取数据
+     *
+     * @type {string}
+     * @memberof SysPostGridExpView
+     */
+    public getDatas() {
+        return this.selectionData;
+    }
+
 
 }

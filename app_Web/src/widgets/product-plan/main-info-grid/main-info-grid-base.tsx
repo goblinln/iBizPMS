@@ -488,13 +488,13 @@ export class MainInfoGridBase extends GridControlBase {
         },
         {
             name: 'begin',
-            label: '开始日期',
+            label: '预计开始日期',
             langtag: 'entities.productplan.maininfo_grid.exportColumns.begin',
             show: true,
         },
         {
             name: 'end',
-            label: '结束日期',
+            label: '预计结束日期',
             langtag: 'entities.productplan.maininfo_grid.exportColumns.end',
             show: true,
         },
@@ -653,6 +653,7 @@ export class MainInfoGridBase extends GridControlBase {
             }, 300);
             // 
             this.addMore();
+            this.copyData();
         }).catch((response: any) => {
             if (response && response.status === 401) {
                 return;

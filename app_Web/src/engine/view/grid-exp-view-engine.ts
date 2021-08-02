@@ -78,6 +78,7 @@ export default class GridExpViewEngine extends ViewEngine {
             this.view.$emit('viewload', args);
         }
         if (Object.is(eventName, 'selectionchange')) {
+            this.view.selectionData = [...args];
             this.view.$emit('viewdataschange', args);
         }
         if (Object.is(eventName, 'activated')) {

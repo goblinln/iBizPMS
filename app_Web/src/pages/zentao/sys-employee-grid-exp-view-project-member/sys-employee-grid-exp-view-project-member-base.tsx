@@ -222,5 +222,23 @@ export class SysEmployeeGridExpViewProjectMemberBase extends GridExpViewBase {
      */
     public viewUID: string = 'zentao-sys-employee-grid-exp-view-project-member';
 
+    /**
+     * 导航数据部件选中数据
+     *
+     * @type {*}
+     * @memberof SysEmployeeGridExpViewProjectMember
+     */
+    public selectionData: any[] = [];
+
+    /**
+     * 获取数据
+     *
+     * @type {string}
+     * @memberof SysEmployeeGridExpViewProjectMember
+     */
+    public getDatas() {
+        return this.selectionData;
+    }
+
 
 }

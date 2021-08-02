@@ -610,6 +610,7 @@ export class ProjectStoryGridBase extends GridControlBase {
             }, 300);
             // 
             this.addMore();
+            this.copyData();
         }).catch((response: any) => {
             if (response && response.status === 401) {
                 return;

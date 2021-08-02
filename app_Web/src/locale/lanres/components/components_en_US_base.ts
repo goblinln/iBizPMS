@@ -143,6 +143,8 @@ export default {
     },
     dropDownList: {
         placeholder: 'please select...',
+        loading: 'Loading...',
+        nulltext: 'No matching data',
     },
     dropDownListDynamic: {
         placeholder: 'please select...',

@@ -145,5 +145,6 @@ export class GridExpViewProjectMembergridexpbarGridexpbarBase extends GridExpBar
         this.selection = {};
         Object.assign(this.selection, { view: { viewname: this.navViewName },  context:tempContext,viewparam:tempViewParam });
         this.$forceUpdate();
+        this.$emit('selectionchange', args);
     }
 }

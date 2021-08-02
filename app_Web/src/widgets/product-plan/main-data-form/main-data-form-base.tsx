@@ -238,7 +238,7 @@ export class MainDataEditFormBase extends EditFormControlBase {
 }),
 
         begin: new FormItemModel({
-    caption: '开始日期', detailType: 'FORMITEM', name: 'begin', visible: true, isShowCaption: true, form: this, showMoreMode: 0,
+    caption: '预计开始日期', detailType: 'FORMITEM', name: 'begin', visible: true, isShowCaption: true, form: this, showMoreMode: 0,
     required:false,
     disabled: false,
     enableCond: 3,
@@ -252,7 +252,7 @@ export class MainDataEditFormBase extends EditFormControlBase {
 }),
 
         end: new FormItemModel({
-    caption: '结束日期', detailType: 'FORMITEM', name: 'end', visible: true, isShowCaption: true, form: this, showMoreMode: 0,
+    caption: '预计结束日期', detailType: 'FORMITEM', name: 'end', visible: true, isShowCaption: true, form: this, showMoreMode: 0,
     required:false,
     disabled: false,
     enableCond: 3,
