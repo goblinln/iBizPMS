@@ -44637,7 +44637,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
-    "expression":"( CASE WHEN ( SELECT CASE	 WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_team` t  WHERE t.`type` = 'task'  AND t.`root` = t1.`id`  ) = 1 THEN '10'  WHEN t1.parent = - 1 THEN'20'   WHEN t1.parent = 0 THEN '30' ELSE '40' END)",
+    "expression":"(CASE WHEN ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0 END FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id`) = 1 THEN '10' WHEN ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_task` t WHERE t.parent = t1.`id` and t.deleted = '0' ) = 1 THEN '20' WHEN t1.parent = 0 THEN '30' ELSE '40' END )",
     "key_field":0,
     "show_order":1000,
     "major_field":0

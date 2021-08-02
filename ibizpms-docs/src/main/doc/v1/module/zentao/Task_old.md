@@ -138,7 +138,7 @@ ORDER BY SUBSTRING(TASKSN,1,2) desc,SUBSTRING(TASKSN,3,1) asc, SUBSTRING(TASKSN,
 |团队用户|USERNAMES|TEXT|&nbsp;|
 |之前消耗|MYCONSUMED|FLOAT|&nbsp;|
 |周期设置周几|CONFIG_WEEK|SMCODELIST|&nbsp;|
-|任务类型|TASKTYPE|SSCODELIST|&nbsp;|
+|任务类型|TASKTYPE|SSCODELIST|&nbsp;( CASE WHEN ( SELECT CASE	 WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_team` t  WHERE t.`type` = 'task'  AND t.`root` = t1.`id`  ) = 1 THEN '10'  WHEN t1.parent = - 1 THEN'20'   WHEN t1.parent = 0 THEN '30' ELSE '40' END)|
 |所有模块|ALLMODULES|TEXT|&nbsp;|
 |提前天数|CONFIG_BEFOREDAYS|INT|&nbsp;|
 |实际完成|FINISHEDDATE|DATE|&nbsp;|

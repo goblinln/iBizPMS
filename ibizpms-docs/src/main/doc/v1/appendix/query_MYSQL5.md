@@ -21492,30 +21492,7 @@ WHEN t1.`status` IN ( 'wait', 'doing' )
 				t1.`STORYVERSION`,
 				t1.`SUBSTATUS`,
 				t1.`TYPE`,
-				(
-				CASE
-						
-						WHEN (
-						SELECT
-						CASE
-								
-							WHEN
-								count( t.`id` ) > 0 THEN
-									1 ELSE 0 
-								END 
-								FROM
-									`zt_team` t 
-								WHERE
-									t.`type` = 'task' 
-									AND t.`root` = t1.`id` 
-									) = 1 THEN
-									'10' 
-									WHEN t1.parent = - 1 THEN
-									'20' 
-									WHEN t1.parent = 0 THEN
-									'30' ELSE '40' 
-								END 
-								) AS `TASKTYPE`,
+				(CASE WHEN ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0 END FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id`) = 1 THEN '10' WHEN ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_task` t WHERE t.parent = t1.`id` and t.deleted = '0' ) = 1 THEN '20' WHEN t1.parent = 0 THEN '30' ELSE '40' END ) AS `TASKTYPE`,
 								CONCAT_WS(
 									'',
 								CASE
@@ -21718,7 +21695,7 @@ t21.`TITLE` AS `STORYNAME`,
 t1.`STORYVERSION`,
 t1.`SUBSTATUS`,
 t1.`TASKSPECIES`,
-( CASE WHEN ( SELECT CASE	 WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_team` t  WHERE t.`type` = 'task'  AND t.`root` = t1.`id`  ) = 1 THEN '10'  WHEN t1.parent = - 1 THEN'20'   WHEN t1.parent = 0 THEN '30' ELSE '40' END) AS `TASKTYPE`,
+(CASE WHEN ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0 END FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id`) = 1 THEN '10' WHEN ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_task` t WHERE t.parent = t1.`id` and t.deleted = '0' ) = 1 THEN '20' WHEN t1.parent = 0 THEN '30' ELSE '40' END ) AS `TASKTYPE`,
 t1.`TYPE`,
 DATE_FORMAT(t1.lastediteddate,'%Y-%m-%d') AS `UPDATEDATE`
 FROM `zt_task` t1 
@@ -21960,7 +21937,7 @@ t21.`TITLE` AS `STORYNAME`,
 t1.`STORYVERSION`,
 t1.`SUBSTATUS`,
 t1.`TASKSPECIES`,
-( CASE WHEN ( SELECT CASE	 WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_team` t  WHERE t.`type` = 'task'  AND t.`root` = t1.`id`  ) = 1 THEN '10'  WHEN t1.parent = - 1 THEN'20'   WHEN t1.parent = 0 THEN '30' ELSE '40' END) AS `TASKTYPE`,
+(CASE WHEN ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0 END FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id`) = 1 THEN '10' WHEN ( SELECT CASE WHEN count( t.`id` ) > 0 THEN 1 ELSE 0  END  FROM `zt_task` t WHERE t.parent = t1.`id` and t.deleted = '0' ) = 1 THEN '20' WHEN t1.parent = 0 THEN '30' ELSE '40' END ) AS `TASKTYPE`,
 t1.`TYPE`,
 DATE_FORMAT(t1.lastediteddate,'%Y-%m-%d') AS `UPDATEDATE`
 FROM `zt_task` t1 
