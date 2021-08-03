@@ -21773,7 +21773,7 @@ WHEN t1.`status` IN ( 'wait', 'doing' )
 										LEFT JOIN zt_task t51 ON t1.PARENT = t51.ID
 LEFT JOIN `zt_productplan` t61 ON t1.`PLAN` = t61.`ID`
 WHERE t1.DELETED = '0' 
-(( t1.`PARENT` <= 0 ) and t1.`project` = #{srf.n_project_eq}) 
+( t1.`project` = #{srf.n_project_eq}) 
 (#{srf.datacontext.formitem} is null or #{srf.datacontext.formitem} = 'ALL' or (#{srf.datacontext.formitem} = 'ZQ' and t1.TASKSPECIES='cycle') or (#{srf.datacontext.formitem} = 'FZQ' and t1.TASKSPECIES<>'cycle')) 
 
 ```
