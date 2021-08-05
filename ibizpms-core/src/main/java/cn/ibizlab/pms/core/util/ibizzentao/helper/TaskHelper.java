@@ -6,6 +6,7 @@ import cn.ibizlab.pms.core.ou.service.ISysEmployeeService;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ChangeUtil;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
 import cn.ibizlab.pms.core.zentao.domain.*;
+import cn.ibizlab.pms.core.zentao.filter.TaskSearchContext;
 import cn.ibizlab.pms.core.zentao.mapper.TaskMapper;
 import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.util.dict.StaticDict;
@@ -145,7 +146,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         //如果是周期任务  设置周期为1 parent为-1 （父任务）
         if (et.getTaskspecies() != null && et.getTaskspecies().equals(StaticDict.TaskSpecies.CYCLE.getValue())) {
             et.setCycle(1);
-            et.setParent(-1L);
+            // et.setParent(-1L);
             et.setEststarted(et.getConfigbegin());
             et.setDeadline(et.getConfigend());
             et.setAssignedto(et.getAssignedtopk());
@@ -491,10 +492,10 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
 
         if (et.getParent() > 0) {
             Task parentTask = this.getById(et.getParent());
-            Task task2 = new Task();
-            task2.setId(et.getParent());
-            task2.setParent(-1L);
-            this.internalUpdate(task2);
+//            Task task2 = new Task();
+//            task2.setId(et.getParent());
+//            // task2.setParent(-1L);
+//            this.internalUpdate(task2);
             updateParentStatus(et, et.getParent(), !changeParent);
             computeBeginAndEnd(this.get(et.getParent()));
             if (changeParent) {
@@ -815,12 +816,12 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         }
         Task oldParentTask = this.get(parentId);
 
-        if (oldParentTask.getParent() != -1) {
-            Task pTask = new Task();
-            pTask.setId(parentId);
-            pTask.setParent(-1L);
-            this.internalUpdate(pTask);
-        }
+//        if (oldParentTask.getParent() != -1) {
+//            Task pTask = new Task();
+//            pTask.setId(parentId);
+//            // pTask.setParent(-1L);
+//            this.internalUpdate(pTask);
+//        }
         computeWorkingHours(oldParentTask);
 
         String sql = String.format("select * from zt_task where parent = %1$s and deleted = '0'", parentId);
@@ -851,7 +852,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             task.setStatus(status);
             task.setId(parentId);
             task.setLastediteddate(nowDate);
-            task.setParent(-1L);
+            // task.setParent(-1L);
             task.setLasteditedby(AuthenticationUser.getAuthenticationUser().getLoginname());
             if (StaticDict.Task__status.DONE.getValue().equals(status)) {
                 task.setAssigneddate(nowDate);
@@ -1186,7 +1187,8 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             updateParentStatus(newTask, old.getParent(), true);
         }
 
-        if (old.getParent() == -1L) {
+        List<Task> childTask = this.list(new QueryWrapper<Task>().eq("parent", et.getId()));
+        if (childTask.size() > 0) {
             Task task1 = new Task();
             this.getActivateUpdateTask(et, task1);
             this.update(task1, (Wrapper<Task>) task1.getUpdateWrapper(true).eq(FIELD_PARENT, old.getId()));
@@ -1253,8 +1255,8 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         if (old.getParent() > 0) {
             updateParentStatus(newTask, old.getParent(), true);
         }
-
-        if (old.getParent() == -1L) {
+        List<Task> childTask = this.list(new QueryWrapper<Task>().eq("parent", et.getId()));
+        if (childTask.size() > 0) {
             Task childNewTask = new Task();
             this.setCancelNewTask(old, childNewTask);
             this.update(childNewTask, (Wrapper<Task>) childNewTask.getUpdateWrapper(true).eq(FIELD_PARENT, old.getId()));
@@ -1668,12 +1670,12 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
             Task lastInsertTask = list.get(list.size() - 1);
             updateParentStatus(lastInsertTask, parent, true);
             computeBeginAndEnd(this.get(old.getId()));
-            if (old.getParent() != -1L) {
-                Task update = new Task();
-                update.setParent(-1L);
-                update.setId(parent);
-                this.internalUpdate(update);
-            }
+//            if (old.getParent() != -1L) {
+//                Task update = new Task();
+//                // update.setParent(-1L);
+//                update.setId(parent);
+//                this.internalUpdate(update);
+//            }
             Task newT = this.getById(parent);
             String regex = "^,*|,*$";
             childTasks = childTasks.replaceAll(regex, "");
