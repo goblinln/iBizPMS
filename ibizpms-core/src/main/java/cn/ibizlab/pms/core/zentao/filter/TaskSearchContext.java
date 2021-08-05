@@ -162,6 +162,13 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
             this.getSearchCond().ne("`status`", n_status_noteq);
         }
     }
+	private String n_multiple_eq;//[多人任务]
+	public void setN_multiple_eq(String n_multiple_eq) {
+        this.n_multiple_eq = n_multiple_eq;
+        if(!ObjectUtils.isEmpty(this.n_multiple_eq)){
+            this.getSearchCond().eq("`multiple`", n_multiple_eq);
+        }
+    }
 	private String n_name_like;//[任务名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;

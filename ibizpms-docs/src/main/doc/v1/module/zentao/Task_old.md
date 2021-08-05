@@ -604,6 +604,7 @@ hide footbox
 |任务状态(STATUS)|EQ|
 |任务状态(STATUS)|IN|
 |任务状态(STATUS)|NOTEQ|
+|多人任务(MULTIPLE)|EQ|
 |任务名称(NAME)|LIKE|
 |关闭时间(CLOSEDDATE)|LTANDEQ|
 |任务类型(TYPE)|EQ|
