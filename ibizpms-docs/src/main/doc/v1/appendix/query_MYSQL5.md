@@ -14112,7 +14112,8 @@ t1.`PRODUCT`,
 t1.`STATUS`,
 (case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
-case when (t11.`TITLE` is not null) then CONCAT('/',t11.`TITLE`,'/',t1.`TITLE`) else CONCAT('/',t1.`TITLE`) end as TITLE ,case when t1.parent <= 0 then t1.`begin` else CONCAT_WS('',t11.`begin`,'-',t1.`begin`) end as BEGINTIME 
+t1.`TITLE` as TITLE ,
+case when t1.parent <= 0 then t1.`begin` else CONCAT_WS('',t11.`begin`,'-',t1.`begin`) end as BEGINTIME 
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
 
