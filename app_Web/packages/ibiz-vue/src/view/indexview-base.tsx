@@ -133,11 +133,16 @@ export class IndexViewBase extends ViewBase implements IndexViewInterface {
         Object.assign(targetCtrlParam.dynamicProps, {
             collapseChange: this.collapseChange
         })
+        let counterdata: any = null;
+        if (this.counterServiceArray?.length > 0) {
+            counterdata = this.counterServiceArray[0].service?.counterData;
+        }
         Object.assign(targetCtrlParam.staticProps, {
             mode: this.viewInstance?.mainMenuAlign,
             isDefaultPage: (this.viewInstance as IPSAppIndexView)?.defaultPage,
             isBlankMode: (this.viewInstance as IPSAppIndexView)?.blankMode,
-            defPSAppView: (this.viewInstance as IPSAppIndexView)?.getDefPSAppView()
+            defPSAppView: (this.viewInstance as IPSAppIndexView)?.getDefPSAppView(),
+            counterdata: counterdata,
         })
         return { targetCtrlName, targetCtrlParam, targetCtrlEvent }
     }

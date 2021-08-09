@@ -217,6 +217,7 @@ export class AppmenuBase extends AppMenuControlBase {
             return (
                 <div class="leaf-treeitem">
                     <span title={node.data.caption}>{node.data.caption}</span>
+                    <badge count={this.counterdata[data.counterid]} overflow-count={9999}></badge>
                 </div>
             )
         }
@@ -260,9 +261,9 @@ export class AppmenuBase extends AppMenuControlBase {
                             {this.$tl(menu.captionTag,menu.caption)}
                         </span>
                         {
-                            (this.counterdata && this.counterdata[menu.counterid] && this.counterdata[menu.counterid] > 0) ?
+                            this.counterdata ?
                                 <span class="pull-right">
-                                    <badge count={this.counterdata ? this.counterdata[menu.counterid] : 0} overflow-count={9999}></badge>
+                                    <badge count={this.counterdata[menu.counterid]} overflow-count={9999}></badge>
                                 </span> : null
                         }
                     </template>
@@ -363,8 +364,13 @@ export class AppmenuBase extends AppMenuControlBase {
                                         },
                                         scopedSlots: {
                                             default: () => {
-                                                return this.$tl(item.captionTag,item.caption);
-                                            }
+                                                return (
+                                                    <div calss='menu-item' style="display:flex;justify-content:space-between">
+                                                        <span>{ this.$tl(item.captionTag,item.caption) }</span>
+                                                        <badge count={this.counterdata[item.counterid]} overflow-count={9999}></badge>
+                                                    </div>
+                                                )
+                                            },
                                         }
                                     }):null
                                 }) : null
@@ -396,7 +402,7 @@ export class AppmenuBase extends AppMenuControlBase {
                     },
                     'default-expand-all': true,
                     'highlight-current': true,
-                    'render-content': this.menuTreeload,
+                    'render-content': this.menuTreeload.bind(this),
                     'node-key': 'name',
                     'filter-node-method': ((filter: any, data: any) => {
                         if (!filter) return true;
@@ -485,7 +491,6 @@ export class AppmenuBase extends AppMenuControlBase {
                 v-model={this.split}
                 style={{ height: '100%' }}>
                 {this.renderContent()}
-
             </split>
         )
     }
@@ -530,19 +535,28 @@ export class AppmenuBase extends AppMenuControlBase {
                                     <el-submenu v-show={!item.hidden} index={item.getPSAppMenuItems?.name}>
                                         <template slot='title'>{this.$tl(item.getPSAppMenuItems.captionTag,item.getPSAppMenuItems.caption)}</template>
                                         {item.getPSAppMenuItems.getPSAppMenuItems.map((item2: any) => (
-                                            <el-menu-item v-show={!item2.hidden} index={item2?.name}>{this.$tl(item2.captionTag,item2.caption)}</el-menu-item>
+                                            <el-menu-item v-show={!item2.hidden} index={item2?.name}>
+                                                {this.$tl(item2.captionTag,item2.caption)}
+                                                <badge count={this.counterdata[item2.counterid]} overflow-count={9999}></badge>
+                                            </el-menu-item>
                                         ))}
                                     </el-submenu>
                                 ) : (
                                     <el-submenu v-show={!item.hidden} index={item?.name}>
                                         <template slot='title'>{item.caption}</template>
                                         {item.getPSAppMenuItems.map((item1: any) => (
-                                            <el-menu-item v-show={!item1.hidden} index={item1?.name}>{this.$tl(item1.captionTag,item1.caption)}</el-menu-item>
+                                            <el-menu-item v-show={!item1.hidden} index={item1?.name}>
+                                                {this.$tl(item1.captionTag,item1.caption)}
+                                                <badge count={this.counterdata[item1.counterid]} overflow-count={9999}></badge>
+                                            </el-menu-item>
                                         ))}
                                     </el-submenu>
                                 )
                             ) : (
-                                <el-menu-item v-show={!item.hidden} index={item?.name}>{this.$tl(item.captionTag,item.caption)}</el-menu-item>
+                                <el-menu-item v-show={!item.hidden} index={item?.name}>
+                                    {this.$tl(item.captionTag,item.caption)}
+                                    <badge count={this.counterdata[item.counterid]} overflow-count={9999}></badge>
+                                </el-menu-item>
                             ),
                         )}
                     </el-menu>
@@ -574,19 +588,28 @@ export class AppmenuBase extends AppMenuControlBase {
                                         <el-submenu v-show={!item.hidden} index={item.getPSAppMenuItems?.name}>
                                             <template slot='title'>{this.$tl(item.getPSAppMenuItems.captionTag,item.getPSAppMenuItems.caption)}</template>
                                             {item.getPSAppMenuItems.getPSAppMenuItems.map((item2: any) => (
-                                                <el-menu-item v-show={!item2.hidden} index={item2?.name}>{this.$tl(item2.captionTag,item2.caption)}</el-menu-item>
+                                                <el-menu-item v-show={!item2.hidden} index={item2?.name}>
+                                                    {this.$tl(item2.captionTag,item2.caption)}
+                                                    <badge count={this.counterdata[item2.counterid]} overflow-count={9999}></badge>
+                                                </el-menu-item>
                                             ))}
                                         </el-submenu>
                                     ) : (
                                         <el-submenu v-show={!item.hidden} index={item?.name}>
                                             <template slot='title'>{item.caption}</template>
                                             {item.getPSAppMenuItems.map((item1: any) => (
-                                                <el-menu-item v-show={!item1.hidden} index={item1?.name}>{this.$tl(item1.captionTag,item1.caption)}</el-menu-item>
+                                                <el-menu-item v-show={!item1.hidden} index={item1?.name}>
+                                                    {this.$tl(item1.captionTag,item1.caption)}
+                                                    <badge count={this.counterdata[item1.counterid]} overflow-count={9999}></badge>
+                                                </el-menu-item>
                                             ))}
                                         </el-submenu>
                                     )
                                 ) : (
-                                    <el-menu-item v-show={!item.hidden} index={item?.name}>{this.$tl(item.captionTag,item.caption)}</el-menu-item>
+                                    <el-menu-item v-show={!item.hidden} index={item?.name}>
+                                        {this.$tl(item.captionTag,item.caption)}
+                                        <badge count={this.counterdata[item.counterid]} overflow-count={9999}></badge>
+                                    </el-menu-item>
                                 ),
                             )}
                         </el-menu>

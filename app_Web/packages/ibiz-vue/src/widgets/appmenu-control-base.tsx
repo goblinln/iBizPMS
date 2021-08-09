@@ -200,6 +200,7 @@ export class AppMenuControlBase extends ControlBase implements MenuControlInterf
         this.isDefaultPage = newVal.isDefaultPage ? newVal.isDefaultPage : this.isDefaultPage;
         this.isBlankMode = newVal.isBlankMode ? newVal.isBlankMode : this.isBlankMode;
         this.defPSAppView = newVal.defPSAppView;
+        this.counterdata = newVal.counterdata;
         super.onStaticPropsChange(newVal, oldVal)
     }
 
