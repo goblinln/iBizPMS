@@ -22,12 +22,12 @@ spec:
         image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-provider-webapi:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 32012
+        - containerPort: 32011
         env:
         - name: SPRING_CLOUD_NACOS_DISCOVERY_IP
           value: "172.16.240.111"      
         - name: SERVER_PORT
-          value: "32012"
+          value: "32011"
         - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR
           value: "172.16.240.110:8850"
         - name: SPRING_REDIS_HOST
@@ -52,12 +52,14 @@ spec:
           value: "true"      
         - name: ZUUL_ROUTES_DYNAMODEL_PATH
           value: "/dynamodel/**"      
+        - name: ZUUL_ROUTES_IBZEMP_SERVICEID
+          value: "ibizpms-webapi"      
         - name: ZUUL_ROUTES_DYNAMODEL_URL
           value: "http://172.16.170.145"      
         - name: PORTMAP
-          value: "19988:19988"      
+          value: "9988:9988"      
         - name: JOBS_APP-PORT
-          value: "19988"      
+          value: "9988"      
         - name: IBIZ_REF_SERVICE_IBZUAA-API
           value: "ibizrt4ebsx-rt4ebsx"      
         - name: IBIZ_DYNAMIC_PUBLISHPATH
@@ -102,14 +104,14 @@ spec:
   type: NodePort
   ports:
   - name: http
-    port: 32012
-    targetPort: 32012
-    nodePort: 32012
+    port: 32011
+    targetPort: 32011
+    nodePort: 32011
     protocol: TCP
   - name: portmap
-    port: 19988:19988
-    targetPort: 19988:19988
-    nodePort: 19988:19988
+    port: 9988:9988
+    targetPort: 9988:9988
+    nodePort: 9988:9988
     protocol: TCP    
   selector:
     app: ibizpms-provider-webapi
