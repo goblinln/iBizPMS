@@ -270,6 +270,7 @@ import { AppDefaultReportPanel } from './control/app-default-reportpanel/app-def
 import { AppDefaultMapExpBar } from './control/app-default-map-exp-bar/app-default-map-exp-bar';
 import { AppDefaultViewPanel } from './control/app-default-viewpanel/app-default-viewpanel';
 import { NotificationSignal } from '../directives';
+import { Badge } from '../directives';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
         v.component('app-list-box', AppListBox);
@@ -543,5 +544,6 @@ export const ComponentsRegister = {
         v.component('app-default-view-panel', AppDefaultViewPanel);
         // 注册指令
         v.directive('notification-signal', NotificationSignal);
+        v.directive('badge', Badge);
     }
 }
