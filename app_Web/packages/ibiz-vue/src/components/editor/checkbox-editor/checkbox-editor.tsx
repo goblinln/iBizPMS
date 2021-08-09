@@ -81,6 +81,10 @@ export default class CheckboxEditor extends EditorBase {
             multiple: this.editorInstance.editorParams?.['multiple'] ? JSON.parse(this.editorInstance.editorParams['multiple'] as string) : false,
         }
         Object.assign(this.customProps, params); 
+        if (!this.customStyle.height) {
+          this.customStyle.maxHeight = '200px';
+          this.customStyle.overflow = 'auto';
+        }
     }
 
     /**

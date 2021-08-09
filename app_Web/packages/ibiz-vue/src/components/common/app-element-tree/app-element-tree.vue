@@ -39,6 +39,7 @@ export default {
         this.$on('tree-node-drag-start', async (event, treeNode) => {
             if (typeof this.allowDrag === 'function' && !(await this.allowDrag(treeNode.node))) {
                 event.preventDefault();
+                dragState.draggingNode = null;
                 return false;
             }
             event.dataTransfer.effectAllowed = 'move';

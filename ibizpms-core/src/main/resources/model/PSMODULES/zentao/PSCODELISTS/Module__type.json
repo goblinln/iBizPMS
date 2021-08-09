@@ -7,32 +7,39 @@
   "getPSCodeItems" : [ {
     "codeName" : "Line",
     "text" : "产品线",
-    "value" : "line"
+    "value" : "line",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story",
     "text" : "需求",
-    "value" : "story"
+    "value" : "story",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Task",
     "text" : "任务",
-    "value" : "task"
+    "value" : "task",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Doc",
     "text" : "文档目录",
-    "value" : "doc"
+    "value" : "doc",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Case",
     "text" : "测试用例",
-    "value" : "case"
+    "value" : "case",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug"
+    "value" : "bug",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

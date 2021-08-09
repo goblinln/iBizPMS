@@ -1,7 +1,7 @@
 <template>
     <div class='app-upicker'>
         <el-select ref="appUpicker" :value="refvalue" size='small' filterable
-            @change="onSelect" :disabled="disabled" style='width:100%;' clearable
+            @change="onSelect" :disabled="disabled || readonly" style='width:100%;' clearable
             @clear="onClear" @visible-change="onSelectOpen">
             <template v-if="items">
                 <el-option v-for="(_item,index) in items" :key="index" :value="_item.value" :label="_item.label"></el-option>
@@ -16,7 +16,6 @@
 
 <script lang = 'ts'>
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
-import { Subject } from 'rxjs';
 
 @Component({
 })
@@ -92,6 +91,13 @@ export default class AppUpicker extends Vue {
      * @memberof AppUpicker
      */
     @Prop() public disabled?: boolean;
+
+	/**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 是否显示按钮

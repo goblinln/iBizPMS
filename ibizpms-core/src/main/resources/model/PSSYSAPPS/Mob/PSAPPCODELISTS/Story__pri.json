@@ -17,7 +17,8 @@
     },
     "text" : "1",
     "textCls" : "text-red-border-color",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_2",
     "color" : "rgba(225, 228, 33, 1)",
@@ -26,7 +27,8 @@
     },
     "text" : "2",
     "textCls" : "text-pink-border-color",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_3",
     "color" : "rgba(52, 8, 248, 1)",
@@ -36,7 +38,8 @@
     "text" : "3",
     "textCls" : "text-blue-border-color",
     "value" : "3",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_4",
     "color" : "rgba(80, 133, 63, 1)",
@@ -45,7 +48,8 @@
     },
     "text" : "4",
     "textCls" : "text-green-border-color",
-    "value" : "4"
+    "value" : "4",
+    "includeBeginValue" : true
   } ],
   "codeItemValueNumber" : true,
   "enableCache" : true

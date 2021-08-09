@@ -7,36 +7,44 @@
   "getPSCodeItems" : [ {
     "codeName" : "Text",
     "text" : "text",
-    "value" : "text"
+    "value" : "text",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Plain",
     "text" : "plain",
-    "value" : "plain"
+    "value" : "plain",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Emotion",
     "text" : "emotion",
-    "value" : "emotion"
+    "value" : "emotion",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Image",
     "text" : "image",
-    "value" : "image"
+    "value" : "image",
+    "includeBeginValue" : true
   }, {
     "codeName" : "File",
     "text" : "file",
-    "value" : "file"
+    "value" : "file",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Object",
     "text" : "object",
-    "value" : "object"
+    "value" : "object",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Code",
     "text" : "code",
-    "value" : "code"
+    "value" : "code",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

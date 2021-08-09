@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Private",
     "text" : "私有",
-    "value" : "private"
+    "value" : "private",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Public",
     "text" : "公开",
-    "value" : "public"
+    "value" : "public",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

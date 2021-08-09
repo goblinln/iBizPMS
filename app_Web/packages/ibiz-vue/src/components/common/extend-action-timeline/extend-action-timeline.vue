@@ -201,7 +201,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 import moment from 'moment';
 import { GlobalService } from 'ibiz-service';
 

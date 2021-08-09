@@ -16,9 +16,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop, Model, Emit, Watch } from "vue-property-decorator";
-import { Subject } from "rxjs";
-import { debounceTime, distinctUntilChanged } from "rxjs/operators";
+import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
 @Component({
 })

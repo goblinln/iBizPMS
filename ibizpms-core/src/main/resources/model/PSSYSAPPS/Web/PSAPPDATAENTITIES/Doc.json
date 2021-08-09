@@ -36,104 +36,36 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Collect",
     "methodType" : "DEACTION",
     "name" : "Collect",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Collect.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Collect"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetDocStatus",
     "methodType" : "DEACTION",
     "name" : "GetDocStatus",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDocStatus.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDocStatus"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -141,14 +73,6 @@
     "codeName" : "OnlyCollectDoc",
     "methodType" : "DEACTION",
     "name" : "OnlyCollectDoc",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyCollectDoc.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -156,14 +80,6 @@
     "codeName" : "OnlyUnCollectDoc",
     "methodType" : "DEACTION",
     "name" : "OnlyUnCollectDoc",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyUnCollectDoc.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -171,18 +87,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -191,46 +95,18 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Save.json"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "UnCollect",
     "methodType" : "DEACTION",
     "name" : "UnCollect",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/UnCollect.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnCollect"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
@@ -238,158 +114,74 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildDocLibDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ChildDocLibDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocLibAndDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocLibAndDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocLibAndDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocLibDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocLibDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocLibDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocModuleDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocModuleDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocModuleDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocStatus",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocStatus",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocStatus"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchLastedModify",
     "methodType" : "FETCH",
     "name" : "FetchLastedModify",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "LastedModify"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchLastedModify"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchModuleDocChild",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ModuleDocChild",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ModuleDocChild"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "FetchMyCreateOrUpdateDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyCreateOrUpdateDoc"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMy"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavourites",
     "methodType" : "FETCH",
     "name" : "FetchMyFavourite",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyFavourite"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyFavourites"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavouritesOnlyDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyFavouritesOnlyDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyFavouritesOnlyDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNotRootDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NotRootDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NotRootDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootDoc",
     "methodType" : "FETCH",
     "name" : "FetchRootDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RootDoc"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRootDoc"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -633,104 +425,36 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Collect",
     "methodType" : "DEACTION",
     "name" : "Collect",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Collect.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Collect"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "GetDocStatus",
     "methodType" : "DEACTION",
     "name" : "GetDocStatus",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDocStatus.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDocStatus"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -738,14 +462,6 @@
     "codeName" : "OnlyCollectDoc",
     "methodType" : "DEACTION",
     "name" : "OnlyCollectDoc",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyCollectDoc.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -753,14 +469,6 @@
     "codeName" : "OnlyUnCollectDoc",
     "methodType" : "DEACTION",
     "name" : "OnlyUnCollectDoc",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyUnCollectDoc.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -768,18 +476,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -788,204 +484,92 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Save.json"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "UnCollect",
     "methodType" : "DEACTION",
     "name" : "UnCollect",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/UnCollect.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "UnCollect"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchChildDocLibDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ChildDocLibDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ChildDocLibDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocLibAndDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocLibAndDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocLibAndDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocLibDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocLibDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocLibDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocModuleDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocModuleDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocModuleDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDocStatus",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DocStatus",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocStatus"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchLastedModify",
     "methodType" : "FETCH",
     "name" : "FetchLastedModify",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "LastedModify"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchLastedModify"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchModuleDocChild",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ModuleDocChild",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ModuleDocChild"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "FetchMyCreateOrUpdateDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyCreateOrUpdateDoc"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMy"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavourites",
     "methodType" : "FETCH",
     "name" : "FetchMyFavourite",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyFavourite"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyFavourites"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyFavouritesOnlyDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyFavouritesOnlyDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyFavouritesOnlyDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchNotRootDoc",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "NotRootDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NotRootDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRootDoc",
     "methodType" : "FETCH",
     "name" : "FetchRootDoc",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RootDoc"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRootDoc"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -1337,70 +921,6 @@
     "logicName" : "文档_未收藏",
     "mSTag" : "doc__0",
     "name" : "文档_未收藏",
-    "getPSDEMainStateActions" : [ {
-      "name" : "Create",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Create.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Update",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Update.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Get",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Get.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Collect",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Collect.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "GetDraft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDraft.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "GetDocStatus",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDocStatus.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "ByVersionUpdateContext",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/ByVersionUpdateContext.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Remove",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Remove.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "OnlyCollectDoc",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyCollectDoc.json"
-      },
-      "allowMode" : true
-    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "MODULE",
       "getPSDEOPPriv" : {
@@ -1417,10 +937,6 @@
       "name" : "SRFUR__DOC_NFAVOUR_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "取消收藏文档",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__DOC_NFAVOUR_BUT"
-        },
         "mapSysUniResCode" : "DOC_NFAVOUR_BUT",
         "name" : "SRFUR__DOC_NFAVOUR_BUT",
         "mapSysUniRes" : true
@@ -1442,70 +958,6 @@
     "logicName" : "文档_已收藏",
     "mSTag" : "doc__1",
     "name" : "文档_已收藏",
-    "getPSDEMainStateActions" : [ {
-      "name" : "OnlyUnCollectDoc",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyUnCollectDoc.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Update",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Update.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "GetDocStatus",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDocStatus.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Remove",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Remove.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "UnCollect",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/UnCollect.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Create",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Create.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "GetDraft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDraft.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "ByVersionUpdateContext",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/ByVersionUpdateContext.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Get",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Get.json"
-      },
-      "allowMode" : true
-    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "MODULE",
       "getPSDEOPPriv" : {
@@ -1516,10 +968,6 @@
       "name" : "SRFUR__DOC_FAVOUR_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "收藏文档",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__DOC_FAVOUR_BUT"
-        },
         "mapSysUniResCode" : "DOC_FAVOUR_BUT",
         "name" : "SRFUR__DOC_FAVOUR_BUT",
         "mapSysUniRes" : true
@@ -1563,10 +1011,6 @@
       "name" : "SRFUR__DOC_NFAVOUR_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "取消收藏文档",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__DOC_NFAVOUR_BUT"
-        },
         "mapSysUniResCode" : "DOC_NFAVOUR_BUT",
         "name" : "SRFUR__DOC_NFAVOUR_BUT",
         "mapSysUniRes" : true
@@ -1592,10 +1036,6 @@
       "name" : "SRFUR__DOC_FAVOUR_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "收藏文档",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__DOC_FAVOUR_BUT"
-        },
         "mapSysUniResCode" : "DOC_FAVOUR_BUT",
         "name" : "SRFUR__DOC_FAVOUR_BUT",
         "mapSysUniRes" : true
@@ -1645,10 +1085,6 @@
       "name" : "SRFUR__DOC_NFAVOUR_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "取消收藏文档",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__DOC_NFAVOUR_BUT"
-        },
         "mapSysUniResCode" : "DOC_NFAVOUR_BUT",
         "name" : "SRFUR__DOC_NFAVOUR_BUT",
         "mapSysUniRes" : true
@@ -1686,10 +1122,6 @@
       "name" : "SRFUR__DOC_FAVOUR_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "收藏文档",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__DOC_FAVOUR_BUT"
-        },
         "mapSysUniResCode" : "DOC_FAVOUR_BUT",
         "name" : "SRFUR__DOC_FAVOUR_BUT",
         "mapSysUniRes" : true
@@ -1713,20 +1145,12 @@
     "logicName" : "文档库-收藏",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
-    },
     "name" : "COLLECT",
     "id" : "Zt_doclib__COLLECT"
   }, {
     "logicName" : "DocLib_Create",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
-    },
     "name" : "CREATE",
     "id" : "Zt_doclib__CREATE"
   }, {
@@ -1736,10 +1160,6 @@
     "logicName" : "DocLib_Delete",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "DELETE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
-    },
     "name" : "DELETE",
     "id" : "Zt_doclib__DELETE"
   }, {
@@ -1752,20 +1172,12 @@
     "logicName" : "DocLib_Manage",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "MANAGE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
-    },
     "name" : "MANAGE",
     "id" : "Zt_doclib__MANAGE"
   }, {
     "logicName" : "文档库-仅收藏文档",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
-    },
     "name" : "OCD",
     "id" : "Zt_doclib__OCD"
   }, {
@@ -1775,10 +1187,6 @@
     "logicName" : "文档库-仅取消收藏文档",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
-    },
     "name" : "OUCD",
     "id" : "Zt_doclib__OUCD"
   }, {
@@ -1788,10 +1196,6 @@
     "logicName" : "DocLib_Read",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
-    },
     "name" : "READ",
     "id" : "Zt_doclib__READ"
   }, {
@@ -1804,10 +1208,6 @@
     "logicName" : "文档库-取消收藏",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
-    },
     "name" : "UNCOLLECT",
     "id" : "Zt_doclib__UNCOLLECT"
   }, {
@@ -1817,10 +1217,6 @@
     "logicName" : "DocLib_Update",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "UPDATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
-    },
     "name" : "UPDATE",
     "id" : "Zt_doclib__UPDATE"
   } ],
@@ -1865,10 +1261,6 @@
   } ],
   "name" : "ZT_DOC",
   "getPSDEName" : "ZT_DOC",
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDESERVICEAPIS/Doc.json"
-  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "TITLE",
     "codeName" : "Title"

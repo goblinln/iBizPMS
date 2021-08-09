@@ -32,6 +32,13 @@ export class ControlBase extends Vue implements ControlInterface {
     public enableControlUIAuth: boolean = true;
 
     /**
+     * 原生引用控件名称
+     *
+     * @memberof ControlBase
+     */
+    public realCtrlRefName: string = '';
+
+    /**
      * 视图标识
      *
      * @type {*}
@@ -109,15 +116,15 @@ export class ControlBase extends Vue implements ControlInterface {
      * @type {*}
      * @memberof ControlBase
      */
-     public copyContext: any = {};
+    public copyContext: any = {};
 
-     /**
-      * 拷贝视图参数
-      *
-      * @type {*}
-      * @memberof ControlBase
-      */
-     public copyViewparams: any = {};
+    /**
+     * 拷贝视图参数
+     *
+     * @type {*}
+     * @memberof ControlBase
+     */
+    public copyViewparams: any = {};
 
     /**
      * 模型数据是否加载完成
@@ -201,11 +208,40 @@ export class ControlBase extends Vue implements ControlInterface {
     public navdatas?: any;
 
     /**
+     * 视图操作参数集合
+     *
+     * @type {*}
+     * @memberof ControlBase
+     */
+    public viewCtx?: any;
+
+    /**
      * 界面触发逻辑Map
      * 
      * @memberof ControlBase
      */
     public ctrlTriggerLogicMap: Map<string, any> = new Map();
+
+    /**
+     * 原生界面触发逻辑集合
+     * 
+     * @memberof ControlBase
+     */
+    public realCtrlTriggerLogicArray: Array<any> = [];
+
+    /**
+     * 原生界面触发逻辑分隔符
+     * 
+     * @memberof ControlBase
+     */
+    public realCtrlSeparator: string = 'ibiz_';
+
+    /**
+     * 注册事件逻辑分隔符
+     * 
+     * @memberof ControlBase
+     */
+    public registerEventSeparator: string = 'ibiz__';
 
     /**
      * 部件事件抛出方法
@@ -267,6 +303,7 @@ export class ControlBase extends Vue implements ControlInterface {
             dynamicProps: {
                 viewparams: Util.deepCopy(this.viewparams),
                 context: Util.deepCopy(this.context),
+                viewCtx: this.viewCtx
             },
             staticProps: {
                 viewState: this.viewState,
@@ -351,6 +388,9 @@ export class ControlBase extends Vue implements ControlInterface {
         if (newVal?.navdatas && newVal.navdatas !== oldVal?.navdatas) {
             this.navdatas = newVal.navdatas;
         }
+        if (newVal?.viewCtx && newVal.viewCtx !== oldVal?.viewCtx) {
+            this.viewCtx = newVal.viewCtx;
+        }
     }
 
     /**
@@ -362,9 +402,9 @@ export class ControlBase extends Vue implements ControlInterface {
      */
     public setNavdatas(args: any) {
         this.navdatas = args;
-        if(Util.isExistData(this.navdatas)){
+        if (Util.isExistData(this.navdatas)) {
             this.handleCustomCtrlData();
-        }else{
+        } else {
             this.context = Util.deepCopy(this.copyContext);
             this.viewparams = Util.deepCopy(this.copyViewparams);
         }
@@ -499,7 +539,7 @@ export class ControlBase extends Vue implements ControlInterface {
      *
      * @memberof ControlBase
      */
-    public ctrlInit(args?: any) { 
+    public ctrlInit(args?: any) {
         if (this.viewState) {
             this.viewStateEvent = this.viewState.subscribe(
                 ({ tag, action, data }: { tag: string; action: string; data: any }) => {
@@ -512,6 +552,8 @@ export class ControlBase extends Vue implements ControlInterface {
                 },
             );
         }
+        // 处理部件定时器逻辑
+        this.handleTimerLogic();
     }
 
     /**
@@ -526,6 +568,18 @@ export class ControlBase extends Vue implements ControlInterface {
             action: 'controlIsMounted',
             data: true
         })
+        if (this.realCtrlRefName && this.realCtrlTriggerLogicArray.length > 0) {
+            let timer: any = setInterval(() => {
+                if (this.$refs && this.$refs[this.realCtrlRefName]) {
+                    clearInterval(timer);
+                    for (const item of this.realCtrlTriggerLogicArray) {
+                        (this.$refs[this.realCtrlRefName] as Vue).$on(item, (...args: any) => {
+                            this.handleRealCtrlEvent(item, this.getData(), args);
+                        });
+                    }
+                }
+            }, 100);
+        }
     }
 
     /**
@@ -546,6 +600,8 @@ export class ControlBase extends Vue implements ControlInterface {
                 }
             })
         }
+        // 销毁部件定时器逻辑
+        this.destroyLogicTimer();
     }
 
     /**
@@ -603,6 +659,7 @@ export class ControlBase extends Vue implements ControlInterface {
      */
     public async initControlLogic(opts: any) {
         if (opts.getPSControlLogics() && opts.getPSControlLogics().length > 0) {
+            this.realCtrlTriggerLogicArray = [];
             opts.getPSControlLogics().forEach((element: any) => {
                 // 目标逻辑类型类型为实体界面逻辑、系统预置界面逻辑、前端扩展插件、脚本代码
                 if (element && element.triggerType && (Object.is(element.logicType, 'DEUILOGIC') ||
@@ -614,7 +671,18 @@ export class ControlBase extends Vue implements ControlInterface {
                             this.ctrlTriggerLogicMap.set(element.name.toLowerCase(), new AppCustomEngine(element));
                             break;
                         case 'CTRLEVENT':
-                            this.ctrlTriggerLogicMap.set(element.name.toLowerCase(), new AppCtrlEventEngine(element));
+                            if (element.eventNames.startsWith(this.registerEventSeparator)) {
+                                this.ctrlTriggerLogicMap.set(element.eventNames.toLowerCase(), new AppCtrlEventEngine(element));
+                            } else {
+                                if (element.eventNames.startsWith(this.realCtrlSeparator)) {
+                                    let eventNames = element.eventNames.slice(this.realCtrlSeparator.length);
+                                    eventNames = eventNames.replace(/_/g, "-");
+                                    eventNames = `${this.realCtrlSeparator}${eventNames}`;
+                                    this.ctrlTriggerLogicMap.set(eventNames.toLowerCase(), new AppCtrlEventEngine(element));
+                                } else {
+                                    this.ctrlTriggerLogicMap.set(element.eventNames.toLowerCase(), new AppCtrlEventEngine(element));
+                                }
+                            }
                             break;
                         case 'TIMER':
                             this.ctrlTriggerLogicMap.set(element.name.toLowerCase(), new AppTimerEngine(element));
@@ -623,6 +691,18 @@ export class ControlBase extends Vue implements ControlInterface {
                             console.log(`${element.triggerType}类型暂未支持`);
                             break;
                     }
+                }
+                // 初始化原生界面触发逻辑
+                if (element.eventNames && element.eventNames.startsWith(this.realCtrlSeparator)) {
+                    let eventNames = element.eventNames.slice(this.realCtrlSeparator.length);
+                    eventNames = eventNames.replace(/_/g, "-");
+                    this.realCtrlTriggerLogicArray.push(eventNames);
+                }
+                // 绑定用户自定义事件
+                if (element.eventNames && element.eventNames.startsWith(this.registerEventSeparator)) {
+                    this.$on(element.eventNames, (...args: any) => {
+                        this.handleCtrlCustomEvent(element.eventNames.toLowerCase(), this.getData(), args);
+                    });
                 }
             });
         }
@@ -722,5 +802,103 @@ export class ControlBase extends Vue implements ControlInterface {
      */
     public onReset() {
         LogUtil.warn(`${this.controlInstance.name}重置功能暂未实现`);
+    }
+
+    /**
+     * 执行部件事件逻辑
+     *
+     * @memberof ControlBase
+     */
+    public async executeCtrlEventLogic(name: string, args: any) {
+        if (this.ctrlTriggerLogicMap.get(name)) {
+            await this.ctrlTriggerLogicMap.get(name).executeAsyncUILogic({ arg: args, utils: this.viewCtx, app: this.viewCtx.app, view: this.viewCtx.view, ctrl: this });
+            return args;
+        }
+    }
+
+    /**
+     * 调用控件逻辑
+     *
+     * @memberof ControlBase
+     */
+    public invoke(methodName: string, args: any) {
+        if (!methodName) {
+            LogUtil.warn('方法名不能为空');
+            return;
+        }
+        if (methodName.startsWith(this.realCtrlSeparator)) {
+            // 原生控件方法
+            if (this.realCtrlRefName && this.$refs && this.$refs[this.realCtrlRefName]) {
+                let realCtrl: any = this.$refs[this.realCtrlRefName];
+                let realMethodName: string = methodName.slice(this.realCtrlSeparator.length);
+                if (realCtrl[realMethodName] && realCtrl[realMethodName] instanceof Function) {
+                    realCtrl[realMethodName](args);
+                } else {
+                    LogUtil.warn(`当前控件未找到指定方法${methodName}`);
+                }
+            } else {
+                LogUtil.warn('原生控件未找到');
+            }
+        } else {
+            // 代理层控件方法
+            let proxyCtrl: any = this;
+            if (proxyCtrl[methodName] && proxyCtrl[methodName] instanceof Function) {
+                proxyCtrl[methodName](args);
+            } else {
+                LogUtil.warn(`当前控件未找到指定方法${methodName}`);
+            }
+        }
+    }
+
+    /**
+     * 处理原生控件事件
+     *
+     * @memberof ControlBase
+     */
+    public handleRealCtrlEvent(name: string, data: any, args: any) {
+        if (this.ctrlTriggerLogicMap.get(`${this.realCtrlSeparator}${name}`)) {
+            this.ctrlTriggerLogicMap.get(`${this.realCtrlSeparator}${name}`).executeAsyncUILogic({ arg: { sender: this.$refs[this.realCtrlRefName], navContext: this.context, navParam: this.viewparams, navData: this.navdatas, data: data, args: args }, utils: this.viewCtx, app: this.viewCtx.app, view: this.viewCtx.view, ctrl: this });
+        }
+    }
+
+    /**
+     * 处理控件自定义事件
+     *
+     * @memberof ControlBase
+     */
+    public handleCtrlCustomEvent(name: string, data: any, args: any) {
+        if (this.ctrlTriggerLogicMap.get(`${name}`)) {
+            this.ctrlTriggerLogicMap.get(`${name}`).executeAsyncUILogic({ arg: { sender: this, navContext: this.context, navParam: this.viewparams, navData: this.navdatas, data: data, args: args }, utils: this.viewCtx, app: this.viewCtx.app, view: this.viewCtx.view, ctrl: this });
+        }
+    }
+
+    /**
+     * 处理部件定时器逻辑
+     *
+     * @memberof ControlBase
+     */
+    public handleTimerLogic() {
+        if (this.ctrlTriggerLogicMap && this.ctrlTriggerLogicMap.size > 0) {
+            for (let item of this.ctrlTriggerLogicMap.values()) {
+                if (item && (item instanceof AppTimerEngine)) {
+                    item.executeAsyncUILogic({ arg: { sender: this, navContext: this.context, navParam: this.viewparams, navData: this.navdatas, data: this.getData() }, utils: this.viewCtx, app: this.viewCtx.app, view: this.viewCtx.view, ctrl: this });
+                }
+            }
+        }
+    }
+
+    /**
+     * 销毁部件定时器逻辑
+     *
+     * @memberof ControlBase
+     */
+    public destroyLogicTimer() {
+        if (this.ctrlTriggerLogicMap && this.ctrlTriggerLogicMap.size > 0) {
+            for (let item of this.ctrlTriggerLogicMap.values()) {
+                if (item && (item instanceof AppTimerEngine)) {
+                    item.destroyTimer();
+                }
+            }
+        }
     }
 }

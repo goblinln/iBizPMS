@@ -2,7 +2,7 @@
     <div class="appAddressSelection">
         <el-cascader
             style="width:100%"
-            :disabled="disabled"
+            :disabled="disabled || readonly"
             size ="medium"
             v-model="CurrentVal"
             :options="city">
@@ -11,10 +11,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
-import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import axios from 'axios';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 import { cityCode } from './city_code'
 @Component({})
 export default class AppAddressSelection extends Vue {
@@ -33,6 +30,12 @@ export default class AppAddressSelection extends Vue {
    */
   @Prop() public disabled?: boolean;
 
+  /**
+   * 只读模式
+   * 
+   * @type {boolean}
+   */
+  @Prop({default: false}) public readonly?: boolean;
 
   /**
    * 当前值

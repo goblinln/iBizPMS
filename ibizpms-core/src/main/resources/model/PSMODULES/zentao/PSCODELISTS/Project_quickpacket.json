@@ -8,38 +8,45 @@
     "codeName" : "All",
     "data" : "{}",
     "text" : "所有",
-    "value" : "All"
+    "value" : "All",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Wait",
     "data" : "{\"n_status_eq\":\"wait\"}",
     "text" : "未开始",
     "value" : "wait",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "More",
     "getPSCodeItems" : [ {
       "codeName" : "Doing",
       "data" : "{\"n_status_eq\":\"doing\"}",
       "text" : "进行中",
-      "value" : "doing"
+      "value" : "doing",
+      "includeBeginValue" : true
     }, {
       "codeName" : "Suspended",
       "data" : "{\"n_status_eq\":\"suspended\"}",
       "text" : "已挂起",
-      "value" : "suspended"
+      "value" : "suspended",
+      "includeBeginValue" : true
     }, {
       "codeName" : "Closed",
       "data" : "{\"n_status_eq\":\"closed\"}",
       "text" : "已关闭",
-      "value" : "closed"
+      "value" : "closed",
+      "includeBeginValue" : true
     } ],
     "text" : "更多",
-    "value" : "MORE"
+    "value" : "MORE",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

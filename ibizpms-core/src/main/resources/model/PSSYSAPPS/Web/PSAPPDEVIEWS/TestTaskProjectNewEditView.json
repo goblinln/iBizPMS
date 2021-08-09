@@ -275,10 +275,6 @@
           } ],
           "ruleInfo" : "结束日期必须大于等于开始日期!"
         },
-        "getPSDEField" : {
-          "name" : "END",
-          "codeName" : "End"
-        },
         "ruleInfo" : "结束日期必须大于等于开始日期!",
         "checkDefault" : false,
         "defaultMode" : false,

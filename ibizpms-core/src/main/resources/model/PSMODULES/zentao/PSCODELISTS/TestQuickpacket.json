@@ -9,32 +9,38 @@
     "data" : "{}",
     "text" : "全部",
     "value" : "ALL",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Icreate",
     "data" : "{\"n_status_eq\":\"wait\"}",
     "text" : "待测测试单",
-    "value" : "ICREATE"
+    "value" : "ICREATE",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Ireview",
     "data" : "{\"n_status_eq\":\"doing\"}",
     "text" : "测试中测试单",
-    "value" : "IREVIEW"
+    "value" : "IREVIEW",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Iclose",
     "data" : "{\"n_status_eq\":\"blocked\"}",
     "text" : "被阻塞测试单",
-    "value" : "ICLOSE"
+    "value" : "ICLOSE",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Tested",
     "data" : "{\"n_status_eq\":\"done\"}",
     "text" : "已测测试单",
-    "value" : "Tested"
+    "value" : "Tested",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

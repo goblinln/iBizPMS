@@ -57,27 +57,11 @@
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDERS/DER1N_SYS_DEPT_SYS_ORG_ORGID.json",
       "logicName" : "单位",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 8,
       "minorCodeName" : "Depts",
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
-      },
       "name" : "DER1N_SYS_DEPT_SYS_ORG_ORGID",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "ORGID",
-        "codeName" : "OrgId"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "ORGNAME",
-        "codeName" : "OrgName"
-      },
       "pickupDEFName" : "ORGID",
       "removeActionType" : 3,
       "removeOrder" : 0,
@@ -176,26 +160,10 @@
       "codeName" : "MainDept",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_DEPT_MDEPTID.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
-      },
       "name" : "DER1N_IBZEMP_SYS_DEPT_MDEPTID",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "MDEPTID",
-        "codeName" : "MdeptId"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "MDEPTNAME",
-        "codeName" : "MDeptName"
-      },
       "pickupDEFName" : "MDEPTID",
       "removeActionType" : 2,
       "removeOrder" : 0
@@ -220,26 +188,10 @@
       "codeName" : "Team",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
-      },
       "name" : "DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "TEAMID",
-        "codeName" : "TeamId"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "TEAMNAME",
-        "codeName" : "TeamName"
-      },
       "pickupDEFName" : "TEAMID",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -264,26 +216,10 @@
       "codeName" : "Post",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysPost.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
-      },
       "name" : "DER1N_SYS_TEAMMEMBER_SYS_POST_POSTID",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "POSTID",
-        "codeName" : "PostId"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "POSTNAME",
-        "codeName" : "PostName"
-      },
       "pickupDEFName" : "POSTID",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -332,26 +268,10 @@
       "codeName" : "Org",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee/PSDERS/DER1N_IBZEMP_SYS_ORG_ORGID.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ou/PSDATAENTITIES/SysEmployee.json"
-      },
       "name" : "DER1N_IBZEMP_SYS_ORG_ORGID",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "ORGID",
-        "codeName" : "OrgId"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "ORGNAME",
-        "codeName" : "OrgName"
-      },
       "pickupDEFName" : "ORGID",
       "removeActionType" : 2,
       "removeOrder" : 0

@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Text",
     "text" : "文档",
-    "value" : "text"
+    "value" : "text",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Url",
     "text" : "链接",
-    "value" : "url"
+    "value" : "url",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

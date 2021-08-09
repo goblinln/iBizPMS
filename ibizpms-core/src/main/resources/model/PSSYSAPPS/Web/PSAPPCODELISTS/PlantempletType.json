@@ -12,15 +12,18 @@
   "getPSCodeItems" : [ {
     "codeName" : "Step",
     "text" : "计划",
-    "value" : "step"
+    "value" : "step",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Group",
     "text" : "父计划",
-    "value" : "group"
+    "value" : "group",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item",
     "text" : "子计划",
-    "value" : "item"
+    "value" : "item",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

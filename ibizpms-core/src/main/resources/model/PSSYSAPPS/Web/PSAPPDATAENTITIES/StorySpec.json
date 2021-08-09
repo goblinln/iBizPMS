@@ -36,14 +36,6 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -51,14 +43,6 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
@@ -66,14 +50,6 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -81,14 +57,6 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
@@ -97,14 +65,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -113,10 +73,6 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Save.json"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
@@ -124,14 +80,6 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
@@ -139,27 +87,11 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchVersion",
     "methodType" : "FETCH",
     "name" : "FetchVersion",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Version"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchVersion"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -242,14 +174,6 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -257,14 +181,6 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
@@ -272,14 +188,6 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -287,14 +195,6 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
@@ -303,14 +203,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -319,10 +211,6 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Save.json"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
@@ -330,41 +218,17 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "builtinMethod" : true
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchVersion",
     "methodType" : "FETCH",
     "name" : "FetchVersion",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Version"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchVersion"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -412,10 +276,6 @@
     "logicName" : "需求-读取",
     "mapPSDEName" : "ZT_STORY",
     "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDERS/DER1N_ZT_STORYSPEC_ZT_STORY_STORY.json"
-    },
     "name" : "READ",
     "id" : "ZTStory__READ"
   }, {
@@ -452,10 +312,6 @@
   } ],
   "name" : "ZT_STORYSPEC",
   "getPSDEName" : "ZT_STORYSPEC",
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDESERVICEAPIS/StorySpec.json"
-  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "TITLE",
     "codeName" : "Title"

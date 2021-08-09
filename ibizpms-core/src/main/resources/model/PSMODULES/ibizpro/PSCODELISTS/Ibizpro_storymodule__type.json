@@ -7,20 +7,24 @@
   "getPSCodeItems" : [ {
     "codeName" : "Pmsstorymodule",
     "text" : "PMS需求模块",
-    "value" : "pmsStoryModule"
+    "value" : "pmsStoryModule",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Ibizsysmodule",
     "text" : "iBiz系统模块",
-    "value" : "iBizSysModule"
+    "value" : "iBizSysModule",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Ibizreqmodule",
     "text" : "iBiz需求模块",
-    "value" : "iBizReqModule"
+    "value" : "iBizReqModule",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

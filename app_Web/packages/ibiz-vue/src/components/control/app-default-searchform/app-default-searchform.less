@@ -10,19 +10,51 @@
     margin-bottom: 8px;
   }
   >.ivu-row {
-    height: calc(100% - 40px);
-  }
-  .search_reset {
-      margin-right: 12px;
+    height: 100%;
   }
   .search-action-footer {
+      height: 42px;
       padding: 4px 6px 0 0;
       display: flex;
       justify-content: flex-end;
       .el-select {
         padding-right: 12px;
       }
+      > .search-button {
+        .search_reset, .save-button {
+          height: 28px;
+          margin-right: 4px;
+          margin-left: 0;
+        }
+        .save-button {
+          margin-right: 0;
+        }
+      }
   }
+}
+.app-search-form.no-search-action, .app-search-form.right-button {
+  .form-content {
+    height: 100%;
+  }
+}
+//  按钮在右侧
+.app-search-form.right-button {
+  > .ivu-row {
+    display: flex;
+    .search-action-footer {
+      height: 100%;
+      padding-top: 0;
+      > .search-button {
+        padding-top: 2px;
+        .search_reset, .save-button {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+} 
+.form-content {
+  height: calc(100% - 42px);
 }
 .app-search-form-flex {
   height: 100%;

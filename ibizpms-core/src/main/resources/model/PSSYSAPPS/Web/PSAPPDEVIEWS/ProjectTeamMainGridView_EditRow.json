@@ -696,10 +696,6 @@
           } ],
           "ruleInfo" : "数值必须大于等于[0.0]且小于等于[24.0]"
         },
-        "getPSDEField" : {
-          "name" : "HOURS",
-          "codeName" : "Hours"
-        },
         "ruleInfo" : "数值必须大于等于[0.0]且小于等于[24.0]",
         "checkDefault" : false,
         "defaultMode" : false,

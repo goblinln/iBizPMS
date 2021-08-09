@@ -3,7 +3,7 @@
         v-model="value[0]"
         class="transfer-select"
         @on-change='handleCronChange'
-        :disabled="disabled"
+        :disabled="disabled || readonly"
         :placeholder="placeholder">
         <Option class="hidden" v-for="(item,i) in value" :value="item" :label="item" :key="i">
         </Option>
@@ -14,7 +14,7 @@
 
 
 <script lang="ts">
-import { Vue, Component, Prop, Watch, Model } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 import VueCron from './vue-cron/vue-cron.vue';
 
 @Component({
@@ -31,6 +31,13 @@ export default class CronEditor extends Vue {
      * @memberof CronEditor
      */ 
     @Prop() disabled: any;
+
+	/**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 下拉框显示值

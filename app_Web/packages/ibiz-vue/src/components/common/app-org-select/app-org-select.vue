@@ -1,6 +1,6 @@
 <template>
   <div class="app-org-select">
-    <ibiz-select-tree :NodesData="NodesData" v-model="selectTreeValue" :disabled="disabled" :multiple="multiple" @select="treeSelectChange"></ibiz-select-tree>
+    <ibiz-select-tree :NodesData="NodesData" v-model="selectTreeValue" :disabled="disabled || readonly" :multiple="multiple" @select="treeSelectChange"></ibiz-select-tree>
   </div>
 </template>
 <script lang = 'ts'>
@@ -68,6 +68,13 @@ export default class AppOrgSelect extends Vue {
    * @memberof AppDepartmentSelect
    */
   @Prop({default:false}) public disabled?: boolean;
+
+  /**
+   * 只读模式
+   * 
+   * @type {boolean}
+   */
+  @Prop({default: false}) public readonly?: boolean;
 
   /**
    * 查询单位路径

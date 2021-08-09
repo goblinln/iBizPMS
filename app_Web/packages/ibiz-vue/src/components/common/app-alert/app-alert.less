@@ -15,6 +15,76 @@
     }
 }
 
+//  开启滚动时设置样式
+.app-alert.enable-scroll {
+    --new-message-bg-color: #fff;
+    --old-message-bg-color: #fff;
+    background-color: var(--new-message-bg-color);
+    border-radius: 2px;
+    width: 100%;
+    height: 60px;
+    position: relative;
+    margin: 4px 0;
+    overflow: hidden;
+    animation: bgColorChange 2.5s;
+    .alert-item {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        z-index: 0;
+    }
+    .alert-item.active {
+        z-index: 1;
+    }
+}
+//  纵向滚动设置样式及动画
+.app-alert.enable-scroll.vertical-scroll {
+    .alert-item {
+        top: 60px;
+    }
+    .alert-item.active {
+        z-index: 1;
+        top: 0;
+        animation: verticalScroll 1s;
+    }
+}
+//  横向滚动设置样式及动画
+.app-alert.enable-scroll.horizontal-scroll {
+    .alert-item {
+        left: -100%;
+    }
+    .alert-item.active {
+        z-index: 1;
+        left: 0;
+        animation: horizontalScroll 1s;
+    }
+}
+
+//  纵向滚动动画
+@keyframes verticalScroll {
+    from { top: 60px; }
+    to { top: 0; }
+}
+
+//  横向滚动动画
+@keyframes horizontalScroll {
+    from { left: 100%; }
+    to { left: 0; }
+}
+
+//  背景颜色变化动画
+@keyframes bgColorChange {
+    0% {
+        background-color: var(--new-message-bg-color);
+    }
+    50% {
+        background-color: var(--old-message-bg-color);
+    }
+    100% {
+        background-color: var(--new-message-bg-color); 
+    }
+}
 
 .view-default {
     .view-top-message {

@@ -2,9 +2,9 @@
     <div :class="['rawitem',contentType.toLowerCase()]">
         <span v-if="caption">{{caption}}</span>
         <div v-if="Object.is(contentType,'RAW')">
-            <slot></slot>
+            {{content}}
         </div>
-        <div v-else-if="Object.is(contentType,'HTML')" v-html="htmlContent" />
+        <div v-else-if="Object.is(contentType,'HTML')" v-html="content" />
         <div v-else-if="Object.is(contentType,'IMAGE')">
             <img v-if="imgUrl" :src="imgUrl"/>
             <i v-else :class="imageClass ? imageClass : ''"></i>
@@ -44,12 +44,12 @@ export default class AppRawItem extends Vue {
     @Prop({default: 'RAW'}) public contentType!: 'RAW' | 'HTML' | 'IMAGE' | 'MARKDOWN';
 
     /**
-     * html内容
+     * 内容
      * 
      * @type {string}
      * @memberof AppRawItem
      */
-    @Prop() public htmlContent?: string;
+    @Prop() public content?: string;
 
     /**
      * 图标

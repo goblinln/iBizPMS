@@ -36,14 +36,6 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -51,14 +43,6 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
@@ -66,14 +50,6 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -81,14 +57,6 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
@@ -97,14 +65,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -113,10 +73,6 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Save.json"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
@@ -124,52 +80,24 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchAll",
     "methodType" : "FETCH",
     "name" : "FetchAllReport",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "AllReport"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAll"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReAllReport",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReAllReport",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyReAllReport"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -328,14 +256,6 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -343,14 +263,6 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
@@ -358,14 +270,6 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -373,14 +277,6 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "DELETE",
@@ -389,14 +285,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -405,10 +293,6 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Save.json"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
@@ -416,51 +300,23 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "builtinMethod" : true
   }, {
     "codeName" : "FetchAll",
     "methodType" : "FETCH",
     "name" : "FetchAllReport",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "AllReport"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAll"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyReAllReport",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyReAllReport",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyReAllReport"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -509,28 +365,6 @@
     "logicName" : "日报",
     "mSTag" : "daily",
     "name" : "日报",
-    "getPSDEMainStateActions" : [ {
-      "name" : "ReportIReceived",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Get",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "MyReportINotSubmit",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
-      },
-      "allowMode" : true
-    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "MONTHLY",
       "getPSDEOPPriv" : {
@@ -565,28 +399,6 @@
     "logicName" : "月报",
     "mSTag" : "monthly",
     "name" : "月报",
-    "getPSDEMainStateActions" : [ {
-      "name" : "Get",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "MyReportINotSubmit",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "ReportIReceived",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
-      },
-      "allowMode" : true
-    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "WEEKLY",
       "getPSDEOPPriv" : {
@@ -621,28 +433,6 @@
     "logicName" : "汇报",
     "mSTag" : "reportly",
     "name" : "汇报",
-    "getPSDEMainStateActions" : [ {
-      "name" : "Get",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "MyReportINotSubmit",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "ReportIReceived",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
-      },
-      "allowMode" : true
-    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "DAILY",
       "getPSDEOPPriv" : {
@@ -677,28 +467,6 @@
     "logicName" : "周报",
     "mSTag" : "weekly",
     "name" : "周报",
-    "getPSDEMainStateActions" : [ {
-      "name" : "MyReportINotSubmit",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Get",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "ReportIReceived",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
-      },
-      "allowMode" : true
-    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "REPORTLY",
       "getPSDEOPPriv" : {
@@ -749,10 +517,6 @@
   "logicName" : "汇报",
   "name" : "IBZ_REPORT",
   "getPSDEName" : "IBZ_REPORT",
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDESERVICEAPIS/ReportSummary.json"
-  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "IBZ_DAILYNAME",
     "codeName" : "IbzDailyName"

@@ -2753,26 +2753,10 @@
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json",
       "logicName" : "文档分类",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 4,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-      },
       "name" : "DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "ROOT",
-        "codeName" : "Root"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "DOCLIBNAME",
-        "codeName" : "Doclibname"
-      },
       "pickupDEFName" : "ROOT",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -2799,26 +2783,10 @@
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
       "logicName" : "父模块",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-      },
       "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "MODULENAME",
-        "codeName" : "Modulename"
-      },
       "pickupDEFName" : "PARENT",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -2845,26 +2813,10 @@
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
       "logicName" : "父模块",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-      },
       "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "MODULENAME",
-        "codeName" : "Modulename"
-      },
       "pickupDEFName" : "PARENT",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -2903,26 +2855,10 @@
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
       "logicName" : "父模块",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-      },
       "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "MODULENAME",
-        "codeName" : "Modulename"
-      },
       "pickupDEFName" : "PARENT",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -2961,26 +2897,10 @@
       "codeName" : "Zt_doclib",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 4,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
-      },
       "name" : "DER1N_ZT_DOC_ZT_DOCLIB_LIB",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "LIB",
-        "codeName" : "Lib"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "LIBNAME",
-        "codeName" : "Libname"
-      },
       "pickupDEFName" : "LIB",
       "removeActionType" : -1,
       "removeOrder" : 0

@@ -8,31 +8,38 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_2",
     "text" : "星期一",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_3",
     "text" : "星期二",
-    "value" : "3"
+    "value" : "3",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_4",
     "text" : "星期三",
-    "value" : "4"
+    "value" : "4",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_5",
     "text" : "星期四",
-    "value" : "5"
+    "value" : "5",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_6",
     "text" : "星期五",
-    "value" : "6"
+    "value" : "6",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_7",
     "text" : "星期六",
-    "value" : "7"
+    "value" : "7",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_1",
     "text" : "星期日",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

@@ -36,68 +36,24 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -105,10 +61,6 @@
     "codeName" : "ProductTeamGuoLv",
     "methodType" : "DEACTION",
     "name" : "ProductTeamGuoLv",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/ProductTeamGuoLv.json"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -116,18 +68,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -136,18 +76,6 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Save.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -155,18 +83,6 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
@@ -174,64 +90,28 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductTeamInfo",
     "methodType" : "FETCH",
     "name" : "FetchProductTeamInfo",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductTeamInfo"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProductTeamInfo"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectApp",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectApp",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectApp"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRowEditDefaultProductTeam",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RowEditDefaultProductTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RowEditDefaultProductTeam"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchSpecifyTeam",
     "methodType" : "FETCH",
     "name" : "FetchSpecifyTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "SpecifyTeam"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchSpecifyTeam"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -384,68 +264,24 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -453,10 +289,6 @@
     "codeName" : "ProductTeamGuoLv",
     "methodType" : "DEACTION",
     "name" : "ProductTeamGuoLv",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/ProductTeamGuoLv.json"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -464,18 +296,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -484,18 +304,6 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Save.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -503,82 +311,34 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductTeamInfo",
     "methodType" : "FETCH",
     "name" : "FetchProductTeamInfo",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductTeamInfo"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProductTeamInfo"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectApp",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectApp",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectApp"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchRowEditDefaultProductTeam",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "RowEditDefaultProductTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RowEditDefaultProductTeam"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchSpecifyTeam",
     "methodType" : "FETCH",
     "name" : "FetchSpecifyTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "SpecifyTeam"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchSpecifyTeam"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -700,10 +460,6 @@
     "logicName" : "Product_Create",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json"
-    },
     "name" : "CREATE",
     "id" : "Productteam__CREATE"
   }, {
@@ -713,20 +469,12 @@
     "logicName" : "Product_Delete",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "DELETE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json"
-    },
     "name" : "DELETE",
     "id" : "Productteam__DELETE"
   }, {
     "logicName" : "Product_Manage",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "MANAGE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json"
-    },
     "name" : "MANAGE",
     "id" : "Productteam__MANAGE"
   }, {
@@ -739,20 +487,12 @@
     "logicName" : "Product_Read",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json"
-    },
     "name" : "READ",
     "id" : "Productteam__READ"
   }, {
     "logicName" : "Product_Update",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "UPDATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json"
-    },
     "name" : "UPDATE",
     "id" : "Productteam__UPDATE"
   }, {
@@ -786,10 +526,6 @@
   } ],
   "name" : "IBZ_PRODUCTTEAM",
   "getPSDEName" : "IBZ_PRODUCTTEAM",
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDESERVICEAPIS/ProductTeam.json"
-  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "ACCOUNT",
     "codeName" : "Account"

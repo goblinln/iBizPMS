@@ -2,7 +2,7 @@
 <div>
   <el-slider 
     v-model ="currentVal"
-    :disabled="disabled"
+    :disabled="disabled || readonly"
     :step="step"
     :min="min"
     :max="max"
@@ -59,6 +59,12 @@ export default class AppSlider extends Vue {
     */
     @Prop({default:100}) public max!: number;
     
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
 
     /**
     * 当前值

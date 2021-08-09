@@ -9,6 +9,7 @@
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : true,
   "enableCache" : false,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -119,10 +119,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
     },
-    "getGroupPSDEField" : {
-      "name" : "ASSIGNEDTO",
-      "codeName" : "AssignedTo"
-    },
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "logicName" : "Bug指派表",
     "getPSAppDataEntity" : {

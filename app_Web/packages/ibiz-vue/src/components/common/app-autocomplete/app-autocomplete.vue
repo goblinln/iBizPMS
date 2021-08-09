@@ -1,7 +1,7 @@
 <template>
     <el-autocomplete
         class="text-value"
-        :disabled="disabled"
+        :disabled="disabled || readonly"
         v-model="curvalue"
         size="small"
         :readonly="Object.is('AC_FS', editorType) || Object.is('AC_FS_NOBUTTON', editorType) ? true : false"
@@ -165,6 +165,13 @@ export default class AppAutocomplete extends Vue {
      * @memberof AppAutocomplete
      */
     @Prop() public url?: string;
+
+    /**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 数组

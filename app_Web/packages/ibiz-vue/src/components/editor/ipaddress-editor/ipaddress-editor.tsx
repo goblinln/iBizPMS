@@ -35,10 +35,10 @@ export default class IpAddressEditor extends EditorBase {
             width: '300px',
         };
         if (!Util.isEmpty(editorWidth) && editorWidth != 0) {
-            this.customStyle.width = editorWidth + 'px';
+            this.customStyle.width = editorWidth > 1 ? editorWidth + "px" : editorWidth * 100 + "%";
         }
         if (!Util.isEmpty(editorHeight) && editorHeight != 0) {
-            this.customStyle.height = editorHeight + 'px';
+            this.customStyle.height = editorHeight > 1 ? editorHeight + "px" : editorHeight * 100 + "%";
         }
     }
 

@@ -4,6 +4,7 @@
             v-model="curVal"
             size="small"
             ref="colorPicker"
+            :readonly="readonly"
             :disabled="disabled"
             :placeholder="placeholder"
             >
@@ -18,8 +19,7 @@
 
 <script lang="ts">
 import { Vue, Component, Watch, Prop, Model } from 'vue-property-decorator';
-import { CodeListService } from 'ibiz-service';
-import { Subject, Subscription } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({})
 export default class AppColorPicker extends Vue {
@@ -55,6 +55,13 @@ export default class AppColorPicker extends Vue {
      * @memberof AppColorPicker
      */
     @Prop({default: false}) public disabled?: boolean;
+
+    /**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 占位提示

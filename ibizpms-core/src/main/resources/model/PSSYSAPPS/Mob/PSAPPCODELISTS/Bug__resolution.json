@@ -12,35 +12,43 @@
   "getPSCodeItems" : [ {
     "codeName" : "Bydesign",
     "text" : "设计如此",
-    "value" : "bydesign"
+    "value" : "bydesign",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Duplicate",
     "text" : "重复Bug",
-    "value" : "duplicate"
+    "value" : "duplicate",
+    "includeBeginValue" : true
   }, {
     "codeName" : "External",
     "text" : "外部原因",
-    "value" : "external"
+    "value" : "external",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Fixed",
     "text" : "已解决",
-    "value" : "fixed"
+    "value" : "fixed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Notrepro",
     "text" : "无法重现",
-    "value" : "notrepro"
+    "value" : "notrepro",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Postponed",
     "text" : "延期处理",
-    "value" : "postponed"
+    "value" : "postponed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Willnotfix",
     "text" : "不予解决",
-    "value" : "willnotfix"
+    "value" : "willnotfix",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Tostory",
     "text" : "转为需求",
-    "value" : "tostory"
+    "value" : "tostory",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

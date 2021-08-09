@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Testtask",
     "text" : "测试单",
-    "value" : "testtask"
+    "value" : "testtask",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Project",
     "text" : "项目",
-    "value" : "project"
+    "value" : "project",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -1,11 +1,11 @@
 <template>
   <div class="app-stepper">
-    <el-input-number v-model="currentVal" :disabled="disabled" size="small" :min="min" :max="max" :step="step"></el-input-number>
+    <el-input-number v-model="currentVal" :disabled="disabled || readonly" size="small" :min="min" :max="max" :step="step"></el-input-number>
   </div>
 </template>
 
 <script lang='ts'>
-import { Component, Vue, Prop, Model, Watch } from "vue-property-decorator";
+import { Component, Vue, Prop, } from "vue-property-decorator";
 
 @Component({})
 export default class AppStepper extends Vue {
@@ -30,7 +30,14 @@ export default class AppStepper extends Vue {
      * @memberof AppStepper
      */
     @Prop() public disabled?: boolean;
-  
+
+  	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
+
     /**
      * 步长
      * @type {number}

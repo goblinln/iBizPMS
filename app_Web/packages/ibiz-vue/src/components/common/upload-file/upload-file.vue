@@ -5,7 +5,7 @@
           :headers="headers ? headers : null"
           :multiple="multiple === true ? true : false" 
           :paste="paste === false ? false : true"
-          :disabled="disabled === true ? true : false" 
+          :disabled="disabled || readonly" 
           :data="data ? data : null"
           :type="type === 'select' ? 'select' : 'drag'" 
           :show-upload-list="showuploadlist === true ? true : false"
@@ -67,7 +67,14 @@ export default class UploadFile extends Vue {
      * @type {boolean}
      * @memberof UploadFile 
      */
-    @Prop() public disabled?: boolean;
+    @Prop({default: false}) public disabled?: boolean;
+
+	/**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 上传时附带的额外参数

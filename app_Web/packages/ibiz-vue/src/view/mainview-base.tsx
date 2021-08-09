@@ -244,8 +244,13 @@ export class MainViewBase extends ViewBase implements MainViewInterface {
         if (this.Environment && this.Environment.isPreviewMode) {
             return;
         }
+        const viewToolBar: IPSDEToolbar = ModelTool.findPSControlByType('TOOLBAR', this.viewInstance.getPSControls());
+        let toolbarTag:string = 'toolbar';
+        if(viewToolBar){
+            toolbarTag = viewToolBar.name;
+        }
         AppViewLogicService.getInstance().executeViewLogic(
-            `toolbar_${data.tag}_click`,
+            `${toolbarTag}_${data.tag}_click`,
             $event,
             this,
             undefined,

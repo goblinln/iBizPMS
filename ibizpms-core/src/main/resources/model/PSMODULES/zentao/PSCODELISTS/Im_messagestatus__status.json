@@ -7,24 +7,29 @@
   "getPSCodeItems" : [ {
     "codeName" : "Waiting",
     "text" : "waiting",
-    "value" : "waiting"
+    "value" : "waiting",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Sent",
     "text" : "sent",
-    "value" : "sent"
+    "value" : "sent",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Readed",
     "text" : "readed",
-    "value" : "readed"
+    "value" : "readed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Deleted",
     "text" : "deleted",
-    "value" : "deleted"
+    "value" : "deleted",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

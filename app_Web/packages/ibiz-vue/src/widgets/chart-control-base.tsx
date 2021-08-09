@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { init } from 'echarts';
+import { init, registerMap } from 'echarts';
 import { MDControlBase } from './md-control-base';
 import { AppChartService } from '../ctrl-service';
 import {
@@ -7,6 +7,7 @@ import {
     ChartLineSeries,
     ChartFunnelSeries,
     ChartPieSeries,
+    ChartMapSeries,
     ChartBarSeries,
     ChartRadarSeries,
     ChartScatterSeries,
@@ -257,11 +258,21 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         }
         // 漏斗图默认配置
         if (Object.is(series.eChartsType, 'funnel')) {
-          Object.assign(opts.ecxObject.label, {
-              position: 'outside',
-              formatter: `{b}: {d}%({@${opts.valueField}})`
-          });
-      }
+            Object.assign(opts.ecxObject.label, {
+                position: 'outside',
+                formatter: `{b}: {d}%({@${opts.valueField}})`
+            });
+        }
+        // 地图默认配置（暂时自定义）
+        if (Object.is(series.eChartsType, 'custom')) {
+            Object.assign(opts.ecxObject.label, {
+                formatter: `{b}: {@${opts.valueField}}`
+            });
+            opts.ecxObject.tooltip = {
+                trigger: 'item',
+                formatter: '{b}:  {c}'
+            };
+        }
         // 处理自定义ECX参数
         this.fillUserParam(series, opts.ecxObject, 'ECX');
         this.fillUserParam(series, opts.ecObject, 'EC');
@@ -297,6 +308,10 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
             data['isGroupField'] = dataFile.groupField;
             data['name'] = dataFile.name?.toLowerCase();
             data['groupMode'] = dataFile.groupMode ? dataFile.groupMode : "";
+            // 只读不合并数据（扩展值属性4）
+            if (series.extValue4Field && Object.is(dataFile.name, series.extValue4Field)) {
+                data['isReadOnly'] = true;
+            }
             seriesData.push(data);
         }
         return seriesData
@@ -344,6 +359,10 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
             case 'candlestick':
                 this.seriesModel[series.name?.toLowerCase()] = new ChartCandlestickSeries(opts);
                 break;
+            // 自定义（暂时地图）
+            case 'custom':
+                this.seriesModel[series.name?.toLowerCase()] = new ChartMapSeries(opts);
+                break;
         }
     }
 
@@ -361,20 +380,17 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         });
         // 填充xAxis
         const xAxis: any = [];
-        //  todo  缺失getPSChartXAxises接口
         (this.controlInstance as any).getPSChartXAxises()?.forEach((_xAxis: IPSChartXAxis) => {
             xAxis.push(this.fillAxis(_xAxis));
         });
         // 填充yAxis
         const yAxis: any = [];
-        //  todo  缺失getPSChartYAxises接口
         (this.controlInstance as any).getPSChartYAxises()?.forEach((_yAxis: IPSChartYAxis) => {
             yAxis.push(this.fillAxis(_yAxis));
 
         });
         // 填充grid
         const grid: any = [];
-        //  todo  缺失getPSChartGrids接口
         (this.controlInstance as any).getPSChartGrids()?.forEach((_grid: IPSDEChartGrid) => {
             grid.push({
                 ..._grid.baseOptionJOString ? (new Function("return {" + _grid.baseOptionJOString + '}'))() : {}
@@ -391,6 +407,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         };
         this.fillTitleOption(opt);
         this.fillLegendOption(opt);
+        this.registerMap();
         // 合并chartOption
         Object.assign(this.chartOption, opt);
         // 雷达图特殊参数
@@ -475,6 +492,20 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
     }
 
     /**
+    * 注册
+    *
+    * @param name 地图名称
+    * @memberof ChartControlBase
+    */
+    public registerMap() {
+        const userParams: any = this.controlInstance.userParams || {};
+        if (userParams?.mapName) {
+            const geoJson = require(`@/assets/json/map/${userParams?.mapName}.json`);
+            registerMap(userParams?.mapName, geoJson);
+        }
+    }
+
+    /**
      * 填充 series
      *
      * @param {*} series 序列模型
@@ -484,6 +515,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
      */
     public fillSeries(series: any, indicator: any = {}) {
         const encode: any = {};
+        let customType: string = "";
         const assginCodeList = (codeList: any) => {
             codeList.getPSCodeItems?.()?.forEach((_item: IPSCodeItem) => {
                 let item: any = {
@@ -525,17 +557,20 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                 encode.x = this.arrayToLowerCase(candlestickEncode.getX())
                 encode.y = this.arrayToLowerCase(candlestickEncode.getY());
                 break;
+            case 'custom':
+                customType = "map";
+                break;
             default:
                 break;
         }
         return {
             id: series?.name?.toLowerCase(),
             name: this.$tl(series.getCapPSLanguageRes()?.lanResTag, series.caption),
-            type: series.eChartsType,
+            type: customType ? customType : series.eChartsType,
             xAxisIndex: series?.getPSChartSeriesEncode()?.M?.getPSChartXAxis?.id | 0,
             yAxisIndex: series?.getPSChartSeriesEncode()?.M?.getPSChartYAxis?.id | 0,
             datasetIndex: series?.M?.getPSChartDataSet?.id | 0,
-            encode: encode,
+            encode: Object.keys(encode).length > 0 ? encode : null,
             ...series.baseOptionJOString ? (new Function("return {" + series.baseOptionJOString + '}'))() : {},
         };
     }
@@ -555,7 +590,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
             name: this.$tl(axis.getCapPSLanguageRes()?.lanResTag, axis.caption),
         }
         // 填充用户自定义参数
-        this.fillUserParam(axis, _axis, 'EC.')
+        this.fillUserParam(axis, _axis, 'EC')
         if (axis.minValue) {
             _axis['min'] = axis.minValue;
         }
@@ -608,7 +643,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                         if (key.indexOf('EC.') != -1) {
                             const value = userParam[key].trim();
                             opts[key.replace('EC.', '')] = this.isJson(value)
-                                ? JSON.parse(value)
+                                ? this.deepJsonParseFun(JSON.parse(value))
                                 : this.isArray(value)
                                     ? eval(value)
                                     : value;
@@ -713,6 +748,7 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         if (this.myChart) {
             this.myChart.setOption(_chartOption);
             this.onChartEvents();
+            this.handleDefaultSelect();
             this.myChart.resize();
         }
     }
@@ -727,6 +763,39 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         _this.myChart.on('click', (e: any) => {
             _this.onChartClick(e);
         })
+        _this.myChart.on('selectchanged', (e: any) => {
+            if (this.isSelectFirstDefault) {
+                if (e && e.fromActionPayload) {
+                    const _event = {
+                        seriesId: e.fromActionPayload.seriesId,
+                        data: e.fromActionPayload.curData,
+                        name: e.fromActionPayload.seriesId
+                    }
+                    this.onChartClick(_event);
+                }
+            }
+        })
+    }
+
+    /**
+     * 处理默认选中
+     *
+     * @memberof ChartControlBase
+     */
+    public handleDefaultSelect() {
+        if (this.isSelectFirstDefault) {
+            const options = this.handleChartOPtion();
+            const selectSeriesId = this.controlInstance.getPSDEChartSerieses()?.[0]?.name || null;
+            const curData = options?.dataset[0]?.source?.[0] || undefined;
+            if (selectSeriesId && curData) {
+                this.myChart.dispatchAction({
+                    type: 'select',
+                    seriesId: selectSeriesId.toLowerCase(),
+                    dataIndex: 0,
+                    curData: curData
+                })
+            }
+        }
     }
 
     /**
@@ -740,7 +809,13 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         }
         let data: any = event.data;
         Object.assign(data, { _chartName: event.seriesId });
-        this.ctrlEvent({ controlname: this.controlInstance.name, action: 'selectionchange', data: [data] });
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
+        let viewparamResult: any = Object.assign(data, this.viewparams);
+        this.ctrlEvent({
+            controlname: this.controlInstance.name,
+            action: 'selectionchange',
+            data: { action: this.loadAction, sender: this, navContext: tempContext, navParam: viewparamResult, navData: this.navdatas, data: [data] }
+        });
     }
 
     /**
@@ -773,6 +848,36 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
         } catch (error) {
             return false;
         }
+    }
+
+    /**
+     * 解析字符串函数
+     *
+     * @param {*} data
+     * @return {*}  {boolean}
+     * @memberof ChartControlBase
+     */
+    public deepJsonParseFun(data:any): any{
+        switch (typeof data) {
+            case 'string':
+            case 'number':
+            case 'boolean':
+            case 'undefined':
+            case 'function':
+            case 'symbol':
+            return data;
+        }
+        for (const key in data) {
+            const item = data[key];
+            let res : any ;
+            if(item.isFun && item.functionBody){
+                res =  new Function (item.arg, item.functionBody)
+            }else{
+                res = this.deepJsonParseFun(item);
+            }
+            data[key] = res;
+        }
+        return data;
     }
 
     /**
@@ -834,58 +939,58 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                 //设置多序列
                 let tempSeries: any = this.seriesModel[seriesName];
                 const returnIndex: number = _chartOption.series.findIndex((item: any) => {
-                  return Object.is(item.id, seriesName);
+                    return Object.is(item.id, seriesName);
                 });
                 if (tempSeries && Object.is(tempSeries.type, 'gauge')) {
-                  _chartOption.series.splice(returnIndex, 1);
-                  const maxValue: number = this.calcSourceMaxValue(_chartOption.dataset[0].source);
-                  let temSeries = {
-                    type: 'gauge',
-                    title: {
-                      fontSize: 14
-                    },
-                    progress: {
-                      show: true,
-                      overlap: false,
-                      roundCap: true
-                    },
-                    max: maxValue,
-                    detail: {
-                        width: 40,
-                        height: 14,
-                        fontSize: 14,
-                        color: '#fff',
-                        backgroundColor: 'auto',
-                        borderRadius: 3,
-                        formatter: '{value}'
-                    },
-                    data: this.transformToChartSeriesData(_chartOption.dataset[0].source,'gauge')
-                  }
+                    _chartOption.series.splice(returnIndex, 1);
+                    const maxValue: number = this.calcSourceMaxValue(_chartOption.dataset[0].source);
+                    let temSeries = {
+                        type: 'gauge',
+                        title: {
+                            fontSize: 14
+                        },
+                        progress: {
+                            show: true,
+                            overlap: false,
+                            roundCap: true
+                        },
+                        max: maxValue,
+                        detail: {
+                            width: 40,
+                            height: 14,
+                            fontSize: 14,
+                            color: '#fff',
+                            backgroundColor: 'auto',
+                            borderRadius: 3,
+                            formatter: '{value}'
+                        },
+                        data: this.transformToChartSeriesData(_chartOption.dataset[0].source, 'gauge')
+                    }
                     _chartOption.series.push(temSeries);
-                }else if (tempSeries && Object.is(tempSeries.type, 'radar')) {
-                  const maxValue: number = this.calcSourceMaxValue(_chartOption.dataset[0].source);
-                  _chartOption.radar.indicator?.forEach((item: any) => {
-                    item.max = item.max ? item.max : maxValue;
-                  });
-                  _chartOption.series[returnIndex].data = this.transformToChartSeriesData(_chartOption.dataset[0].source,'radar',_chartOption.radar.indicator);
-                }else if (
+                } else if (tempSeries && Object.is(tempSeries.type, 'radar')) {
+                    const maxValue: number = this.calcSourceMaxValue(_chartOption.dataset[0].source);
+                    _chartOption.radar.indicator?.forEach((item: any) => {
+                        item.max = item.max ? item.max : maxValue;
+                    });
+                    _chartOption.series[returnIndex].data = this.transformToChartSeriesData(_chartOption.dataset[0].source, 'radar', _chartOption.radar.indicator);
+                } else if (
                     tempSeries &&
                     tempSeries.seriesIdField &&
-                    tempSeries.seriesValues.length > 0 
+                    tempSeries.seriesValues.length > 0
                 ) {
                     let series = _chartOption.series[returnIndex];
                     _chartOption.series.splice(returnIndex, 1);
                     delete series.id;
                     tempSeries.seriesValues.forEach((seriesvalueItem: any) => {
                         let tempSeriesTemp: any = Util.deepCopy(tempSeries.seriesTemp);
-                        Object.assign(tempSeriesTemp,series);
+                        Object.assign(tempSeriesTemp, series);
                         tempSeriesTemp.name = tempSeries.seriesMap[seriesvalueItem];
                         tempSeriesTemp.datasetIndex = tempSeries.seriesIndex;
                         tempSeriesTemp.encode = { x: tempSeries.categorField, y: `${seriesvalueItem}` };
                         _chartOption.series.push(tempSeriesTemp);
                     });
                 }
-                
+
             });
         }
         if (Object.keys(this.chartBaseOPtion).length > 0) {
@@ -1088,21 +1193,21 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
      * @memberof ChartControlBase
      */
     public calcSourceMaxValue(source: any[]) {
-      let data: any[] = [];
-      source.forEach((item: any) => {
-        if (item.data) {
-          data.push(item.data);
-        }else {
-          let itemData = [];
-          for (const key in item) {
-            if (!isNaN(item[key])) {
-              itemData.push(item[key]);
+        let data: any[] = [];
+        source.forEach((item: any) => {
+            if (item.data) {
+                data.push(item.data);
+            } else {
+                let itemData = [];
+                for (const key in item) {
+                    if (!isNaN(item[key])) {
+                        itemData.push(item[key]);
+                    }
+                }
+                data.push(Math.max(...itemData));
             }
-          }
-          data.push(Math.max(...itemData));
-        }
-      })
-      return Math.max(...data);
+        })
+        return Math.max(...data);
     }
 
     /**
@@ -1113,40 +1218,40 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
      * @param {Array<any>} series chart类型
      * @memberof ChartControlBase
      */
-    public transformToChartSeriesData(source: any[],series: string,indicator?: any[]) {
-      if (Object.is(series,"gauge")) {
-        let seriesData:any[] = [];
-        let offsetLength: number = 100/(source.length-1);
-        source.forEach((sourceItem: any,index: number) => {
-          let data = {
-            name: sourceItem[this.chartCatalogName],
-            value: sourceItem[this.chartValueName],
-            title: {
-              offsetCenter: [(index*offsetLength - 50) + '%', '80%']
-            },
-            detail: {
-                offsetCenter: [(index*offsetLength - 50) + '%', '95%']
+    public transformToChartSeriesData(source: any[], series: string, indicator?: any[]) {
+        if (Object.is(series, "gauge")) {
+            let seriesData: any[] = [];
+            let offsetLength: number = 100 / (source.length - 1);
+            source.forEach((sourceItem: any, index: number) => {
+                let data = {
+                    name: sourceItem[this.chartCatalogName],
+                    value: sourceItem[this.chartValueName],
+                    title: {
+                        offsetCenter: [(index * offsetLength - 50) + '%', '80%']
+                    },
+                    detail: {
+                        offsetCenter: [(index * offsetLength - 50) + '%', '95%']
+                    }
+                }
+                seriesData.push(data)
+            })
+            return seriesData;
+        } else if (Object.is(series, "radar")) {
+            if (!indicator || indicator.length == 0) {
+                LogUtil.log(this.$t('app.chart.noindicator'));
+                return;
             }
-          }
-          seriesData.push(data)
-        })
-        return seriesData;
-      }else if(Object.is(series,"radar")) {
-        if (!indicator || indicator.length == 0) {
-          LogUtil.log(this.$t('app.chart.noindicator'));
-          return;
+            let seriesData: any[] = [];
+            source.forEach((sourceItem: any) => {
+                let name = sourceItem.type;
+                let data: any[] = [];
+                indicator.forEach((item: any) => {
+                    data.push(sourceItem[item.name]);
+                })
+                seriesData.push({ name, value: data });
+            })
+            return seriesData;
         }
-        let seriesData:any[] = [];
-        source.forEach((sourceItem: any) => {
-          let name = sourceItem.type;
-          let data: any[] = [];
-          indicator.forEach((item: any) => {
-            data.push(sourceItem[item.name]);
-          })
-          seriesData.push({name,value: data});
-        })
-        return seriesData;
-      }
     }
 
     /**
@@ -1214,9 +1319,14 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                         categorResult = singleItem[groupField[0]];
                         valueResult[valueField[0]] = valueResult[valueField[0]] ? valueResult[valueField[0]] + singleItem[valueField[0]] : singleItem[valueField[0]];
                         item.dataSetFields.forEach((dataSetField: any) => {
-                          if (!Object.is(dataSetField.name,groupField[0]) && !Object.is(dataSetField.name,valueField[0])) {
-                            valueResult[dataSetField.name] = valueResult[dataSetField.name] ? valueResult[dataSetField.name] + singleItem[dataSetField.name] : singleItem[dataSetField.name];
-                          }
+                            // 只读不合并数据（扩展值属性4）
+                            if (dataSetField.isReadOnly) {
+                                valueResult[dataSetField.name] = singleItem[dataSetField.name];
+                            } else {
+                                if (!Object.is(dataSetField.name, groupField[0]) && !Object.is(dataSetField.name, valueField[0])) {
+                                    valueResult[dataSetField.name] = valueResult[dataSetField.name] ? valueResult[dataSetField.name] + singleItem[dataSetField.name] : singleItem[dataSetField.name];
+                                }
+                            }
                         });
                     });
                     Object.defineProperty(curObject, groupField[0], {
@@ -1226,12 +1336,12 @@ export class ChartControlBase extends MDControlBase implements ChartControlInter
                         configurable: true,
                     });
                     for (const value in valueResult) {
-                      Object.defineProperty(curObject, value, {
-                        value: valueResult[value],
-                        writable: true,
-                        enumerable: true,
-                        configurable: true,
-                      });
+                        Object.defineProperty(curObject, value, {
+                            value: valueResult[value],
+                            writable: true,
+                            enumerable: true,
+                            configurable: true,
+                        });
                     }
                     returnArray.push(curObject);
                 }

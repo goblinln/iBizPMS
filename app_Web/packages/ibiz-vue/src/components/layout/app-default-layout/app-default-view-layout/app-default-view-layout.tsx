@@ -183,7 +183,13 @@ export class AppDefaultViewLayout extends Vue {
      * @memberof AppDefaultViewLayout
      */
     public renderRootPSPanelItems() {
-        return <row class="app-viewlayout-panel" style={{ 'height': '100%' }}>
+        let rootStyle = {'height': '100%'}
+        let layout: any = this.viewLayoutPanel?.getPSLayout();
+        let layoutMode = this.viewLayoutPanel?.getPSLayout()?.layout;
+        if (layout && layoutMode == 'FLEX') {
+          Object.assign(rootStyle,{'display': 'flex'});
+        }
+        return <row class="app-viewlayout-panel" style={rootStyle}>
             {this.viewLayoutPanel?.getRootPSPanelItems()?.map((container: any, index: number) => {
                 return this.renderByDetailType(container);
             })}
@@ -448,23 +454,27 @@ export class AppDefaultViewLayout extends Vue {
         let { rawItemHeight, rawItemWidth, contentType, htmlContent, rawContent } = modelJson;
         let sysCssName = modelJson.getPSSysCss()?.cssName;
         let sysImage = modelJson.getPSSysImage()?.cssClass;
+        let sysImgurl = modelJson.getPSSysImage()?.imagePath;
         const style: any = {
             width: rawItemWidth > 0 ? `${rawItemWidth}px` : '',
             height: rawItemHeight > 0 ? `${rawItemHeight}px` : '',
         }
-        if (rawContent) {
-            const items = rawContent.match(/\{{(.+?)\}}/g);
+        let content: any;
+        if (Object.is(contentType,'RAW')) {
+            content = rawContent;
+        } else if (Object.is(contentType,'HTML')){
+            content = htmlContent;
+        }
+        if (content) {
+            const items = content.match(/\{{(.+?)\}}/g);
             if (items) {
                 items.forEach((item: string) => {
-                    rawContent = rawContent.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
+                    content = content.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
                 });
             }
+            content = content.replaceAll('&lt;','<');
+            content = content.replaceAll('&gt;','>');
         }
-        const tempNode = this.$createElement('div', {
-            domProps: {
-                innerHTML: rawContent,
-            },
-        });
         return (
             <app-rawitem
                 class={sysCssName}
@@ -473,9 +483,9 @@ export class AppDefaultViewLayout extends Vue {
                 context={this.context}
                 contentType={contentType}
                 imageClass={sysImage}
-                htmlContent={htmlContent}
+                imgUrl={sysImgurl}
+                content={content}
             >
-                {Object.is(contentType, 'RAW') && tempNode}
             </app-rawitem>
         );
     }

@@ -33,7 +33,7 @@
     <el-upload 
       v-if = "multiple || files.length === 0" 
       :class = "{'el-upload-disabled':disabled}"
-      :disabled = "disabled"
+      :disabled = "disabled || readonly"
       :action = "uploadUrl"
       :multiple="multipleSelect"
       :headers = "headers"
@@ -158,6 +158,13 @@ export default class AppImageUpload extends Vue {
      * @memberof AppImageUpload
      */
     @Prop() public disabled?: boolean;
+
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
 
     /**
      * 上传参数

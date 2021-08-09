@@ -18,7 +18,7 @@
         :value="value"
         :name="name"
     />
-    <span class="app-span" v-else>
+    <span class="app-span" :title="text" v-else>
       <span v-if="(!text && (text !== 0) && !unitName) && Object.is('STYLE1', noValueShowMode)">- - -</span>
       <span v-else-if="textFormat">
           <span class="app-span-value-format" v-format="textFormat">{{text}}</span>
@@ -240,7 +240,7 @@ export default class AppSpan extends Vue {
      * @memberof AppSpan
      */
     public formatData() {
-      if (this.valueFormat) {
+      if (this.valueFormat && !Object.is(this.dataType, 'DATETIME')) {
         this.textFormat = this.unitName ? this.valueFormat + '_' + this.unitName : this.valueFormat;
         //vue-text-format插件重复值修复
         if(this.valueFormat.includes("*")) {
@@ -251,7 +251,7 @@ export default class AppSpan extends Vue {
         }
       }
       if (Object.is(this.dataType, 'DATETIME') && this.valueFormat.length > 0) {
-        this.text = moment(this.value).unix();
+        this.text = moment(this.value).format(this.valueFormat);
       }else {
         this.text = this.value;
       }

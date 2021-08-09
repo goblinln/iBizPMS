@@ -7,7 +7,7 @@
             :transfer="true"
             transfer-class-name="dropdown-list-mpicker-transfer"
             v-model="currentVal"
-            :disabled="disabled"
+            :disabled="disabled || readonly"
             :clearable="true"
             :filterable="filterable"
             @on-open-change="onClick"
@@ -91,6 +91,13 @@ export default class DropDownListMpicker extends Vue {
      * 
      */
     @Prop() public disabled?: any;
+
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
 
     /**
      * 是否支持过滤

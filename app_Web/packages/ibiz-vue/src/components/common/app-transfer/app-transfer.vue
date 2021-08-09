@@ -5,7 +5,7 @@
         @on-change="dataChange"
         v-model="dataRight"
         :style="{width:width}"
-        :disabled="disabled"
+        :disabled="disabled || readonly"
         :placeholder="placeholder"
         multiple>
         <Option class="hidden" :value="item" v-for="(item,i) in dataRight" :key="i">
@@ -20,9 +20,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Watch, Prop, Model } from "vue-property-decorator";
+import { Vue, Component, Prop, Model } from "vue-property-decorator";
 import {CodeListService} from "ibiz-service";
-import { ElSelect } from "element-ui/types/select";
 import { LogUtil } from 'ibiz-core';
 
 @Component({})
@@ -107,6 +106,13 @@ export default class AppTransfer extends Vue {
      *
      */
     @Prop() public disabled?: any;
+
+	/**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 穿梭框提示内容

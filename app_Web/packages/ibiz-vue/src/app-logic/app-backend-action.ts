@@ -59,6 +59,9 @@ export class AppBackEndAction extends AppDEUIAction {
         deUIService?: any,
     ) {
         if (Object.is(this.actionModel?.uILogicAttachMode, 'REPLACE')) {
+            if (actionContext.context) {
+                Object.assign(context, actionContext.context);
+            }
             return this.executeDEUILogic(args, context, params, $event, xData, actionContext, srfParentDeName);
         }
         const actionTarget: string | null = this.actionModel.actionTarget;
@@ -259,6 +262,9 @@ export class AppBackEndAction extends AppDEUIAction {
                                         });
                                     } else {
                                         if (Object.is(this.actionModel?.uILogicAttachMode, 'AFTER')) {
+                                            if (actionContext.context) {
+                                                Object.assign(context, actionContext.context);
+                                            }
                                             return this.executeDEUILogic(args, context, params, $event, xData, actionContext, context?.srfparentdename);
                                         } else {
                                             return new UIActionResult({ ok: true, result: args });

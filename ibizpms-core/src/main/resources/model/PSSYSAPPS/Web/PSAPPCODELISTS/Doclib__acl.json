@@ -12,7 +12,8 @@
   "getPSCodeItems" : [ {
     "codeName" : "Default",
     "text" : "默认",
-    "value" : "default"
+    "value" : "default",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

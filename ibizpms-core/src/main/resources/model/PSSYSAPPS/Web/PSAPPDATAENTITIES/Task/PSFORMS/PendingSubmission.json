@@ -1091,10 +1091,6 @@
                       "paramValue" : "0"
                     } ]
                   },
-                  "getPSDEField" : {
-                    "name" : "ESTIMATE",
-                    "codeName" : "Estimate"
-                  },
                   "ruleInfo" : "预计大于等于0",
                   "checkDefault" : false,
                   "defaultMode" : false,

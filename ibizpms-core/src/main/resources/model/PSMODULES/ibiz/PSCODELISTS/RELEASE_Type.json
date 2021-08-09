@@ -7,44 +7,54 @@
   "getPSCodeItems" : [ {
     "codeName" : "Deploypkg",
     "text" : "部署系统组件到仓库",
-    "value" : "DEPLOYPKG"
+    "value" : "DEPLOYPKG",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Packmobapp",
     "text" : "打包移动应用",
-    "value" : "PACKMOBAPP"
+    "value" : "PACKMOBAPP",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Packver",
     "text" : "打包版本",
-    "value" : "PACKVER"
+    "value" : "PACKVER",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Pubcode",
     "text" : "代码发布",
-    "value" : "PUBCODE"
+    "value" : "PUBCODE",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Pubcode2",
     "text" : "代码发布（模板开发）",
-    "value" : "PUBCODE2"
+    "value" : "PUBCODE2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Startmsapi",
     "text" : "启动微服务",
-    "value" : "STARTMSAPI"
+    "value" : "STARTMSAPI",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Startmsapp",
     "text" : "启动微服务应用",
-    "value" : "STARTMSAPP"
+    "value" : "STARTMSAPP",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Startmsfunc",
     "text" : "启动微服务功能",
-    "value" : "STARTMSFUNC"
+    "value" : "STARTMSFUNC",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Startx",
     "text" : "启动系统",
-    "value" : "STARTX"
+    "value" : "STARTX",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -12,111 +12,138 @@
   "getPSCodeItems" : [ {
     "codeName" : "Product",
     "text" : "产品",
-    "value" : "product"
+    "value" : "product",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story",
     "text" : "需求",
-    "value" : "story"
+    "value" : "story",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Productplan",
     "text" : "计划",
-    "value" : "productplan"
+    "value" : "productplan",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Release",
     "text" : "发布",
-    "value" : "release"
+    "value" : "release",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Project",
     "text" : "项目",
-    "value" : "project"
+    "value" : "project",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Task",
     "text" : "任务",
-    "value" : "task"
+    "value" : "task",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Build",
     "text" : "版本",
-    "value" : "build"
+    "value" : "build",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug"
+    "value" : "bug",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Case",
     "text" : "用例",
-    "value" : "case"
+    "value" : "case",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Caseresult",
     "text" : "用例结果",
-    "value" : "caseresult"
+    "value" : "caseresult",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Stepresult",
     "text" : "用例步骤",
-    "value" : "stepresult"
+    "value" : "stepresult",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Testtask",
     "text" : "测试单",
-    "value" : "testtask"
+    "value" : "testtask",
+    "includeBeginValue" : true
   }, {
     "codeName" : "User",
     "text" : "用户",
-    "value" : "user"
+    "value" : "user",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Doc",
     "text" : "文档",
-    "value" : "doc"
+    "value" : "doc",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Doclib",
     "text" : "文档库",
-    "value" : "doclib"
+    "value" : "doclib",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Todo",
     "text" : "待办",
-    "value" : "todo"
+    "value" : "todo",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Branch",
     "text" : "分支",
-    "value" : "branch"
+    "value" : "branch",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Module",
     "text" : "模块",
-    "value" : "module"
+    "value" : "module",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Testsuite",
     "text" : "套件",
-    "value" : "testsuite"
+    "value" : "testsuite",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Caselib",
     "text" : "用例库",
-    "value" : "caselib"
+    "value" : "caselib",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Testreport",
     "text" : "报告",
-    "value" : "testreport"
+    "value" : "testreport",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Entry",
     "text" : "应用",
-    "value" : "entry"
+    "value" : "entry",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Webhook",
     "text" : "Webhook",
-    "value" : "webhook"
+    "value" : "webhook",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Daily",
     "text" : "日报",
-    "value" : "daily"
+    "value" : "daily",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Weekly",
     "text" : "周报",
-    "value" : "weekly"
+    "value" : "weekly",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Monthly",
     "text" : "月报",
-    "value" : "monthly"
+    "value" : "monthly",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Reportly",
     "text" : "汇报",
-    "value" : "reportly"
+    "value" : "reportly",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

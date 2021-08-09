@@ -12,47 +12,58 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "间隔1天",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_2",
     "text" : "间隔2天",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_3",
     "text" : "间隔3天",
-    "value" : "3"
+    "value" : "3",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_4",
     "text" : "间隔4天",
-    "value" : "4"
+    "value" : "4",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_5",
     "text" : "间隔5天",
-    "value" : "5"
+    "value" : "5",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_6",
     "text" : "间隔6天",
-    "value" : "6"
+    "value" : "6",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_7",
     "text" : "间隔7天",
-    "value" : "7"
+    "value" : "7",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_8",
     "text" : "间隔8天",
-    "value" : "8"
+    "value" : "8",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_9",
     "text" : "间隔9天",
-    "value" : "9"
+    "value" : "9",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_10",
     "text" : "间隔10天",
-    "value" : "10"
+    "value" : "10",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_11",
     "text" : "间隔11天",
-    "value" : "11"
+    "value" : "11",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

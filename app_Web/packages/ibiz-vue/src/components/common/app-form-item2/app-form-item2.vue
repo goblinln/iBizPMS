@@ -14,6 +14,7 @@
       <span
         v-if="isShowCaption && labelWidth > 0"
         slot="label" :class="labelclasses"
+        :title="isEmptyCaption ? '' : caption"
       >{{isEmptyCaption ? '' : caption}}</span>
       <div class="app-editor-contant">{{$slots.default}}</div>
       <div

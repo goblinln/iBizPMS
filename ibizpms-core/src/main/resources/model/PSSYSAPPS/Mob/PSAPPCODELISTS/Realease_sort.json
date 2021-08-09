@@ -13,19 +13,22 @@
     "codeName" : "All",
     "data" : "{}",
     "text" : "所有",
-    "value" : "all"
+    "value" : "all",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Normal",
     "color" : "rgba(13, 255, 0, 1)",
     "data" : "{\"n_status_eq\":\"normal\"}",
     "text" : "正常",
     "value" : "normal",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Terminate",
     "data" : "{\"n_status_eq\":\"terminate\"}",
     "text" : "停止维护",
-    "value" : "terminate"
+    "value" : "terminate",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

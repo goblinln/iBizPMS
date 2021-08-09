@@ -164,7 +164,7 @@ export class DynamicViewMessageService {
             }
         }
         //  消息位置
-        const msgPosField = this.viewMsgInstance.getMsgTypePSAppDEField?.()?.codeName?.toLowerCase();
+        const msgPosField = this.viewMsgInstance.getMsgPosPSAppDEField?.()?.codeName?.toLowerCase();
         if (msgPosField) {
             const position = item[msgPosField];
             if (position == 'TOP' || position == 'BODY' || position == 'BOTTOM' || position == 'POPUP' || position == 'CUSTOM') {

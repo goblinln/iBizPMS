@@ -334,11 +334,20 @@ export class UIServiceBase {
      * @param enableWorkflowParam  重定向视图需要处理流程中的数据
      * @memberof  UIServiceBase
      */
-    protected async getRDAppView(context: any, srfkey: string, enableWorkflowParam: any) {
+    protected async getRDAppView(context: any, srfkey: string, enableWorkflowParam: any, dataSetParams: any = {}) {
         // 进行数据查询
         let returnData: any = {};
         Object.assign(context, { [this.entityModel.codeName.toLowerCase()]: srfkey });
-        let result: any = await this.dataService.Get(context);
+        let result: any = {};
+        if (
+            dataSetParams &&
+            dataSetParams.action &&
+            this.dataService[dataSetParams.action] && this.dataService[dataSetParams.action] instanceof Function
+        ) {
+            result = await this.dataService[dataSetParams.action](context);
+        } else {
+            result = await this.dataService.Get(context);
+        }
         const curData: any = result.data;
         // 设置原始数据
         if (curData && Object.keys(curData).length > 0) {

@@ -17,10 +17,6 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__type.json"
   },
-  "getGroupPSDEField" : {
-    "name" : "TYPE",
-    "codeName" : "Type"
-  },
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "logicName" : "任务分组（类型分组）",
   "minorSortDir" : "DESC",

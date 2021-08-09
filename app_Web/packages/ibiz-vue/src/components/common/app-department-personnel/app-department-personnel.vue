@@ -1,10 +1,10 @@
 <template>
     <div class="app-department-personnel">
-        <i-select :multiple="multiple" :transfer="true" transfer-class-name="app-department-personnel-select" :value="selectsLabel" :disabled="disabled" :clearable="true" @on-open-change="onClick" @on-change="change">
+        <i-select :multiple="multiple" :transfer="true" transfer-class-name="app-department-personnel-select" :value="selectsLabel" :disabled="disabled || readonly" :clearable="true" @on-open-change="onClick" @on-change="change">
             <i-option v-for="(item, index) in items" :key="index" :value="item.id" :label="item.label"></i-option>
         </i-select>
         <template>
-            <i v-if="!disabled" class="el-icon-search" @click="openView"></i>
+            <i v-if="!disabled && !readonly" class="el-icon-search" @click="openView"></i>
         </template>
     </div>
 </template>
@@ -88,6 +88,13 @@ export default class AppDepartmentPersonnel extends Vue {
      * @memberof AppDepartmentPersonnel
      */  
     @Prop() public disabled?: boolean;
+
+    /**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 值

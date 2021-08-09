@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Released",
     "text" : "released",
-    "value" : "released"
+    "value" : "released",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Wait",
     "text" : "wait",
-    "value" : "wait"
+    "value" : "wait",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

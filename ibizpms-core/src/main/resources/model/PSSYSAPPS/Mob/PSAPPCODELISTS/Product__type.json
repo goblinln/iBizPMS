@@ -14,15 +14,18 @@
     "color" : "blue",
     "text" : "正常",
     "value" : "normal",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Branch",
     "text" : "多分支",
-    "value" : "branch"
+    "value" : "branch",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Platform",
     "text" : "多平台",
-    "value" : "platform"
+    "value" : "platform",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

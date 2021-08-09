@@ -6,7 +6,7 @@
       </el-col>
       <el-col :span="(rowPreview && files.length > 0) ? 12 : 24" class="upload-col">
         <el-upload
-          :disabled="disabled || (!this.multiple && files.length > 0)"
+          :disabled="disabled || (!this.multiple && files.length > 0) || readonly"
           :file-list="files"
           :limit="multiple ? 1000 : 1"
           :action="uploadUrl"
@@ -20,7 +20,7 @@
           :drag="isdrag"
           :show-file-list="!rowPreview"
           >
-            <el-button v-if="!isdrag" size='mini' icon='el-icon-upload' :disabled="disabled || (!this.multiple && files.length > 0)">{{$t('components.appfileupload.caption')}}</el-button>
+            <el-button v-if="!isdrag" size='mini' icon='el-icon-upload' :disabled="disabled || (!this.multiple && files.length > 0) || readonly">{{$t('components.appfileupload.caption')}}</el-button>
           <i v-if="isdrag" class="el-icon-upload"></i>
           <div v-if="isdrag" class="el-upload__text" v-html="$t('components.appfileupload.uploadtext')"></div>
         </el-upload>
@@ -167,6 +167,13 @@ export default class AppFileUpload extends Vue {
      * @memberof AppFileUpload
      */
     @Prop() public disabled?: boolean;
+
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
 
     /**
      * 上传参数

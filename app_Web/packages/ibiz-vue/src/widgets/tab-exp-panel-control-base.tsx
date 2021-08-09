@@ -120,8 +120,8 @@ export class TabExpPanelBase extends MainControlBase implements TabExpPanelContr
      */
     public ctrlMounted() {
         super.ctrlMounted();
-        if (this.viewparams && this.viewparams.srftabactivate) {
-            const activate = this.viewparams.srftabactivate.toLowerCase();
+        if (this.viewparams && (this.viewparams.srftabactivate || this.viewparams.srfnavtag)) {
+            const activate = this.viewparams.srftabactivate?.toLowerCase() || this.viewparams.srfnavtag?.toLowerCase();
             if (activate && this.isInit[activate] !== undefined) {
                 for (const key in this.isInit) {
                     if (this.isInit.hasOwnProperty(key)) {
@@ -195,7 +195,6 @@ export class TabExpPanelBase extends MainControlBase implements TabExpPanelContr
         const allControls: IPSControl[] = this.controlInstance.getPSControls() as IPSControl[];
         this.authResourceObject = [];
         allControls.forEach((item: any, index: number) => {
-            //  zktodo 权限待补充
             this.authResourceObject[item.name] = {
                 resourcetag: "",
                 visabled: true,

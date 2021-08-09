@@ -90,7 +90,7 @@ import '@interactjs/modifiers'
 import '@interactjs/dev-tools'
 import interact from "@interactjs/interact";
 import AppDashboardDesignService from './app-dashboard-design-service';
-import { Http, ViewState, Util, LogUtil  } from 'ibiz-core';
+import { ViewState, LogUtil  } from 'ibiz-core';
 import { Subject, Subscription } from 'rxjs';
 
 @Component({

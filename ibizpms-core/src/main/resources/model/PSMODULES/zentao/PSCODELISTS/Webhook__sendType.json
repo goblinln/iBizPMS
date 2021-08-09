@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Sync",
     "text" : "sync",
-    "value" : "sync"
+    "value" : "sync",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Async",
     "text" : "async",
-    "value" : "async"
+    "value" : "async",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

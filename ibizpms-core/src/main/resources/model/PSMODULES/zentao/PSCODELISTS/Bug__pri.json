@@ -11,7 +11,8 @@
     },
     "text" : "严重",
     "textCls" : "text-red-border-color-lang",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_2",
     "getPSSysCss" : {
@@ -19,7 +20,8 @@
     },
     "text" : "主要",
     "textCls" : "text-pink-border-color-lang",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_3",
     "getPSSysCss" : {
@@ -28,7 +30,8 @@
     "text" : "次要",
     "textCls" : "text-blue-border-color-lang",
     "value" : "3",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_4",
     "getPSSysCss" : {
@@ -36,12 +39,14 @@
     },
     "text" : "不重要",
     "textCls" : "text-green-border-color-lang",
-    "value" : "4"
+    "value" : "4",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : true,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -4,7 +4,7 @@
     </div>
     <div v-else-if="!Object.is(editorType, 'pickup-no-ac') && !Object.is(editorType, 'dropdown')" class='app-picker'>
         <div class='app-picker'>
-            <el-autocomplete ref="appAc" class='text-value' :value-key="deMajorField" :disabled="disabled" v-model="curvalue" size='small'
+            <el-autocomplete ref="appAc" class='text-value' :value-key="deMajorField" :disabled="disabled || readonly" v-model="curvalue" size='small'
                 :trigger-on-focus="true" :fetch-suggestions="(query, callback) => { this.onSearch(query, callback, true) }" @select="onACSelect"
                 @input="onInput" @blur="onBlur" @focus="onAcFocus" style='width:100%;'
                 :placeholder="placeholder" :popper-class="`app-ac-${name}`">
@@ -40,7 +40,7 @@
     </div>
     <div v-else-if="Object.is(editorType, 'dropdown')" class='app-picker'>
         <el-select ref="appPicker" remote :remote-method="(query) => this.onSearch(query, null, true)" :value="refvalue" size='small' filterable
-            @change="onSelect" :disabled="disabled" style='width:100%;' clearable popper-class="app-picker-dropdown"
+            @change="onSelect" :disabled="disabled || readonly" style='width:100%;' clearable popper-class="app-picker-dropdown"
             @clear="onClear" @visible-change="onSelectOpen" :loading="loading" 
             :placeholder="placeholder">
             <template v-if="loading" slot="empty">
@@ -151,6 +151,13 @@ export default class AppPicker extends Vue {
      * @memberof AppPicker
      */
     @Prop() public disabled?: boolean;
+
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
 
     /**
      * 是否显示按钮

@@ -13,37 +13,44 @@
     "codeName" : "Projected",
     "color" : "rgba(139, 173, 237, 1)",
     "text" : "已立项",
-    "value" : "projected"
+    "value" : "projected",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Developing",
     "color" : "rgba(63, 77, 238, 1)",
     "text" : "研发中",
-    "value" : "developing"
+    "value" : "developing",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Developed",
     "color" : "rgba(73, 227, 101, 1)",
     "text" : "研发完毕",
-    "value" : "developed"
+    "value" : "developed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Testing",
     "color" : "rgba(224, 198, 54, 1)",
     "text" : "测试中",
-    "value" : "testing"
+    "value" : "testing",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Tested",
     "color" : "rgba(234, 233, 237, 1)",
     "text" : "测试完毕",
-    "value" : "tested"
+    "value" : "tested",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Verified",
     "color" : "rgba(109, 108, 108, 1)",
     "text" : "已验收",
-    "value" : "verified"
+    "value" : "verified",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Released",
     "color" : "rgba(11, 11, 11, 1)",
     "text" : "已发布",
-    "value" : "released"
+    "value" : "released",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

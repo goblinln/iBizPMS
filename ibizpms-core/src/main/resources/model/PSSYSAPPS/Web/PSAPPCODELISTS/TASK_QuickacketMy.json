@@ -14,27 +14,32 @@
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指派给我",
     "value" : "TOME",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Cancelled",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "text" : "由我创建",
-    "value" : "CANCELLED"
+    "value" : "CANCELLED",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Ifinished",
     "data" : "{\"n_finishedby_eq\":\"%srfloginname%\"}",
     "text" : "由我完成",
-    "value" : "IFINISHED"
+    "value" : "IFINISHED",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Completed",
     "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
     "text" : "由我关闭",
-    "value" : "COMPLETED"
+    "value" : "COMPLETED",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Closed",
     "data" : "{\"n_canceledby_eq\":\"%srfloginname%\"}",
     "text" : "由我取消",
-    "value" : "CLOSED"
+    "value" : "CLOSED",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

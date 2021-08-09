@@ -12,7 +12,8 @@
   "getPSCodeItems" : [ {
     "codeName" : "On",
     "text" : "暂时不设定时间",
-    "value" : "on"
+    "value" : "on",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

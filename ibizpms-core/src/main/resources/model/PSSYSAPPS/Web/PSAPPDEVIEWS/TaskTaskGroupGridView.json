@@ -344,10 +344,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TaskStatusCK.json"
     },
-    "getGroupPSDEField" : {
-      "name" : "STATUS1",
-      "codeName" : "Status1"
-    },
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "logicName" : "任务分组（状态分组）",
     "minorSortDir" : "DESC",

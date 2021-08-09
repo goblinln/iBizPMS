@@ -87,6 +87,14 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
     public stepTags: any = {};
 
     /**
+     * 步骤集合
+     *
+     * @type {*}
+     * @memberof WizardPanelControlBase
+     */
+     public steps: any[] = [];
+
+    /**
      * 视图状态订阅对象
      *
      * @public
@@ -178,6 +186,7 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
     public regFormActions() {
         const wizard: IPSDEWizard | null = this.controlInstance.getPSDEWizard();
         const wizardForms: Array<IPSDEWizardForm> = wizard?.getPSDEWizardForms() || [];
+        const wizardSteps: Array<IPSDEWizardStep> = wizard?.getPSDEWizardSteps() || [];
         if (wizard && wizardForms.length > 0) {
             wizardForms.forEach((stepForm: IPSDEWizardForm) => {
                 const formName = `${this.controlInstance.name}_form_${stepForm.formTag?.toLowerCase()}`;
@@ -190,7 +199,12 @@ export class WizardPanelControlBase extends MainControlBase implements WizardPan
                     saveAction: editForm?.getUpdatePSControlAction()?.actionName || "Update",
                     actions: stepForm.getStepActions() || [],
                 }
-                this.regFormAction(formName, action, this.getStepTag(wizard.getPSDEWizardSteps() || [], stepForm?.getPSDEWizardStep()?.stepTag as string));
+                this.regFormAction(formName, action, this.getStepTag(wizardSteps, stepForm?.getPSDEWizardStep()?.stepTag as string));
+            })
+        }
+        if (wizardSteps.length > 0) {
+            wizardSteps.forEach((steps: IPSDEWizardStep) => {
+                this.steps.push(steps.stepTag);
             })
         }
     }

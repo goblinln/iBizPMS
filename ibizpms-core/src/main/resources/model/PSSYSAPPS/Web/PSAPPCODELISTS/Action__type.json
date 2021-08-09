@@ -12,307 +12,383 @@
   "getPSCodeItems" : [ {
     "codeName" : "Created",
     "text" : "创建",
-    "value" : "created"
+    "value" : "created",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Opened",
     "text" : "创建",
-    "value" : "opened"
+    "value" : "opened",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Changed",
     "text" : "变更了",
-    "value" : "changed"
+    "value" : "changed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Edited",
     "text" : "编辑了",
-    "value" : "edited"
+    "value" : "edited",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Assigned",
     "text" : "指派了",
-    "value" : "assigned"
+    "value" : "assigned",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Closed",
     "text" : "关闭了",
-    "value" : "closed"
+    "value" : "closed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Deleted",
     "text" : "删除了",
-    "value" : "deleted"
+    "value" : "deleted",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Deletedfile",
     "text" : "删除附件",
-    "value" : "deletedfile"
+    "value" : "deletedfile",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Editfile",
     "text" : "编辑附件",
-    "value" : "editfile"
+    "value" : "editfile",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Erased",
     "text" : "删除了",
-    "value" : "erased"
+    "value" : "erased",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Undeleted",
     "text" : "还原了",
-    "value" : "undeleted"
+    "value" : "undeleted",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Hidden",
     "text" : "隐藏了",
-    "value" : "hidden"
+    "value" : "hidden",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Commented",
     "text" : "评论了",
-    "value" : "commented"
+    "value" : "commented",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Activated",
     "text" : "激活了",
-    "value" : "activated"
+    "value" : "activated",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Blocked",
     "text" : "阻塞了",
-    "value" : "blocked"
+    "value" : "blocked",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Resolved",
     "text" : "解决了",
-    "value" : "resolved"
+    "value" : "resolved",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Reviewed",
     "text" : "评审了",
-    "value" : "reviewed"
+    "value" : "reviewed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Moved",
     "text" : "移动了",
-    "value" : "moved"
+    "value" : "moved",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Confirmed",
     "text" : "确认了需求",
-    "value" : "confirmed"
+    "value" : "confirmed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bugconfirmed",
     "text" : "确认了",
-    "value" : "bugconfirmed"
+    "value" : "bugconfirmed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Tostory",
     "text" : "转需求",
-    "value" : "tostory"
+    "value" : "tostory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Frombug",
     "text" : "转需求",
-    "value" : "frombug"
+    "value" : "frombug",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Fromlib",
     "text" : "从用例库导入",
-    "value" : "fromlib"
+    "value" : "fromlib",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Totask",
     "text" : "转任务",
-    "value" : "totask"
+    "value" : "totask",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Svncommited",
     "text" : "提交代码",
-    "value" : "svncommited"
+    "value" : "svncommited",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Gitcommited",
     "text" : "提交代码",
-    "value" : "gitcommited"
+    "value" : "gitcommited",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linked2plan",
     "text" : "关联计划",
-    "value" : "linked2plan"
+    "value" : "linked2plan",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkedfromplan",
     "text" : "移除计划",
-    "value" : "unlinkedfromplan"
+    "value" : "unlinkedfromplan",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Changestatus",
     "text" : "修改状态",
-    "value" : "changestatus"
+    "value" : "changestatus",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Marked",
     "text" : "编辑了",
-    "value" : "marked"
+    "value" : "marked",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linked2project",
     "text" : "关联项目",
-    "value" : "linked2project"
+    "value" : "linked2project",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkedfromproject",
     "text" : "移除项目",
-    "value" : "unlinkedfromproject"
+    "value" : "unlinkedfromproject",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkedfrombuild",
     "text" : "移除版本",
-    "value" : "unlinkedfrombuild"
+    "value" : "unlinkedfrombuild",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linked2release",
     "text" : "关联发布",
-    "value" : "linked2release"
+    "value" : "linked2release",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkedfromrelease",
     "text" : "移除发布",
-    "value" : "unlinkedfromrelease"
+    "value" : "unlinkedfromrelease",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linkrelatedbug",
     "text" : "关联了相关Bug",
-    "value" : "linkrelatedbug"
+    "value" : "linkrelatedbug",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkrelatedbug",
     "text" : "移除了相关Bug",
-    "value" : "unlinkrelatedbug"
+    "value" : "unlinkrelatedbug",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linkrelatedcase",
     "text" : "关联了相关用例",
-    "value" : "linkrelatedcase"
+    "value" : "linkrelatedcase",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkrelatedcase",
     "text" : "移除了相关用例",
-    "value" : "unlinkrelatedcase"
+    "value" : "unlinkrelatedcase",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linkrelatedstory",
     "text" : "关联了相关需求",
-    "value" : "linkrelatedstory"
+    "value" : "linkrelatedstory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkrelatedstory",
     "text" : "移除了相关需求",
-    "value" : "unlinkrelatedstory"
+    "value" : "unlinkrelatedstory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Subdividestory",
     "text" : "细分了需求",
-    "value" : "subdividestory"
+    "value" : "subdividestory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkchildstory",
     "text" : "移除了细分需求",
-    "value" : "unlinkchildstory"
+    "value" : "unlinkchildstory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Started",
     "text" : "开始了",
-    "value" : "started"
+    "value" : "started",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Restarted",
     "text" : "继续了",
-    "value" : "restarted"
+    "value" : "restarted",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Recordestimate",
     "text" : "记录了工时",
-    "value" : "recordestimate"
+    "value" : "recordestimate",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Editestimate",
     "text" : "编辑了工时",
-    "value" : "editestimate"
+    "value" : "editestimate",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Canceled",
     "text" : "取消了",
-    "value" : "canceled"
+    "value" : "canceled",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Finished",
     "text" : "完成了",
-    "value" : "finished"
+    "value" : "finished",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Paused",
     "text" : "暂停了",
-    "value" : "paused"
+    "value" : "paused",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Verified",
     "text" : "验收了",
-    "value" : "verified"
+    "value" : "verified",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Delayed",
     "text" : "延期",
-    "value" : "delayed"
+    "value" : "delayed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Suspended",
     "text" : "挂起",
-    "value" : "suspended"
+    "value" : "suspended",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Login",
     "text" : "登录系统",
-    "value" : "login"
+    "value" : "login",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Logout",
     "text" : "退出登录",
-    "value" : "logout"
+    "value" : "logout",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Deleteestimate",
     "text" : "删除了工时",
-    "value" : "deleteestimate"
+    "value" : "deleteestimate",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linked2build",
     "text" : "关联了",
-    "value" : "linked2build"
+    "value" : "linked2build",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linked2bug",
     "text" : "关联了",
-    "value" : "linked2bug"
+    "value" : "linked2bug",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linkchildtask",
     "text" : "关联子任务",
-    "value" : "linkchildtask"
+    "value" : "linkchildtask",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkchildrentask",
     "text" : "取消关联子任务",
-    "value" : "unlinkchildrentask"
+    "value" : "unlinkchildrentask",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linkparenttask",
     "text" : "关联到父任务",
-    "value" : "linkparenttask"
+    "value" : "linkparenttask",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkparenttask",
     "text" : "从父任务取消关联",
-    "value" : "unlinkparenttask"
+    "value" : "unlinkparenttask",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Batchcreate",
     "text" : "批量创建任务",
-    "value" : "batchcreate"
+    "value" : "batchcreate",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Createchildren",
     "text" : "创建子任务",
-    "value" : "createchildren"
+    "value" : "createchildren",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Managed",
     "text" : "维护",
-    "value" : "managed"
+    "value" : "managed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Deletechildrentask",
     "text" : "删除子任务",
-    "value" : "deletechildrentask"
+    "value" : "deletechildrentask",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Createchildrenstory",
     "text" : "创建子需求",
-    "value" : "createchildrenstory"
+    "value" : "createchildrenstory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linkchildstory",
     "text" : "关联子需求",
-    "value" : "linkchildstory"
+    "value" : "linkchildstory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkchildrenstory",
     "text" : "取消关联子需求",
-    "value" : "unlinkchildrenstory"
+    "value" : "unlinkchildrenstory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linkparentstory",
     "text" : "关联到父需求",
-    "value" : "linkparentstory"
+    "value" : "linkparentstory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkparentstory",
     "text" : "从父需求取消关联",
-    "value" : "unlinkparentstory"
+    "value" : "unlinkparentstory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Deletechildrenstory",
     "text" : "删除子需求",
-    "value" : "deletechildrenstory"
+    "value" : "deletechildrenstory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Submit",
     "text" : "提交",
-    "value" : "submit"
+    "value" : "submit",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Read",
     "text" : "已读了",
-    "value" : "read"
+    "value" : "read",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Remind",
     "text" : "提醒",
-    "value" : "remind"
+    "value" : "remind",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unlinkedfrombranch",
     "text" : "移除关联平台",
-    "value" : "unlinkedfrombranch"
+    "value" : "unlinkedfrombranch",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

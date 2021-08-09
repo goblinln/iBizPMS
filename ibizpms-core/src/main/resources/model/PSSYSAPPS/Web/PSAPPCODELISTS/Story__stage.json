@@ -13,52 +13,62 @@
     "codeName" : "Wait",
     "color" : "rgba(144, 248, 25, 1)",
     "text" : "未开始",
-    "value" : "wait"
+    "value" : "wait",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Planned",
     "color" : "rgba(108, 159, 19, 1)",
     "text" : "已计划",
-    "value" : "planned"
+    "value" : "planned",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Projected",
     "color" : "rgba(45, 89, 5, 1)",
     "text" : "已立项",
-    "value" : "projected"
+    "value" : "projected",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Developing",
     "color" : "rgba(10, 164, 181, 1)",
     "text" : "研发中",
-    "value" : "developing"
+    "value" : "developing",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Developed",
     "color" : "rgba(7, 98, 108, 1)",
     "text" : "研发完毕",
-    "value" : "developed"
+    "value" : "developed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Testing",
     "color" : "rgba(18, 46, 205, 1)",
     "text" : "测试中",
-    "value" : "testing"
+    "value" : "testing",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Tested",
     "color" : "rgba(8, 56, 115, 1)",
     "text" : "测试完毕",
-    "value" : "tested"
+    "value" : "tested",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Verified",
     "color" : "rgba(85, 7, 137, 1)",
     "text" : "已验收",
-    "value" : "verified"
+    "value" : "verified",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Released",
     "color" : "rgba(12, 244, 47, 1)",
     "text" : "已发布",
-    "value" : "released"
+    "value" : "released",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Closed",
     "color" : "rgba(212, 219, 221, 1)",
     "text" : "已关闭",
-    "value" : "closed"
+    "value" : "closed",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

@@ -386,7 +386,11 @@ export class AppTreeService extends ControlServiceBase {
                                     strNodeId += filter.realnodeid;
                                 }
                                 Object.assign(treeNode, { id: strNodeId });
-                                if (nodeJson?.getPSSysImage()?.cssClass) {
+                                if ((nodeJson as IPSDETreeDataSetNode)?.getIconPSAppDEField()) {
+                                    const codeName: any = (nodeJson as IPSDETreeDataSetNode).getIconPSAppDEField()?.codeName.toLowerCase();
+                                    const icon = entity[codeName];
+                                    Object.assign(treeNode, { icon: icon });
+                                } else if (nodeJson?.getPSSysImage()?.cssClass) {
                                     Object.assign(treeNode, { iconcls: nodeJson.getPSSysImage()?.cssClass });
                                 } else if (nodeJson?.getPSSysImage()?.imagePath) {
                                     Object.assign(treeNode, { icon: nodeJson.getPSSysImage()?.imagePath });
@@ -432,6 +436,14 @@ export class AppTreeService extends ControlServiceBase {
                                     nodeDataItems.forEach((item: IPSDETreeNodeDataItem) => {
                                         if (item?.getPSAppDEField()) {
                                             Object.assign(treeNode, { [item.name.toLowerCase()]: entity[item.getPSAppDEField()?.codeName.toLowerCase() as string] });
+                                        }
+                                        if (Object.is('text', item.name.toLowerCase()) && item.customCode) {
+                                            Object.assign(treeNode, { textCustomCode: true });
+                                            Object.assign(treeNode, { textScriptCode: item.scriptCode });
+                                        }
+                                        if (Object.is('icon', item.name.toLowerCase()) && item.customCode) {
+                                            Object.assign(treeNode, { iconCustomCode: true });
+                                            Object.assign(treeNode, { iconScriptCode: item.scriptCode });
                                         }
                                     });
                                 }

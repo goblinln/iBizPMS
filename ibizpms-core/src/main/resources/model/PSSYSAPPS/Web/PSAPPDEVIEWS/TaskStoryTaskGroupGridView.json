@@ -340,10 +340,6 @@
       "name" : "STORYNAME",
       "codeName" : "Storyname"
     },
-    "getGroupPSDEField" : {
-      "name" : "STORYNAME",
-      "codeName" : "Storyname"
-    },
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "logicName" : "任务分组（需求分组）",
     "minorSortDir" : "DESC",

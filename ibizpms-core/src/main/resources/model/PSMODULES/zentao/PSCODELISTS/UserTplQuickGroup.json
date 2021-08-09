@@ -8,28 +8,33 @@
     "codeName" : "All",
     "data" : "{}",
     "text" : "所有",
-    "value" : "all"
+    "value" : "all",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story",
     "data" : "{\"n_type_eq\":\"story\"}",
     "text" : "需求",
     "value" : "story",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Task",
     "data" : "{\"n_type_eq\":\"task\"}",
     "text" : "任务",
-    "value" : "task"
+    "value" : "task",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug",
     "data" : "{\"n_type_eq\":\"bug\"}",
     "text" : "Bug",
-    "value" : "bug"
+    "value" : "bug",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

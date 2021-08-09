@@ -12,6 +12,7 @@
         :placeholder="$t('components.apprangdate.placeholder')"
         :value="activeData[item]"
         :disabled="disabled"
+        :readonly="readonly"
         @on-change="startOnValueChange"
       ></date-picker>
 
@@ -24,6 +25,7 @@
         :placeholder="$t('components.apprangdate.placeholder')"
         :value="activeData[item]"
         :disabled="disabled"
+        :readonly="readonly"
         @on-change="startOnValueChange"
       ></date-picker>
 
@@ -36,6 +38,7 @@
         :placeholder="$t('components.apprangdate.placeholder')"
         :value="activeData[item]"
         :disabled="disabled"
+        :readonly="readonly"
         @on-change="endOnValueChange"
       ></date-picker>
 
@@ -48,6 +51,7 @@
         :placeholder="$t('components.apprangdate.placeholder')"
         :value="activeData[item]"
         :disabled="disabled"
+        :readonly="readonly"
         @on-change="endOnValueChange"
       ></date-picker>
       <span v-if="index  > 0" :key="index + '-only'" class="editor-space">{{$t('components.apprangdate.dayend')}}</span>
@@ -110,6 +114,13 @@ export default class AppRangDate extends Vue {
    * @memberof AppRangDate
    */
   @Prop() public refFormItem!: string[];
+
+  /**
+   * 只读模式
+   * 
+   * @type {boolean}
+   */
+  @Prop({default: false}) public readonly?: boolean;
 
   /**
    * 值变化时间

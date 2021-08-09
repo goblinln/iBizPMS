@@ -12,19 +12,23 @@
   "getPSCodeItems" : [ {
     "codeName" : "None",
     "text" : "无操作",
-    "value" : "0"
+    "value" : "0",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Quick",
     "text" : "快速（删除本地项目与代码仓库多余文件）",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   }, {
     "codeName" : "FixModel",
     "text" : "修复模型",
-    "value" : "4"
+    "value" : "4",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Full",
     "text" : "完整（完全重建本地项目及代码仓库）",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   } ],
   "codeItemValueNumber" : true,
   "enableCache" : true

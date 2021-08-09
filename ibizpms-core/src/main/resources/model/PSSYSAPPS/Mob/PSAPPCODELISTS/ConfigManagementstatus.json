@@ -8,23 +8,28 @@
   "getPSCodeItems" : [ {
     "codeName" : "Product_project",
     "text" : "产品 - 项目",
-    "value" : "product_project"
+    "value" : "product_project",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Product_iteration",
     "text" : "产品 - 迭代",
-    "value" : "product_iteration"
+    "value" : "product_iteration",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Project_iteration",
     "text" : "项目 - 迭代",
-    "value" : "project_iteration"
+    "value" : "project_iteration",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Product_sprint",
     "text" : "产品 - 冲刺",
-    "value" : "product_sprint"
+    "value" : "product_sprint",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Project_sprint",
     "text" : "项目 - 冲刺",
-    "value" : "project_sprint"
+    "value" : "project_sprint",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

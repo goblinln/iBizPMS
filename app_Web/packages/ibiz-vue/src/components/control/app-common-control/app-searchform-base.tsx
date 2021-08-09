@@ -225,23 +225,27 @@ export class AppSearchFormBase extends SearchFormControlBase {
         let { rawItemHeight, rawItemWidth, contentType, htmlContent, rawContent } = modelJson;
         let sysCssName = modelJson.getPSSysCss()?.cssName;
         let sysImage = modelJson.getPSSysImage()?.cssClass;
+        let sysImgurl = modelJson.getPSSysImage()?.imagePath;
         const style: any = {
             width: rawItemWidth > 0 ? `${rawItemWidth}px` : false,
             height: rawItemHeight > 0 ? `${rawItemHeight}px` :false,
         }
-        if (rawContent) {
-            const items = rawContent.match(/\{{(.+?)\}}/g);
+        let content: any;
+        if (Object.is(contentType,'RAW')) {
+            content = rawContent;
+        } else if (Object.is(contentType,'HTML')){
+            content = htmlContent;
+        }
+        if (content) {
+            const items = content.match(/\{{(.+?)\}}/g);
             if (items) {
                 items.forEach((item: string) => {
-                    rawContent = rawContent.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
+                    content = content.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
                 });
             }
+            content = content.replaceAll('&lt;','<');
+            content = content.replaceAll('&gt;','>');
         }
-        const tempNode = this.$createElement('div', {
-            domProps: {
-                innerHTML: rawContent,
-            },
-        });
         return (
             <app-rawitem
                 class={sysCssName}
@@ -250,9 +254,9 @@ export class AppSearchFormBase extends SearchFormControlBase {
                 context={this.context}
                 contentType={contentType}
                 imageClass={sysImage}
-                htmlContent={htmlContent}
+                imgUrl={sysImgurl}
+                content={content}
             >
-                {Object.is(contentType, 'RAW') && tempNode}
             </app-rawitem>
         );
     }
@@ -518,6 +522,28 @@ export class AppSearchFormBase extends SearchFormControlBase {
         }
     }
 
+    /**
+     * 获取搜索内容或按钮样式
+     * 
+     * @param position 位置
+     * @memberof AppSearchFormBase
+     */
+    public getColStyle(position: string = 'content') {
+        const { searchButtonStyle, searchButtonPos } = this.controlInstance as any;
+        if (searchButtonPos && searchButtonPos == 'RIGHT') {
+            switch (searchButtonStyle) {
+                case 'DEFAULT':
+                    return position == 'content' ? { width: 'calc(100% - 220px)' } : { width: '220px' };
+                case 'SEARCHONLY':
+                    return position == 'content' ? { width: 'calc(100% - 88px)' } : { width: '88px' };
+                case 'NONE':
+                    return position == 'content' ? { width: '100%' } : { };
+            }
+        } else {
+            return {};
+        }
+    }
+
 
     /**
      * 绘制内容
@@ -535,10 +561,16 @@ export class AppSearchFormBase extends SearchFormControlBase {
         if (!this.controlInstance.getPSDEFormItems() || this.controlInstance.getPSDEFormItems()?.length == 0) {
             return null;
         }
+        const { searchButtonStyle, searchButtonPos } = this.controlInstance as any;
         return (
             <i-form
                 props={{ model: this.data }}
-                class={{ ...controlClassNames, 'app-search-form': true }}
+                class={{ 
+                    ...controlClassNames,
+                    'app-search-form': true,
+                    'no-search-action': this.controlInstance.formStyle != 'SEARCHBAR' && searchButtonStyle != 'NONE' ? false : true,
+                    [`${searchButtonPos && searchButtonPos == 'RIGHT' ? 'right' : 'bottom'}-button`]: true
+                }}
                 ref={this.controlInstance.name}
                 id={formId}
                 on-on-valuidate={this.formItemValidate.bind(this)}
@@ -546,14 +578,15 @@ export class AppSearchFormBase extends SearchFormControlBase {
             >
                 <input style='display:none;' />
                 <row>
-                    <i-col class="form-content">
+                    <i-col style={this.getColStyle()} class="form-content">
                         <row>
                             {this.renderFormContent()}
                         </row>
                     </i-col>
-                </row>
-                {this.controlInstance.formStyle != 'SEARCHBAR' &&
-                    <i-col class="search-action-footer">
+                {this.controlInstance.formStyle != 'SEARCHBAR' && searchButtonStyle != 'NONE' &&
+                    <i-col
+                        style={this.getColStyle('button')}
+                        class="search-action-footer">
                         {this.historyItems?.length>0 ? 
                         <el-select
                             size="small"
@@ -576,17 +609,20 @@ export class AppSearchFormBase extends SearchFormControlBase {
                                 })}
                             </el-select> : null}
                         {Object.keys(this.data).length > 0 && <row class='search-button'>
-                            <i-button class='search_reset' size='default' type='primary' on-click={(...params: any[]) => throttle(this.onSearch,params,this)}>{this.$t('app.searchbutton.search')}</i-button>
-                            <i-button class='search_reset reset' size='default' on-click={(...params: any[]) => throttle(this.onReset,params,this)}>{this.$t('app.searchbutton.reset')}</i-button>
-                            {this.enableSaveFilter ?
+                            {  searchButtonStyle == 'DEFAULT' || searchButtonStyle == 'SEARCHONLY' ? 
+                                <i-button class='search_reset' size='default' type='primary' on-click={(...params: any[]) => throttle(this.onSearch,params,this)}>{this.$t('app.searchbutton.search')}</i-button> : null }
+                            { searchButtonStyle == 'DEFAULT' ? 
+                             <i-button class='search_reset reset' size='default' on-click={(...params: any[]) => throttle(this.onReset,params,this)}>{this.$t('app.searchbutton.reset')}</i-button> : null }
+                            {this.enableSaveFilter && searchButtonStyle == 'DEFAULT' ?
                                 <poptip
                                     ref="propip"
                                     trigger="hover"
                                     placement="top-end"
                                     title="存储自定义查询"
                                     popper-class="searchform-poptip"
+                                    transfer
                                     on-on-popper-show={() => this.saveItemName = ''}>
-                                        <i-button><i class="fa fa-floppy-o" aria-hidden="true"></i></i-button>
+                                        <i-button class="save-button"><i class="fa fa-floppy-o" aria-hidden="true"></i></i-button>
                                         <div slot="content">
                                             <i-input v-model={this.saveItemName} placeholder=""></i-input>
                                             <div class="save-action">
@@ -598,6 +634,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
                         </row>}
                     </i-col>
                 }
+                </row>
             </i-form>
         );
     }

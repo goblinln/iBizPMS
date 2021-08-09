@@ -14,7 +14,8 @@
     "data" : "{\"n_account_eq\":\"%srfloginname%\"}",
     "text" : "我的项目",
     "value" : "All",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

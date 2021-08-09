@@ -25,8 +25,7 @@
 </template>
 
 <script lang = 'ts'>
-import { Component, Vue, Prop, Model, Watch } from "vue-property-decorator";
-import { Subject } from "rxjs";
+import { Component, Vue } from "vue-property-decorator";
 import { EntityBaseService } from "ibiz-core";
 @Component({})
 export default class AppUpdatePassword extends Vue {

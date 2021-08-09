@@ -8,27 +8,32 @@
     "codeName" : "N_a",
     "color" : "rgba(27, 97, 247, 1)",
     "text" : "忽略",
-    "value" : "n/a"
+    "value" : "n/a",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Pass",
     "color" : "rgba(101, 214, 15, 1)",
     "text" : "通过",
-    "value" : "pass"
+    "value" : "pass",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Fail",
     "color" : "rgba(244, 12, 12, 1)",
     "text" : "失败",
-    "value" : "fail"
+    "value" : "fail",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Blocked",
     "color" : "rgba(234, 187, 17, 1)",
     "text" : "阻塞",
-    "value" : "blocked"
+    "value" : "blocked",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -1,6 +1,6 @@
 <template>
     <div class="app-rate">
-        <el-rate :value="currentVal" :disabled="disabled" :max="maxItem" @change="change"> </el-rate>
+        <el-rate :value="currentVal" :disabled="disabled || readonly" :max="maxItem" @change="change"> </el-rate>
     </div>
 </template>
 
@@ -24,6 +24,13 @@ export default class AppRate extends Vue {
      * @memberof AppRate
      */
     @Prop() public disabled?: boolean;
+
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
 
     /**
      * 下发数据

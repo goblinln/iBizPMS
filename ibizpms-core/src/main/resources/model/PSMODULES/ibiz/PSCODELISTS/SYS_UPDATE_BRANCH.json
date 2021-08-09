@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Pc",
     "text" : "PC",
-    "value" : "PC"
+    "value" : "PC",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Mob",
     "text" : "MOB",
-    "value" : "MOB"
+    "value" : "MOB",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -9,22 +9,26 @@
     "data" : "{}",
     "text" : "所有",
     "value" : "All",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unexpired",
     "data" : "{\"n_isexpired_eq\":0}",
     "text" : "未过期",
-    "value" : "UNEXPIRED"
+    "value" : "UNEXPIRED",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Isexpired",
     "data" : "{\"n_isexpired_eq\":1}",
     "text" : "已过期",
-    "value" : "ISEXPIRED"
+    "value" : "ISEXPIRED",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

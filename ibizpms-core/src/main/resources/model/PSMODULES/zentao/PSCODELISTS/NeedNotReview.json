@@ -7,12 +7,14 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_0",
     "text" : "不需要评审",
-    "value" : "0"
+    "value" : "0",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

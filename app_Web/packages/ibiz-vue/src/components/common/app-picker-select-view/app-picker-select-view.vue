@@ -1,14 +1,14 @@
 <template>
     <div class="app-picker-select-view">
         <Dropdown :visible="visible" trigger="custom" transfer-class-name="app-picker-select-view-transfer" transfer placement="bottom-start" style="left:0px;width: 100%" @on-clickoutside="() => {triggerMenu(false);}" >
-          <Input v-if="isSingleSelect" v-model="queryValue" class="tree-input" type="text" :placeholder="placeholder ? placeholder : $t('components.apppickerselectview.placeholder')" :disabled="disabled" @on-change="OnInputChange" @on-focus="()=>{triggerMenu(true);}" >
+          <Input v-if="isSingleSelect" v-model="queryValue" class="tree-input" type="text" :placeholder="placeholder ? placeholder : $t('components.apppickerselectview.placeholder')" :disabled="disabled" :readonly="readonly" @on-change="OnInputChange" @on-focus="()=>{triggerMenu(true);}" >
               <template v-slot:suffix>
-                  <i v-if="queryValue && !disabled" class='el-icon-circle-close' @click="onClear"></i>
+                  <i v-if="queryValue && !disabled && !readonly" class='el-icon-circle-close' @click="onClear"></i>
                   <Icon :type="visible ? 'ios-arrow-up' : 'ios-arrow-down'" class="icon-arrow" @click="() => {triggerMenu();}"></Icon>
                   <icon v-if="linkview" type="ios-open-outline" @click="openLinkView"/>
               </template>
           </Input>
-          <el-select v-if="!isSingleSelect" popper-class="select-no-dropdown" :value="keySet" multiple filterable remote :remote-method="($event) => {this.queryValue = $event;}" size="small" style="width:100%;" @change="onSelectChange" @focus="() => {triggerMenu(true);}" :disabled="disabled">
+          <el-select v-if="!isSingleSelect" popper-class="select-no-dropdown" :value="keySet" multiple filterable remote :remote-method="($event) => {this.queryValue = $event;}" size="small" style="width:100%;" @change="onSelectChange" @focus="() => {triggerMenu(true);}" :disabled="disabled || readonly">
                 <el-option v-for="(item, index) in items" :key="index" :label="item.srfmajortext" :value="item[deKeyField]"></el-option>
           </el-select>
           <DropdownMenu slot="list">
@@ -35,9 +35,8 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
-import { CreateElement } from 'vue';
-import { Subject, Subscription } from 'rxjs';
-import { ViewTool, Util } from 'ibiz-core';
+import { Subject } from 'rxjs';
+import { Util } from 'ibiz-core';
 
 @Component({
 })
@@ -145,7 +144,14 @@ export default class AppPickerSelectView extends Vue {
      * @memberof AppPickerSelectView
      */
     @Prop({default: false}) public disabled!: boolean;
-    
+
+    /**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
+
     /**
      * 应用实体主信息属性名称
      *

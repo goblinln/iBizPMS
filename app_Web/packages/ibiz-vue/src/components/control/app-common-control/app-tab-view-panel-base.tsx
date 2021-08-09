@@ -92,7 +92,8 @@ export class AppTabViewPanelBase extends TabViewPanelBase {
         let targetCtrlParam: any = {
             staticProps: {
                 viewDefaultUsage: false,
-                viewModelData: embedView
+                viewModelData: embedView,
+                viewUseByExpBar: true
             },
             dynamicProps: {
                 viewparam: tempViewParam,

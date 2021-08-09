@@ -19,6 +19,7 @@ import AppEmbedPicker from './common/app-embed-picker/app-embed-picker.vue'
 import AppTreePicker from './common/app-tree-picker/app-tree-picker.vue'
 import AppFileUpload from './common/app-file-upload/app-file-upload.vue'
 import AppImageUpload from './common/app-image-upload/app-image-upload.vue'
+import AppImageSelect from './common/app-image-select/app-image-select.vue'
 import PropertyLayout from './common/property-layout/property-layout.vue'
 import AppRangeEditor from './common/app-range-editor/app-range-editor.vue'
 import AppDateRange from './common/app-date-range/app-date-range.vue'
@@ -309,6 +310,7 @@ export const ComponentsRegister = {
         v.component('app-rich-text-editor', AppRichTextEditor);
         v.component('app-file-upload', AppFileUpload);
         v.component('app-image-upload', AppImageUpload);
+        v.component('app-image-select', AppImageSelect);
         v.component('property-layout', PropertyLayout);
         v.component('app-range-editor', AppRangeEditor);
         v.component('app-date-range', AppDateRange);

@@ -9,17 +9,20 @@
     "data" : "{}",
     "text" : "所有",
     "value" : "All",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Active",
     "data" : "{\"n_status_eq\":\"active\"}",
     "text" : "未解决",
-    "value" : "active"
+    "value" : "active",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

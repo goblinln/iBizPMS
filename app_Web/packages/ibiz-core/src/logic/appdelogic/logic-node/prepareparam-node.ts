@@ -57,7 +57,7 @@ export class AppDeLogicPrepareParamNode extends AppDeLogicNodeBase {
             let contextField = undefined;
             if (nodeParam.dstFieldName) {
                 let dstAppDataEntity: IPSAppDataEntity = (nodeParam.getDstPSDELogicParam() as any)?.getParamPSAppDataEntity?.();
-                let deField = (dstAppDataEntity?.getAllPSAppDEFields() as IPSAppDEField[]).find((item: IPSAppDEField) => nodeParam.dstFieldName == item.codeName)
+                let deField = (dstAppDataEntity?.getAllPSAppDEFields() as IPSAppDEField[]).find((item: IPSAppDEField) => nodeParam.dstFieldName.toLowerCase() == item.codeName.toLowerCase())
                 if (deField) {
                     dstFieldName = deField.codeName?.toLowerCase();
                     contextField = deField.keyField ? dstAppDataEntity.codeName.toLowerCase() : undefined;

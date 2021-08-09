@@ -1,4 +1,5 @@
 
+import { VNode } from 'vue';
 import { DynamicInstanceConfig, IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppView, IPSAppViewRef } from "@ibiz/dynamic-model-api";
 import { GetModelService, LogUtil, RedirectViewInterface, Util, ViewTool } from "ibiz-core";
 import { MainViewBase } from "./mainview-base";
@@ -18,6 +19,50 @@ export class DeRedirectViewBase extends MainViewBase implements RedirectViewInte
    * @memberof DeRedirectViewBase
    */
   public viewInstance!: IPSAppDERedirectView;
+
+  /**
+   * 视图是否被导航部件引用
+   * 
+   * @memberof DeRedirectViewBase
+   */
+  public viewUseByExpBar: boolean = false;
+
+  /**
+   * 视图内容节点
+   * 
+   * @memberof DeRedirectViewBase
+   */
+  public viewNodeContent?: VNode;
+
+  /**
+   * 是否首次加载
+   * 
+   * @memberof DeRedirectViewBase
+   */
+  public isFirstLoad: boolean = true;
+
+  /**
+   * 监听静态参数变化
+   * 
+   * @memberof DeRedirectViewBase
+   */
+  public onStaticPropsChange(newVal: any, oldVal: any) {
+    super.onStaticPropsChange(newVal, oldVal);
+    this.viewUseByExpBar = newVal.viewUseByExpBar ? true : false;
+  }
+
+  /**
+   * 监听动态参数变化
+   * 
+   * @memberof DeRedirectViewBase
+   */
+  public onDynamicPropsChange(newVal: any, oldVal: any) {
+    super.onDynamicPropsChange(newVal, oldVal);
+    if (!this.isFirstLoad && this.viewUseByExpBar) {
+      this.executeRedirectLogic();
+    }
+    this.isFirstLoad = false;
+  }
 
   /**
     * 初始化视图实例
@@ -43,22 +88,42 @@ export class DeRedirectViewBase extends MainViewBase implements RedirectViewInte
     if (this.viewparams && this.viewparams.srfwf) {
       localParams = { srfwf: this.viewparams.srfwf.toLowerCase() };
     } else {
-      localParams = { enableWorkflow: this.viewInstance?.enableWorkflow };
+      const appDataEntity = this.viewInstance.getPSAppDataEntity() as IPSAppDataEntity;
+      localParams = { enableWorkflow: this.viewInstance?.enableWorkflow && appDataEntity?.enableWFActions };
     }
-    this.appUIService.getRDAppView(this.context, this.context[this.appDeCodeName.toLowerCase()], localParams).then(async (result: any) => {
+    let dataSetParams: any = {};
+    if (this.viewUseByExpBar && this.viewInstance.enableCustomGetDataAction) {
+      const action = this.viewInstance.getGetDataPSAppDEAction();
+      if (action) {
+        Object.assign(dataSetParams, {
+          action: action.codeName
+        });
+      }
+    }
+    this.appUIService.getRDAppView(this.context, this.context[this.appDeCodeName.toLowerCase()], localParams, dataSetParams).then(async (result: any) => {
       if (!result) {
         return;
       }
       let targetOpenViewRef: IPSAppViewRef | null | undefined = null;
-      if (this.viewparams && this.viewparams.srfwf) {
-        targetOpenViewRef = (this.viewInstance.getRedirectPSAppViewRefs() as IPSAppViewRef[]).find((item: any) => {
-          return item.name === `${result.param.split(":")[0]}:${this.viewparams.srfwf.toUpperCase()}`;
-        })
-      }
-      if (!targetOpenViewRef) {
-        targetOpenViewRef = (this.viewInstance.getRedirectPSAppViewRefs() as IPSAppViewRef[]).find((item: any) => {
-          return item.name === result.param.split(":")[0];
-        })
+      if (this.viewUseByExpBar) {
+        //  重定向视图识别属性
+        const typeFieldCodeName = this.viewInstance.getTypePSAppDEField?.()?.codeName;
+        if (typeFieldCodeName && result.srfdata && result.srfdata[typeFieldCodeName.toLowerCase()]) {
+          targetOpenViewRef = (this.viewInstance.getRedirectPSAppViewRefs() as IPSAppViewRef[]).find((item: any) => {
+            return item.name.toLowerCase() === result.srfdata[typeFieldCodeName.toLowerCase()].toLowerCase();
+          })
+        }
+      } else {
+        if (this.viewparams && this.viewparams.srfwf) {
+          targetOpenViewRef = (this.viewInstance.getRedirectPSAppViewRefs() as IPSAppViewRef[]).find((item: any) => {
+            return item.name === `${result.param.split(":")[0]}:${this.viewparams.srfwf.toUpperCase()}`;
+          })
+        }
+        if (!targetOpenViewRef) {
+          targetOpenViewRef = (this.viewInstance.getRedirectPSAppViewRefs() as IPSAppViewRef[]).find((item: any) => {
+            return item.name === result.param.split(":")[0];
+          })
+        }
       }
       if (!targetOpenViewRef) {
         return;
@@ -107,7 +172,11 @@ export class DeRedirectViewBase extends MainViewBase implements RedirectViewInte
             Object.assign(tempContext, { viewpath: targetOpenView.modelPath });
           }
         }
-        this.openTargetView(targetOpenView, view, tempContext, tempViewParams, [], parameters, []);
+        if (this.viewUseByExpBar) {
+          this.openTargetViewByExpBar(targetOpenView, view, tempContext, tempViewParams, [], parameters, []);
+        } else {
+          this.openTargetView(targetOpenView, view, tempContext, tempViewParams, [], parameters, []);
+        }
       }
     })
   }
@@ -129,6 +198,33 @@ export class DeRedirectViewBase extends MainViewBase implements RedirectViewInte
   }
 
   /**
+   * 打开目标视图（被导航栏引用的情况）
+   *
+   * @memberof DeRedirectViewBase
+   */
+  public openTargetViewByExpBar(openView: any, view: any, tempContext: any, data: any, deResParameters: any, parameters: any, args: any) {
+    this.viewNodeContent = undefined;
+    if (openView && openView.modelPath) {
+      Object.assign(tempContext, { viewpath: openView.modelPath });
+    }
+    const content = this.$createElement('app-view-shell', {
+      key: Util.createUUID(),
+      props: {
+        staticProps:{
+            viewDefaultUsage: false,
+        },
+        dynamicProps:{
+            viewdata: JSON.stringify(tempContext),
+            viewparam: JSON.stringify(data)
+        }
+      },
+      class: 'viewcontainer3',
+    })
+    this.viewNodeContent = content;
+    this.$forceUpdate();
+  }
+
+  /**
    * 关闭当前重定向视图
    *
    * @memberof DeRedirectViewBase
@@ -144,6 +240,17 @@ export class DeRedirectViewBase extends MainViewBase implements RedirectViewInte
       } else {
         this.closeViewWithDefault(view);
       }
+    }
+  }
+
+  /**
+   * 渲染视图内容节点
+   *
+   * @memberof DeRedirectViewBase
+   */
+  public renderContent() {
+    if (this.viewNodeContent) {
+      return this.viewNodeContent;
     }
   }
 

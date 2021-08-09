@@ -165,10 +165,6 @@
           } ],
           "ruleInfo" : "总计消耗大于等于0"
         },
-        "getPSDEField" : {
-          "name" : "CONSUMED",
-          "codeName" : "Consumed"
-        },
         "ruleInfo" : "总计消耗大于等于0",
         "checkDefault" : false,
         "defaultMode" : false,
@@ -197,10 +193,6 @@
             "includeMinValue" : true
           } ],
           "ruleInfo" : "总计消耗大于等于0"
-        },
-        "getPSDEField" : {
-          "name" : "CONSUMED",
-          "codeName" : "Consumed"
         },
         "ruleInfo" : "总计消耗大于等于0",
         "checkDefault" : false,

@@ -17,5 +17,8 @@ export const rootstate: any = {
     orgDataMap: {},
     depDataMap: {},
     viewMessage: {},
-    customParam: {}
+    customParam: {},
+    appGlobal:{},
+    routeViewGlobal: {},
+    appViews:{}
 }

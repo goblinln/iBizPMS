@@ -7,24 +7,29 @@
   "getPSCodeItems" : [ {
     "codeName" : "Online",
     "text" : "online",
-    "value" : "online"
+    "value" : "online",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Away",
     "text" : "away",
-    "value" : "away"
+    "value" : "away",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Busy",
     "text" : "busy",
-    "value" : "busy"
+    "value" : "busy",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Offline",
     "text" : "offline",
-    "value" : "offline"
+    "value" : "offline",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

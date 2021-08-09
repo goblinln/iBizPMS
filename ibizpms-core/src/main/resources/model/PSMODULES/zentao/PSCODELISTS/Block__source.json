@@ -7,24 +7,29 @@
   "getPSCodeItems" : [ {
     "codeName" : "Product",
     "text" : "产品",
-    "value" : "product"
+    "value" : "product",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Project",
     "text" : "项目",
-    "value" : "project"
+    "value" : "project",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Qa",
     "text" : "测试",
-    "value" : "qa"
+    "value" : "qa",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Todo",
     "text" : "待办",
-    "value" : "todo"
+    "value" : "todo",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

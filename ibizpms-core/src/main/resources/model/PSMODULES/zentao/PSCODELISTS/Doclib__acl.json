@@ -7,12 +7,14 @@
   "getPSCodeItems" : [ {
     "codeName" : "Default",
     "text" : "默认",
-    "value" : "default"
+    "value" : "default",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

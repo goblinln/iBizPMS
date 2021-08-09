@@ -78,10 +78,12 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
         const wizardSteps: Array<IPSDEWizardStep> = (this.controlInstance.getPSDEWizard() as IPSDEWizard).getPSDEWizardSteps() || [];
         if (this.controlInstance.showStepBar && wizardSteps.length > 0) {
             return (
-                <el-steps class="wizard-steps" active={this.wizardForms.indexOf(this.activeForm)} finish-status="success">
+                <el-steps class="wizard-steps" active={this.steps.indexOf(this.stepTags[this.activeForm]) + 1} align-center finish-status="success">
                     {wizardSteps.map((step: IPSDEWizardStep) => {
                         const title = this.$tl((step.getTitlePSLanguageRes() as IPSLanguageRes)?.lanResTag, step.title);
-                        return <el-step title={title}></el-step>
+                        const stepClassName = step.getTitlePSSysCss()?.cssName;
+                        const icon = step.getPSSysImage()?.cssClass;
+                        return <el-step title={title} class={stepClassName} icon={icon}></el-step>
                     })}
                 </el-steps>
             );

@@ -7,20 +7,24 @@
   "getPSCodeItems" : [ {
     "codeName" : "Normal",
     "text" : "normal",
-    "value" : "normal"
+    "value" : "normal",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Broadcast",
     "text" : "broadcast",
-    "value" : "broadcast"
+    "value" : "broadcast",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Notify",
     "text" : "notify",
-    "value" : "notify"
+    "value" : "notify",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

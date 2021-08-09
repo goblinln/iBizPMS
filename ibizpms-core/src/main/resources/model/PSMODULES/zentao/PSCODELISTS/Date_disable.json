@@ -7,12 +7,14 @@
   "getPSCodeItems" : [ {
     "codeName" : "On",
     "text" : "待定",
-    "value" : "on"
+    "value" : "on",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

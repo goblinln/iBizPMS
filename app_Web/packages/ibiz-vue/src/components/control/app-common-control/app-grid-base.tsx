@@ -208,8 +208,8 @@ export class AppGridBase extends GridControlBase {
     public computeGridEvents() {
         let events: any = {
             'row-click': (row: any, column: any, event: any) => throttle(this.rowClick, [row, column, event], this),
-            'row-dblclick': (row: any) => throttle(this.rowDBLClick, [row], this),
-            select: (selection: any, row: any) => throttle(this.select, [selection, row], this),
+            'row-dblclick': (row: any, column: any, event: any) => throttle(this.rowDBLClick, [row, column, event], this),
+            'select': (selection: any, row: any) => throttle(this.select, [selection, row], this),
             'select-all': (selection: any) => throttle(this.selectAll, [selection], this),
         };
         //  支持排序
@@ -239,8 +239,14 @@ export class AppGridBase extends GridControlBase {
             {
                 props: this.computeGridParams(),
                 on: this.computeGridEvents(),
-                ref: `${this.name.toLowerCase()}grid`,
+                ref: `${this.realCtrlRefName}`,
                 class: this.gridRowActiveMode == 1 ? "grid-rowactive-click" : null,
+                scopedSlots: {
+                    // 无数据插槽
+                    empty: (scope: any) => {
+                        return this.renderEmptyDataTip();
+                    }
+                },
             },
             [
                 !this.isSingleSelect ? (
@@ -805,11 +811,11 @@ export class AppGridBase extends GridControlBase {
         }
         const { controlClassNames } = this.renderOptions;
         return (
-            <div class={{ ...controlClassNames, grid: true }}>
+            <div class={{ ...controlClassNames, grid: true ,'no-paging-bar': !this.controlInstance?.enablePagingBar }}>
                 <i-form>
-                    {this.items?.length > 0 ? this.renderGridContent(h) : <div class="app-grid-empty-content">
-                        {this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
-                    </div>}
+                    {
+                        this.isControlLoaded ? this.renderGridContent(h) : <div class="app-grid-empty-content"> {this.renderLoadDataTip()} </div>
+                    }
                     {this.controlInstance?.enablePagingBar && !Object.is(this.controlInstance?.gridStyle, 'USER') ? this.renderPagingBar(h) : ''}
                     {this.items?.length > 0 ? this.renderColumnFilter() : null}
                 </i-form>

@@ -114,22 +114,40 @@ export class AppTreeViewBase extends TreeControlBase {
     public renderNode({ node, data }: any): any {
         // 绘制图标
         let iconElement = null;
-        if (data.iconcls) {
+        if (data.iconCustomCode) {
+            let icon = '';
+            if (data.iconScriptCode.indexOf('return') !== -1) {
+                data.iconScriptCode = data.iconScriptCode.replace(new RegExp('return', 'g'), `icon =`);
+            }
+            eval(data.iconScriptCode);
+            iconElement = <span domPropsInnerHTML={icon}></span>;
+        } else if (data.iconcls) {
             iconElement = <i class={data.iconcls}></i>
         } else if (data.icon) {
-            iconElement = <img src={data.icon} />
+            iconElement = <img src={data.icon} style='width:14px;height:14px;vertical-align: bottom;'/>
         } else if (this.controlInstance.outputIconDefault) {
-            iconElement = <icon type="ios-paper-outline"></icon>
+            iconElement = <i class="ivu-icon ivu-icon-ios-paper-outline"></i>
         }
-
         const cssName = data.cssName ? data.cssName : "";
-        const nodeStyle= {
+        const nodeStyle = {
             'width': '100%',
             'padding-left': node.parent?.data?.enablecheck && !node.data?.enablecheck ? '22px' : '0px',
         }
+        if (this.ctrlTriggerLogicMap.get('calcnodestyle')) {
+            let styleObj = this.ctrlTriggerLogicMap.get('calcnodestyle').executeUILogic({ arg: { node, data } });
+            Object.assign(nodeStyle, styleObj);
+        }
         // 绘制显示文本
         let textElement = null;
-        if (data.html) {
+
+        if (data.textCustomCode) {
+            let text = '';
+            if (data.textScriptCode.indexOf('return') !== -1) {
+                data.textScriptCode = data.textScriptCode.replace(new RegExp('return', 'g'), `text =`);
+            }
+            eval(data.textScriptCode);
+            textElement = <span domPropsInnerHTML={text}></span>;
+        } else if (data.html) {
             textElement = <span domPropsInnerHTML={data.html}></span>;
         } else {
             textElement = <span>{Object.is(data.nodeType, "STATIC") ? this.$tl(data.lanResTag, data.text) : data.text}</span>
@@ -160,7 +178,7 @@ export class AppTreeViewBase extends TreeControlBase {
                             throttle(this.doDefaultAction, [node], this);
                         }}
                     >
-                        {iconElement ? <span class='icon'>{iconElement}&nbsp;</span> : null}
+                        {iconElement ? <span class='icon'>{iconElement}</span> : null}
                         <span class='text'>
                             {textElement}
                         </span>
@@ -207,7 +225,7 @@ export class AppTreeViewBase extends TreeControlBase {
                         allow-drag={(node: any) => { return throttle(this.allowDrag, [node], this) }}
                         allow-drop={(draggingNode: any, dropNode: any, type: string) => { return this.allowDrop(draggingNode, dropNode, type) }}
                         on-edit-value-change={(value: string, node: any, event: any) => { this.nodeValueChange(value, node, event) }}
-                        on-close-edit={(node: any, event: any) => { this.saveAndRefresh(node, event)}}
+                        on-close-edit={(node: any, event: any) => { this.saveAndRefresh(node, event) }}
                         load={this.load.bind(this)}
                         highlight-current={true}
                         expand-on-click-node={false}

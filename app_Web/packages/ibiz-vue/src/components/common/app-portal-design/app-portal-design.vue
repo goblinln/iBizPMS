@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop, Model, Emit,Watch } from "vue-property-decorator";
+import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import { Subject } from "rxjs";
 import AppDashboardDesign from '../app-dashboard-design/app-dashboard-design.vue';
 import { LogUtil, Util, ViewState } from 'ibiz-core';

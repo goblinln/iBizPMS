@@ -7,20 +7,24 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "1",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_2",
     "text" : "2",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_3",
     "text" : "3",
-    "value" : "3"
+    "value" : "3",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

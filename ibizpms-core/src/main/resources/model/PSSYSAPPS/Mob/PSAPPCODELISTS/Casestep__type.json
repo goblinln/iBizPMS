@@ -12,15 +12,18 @@
   "getPSCodeItems" : [ {
     "codeName" : "Step",
     "text" : "步骤",
-    "value" : "step"
+    "value" : "step",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Group",
     "text" : "分组",
-    "value" : "group"
+    "value" : "group",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item",
     "text" : "分组步骤",
-    "value" : "item"
+    "value" : "item",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

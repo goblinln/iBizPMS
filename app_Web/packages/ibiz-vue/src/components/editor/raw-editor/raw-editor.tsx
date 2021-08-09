@@ -36,24 +36,20 @@ export default class RawEditor extends EditorBase {
      * 
      * @memberof RawEditor
      */
-    public renderRaw(rawContent: any) {
-        if (!Object.is('RAW', this.contentType)) {
-            return null;
-        }
+    public getContentValue(value: any) {
         const data = this.contextData;
-        if (rawContent) {
-            const items = rawContent.match(/\{{(.+?)\}}/g);
+        let content = value;
+        if (content) {
+            const items = content.match(/\{{(.+?)\}}/g);
             if (items) {
                 items.forEach((item: string) => {
-                    rawContent = rawContent.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
+                    content = content.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
                 });
             }
+            content = content.replaceAll('&lt;','<');
+            content = content.replaceAll('&gt;','>');
         }
-        return this.$createElement('div', {
-            domProps: {
-                innerHTML: rawContent,
-            },
-        });
+        return content;
     }
 
     /**
@@ -68,15 +64,10 @@ export default class RawEditor extends EditorBase {
         }
         return this.$createElement(this.editorComponentName, {
             props: {
-                htmlContent: this.value,
+                content: this.getContentValue(this.value),
                 imgUrl: this.value,
                 itemValue: this.value,
                 ...this.customProps,
-            },
-            scopedSlots: {
-                default: () => {
-                    return this.renderRaw(this.value);
-                }
             },
             style: this.customStyle,
         });

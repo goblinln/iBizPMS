@@ -10,6 +10,7 @@
     :disabled="disabled"
     value-format="yyyy-MM-dd"
     @change="change"
+    :readonly="readonly"
     :format="format"
   ></el-date-picker>
   <div class="date-picker-text">{{$t('components.daterange.endtext')}}</div>
@@ -68,7 +69,12 @@ export default class DateRange extends Vue {
    */
   @Prop() value?: any;
 
-
+  /**
+   * 只读模式
+   * 
+   * @type {boolean}
+   */
+  @Prop({default: false}) public readonly?: boolean;
 
   /**
    * 选中时间事件
@@ -78,8 +84,6 @@ export default class DateRange extends Vue {
   public change() {
     this.$emit("on-change", this.value);
   }
-
-
 
   /**
    * 编辑器名称

@@ -185,10 +185,6 @@
           } ],
           "ruleInfo" : "预计剩余大于0"
         },
-        "getPSDEField" : {
-          "name" : "LEFT",
-          "codeName" : "Left"
-        },
         "ruleInfo" : "预计剩余大于0",
         "checkDefault" : false,
         "defaultMode" : false,

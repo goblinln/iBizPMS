@@ -7,28 +7,34 @@
   "getPSCodeItems" : [ {
     "codeName" : "Sys",
     "text" : "全局",
-    "value" : "sys"
+    "value" : "sys",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Org",
     "text" : "当前组织",
-    "value" : "org"
+    "value" : "org",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Dept1",
     "text" : "当前部门（含子部门）",
-    "value" : "dept1"
+    "value" : "dept1",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Dept2",
     "text" : "当前部门（不含子部门）",
-    "value" : "dept2"
+    "value" : "dept2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "User",
     "text" : "个人",
-    "value" : "user"
+    "value" : "user",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

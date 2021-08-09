@@ -7,36 +7,44 @@
   "getPSCodeItems" : [ {
     "codeName" : "Done",
     "text" : "已完成",
-    "value" : "done"
+    "value" : "done",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Subdivided",
     "text" : "已细分",
-    "value" : "subdivided"
+    "value" : "subdivided",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Duplicate",
     "text" : "重复",
-    "value" : "duplicate"
+    "value" : "duplicate",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Postponed",
     "text" : "延期",
-    "value" : "postponed"
+    "value" : "postponed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Willnotdo",
     "text" : "不做",
-    "value" : "willnotdo"
+    "value" : "willnotdo",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Cancel",
     "text" : "已取消",
-    "value" : "cancel"
+    "value" : "cancel",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bydesign",
     "text" : "设计如此",
-    "value" : "bydesign"
+    "value" : "bydesign",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -1,11 +1,11 @@
 <template>
   <div class="app-department-select">
-    <ibiz-select-tree  :NodesData="Nodesdata" v-model="selectTreeValue" :disabled="disabled" :multiple="multiple" @select="onSelect"></ibiz-select-tree>
+    <ibiz-select-tree  :NodesData="Nodesdata" v-model="selectTreeValue" :disabled="disabled || readonly" :multiple="multiple" @select="onSelect"></ibiz-select-tree>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component, Watch, Prop, Model } from 'vue-property-decorator';
+import { Vue, Component, Watch, Prop } from 'vue-property-decorator';
 import { CodeListService } from "ibiz-service";
 import { LogUtil } from 'ibiz-core';
 import axios from 'axios';
@@ -67,6 +67,13 @@ export default class AppDepartmentSelect extends Vue {
      * @memberof AppDepartmentSelect
      */
     @Prop({default:false}) public disabled?: boolean;
+
+    /**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 表单数据

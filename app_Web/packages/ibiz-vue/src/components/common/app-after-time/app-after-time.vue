@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop,  Emit, Watch, Model } from 'vue-property-decorator';
-import { Subject, Subscription } from 'rxjs';
+import { Vue, Component, Prop, Watch, Model } from 'vue-property-decorator';
+import { Subject } from 'rxjs';
 import  moment  from 'moment';
 
 @Component({})

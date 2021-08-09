@@ -12,11 +12,13 @@
   "getPSCodeItems" : [ {
     "codeName" : "Private",
     "text" : "私有",
-    "value" : "private"
+    "value" : "private",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Public",
     "text" : "公开",
-    "value" : "public"
+    "value" : "public",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

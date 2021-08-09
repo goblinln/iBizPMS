@@ -9,17 +9,20 @@
     "data" : "{\"n_lastrunner_eq\":\"%srfloginname%\"}",
     "text" : "给我的用例",
     "value" : "TOME",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Icreate",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "text" : "我建的用例",
-    "value" : "ICREATE"
+    "value" : "ICREATE",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

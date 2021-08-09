@@ -7,12 +7,14 @@
   "getPSCodeItems" : [ {
     "codeName" : "Closed",
     "text" : "关闭",
-    "value" : "closed"
+    "value" : "closed",
+    "includeBeginValue" : true
   } ],
   "refFlag" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

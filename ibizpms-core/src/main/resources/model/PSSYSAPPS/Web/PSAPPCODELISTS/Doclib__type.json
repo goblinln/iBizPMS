@@ -12,15 +12,18 @@
   "getPSCodeItems" : [ {
     "codeName" : "Product",
     "text" : "产品文档库",
-    "value" : "product"
+    "value" : "product",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Project",
     "text" : "项目文档库",
-    "value" : "project"
+    "value" : "project",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Custom",
     "text" : "自定义文档库",
-    "value" : "custom"
+    "value" : "custom",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

@@ -14,17 +14,20 @@
     "data" : "{}",
     "text" : "所有",
     "value" : "All",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Normal",
     "data" : "{\"n_status_eq\":\"normal\"}",
     "text" : "未关闭",
-    "value" : "normal"
+    "value" : "normal",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Closed",
     "data" : "{\"n_status_eq\":\"closed\"}",
     "text" : "已关闭",
-    "value" : "closed"
+    "value" : "closed",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

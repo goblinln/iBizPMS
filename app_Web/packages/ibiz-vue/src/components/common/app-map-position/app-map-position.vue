@@ -46,8 +46,8 @@
 </template>
 
 <script lang='tsx'>
-import { Vue, Component, Prop, Watch, Model } from 'vue-property-decorator';
-import { Subject, Subscription } from 'rxjs';
+import { Vue, Component, Prop, Model } from 'vue-property-decorator';
+import { Subject } from 'rxjs';
 import { AMapManager } from 'vue-amap';
 import { LogUtil } from 'ibiz-core';
 

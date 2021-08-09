@@ -199,8 +199,8 @@ export class AppCalendarBase extends CalendarControlBase{
                                   {calendarItem && calendarItem.getPSLayoutPanel() ? 
                                       this.renderItemPanel(item,calendarItem) : 
                                       <div>
-                                          <h4 style={{'margin-bottom': '10px'}}>{item.title}</h4>
-                                          <p>从 {item.start} 至 {item.end}</p>
+                                          <h4 style={{'margin-bottom': item.content ? '10px' : '0px'}}>{item.title}</h4>
+                                          <p>{item.content}</p>
                                       </div>}
                           </el-card>
                   </context-menu>

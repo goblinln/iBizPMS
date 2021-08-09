@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Closed",
     "text" : "closed",
-    "value" : "closed"
+    "value" : "closed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Open",
     "text" : "open",
-    "value" : "open"
+    "value" : "open",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

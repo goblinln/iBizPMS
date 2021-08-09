@@ -205,10 +205,10 @@ export class EditorBase extends Vue {
         let { editorWidth, editorHeight } = this.editorInstance;
         this.customStyle = {};
         if (!Util.isEmpty(editorWidth) && editorWidth != 0) {
-            this.customStyle.width = editorWidth + 'px';
+            this.customStyle.width = editorWidth > 1 ? editorWidth + "px" : editorWidth * 100 + "%";
         }
         if (!Util.isEmpty(editorHeight) && editorHeight != 0) {
-            this.customStyle.height = editorHeight + 'px';
+            this.customStyle.height = editorHeight > 1 ? editorHeight + "px" : editorHeight * 100 + "%";
         }
     }
 
@@ -229,7 +229,7 @@ export class EditorBase extends Vue {
         });
         for (const key in this.editorInstance.editorParams) {
           let param: any;
-          if (key == 'uploadparams' || key == 'exportparams') {
+          if (key == 'uploadparams' || key == 'exportparams' || key == 'readonly') {
             param = eval('(' + this.editorInstance.editorParams[key] + ')');
           }else {
             param = this.editorInstance.editorParams[key];

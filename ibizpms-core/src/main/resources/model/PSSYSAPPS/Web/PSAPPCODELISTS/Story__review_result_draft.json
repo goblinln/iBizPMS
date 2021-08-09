@@ -12,17 +12,20 @@
   "getPSCodeItems" : [ {
     "codeName" : "Pass",
     "text" : "确认通过",
-    "value" : "pass"
+    "value" : "pass",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Clarify",
     "color" : "rgba(49, 27, 146, 1)",
     "text" : "有待明确",
     "value" : "clarify",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Reject",
     "text" : "拒绝",
-    "value" : "reject"
+    "value" : "reject",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

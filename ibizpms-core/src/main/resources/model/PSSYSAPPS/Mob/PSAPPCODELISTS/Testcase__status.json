@@ -13,12 +13,14 @@
     "codeName" : "Wait",
     "text" : "待评审",
     "value" : "wait",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Normal",
     "color" : "rgba(84, 238, 19, 1)",
     "text" : "正常",
-    "value" : "normal"
+    "value" : "normal",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Blocked",
     "color" : "rgba(242, 238, 7, 1)",
@@ -27,12 +29,14 @@
     },
     "text" : "被阻塞",
     "textCls" : "codeitemback",
-    "value" : "blocked"
+    "value" : "blocked",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Investigate",
     "color" : "rgba(245, 12, 12, 1)",
     "text" : "研究中",
-    "value" : "investigate"
+    "value" : "investigate",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

@@ -12,7 +12,8 @@
   "getPSCodeItems" : [ {
     "codeName" : "On",
     "text" : "待定",
-    "value" : "on"
+    "value" : "on",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

@@ -7,68 +7,84 @@
   "getPSCodeItems" : [ {
     "codeName" : "Customer",
     "text" : "客户",
-    "value" : "customer"
+    "value" : "customer",
+    "includeBeginValue" : true
   }, {
     "codeName" : "User",
     "text" : "用户",
-    "value" : "user"
+    "value" : "user",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Po",
     "text" : "产品经理",
-    "value" : "po"
+    "value" : "po",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Market",
     "text" : "市场",
-    "value" : "market"
+    "value" : "market",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Service",
     "text" : "客服",
-    "value" : "service"
+    "value" : "service",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Operation",
     "text" : "运营",
-    "value" : "operation"
+    "value" : "operation",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Support",
     "text" : "技术支持",
-    "value" : "support"
+    "value" : "support",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Competitor",
     "text" : "竞争对手",
-    "value" : "competitor"
+    "value" : "competitor",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Partner",
     "text" : "合作伙伴",
-    "value" : "partner"
+    "value" : "partner",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Dev",
     "text" : "开发人员",
-    "value" : "dev"
+    "value" : "dev",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Tester",
     "text" : "测试人员",
-    "value" : "tester"
+    "value" : "tester",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug"
+    "value" : "bug",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Forum",
     "text" : "论坛",
-    "value" : "forum"
+    "value" : "forum",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Other",
     "text" : "其它",
-    "value" : "other"
+    "value" : "other",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Ibiz",
     "text" : "iBiz",
-    "value" : "iBiz"
+    "value" : "iBiz",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -12,87 +12,108 @@
   "getPSCodeItems" : [ {
     "codeName" : "All",
     "text" : "全部",
-    "value" : "all"
+    "value" : "all",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Windows",
     "text" : "Windows",
-    "value" : "windows"
+    "value" : "windows",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Win10",
     "text" : "Windows 10",
-    "value" : "win10"
+    "value" : "win10",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Win8",
     "text" : "Windows 8",
-    "value" : "win8"
+    "value" : "win8",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Win7",
     "text" : "Windows 7",
-    "value" : "win7"
+    "value" : "win7",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Vista",
     "text" : "Windows Vista",
-    "value" : "vista"
+    "value" : "vista",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Winxp",
     "text" : "Windows XP",
-    "value" : "winxp"
+    "value" : "winxp",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Win2012",
     "text" : "Windows 2012",
-    "value" : "win2012"
+    "value" : "win2012",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Win2008",
     "text" : "Windows 2008",
-    "value" : "win2008"
+    "value" : "win2008",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Win2003",
     "text" : "Windows 2003",
-    "value" : "win2003"
+    "value" : "win2003",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Win2000",
     "text" : "Windows 2000",
-    "value" : "win2000"
+    "value" : "win2000",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Android",
     "text" : "Android",
-    "value" : "android"
+    "value" : "android",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Ios",
     "text" : "IOS",
-    "value" : "ios"
+    "value" : "ios",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Wp8",
     "text" : "WP8",
-    "value" : "wp8"
+    "value" : "wp8",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Wp7",
     "text" : "WP7",
-    "value" : "wp7"
+    "value" : "wp7",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Symbian",
     "text" : "Symbian",
-    "value" : "symbian"
+    "value" : "symbian",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Linux",
     "text" : "Linux",
-    "value" : "linux"
+    "value" : "linux",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Freebsd",
     "text" : "FreeBSD",
-    "value" : "freebsd"
+    "value" : "freebsd",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Osx",
     "text" : "OS X",
-    "value" : "osx"
+    "value" : "osx",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Unix",
     "text" : "Unix",
-    "value" : "unix"
+    "value" : "unix",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Others",
     "text" : "其他",
-    "value" : "others"
+    "value" : "others",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

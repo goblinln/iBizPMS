@@ -7,12 +7,14 @@
   "getPSCodeItems" : [ {
     "codeName" : "Ibizsys6",
     "text" : "iBizSys6",
-    "value" : "iBizSys6"
+    "value" : "iBizSys6",
+    "includeBeginValue" : true
   } ],
   "refFlag" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

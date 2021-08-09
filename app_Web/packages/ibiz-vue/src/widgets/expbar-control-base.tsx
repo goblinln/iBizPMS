@@ -385,6 +385,8 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
         if (toolbar) {
             const toolbarItems: Array<IPSDEToolbarItem> = toolbar.getPSDEToolbarItems() || [];
             toolbarItems.forEach((item: IPSDEToolbarItem) => {
+                const img = item.getPSSysImage();
+                const css = item.getPSSysCss();
                 let itemModel: any = {
                     name: item.name,
                     showCaption: item.showCaption,
@@ -395,7 +397,8 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
                     caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
                     disabled: false,
                     itemType: item.itemType,
-                    visabled: true
+                    visabled: true,
+                    getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
                 };
                 if (item.itemType && item.itemType == "DEUIACTION") {
                     const uiAction: IPSDEUIAction = (item as IPSDETBUIActionItem).getPSUIAction() as IPSDEUIAction;

@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Group",
     "text" : "分组",
-    "value" : "GROUP"
+    "value" : "GROUP",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item",
     "text" : "配置项",
-    "value" : "ITEM"
+    "value" : "ITEM",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

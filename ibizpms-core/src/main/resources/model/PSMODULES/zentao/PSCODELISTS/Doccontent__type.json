@@ -7,32 +7,39 @@
   "getPSCodeItems" : [ {
     "codeName" : "Html",
     "text" : "富文本",
-    "value" : "html"
+    "value" : "html",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Markdown",
     "text" : "Markdown",
-    "value" : "markdown"
+    "value" : "markdown",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Url",
     "text" : "链接",
-    "value" : "url"
+    "value" : "url",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Word",
     "text" : "Word",
-    "value" : "word"
+    "value" : "word",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Ppt",
     "text" : "PPT",
-    "value" : "ppt"
+    "value" : "ppt",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Excel",
     "text" : "Excel",
-    "value" : "excel"
+    "value" : "excel",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

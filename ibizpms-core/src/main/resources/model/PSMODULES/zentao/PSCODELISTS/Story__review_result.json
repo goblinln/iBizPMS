@@ -7,22 +7,26 @@
   "getPSCodeItems" : [ {
     "codeName" : "Pass",
     "text" : "确认通过",
-    "value" : "pass"
+    "value" : "pass",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Revert",
     "text" : "撤销变更",
-    "value" : "revert"
+    "value" : "revert",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Clarify",
     "color" : "rgba(49, 27, 146, 1)",
     "text" : "有待明确",
     "value" : "clarify",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

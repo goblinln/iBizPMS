@@ -16,7 +16,8 @@
     },
     "text" : "一般",
     "textCls" : "text-blue-border-color-lang",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_2",
     "getPSSysCss" : {
@@ -24,7 +25,8 @@
     },
     "text" : "最高",
     "textCls" : "text-red-border-color-lang",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_3",
     "getPSSysCss" : {
@@ -32,7 +34,8 @@
     },
     "text" : "较高",
     "textCls" : "text-pink-border-color-lang",
-    "value" : "3"
+    "value" : "3",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_4",
     "getPSSysCss" : {
@@ -40,7 +43,8 @@
     },
     "text" : "最低",
     "textCls" : "text-green-border-color-lang",
-    "value" : "4"
+    "value" : "4",
+    "includeBeginValue" : true
   } ],
   "codeItemValueNumber" : true,
   "enableCache" : true

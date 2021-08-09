@@ -556,8 +556,9 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
             });
             let _removeAction = keys.length > 1 ? 'removeBatch' : this.removeAction;
             const tempContext: any = Util.deepCopy(this.context);
-            Object.assign(tempContext, { [this.appDeCodeName]: keys.join(';') });
-            const arg = { [this.appDeCodeName]: keys.join(';') };
+            const appDeCodeName = this.appDeCodeName.toLowerCase();
+            Object.assign(tempContext, { [appDeCodeName]: keys.join(';') });
+            const arg = { [appDeCodeName]: keys.join(';') };
             Object.assign(arg, { viewparams: this.viewparams }),
             this.onControlRequset('remove', tempContext, arg);
             const post: Promise<any> = this.service.delete(_removeAction, tempContext, arg, this.showBusyIndicator);
@@ -1023,26 +1024,31 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      *
      * @memberof DataViewControlBase
      */
-    public renderDataViewItem(h: any, args: any, dataViewItem: IPSDEDataViewItem) {
+    public renderDataViewItem(h: any, item: any, dataViewItem: IPSDEDataViewItem) {
         if (this.controlInstance.getItemPSSysPFPlugin()) {
             const pluginInstance: any = this.PluginFactory.getPluginInstance(
                 'CONTROLITEM',
                 (this.controlInstance.getItemPSSysPFPlugin() as IPSSysPFPlugin).pluginCode,
             );
             if (pluginInstance) {
-                return pluginInstance.renderCtrlItem(this.$createElement, dataViewItem, this, args);
+                return pluginInstance.renderCtrlItem(this.$createElement, dataViewItem, this, item);
             }
         } else {
-            let itemImage: any = args.srficonpath ? args.srficonpath : './assets/img/noimage.png';
             return [
                 <div class='data-view-item'>
-                    <img src={itemImage} class='single-card-img' />
                     <div class='single-card-default'>
-                        <tooltip content={args.srfmajortext}>{args.srfmajortext}</tooltip>
+                        <div calss="item-title">
+                            <tooltip content={item.srfmajortext}>{item.srfmajortext}</tooltip>
+                        </div>
+                        {
+                            item.content && (
+                                <div class='item-content'>{item.content}</div>
+                            )
+                        }
                     </div>
                 </div>,
                 <div class='data-view-item-action'>
-                    {dataViewItem ? this.renderDataViewItemAction(h, args, dataViewItem) : ''}
+                    {dataViewItem ? this.renderDataViewItemAction(h, item, dataViewItem) : ''}
                 </div>,
             ];
         }

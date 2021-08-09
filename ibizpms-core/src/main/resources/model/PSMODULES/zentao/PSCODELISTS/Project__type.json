@@ -8,20 +8,24 @@
     "codeName" : "Sprint",
     "text" : "短期项目",
     "value" : "sprint",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Waterfall",
     "text" : "长期项目",
-    "value" : "waterfall"
+    "value" : "waterfall",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Ops",
     "text" : "运维项目",
-    "value" : "ops"
+    "value" : "ops",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -4,6 +4,7 @@
             type="text" 
             size="small"
             :disabled="disabled"
+            :readonly="readonly"
             v-model="firstIp"
             @focus="getFocus"
             maxlength="3" />.
@@ -11,6 +12,7 @@
             type="text" 
             size="small"
             :disabled="disabled"
+            :readonly="readonly"
             v-model="secIp"
             @focus="getFocus"
             maxlength="3" />.
@@ -19,6 +21,7 @@
             size="small"
             maxlength="3" 
             :disabled="disabled"
+            :readonly="readonly"
             @focus="getFocus"
             v-model="thirdIp" />.
         <el-input 
@@ -26,6 +29,7 @@
             size="small"
             maxlength="3"
             :disabled="disabled"
+            :readonly="readonly"
             @focus="getFocus"
             v-model="forIp" />
     </div>     
@@ -56,12 +60,19 @@ export default class AppInputIp extends Vue {
     @Prop() viewparam: any;
 
     /**
-     * 视图参数
+     * 是否启用禁用
      * 
      * @type {any}
      * @memberof AppInputIp
      */
     @Prop({default: false}) disabled: any;
+
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
 
     /**
      * 表单状态对象

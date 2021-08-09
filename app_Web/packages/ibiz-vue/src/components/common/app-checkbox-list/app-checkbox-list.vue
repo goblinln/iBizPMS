@@ -1,6 +1,6 @@
 <template>
     <checkbox-group class="app-checkbox-list" v-model="selectArray">
-        <checkbox v-for="(item,index) in items" :key="index" :label="item.value" :disabled="isDisabled || item.disabled">
+        <checkbox v-for="(item,index) in items" :key="index" :label="item.value" :disabled="isDisabled || item.disabled || readonly">
             <span>{{item.text}}</span>
         </checkbox>
     </checkbox-group >
@@ -9,7 +9,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
 import { CodeListService } from "ibiz-service";
-import { LogUtil, Util } from 'ibiz-core';
+import { LogUtil } from 'ibiz-core';
 
 @Component({
 })
@@ -61,6 +61,13 @@ export default class AppCheckBox extends Vue {
      * @memberof AppCheckBox
      */
     @Prop() disabled?: boolean;
+
+    /**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 传入表单数据

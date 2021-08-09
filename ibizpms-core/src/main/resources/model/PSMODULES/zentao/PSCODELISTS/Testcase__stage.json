@@ -7,32 +7,39 @@
   "getPSCodeItems" : [ {
     "codeName" : "Unittest",
     "text" : "单元测试阶段",
-    "value" : "unittest"
+    "value" : "unittest",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Feature",
     "text" : "功能测试阶段",
-    "value" : "feature"
+    "value" : "feature",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Intergrate",
     "text" : "集成测试阶段",
-    "value" : "intergrate"
+    "value" : "intergrate",
+    "includeBeginValue" : true
   }, {
     "codeName" : "System",
     "text" : "系统测试阶段",
-    "value" : "system"
+    "value" : "system",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Smoke",
     "text" : "冒烟测试阶段",
-    "value" : "smoke"
+    "value" : "smoke",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bvt",
     "text" : "版本验证阶段",
-    "value" : "bvt"
+    "value" : "bvt",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

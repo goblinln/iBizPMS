@@ -336,9 +336,11 @@ export class AppPanelBase extends PanelControlBase {
             name,
             height,
             tooltip,
+            width,
         } = modelJson;
         const buttonStyle = {
             height: height && height > 0 ? height + 'px' : '',
+            width: width && width > 0 ? width + 'px' : '',
         };
         const icon = modelJson.getPSSysImage();
         const uiAction = modelJson.getPSUIAction() as IPSUIAction;
@@ -425,26 +427,31 @@ export class AppPanelBase extends PanelControlBase {
      */
 
     public renderRawitem(modelJson: IPSPanelRawItem) {
+        const data: any = this.data;
         let { rawItemHeight, rawItemWidth, contentType, htmlContent, rawContent } = modelJson;
         let sysCssName = modelJson.getPSSysCss()?.cssName;
         let sysImage = modelJson.getPSSysImage()?.cssClass;
+        let sysImgurl = modelJson.getPSSysImage()?.imagePath;
         const style: any = {
             width: rawItemWidth > 0 ? `${rawItemWidth}px` : '100%',
             height: rawItemHeight > 0 ? `${rawItemHeight}px` : '',
         }
-        if (rawContent) {
-            const items = rawContent.match(/\{{(.+?)\}}/g);
+        let content: any;
+        if (Object.is(contentType,'RAW')) {
+            content = rawContent;
+        } else if (Object.is(contentType,'HTML')){
+            content = htmlContent;
+        }
+        if (content) {
+            const items = content.match(/\{{(.+?)\}}/g);
             if (items) {
                 items.forEach((item: string) => {
-                    rawContent = rawContent.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
+                    content = content.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
                 });
             }
+            content = content.replaceAll('&lt;','<');
+            content = content.replaceAll('&gt;','>');
         }
-        const tempNode = this.$createElement('div', {
-            domProps: {
-                innerHTML: rawContent,
-            },
-        });
         return (
             <app-rawitem
                 class={sysCssName}
@@ -453,9 +460,9 @@ export class AppPanelBase extends PanelControlBase {
                 context={this.context}
                 contentType={contentType}
                 imageClass={sysImage}
-                htmlContent={htmlContent}
+                imgUrl={sysImgurl}
+                content={content}
             >
-                {Object.is(contentType, 'RAW') && tempNode}
             </app-rawitem>
         );
     }
@@ -601,7 +608,8 @@ export class AppPanelBase extends PanelControlBase {
             controlStyle.display = 'flex';
         }
         return (
-            <div class="viewpanel-container" style={{'width': '100%' }}>
+            // height为100%，适配占满
+            <div class="viewpanel-container" style={{ 'width': '100%', 'height': '100%' }}>
                 <row class={controlClassNames} style={controlStyle}>
                     {this.renderRootPSPanelItems(this.controlInstance)}
                 </row>

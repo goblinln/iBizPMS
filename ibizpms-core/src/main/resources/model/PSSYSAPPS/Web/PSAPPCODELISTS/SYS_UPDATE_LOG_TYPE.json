@@ -13,12 +13,14 @@
     "codeName" : "Item_10",
     "color" : "rgba(217, 4, 4, 1)",
     "text" : "功能增强",
-    "value" : "10"
+    "value" : "10",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_20",
     "color" : "rgba(97, 207, 13, 1)",
     "text" : "优化",
-    "value" : "20"
+    "value" : "20",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

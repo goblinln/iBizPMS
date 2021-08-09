@@ -6,7 +6,7 @@
                     v-for="(item, index) in items"
                     :key="index"
                     :label="Object.is('LISTBOX', editorType) ? item.value : item[deKeyField]"
-                    :disabled="disabled || item.disabled"
+                    :disabled="disabled || item.disabled || readonly"
                 >
                     <span>{{ Object.is('LISTBOX', editorType) ? item.text : item[deMajorField] }}</span>
                 </checkbox>
@@ -18,7 +18,7 @@
                     v-for="(item, index) in items"
                     :key="index"
                     :label="Object.is('LISTBOX', editorType) ? item.value : item[deKeyField]"
-                    :disabled="disabled || item.disabled"
+                    :disabled="disabled || item.disabled || readonly"
                     @change="selectChange(Object.is('LISTBOX', editorType) ? item.value : item[deKeyField])"
                 >
                     {{ Object.is('LISTBOX', editorType) ? item.text : item[deMajorField] }}
@@ -116,6 +116,14 @@ export default class AppListBox extends Vue {
      */
     @Prop()
     public disabled?: boolean;
+
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false})
+    public readonly?: boolean;
 
     /**
      * 是否多选

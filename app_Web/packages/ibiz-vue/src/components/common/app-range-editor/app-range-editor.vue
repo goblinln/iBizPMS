@@ -10,7 +10,8 @@
               :format="valFormat"
               :placeholder="$t('components.apprangeeditor.placeholder')"
               :value="activeData[item]"
-              :disabled="disabled" 
+              :disabled="disabled"
+              :readonly="readonly" 
               @on-change="(value,type)=>{onValueChange(item,value)}">
             </date-picker>
             <time-picker
@@ -21,6 +22,7 @@
               :placeholder="$t('components.apprangeeditor.placeholder')"
               :value="activeData[item]"
               :disabled="disabled"
+              :readonly="readonly"
               @on-change="(value)=>{onValueChange(item,value)}">
             </time-picker>
             <InputNumber
@@ -28,6 +30,7 @@
               v-else-if="Object.is(editorType, 'NUMBER')"
               :value="activeData[item]" 
               :disabled="disabled"
+              :readonly="readonly"
               :placeholder="$t('components.apprangeeditor.input')"
               @on-change="(value)=>{onValueChange(item,value)}">
             </InputNumber>
@@ -42,6 +45,7 @@
               v-else
               :value="getValue(item)" 
               :disabled="disabled"
+              :readonly="readonly"
               :placeholder="$t('components.apprangeeditor.input')"
               @input="(value)=>{onValueChange(item,value)}">
             </el-input>
@@ -50,7 +54,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
+import { Component, Vue, Prop } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
@@ -73,6 +77,13 @@ export default class AppRangeEditor extends Vue {
      * @memberof AppRangeEditor
      */
     @Prop() public disabled!: boolean;
+
+	/**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 表单数据对象

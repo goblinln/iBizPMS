@@ -12,19 +12,23 @@
   "getPSCodeItems" : [ {
     "codeName" : "Weekly",
     "text" : "周报",
-    "value" : "weekly"
+    "value" : "weekly",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Daily",
     "text" : "日报",
-    "value" : "daily"
+    "value" : "daily",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Monthly",
     "text" : "月报",
-    "value" : "monthly"
+    "value" : "monthly",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Reportly",
     "text" : "汇报",
-    "value" : "reportly"
+    "value" : "reportly",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

@@ -11,8 +11,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop, Model, Emit } from "vue-property-decorator";
-import { Subject } from "rxjs";
+import { Vue, Component } from "vue-property-decorator";
 import { Environment } from '@/environments/environment';
 import { StudioActionUtil } from "ibiz-core";
 
@@ -35,8 +34,6 @@ export default class AppHeaderMenus extends Vue {
    * @memberof AppHeaderMenus
    */
   public isShow:boolean = Environment.devMode;
-
-  
   
   /**
    * 菜单数据

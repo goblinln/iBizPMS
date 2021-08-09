@@ -12,87 +12,108 @@
   "getPSCodeItems" : [ {
     "codeName" : "Story_closed_willnotdo",
     "text" : "不做",
-    "value" : "story_closed_willnotdo"
+    "value" : "story_closed_willnotdo",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story_closed_cancel",
     "text" : "已取消",
-    "value" : "story_closed_cancel"
+    "value" : "story_closed_cancel",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story_closed_done",
     "text" : "已完成",
-    "value" : "story_closed_done"
+    "value" : "story_closed_done",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story_closed_subdivided",
     "text" : "已细分",
-    "value" : "story_closed_subdivided"
+    "value" : "story_closed_subdivided",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story_closed_postponed",
     "text" : "延期",
-    "value" : "story_closed_postponed"
+    "value" : "story_closed_postponed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story_closed_bydesign",
     "text" : "设计如此",
-    "value" : "story_closed_bydesign"
+    "value" : "story_closed_bydesign",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story_closed_duplicate",
     "text" : "重复",
-    "value" : "story_closed_duplicate"
+    "value" : "story_closed_duplicate",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug_resolved_willnotfix",
     "text" : "不予解决",
-    "value" : "bug_resolved_willnotfix"
+    "value" : "bug_resolved_willnotfix",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug_resolved_external",
     "text" : "外部原因",
-    "value" : "bug_resolved_external"
+    "value" : "bug_resolved_external",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug_resolved_fixed",
     "text" : "已解决",
-    "value" : "bug_resolved_fixed"
+    "value" : "bug_resolved_fixed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug_resolved_postponed",
     "text" : "延期处理",
-    "value" : "bug_resolved_postponed"
+    "value" : "bug_resolved_postponed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug_resolved_notrepro",
     "text" : "无法重现",
-    "value" : "bug_resolved_notrepro"
+    "value" : "bug_resolved_notrepro",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug_resolved_bydesign",
     "text" : "设计如此",
-    "value" : "bug_resolved_bydesign"
+    "value" : "bug_resolved_bydesign",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug_resolved_tostory",
     "text" : "转为需求",
-    "value" : "bug_resolved_tostory"
+    "value" : "bug_resolved_tostory",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug_resolved_duplicate",
     "text" : "重复Bug",
-    "value" : "bug_resolved_duplicate"
+    "value" : "bug_resolved_duplicate",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story_reviewed_reject",
     "text" : "拒绝",
-    "value" : "story_reviewed_reject"
+    "value" : "story_reviewed_reject",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story_reviewed_revert",
     "text" : "撤销变更",
-    "value" : "story_reviewed_revert"
+    "value" : "story_reviewed_revert",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story_reviewed_clarify",
     "text" : "有待明确",
-    "value" : "story_reviewed_clarify"
+    "value" : "story_reviewed_clarify",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story_reviewed_pass",
     "text" : "确认通过",
-    "value" : "story_reviewed_pass"
+    "value" : "story_reviewed_pass",
+    "includeBeginValue" : true
   }, {
     "codeName" : "_release_changestatus_terminate",
     "text" : "停止维护",
-    "value" : " release_changestatus_terminate"
+    "value" : " release_changestatus_terminate",
+    "includeBeginValue" : true
   }, {
     "codeName" : "_release_changestatus_normal",
     "text" : "正常",
-    "value" : " release_changestatus_normal"
+    "value" : " release_changestatus_normal",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

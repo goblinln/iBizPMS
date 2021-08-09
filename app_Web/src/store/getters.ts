@@ -138,6 +138,33 @@ export const getViewMessage = (state: any) => (tag: string) => {
  * 
  * @param state 
  */
- export const getCustomParamByTag = (state: any) => (tag: string) => {
+export const getCustomParamByTag = (state: any) => (tag: string) => {
     return state.customParam[tag];
+}
+
+/**
+ * 获取全局数据
+ * 
+ * @param state 
+ */
+ export const getAppGlobal = (state: any) => () => {
+    return state.appGlobal;
+}
+
+/**
+ * 获取顶层路由数据
+ * 
+ * @param state 
+ */
+ export const getRouteViewGlobal = (state: any) => (key:string) => {
+    return state.routeViewGlobal[key];
+}
+
+/**
+ * 获取顶层视图
+ * 
+ * @param state 
+ */
+ export const getView = (state: any) => (key:string) => {
+    return state.appViews[key];
 }

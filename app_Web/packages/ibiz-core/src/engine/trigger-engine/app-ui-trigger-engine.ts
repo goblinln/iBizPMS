@@ -124,8 +124,13 @@ export class AppUITriggerEngine {
      * @memberof AppUITriggerEngine
      */
     public async executeAsyncScriptLogic(opts: any) {
-        if (this.scriptCode) {
-            return eval(this.scriptCode);
+        try {
+            if (this.scriptCode) {
+                let tempScriptCode = this.handleScriptCode(this.scriptCode, true);
+                return this.executeDefaultScriptLogic(opts, tempScriptCode);
+            }
+        } catch (error) {
+            LogUtil.warn(`执行脚本界面逻辑异常，脚本代码为：${this.scriptCode}`);
         }
     }
 
@@ -158,8 +163,12 @@ export class AppUITriggerEngine {
      * @memberof AppUITriggerEngine
      */
     public executeScriptLogic(opts: any) {
-        if (this.scriptCode) {
-            return this.dispenseUILogic(opts, this.handleScriptCode(this.scriptCode));
+        try {
+            if (this.scriptCode) {
+                return this.dispenseUILogic(opts, this.scriptCode);
+            }
+        } catch (error) {
+            LogUtil.warn(`执行脚本界面逻辑异常，脚本代码为：${this.scriptCode}`);
         }
     }
 
@@ -171,14 +180,22 @@ export class AppUITriggerEngine {
         if (this.name) {
             switch (this.name.toLowerCase()) {
                 case 'calcrowstyle':
+                    scriptCode = this.handleScriptCode(scriptCode);
                     return AppEmbeddedUILogic.calcRowStyle(opts, scriptCode);
                 case 'calccellstyle':
+                    scriptCode = this.handleScriptCode(scriptCode);
                     return AppEmbeddedUILogic.calcCellStyle(opts, scriptCode);
                 case 'calcheaderrowstyle':
+                    scriptCode = this.handleScriptCode(scriptCode);
                     return AppEmbeddedUILogic.calcRowStyle(opts, scriptCode);
                 case 'calcheadercellstyle':
+                    scriptCode = this.handleScriptCode(scriptCode);
                     return AppEmbeddedUILogic.calcRowStyle(opts, scriptCode);
+                case 'calcnodestyle':
+                    scriptCode = this.handleScriptCode(scriptCode);
+                    return AppEmbeddedUILogic.calNodeStyle(opts, scriptCode);
                 default:
+                    scriptCode = this.handleScriptCode(scriptCode, true);
                     return this.executeDefaultScriptLogic(opts, scriptCode);
             }
         }
@@ -189,7 +206,7 @@ export class AppUITriggerEngine {
      * @memberof AppUITriggerEngine
      */
     public executeDefaultScriptLogic(opts: any, scriptCode: string) {
-        const { arg } = opts;
+        const { arg, utils, app, view, ctrl } = opts;
         eval(scriptCode);
         return arg;
     }
@@ -198,11 +215,16 @@ export class AppUITriggerEngine {
      * 处理自定义脚本
      *
      * @param scriptCode 自定义脚本
+     * @param isMergeArg 是否合入到arg的srfret
      * @memberof AppUITriggerEngine
      */
-    public handleScriptCode(scriptCode: string) {
+    public handleScriptCode(scriptCode: string, isMergeArg?: boolean) {
         if (scriptCode.indexOf('return') !== -1) {
-            scriptCode = scriptCode.replace(new RegExp('return', 'g'), `result =`);
+            if (isMergeArg) {
+                scriptCode = scriptCode.replace(new RegExp('return', 'g'), `arg.srfret =`);
+            } else {
+                scriptCode = scriptCode.replace(new RegExp('return', 'g'), `result =`);
+            }
         }
         return scriptCode;
     }

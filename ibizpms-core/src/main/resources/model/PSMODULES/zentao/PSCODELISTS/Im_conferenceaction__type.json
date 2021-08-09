@@ -7,24 +7,29 @@
   "getPSCodeItems" : [ {
     "codeName" : "Create",
     "text" : "create",
-    "value" : "create"
+    "value" : "create",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Join",
     "text" : "join",
-    "value" : "join"
+    "value" : "join",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Leave",
     "text" : "leave",
-    "value" : "leave"
+    "value" : "leave",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Close",
     "text" : "close",
-    "value" : "close"
+    "value" : "close",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

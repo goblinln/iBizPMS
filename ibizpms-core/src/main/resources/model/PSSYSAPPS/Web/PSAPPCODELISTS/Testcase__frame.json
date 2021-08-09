@@ -12,35 +12,43 @@
   "getPSCodeItems" : [ {
     "codeName" : "Junit",
     "text" : "JUnit",
-    "value" : "junit"
+    "value" : "junit",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Testng",
     "text" : "TestNG",
-    "value" : "testng"
+    "value" : "testng",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Phpunit",
     "text" : "PHPUnit",
-    "value" : "phpunit"
+    "value" : "phpunit",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Pytest",
     "text" : "Pytest",
-    "value" : "pytest"
+    "value" : "pytest",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Jtest",
     "text" : "JTest",
-    "value" : "jtest"
+    "value" : "jtest",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Cppunit",
     "text" : "CppUnit",
-    "value" : "cppunit"
+    "value" : "cppunit",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Gtest",
     "text" : "GTest",
-    "value" : "gtest"
+    "value" : "gtest",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Qtest",
     "text" : "QTest",
-    "value" : "qtest"
+    "value" : "qtest",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

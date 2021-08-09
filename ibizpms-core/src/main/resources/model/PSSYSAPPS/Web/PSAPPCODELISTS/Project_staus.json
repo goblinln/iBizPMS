@@ -12,15 +12,18 @@
   "getPSCodeItems" : [ {
     "codeName" : "Doing",
     "text" : "进行中",
-    "value" : "doing"
+    "value" : "doing",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Suspended",
     "text" : "已挂起",
-    "value" : "suspended"
+    "value" : "suspended",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Closed",
     "text" : "已关闭",
-    "value" : "closed"
+    "value" : "closed",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

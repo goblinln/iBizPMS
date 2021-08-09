@@ -9,22 +9,26 @@
     "color" : "rgba(0, 157, 255, 1)",
     "text" : "激活",
     "value" : "active",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Resolved",
     "color" : "rgba(1, 217, 19, 1)",
     "text" : "已解决",
-    "value" : "resolved"
+    "value" : "resolved",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Closed",
     "color" : "rgba(151, 152, 141, 1)",
     "text" : "已关闭",
-    "value" : "closed"
+    "value" : "closed",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

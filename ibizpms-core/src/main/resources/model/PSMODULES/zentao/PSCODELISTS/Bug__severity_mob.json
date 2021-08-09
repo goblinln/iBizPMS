@@ -12,7 +12,8 @@
       "cssClass" : "radio-button-off"
     },
     "text" : "1",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_2",
     "color" : "rgba(255, 191, 0, 1)",
@@ -21,7 +22,8 @@
       "cssClass" : "radio-button-off"
     },
     "text" : "2",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_3",
     "color" : "rgba(16, 174, 231, 1)",
@@ -30,7 +32,8 @@
       "cssClass" : "radio-button-off"
     },
     "text" : "3",
-    "value" : "3"
+    "value" : "3",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_4",
     "color" : "rgba(49, 234, 12, 1)",
@@ -39,12 +42,14 @@
       "cssClass" : "radio-button-off"
     },
     "text" : "4",
-    "value" : "4"
+    "value" : "4",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : true,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

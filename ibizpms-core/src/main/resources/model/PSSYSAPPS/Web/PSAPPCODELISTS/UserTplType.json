@@ -12,27 +12,33 @@
   "getPSCodeItems" : [ {
     "codeName" : "Story",
     "text" : "需求",
-    "value" : "story"
+    "value" : "story",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Task",
     "text" : "任务",
-    "value" : "task"
+    "value" : "task",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug"
+    "value" : "bug",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Product",
     "text" : "产品",
-    "value" : "product"
+    "value" : "product",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Project",
     "text" : "项目",
-    "value" : "project"
+    "value" : "project",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Productplan",
     "text" : "产品计划",
-    "value" : "productplan"
+    "value" : "productplan",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

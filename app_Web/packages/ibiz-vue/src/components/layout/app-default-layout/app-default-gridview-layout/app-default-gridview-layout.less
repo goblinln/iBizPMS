@@ -216,6 +216,14 @@
         position: relative;
       }
     }
+    // 表格无分页情况下，高度问题
+    .no-paging-bar{
+      .el-table{
+        .el-table__body-wrapper,.el-table__fixed-body-wrapper{
+          height:  100% ;
+        }
+      }
+    }
 }
 
 // 过滤项气泡

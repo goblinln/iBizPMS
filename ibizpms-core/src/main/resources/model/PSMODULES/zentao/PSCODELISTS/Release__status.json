@@ -9,16 +9,19 @@
     "color" : "rgba(13, 255, 0, 1)",
     "text" : "正常",
     "value" : "normal",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Terminate",
     "text" : "停止维护",
-    "value" : "terminate"
+    "value" : "terminate",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

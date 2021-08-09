@@ -9,17 +9,20 @@
     "data" : "{}",
     "text" : "所有",
     "value" : "ALL",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Tome",
     "data" : "{\"n_status1_eq\":\"storychange\"}",
     "text" : "需求变动",
-    "value" : "TOME"
+    "value" : "TOME",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

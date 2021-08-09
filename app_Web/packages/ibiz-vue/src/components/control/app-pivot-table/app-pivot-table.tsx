@@ -68,7 +68,7 @@ export class AppPivotTable extends AppGridBase {
      * @param {*} [arg={}]
      * @memberof AppPivotTable
      */
-    public load(opt: any = {}, pageReset: boolean = false): void {
+    public async load(opt: any = {}, pageReset: boolean = false) {
         if(!this.fetchAction){
             this.$throw((this.$t('app.grid.notconfig.fetchaction') as string),'load');
             return;

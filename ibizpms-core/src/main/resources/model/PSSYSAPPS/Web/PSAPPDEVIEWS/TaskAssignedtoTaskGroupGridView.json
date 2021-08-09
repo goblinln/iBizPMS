@@ -344,10 +344,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
     },
-    "getGroupPSDEField" : {
-      "name" : "ASSIGNEDTO",
-      "codeName" : "AssignedTo"
-    },
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "logicName" : "任务分组（指派分组）",
     "minorSortDir" : "DESC",

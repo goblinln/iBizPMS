@@ -9,17 +9,20 @@
     "data" : "{}",
     "text" : "所有用例",
     "value" : "ALL",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Tome",
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指派给我",
-    "value" : "TOME"
+    "value" : "TOME",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

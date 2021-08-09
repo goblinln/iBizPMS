@@ -116,7 +116,7 @@ export default class DatePickerEditor extends EditorBase {
             this.handleEditorWidth(editorWidth);
         }
         if (!Util.isEmpty(editorHeight) && editorHeight != 0) {
-            this.customStyle.height = editorHeight + 'px';
+            this.customStyle.height = editorHeight > 1 ? editorHeight + "px" : editorHeight * 100 + "%";
         }
     }
 
@@ -132,24 +132,39 @@ export default class DatePickerEditor extends EditorBase {
             case 'DATEPICKER':
             case 'DATEPICKEREX_SECOND':
                 this.customProps.format = 'yyyy-MM-dd HH:mm:ss';
-                this.customStyle.width = width == 160 ? '100%' : `${width}px`;
+                this.calcCustomStyle(width,160);
                 break;
             case 'DATEPICKEREX_MINUTE':
             case 'DATEPICKEREX_NOSECOND':
-                this.customStyle.width = width == 140 ? '100%' : `${width}px`;
+                this.calcCustomStyle(width,140);
                 break;
             case 'DATEPICKEREX_HOUR':
-                this.customStyle.width = width == 120 ? '100%' : `${width}px`;
+                this.calcCustomStyle(width,120);
                 break;
             case 'DATEPICKEREX_NOTIME':
-                this.customStyle.width = width == 100 ? '100%' : `${width}px`;
+                this.calcCustomStyle(width,100);
                 break;
             case 'DATEPICKEREX_NODAY':
-                this.customStyle.width = width == 90 ? '100%' : `${width}px`;
+                this.calcCustomStyle(width,90);
                 break;
             case 'DATEPICKEREX_NODAY_NOSECOND':
-                this.customStyle.width = width == 70 ? '100%' : `${width}px`;
+                this.calcCustomStyle(width,70);
                 break;
+        }
+    }
+
+    /**
+     * 计算自定义样式
+     *
+     * @param date  时间
+     * @param format    格式
+     * @memberof DatePickerEditor
+     */
+    public calcCustomStyle(value: number, limit: number) {
+        if ( value == limit) {
+            this.customStyle.width = '100%';
+        }else {
+            this.customStyle.width = value > 1 ? value + "px" : value * 100 + "%";
         }
     }
 

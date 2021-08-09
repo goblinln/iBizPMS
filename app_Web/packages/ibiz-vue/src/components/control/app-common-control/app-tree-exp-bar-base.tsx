@@ -133,6 +133,7 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
                 props: {
                     staticProps:{
                         viewDefaultUsage: false,
+                        viewUseByExpBar: true
                     },
                     dynamicProps:{
                         viewdata: JSON.stringify(this.selection.context),

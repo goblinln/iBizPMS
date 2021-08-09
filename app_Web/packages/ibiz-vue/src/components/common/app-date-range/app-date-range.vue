@@ -6,6 +6,7 @@
             popper-class="app-date-range-popper"
             :format="valFormat"
             :disabled="disabled"
+            :readonly="readonly"
             :range-separator="$t('components.appdaterange.separator')"
             :start-placeholder="$t('components.appdaterange.start')"
             :end-placeholder="$t('components.appdaterange.end')"
@@ -36,6 +37,13 @@ export default class AppDateRange extends Vue {
      * @memberof AppDateRange
      */
     @Prop() public disabled!: boolean;
+
+    /**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 表单数据对象

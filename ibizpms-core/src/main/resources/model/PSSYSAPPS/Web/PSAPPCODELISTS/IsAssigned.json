@@ -9,11 +9,13 @@
     "codeName" : "Assign",
     "text" : "已指派",
     "value" : "assign",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Noassign",
     "text" : "未指派",
-    "value" : "noassign"
+    "value" : "noassign",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

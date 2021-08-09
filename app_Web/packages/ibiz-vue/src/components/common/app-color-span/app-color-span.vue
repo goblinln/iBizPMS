@@ -13,9 +13,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Watch, Prop, Model } from 'vue-property-decorator';
-import { CodeListService } from 'ibiz-service';
-import { Subject, Subscription } from 'rxjs';
+import { Vue, Component, Watch, Prop } from 'vue-property-decorator';
+
 @Component({
 })
 export default class AppColorSpan extends Vue {

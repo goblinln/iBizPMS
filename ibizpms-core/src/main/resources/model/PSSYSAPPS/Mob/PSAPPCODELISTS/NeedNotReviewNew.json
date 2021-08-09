@@ -12,7 +12,8 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "不需要评审",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

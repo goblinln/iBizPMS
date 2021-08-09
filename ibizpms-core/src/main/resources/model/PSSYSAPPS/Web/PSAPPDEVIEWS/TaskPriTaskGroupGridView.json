@@ -344,10 +344,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Task__pri.json"
     },
-    "getGroupPSDEField" : {
-      "name" : "PRI",
-      "codeName" : "Pri"
-    },
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "logicName" : "任务分组（优先级分组）",
     "minorSortDir" : "DESC",

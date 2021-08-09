@@ -785,8 +785,8 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
         }
         const arg: any = { ...data };
         const formdata = this.getData();
-        Object.assign(arg, formdata);
         Object.assign(arg, this.viewparams);
+        Object.assign(arg, formdata);
         let tempContext: any = JSON.parse(JSON.stringify(this.context));
         if (data[this.appDeCodeName.toLowerCase()]) {
             Object.assign(tempContext, { [this.appDeCodeName.toLowerCase()]: data[this.appDeCodeName.toLowerCase()] });
@@ -829,7 +829,7 @@ export class EditFormControlBase extends FormControlBase implements EditFormCont
         if (!mode || (mode && Object.is(mode, ''))) {
             return;
         }
-        const arg: any = Object.assign(data, Util.deepCopy(this.viewparams));
+        const arg: any = Object.assign(Util.deepCopy(this.viewparams), data);
         let tempContext: any = JSON.parse(JSON.stringify(this.context));
         this.onControlRequset('updateFormItems', tempContext, arg);
         const post: Promise<any> = this.service.frontLogic(mode, tempContext, arg, showloading);

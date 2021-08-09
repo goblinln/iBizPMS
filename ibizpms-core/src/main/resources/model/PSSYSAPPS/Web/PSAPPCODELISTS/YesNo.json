@@ -8,11 +8,13 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "是",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_0",
     "text" : "否",
-    "value" : "0"
+    "value" : "0",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

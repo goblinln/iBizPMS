@@ -13,11 +13,13 @@
     "codeName" : "Normal",
     "color" : "rgba(13, 255, 0, 1)",
     "text" : "正常",
-    "value" : "normal"
+    "value" : "normal",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Closed",
     "text" : "结束",
-    "value" : "closed"
+    "value" : "closed",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

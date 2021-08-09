@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Doc",
     "text" : "文档",
-    "value" : "doc"
+    "value" : "doc",
+    "includeBeginValue" : true
   }, {
     "codeName" : "File",
     "text" : "附件",
-    "value" : "file"
+    "value" : "file",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

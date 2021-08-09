@@ -7,52 +7,64 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_0",
     "text" : "0",
-    "value" : "0"
+    "value" : "0",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_05",
     "text" : "0.5",
-    "value" : "0.5"
+    "value" : "0.5",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_1",
     "text" : "1",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_2",
     "text" : "2",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_3",
     "text" : "3",
-    "value" : "3"
+    "value" : "3",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_5",
     "text" : "5",
-    "value" : "5"
+    "value" : "5",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_8",
     "text" : "8",
-    "value" : "8"
+    "value" : "8",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_13",
     "text" : "13",
-    "value" : "13"
+    "value" : "13",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_20",
     "text" : "20",
-    "value" : "20"
+    "value" : "20",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_40",
     "text" : "40",
-    "value" : "40"
+    "value" : "40",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_100",
     "text" : "100",
-    "value" : "100"
+    "value" : "100",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

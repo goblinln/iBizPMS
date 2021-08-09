@@ -7,12 +7,14 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_1",
     "text" : "过期计划",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

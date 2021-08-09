@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
 import { IPSAppCounterRef, IPSAppView, IPSControl, IPSDETBGroupItem, IPSDETBRawItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSLanguageRes } from '@ibiz/dynamic-model-api';
-import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface, throttle } from 'ibiz-core';
+import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, LogUtil, SandboxInstance, ViewInterface, throttle, AppCustomEngine, AppCtrlEventEngine, AppTimerEngine, AppViewEventEngine } from 'ibiz-core';
 import { CounterServiceRegister, ViewMessageService } from 'ibiz-service';
-import { AppNavHistory, NavDataService, ViewLoadingService } from '../app-service';
+import { AppMessageBoxService, AppNavHistory, NavDataService, ViewLoadingService } from '../app-service';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
+import { createUUID, isNilOrEmpty } from 'qx-util';
 
 /**
  * 视图基类
@@ -24,6 +25,13 @@ export class ViewBase extends Vue implements ViewInterface {
      * @memberof ViewBase
      */
     protected Environment: any = AppServiceBase.getInstance().getAppEnvironment();
+
+    /**
+     * 注册事件逻辑分隔符
+     * 
+     * @memberof ViewBase
+     */
+    public registerEventSeparator: string = 'ibiz__';
 
     /**
      * 传入视图上下文
@@ -47,7 +55,15 @@ export class ViewBase extends Vue implements ViewInterface {
      * @type {*}
      * @memberof ViewBase
      */
-     public navdatas!: any;
+    public navdatas!: any;
+
+    /**
+     * 视图操作参数集合
+     *
+     * @type {*}
+     * @memberof ViewBase
+     */
+    public viewCtx: any = {};
 
     /**
      * 视图loading服务
@@ -268,6 +284,13 @@ export class ViewBase extends Vue implements ViewInterface {
     protected toolbarModels: any;
 
     /**
+     * 界面触发逻辑Map
+     * 
+     * @memberof ViewBase
+     */
+    public viewTriggerLogicMap: Map<string, any> = new Map();
+
+    /**
      * 视图动态参数
      *
      * @type {*}
@@ -282,6 +305,33 @@ export class ViewBase extends Vue implements ViewInterface {
      * @memberof ViewBase
      */
     public staticProps!: any;
+
+    /**
+     * 获取顶层视图
+     *
+     * @memberof ViewBase
+     */
+    public getTopView() {
+        return this.viewCtx.topview;
+    }
+
+    /**
+     * 获取父级视图
+     *
+     * @memberof ViewBase
+     */
+    public getParentView() {
+        return this.viewCtx.parentview;
+    }
+
+    /**
+     * 获取指定名称部件
+     *
+     * @memberof ViewBase
+     */
+    public getCtrlByName(name: string) {
+        return (this.$refs[name] as any).ctrl;
+    }
 
     /**
      * 监听动态参数变化
@@ -317,9 +367,10 @@ export class ViewBase extends Vue implements ViewInterface {
             }
         }
         // 处理navdatas
-        if(newVal.navdatas && newVal.navdatas !== oldVal?.navdatas){
+        if (newVal.navdatas && newVal.navdatas !== oldVal?.navdatas) {
             this.navdatas = newVal.navdatas;
         }
+        this.initViewCtx();
     }
 
     /**
@@ -511,11 +562,14 @@ export class ViewBase extends Vue implements ViewInterface {
             this.initMountedMap();
             // 初始化时需要计算context和viewparams
             this.parseViewParam();
+            // 初始化viewCtx
+            this.initViewCtx();
             if (this.staticProps && this.staticProps.modeldata) {
                 this.initContainerModel(this.staticProps);
                 await this.initViewMessageService(this.staticProps.modeldata);
                 await this.initCounterService(this.staticProps.modeldata);
                 await this.initAppUIService();
+                await this.initViewLogic(this.viewInstance);
             }
         } catch (error) {
             LogUtil.warn(error);
@@ -576,7 +630,8 @@ export class ViewBase extends Vue implements ViewInterface {
             Object.assign(targetCtrlParam, {
                 dynamicProps: {
                     viewparams: Util.deepCopy(this.viewparams),
-                    context: Util.deepCopy(this.context)
+                    context: Util.deepCopy(this.context),
+                    viewCtx: this.viewCtx
                 }
             });
             return this.$createElement(targetCtrlName, { slot: `layout-${control.name}`, props: targetCtrlParam, ref: control?.name, on: targetCtrlEvent });
@@ -805,6 +860,8 @@ export class ViewBase extends Vue implements ViewInterface {
         this.$nextTick(() => {
             this.navDataService.addNavData({ title: this.model.srfCaption, viewType: this.viewInstance.viewType, path: this.$route?.fullPath, viewmode: this.viewDefaultUsage, tag: this.viewInstance.codeName, key: null, data: {} });
         })
+        // 处理视图定时器逻辑
+        this.handleTimerLogic();
     }
 
     /**
@@ -845,6 +902,18 @@ export class ViewBase extends Vue implements ViewInterface {
             if (this.serviceStateEvent) {
                 this.serviceStateEvent.unsubscribe();
             }
+            if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+                // 清除顶层路由参数
+                AppServiceBase.getInstance().getAppStore().commit('removeRouteViewGlobal', this.context.srfsessionid);
+                // 清除顶层视图
+                AppServiceBase.getInstance().getAppStore().commit('removeView', this.context.srfsessionid);
+            }
+        }
+        // 清除当前视图
+        if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+            if (this.viewInstance && this.viewInstance.modelPath) {
+                AppServiceBase.getInstance().getAppStore().commit('removeView', this.viewInstance.modelPath);
+            }
         }
         // 销毁计数器定时器
         if (this.counterServiceArray && this.counterServiceArray.length > 0) {
@@ -863,6 +932,70 @@ export class ViewBase extends Vue implements ViewInterface {
         }
         // 视图销毁从导航栈里面删除数据
         this.navDataService.removeNavData(this.viewInstance.codeName);
+        // 销毁逻辑定时器
+        this.destroyLogicTimer();
+    }
+
+    /**
+     * 初始化视图操作参数
+     *
+     * @public
+     * @memberof ViewBase
+     */
+    public initViewCtx(args?: any): void {
+        this.viewCtx = { viewNavContext: this.context, viewNavParam: this.viewparams };
+        if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+            this.viewCtx['appGlobal'] = AppServiceBase.getInstance().getAppStore().getters.getAppGlobal()
+        };
+        if (AppServiceBase.getInstance().getAppStore().getters.getRouteViewGlobal(this.context.srfsessionid)) {
+            this.viewCtx['routeViewGlobal'] = AppServiceBase.getInstance().getAppStore().getters.getRouteViewGlobal(this.context.srfsessionid);
+        } else {
+            AppServiceBase.getInstance().getAppStore().commit('addRouteViewGlobal', { tag: this.context.srfsessionid, param: {} });
+            this.viewCtx['routeViewGlobal'] = AppServiceBase.getInstance().getAppStore().getters.getRouteViewGlobal(this.context.srfsessionid);
+        }
+        this.viewCtx['viewGlobal'] = {};
+        this.viewCtx['viewNavData'] = {};
+        this.viewCtx['messagebox'] = AppMessageBoxService.getInstance();
+        this.viewCtx['app'] = AppServiceBase.getInstance();
+        this.viewCtx['view'] = this;
+        // 处理顶层视图
+        if (!this.viewDefaultUsage && this.viewdata && !Object.is(this.viewdata, '')) {
+            // 嵌入视图
+            if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+                this.viewCtx['topview'] = AppServiceBase.getInstance().getAppStore().getters.getView(this.context.srfsessionid);;
+            }
+        } else {
+            // 顶层路由视图
+            if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+                AppServiceBase.getInstance().getAppStore().commit('addView', { tag: this.context.srfsessionid, param: this });
+            }
+            this.viewCtx['topview'] = this;
+        }
+        // 处理父层视图
+        this.handleParentView();
+    }
+
+    /**
+     * 处理父级视图数据
+     *
+     * @memberof ViewBase
+     */
+    public handleParentView() {
+        if (this.context && this.context.parentviewpath) {
+            if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+                this.viewCtx['parentview'] = AppServiceBase.getInstance().getAppStore().getters.getView(this.context.parentviewpath);;
+            } else {
+                this.viewCtx['parentview'] = null;
+            }
+        } else {
+            this.viewCtx['parentview'] = null;
+        }
+        if (this.viewInstance && this.viewInstance.modelPath) {
+            if (AppServiceBase.getInstance() && AppServiceBase.getInstance().getAppStore()) {
+                AppServiceBase.getInstance().getAppStore().commit('addView', { tag: this.viewInstance.modelPath, param: this });
+            }
+            Object.assign(this.context, { parentviewpath: this.viewInstance.modelPath });
+        }
     }
 
     /**
@@ -895,6 +1028,9 @@ export class ViewBase extends Vue implements ViewInterface {
         if (!_this.viewDefaultUsage && _this.viewdata && !Object.is(_this.viewdata, '')) {
             if (typeof _this.viewdata == 'string') {
                 Object.assign(_this.context, JSON.parse(_this.viewdata));
+            }
+            if (isNilOrEmpty(_this.context.srfsessionid)) {
+                _this.context.srfsessionid = createUUID();
             }
             if (_this.context && _this.context.srfparentdename) {
                 Object.assign(_this.viewparams, { srfparentdename: _this.context.srfparentdename });
@@ -1187,10 +1323,12 @@ export class ViewBase extends Vue implements ViewInterface {
         if (msgDetails.length == 0) {
             return null;
         }
+        const topStyle = (this.viewInstance.getPSAppViewMsgGroup() as any)?.topStyle;
         return (
             <div slot="topMessage" class="view-top-message">
                 <app-alert
                     position="TOP"
+                    showStyle={topStyle}
                     messageDetails={msgDetails}
                     context={Util.deepCopy(this.context)}
                     viewparam={Util.deepCopy(this.viewparam)}
@@ -1211,10 +1349,12 @@ export class ViewBase extends Vue implements ViewInterface {
         if (msgDetails.length == 0) {
             return null;
         }
+        const bodyStyle = (this.viewInstance.getPSAppViewMsgGroup() as any)?.bodyStyle;
         return (
             <div slot="bodyMessage" class="view-body-message">
                 <app-alert
                     position="BODY"
+                    showStyle={bodyStyle}
                     messageDetails={msgDetails}
                     context={Util.deepCopy(this.context)}
                     viewparam={Util.deepCopy(this.viewparam)}
@@ -1235,10 +1375,12 @@ export class ViewBase extends Vue implements ViewInterface {
         if (msgDetails.length == 0) {
             return null;
         }
+        const bottomStyle = (this.viewInstance.getPSAppViewMsgGroup() as any)?.bottomStyle;
         return (
             <div slot="bottomMessage" class="view-bottom-message">
                 <app-alert
                     position="BOTTOM"
+                    showStyle={bottomStyle}
                     messageDetails={msgDetails}
                     context={Util.deepCopy(this.context)}
                     viewparam={Util.deepCopy(this.viewparam)}
@@ -1289,6 +1431,7 @@ export class ViewBase extends Vue implements ViewInterface {
             dynamicProps: {
                 viewparams: this.viewparams,
                 context: this.context,
+                viewCtx: this.viewCtx
             }
         };
         Object.defineProperty(targetCtrlParam.staticProps, 'containerInstance', { enumerable: false, writable: true });
@@ -1361,8 +1504,21 @@ export class ViewBase extends Vue implements ViewInterface {
             if (Object.is(action, 'authlimit')) {
                 this.renderShade();
             } else {
-                if (_this.engine) {
-                    _this.engine.onCtrlEvent(controlname, action, data);
+                if (controlname && action && this.viewTriggerLogicMap.get(`${controlname.toLowerCase()}-${action.toLowerCase()}`)) {
+                    if (this.viewTriggerLogicMap.get(`${controlname.toLowerCase()}-${action.toLowerCase()}`)) {
+                        this.viewTriggerLogicMap.get(`${controlname.toLowerCase()}-${action.toLowerCase()}`).executeAsyncUILogic({ arg: data, utils: this.viewCtx, app: this.viewCtx.app, view: this, ctrl: (this.$refs[controlname] as any).ctrl }).then((args: any) => {
+                            if (args && args?.hasOwnProperty('srfret') && !args.srfret) {
+                                return;
+                            }
+                            if (_this.engine) {
+                                _this.engine.onCtrlEvent(controlname, action, data);
+                            }
+                        })
+                    }
+                } else {
+                    if (_this.engine) {
+                        _this.engine.onCtrlEvent(controlname, action, data);
+                    }
                 }
             }
         }
@@ -1390,4 +1546,88 @@ export class ViewBase extends Vue implements ViewInterface {
             el.appendChild(shade);
         }
     }
+
+    /**
+     * 初始化视图逻辑
+     * 
+     * @memberof ViewBase
+     */
+    public async initViewLogic(opts: any) {
+        if (opts.getPSAppViewLogics() && opts.getPSAppViewLogics().length > 0) {
+            opts.getPSAppViewLogics().forEach((element: any) => {
+                // 目标逻辑类型类型为实体界面逻辑、系统预置界面逻辑、前端扩展插件、脚本代码
+                if (element && element.logicTrigger && (Object.is(element.logicType, 'DEUILOGIC') ||
+                    Object.is(element.logicType, 'SYSVIEWLOGIC') ||
+                    Object.is(element.logicType, 'PFPLUGIN') ||
+                    Object.is(element.logicType, 'SCRIPT'))) {
+                    switch (element.logicTrigger) {
+                        case 'TIMER':
+                            this.viewTriggerLogicMap.set(element.name.toLowerCase(), new AppTimerEngine(element));
+                            break;
+                        case 'CTRLEVENT':
+                            if (element?.getPSViewCtrlName() && element?.eventNames) {
+                                this.viewTriggerLogicMap.set(`${element.getPSViewCtrlName()?.toLowerCase()}-${element.eventNames?.toLowerCase()}`, new AppCtrlEventEngine(element));
+                            }
+                            break;
+                        case 'VIEWEVENT':
+                            if (element?.eventNames) {
+                                this.viewTriggerLogicMap.set(`${element.eventNames?.toLowerCase()}`, new AppViewEventEngine(element));
+                            }
+                            break;
+                        default:
+                            console.log(`视图${element.logicTrigger}类型暂未支持`);
+                            break;
+                    }
+                }
+                // 绑定用户自定义事件
+                if (element.eventNames && element.eventNames.toLowerCase().startsWith(this.registerEventSeparator)) {
+                    this.$on(element.eventNames, (...args: any) => {
+                        this.handleViewCustomEvent(element.name?.toLowerCase(), null, args);
+                    });
+                }
+            });
+        }
+    }
+
+    /**
+     * 处理视图自定义事件
+     *
+     * @memberof ViewBase
+     */
+    public handleViewCustomEvent(name: string, data: any, args: any) {
+        if (this.viewTriggerLogicMap.get(name)) {
+            this.viewTriggerLogicMap.get(name).executeAsyncUILogic({ arg: { sender: this, navContext: this.context, navParam: this.viewparams, navData: this.navdatas, data: data, args: args }, utils: this.viewCtx, app: this.viewCtx.app, view: this });
+        }
+    }
+
+    /**
+     * 处理视图定时器逻辑
+     *
+     * @memberof ViewBase
+     */
+    public handleTimerLogic() {
+        if (this.viewTriggerLogicMap && this.viewTriggerLogicMap.size > 0) {
+            for (let item of this.viewTriggerLogicMap.values()) {
+                if (item && (item instanceof AppTimerEngine)) {
+                    item.executeAsyncUILogic({ arg: { sender: this, navContext: this.context, navParam: this.viewparams, navData: this.navdatas, data: null }, utils: this.viewCtx, app: this.viewCtx.app, view: this });
+                }
+            }
+        }
+    }
+
+    /**
+     * 销毁视图定时器逻辑
+     *
+     * @memberof ViewBase
+     */
+    public destroyLogicTimer() {
+        if (this.viewTriggerLogicMap && this.viewTriggerLogicMap.size > 0) {
+            for (let item of this.viewTriggerLogicMap.values()) {
+                if (item && (item instanceof AppTimerEngine)) {
+                    item.destroyTimer();
+                }
+            }
+        }
+    }
+
 }

@@ -7,28 +7,34 @@
   "getPSCodeItems" : [ {
     "codeName" : "Custom",
     "text" : "自定义",
-    "value" : "custom"
+    "value" : "custom",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Bug",
     "text" : "Bug",
-    "value" : "bug"
+    "value" : "bug",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Task",
     "text" : "项目任务",
-    "value" : "task"
+    "value" : "task",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story",
     "text" : "项目需求",
-    "value" : "story"
+    "value" : "story",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Cycle",
     "text" : "周期",
-    "value" : "cycle"
+    "value" : "cycle",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

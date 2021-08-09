@@ -7,12 +7,14 @@
   "getPSCodeItems" : [ {
     "codeName" : "Zt_todo",
     "text" : "ZT_TODO",
-    "value" : "ZT_TODO"
+    "value" : "ZT_TODO",
+    "includeBeginValue" : true
   } ],
   "refFlag" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

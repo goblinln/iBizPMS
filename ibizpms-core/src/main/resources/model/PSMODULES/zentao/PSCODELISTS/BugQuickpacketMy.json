@@ -9,27 +9,32 @@
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指派给我",
     "value" : "TOME",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Icreate",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "text" : "由我创建",
-    "value" : "ICREATE"
+    "value" : "ICREATE",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Byme",
     "data" : "{\"n_resolvedby_eq\":\"%srfloginname%\"}",
     "text" : "由我解决",
-    "value" : "BYME"
+    "value" : "BYME",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Waitclosed",
     "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
     "text" : "由我关闭",
-    "value" : "WAITCLOSED"
+    "value" : "WAITCLOSED",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -7,20 +7,24 @@
   "getPSCodeItems" : [ {
     "codeName" : "Plan",
     "text" : "计划任务",
-    "value" : "plan"
+    "value" : "plan",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Cycle",
     "text" : "周期任务",
-    "value" : "cycle"
+    "value" : "cycle",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Temp",
     "text" : "临时任务",
-    "value" : "temp"
+    "value" : "temp",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

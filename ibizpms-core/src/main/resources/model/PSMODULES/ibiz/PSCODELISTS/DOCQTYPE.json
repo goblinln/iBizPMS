@@ -7,20 +7,24 @@
   "getPSCodeItems" : [ {
     "codeName" : "Doc",
     "text" : "文档",
-    "value" : "doc"
+    "value" : "doc",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Doclib",
     "text" : "文档库",
-    "value" : "doclib"
+    "value" : "doclib",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Module",
     "text" : "文档库分类",
-    "value" : "module"
+    "value" : "module",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

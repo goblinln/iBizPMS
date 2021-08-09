@@ -4,7 +4,7 @@ import { MDControlBase } from './md-control-base';
 import { AppGridService } from '../ctrl-service/app-grid-service';
 import { AppViewLogicService } from 'ibiz-vue';
 import { GlobalService } from 'ibiz-service';
-import { IPSDEDataImport,DynamicInstanceConfig, IPSDEDataImportItem, IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeList, IPSDEDataExport, IPSDEDataExportItem, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail, IPSDEGridGroupColumn, IPSDEGridEditItemUpdate, IPSAppDEDataSet, IPSDEFValueRule } from '@ibiz/dynamic-model-api';
+import { IPSDEDataImport, DynamicInstanceConfig, IPSDEDataImportItem, IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeList, IPSDEDataExport, IPSDEDataExportItem, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail, IPSDEGridGroupColumn, IPSDEGridEditItemUpdate, IPSAppDEDataSet, IPSDEFValueRule } from '@ibiz/dynamic-model-api';
 
 /**
  * 表格部件基类
@@ -22,6 +22,14 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public controlInstance!: IPSDEGrid;
+
+    /**
+     * 表格引用名称
+     * 
+     * @type 
+     * @memberof GridControlBase
+     */
+    public gridRefName: string = "";
 
     /**
      * 是否默认保存
@@ -62,14 +70,6 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public majorInfoColName: string = '';
-
-    /**
-     * 是否单选
-     *
-     * @type {boolean}
-     * @memberof GridControlBase
-     */
-    public isSingleSelect?: boolean;
 
     /**
      * 是否默认选中第一条数据
@@ -231,14 +231,6 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public rules: any = {};
-
-    /**
-     * 表格引用名称
-     * 
-     * @type 
-     * @memberof GridControlBase
-     */
-    public gridRefName: string = "";
 
     /**
      * 聚合模式
@@ -550,9 +542,9 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         if (gridColumns && gridColumns.length > 0) {
             gridColumns.forEach((gridColumn: IPSDEGridColumn) => {
                 if (gridColumn.dataItemName) {
-                    const dataItem: IPSDEGridDataItem | undefined= this.controlInstance.getPSDEGridDataItems()?.find((_dataItem: IPSDEGridDataItem) => Object.is(gridColumn.dataItemName, _dataItem.name));
+                    const dataItem: IPSDEGridDataItem | undefined = this.controlInstance.getPSDEGridDataItems()?.find((_dataItem: IPSDEGridDataItem) => Object.is(gridColumn.dataItemName, _dataItem.name));
                     if (dataItem) {
-                        this.dataMap.set(dataItem.name,{ itemUIName: gridColumn.name });
+                        this.dataMap.set(dataItem.name, { itemUIName: gridColumn.name });
                     };
                 };
             });
@@ -597,6 +589,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         this.isNoSort = this.controlInstance.noSort;
         this.minorSortDir = this.controlInstance.minorSortDir;
         this.minorSortPSDEF = (this.controlInstance.getMinorSortPSAppDEField() as IPSAppDEField)?.codeName?.toLowerCase();
+        this.realCtrlRefName = `${this.name.toLowerCase()}grid`;
         this.gridRefName = `${this.name.toLowerCase()}grid`;
         this.aggMode = this.controlInstance.aggMode;
         this.allColumnsInstance = this.controlInstance.getPSDEGridColumns() || [];
@@ -793,8 +786,8 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         this.selections = [];
         if (this.selectedData) {
             const refs: any = this.$refs;
-            if (refs[this.gridRefName]) {
-                refs[this.gridRefName].clearSelection();
+            if (refs[this.realCtrlRefName]) {
+                refs[this.realCtrlRefName].clearSelection();
                 JSON.parse(this.selectedData).forEach((selection: any) => {
                     let selectedItem = this.items.find((item: any) => {
                         return Object.is(item.srfkey, selection.srfkey);
@@ -905,7 +898,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @param {boolean} [pageReset] 页码是否重置
      * @memberof GridControlBase
      */
-    public load(opt: any = {}, pageReset: boolean = false): void {
+    public async load(opt: any = {}, pageReset: boolean = false) {
         if (!this.fetchAction) {
             this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.grid.notconfig.fetchaction') as string), 'load');
             return;
@@ -950,17 +943,44 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         }
         Object.assign(arg, { viewparams: tempViewParams });
         let tempContext: any = Util.deepCopy(this.context);
+        let beforeloadResult: any = await this.executeCtrlEventLogic('onbeforeload', { action: this.fetchAction, sender: this, navContext: tempContext, navParam: arg, navData: this.navdatas, data: this.getData(), });
+        if (beforeloadResult && beforeloadResult?.hasOwnProperty('srfret') && !beforeloadResult.srfret) {
+            return;
+        }
+        this.ctrlEvent({
+            controlname: this.controlInstance.name,
+            action: 'onbeforeload',
+            data: { action: this.fetchAction, sender: this, navContext: tempContext, navParam: arg, navData: this.navdatas, data: [] }
+        });
         this.onControlRequset('load', tempContext, arg);
         const post: Promise<any> = this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
-        post.then((response: any) => {
+        post.then(async (response: any) => {
             this.onControlResponse('load', response);
             if (!response.status || response.status !== 200) {
+                let loaderrorResult: any = await this.executeCtrlEventLogic('onloaderror', { action: this.fetchAction, sender: this, navContext: this.context, navParam: arg, navData: this.navdatas, data: response?.data });
+                if (loaderrorResult && loaderrorResult?.hasOwnProperty('srfret') && !loaderrorResult.srfret) {
+                    return;
+                }
+                this.ctrlEvent({
+                    controlname: this.controlInstance.name,
+                    action: 'onloaderror',
+                    data: { action: this.loadAction, sender: this, navContext: this.context, navParam: arg, navData: this.navdatas, data: response?.data }
+                });
                 this.$throw(response, 'load');
                 return;
             }
             const data: any = response.data;
             this.totalRecord = response.total;
             this.items = this.dataItemTransition(data);
+            let loadsuccessResult: any = await this.executeCtrlEventLogic('onloadsuccess', { action: this.fetchAction, sender: this, navContext: this.context, navParam: arg, navData: this.navdatas, data: data })
+            if (loadsuccessResult && loadsuccessResult?.hasOwnProperty('srfret') && !loadsuccessResult.srfret) {
+                return;
+            }
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'onloadsuccess',
+                data: { action: this.loadAction, sender: this, navContext: this.context, navParam: arg, navData: this.navdatas, data: data }
+            });
             // 清空selections,gridItemsModel
             this.selections = [];
             this.gridItemsModel = [];
@@ -998,7 +1018,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                     }
                 }
                 if (_this.selectedData) {
-                    const table: any = (this.$refs as any)[this.gridRefName];
+                    const table: any = (this.$refs as any)[this.realCtrlRefName];
                     if (table) {
                         table.clearSelection();
                         JSON.parse(_this.selectedData).forEach((selection: any) => {
@@ -1021,8 +1041,17 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             this.$nextTick(() => {
                 this.resetGridLayout();
             })
-        }).catch((response: any) => {
+        }).catch(async (response: any) => {
             this.onControlResponse('load', response);
+            let loaderrorResult: any = await this.executeCtrlEventLogic('onloaderror', { action: this.loadAction, sender: this, navContext: this.context, navParam: arg, navData: this.navdatas, data: response?.data });
+            if (loaderrorResult && loaderrorResult?.hasOwnProperty('srfret') && !loaderrorResult.srfret) {
+                return;
+            }
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'onloaderror',
+                data: { action: this.loadAction, sender: this, navContext: this.context, navParam: arg, navData: this.navdatas, data: response?.data }
+            });
             this.$throw(response, 'load');
         });
     }
@@ -1033,7 +1062,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public resetGridLayout() {
-        const grid = (this.$refs[this.gridRefName] as any)?.$el;
+        const grid = (this.$refs[this.realCtrlRefName] as any)?.$el;
         if (!grid) {
             return;
         }
@@ -1544,8 +1573,8 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
                     groupById: Util.createUUID(),
                     group: ""
                 });
-                const i = allGroup.findIndex((group: any)=> !Object.is(allGroupField && allGroupField.length > 0 ? group.label : group.value, item[this.groupAppField]));
-                if(i < 0){
+                const i = allGroup.findIndex((group: any) => !Object.is(allGroupField && allGroupField.length > 0 ? group.label : group.value, item[this.groupAppField]));
+                if (i < 0) {
                     otherItems.push(item);
                 }
             });
@@ -1666,6 +1695,9 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public select(selection: any, row: any): void {
+        if (this.ctrlTriggerLogicMap.get(`${this.realCtrlSeparator}select`)) {
+            return;
+        }
         if (this.groupAppField) {
             let isContain: boolean = selection.some((item: any) => {
                 return item == row;
@@ -1751,7 +1783,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public toggleSelection(rows?: any, flag?: boolean) {
-        const table: any = (this.$refs as any)[this.gridRefName];
+        const table: any = (this.$refs as any)[this.realCtrlRefName];
         if (rows) {
             rows.forEach((row: any) => {
                 table.toggleRowSelection(row, flag);
@@ -1768,6 +1800,9 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public selectAll(selection: any): void {
+        if (this.ctrlTriggerLogicMap.get(`${this.realCtrlSeparator}selectselect-all`)) {
+            return;
+        }
         this.selections = [];
         if (this.groupAppField) {
             let flag: boolean = true;
@@ -1825,6 +1860,9 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public rowClick(row: any, column?: any, event?: any, isExecute: boolean = false): void {
+        if (this.ctrlTriggerLogicMap.get(`${this.realCtrlSeparator}row-click`)) {
+            return;
+        }
         //是否是分组列，是分组列时选中数据
         const isSelectColumn: boolean = column && Object.is(column.type, 'selection') ? true : false;
         // 分组行跳过
@@ -1846,7 +1884,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         } else if (this.gridRowActiveMode == 2 || isSelectColumn) {
             // 只选中当前行
             this.selections.push(Util.deepCopy(row));
-            const table: any = (this.$refs as any)[this.gridRefName];
+            const table: any = (this.$refs as any)[this.realCtrlRefName];
             if (table) {
                 table.clearSelection();
                 if (this.isSingleSelect) {
@@ -1865,15 +1903,18 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @param {*} $event 点击事件
      * @memberof GridControlBase
      */
-    public rowDBLClick($event: any): void {
+    public rowDBLClick(row: any, column?: any, event?: any): void {
+        if (this.ctrlTriggerLogicMap.get(`${this.realCtrlSeparator}row-dblclick`)) {
+            return;
+        }
         // 分组行跳过
-        if ($event && $event.children) {
+        if (row && row.children) {
             return;
         }
-        if (!$event || this.actualIsOpenEdit || Object.is(this.gridRowActiveMode, 0)) {
+        if (!row || this.actualIsOpenEdit || Object.is(this.gridRowActiveMode, 0)) {
             return;
         }
-        this.ctrlEvent({ controlname: this.name, action: "rowdblclick", data: $event });
+        this.ctrlEvent({ controlname: this.name, action: "rowdblclick", data: row });
     }
 
     /**
@@ -1931,7 +1972,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public computeGroupRow(rows: any[], currentRow: any) {
-        const table: any = (this.$refs as any)[this.gridRefName];
+        const table: any = (this.$refs as any)[this.realCtrlRefName];
         let count: number = 0;
         this.selections.forEach((select: any) => {
             rows.forEach((row: any) => {
@@ -2003,6 +2044,9 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @memberof GridControlBase
      */
     public onSortChange({ column, prop, order }: { column: any, prop: any, order: any }): void {
+        if (this.ctrlTriggerLogicMap.get(`${this.realCtrlSeparator}sort-change`)) {
+            return;
+        }
         const dir = Object.is(order, 'ascending') ? 'asc' : Object.is(order, 'descending') ? 'desc' : '';
         if (Object.is(dir, this.minorSortDir) && Object.is(this.minorSortPSDEF, prop)) {
             return;
@@ -2371,7 +2415,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
             } catch {
                 return value;
             }
-        } 
+        }
         const { columns, data } = param;
         const sums: Array<any> = [];
         if (Object.is(this.aggMode, "PAGE")) {
@@ -2582,7 +2626,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * @param {*} viewparam 视图参数
      * @memberof GridControlBase
      */
-     public onControlRequset(action: string, context: any, viewparam: any) {
+    public onControlRequset(action: string, context: any, viewparam: any) {
         if (!Object.is(action, 'updateGridEditItem')) {
             this.ctrlBeginLoading();
         }
@@ -2635,8 +2679,8 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * 操作列按钮点击
      *
      * @memberof GridControlBase
-     */    
-    public handleActionButtonClick(row:any, $event:any, _column:IPSDEGridUAColumn, uiactionDetail:IPSUIActionGroupDetail){
+     */
+    public handleActionButtonClick(row: any, $event: any, _column: IPSDEGridUAColumn, uiactionDetail: IPSUIActionGroupDetail) {
         (this.$apppopover as any).popperDestroy2();
         this.handleActionClick(row, $event, _column, uiactionDetail);
     }
@@ -2645,7 +2689,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
      * 计算目标部件参数
      *
      * @memberof GridControlBase
-     */ 
+     */
     public computeTargetCtrlData(controlInstance: any, item?: any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
         Object.assign(targetCtrlParam.dynamicProps, {

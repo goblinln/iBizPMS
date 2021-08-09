@@ -162,7 +162,7 @@ export class UIActionContext {
         $event?: any, xData?: any, actioncontext?: any, srfParentDeName?: string) {
         this.appContext = context;
         this.viewParam = params;
-        this.data = args && Array.isArray(args) ? args[0] : {};
+        this.data = args?.length > 0 ? args[0] : {};
         this.otherParams = {
             event: $event,
             control: xData,

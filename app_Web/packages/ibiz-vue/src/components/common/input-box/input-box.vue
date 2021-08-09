@@ -6,6 +6,7 @@
       :placeholder="placeholder"
       :formatter="numberFormat"
       :size="size"
+      :readonly="readonly"
       :precision="precision"
       v-model="CurrentVal"
       :disabled="disabled ? true : false"
@@ -17,6 +18,7 @@
       :size="size"
       :type="type"
       :rows="rows"
+      :readonly="readonly"
       v-model="CurrentVal"
       :disabled="disabled ? true : false"
       :element-id="textareaId"
@@ -93,6 +95,13 @@ export default class InputBox extends Vue {
    * @memberof InputBox
    */
   @Prop() public disabled?: boolean;
+
+  /**
+   * 只读模式
+   * 
+   * @type {boolean}
+   */
+  @Prop({default: false}) public readonly?: boolean;
 
   /**
    * 属性类型

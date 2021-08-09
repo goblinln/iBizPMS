@@ -252,10 +252,6 @@
           } ],
           "ruleInfo" : "发布日期不能大于当前日期"
         },
-        "getPSDEField" : {
-          "name" : "DATE",
-          "codeName" : "Date"
-        },
         "ruleInfo" : "发布日期不能大于当前日期",
         "checkDefault" : false,
         "defaultMode" : false,

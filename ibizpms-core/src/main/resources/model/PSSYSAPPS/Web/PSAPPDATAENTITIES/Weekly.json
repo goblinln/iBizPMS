@@ -35,18 +35,6 @@
     "codeName" : "AutoCreate",
     "methodType" : "DEACTION",
     "name" : "createEveryWeekReport",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AutoCreate"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
@@ -54,32 +42,12 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -87,14 +55,6 @@
     "codeName" : "CreateGetLastWeekPlanAndWork",
     "methodType" : "DEACTION",
     "name" : "CreateGetLastWeekPlanAndWork",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -102,50 +62,18 @@
     "codeName" : "EditGetLastWeekTaskAndComTask",
     "methodType" : "DEACTION",
     "name" : "EditGetLastWeekTaskAndComTask",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/EditGetLastWeekTaskAndComTask.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -153,50 +81,18 @@
     "codeName" : "JugThisWeekCreateWeekly",
     "methodType" : "DEACTION",
     "name" : "JugThisWeekCreateWeekly",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/JugThisWeekCreateWeekly.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Notice",
     "methodType" : "DEACTION",
     "name" : "pushUserWeekly",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Notice"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Read",
     "methodType" : "DEACTION",
     "name" : "haveRead",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Read"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -205,14 +101,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
     "userCat" : "CAT1",
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -222,46 +110,18 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Save.json"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Submit",
     "methodType" : "DEACTION",
     "name" : "submit",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Submit.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Submit"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataExports" : [ {
@@ -334,58 +194,30 @@
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyNotSubmit",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyNotSubmit",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyNotSubmit"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyWeekly",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyWeekly",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyWeekly"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductTeamMemberWeekly",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductTeamMemberWeekly",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductTeamMemberWeekly"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectWeekly",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectWeekly",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectWeekly"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -534,18 +366,6 @@
     "codeName" : "AutoCreate",
     "methodType" : "DEACTION",
     "name" : "createEveryWeekReport",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AutoCreate"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
@@ -553,32 +373,12 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -586,14 +386,6 @@
     "codeName" : "CreateGetLastWeekPlanAndWork",
     "methodType" : "DEACTION",
     "name" : "CreateGetLastWeekPlanAndWork",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -601,50 +393,18 @@
     "codeName" : "EditGetLastWeekTaskAndComTask",
     "methodType" : "DEACTION",
     "name" : "EditGetLastWeekTaskAndComTask",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/EditGetLastWeekTaskAndComTask.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -652,50 +412,18 @@
     "codeName" : "JugThisWeekCreateWeekly",
     "methodType" : "DEACTION",
     "name" : "JugThisWeekCreateWeekly",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/JugThisWeekCreateWeekly.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Notice",
     "methodType" : "DEACTION",
     "name" : "pushUserWeekly",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Notice"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Read",
     "methodType" : "DEACTION",
     "name" : "haveRead",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Read"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -704,14 +432,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
     "userCat" : "CAT1",
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -721,103 +441,47 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Save.json"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
     "codeName" : "Submit",
     "methodType" : "DEACTION",
     "name" : "submit",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Submit.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Submit"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyNotSubmit",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyNotSubmit",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyNotSubmit"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchMyWeekly",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "MyWeekly",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyWeekly"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProductTeamMemberWeekly",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProductTeamMemberWeekly",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductTeamMemberWeekly"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectWeekly",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectWeekly",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectWeekly"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
@@ -1006,85 +670,10 @@
     "logicName" : "未提交",
     "mSTag" : "0",
     "name" : "未提交",
-    "getPSDEMainStateActions" : [ {
-      "name" : "Remove",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Remove.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "CreateGetLastWeekPlanAndWork",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Create",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Create.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "submit",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Submit.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "createEveryWeekReport",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Update",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Update.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Get",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "JugThisWeekCreateWeekly",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/JugThisWeekCreateWeekly.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "EditGetLastWeekTaskAndComTask",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/EditGetLastWeekTaskAndComTask.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "pushUserWeekly",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json"
-      },
-      "allowMode" : true
-    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__WEEKLY_NSUBMIT_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "周报待提交",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__WEEKLY_NSUBMIT_BUT"
-        },
         "mapSysUniResCode" : "WEEKLY_NSUBMIT_BUT",
         "name" : "SRFUR__WEEKLY_NSUBMIT_BUT",
         "mapSysUniRes" : true
@@ -1105,64 +694,10 @@
     "logicName" : "已提交",
     "mSTag" : "1",
     "name" : "已提交",
-    "getPSDEMainStateActions" : [ {
-      "name" : "CreateGetLastWeekPlanAndWork",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "pushUserWeekly",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "JugThisWeekCreateWeekly",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/JugThisWeekCreateWeekly.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Update",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Update.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Remove",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Remove.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "haveRead",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Get",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
-      },
-      "allowMode" : true
-    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__WEEKLY_SUBMIT_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "周报已提交",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "report__WEEKLY_SUBMIT_BUT"
-        },
         "mapSysUniResCode" : "WEEKLY_SUBMIT_BUT",
         "name" : "SRFUR__WEEKLY_SUBMIT_BUT",
         "mapSysUniRes" : true
@@ -1199,10 +734,6 @@
   "logicName" : "个人周报",
   "name" : "IBZ_WEEKLY",
   "getPSDEName" : "IBZ_WEEKLY",
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDESERVICEAPIS/Weekly.json"
-  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "IBZ_WEEKLYNAME",
     "codeName" : "IbzWeeklyName"

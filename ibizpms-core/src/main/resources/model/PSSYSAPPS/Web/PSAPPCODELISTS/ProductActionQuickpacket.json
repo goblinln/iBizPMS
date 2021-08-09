@@ -13,38 +13,45 @@
     "codeName" : "All",
     "data" : "{}",
     "text" : "所有",
-    "value" : "All"
+    "value" : "All",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Today",
     "data" : "{\"n_today_eq\":1}",
     "text" : "今天",
     "value" : "today",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Yesterday",
     "data" : "{\"n_yesterday_eq\":1}",
     "text" : "昨天",
-    "value" : "yesterday"
+    "value" : "yesterday",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Thisweek",
     "data" : "{\"n_thisweek_eq\":1}",
     "text" : "本周",
-    "value" : "thisweek"
+    "value" : "thisweek",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Lastweek",
     "data" : "{\"n_lastweek_eq\":1}",
     "text" : "上周",
-    "value" : "lastweek"
+    "value" : "lastweek",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Thismonth",
     "data" : "{\"n_thismonth_eq\":1}",
     "text" : "本月",
-    "value" : "thismonth"
+    "value" : "thismonth",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Lastmonth",
     "data" : "{\"n_lastmonth_eq\":1}",
     "text" : "上月",
-    "value" : "lastmonth"
+    "value" : "lastmonth",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

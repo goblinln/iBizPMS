@@ -47,7 +47,7 @@ export class ChartExpBarControlBase extends ExpBarControlBase {
                 [item.name]: item.getNavPSAppView?.()?.modelPath || ""
             });
             Object.assign(navParam, {
-                [item.name]: {
+                [item.name.toLowerCase()]: {
                     navigateContext: this.initNavParam(item.getPSNavigateContexts?.()),
                     navigateParams: this.initNavParam(item.getPSNavigateParams?.())
                 }
@@ -124,7 +124,7 @@ export class ChartExpBarControlBase extends ExpBarControlBase {
             Object.assign(tempContext, Util.deepCopy(this.context));
         }
         const seriesItem: IPSDEChartSeries | null | undefined = (this.$xDataControl.getPSDEChartSerieses() || []).find((item: IPSDEChartSeries) => {
-            return item.name === arg._chartName;
+            return item.name.toLowerCase() === arg._chartName.toLowerCase();
         });
         const appDataEntity: IPSAppDataEntity | null = this.$xDataControl?.getPSAppDataEntity();
         if (seriesItem && appDataEntity) {
@@ -140,18 +140,18 @@ export class ChartExpBarControlBase extends ExpBarControlBase {
                 Object.assign(tempContext, { [seriesItem.valueField]: arg[seriesItem.valueField] });
                 Object.assign(tempViewParam, { [seriesItem.valueField]: arg[seriesItem.valueField] });
             }
-            if (this.navFilter && this.navFilter[arg.itemType] && !Object.is(this.navFilter[arg.itemType], "")) {
-                Object.assign(tempViewParam, { [this.navFilter[arg.itemType]]: arg[appDataEntity.codeName?.toLowerCase()] });
+            if (this.navFilter && this.navFilter[arg._chartName] && !Object.is(this.navFilter[arg._chartName], "")) {
+                Object.assign(tempViewParam, { [this.navFilter[arg._chartName]]: arg[appDataEntity.codeName?.toLowerCase()] });
             }
-            if (this.navPSDer && this.navFilter[arg.itemType] && !Object.is(this.navPSDer[arg.itemType], "")) {
-                Object.assign(tempViewParam, { [this.navPSDer[arg.itemType]]: arg[appDataEntity.codeName?.toLowerCase()] });
+            if (this.navPSDer && this.navFilter[arg._chartName] && !Object.is(this.navPSDer[arg._chartName], "")) {
+                Object.assign(tempViewParam, { [this.navPSDer[arg._chartName]]: arg[appDataEntity.codeName?.toLowerCase()] });
             }
-            if (this.navParam && this.navParam[arg.itemType] && this.navParam[arg.itemType].navigateContext && Object.keys(this.navParam[arg.itemType].navigateContext).length > 0) {
-                let _context: any = Util.computedNavData(arg.curdata, tempContext, tempViewParam, this.navParam[arg.itemType].navigateContext);
+            if (this.navParam && this.navParam[arg._chartName] && this.navParam[arg._chartName].navigateContext && Object.keys(this.navParam[arg._chartName].navigateContext).length > 0) {
+                let _context: any = Util.computedNavData(arg, tempContext, tempViewParam, this.navParam[arg._chartName].navigateContext);
                 Object.assign(tempContext, _context);
             }
-            if (this.navParam && this.navParam[arg.itemType] && this.navParam[arg.itemType].navigateParams && Object.keys(this.navParam[arg.itemType].navigateParams).length > 0) {
-                let _params: any = Util.computedNavData(arg.curdata, tempContext, tempViewParam, this.navParam[arg.itemType].navigateParams);
+            if (this.navParam && this.navParam[arg._chartName] && this.navParam[arg._chartName].navigateParams && Object.keys(this.navParam[arg._chartName].navigateParams).length > 0) {
+                let _params: any = Util.computedNavData(arg, tempContext, tempViewParam, this.navParam[arg._chartName].navigateParams);
                 Object.assign(tempViewParam, _params);
             }
             if (seriesItem.getNavPSAppView()) {
@@ -164,6 +164,22 @@ export class ChartExpBarControlBase extends ExpBarControlBase {
         Object.assign(this.selection, { view: { viewname: 'app-view-shell' }, context: tempContext, viewparam: tempViewParam });
         this.calcToolbarItemState(false);
         this.$emit("ctrl-event", { controlname: this.controlInstance.name, action: "selectionchange", data: args });
+    }
+
+    /**
+     * 部件事件
+     * @param ctrl 部件 
+     * @param action  行为
+     * @param data 数据
+     * 
+     * @memberof ChartExpBarControlBase
+     */
+    public onCtrlEvent(controlname: string, action: string, data: any) {
+        if (action == 'selectionchange') {
+            this.onSelectionChange(data.data);
+        } else {
+            super.onCtrlEvent(controlname, action, data);
+        }
     }
 
 }

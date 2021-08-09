@@ -14,22 +14,26 @@
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指给我",
     "value" : "TOME",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Icreate",
     "data" : "{\"n_openedby_eq\":\"%srfloginname%\"}",
     "text" : "由我创建",
-    "value" : "ICREATE"
+    "value" : "ICREATE",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Ireview",
     "data" : "{\"n_reviewedby_eq\":\"%srfloginname%\"}",
     "text" : "由我评审",
-    "value" : "IREVIEW"
+    "value" : "IREVIEW",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Iclose",
     "data" : "{\"n_closedby_eq\":\"%srfloginname%\"}",
     "text" : "由我关闭",
-    "value" : "ICLOSE"
+    "value" : "ICLOSE",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

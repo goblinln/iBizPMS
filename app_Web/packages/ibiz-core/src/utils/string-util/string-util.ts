@@ -16,7 +16,7 @@ export class StringUtil {
      * @date 2021-04-23 20:04:01
      * @static
      */
-    static contextReg = /(?<=(\$\{context\.)).*?(?=(\}))/g;
+    static contextReg = /\$\{context.[a-zA-Z_$][a-zA-Z0-9_$]{1,}\}/g;
     /**
      * 数据替换正则
      *
@@ -24,7 +24,7 @@ export class StringUtil {
      * @date 2021-04-23 20:04:09
      * @static
      */
-    static dataReg = /(?<=(\$\{data\.)).*?(?=(\}))/g;
+    static dataReg = /\$\{data.[a-zA-Z_$][a-zA-Z0-9_$]{1,}\}/g;
 
     /**
      * 填充字符串中的数据
@@ -41,13 +41,15 @@ export class StringUtil {
         if (notNilEmpty(str)) {
             if (notNilEmpty(context)) {
                 const strArr = str.match(this.contextReg);
-                strArr?.forEach(key => {
+                strArr?.forEach(_key => {
+                    const key = _key.slice(10, _key.length - 1);
                     str = str.replace(`\${context.${key}}`, context[key] || '');
                 });
             }
             if (notNilEmpty(data)) {
                 const strArr = str.match(this.dataReg);
-                strArr?.forEach(key => {
+                strArr?.forEach(_key => {
+                    const key = _key.slice(7, _key.length - 1);
                     str = str.replace(`\${data.${key}}`, data[key] || '');
                 });
             }

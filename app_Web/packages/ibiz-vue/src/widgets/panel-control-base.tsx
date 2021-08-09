@@ -424,7 +424,16 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
                 this.$set(this.data, item.name, null);
             });
         }
-        await this.computeLoadState();
+        const dataMode = this.controlInstance.dataMode;
+        if(dataMode === 3){
+            this.viewCtx.appGlobal[this.controlInstance.M.dataName] = this.data;
+        }else if(dataMode === 4){
+            this.viewCtx.routeViewGlobal[this.controlInstance.M.dataName] = this.data;
+        }else if(dataMode === 5){
+            this.viewCtx.viewGlobal[this.controlInstance.M.dataName] = this.data;
+        }else{
+            await this.computeLoadState(dataMode);
+        }
     }
 
     /**
@@ -432,8 +441,7 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      *
      * @memberof PanelControlBase
      */
-    public async computeLoadState() {
-        const dataMode = this.controlInstance.dataMode;
+    public async computeLoadState(dataMode: number) {
         if (dataMode === 0) {
             //  0：不获取，使用传入数据
             if (this.navdatas && (this.navdatas.length > 0)) {
@@ -504,7 +512,11 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
      */
     public fillPanelData(data: any) {
         this.getDataItems().forEach((item: any) => {
-            this.data[item.name] = data?.[item.prop];
+            if (item?.prop) {
+                this.data[item.name] = data?.[item.prop];
+            } else {
+                this.data[item.name] = data?.[item.name];
+            }
         });
     }
 
@@ -631,13 +643,6 @@ export class PanelControlBase extends MDControlBase implements PanelControlInter
             }
         })
     }
-
-    /**
-     * 设置已经绘制完成状态
-     *
-     * @memberof ControlBase
-     */
-    public setIsMounted(name: string = 'self') { }
 
     /**
      * 监控数据对象

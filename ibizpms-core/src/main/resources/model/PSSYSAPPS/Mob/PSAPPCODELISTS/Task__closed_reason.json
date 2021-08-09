@@ -12,11 +12,13 @@
   "getPSCodeItems" : [ {
     "codeName" : "Done",
     "text" : "已完成",
-    "value" : "done"
+    "value" : "done",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Cancel",
     "text" : "已取消",
-    "value" : "cancel"
+    "value" : "cancel",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

@@ -21,9 +21,13 @@ export class AppUILogicNodeBase {
      */
     public computeNextNodes(logicNode: any, actionContext: UIActionContext) {
         LogUtil.log(`已完成执行${logicNode?.name}节点，操作参数数据如下:`);
-        if(actionContext.paramsMap && (actionContext.paramsMap.size > 0)){
+        if (actionContext.paramsMap && (actionContext.paramsMap.size > 0)) {
             for (let [key, value] of actionContext.paramsMap) {
-                LogUtil.log(`${key}:`,value);
+                if (key && Object.is(key, 'Context')) {
+                    LogUtil.log(`${key}:`, actionContext.context);
+                } else {
+                    LogUtil.log(`${key}:`, value);
+                }
             }
         }
         let result: any = { nextNodes: [], actionContext };
@@ -68,7 +72,7 @@ export class AppUILogicNodeBase {
                 let dstLogicParam = actionContext.getParam(logicLinkSingleCond?.getDstLogicParam?.()?.codeName || actionContext.defaultParamName)
                 let dstValue = dstLogicParam[logicLinkSingleCond.dstFieldName.toLowerCase()]
                 let targetValue;
-                if(logicLinkSingleCond.paramType){
+                if (logicLinkSingleCond.paramType) {
                     switch (logicLinkSingleCond.paramType) {
                         case 'CURTIME':
                             targetValue = Util.dateFormat(new Date(), 'YYYY-MM-DD');
@@ -76,7 +80,7 @@ export class AppUILogicNodeBase {
                         default:
                             targetValue = logicLinkSingleCond.paramValue;
                     }
-                }else{
+                } else {
                     targetValue = logicLinkSingleCond.paramValue;
                 }
                 return Verify.testCond(dstValue, logicLinkSingleCond.condOP, targetValue)

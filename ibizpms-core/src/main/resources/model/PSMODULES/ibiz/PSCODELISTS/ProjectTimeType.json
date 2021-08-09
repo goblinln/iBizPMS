@@ -6,16 +6,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Consumed",
     "text" : "消耗时间",
-    "value" : "CONSUMED"
+    "value" : "CONSUMED",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Left",
     "text" : "剩余时间",
-    "value" : "LEFT"
+    "value" : "LEFT",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

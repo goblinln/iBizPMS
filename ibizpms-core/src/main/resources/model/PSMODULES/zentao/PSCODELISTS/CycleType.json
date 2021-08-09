@@ -7,20 +7,24 @@
   "getPSCodeItems" : [ {
     "codeName" : "Day",
     "text" : "天",
-    "value" : "day"
+    "value" : "day",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Week",
     "text" : "周",
-    "value" : "week"
+    "value" : "week",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Month",
     "text" : "月度",
-    "value" : "month"
+    "value" : "month",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

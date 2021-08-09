@@ -122,25 +122,16 @@ export class AppListBase extends ListControlBase {
      * @memberof AppListBase
      */
     public renderListContent(item: any, listItem: IPSDEListItem) {
-        return [<div class='app-list-item-content'>
-                {item.srficon ? (
-                    <div class='item-icon'>
-                        <img src={item.srficon} />
-                    </div>
-                ) : null}
-            <div class='item-content-text'>
-                <span class='item-title'>{item.srfmajortext}</span>
-                {item.srfdescription && (
-                    <span class='item-description'>{item.srfdescription}</span>
-                )}
-            </div>
-        </div>,
-        item.srfdate && (
-            <div class='app-list-item-date'>
-                <span class='date'>{item.srfdate}</span>
-            </div>
-        ),
-        <div class='app-list-item-action'>{listItem ? this.renderListItemAction(item, listItem) : ''}</div>]
+        return [
+            <div class='app-list-item-content'>
+                <div class='item-content-text'>
+                    <span class='item-title'>{item.srfmajortext}</span>
+                    {item.content && (
+                        <span class='item-content'>{item.content}</span>
+                    )}
+                </div>
+            </div>,
+            <div class='app-list-item-action'>{listItem ? this.renderListItemAction(item, listItem) : ''}</div>]
     }
 
     /**

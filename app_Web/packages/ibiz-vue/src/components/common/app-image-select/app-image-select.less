@@ -1,0 +1,42 @@
+.image-selector {
+    height: 148px;
+    .image-wrapper,
+    .el-dialog__body {
+        height: 100%;
+        > .image-img {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            > img {
+                width: 100%;
+            }
+        }
+        > .image-svg {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            > svg {
+                width: 100%;
+            }
+        }
+    }
+    .el-dialog__header {
+        padding: 0;
+    }
+    &.has-picture .el-upload.el-upload--picture-card {
+        display: none;
+    }
+    &.disabled .el-upload.el-upload--picture-card {
+        background-color: rgba(0, 0, 0, 0.1);
+        border: none;
+        cursor: not-allowed;
+    }
+    .el-upload-list__item {
+        transition: none;
+    }
+    .el-upload-list__item.is-ready {
+        display: none;
+    }
+}

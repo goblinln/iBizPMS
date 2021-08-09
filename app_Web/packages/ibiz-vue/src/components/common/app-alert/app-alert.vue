@@ -1,20 +1,26 @@
 <template>
-    <div class="app-alert">
+    <div 
+        ref="appAlert" 
+        :class="[
+            'app-alert',
+            enableScroll ? showStyle == 'MARQUEE2' ? 'enable-scroll vertical-scroll' : 'enable-scroll horizontal-scroll' : '',
+        ]">
         <template v-if="items && items.length > 0">
             <template v-for="(item, index) in items">
                 <template v-if="item.hasContent && !Object.is('POPUP', item.position)">
-                <el-alert
-                    :key="index"
-                    v-show="item.showState"
-                    :title="item.title"
-                    :type="item.type"
-                    :closable="item.closeable"
-                    @close="alertClose(item)">
-                    <template slot>
-                        <span v-if="item.messageType == 'HTML'" v-html="item.content"></span>
-                        <span v-else>{{ item.content }}</span>
-                    </template>
-                </el-alert>
+                    <el-alert
+                        v-show="item.showState"
+                        :key="index"
+                        :title="item.title"
+                        :type="item.type"
+                        :closable="item.closeable"
+                        :class="['alert-item', `item-index-${index}`, curIndex === index ? 'active' : '']"
+                        @close="alertClose(item)">
+                        <template slot>
+                            <span v-if="item.messageType == 'HTML'" v-html="item.content"></span>
+                            <span v-else>{{ item.content }}</span>
+                        </template>
+                    </el-alert>
                 </template>
             </template>
         </template>
@@ -76,7 +82,30 @@ export default class AppAlert extends Vue {
      */
     @Prop() viewname!: any;
 
+    /**
+     * 视图消息模型集合
+     * 
+     * @type {any}
+     * @memberof AppAlert
+     */
     @Prop() messageDetails!: any[];
+
+    /**
+     * 显示模式
+     * 
+     * @description 视图消息显示模式 {LIST：列表显示、 MARQUEE：横向滚动显示、 MARQUEE2：纵向滚动显示、 USER：用户自定义、 USER2：用户自定义2 }
+     * @type {string}
+     * @memberof AppAlert
+     */
+    @Prop({ default: 'MARQUEE2' }) public showStyle?: 'LIST' | 'MARQUEE' | 'MARQUEE2' | 'USER' | 'USER2';
+
+    /**
+     * 开启滚动
+     * 
+     * @type {boolean}
+     * @memberof AppAlert
+     */
+    public enableScroll: boolean = false;
     
     /**
      * 视图消息对象
@@ -87,12 +116,72 @@ export default class AppAlert extends Vue {
     public items: any[]= [];
 
     /**
-     * Vue生命周期
+     * 当前展示消息下标（开启滚动时启用）
+     * 
+     * @type {number}
+     * @memberof AppAlert
+     */
+    public curIndex: number = 0;
+
+    /**
+     * 定时器对象（开启滚动时启用）
+     * 
+     * @type {any}
+     * @memberof AppAlert
+     */
+    public timer: any = null;
+
+    /**
+     * 定时器执行间隔（开启滚动时启用）
+     * 
+     * @type {number}
+     * @memberof AppAlert
+     */
+    public delayTime: number = 3000;
+
+    /**
+     * 消息类型对应背景颜色集合
+     * 
+     * @type {number}
+     * @memberof AppAlert
+     */
+    public bgColorMap: any = { 
+        'success': '#f0f9eb',
+        'info': '#f4f4f5', 
+        'warning': '#fdf6ec',
+        'error': '#fef0f0'
+    }
+
+    /**
+     * Vue生命周期 --- Created
      * 
      * @memberof AppAlert
      */
     public created() {
+        this.initOptions();
         this.handleItems();
+    }
+
+    /**
+     * Vue生命周期 --- Mounted
+     * 
+     * @memberof AppAlert
+     */
+    public mounted() {
+        if (this.enableScroll) {
+            this.initScroll();
+        }
+    }
+
+    /**
+     * 开启滚动时初始化配置
+     * 
+     * @memberof AppAlert
+     */
+    public initOptions() {
+        if (this.showStyle == "MARQUEE" || this.showStyle == 'MARQUEE2') {
+            this.enableScroll = true;
+        }
     }
 
     /**
@@ -108,6 +197,10 @@ export default class AppAlert extends Vue {
                 this.handleItemPosition(detail, flag);
                 this.items.push(detail);
             })
+            //  开启滚动时获取激活视图消息项
+            if (this.enableScroll) {
+                this.getActiveItem();
+            }
         }
     }
 
@@ -180,7 +273,7 @@ export default class AppAlert extends Vue {
                             ]), 
                             type: data.type,
                             showClose: data.closeable,
-                            onClose: this.alertClose,
+                            onClose: (eveny: any) => this.alertClose(data),
                         })
                     }, 0)
                 } else {
@@ -193,7 +286,7 @@ export default class AppAlert extends Vue {
                             ]), 
                             type: data.type,
                             showClose: data.closeable,
-                            onClose: this.alertClose,
+                            onClose: (eveny: any) => this.alertClose(data),
                         })
                     }, 0)
                 }
@@ -207,6 +300,11 @@ export default class AppAlert extends Vue {
      * @memberof AppAlert
      */
     public alertClose(data: any) {
+        data.showState = false;
+        if (this.enableScroll && data.position !== 'POPUP') {
+            this.getActiveItem();
+            this.initScroll();
+        }
         if(data.customClass) {
             let tempArr: any[] = data.customClass.toString().split(',');
             if(tempArr && tempArr.length > 0) {
@@ -220,6 +318,115 @@ export default class AppAlert extends Vue {
             const tag = this.viewname + '_' + this.infoGroup + '_' + data.codeName;
             localStorage.setItem(tag, data.codeName);
         }
+    }
+
+    /**
+     * 初始化滚动逻辑，设置定时器
+     * 
+     * @memberof AppAlert
+     */
+    public initScroll() {
+        this.removeInterval();
+        this.timer = setInterval(() => {
+            this.getActiveItem();
+        }, this.delayTime)
+    }
+
+    /**
+     * 获取当前激活视图消息项（开启滚动时有效）
+     * 
+     * @memberof AppAlert
+     */
+    public getActiveItem() {
+        const showItems = this.items.filter((item: any) => item.showState);
+        let items: any = [];
+        if (this.curIndex < this.items.length - 1) {
+            items = this.items.slice(this.curIndex + 1, this.items.length);
+        } else {
+            items = [...showItems];
+        }
+        const index = this.getActiveItemIndex(items);
+        //  无显示项
+        if (index == -1 && showItems.length == 0) {
+            this.noItemsShow();
+        } else if(index == -1) {
+            //  获取第一个激活项
+            this.curIndex = this.items.findIndex((_item: any) => Object.is(_item, showItems[0]) );
+        } else {
+            this.curIndex = index;
+        }
+        if (index != -1) {
+            this.handleContainerBgColorChange();
+        }
+    }
+
+    /**
+     * 处理视图消息容器背景颜色变化（开启滚动时有效）
+     * 
+     * @memberof AppAlert
+     */
+    public handleContainerBgColorChange() {
+        const alert: any = this.$refs.appAlert;
+        const item = this.items[this.curIndex];
+        if (alert && item) {
+            const oldBgColor = getComputedStyle(alert).getPropertyValue('--new-message-bg-color');
+            const newBgColor = this.bgColorMap[item.type];
+            alert.style.setProperty('--old-message-bg-color', oldBgColor);
+            alert.style.setProperty('--new-message-bg-color', newBgColor);
+        }
+    }
+
+    /**
+     * 获取当前激活视图消息项下标（开启滚动时有效）
+     * 
+     * @description 获取当前激活视图消息项对应items中的下标，没有时返回-1
+     * @memberof AppAlert
+     */
+    public getActiveItemIndex(items: any[]) {
+        if (items.length == 0) {
+            return -1;
+        }
+        let item: any = items.find((item: any) => { return item.showState });
+        if (!item) {
+            return -1;
+        }
+        return this.items.findIndex((_item: any) => { return Object.is(item, _item) });
+    }
+
+    /**
+     * 无视图消息展示（开启滚动时有效）
+     * 
+     * @description 无视图消息展示时，隐藏消息容器，删除定时器
+     * @memberof AppAlert
+     */
+    public noItemsShow() {
+        const alert: any = this.$refs.appAlert;
+        if (alert) {
+            alert.style.display = 'none';
+        }
+        this.removeInterval();
+    }
+
+    /**
+     * 删除定时器
+     * 
+     * @memberof AppAlert
+     */
+    public removeInterval() {
+        if (this.timer) {
+            clearInterval(this.timer);
+            this.timer = null;
+        }
+    }
+
+    /**
+     * Vue生命周期 --- Destroyed
+     * 
+     * @description 无视图消息展示时，隐藏消息容器，删除定时器
+     * @memberof AppAlert
+     */
+    public destroyed() {
+        this.removeInterval();
     }
 
 }

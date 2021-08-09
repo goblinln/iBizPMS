@@ -10,7 +10,7 @@ import { IPSDEEditFormItem, IPSDEForm } from '@ibiz/dynamic-model-api';
  * @class FormControlBase
  * @extends {MainControlBase}
  */
-export class FormControlBase extends MainControlBase implements FormControlInterface{
+export class FormControlBase extends MainControlBase implements FormControlInterface {
 
     /**
      * 表单数据对象
@@ -413,7 +413,7 @@ export class FormControlBase extends MainControlBase implements FormControlInter
      * @param {*} [opt={}] 加载参数
      * @memberof FormControlBase
      */
-    public load(opt: any = {}): void {
+    public async load(opt: any = {}) {
         if (!this.loadAction) {
             this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loadaction') as string), 'load');
             return;
@@ -421,26 +421,62 @@ export class FormControlBase extends MainControlBase implements FormControlInter
         const arg: any = { ...opt };
         let tempContext: any = JSON.parse(JSON.stringify(this.context));
         let viewparamResult: any = Object.assign(arg, this.viewparams);
+        let beforeloadResult: any = await this.executeCtrlEventLogic('onbeforeload', { action: this.loadAction, sender: this, navContext: this.context, navParam: viewparamResult, navData: this.navdatas, data: this.getData() });
+        if (beforeloadResult && beforeloadResult?.hasOwnProperty('srfret') && !beforeloadResult.srfret) {
+            return;
+        }
+        this.ctrlEvent({
+            controlname: this.controlInstance.name,
+            action: 'onbeforeload',
+            data: { action: this.loadAction, sender: this, navContext: this.context, navParam: viewparamResult, navData: this.navdatas, data: this.getData() }
+        });
         this.onControlRequset('load', tempContext, viewparamResult);
         const get: Promise<any> = this.service.get(this.loadAction, tempContext, { viewparams: viewparamResult }, this.showBusyIndicator);
-        get.then((response: any) => {
+        get.then(async (response: any) => {
             this.onControlResponse('load', response);
             if (!response.status || response.status !== 200) {
+                let loaderrorResult: any = await this.executeCtrlEventLogic('onloaderror', { action: this.loadAction, sender: this, navContext: this.context, navParam: viewparamResult, navData: this.navdatas, data: response?.data });
+                if (loaderrorResult && loaderrorResult?.hasOwnProperty('srfret') && !loaderrorResult.srfret) {
+                    return;
+                }
+                this.ctrlEvent({
+                    controlname: this.controlInstance.name,
+                    action: 'onloaderror',
+                    data: { action: this.loadAction, sender: this, navContext: this.context, navParam: viewparamResult, navData: this.navdatas, data: response?.data }
+                });
                 this.$throw(response, 'load');
                 return;
             }
             const data = response.data;
+            let loadsuccessResult: any = await this.executeCtrlEventLogic('onloadsuccess', { action: this.loadAction, sender: this, navContext: this.context, navParam: viewparamResult, navData: this.navdatas, data: data })
+            if (loadsuccessResult && loadsuccessResult?.hasOwnProperty('srfret') && !loadsuccessResult.srfret) {
+                return;
+            }
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'onloadsuccess',
+                data: { action: this.loadAction, sender: this, navContext: this.context, navParam: viewparamResult, navData: this.navdatas, data: data }
+            });
             this.onFormLoad(data, 'load');
             this.ctrlEvent({
                 controlname: this.controlInstance.name,
                 action: 'load',
-                data: this.data,
+                data: this.data
             });
             this.$nextTick(() => {
                 this.formState.next({ type: 'load', data: data });
             });
-        }).catch((error: any) => {
+        }).catch(async (error: any) => {
             this.onControlResponse('load', error);
+            let loaderrorResult: any = await this.executeCtrlEventLogic('onloaderror', { action: this.loadAction, sender: this, navContext: this.context, navParam: viewparamResult, navData: this.navdatas, data: error?.data });
+            if (loaderrorResult && loaderrorResult?.hasOwnProperty('srfret') && !loaderrorResult.srfret) {
+                return;
+            }
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'onloaderror',
+                data: { action: this.loadAction, sender: this, navContext: this.context, navParam: viewparamResult, navData: this.navdatas, data: error?.data }
+            });
             this.$throw(error, 'load');
         });
     }
@@ -555,7 +591,7 @@ export class FormControlBase extends MainControlBase implements FormControlInter
             return formItem.getPSAppDEField()?.name == fieldName;
         })
     }
-    
+
     /**
      * 处理部件UI请求
      *
@@ -564,7 +600,7 @@ export class FormControlBase extends MainControlBase implements FormControlInter
      * @param {*} viewparam 视图参数
      * @memberof FormControlBase
      */
-     public onControlRequset(action: string, context: any, viewparam: any) {
+    public onControlRequset(action: string, context: any, viewparam: any) {
         if (!Object.is(action, 'updateFormItems')) {
             this.ctrlBeginLoading();
         }
@@ -595,18 +631,18 @@ export class FormControlBase extends MainControlBase implements FormControlInter
         if (response && response.status && response.status != 200 && response.data) {
             const data: any = response.data;
             if (data.code && Object.is(AppErrorCode.INPUTERROR, data.code) && data.details?.length > 0) {
-                let errorMsg:string = '';
+                let errorMsg: string = '';
                 data.details.forEach((detail: any) => {
                     if (Object.is(EntityFieldErrorCode.ERROR_VALUERULE, detail.fielderrortype) && detail.fieldname) {
                         const tempFormItem: any = this.findFormItemByField(detail.fieldname);
                         if (tempFormItem) {
                             Object.assign(this.detailsModel[tempFormItem.name], { error: new String(detail.fielderrorinfo ? detail.fielderrorinfo : data.message) });
-                        }else{
+                        } else {
                             errorMsg += `${detail.fieldlogicname}${detail.fielderrorinfo ? detail.fielderrorinfo : data.message}<br/>`;
                         }
                     }
                 })
-                response.data.message = errorMsg?errorMsg:(this.$t('app.searchform.globalerrortip') as string);
+                response.data.message = errorMsg ? errorMsg : (this.$t('app.searchform.globalerrortip') as string);
                 this.$forceUpdate();
             }
         }

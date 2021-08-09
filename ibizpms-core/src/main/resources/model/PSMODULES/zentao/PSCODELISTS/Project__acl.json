@@ -8,16 +8,19 @@
     "codeName" : "Open",
     "text" : "默认设置(有项目视图权限，即可访问)",
     "value" : "open",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Private",
     "text" : "私有项目(只有项目团队成员才能访问)",
-    "value" : "private"
+    "value" : "private",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

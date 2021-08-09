@@ -382,6 +382,7 @@ export class AppComponentService {
         this.editorMap.set("FILEUPLOADER_USEWORKTEMP", "text-file-upload");
         this.editorMap.set("PICKER_COMMONMICROCOM", "app-common-microcom");
         this.editorMap.set("SLIDER_PROGRESS", 'app-progress');
+        this.editorMap.set("PICTURE_ONE_RAW", 'app-image-select');
        // 注册编辑器
         this.editorMap.set("MDROPDOWNLIST_MpickerList", "app-mdropdownlist-mpicker-list");
         this.editorMap.set("TEXTBOX_casedesc", "app-textbox-casedesc");

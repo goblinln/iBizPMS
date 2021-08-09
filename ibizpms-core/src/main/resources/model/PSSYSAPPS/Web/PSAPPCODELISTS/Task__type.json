@@ -12,39 +12,48 @@
   "getPSCodeItems" : [ {
     "codeName" : "Design",
     "text" : "设计",
-    "value" : "design"
+    "value" : "design",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Devel",
     "text" : "开发",
-    "value" : "devel"
+    "value" : "devel",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Test",
     "text" : "测试",
-    "value" : "test"
+    "value" : "test",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Study",
     "text" : "研究",
-    "value" : "study"
+    "value" : "study",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Discuss",
     "text" : "讨论",
-    "value" : "discuss"
+    "value" : "discuss",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Ui",
     "text" : "界面",
-    "value" : "ui"
+    "value" : "ui",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Affair",
     "text" : "事务",
-    "value" : "affair"
+    "value" : "affair",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Serve",
     "text" : "服务",
-    "value" : "serve"
+    "value" : "serve",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Misc",
     "text" : "其他",
-    "value" : "misc"
+    "value" : "misc",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

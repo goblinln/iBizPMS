@@ -66,10 +66,6 @@
         } ],
         "ruleInfo" : "本次消耗必须大于0"
       },
-      "getPSDEField" : {
-        "name" : "CURRENTCONSUMED",
-        "codeName" : "CurrentConsumed"
-      },
       "ruleInfo" : "本次消耗必须大于0",
       "checkDefault" : false,
       "defaultMode" : false,

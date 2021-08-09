@@ -8,31 +8,38 @@
   "getPSCodeItems" : [ {
     "codeName" : "Item_7",
     "text" : "一星期",
-    "value" : "7"
+    "value" : "7",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_14",
     "text" : "两星期",
-    "value" : "14"
+    "value" : "14",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_31",
     "text" : "一个月",
-    "value" : "31"
+    "value" : "31",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_62",
     "text" : "两个月",
-    "value" : "62"
+    "value" : "62",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_93",
     "text" : "三个月",
-    "value" : "93"
+    "value" : "93",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_186",
     "text" : "半年",
-    "value" : "186"
+    "value" : "186",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_365",
     "text" : "一年",
-    "value" : "365"
+    "value" : "365",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

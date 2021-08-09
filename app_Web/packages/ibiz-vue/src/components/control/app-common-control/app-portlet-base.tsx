@@ -103,24 +103,27 @@ export class AppPortletBase extends PortletControlBase {
         const { rawItemHeight, rawItemWidth, contentType, rawContent, htmlContent } = this.controlInstance as IPSDBRawItemPortletPart;
         let sysCssName = this.controlInstance.getPSSysCss()?.cssName;
         let sysImage = this.controlInstance.getPSSysImage()?.cssClass;
+        let sysImgurl = this.controlInstance.getPSSysImage()?.imagePath;
         const style: any = {
             width: rawItemWidth > 0 ? `${rawItemWidth}px` : false,
             height: rawItemHeight > 0 ? `${rawItemHeight}px` :false,
         }
-        let newRawContent = rawContent;
-        if (newRawContent) {
-            const items = newRawContent.match(/\{{(.+?)\}}/g);
+        let content: any;
+        if (Object.is(contentType,'RAW')) {
+            content = rawContent;
+        } else if (Object.is(contentType,'HTML')){
+            content = htmlContent;
+        }
+        if (content) {
+            const items = content.match(/\{{(.+?)\}}/g);
             if (items) {
                 items.forEach((item: string) => {
-                    newRawContent = newRawContent.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
+                    content = content.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
                 });
             }
+            content = content.replaceAll('&lt;','<');
+            content = content.replaceAll('&gt;','>');
         }
-        const tempNode = this.$createElement('div', {
-            domProps: {
-                innerHTML: newRawContent,
-            },
-        });
         return (
             <app-rawitem
                 class={sysCssName}
@@ -129,9 +132,9 @@ export class AppPortletBase extends PortletControlBase {
                 context={this.context}
                 contentType={contentType}
                 imageClass={sysImage}
-                htmlContent={htmlContent}
+                imgUrl={sysImgurl}
+                content={content}
             >
-                {Object.is(contentType, 'RAW') && tempNode}
             </app-rawitem>
         );
     }

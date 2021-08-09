@@ -8,28 +8,34 @@
     "codeName" : "Item_1",
     "text" : "1",
     "value" : "1",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_2",
     "text" : "2",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_3",
     "text" : "3",
-    "value" : "3"
+    "value" : "3",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_4",
     "text" : "4",
-    "value" : "4"
+    "value" : "4",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_5",
     "text" : "5",
-    "value" : "5"
+    "value" : "5",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -79,7 +79,7 @@ export class AppServiceBase {
      * @type {(any)}
      * @memberof AppServiceBase
      */
-    private static router:any;
+    private static router: any;
 
     /**
      * 获取AppServiceBase单例对象
@@ -101,7 +101,7 @@ export class AppServiceBase {
      * @public
      * @memberof AppServiceBase
      */
-    public getAppModelDataObject():IPSApplication {
+    public getAppModelDataObject(): IPSApplication {
         return AppServiceBase.appModelDataObject;
     }
 
@@ -221,7 +221,7 @@ export class AppServiceBase {
      * @public
      * @memberof AppServiceBase
      */
-     public getRouter() {
+    public getRouter() {
         return AppServiceBase.router;
     }
 
@@ -233,6 +233,30 @@ export class AppServiceBase {
      */
     public setRouter(opts: any) {
         AppServiceBase.router = opts;
+    }
+
+    /**
+     * 应用级抛事件
+     *
+     * @public
+     * @memberof AppServiceBase
+     */
+    public $emit(eventName: string, args: any) {
+        if (this.getRouter().app) {
+            (this.getRouter().app as Vue).$emit(eventName, args);
+        }
+    }
+
+    /**
+     * 应用级接收事件
+     *
+     * @public
+     * @memberof AppServiceBase
+     */
+    public $on(eventName: string, callback: Function) {
+        if (this.getRouter().app) {
+            (this.getRouter().app as Vue).$on(eventName, callback);
+        }
     }
 
 }

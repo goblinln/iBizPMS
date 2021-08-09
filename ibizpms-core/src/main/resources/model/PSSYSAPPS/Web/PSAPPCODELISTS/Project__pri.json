@@ -17,7 +17,8 @@
     "text" : "1",
     "textCls" : "text-red-border-color",
     "value" : "1",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_2",
     "getPSSysCss" : {
@@ -25,7 +26,8 @@
     },
     "text" : "2",
     "textCls" : "text-pink-border-color",
-    "value" : "2"
+    "value" : "2",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_3",
     "getPSSysCss" : {
@@ -33,7 +35,8 @@
     },
     "text" : "3",
     "textCls" : "text-blue-border-color",
-    "value" : "3"
+    "value" : "3",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_4",
     "getPSSysCss" : {
@@ -41,7 +44,8 @@
     },
     "text" : "4",
     "textCls" : "text-green-border-color",
-    "value" : "4"
+    "value" : "4",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

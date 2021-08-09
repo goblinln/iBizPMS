@@ -8,16 +8,19 @@
     "codeName" : "Item_0",
     "color" : "rgba(244, 15, 15, 1)",
     "text" : "未读",
-    "value" : "0"
+    "value" : "0",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item_1",
     "text" : "已读",
-    "value" : "1"
+    "value" : "1",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

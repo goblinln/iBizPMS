@@ -367,26 +367,10 @@
           "codeName" : "IBizParent",
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDERS/DER1N__ZT_DEPT__ZT_DEPT__PARENT.json",
-          "getMajorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
-          },
           "masterOrder" : -1,
           "masterRS" : 0,
-          "getMinorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
-          },
           "name" : "DER1N__ZT_DEPT__ZT_DEPT__PARENT",
           "orderValue" : 100,
-          "getPSPickupDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
-          },
-          "getPSPickupTextDEField" : {
-            "name" : "PARENTNAME",
-            "codeName" : "ParentName"
-          },
           "pickupDEFName" : "PARENT",
           "removeActionType" : -1,
           "removeOrder" : 0
@@ -423,26 +407,10 @@
           "codeName" : "IBizParent",
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDERS/DER1N__ZT_DEPT__ZT_DEPT__PARENT.json",
-          "getMajorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
-          },
           "masterOrder" : -1,
           "masterRS" : 0,
-          "getMinorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept.json"
-          },
           "name" : "DER1N__ZT_DEPT__ZT_DEPT__PARENT",
           "orderValue" : 100,
-          "getPSPickupDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
-          },
-          "getPSPickupTextDEField" : {
-            "name" : "PARENTNAME",
-            "codeName" : "ParentName"
-          },
           "pickupDEFName" : "PARENT",
           "removeActionType" : -1,
           "removeOrder" : 0

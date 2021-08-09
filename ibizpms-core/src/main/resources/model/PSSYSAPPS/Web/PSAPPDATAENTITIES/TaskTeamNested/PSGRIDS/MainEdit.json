@@ -242,10 +242,6 @@
         } ],
         "ruleInfo" : "预计剩余大于等于0"
       },
-      "getPSDEField" : {
-        "name" : "LEFT",
-        "codeName" : "Left"
-      },
       "ruleInfo" : "预计剩余大于等于0",
       "checkDefault" : false,
       "defaultMode" : false,
@@ -271,10 +267,6 @@
           "name" : "[常规条件] 大于(>) (0)",
           "paramValue" : "0"
         } ]
-      },
-      "getPSDEField" : {
-        "name" : "ESTIMATE",
-        "codeName" : "Estimate"
       },
       "ruleInfo" : "预计大于等于0",
       "checkDefault" : false,
@@ -304,10 +296,6 @@
           "includeMinValue" : true
         } ],
         "ruleInfo" : "总计消耗大于等于0"
-      },
-      "getPSDEField" : {
-        "name" : "CONSUMED",
-        "codeName" : "Consumed"
       },
       "ruleInfo" : "总计消耗大于等于0",
       "checkDefault" : false,

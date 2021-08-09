@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "F",
     "text" : "女",
-    "value" : "f"
+    "value" : "f",
+    "includeBeginValue" : true
   }, {
     "codeName" : "M",
     "text" : "男",
-    "value" : "m"
+    "value" : "m",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

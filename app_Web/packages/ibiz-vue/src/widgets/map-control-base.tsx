@@ -4,7 +4,6 @@ import { IPSSysMap, IPSSysMapItem } from '@ibiz/dynamic-model-api';
 import { init } from 'echarts';
 import '../components/control/app-default-map/china.js'
 import { MapControlInterface, Util } from "ibiz-core";
-import { AMapManager } from 'vue-amap';
 
 /**
  * 地图部件基类
@@ -54,14 +53,6 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
      * @memberof MapControlBase
      */
     public win: any;
-
-    /**
-     * AMap SDK对象
-     *
-     * @type {*}
-     * @memberof MapControlBase
-     */
-    public amapManager: any = new AMapManager();
 
     /**
      * 地图信息缓存
@@ -416,9 +407,7 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
         Object.assign(data, { viewparams: tempViewParams });
         let tempContext: any =  Util.deepCopy(this.context);
         this.onControlRequset('load', tempContext, data);
-        const _this: any = this;
         this.service.search(this.fetchAction, this.context, data).then((response: any) => {
-            _this.onControlResponse('load', response);
             if (!response || response.status !== 200) {
                 this.$throw(response, 'load');
             }
@@ -432,10 +421,12 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
                 this.setAreaData();
                 this.handleMapOptions();
                 this.setOptions();
+                // 处理地图所有数据需要一定时间，所以将关闭遮罩放置在地图绘制完成之后
+                this.onControlResponse('load', response);
             });
         },
         (response: any) => {
-            _this.onControlResponse('load', response);
+            this.onControlResponse('load', response);
             this.$throw(response, 'load');
         });
     }
@@ -771,20 +762,21 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
      * @param {*} lat 纬度
      * @memberof MapControlBase
      */
-     public getAddress(lng: any, lat: any) {
+     public async getAddress(lng: any, lat: any) {
         return new Promise((resolve, reject) => {
+            let address: any = null;
             if (this.addressCache.get(lng+'-'+lat)) {
-                const address = this.addressCache.get(lng+'-'+lat);
+                address = this.addressCache.get(lng+'-'+lat);
                 resolve(address);
             }
             this.geocoder.getAddress([lng,lat],(status:any,result: any) => {
                 if (status === 'complete' && result.info === 'OK') {
                     if (result && result.regeocode) {
-                        const address = result.regeocode.addressComponent;
+                        address = result.regeocode.addressComponent;
                         this.addressCache.set(lng+'-'+lat, address);
-                        resolve(address);
                     }
                 }
+                resolve(address);
             })
         });
     }
@@ -799,12 +791,14 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
         if (this.items.length > 0) {
             for (let item of this.items) {
                 const address: any = await this.getAddress(item.longitude, item.latitude);
-                const provinceName = address.province;
-                this.areaData.push({
-                    name: provinceName,
-                    itemType: item.itemType,
-                    data: item,
-                })
+                if (address) {
+                    const provinceName = address.province;
+                    this.areaData.push({
+                        name: provinceName,
+                        itemType: item.itemType,
+                        data: item,
+                    })
+                }
             }
         }
     }

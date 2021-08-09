@@ -394,8 +394,8 @@
     }
 }
 
-// 多数据部件空数据
-.empty-data-tip{
+// 多数据部件空数据 & 加载动画
+.empty-data-tip, .load-data-tip{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -432,7 +432,6 @@
 .view-default.view-container.delistexpview,
 .view-default.view-container.dedataviewexpview,
 .view-default.view-container.decalendarexpview {
-  padding: 0;
   >.ivu-card >.ivu-card-body >.content-container  {
     padding: 0;
     background-color:var(--app-background-color-light);

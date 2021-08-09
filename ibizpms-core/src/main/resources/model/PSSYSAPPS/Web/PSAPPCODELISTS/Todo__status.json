@@ -8,21 +8,25 @@
   "getPSCodeItems" : [ {
     "codeName" : "Wait",
     "text" : "未开始",
-    "value" : "wait"
+    "value" : "wait",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Doing",
     "color" : "rgba(245, 18, 18, 1)",
     "text" : "进行中",
-    "value" : "doing"
+    "value" : "doing",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Done",
     "color" : "rgba(4, 251, 17, 1)",
     "text" : "已完成",
-    "value" : "done"
+    "value" : "done",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Closed",
     "text" : "已关闭",
-    "value" : "closed"
+    "value" : "closed",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

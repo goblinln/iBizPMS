@@ -259,6 +259,28 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
     }
 
     /**
+     * 获取多项数据
+     *
+     * @returns {any[]}
+     * @memberof TreeControlBase
+     */
+    public getDatas(): any[] {
+        return this.selectedNodes.map((item: any) => {
+            return item.curData;
+        });
+    }
+
+    /**
+     * 获取单项数据
+     *
+     * @returns {*}
+     * @memberof TreeControlBase
+     */
+    public getData(): any {
+        return this.selectedNodes?.[0]?.curData;
+    }
+
+    /**
      * 数据加载
      *
      * @param {*} [node={}] 节点数据
@@ -665,7 +687,15 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
                 }
                 if (index === -1) {
                     if (isRoot) {
-                        index = 0;
+                        if (this.viewparams && this.viewparams.srfnavtag && items.length > 0) {
+                            const activate = this.viewparams.srfnavtag;
+                            index = items.findIndex((item: any) => {
+                                return item.id && item.id.split(';') && (item.id.split(';')[0] == activate);
+                            });
+                            if (index === -1) index = 0;
+                        } else {
+                            index = 0;
+                        }
                     } else {
                         return;
                     }
@@ -800,6 +830,7 @@ export class TreeControlBase extends MDControlBase implements TreeControlInterfa
                     this.ctrlTriggerLogicMap.get('calcnodeallowdrop').executeUILogic({
                         context: dropNodeData.srfappctx,
                         viewparams: this.viewparams,
+                        utils: this.viewCtx,
                         data: [arg],
                         event: null,
                         xData: this,

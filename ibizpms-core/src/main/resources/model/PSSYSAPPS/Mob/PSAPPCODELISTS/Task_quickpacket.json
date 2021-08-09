@@ -13,63 +13,75 @@
     "codeName" : "ALLTASKCNT",
     "data" : "{}",
     "text" : "所有",
-    "value" : "All"
+    "value" : "All",
+    "includeBeginValue" : true
   }, {
     "codeName" : "UNCLOSETASKCNT",
     "data" : "{\"n_status_noteq\":\"closed\"}",
     "text" : "未关闭",
     "value" : "UNCLOSED",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "ASSTOMYTASKCNT",
     "data" : "{\"n_assignedto_eq\":\"%srfloginname%\"}",
     "text" : "指派给我",
-    "value" : "TOME"
+    "value" : "TOME",
+    "includeBeginValue" : true
   }, {
     "codeName" : "STORYCHANGECNT",
     "data" : "{\"n_status1_eq\":\"storychange\"}",
     "text" : "需求变更",
-    "value" : "storychange"
+    "value" : "storychange",
+    "includeBeginValue" : true
   }, {
     "codeName" : "MORETASKCNT",
     "getPSCodeItems" : [ {
       "codeName" : "UNSTARTTASKCNT",
       "data" : "{\"n_status_eq\":\"wait\"}",
       "text" : "未开始",
-      "value" : "NOTSTARTED"
+      "value" : "NOTSTARTED",
+      "includeBeginValue" : true
     }, {
       "codeName" : "YSTARTASKCNT",
       "data" : "{\"n_status_eq\":\"doing\"}",
       "text" : "进行中",
-      "value" : "INPROGRESS"
+      "value" : "INPROGRESS",
+      "includeBeginValue" : true
     }, {
       "codeName" : "UNCOMPLETETASKCNT",
       "data" : "{\"n_status_in\":\"wait;cancel;doing\"}",
       "text" : "未完成",
-      "value" : "UNACCOMPLISHED"
+      "value" : "UNACCOMPLISHED",
+      "includeBeginValue" : true
     }, {
       "codeName" : "MYCOMPLETETASKCNT",
       "data" : "{\"n_finishedby_eq\":\"%srfloginname%\"}",
       "text" : "我完成",
-      "value" : "IFINISHED"
+      "value" : "IFINISHED",
+      "includeBeginValue" : true
     }, {
       "codeName" : "YCOMPLETETASKCNT",
       "data" : "{\"n_status_eq\":\"done\"}",
       "text" : "已完成",
-      "value" : "COMPLETED"
+      "value" : "COMPLETED",
+      "includeBeginValue" : true
     }, {
       "codeName" : "CLOSETASKCNT",
       "data" : "{\"n_status_eq\":\"closed\"}",
       "text" : "已关闭",
-      "value" : "CLOSED"
+      "value" : "CLOSED",
+      "includeBeginValue" : true
     }, {
       "codeName" : "CANCELTASKCNT",
       "data" : "{\"n_status_eq\":\"cancel\"}",
       "text" : "已取消",
-      "value" : "CANCELLED"
+      "value" : "CANCELLED",
+      "includeBeginValue" : true
     } ],
     "text" : "更多",
-    "value" : "MORE"
+    "value" : "MORE",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

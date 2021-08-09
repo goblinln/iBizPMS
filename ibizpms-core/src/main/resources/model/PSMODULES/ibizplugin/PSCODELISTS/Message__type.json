@@ -7,16 +7,19 @@
   "getPSCodeItems" : [ {
     "codeName" : "Todo",
     "text" : "待办",
-    "value" : "todo"
+    "value" : "todo",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Toread",
     "text" : "待阅",
-    "value" : "toread"
+    "value" : "toread",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

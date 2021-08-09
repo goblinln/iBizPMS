@@ -7,12 +7,14 @@
   "getPSCodeItems" : [ {
     "codeName" : "Sourcenote__dataentity",
     "text" : "实体",
-    "value" : "sourcenote__dataentity"
+    "value" : "sourcenote__dataentity",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

@@ -129,7 +129,7 @@ export class ViewToolbar extends Vue {
             if (item.items && item.items.length > 0) {
                 return this.renderMenuGroup(item);
             }
-            return <dropdown-item>{this.renderMenuItem(item)}</dropdown-item>;
+            return <dropdown-item>{this.renderMenuItem(item,false)}</dropdown-item>;
         });
     }
 
@@ -141,13 +141,23 @@ export class ViewToolbar extends Vue {
      * @returns {*}
      * @memberof ViewToolbar
      */
-    protected renderMenuItem(item: any): any {
+    protected renderMenuItem(item: any, showButton: boolean = true): any {
         const targetCounterService:any = Util.findElementByField(this.counterServiceArray,'path',item.uiaction?.getPSAppCounter?.()?.modelPath)?.service;
         if(item.visabled){
             if (item.itemType == 'RAWITEM') {
                 return <tooltip transfer={true} max-width='600' disabled={!item.tooltip}>
                     {this.renderRawItem(item)}
                 </tooltip>
+            } else if (!showButton) {
+              return (
+                  <span
+                  disabled={item.disabled}
+                  class={item.class}
+                  on-click={(e: any) => throttle(this.itemClick,[{ tag: item.name }, e],this)}>
+                      {item.showIcon ? <menu-icon item={item} /> : null}
+                      {item.showCaption ? <span class='caption'>{item.caption}</span> : ''}
+                  </span>
+              );
             }
             return (
                 <tooltip transfer={true} max-width='600' disabled={!item.tooltip}>
@@ -199,7 +209,7 @@ export class ViewToolbar extends Vue {
      */
     protected renderMenuGroup(item: ToolbarItem): any {
         return (
-            <dropdown class='user-menu-child' placement='left-start'>
+            <dropdown transfer transfer-class-name="view-toolbar-transfer" class='user-menu-child' placement='left-start'>
                 <dropdownItem name={item.name} title={item.tooltip}>
                     <icon type='ios-arrow-back'></icon>
                     {item.caption}
@@ -234,6 +244,7 @@ export class ViewToolbar extends Vue {
                         placement="bottom-start"
                         trigger="click"
                         stop-propagation
+                        transfer
                     >
                         {
                             <i-button
@@ -271,7 +282,7 @@ export class ViewToolbar extends Vue {
             }
             if (Object.is(item.itemType, 'ITEMS') && item.items && item.items.length > 0) {
                 return (
-                    <dropdown v-show={item.visabled} trigger='click'>
+                    <dropdown transfer transfer-class-name="view-toolbar-transfer" v-show={item.visabled} trigger='click'>
                         <tooltip transfer={true} max-width='600' disabled={!item.tooltip}>
                             <i-button class={this.getToolBarItemClass(item)} loading={this.isViewLoading}>
                                 {item.icon ? <menu-icon item={item} /> : null}
@@ -296,27 +307,32 @@ export class ViewToolbar extends Vue {
      */
     public renderRawItem(item: any) {
         let { style, rawContent, htmlContent, rawType, getPSSysImage } = item;
-        if (rawContent) {
-            const items = rawContent.match(/\{{(.+?)\}}/g);
+        let content: any;
+        let sysImage = getPSSysImage?.cssClass;
+        let sysImgurl = getPSSysImage?.imagePath;
+        if (Object.is(rawType,'RAW')) {
+            content = rawContent;
+        } else if (Object.is(rawType,'HTML')){
+            content = htmlContent;
+        }
+        if (content) {
+            const items = content.match(/\{{(.+?)\}}/g);
             if (items) {
                 items.forEach((item: string) => {
-                    rawContent = rawContent.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
+                    content = content.replace(/\{{(.+?)\}}/, eval(item.substring(2, item.length - 2)));
                 });
             }
+            content = content.replaceAll('&lt;','<');
+            content = content.replaceAll('&gt;','>');
         }
-        const tempNode = this.$createElement('div', {
-            domProps: {
-                innerHTML: rawContent,
-            },
-        });
         return (
             <app-rawitem
                 class={item.class}
                 style={style}
-                imageClass={getPSSysImage}
+                imageClass={sysImage}
+                imgUrl={sysImgurl}
                 contentType={rawType}
-                htmlContent={htmlContent}>
-                {Object.is(rawType, 'RAW') && tempNode}
+                content={content}>
             </app-rawitem>
         )
     }

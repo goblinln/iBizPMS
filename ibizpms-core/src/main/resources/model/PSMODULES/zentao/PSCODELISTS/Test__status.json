@@ -7,24 +7,29 @@
   "getPSCodeItems" : [ {
     "codeName" : "Wait",
     "text" : "未开始",
-    "value" : "wait"
+    "value" : "wait",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Doing",
     "text" : "进行中",
-    "value" : "doing"
+    "value" : "doing",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Done",
     "text" : "已完成",
-    "value" : "done"
+    "value" : "done",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Blocked",
     "text" : "被阻塞",
-    "value" : "blocked"
+    "value" : "blocked",
+    "includeBeginValue" : true
   } ],
   "refFlag" : false,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

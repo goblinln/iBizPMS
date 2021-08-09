@@ -412,7 +412,7 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
      * @memberof MDControlBase
      */
     public renderLoadDataTip(){
-        return <div class="empty-data-tip">
+        return <div class="load-data-tip">
             <img class="tip-img" src="./assets/img/load-data.gif" />
             <span class="tip-text">{this.$t('app.warn.load')}</span>
         </div>

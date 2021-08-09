@@ -66,7 +66,7 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { appConfig } from '@/config/appConfig';
 import { themeConfig } from '@/config/themeConfig';
-import { AppServiceBase, textCopy, Util } from 'ibiz-core';
+import { AppServiceBase, textCopy } from 'ibiz-core';
 import qs from 'qs';
 
 @Component({})

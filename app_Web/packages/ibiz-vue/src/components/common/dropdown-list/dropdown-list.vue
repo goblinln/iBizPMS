@@ -4,7 +4,7 @@
         class='dropdown-list'
         :transfer="true"
         v-model="currentVal"
-        :disabled="disabled"
+        :disabled="disabled || readonly"
         :clearable="true"
         :filterable="filterable"
         @on-open-change="onClick"
@@ -182,6 +182,13 @@ export default class DropDownList extends Vue {
      */
     @Prop() public disabled?: any;
 
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
+
     /**
      * 是否支持过滤
      * @type {boolean}
@@ -300,9 +307,7 @@ export default class DropDownList extends Vue {
         if(this.formState) {
             this.formStateEvent = this.formState.subscribe(({ type, data }) => {
                 if (Object.is('load', type)) {
-                    if(this.itemValue){
-                        this.loadData();
-                    }
+                    this.loadData();
                     this.readyValue();
                 }
             });

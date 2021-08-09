@@ -12,11 +12,13 @@
   "getPSCodeItems" : [ {
     "codeName" : "Group",
     "text" : "分组",
-    "value" : "GROUP"
+    "value" : "GROUP",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Item",
     "text" : "配置项",
-    "value" : "ITEM"
+    "value" : "ITEM",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

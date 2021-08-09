@@ -12,11 +12,13 @@
   "getPSCodeItems" : [ {
     "codeName" : "Pc",
     "text" : "PC",
-    "value" : "PC"
+    "value" : "PC",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Mob",
     "text" : "MOB",
-    "value" : "MOB"
+    "value" : "MOB",
+    "includeBeginValue" : true
   } ],
   "enableCache" : true
 }

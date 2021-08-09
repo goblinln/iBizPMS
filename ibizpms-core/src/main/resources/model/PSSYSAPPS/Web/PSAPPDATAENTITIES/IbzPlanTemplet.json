@@ -34,35 +34,11 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZPLANTEMPLET__DEACTION__CREATE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -70,14 +46,6 @@
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/CreateTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -86,49 +54,17 @@
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/CreateTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZPLANTEMPLET__DEACTION__GET"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
@@ -136,14 +72,6 @@
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetDraftTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -152,32 +80,12 @@
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetDraftTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
     "codeName" : "GetPlan",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetPlan.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetPlan"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
@@ -185,14 +93,6 @@
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -201,14 +101,6 @@
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -216,18 +108,6 @@
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZPLANTEMPLET__DEACTION__REMOVE"
-    },
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -237,14 +117,6 @@
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/RemoveTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -255,14 +127,6 @@
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/RemoveTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -270,31 +134,11 @@
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZPLANTEMPLET__DEACTION__UPDATE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
@@ -302,14 +146,6 @@
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/UpdateTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -318,14 +154,6 @@
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/UpdateTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   } ],
@@ -354,34 +182,10 @@
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchCurUserTemplet",
     "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "CurUserTemplet"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCurUserTemplet"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -451,35 +255,11 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZPLANTEMPLET__DEACTION__CREATE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
@@ -487,14 +267,6 @@
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/CreateTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -503,49 +275,17 @@
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/CreateTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZPLANTEMPLET__DEACTION__GET"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
@@ -553,14 +293,6 @@
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetDraftTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -569,32 +301,12 @@
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetDraftTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
     "codeName" : "GetPlan",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetPlan.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetPlan"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
@@ -602,14 +314,6 @@
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -618,14 +322,6 @@
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/GetTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -633,18 +329,6 @@
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZPLANTEMPLET__DEACTION__REMOVE"
-    },
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
@@ -654,14 +338,6 @@
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/RemoveTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -672,14 +348,6 @@
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/RemoveTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -687,31 +355,11 @@
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "IBZPLANTEMPLET__DEACTION__UPDATE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
@@ -719,14 +367,6 @@
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/UpdateTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -735,57 +375,21 @@
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDEACTIONS/UpdateTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
     "codeName" : "FetchCurUserTemplet",
     "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "CurUserTemplet"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCurUserTemplet"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempCurUserTemplet",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "CurUserTemplet",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "CurUserTemplet"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -793,10 +397,6 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -837,14 +437,6 @@
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Select"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
@@ -868,10 +460,6 @@
   "logicName" : "产品计划模板",
   "name" : "IBZ_PLANTEMPLET",
   "getPSDEName" : "IBZ_PLANTEMPLET",
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTemplet/PSDESERVICEAPIS/IbzPlanTemplet.json"
-  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "IBZ_PLANTEMPLETNAME",
     "codeName" : "IbzPlanTempletName"

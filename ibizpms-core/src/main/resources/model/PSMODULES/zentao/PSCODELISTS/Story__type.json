@@ -7,17 +7,20 @@
   "getPSCodeItems" : [ {
     "codeName" : "Requirement",
     "text" : "用户需求",
-    "value" : "requirement"
+    "value" : "requirement",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Story",
     "text" : "软件需求",
     "value" : "story",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

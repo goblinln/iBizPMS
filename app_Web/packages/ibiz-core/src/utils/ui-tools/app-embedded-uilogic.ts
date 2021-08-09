@@ -53,4 +53,18 @@
         eval(scriptCode);
         return result;
     }
+
+    /**
+     * 计算树节点样式
+     *
+     * @memberof AppEmbeddedUILogic
+     */
+     public static calNodeStyle(opts: any, scriptCode: string) {
+        let result: any;
+        const { arg } = opts;
+        const { node, data } = arg;
+        eval(scriptCode);
+        return result;
+    }
+
 }

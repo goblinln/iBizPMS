@@ -580,26 +580,10 @@
       "codeName" : "ParentModule",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-      },
       "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "PARENTNAME",
-        "codeName" : "ParentName"
-      },
       "pickupDEFName" : "PARENT",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -636,26 +620,10 @@
       "codeName" : "ParentModule",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-      },
       "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "PARENTNAME",
-        "codeName" : "ParentName"
-      },
       "pickupDEFName" : "PARENT",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -692,26 +660,10 @@
       "codeName" : "ParentModule",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-      },
       "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "PARENTNAME",
-        "codeName" : "ParentName"
-      },
       "pickupDEFName" : "PARENT",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -771,26 +723,10 @@
       "codeName" : "ParentModule",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-      },
       "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "PARENTNAME",
-        "codeName" : "ParentName"
-      },
       "pickupDEFName" : "PARENT",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -815,26 +751,10 @@
       "codeName" : "ParentModule",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-      },
       "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "PARENTNAME",
-        "codeName" : "ParentName"
-      },
       "pickupDEFName" : "PARENT",
       "removeActionType" : -1,
       "removeOrder" : 0
@@ -883,26 +803,10 @@
       "codeName" : "ParentModule",
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-      },
       "masterOrder" : -1,
       "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-      },
       "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
       "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "PARENTNAME",
-        "codeName" : "ParentName"
-      },
       "pickupDEFName" : "PARENT",
       "removeActionType" : -1,
       "removeOrder" : 0

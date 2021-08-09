@@ -103,6 +103,8 @@ public class DocLibSearchContext extends QueryWrapperContext<DocLib> {
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
                      wrapper.like("t1.`NAME`", query)
+                        .or().like("t11.`name`", query)
+                        .or().like("t21.`NAME`", query)
             );
 		 }
 	}

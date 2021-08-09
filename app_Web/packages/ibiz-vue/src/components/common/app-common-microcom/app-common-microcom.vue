@@ -2,14 +2,14 @@
     <div class="app-common-microcom">
         <template v-if="multiple" class="app-common-microcom-multiple">
             <checkbox-group v-model="selectArray" @on-change="selectChange">
-                <checkbox v-for="(item,index) in datas" :key="index" :label="item.id" :disabled="disabled || item.disabled">
+                <checkbox v-for="(item,index) in datas" :key="index" :label="item.id" :disabled="disabled || item.disabled || readonly">
                     <span>{{item.label}}</span>
                 </checkbox>
             </checkbox-group>
         </template>
         <template v-else class="app-common-microcom-radio">
             <el-radio-group v-model="selectArray[0]">
-                <el-radio v-for="(item,index) in datas" :key="index" :label="item.id" :disabled="disabled || item.disabled" @change="selectChange(item)">
+                <el-radio v-for="(item,index) in datas" :key="index" :label="item.id" :disabled="disabled || item.disabled || readonly" @change="selectChange(item)">
                     {{ item.label }}
                 </el-radio>
             </el-radio-group>
@@ -96,6 +96,14 @@ export default class AppCommonMicrocom extends Vue {
      */
     @Prop()
     public disabled?: boolean;
+
+    /**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false})
+    public readonly?: boolean;
 
     /**
      * 是否多选

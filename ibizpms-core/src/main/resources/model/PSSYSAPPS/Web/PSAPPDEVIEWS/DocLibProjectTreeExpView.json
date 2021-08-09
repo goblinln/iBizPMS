@@ -275,26 +275,10 @@
           "codeName" : "Zt_project",
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDERS/DER1N_ZT_DOCLIB_ZT_PROJECT_PROJECT.json",
-          "getMajorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-          },
           "masterOrder" : -1,
           "masterRS" : 4,
-          "getMinorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-          },
           "name" : "DER1N_ZT_DOCLIB_ZT_PROJECT_PROJECT",
           "orderValue" : 100,
-          "getPSPickupDEField" : {
-            "name" : "PROJECT",
-            "codeName" : "Project"
-          },
-          "getPSPickupTextDEField" : {
-            "name" : "PROJECTNAME",
-            "codeName" : "ProjectName"
-          },
           "pickupDEFName" : "PROJECT",
           "removeActionType" : -1,
           "removeOrder" : 0

@@ -5,6 +5,7 @@
             :active-change="false"
             v-model="minValue"
             :disabled="disabled"
+            :readonly="readonly"
             :precision="precision"
             @on-change="(value) => {onValueChange(value, 0)}">
         </input-number>
@@ -14,6 +15,7 @@
             :active-change="false"
             v-model="maxValue"
             :disabled="disabled"
+            :readonly="readonly"
             :precision="precision"
             @on-change="(value) => {onValueChange(value, 1)}">
         </input-number>
@@ -41,6 +43,13 @@ export default class AppNumberRange extends Vue {
      * @memberof AppNumberRange
      */
     @Prop({default: false}) public disabled: any;
+
+    /**
+     * 只读模式
+     * 
+     * @type {boolean}
+     */
+    @Prop({default: false}) public readonly?: boolean;
 
     /**
      * 关系表单项集合

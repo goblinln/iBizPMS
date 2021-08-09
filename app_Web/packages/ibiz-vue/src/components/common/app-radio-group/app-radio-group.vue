@@ -4,7 +4,7 @@
             v-for="(_item, index) in items"
             :key="index"
             :label="_item.value"
-            :disabled="isDisabled || _item.disabled"
+            :disabled="isDisabled || _item.disabled || readonly"
         >
             <span>{{ _item.text }}</span>
         </radio>
@@ -121,6 +121,13 @@ export default class AppRadioGroup extends Vue {
      * @memberof AppRadioGroup
      */
     @Prop() public disabled?: boolean;
+
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
 
     /**
      * 局部上下文导航参数

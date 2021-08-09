@@ -9,42 +9,50 @@
     "color" : "rgba(131, 138, 157, 1)",
     "text" : "未开始",
     "value" : "wait",
-    "default" : true
+    "default" : true,
+    "includeBeginValue" : true
   }, {
     "codeName" : "Doing",
     "color" : "rgba(255, 93, 93, 1)",
     "text" : "进行中",
-    "value" : "doing"
+    "value" : "doing",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Done",
     "color" : "rgba(67, 160, 71, 1)",
     "text" : "已完成",
-    "value" : "done"
+    "value" : "done",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Pause",
     "color" : "rgba(255, 152, 0, 1)",
     "text" : "已暂停",
-    "value" : "pause"
+    "value" : "pause",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Cancel",
     "color" : "rgba(131, 138, 157, 1)",
     "text" : "已取消",
-    "value" : "cancel"
+    "value" : "cancel",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Closed",
     "color" : "rgba(131, 138, 157, 1)",
     "text" : "已关闭",
-    "value" : "closed"
+    "value" : "closed",
+    "includeBeginValue" : true
   }, {
     "codeName" : "Storychange",
     "color" : "rgba(245, 8, 8, 1)",
     "text" : "需求变更",
-    "value" : "storychange"
+    "value" : "storychange",
+    "includeBeginValue" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : false,
   "enableCache" : true,
+  "includeBeginValue" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

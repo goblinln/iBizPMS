@@ -1,7 +1,7 @@
 <template>
     <div class="app-mpicker">
         <div style="position: relative;width: 100%;">
-            <el-select :value="curValue" multiple filterable remote :loading="loading" :remote-method="onSearch" size="small" style="width:100%;" @change="onSelect" @remove-tag="onRemove" :disabled="disabled">
+            <el-select :value="curValue" multiple filterable remote :loading="loading" :remote-method="onSearch" size="small" style="width:100%;" @change="onSelect" @remove-tag="onRemove" :disabled="disabled || readonly">
                 <template v-if="loading" slot="empty">
                     <li class="loading">
                         <i class="el-icon-loading"></i>
@@ -38,6 +38,13 @@ export default class AppMpicker extends Vue {
      * 是否禁用
      */
     @Prop() disabled?: boolean;
+
+	/**
+	 * 只读模式
+	 * 
+	 * @type {boolean}
+	 */
+	@Prop({default: false}) public readonly?: boolean;
 
     /**
      * 编辑器参数

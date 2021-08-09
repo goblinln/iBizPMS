@@ -20,14 +20,6 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -36,14 +28,6 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -52,14 +36,6 @@
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -68,14 +44,6 @@
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -84,14 +52,6 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -99,14 +59,6 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -114,14 +66,6 @@
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -130,14 +74,6 @@
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -146,14 +82,6 @@
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -162,14 +90,6 @@
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -178,14 +98,6 @@
     "codeName" : "PMEvaluation",
     "methodType" : "DEACTION",
     "name" : "PMEvaluation",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/PMEvaluation.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -194,14 +106,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "userCat" : "CAT1",
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -212,14 +116,6 @@
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -230,14 +126,6 @@
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -248,10 +136,6 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Save.json"
-    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -260,14 +144,6 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "userCat" : "CAT1",
     "builtinMethod" : true
   }, {
@@ -276,14 +152,6 @@
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -292,14 +160,6 @@
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   } ],
@@ -308,70 +168,42 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ActionMonth",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ActionMonth"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchActionYear",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ActionYear",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ActionYear"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaults",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT1",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Defaults"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionMonth",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectActionMonth",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectActionMonth"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionYear",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectActionYear",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectActionYear"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskEstimate",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTaskEstimate",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectTaskEstimate"
-    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
@@ -501,14 +333,6 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -517,14 +341,6 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -533,14 +349,6 @@
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
     "name" : "CreateTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -549,14 +357,6 @@
     "codeName" : "CreateTempMajor",
     "methodType" : "DEACTION",
     "name" : "CreateTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/CreateTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -565,14 +365,6 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -580,14 +372,6 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -595,14 +379,6 @@
     "codeName" : "GetDraftTemp",
     "methodType" : "DEACTION",
     "name" : "GetDraftTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -611,14 +387,6 @@
     "codeName" : "GetDraftTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetDraftTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetDraftTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -627,14 +395,6 @@
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
     "name" : "GetTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -643,14 +403,6 @@
     "codeName" : "GetTempMajor",
     "methodType" : "DEACTION",
     "name" : "GetTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/GetTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -659,14 +411,6 @@
     "codeName" : "PMEvaluation",
     "methodType" : "DEACTION",
     "name" : "PMEvaluation",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/PMEvaluation.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
@@ -675,14 +419,6 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "userCat" : "CAT1",
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -693,14 +429,6 @@
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -711,14 +439,6 @@
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/RemoveTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true,
     "enableBatchAction" : true
@@ -729,10 +449,6 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Save.json"
-    },
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -741,14 +457,6 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "userCat" : "CAT1",
     "builtinMethod" : true
   }, {
@@ -757,14 +465,6 @@
     "codeName" : "UpdateTemp",
     "methodType" : "DEACTION",
     "name" : "UpdateTemp",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTemp.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : true
   }, {
@@ -773,14 +473,6 @@
     "codeName" : "UpdateTempMajor",
     "methodType" : "DEACTION",
     "name" : "UpdateTempMajor",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/UpdateTempMajor.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
@@ -788,80 +480,48 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ActionMonth",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ActionMonth"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchActionYear",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ActionYear",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ActionYear"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaults",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT1",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Defaults"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionMonth",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectActionMonth",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectActionMonth"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionYear",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectActionYear",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectActionYear"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskEstimate",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "ProjectTaskEstimate",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectTaskEstimate"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempActionMonth",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ActionMonth",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ActionMonth"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -869,10 +529,6 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ActionYear",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ActionYear"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -880,10 +536,6 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -891,10 +543,6 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "DEFAULT1",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Defaults"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -902,10 +550,6 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectActionMonth",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectActionMonth"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -913,10 +557,6 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectActionYear",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectActionYear"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -924,10 +564,6 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCHTEMP",
     "name" : "ProjectTaskEstimate",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectTaskEstimate"
-    },
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
@@ -970,10 +606,6 @@
     "logicName" : "建立",
     "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "RECORDESTIMATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
-    },
     "name" : "CREATE",
     "id" : "ZTtask__CREATE"
   }, {
@@ -986,10 +618,6 @@
     "logicName" : "删除",
     "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "RECORDESTIMATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
-    },
     "name" : "DELETE",
     "id" : "ZTtask__DELETE"
   }, {
@@ -999,10 +627,6 @@
     "logicName" : "任务-读取",
     "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "RECORDESTIMATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
-    },
     "name" : "READ",
     "id" : "ZTtask__READ"
   }, {
@@ -1012,10 +636,6 @@
     "logicName" : "更新",
     "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "RECORDESTIMATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
-    },
     "name" : "UPDATE",
     "id" : "ZTtask__UPDATE"
   }, {
@@ -1030,10 +650,6 @@
   "logicName" : "任务团队（嵌套）",
   "name" : "IBZ_TASKESTIMATE",
   "getPSDEName" : "ZT_TASKESTIMATE",
-  "getPSDEServiceAPI" : {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDESERVICEAPIS/TaskTeamNested.json"
-  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "ACCOUNT",
     "codeName" : "Account"

@@ -1967,6 +1967,7 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
+    "enableQuickSearch" : true,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -2039,6 +2040,7 @@
       "name" : "PROJECT",
       "codeName" : "Project"
     },
+    "enableQuickSearch" : true,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
