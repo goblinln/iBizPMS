@@ -230,7 +230,7 @@ export class TreeGrid extends AppDefaultGrid {
      * @param {*} [arg={}]
      * @memberof TreeGrid
      */
-    public load(opt: any = {}, pageReset: boolean = false): void {
+    public async load(opt: any = {}, pageReset: boolean = false) {
     	if (!this.fetchAction) {
             this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.grid.notconfig.fetchaction') as string), 'load');
             return;
@@ -258,7 +258,7 @@ export class TreeGrid extends AppDefaultGrid {
         let tempContext:any = JSON.parse(JSON.stringify(this.context));
         this.onControlRequset('load', tempContext, arg);
         const post: Promise<any> = this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
-        post.then((response: any) => {
+        post.then(async (response: any) => {
 			this.onControlResponse('load', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'load');
@@ -267,7 +267,7 @@ export class TreeGrid extends AppDefaultGrid {
             const data: any = response.data;
             if(data.length === 0 && this.curPage > 1) {
                 this.curPage--;
-                this.load(opt, pageReset);
+                await this.load(opt, pageReset);
                 return;
             }
             this.totalRecord = response.total;

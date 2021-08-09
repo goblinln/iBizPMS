@@ -1010,7 +1010,7 @@
 
 
     <!--输出实体[ZT_FILE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_file-1-28">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_file-2-28">
         <createTable tableName="zt_file">
                 <column name="PATHNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -1090,7 +1090,7 @@
 
 
     <!--输出实体[ZT_HISTORY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_history-1-31">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_history-2-31">
         <createTable tableName="zt_history">
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2392,7 +2392,7 @@
 
 
     <!--输出实体[IBZ_PRODUCTTEAM]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_productteam-1-85">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_productteam-2-85">
         <createTable tableName="zt_team">
                 <column name="TEAMSTATUS" remarks="" type="VARCHAR(100)">
                 </column>

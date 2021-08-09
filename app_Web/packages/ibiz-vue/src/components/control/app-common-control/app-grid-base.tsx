@@ -142,6 +142,18 @@ export class AppGridBase extends GridControlBase {
     }
 
     /**
+     * 计算表格头单元格样式表
+     *
+     * @memberof AppGridBase
+     */
+    public calcGridHeaderCellClassName(row: any, column: any, rowIndex: number, columnIndex: number) {
+        const columnInstance: any = this.controlInstance.findPSDEGridColumn(column.property);
+        if (columnInstance && columnInstance.getHeaderPSSysCss?.()?.cssName) {
+            return columnInstance.getHeaderPSSysCss().cssName
+        }
+    }
+
+    /**
      * 计算表格参数
      *
      * @memberof AppGridBase
@@ -159,6 +171,7 @@ export class AppGridBase extends GridControlBase {
             'header-row-style': ({ row, rowIndex }: any) => this.calcGridHeaderRowStyle(row, rowIndex),
             'header-cell-style': ({ row, column, rowIndex, columnIndex }: any) =>
                 this.calcGridHeaderCellStyle(row, column, rowIndex, columnIndex),
+            'header-cell-class-name': (({row, column, rowIndex, columnIndex}: any) => this.calcGridHeaderCellClassName(row, column, rowIndex, columnIndex)),
             'cell-class-name': ({ row, column, rowIndex, columnIndex }: any) =>
                 this.getCellClassName({ row, column, rowIndex, columnIndex }),
             'max-height': this.items?.length > 0 && !Object.is(this.controlInstance.gridStyle, 'USER') && this.controlInstance.enablePagingBar ? 'calc(100% - 50px)' : '100%',
@@ -348,8 +361,7 @@ export class AppGridBase extends GridControlBase {
             'column-key': name,
             label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             align: 'center',
-            'class-name': 'default-ua-column' + (column.getCellPSSysCss()?.cssName ? '' + column.getCellPSSysCss()?.cssName : ''),
-            'label-class-name': column.getHeaderPSSysCss()?.cssName,
+            'class-name': 'default-ua-column',
         };
         const sysImage = column.getPSSysImage();
         renderParams['width'] = 42;
@@ -440,8 +452,7 @@ export class AppGridBase extends GridControlBase {
         //参数
         let renderParams: any = {
             'column-key': name,
-            'class-name': 'style2-ua-column' + (column.getCellPSSysCss()?.cssName ? '' + column.getCellPSSysCss()?.cssName : ''),
-            'label-class-name': column.getHeaderPSSysCss()?.cssName,
+            'class-name': 'style2-ua-column',
             label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             align: align ? align.toLowerCase() : 'center',
         };
@@ -564,8 +575,6 @@ export class AppGridBase extends GridControlBase {
         ) as IPSDEGridEditItem;
         const sysImage = column.getPSSysImage();
         let renderParams: any = {
-            'class-name': column.getCellPSSysCss()?.cssName,
-            'label-class-name': column.getHeaderPSSysCss()?.cssName,
             label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             prop: name,
             align: align ? align.toLowerCase() : 'center',
@@ -607,8 +616,6 @@ export class AppGridBase extends GridControlBase {
         const { name, width, caption, widthUnit, align, enableSort } = column;
         let renderParams: any = {
             'show-overflow-tooltip': true,
-            'class-name': column.getCellPSSysCss()?.cssName,
-            'label-class-name': column.getHeaderPSSysCss()?.cssName,
             label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             prop: name,
             align: align ? align.toLowerCase() : 'center',

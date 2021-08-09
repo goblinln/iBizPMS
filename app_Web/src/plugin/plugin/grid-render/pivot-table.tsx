@@ -69,7 +69,7 @@ export class PivotTable extends AppDefaultGrid {
      * @param {*} [arg={}]
      * @memberof PivotTable
      */
-    public load(opt: any = {}, pageReset: boolean = false): void {
+    public async load(opt: any = {}, pageReset: boolean = false) {
         if(!this.fetchAction){
             this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.grid.notconfig.fetchaction') as string), 'load');
             return;

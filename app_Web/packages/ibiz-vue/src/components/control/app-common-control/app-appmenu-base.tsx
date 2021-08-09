@@ -217,7 +217,7 @@ export class AppmenuBase extends AppMenuControlBase {
             return (
                 <div class="leaf-treeitem">
                     <span title={node.data.caption}>{node.data.caption}</span>
-                    <badge count={this.counterdata[data.counterid]} overflow-count={9999}></badge>
+                    <badge count={this.counterdata ? this.counterdata[data.counterid] : null} overflow-count={9999}></badge>
                 </div>
             )
         }
@@ -365,9 +365,9 @@ export class AppmenuBase extends AppMenuControlBase {
                                         scopedSlots: {
                                             default: () => {
                                                 return (
-                                                    <div calss='menu-item' style="display:flex;justify-content:space-between">
+                                                    <div calss='menu-item' style="display:flex;justify-content:space-between;align-items:center">
                                                         <span>{ this.$tl(item.captionTag,item.caption) }</span>
-                                                        <badge count={this.counterdata[item.counterid]} overflow-count={9999}></badge>
+                                                        <badge count={this.counterdata ? this.counterdata[item.counterid] : null} overflow-count={9999}></badge>
                                                     </div>
                                                 )
                                             },
@@ -537,7 +537,7 @@ export class AppmenuBase extends AppMenuControlBase {
                                         {item.getPSAppMenuItems.getPSAppMenuItems.map((item2: any) => (
                                             <el-menu-item v-show={!item2.hidden} index={item2?.name}>
                                                 {this.$tl(item2.captionTag,item2.caption)}
-                                                <badge count={this.counterdata[item2.counterid]} overflow-count={9999}></badge>
+                                                <badge count={this.counterdata ? this.counterdata[item2.counterid] : null} overflow-count={9999}></badge>
                                             </el-menu-item>
                                         ))}
                                     </el-submenu>
@@ -547,7 +547,7 @@ export class AppmenuBase extends AppMenuControlBase {
                                         {item.getPSAppMenuItems.map((item1: any) => (
                                             <el-menu-item v-show={!item1.hidden} index={item1?.name}>
                                                 {this.$tl(item1.captionTag,item1.caption)}
-                                                <badge count={this.counterdata[item1.counterid]} overflow-count={9999}></badge>
+                                                <badge count={this.counterdata ? this.counterdata[item1.counterid] : null} overflow-count={9999}></badge>
                                             </el-menu-item>
                                         ))}
                                     </el-submenu>
@@ -555,7 +555,7 @@ export class AppmenuBase extends AppMenuControlBase {
                             ) : (
                                 <el-menu-item v-show={!item.hidden} index={item?.name}>
                                     {this.$tl(item.captionTag,item.caption)}
-                                    <badge count={this.counterdata[item.counterid]} overflow-count={9999}></badge>
+                                    <badge count={this.counterdata ? this.counterdata[item.counterid] : null} overflow-count={9999}></badge>
                                 </el-menu-item>
                             ),
                         )}
@@ -590,7 +590,7 @@ export class AppmenuBase extends AppMenuControlBase {
                                             {item.getPSAppMenuItems.getPSAppMenuItems.map((item2: any) => (
                                                 <el-menu-item v-show={!item2.hidden} index={item2?.name}>
                                                     {this.$tl(item2.captionTag,item2.caption)}
-                                                    <badge count={this.counterdata[item2.counterid]} overflow-count={9999}></badge>
+                                                    <badge count={this.counterdata ? this.counterdata[item2.counterid] : null} overflow-count={9999}></badge>
                                                 </el-menu-item>
                                             ))}
                                         </el-submenu>
@@ -600,7 +600,7 @@ export class AppmenuBase extends AppMenuControlBase {
                                             {item.getPSAppMenuItems.map((item1: any) => (
                                                 <el-menu-item v-show={!item1.hidden} index={item1?.name}>
                                                     {this.$tl(item1.captionTag,item1.caption)}
-                                                    <badge count={this.counterdata[item1.counterid]} overflow-count={9999}></badge>
+                                                    <badge count={this.counterdata ? this.counterdata[item1.counterid] : null} overflow-count={9999}></badge>
                                                 </el-menu-item>
                                             ))}
                                         </el-submenu>
@@ -608,7 +608,7 @@ export class AppmenuBase extends AppMenuControlBase {
                                 ) : (
                                     <el-menu-item v-show={!item.hidden} index={item?.name}>
                                         {this.$tl(item.captionTag,item.caption)}
-                                        <badge count={this.counterdata[item.counterid]} overflow-count={9999}></badge>
+                                        <badge count={this.counterdata ? this.counterdata[item.counterid] : null} overflow-count={9999}></badge>
                                     </el-menu-item>
                                 ),
                             )}

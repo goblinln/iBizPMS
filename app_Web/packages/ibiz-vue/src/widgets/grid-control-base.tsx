@@ -1945,6 +1945,10 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
     public getCellClassName(args: { row: any, column: any, rowIndex: number, columnIndex: number }) {
         let className: string = '';
         if (args.column.property) {
+            const columnInstance = this.controlInstance.findPSDEGridColumn(args.column.property);
+            if (columnInstance && columnInstance.getCellPSSysCss?.()?.cssName) {
+                className += columnInstance.getCellPSSysCss()?.cssName;
+            }
             let col = this.allColumns.find((item: any) => {
                 return Object.is(args.column.property, item.name);
             })
