@@ -2,6 +2,43 @@
 
 初始化文件
 
+## 2021-08-09
+新增视图消息显示模式支持，[2706c8ee](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/2706c8eeb33dbc376c570aab12ca191fcd5ffd5e)（by Mosher）
+
+优化多选框列表样式，[30b4380e](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/30b4380e14eb4b0730569bd46d160e8d273b64e1)（by RedPig97）
+
+更新树视图图标，[4db2a97e](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/4db2a97eda4512b77ed1b30549c1bc3884189655)（by Shine-zwj）
+
+优化视图工具栏分组项样式，[26ab946d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/26ab946d67d2ddc15acafd7b1a4168d96b8d31ca)（by RedPig97）
+
+新增图表解析字符串函数逻辑，[930a6440](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/930a6440b3ddaa5369ff1d06683780943d39871f)（by KK）
+
+更新地图部件逻辑，[517561f7](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/517561f7cd9b348ceaf8669566b645c8f19c73e8)，[b23089b5](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/b23089b513ddc04b6673abcf29e3ea1e5395a21c)（by Shine-zwj）
+
+更新视图消息逻辑，滚动样式优化，[fc125dcb](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/fc125dcbfd9b411318b08e5a717c825d2622da3a)（by Mosher）
+
+修复动态视图消息服务获取消息位置异常的问题，[576afcec](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/576afcecae7c392734bcce178c5cdd0018f7680e)（by Mosher）
+
+更新搜索表单按钮间隔，[f3bb0848](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f3bb08487df6c619249f3fa6dd7acbcbfaf87559)（by Mosher）
+
+新增视图消息显示位置模型识别逻辑，[55650f99](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/55650f999ca47aa69c087761abe90fd58484acff)（by Mosher）
+
+新增菜单计数器，[ae371c4d](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/ae371c4dbfb0db32ac6241fc3a35e4416ecf9a6d)，[3b1a8ae2](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/3b1a8ae27887567503167af4bffe2d3e5250e7de)（by Shine-zwj）
+
+更新表格设置头部样式表、单元格样式表逻辑，[1cb5c28b](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/1cb5c28b2075e8e1c986c627a5659f522cb681d7)（by Mosher）
+
+新增微标指令，[393ec239](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/393ec23942958b9c13f52774c8b1b246741f0568)（by RedPig97）
+
+树视图计数器标识指令替换，[247c77b1](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/247c77b1b991650a01d2c8661587460ede05259d)（by RedPig97）
+
+修复界面行为计数器标识绑定，[f6d8f063](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/f6d8f063db90cbe821058bad92f00510982b63ee)（by RedPig97）
+
+修复图表导航无主键问题，[83be4b10](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/83be4b103295854beafb5f5c7306808714f20a3b)（by Shine-zwj）
+
+菜单计数器标识指令替换，[a2d5e77c](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/a2d5e77c3ba17a39d9d3d38dc191d926d29f7681)（by RedPig97）
+
+更新地图数据信息tooltip显示，[173d15c6](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/173d15c635bf157322c012a86c61d624d3befe33)（by Shine-zwj）
+
 ## 2021-08-06
 
 修复直接内容图片类型报错，[2a3f5640](http://172.16.180.229/tony/DYNAMIC_APP_RENDER_RES/commit/2a3f5640a5b26e4039a06cece1ac47d7ab45fc6c)（by Shine-zwj）
