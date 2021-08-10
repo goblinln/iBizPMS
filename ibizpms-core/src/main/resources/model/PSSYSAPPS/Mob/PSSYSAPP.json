@@ -4723,19 +4723,6 @@
     "group" : true,
     "id" : "d25a9e58be16f27e8e61f784a1c74ea5"
   }, {
-    "caption" : "刷新",
-    "codeName" : "Refresh",
-    "fullCodeName" : "Refresh",
-    "name" : "表格界面_刷新操作",
-    "getPSSysImage" : {
-      "glyph" : "xf021@FontAwesome",
-      "cssClass" : "fa fa-refresh"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "SYS",
-    "uIActionTag" : "Refresh",
-    "uIActionType" : "DEUIACTION"
-  }, {
     "getCapPSLanguageRes" : {
       "lanResTag" : "TBB.TEXT.*.NEW"
     },
