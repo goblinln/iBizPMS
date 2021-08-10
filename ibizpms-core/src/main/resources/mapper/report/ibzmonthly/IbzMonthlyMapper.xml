@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACCOUNT`, t1.`COMMENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_MONTHLYID`, t1.`IBZ_MONTHLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`NEXTMONTHPLANSTASK`, t1.`PLANSNEXTMONTH`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`THISMONTHTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME`, t1.`WORKTHISMONTH` FROM `T_IBZ_MONTHLY` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_reportstatus_eq != null ">
@@ -49,8 +49,8 @@
     <resultMap id="IbzMonthlyResultMap" type="cn.ibizlab.pms.core.report.domain.IbzMonthly" autoMapping="true">
 		<id property="ibzmonthlyid" column="ibz_monthlyid" /><!--主键字段映射-->
 		<result property="ibzmonthlyname" column="ibz_monthlyname" />
-            
-		
+
+
     </resultMap>
 
 

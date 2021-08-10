@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`BEGINDATESTATS`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`ENDDATESTATS`, t1.`IBZPRO_PROJECTWEEKLYID`, t1.`IBZPRO_PROJECTWEEKLYNAME`, t1.`MONTH`, t1.`PM`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`WEEK`, t1.`YEAR` FROM `T_IBZPRO_PROJECTWEEKLY` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_ibzpro_projectweeklyname_like != null ">
@@ -44,8 +44,8 @@
 		<id property="projectweeklyid" column="ibzpro_projectweeklyid" /><!--主键字段映射-->
 		<result property="projectweeklyname" column="ibzpro_projectweeklyname" />
 		<result property="project" column="project" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztproject" javaType="cn.ibizlab.pms.core.zentao.domain.Project" column="project" select="cn.ibizlab.pms.core.zentao.mapper.ProjectMapper.selectById" fetchType="lazy"></association>
     </resultMap>

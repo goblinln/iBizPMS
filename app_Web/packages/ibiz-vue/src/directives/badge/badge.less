@@ -1,41 +1,38 @@
-.ibiz-badge {
-  position: relative;
-  sup {
-    position: absolute;
-    vertical-align: middle;
-    top: -10px;
-    height: 20px;
-    border-radius: 10px;
-    min-width: 20px;
-    background: #ed4014;
-    border: 1px solid transparent;
-    color: #fff;
-    line-height: 18px;
-    text-align: center;
-    padding: 0 6px;
-    font-size: 12px;
-    white-space: nowrap;
-    z-index: 10;
-    box-shadow: 0 0 0 1px #fff;
-  }
+sup.ibiz-badge {
+  position: absolute;
+  vertical-align: middle;
+  top: -10px;
+  height: 20px;
+  border-radius: 10px;
+  min-width: 20px;
+  background: #ed4014;
+  border: 1px solid transparent;
+  color: #fff;
+  line-height: 18px;
+  text-align: center;
+  padding: 0 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 0 0 1px #fff;
   //预设类型颜色
-  .primary {
-    background: #2d8cf0;
+  &.primary {
+      background: #2d8cf0;
   }
-  .success {
-    background: #19be6b;
+  &.success {
+      background: #19be6b;
   }
-  .normal {
-    background: #e6ebf1;
-    color: #808695;
+  &.normal {
+      background: #e6ebf1;
+      color: #808695;
   }
-  .error {
-    background: #ed4014;
+  &.error {
+      background: #ed4014;
   }
-  .warning {
-    background: #f90;
+  &.warning {
+      background: #f90;
   }
-  .info {
-    background: #2db7f5;
+  &.info {
+      background: #2db7f5;
   }
 }

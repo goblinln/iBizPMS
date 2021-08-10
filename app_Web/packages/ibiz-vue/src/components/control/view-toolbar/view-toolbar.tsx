@@ -142,7 +142,10 @@ export class ViewToolbar extends Vue {
      * @memberof ViewToolbar
      */
     protected renderMenuItem(item: any, showButton: boolean = true): any {
-        const targetCounterService:any = Util.findElementByField(this.counterServiceArray,'path',item.uiaction?.getPSAppCounter?.()?.modelPath)?.service;
+        const targetCounterService: any = {};
+        if (this.counterServiceArray.length > 0) {
+            Object.assign(targetCounterService,this.counterServiceArray[0].service)
+        }
         if(item.visabled){
             if (item.itemType == 'RAWITEM') {
                 return <tooltip transfer={true} max-width='600' disabled={!item.tooltip}>
@@ -168,10 +171,10 @@ export class ViewToolbar extends Vue {
                             on-exportexcel={($event: any) => throttle(this.itemClick,[{ tag: item.name }, $event],this)}
                             loading={this.isViewLoading}
                         ></app-export-excel>
-                    ) : (item.uiaction && item.uiaction.counterId) && targetCounterService ? (
-                        <el-badge value={targetCounterService.counterData[item.uiaction.counterId]}>
+                    ) : (item.uiaction && item.uiaction.counterId) && Object.keys(targetCounterService).length > 0 ? (
                             <i-button
                                 disabled={item.disabled}
+                                v-badge={{count:targetCounterService.counterData[item.uiaction.counterId]}}
                                 class={this.getToolBarItemClass(item)}
                                 on-click={(e: any) => throttle(this.itemClick,[{ tag: item.name }, e],this)}
                                 loading={this.isViewLoading}
@@ -179,7 +182,6 @@ export class ViewToolbar extends Vue {
                                 {item.showIcon ? <menu-icon item={item} /> : null}
                                 {item.showCaption ? <span class='caption'>{item.caption}</span> : ''}
                             </i-button>
-                        </el-badge>
                     ) : (
                         <i-button
                             disabled={item.disabled}

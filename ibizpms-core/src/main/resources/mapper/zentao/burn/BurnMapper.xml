@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ESTIMATE`, t1.`ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`ORGNAME`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_isweekend_eq != null ">
@@ -52,8 +52,8 @@
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="project" column="project" />
 		<result property="task" column="task" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztproject" javaType="cn.ibizlab.pms.core.zentao.domain.Project" column="project" select="cn.ibizlab.pms.core.zentao.mapper.ProjectMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->

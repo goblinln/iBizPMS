@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`APPID`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DYNADASHBOARDID`, t1.`DYNADASHBOARDNAME`, t1.`MODEL`, t1.`MODELID`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`USERID` FROM `T_DYNADASHBOARD` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_dynadashboardid_eq != null ">
@@ -36,8 +36,8 @@
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="DynaDashboardResultMap" type="cn.ibizlab.pms.core.ibiz.domain.DynaDashboard" autoMapping="true">
 		<id property="dynadashboardid" column="dynadashboardid" /><!--主键字段映射-->
-            
-		
+
+
     </resultMap>
 
 

@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`UPDATEBY`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_title_like != null ">
@@ -46,8 +46,8 @@
     <resultMap id="StorySpecResultMap" type="cn.ibizlab.pms.core.zentao.domain.StorySpec" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="story" column="story" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztstory" javaType="cn.ibizlab.pms.core.zentao.domain.Story" column="story" select="cn.ibizlab.pms.core.zentao.mapper.StoryMapper.selectById" fetchType="lazy"></association>
     </resultMap>

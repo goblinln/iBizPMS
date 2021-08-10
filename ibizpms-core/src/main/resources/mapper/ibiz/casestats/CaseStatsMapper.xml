@@ -8,7 +8,7 @@
         <![CDATA[ SELECT 0 AS `BLOCKEDCASE`, 0 AS `FAILCASE`, t1.`ID`, t1.`MODULE`, 0 AS `PASSCASE`, t1.`PRODUCT`, t1.`TITLE`, 0 AS `TOTALCASE`, 0 AS `TOTALRUNCASE` FROM `zt_case` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_title_like != null ">
@@ -44,8 +44,8 @@
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="product" column="product" />
 		<result property="module" column="module" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztmodule" javaType="cn.ibizlab.pms.core.zentao.domain.Module" column="module" select="cn.ibizlab.pms.core.zentao.mapper.ModuleMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->

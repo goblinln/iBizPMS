@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`BEGIN`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`END`, t1.`IBIZPRO_PRODUCTDAILYID`, t1.`IBIZPRO_PRODUCTDAILYNAME`, t1.`PO`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`TASKS`, t1.`TOTALESTIMATES`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBIZPRO_PRODUCTDAILY` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_ibizpro_productdailyname_like != null ">
@@ -51,8 +51,8 @@
 		<id property="ibizproproductdailyid" column="ibizpro_productdailyid" /><!--主键字段映射-->
 		<result property="ibizproproductdailyname" column="ibizpro_productdailyname" />
 		<result property="product" column="product" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztproduct" javaType="cn.ibizlab.pms.core.zentao.domain.Product" column="product" select="cn.ibizlab.pms.core.zentao.mapper.ProductMapper.selectById" fetchType="lazy"></association>
     </resultMap>

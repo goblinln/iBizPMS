@@ -1,5 +1,5 @@
 import { IPSAppDataEntity, IPSChartExpBar, IPSDEChart, IPSDEChartSeries, IPSDERBase } from '@ibiz/dynamic-model-api';
-import { Util } from 'ibiz-core';
+import { ModelTool, Util } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
 
 export class ChartExpBarControlBase extends ExpBarControlBase {
@@ -128,7 +128,7 @@ export class ChartExpBarControlBase extends ExpBarControlBase {
         });
         const appDataEntity: IPSAppDataEntity | null = this.$xDataControl?.getPSAppDataEntity();
         if (seriesItem && appDataEntity) {
-            Object.assign(tempContext, { [appDataEntity.codeName?.toLowerCase()]: arg[appDataEntity.codeName?.toLowerCase()] });
+            Object.assign(tempContext, { [appDataEntity.codeName?.toLowerCase()]: arg[(ModelTool.getAppEntityKeyField(appDataEntity) as any)?.codeName?.toLowerCase()] });
             Object.assign(tempContext, { srfparentdename: appDataEntity.codeName,srfparentdemapname:(appDataEntity as any)?.getPSDEName(), srfparentkey: arg[appDataEntity.codeName?.toLowerCase()] });
             //  分类属性
             if (seriesItem.catalogField) {

@@ -8,7 +8,7 @@
         <![CDATA[ SELECT 0 AS `CLOSEDSTORYCNT`, t1.`COMMENT`, t1.`DATE`, 0 AS `DYNAMICCNT`, 0 AS `FINISHEDTASKCNT`, t1.`ID`, 0 AS `LOGHOURS`, 0 AS `LOGINCNT`, 0 AS `OPENEDBUGCNT`, 0 AS `OPENEDSTORYCNT`, 0 AS `OPENEDTASKCNT`, 0 AS `RESOLVEDBUGCNT` FROM `zt_action` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_date_gtandeq != null ">
@@ -42,8 +42,8 @@
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="CompanyStatsResultMap" type="cn.ibizlab.pms.core.ibiz.domain.CompanyStats" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
-            
-		
+
+
     </resultMap>
 
 

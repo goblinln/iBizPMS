@@ -218,6 +218,9 @@ export class MapControlBase extends MDControlBase implements MapControlInterface
                 type: 'map',
                 geoIndex: 0,
                 data: [],
+                tooltip: {
+                    formatter: "<span style='margin-right: 20px'>{b}</span><b>{c}</b>",
+                },
             }
         ]
     }

@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_PRODUCTLINEID`, t1.`IBZ_PRODUCTLINENAME`, t1.`ORDER`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_module` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_ibz_productlinename_like != null ">
@@ -37,8 +37,8 @@
     <resultMap id="ProductLineResultMap" type="cn.ibizlab.pms.core.ibiz.domain.ProductLine" autoMapping="true">
 		<id property="productlineid" column="ibz_productlineid" /><!--主键字段映射-->
 		<result property="productlinename" column="ibz_productlinename" />
-            
-		
+
+
     </resultMap>
 
 

@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PUBLIC`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY`, t1.`USERTPLSN` FROM `zt_usertpl` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_title_like != null ">
@@ -43,8 +43,8 @@
     <resultMap id="UserTplResultMap" type="cn.ibizlab.pms.core.zentao.domain.UserTpl" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="ibizpublic" column="public" />
-            
-		
+
+
     </resultMap>
 
 

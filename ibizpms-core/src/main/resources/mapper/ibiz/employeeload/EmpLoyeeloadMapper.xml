@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ASSIGN`, t1.`ASSIGNEDTO`, t1.`ID`, ０ AS `LEFT`, t1.`NAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, ０ AS `TASKCNT`, ０ AS `TOTALLEFT`, ０ AS `TOTALTASKCNT`, ０ AS `WORKLOAD` FROM `ZT_TASK` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_name_like != null ">
@@ -50,8 +50,8 @@
     <resultMap id="EmpLoyeeloadResultMap" type="cn.ibizlab.pms.core.ibiz.domain.EmpLoyeeload" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="project" column="project" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztproject" javaType="cn.ibizlab.pms.core.zentao.domain.Project" column="project" select="cn.ibizlab.pms.core.zentao.mapper.ProjectMapper.selectById" fetchType="lazy"></association>
     </resultMap>

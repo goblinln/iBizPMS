@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`AGENTBEGIN`, t1.`AGENTEND`, t1.`AGENTUSER`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`IBZ_AGENTID`, t1.`IBZ_AGENTNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_AGENT` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_createmanname_eq != null ">
@@ -40,8 +40,8 @@
     <resultMap id="IbzAgentResultMap" type="cn.ibizlab.pms.core.ibiz.domain.IbzAgent" autoMapping="true">
 		<id property="ibzagentid" column="ibz_agentid" /><!--主键字段映射-->
 		<result property="ibzagentname" column="ibz_agentname" />
-            
-		
+
+
     </resultMap>
 
 

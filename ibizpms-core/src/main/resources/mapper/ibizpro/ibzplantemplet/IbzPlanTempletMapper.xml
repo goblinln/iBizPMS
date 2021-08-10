@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACL`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`IBZ_PLANTEMPLETID`, t1.`IBZ_PLANTEMPLETNAME`, t1.`PLANS`, t1.`PRODUCT`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_PLANTEMPLET` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_acl_eq != null ">
@@ -43,8 +43,8 @@
     <resultMap id="IbzPlanTempletResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IbzPlanTemplet" autoMapping="true">
 		<id property="ibzplantempletid" column="ibz_plantempletid" /><!--主键字段映射-->
 		<result property="ibzplantempletname" column="ibz_plantempletname" />
-            
-		
+
+
     </resultMap>
 
 

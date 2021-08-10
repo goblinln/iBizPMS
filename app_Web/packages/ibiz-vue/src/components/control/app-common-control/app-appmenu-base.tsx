@@ -262,8 +262,7 @@ export class AppmenuBase extends AppMenuControlBase {
                         </span>
                         {
                             this.counterdata ?
-                                <span class="pull-right">
-                                    <badge count={this.counterdata[menu.counterid]} overflow-count={9999}></badge>
+                                <span v-badge={{count: this.counterdata[menu.counterid], offset: [-12,24]}} class="pull-right">
                                 </span> : null
                         }
                     </template>
@@ -367,7 +366,7 @@ export class AppmenuBase extends AppMenuControlBase {
                                                 return (
                                                     <div calss='menu-item' style="display:flex;justify-content:space-between;align-items:center">
                                                         <span>{ this.$tl(item.captionTag,item.caption) }</span>
-                                                        <badge count={this.counterdata ? this.counterdata[item.counterid] : null} overflow-count={9999}></badge>
+                                                        <span style="position:relative" v-badge={{count: this.counterdata ? this.counterdata[item.counterid] : null, offset: [-30,0]}} />
                                                     </div>
                                                 )
                                             },

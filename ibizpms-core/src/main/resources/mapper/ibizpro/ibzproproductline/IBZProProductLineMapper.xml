@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CREATEBY`, t1.`DELETED`, t1.`ID`, t1.`MDEPTID`, t1.`MDEPTNAME`, t1.`NAME`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`SHORT`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_module` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_id_eq != null ">
@@ -43,8 +43,8 @@
     <resultMap id="IBZProProductLineResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IBZProProductLine" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="ibizshort" column="short" />
-            
-		
+
+
     </resultMap>
 
 

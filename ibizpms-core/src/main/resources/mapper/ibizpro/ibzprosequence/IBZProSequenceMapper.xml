@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`BEGINSEQ`, t1.`CATEGORY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CURSEQ`, t1.`IBZPRO_SEQUENCEID`, t1.`IBZPRO_SEQUENCENAME`, t1.`INCREMENT`, t1.`ISENABLE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_IBZPRO_SEQUENCE` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_ibzpro_sequenceid_eq != null ">
@@ -46,8 +46,8 @@
     <resultMap id="IBZProSequenceResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IBZProSequence" autoMapping="true">
 		<id property="ibzprosequenceid" column="ibzpro_sequenceid" /><!--主键字段映射-->
 		<result property="ibzprosequencename" column="ibzpro_sequencename" />
-            
-		
+
+
     </resultMap>
 
 

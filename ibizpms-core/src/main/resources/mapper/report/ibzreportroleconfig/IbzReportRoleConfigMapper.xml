@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_REPORT_ROLE_CONFIGID`, t1.`IBZ_REPORT_ROLE_CONFIGNAME`, t1.`REPORT_ROLE`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_REPORT_ROLE_CONFIG` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_ibz_report_role_configname_like != null ">
@@ -41,8 +41,8 @@
 		<id property="ibzreportroleconfigid" column="ibz_report_role_configid" /><!--主键字段映射-->
 		<result property="ibzreportroleconfigname" column="ibz_report_role_configname" />
 		<result property="reportRole" column="report_role" />
-            
-		
+
+
     </resultMap>
 
 

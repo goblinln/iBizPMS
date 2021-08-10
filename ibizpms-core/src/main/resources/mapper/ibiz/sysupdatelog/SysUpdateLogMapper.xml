@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`LATESTUPDATE`, t1.`SYS_UPDATE_LOGID`, t1.`SYS_UPDATE_LOGNAME`, t1.`UPDATE`, t1.`UPDATEBRANCH`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDESC` FROM `T_SYS_UPDATE_LOG` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_sys_update_logid_eq != null ">
@@ -43,8 +43,8 @@
     <resultMap id="SysUpdateLogResultMap" type="cn.ibizlab.pms.core.ibiz.domain.SysUpdateLog" autoMapping="true">
 		<id property="sysupdatelogid" column="sys_update_logid" /><!--主键字段映射-->
 		<result property="sysupdatelogname" column="sys_update_logname" />
-            
-		
+
+
     </resultMap>
 
 

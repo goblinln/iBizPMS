@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`FILE`, t1.`IBIZ_SOURCEOBJECT`, t1.`IBZPRO_SYSTPLID`, t1.`IBZPRO_SYSTPLNAME`, t1.`PUBLIC`, t1.`TPLTYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SYSTPL` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_ibzpro_systplid_eq != null ">
@@ -52,8 +52,8 @@
 		<result property="ibzprosystplname" column="ibzpro_systplname" />
 		<result property="ibizSourceobject" column="ibiz_sourceobject" />
 		<result property="file" column="file" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztFile" javaType="cn.ibizlab.pms.core.zentao.domain.File" column="file" select="cn.ibizlab.pms.core.zentao.mapper.FileMapper.selectById" fetchType="lazy"></association>
     </resultMap>

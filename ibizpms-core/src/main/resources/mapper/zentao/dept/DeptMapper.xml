@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`DEPTSN`, t1.`FUNCTION`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_DEPT WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`MANAGER`, t1.`NAME`, t1.`ORDER`, t1.`PARENT`, t11.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`POSITION` FROM `zt_dept` t1  LEFT JOIN `zt_dept` t11 ON t1.`PARENT` = t11.`ID`   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_id_eq != null ">
@@ -47,8 +47,8 @@
     <resultMap id="DeptResultMap" type="cn.ibizlab.pms.core.zentao.domain.Dept" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="parent" column="parent" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ibizparent" javaType="cn.ibizlab.pms.core.zentao.domain.Dept" column="parent" select="cn.ibizlab.pms.core.zentao.mapper.DeptMapper.selectById" fetchType="lazy"></association>
     </resultMap>

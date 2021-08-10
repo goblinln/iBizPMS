@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`IBZPRO_TRANSLATORID`, t1.`IBZPRO_TRANSLATORNAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_TRANSLATOR` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_ibzpro_translatorname_like != null ">
@@ -37,8 +37,8 @@
     <resultMap id="IBZProTranslatorResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IBZProTranslator" autoMapping="true">
 		<id property="ibzprotranslatorid" column="ibzpro_translatorid" /><!--主键字段映射-->
 		<result property="ibzprotranslatorname" column="ibzpro_translatorname" />
-            
-		
+
+
     </resultMap>
 
 

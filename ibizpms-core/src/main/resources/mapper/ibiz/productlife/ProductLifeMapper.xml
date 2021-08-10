@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`BEGIN`, t1.`BRANCH`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`END`, t1.`IBZ_PRODUCTLIFEID`, t1.`IBZ_PRODUCTLIFENAME`, t1.`MARKER`, t1.`PARENT`, t1.`PRODUCT`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_IBZ_PRODUCTLIFE` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_ibz_productlifename_like != null ">
@@ -44,8 +44,8 @@
 		<id property="productlifeid" column="ibz_productlifeid" /><!--主键字段映射-->
 		<result property="productlifename" column="ibz_productlifename" />
 		<result property="product" column="product" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ibzproduct" javaType="cn.ibizlab.pms.core.zentao.domain.Product" column="product" select="cn.ibizlab.pms.core.zentao.mapper.ProductMapper.selectById" fetchType="lazy"></association>
     </resultMap>

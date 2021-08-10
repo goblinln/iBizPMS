@@ -255,7 +255,7 @@ export class MDControlBase extends MainControlBase implements MDControlInterface
     public onStaticPropsChange(newVal: any, oldVal: any) {
         this.isSingleSelect = newVal.isSingleSelect !== false;
         this.isSelectFirstDefault = newVal.isSelectFirstDefault === true;
-        this.mDCtrlActiveMode = newVal.mDCtrlActiveMode ? newVal.mDCtrlActiveMode : 2;
+        this.mDCtrlActiveMode = newVal.mDCtrlActiveMode;
         super.onStaticPropsChange(newVal, oldVal);
     }
 

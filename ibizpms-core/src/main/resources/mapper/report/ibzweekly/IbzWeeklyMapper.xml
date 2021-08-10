@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACCOUNT`, t1.`COMMENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_WEEKLYID`, t1.`IBZ_WEEKLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.mailto AS `MAILTOPK`, t1.`NEXTWEEKTASK`, t1.`PLANNEXTWEEK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.reportto AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`THISWEEKTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME`, t1.`WORKTHISWEEK` FROM `T_IBZ_WEEKLY` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_issubmit_eq != null ">
@@ -49,8 +49,8 @@
     <resultMap id="IbzWeeklyResultMap" type="cn.ibizlab.pms.core.report.domain.IbzWeekly" autoMapping="true">
 		<id property="ibzweeklyid" column="ibz_weeklyid" /><!--主键字段映射-->
 		<result property="ibzweeklyname" column="ibz_weeklyname" />
-            
-		
+
+
     </resultMap>
 
 

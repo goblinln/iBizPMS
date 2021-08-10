@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`IBZ_REPORTLYID`, t1.`IBZ_REPORTLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.mailto AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.reportto AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_REPORTLY` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_account_eq != null ">
@@ -46,8 +46,8 @@
     <resultMap id="IbzReportlyResultMap" type="cn.ibizlab.pms.core.report.domain.IbzReportly" autoMapping="true">
 		<id property="ibzreportlyid" column="ibz_reportlyid" /><!--主键字段映射-->
 		<result property="ibzreportlyname" column="ibz_reportlyname" />
-            
-		
+
+
     </resultMap>
 
 

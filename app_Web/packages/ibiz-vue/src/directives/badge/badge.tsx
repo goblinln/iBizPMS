@@ -20,6 +20,18 @@ export const Badge: any = {
     bind(el: HTMLDivElement, binding: any, vNode: VNode, oldVNode: VNode) {
         bc.init(el,binding);
     },
+
+    /**
+     * 指令更新
+     *
+     * @param {HTMLDivElement} el
+     * @param {*} binding
+     * @param {VNode} vNode
+     * @param {VNode} oldVNode
+     */
+    componentUpdated(el: HTMLDivElement, binding: any, vNode: VNode, oldVNode: VNode) {
+        bc.update(el,binding);
+    },
 };
 
 /**
@@ -66,19 +78,35 @@ export const Badge: any = {
    */
   public init(el: HTMLDivElement, binding: any): void {
     const item: any = binding.value;
-    this.el = el;
     if (Object.keys(item).length > 0 && Util.isExistAndNotEmpty(item.count)) {
       if(!item.showZero && item.count == 0) {
         return;
       }
       let badge: HTMLElement = document.createElement("sup");
       badge.innerHTML = String(item.count);
-      el.classList.add('ibiz-badge');
+      badge.classList.add('ibiz-badge');
       this.el = badge;
       el.append(badge);
       this.setBadgeclass(item.type);
       this.setBadgeclass(item.className);
       this.setBadgeOffset(item.offset);
+    }
+  }
+
+  /**
+   * 更新
+   *
+   * @param {HTMLDivElement} 
+   * @param {any} 
+   * @memberof BadgeController
+   */
+   public update(el: HTMLDivElement, binding: any): void {
+    const item: any = binding.value;
+    if (Object.keys(item).length > 0 && Util.isExistAndNotEmpty(item.count)) {
+      if(!item.showZero && item.count == 0) {
+        return;
+      }
+      this.el.innerHTML = String(item.count);
     }
   }
 

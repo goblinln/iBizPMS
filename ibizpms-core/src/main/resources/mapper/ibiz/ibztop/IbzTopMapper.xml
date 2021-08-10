@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_TOPID`, t1.`IBZ_TOPNAME`, t1.`OBJECTID`, t1.`OBJECTORDER`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_TOP` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_ibz_topid_eq != null ">
@@ -43,8 +43,8 @@
     <resultMap id="IbzTopResultMap" type="cn.ibizlab.pms.core.ibiz.domain.IbzTop" autoMapping="true">
 		<id property="ibztopid" column="ibz_topid" /><!--主键字段映射-->
 		<result property="ibztopname" column="ibz_topname" />
-            
-		
+
+
     </resultMap>
 
 

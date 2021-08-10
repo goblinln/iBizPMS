@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ADMINS`, t1.`COMMITTERS`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`DISMISSDATE`, t1.`EDITEDBY`, t1.`EDITEDDATE`, t1.`GID`, t1.`ID`, t1.`LASTACTIVETIME`, t1.`NAME`, t1.`PUBLIC`, t1.`SUBJECT`, t1.`TYPE` FROM `zt_im_chat` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_public_eq != null ">
@@ -40,8 +40,8 @@
     <resultMap id="ImChatResultMap" type="cn.ibizlab.pms.core.zentao.domain.ImChat" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="ibizpublic" column="public" />
-            
-		
+
+
     </resultMap>
 
 

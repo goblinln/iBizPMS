@@ -737,8 +737,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
-      "standardColumnName" : "`ID`",
-      "autoIncrement" : true
+      "standardColumnName" : "`ID`"
     } ],
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
@@ -766,14 +765,13 @@
     } ],
     "codeName" : "Id",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
     "importOrder" : 1000,
     "logicName" : "id",
     "name" : "ID",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,

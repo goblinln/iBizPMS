@@ -508,7 +508,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
     public onStaticPropsChange(newVal: any, oldVal: any) {
         this.isOpenEdit = newVal.isOpenEdit;
         this.actualIsOpenEdit = this.isOpenEdit;
-        this.gridRowActiveMode = newVal.gridRowActiveMode ? newVal.gridRowActiveMode : 2;
+        this.gridRowActiveMode = newVal.gridRowActiveMode;
         this.isSelectFirstDefault = newVal.isSelectFirstDefault;
         super.onStaticPropsChange(newVal, oldVal);
     }
@@ -1881,7 +1881,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
         if (this.gridRowActiveMode == 1 && !isSelectColumn) {
             this.ctrlEvent({ controlname: this.name, action: "rowclick", data: Util.deepCopy(row) });
             this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: [Util.deepCopy(row)] });
-        } else if (this.gridRowActiveMode == 2 || isSelectColumn) {
+        } else if (this.gridRowActiveMode == 2 || this.gridRowActiveMode == 0 || isSelectColumn) {
             // 只选中当前行
             this.selections.push(Util.deepCopy(row));
             const table: any = (this.$refs as any)[this.realCtrlRefName];

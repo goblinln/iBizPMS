@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`BEGIN`, (case when t1.`begin` = '2030-01-01' then '待定' else t1.`begin` end) AS `BEGINSTR`, t1.`BRANCH`, ((select count(t.id) FROM zt_bug t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0')) AS `BUGCNT`, t1.`CREATEBY`, case when t1.`end` is null or t1.`end` = '0000-00-00' or t1.`end` = '1970-01-01' then '' when t1.`status` in('wait','doing') and t1.`end` < DATE_FORMAT(NOW(),'%Y-%m-%d') then CONCAT('','延期',TO_DAYS(NOW()) - TO_DAYS(t1.`end`),'天') ELSE '' end AS `DELAY`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DESC`, (to_Days(t1.`END`) - to_Days(t1.`BEGIN`)) AS `DURATION`, t1.`END`, (case when t1.`end` = '2030-01-01' then '待定' else t1.`end` end) AS `ENDSTR`, (select sum(t.estimate) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' ) AS `ESTIMATECNT`, (case when t1.`begin` = '2030-01-01' or t1.`end` = '2030-01-01' then 'on' else '' end) AS `FUTURE`, t1.`ID`, (case when t1.`end` > now() then '0' else '1' end) AS `ISEXPIRED`, t1.`ORDER`, t1.`ORG`, t1.`ORGNAME`, t1.`PARENT`, t11.`TITLE` AS `PARENTNAME`, t1.`PRODUCT`, t1.`PRODUCTPLANSN`, t1.`STATUS`, (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) AS `STATUSS`, ((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_productplan` t1  LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID`   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_title_like != null ">
@@ -79,8 +79,8 @@
 		<result property="branch" column="branch" />
 		<result property="parent" column="parent" />
 		<result property="product" column="product" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztbranch" javaType="cn.ibizlab.pms.core.zentao.domain.Branch" column="branch" select="cn.ibizlab.pms.core.zentao.mapper.BranchMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->

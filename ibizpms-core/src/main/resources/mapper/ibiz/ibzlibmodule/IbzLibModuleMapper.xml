@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`CREATEBY`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`MDEPTID`, t1.`MDEPTNAME`, t1.`NAME`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`OWNER`, t1.`PARENT`, t11.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_module` t1  LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID`   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_id_eq != null ">
@@ -45,8 +45,8 @@
 		<result property="ibizshort" column="short" />
 		<result property="root" column="root" />
 		<result property="parent" column="parent" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="parentmodule" javaType="cn.ibizlab.pms.core.ibiz.domain.IbzLibModule" column="parent" select="cn.ibizlab.pms.core.ibiz.mapper.IbzLibModuleMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->

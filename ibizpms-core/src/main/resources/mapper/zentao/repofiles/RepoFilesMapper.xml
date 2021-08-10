@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACTION`, t1.`ID`, t1.`PARENT`, t1.`PATH`, t1.`REPO`, t1.`REVISION`, t1.`TYPE` FROM `zt_repofiles` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_id_eq != null ">
@@ -36,8 +36,8 @@
     <resultMap id="RepoFilesResultMap" type="cn.ibizlab.pms.core.zentao.domain.RepoFiles" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="parent" column="parent" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ibizparent" javaType="cn.ibizlab.pms.core.zentao.domain.RepoFiles" column="parent" select="cn.ibizlab.pms.core.zentao.mapper.RepoFilesMapper.selectById" fetchType="lazy"></association>
     </resultMap>

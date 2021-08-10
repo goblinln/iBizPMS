@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACCOUNT`, t1.`DATE`, t1.`EVALUATIONCOST`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`ID`, t1.`INPUTCOST`, t1.`MONTHNAME` FROM `zt_taskestimate` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_id_eq != null ">
@@ -32,8 +32,8 @@
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="TaskEstimateStatsResultMap" type="cn.ibizlab.pms.core.zentao.domain.TaskEstimateStats" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
-            
-		
+
+
     </resultMap>
 
 

@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZPRO_CONFIGID`, t1.`IBZPRO_CONFIGNAME`, t1.`MANAGEMENTSTATUS`, t1.`MEMO`, t1.`SCOPE`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VAILD` FROM `T_IBZPRO_CONFIG` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_ibzpro_configname_like != null ">
@@ -46,8 +46,8 @@
     <resultMap id="IbzproConfigResultMap" type="cn.ibizlab.pms.core.ibizpro.domain.IbzproConfig" autoMapping="true">
 		<id property="ibzproconfigid" column="ibzpro_configid" /><!--主键字段映射-->
 		<result property="ibzproconfigname" column="ibzpro_configname" />
-            
-		
+
+
     </resultMap>
 
 

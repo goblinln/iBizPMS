@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`APPTASKID`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATAID`, t1.`ENABLE`, t1.`MEMO`, t1.`TASKMSGRECORDID`, t1.`TASKMSGRECORDNAME`, t1.`TASKTYPE`, t1.`TASKUSERID`, t1.`TITLE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_TASKMSGRECORD` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_taskmsgrecordname_like != null ">
@@ -39,8 +39,8 @@
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="TaskMsgRecordResultMap" type="cn.ibizlab.pms.core.ibiz.domain.TaskMsgRecord" autoMapping="true">
 		<id property="taskmsgrecordid" column="taskmsgrecordid" /><!--主键字段映射-->
-            
-		
+
+
     </resultMap>
 
 

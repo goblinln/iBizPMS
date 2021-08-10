@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACCOUNT`, t1.`COMMENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.`PLANSTOMORROW`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME`, t1.`WORKTODAY` FROM `t_ibz_daily` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
@@ -30,8 +30,8 @@
     <resultMap id="IbzReportResultMap" type="cn.ibizlab.pms.core.report.domain.IbzReport" autoMapping="true">
 		<id property="ibzdailyid" column="ibz_dailyid" /><!--主键字段映射-->
 		<result property="ibzdailyname" column="ibz_dailyname" />
-            
-		
+
+
     </resultMap>
 
 

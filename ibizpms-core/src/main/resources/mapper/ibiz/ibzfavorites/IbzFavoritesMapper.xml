@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_FAVORITESID`, t1.`IBZ_FAVORITESNAME`, t1.`OBJECTID`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_FAVORITES` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_type_eq != null ">
@@ -46,8 +46,8 @@
     <resultMap id="IbzFavoritesResultMap" type="cn.ibizlab.pms.core.ibiz.domain.IbzFavorites" autoMapping="true">
 		<id property="ibzfavoritesid" column="ibz_favoritesid" /><!--主键字段映射-->
 		<result property="ibzfavoritesname" column="ibz_favoritesname" />
-            
-		
+
+
     </resultMap>
 
 

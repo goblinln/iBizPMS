@@ -159,6 +159,12 @@ export class AppTreeViewBase extends TreeControlBase {
             let counterService = Util.findElementByField(this.counterServiceArray, 'id', this.controlInstance.getPSAppCounterRef()?.id)?.service;
             nodeCount = counterService?.counterData?.[data.counterId];
         }
+        let nodeCountStyle = {
+            count: nodeCount,
+            showZero: data.counterMode !== 1,
+            type:"primary",
+            offset:[4,7]
+        }
 
         return (
             <context-menu
@@ -174,6 +180,7 @@ export class AppTreeViewBase extends TreeControlBase {
                 <tooltip transfer style='width: 100%;' max-width={2000} placement='right'>
                     <div
                         class={['tree-node', cssName]}
+                        v-badge={nodeCountStyle}
                         on-dblclick={() => {
                             throttle(this.doDefaultAction, [node], this);
                         }}
@@ -182,7 +189,6 @@ export class AppTreeViewBase extends TreeControlBase {
                         <span class='text'>
                             {textElement}
                         </span>
-                        <badge count={nodeCount} type="primary" showZero={data.counterMode !== 1}></badge>
                     </div>
                     <template slot='content'>
                         {data.tooltip ? data.tooltip : textElement}

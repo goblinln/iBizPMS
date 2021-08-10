@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`ACL`, t1.`CANCELEDBY`, t1.`CLOSEDBY`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1) AS `FIFTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1) AS `FOURTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1) AS `FRISTMEMBER`, t1.`ID`, t1.`NAME`, t1.`OPENEDBY`, t1.PM AS `PM`, t1.PO AS `PO`, t1.QD AS `QD`, t1.RD AS `RD`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1) AS `SECONDMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1) AS `SIXTHMEMBER`, (select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root) AS `TEAMEMBERS`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1) AS `THIRDMEMBER`, t1.`UPDATEBY` FROM `zt_project` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_id_eq != null ">
@@ -35,8 +35,8 @@
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="IbzProjectMemberResultMap" type="cn.ibizlab.pms.core.ibiz.domain.IbzProjectMember" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
-            
-		
+
+
     </resultMap>
 
 

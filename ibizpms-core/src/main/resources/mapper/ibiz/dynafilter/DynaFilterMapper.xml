@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATA`, t1.`DENAME`, t1.`DEPTID`, t1.`DYNAFILTERID`, t1.`DYNAFILTERNAME`, t1.`FORMNAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_DYNAFILTER` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_dynafilterid_eq != null ">
@@ -36,8 +36,8 @@
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="DynaFilterResultMap" type="cn.ibizlab.pms.core.ibiz.domain.DynaFilter" autoMapping="true">
 		<id property="dynafilterid" column="dynafilterid" /><!--主键字段映射-->
-            
-		
+
+
     </resultMap>
 
 

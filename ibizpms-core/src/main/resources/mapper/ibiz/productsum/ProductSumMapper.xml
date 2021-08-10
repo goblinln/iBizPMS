@@ -8,7 +8,7 @@
         <![CDATA[ SELECT 0 AS `ACTIVESTORYCNT`, 0 AS `BUGCNT`, 0 AS `CHANGEDSTORYCNT`, 0 AS `CLOSEDSTAGESTORYCNT`, 0 AS `CLOSEDSTAGESTORYHOURS`, 0 AS `CLOSEDSTORYCNT`, 0 AS `DEVELOPEDSTAGESTORYCNT`, 0 AS `DEVELOPEDSTAGESTORYHOURS`, 0 AS `DEVELOPINGSTAGESTORYCNT`, 0 AS `DEVELOPINGSTAGESTORYHOURS`, t1.`ID`, t1.`NAME`, 0 AS `PLAN`, 0 AS `PLANEDSTAGESTORYCNT`, 0 AS `PLANEDSTAGESTORYHOURS`, t1.`PO`, 0 AS `PROJECTEDSTAGESTORYCNT`, 0 AS `PROJECTEDSTAGESTORYHOURS`, 0 AS `RELEASEDSTAGESTORYCNT`, 0 AS `RELEASEDSTAGESTORYHOURS`, 0 AS `STORYCNT`, 0 AS `TESTEDSTAGESTORYCNT`, 0 AS `TESTEDSTAGESTORYHOURS`, 0 AS `TESTINGSTAGESTORYCNT`, 0 AS `TESTINGSTAGESTORYHOURS`, 0 AS `TOTALHOURS`, 0 AS `VERIFIEDSTAGESTORYCNT`, 0 AS `VERIFIEDSTAGESTORYHOURS`, 0 AS `WAITSTAGESTORYCNT`, 0 AS `WAITSTAGESTORYHOURS`, 0 AS `WAITSTORYCNT` FROM `zt_product` t1   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
@@ -29,8 +29,8 @@
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="ProductSumResultMap" type="cn.ibizlab.pms.core.ibiz.domain.ProductSum" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
-            
-		
+
+
     </resultMap>
 
 

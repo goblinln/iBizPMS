@@ -8,7 +8,7 @@
         <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DISPLAYORDER`, t1.`FEATURESDESC`, t1.`SYS_UPDATE_FEATURESID`, t1.`SYS_UPDATE_FEATURESNAME`, t1.`SYS_UPDATE_LOGID`, t11.`SYS_UPDATE_LOGNAME`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPFEATURES` FROM `T_SYS_UPDATE_FEATURES` t1  LEFT JOIN `T_SYS_UPDATE_LOG` t11 ON t1.`SYS_UPDATE_LOGID` = t11.`SYS_UPDATE_LOGID`   ]]>
     </sql>
 
-	
+
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_sys_update_featuresname_like != null ">
@@ -52,8 +52,8 @@
 		<result property="sysupdatefeaturesname" column="sys_update_featuresname" />
 		<result property="sysupdatelogname" column="sys_update_logname" />
 		<result property="sysupdatelogid" column="sys_update_logid" />
-            
-		
+
+
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="sysupdatelog" javaType="cn.ibizlab.pms.core.ibiz.domain.SysUpdateLog" column="sys_update_logid" select="cn.ibizlab.pms.core.ibiz.mapper.SysUpdateLogMapper.selectById" fetchType="lazy"></association>
     </resultMap>
