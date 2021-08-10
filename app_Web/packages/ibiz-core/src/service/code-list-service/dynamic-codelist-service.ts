@@ -209,12 +209,12 @@ export class DynamicCodeListService {
                     if (pValueField) {
                         Object.assign(itemdata, { pvalue: item[pValueField.toLowerCase()] });
                     }
-                    if (iconPathField) {
-                        Object.assign(itemdata, { pvalue: item[iconPathField.toLowerCase()] });
-                    }
-                    if (iconClsField) {
-                        Object.assign(itemdata, { pvalue: item[iconClsField.toLowerCase()] });
-                    }
+                    // if (iconPathField) {
+                    //     Object.assign(itemdata, { pvalue: item[iconPathField.toLowerCase()] });
+                    // }
+                    // if (iconClsField) {
+                    //     Object.assign(itemdata, { pvalue: item[iconClsField.toLowerCase()] });
+                    // }
                     _items.push(itemdata);
                 })
             }
