@@ -3,41 +3,9 @@ services:
   ibizpms-app-web:
     image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-web:latest
     ports:
-      - "33011:33011"
+      - "8080:8080"
     networks:
       - agent_network
-    environment:
-      - SPRING_CLOUD_NACOS_DISCOVERY_IP=172.16.240.111
-      - SERVER_PORT=33011
-      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=172.16.240.110:8850
-      - SPRING_REDIS_HOST=172.16.240.110
-      - SPRING_REDIS_PORT=6381
-      - SPRING_REDIS_DATABASE=0
-      - SPRING_DATASOURCE_USERNAME=a_A_23e8aa361
-      - SPRING_DATASOURCE_PASSWORD=b7989eb@
-      - SPRING_DATASOURCE_URL=jdbc:mysql://172.16.180.232:3306/a_A_23e8aa361?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
-      - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.jdbc.Driver
-      - SPRING_DATASOURCE_DEFAULTSCHEMA=a_A_23e8aa361
-      - REMOTEDYNAPATH=/dynamodel
-      - IBIZ_REF_SERVICE_IBZUAA-API=ibizrt4ebsx-rt4ebsx
-      - ZUUL_ROUTES_DYNAMODEL_STRIPPREFIX=true
-      - BDYNAMIC=true
-      - ZUUL_ROUTES_IBZEMP_SERVICEID=ibizpms-standardapi
-      - ZUUL_ROUTES_DYNAMODEL_PATH=/dynamodel/**
-      - ZUUL_ROUTES_DYNAMODEL_URL=http://172.16.170.145
-      - SERVER_SERVLET_CONTEXTPATH=/pms
-      - NACOS=172.16.240.110:8850
-      - IBIZ_REF_SERVICE_OU=ibizrt4ebsx-rt4ebsx
-      - IBIZ_REF_SERVICE_DICT=ibizrt4ebsx-rt4ebsx
-      - IBIZ_REF_SERVICE_IBZOU-API=ibizrt4ebsx-rt4ebsx
-      - SEATA_REGISTRY_NACOS_SERVER-ADDR=172.16.240.110:8850
-      - CAS=https://passport.ibizlab.cn
-      - IBIZ_REF_SERVICE_LITE=ibizrt4ebsx-rt4ebsx
-      - SEATA_ENABLED=true
-      - IBIZ_CACHELEVEL=L2
-      - IBIZ_REF_SERVICE_UAA=ibizrt4ebsx-rt4ebsx
-      - IBIZ_REF_SERVICE_WF=ibizrt4ebsx-rt4ebsx
-      - IBIZ_REF_SERVICE_DISK=ibizrt4ebsx-rt4ebsx
     deploy:
       resources:
            limits:

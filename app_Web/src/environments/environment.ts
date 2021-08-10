@@ -6,7 +6,7 @@ export const Environment = {
     // 应用 title
     AppTitle: 'iBiz软件生产管理',
     // 应用基础路径
-    BaseUrl: '/pms',
+    BaseUrl: '',
     // 系统名称
     SysName: 'iBizPMS',
     // 远程登录地址，本地开发调试使用
