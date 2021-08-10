@@ -960,7 +960,7 @@
   "name" : "ZT_HISTORY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 2,
+  "saaSMode" : 4,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "History",
   "storageMode" : 1,

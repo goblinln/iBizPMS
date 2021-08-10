@@ -1183,7 +1183,7 @@
   "name" : "ZT_TEAM",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 2,
+  "saaSMode" : 4,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "Team",
   "storageMode" : 1,

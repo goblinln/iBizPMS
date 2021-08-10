@@ -1581,7 +1581,7 @@
   "name" : "IBZ_TASKTEAM",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 2,
+  "saaSMode" : 4,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "TaskTeam",
   "storageMode" : 1,

@@ -2180,7 +2180,7 @@
   "name" : "IBZ_PROJECTTEAM",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 2,
+  "saaSMode" : 4,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "ProjectTeam",
   "storageMode" : 1,

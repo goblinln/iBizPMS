@@ -1,7 +1,7 @@
 
 import { VNode } from 'vue';
-import { DynamicInstanceConfig, IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppView, IPSAppViewRef } from "@ibiz/dynamic-model-api";
-import { GetModelService, LogUtil, RedirectViewInterface, Util, ViewTool } from "ibiz-core";
+import { DynamicInstanceConfig, IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppView, IPSAppViewRef, IPSNavigateContext, IPSNavigateParam } from "@ibiz/dynamic-model-api";
+import { GetModelService, LogUtil, ModelTool, RedirectViewInterface, StringUtil, Util, ViewTool } from "ibiz-core";
 import { MainViewBase } from "./mainview-base";
 
 /**
@@ -127,6 +127,36 @@ export class DeRedirectViewBase extends MainViewBase implements RedirectViewInte
       }
       if (!targetOpenViewRef) {
         return;
+      }
+      //  导航上下文
+      if (
+        targetOpenViewRef.getPSNavigateContexts() &&
+        (targetOpenViewRef.getPSNavigateContexts() as IPSNavigateContext[]).length > 0
+      ) {
+          let localContextRef: any = Util.formatNavParam(targetOpenViewRef.getPSNavigateContexts(), true);
+          let _context: any = Util.computedNavData(result, tempContext, tempViewParams, localContextRef);
+          //  填充字符串数据
+          if (_context && Object.keys(_context).length > 0) {
+            for (const key of Object.keys(_context)) {
+              _context[key] = StringUtil.fillStrData(_context[key], tempContext, result);
+            }
+          }
+          Object.assign(tempContext, _context);
+      }
+      //  导航视图参数
+      if (
+        targetOpenViewRef.getPSNavigateParams() &&
+        (targetOpenViewRef.getPSNavigateParams() as IPSNavigateParam[]).length > 0
+      ) {
+          let localViewParamsRef: any = Util.formatNavParam(targetOpenViewRef.getPSNavigateParams(), true);
+          let _viewParams: any = Util.computedNavData(result, tempContext, tempViewParams, localViewParamsRef);
+          //  填充字符串数据
+          if (_viewParams && Object.keys(_viewParams).length > 0) {
+            for (const key of Object.keys(_viewParams)) {
+              _viewParams[key] = StringUtil.fillStrData(_viewParams[key], tempContext, result);
+            }
+          }
+          Object.assign(tempViewParams, _viewParams);
       }
       // 存在动态实例
       let splitArray: Array<any> = result.param.split(":");
