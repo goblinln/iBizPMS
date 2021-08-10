@@ -3067,31 +3067,31 @@
                         "name" : "grouppanel4",
                         "getPSDEFormDetails" : [ {
                           "codeName" : "rawitem4",
-                          "contentType" : "RAW",
+                          "contentType" : "HTML",
                           "detailStyle" : "DEFAULT",
                           "detailType" : "RAWITEM",
+                          "htmlContent" : "<p>&lt;div style=\"padding-left: 30px;text-align: center;\"&gt;&amp;nbsp;今日更新&amp;nbsp;&amp;nbsp;&lt;b&gt;{{data.todayupdatecnt ? data.todayupdatecnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
                           "name" : "rawitem4",
                           "getPSLayoutPos" : {
                             "colLG" : 12,
                             "colMD" : 24,
                             "layout" : "TABLE_24COL"
                           },
-                          "rawContent" : "<div style=\"padding-left: 30px;text-align: center;\">&nbsp;今日更新&nbsp;&nbsp;<b>{{data.todayupdatecnt ? data.todayupdatecnt : 0}}</b></div>",
                           "rawItemHeight" : -1.0,
                           "rawItemWidth" : -1.0,
                           "showCaption" : true
                         }, {
                           "codeName" : "rawitem5",
-                          "contentType" : "RAW",
+                          "contentType" : "HTML",
                           "detailStyle" : "DEFAULT",
                           "detailType" : "RAWITEM",
+                          "htmlContent" : "<p>&lt;div style=\"padding-left: 30px;text-align: center;\"&gt;&amp;nbsp;最近更新&amp;nbsp;&amp;nbsp;&lt;b&gt;{{data.recentupdatecnt ? data.recentupdatecnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
                           "name" : "rawitem5",
                           "getPSLayoutPos" : {
                             "colLG" : 12,
                             "colMD" : 24,
                             "layout" : "TABLE_24COL"
                           },
-                          "rawContent" : "<div style=\"padding-left: 30px;text-align: center;\">&nbsp;最近更新&nbsp;&nbsp;<b>{{data.recentupdatecnt ? data.recentupdatecnt : 0}}</b></div>",
                           "rawItemHeight" : -1.0,
                           "rawItemWidth" : -1.0,
                           "showCaption" : true
@@ -3127,15 +3127,15 @@
                       "name" : "grouppanel2",
                       "getPSDEFormDetails" : [ {
                         "codeName" : "rawitem6",
-                        "contentType" : "RAW",
+                        "contentType" : "HTML",
                         "detailStyle" : "DEFAULT",
                         "detailType" : "RAWITEM",
+                        "htmlContent" : "<p>&lt;div style=\"margin-top: 0px;\"&gt;&lt;/div&gt;</p>",
                         "name" : "rawitem6",
                         "getPSLayoutPos" : {
                           "colMD" : 24,
                           "layout" : "TABLE_24COL"
                         },
-                        "rawContent" : "<div style=\"margin-top: 0px;\"></div>",
                         "rawItemHeight" : -1.0,
                         "rawItemWidth" : -1.0,
                         "showCaption" : true
@@ -3148,9 +3148,10 @@
                         "name" : "grouppanel5",
                         "getPSDEFormDetails" : [ {
                           "codeName" : "rawitem1",
-                          "contentType" : "RAW",
+                          "contentType" : "HTML",
                           "detailStyle" : "DEFAULT",
                           "detailType" : "RAWITEM",
+                          "htmlContent" : "<p>&lt;div style=\"margin-top: 40px;padding-left: 10px;\"&gt;&amp;nbsp;最近添加&amp;nbsp;&amp;nbsp;&lt;b&gt;{{data.recentaddcnt ? data.recentaddcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
                           "name" : "rawitem1",
                           "getPSLayoutPos" : {
                             "colLG" : 10,
@@ -3158,7 +3159,6 @@
                             "colMD" : 24,
                             "layout" : "TABLE_24COL"
                           },
-                          "rawContent" : "<div style=\"margin-top: 40px;padding-left: 10px;\">&nbsp;最近添加&nbsp;&nbsp;<b>{{data.recentaddcnt ? data.recentaddcnt : 0}}</b></div>",
                           "rawItemHeight" : -1.0,
                           "rawItemWidth" : -1.0,
                           "showCaption" : true
@@ -3260,9 +3260,10 @@
                         "name" : "grouppanel6",
                         "getPSDEFormDetails" : [ {
                           "codeName" : "rawitem2",
-                          "contentType" : "RAW",
+                          "contentType" : "HTML",
                           "detailStyle" : "DEFAULT",
                           "detailType" : "RAWITEM",
+                          "htmlContent" : "<p>&lt;div style=\"margin-top: 40px;padding-left: 10px;\"&gt;&amp;nbsp;我的文档&amp;nbsp;&amp;nbsp;&lt;b&gt;{{data.mydoccnt ? data.mydoccnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
                           "name" : "rawitem2",
                           "getPSLayoutPos" : {
                             "colLG" : 10,
@@ -3270,7 +3271,6 @@
                             "colMD" : 24,
                             "layout" : "TABLE_24COL"
                           },
-                          "rawContent" : "<div style=\"margin-top: 40px;padding-left: 10px;\">&nbsp;我的文档&nbsp;&nbsp;<b>{{data.mydoccnt ? data.mydoccnt : 0}}</b></div>",
                           "rawItemHeight" : -1.0,
                           "rawItemWidth" : -1.0,
                           "showCaption" : true
@@ -3372,9 +3372,10 @@
                         "name" : "grouppanel7",
                         "getPSDEFormDetails" : [ {
                           "codeName" : "rawitem3",
-                          "contentType" : "RAW",
+                          "contentType" : "HTML",
                           "detailStyle" : "DEFAULT",
                           "detailType" : "RAWITEM",
+                          "htmlContent" : "<p>&lt;div style=\"margin-top: 40px;padding-left: 10px;\"&gt;&amp;nbsp;我的收藏&amp;nbsp;&amp;nbsp;&lt;b&gt;{{data.myfavouritecnt ? data.myfavouritecnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
                           "name" : "rawitem3",
                           "getPSLayoutPos" : {
                             "colLG" : 10,
@@ -3382,7 +3383,6 @@
                             "colMD" : 24,
                             "layout" : "TABLE_24COL"
                           },
-                          "rawContent" : "<div style=\"margin-top: 40px;padding-left: 10px;\">&nbsp;我的收藏&nbsp;&nbsp;<b>{{data.myfavouritecnt ? data.myfavouritecnt : 0}}</b></div>",
                           "rawItemHeight" : -1.0,
                           "rawItemWidth" : -1.0,
                           "showCaption" : true

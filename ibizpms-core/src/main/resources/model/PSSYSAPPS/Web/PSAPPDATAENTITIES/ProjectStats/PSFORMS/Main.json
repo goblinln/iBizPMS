@@ -501,31 +501,31 @@
         "name" : "grouppanel1",
         "getPSDEFormDetails" : [ {
           "codeName" : "rawitem1",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;昨日完成任务数&amp;nbsp;&lt;b&gt;{{data.yesterdayctaskcnt ? data.yesterdayctaskcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
           "name" : "rawitem1",
           "getPSLayoutPos" : {
             "colLG" : 18,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;昨日完成任务数&nbsp;<b>{{data.yesterdayctaskcnt ? data.yesterdayctaskcnt : 0}}</b></div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
         }, {
           "codeName" : "rawitem6",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;总任务&amp;nbsp;:&amp;nbsp;{{data.taskcnt ? data.taskcnt : 0}}&lt;/div&gt;</p>",
           "name" : "rawitem6",
           "getPSLayoutPos" : {
             "colLG" : 6,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;总任务&nbsp;:&nbsp;{{data.taskcnt ? data.taskcnt : 0}}</div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -666,16 +666,16 @@
           "showCaption" : true
         }, {
           "codeName" : "rawitem7",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;未完成&amp;nbsp;:&amp;nbsp;{{data.undonetaskcnt ? data.undonetaskcnt : 0}}&lt;/div&gt;</p>",
           "name" : "rawitem7",
           "getPSLayoutPos" : {
             "colLG" : 6,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;未完成&nbsp;:&nbsp;{{data.undonetaskcnt ? data.undonetaskcnt : 0}}</div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -730,31 +730,31 @@
         "name" : "grouppanel2",
         "getPSDEFormDetails" : [ {
           "codeName" : "rawitem2",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;已发布需求数&amp;nbsp;&lt;b&gt;{{data.releasedstorycnt ? data.releasedstorycnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
           "name" : "rawitem2",
           "getPSLayoutPos" : {
             "colLG" : 18,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;已发布需求数&nbsp;<b>{{data.releasedstorycnt ? data.releasedstorycnt : 0}}</b></div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
         }, {
           "codeName" : "rawitem5",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;总需求&amp;nbsp;:&amp;nbsp;{{data.storycnt ? data.storycnt : 0}}&lt;/div&gt;</p>",
           "name" : "rawitem5",
           "getPSLayoutPos" : {
             "colLG" : 6,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;总需求&nbsp;:&nbsp;{{data.storycnt ? data.storycnt : 0}}</div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -895,16 +895,16 @@
           "showCaption" : true
         }, {
           "codeName" : "rawitem8",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;未关闭&amp;nbsp;:&amp;nbsp;{{data.unclosedstorycnt ? data.unclosedstorycnt : 0}}&lt;/div&gt;</p>",
           "name" : "rawitem8",
           "getPSLayoutPos" : {
             "colLG" : 6,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;未关闭&nbsp;:&nbsp;{{data.unclosedstorycnt ? data.unclosedstorycnt : 0}}</div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -959,16 +959,16 @@
         "name" : "grouppanel3",
         "getPSDEFormDetails" : [ {
           "codeName" : "rawitem3",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;昨日解决Bug数&amp;nbsp;&lt;b&gt;{{data.yesterdayrbugcnt ? data.yesterdayrbugcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
           "name" : "rawitem3",
           "getPSLayoutPos" : {
             "colLG" : 18,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;昨日解决Bug数&nbsp;<b>{{data.yesterdayrbugcnt ? data.yesterdayrbugcnt : 0}}</b></div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -1002,16 +1002,16 @@
           "showCaption" : true
         }, {
           "codeName" : "rawitem4",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 31px;\"&gt;&amp;nbsp;所有&amp;nbsp;:&amp;nbsp;{{data.bugcnt ? data.bugcnt : 0}}&lt;/div&gt;</p>",
           "name" : "rawitem4",
           "getPSLayoutPos" : {
             "colLG" : 6,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 31px;\">&nbsp;所有&nbsp;:&nbsp;{{data.bugcnt ? data.bugcnt : 0}}</div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -1124,16 +1124,16 @@
           "showCaption" : true
         }, {
           "codeName" : "rawitem9",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;未解决&amp;nbsp;:&amp;nbsp;{{data.activebugcnt ? data.activebugcnt : 0}}&lt;/div&gt;</p>",
           "name" : "rawitem9",
           "getPSLayoutPos" : {
             "colLG" : 6,
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"margin-top: 6px;padding-left: 19px;\">&nbsp;未解决&nbsp;:&nbsp;{{data.activebugcnt ? data.activebugcnt : 0}}</div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true

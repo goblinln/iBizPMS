@@ -359,15 +359,15 @@
         "name" : "grouppanel3",
         "getPSDEFormDetails" : [ {
           "codeName" : "rawitem1",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;昨天解决Bug数&amp;nbsp;&lt;b&gt;{{data.yesterdayresolvedbugcnt ? data.yesterdayresolvedbugcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
           "name" : "rawitem1",
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;昨天解决Bug数&nbsp;<b>{{data.yesterdayresolvedbugcnt ? data.yesterdayresolvedbugcnt : 0}}</b></div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -511,15 +511,15 @@
           "showCaption" : true
         }, {
           "codeName" : "rawitem2",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"padding-left: 69px;\"&gt;&lt;/div&gt;</p>",
           "name" : "rawitem2",
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"padding-left: 69px;\"></div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -663,15 +663,15 @@
           "showCaption" : true
         }, {
           "codeName" : "rawitem3",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;div style=\"padding-left: 69px;\"&gt;&lt;Icon type=\"md-checkmark-circle\" color=\"#49db44\"/&gt;&amp;nbsp;昨天关闭Bug数&amp;nbsp;&lt;b&gt;{{data.yesterdayClosedBugCnt ? data.yesterdayClosedBugCnt: 0}}&lt;/b&gt;&lt;/div&gt;</p>",
           "name" : "rawitem3",
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<div style=\"padding-left: 69px;\"><Icon type=\"md-checkmark-circle\" color=\"#49db44\"/>&nbsp;昨天关闭Bug数&nbsp;<b>{{data.yesterdayClosedBugCnt ? data.yesterdayClosedBugCnt: 0}}</b></div>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true

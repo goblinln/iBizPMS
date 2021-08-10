@@ -393,23 +393,24 @@
         "name" : "grouppanel1",
         "getPSDEFormDetails" : [ {
           "codeName" : "rawitem1",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>&lt;br/&gt;<br />&lt;br/&gt;</p>",
           "name" : "rawitem1",
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "rawContent" : "<br/>\n<br/>",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
         }, {
           "codeName" : "rawitem3",
-          "contentType" : "RAW",
+          "contentType" : "HTML",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "htmlContent" : "<p>需求数</p>",
           "name" : "rawitem3",
           "getPSLayoutPos" : {
             "colLG" : 22,
@@ -419,7 +420,6 @@
           "getPSSysCss" : {
             "cssName" : "text-center"
           },
-          "rawContent" : "需求数",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
           "showCaption" : true
@@ -816,9 +816,10 @@
           "name" : "grouppanel8",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem5",
-            "contentType" : "RAW",
+            "contentType" : "HTML",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有计划&amp;nbsp;:&amp;nbsp;{{data.productplancnt ? data.productplancnt : 0}}&lt;/div&gt;</p>",
             "name" : "rawitem5",
             "getPSLayoutPos" : {
               "colLG" : 8,
@@ -827,7 +828,6 @@
               "colMDOffset" : 16,
               "layout" : "TABLE_24COL"
             },
-            "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;所有计划&nbsp;:&nbsp;{{data.productplancnt ? data.productplancnt : 0}}</div>",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
@@ -1004,16 +1004,16 @@
             "showCaption" : false
           }, {
             "codeName" : "rawitem6",
-            "contentType" : "RAW",
+            "contentType" : "HTML",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;未过期&amp;nbsp;:&amp;nbsp;{{data.unendproductplancnt ? data.unendproductplancnt : 0}}&lt;/div&gt;</p>",
             "name" : "rawitem6",
             "getPSLayoutPos" : {
               "colLG" : 8,
               "colMD" : 8,
               "layout" : "TABLE_24COL"
             },
-            "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;未过期&nbsp;:&nbsp;{{data.unendproductplancnt ? data.unendproductplancnt : 0}}</div>",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
@@ -1046,9 +1046,10 @@
             "name" : "grouppanel4",
             "getPSDEFormDetails" : [ {
               "codeName" : "rawitem4",
-              "contentType" : "RAW",
+              "contentType" : "HTML",
               "detailStyle" : "DEFAULT",
               "detailType" : "RAWITEM",
+              "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;\"&gt;&lt;Icon type=\"md-alert\" color=\"red\"/&gt;&amp;nbsp;已延期&amp;nbsp;&lt;b&gt;{{data.postponedprojectcnt ? data.postponedprojectcnt : 0}}&lt;/b&gt;&lt;/div&gt;</p>",
               "name" : "rawitem4",
               "getPSDEFDGroupLogics" : [ {
                 "groupOP" : "AND",
@@ -1069,7 +1070,6 @@
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
               },
-              "rawContent" : "<div style=\"margin-top: 6px;\"><Icon type=\"md-alert\" color=\"red\"/>&nbsp;已延期&nbsp;<b>{{data.postponedprojectcnt ? data.postponedprojectcnt : 0}}</b></div>",
               "rawItemHeight" : -1.0,
               "rawItemWidth" : -1.0,
               "showCaption" : true
@@ -1275,29 +1275,29 @@
             "name" : "grouppanel10",
             "getPSDEFormDetails" : [ {
               "codeName" : "rawitem7",
-              "contentType" : "RAW",
+              "contentType" : "HTML",
               "detailStyle" : "DEFAULT",
               "detailType" : "RAWITEM",
+              "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有项目&amp;nbsp;:&amp;nbsp;{{data.resprojectcnt ? data.resprojectcnt : 0}}&lt;/div&gt;</p>",
               "name" : "rawitem7",
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
               },
-              "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;所有项目&nbsp;:&nbsp;{{data.resprojectcnt ? data.resprojectcnt : 0}}</div>",
               "rawItemHeight" : -1.0,
               "rawItemWidth" : -1.0,
               "showCaption" : true
             }, {
               "codeName" : "rawitem8",
-              "contentType" : "RAW",
+              "contentType" : "HTML",
               "detailStyle" : "DEFAULT",
               "detailType" : "RAWITEM",
+              "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;进行中&amp;nbsp;:&amp;nbsp;{{data.undoneresprojectcnt ? data.undoneresprojectcnt : 0}}&lt;/div&gt;</p>",
               "name" : "rawitem8",
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
               },
-              "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;进行中&nbsp;:&nbsp;{{data.undoneresprojectcnt ? data.undoneresprojectcnt : 0}}</div>",
               "rawItemHeight" : -1.0,
               "rawItemWidth" : -1.0,
               "showCaption" : true
@@ -1364,9 +1364,10 @@
           "name" : "grouppanel11",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem9",
-            "contentType" : "RAW",
+            "contentType" : "HTML",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有发布&amp;nbsp;:&amp;nbsp;{{data.releasecnt ? data.releasecnt : 0}}&lt;/div&gt;</p>",
             "name" : "rawitem9",
             "getPSLayoutPos" : {
               "colLG" : 8,
@@ -1375,7 +1376,6 @@
               "colMDOffset" : 16,
               "layout" : "TABLE_24COL"
             },
-            "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;所有发布&nbsp;:&nbsp;{{data.releasecnt ? data.releasecnt : 0}}</div>",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
@@ -1552,16 +1552,16 @@
             "showCaption" : false
           }, {
             "codeName" : "rawitem10",
-            "contentType" : "RAW",
+            "contentType" : "HTML",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;维护中&amp;nbsp;:&amp;nbsp;{{data.normalreleasecnt ? data.normalreleasecnt : 0}}&lt;/div&gt;</p>",
             "name" : "rawitem10",
             "getPSLayoutPos" : {
               "colLG" : 8,
               "colMD" : 8,
               "layout" : "TABLE_24COL"
             },
-            "rawContent" : "<div style=\"margin-top: 6px;padding-left: 20px;\">&nbsp;维护中&nbsp;:&nbsp;{{data.normalreleasecnt ? data.normalreleasecnt : 0}}</div>",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
