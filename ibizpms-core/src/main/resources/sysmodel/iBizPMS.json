@@ -11800,7 +11800,7 @@
     "codename":"Id",
     "field_logic_name":"id",
     "entity_name":"ZT_HISTORY",
-    "field_type":"BIGINT",
+    "field_type":"ACID",
     "nullable":0,
     "physical_field":1,
     "data_type":"BIGINT",
