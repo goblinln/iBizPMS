@@ -2262,7 +2262,6 @@
               "layout" : "TABLE_24COL"
             },
             "unitName" : "小时",
-            "valueFormat" : "%1$,.3f",
             "allowEmpty" : true,
             "enableUnitName" : true,
             "showCaption" : true

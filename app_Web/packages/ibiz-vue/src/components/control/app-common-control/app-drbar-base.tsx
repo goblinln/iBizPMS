@@ -1,3 +1,4 @@
+import { IPSDEDRBarGroup } from '@ibiz/dynamic-model-api';
 import { throttle, Util } from 'ibiz-core';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { DrbarControlBase } from '../../../widgets/drbar-control-base';
@@ -114,6 +115,57 @@ export class AppDrbarBase extends DrbarControlBase {
     }
 
     /**
+     * 获取分组数据集合
+     *
+     * @memberof AppDrbarBase
+     */
+    public getGroupsItems(groups: IPSDEDRBarGroup[]): any[] {
+        const groupItems: any[] = [];
+        groups.forEach((group: IPSDEDRBarGroup) => {
+            groupItems.push({
+                caption: this.$tl(group.getCapPSLanguageRes()?.lanResTag, group.caption),
+                codeName: group.id,
+                hidden: group.hidden,
+                items: this.items.filter((item: any) => { return Object.is(item.groupCodeName, group.id); })
+            });
+        });
+        const noGroupItems = this.items.filter((item: any) => { return !item.groupCodeName; })
+        if (noGroupItems.length > 0) {
+            groupItems.push({
+                caption: '无分组',
+                name: 'noGroup',
+                items: noGroupItems
+            })
+        } 
+        return groupItems;
+    }
+
+    /**
+     * 渲染导航菜单
+     *
+     * @memberof AppDrbarBase
+     */
+    public renderSiderMenus() {
+        const groups: IPSDEDRBarGroup[] = this.controlInstance.getPSDEDRBarGroups() || [];
+        if (groups.length === 0) {
+            return <app-sider-menus menus={this.items}/>
+        } else {
+            const groupItems = this.getGroupsItems(groups);
+            return groupItems.map((group: any, index: number) => {
+                if (group.name == 'noGroup') {
+                    return <app-sider-menus menus={group.items} />
+                }
+                return (!group.hidden &&
+                    <el-submenu index={`${index}_${group.codeName}`} class={`drbar-group drbar-group-${group.codeName?.toLowerCase()}`}>
+                        <span class={{ [group.codeName]: true, 'drbar-item-title': true }} slot="title">{ group.caption }</span>
+                        <app-sider-menus class="group-menus" menus={group.items}/>
+                    </el-submenu>
+                )
+            })
+        }
+    }
+
+    /**
      * 绘制关系栏部件
      *
      * @returns {*}
@@ -131,7 +183,7 @@ export class AppDrbarBase extends DrbarControlBase {
                         default-openeds={this.defaultOpeneds}
                         default-active={this.items[0]?.id}
                         on-select={(event: any) => throttle(this.onSelect, [event], this)}>
-                        <app-sider-menus menus={this.items} />
+                            {this.renderSiderMenus()}
                     </el-menu>
                 </sider>
                 <content style={{ width: `calc(100% - ${this.width + 1}px)` }}>

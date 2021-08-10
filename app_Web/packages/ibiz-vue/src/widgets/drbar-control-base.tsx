@@ -123,15 +123,32 @@ export class DrbarControlBase extends MainControlBase implements DrbarControlInt
             })
         }
         const ctrlItems: Array<IPSDEDRCtrlItem> = this.controlInstance.getPSDEDRCtrlItems() || [];
+        const counterRef = this.controlInstance.getPSAppCounterRef();
+        let counterService: any = undefined;
+        if (counterRef) {
+            counterService = Util.findElementByField(this.counterServiceArray, 'id', counterRef.id)?.service;
+        }
         ctrlItems.forEach((item: IPSDEDRCtrlItem) => {
-            this.items.push({
+            let _item: any = {
                 text: this.$tl(item.getCapPSLanguageRes()?.lanResTag, item.caption),
                 disabled: true,
                 id: item.name?.toLowerCase(),
                 iconcls: (item as any).getPSSysImage?.()?.cssClass,
                 icon: (item as any).getPSSysImage?.()?.imagePath,
-                view: item
-            })
+                view: item,
+                groupCodeName: (item as any).getPSDEDRBarGroup?.()?.id || '',
+            }
+            if (item.counterId && counterService) {
+                Object.assign(_item, {
+                    counter: {
+                        id: item.counterId,
+                        count: counterService?.counterData?.[item.counterId.toLowerCase()],
+                        offset: _item.groupCodeName ? [10, 19] : [-16, 19],
+                        showZero: 1
+                    }
+                });
+            }
+            this.items.push(_item);
         })
     }
 

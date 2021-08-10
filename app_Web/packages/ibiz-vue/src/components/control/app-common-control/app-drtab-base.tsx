@@ -84,8 +84,17 @@ export class AppDrtabBase extends DrtabControlBase {
      * @memberof AppDrtabBase
      */
     public renderPanelLabel(h: any,tabPage: any){
+      let counter: any = undefined;
+      if (tabPage.counterId && this.counterData?.[tabPage.counterId.toLowerCase()]) {
+        counter = {
+          id: tabPage.counterId,
+          count: this.counterData[tabPage.counterId.toLowerCase()],
+          showZero: 1,
+          offset: [2, 10]
+        }
+      }
       if (Object.is(this.controlInstance.parentModel.viewType,'DEEDITVIEW4')) {
-        return <span slot="reference">{this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}</span>
+        return <span slot="reference" v-badge={counter} >{this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}</span>
       }
       return (<el-popover
           content={this.$t("components.appformdruipart.blockuitipinfo")}
@@ -93,7 +102,7 @@ export class AppDrtabBase extends DrtabControlBase {
           popper-class="app-tooltip"
           disabled={!tabPage.disabled}
           trigger="hover">
-          <span slot="reference">{this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}</span>
+          <span slot="reference" v-badge={counter}>{this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}</span>
       </el-popover>);
     }
 

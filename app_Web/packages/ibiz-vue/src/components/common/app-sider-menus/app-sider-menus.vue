@@ -25,7 +25,7 @@
                     trigger="hover">
                     <span slot="reference">{{item.text}}</span>
                 </el-popover>
-                  
+                <span v-if="item.counter && (item.counter.count || item.counter.count == 0)" v-badge="item.counter" class="right-badge"/>
               </el-menu-item>
           </template>
       </template>

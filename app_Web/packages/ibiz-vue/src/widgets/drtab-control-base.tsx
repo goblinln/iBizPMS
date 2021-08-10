@@ -28,6 +28,14 @@ export class DrtabControlBase extends MainControlBase implements DrtabControlInt
     public isShowSlot: boolean = true;
 
     /**
+     * 计数器数据
+     *
+     * @type {any}
+     * @memberof DrtabControlBase
+     */
+    public counterData: any = null;
+
+    /**
      * 监听静态参数变化
      *
      * @memberof DrtabControlBase
@@ -46,6 +54,7 @@ export class DrtabControlBase extends MainControlBase implements DrtabControlInt
     public async ctrlModelInit() {
         await super.ctrlModelInit();
         this.initDrtabBasicData();
+        this.initCounterData();
     }
 
     /**
@@ -78,6 +87,19 @@ export class DrtabControlBase extends MainControlBase implements DrtabControlInt
             this.controlInstance.getPSDEDRTabPages().forEach((element: any) => {
                 this.drtabItems.push(Object.assign(element, { disabled: true }));
             });
+        }
+    }
+
+    /**
+     * 初始化数据关系部件计数器数据
+     *
+     * @memberof DrtabControlBase
+     */
+    public initCounterData() {
+        const counterRef = this.controlInstance.getPSAppCounterRef?.();
+        if (counterRef) {
+            const targetCounterService = Util.findElementByField(this.counterServiceArray, 'id', counterRef.id)?.service;
+            this.counterData = targetCounterService?.counterData;
         }
     }
 
