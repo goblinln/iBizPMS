@@ -1256,6 +1256,9 @@
                     "modelid" : "33faef68532bd41ec8c3b0e9bd5cfd48",
                     "modeltype" : "PSDELIST"
                   } ],
+                  "getPSSysCss" : {
+                    "cssName" : "list-left-exp"
+                  },
                   "width" : 200.0,
                   "xDataControlName" : "listexpbar_list",
                   "enableCounter" : true,
@@ -1568,6 +1571,9 @@
                     "modelid" : "2117568b84525320ec8ad1b8481bc912",
                     "modeltype" : "PSDELIST"
                   } ],
+                  "getPSSysCss" : {
+                    "cssName" : "list-left-exp"
+                  },
                   "width" : 200.0,
                   "xDataControlName" : "listexpbar_list",
                   "enableCounter" : true,
@@ -1986,6 +1992,9 @@
                     "modelid" : "39eccc280ce56a6592d72d227bbcc15d",
                     "modeltype" : "PSDELIST"
                   } ],
+                  "getPSSysCss" : {
+                    "cssName" : "list-left-exp"
+                  },
                   "width" : 200.0,
                   "xDataControlName" : "listexpbar_list",
                   "enableCounter" : true,

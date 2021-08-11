@@ -338,6 +338,9 @@
                 "modelid" : "2117568b84525320ec8ad1b8481bc912",
                 "modeltype" : "PSDELIST"
               } ],
+              "getPSSysCss" : {
+                "cssName" : "list-left-exp"
+              },
               "width" : 200.0,
               "xDataControlName" : "listexpbar_list",
               "enableCounter" : true,
