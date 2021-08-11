@@ -245,6 +245,8 @@ export class AppSearchFormBase extends SearchFormControlBase {
             }
             content = content.replaceAll('&lt;','<');
             content = content.replaceAll('&gt;','>');
+            content = content.replaceAll('&amp;nbsp;',' ');
+            content = content.replaceAll('&nbsp;',' ');
         }
         return (
             <app-rawitem

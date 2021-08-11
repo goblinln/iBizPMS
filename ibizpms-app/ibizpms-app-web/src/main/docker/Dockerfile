@@ -1,5 +1,5 @@
 
-FROM openjdk:8-jre-alpine
+FROM adoptopenjdk/openjdk8:jdk8u222-b10-debian
 
 ENV TZ=Asia/Shanghai \
     SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \

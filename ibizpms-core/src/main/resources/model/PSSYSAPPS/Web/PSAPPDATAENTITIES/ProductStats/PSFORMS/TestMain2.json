@@ -822,6 +822,9 @@
           "grow" : -1,
           "layout" : "FLEX"
         },
+        "getPSSysCss" : {
+          "cssName" : "label-top-value-center"
+        },
         "infoGroupMode" : false,
         "showCaption" : false
       } ],
