@@ -6,10 +6,12 @@
   "logicName" : "评审",
   "name" : "Review",
   "getPSDEActionInput" : {
+    "codeName" : "ReviewInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ReviewResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

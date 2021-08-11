@@ -6,10 +6,12 @@
   "logicName" : "定时推送项目周报",
   "name" : "pushSumProjectWeekly",
   "getPSDEActionInput" : {
+    "codeName" : "PushSumProjectWeeklyInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "PushSumProjectWeeklyResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

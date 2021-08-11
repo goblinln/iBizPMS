@@ -8,11 +8,13 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
+      "codeName" : "CreateInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -28,11 +30,13 @@
     "name" : "CreateTemp",
     "orderValue" : 2,
     "getPSDEActionInput" : {
+      "codeName" : "CreateTempInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateTempResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -48,11 +52,13 @@
     "name" : "CreateTempMajor",
     "orderValue" : 3,
     "getPSDEActionInput" : {
+      "codeName" : "CreateTempMajorInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateTempMajorResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -68,11 +74,13 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
+      "codeName" : "UpdateInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UpdateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -88,11 +96,13 @@
     "name" : "UpdateTemp",
     "orderValue" : 12,
     "getPSDEActionInput" : {
+      "codeName" : "UpdateTempInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UpdateTempResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -108,11 +118,13 @@
     "name" : "UpdateTempMajor",
     "orderValue" : 13,
     "getPSDEActionInput" : {
+      "codeName" : "UpdateTempMajorInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UpdateTempMajorResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -129,10 +141,12 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
+      "codeName" : "RemoveInput",
       "name" : "输入对象",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RemoveResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -150,10 +164,12 @@
     "name" : "RemoveTemp",
     "orderValue" : 22,
     "getPSDEActionInput" : {
+      "codeName" : "RemoveTempInput",
       "name" : "输入对象",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RemoveTempResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -171,10 +187,12 @@
     "name" : "RemoveTempMajor",
     "orderValue" : 23,
     "getPSDEActionInput" : {
+      "codeName" : "RemoveTempMajorInput",
       "name" : "输入对象",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RemoveTempMajorResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -191,12 +209,14 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
+      "codeName" : "GetInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "builtinAction" : true
   }, {
@@ -208,12 +228,14 @@
     "name" : "GetTemp",
     "orderValue" : 32,
     "getPSDEActionInput" : {
+      "codeName" : "GetTempInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetTempResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "tempDataMode" : 2,
     "builtinAction" : true,
@@ -227,12 +249,14 @@
     "name" : "GetTempMajor",
     "orderValue" : 33,
     "getPSDEActionInput" : {
+      "codeName" : "GetTempMajorInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetTempMajorResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "tempDataMode" : 1,
     "builtinAction" : true,
@@ -246,12 +270,14 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
+      "codeName" : "GetDraftInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetDraftResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "builtinAction" : true
   }, {
@@ -263,12 +289,14 @@
     "name" : "GetDraftTemp",
     "orderValue" : 43,
     "getPSDEActionInput" : {
+      "codeName" : "GetDraftTempInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetDraftTempResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "tempDataMode" : 2,
     "builtinAction" : true,
@@ -282,12 +310,14 @@
     "name" : "GetDraftTempMajor",
     "orderValue" : 45,
     "getPSDEActionInput" : {
+      "codeName" : "GetDraftTempMajorInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetDraftTempMajorResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "tempDataMode" : 1,
     "builtinAction" : true,
@@ -300,10 +330,12 @@
     "logicName" : "建用例",
     "name" : "bugCreateCase",
     "getPSDEActionInput" : {
+      "codeName" : "BugCreateCaseInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BugCreateCaseResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -315,10 +347,12 @@
     "logicName" : "行为",
     "name" : "CaseFavorite",
     "getPSDEActionInput" : {
+      "codeName" : "CaseFavoriteInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CaseFavoriteResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -334,10 +368,12 @@
     "logicName" : "CaseNFavorite",
     "name" : "CaseNFavorite",
     "getPSDEActionInput" : {
+      "codeName" : "CaseNFavoriteInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CaseNFavoriteResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -353,10 +389,12 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
+      "codeName" : "CheckKeyInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CheckKeyResult",
       "name" : "返回对象",
       "stdDataType" : 9,
       "type" : "SIMPLE"
@@ -370,10 +408,12 @@
     "logicName" : "确认用例变更",
     "name" : "confirmChange",
     "getPSDEActionInput" : {
+      "codeName" : "ConfirmChangeInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ConfirmChangeResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -386,10 +426,12 @@
     "logicName" : "确认需求变更",
     "name" : "confirmstorychange",
     "getPSDEActionInput" : {
+      "codeName" : "ConfirmstorychangeInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ConfirmstorychangeResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -402,12 +444,14 @@
     "logicName" : "根据测试单获取或者状态",
     "name" : "GetByTestTask",
     "getPSDEActionInput" : {
+      "codeName" : "GetByTestTaskInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetByTestTaskResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     }
   }, {
     "actionMode" : "READ",
@@ -417,12 +461,14 @@
     "logicName" : "获取测试单执行结果",
     "name" : "GetTestTaskCntRun",
     "getPSDEActionInput" : {
+      "codeName" : "GetTestTaskCntRunInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetTestTaskCntRunResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     }
   }, {
     "actionMode" : "CUSTOM",
@@ -433,10 +479,12 @@
     "logicName" : "测试单关联测试用例",
     "name" : "linkCase",
     "getPSDEActionInput" : {
+      "codeName" : "LinkCaseInput",
       "name" : "输入对象",
-      "type" : "DOMAINS"
+      "type" : "DTOS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "LinkCaseResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -450,10 +498,12 @@
     "logicName" : "移动端关联需求",
     "name" : "MobLinkCase",
     "getPSDEActionInput" : {
+      "codeName" : "MobLinkCaseInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "MobLinkCaseResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -466,10 +516,12 @@
     "logicName" : "执行测试",
     "name" : "RunCase",
     "getPSDEActionInput" : {
+      "codeName" : "RunCaseInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RunCaseResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -482,10 +534,12 @@
     "logicName" : "runCases",
     "name" : "runCases",
     "getPSDEActionInput" : {
+      "codeName" : "RunCasesInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RunCasesResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -502,10 +556,12 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
+      "codeName" : "SaveInput",
       "name" : "输入对象",
-      "type" : "DOMAINS"
+      "type" : "DTOS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "SaveResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -519,10 +575,12 @@
     "logicName" : "执行测试",
     "name" : "TestRunCase",
     "getPSDEActionInput" : {
+      "codeName" : "TestRunCaseInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "TestRunCaseResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -535,10 +593,12 @@
     "logicName" : "testRunCases",
     "name" : "testRunCases",
     "getPSDEActionInput" : {
+      "codeName" : "TestRunCasesInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "TestRunCasesResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -555,10 +615,12 @@
     "logicName" : "套件关联",
     "name" : "testsuitelinkCase",
     "getPSDEActionInput" : {
+      "codeName" : "TestsuitelinkCaseInput",
       "name" : "输入对象",
-      "type" : "DOMAINS"
+      "type" : "DTOS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "TestsuitelinkCaseResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -572,10 +634,12 @@
     "logicName" : "移除用例",
     "name" : "unlinkCase",
     "getPSDEActionInput" : {
+      "codeName" : "UnlinkCaseInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UnlinkCaseResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -588,10 +652,12 @@
     "logicName" : "unlinkCases",
     "name" : "unlinkCases",
     "getPSDEActionInput" : {
+      "codeName" : "UnlinkCasesInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UnlinkCasesResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -607,10 +673,12 @@
     "logicName" : "移除用例",
     "name" : "unlinkSuiteCase",
     "getPSDEActionInput" : {
+      "codeName" : "UnlinkSuiteCaseInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UnlinkSuiteCaseResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -623,10 +691,12 @@
     "logicName" : "unlinkSuiteCases",
     "name" : "unlinkSuiteCases",
     "getPSDEActionInput" : {
+      "codeName" : "UnlinkSuiteCasesInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UnlinkSuiteCasesResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -1613,10 +1683,12 @@
       "id" : "Account"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "AccountInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "AccountResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1632,10 +1704,12 @@
       "id" : "BatchNew"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "BatchNewInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "BatchNewResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1651,10 +1725,12 @@
       "id" : "CurOpenedCase"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "CurOpenedCaseInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "CurOpenedCaseResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1670,10 +1746,12 @@
       "id" : "CurSuite"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "CurSuiteInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "CurSuiteResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1689,10 +1767,12 @@
       "id" : "CurTestTask"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "CurTestTaskInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "CurTestTaskResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1708,10 +1788,12 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "DefaultInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "DefaultResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1728,10 +1810,12 @@
       "id" : "ESBulk"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ESBulkInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ESBulkResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1747,10 +1831,12 @@
       "id" : "ModuleRePortCase"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ModuleRePortCaseInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ModuleRePortCaseResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1766,10 +1852,12 @@
       "id" : "ModuleRePortCaseEntry"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ModuleRePortCaseEntryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ModuleRePortCaseEntryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1785,10 +1873,12 @@
       "id" : "ModuleRePortCase_Project"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ModuleRePortCase_ProjectInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ModuleRePortCase_ProjectResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1804,10 +1894,12 @@
       "id" : "My"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1823,10 +1915,12 @@
       "id" : "MyCreateOrUpdate"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyCreateOrUpdateInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyCreateOrUpdateResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1842,10 +1936,12 @@
       "id" : "MyFavorite"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyFavoritesInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyFavoritesResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1861,10 +1957,12 @@
       "id" : "MyReProduct"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyReProductInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyReProductResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1880,10 +1978,12 @@
       "id" : "NotCurTestSuite"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "NotCurTestSuiteInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "NotCurTestSuiteResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1899,10 +1999,12 @@
       "id" : "NotCurTestTask"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "NotCurTestTaskInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "NotCurTestTaskResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1918,10 +2020,12 @@
       "id" : "NotCurTestTaskProject"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "NotCurTestTaskProjectInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "NotCurTestTaskProjectResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1937,10 +2041,12 @@
       "id" : "RePortCase"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "RePortCaseInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "RePortCaseResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1956,10 +2062,12 @@
       "id" : "RePortCaseEntry"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "RePortCaseEntryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "RePortCaseEntryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1975,10 +2083,12 @@
       "id" : "RePortCase_Project"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "RePortCase_ProjectInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "RePortCase_ProjectResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -1994,10 +2104,12 @@
       "id" : "RunERRePortCase"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "RunERRePortCaseInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "RunERRePortCaseResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2013,10 +2125,12 @@
       "id" : "RunERRePortCaseEntry"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "RunERRePortCaseEntryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "RunERRePortCaseEntryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2032,10 +2146,12 @@
       "id" : "RunERRePortCase_Project"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "RunERRePortCase_ProjectInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "RunERRePortCase_ProjectResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2051,10 +2167,12 @@
       "id" : "RunRePortCase"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "RunRePortCaseInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "RunRePortCaseResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2070,10 +2188,12 @@
       "id" : "RunRePortCaseEntry"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "RunRePortCaseEntryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "RunRePortCaseEntryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2089,10 +2209,12 @@
       "id" : "RunRePortCase_Project"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "RunRePortCase_ProjectInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "RunRePortCase_ProjectResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },

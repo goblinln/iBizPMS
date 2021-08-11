@@ -6,10 +6,12 @@
   "logicName" : "移除关联需求",
   "name" : "unlinkStory",
   "getPSDEActionInput" : {
+    "codeName" : "UnlinkStoryInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "UnlinkStoryResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

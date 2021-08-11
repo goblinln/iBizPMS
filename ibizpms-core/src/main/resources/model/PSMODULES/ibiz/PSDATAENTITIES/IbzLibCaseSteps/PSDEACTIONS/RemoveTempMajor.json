@@ -8,10 +8,12 @@
   "name" : "RemoveTempMajor",
   "orderValue" : 23,
   "getPSDEActionInput" : {
+    "codeName" : "RemoveTempMajorInput",
     "name" : "输入对象",
     "type" : "KEYFIELDS"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "RemoveTempMajorResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

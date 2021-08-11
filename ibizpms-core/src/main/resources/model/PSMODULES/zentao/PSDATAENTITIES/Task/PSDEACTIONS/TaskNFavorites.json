@@ -6,10 +6,12 @@
   "logicName" : "任务收藏",
   "name" : "TaskNFavorites",
   "getPSDEActionInput" : {
+    "codeName" : "TaskNFavoritesInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "TaskNFavoritesResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

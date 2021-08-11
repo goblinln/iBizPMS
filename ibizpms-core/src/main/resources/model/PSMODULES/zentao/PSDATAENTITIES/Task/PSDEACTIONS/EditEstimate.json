@@ -6,10 +6,12 @@
   "logicName" : "编辑工时",
   "name" : "EditEstimate",
   "getPSDEActionInput" : {
+    "codeName" : "EditEstimateInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "EditEstimateResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

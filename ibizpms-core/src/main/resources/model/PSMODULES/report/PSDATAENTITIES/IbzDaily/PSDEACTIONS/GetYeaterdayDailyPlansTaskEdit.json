@@ -6,11 +6,13 @@
   "logicName" : "获取前一天日报计划参与任务（编辑）",
   "name" : "getYeaterdayDailyPlansTaskEdit",
   "getPSDEActionInput" : {
+    "codeName" : "GetYeaterdayDailyPlansTaskEditInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetYeaterdayDailyPlansTaskEditResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   }
 }

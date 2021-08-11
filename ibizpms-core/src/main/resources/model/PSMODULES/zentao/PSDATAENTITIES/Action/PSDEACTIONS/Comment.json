@@ -6,10 +6,12 @@
   "logicName" : "添加备注",
   "name" : "Comment",
   "getPSDEActionInput" : {
+    "codeName" : "CommentInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CommentResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

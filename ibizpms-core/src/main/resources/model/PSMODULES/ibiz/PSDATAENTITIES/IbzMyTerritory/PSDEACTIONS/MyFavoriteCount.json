@@ -6,10 +6,12 @@
   "logicName" : "我的收藏计数器",
   "name" : "MyFavoriteCount",
   "getPSDEActionInput" : {
+    "codeName" : "MyFavoriteCountInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "MyFavoriteCountResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

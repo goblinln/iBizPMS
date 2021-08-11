@@ -6,10 +6,12 @@
   "logicName" : "提交",
   "name" : "Submit",
   "getPSDEActionInput" : {
+    "codeName" : "SubmitInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "SubmitResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

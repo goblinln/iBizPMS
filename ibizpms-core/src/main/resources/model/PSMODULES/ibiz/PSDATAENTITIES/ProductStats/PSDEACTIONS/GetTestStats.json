@@ -6,12 +6,14 @@
   "logicName" : "获取测试统计详情",
   "name" : "GetTestStats",
   "getPSDEActionInput" : {
+    "codeName" : "GetTestStatsInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetTestStatsResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "builtinAction" : true
 }

@@ -6,10 +6,12 @@
   "logicName" : "EE关闭计划",
   "name" : "EeClosePlan",
   "getPSDEActionInput" : {
+    "codeName" : "EeClosePlanInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "EeClosePlanResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

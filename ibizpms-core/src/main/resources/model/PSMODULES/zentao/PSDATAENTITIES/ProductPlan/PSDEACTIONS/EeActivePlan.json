@@ -6,10 +6,12 @@
   "logicName" : "EE激活计划",
   "name" : "EeActivePlan",
   "getPSDEActionInput" : {
+    "codeName" : "EeActivePlanInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "EeActivePlanResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

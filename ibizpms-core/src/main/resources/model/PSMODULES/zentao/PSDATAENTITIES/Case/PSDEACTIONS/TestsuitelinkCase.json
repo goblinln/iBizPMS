@@ -7,10 +7,12 @@
   "logicName" : "套件关联",
   "name" : "testsuitelinkCase",
   "getPSDEActionInput" : {
+    "codeName" : "TestsuitelinkCaseInput",
     "name" : "输入对象",
-    "type" : "DOMAINS"
+    "type" : "DTOS"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "TestsuitelinkCaseResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

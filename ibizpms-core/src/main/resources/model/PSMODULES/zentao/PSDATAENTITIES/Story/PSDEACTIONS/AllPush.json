@@ -6,10 +6,12 @@
   "logicName" : "全部推送",
   "name" : "AllPush",
   "getPSDEActionInput" : {
+    "codeName" : "AllPushInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "AllPushResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

@@ -6,10 +6,12 @@
   "logicName" : "项目任务快速分组计数器",
   "name" : "ProjectTaskQCnt",
   "getPSDEActionInput" : {
+    "codeName" : "ProjectTaskQCntInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ProjectTaskQCntResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

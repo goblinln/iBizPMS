@@ -6,10 +6,12 @@
   "logicName" : "标记已读",
   "name" : "MarkRead",
   "getPSDEActionInput" : {
+    "codeName" : "MarkReadInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "MarkReadResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

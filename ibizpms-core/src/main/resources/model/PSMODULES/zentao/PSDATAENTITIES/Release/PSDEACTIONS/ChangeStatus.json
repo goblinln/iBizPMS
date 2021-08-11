@@ -6,10 +6,12 @@
   "logicName" : "状态变更",
   "name" : "ChangeStatus",
   "getPSDEActionInput" : {
+    "codeName" : "ChangeStatusInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ChangeStatusResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

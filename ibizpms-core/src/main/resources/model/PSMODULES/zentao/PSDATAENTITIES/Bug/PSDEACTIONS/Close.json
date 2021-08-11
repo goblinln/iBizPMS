@@ -19,10 +19,12 @@
   "logicName" : "关闭",
   "name" : "Close",
   "getPSDEActionInput" : {
+    "codeName" : "CloseInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CloseResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

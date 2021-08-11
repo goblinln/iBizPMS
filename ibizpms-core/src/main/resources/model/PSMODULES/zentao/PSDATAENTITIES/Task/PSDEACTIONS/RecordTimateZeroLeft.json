@@ -6,10 +6,12 @@
   "logicName" : "预计剩余为0进行中",
   "name" : "RecordTimateZeroLeft",
   "getPSDEActionInput" : {
+    "codeName" : "RecordTimateZeroLeftInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "RecordTimateZeroLeftResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

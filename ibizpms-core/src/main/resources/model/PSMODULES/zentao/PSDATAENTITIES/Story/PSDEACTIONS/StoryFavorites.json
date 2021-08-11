@@ -6,10 +6,12 @@
   "logicName" : "需求收藏",
   "name" : "StoryFavorites",
   "getPSDEActionInput" : {
+    "codeName" : "StoryFavoritesInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "StoryFavoritesResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

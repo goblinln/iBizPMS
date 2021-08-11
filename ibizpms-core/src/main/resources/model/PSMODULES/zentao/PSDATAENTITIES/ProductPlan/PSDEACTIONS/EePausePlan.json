@@ -6,10 +6,12 @@
   "logicName" : "EE暂停计划",
   "name" : "EePausePlan",
   "getPSDEActionInput" : {
+    "codeName" : "EePausePlanInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "EePausePlanResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

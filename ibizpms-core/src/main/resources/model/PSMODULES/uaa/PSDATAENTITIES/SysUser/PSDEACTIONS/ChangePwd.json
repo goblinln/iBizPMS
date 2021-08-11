@@ -6,10 +6,12 @@
   "logicName" : "修改密码",
   "name" : "ChangePwd",
   "getPSDEActionInput" : {
+    "codeName" : "ChangePwdInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ChangePwdResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

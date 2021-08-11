@@ -8,11 +8,13 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
+      "codeName" : "CreateInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -27,11 +29,13 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
+      "codeName" : "UpdateInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UpdateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -47,10 +51,12 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
+      "codeName" : "RemoveInput",
       "name" : "输入对象",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RemoveResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -66,12 +72,14 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
+      "codeName" : "GetInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "builtinAction" : true
   }, {
@@ -100,12 +108,14 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
+      "codeName" : "GetDraftInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetDraftResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "builtinAction" : true
   }, {
@@ -116,10 +126,12 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
+      "codeName" : "CheckKeyInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CheckKeyResult",
       "name" : "返回对象",
       "stdDataType" : 9,
       "type" : "SIMPLE"
@@ -133,11 +145,13 @@
     "logicName" : "定时生成每周周报",
     "name" : "createEveryWeekReport",
     "getPSDEActionInput" : {
+      "codeName" : "CreateEveryWeekReportInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateEveryWeekReportResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -150,11 +164,13 @@
     "logicName" : "获取上周周报的下周计划",
     "name" : "CreateGetLastWeekPlanAndWork",
     "getPSDEActionInput" : {
+      "codeName" : "CreateGetLastWeekPlanAndWorkInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateGetLastWeekPlanAndWorkResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -166,10 +182,12 @@
     "logicName" : "编辑获取上周计划完成任务和本周已完成任务",
     "name" : "EditGetLastWeekTaskAndComTask",
     "getPSDEActionInput" : {
+      "codeName" : "EditGetLastWeekTaskAndComTaskInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "EditGetLastWeekTaskAndComTaskResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -181,10 +199,12 @@
     "logicName" : "已读",
     "name" : "haveRead",
     "getPSDEActionInput" : {
+      "codeName" : "HaveReadInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "HaveReadResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -197,10 +217,12 @@
     "logicName" : "判断本周是否创建过周报",
     "name" : "JugThisWeekCreateWeekly",
     "getPSDEActionInput" : {
+      "codeName" : "JugThisWeekCreateWeeklyInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "JugThisWeekCreateWeeklyResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -212,10 +234,12 @@
     "logicName" : "定时推送待阅提醒用户周报提交",
     "name" : "pushUserWeekly",
     "getPSDEActionInput" : {
+      "codeName" : "PushUserWeeklyInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "PushUserWeeklyResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -228,10 +252,12 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
+      "codeName" : "SaveInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "SaveResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -244,10 +270,12 @@
     "logicName" : "提交",
     "name" : "submit",
     "getPSDEActionInput" : {
+      "codeName" : "SubmitInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "SubmitResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -383,10 +411,12 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "DefaultInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "DefaultResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -402,10 +432,12 @@
       "id" : "MyNotSubmit"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyNotSubmitInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyNotSubmitResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -420,10 +452,12 @@
       "id" : "MyWeekly"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyWeeklyInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyWeeklyResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -438,10 +472,12 @@
       "id" : "ProductTeamMemberWeekly"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ProductTeamMemberWeeklyInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ProductTeamMemberWeeklyResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -456,10 +492,12 @@
       "id" : "ProjectWeekly"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ProjectWeeklyInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ProjectWeeklyResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },

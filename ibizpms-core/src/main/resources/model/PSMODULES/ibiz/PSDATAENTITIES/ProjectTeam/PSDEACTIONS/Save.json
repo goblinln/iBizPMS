@@ -7,10 +7,12 @@
   "logicName" : "Save",
   "name" : "Save",
   "getPSDEActionInput" : {
+    "codeName" : "SaveInput",
     "name" : "输入对象",
-    "type" : "DOMAINS"
+    "type" : "DTOS"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "SaveResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

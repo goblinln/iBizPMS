@@ -6,10 +6,12 @@
   "logicName" : "我的地盘移动端计数器",
   "name" : "MyTerritoryCount",
   "getPSDEActionInput" : {
+    "codeName" : "MyTerritoryCountInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "MyTerritoryCountResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

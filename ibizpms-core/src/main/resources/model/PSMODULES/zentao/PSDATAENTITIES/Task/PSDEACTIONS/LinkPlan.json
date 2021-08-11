@@ -6,10 +6,12 @@
   "logicName" : "关联计划",
   "name" : "LinkPlan",
   "getPSDEActionInput" : {
+    "codeName" : "LinkPlanInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "LinkPlanResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

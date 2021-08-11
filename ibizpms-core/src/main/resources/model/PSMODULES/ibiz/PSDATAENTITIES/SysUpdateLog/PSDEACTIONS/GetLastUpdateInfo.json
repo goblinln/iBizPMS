@@ -6,11 +6,13 @@
   "logicName" : "获取最新更新信息",
   "name" : "getLastUpdateInfo",
   "getPSDEActionInput" : {
+    "codeName" : "GetLastUpdateInfoInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetLastUpdateInfoResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   }
 }

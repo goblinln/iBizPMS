@@ -164,7 +164,7 @@
     "orMode" : "STR",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchProjectTeamUserTask"
+      "id" : "FetchProject"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

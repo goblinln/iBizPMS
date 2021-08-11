@@ -6,10 +6,12 @@
   "logicName" : "重建模块路径",
   "name" : "Fix",
   "getPSDEActionInput" : {
+    "codeName" : "FixInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "FixResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

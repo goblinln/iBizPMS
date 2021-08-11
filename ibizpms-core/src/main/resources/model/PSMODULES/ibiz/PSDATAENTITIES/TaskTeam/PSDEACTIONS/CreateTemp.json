@@ -7,11 +7,13 @@
   "name" : "CreateTemp",
   "orderValue" : 2,
   "getPSDEActionInput" : {
+    "codeName" : "CreateTempInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CreateTempResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

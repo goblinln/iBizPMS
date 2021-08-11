@@ -6,10 +6,12 @@
   "logicName" : "汇总项目日报",
   "name" : "SumProjectDaily",
   "getPSDEActionInput" : {
+    "codeName" : "SumProjectDailyInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "SumProjectDailyResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

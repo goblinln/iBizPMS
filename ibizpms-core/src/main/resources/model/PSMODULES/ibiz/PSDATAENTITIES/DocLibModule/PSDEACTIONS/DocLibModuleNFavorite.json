@@ -6,10 +6,12 @@
   "logicName" : "取消收藏",
   "name" : "DocLibModuleNFavorite",
   "getPSDEActionInput" : {
+    "codeName" : "DocLibModuleNFavoriteInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "DocLibModuleNFavoriteResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

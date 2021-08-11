@@ -7,10 +7,12 @@
   "logicName" : "删除模块",
   "name" : "RemoveModule",
   "getPSDEActionInput" : {
+    "codeName" : "RemoveModuleInput",
     "name" : "输入对象",
     "type" : "KEYFIELDS"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "RemoveModuleResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

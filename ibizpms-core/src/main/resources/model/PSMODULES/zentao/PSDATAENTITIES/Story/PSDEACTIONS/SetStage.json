@@ -6,10 +6,12 @@
   "logicName" : "设置需求阶段",
   "name" : "setStage",
   "getPSDEActionInput" : {
+    "codeName" : "SetStageInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "SetStageResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

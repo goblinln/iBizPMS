@@ -6,10 +6,12 @@
   "logicName" : "仅收藏文档",
   "name" : "OnlyCollectDoc",
   "getPSDEActionInput" : {
+    "codeName" : "OnlyCollectDocInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "OnlyCollectDocResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

@@ -6,10 +6,12 @@
   "logicName" : "重置由谁评审",
   "name" : "ResetReviewedBy",
   "getPSDEActionInput" : {
+    "codeName" : "ResetReviewedByInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ResetReviewedByResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

@@ -6,10 +6,12 @@
   "logicName" : "批量变更阶段",
   "name" : "BatchChangeStage",
   "getPSDEActionInput" : {
+    "codeName" : "BatchChangeStageInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "BatchChangeStageResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

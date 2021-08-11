@@ -633,7 +633,7 @@
             "contentType" : "HTML",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
-            "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;总任务&amp;nbsp;:&amp;nbsp;{{data.taskcnt ? data.taskcnt : 0}}&lt;/div&gt;</p>",
+            "htmlContent" : "<div style=\"margin-top: 6px; padding-left: 19px;\">&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;总任务&amp;nbsp;:&amp;nbsp;{{data.taskcnt ? data.taskcnt : 0}}&lt;/div&gt;</div>",
             "name" : "rawitem6",
             "getPSLayoutPos" : {
               "colLG" : 6,
@@ -783,7 +783,7 @@
             "contentType" : "HTML",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
-            "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;未完成&amp;nbsp;:&amp;nbsp;{{data.undonetaskcnt ? data.undonetaskcnt : 0}}&lt;/div&gt;</p>",
+            "htmlContent" : "<div style=\"margin-top: 6px; padding-left: 19px;\">&lt;div style=\"margin-top: 6px;padding-left: 19px;\"&gt;&amp;nbsp;未完成&amp;nbsp;:&amp;nbsp;{{data.undonetaskcnt ? data.undonetaskcnt : 0}}&lt;/div&gt;</div>",
             "name" : "rawitem7",
             "getPSLayoutPos" : {
               "colLG" : 6,

@@ -6,11 +6,13 @@
   "logicName" : "更新父任务状态",
   "name" : "updateParentStatus",
   "getPSDEActionInput" : {
+    "codeName" : "UpdateParentStatusInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "UpdateParentStatusResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

@@ -6,10 +6,12 @@
   "logicName" : "指派",
   "name" : "AssignTo",
   "getPSDEActionInput" : {
+    "codeName" : "AssignToInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "AssignToResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

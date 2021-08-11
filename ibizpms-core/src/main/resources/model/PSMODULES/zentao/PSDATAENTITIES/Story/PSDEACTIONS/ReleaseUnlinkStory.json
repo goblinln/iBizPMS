@@ -6,10 +6,12 @@
   "logicName" : "发布解除关联需求",
   "name" : "ReleaseUnlinkStory",
   "getPSDEActionInput" : {
+    "codeName" : "ReleaseUnlinkStoryInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ReleaseUnlinkStoryResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

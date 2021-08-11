@@ -6,10 +6,12 @@
   "logicName" : "关联测试用例",
   "name" : "unlinkCase",
   "getPSDEActionInput" : {
+    "codeName" : "UnlinkCaseInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "UnlinkCaseResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

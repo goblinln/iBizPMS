@@ -6,10 +6,12 @@
   "logicName" : "定时推送待阅提醒用户周报提交",
   "name" : "pushUserWeekly",
   "getPSDEActionInput" : {
+    "codeName" : "PushUserWeeklyInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "PushUserWeeklyResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

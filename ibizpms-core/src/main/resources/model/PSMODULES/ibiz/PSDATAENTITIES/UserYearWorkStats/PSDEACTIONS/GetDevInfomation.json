@@ -6,12 +6,14 @@
   "logicName" : "获取研发人员相关数据",
   "name" : "GetDevInfomation",
   "getPSDEActionInput" : {
+    "codeName" : "GetDevInfomationInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetDevInfomationResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDELogic" : {
     "modelref" : true,

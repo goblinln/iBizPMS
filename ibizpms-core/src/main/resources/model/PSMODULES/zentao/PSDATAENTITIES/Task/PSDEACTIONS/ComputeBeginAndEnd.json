@@ -6,10 +6,12 @@
   "logicName" : "计算开始时间和完成时间",
   "name" : "computeBeginAndEnd",
   "getPSDEActionInput" : {
+    "codeName" : "ComputeBeginAndEndInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ComputeBeginAndEndResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

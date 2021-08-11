@@ -6,11 +6,13 @@
   "logicName" : "定时生成用户月报",
   "name" : "CreateUserMonthly",
   "getPSDEActionInput" : {
+    "codeName" : "CreateUserMonthlyInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CreateUserMonthlyResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

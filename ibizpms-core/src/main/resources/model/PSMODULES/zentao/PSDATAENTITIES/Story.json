@@ -9,11 +9,13 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
+      "codeName" : "CreateInput",
       "name" : "输入对象",
-      "type" : "DOMAINS",
+      "type" : "DTOS",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -30,11 +32,13 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
+      "codeName" : "UpdateInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UpdateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -50,10 +54,12 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
+      "codeName" : "RemoveInput",
       "name" : "输入对象",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RemoveResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -70,12 +76,14 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
+      "codeName" : "GetInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "builtinAction" : true
   }, {
@@ -87,12 +95,14 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
+      "codeName" : "GetDraftInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetDraftResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "builtinAction" : true
   }, {
@@ -103,10 +113,12 @@
     "logicName" : "激活",
     "name" : "activate",
     "getPSDEActionInput" : {
+      "codeName" : "ActivateInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ActivateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -119,10 +131,12 @@
     "logicName" : "全部推送",
     "name" : "AllPush",
     "getPSDEActionInput" : {
+      "codeName" : "AllPushInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "AllPushResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -134,10 +148,12 @@
     "logicName" : "指派",
     "name" : "AssignTo",
     "getPSDEActionInput" : {
+      "codeName" : "AssignToInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "AssignToResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -150,10 +166,12 @@
     "logicName" : "批量指派",
     "name" : "BatchAssignTo",
     "getPSDEActionInput" : {
+      "codeName" : "BatchAssignToInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BatchAssignToResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -165,10 +183,12 @@
     "logicName" : "批量变更平台/分支",
     "name" : "BatchChangeBranch",
     "getPSDEActionInput" : {
+      "codeName" : "BatchChangeBranchInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BatchChangeBranchResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -180,10 +200,12 @@
     "logicName" : "批量变更模块",
     "name" : "BatchChangeModule",
     "getPSDEActionInput" : {
+      "codeName" : "BatchChangeModuleInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BatchChangeModuleResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -195,10 +217,12 @@
     "logicName" : "批量关联计划",
     "name" : "BatchChangePlan",
     "getPSDEActionInput" : {
+      "codeName" : "BatchChangePlanInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BatchChangePlanResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -210,10 +234,12 @@
     "logicName" : "批量变更阶段",
     "name" : "BatchChangeStage",
     "getPSDEActionInput" : {
+      "codeName" : "BatchChangeStageInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BatchChangeStageResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -225,10 +251,12 @@
     "logicName" : "批量关闭",
     "name" : "BatchClose",
     "getPSDEActionInput" : {
+      "codeName" : "BatchCloseInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BatchCloseResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -240,10 +268,12 @@
     "logicName" : "批量评审",
     "name" : "BatchReview",
     "getPSDEActionInput" : {
+      "codeName" : "BatchReviewInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BatchReviewResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -255,10 +285,12 @@
     "logicName" : "计划批量解除关联需求",
     "name" : "BatchUnlinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "BatchUnlinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BatchUnlinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -271,10 +303,12 @@
     "logicName" : "bug转需求",
     "name" : "BugToStory",
     "getPSDEActionInput" : {
+      "codeName" : "BugToStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BugToStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -286,10 +320,12 @@
     "logicName" : "版本批量解除关联需求",
     "name" : "buildBatchUnlinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "BuildBatchUnlinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BuildBatchUnlinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -302,10 +338,12 @@
     "logicName" : "项目关联需求",
     "name" : "buildLinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "BuildLinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BuildLinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -318,10 +356,12 @@
     "logicName" : "版本解除关联需求",
     "name" : "buildUnlinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "BuildUnlinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BuildUnlinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -334,10 +374,12 @@
     "logicName" : "版本解除关联需求",
     "name" : "buildUnlinkStorys",
     "getPSDEActionInput" : {
+      "codeName" : "BuildUnlinkStorysInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "BuildUnlinkStorysResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -353,10 +395,12 @@
     "logicName" : "变更",
     "name" : "Change",
     "getPSDEActionInput" : {
+      "codeName" : "ChangeInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ChangeResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -370,10 +414,12 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
+      "codeName" : "CheckKeyInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CheckKeyResult",
       "name" : "返回对象",
       "stdDataType" : 9,
       "type" : "SIMPLE"
@@ -387,10 +433,12 @@
     "logicName" : "关闭",
     "name" : "Close",
     "getPSDEActionInput" : {
+      "codeName" : "CloseInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CloseResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -403,11 +451,13 @@
     "logicName" : "生成任务",
     "name" : "CreateTasks",
     "getPSDEActionInput" : {
+      "codeName" : "CreateTasksInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateTasksResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -419,12 +469,14 @@
     "logicName" : "获取需求描述",
     "name" : "GetStorySpec",
     "getPSDEActionInput" : {
+      "codeName" : "GetStorySpecInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetStorySpecResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     }
   }, {
     "actionMode" : "READ",
@@ -434,12 +486,14 @@
     "logicName" : "获取需求描述",
     "name" : "GetStorySpecs",
     "getPSDEActionInput" : {
+      "codeName" : "GetStorySpecsInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetStorySpecsResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -453,12 +507,14 @@
     "logicName" : "任务相关需求草稿方法",
     "name" : "GetTaskReStory",
     "getPSDEActionInput" : {
+      "codeName" : "GetTaskReStoryInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetTaskReStoryResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     }
   }, {
     "actionMode" : "READ",
@@ -468,12 +524,14 @@
     "logicName" : "获取联系人",
     "name" : "GetUserConcat",
     "getPSDEActionInput" : {
+      "codeName" : "GetUserConcatInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetUserConcatResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -487,10 +545,12 @@
     "logicName" : "项目关联需求-按计划关联",
     "name" : "importPlanStories",
     "getPSDEActionInput" : {
+      "codeName" : "ImportPlanStoriesInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ImportPlanStoriesResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -503,10 +563,12 @@
     "logicName" : "计划关联需求",
     "name" : "LinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "LinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "LinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -519,10 +581,12 @@
     "logicName" : "项目批量解除关联需求",
     "name" : "ProjectBatchUnlinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "ProjectBatchUnlinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ProjectBatchUnlinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -535,10 +599,12 @@
     "logicName" : "项目关联需求",
     "name" : "ProjectLinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "ProjectLinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ProjectLinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -551,10 +617,12 @@
     "logicName" : "项目解除关联需求",
     "name" : "ProjectUnlinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "ProjectUnlinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ProjectUnlinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -567,10 +635,12 @@
     "logicName" : "项目解除关联需求",
     "name" : "projectUnlinkStorys",
     "getPSDEActionInput" : {
+      "codeName" : "ProjectUnlinkStorysInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ProjectUnlinkStorysResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -586,10 +656,12 @@
     "logicName" : "推送",
     "name" : "Push",
     "getPSDEActionInput" : {
+      "codeName" : "PushInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "PushResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -601,10 +673,12 @@
     "logicName" : "发布批量解除关联需求",
     "name" : "ReleaseBatchUnlinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "ReleaseBatchUnlinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ReleaseBatchUnlinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -617,10 +691,12 @@
     "logicName" : "发布关联需求",
     "name" : "ReleaseLinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "ReleaseLinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ReleaseLinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -633,10 +709,12 @@
     "logicName" : "发布解除关联需求",
     "name" : "ReleaseUnlinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "ReleaseUnlinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ReleaseUnlinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -649,10 +727,12 @@
     "logicName" : "重置由谁评审",
     "name" : "ResetReviewedBy",
     "getPSDEActionInput" : {
+      "codeName" : "ResetReviewedByInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ResetReviewedByResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -664,10 +744,12 @@
     "logicName" : "评审",
     "name" : "Review",
     "getPSDEActionInput" : {
+      "codeName" : "ReviewInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ReviewResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -681,10 +763,12 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
+      "codeName" : "SaveInput",
       "name" : "输入对象",
-      "type" : "DOMAINS"
+      "type" : "DTOS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "SaveResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -698,10 +782,12 @@
     "logicName" : "行为",
     "name" : "sendMessage",
     "getPSDEActionInput" : {
+      "codeName" : "SendMessageInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "SendMessageResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -713,10 +799,12 @@
     "logicName" : "发送消息前置处理",
     "name" : "sendMsgPreProcess",
     "getPSDEActionInput" : {
+      "codeName" : "SendMsgPreProcessInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "SendMsgPreProcessResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -728,10 +816,12 @@
     "logicName" : "设置需求阶段",
     "name" : "setStage",
     "getPSDEActionInput" : {
+      "codeName" : "SetStageInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "SetStageResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -743,10 +833,12 @@
     "logicName" : "需求收藏",
     "name" : "StoryFavorites",
     "getPSDEActionInput" : {
+      "codeName" : "StoryFavoritesInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "StoryFavoritesResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -762,10 +854,12 @@
     "logicName" : "取消收藏",
     "name" : "StoryNFavorites",
     "getPSDEActionInput" : {
+      "codeName" : "StoryNFavoritesInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "StoryNFavoritesResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -781,10 +875,12 @@
     "logicName" : "同步Ibz平台实体",
     "name" : "SyncFromIbiz",
     "getPSDEActionInput" : {
+      "codeName" : "SyncFromIbizInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "SyncFromIbizResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -796,10 +892,12 @@
     "logicName" : "转需求",
     "name" : "toStory",
     "getPSDEActionInput" : {
+      "codeName" : "ToStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "ToStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -811,10 +909,12 @@
     "logicName" : "计划解除关联需求",
     "name" : "UnlinkStory",
     "getPSDEActionInput" : {
+      "codeName" : "UnlinkStoryInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UnlinkStoryResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -2225,10 +2325,12 @@
       "id" : "Account"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "AccountInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "AccountResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2243,10 +2345,12 @@
       "id" : "AssignedToMyStory"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "AssignedToMyStoryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "AssignedToMyStoryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2261,10 +2365,12 @@
       "id" : "AssignedToMyStoryCalendar"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "AssignedToMyStoryCalendarInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "AssignedToMyStoryCalendarResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2284,10 +2390,12 @@
       "id" : "BugStory"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "BugStoryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "BugStoryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2302,10 +2410,12 @@
       "id" : "BuildLinkCompletedStories"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "BuildLinkCompletedStoriesInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "BuildLinkCompletedStoriesResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2320,10 +2430,12 @@
       "id" : "BuildLinkableStories"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "BuildLinkableStoriesInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "BuildLinkableStoriesResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2343,10 +2455,12 @@
       "id" : "BuildStories"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "BuildStoriesInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "BuildStoriesResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2361,10 +2475,12 @@
       "id" : "ByModule"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ByModuleInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ByModuleResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2384,10 +2500,12 @@
       "id" : "CaseStory"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "CaseStoryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "CaseStoryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2402,10 +2520,12 @@
       "id" : "ChildMore"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ChildMoreInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ChildMoreResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2420,10 +2540,12 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "DefaultInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "DefaultResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2439,10 +2561,12 @@
       "id" : "ESBulk"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ESBulkInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ESBulkResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2457,10 +2581,12 @@
       "id" : "GetProductStories"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "GetProductStoriesInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "GetProductStoriesResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2475,10 +2601,12 @@
       "id" : "My"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2493,10 +2621,12 @@
       "id" : "MyAgentStory"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyAgentStoryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyAgentStoryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2511,10 +2641,12 @@
       "id" : "MyCreate"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyCreateInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyCreateResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2529,10 +2661,12 @@
       "id" : "MyCreateOrPartake"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyCreateOrPartakeInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyCreateOrPartakeResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2547,10 +2681,12 @@
       "id" : "MyCurOpenedStory"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyCurOpenedStoryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyCurOpenedStoryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2565,10 +2701,12 @@
       "id" : "MyFavorites"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyFavoritesInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyFavoritesResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2583,10 +2721,12 @@
       "id" : "MyReProduct"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "MyReProductInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "MyReProductResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2606,10 +2746,12 @@
       "id" : "NotCurPlanLinkStory"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "NotCurPlanLinkStoryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "NotCurPlanLinkStoryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2624,10 +2766,12 @@
       "id" : "ParentDefault"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ParentDefaultInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ParentDefaultResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2642,10 +2786,12 @@
       "id" : "ParentDefaultQ"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ParentDefaultQInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ParentDefaultQResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2660,10 +2806,12 @@
       "id" : "ProjectLinkStory"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ProjectLinkStoryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ProjectLinkStoryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2683,10 +2831,12 @@
       "id" : "ProjectStories"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ProjectStoriesInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ProjectStoriesResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2706,10 +2856,12 @@
       "id" : "ReleaseLinkableStories"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ReleaseLinkableStoriesInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ReleaseLinkableStoriesResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2729,10 +2881,12 @@
       "id" : "ReleaseStories"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ReleaseStoriesInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ReleaseStoriesResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2747,10 +2901,12 @@
       "id" : "ReportStories"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ReportStoriesInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ReportStoriesResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2770,10 +2926,12 @@
       "id" : "StoryChild"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "StoryChildInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "StoryChildResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2793,10 +2951,12 @@
       "id" : "StoryRelated"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "StoryRelatedInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "StoryRelatedResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2811,10 +2971,12 @@
       "id" : "SubStory"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "SubStoryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "SubStoryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2834,10 +2996,12 @@
       "id" : "TaskRelatedStory"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "TaskRelatedStoryInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "TaskRelatedStoryResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -2852,10 +3016,12 @@
       "id" : "View"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ViewInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ViewResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },

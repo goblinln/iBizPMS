@@ -6,10 +6,12 @@
   "logicName" : "行为",
   "name" : "sendMessage",
   "getPSDEActionInput" : {
+    "codeName" : "SendMessageInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "SendMessageResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

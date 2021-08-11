@@ -6,11 +6,13 @@
   "logicName" : "任务相关需求草稿方法",
   "name" : "GetTaskReStory",
   "getPSDEActionInput" : {
+    "codeName" : "GetTaskReStoryInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetTaskReStoryResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   }
 }

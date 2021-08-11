@@ -6,10 +6,12 @@
   "logicName" : "状态变更（停止维护）",
   "name" : "Terminate",
   "getPSDEActionInput" : {
+    "codeName" : "TerminateInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "TerminateResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

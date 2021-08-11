@@ -6,10 +6,12 @@
   "logicName" : "继续任务时填入预计剩余为0设置为进行中",
   "name" : "RecordTimZeroLeftAfterContinue",
   "getPSDEActionInput" : {
+    "codeName" : "RecordTimZeroLeftAfterContinueInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "RecordTimZeroLeftAfterContinueResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

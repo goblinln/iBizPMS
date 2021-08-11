@@ -143,7 +143,7 @@ export class ViewToolbar extends Vue {
      */
     protected renderMenuItem(item: any, showButton: boolean = true): any {
         const targetCounterService: any = {};
-        if (this.counterServiceArray.length > 0) {
+        if (this.counterServiceArray?.length > 0) {
             Object.assign(targetCounterService,this.counterServiceArray[0].service)
         }
         if(item.visabled){

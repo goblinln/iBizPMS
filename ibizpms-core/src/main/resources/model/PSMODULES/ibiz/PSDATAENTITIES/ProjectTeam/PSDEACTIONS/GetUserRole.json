@@ -6,10 +6,12 @@
   "logicName" : "获取成员角色",
   "name" : "GetUserRole",
   "getPSDEActionInput" : {
+    "codeName" : "GetUserRoleInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetUserRoleResult",
     "name" : "返回对象",
     "type" : "ENTITY"
   }

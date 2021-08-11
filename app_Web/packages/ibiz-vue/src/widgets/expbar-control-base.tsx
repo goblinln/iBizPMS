@@ -569,7 +569,7 @@ export class ExpBarControlBase extends MainControlBase implements ExpBarControlI
      * @memberof ExpBarControlBase
      */
     public renderToolbar() {
-        return (<view-toolbar slot='toolbar' toolbarModels={this.toolbarModels} on-item-click={(data: any, $event: any) => { throttle(this.handleItemClick,[data, $event],this) }}></view-toolbar>);
+        return (<view-toolbar slot='toolbar' toolbarModels={this.toolbarModels} counterServiceArray={this.counterServiceArray} on-item-click={(data: any, $event: any) => { throttle(this.handleItemClick,[data, $event],this) }}></view-toolbar>);
     }
 
     /**

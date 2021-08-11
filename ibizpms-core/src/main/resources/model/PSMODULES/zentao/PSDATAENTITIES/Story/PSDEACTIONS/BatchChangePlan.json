@@ -6,10 +6,12 @@
   "logicName" : "批量关联计划",
   "name" : "BatchChangePlan",
   "getPSDEActionInput" : {
+    "codeName" : "BatchChangePlanInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "BatchChangePlanResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

@@ -6,10 +6,12 @@
   "logicName" : "PmsEe团队管理过滤",
   "name" : "ProductTeamGuoLv",
   "getPSDEActionInput" : {
+    "codeName" : "ProductTeamGuoLvInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ProductTeamGuoLvResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

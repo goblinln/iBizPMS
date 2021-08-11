@@ -7,11 +7,13 @@
   "name" : "CreateTempMajor",
   "orderValue" : 3,
   "getPSDEActionInput" : {
+    "codeName" : "CreateTempMajorInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CreateTempMajorResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

@@ -6,11 +6,13 @@
   "logicName" : "创建周期任务",
   "name" : "CreateCycleTasks",
   "getPSDEActionInput" : {
+    "codeName" : "CreateCycleTasksInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CreateCycleTasksResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

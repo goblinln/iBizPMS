@@ -6,10 +6,12 @@
   "logicName" : "提交测试",
   "name" : "mentionTest",
   "getPSDEActionInput" : {
+    "codeName" : "MentionTestInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "MentionTestResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

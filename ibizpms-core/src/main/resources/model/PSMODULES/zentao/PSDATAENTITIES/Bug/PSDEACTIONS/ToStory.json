@@ -19,10 +19,12 @@
   "logicName" : "转需求",
   "name" : "toStory",
   "getPSDEActionInput" : {
+    "codeName" : "ToStoryInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ToStoryResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

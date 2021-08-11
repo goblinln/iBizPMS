@@ -6,10 +6,12 @@
   "logicName" : "暂停",
   "name" : "Pause",
   "getPSDEActionInput" : {
+    "codeName" : "PauseInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "PauseResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

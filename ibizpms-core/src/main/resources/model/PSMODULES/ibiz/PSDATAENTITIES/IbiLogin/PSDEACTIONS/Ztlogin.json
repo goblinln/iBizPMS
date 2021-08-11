@@ -6,10 +6,12 @@
   "logicName" : "\bZT登录\b",
   "name" : "ztlogin",
   "getPSDEActionInput" : {
+    "codeName" : "ZtloginInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ZtloginResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

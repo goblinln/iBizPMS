@@ -6,10 +6,12 @@
   "logicName" : "批量解除关联Bug",
   "name" : "ReleaaseBatchUnlinkBug",
   "getPSDEActionInput" : {
+    "codeName" : "ReleaaseBatchUnlinkBugInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ReleaaseBatchUnlinkBugResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

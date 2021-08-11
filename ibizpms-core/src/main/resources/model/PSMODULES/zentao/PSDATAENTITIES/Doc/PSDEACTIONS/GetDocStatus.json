@@ -6,11 +6,13 @@
   "logicName" : "行为",
   "name" : "GetDocStatus",
   "getPSDEActionInput" : {
+    "codeName" : "GetDocStatusInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetDocStatusResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   }
 }

@@ -6,10 +6,12 @@
   "logicName" : "移除项目成员",
   "name" : "unlinkPorjectMember",
   "getPSDEActionInput" : {
+    "codeName" : "UnlinkPorjectMemberInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "UnlinkPorjectMemberResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

@@ -6,10 +6,12 @@
   "logicName" : "Finish",
   "name" : "Finish",
   "getPSDEActionInput" : {
+    "codeName" : "FinishInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "FinishResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

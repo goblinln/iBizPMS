@@ -8,11 +8,13 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
+      "codeName" : "CreateInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -27,11 +29,13 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
+      "codeName" : "UpdateInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UpdateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -47,10 +51,12 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
+      "codeName" : "RemoveInput",
       "name" : "输入对象",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RemoveResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -66,12 +72,14 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
+      "codeName" : "GetInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "builtinAction" : true
   }, {
@@ -83,12 +91,14 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
+      "codeName" : "GetDraftInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetDraftResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "builtinAction" : true
   }, {
@@ -99,10 +109,12 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
+      "codeName" : "CheckKeyInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CheckKeyResult",
       "name" : "返回对象",
       "stdDataType" : 9,
       "type" : "SIMPLE"
@@ -116,12 +128,14 @@
     "logicName" : "根据起始时间获取概况信息",
     "name" : "GetInfoTaskOvByTime",
     "getPSDEActionInput" : {
+      "codeName" : "GetInfoTaskOvByTimeInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetInfoTaskOvByTimeResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -135,12 +149,14 @@
     "logicName" : "根据测试单获取相应信息",
     "name" : "GetInfoTestTask",
     "getPSDEActionInput" : {
+      "codeName" : "GetInfoTestTaskInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetInfoTestTaskResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -154,12 +170,14 @@
     "logicName" : "根据测试报告概况信息（项目报告）",
     "name" : "GetInfoTestTaskOvProject",
     "getPSDEActionInput" : {
+      "codeName" : "GetInfoTestTaskOvProjectInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetInfoTestTaskOvProjectResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -173,12 +191,14 @@
     "logicName" : "根据测试单获取相应信息（项目报告）",
     "name" : "GetInfoTestTaskProject",
     "getPSDEActionInput" : {
+      "codeName" : "GetInfoTestTaskProjectInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetInfoTestTaskProjectResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -192,12 +212,14 @@
     "logicName" : "根据测试单获取相应信息（项目报告）（单测试）",
     "name" : "GetInfoTestTaskR",
     "getPSDEActionInput" : {
+      "codeName" : "GetInfoTestTaskRInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetInfoTestTaskRResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -211,12 +233,14 @@
     "logicName" : "根据测试单获取相应信息（项目报告）（测试）",
     "name" : "GetInfoTestTaskS",
     "getPSDEActionInput" : {
+      "codeName" : "GetInfoTestTaskSInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetInfoTestTaskSResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -230,12 +254,14 @@
     "logicName" : "根据测试报告获取基本信息",
     "name" : "GetTestReportBasicInfo",
     "getPSDEActionInput" : {
+      "codeName" : "GetTestReportBasicInfoInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetTestReportBasicInfoResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -249,12 +275,14 @@
     "logicName" : "根据测试报告获取基本信息（项目报告）",
     "name" : "GetTestReportProject",
     "getPSDEActionInput" : {
+      "codeName" : "GetTestReportProjectInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetTestReportProjectResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDELogic" : {
       "modelref" : true,
@@ -268,10 +296,12 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
+      "codeName" : "SaveInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "SaveResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -330,10 +360,12 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "DefaultInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "DefaultResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },

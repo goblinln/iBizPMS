@@ -19,10 +19,12 @@
   "logicName" : "确认",
   "name" : "Confirm",
   "getPSDEActionInput" : {
+    "codeName" : "ConfirmInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ConfirmResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

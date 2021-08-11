@@ -6,10 +6,12 @@
   "logicName" : "TestScript",
   "name" : "TestScript",
   "getPSDEActionInput" : {
+    "codeName" : "TestScriptInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "TestScriptResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

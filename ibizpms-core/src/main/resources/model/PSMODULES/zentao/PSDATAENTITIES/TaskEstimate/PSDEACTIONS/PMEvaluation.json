@@ -6,10 +6,12 @@
   "logicName" : "项目经理评估",
   "name" : "PMEvaluation",
   "getPSDEActionInput" : {
+    "codeName" : "PMEvaluationInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "PMEvaluationResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

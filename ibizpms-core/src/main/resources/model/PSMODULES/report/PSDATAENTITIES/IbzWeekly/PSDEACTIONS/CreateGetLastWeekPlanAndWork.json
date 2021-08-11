@@ -6,11 +6,13 @@
   "logicName" : "获取上周周报的下周计划",
   "name" : "CreateGetLastWeekPlanAndWork",
   "getPSDEActionInput" : {
+    "codeName" : "CreateGetLastWeekPlanAndWorkInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CreateGetLastWeekPlanAndWorkResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

@@ -6,10 +6,12 @@
   "logicName" : "批量关闭",
   "name" : "BatchClose",
   "getPSDEActionInput" : {
+    "codeName" : "BatchCloseInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "BatchCloseResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

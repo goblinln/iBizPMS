@@ -6,11 +6,13 @@
   "logicName" : "定时生成每周周报",
   "name" : "createEveryWeekReport",
   "getPSDEActionInput" : {
+    "codeName" : "CreateEveryWeekReportInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CreateEveryWeekReportResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

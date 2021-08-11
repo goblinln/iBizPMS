@@ -6,10 +6,12 @@
   "logicName" : "移除关联Bug（遗留Bug）",
   "name" : "ReleaseUnLinkBugbyLeftBug",
   "getPSDEActionInput" : {
+    "codeName" : "ReleaseUnLinkBugbyLeftBugInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ReleaseUnLinkBugbyLeftBugResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

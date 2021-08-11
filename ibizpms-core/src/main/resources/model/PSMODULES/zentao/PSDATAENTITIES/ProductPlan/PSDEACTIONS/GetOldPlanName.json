@@ -6,12 +6,14 @@
   "logicName" : "获取上一个计划的名称",
   "name" : "GetOldPlanName",
   "getPSDEActionInput" : {
+    "codeName" : "GetOldPlanNameInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetOldPlanNameResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDELogic" : {
     "modelref" : true,

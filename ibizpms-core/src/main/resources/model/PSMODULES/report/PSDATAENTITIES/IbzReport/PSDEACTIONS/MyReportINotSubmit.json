@@ -6,10 +6,12 @@
   "logicName" : "我未提交的（计数器）",
   "name" : "MyReportINotSubmit",
   "getPSDEActionInput" : {
+    "codeName" : "MyReportINotSubmitInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "MyReportINotSubmitResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

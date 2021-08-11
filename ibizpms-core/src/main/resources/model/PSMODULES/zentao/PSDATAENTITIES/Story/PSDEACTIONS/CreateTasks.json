@@ -6,11 +6,13 @@
   "logicName" : "生成任务",
   "name" : "CreateTasks",
   "getPSDEActionInput" : {
+    "codeName" : "CreateTasksInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CreateTasksResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

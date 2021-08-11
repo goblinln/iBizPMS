@@ -6,10 +6,12 @@
   "logicName" : "版本批量解除关联需求",
   "name" : "buildBatchUnlinkStory",
   "getPSDEActionInput" : {
+    "codeName" : "BuildBatchUnlinkStoryInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "BuildBatchUnlinkStoryResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

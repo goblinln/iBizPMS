@@ -6,10 +6,12 @@
   "logicName" : "汇总产品月报",
   "name" : "StatsProductMonthly",
   "getPSDEActionInput" : {
+    "codeName" : "StatsProductMonthlyInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "StatsProductMonthlyResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

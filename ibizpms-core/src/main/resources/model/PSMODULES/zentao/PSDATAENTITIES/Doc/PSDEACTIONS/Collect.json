@@ -6,10 +6,12 @@
   "logicName" : "收藏",
   "name" : "Collect",
   "getPSDEActionInput" : {
+    "codeName" : "CollectInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CollectResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

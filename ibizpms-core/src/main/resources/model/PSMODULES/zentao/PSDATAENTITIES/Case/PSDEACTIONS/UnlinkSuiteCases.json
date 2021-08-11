@@ -6,10 +6,12 @@
   "logicName" : "unlinkSuiteCases",
   "name" : "unlinkSuiteCases",
   "getPSDEActionInput" : {
+    "codeName" : "UnlinkSuiteCasesInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "UnlinkSuiteCasesResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

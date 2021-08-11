@@ -6,11 +6,13 @@
   "logicName" : "根据测试单获取或者状态",
   "name" : "GetByTestTask",
   "getPSDEActionInput" : {
+    "codeName" : "GetByTestTaskInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetByTestTaskResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   }
 }

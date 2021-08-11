@@ -6,10 +6,12 @@
   "logicName" : "项目关联需求",
   "name" : "ProjectLinkStory",
   "getPSDEActionInput" : {
+    "codeName" : "ProjectLinkStoryInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ProjectLinkStoryResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

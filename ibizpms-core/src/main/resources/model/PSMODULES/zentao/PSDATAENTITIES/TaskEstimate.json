@@ -9,11 +9,13 @@
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
+      "codeName" : "CreateInput",
       "name" : "输入对象",
-      "type" : "DOMAINS",
+      "type" : "DTOS",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -28,11 +30,13 @@
     "name" : "CreateTemp",
     "orderValue" : 2,
     "getPSDEActionInput" : {
+      "codeName" : "CreateTempInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateTempResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -48,11 +52,13 @@
     "name" : "CreateTempMajor",
     "orderValue" : 3,
     "getPSDEActionInput" : {
+      "codeName" : "CreateTempMajorInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CreateTempMajorResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -68,11 +74,13 @@
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
+      "codeName" : "UpdateInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UpdateResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -87,11 +95,13 @@
     "name" : "UpdateTemp",
     "orderValue" : 12,
     "getPSDEActionInput" : {
+      "codeName" : "UpdateTempInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UpdateTempResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -107,11 +117,13 @@
     "name" : "UpdateTempMajor",
     "orderValue" : 13,
     "getPSDEActionInput" : {
+      "codeName" : "UpdateTempMajorInput",
       "name" : "输入对象",
-      "type" : "DOMAIN",
+      "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "codeName" : "UpdateTempMajorResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -128,10 +140,12 @@
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
+      "codeName" : "RemoveInput",
       "name" : "输入对象",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RemoveResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -148,10 +162,12 @@
     "name" : "RemoveTemp",
     "orderValue" : 22,
     "getPSDEActionInput" : {
+      "codeName" : "RemoveTempInput",
       "name" : "输入对象",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RemoveTempResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -169,10 +185,12 @@
     "name" : "RemoveTempMajor",
     "orderValue" : 23,
     "getPSDEActionInput" : {
+      "codeName" : "RemoveTempMajorInput",
       "name" : "输入对象",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "RemoveTempMajorResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -189,12 +207,14 @@
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
+      "codeName" : "GetInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "builtinAction" : true
   }, {
@@ -206,12 +226,14 @@
     "name" : "GetTemp",
     "orderValue" : 32,
     "getPSDEActionInput" : {
+      "codeName" : "GetTempInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetTempResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "tempDataMode" : 2,
     "builtinAction" : true,
@@ -225,12 +247,14 @@
     "name" : "GetTempMajor",
     "orderValue" : 33,
     "getPSDEActionInput" : {
+      "codeName" : "GetTempMajorInput",
       "name" : "输入对象",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetTempMajorResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "tempDataMode" : 1,
     "builtinAction" : true,
@@ -244,12 +268,14 @@
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
+      "codeName" : "GetDraftInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetDraftResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "builtinAction" : true
   }, {
@@ -261,12 +287,14 @@
     "name" : "GetDraftTemp",
     "orderValue" : 43,
     "getPSDEActionInput" : {
+      "codeName" : "GetDraftTempInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetDraftTempResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "tempDataMode" : 2,
     "builtinAction" : true,
@@ -280,12 +308,14 @@
     "name" : "GetDraftTempMajor",
     "orderValue" : 45,
     "getPSDEActionInput" : {
+      "codeName" : "GetDraftTempMajorInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "GetDraftTempMajorResult",
       "name" : "返回对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "tempDataMode" : 1,
     "builtinAction" : true,
@@ -298,10 +328,12 @@
     "logicName" : "CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
+      "codeName" : "CheckKeyInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "CheckKeyResult",
       "name" : "返回对象",
       "stdDataType" : 9,
       "type" : "SIMPLE"
@@ -315,10 +347,12 @@
     "logicName" : "项目经理评估",
     "name" : "PMEvaluation",
     "getPSDEActionInput" : {
+      "codeName" : "PMEvaluationInput",
       "name" : "输入对象",
-      "type" : "DOMAIN"
+      "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "PMEvaluationResult",
       "name" : "返回对象",
       "type" : "VOID"
     }
@@ -331,10 +365,12 @@
     "logicName" : "Save",
     "name" : "Save",
     "getPSDEActionInput" : {
+      "codeName" : "SaveInput",
       "name" : "输入对象",
-      "type" : "DOMAINS"
+      "type" : "DTOS"
     },
     "getPSDEActionReturn" : {
+      "codeName" : "SaveResult",
       "name" : "返回对象",
       "type" : "VOID"
     },
@@ -538,10 +574,12 @@
       "id" : "ActionMonth"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ActionMonthInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ActionMonthResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -557,10 +595,12 @@
       "id" : "ActionYear"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ActionYearInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ActionYearResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -576,10 +616,12 @@
       "id" : "Default"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "DefaultInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "DefaultResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -596,10 +638,12 @@
       "id" : "Defaults"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "DefaultsInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "DefaultsResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -615,10 +659,12 @@
       "id" : "ProjectActionMonth"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ProjectActionMonthInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ProjectActionMonthResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -634,10 +680,12 @@
       "id" : "ProjectActionYear"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ProjectActionYearInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ProjectActionYearResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },
@@ -653,10 +701,12 @@
       "id" : "ProjectTaskEstimate"
     } ],
     "getPSDEDataSetInput" : {
+      "codeName" : "ProjectTaskEstimateInput",
       "name" : "输入对象",
-      "type" : "FILTER"
+      "type" : "DTO"
     },
     "getPSDEDataSetReturn" : {
+      "codeName" : "ProjectTaskEstimateResult",
       "name" : "返回对象",
       "type" : "PAGE"
     },

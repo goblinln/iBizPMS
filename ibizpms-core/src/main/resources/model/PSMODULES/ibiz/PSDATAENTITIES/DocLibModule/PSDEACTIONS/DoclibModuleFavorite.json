@@ -6,10 +6,12 @@
   "logicName" : "收藏",
   "name" : "DoclibModuleFavorite",
   "getPSDEActionInput" : {
+    "codeName" : "DoclibModuleFavoriteInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "DoclibModuleFavoriteResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

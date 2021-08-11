@@ -19,10 +19,12 @@
   "logicName" : "解决",
   "name" : "Resolve",
   "getPSDEActionInput" : {
+    "codeName" : "ResolveInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ResolveResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

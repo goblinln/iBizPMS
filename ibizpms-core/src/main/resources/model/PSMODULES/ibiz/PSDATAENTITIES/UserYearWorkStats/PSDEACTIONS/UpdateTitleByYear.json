@@ -19,11 +19,13 @@
   "logicName" : "更新标题",
   "name" : "UpdateTitleByYear",
   "getPSDEActionInput" : {
+    "codeName" : "UpdateTitleByYearInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "UpdateTitleByYearResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

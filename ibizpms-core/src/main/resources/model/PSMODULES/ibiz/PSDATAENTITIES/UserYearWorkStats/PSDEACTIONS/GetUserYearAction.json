@@ -19,11 +19,13 @@
   "logicName" : "获取用户所选年度的动作",
   "name" : "GetUserYearAction",
   "getPSDEActionInput" : {
+    "codeName" : "GetUserYearActionInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetUserYearActionResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   }
 }

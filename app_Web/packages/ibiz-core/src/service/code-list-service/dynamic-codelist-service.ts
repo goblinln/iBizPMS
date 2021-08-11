@@ -143,7 +143,7 @@ export class DynamicCodeListService {
         const minorSortDir = this.codeListInstance?.minorSortDir;
         const sortField = this.codeListInstance?.getMinorSortPSAppDEField()?.codeName;
         if (minorSortDir && sortField) {
-            this,this.queryParamNames = { sort: `${sortField.toLowerCase()},${minorSortDir.toLowerCase()}` };
+            this.queryParamNames = { sort: `${sortField.toLowerCase()},${minorSortDir.toLowerCase()}` };
         }
     }
 
@@ -209,12 +209,12 @@ export class DynamicCodeListService {
                     if (pValueField) {
                         Object.assign(itemdata, { pvalue: item[pValueField.toLowerCase()] });
                     }
-                    // if (iconPathField) {
-                    //     Object.assign(itemdata, { pvalue: item[iconPathField.toLowerCase()] });
-                    // }
-                    // if (iconClsField) {
-                    //     Object.assign(itemdata, { pvalue: item[iconClsField.toLowerCase()] });
-                    // }
+                    if (iconPathField) {
+                        Object.assign(itemdata, { icon: item[iconPathField.toLowerCase()] });
+                    }
+                    if (iconClsField) {
+                        Object.assign(itemdata, { iconcls: item[iconClsField.toLowerCase()] });
+                    }
                     _items.push(itemdata);
                 })
             }

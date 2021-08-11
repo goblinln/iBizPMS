@@ -6,10 +6,12 @@
   "logicName" : "移动端项目版本计数器",
   "name" : "MobProjectBuildCounter",
   "getPSDEActionInput" : {
+    "codeName" : "MobProjectBuildCounterInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "MobProjectBuildCounterResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

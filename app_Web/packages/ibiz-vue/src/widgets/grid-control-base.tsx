@@ -508,7 +508,7 @@ export class GridControlBase extends MDControlBase implements GridControlInterfa
     public onStaticPropsChange(newVal: any, oldVal: any) {
         this.isOpenEdit = newVal.isOpenEdit;
         this.actualIsOpenEdit = this.isOpenEdit;
-        this.gridRowActiveMode = newVal.gridRowActiveMode;
+        this.gridRowActiveMode = newVal.gridRowActiveMode ? newVal.gridRowActiveMode : 2;
         this.isSelectFirstDefault = newVal.isSelectFirstDefault;
         super.onStaticPropsChange(newVal, oldVal);
     }

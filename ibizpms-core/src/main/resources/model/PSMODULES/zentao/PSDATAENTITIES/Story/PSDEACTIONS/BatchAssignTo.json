@@ -6,10 +6,12 @@
   "logicName" : "批量指派",
   "name" : "BatchAssignTo",
   "getPSDEActionInput" : {
+    "codeName" : "BatchAssignToInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "BatchAssignToResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

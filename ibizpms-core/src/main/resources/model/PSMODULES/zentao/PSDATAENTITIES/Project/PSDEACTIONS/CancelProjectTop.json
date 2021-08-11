@@ -6,10 +6,12 @@
   "logicName" : "取消置顶",
   "name" : "CancelProjectTop",
   "getPSDEActionInput" : {
+    "codeName" : "CancelProjectTopInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CancelProjectTopResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

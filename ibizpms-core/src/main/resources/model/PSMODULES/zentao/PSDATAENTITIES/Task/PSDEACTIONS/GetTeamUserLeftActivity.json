@@ -6,11 +6,13 @@
   "logicName" : "获取团队成员剩余工时（激活）",
   "name" : "GetTeamUserLeftActivity",
   "getPSDEActionInput" : {
+    "codeName" : "GetTeamUserLeftActivityInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetTeamUserLeftActivityResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   }
 }

@@ -6,10 +6,12 @@
   "logicName" : "移动端测试套件计数器",
   "name" : "MobTestSuiteCount",
   "getPSDEActionInput" : {
+    "codeName" : "MobTestSuiteCountInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "MobTestSuiteCountResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

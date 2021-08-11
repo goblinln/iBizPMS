@@ -6,10 +6,12 @@
   "logicName" : "编辑获取上周计划完成任务和本周已完成任务",
   "name" : "EditGetLastWeekTaskAndComTask",
   "getPSDEActionInput" : {
+    "codeName" : "EditGetLastWeekTaskAndComTaskInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "EditGetLastWeekTaskAndComTaskResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

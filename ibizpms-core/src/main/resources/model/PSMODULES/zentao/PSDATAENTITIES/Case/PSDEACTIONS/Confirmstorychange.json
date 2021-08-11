@@ -6,10 +6,12 @@
   "logicName" : "确认需求变更",
   "name" : "confirmstorychange",
   "getPSDEActionInput" : {
+    "codeName" : "ConfirmstorychangeInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ConfirmstorychangeResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

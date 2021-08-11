@@ -6,10 +6,12 @@
   "logicName" : "项目质量表聚合逻辑",
   "name" : "ProjectQualitySum",
   "getPSDEActionInput" : {
+    "codeName" : "ProjectQualitySumInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ProjectQualitySumResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

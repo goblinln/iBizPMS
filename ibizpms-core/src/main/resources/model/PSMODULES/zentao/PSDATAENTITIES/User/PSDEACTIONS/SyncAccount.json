@@ -6,10 +6,12 @@
   "logicName" : "同步账号",
   "name" : "SyncAccount",
   "getPSDEActionInput" : {
+    "codeName" : "SyncAccountInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "SyncAccountResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

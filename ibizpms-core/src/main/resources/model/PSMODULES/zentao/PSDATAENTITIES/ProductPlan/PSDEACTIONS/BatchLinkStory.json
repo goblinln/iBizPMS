@@ -6,10 +6,12 @@
   "logicName" : "批关联需求",
   "name" : "BatchLinkStory",
   "getPSDEActionInput" : {
+    "codeName" : "BatchLinkStoryInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "BatchLinkStoryResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

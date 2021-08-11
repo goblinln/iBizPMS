@@ -8,6 +8,7 @@
   "name" : "Remove",
   "orderValue" : 21,
   "getPSDEActionInput" : {
+    "codeName" : "RemoveInput",
     "name" : "输入对象",
     "type" : "KEYFIELDS"
   },
@@ -21,6 +22,7 @@
     "valueType" : "INPUTVALUE"
   } ],
   "getPSDEActionReturn" : {
+    "codeName" : "RemoveResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

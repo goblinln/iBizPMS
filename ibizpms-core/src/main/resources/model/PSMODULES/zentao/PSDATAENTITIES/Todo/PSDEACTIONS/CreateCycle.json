@@ -6,11 +6,13 @@
   "logicName" : "定时创建周期",
   "name" : "createCycle",
   "getPSDEActionInput" : {
+    "codeName" : "CreateCycleInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CreateCycleResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

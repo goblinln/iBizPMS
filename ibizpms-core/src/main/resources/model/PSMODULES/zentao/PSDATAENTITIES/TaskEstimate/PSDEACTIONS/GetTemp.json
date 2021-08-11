@@ -7,12 +7,14 @@
   "name" : "GetTemp",
   "orderValue" : 32,
   "getPSDEActionInput" : {
+    "codeName" : "GetTempInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetTempResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "tempDataMode" : 2,
   "builtinAction" : true,

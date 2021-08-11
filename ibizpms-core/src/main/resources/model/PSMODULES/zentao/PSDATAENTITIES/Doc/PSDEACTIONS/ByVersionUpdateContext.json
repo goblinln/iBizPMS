@@ -6,10 +6,12 @@
   "logicName" : "根据版本更新正文信息",
   "name" : "ByVersionUpdateContext",
   "getPSDEActionInput" : {
+    "codeName" : "ByVersionUpdateContextInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ByVersionUpdateContextResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

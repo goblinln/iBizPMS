@@ -6,10 +6,12 @@
   "logicName" : "关联Bug（遗留Bug）",
   "name" : "LinkBugbyLeftBug",
   "getPSDEActionInput" : {
+    "codeName" : "LinkBugbyLeftBugInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "LinkBugbyLeftBugResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

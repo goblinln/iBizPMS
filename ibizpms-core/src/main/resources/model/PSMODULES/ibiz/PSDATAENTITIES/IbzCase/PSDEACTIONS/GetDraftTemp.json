@@ -7,12 +7,14 @@
   "name" : "GetDraftTemp",
   "orderValue" : 43,
   "getPSDEActionInput" : {
+    "codeName" : "GetDraftTempInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetDraftTempResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "tempDataMode" : 2,
   "builtinAction" : true,

@@ -6,10 +6,12 @@
   "logicName" : "Bug收藏",
   "name" : "BugFavorites",
   "getPSDEActionInput" : {
+    "codeName" : "BugFavoritesInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "BugFavoritesResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

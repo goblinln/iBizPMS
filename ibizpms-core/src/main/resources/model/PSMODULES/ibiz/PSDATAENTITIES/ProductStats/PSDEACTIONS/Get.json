@@ -20,12 +20,14 @@
   "name" : "Get",
   "orderValue" : 31,
   "getPSDEActionInput" : {
+    "codeName" : "GetInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "builtinAction" : true
 }

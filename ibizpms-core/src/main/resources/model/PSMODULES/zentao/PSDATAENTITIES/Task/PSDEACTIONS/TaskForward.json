@@ -6,10 +6,12 @@
   "logicName" : "检查多人任务操作权限",
   "name" : "taskForward",
   "getPSDEActionInput" : {
+    "codeName" : "TaskForwardInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "TaskForwardResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

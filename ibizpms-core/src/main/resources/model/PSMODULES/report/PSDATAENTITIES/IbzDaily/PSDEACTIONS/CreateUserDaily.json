@@ -6,11 +6,13 @@
   "logicName" : "定时生成用户日报",
   "name" : "CreateUserDaily",
   "getPSDEActionInput" : {
+    "codeName" : "CreateUserDailyInput",
     "name" : "输入对象",
-    "type" : "DOMAIN",
+    "type" : "DTO",
     "output" : true
   },
   "getPSDEActionReturn" : {
+    "codeName" : "CreateUserDailyResult",
     "name" : "返回对象",
     "type" : "VOID"
   },

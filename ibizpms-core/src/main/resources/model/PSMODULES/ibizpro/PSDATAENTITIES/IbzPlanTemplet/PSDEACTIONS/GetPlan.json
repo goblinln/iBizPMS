@@ -6,11 +6,13 @@
   "logicName" : "获取计划",
   "name" : "getPlan",
   "getPSDEActionInput" : {
+    "codeName" : "GetPlanInput",
     "name" : "输入对象",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "GetPlanResult",
     "name" : "返回对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   }
 }

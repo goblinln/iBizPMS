@@ -6,10 +6,12 @@
   "logicName" : "仅取消收藏文档",
   "name" : "OnlyUnCollectDoc",
   "getPSDEActionInput" : {
+    "codeName" : "OnlyUnCollectDocInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "OnlyUnCollectDocResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

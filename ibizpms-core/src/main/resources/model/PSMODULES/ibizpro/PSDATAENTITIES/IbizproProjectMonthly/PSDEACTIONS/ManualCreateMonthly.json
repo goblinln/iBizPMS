@@ -6,10 +6,12 @@
   "logicName" : "手动生成项目月报",
   "name" : "ManualCreateMonthly",
   "getPSDEActionInput" : {
+    "codeName" : "ManualCreateMonthlyInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "ManualCreateMonthlyResult",
     "name" : "返回对象",
     "type" : "VOID"
   }

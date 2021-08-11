@@ -6,10 +6,12 @@
   "logicName" : "挂起",
   "name" : "Suspend",
   "getPSDEActionInput" : {
+    "codeName" : "SuspendInput",
     "name" : "输入对象",
-    "type" : "DOMAIN"
+    "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "codeName" : "SuspendResult",
     "name" : "返回对象",
     "type" : "VOID"
   },
