@@ -22,7 +22,15 @@
         "codeName" : "MyMobCounter",
         "counterType" : "CUSTOM",
         "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCOUNTERS/MyMobCounter.json",
+        "getGetPSAppDEAction" : {
+          "modelref" : true,
+          "id" : "MyTerritoryCount"
+        },
         "name" : "我的地盘移动端计数器",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMyTerritory.json"
+        },
         "timer" : 5000
       },
       "tag" : "f53263b4f2342fa935de5aa0cf26b1ec",

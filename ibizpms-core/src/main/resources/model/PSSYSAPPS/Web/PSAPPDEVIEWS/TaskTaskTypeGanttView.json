@@ -240,8 +240,7 @@
         "getPSAppDEField" : {
           "name" : "DEADLINE",
           "codeName" : "Deadline"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -249,8 +248,7 @@
         "getPSAppDEField" : {
           "name" : "ASSIGNEDTO",
           "codeName" : "AssignedTo"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -258,8 +256,7 @@
         "getPSAppDEField" : {
           "name" : "ESTSTARTED",
           "codeName" : "EstStarted"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "FRONT",
         "dataType" : 25,
@@ -271,8 +268,7 @@
         "getPSAppDEField" : {
           "name" : "TYPE",
           "codeName" : "Type"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -280,8 +276,7 @@
         "getPSAppDEField" : {
           "name" : "DURATION",
           "codeName" : "Duration"
-        },
-        "dataAccessAction" : false
+        }
       } ],
       "textFormat" : "任务类型",
       "getTextPSAppDEField" : {
@@ -356,8 +351,7 @@
         "getPSAppDEField" : {
           "name" : "DURATION",
           "codeName" : "Duration"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -365,8 +359,7 @@
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -374,8 +367,7 @@
         "getPSAppDEField" : {
           "name" : "DEADLINE",
           "codeName" : "Deadline"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -383,8 +375,7 @@
         "getPSAppDEField" : {
           "name" : "ASSIGNEDTO",
           "codeName" : "AssignedTo"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -392,8 +383,7 @@
         "getPSAppDEField" : {
           "name" : "ESTSTARTED",
           "codeName" : "EstStarted"
-        },
-        "dataAccessAction" : false
+        }
       } ],
       "getTextPSAppDEField" : {
         "name" : "NAME",
@@ -444,8 +434,7 @@
         "getPSAppDEField" : {
           "name" : "ASSIGNEDTO",
           "codeName" : "AssignedTo"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -453,8 +442,7 @@
         "getPSAppDEField" : {
           "name" : "ESTSTARTED",
           "codeName" : "EstStarted"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -462,8 +450,7 @@
         "getPSAppDEField" : {
           "name" : "DURATION",
           "codeName" : "Duration"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -471,8 +458,7 @@
         "getPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
-        },
-        "dataAccessAction" : false
+        }
       }, {
         "cLConvertMode" : "NONE",
         "dataType" : 25,
@@ -480,8 +466,7 @@
         "getPSAppDEField" : {
           "name" : "DEADLINE",
           "codeName" : "Deadline"
-        },
-        "dataAccessAction" : false
+        }
       } ],
       "getTextPSAppDEField" : {
         "name" : "NAME",

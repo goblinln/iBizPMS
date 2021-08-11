@@ -2089,6 +2089,10 @@
                       "counterType" : "DEDR",
                       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCOUNTERS/MyReportCounter.json",
                       "name" : "我收到的未读汇报",
+                      "getPSAppDataEntity" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json"
+                      },
                       "timer" : 60000
                     },
                     "tag" : "e00e3a9849fb94d5b53a2bfda5568337",

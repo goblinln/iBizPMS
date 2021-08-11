@@ -23,6 +23,10 @@
         "counterType" : "CUSTOM",
         "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCOUNTERS/MobProductReleaseCounter.json",
         "name" : "移动端产品发布计数器",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductRelease.json"
+        },
         "timer" : 5000
       },
       "tag" : "102f4c66e5cc34084353b19f030b8d8a",

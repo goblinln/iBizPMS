@@ -15,6 +15,10 @@
       "counterType" : "CUSTOM",
       "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCOUNTERS/ProjectTaskQCounter.json",
       "name" : "项目任务快速分组计数器",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+      },
       "timer" : 120000
     },
     "tag" : "3925a4d1244fa8157d19fb4ac7f808cc",

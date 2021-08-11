@@ -19314,6 +19314,10 @@
           "counterType" : "DEDR",
           "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCOUNTERS/MySubmitReporttCounter.json",
           "name" : "我未提交的汇报",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ReportSummary.json"
+          },
           "timer" : 60000
         },
         "tag" : "b73492b7548b7bd6df9079e4136aa42c",
@@ -20667,7 +20671,15 @@
           "codeName" : "MobMenuCounter",
           "counterType" : "CUSTOM",
           "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCOUNTERS/MobMenuCounter.json",
+          "getGetPSAppDEAction" : {
+            "modelref" : true,
+            "id" : "MobMenuCount"
+          },
           "name" : "移动端菜单计数器",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMyTerritory.json"
+          },
           "timer" : 60000
         },
         "tag" : "c2e4cb7551ad930aaa28f60b39c20902",

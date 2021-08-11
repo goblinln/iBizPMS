@@ -10,7 +10,15 @@
       "codeName" : "MobMenuCounter",
       "counterType" : "CUSTOM",
       "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCOUNTERS/MobMenuCounter.json",
+      "getGetPSAppDEAction" : {
+        "modelref" : true,
+        "id" : "MobMenuCount"
+      },
       "name" : "移动端菜单计数器",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMyTerritory.json"
+      },
       "timer" : 60000
     },
     "tag" : "c2e4cb7551ad930aaa28f60b39c20902",
