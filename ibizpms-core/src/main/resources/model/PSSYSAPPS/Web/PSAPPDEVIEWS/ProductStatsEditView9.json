@@ -564,8 +564,7 @@
               "enableLinkView" : false
             },
             "getPSLayoutPos" : {
-              "colLG" : 14,
-              "colLGOffset" : 10,
+              "colLG" : 24,
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
