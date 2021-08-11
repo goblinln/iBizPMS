@@ -339,6 +339,9 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
                 if (Object.is(action, 'filter')) {
                     this.refresh(data);
                 }
+                if (Object.is(action, 'save')) {
+                    this.save(data);
+                }
             });
         }
         this.initDataItemCodelist();
@@ -621,7 +624,7 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
      * @return {*} 
      * @memberof DataViewControlBase
      */
-    public async save(args: any[]) {
+    public async save(args: any) {
         let _this = this;
         let successItems: any = [];
         let errorItems: any = [];
@@ -669,7 +672,9 @@ export class DataViewControlBase extends MDControlBase implements DataViewContro
         this.$emit('ctrl-event', { controlname: this.controlInstance.name, action: 'save', data: successItems });
         this.refresh();
         if (errorItems.length === 0) {
-            this.$success(this.$t('app.commonwords.savesuccess') as string,'save');
+            if(args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))){
+                this.$success(this.$t('app.commonwords.savesuccess') as string,'save');
+            }
         } else {
             errorItems.forEach((item: any, index: number) => {
                 this.$throw(item.majorentityname + (this.$t('app.commonwords.savefailed') as string) + '!','save');

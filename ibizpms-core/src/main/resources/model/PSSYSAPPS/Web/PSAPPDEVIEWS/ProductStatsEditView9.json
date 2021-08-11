@@ -939,7 +939,7 @@
               "contentType" : "HTML",
               "detailStyle" : "DEFAULT",
               "detailType" : "RAWITEM",
-              "htmlContent" : "<div style=\"margin-top: 6px; padding-left: 20px;\">&nbsp;所有计划&nbsp;:&nbsp;{{data.productplancnt ? data.productplancnt : 0}}</div>",
+              "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有计划&amp;nbsp;:&amp;nbsp;{{data.productplancnt ? data.productplancnt : 0}}&lt;/div&gt;</p>",
               "name" : "rawitem5",
               "getPSLayoutPos" : {
                 "colLG" : 8,
@@ -1127,7 +1127,7 @@
               "contentType" : "HTML",
               "detailStyle" : "DEFAULT",
               "detailType" : "RAWITEM",
-              "htmlContent" : "<div style=\"margin-top: 6px; padding-left: 20px;\">&nbsp;未过期&nbsp;:&nbsp;{{data.unendproductplancnt ? data.unendproductplancnt : 0}}</div>",
+              "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;未过期&amp;nbsp;:&amp;nbsp;{{data.unendproductplancnt ? data.unendproductplancnt : 0}}&lt;/div&gt;</p>",
               "name" : "rawitem6",
               "getPSLayoutPos" : {
                 "colLG" : 8,
@@ -1398,7 +1398,7 @@
                 "contentType" : "HTML",
                 "detailStyle" : "DEFAULT",
                 "detailType" : "RAWITEM",
-                "htmlContent" : "<div style=\"margin-top: 6px; padding-left: 20px;\">&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有项目&amp;nbsp;:&amp;nbsp;{{data.resprojectcnt ? data.resprojectcnt : 0}}&lt;/div&gt;</div>",
+                "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有项目&amp;nbsp;:&amp;nbsp;{{data.resprojectcnt ? data.resprojectcnt : 0}}&lt;/div&gt;</p>",
                 "name" : "rawitem7",
                 "getPSLayoutPos" : {
                   "colMD" : 24,
@@ -1412,7 +1412,7 @@
                 "contentType" : "HTML",
                 "detailStyle" : "DEFAULT",
                 "detailType" : "RAWITEM",
-                "htmlContent" : "<div style=\"margin-top: 6px; padding-left: 20px;\">&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;进行中&amp;nbsp;:&amp;nbsp;{{data.undoneresprojectcnt ? data.undoneresprojectcnt : 0}}&lt;/div&gt;</div>",
+                "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;进行中&amp;nbsp;:&amp;nbsp;{{data.undoneresprojectcnt ? data.undoneresprojectcnt : 0}}&lt;/div&gt;</p>",
                 "name" : "rawitem8",
                 "getPSLayoutPos" : {
                   "colMD" : 24,
@@ -1487,7 +1487,7 @@
               "contentType" : "HTML",
               "detailStyle" : "DEFAULT",
               "detailType" : "RAWITEM",
-              "htmlContent" : "<div style=\"margin-top: 6px; padding-left: 20px;\">&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有发布&amp;nbsp;:&amp;nbsp;{{data.releasecnt ? data.releasecnt : 0}}&lt;/div&gt;</div>",
+              "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;所有发布&amp;nbsp;:&amp;nbsp;{{data.releasecnt ? data.releasecnt : 0}}&lt;/div&gt;</p>",
               "name" : "rawitem9",
               "getPSLayoutPos" : {
                 "colLG" : 8,
@@ -1675,7 +1675,7 @@
               "contentType" : "HTML",
               "detailStyle" : "DEFAULT",
               "detailType" : "RAWITEM",
-              "htmlContent" : "<div style=\"margin-top: 6px; padding-left: 20px;\">&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;维护中&amp;nbsp;:&amp;nbsp;{{data.normalreleasecnt ? data.normalreleasecnt : 0}}&lt;/div&gt;</div>",
+              "htmlContent" : "<p>&lt;div style=\"margin-top: 6px;padding-left: 20px;\"&gt;&amp;nbsp;维护中&amp;nbsp;:&amp;nbsp;{{data.normalreleasecnt ? data.normalreleasecnt : 0}}&lt;/div&gt;</p>",
               "name" : "rawitem10",
               "getPSLayoutPos" : {
                 "colLG" : 8,

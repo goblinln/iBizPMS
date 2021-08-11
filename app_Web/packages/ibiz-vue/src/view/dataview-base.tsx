@@ -109,4 +109,20 @@ export class DataViewBase extends MDViewBase implements DataViewInterface {
             refs[this.dataViewInstance?.name].ctrl.refresh();
         }
     }
+    
+    /**
+     * 部件事件
+     * @param ctrl 部件 
+     * @param action  行为
+     * @param data 数据
+     * 
+     * @memberof DataViewBase
+     */
+     public onCtrlEvent(controlname: string, action: string, data: any) {
+        if(action == 'save'){
+            this.$emit("view-event", { action: "drdatasaved", data: data });
+        }else{
+            super.onCtrlEvent(controlname, action, data);
+        }
+    }
 }
