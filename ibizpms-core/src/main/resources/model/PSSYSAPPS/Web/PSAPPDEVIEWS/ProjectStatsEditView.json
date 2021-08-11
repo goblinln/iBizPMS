@@ -940,6 +940,9 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "getPSSysCss" : {
+            "cssName" : "label-top-value-center"
+          },
           "infoGroupMode" : true,
           "showCaption" : false
         } ],
