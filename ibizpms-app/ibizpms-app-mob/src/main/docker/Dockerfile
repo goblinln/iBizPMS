@@ -10,6 +10,6 @@ CMD echo "The application will start in ${IBIZ_SLEEP}s..." && \
     sleep ${IBIZ_SLEEP} && \
     java ${JAVA_OPTS} -Duser.timezone=$TZ -Djava.security.egd=file:/dev/./urandom -jar /ibizpms-app-mob.jar
 
-EXPOSE 33011
+EXPOSE 8080
 
 ADD ibizpms-app-mob.jar /ibizpms-app-mob.jar

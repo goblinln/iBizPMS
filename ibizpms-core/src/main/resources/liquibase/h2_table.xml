@@ -1010,7 +1010,7 @@
 
 
     <!--输出实体[ZT_FILE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_file-5-28">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_file-7-28">
         <createTable tableName="zt_file">
                 <column name="PATHNAME" remarks="" type="VARCHAR(100)">
                 </column>
