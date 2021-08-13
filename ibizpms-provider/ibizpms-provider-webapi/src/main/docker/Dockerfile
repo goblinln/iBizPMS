@@ -1,5 +1,5 @@
 
-FROM adoptopenjdk/openjdk8:jdk8u222-b10-debian
+FROM adoptopenjdk/openjdk8:jdk8u242-b08-centos
 
 ENV TZ=Asia/Shanghai \
     SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \

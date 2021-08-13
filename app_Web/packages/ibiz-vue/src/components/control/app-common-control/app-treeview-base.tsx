@@ -162,7 +162,6 @@ export class AppTreeViewBase extends TreeControlBase {
         let nodeCountStyle = {
             count: nodeCount,
             showZero: data.counterMode !== 1,
-            type:"primary",
             offset:[4,7]
         }
 

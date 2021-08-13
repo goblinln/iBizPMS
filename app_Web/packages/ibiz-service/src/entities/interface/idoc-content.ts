@@ -51,6 +51,10 @@ export interface IDocContent extends IEntityBase {
      */
     version?: any;
     /**
+     * 文档内容编号
+     */
+    doccontentsn?: any;
+    /**
      * 文档摘要
      */
     digest?: any;
@@ -66,8 +70,4 @@ export interface IDocContent extends IEntityBase {
      * 文档
      */
     doc?: any;
-    /**
-     * 文档内容编号
-     */
-    doccontentsn?: any;
 }

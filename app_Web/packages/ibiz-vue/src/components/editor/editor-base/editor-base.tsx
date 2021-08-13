@@ -170,11 +170,9 @@ export class EditorBase extends Vue {
      */
     public async initEditorBase() {
         this.editorChange = this.editorChange.bind(this);
-        this.customProps = {
-            placeholder: this.editorInstance.placeHolder,
-        };
         this.editorComponentName = AppComponentService.getEditorComponents(this.editorInstance.editorType,this.editorInstance.editorStyle);
         this.setCustomStyle();
+        this.setCustomProps();
         await this.initEditor();
         this.setEditorParams();
         this.editorIsLoaded = true;
@@ -209,6 +207,23 @@ export class EditorBase extends Vue {
         }
         if (!Util.isEmpty(editorHeight) && editorHeight != 0) {
             this.customStyle.height = editorHeight > 1 ? editorHeight + "px" : editorHeight * 100 + "%";
+        }
+    }
+
+    /**
+     * 设置编辑器的自定义参数
+     * 
+     * @memberof EditorBase
+     */
+    public setCustomProps() {
+        this.customProps = {
+            placeholder: this.editorInstance.placeHolder,
+        };
+        // 只读状态
+        if (this.editorInstance.readOnly) {
+            Object.assign(this.customProps, {
+                readonly: this.editorInstance.readOnly,
+            });
         }
     }
 

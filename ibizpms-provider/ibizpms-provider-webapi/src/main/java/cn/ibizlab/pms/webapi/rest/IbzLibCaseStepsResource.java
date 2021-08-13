@@ -105,6 +105,7 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @VersionCheck(entity = "ibzlibcasesteps" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_LIBCASESTEPS', #ibzlibcasesteps_id, 'UPDATE')")
     @ApiOperation(value = "根据测试用例更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据测试用例更新用例库用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")
@@ -218,6 +219,7 @@ public class IbzLibCaseStepsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @VersionCheck(entity = "ibzlibcasesteps" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_LIBCASESTEPS', #ibzlibcasesteps_id, 'UPDATE')")
     @ApiOperation(value = "根据用例库测试用例更新用例库用例步骤", tags = {"用例库用例步骤" },  notes = "根据用例库测试用例更新用例库用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/{ibzlibcasesteps_id}")

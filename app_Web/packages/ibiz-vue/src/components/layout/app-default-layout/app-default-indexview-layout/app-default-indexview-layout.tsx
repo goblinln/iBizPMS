@@ -331,7 +331,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                 { (Object.is(this.viewInstance.mainMenuAlign, "LEFT") || !this.viewInstance.mainMenuAlign) ? this.renderContentLeft() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, "TOP") ? this.renderContentTop() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, "CENTER") ? this.renderContentMiddle() : null}
-                { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_LEFT') ? this.renderContentTabexpView() : null}
+                { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_LEFT') || Object.is(this.viewInstance.mainMenuAlign, 'TREEEXP') ? this.renderContentTabexpView() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_TOP') ? this.renderContentTabexpView() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_RIGHT') ? this.renderContentTabexpView() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_BOTTOM') ? this.renderContentTabexpView() : null}

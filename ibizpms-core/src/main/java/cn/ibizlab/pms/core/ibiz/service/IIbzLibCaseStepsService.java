@@ -40,6 +40,7 @@ public interface IIbzLibCaseStepsService extends IService<IbzLibCaseSteps> {
     void saveBatch(List<IbzLibCaseSteps> list);
     List<IbzLibCaseSteps> select(IbzLibCaseStepsSearchContext context);
     List<IbzLibCaseSteps> selectDefault(IbzLibCaseStepsSearchContext context);
+    List<IbzLibCaseSteps> selectSimple(IbzLibCaseStepsSearchContext context);
     List<IbzLibCaseSteps> selectView(IbzLibCaseStepsSearchContext context);
 
     Page<IbzLibCaseSteps> searchDefault(IbzLibCaseStepsSearchContext context);
@@ -65,6 +66,8 @@ public interface IIbzLibCaseStepsService extends IService<IbzLibCaseSteps> {
      */
     boolean execute(String sql, Map param);
 
+    List<IbzLibCaseSteps> getIbzlibcasestepsByIds(List<Long> ids);
+    List<IbzLibCaseSteps> getIbzlibcasestepsByEntities(List<IbzLibCaseSteps> entities);
 }
 
 

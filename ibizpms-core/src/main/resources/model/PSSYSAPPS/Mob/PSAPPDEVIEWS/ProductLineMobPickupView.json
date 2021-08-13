@@ -153,10 +153,18 @@
         },
         "getPSDEListDataItems" : [ {
           "dataType" : 25,
-          "name" : "srfkey"
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "IBZ_PRODUCTLINEID",
+            "codeName" : "ProductLineId"
+          }
         }, {
           "dataType" : 25,
-          "name" : "srfmajortext"
+          "name" : "srfmajortext",
+          "getPSAppDEField" : {
+            "name" : "IBZ_PRODUCTLINENAME",
+            "codeName" : "ProductLineName"
+          }
         } ],
         "pagingSize" : 1000,
         "getRemovePSControlAction" : {

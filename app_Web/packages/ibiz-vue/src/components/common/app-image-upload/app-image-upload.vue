@@ -22,7 +22,7 @@
               <span class='el-upload-list__item-download'>
                   <i class='el-icon-download' @click="onDownload(file)"></i>
               </span>
-              <span :style="{ 'display': disabled? 'none' : 'inline-block' }" class='el-upload-list__item-delete'>
+              <span :style="{ 'display': disabled || readonly? 'none' : 'inline-block' }" class='el-upload-list__item-delete'>
                   <i class='el-icon-delete' @click="onRemove(file, files)"></i>
               </span>
           </span>
@@ -31,9 +31,9 @@
     </ul>
     <!-- 文件上传 -->
     <el-upload 
-      v-if = "multiple || files.length === 0" 
+      v-if = "!readonly && (multiple || files.length === 0)" 
       :class = "{'el-upload-disabled':disabled}"
-      :disabled = "disabled || readonly"
+      :disabled = "disabled"
       :action = "uploadUrl"
       :multiple="multipleSelect"
       :headers = "headers"

@@ -343,6 +343,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     public List<IbzLibCaseSteps> selectDefault(IbzLibCaseStepsSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
     }
+    public List<IbzLibCaseSteps> selectSimple(IbzLibCaseStepsSearchContext context){
+        return baseMapper.selectSimple(context, context.getSelectCond());
+    }
     public List<IbzLibCaseSteps> selectView(IbzLibCaseStepsSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -403,6 +406,27 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
         return true;
     }
 
+    @Override
+    public List<IbzLibCaseSteps> getIbzlibcasestepsByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<IbzLibCaseSteps> getIbzlibcasestepsByEntities(List<IbzLibCaseSteps> entities) {
+        List ids =new ArrayList();
+        for(IbzLibCaseSteps entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     @Override

@@ -42,6 +42,7 @@ export class DBService extends DBBaseService {
      */
     protected init(): void {
         this.v = this.v.stores({
+            StoryStage: '&id',
         });
     }
 

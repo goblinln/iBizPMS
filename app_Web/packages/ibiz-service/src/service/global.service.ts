@@ -150,7 +150,7 @@ export class GlobalService {
         return (await import('./account-story/account-story.service')).default.getInstance(context);
     }
     /**
-     * 测试用例库用例步骤服务
+     * 用例库用例步骤服务
      *
      * @param context 应用上下文
      * @return {IbzLibCasesteps}
@@ -218,6 +218,16 @@ export class GlobalService {
      */
     async getEmpLoyeeloadService(context?: any) {
         return (await import('./emp-loyeeload/emp-loyeeload.service')).default.getInstance(context);
+    }
+    /**
+     * 文档内容服务
+     *
+     * @param context 应用上下文
+     * @return {DocContent}
+     * @memberof GlobalService
+     */
+    async getDocContentService(context?: any) {
+        return (await import('./doc-content/doc-content.service')).default.getInstance(context);
     }
     /**
      * 汇报服务
@@ -418,6 +428,16 @@ export class GlobalService {
      */
     async getTestCaseStepService(context?: any) {
         return (await import('./test-case-step/test-case-step.service')).default.getInstance(context);
+    }
+    /**
+     * 需求阶段服务
+     *
+     * @param context 应用上下文
+     * @return {StoryStage}
+     * @memberof GlobalService
+     */
+    async getStoryStageService(context?: any) {
+        return (await import('./story-stage/story-stage.service')).default.getInstance(context);
     }
     /**
      * 部门服务

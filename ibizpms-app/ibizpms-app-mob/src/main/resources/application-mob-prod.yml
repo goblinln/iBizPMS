@@ -133,7 +133,7 @@ zuul:
       stripPrefix: false
     ibz_taskestimate:
       path: /ibztaskestimates/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
+      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
       stripPrefix: false
     zt_project:
       path: /projects/**
@@ -154,6 +154,10 @@ zuul:
     zt_file:
       path: /files/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
+      stripPrefix: false
+    zt_history:
+      path: /histories/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
       stripPrefix: false
     zt_branch:
       path: /productbranches/**
@@ -277,10 +281,6 @@ zuul:
       stripPrefix: false
     zt_story:
       path: /stories/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
-      stripPrefix: false
-    ibz_productline:
-      path: /productlines/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
   sensitive-headers:

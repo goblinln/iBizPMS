@@ -628,7 +628,7 @@ export class AppmenuBase extends AppMenuControlBase {
             return (<div>
                 {this.renderMiddleMenu()}
             </div>)
-        } else  if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, 'TABEXP_LEFT')) {
+        } else  if (this.staticProps && this.staticProps.mode && (Object.is(this.staticProps.mode, 'TABEXP_LEFT') || Object.is(this.staticProps.mode, 'TREEEXP'))) {
             return <div>{this.renderTableLeftMenu()}</div>;
         } else if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, 'TABEXP_TOP')) {
             return <div>{this.renderTableTopMenu()}</div>;

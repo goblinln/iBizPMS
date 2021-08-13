@@ -121,7 +121,7 @@ zuul:
       stripPrefix: false
     ibz_libcasesteps:
       path: /ibzlibcasesteps/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
+      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
       stripPrefix: false
     accounttesttask:
       path: /accounttesttasks/**
@@ -145,6 +145,10 @@ zuul:
       stripPrefix: false
     ibz_employeeload:
       path: /employeeloads/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
+      stripPrefix: false
+    zt_doccontent:
+      path: /doccontents/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
       stripPrefix: false
     ibz_report:

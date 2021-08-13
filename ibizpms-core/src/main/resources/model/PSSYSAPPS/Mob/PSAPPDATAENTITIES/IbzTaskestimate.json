@@ -5,30 +5,43 @@
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
-      "name" : "value"
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     }, {
       "dataType" : 25,
-      "name" : "text"
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     } ],
     "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "defaultMode" : true,
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
     "actionMode" : "CHECKKEY",
-    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
-    "name" : "CheckKey",
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
-    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "builtinMethod" : true,
+    "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "CREATE",
@@ -48,18 +61,16 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
-    "actionType" : "BUILTIN",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
-    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "actionType" : "BUILTIN",
@@ -94,20 +105,16 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
-    "actionType" : "USERCUSTOM",
     "codeName" : "PMEvaluation",
     "methodType" : "DEACTION",
-    "name" : "PMEvaluation",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
-    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "userCat" : "CAT1",
-    "builtinMethod" : true,
+    "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
@@ -131,21 +138,17 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
-    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
-    "name" : "Save",
-    "builtinMethod" : true,
+    "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UPDATE",
-    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "userCat" : "CAT1",
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
@@ -165,128 +168,46 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchActionMonth",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "ActionMonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchActionYear",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "ActionYear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "DEFAULT",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaults",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "DEFAULT1",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionMonth",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "ProjectActionMonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionYear",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "ProjectActionYear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskEstimate",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "ProjectTaskEstimate",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
-    "codeName" : "Estimate",
-    "logicName" : "最初预计",
-    "name" : "ESTIMATE",
-    "stdDataType" : 7
-  }, {
     "codeName" : "Org",
     "logicName" : "归属组织",
     "name" : "ORG",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
+    "codeName" : "Monthname",
+    "logicName" : "月（显示）",
+    "name" : "MONTHNAME",
     "stdDataType" : 25,
     "stringLength" : 100
-  }, {
-    "codeName" : "Username",
-    "logicName" : "用户",
-    "name" : "USERNAME",
-    "stdDataType" : 25,
-    "stringLength" : 200
-  }, {
-    "codeName" : "Join",
-    "logicName" : "加盟日",
-    "name" : "JOIN",
-    "stdDataType" : 5,
-    "valueFormat" : "YYYY-MM-DD"
-  }, {
-    "codeName" : "Hours",
-    "logicName" : "可用工时/天",
-    "name" : "HOURS",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Account",
-    "logicName" : "用户",
-    "name" : "ACCOUNT",
-    "stdDataType" : 25,
-    "stringLength" : 30,
-    "enableQuickSearch" : true,
-    "majorField" : true
-  }, {
-    "codeName" : "Order",
-    "logicName" : "排序",
-    "name" : "ORDER",
-    "stdDataType" : 9
-  }, {
-    "codeName" : "Left",
-    "logicName" : "预计剩余",
-    "name" : "LEFT",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "CreateBy",
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Consumed",
-    "logicName" : "总计消耗",
-    "name" : "CONSUMED",
-    "stdDataType" : 7
-  }, {
-    "codeName" : "Limited",
-    "logicName" : "受限用户",
-    "name" : "LIMITED",
-    "stdDataType" : 25,
-    "stringLength" : 8
-  }, {
-    "codeName" : "Role",
-    "logicName" : "角色",
-    "name" : "ROLE",
-    "stdDataType" : 25,
-    "stringLength" : 30
   }, {
     "codeName" : "Dept",
     "logicName" : "归属部门",
@@ -294,21 +215,65 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "Year",
+    "logicName" : "年",
+    "name" : "YEAR",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Account",
+    "logicName" : "用户",
+    "name" : "ACCOUNT",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Left",
+    "logicName" : "预计剩余",
+    "name" : "LEFT",
+    "precision" : 2,
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Consumed",
+    "logicName" : "总计消耗",
+    "name" : "CONSUMED",
+    "precision" : 2,
+    "stdDataType" : 7
+  }, {
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Evaluationcost",
+    "logicName" : "评估成本",
+    "name" : "EVALUATIONCOST",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Monthorder",
+    "logicName" : "月（排序）",
+    "name" : "MONTHORDER",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Files",
+    "logicName" : "附件",
+    "name" : "FILES",
+    "stdDataType" : 25,
+    "stringLength" : 2000
+  }, {
     "codeName" : "Id",
     "logicName" : "编号",
     "name" : "ID",
     "stdDataType" : 1,
-    "keyField" : true
+    "enableQuickSearch" : true,
+    "keyField" : true,
+    "majorField" : true
   }, {
-    "codeName" : "Days",
-    "logicName" : "可用工日",
-    "name" : "DAYS",
-    "stdDataType" : 9
-  }, {
-    "codeName" : "Total",
-    "logicName" : "总计可用",
-    "name" : "TOTAL",
-    "stdDataType" : 9
+    "codeName" : "Evaluationstatus",
+    "logicName" : "评估状态",
+    "name" : "EVALUATIONSTATUS",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "OrgName",
     "logicName" : "归属组织名",
@@ -316,32 +281,121 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "Yearname",
+    "logicName" : "年（显示）",
+    "name" : "YEARNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Date",
+    "logicName" : "日期",
+    "name" : "DATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Evaluationtime",
+    "logicName" : "评估工时",
+    "name" : "EVALUATIONTIME",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Inputcost",
+    "logicName" : "投入成本",
+    "name" : "INPUTCOST",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Dates",
+    "logicName" : "日期",
+    "name" : "DATES",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "TaskEstimatesn",
+    "logicName" : "任务预计编号",
+    "name" : "TASKESTIMATESN",
+    "stdDataType" : 1
+  }, {
+    "codeName" : "Month",
+    "logicName" : "月",
+    "name" : "MONTH",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Work",
+    "logicName" : "work",
+    "name" : "WORK",
+    "stdDataType" : 21,
+    "stringLength" : 65535
+  }, {
+    "codeName" : "Evaluationdesc",
+    "logicName" : "评估说明",
+    "name" : "EVALUATIONDESC",
+    "stdDataType" : 21,
+    "stringLength" : 1048576
+  }, {
+    "codeName" : "Taskspecies",
+    "logicName" : "任务种别",
+    "name" : "TASKSPECIES",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "TaskName",
+    "logicName" : "任务名称",
+    "name" : "TASKNAME",
+    "stdDataType" : 25,
+    "stringLength" : 255
+  }, {
+    "codeName" : "ProjectName",
+    "logicName" : "所属项目",
+    "name" : "PROJECTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 90
+  }, {
     "codeName" : "Type",
-    "logicName" : "团队类型",
+    "logicName" : "任务类型",
     "name" : "TYPE",
     "stdDataType" : 25,
-    "stringLength" : 7
+    "stringLength" : 20
   }, {
-    "codeName" : "Root",
-    "logicName" : "编号",
-    "name" : "ROOT",
+    "codeName" : "Deleted",
+    "logicName" : "任务删除标识",
+    "name" : "DELETED",
+    "stdDataType" : 25,
+    "stringLength" : 1
+  }, {
+    "codeName" : "Project",
+    "logicName" : "项目",
+    "name" : "PROJECT",
+    "stdDataType" : 1
+  }, {
+    "codeName" : "Task",
+    "logicName" : "任务",
+    "name" : "TASK",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
-    "actionType" : "BUILTIN",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
-    "name" : "CheckKey",
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
-    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
-    "builtinMethod" : true,
+    "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "CREATE",
@@ -361,18 +415,16 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
-    "actionType" : "BUILTIN",
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
-    "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "actionType" : "BUILTIN",
@@ -407,20 +459,16 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
-    "actionType" : "USERCUSTOM",
     "codeName" : "PMEvaluation",
     "methodType" : "DEACTION",
-    "name" : "PMEvaluation",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
-    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
-    "userCat" : "CAT1",
-    "builtinMethod" : true,
+    "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
@@ -444,21 +492,17 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
-    "actionType" : "BUILTIN",
     "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
-    "name" : "Save",
-    "builtinMethod" : true,
+    "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UPDATE",
-    "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
-    "userCat" : "CAT1",
-    "builtinMethod" : true
+    "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
@@ -477,45 +521,32 @@
     "builtinMethod" : true
   }, {
     "codeName" : "FetchActionMonth",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "ActionMonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchActionYear",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "ActionYear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "DEFAULT",
+    "name" : "FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefaults",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "DEFAULT1",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionMonth",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "ProjectActionMonth",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectActionYear",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "ProjectActionYear",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchProjectTaskEstimate",
-    "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
-    "name" : "ProjectTaskEstimate",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempActionMonth",
@@ -601,6 +632,10 @@
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
     "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -647,12 +682,12 @@
   "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzTaskestimate.json",
   "enableUIActions" : 15,
-  "logicName" : "任务团队（嵌套）",
+  "logicName" : "任务预计",
   "name" : "IBZ_TASKESTIMATE",
   "getPSDEName" : "ZT_TASKESTIMATE",
   "getQuickSearchPSAppDEFields" : [ {
-    "name" : "ACCOUNT",
-    "codeName" : "Account"
+    "name" : "ID",
+    "codeName" : "Id"
   } ],
   "storageMode" : 0,
   "defaultMode" : false,
@@ -662,5 +697,5 @@
   "enableUIModify" : true,
   "enableUIRemove" : true,
   "enableWFActions" : false,
-  "major" : false
+  "major" : true
 }

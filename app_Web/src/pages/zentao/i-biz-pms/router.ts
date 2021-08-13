@@ -1517,6 +1517,24 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'doccontents/:doccontent?/views/:view?',
+                    meta: {
+                        captionTag: '',
+                        caption: '',
+                        info:'',
+                        imgPath: '',
+                        iconCls: '',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doccontents', parameterName: 'doccontent' },
+                            { pathName: 'views', parameterName: 'view' },
+                        ],
+                        resource:'doccontent',
+                        requireAuth: false,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'reportsummaries/:reportsummary?/views/:view?',
                     meta: {
                         captionTag: '',
@@ -2890,6 +2908,24 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'view' },
                         ],
                         resource:'testcasestep',
+                        requireAuth: false,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'storystages/:storystage?/views/:view?',
+                    meta: {
+                        captionTag: '',
+                        caption: '',
+                        info:'',
+                        imgPath: '',
+                        iconCls: '',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'storystages', parameterName: 'storystage' },
+                            { pathName: 'views', parameterName: 'view' },
+                        ],
+                        resource:'storystage',
                         requireAuth: false,
                     },
                     component: AppViewShell

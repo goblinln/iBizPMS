@@ -129,6 +129,8 @@ public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
         IbzLibCaseStepsSearchContext searchContext = (IbzLibCaseStepsSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return ibzlibcasestepsService.selectDefault(searchContext);
+        if (iPSDataQuery.getName().equals("SIMPLE"))
+            return ibzlibcasestepsService.selectSimple(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzlibcasestepsService.selectView(searchContext);
         return null;

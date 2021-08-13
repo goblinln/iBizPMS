@@ -71,6 +71,30 @@ export abstract class TestCaseLibCaseStepNestedBase extends EntityBase implement
      * 用例编号
      */
     ibizcase?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
+    /**
+     * 更新时间
+     */
+    updatedate?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
+    /**
+     * 建立时间
+     */
+    createdate?: any;
+    /**
+     * 组织机构标识
+     */
+    orgid?: any;
+    /**
+     * 组织部门标识
+     */
+    deptid?: any;
 
     /**
      * 重置实体数据

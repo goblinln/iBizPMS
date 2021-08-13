@@ -5,12 +5,28 @@
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
-      "name" : "value"
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLINEID",
+        "codeName" : "ProductLineId"
+      }
     }, {
       "dataType" : 25,
-      "name" : "text"
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "IBZ_PRODUCTLINENAME",
+        "codeName" : "ProductLineName"
+      }
     } ],
     "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "IBZ_PRODUCTLINENAME",
+      "codeName" : "ProductLineName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "IBZ_PRODUCTLINEID",
+      "codeName" : "ProductLineId"
+    },
     "defaultMode" : true,
     "enablePagingBar" : false
   } ],
@@ -23,23 +39,11 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "builtinMethod" : false
-  }, {
-    "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
     "builtinMethod" : true
-  }, {
-    "actionMode" : "READ",
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
@@ -49,25 +53,11 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "builtinMethod" : false
-  }, {
-    "actionMode" : "GETDRAFT",
     "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
     "builtinMethod" : true
-  }, {
-    "actionMode" : "DELETE",
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "builtinMethod" : false,
-    "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
@@ -79,25 +69,11 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
-    "batchActionMode" : 2,
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "name" : "Save",
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
     "builtinMethod" : true
-  }, {
-    "actionMode" : "UPDATE",
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
@@ -108,89 +84,62 @@
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
-    "codeName" : "Id",
-    "logicName" : "id",
-    "name" : "ID",
-    "stdDataType" : 1,
-    "keyField" : true
-  }, {
-    "codeName" : "MdeptId",
-    "logicName" : "部门标识",
-    "name" : "MDEPTID",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgId",
-    "logicName" : "组织机构标识",
-    "name" : "ORGID",
-    "stdDataType" : 25,
-    "stringLength" : 60
-  }, {
-    "codeName" : "Deleted",
-    "logicName" : "已删除",
-    "name" : "DELETED",
-    "stdDataType" : 25,
-    "stringLength" : 1
-  }, {
-    "codeName" : "Name",
+    "codeName" : "ProductLineName",
     "logicName" : "产品线名称",
-    "name" : "NAME",
+    "name" : "IBZ_PRODUCTLINENAME",
     "stdDataType" : 25,
-    "stringLength" : 60,
+    "stringLength" : 200,
+    "enableFrontOnly" : true,
     "enableQuickSearch" : true,
     "majorField" : true
   }, {
-    "codeName" : "MdeptName",
-    "logicName" : "归属部门名",
-    "name" : "MDEPTNAME",
+    "codeName" : "ProductLineId",
+    "logicName" : "产品线标识",
+    "name" : "IBZ_PRODUCTLINEID",
     "stdDataType" : 25,
-    "stringLength" : 100
+    "stringLength" : 100,
+    "enableFrontOnly" : true,
+    "keyField" : true
   }, {
-    "codeName" : "Type",
-    "logicName" : "类型",
-    "name" : "TYPE",
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
     "stdDataType" : 25,
-    "stringLength" : 30
-  }, {
-    "codeName" : "IBizShort",
-    "logicName" : "简称",
-    "name" : "SHORT",
-    "stdDataType" : 25,
-    "stringLength" : 30
-  }, {
-    "codeName" : "CreateBy",
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
+    "stringLength" : 60,
+    "enableFrontOnly" : true
   }, {
     "codeName" : "Order",
     "logicName" : "排序",
     "name" : "ORDER",
-    "stdDataType" : 9
+    "stdDataType" : 9,
+    "enableFrontOnly" : true
   }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableFrontOnly" : true
   }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
     "stdDataType" : 25,
-    "stringLength" : 100
+    "stringLength" : 60,
+    "enableFrontOnly" : true
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
@@ -201,23 +150,11 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "builtinMethod" : false
-  }, {
-    "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
     "builtinMethod" : true
-  }, {
-    "actionMode" : "READ",
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
@@ -227,25 +164,11 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "builtinMethod" : false
-  }, {
-    "actionMode" : "GETDRAFT",
     "actionType" : "BUILTIN",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
     "builtinMethod" : true
-  }, {
-    "actionMode" : "DELETE",
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "builtinMethod" : false,
-    "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
@@ -257,14 +180,6 @@
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
-    "batchActionMode" : 2,
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "name" : "Save",
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -272,22 +187,11 @@
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "builtinMethod" : false
-  }, {
-    "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
     "builtinMethod" : true
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
@@ -352,10 +256,10 @@
   "name" : "IBZ_PRODUCTLINE",
   "getPSDEName" : "IBZ_PRODUCTLINE",
   "getQuickSearchPSAppDEFields" : [ {
-    "name" : "NAME",
-    "codeName" : "Name"
+    "name" : "IBZ_PRODUCTLINENAME",
+    "codeName" : "ProductLineName"
   } ],
-  "storageMode" : 0,
+  "storageMode" : 4,
   "defaultMode" : true,
   "enableFilterActions" : true,
   "enableUICreate" : true,

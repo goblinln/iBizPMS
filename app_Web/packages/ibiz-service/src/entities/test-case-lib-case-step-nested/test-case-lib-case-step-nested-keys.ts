@@ -8,4 +8,10 @@ export default [
     'version',
     'parent',
     'ibizcase',
+    'updateman',
+    'updatedate',
+    'createman',
+    'createdate',
+    'orgid',
+    'deptid',
 ];

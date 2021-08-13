@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CASE`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`PARENT`, t1.`TYPE`, t11.`VERSION` FROM `zt_casestep` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`   ]]>
+        <![CDATA[ SELECT t1.`CASE`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`ORGID`, t1.`PARENT`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t11.`VERSION` FROM `zt_casestep` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`   ]]>
     </sql>
 
 
@@ -82,7 +82,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`PARENT`, t1.`TYPE`, t11.`VERSION` FROM `zt_casestep` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`   ]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`ORGID`, t1.`PARENT`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t11.`VERSION` FROM `zt_casestep` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -92,9 +92,21 @@
 		<include refid="Default" />
 	</select>
 
+    <!--数据查询[Simple]-->
+    <sql id="Simple" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`EXPECT`, t1.`ID`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_casestep` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectSimple"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibCaseStepsSearchContext" resultMap="IbzLibCaseStepsResultMap">
+		<include refid="Simple" />
+	</select>
+
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`PARENT`, t1.`TYPE`, t11.`VERSION` FROM `zt_casestep` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`   ]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.`ORGID`, t1.`PARENT`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t11.`VERSION` FROM `zt_casestep` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

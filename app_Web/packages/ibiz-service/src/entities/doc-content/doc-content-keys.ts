@@ -9,9 +9,9 @@ export default [
     'title',
     'orgname',
     'version',
+    'doccontentsn',
     'digest',
     'deptname',
     'createby',
     'doc',
-    'doccontentsn',
 ];

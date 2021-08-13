@@ -1984,7 +1984,27 @@
     "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/CurStory.json",
     "emptyText" : "未定义",
     "minorSortDir" : "DESC",
-    "name" : "当前需求版本（动态）"
+    "getMinorSortPSAppDEField" : {
+      "name" : "VERSION",
+      "codeName" : "Version"
+    },
+    "name" : "当前需求版本（动态）",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchVersion"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/StorySpec.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "TITLE",
+      "codeName" : "Title"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "VERSION",
+      "codeName" : "Version"
+    }
   }, {
     "codeListType" : "DYNAMIC",
     "codeName" : "ProductPlan",
@@ -4853,6 +4873,12 @@
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json"
   }, {
     "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/StorySpec.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/History.json"
+  }, {
+    "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductBranch.json"
   }, {
     "modelref" : true,
@@ -4914,6 +4940,9 @@
   }, {
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/UserContact.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/StoryStage.json"
   }, {
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/SysUpdateFeatures.json"
@@ -16992,6 +17021,7 @@
   "serviceCodeName" : "Mob",
   "enableDynaDashboard" : true,
   "enableFilterStorage" : true,
+  "enableServiceAPIDTO" : true,
   "enableUACLogin" : false,
   "mobileApp" : true,
   "useServiceApi" : true,

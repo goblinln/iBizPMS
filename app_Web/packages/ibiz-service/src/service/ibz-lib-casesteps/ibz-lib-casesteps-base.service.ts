@@ -2,6 +2,7 @@ import { CodeListService } from '../app/codelist-service';
 import { EntityBaseService, IContext, HttpResponse } from 'ibiz-core';
 import { IIbzLibCasesteps, IbzLibCasesteps } from '../../entities';
 import keys from '../../entities/ibz-lib-casesteps/ibz-lib-casesteps-keys';
+import { SearchFilter } from 'ibiz-core';
 
 /**
  * 用例库用例步骤服务对象基类
@@ -61,5 +62,16 @@ export class IbzLibCasestepsBaseService extends EntityBaseService<IIbzLibCaseste
             entity = result.data;
         }
         return new HttpResponse(entity);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzLibCasestepsService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.searchAppLocal(null, new SearchFilter(_context, _data));
     }
 }
