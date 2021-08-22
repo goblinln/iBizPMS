@@ -90,7 +90,7 @@ public class ProductPlanHelper extends ZTBaseHelper<ProductPlanMapper, ProductPl
     public boolean delete(Long key) {
         boolean bOk = super.delete(key);
 
-        changeParentField(key);
+        // changeParentField(key);
 
 
         return bOk;
