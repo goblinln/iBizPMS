@@ -2,6 +2,7 @@ package cn.ibizlab.pms.core.util.ibizzentao.helper;
 
 import cn.ibizlab.pms.core.ibiz.domain.TaskTeam;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ChangeUtil;
+import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
 import cn.ibizlab.pms.core.zentao.domain.*;
 import cn.ibizlab.pms.core.zentao.mapper.TaskEstimateMapper;
 import cn.ibizlab.pms.core.zentao.service.*;
@@ -58,6 +59,9 @@ public class TaskEstimateHelper extends ZTBaseHelper<TaskEstimateMapper, TaskEst
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean create(TaskEstimate et) {
+        if(et.getDate() == null) {
+            et.setDate(et.getDates() != null ? et.getDates() : ZTDateUtil.now());
+        }
         if (!super.create(et)) {
             return false;
         }
