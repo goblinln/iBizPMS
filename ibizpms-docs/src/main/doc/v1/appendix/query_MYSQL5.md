@@ -14085,7 +14085,7 @@ FROM `zt_productplan` t1
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
 left join (select tt.plan,max(tt.deadline) as deadline,min(tt.ESTSTARTED) as ESTSTARTED from zt_task tt where tt.deleted = '0' GROUP BY tt.plan) t21 on t21.plan = t1.id
 WHERE t1.DELETED = '0' 
-t1.parent <= '0' 
+(t1.parent <= '0' or t1.parent is null) 
 
 ```
 ### 任务计划(TaskPlan)<div id="ProductPlan_TaskPlan"></div>
