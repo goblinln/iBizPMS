@@ -54,24 +54,16 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
 
     protected int batchSize = 500;
 
-    @Override
+        @Override
     @Transactional
     public boolean create(TaskEstimate et) {
-        fillParentData(et);
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskEstimateHelper.class).create(et);
     }
 
     @Override
-    @Transactional
     public void createBatch(List<TaskEstimate> list) {
-        list.forEach(item->fillParentData(item));
-        this.saveBatch(list, batchSize);
-    }
 
+    }
         @Override
     @Transactional
     public boolean update(TaskEstimate et) {
