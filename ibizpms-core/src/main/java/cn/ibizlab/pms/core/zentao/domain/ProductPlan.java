@@ -232,7 +232,7 @@ public class ProductPlan extends EntityMP implements Serializable {
     /**
      * 排序
      */
-    @DEField(defaultValue = "#EMPTY")
+    @DEField(defaultValue = "0")
     @TableField(value = "`order`")
     @JSONField(name = "order")
     @JsonProperty("order")

@@ -2220,7 +2220,7 @@
 
 
     <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
-    <changeSet author="a_LAB01_96184aff4" id="tab-zt_productplan-36-84">
+    <changeSet author="a_LAB01_96184aff4" id="tab-zt_productplan-37-84">
         <createTable tableName="zt_productplan">
                 <column name="`TITLE`" remarks="" type="VARCHAR(90)">
                 </column>
@@ -3264,13 +3264,13 @@
        <addForeignKeyConstraint baseColumnNames="ROOT" baseTableName="zt_module" constraintName="DER1N_IBZ_PRODUCTMODULE_ZT_PRO" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_product" validate="true"/>
     </changeSet>
         <!--输出实体[ZT_PRODUCTPLAN]外键关系 -->
-    <changeSet author="a_LAB01_96184aff4" id="fk-zt_productplan-36-199">
+    <changeSet author="a_LAB01_96184aff4" id="fk-zt_productplan-37-199">
        <addForeignKeyConstraint baseColumnNames="BRANCH" baseTableName="zt_productplan" constraintName="DER1N_ZT_PRODUCTPLAN_ZT_BRANCH" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_branch" validate="true"/>
     </changeSet>
-    <changeSet author="a_LAB01_96184aff4" id="fk-zt_productplan-36-200">
+    <changeSet author="a_LAB01_96184aff4" id="fk-zt_productplan-37-200">
        <addForeignKeyConstraint baseColumnNames="PRODUCT" baseTableName="zt_productplan" constraintName="DER1N_ZT_PRODUCTPLAN_ZT_PRODUC" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_product" validate="true"/>
     </changeSet>
-    <changeSet author="a_LAB01_96184aff4" id="fk-zt_productplan-36-201">
+    <changeSet author="a_LAB01_96184aff4" id="fk-zt_productplan-37-201">
        <addForeignKeyConstraint baseColumnNames="PARENT" baseTableName="zt_productplan" constraintName="DER1N__ZT_PRODUCTPLAN__ZT_PROD" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_productplan" validate="true"/>
     </changeSet>
         <!--输出实体[IBZ_PRODUCTSTATS]外键关系 -->
