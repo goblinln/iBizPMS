@@ -13703,7 +13703,8 @@ t1.`PRODUCT`,
 case when t1.`STATUS` is null then 'wait' else t1.`STATUS` end `STATUS`,
 (case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
-t1.`TITLE`
+t1.`TITLE`,
+(case when (select count(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then false else true end) as `ISLEAF`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
 left join (select tt.plan,max(tt.deadline) as deadline,min(tt.ESTSTARTED) as ESTSTARTED from zt_task tt where tt.deleted = '0' GROUP BY tt.plan) t21 on t21.plan = t1.id
@@ -14080,7 +14081,8 @@ t1.`PRODUCT`,
 case when t1.`STATUS` is null then 'wait' else t1.`STATUS` end `STATUS`,
 (case when (select COUNT(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then 'parent' else 'normal' end) AS `STATUSS`,
 ((select COUNT(t.id) from zt_story t where  t.product = t1.product and  (t.plan = t1.id or (t.plan in (select t2.id from zt_productplan t2 where t2.parent = t1.id and t2.deleted = '0')) )  and t.deleted = '0' )) AS `STORYCNT`,
-t1.`TITLE`
+t1.`TITLE`,
+(case when (select count(1) from zt_productplan t where t.deleted = '0' and t.parent = t1.id) > 0 then false else true end) as `ISLEAF`
 FROM `zt_productplan` t1 
 LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` 
 left join (select tt.plan,max(tt.deadline) as deadline,min(tt.ESTSTARTED) as ESTSTARTED from zt_task tt where tt.deleted = '0' GROUP BY tt.plan) t21 on t21.plan = t1.id
@@ -21874,6 +21876,7 @@ t1.`DEADLINE`,
 (case when t1.deadline is null or t1.deadline = '0000-00-00' or t1.deadline = '1970-01-01' then '' when t1.`status` in ('wait','doing') and t1.deadline <DATE_FORMAT(now(),'%y-%m-%d')  then CONCAT_WS('','延期',TIMESTAMPDIFF(DAY, t1.deadline, now()),'天') else '' end) AS `DELAY`,
 t1.`DELETED`,
 (To_Days(t1.`DEADLINE`)-To_Days(t1.`ESTSTARTED`)) AS `DURATION`,
+%1$s AS `ENDNODE`,
 t1.`ESTIMATE`,
 t1.`ESTSTARTED`,
 t1.`FINISHEDBY`,
@@ -22115,6 +22118,7 @@ t1.`DEADLINE`,
 t1.`DELETED`,
 t1.`DESC`,
 (To_Days(t1.`DEADLINE`)-To_Days(t1.`ESTSTARTED`)) AS `DURATION`,
+%1$s AS `ENDNODE`,
 t1.`ESTIMATE`,
 t1.`ESTSTARTED`,
 t1.`FINISHEDBY`,

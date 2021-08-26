@@ -20257,9 +20257,10 @@ POST
 | 83 | frombug | Long | 允许 | 来源Bug |
 | 84 | ordernum | Integer | 允许 | 排序 |
 | 85 | assignedtopk | String | 允许 | 指派给 |
-| 86 | ibztaskestimates | List<[IBZTaskEstimateDTO}](#IBZTaskEstimateDTO})> | 允许 | 任务预计 |
-| 87 | ibztaskteams | List<[IBZTaskTeamDTO}](#IBZTaskTeamDTO})> | 允许 | 任务团队 |
-| 88 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 86 | endnode | String | 允许 | 是否是末端节点 |
+| 87 | ibztaskestimates | List<[IBZTaskEstimateDTO}](#IBZTaskEstimateDTO})> | 允许 | 任务预计 |
+| 88 | ibztaskteams | List<[IBZTaskTeamDTO}](#IBZTaskTeamDTO})> | 允许 | 任务团队 |
+| 89 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### IBZTaskEstimateDTO
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

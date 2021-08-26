@@ -776,6 +776,14 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("assignedtopk")
     @ApiModelProperty("指派给")
     private String assignedtopk;
+    /**
+     * 是否是末端节点
+     */
+    @TableField(exist = false)
+    @JSONField(name = "endnode")
+    @JsonProperty("endnode")
+    @ApiModelProperty("是否是末端节点")
+    private String endnode;
 
     /**
      * 

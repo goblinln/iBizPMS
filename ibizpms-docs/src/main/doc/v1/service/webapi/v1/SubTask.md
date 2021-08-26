@@ -433,7 +433,8 @@ POST
 | 83 | frombug | Long | 允许 | 来源Bug |
 | 84 | ordernum | Integer | 允许 | 排序 |
 | 85 | assignedtopk | String | 允许 | 指派给 |
-| 86 | <动态属性> | Object | 允许 | 支持动态属性 |
+| 86 | endnode | String | 允许 | 是否是末端节点 |
+| 87 | <动态属性> | Object | 允许 | 支持动态属性 |
 
 #### TaskSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |

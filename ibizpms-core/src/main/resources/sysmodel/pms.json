@@ -44995,6 +44995,21 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"ENDNODE" ,
+    "codename":"Endnode",
+    "field_logic_name":"是否是末端节点",
+    "entity_name":"ZT_TASK",
+    "field_type":"YESNO",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":200,
+    "expression":"%1$s",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
