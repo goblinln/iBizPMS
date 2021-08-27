@@ -249453,7 +249453,6 @@ CREATE TABLE `T_SYS_UPDATE_LOG`(
 | OPENEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
 | STORY        | 相关需求  |       |   8   | &nbsp; |
 | PLAN        | 编号  |       |   8   | &nbsp; |
-| ENDNODE        | 是否是末端节点  | VARCHAR      |   200   | &nbsp; |
 | PROGRESSRATE        | 进度  | VARCHAR      |   200   | &nbsp; |
 | INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
 | PLANNAME        | 所属计划  | VARCHAR      |   90   | &nbsp; |

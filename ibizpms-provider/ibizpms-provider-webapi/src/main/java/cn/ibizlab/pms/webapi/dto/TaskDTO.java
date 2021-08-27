@@ -868,16 +868,6 @@ public class TaskDTO extends DTOBase implements Serializable {
     @ApiModelProperty("指派给")
     private String assignedtopk;
 
-    /**
-     * 属性 [ENDNODE]
-     *
-     */
-    @JSONField(name = "endnode")
-    @JsonProperty("endnode")
-    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
-    @ApiModelProperty("是否是末端节点")
-    private String endnode;
-
 
     /**
      * 设置 [CANCELEDBY]

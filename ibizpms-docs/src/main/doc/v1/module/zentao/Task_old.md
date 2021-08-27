@@ -111,7 +111,6 @@ hide members
 |来源Bug|FROMBUG|PICKUP|&nbsp;|
 |排序|ORDERNUM|INT|&nbsp;|
 |指派给|ASSIGNEDTOPK|TEXT|&nbsp;|
-|是否是末端节点|ENDNODE|YESNO|&nbsp;|
 
 ## 值规则
 | 属性名称    | 规则    |  说明  |
@@ -211,7 +210,6 @@ hide members
 |来源Bug|默认规则|默认规则|
 |排序|默认规则|默认规则|
 |指派给|默认规则|内容长度必须小于等于[100]|
-|是否是末端节点|默认规则|内容长度必须小于等于[200]|
 
 ## 状态控制
 
