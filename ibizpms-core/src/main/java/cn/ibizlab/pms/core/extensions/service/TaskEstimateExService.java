@@ -33,6 +33,17 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
     }
 
     @Override
+    @Transactional
+    public boolean create(TaskEstimate et) {
+        Task task = taskService.getById(et.getTask());
+        List<TaskEstimate> list = new ArrayList<>();
+        list.add(et);
+        task.setTaskestimate(list);
+        taskService.recordEstimate(task);
+        return true;
+    }
+
+    @Override
     public void saveBatch(List<TaskEstimate> list) {
         Map<Long, Task> taskMap = new HashMap<>();
         List<TaskEstimate> taskEstimateList_0 = new ArrayList<>();
