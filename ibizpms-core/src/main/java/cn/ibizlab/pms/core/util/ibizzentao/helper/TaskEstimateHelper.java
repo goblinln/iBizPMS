@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -59,12 +60,15 @@ public class TaskEstimateHelper extends ZTBaseHelper<TaskEstimateMapper, TaskEst
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean create(TaskEstimate et) {
+        Task task = taskHelper.get(et.getTask());
+        List<TaskEstimate> taskEstimateList = new ArrayList<>();
+        
         if(et.getDate() == null) {
             et.setDate(et.getDates() != null ? et.getDates() : ZTDateUtil.now());
         }
-        if (!super.create(et)) {
-            return false;
-        }
+        taskEstimateList.add(et);
+        task.setTaskestimate(taskEstimateList);
+        taskHelper.recordEstimate(task);
         return true;
     }
 
