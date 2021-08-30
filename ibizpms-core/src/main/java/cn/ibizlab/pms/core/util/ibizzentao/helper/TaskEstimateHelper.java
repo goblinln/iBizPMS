@@ -60,15 +60,12 @@ public class TaskEstimateHelper extends ZTBaseHelper<TaskEstimateMapper, TaskEst
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean create(TaskEstimate et) {
-        Task task = taskHelper.get(et.getTask());
-        List<TaskEstimate> taskEstimateList = new ArrayList<>();
-        
         if(et.getDate() == null) {
             et.setDate(et.getDates() != null ? et.getDates() : ZTDateUtil.now());
         }
-        taskEstimateList.add(et);
-        task.setTaskestimate(taskEstimateList);
-        taskHelper.recordEstimate(task);
+        if (!super.create(et)) {
+            return false;
+        }
         return true;
     }
 
