@@ -1728,6 +1728,7 @@ public class TaskHelper extends ZTBaseHelper<TaskMapper, Task> {
         newTask.setIdvalue(et.getId());
         newTask.setCycle(0);
         newTask.setConsumed(0.0D);
+        newTask.setLeft(0.0D);
         newTask.setTaskspecies(StaticDict.TaskSpecies.TEMP.getValue());//子任务设为临时任务
 
         newTask.setStatus(StaticDict.Task__status.WAIT.getValue());
