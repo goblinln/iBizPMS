@@ -5,25 +5,25 @@
             <tns:import name="java.util.Map" />
             <tns:import name="org.springframework.util.StringUtils"/>
             <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
-            <tns:metaData express="" name="caseunlinkcasesdefault" type="entity"/>
             <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.TestRun()" name="caseunlinkcasestestrun" type="refentity"/>
+            <tns:metaData express="" name="caseunlinkcasesdefault" type="entity"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.ICaseService))" name="caseservice" type="service"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.ICaseService))" name="iBzSysCaseDefaultService" type="service"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
-        <tns:global identifier="caseunlinkcasesdefault" type="cn.ibizlab.pms.core.zentao.domain.Case" />
         <tns:global identifier="caseunlinkcasestestrun" type="cn.ibizlab.pms.core.zentao.domain.TestRun" />
+        <tns:global identifier="caseunlinkcasesdefault" type="cn.ibizlab.pms.core.zentao.domain.Case" />
         </extensionElements>
      <startEvent id="begin" isInterrupting="true"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="caseunlinkcasesdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="处理移除接口"/>
      <endEvent id="deaction1_end" name="end"/>
      <sequenceFlow id="deaction1_end_line" sourceRef="deaction1" targetRef="deaction1_end"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="caseunlinkcasesprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="重置ID"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="caseunlinkcasesrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取数据"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="caseunlinkcasesprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="重置ID"/>
+     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+     </sequenceFlow>
      <sequenceFlow id="rawsqlcall1_prepareparam1" sourceRef="rawsqlcall1" targetRef="prepareparam1">
      </sequenceFlow>
      <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">
-     </sequenceFlow>
-     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
      </sequenceFlow>
     </process>
 </definitions>

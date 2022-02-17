@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 @FeignClient(value = "${ibiz.ref.service.ibzou-api:ibzou-api}", contextId = "SysDepartment", fallback = SysDepartmentFallback.class)
 public interface SysDepartmentFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/select")
-    Page<SysDepartment> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/sysdepartments")
     SysDepartment create(@RequestBody SysDepartment et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/batch")
     Boolean createBatch(@RequestBody List<SysDepartment> sysdepartments);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/{deptid}")
-    SysDepartment update(@PathVariable("deptid") String deptid, @RequestBody SysDepartment et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/batch")
-    Boolean updateBatch(@RequestBody List<SysDepartment> sysdepartments);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/{deptid}")
-    Boolean remove(@PathVariable("deptid") String deptid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/{deptid}")
@@ -51,12 +33,31 @@ public interface SysDepartmentFeignClient {
     String getByCodeName(@PathVariable("deptid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/getdraft")
-    SysDepartment getDraft(SysDepartment entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/{deptid}")
+    Boolean remove(@PathVariable("deptid") String deptid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/{deptid}")
+    SysDepartment update(@PathVariable("deptid") String deptid, @RequestBody SysDepartment et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/batch")
+    Boolean updateBatch(@RequestBody List<SysDepartment> sysdepartments);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/checkkey")
     Boolean checkKey(@RequestBody SysDepartment et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/searchdefault")
+    Page<SysDepartment> searchDefault(@RequestBody SysDepartmentSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/getdraft")
+    SysDepartment getDraft(SysDepartment entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/save")
@@ -68,9 +69,8 @@ public interface SysDepartmentFeignClient {
     Boolean saveBatch(@RequestBody List<SysDepartment> sysdepartments);
 
 
-
-    @RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/searchdefault")
-    Page<SysDepartment> searchDefault(@RequestBody SysDepartmentSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/select")
+    Page<SysDepartment> select();
 
 
 }

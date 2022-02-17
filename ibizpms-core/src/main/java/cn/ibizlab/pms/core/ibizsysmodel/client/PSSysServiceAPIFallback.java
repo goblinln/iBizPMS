@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSSysServiceAPIFallback implements PSSysServiceAPIFeignClient {
 
-    public Page<PSSysServiceAPI> select() {
-        return null;
-    }
-
     public PSSysServiceAPI create(PSSysServiceAPI et) {
         return null;
     }
     public Boolean createBatch(List<PSSysServiceAPI> pssysserviceapis) {
-        return false;
-    }
-
-    public PSSysServiceAPI update(String pssysserviceapiid, PSSysServiceAPI et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSSysServiceAPI> pssysserviceapis) {
-        return false;
-    }
-
-
-    public Boolean remove(String pssysserviceapiid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class PSSysServiceAPIFallback implements PSSysServiceAPIFeignClient {
     }
 
 
-    public PSSysServiceAPI getDraft(PSSysServiceAPI entity){
-        return null;
+    public Boolean remove(String pssysserviceapiid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSSysServiceAPI update(String pssysserviceapiid, PSSysServiceAPI et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSSysServiceAPI> pssysserviceapis) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSSysServiceAPI et) {
         return false;
     }
+
+
+    public Page<PSSysServiceAPI> searchDefault(PSSysServiceAPISearchContext context) {
+        return null;
+    }
+
+
+    public PSSysServiceAPI getDraft(PSSysServiceAPI entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSSysServiceAPI et) {
@@ -76,9 +77,8 @@ public class PSSysServiceAPIFallback implements PSSysServiceAPIFeignClient {
         return false;
     }
 
-    public Page<PSSysServiceAPI> searchDefault(PSSysServiceAPISearchContext context) {
+    public Page<PSSysServiceAPI> select() {
         return null;
     }
-
 
 }

@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SysDepartmentFallback implements SysDepartmentFeignClient {
 
-    public Page<SysDepartment> select() {
-        return null;
-    }
-
     public SysDepartment create(SysDepartment et) {
         return null;
     }
     public Boolean createBatch(List<SysDepartment> sysdepartments) {
-        return false;
-    }
-
-    public SysDepartment update(String deptid, SysDepartment et) {
-        return null;
-    }
-    public Boolean updateBatch(List<SysDepartment> sysdepartments) {
-        return false;
-    }
-
-
-    public Boolean remove(String deptid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class SysDepartmentFallback implements SysDepartmentFeignClient {
     }
 
 
-    public SysDepartment getDraft(SysDepartment entity){
-        return null;
+    public Boolean remove(String deptid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public SysDepartment update(String deptid, SysDepartment et) {
+        return null;
+    }
+    public Boolean updateBatch(List<SysDepartment> sysdepartments) {
+        return false;
+    }
 
 
     public Boolean checkKey(SysDepartment et) {
         return false;
     }
+
+
+    public Page<SysDepartment> searchDefault(SysDepartmentSearchContext context) {
+        return null;
+    }
+
+
+    public SysDepartment getDraft(SysDepartment entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(SysDepartment et) {
@@ -76,9 +77,8 @@ public class SysDepartmentFallback implements SysDepartmentFeignClient {
         return false;
     }
 
-    public Page<SysDepartment> searchDefault(SysDepartmentSearchContext context) {
+    public Page<SysDepartment> select() {
         return null;
     }
-
 
 }

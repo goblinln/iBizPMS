@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 @FeignClient(value = "${ibiz.ref.service.pmspro-pluginserviceapi:pmspro-pluginserviceapi}", contextId = "IBIZProPlugin", fallback = IBIZProPluginFallback.class)
 public interface IBIZProPluginFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/select")
-    Page<IBIZProPlugin> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins")
     IBIZProPlugin create(@RequestBody IBIZProPlugin et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/batch")
     Boolean createBatch(@RequestBody List<IBIZProPlugin> ibizproplugins);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/{ibizpropluginid}")
-    IBIZProPlugin update(@PathVariable("ibizpropluginid") String ibizpropluginid, @RequestBody IBIZProPlugin et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/batch")
-    Boolean updateBatch(@RequestBody List<IBIZProPlugin> ibizproplugins);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/{ibizpropluginid}")
-    Boolean remove(@PathVariable("ibizpropluginid") String ibizpropluginid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/{ibizpropluginid}")
@@ -51,12 +33,31 @@ public interface IBIZProPluginFeignClient {
     String getByCodeName(@PathVariable("ibizpropluginid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/getdraft")
-    IBIZProPlugin getDraft(IBIZProPlugin entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/{ibizpropluginid}")
+    Boolean remove(@PathVariable("ibizpropluginid") String ibizpropluginid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/{ibizpropluginid}")
+    IBIZProPlugin update(@PathVariable("ibizpropluginid") String ibizpropluginid, @RequestBody IBIZProPlugin et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/batch")
+    Boolean updateBatch(@RequestBody List<IBIZProPlugin> ibizproplugins);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/checkkey")
     Boolean checkKey(@RequestBody IBIZProPlugin et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/searchdefault")
+    Page<IBIZProPlugin> searchDefault(@RequestBody IBIZProPluginSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/getdraft")
+    IBIZProPlugin getDraft(IBIZProPlugin entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/save")
@@ -68,9 +69,8 @@ public interface IBIZProPluginFeignClient {
     Boolean saveBatch(@RequestBody List<IBIZProPlugin> ibizproplugins);
 
 
-
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/searchdefault")
-    Page<IBIZProPlugin> searchDefault(@RequestBody IBIZProPluginSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/select")
+    Page<IBIZProPlugin> select();
 
 
 }

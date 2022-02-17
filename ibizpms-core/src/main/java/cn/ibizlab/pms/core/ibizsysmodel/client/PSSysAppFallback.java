@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSSysAppFallback implements PSSysAppFeignClient {
 
-    public Page<PSSysApp> select() {
-        return null;
-    }
-
     public PSSysApp create(PSSysApp et) {
         return null;
     }
     public Boolean createBatch(List<PSSysApp> pssysapps) {
-        return false;
-    }
-
-    public PSSysApp update(String pssysappid, PSSysApp et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSSysApp> pssysapps) {
-        return false;
-    }
-
-
-    public Boolean remove(String pssysappid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,40 @@ public class PSSysAppFallback implements PSSysAppFeignClient {
     }
 
 
-    public PSSysApp getDraft(PSSysApp entity){
-        return null;
+    public Boolean remove(String pssysappid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSSysApp update(String pssysappid, PSSysApp et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSSysApp> pssysapps) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSSysApp et) {
         return false;
     }
+
+
+    public Page<PSSysApp> searchBuild(PSSysAppSearchContext context) {
+        return null;
+    }
+
+
+    public Page<PSSysApp> searchDefault(PSSysAppSearchContext context) {
+        return null;
+    }
+
+
+    public PSSysApp getDraft(PSSysApp entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSSysApp et) {
@@ -76,14 +82,8 @@ public class PSSysAppFallback implements PSSysAppFeignClient {
         return false;
     }
 
-    public Page<PSSysApp> searchBuild(PSSysAppSearchContext context) {
+    public Page<PSSysApp> select() {
         return null;
     }
-
-
-    public Page<PSSysApp> searchDefault(PSSysAppSearchContext context) {
-        return null;
-    }
-
 
 }

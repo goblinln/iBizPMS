@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSubSysServiceAPI", fallback = PSSubSysServiceAPIFallback.class)
 public interface PSSubSysServiceAPIFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssubsysserviceapis/select")
-    Page<PSSubSysServiceAPI> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsysserviceapis")
     PSSubSysServiceAPI create(@RequestBody PSSubSysServiceAPI et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsysserviceapis/batch")
     Boolean createBatch(@RequestBody List<PSSubSysServiceAPI> pssubsysserviceapis);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssubsysserviceapis/{pssubsysserviceapiid}")
-    PSSubSysServiceAPI update(@PathVariable("pssubsysserviceapiid") String pssubsysserviceapiid, @RequestBody PSSubSysServiceAPI et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssubsysserviceapis/batch")
-    Boolean updateBatch(@RequestBody List<PSSubSysServiceAPI> pssubsysserviceapis);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsysserviceapis/{pssubsysserviceapiid}")
-    Boolean remove(@PathVariable("pssubsysserviceapiid") String pssubsysserviceapiid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsysserviceapis/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssubsysserviceapis/{pssubsysserviceapiid}")
@@ -51,12 +33,31 @@ public interface PSSubSysServiceAPIFeignClient {
     String getByCodeName(@PathVariable("pssubsysserviceapiid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssubsysserviceapis/getdraft")
-    PSSubSysServiceAPI getDraft(PSSubSysServiceAPI entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsysserviceapis/{pssubsysserviceapiid}")
+    Boolean remove(@PathVariable("pssubsysserviceapiid") String pssubsysserviceapiid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsysserviceapis/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssubsysserviceapis/{pssubsysserviceapiid}")
+    PSSubSysServiceAPI update(@PathVariable("pssubsysserviceapiid") String pssubsysserviceapiid, @RequestBody PSSubSysServiceAPI et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssubsysserviceapis/batch")
+    Boolean updateBatch(@RequestBody List<PSSubSysServiceAPI> pssubsysserviceapis);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsysserviceapis/checkkey")
     Boolean checkKey(@RequestBody PSSubSysServiceAPI et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/pssubsysserviceapis/searchdefault")
+    Page<PSSubSysServiceAPI> searchDefault(@RequestBody PSSubSysServiceAPISearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/pssubsysserviceapis/getdraft")
+    PSSubSysServiceAPI getDraft(PSSubSysServiceAPI entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsysserviceapis/save")
@@ -68,9 +69,8 @@ public interface PSSubSysServiceAPIFeignClient {
     Boolean saveBatch(@RequestBody List<PSSubSysServiceAPI> pssubsysserviceapis);
 
 
-
-    @RequestMapping(method = RequestMethod.POST, value = "/pssubsysserviceapis/searchdefault")
-    Page<PSSubSysServiceAPI> searchDefault(@RequestBody PSSubSysServiceAPISearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/pssubsysserviceapis/select")
+    Page<PSSubSysServiceAPI> select();
 
 
 }

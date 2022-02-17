@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSSubSysServiceAPIFallback implements PSSubSysServiceAPIFeignClient {
 
-    public Page<PSSubSysServiceAPI> select() {
-        return null;
-    }
-
     public PSSubSysServiceAPI create(PSSubSysServiceAPI et) {
         return null;
     }
     public Boolean createBatch(List<PSSubSysServiceAPI> pssubsysserviceapis) {
-        return false;
-    }
-
-    public PSSubSysServiceAPI update(String pssubsysserviceapiid, PSSubSysServiceAPI et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSSubSysServiceAPI> pssubsysserviceapis) {
-        return false;
-    }
-
-
-    public Boolean remove(String pssubsysserviceapiid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class PSSubSysServiceAPIFallback implements PSSubSysServiceAPIFeignClient
     }
 
 
-    public PSSubSysServiceAPI getDraft(PSSubSysServiceAPI entity){
-        return null;
+    public Boolean remove(String pssubsysserviceapiid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSSubSysServiceAPI update(String pssubsysserviceapiid, PSSubSysServiceAPI et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSSubSysServiceAPI> pssubsysserviceapis) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSSubSysServiceAPI et) {
         return false;
     }
+
+
+    public Page<PSSubSysServiceAPI> searchDefault(PSSubSysServiceAPISearchContext context) {
+        return null;
+    }
+
+
+    public PSSubSysServiceAPI getDraft(PSSubSysServiceAPI entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSSubSysServiceAPI et) {
@@ -76,9 +77,8 @@ public class PSSubSysServiceAPIFallback implements PSSubSysServiceAPIFeignClient
         return false;
     }
 
-    public Page<PSSubSysServiceAPI> searchDefault(PSSubSysServiceAPISearchContext context) {
+    public Page<PSSubSysServiceAPI> select() {
         return null;
     }
-
 
 }

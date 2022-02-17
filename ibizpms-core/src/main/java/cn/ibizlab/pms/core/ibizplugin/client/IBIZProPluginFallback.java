@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class IBIZProPluginFallback implements IBIZProPluginFeignClient {
 
-    public Page<IBIZProPlugin> select() {
-        return null;
-    }
-
     public IBIZProPlugin create(IBIZProPlugin et) {
         return null;
     }
     public Boolean createBatch(List<IBIZProPlugin> ibizproplugins) {
-        return false;
-    }
-
-    public IBIZProPlugin update(String ibizpropluginid, IBIZProPlugin et) {
-        return null;
-    }
-    public Boolean updateBatch(List<IBIZProPlugin> ibizproplugins) {
-        return false;
-    }
-
-
-    public Boolean remove(String ibizpropluginid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class IBIZProPluginFallback implements IBIZProPluginFeignClient {
     }
 
 
-    public IBIZProPlugin getDraft(IBIZProPlugin entity){
-        return null;
+    public Boolean remove(String ibizpropluginid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public IBIZProPlugin update(String ibizpropluginid, IBIZProPlugin et) {
+        return null;
+    }
+    public Boolean updateBatch(List<IBIZProPlugin> ibizproplugins) {
+        return false;
+    }
 
 
     public Boolean checkKey(IBIZProPlugin et) {
         return false;
     }
+
+
+    public Page<IBIZProPlugin> searchDefault(IBIZProPluginSearchContext context) {
+        return null;
+    }
+
+
+    public IBIZProPlugin getDraft(IBIZProPlugin entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(IBIZProPlugin et) {
@@ -76,9 +77,8 @@ public class IBIZProPluginFallback implements IBIZProPluginFeignClient {
         return false;
     }
 
-    public Page<IBIZProPlugin> searchDefault(IBIZProPluginSearchContext context) {
+    public Page<IBIZProPlugin> select() {
         return null;
     }
-
 
 }

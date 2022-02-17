@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SysUserRoleFallback implements SysUserRoleFeignClient {
 
-    public Page<SysUserRole> select() {
-        return null;
-    }
-
     public SysUserRole create(SysUserRole et) {
         return null;
     }
     public Boolean createBatch(List<SysUserRole> sysuserroles) {
-        return false;
-    }
-
-    public SysUserRole update(String userroleid, SysUserRole et) {
-        return null;
-    }
-    public Boolean updateBatch(List<SysUserRole> sysuserroles) {
-        return false;
-    }
-
-
-    public Boolean remove(String userroleid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class SysUserRoleFallback implements SysUserRoleFeignClient {
     }
 
 
-    public SysUserRole getDraft(SysUserRole entity){
-        return null;
+    public Boolean remove(String userroleid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public SysUserRole update(String userroleid, SysUserRole et) {
+        return null;
+    }
+    public Boolean updateBatch(List<SysUserRole> sysuserroles) {
+        return false;
+    }
 
 
     public Boolean checkKey(SysUserRole et) {
         return false;
     }
+
+
+    public Page<SysUserRole> searchDefault(SysUserRoleSearchContext context) {
+        return null;
+    }
+
+
+    public SysUserRole getDraft(SysUserRole entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(SysUserRole et) {
@@ -76,9 +77,8 @@ public class SysUserRoleFallback implements SysUserRoleFeignClient {
         return false;
     }
 
-    public Page<SysUserRole> searchDefault(SysUserRoleSearchContext context) {
+    public Page<SysUserRole> select() {
         return null;
     }
-
 
 }

@@ -32,6 +32,7 @@ import org.springframework.util.ClassUtils;
 import org.springframework.util.DigestUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.core.annotation.Order;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamReader;
@@ -52,6 +53,7 @@ import java.util.concurrent.ConcurrentMap;
 @Aspect
 @Component
 @Slf4j
+@Order(100)
 public class DELogicAspect {
 
     private static BpmnXMLConverter bpmnXMLConverter = new BpmnXMLConverter();

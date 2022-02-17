@@ -37,4 +37,8 @@ public interface IBZWFFeignClient
 	@RequestMapping(method = RequestMethod.GET, value = "/{system}/{entity}/{businessKey}/dataaccessmode")
 	Integer getDataAccessMode(@PathVariable("system") String system, @PathVariable("entity") String entity, @PathVariable("businessKey") Serializable businessKey);
 
+
+	@RequestMapping(method = RequestMethod.GET, value = "/{system}-app-{appname}/{entity}/mytasks")
+	Map<String,Map<String,Object>> getMyTask(@PathVariable("system") String system,@PathVariable("appname") String appName,
+											 @PathVariable("entity") String entity);
 }

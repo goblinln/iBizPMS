@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSModuleFallback implements PSModuleFeignClient {
 
-    public Page<PSModule> select() {
-        return null;
-    }
-
     public PSModule create(PSModule et) {
         return null;
     }
     public Boolean createBatch(List<PSModule> psmodules) {
-        return false;
-    }
-
-    public PSModule update(String psmoduleid, PSModule et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSModule> psmodules) {
-        return false;
-    }
-
-
-    public Boolean remove(String psmoduleid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class PSModuleFallback implements PSModuleFeignClient {
     }
 
 
-    public PSModule getDraft(PSModule entity){
-        return null;
+    public Boolean remove(String psmoduleid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSModule update(String psmoduleid, PSModule et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSModule> psmodules) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSModule et) {
         return false;
     }
+
+
+    public Page<PSModule> searchDefault(PSModuleSearchContext context) {
+        return null;
+    }
+
+
+    public PSModule getDraft(PSModule entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSModule et) {
@@ -76,9 +77,8 @@ public class PSModuleFallback implements PSModuleFeignClient {
         return false;
     }
 
-    public Page<PSModule> searchDefault(PSModuleSearchContext context) {
+    public Page<PSModule> select() {
         return null;
     }
-
 
 }

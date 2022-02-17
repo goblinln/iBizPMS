@@ -43,4 +43,9 @@ public class IBZWFFallback implements IBZWFFeignClient {
         return null;
     }
 
+    @Override
+    public Map<String, Map<String, Object>> getMyTask(String system, String appName, String entity) {
+        return null;
+    }
+
 }

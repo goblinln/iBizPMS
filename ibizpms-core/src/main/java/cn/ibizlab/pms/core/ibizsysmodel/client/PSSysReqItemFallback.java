@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSSysReqItemFallback implements PSSysReqItemFeignClient {
 
-    public Page<PSSysReqItem> select() {
-        return null;
-    }
-
     public PSSysReqItem create(PSSysReqItem et) {
         return null;
     }
     public Boolean createBatch(List<PSSysReqItem> pssysreqitems) {
-        return false;
-    }
-
-    public PSSysReqItem update(String pssysreqitemid, PSSysReqItem et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSSysReqItem> pssysreqitems) {
-        return false;
-    }
-
-
-    public Boolean remove(String pssysreqitemid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class PSSysReqItemFallback implements PSSysReqItemFeignClient {
     }
 
 
-    public PSSysReqItem getDraft(PSSysReqItem entity){
-        return null;
+    public Boolean remove(String pssysreqitemid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSSysReqItem update(String pssysreqitemid, PSSysReqItem et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSSysReqItem> pssysreqitems) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSSysReqItem et) {
         return false;
     }
+
+
+    public Page<PSSysReqItem> searchDefault(PSSysReqItemSearchContext context) {
+        return null;
+    }
+
+
+    public PSSysReqItem getDraft(PSSysReqItem entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSSysReqItem et) {
@@ -76,9 +77,8 @@ public class PSSysReqItemFallback implements PSSysReqItemFeignClient {
         return false;
     }
 
-    public Page<PSSysReqItem> searchDefault(PSSysReqItemSearchContext context) {
+    public Page<PSSysReqItem> select() {
         return null;
     }
-
 
 }

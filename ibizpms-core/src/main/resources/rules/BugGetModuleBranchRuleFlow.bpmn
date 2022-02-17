@@ -5,30 +5,30 @@
             <tns:import name="java.util.Map" />
             <tns:import name="org.springframework.util.StringUtils"/>
             <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
-            <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.Module()" name="buggetmodulebranchmodule" type="refentity"/>
             <tns:metaData express="" name="buggetmodulebranchdefault" type="entity"/>
+            <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.Module()" name="buggetmodulebranchmodule" type="refentity"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.IModuleService))" name="moduleservice" type="service"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.IBugService))" name="iBzSysBugDefaultService" type="service"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
-        <tns:global identifier="buggetmodulebranchmodule" type="cn.ibizlab.pms.core.zentao.domain.Module" />
         <tns:global identifier="buggetmodulebranchdefault" type="cn.ibizlab.pms.core.zentao.domain.Bug" />
+        <tns:global identifier="buggetmodulebranchmodule" type="cn.ibizlab.pms.core.zentao.domain.Module" />
         </extensionElements>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="buggetmodulebranchdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="获取模块详情"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="buggetmodulebranchprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置模块参数"/>
      <startEvent id="begin" isInterrupting="true"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="buggetmodulebranchprepareparam2" id="prepareparam2" implementation="http://www.jboss.org/drools/rule" name="设置bug平台值"/>
      <endEvent id="prepareparam2_end" name="end"/>
      <sequenceFlow id="prepareparam2_end_line" sourceRef="prepareparam2" targetRef="prepareparam2_end"/>
-     <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">
-     </sequenceFlow>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="buggetmodulebranchprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置模块参数"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="buggetmodulebranchdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="获取模块详情"/>
      <sequenceFlow id="gateway-begin_prepareparam1" sourceRef="gateway-begin" targetRef="prepareparam1">
             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-            $buggetmodulebranchmodule:Module();
             $buggetmodulebranchdefault:Bug();
-            eval($buggetmodulebranchmodule==buggetmodulebranchmodule && $buggetmodulebranchdefault==buggetmodulebranchdefault);
+            $buggetmodulebranchmodule:Module();
+            eval($buggetmodulebranchdefault==buggetmodulebranchdefault && $buggetmodulebranchmodule==buggetmodulebranchmodule);
                 eval((RuleUtils.test($buggetmodulebranchdefault.get("module"),"ISNOTNULL","")))
                 ]]>
             </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">
      </sequenceFlow>
      <sequenceFlow id="deaction1_prepareparam2" sourceRef="deaction1" targetRef="prepareparam2">
      </sequenceFlow>

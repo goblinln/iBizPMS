@@ -69,6 +69,12 @@ public class SearchContextBase implements ISearchContext{
      */
     public String processDefinitionKey;
     /**
+     * 工作流标识
+     */
+    @JsonProperty("srfwf")
+    public String srfWF;
+
+    /**
      * es查询条件
      */
     public BoolQueryBuilder esCond=new BoolQueryBuilder();

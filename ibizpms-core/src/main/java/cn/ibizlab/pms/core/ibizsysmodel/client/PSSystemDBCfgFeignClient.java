@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSystemDBCfg", fallback = PSSystemDBCfgFallback.class)
 public interface PSSystemDBCfgFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/select")
-    Page<PSSystemDBCfg> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs")
     PSSystemDBCfg create(@RequestBody PSSystemDBCfg et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/batch")
     Boolean createBatch(@RequestBody List<PSSystemDBCfg> pssystemdbcfgs);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/{pssystemdbcfgid}")
-    PSSystemDBCfg update(@PathVariable("pssystemdbcfgid") String pssystemdbcfgid, @RequestBody PSSystemDBCfg et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/batch")
-    Boolean updateBatch(@RequestBody List<PSSystemDBCfg> pssystemdbcfgs);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/{pssystemdbcfgid}")
-    Boolean remove(@PathVariable("pssystemdbcfgid") String pssystemdbcfgid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/{pssystemdbcfgid}")
@@ -51,12 +33,36 @@ public interface PSSystemDBCfgFeignClient {
     String getByCodeName(@PathVariable("pssystemdbcfgid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/getdraft")
-    PSSystemDBCfg getDraft(PSSystemDBCfg entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/{pssystemdbcfgid}")
+    Boolean remove(@PathVariable("pssystemdbcfgid") String pssystemdbcfgid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/{pssystemdbcfgid}")
+    PSSystemDBCfg update(@PathVariable("pssystemdbcfgid") String pssystemdbcfgid, @RequestBody PSSystemDBCfg et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/batch")
+    Boolean updateBatch(@RequestBody List<PSSystemDBCfg> pssystemdbcfgs);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/checkkey")
     Boolean checkKey(@RequestBody PSSystemDBCfg et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/searchbuild")
+    Page<PSSystemDBCfg> searchBuild(@RequestBody PSSystemDBCfgSearchContext context);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/searchdefault")
+    Page<PSSystemDBCfg> searchDefault(@RequestBody PSSystemDBCfgSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/getdraft")
+    PSSystemDBCfg getDraft(PSSystemDBCfg entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/save")
@@ -68,14 +74,8 @@ public interface PSSystemDBCfgFeignClient {
     Boolean saveBatch(@RequestBody List<PSSystemDBCfg> pssystemdbcfgs);
 
 
-
-    @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/searchbuild")
-    Page<PSSystemDBCfg> searchBuild(@RequestBody PSSystemDBCfgSearchContext context);
-
-
-
-    @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/searchdefault")
-    Page<PSSystemDBCfg> searchDefault(@RequestBody PSSystemDBCfgSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/select")
+    Page<PSSystemDBCfg> select();
 
 
 }

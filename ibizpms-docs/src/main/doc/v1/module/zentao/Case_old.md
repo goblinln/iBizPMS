@@ -322,15 +322,15 @@ hide footbox
 {% plantuml %}
 hide footbox
 
-测试用例 -> 收藏: Create
 测试用例 -> 测试用例: 准备参数
+测试用例 -> 收藏: Create
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
-|1|Create |
-|1|开始 | 
-|2|准备参数 |
+|0|开始 | 
+|1|准备参数 |
+|2|Create |
 <center>用例收藏</center>
 * runCases (runCases)
   
@@ -339,15 +339,15 @@ hide footbox
 {% plantuml %}
 hide footbox
 
-测试用例 -> 测试用例: 执行测试
 测试用例 -> 测试用例: 准备参数
+测试用例 -> 测试用例: 执行测试
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
-|1|执行测试 |
-|1|开始 | 
-|2|准备参数 |
+|0|开始 | 
+|1|准备参数 |
+|2|执行测试 |
 <center>runCases</center>
 * testRunCases (testRunCases)
   
@@ -356,17 +356,17 @@ hide footbox
 {% plantuml %}
 hide footbox
 
+测试用例 -> 测试用例: 获取数据
 测试用例 -> 测试用例: 执行测试
 测试用例 -> 测试用例: 重置ID
-测试用例 -> 测试用例: 获取数据
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
-|1|执行测试 |
-|2|重置ID |
-|2|开始 | 
-|3|获取数据 |
+|0|开始 | 
+|1|获取数据 |
+|2|执行测试 |
+|3|重置ID |
 <center>testRunCases</center>
 * unlinkCases (unlinkCases)
   
@@ -375,17 +375,17 @@ hide footbox
 {% plantuml %}
 hide footbox
 
+测试用例 -> 测试用例: 获取数据
 测试用例 -> 测试用例: 重置ID
 测试用例 -> 测试用例: 处理移除接口
-测试用例 -> 测试用例: 获取数据
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
-|1|重置ID |
-|2|处理移除接口 |
-|2|开始 | 
-|3|获取数据 |
+|0|开始 | 
+|1|获取数据 |
+|2|重置ID |
+|3|处理移除接口 |
 <center>unlinkCases</center>
 * unlinkSuiteCases (unlinkSuiteCases)
   
@@ -394,15 +394,15 @@ hide footbox
 {% plantuml %}
 hide footbox
 
-测试用例 -> 测试用例: 移除用例
 测试用例 -> 测试用例: 准备参数
+测试用例 -> 测试用例: 移除用例
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
-|1|移除用例 |
-|1|开始 | 
-|2|准备参数 |
+|0|开始 | 
+|1|准备参数 |
+|2|移除用例 |
 <center>unlinkSuiteCases</center>
 
 ## 查询集合

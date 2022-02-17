@@ -5,19 +5,19 @@
             <tns:import name="java.util.Map" />
             <tns:import name="org.springframework.util.StringUtils"/>
             <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
-            <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.Module()" name="projectmoduleremovemodulemodule" type="refentity"/>
             <tns:metaData express="" name="projectmoduleremovemoduledefault" type="entity"/>
+            <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.Module()" name="projectmoduleremovemodulemodule" type="refentity"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.IModuleService))" name="moduleservice" type="service"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.ibiz.service.IProjectModuleService))" name="iBzSysProjectmoduleDefaultService" type="service"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
-        <tns:global identifier="projectmoduleremovemodulemodule" type="cn.ibizlab.pms.core.zentao.domain.Module" />
         <tns:global identifier="projectmoduleremovemoduledefault" type="cn.ibizlab.pms.core.ibiz.domain.ProjectModule" />
+        <tns:global identifier="projectmoduleremovemodulemodule" type="cn.ibizlab.pms.core.zentao.domain.Module" />
         </extensionElements>
+     <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectmoduleremovemoduleprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置模块参数"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectmoduleremovemoduledeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="模块删除"/>
      <endEvent id="deaction1_end" name="end"/>
      <sequenceFlow id="deaction1_end_line" sourceRef="deaction1" targetRef="deaction1_end"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="projectmoduleremovemoduleprepareparam1" id="prepareparam1" implementation="http://www.jboss.org/drools/rule" name="设置模块参数"/>
-     <startEvent id="begin" isInterrupting="true"/>
      <sequenceFlow id="begin_prepareparam1" sourceRef="begin" targetRef="prepareparam1">
      </sequenceFlow>
      <sequenceFlow id="prepareparam1_deaction1" sourceRef="prepareparam1" targetRef="deaction1">

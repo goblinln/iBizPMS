@@ -27,6 +27,7 @@ public interface TestTaskDataImport {
         @Mapping(target = "report", source = "report"),
         @Mapping(target = "status", source = "status"),
         @Mapping(target = "substatus", source = "substatus"),
+
     })
     @BeanMapping(ignoreByDefault = true)
     TestTask toDomain(TestTask entity);

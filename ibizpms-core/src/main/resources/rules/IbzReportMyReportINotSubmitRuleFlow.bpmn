@@ -10,14 +10,16 @@
             <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
         <tns:global identifier="ibzreportmyreportinotsubmitdefault" type="cn.ibizlab.pms.core.report.domain.IbzReport" />
         </extensionElements>
+     <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzreportmyreportinotsubmitrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="统计我未提交的周报"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzreportmyreportinotsubmitrawsqlcall4" id="rawsqlcall4" implementation="http://www.jboss.org/drools/rule" name="统计我未提交的汇报数"/>
      <endEvent id="rawsqlcall4_end" name="end"/>
      <sequenceFlow id="rawsqlcall4_end_line" sourceRef="rawsqlcall4" targetRef="rawsqlcall4_end"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzreportmyreportinotsubmitrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="统计我未提交的周报"/>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzreportmyreportinotsubmitmyunreadcnt" id="myunreadcnt" implementation="http://www.jboss.org/drools/rule" name="统计我收到的（未读）"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzreportmyreportinotsubmitrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="统计我未提交的月报"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzreportmyreportinotsubmitrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="统计我未提交的日报数"/>
-     <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzreportmyreportinotsubmitmyunreadcnt" id="myunreadcnt" implementation="http://www.jboss.org/drools/rule" name="统计我收到的（未读）"/>
+     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
+     </sequenceFlow>
      <sequenceFlow id="rawsqlcall2_rawsqlcall3" sourceRef="rawsqlcall2" targetRef="rawsqlcall3">
      </sequenceFlow>
      <sequenceFlow id="rawsqlcall3_myunreadcnt" sourceRef="rawsqlcall3" targetRef="myunreadcnt">
@@ -25,8 +27,6 @@
      <sequenceFlow id="rawsqlcall1_rawsqlcall2" sourceRef="rawsqlcall1" targetRef="rawsqlcall2">
      </sequenceFlow>
      <sequenceFlow id="myunreadcnt_rawsqlcall4" sourceRef="myunreadcnt" targetRef="rawsqlcall4">
-     </sequenceFlow>
-     <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
      </sequenceFlow>
     </process>
 </definitions>

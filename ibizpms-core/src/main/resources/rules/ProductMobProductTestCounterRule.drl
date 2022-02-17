@@ -37,14 +37,14 @@ ruleflow-group "productmobproducttestcounterrawsqlcall4"
     update(productmobproducttestcounterdefault);//更新fact中变量值
     end
 
-//逻辑处理节点[获取测试用例数]
-rule "rawsqlcall2"
-ruleflow-group "productmobproducttestcounterrawsqlcall2"
+//逻辑处理节点[获取相关bug数]
+rule "rawsqlcall1"
+ruleflow-group "productmobproducttestcounterrawsqlcall1"
     when
     then
     Map param =new HashMap();
     param.put("param0",productmobproducttestcounterdefault.get("id"));
-    String strSql="select count(t1.id) as CASECNT from zt_case t1 where t1.deleted = '0' and t1.product = #{et.param0}";
+    String strSql="select count(1) as RELATEDBUGCNT from zt_bug t where t.deleted = '0'  AND t.product = #{et.param0}";
     java.util.List<JSONObject> entities=iBzSysProductDefaultService.select(strSql,param);//SQL调用
     if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
         JSONObject entity=entities.get(0);
@@ -55,14 +55,14 @@ ruleflow-group "productmobproducttestcounterrawsqlcall2"
     update(productmobproducttestcounterdefault);//更新fact中变量值
     end
 
-//逻辑处理节点[获取相关bug数]
-rule "rawsqlcall1"
-ruleflow-group "productmobproducttestcounterrawsqlcall1"
+//逻辑处理节点[获取测试用例数]
+rule "rawsqlcall2"
+ruleflow-group "productmobproducttestcounterrawsqlcall2"
     when
     then
     Map param =new HashMap();
     param.put("param0",productmobproducttestcounterdefault.get("id"));
-    String strSql="select count(1) as RELATEDBUGCNT from zt_bug t where t.deleted = '0'  AND t.product = #{et.param0}";
+    String strSql="select count(t1.id) as CASECNT from zt_case t1 where t1.deleted = '0' and t1.product = #{et.param0}";
     java.util.List<JSONObject> entities=iBzSysProductDefaultService.select(strSql,param);//SQL调用
     if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
         JSONObject entity=entities.get(0);

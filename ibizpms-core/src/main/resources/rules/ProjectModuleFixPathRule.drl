@@ -5,8 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.util.StringUtils;
 import org.springframework.util.ObjectUtils;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
-global cn.ibizlab.pms.core.zentao.domain.Module projectmodulefixpathzt_module;
 global cn.ibizlab.pms.core.ibiz.domain.ProjectModule projectmodulefixpathdefault;
+global cn.ibizlab.pms.core.zentao.domain.Module projectmodulefixpathzt_module;
 global cn.ibizlab.pms.core.zentao.service.IModuleService moduleservice;
 global cn.ibizlab.pms.core.ibiz.service.IProjectModuleService iBzSysProjectmoduleDefaultService;
 global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
@@ -14,14 +14,21 @@ global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
 
 no-loop
 
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "projectmodulefixpathbegin"
+    when
+    then
+    end
+
 //逻辑处理节点[执行重建模块路径行为]
 rule "deaction1"
 ruleflow-group "projectmodulefixpathdeaction1"
     when
     then
     moduleservice.update(projectmodulefixpathzt_module);
-    update(projectmodulefixpathzt_module);//更新fact中变量值
     update(projectmodulefixpathdefault);//更新fact中变量值
+    update(projectmodulefixpathzt_module);//更新fact中变量值
     end
 
 //逻辑处理节点[准备参数]
@@ -39,14 +46,7 @@ ruleflow-group "projectmodulefixpathprepareparam1"
     projectmodulefixpathzt_module.set("root",projectmodulefixpathdefault.get("root"));
     projectmodulefixpathzt_module.set("ibizshort",projectmodulefixpathdefault.get("ibizshort"));
     projectmodulefixpathzt_module.set("type",projectmodulefixpathdefault.get("type"));
-    update(projectmodulefixpathzt_module);//更新fact中变量值
     update(projectmodulefixpathdefault);//更新fact中变量值
-    end
-
-//逻辑处理节点[开始]
-rule "begin"
-ruleflow-group "projectmodulefixpathbegin"
-    when
-    then
+    update(projectmodulefixpathzt_module);//更新fact中变量值
     end
 

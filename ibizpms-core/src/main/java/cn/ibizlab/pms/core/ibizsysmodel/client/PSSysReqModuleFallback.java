@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSSysReqModuleFallback implements PSSysReqModuleFeignClient {
 
-    public Page<PSSysReqModule> select() {
-        return null;
-    }
-
     public PSSysReqModule create(PSSysReqModule et) {
         return null;
     }
     public Boolean createBatch(List<PSSysReqModule> pssysreqmodules) {
-        return false;
-    }
-
-    public PSSysReqModule update(String pssysreqmoduleid, PSSysReqModule et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSSysReqModule> pssysreqmodules) {
-        return false;
-    }
-
-
-    public Boolean remove(String pssysreqmoduleid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class PSSysReqModuleFallback implements PSSysReqModuleFeignClient {
     }
 
 
-    public PSSysReqModule getDraft(PSSysReqModule entity){
-        return null;
+    public Boolean remove(String pssysreqmoduleid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSSysReqModule update(String pssysreqmoduleid, PSSysReqModule et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSSysReqModule> pssysreqmodules) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSSysReqModule et) {
         return false;
     }
+
+
+    public Page<PSSysReqModule> searchDefault(PSSysReqModuleSearchContext context) {
+        return null;
+    }
+
+
+    public PSSysReqModule getDraft(PSSysReqModule entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSSysReqModule et) {
@@ -76,9 +77,8 @@ public class PSSysReqModuleFallback implements PSSysReqModuleFeignClient {
         return false;
     }
 
-    public Page<PSSysReqModule> searchDefault(PSSysReqModuleSearchContext context) {
+    public Page<PSSysReqModule> select() {
         return null;
     }
-
 
 }

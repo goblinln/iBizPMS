@@ -263,15 +263,15 @@ Bug状态
 {% plantuml %}
 hide footbox
 
-Bug -> 收藏: 创建收藏信息
 Bug -> Bug: 设置收藏参数
+Bug -> 收藏: 创建收藏信息
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
-|1|创建收藏信息 |
-|1|开始 | 
-|2|设置收藏参数 |
+|0|开始 | 
+|1|设置收藏参数 |
+|2|创建收藏信息 |
 <center>Bug收藏</center>
 * Bug取消收藏 (BugNFavorites)
   
@@ -310,16 +310,16 @@ Bug -> Bug: 获取参数
 {% plantuml %}
 hide footbox
 
-Bug -> 模块: 获取模块详情
 Bug -> Bug: 设置模块参数
+Bug -> 模块: 获取模块详情
 模块 -> Bug: 设置bug平台值
 {% endplantuml %}
 
 | 步骤       | 操作        |
 | --------   | --------   |
-|1|获取模块详情 |
-|1|开始 | 
-|2|设置模块参数 |
+|0|开始 | 
+|1|设置模块参数 |
+|2|获取模块详情 |
 |3|设置bug平台值 |
 <center>获取模块的平台</center>
 * 获取产品 (GetProducts)

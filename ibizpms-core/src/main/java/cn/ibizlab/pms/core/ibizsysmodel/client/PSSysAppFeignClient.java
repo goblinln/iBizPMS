@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysApp", fallback = PSSysAppFallback.class)
 public interface PSSysAppFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/select")
-    Page<PSSysApp> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps")
     PSSysApp create(@RequestBody PSSysApp et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/batch")
     Boolean createBatch(@RequestBody List<PSSysApp> pssysapps);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/{pssysappid}")
-    PSSysApp update(@PathVariable("pssysappid") String pssysappid, @RequestBody PSSysApp et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/batch")
-    Boolean updateBatch(@RequestBody List<PSSysApp> pssysapps);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/{pssysappid}")
-    Boolean remove(@PathVariable("pssysappid") String pssysappid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/{pssysappid}")
@@ -51,12 +33,36 @@ public interface PSSysAppFeignClient {
     String getByCodeName(@PathVariable("pssysappid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/getdraft")
-    PSSysApp getDraft(PSSysApp entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/{pssysappid}")
+    Boolean remove(@PathVariable("pssysappid") String pssysappid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssysapps/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/{pssysappid}")
+    PSSysApp update(@PathVariable("pssysappid") String pssysappid, @RequestBody PSSysApp et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssysapps/batch")
+    Boolean updateBatch(@RequestBody List<PSSysApp> pssysapps);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/checkkey")
     Boolean checkKey(@RequestBody PSSysApp et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/searchbuild")
+    Page<PSSysApp> searchBuild(@RequestBody PSSysAppSearchContext context);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/searchdefault")
+    Page<PSSysApp> searchDefault(@RequestBody PSSysAppSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/getdraft")
+    PSSysApp getDraft(PSSysApp entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/save")
@@ -68,14 +74,8 @@ public interface PSSysAppFeignClient {
     Boolean saveBatch(@RequestBody List<PSSysApp> pssysapps);
 
 
-
-    @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/searchbuild")
-    Page<PSSysApp> searchBuild(@RequestBody PSSysAppSearchContext context);
-
-
-
-    @RequestMapping(method = RequestMethod.POST, value = "/pssysapps/searchdefault")
-    Page<PSSysApp> searchDefault(@RequestBody PSSysAppSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/select")
+    Page<PSSysApp> select();
 
 
 }

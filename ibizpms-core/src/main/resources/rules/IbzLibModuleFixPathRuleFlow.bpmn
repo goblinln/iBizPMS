@@ -5,13 +5,13 @@
             <tns:import name="java.util.Map" />
             <tns:import name="org.springframework.util.StringUtils"/>
             <tns:import name="cn.ibizlab.pms.util.helper.RuleUtils"/>
-            <tns:metaData express="" name="ibzlibmodulefixpathdefault" type="entity"/>
             <tns:metaData express="new cn.ibizlab.pms.core.zentao.domain.Module()" name="ibzlibmodulefixpathzt_module" type="refentity"/>
+            <tns:metaData express="" name="ibzlibmodulefixpathdefault" type="entity"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.zentao.service.IModuleService))" name="moduleservice" type="service"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.SpringContextHolder).getBean(T(cn.ibizlab.pms.core.ibiz.service.IIbzLibModuleService))" name="iBzSysIbzlibmoduleDefaultService" type="service"/>
             <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
-        <tns:global identifier="ibzlibmodulefixpathdefault" type="cn.ibizlab.pms.core.ibiz.domain.IbzLibModule" />
         <tns:global identifier="ibzlibmodulefixpathzt_module" type="cn.ibizlab.pms.core.zentao.domain.Module" />
+        <tns:global identifier="ibzlibmodulefixpathdefault" type="cn.ibizlab.pms.core.ibiz.domain.IbzLibModule" />
         </extensionElements>
      <startEvent id="begin" isInterrupting="true"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ibzlibmodulefixpathdeaction1" id="deaction1" implementation="http://www.jboss.org/drools/rule" name="执行重建模块路径行为"/>

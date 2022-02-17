@@ -10,12 +10,12 @@
             <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
         <tns:global identifier="productmobproductcounterdefault" type="cn.ibizlab.pms.core.zentao.domain.Product" />
         </extensionElements>
-     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productmobproductcounterrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="计划数"/>
+     <startEvent id="begin" isInterrupting="true"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productmobproductcounterrawsqlcall4" id="rawsqlcall4" implementation="http://www.jboss.org/drools/rule" name="发布数"/>
      <endEvent id="rawsqlcall4_end" name="end"/>
      <sequenceFlow id="rawsqlcall4_end_line" sourceRef="rawsqlcall4" targetRef="rawsqlcall4_end"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productmobproductcounterrawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取相关BUG数"/>
-     <startEvent id="begin" isInterrupting="true"/>
+     <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productmobproductcounterrawsqlcall3" id="rawsqlcall3" implementation="http://www.jboss.org/drools/rule" name="计划数"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productmobproductcounterrawsqlcall2" id="rawsqlcall2" implementation="http://www.jboss.org/drools/rule" name="获取需求数"/>
      <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
      </sequenceFlow>

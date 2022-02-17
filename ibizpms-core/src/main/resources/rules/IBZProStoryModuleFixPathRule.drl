@@ -21,6 +21,16 @@ ruleflow-group "ibzprostorymodulefixpathbegin"
     then
     end
 
+//逻辑处理节点[执行重建模块路径行为]
+rule "deaction1"
+ruleflow-group "ibzprostorymodulefixpathdeaction1"
+    when
+    then
+    moduleservice.update(ibzprostorymodulefixpathzt_module);
+    update(ibzprostorymodulefixpathdefault);//更新fact中变量值
+    update(ibzprostorymodulefixpathzt_module);//更新fact中变量值
+    end
+
 //逻辑处理节点[准备参数]
 rule "prepareparam1"
 ruleflow-group "ibzprostorymodulefixpathprepareparam1"
@@ -34,16 +44,6 @@ ruleflow-group "ibzprostorymodulefixpathprepareparam1"
     ibzprostorymodulefixpathzt_module.set("root",ibzprostorymodulefixpathdefault.get("root"));
     ibzprostorymodulefixpathzt_module.set("ibizshort",ibzprostorymodulefixpathdefault.get("ibizshort"));
     ibzprostorymodulefixpathzt_module.set("type",ibzprostorymodulefixpathdefault.get("type"));
-    update(ibzprostorymodulefixpathdefault);//更新fact中变量值
-    update(ibzprostorymodulefixpathzt_module);//更新fact中变量值
-    end
-
-//逻辑处理节点[执行重建模块路径行为]
-rule "deaction1"
-ruleflow-group "ibzprostorymodulefixpathdeaction1"
-    when
-    then
-    moduleservice.update(ibzprostorymodulefixpathzt_module);
     update(ibzprostorymodulefixpathdefault);//更新fact中变量值
     update(ibzprostorymodulefixpathzt_module);//更新fact中变量值
     end

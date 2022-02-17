@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 @FeignClient(value = "${ibiz.ref.service.ibzou-api:ibzou-api}", contextId = "SysPost", fallback = SysPostFallback.class)
 public interface SysPostFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysposts/select")
-    Page<SysPost> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts")
     SysPost create(@RequestBody SysPost et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts/batch")
     Boolean createBatch(@RequestBody List<SysPost> sysposts);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/sysposts/{postid}")
-    SysPost update(@PathVariable("postid") String postid, @RequestBody SysPost et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/sysposts/batch")
-    Boolean updateBatch(@RequestBody List<SysPost> sysposts);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/{postid}")
-    Boolean remove(@PathVariable("postid") String postid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysposts/{postid}")
@@ -51,12 +33,31 @@ public interface SysPostFeignClient {
     String getByCodeName(@PathVariable("postid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysposts/getdraft")
-    SysPost getDraft(SysPost entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/{postid}")
+    Boolean remove(@PathVariable("postid") String postid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/sysposts/{postid}")
+    SysPost update(@PathVariable("postid") String postid, @RequestBody SysPost et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/sysposts/batch")
+    Boolean updateBatch(@RequestBody List<SysPost> sysposts);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts/checkkey")
     Boolean checkKey(@RequestBody SysPost et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/sysposts/searchdefault")
+    Page<SysPost> searchDefault(@RequestBody SysPostSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/sysposts/getdraft")
+    SysPost getDraft(SysPost entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysposts/save")
@@ -68,9 +69,8 @@ public interface SysPostFeignClient {
     Boolean saveBatch(@RequestBody List<SysPost> sysposts);
 
 
-
-    @RequestMapping(method = RequestMethod.POST, value = "/sysposts/searchdefault")
-    Page<SysPost> searchDefault(@RequestBody SysPostSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/sysposts/select")
+    Page<SysPost> select();
 
 
 }

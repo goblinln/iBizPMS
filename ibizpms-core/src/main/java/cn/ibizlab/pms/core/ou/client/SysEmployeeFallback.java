@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SysEmployeeFallback implements SysEmployeeFeignClient {
 
-    public Page<SysEmployee> select() {
-        return null;
-    }
-
     public SysEmployee create(SysEmployee et) {
         return null;
     }
     public Boolean createBatch(List<SysEmployee> sysemployees) {
-        return false;
-    }
-
-    public SysEmployee update(String userid, SysEmployee et) {
-        return null;
-    }
-    public Boolean updateBatch(List<SysEmployee> sysemployees) {
-        return false;
-    }
-
-
-    public Boolean remove(String userid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,26 +36,25 @@ public class SysEmployeeFallback implements SysEmployeeFeignClient {
     }
 
 
-    public SysEmployee getDraft(SysEmployee entity){
-        return null;
+    public Boolean remove(String userid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public SysEmployee update(String userid, SysEmployee et) {
+        return null;
+    }
+    public Boolean updateBatch(List<SysEmployee> sysemployees) {
+        return false;
+    }
 
 
     public Boolean checkKey(SysEmployee et) {
         return false;
     }
 
-
-    public Object saveEntity(SysEmployee et) {
-        return null;
-    }
-    public Boolean save(SysEmployee et) {
-        return false;
-    }
-    public Boolean saveBatch(List<SysEmployee> sysemployees) {
-        return false;
-    }
 
     public Page<SysEmployee> searchBugUser(SysEmployeeSearchContext context) {
         return null;
@@ -106,6 +86,11 @@ public class SysEmployeeFallback implements SysEmployeeFeignClient {
     }
 
 
+    public Page<SysEmployee> searchProjectteamPk(SysEmployeeSearchContext context) {
+        return null;
+    }
+
+
     public Page<SysEmployee> searchProjectTeamTaskUserTemp(SysEmployeeSearchContext context) {
         return null;
     }
@@ -117,11 +102,6 @@ public class SysEmployeeFallback implements SysEmployeeFeignClient {
 
 
     public Page<SysEmployee> searchProjectTeamUserTask(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchProjectteamPk(SysEmployeeSearchContext context) {
         return null;
     }
 
@@ -140,5 +120,25 @@ public class SysEmployeeFallback implements SysEmployeeFeignClient {
         return null;
     }
 
+
+    public SysEmployee getDraft(SysEmployee entity){
+        return null;
+    }
+
+
+
+    public Object saveEntity(SysEmployee et) {
+        return null;
+    }
+    public Boolean save(SysEmployee et) {
+        return false;
+    }
+    public Boolean saveBatch(List<SysEmployee> sysemployees) {
+        return false;
+    }
+
+    public Page<SysEmployee> select() {
+        return null;
+    }
 
 }

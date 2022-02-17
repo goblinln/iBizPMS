@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class IBIZProKeywordFallback implements IBIZProKeywordFeignClient {
 
-    public Page<IBIZProKeyword> select() {
-        return null;
-    }
-
     public IBIZProKeyword create(IBIZProKeyword et) {
         return null;
     }
     public Boolean createBatch(List<IBIZProKeyword> ibizprokeywords) {
-        return false;
-    }
-
-    public IBIZProKeyword update(String id, IBIZProKeyword et) {
-        return null;
-    }
-    public Boolean updateBatch(List<IBIZProKeyword> ibizprokeywords) {
-        return false;
-    }
-
-
-    public Boolean remove(String id) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class IBIZProKeywordFallback implements IBIZProKeywordFeignClient {
     }
 
 
-    public IBIZProKeyword getDraft(IBIZProKeyword entity){
-        return null;
+    public Boolean remove(String id) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public IBIZProKeyword update(String id, IBIZProKeyword et) {
+        return null;
+    }
+    public Boolean updateBatch(List<IBIZProKeyword> ibizprokeywords) {
+        return false;
+    }
 
 
     public Boolean checkKey(IBIZProKeyword et) {
         return false;
     }
+
+
+    public Page<IBIZProKeyword> searchDefault(IBIZProKeywordSearchContext context) {
+        return null;
+    }
+
+
+    public IBIZProKeyword getDraft(IBIZProKeyword entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(IBIZProKeyword et) {
@@ -76,9 +77,8 @@ public class IBIZProKeywordFallback implements IBIZProKeywordFeignClient {
         return false;
     }
 
-    public Page<IBIZProKeyword> searchDefault(IBIZProKeywordSearchContext context) {
+    public Page<IBIZProKeyword> select() {
         return null;
     }
-
 
 }

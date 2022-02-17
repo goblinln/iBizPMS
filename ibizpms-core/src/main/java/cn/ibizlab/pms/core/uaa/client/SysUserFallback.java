@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SysUserFallback implements SysUserFeignClient {
 
-    public Page<SysUser> select() {
-        return null;
-    }
-
     public SysUser create(SysUser et) {
         return null;
     }
     public Boolean createBatch(List<SysUser> sysusers) {
-        return false;
-    }
-
-    public SysUser update(String userid, SysUser et) {
-        return null;
-    }
-    public Boolean updateBatch(List<SysUser> sysusers) {
-        return false;
-    }
-
-
-    public Boolean remove(String userid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,10 +36,19 @@ public class SysUserFallback implements SysUserFeignClient {
     }
 
 
-    public SysUser getDraft(SysUser entity){
-        return null;
+    public Boolean remove(String userid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public SysUser update(String userid, SysUser et) {
+        return null;
+    }
+    public Boolean updateBatch(List<SysUser> sysusers) {
+        return false;
+    }
 
 
     public SysUser changePwd( String userid, SysUser et) {
@@ -68,6 +58,17 @@ public class SysUserFallback implements SysUserFeignClient {
     public Boolean checkKey(SysUser et) {
         return false;
     }
+
+
+    public Page<SysUser> searchDefault(SysUserSearchContext context) {
+        return null;
+    }
+
+
+    public SysUser getDraft(SysUser entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(SysUser et) {
@@ -80,9 +81,8 @@ public class SysUserFallback implements SysUserFeignClient {
         return false;
     }
 
-    public Page<SysUser> searchDefault(SysUserSearchContext context) {
+    public Page<SysUser> select() {
         return null;
     }
-
 
 }

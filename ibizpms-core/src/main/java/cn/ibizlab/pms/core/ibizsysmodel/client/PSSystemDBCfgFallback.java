@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSSystemDBCfgFallback implements PSSystemDBCfgFeignClient {
 
-    public Page<PSSystemDBCfg> select() {
-        return null;
-    }
-
     public PSSystemDBCfg create(PSSystemDBCfg et) {
         return null;
     }
     public Boolean createBatch(List<PSSystemDBCfg> pssystemdbcfgs) {
-        return false;
-    }
-
-    public PSSystemDBCfg update(String pssystemdbcfgid, PSSystemDBCfg et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSSystemDBCfg> pssystemdbcfgs) {
-        return false;
-    }
-
-
-    public Boolean remove(String pssystemdbcfgid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,40 @@ public class PSSystemDBCfgFallback implements PSSystemDBCfgFeignClient {
     }
 
 
-    public PSSystemDBCfg getDraft(PSSystemDBCfg entity){
-        return null;
+    public Boolean remove(String pssystemdbcfgid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSSystemDBCfg update(String pssystemdbcfgid, PSSystemDBCfg et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSSystemDBCfg> pssystemdbcfgs) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSSystemDBCfg et) {
         return false;
     }
+
+
+    public Page<PSSystemDBCfg> searchBuild(PSSystemDBCfgSearchContext context) {
+        return null;
+    }
+
+
+    public Page<PSSystemDBCfg> searchDefault(PSSystemDBCfgSearchContext context) {
+        return null;
+    }
+
+
+    public PSSystemDBCfg getDraft(PSSystemDBCfg entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSSystemDBCfg et) {
@@ -76,14 +82,8 @@ public class PSSystemDBCfgFallback implements PSSystemDBCfgFeignClient {
         return false;
     }
 
-    public Page<PSSystemDBCfg> searchBuild(PSSystemDBCfgSearchContext context) {
+    public Page<PSSystemDBCfg> select() {
         return null;
     }
-
-
-    public Page<PSSystemDBCfg> searchDefault(PSSystemDBCfgSearchContext context) {
-        return null;
-    }
-
 
 }

@@ -42,7 +42,7 @@
       cd ibizpms-provider/ibizpms-provider-webapi
       mvn -Pwebapi docker:build
       mvn -Pwebapi docker:push
-      docker -H $para1 stack deploy --compose-file=src/main/docker/ibizpms-provider-webapi.yaml iBizEE --with-registry-auth      
+      docker -H $para1 stack deploy --compose-file=src/main/docker/ibizpms-provider-webapi.yaml iBizDemo --with-registry-auth      
       </command>
     </hudson.tasks.Shell>
   </builders>

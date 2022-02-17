@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class IBIZProMessageFallback implements IBIZProMessageFeignClient {
 
-    public Page<IBIZProMessage> select() {
-        return null;
-    }
-
     public IBIZProMessage create(IBIZProMessage et) {
         return null;
     }
     public Boolean createBatch(List<IBIZProMessage> ibizpromessages) {
-        return false;
-    }
-
-    public IBIZProMessage update(String ibizpromessageid, IBIZProMessage et) {
-        return null;
-    }
-    public Boolean updateBatch(List<IBIZProMessage> ibizpromessages) {
-        return false;
-    }
-
-
-    public Boolean remove(String ibizpromessageid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,45 @@ public class IBIZProMessageFallback implements IBIZProMessageFeignClient {
     }
 
 
-    public IBIZProMessage getDraft(IBIZProMessage entity){
-        return null;
+    public Boolean remove(String ibizpromessageid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public IBIZProMessage update(String ibizpromessageid, IBIZProMessage et) {
+        return null;
+    }
+    public Boolean updateBatch(List<IBIZProMessage> ibizpromessages) {
+        return false;
+    }
 
 
     public Boolean checkKey(IBIZProMessage et) {
         return false;
     }
+
+
+    public Page<IBIZProMessage> searchDefault(IBIZProMessageSearchContext context) {
+        return null;
+    }
+
+
+    public Page<IBIZProMessage> searchUserAllMessages(IBIZProMessageSearchContext context) {
+        return null;
+    }
+
+
+    public Page<IBIZProMessage> searchUserUnreadMessages(IBIZProMessageSearchContext context) {
+        return null;
+    }
+
+
+    public IBIZProMessage getDraft(IBIZProMessage entity){
+        return null;
+    }
+
 
 
     public IBIZProMessage markDone( String ibizpromessageid, IBIZProMessage et) {
@@ -84,23 +95,12 @@ public class IBIZProMessageFallback implements IBIZProMessageFeignClient {
         return false;
     }
 
+    public Page<IBIZProMessage> select() {
+        return null;
+    }
+
     public IBIZProMessage send( String ibizpromessageid, IBIZProMessage et) {
         return null;
     }
-
-    public Page<IBIZProMessage> searchDefault(IBIZProMessageSearchContext context) {
-        return null;
-    }
-
-
-    public Page<IBIZProMessage> searchUserAllMessages(IBIZProMessageSearchContext context) {
-        return null;
-    }
-
-
-    public Page<IBIZProMessage> searchUserUnreadMessages(IBIZProMessageSearchContext context) {
-        return null;
-    }
-
 
 }

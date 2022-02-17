@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSSysSFPubFallback implements PSSysSFPubFeignClient {
 
-    public Page<PSSysSFPub> select() {
-        return null;
-    }
-
     public PSSysSFPub create(PSSysSFPub et) {
         return null;
     }
     public Boolean createBatch(List<PSSysSFPub> pssyssfpubs) {
-        return false;
-    }
-
-    public PSSysSFPub update(String pssyssfpubid, PSSysSFPub et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSSysSFPub> pssyssfpubs) {
-        return false;
-    }
-
-
-    public Boolean remove(String pssyssfpubid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,40 @@ public class PSSysSFPubFallback implements PSSysSFPubFeignClient {
     }
 
 
-    public PSSysSFPub getDraft(PSSysSFPub entity){
-        return null;
+    public Boolean remove(String pssyssfpubid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSSysSFPub update(String pssyssfpubid, PSSysSFPub et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSSysSFPub> pssyssfpubs) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSSysSFPub et) {
         return false;
     }
+
+
+    public Page<PSSysSFPub> searchBuild(PSSysSFPubSearchContext context) {
+        return null;
+    }
+
+
+    public Page<PSSysSFPub> searchDefault(PSSysSFPubSearchContext context) {
+        return null;
+    }
+
+
+    public PSSysSFPub getDraft(PSSysSFPub entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSSysSFPub et) {
@@ -76,14 +82,8 @@ public class PSSysSFPubFallback implements PSSysSFPubFeignClient {
         return false;
     }
 
-    public Page<PSSysSFPub> searchBuild(PSSysSFPubSearchContext context) {
+    public Page<PSSysSFPub> select() {
         return null;
     }
-
-
-    public Page<PSSysSFPub> searchDefault(PSSysSFPubSearchContext context) {
-        return null;
-    }
-
 
 }

@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSDEField", fallback = PSDEFieldFallback.class)
 public interface PSDEFieldFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/psdefields/select")
-    Page<PSDEField> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields")
     PSDEField create(@RequestBody PSDEField et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields/batch")
     Boolean createBatch(@RequestBody List<PSDEField> psdefields);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/psdefields/{psdefieldid}")
-    PSDEField update(@PathVariable("psdefieldid") String psdefieldid, @RequestBody PSDEField et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/psdefields/batch")
-    Boolean updateBatch(@RequestBody List<PSDEField> psdefields);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/psdefields/{psdefieldid}")
-    Boolean remove(@PathVariable("psdefieldid") String psdefieldid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/psdefields/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/psdefields/{psdefieldid}")
@@ -51,12 +33,31 @@ public interface PSDEFieldFeignClient {
     String getByCodeName(@PathVariable("psdefieldid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/psdefields/getdraft")
-    PSDEField getDraft(PSDEField entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/psdefields/{psdefieldid}")
+    Boolean remove(@PathVariable("psdefieldid") String psdefieldid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/psdefields/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/psdefields/{psdefieldid}")
+    PSDEField update(@PathVariable("psdefieldid") String psdefieldid, @RequestBody PSDEField et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/psdefields/batch")
+    Boolean updateBatch(@RequestBody List<PSDEField> psdefields);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields/checkkey")
     Boolean checkKey(@RequestBody PSDEField et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/psdefields/searchdefault")
+    Page<PSDEField> searchDefault(@RequestBody PSDEFieldSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/psdefields/getdraft")
+    PSDEField getDraft(PSDEField entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/psdefields/save")
@@ -68,9 +69,8 @@ public interface PSDEFieldFeignClient {
     Boolean saveBatch(@RequestBody List<PSDEField> psdefields);
 
 
-
-    @RequestMapping(method = RequestMethod.POST, value = "/psdefields/searchdefault")
-    Page<PSDEField> searchDefault(@RequestBody PSDEFieldSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/psdefields/select")
+    Page<PSDEField> select();
 
 
 }

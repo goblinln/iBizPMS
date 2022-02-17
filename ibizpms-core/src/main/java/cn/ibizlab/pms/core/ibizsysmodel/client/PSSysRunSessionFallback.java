@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSSysRunSessionFallback implements PSSysRunSessionFeignClient {
 
-    public Page<PSSysRunSession> select() {
-        return null;
-    }
-
     public PSSysRunSession create(PSSysRunSession et) {
         return null;
     }
     public Boolean createBatch(List<PSSysRunSession> pssysrunsessions) {
-        return false;
-    }
-
-    public PSSysRunSession update(String pssysrunsessionid, PSSysRunSession et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSSysRunSession> pssysrunsessions) {
-        return false;
-    }
-
-
-    public Boolean remove(String pssysrunsessionid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class PSSysRunSessionFallback implements PSSysRunSessionFeignClient {
     }
 
 
-    public PSSysRunSession getDraft(PSSysRunSession entity){
-        return null;
+    public Boolean remove(String pssysrunsessionid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSSysRunSession update(String pssysrunsessionid, PSSysRunSession et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSSysRunSession> pssysrunsessions) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSSysRunSession et) {
         return false;
     }
+
+
+    public Page<PSSysRunSession> searchDefault(PSSysRunSessionSearchContext context) {
+        return null;
+    }
+
+
+    public PSSysRunSession getDraft(PSSysRunSession entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSSysRunSession et) {
@@ -76,9 +77,8 @@ public class PSSysRunSessionFallback implements PSSysRunSessionFeignClient {
         return false;
     }
 
-    public Page<PSSysRunSession> searchDefault(PSSysRunSessionSearchContext context) {
+    public Page<PSSysRunSession> select() {
         return null;
     }
-
 
 }

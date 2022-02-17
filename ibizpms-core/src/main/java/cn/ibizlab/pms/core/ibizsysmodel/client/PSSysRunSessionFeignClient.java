@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysRunSession", fallback = PSSysRunSessionFallback.class)
 public interface PSSysRunSessionFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/select")
-    Page<PSSysRunSession> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions")
     PSSysRunSession create(@RequestBody PSSysRunSession et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/batch")
     Boolean createBatch(@RequestBody List<PSSysRunSession> pssysrunsessions);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssysrunsessions/{pssysrunsessionid}")
-    PSSysRunSession update(@PathVariable("pssysrunsessionid") String pssysrunsessionid, @RequestBody PSSysRunSession et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssysrunsessions/batch")
-    Boolean updateBatch(@RequestBody List<PSSysRunSession> pssysrunsessions);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssysrunsessions/{pssysrunsessionid}")
-    Boolean remove(@PathVariable("pssysrunsessionid") String pssysrunsessionid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssysrunsessions/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/{pssysrunsessionid}")
@@ -51,12 +33,31 @@ public interface PSSysRunSessionFeignClient {
     String getByCodeName(@PathVariable("pssysrunsessionid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/getdraft")
-    PSSysRunSession getDraft(PSSysRunSession entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssysrunsessions/{pssysrunsessionid}")
+    Boolean remove(@PathVariable("pssysrunsessionid") String pssysrunsessionid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssysrunsessions/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssysrunsessions/{pssysrunsessionid}")
+    PSSysRunSession update(@PathVariable("pssysrunsessionid") String pssysrunsessionid, @RequestBody PSSysRunSession et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssysrunsessions/batch")
+    Boolean updateBatch(@RequestBody List<PSSysRunSession> pssysrunsessions);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/checkkey")
     Boolean checkKey(@RequestBody PSSysRunSession et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/searchdefault")
+    Page<PSSysRunSession> searchDefault(@RequestBody PSSysRunSessionSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/getdraft")
+    PSSysRunSession getDraft(PSSysRunSession entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/save")
@@ -68,9 +69,8 @@ public interface PSSysRunSessionFeignClient {
     Boolean saveBatch(@RequestBody List<PSSysRunSession> pssysrunsessions);
 
 
-
-    @RequestMapping(method = RequestMethod.POST, value = "/pssysrunsessions/searchdefault")
-    Page<PSSysRunSession> searchDefault(@RequestBody PSSysRunSessionSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/select")
+    Page<PSSysRunSession> select();
 
 
 }

@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSDEFieldFallback implements PSDEFieldFeignClient {
 
-    public Page<PSDEField> select() {
-        return null;
-    }
-
     public PSDEField create(PSDEField et) {
         return null;
     }
     public Boolean createBatch(List<PSDEField> psdefields) {
-        return false;
-    }
-
-    public PSDEField update(String psdefieldid, PSDEField et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSDEField> psdefields) {
-        return false;
-    }
-
-
-    public Boolean remove(String psdefieldid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class PSDEFieldFallback implements PSDEFieldFeignClient {
     }
 
 
-    public PSDEField getDraft(PSDEField entity){
-        return null;
+    public Boolean remove(String psdefieldid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSDEField update(String psdefieldid, PSDEField et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSDEField> psdefields) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSDEField et) {
         return false;
     }
+
+
+    public Page<PSDEField> searchDefault(PSDEFieldSearchContext context) {
+        return null;
+    }
+
+
+    public PSDEField getDraft(PSDEField entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSDEField et) {
@@ -76,9 +77,8 @@ public class PSDEFieldFallback implements PSDEFieldFeignClient {
         return false;
     }
 
-    public Page<PSDEField> searchDefault(PSDEFieldSearchContext context) {
+    public Page<PSDEField> select() {
         return null;
     }
-
 
 }

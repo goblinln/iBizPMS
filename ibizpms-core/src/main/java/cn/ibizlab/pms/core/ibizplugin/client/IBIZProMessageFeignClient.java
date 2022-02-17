@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 @FeignClient(value = "${ibiz.ref.service.pmspro-pluginserviceapi:pmspro-pluginserviceapi}", contextId = "IBIZProMessage", fallback = IBIZProMessageFallback.class)
 public interface IBIZProMessageFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/select")
-    Page<IBIZProMessage> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages")
     IBIZProMessage create(@RequestBody IBIZProMessage et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/batch")
     Boolean createBatch(@RequestBody List<IBIZProMessage> ibizpromessages);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/{ibizpromessageid}")
-    IBIZProMessage update(@PathVariable("ibizpromessageid") String ibizpromessageid, @RequestBody IBIZProMessage et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/batch")
-    Boolean updateBatch(@RequestBody List<IBIZProMessage> ibizpromessages);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/{ibizpromessageid}")
-    Boolean remove(@PathVariable("ibizpromessageid") String ibizpromessageid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/{ibizpromessageid}")
@@ -51,12 +33,41 @@ public interface IBIZProMessageFeignClient {
     String getByCodeName(@PathVariable("ibizpromessageid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/getdraft")
-    IBIZProMessage getDraft(IBIZProMessage entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/{ibizpromessageid}")
+    Boolean remove(@PathVariable("ibizpromessageid") String ibizpromessageid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/{ibizpromessageid}")
+    IBIZProMessage update(@PathVariable("ibizpromessageid") String ibizpromessageid, @RequestBody IBIZProMessage et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/batch")
+    Boolean updateBatch(@RequestBody List<IBIZProMessage> ibizpromessages);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/checkkey")
     Boolean checkKey(@RequestBody IBIZProMessage et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/searchdefault")
+    Page<IBIZProMessage> searchDefault(@RequestBody IBIZProMessageSearchContext context);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/searchuserallmessages")
+    Page<IBIZProMessage> searchUserAllMessages(@RequestBody IBIZProMessageSearchContext context);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/searchuserunreadmessages")
+    Page<IBIZProMessage> searchUserUnreadMessages(@RequestBody IBIZProMessageSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/getdraft")
+    IBIZProMessage getDraft(IBIZProMessage entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/{ibizpromessageid}/markdone")
@@ -76,23 +87,12 @@ public interface IBIZProMessageFeignClient {
     Boolean saveBatch(@RequestBody List<IBIZProMessage> ibizpromessages);
 
 
+    @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/select")
+    Page<IBIZProMessage> select();
+
+
     @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/{ibizpromessageid}/send")
     IBIZProMessage send(@PathVariable("ibizpromessageid") String ibizpromessageid, @RequestBody IBIZProMessage et);
-
-
-
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/searchdefault")
-    Page<IBIZProMessage> searchDefault(@RequestBody IBIZProMessageSearchContext context);
-
-
-
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/searchuserallmessages")
-    Page<IBIZProMessage> searchUserAllMessages(@RequestBody IBIZProMessageSearchContext context);
-
-
-
-    @RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/searchuserunreadmessages")
-    Page<IBIZProMessage> searchUserUnreadMessages(@RequestBody IBIZProMessageSearchContext context);
 
 
 }

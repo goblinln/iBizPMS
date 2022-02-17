@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 @FeignClient(value = "${ibiz.ref.service.ibzuaa-api:ibzuaa-api}", contextId = "SysUser", fallback = SysUserFallback.class)
 public interface SysUserFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/select")
-    Page<SysUser> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers")
     SysUser create(@RequestBody SysUser et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/batch")
     Boolean createBatch(@RequestBody List<SysUser> sysusers);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/sysusers/{userid}")
-    SysUser update(@PathVariable("userid") String userid, @RequestBody SysUser et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/sysusers/batch")
-    Boolean updateBatch(@RequestBody List<SysUser> sysusers);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/sysusers/{userid}")
-    Boolean remove(@PathVariable("userid") String userid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/sysusers/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysusers/{userid}")
@@ -51,8 +33,18 @@ public interface SysUserFeignClient {
     String getByCodeName(@PathVariable("userid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/getdraft")
-    SysUser getDraft(SysUser entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/sysusers/{userid}")
+    Boolean remove(@PathVariable("userid") String userid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/sysusers/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/sysusers/{userid}")
+    SysUser update(@PathVariable("userid") String userid, @RequestBody SysUser et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/sysusers/batch")
+    Boolean updateBatch(@RequestBody List<SysUser> sysusers);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/{userid}/changepwd")
@@ -61,6 +53,15 @@ public interface SysUserFeignClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/checkkey")
     Boolean checkKey(@RequestBody SysUser et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/sysusers/searchdefault")
+    Page<SysUser> searchDefault(@RequestBody SysUserSearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/getdraft")
+    SysUser getDraft(SysUser entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/save")
@@ -72,9 +73,8 @@ public interface SysUserFeignClient {
     Boolean saveBatch(@RequestBody List<SysUser> sysusers);
 
 
-
-    @RequestMapping(method = RequestMethod.POST, value = "/sysusers/searchdefault")
-    Page<SysUser> searchDefault(@RequestBody SysUserSearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/select")
+    Page<SysUser> select();
 
 
 }

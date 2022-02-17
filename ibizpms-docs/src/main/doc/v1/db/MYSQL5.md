@@ -6,9 +6,9 @@
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
-| EVALUATIONCOST        | 评估成本  | DOUBLE      |   2   | &nbsp; |
 | DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| EVALUATIONCOST        | 评估成本  | DOUBLE      |   2   | &nbsp; |
+| INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
 
 
 
@@ -1848,28 +1848,28 @@ CREATE TABLE `zt_taskestimate`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| OBJECTID        | 对象ID  |       |   -1   | &nbsp; |
+| ACTION        | 动作  | VARCHAR      |   30   | &nbsp; |
+| ACTIONMANNER        | 操作方式  | VARCHAR      |   200   | &nbsp; |
+| ACTOR        | 操作者  | VARCHAR      |   100   | &nbsp; |
 | COMMENT        | 备注  | CLOB      |   65,535   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| DATE1        | 显示日期  | VARCHAR      |   200   | &nbsp; |
+| EXTRA        | 附加值  | CLOB      |   65,535   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| ISACTORSS        | 当前用户  |       |   -1   | &nbsp; |
+| LASTCOMMENT        | 备注  | VARCHAR      |   200   | &nbsp; |
+| LASTMONTH        | 上月  | VARCHAR      |   200   | &nbsp; |
+| LASTWEEK        | 上周  | VARCHAR      |   200   | &nbsp; |
+| OBJECTID        | 对象ID  |       |   -1   | &nbsp; |
+| OBJECTTYPE        | 对象类型  | VARCHAR      |   30   | &nbsp; |
+| PRODUCT        | 产品  | VARCHAR      |   255   | &nbsp; |
+| PROJECT        | 项目  |       |   9   | &nbsp; |
 | READ        | 已读  | VARCHAR      |   1   | &nbsp; |
 | SRFKEY        | 前端键值  |       |   -1   | &nbsp; |
 | THISMONTH        | 本月  | VARCHAR      |   200   | &nbsp; |
-| YESTERDAY        | 昨天  | VARCHAR      |   200   | &nbsp; |
-| ISACTORSS        | 当前用户  |       |   -1   | &nbsp; |
-| PROJECT        | 项目  |       |   9   | &nbsp; |
-| ACTOR        | 操作者  | VARCHAR      |   100   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| ACTION        | 动作  | VARCHAR      |   30   | &nbsp; |
-| OBJECTTYPE        | 对象类型  | VARCHAR      |   30   | &nbsp; |
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| ACTIONMANNER        | 操作方式  | VARCHAR      |   200   | &nbsp; |
-| LASTWEEK        | 上周  | VARCHAR      |   200   | &nbsp; |
-| PRODUCT        | 产品  | VARCHAR      |   255   | &nbsp; |
 | THISWEEK        | 本周  | VARCHAR      |   200   | &nbsp; |
-| DATE1        | 显示日期  | VARCHAR      |   200   | &nbsp; |
-| LASTMONTH        | 上月  | VARCHAR      |   200   | &nbsp; |
-| EXTRA        | 附加值  | CLOB      |   65,535   | &nbsp; |
-| LASTCOMMENT        | 备注  | VARCHAR      |   200   | &nbsp; |
 | TODAY        | 今天  | VARCHAR      |   200   | &nbsp; |
+| YESTERDAY        | 昨天  | VARCHAR      |   200   | &nbsp; |
 
 
 
@@ -3717,17 +3717,17 @@ CREATE TABLE `zt_action`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| HIDDEN        | 隐藏  | INTEGER      |   -1   | &nbsp; |
-| TITLE        | 区块名称  | VARCHAR      |   100   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   3   | &nbsp; |
-| SOURCE        | 来源模块  | VARCHAR      |   20   | &nbsp; |
 | ACCOUNT        | 所属用户  | VARCHAR      |   30   | &nbsp; |
-| HEIGHT        | 高度  | INTEGER      |   5   | &nbsp; |
 | BLOCK        | 来源区块  | VARCHAR      |   20   | &nbsp; |
-| MODULE        | 所属模块  | VARCHAR      |   20   | &nbsp; |
 | GRID        | 位置  | INTEGER      |   3   | &nbsp; |
-| PARAMS        | params  | CLOB      |   65,535   | &nbsp; |
+| HEIGHT        | 高度  | INTEGER      |   5   | &nbsp; |
+| HIDDEN        | 隐藏  | INTEGER      |   -1   | &nbsp; |
 | ID        | id  |       |   -1   | 主键&nbsp; |
+| MODULE        | 所属模块  | VARCHAR      |   20   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   3   | &nbsp; |
+| PARAMS        | params  | CLOB      |   65,535   | &nbsp; |
+| SOURCE        | 来源模块  | VARCHAR      |   20   | &nbsp; |
+| TITLE        | 区块名称  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -5575,11 +5575,11 @@ CREATE TABLE `zt_block`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| NAME        | 名称  | VARCHAR      |   255   | &nbsp; |
 | DELETED        | 已删除  | VARCHAR      |   100   | &nbsp; |
-| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   5   | &nbsp; |
 | ID        | 编号  |       |   8   | 主键&nbsp; |
+| NAME        | 名称  | VARCHAR      |   255   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   5   | &nbsp; |
+| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
 
 
 
@@ -7421,74 +7421,74 @@ CREATE TABLE `zt_branch`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| STORYNAME        | 相关需求  | VARCHAR      |   255   | &nbsp; |
-| LINES        | lines  | VARCHAR      |   10   | &nbsp; |
-| TOSTORY        | 转需求  |       |   8   | &nbsp; |
-| CASENAME        | 相关用例  | VARCHAR      |   255   | &nbsp; |
-| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
 | ACTIVATEDCOUNT        | 激活次数  | INTEGER      |   6   | &nbsp; |
-| RESOLVEDBUILD        | 解决版本  | VARCHAR      |   255   | &nbsp; |
-| LINKBUG        | 相关Bug  | VARCHAR      |   255   | &nbsp; |
-| PRODUCTNAME        | 产品  | VARCHAR      |   90   | &nbsp; |
-| DEADLINE        | 截止日期  | DATETIME      |   -1   | &nbsp; |
-| OS        | 操作系统  | VARCHAR      |   30   | &nbsp; |
 | ACTIVATEDDATE        | 激活日期  | DATETIME      |   -1   | &nbsp; |
-| COLOR        | 标题颜色  | VARCHAR      |   7   | &nbsp; |
-| SEVERITY        | 严重程度  | INTEGER      |   4   | &nbsp; |
-| CONFIRMED        | 是否确认  | INTEGER      |   -1   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| KEYWORDS        | 关键词  | VARCHAR      |   255   | &nbsp; |
-| RESOLUTION        | 解决方案  | VARCHAR      |   30   | &nbsp; |
-| MODULENAME        | 模块名称  | VARCHAR      |   60   | &nbsp; |
-| TASKNAME        | 相关任务  | VARCHAR      |   255   | &nbsp; |
-| ENTRY        | 应用  |       |   255   | &nbsp; |
-| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
-| DUPLICATEBUG        | 重复ID  |       |   8   | &nbsp; |
-| TOTASK        | 转任务  |       |   8   | &nbsp; |
-| LASTEDITEDDATE        | 修改日期  | DATETIME      |   -1   | &nbsp; |
-| STORYVERSION        | 需求版本  | INTEGER      |   6   | &nbsp; |
-| TYPE        | Bug类型  | VARCHAR      |   30   | &nbsp; |
-| ASSIGNEDTO        | 指派给  | VARCHAR      |   30   | &nbsp; |
-| PROJECT        | 所属项目  |       |   8   | &nbsp; |
-| MODULE        | 所属模块  |       |   8   | &nbsp; |
-| TASK        | 相关任务  |       |   8   | &nbsp; |
-| STEPS        | 重现步骤  | CLOB      |   65,535   | &nbsp; |
-| BRANCH        | 平台/分支  |       |   8   | &nbsp; |
-| PLAN        | 所属计划  |       |   8   | &nbsp; |
-| OPENEDBUILD        | 影响版本  | VARCHAR      |   255   | &nbsp; |
-| REPOTYPE        | 代码类型  | VARCHAR      |   30   | &nbsp; |
-| MAILTO        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
-| LASTEDITEDBY        | 最后修改者  | VARCHAR      |   200   | &nbsp; |
-| ID        | Bug编号  |       |   8   | 主键&nbsp; |
-| CLOSEDDATE        | 关闭日期  | DATETIME      |   -1   | &nbsp; |
-| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
-| RESULT        | result  | INTEGER      |   -1   | &nbsp; |
-| TITLE        | Bug标题  | VARCHAR      |   255   | &nbsp; |
-| REPO        | 代码  |       |   -1   | &nbsp; |
-| HARDWARE        | hardware  | VARCHAR      |   30   | &nbsp; |
-| DELAY        | 延期  | VARCHAR      |   200   | &nbsp; |
-| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
 | ASSIGNEDDATE        | 指派日期  | DATETIME      |   -1   | &nbsp; |
-| RESOLVEDDATE        | 解决日期  | DATETIME      |   -1   | &nbsp; |
-| ISFAVORITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
-| DELAYRESOLVE        | 延期解决  | VARCHAR      |   200   | &nbsp; |
-| CASEVERSION        | 用例版本  | INTEGER      |   6   | &nbsp; |
-| V1        | v1  | VARCHAR      |   40   | &nbsp; |
-| MAILTOPK        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
-| BROWSER        | 浏览器  | VARCHAR      |   30   | &nbsp; |
-| STORY        | 相关需求  |       |   8   | &nbsp; |
-| OVERDUEBUGS        | 过期天数  | INTEGER      |   -1   | &nbsp; |
-| FOUND        | found  | VARCHAR      |   30   | &nbsp; |
-| PROJECTNAME        | 项目  | VARCHAR      |   90   | &nbsp; |
+| ASSIGNEDTO        | 指派给  | VARCHAR      |   30   | &nbsp; |
+| BRANCH        | 平台/分支  |       |   8   | &nbsp; |
 | BRANCHNAME        | 平台/分支  | VARCHAR      |   255   | &nbsp; |
-| STATUS        | Bug状态  | VARCHAR      |   8   | &nbsp; |
-| MODULENAME1        | 模块名称  | VARCHAR      |   200   | &nbsp; |
-| TESTTASK        | 测试单  |       |   8   | &nbsp; |
-| RESOLVEDBY        | 解决者  | VARCHAR      |   200   | &nbsp; |
-| CLOSEDBY        | 由谁关闭  | VARCHAR      |   200   | &nbsp; |
-| OPENEDBY        | 由谁创建  | VARCHAR      |   200   | &nbsp; |
-| V2        | v2  | VARCHAR      |   40   | &nbsp; |
+| BROWSER        | 浏览器  | VARCHAR      |   30   | &nbsp; |
 | CASE        | 相关用例  |       |   8   | &nbsp; |
+| CASENAME        | 相关用例  | VARCHAR      |   255   | &nbsp; |
+| CASEVERSION        | 用例版本  | INTEGER      |   6   | &nbsp; |
+| CLOSEDBY        | 由谁关闭  | VARCHAR      |   200   | &nbsp; |
+| CLOSEDDATE        | 关闭日期  | DATETIME      |   -1   | &nbsp; |
+| COLOR        | 标题颜色  | VARCHAR      |   7   | &nbsp; |
+| CONFIRMED        | 是否确认  | INTEGER      |   -1   | &nbsp; |
+| DEADLINE        | 截止日期  | DATETIME      |   -1   | &nbsp; |
+| DELAY        | 延期  | VARCHAR      |   200   | &nbsp; |
+| DELAYRESOLVE        | 延期解决  | VARCHAR      |   200   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| DUPLICATEBUG        | 重复ID  |       |   8   | &nbsp; |
+| ENTRY        | 应用  |       |   255   | &nbsp; |
+| FOUND        | found  | VARCHAR      |   30   | &nbsp; |
+| HARDWARE        | hardware  | VARCHAR      |   30   | &nbsp; |
+| ID        | Bug编号  |       |   8   | 主键&nbsp; |
+| ISFAVORITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
+| KEYWORDS        | 关键词  | VARCHAR      |   255   | &nbsp; |
+| LASTEDITEDBY        | 最后修改者  | VARCHAR      |   200   | &nbsp; |
+| LASTEDITEDDATE        | 修改日期  | DATETIME      |   -1   | &nbsp; |
+| LINES        | lines  | VARCHAR      |   10   | &nbsp; |
+| LINKBUG        | 相关Bug  | VARCHAR      |   255   | &nbsp; |
+| MAILTO        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
+| MAILTOPK        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
+| MODULE        | 所属模块  |       |   8   | &nbsp; |
+| MODULENAME        | 模块名称  | VARCHAR      |   60   | &nbsp; |
+| MODULENAME1        | 模块名称  | VARCHAR      |   200   | &nbsp; |
+| OPENEDBUILD        | 影响版本  | VARCHAR      |   255   | &nbsp; |
+| OPENEDBY        | 由谁创建  | VARCHAR      |   200   | &nbsp; |
+| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
+| OS        | 操作系统  | VARCHAR      |   30   | &nbsp; |
+| OVERDUEBUGS        | 过期天数  | INTEGER      |   -1   | &nbsp; |
+| PLAN        | 所属计划  |       |   8   | &nbsp; |
+| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
+| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 产品  | VARCHAR      |   90   | &nbsp; |
+| PROJECT        | 所属项目  |       |   8   | &nbsp; |
+| PROJECTNAME        | 项目  | VARCHAR      |   90   | &nbsp; |
+| REPO        | 代码  |       |   -1   | &nbsp; |
+| REPOTYPE        | 代码类型  | VARCHAR      |   30   | &nbsp; |
+| RESOLUTION        | 解决方案  | VARCHAR      |   30   | &nbsp; |
+| RESOLVEDBUILD        | 解决版本  | VARCHAR      |   255   | &nbsp; |
+| RESOLVEDBY        | 解决者  | VARCHAR      |   200   | &nbsp; |
+| RESOLVEDDATE        | 解决日期  | DATETIME      |   -1   | &nbsp; |
+| RESULT        | result  | INTEGER      |   -1   | &nbsp; |
+| SEVERITY        | 严重程度  | INTEGER      |   4   | &nbsp; |
+| STATUS        | Bug状态  | VARCHAR      |   8   | &nbsp; |
+| STEPS        | 重现步骤  | CLOB      |   65,535   | &nbsp; |
+| STORY        | 相关需求  |       |   8   | &nbsp; |
+| STORYNAME        | 相关需求  | VARCHAR      |   255   | &nbsp; |
+| STORYVERSION        | 需求版本  | INTEGER      |   6   | &nbsp; |
+| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
+| TASK        | 相关任务  |       |   8   | &nbsp; |
+| TASKNAME        | 相关任务  | VARCHAR      |   255   | &nbsp; |
+| TESTTASK        | 测试单  |       |   8   | &nbsp; |
+| TITLE        | Bug标题  | VARCHAR      |   255   | &nbsp; |
+| TOSTORY        | 转需求  |       |   8   | &nbsp; |
+| TOTASK        | 转任务  |       |   8   | &nbsp; |
+| TYPE        | Bug类型  | VARCHAR      |   30   | &nbsp; |
+| V1        | v1  | VARCHAR      |   40   | &nbsp; |
+| V2        | v2  | VARCHAR      |   40   | &nbsp; |
 
 
 
@@ -9380,27 +9380,27 @@ CREATE TABLE `zt_bug`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
-| BUGWJJ        | 未解决  | INTEGER      |   -1   | &nbsp; |
-| BUGNOTREPRO        | 无法重现  | INTEGER      |   -1   | &nbsp; |
-| BUGWILLNOTFIX        | 不予解决  | INTEGER      |   -1   | &nbsp; |
-| BUGDUPLICATE        | 重复Bug  | INTEGER      |   -1   | &nbsp; |
-| RESOLVEDBY        | 由谁解决  | VARCHAR      |   100   | &nbsp; |
-| BUGTOTAL        | 总计  | INTEGER      |   -1   | &nbsp; |
 | ASSIGNEDTO        | 指派给  | VARCHAR      |   60   | &nbsp; |
-| BUGFIXED        | 已解决  | INTEGER      |   -1   | &nbsp; |
-| BUGTOSTORY        | 转为需求  | INTEGER      |   -1   | &nbsp; |
-| BUGPOSTPONED        | 延期处理  | INTEGER      |   -1   | &nbsp; |
-| OPENEDBY        | 由谁创建  | VARCHAR      |   60   | &nbsp; |
-| BUGEXTERNAL        | 外部原因  | INTEGER      |   -1   | &nbsp; |
-| TITLE        | 名称  | VARCHAR      |   100   | &nbsp; |
 | BUGBYDESIGN        | 设计如此  | INTEGER      |   -1   | &nbsp; |
 | BUGCNT        | Bug  | INTEGER      |   -1   | &nbsp; |
-| PRODUCT        | 编号  |       |   8   | &nbsp; |
-| PROJECT        | 项目编号  |       |   8   | &nbsp; |
+| BUGDUPLICATE        | 重复Bug  | INTEGER      |   -1   | &nbsp; |
 | BUGEFFICIENT        | 有效率  | VARCHAR      |   200   | &nbsp; |
+| BUGEXTERNAL        | 外部原因  | INTEGER      |   -1   | &nbsp; |
+| BUGFIXED        | 已解决  | INTEGER      |   -1   | &nbsp; |
+| BUGNOTREPRO        | 无法重现  | INTEGER      |   -1   | &nbsp; |
+| BUGPOSTPONED        | 延期处理  | INTEGER      |   -1   | &nbsp; |
+| BUGTOSTORY        | 转为需求  | INTEGER      |   -1   | &nbsp; |
+| BUGTOTAL        | 总计  | INTEGER      |   -1   | &nbsp; |
+| BUGWILLNOTFIX        | 不予解决  | INTEGER      |   -1   | &nbsp; |
+| BUGWJJ        | 未解决  | INTEGER      |   -1   | &nbsp; |
 | ID        | 标识  |       |   20   | 主键&nbsp; |
+| OPENEDBY        | 由谁创建  | VARCHAR      |   60   | &nbsp; |
+| PRODUCT        | 编号  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
+| PROJECT        | 项目编号  |       |   8   | &nbsp; |
 | PROJECTNAME        | 项目名称  | VARCHAR      |   100   | &nbsp; |
+| RESOLVEDBY        | 由谁解决  | VARCHAR      |   100   | &nbsp; |
+| TITLE        | 名称  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -11245,20 +11245,20 @@ CREATE TABLE `zt_bug`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | BRANCH        | 平台/分支  |       |   8   | &nbsp; |
-| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
 | BUGS        | 解决的Bug  | CLOB      |   65,535   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| SCMPATH        | 源代码地址  | VARCHAR      |   255   | &nbsp; |
-| DATE        | 打包日期  | DATETIME      |   -1   | &nbsp; |
-| FILEPATH        | 下载地址  | VARCHAR      |   255   | &nbsp; |
-| NAME        | 名称编号  | VARCHAR      |   150   | &nbsp; |
 | BUILDER        | 构建者  | VARCHAR      |   30   | &nbsp; |
-| PRODUCT        | 产品  |       |   8   | &nbsp; |
-| STORIES        | 完成的需求  | CLOB      |   65,535   | &nbsp; |
 | BUILDERPK        | 构建者（选择）  | VARCHAR      |   200   | &nbsp; |
+| DATE        | 打包日期  | DATETIME      |   -1   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
+| FILEPATH        | 下载地址  | VARCHAR      |   255   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| NAME        | 名称编号  | VARCHAR      |   150   | &nbsp; |
+| PRODUCT        | 产品  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
 | PROJECT        | 所属项目  |       |   8   | &nbsp; |
+| SCMPATH        | 源代码地址  | VARCHAR      |   255   | &nbsp; |
+| STORIES        | 完成的需求  | CLOB      |   65,535   | &nbsp; |
 
 
 
@@ -13108,14 +13108,14 @@ CREATE TABLE `zt_build`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TASK        | 任务  |       |   8   | &nbsp; |
-| ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
 | CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
-| ESTIMATE        | 最初预计  | DOUBLE      |   -1   | &nbsp; |
 | DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| ESTIMATE        | 最初预计  | DOUBLE      |   -1   | &nbsp; |
+| ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
+| ISWEEKEND        | 周末  | VARCHAR      |   200   | &nbsp; |
 | LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
 | PROJECT        | 所属项目  |       |   8   | &nbsp; |
-| ISWEEKEND        | 周末  | VARCHAR      |   200   | &nbsp; |
+| TASK        | 任务  |       |   8   | &nbsp; |
 
 
 
@@ -14958,59 +14958,59 @@ CREATE TABLE `zt_burn`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TITLE        | 用例标题  | VARCHAR      |   255   | &nbsp; |
-| FROMBUG        | 来源Bug  |       |   8   | &nbsp; |
+| AUTO        | auto  | VARCHAR      |   10   | &nbsp; |
+| BRANCH        | 平台/分支  |       |   8   | &nbsp; |
 | COLOR        | 标题颜色  | VARCHAR      |   7   | &nbsp; |
 | DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| STAGE        | 适用阶段  | VARCHAR      |   255   | &nbsp; |
-| OPENEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
+| FRAME        | 工具/框架  | VARCHAR      |   10   | &nbsp; |
+| FREQUENCY        | frequency  | VARCHAR      |   1   | &nbsp; |
+| FROMBUG        | 来源Bug  |       |   8   | &nbsp; |
 | FROMCASEID        | 来源用例  |       |   8   | &nbsp; |
-| LIBNAME        | 用例库  | VARCHAR      |   255   | &nbsp; |
-| RESULTCNT        | 测试结果数  | INTEGER      |   -1   | &nbsp; |
-| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
-| VERSION        | 用例版本  | INTEGER      |   3   | &nbsp; |
-| PATH        | path  | INTEGER      |   -1   | &nbsp; |
-| REVIEWEDBY        | 由谁评审  | VARCHAR      |   255   | &nbsp; |
-| ISFAVORITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
-| STORYNAME        | 需求名称  | VARCHAR      |   255   | &nbsp; |
-| KEYWORDS        | 关键词  | VARCHAR      |   255   | &nbsp; |
-| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
+| FROMCASEVERSION        | 来源用例版本  | INTEGER      |   8   | &nbsp; |
 | HOWRUN        | howRun  | VARCHAR      |   30   | &nbsp; |
 | ID        | 用例编号  |       |   8   | 主键&nbsp; |
-| LASTRUNRESULT1        | 测试用例结果  | VARCHAR      |   200   | &nbsp; |
-| LINKCASE        | 相关用例  | VARCHAR      |   255   | &nbsp; |
-| SCRIPTEDBY        | scriptedBy  | VARCHAR      |   30   | &nbsp; |
-| TYPE        | 用例类型  | VARCHAR      |   30   | &nbsp; |
-| STATUS        | 用例状态  | VARCHAR      |   30   | &nbsp; |
-| STORYVERSION        | 需求版本  | INTEGER      |   6   | &nbsp; |
-| SCRIPTEDDATE        | scriptedDate  | DATETIME      |   -1   | &nbsp; |
-| REVIEWEDDATE        | 评审时间  | DATETIME      |   -1   | &nbsp; |
-| STORY        | 相关需求  |       |   8   | &nbsp; |
-| PRECONDITION        | 前置条件  | CLOB      |   65,535   | &nbsp; |
-| STATUS1        | 用例状态  | VARCHAR      |   200   | &nbsp; |
-| LASTEDITEDDATE        | 修改日期  | DATETIME      |   -1   | &nbsp; |
+| ISFAVORITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
+| KEYWORDS        | 关键词  | VARCHAR      |   255   | &nbsp; |
 | LASTEDITEDBY        | 最后修改者  | VARCHAR      |   30   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   30   | &nbsp; |
-| AUTO        | auto  | VARCHAR      |   10   | &nbsp; |
-| SCRIPTLOCATION        | scriptLocation  | VARCHAR      |   255   | &nbsp; |
-| FREQUENCY        | frequency  | VARCHAR      |   1   | &nbsp; |
-| LIB        | 所属库  |       |   8   | &nbsp; |
+| LASTEDITEDDATE        | 修改日期  | DATETIME      |   -1   | &nbsp; |
 | LASTRUNDATE        | 执行时间  | DATETIME      |   -1   | &nbsp; |
-| FRAME        | 工具/框架  | VARCHAR      |   10   | &nbsp; |
-| LASTRUNRESULT        | 结果  | VARCHAR      |   30   | &nbsp; |
-| TOBUGCNT        | 转bug数  | INTEGER      |   -1   | &nbsp; |
-| PRI        | 优先级  | INTEGER      |   -1   | &nbsp; |
-| SCRIPTSTATUS        | scriptStatus  | VARCHAR      |   30   | &nbsp; |
-| BRANCH        | 平台/分支  |       |   8   | &nbsp; |
 | LASTRUNNER        | 执行人  | VARCHAR      |   30   | &nbsp; |
-| FROMCASEVERSION        | 来源用例版本  | INTEGER      |   8   | &nbsp; |
-| MODULENAME1        | 模块名称  | VARCHAR      |   200   | &nbsp; |
-| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
-| RESULTFALICNT        | 测试失败数  | INTEGER      |   -1   | &nbsp; |
-| MODULENAME        | 模块名称  | VARCHAR      |   60   | &nbsp; |
-| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
+| LASTRUNRESULT        | 结果  | VARCHAR      |   30   | &nbsp; |
+| LASTRUNRESULT1        | 测试用例结果  | VARCHAR      |   200   | &nbsp; |
+| LIB        | 所属库  |       |   8   | &nbsp; |
+| LIBNAME        | 用例库  | VARCHAR      |   255   | &nbsp; |
+| LINKCASE        | 相关用例  | VARCHAR      |   255   | &nbsp; |
 | MODULE        | 所属模块  |       |   -1   | &nbsp; |
+| MODULENAME        | 模块名称  | VARCHAR      |   60   | &nbsp; |
+| MODULENAME1        | 模块名称  | VARCHAR      |   200   | &nbsp; |
+| OPENEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
+| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   30   | &nbsp; |
+| PATH        | path  | INTEGER      |   -1   | &nbsp; |
+| PRECONDITION        | 前置条件  | CLOB      |   65,535   | &nbsp; |
+| PRI        | 优先级  | INTEGER      |   -1   | &nbsp; |
+| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
+| RESULTCNT        | 测试结果数  | INTEGER      |   -1   | &nbsp; |
+| RESULTFALICNT        | 测试失败数  | INTEGER      |   -1   | &nbsp; |
+| REVIEWEDBY        | 由谁评审  | VARCHAR      |   255   | &nbsp; |
+| REVIEWEDDATE        | 评审时间  | DATETIME      |   -1   | &nbsp; |
+| SCRIPTEDBY        | scriptedBy  | VARCHAR      |   30   | &nbsp; |
+| SCRIPTEDDATE        | scriptedDate  | DATETIME      |   -1   | &nbsp; |
+| SCRIPTLOCATION        | scriptLocation  | VARCHAR      |   255   | &nbsp; |
+| SCRIPTSTATUS        | scriptStatus  | VARCHAR      |   30   | &nbsp; |
+| STAGE        | 适用阶段  | VARCHAR      |   255   | &nbsp; |
+| STATUS        | 用例状态  | VARCHAR      |   30   | &nbsp; |
+| STATUS1        | 用例状态  | VARCHAR      |   200   | &nbsp; |
 | STEPCNT        | 用例步骤数  | INTEGER      |   -1   | &nbsp; |
+| STORY        | 相关需求  |       |   8   | &nbsp; |
+| STORYNAME        | 需求名称  | VARCHAR      |   255   | &nbsp; |
+| STORYVERSION        | 需求版本  | INTEGER      |   6   | &nbsp; |
+| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
+| TITLE        | 用例标题  | VARCHAR      |   255   | &nbsp; |
+| TOBUGCNT        | 转bug数  | INTEGER      |   -1   | &nbsp; |
+| TYPE        | 用例类型  | VARCHAR      |   30   | &nbsp; |
+| VERSION        | 用例版本  | INTEGER      |   3   | &nbsp; |
 
 
 
@@ -16888,15 +16888,15 @@ CREATE TABLE `zt_case`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PRODUCT        | 产品  |       |   8   | &nbsp; |
 | BLOCKEDCASE        | 阻塞用例数  | INTEGER      |   -1   | &nbsp; |
-| TOTALRUNCASE        | 总执行数  | INTEGER      |   -1   | &nbsp; |
-| TOTALCASE        | 总用例数  | INTEGER      |   -1   | &nbsp; |
-| TITLE        | 用例标题  | VARCHAR      |   100   | &nbsp; |
-| MODULE        | 模块  |       |   -1   | &nbsp; |
-| PASSCASE        | 通过用例数  | INTEGER      |   -1   | &nbsp; |
 | FAILCASE        | 失败用例数  | INTEGER      |   -1   | &nbsp; |
 | ID        | 用例编号  |       |   20   | 主键&nbsp; |
+| MODULE        | 模块  |       |   -1   | &nbsp; |
+| PASSCASE        | 通过用例数  | INTEGER      |   -1   | &nbsp; |
+| PRODUCT        | 产品  |       |   8   | &nbsp; |
+| TITLE        | 用例标题  | VARCHAR      |   100   | &nbsp; |
+| TOTALCASE        | 总用例数  | INTEGER      |   -1   | &nbsp; |
+| TOTALRUNCASE        | 总执行数  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -18738,13 +18738,13 @@ CREATE TABLE `zt_case`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | CASE        | 用例  |       |   8   | &nbsp; |
+| CASESTEPID        | 用例步骤编号  |       |   -1   | &nbsp; |
+| DESC        | 步骤  | CLOB      |   65,535   | &nbsp; |
+| EXPECT        | 预期  | CLOB      |   65,535   | &nbsp; |
 | ID        | 编号  |       |   8   | 主键&nbsp; |
 | PARENT        | 分组用例步骤的组编号  |       |   8   | &nbsp; |
 | TYPE        | 用例步骤类型  | VARCHAR      |   10   | &nbsp; |
 | VERSION        | 用例版本  | INTEGER      |   3   | &nbsp; |
-| EXPECT        | 预期  | CLOB      |   65,535   | &nbsp; |
-| DESC        | 步骤  | CLOB      |   65,535   | &nbsp; |
-| CASESTEPID        | 用例步骤编号  |       |   -1   | &nbsp; |
 
 
 
@@ -20588,17 +20588,17 @@ CREATE TABLE `zt_casestep`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PHONE        | 联系电话  | VARCHAR      |   20   | &nbsp; |
+| ADDRESS        | 通讯地址  | VARCHAR      |   120   | &nbsp; |
 | ADMINS        | admins  | VARCHAR      |   255   | &nbsp; |
 | BACKYARD        | 内网  | VARCHAR      |   120   | &nbsp; |
-| ADDRESS        | 通讯地址  | VARCHAR      |   120   | &nbsp; |
-| NAME        | 公司名称  | VARCHAR      |   120   | &nbsp; |
-| GUEST        | 匿名登陆  | VARCHAR      |   1   | &nbsp; |
 | DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| ZIPCODE        | 邮政编码  | VARCHAR      |   10   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| WEBSITE        | 官网  | VARCHAR      |   120   | &nbsp; |
 | FAX        | 传真  | VARCHAR      |   20   | &nbsp; |
+| GUEST        | 匿名登陆  | VARCHAR      |   1   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| NAME        | 公司名称  | VARCHAR      |   120   | &nbsp; |
+| PHONE        | 联系电话  | VARCHAR      |   20   | &nbsp; |
+| WEBSITE        | 官网  | VARCHAR      |   120   | &nbsp; |
+| ZIPCODE        | 邮政编码  | VARCHAR      |   10   | &nbsp; |
 
 
 
@@ -22447,17 +22447,17 @@ CREATE TABLE `zt_company`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | CLOSEDSTORYCNT        | 关闭需求数  | INTEGER      |   -1   | &nbsp; |
-| DYNAMICCNT        | 动态数  | INTEGER      |   -1   | &nbsp; |
-| OPENEDBUGCNT        | 新增Bug数  | INTEGER      |   -1   | &nbsp; |
 | COMMENT        | 备注  | CLOB      |   65,535   | &nbsp; |
 | DATE        | 日志日期  | DATETIME      |   -1   | &nbsp; |
-| LOGHOURS        | 日志工时  | INTEGER      |   -1   | &nbsp; |
-| RESOLVEDBUGCNT        | 解决Bug数  | INTEGER      |   -1   | &nbsp; |
-| OPENEDSTORYCNT        | 新增需求数  | INTEGER      |   -1   | &nbsp; |
-| LOGINCNT        | 登录次数  | INTEGER      |   -1   | &nbsp; |
-| ID        | 标识  |       |   20   | 主键&nbsp; |
-| OPENEDTASKCNT        | 新增任务数  | INTEGER      |   -1   | &nbsp; |
+| DYNAMICCNT        | 动态数  | INTEGER      |   -1   | &nbsp; |
 | FINISHEDTASKCNT        | 完成任务数  | INTEGER      |   -1   | &nbsp; |
+| ID        | 标识  |       |   20   | 主键&nbsp; |
+| LOGHOURS        | 日志工时  | INTEGER      |   -1   | &nbsp; |
+| LOGINCNT        | 登录次数  | INTEGER      |   -1   | &nbsp; |
+| OPENEDBUGCNT        | 新增Bug数  | INTEGER      |   -1   | &nbsp; |
+| OPENEDSTORYCNT        | 新增需求数  | INTEGER      |   -1   | &nbsp; |
+| OPENEDTASKCNT        | 新增任务数  | INTEGER      |   -1   | &nbsp; |
+| RESOLVEDBUGCNT        | 解决Bug数  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -24297,19 +24297,19 @@ CREATE TABLE `zt_action`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| ATTIME        | atTime  | VARCHAR      |   10   | &nbsp; |
+| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
+| CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
 | JOB        | job  | INTEGER      |   -1   | &nbsp; |
 | LOGS        | logs  | CLOB      |   65,535   | &nbsp; |
-| UPDATEDATE        | updateDate  | DATETIME      |   -1   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| STATUS        | status  | VARCHAR      |   255   | &nbsp; |
-| ATTIME        | atTime  | VARCHAR      |   10   | &nbsp; |
 | NAME        | name  | VARCHAR      |   50   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| TESTTASK        | testtask  | INTEGER      |   -1   | &nbsp; |
 | QUEUE        | queue  | INTEGER      |   -1   | &nbsp; |
+| STATUS        | status  | VARCHAR      |   255   | &nbsp; |
 | TAG        | tag  | VARCHAR      |   255   | &nbsp; |
-| CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
-| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
+| TESTTASK        | testtask  | INTEGER      |   -1   | &nbsp; |
+| UPDATEDATE        | updateDate  | DATETIME      |   -1   | &nbsp; |
 
 
 
@@ -26159,11 +26159,11 @@ CREATE TABLE `zt_compile`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| MODULE        | 模块  | VARCHAR      |   30   | &nbsp; |
-| KEY        | 键  | VARCHAR      |   30   | &nbsp; |
-| SECTION        | 附加部分  | VARCHAR      |   30   | &nbsp; |
 | ID        | id  |       |   -1   | 主键&nbsp; |
+| KEY        | 键  | VARCHAR      |   30   | &nbsp; |
+| MODULE        | 模块  | VARCHAR      |   30   | &nbsp; |
 | OWNER        | 所有者  | VARCHAR      |   30   | &nbsp; |
+| SECTION        | 附加部分  | VARCHAR      |   30   | &nbsp; |
 | VALUE        | 值  | CLOB      |   65,535   | &nbsp; |
 
 
@@ -28007,18 +28007,18 @@ CREATE TABLE `zt_config`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| H        | h  | VARCHAR      |   20   | &nbsp; |
-| STATUS        | status  | VARCHAR      |   20   | &nbsp; |
-| COMMAND        | command  | CLOB      |   65,535   | &nbsp; |
 | BUILDIN        | buildin  | INTEGER      |   -1   | &nbsp; |
+| COMMAND        | command  | CLOB      |   65,535   | &nbsp; |
+| DOM        | dom  | VARCHAR      |   20   | &nbsp; |
+| DOW        | dow  | VARCHAR      |   20   | &nbsp; |
+| H        | h  | VARCHAR      |   20   | &nbsp; |
 | ID        | id  |       |   -1   | 主键&nbsp; |
 | LASTTIME        | lastTime  | DATETIME      |   -1   | &nbsp; |
-| MON        | mon  | VARCHAR      |   20   | &nbsp; |
-| DOM        | dom  | VARCHAR      |   20   | &nbsp; |
-| TYPE        | type  | VARCHAR      |   20   | &nbsp; |
-| REMARK        | remark  | VARCHAR      |   255   | &nbsp; |
-| DOW        | dow  | VARCHAR      |   20   | &nbsp; |
 | M        | m  | VARCHAR      |   20   | &nbsp; |
+| MON        | mon  | VARCHAR      |   20   | &nbsp; |
+| REMARK        | remark  | VARCHAR      |   255   | &nbsp; |
+| STATUS        | status  | VARCHAR      |   20   | &nbsp; |
+| TYPE        | type  | VARCHAR      |   20   | &nbsp; |
 
 
 
@@ -29868,15 +29868,15 @@ CREATE TABLE `zt_cron`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | FUNCTION        | function  | VARCHAR      |   255   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| PARENTNAME        | 上级部门  | VARCHAR      |   60   | &nbsp; |
-| MANAGER        | 负责人  | VARCHAR      |   30   | &nbsp; |
-| ISLEAF        | 无子部门  | VARCHAR      |   200   | &nbsp; |
-| ORDER        | order  | INTEGER      |   -1   | &nbsp; |
-| NAME        | 部门名称  | VARCHAR      |   60   | &nbsp; |
 | GRADE        | grade  | INTEGER      |   -1   | &nbsp; |
-| PATH        | path  | VARCHAR      |   255   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| ISLEAF        | 无子部门  | VARCHAR      |   200   | &nbsp; |
+| MANAGER        | 负责人  | VARCHAR      |   30   | &nbsp; |
+| NAME        | 部门名称  | VARCHAR      |   60   | &nbsp; |
+| ORDER        | order  | INTEGER      |   -1   | &nbsp; |
 | PARENT        | parent  |       |   -1   | &nbsp; |
+| PARENTNAME        | 上级部门  | VARCHAR      |   60   | &nbsp; |
+| PATH        | path  | VARCHAR      |   255   | &nbsp; |
 | POSITION        | position  | VARCHAR      |   30   | &nbsp; |
 
 
@@ -31723,31 +31723,31 @@ CREATE TABLE `zt_dept`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| MODULE        | 所属分类  |       |   30   | &nbsp; |
-| TYPE        | 文档类型  | VARCHAR      |   30   | &nbsp; |
-| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
 | ACL        | 权限  | VARCHAR      |   10   | &nbsp; |
-| PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
-| VERSION        | 版本号  | INTEGER      |   5   | &nbsp; |
-| EDITEDDATE        | 更新时间  | DATETIME      |   -1   | &nbsp; |
-| VIEWS        | views  | INTEGER      |   -1   | &nbsp; |
-| ID        | 文档编号  |       |   8   | 主键&nbsp; |
-| DOCQTYPE        | 文档查询类型  | VARCHAR      |   200   | &nbsp; |
-| KEYWORDS        | 关键字  | VARCHAR      |   255   | &nbsp; |
-| TITLE        | 文档标题  | VARCHAR      |   255   | &nbsp; |
-| USERS        | 用户  | CLOB      |   65,535   | &nbsp; |
-| ADDEDDATE        | 添加时间  | DATETIME      |   -1   | &nbsp; |
-| PRODUCTNAME        | 所属产品  | VARCHAR      |   90   | &nbsp; |
-| EDITEDBY        | 由谁更新  | VARCHAR      |   30   | &nbsp; |
-| LIBNAME        | 所属文档库  | VARCHAR      |   60   | &nbsp; |
-| MODULENAME        | 模块分类  | VARCHAR      |   60   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| GROUPS        | 分组  | VARCHAR      |   255   | &nbsp; |
-| COLLECTOR        | 收藏者  | CLOB      |   65,535   | &nbsp; |
-| ISFAVOURITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
-| PROJECT        | 所属项目  |       |   8   | &nbsp; |
-| LIB        | 所属文档库  |       |   30   | &nbsp; |
 | ADDEDBY        | 由谁添加  | VARCHAR      |   30   | &nbsp; |
+| ADDEDDATE        | 添加时间  | DATETIME      |   -1   | &nbsp; |
+| COLLECTOR        | 收藏者  | CLOB      |   65,535   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| DOCQTYPE        | 文档查询类型  | VARCHAR      |   200   | &nbsp; |
+| EDITEDBY        | 由谁更新  | VARCHAR      |   30   | &nbsp; |
+| EDITEDDATE        | 更新时间  | DATETIME      |   -1   | &nbsp; |
+| GROUPS        | 分组  | VARCHAR      |   255   | &nbsp; |
+| ID        | 文档编号  |       |   8   | 主键&nbsp; |
+| ISFAVOURITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
+| KEYWORDS        | 关键字  | VARCHAR      |   255   | &nbsp; |
+| LIB        | 所属文档库  |       |   30   | &nbsp; |
+| LIBNAME        | 所属文档库  | VARCHAR      |   60   | &nbsp; |
+| MODULE        | 所属分类  |       |   30   | &nbsp; |
+| MODULENAME        | 模块分类  | VARCHAR      |   60   | &nbsp; |
+| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 所属产品  | VARCHAR      |   90   | &nbsp; |
+| PROJECT        | 所属项目  |       |   8   | &nbsp; |
+| PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
+| TITLE        | 文档标题  | VARCHAR      |   255   | &nbsp; |
+| TYPE        | 文档类型  | VARCHAR      |   30   | &nbsp; |
+| USERS        | 用户  | CLOB      |   65,535   | &nbsp; |
+| VERSION        | 版本号  | INTEGER      |   5   | &nbsp; |
+| VIEWS        | views  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -33603,14 +33603,14 @@ CREATE TABLE `zt_doc`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| FILES        | 附件  | CLOB      |   65,535   | &nbsp; |
-| DOC        | 文档  |       |   8   | &nbsp; |
+| CONTENT        | 文档正文  | CLOB      |   65,535   | &nbsp; |
 | DIGEST        | 文档摘要  | VARCHAR      |   255   | &nbsp; |
+| DOC        | 文档  |       |   8   | &nbsp; |
+| FILES        | 附件  | CLOB      |   65,535   | &nbsp; |
 | ID        | 编号  |       |   -1   | 主键&nbsp; |
 | TITLE        | 文档标题  | VARCHAR      |   255   | &nbsp; |
-| VERSION        | 版本号  | INTEGER      |   5   | &nbsp; |
-| CONTENT        | 文档正文  | CLOB      |   65,535   | &nbsp; |
 | TYPE        | 文档类型  | VARCHAR      |   10   | &nbsp; |
+| VERSION        | 版本号  | INTEGER      |   5   | &nbsp; |
 
 
 
@@ -35455,26 +35455,26 @@ CREATE TABLE `zt_doccontent`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| ORGID        | 组织标识  | VARCHAR      |   100   | &nbsp; |
-| MDEPTID        | 部门标识  | VARCHAR      |   100   | &nbsp; |
-| OPENEDDATE        | 创建时间  | DATETIME      |   -1   | &nbsp; |
+| ACL        | 权限  | VARCHAR      |   10   | &nbsp; |
+| COLLECTOR        | 收藏者  | CLOB      |   65,535   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| DOCLIBTYPE        | 文件库类型  | VARCHAR      |   200   | &nbsp; |
 | GROUPS        | 分组  | VARCHAR      |   255   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   5   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| ISFAVOURITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
+| MAIN        | 是否是主库  | VARCHAR      |   1   | &nbsp; |
+| MDEPTID        | 部门标识  | VARCHAR      |   100   | &nbsp; |
 | MODULECNT        | 文件夹数  | INTEGER      |   -1   | &nbsp; |
 | NAME        | 文档库名称  | VARCHAR      |   60   | &nbsp; |
-| USERS        | 用户  | CLOB      |   65,535   | &nbsp; |
+| OPENEDDATE        | 创建时间  | DATETIME      |   -1   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   5   | &nbsp; |
+| ORGID        | 组织标识  | VARCHAR      |   100   | &nbsp; |
 | PRODUCT        | 产品库  |       |   8   | &nbsp; |
-| PROJECT        | 项目库  |       |   8   | &nbsp; |
-| MAIN        | 是否是主库  | VARCHAR      |   1   | &nbsp; |
 | PRODUCTNAME        | 所属产品  | VARCHAR      |   90   | &nbsp; |
-| COLLECTOR        | 收藏者  | CLOB      |   65,535   | &nbsp; |
-| TYPE        | 文档类型  | VARCHAR      |   30   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| PROJECT        | 项目库  |       |   8   | &nbsp; |
 | PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
-| DOCLIBTYPE        | 文件库类型  | VARCHAR      |   200   | &nbsp; |
-| ACL        | 权限  | VARCHAR      |   10   | &nbsp; |
-| ISFAVOURITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
+| TYPE        | 文档类型  | VARCHAR      |   30   | &nbsp; |
+| USERS        | 用户  | CLOB      |   65,535   | &nbsp; |
 
 
 
@@ -37325,24 +37325,24 @@ CREATE TABLE `zt_doclib`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| BRANCH        | branch  | INTEGER      |   -1   | &nbsp; |
+| COLLECTOR        | collector  | CLOB      |   65,535   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
 | DOCCNT        | 文档数  | INTEGER      |   -1   | &nbsp; |
 | DOCLIBNAME        | 所属文档库  | VARCHAR      |   60   | &nbsp; |
-| SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
-| COLLECTOR        | collector  | CLOB      |   65,535   | &nbsp; |
-| ISFAVOURITES        | 是否已收藏  | VARCHAR      |   200   | &nbsp; |
 | GRADE        | grade  | INTEGER      |   -1   | &nbsp; |
-| BRANCH        | branch  | INTEGER      |   -1   | &nbsp; |
-| PARENT        | id  |       |   20   | &nbsp; |
-| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
-| MODULENAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| ORDER        | 排序值  | INTEGER      |   -1   | &nbsp; |
 | ID        | id  |       |   20   | 主键&nbsp; |
+| ISFAVOURITES        | 是否已收藏  | VARCHAR      |   200   | &nbsp; |
 | ISLEAF        | 叶子模块  | VARCHAR      |   200   | &nbsp; |
-| TYPE        | 类型  | VARCHAR      |   30   | &nbsp; |
-| PATH        | path  | VARCHAR      |   255   | &nbsp; |
+| MODULENAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
+| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
+| ORDER        | 排序值  | INTEGER      |   -1   | &nbsp; |
 | OWNER        | owner  | VARCHAR      |   30   | &nbsp; |
+| PARENT        | id  |       |   20   | &nbsp; |
+| PATH        | path  | VARCHAR      |   255   | &nbsp; |
 | ROOT        | 编号  |       |   8   | &nbsp; |
+| SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -39192,16 +39192,16 @@ CREATE TABLE `zt_module`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| USERID        | 用户标识  | VARCHAR      |   100   | &nbsp; |
-| DYNADASHBOARDID        | 动态数据看板标识  | VARCHAR      |   100   | 主键&nbsp; |
-| MODEL        | 模型  | CLOB      |   1,048,576   | &nbsp; |
-| DYNADASHBOARDNAME        | 动态数据看板名称  | VARCHAR      |   200   | &nbsp; |
-| MODELID        | 模型标识  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 | APPID        | 应用标识  | VARCHAR      |   100   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DYNADASHBOARDID        | 动态数据看板标识  | VARCHAR      |   100   | 主键&nbsp; |
+| DYNADASHBOARDNAME        | 动态数据看板名称  | VARCHAR      |   200   | &nbsp; |
+| MODEL        | 模型  | CLOB      |   1,048,576   | &nbsp; |
+| MODELID        | 模型标识  | VARCHAR      |   100   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERID        | 用户标识  | VARCHAR      |   100   | &nbsp; |
 
 表
 ```sql
@@ -41048,16 +41048,16 @@ CREATE TABLE `T_DYNADASHBOARD`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| DATE        | date  | DATETIME      |   -1   | &nbsp; |
-| TYPE        | type  | VARCHAR      |   1   | &nbsp; |
-| NAME        | name  | VARCHAR      |   30   | &nbsp; |
-| IDVALUE        | idvalue  | INTEGER      |   -1   | &nbsp; |
 | BEGIN        | begin  | DATETIME      |   -1   | &nbsp; |
-| TODO        | todo  | VARCHAR      |   1   | &nbsp; |
+| DATE        | date  | DATETIME      |   -1   | &nbsp; |
 | DESC        | desc  | VARCHAR      |   255   | &nbsp; |
 | END        | end  | DATETIME      |   -1   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| IDVALUE        | idvalue  | INTEGER      |   -1   | &nbsp; |
+| NAME        | name  | VARCHAR      |   30   | &nbsp; |
 | STATUS        | status  | VARCHAR      |   1   | &nbsp; |
+| TODO        | todo  | VARCHAR      |   1   | &nbsp; |
+| TYPE        | type  | VARCHAR      |   1   | &nbsp; |
 | USER        | user  | VARCHAR      |   30   | &nbsp; |
 
 
@@ -42906,17 +42906,17 @@ CREATE TABLE `zt_effort`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TASKCNT        | 任务数  | INTEGER      |   -1   | &nbsp; |
-| TOTALTASKCNT        | 总任务数  | INTEGER      |   -1   | &nbsp; |
-| TOTALLEFT        | 总工时  | INTEGER      |   -1   | &nbsp; |
 | ASSIGN        | 是否指派  | VARCHAR      |   100   | &nbsp; |
-| PROJECT        | 项目编号  |       |   8   | &nbsp; |
-| WORKLOAD        | 工作负载  | VARCHAR      |   200   | &nbsp; |
 | ASSIGNEDTO        | 指派给  | VARCHAR      |   100   | &nbsp; |
 | ID        | 主键  |       |   20   | 主键&nbsp; |
-| NAME        | 任务名  | VARCHAR      |   100   | &nbsp; |
-| PROJECTNAME        | 项目  | VARCHAR      |   90   | &nbsp; |
 | LEFT        | 剩余工时  | INTEGER      |   -1   | &nbsp; |
+| NAME        | 任务名  | VARCHAR      |   100   | &nbsp; |
+| PROJECT        | 项目编号  |       |   8   | &nbsp; |
+| PROJECTNAME        | 项目  | VARCHAR      |   90   | &nbsp; |
+| TASKCNT        | 任务数  | INTEGER      |   -1   | &nbsp; |
+| TOTALLEFT        | 总工时  | INTEGER      |   -1   | &nbsp; |
+| TOTALTASKCNT        | 总任务数  | INTEGER      |   -1   | &nbsp; |
+| WORKLOAD        | 工作负载  | VARCHAR      |   200   | &nbsp; |
 
 
 
@@ -44759,11 +44759,11 @@ CREATE TABLE `ZT_TASK`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| ENTITY2NAME        | 实体2名称  | VARCHAR      |   200   | &nbsp; |
-| ENTITY2ID        | 实体2标识  | VARCHAR      |   100   | 主键&nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| ENTITY2ID        | 实体2标识  | VARCHAR      |   100   | 主键&nbsp; |
+| ENTITY2NAME        | 实体2名称  | VARCHAR      |   200   | &nbsp; |
 | UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -46606,20 +46606,20 @@ CREATE TABLE `T_ENTITY2`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| IP        | ip  | VARCHAR      |   100   | &nbsp; |
-| CALLEDTIME        | calledTime  | INTEGER      |   -1   | &nbsp; |
-| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
 | ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
-| DESC        | desc  | CLOB      |   65,535   | &nbsp; |
+| CALLEDTIME        | calledTime  | INTEGER      |   -1   | &nbsp; |
+| CODE        | code  | VARCHAR      |   20   | &nbsp; |
+| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
 | CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
 | DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| KEY        | key  | VARCHAR      |   32   | &nbsp; |
+| DESC        | desc  | CLOB      |   65,535   | &nbsp; |
+| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
 | EDITEDDATE        | editedDate  | DATETIME      |   -1   | &nbsp; |
-| CODE        | code  | VARCHAR      |   20   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
 | FREEPASSWD        | freePasswd  | VARCHAR      |   1   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| IP        | ip  | VARCHAR      |   100   | &nbsp; |
+| KEY        | key  | VARCHAR      |   32   | &nbsp; |
 | NAME        | name  | VARCHAR      |   50   | &nbsp; |
-| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -48470,21 +48470,21 @@ CREATE TABLE `zt_entry`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| INSTALLEDTIME        | installedTime  | DATETIME      |   -1   | &nbsp; |
-| NAME        | name  | VARCHAR      |   150   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| SITE        | site  | VARCHAR      |   150   | &nbsp; |
-| VERSION        | version  | VARCHAR      |   50   | &nbsp; |
 | AUTHOR        | author  | VARCHAR      |   100   | &nbsp; |
 | CODE        | code  | VARCHAR      |   30   | &nbsp; |
-| DIRS        | dirs  | CLOB      |   16,777,215   | &nbsp; |
-| LICENSE        | license  | CLOB      |   65,535   | &nbsp; |
-| DESC        | desc  | CLOB      |   65,535   | &nbsp; |
 | DEPENDS        | depends  | VARCHAR      |   100   | &nbsp; |
-| ZENTAOCOMPATIBLE        | zentaoCompatible  | VARCHAR      |   100   | &nbsp; |
+| DESC        | desc  | CLOB      |   65,535   | &nbsp; |
+| DIRS        | dirs  | CLOB      |   16,777,215   | &nbsp; |
+| FILES        | files  | CLOB      |   16,777,215   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| INSTALLEDTIME        | installedTime  | DATETIME      |   -1   | &nbsp; |
+| LICENSE        | license  | CLOB      |   65,535   | &nbsp; |
+| NAME        | name  | VARCHAR      |   150   | &nbsp; |
+| SITE        | site  | VARCHAR      |   150   | &nbsp; |
 | STATUS        | status  | VARCHAR      |   20   | &nbsp; |
 | TYPE        | type  | VARCHAR      |   20   | &nbsp; |
-| FILES        | files  | CLOB      |   16,777,215   | &nbsp; |
+| VERSION        | version  | VARCHAR      |   50   | &nbsp; |
+| ZENTAOCOMPATIBLE        | zentaoCompatible  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -50336,19 +50336,19 @@ CREATE TABLE `zt_extension`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| ADDEDBY        | 由谁添加  | VARCHAR      |   30   | &nbsp; |
 | ADDEDDATE        | 添加时间  | DATETIME      |   -1   | &nbsp; |
-| PATHNAME        | 路径  | VARCHAR      |   100   | &nbsp; |
-| STRSIZE        | 显示大小  | VARCHAR      |   200   | &nbsp; |
-| TITLE        | 标题  | VARCHAR      |   255   | &nbsp; |
-| EXTRA        | 备注  | VARCHAR      |   255   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
 | DOWNLOADS        | 下载次数  | INTEGER      |   -1   | &nbsp; |
-| OBJECTTYPE        | 对象类型  | VARCHAR      |   30   | &nbsp; |
-| SIZE        | 大小  | INTEGER      |   -1   | &nbsp; |
+| EXTENSION        | 文件类型  | VARCHAR      |   30   | &nbsp; |
+| EXTRA        | 备注  | VARCHAR      |   255   | &nbsp; |
 | ID        | id  |       |   -1   | 主键&nbsp; |
 | OBJECTID        | 对象ID  |       |   -1   | &nbsp; |
-| ADDEDBY        | 由谁添加  | VARCHAR      |   30   | &nbsp; |
-| EXTENSION        | 文件类型  | VARCHAR      |   30   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| OBJECTTYPE        | 对象类型  | VARCHAR      |   30   | &nbsp; |
+| PATHNAME        | 路径  | VARCHAR      |   100   | &nbsp; |
+| SIZE        | 大小  | INTEGER      |   -1   | &nbsp; |
+| STRSIZE        | 显示大小  | VARCHAR      |   200   | &nbsp; |
+| TITLE        | 标题  | VARCHAR      |   255   | &nbsp; |
 
 
 
@@ -52198,10 +52198,10 @@ CREATE TABLE `zt_file`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | ACL        | acl  | CLOB      |   65,535   | &nbsp; |
-| ROLE        | role  | VARCHAR      |   30   | &nbsp; |
-| NAME        | 分组名称  | VARCHAR      |   30   | &nbsp; |
 | DESC        | 分组描述  | VARCHAR      |   255   | &nbsp; |
 | ID        | ID  |       |   -1   | 主键&nbsp; |
+| NAME        | 分组名称  | VARCHAR      |   30   | &nbsp; |
+| ROLE        | role  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -54043,9 +54043,9 @@ CREATE TABLE `zt_group`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| METHOD        | method  | VARCHAR      |   30   | &nbsp; |
-| ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
 | GROUP        | group  | INTEGER      |   -1   | &nbsp; |
+| ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
+| METHOD        | method  | VARCHAR      |   30   | &nbsp; |
 | MODULE        | module  | VARCHAR      |   30   | &nbsp; |
 
 
@@ -55888,9 +55888,9 @@ CREATE TABLE `zt_grouppriv`(
 | --------   |------------| :-----:   | :----: | :--------- | 
 | ACTION        | 关联日志  |       |   8   | &nbsp; |
 | DIFF        | 不同  | CLOB      |   16,777,215   | &nbsp; |
-| NEW        | 新值  | CLOB      |   65,535   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
 | FIELD        | 字段  | VARCHAR      |   30   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| NEW        | 新值  | CLOB      |   65,535   | &nbsp; |
 | OLD        | 旧值  | CLOB      |   65,535   | &nbsp; |
 
 
@@ -59566,21 +59566,21 @@ CREATE TABLE `zt_history`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| FROM        | 发送方  | CLOB      |   1,048,576   | &nbsp; |
-| ISLINK        | 是否是链接消息  | INTEGER      |   -1   | &nbsp; |
-| RETRYINTERVALTIME        | 重发间隔时间  | INTEGER      |   -1   | &nbsp; |
-| IBIZPRO_MESSAGENAME        | 消息名称  | VARCHAR      |   100   | &nbsp; |
-| LINKURL        | 链接地址  | VARCHAR      |   100   | &nbsp; |
-| IBIZPRO_MESSAGEID        | 消息标识  | VARCHAR      |   100   | 主键&nbsp; |
-| TO        | 接收方  | CLOB      |   1,048,576   | &nbsp; |
-| ISSYNC        | 是否同步  | INTEGER      |   -1   | &nbsp; |
-| RETRYTIMES        | 重发次数  | INTEGER      |   -1   | &nbsp; |
-| ISRETRY        | 是否重发  | INTEGER      |   -1   | &nbsp; |
-| SUBJECT        | 标题  | VARCHAR      |   100   | &nbsp; |
-| CONTENT        | 内容  | CLOB      |   1,048,576   | &nbsp; |
-| CC        | 抄送方  | CLOB      |   1,048,576   | &nbsp; |
-| PARAM        | 消息参数  | CLOB      |   1,048,576   | &nbsp; |
 | BCC        | 密件抄送方  | CLOB      |   1,048,576   | &nbsp; |
+| CC        | 抄送方  | CLOB      |   1,048,576   | &nbsp; |
+| CONTENT        | 内容  | CLOB      |   1,048,576   | &nbsp; |
+| FROM        | 发送方  | CLOB      |   1,048,576   | &nbsp; |
+| IBIZPRO_MESSAGEID        | 消息标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBIZPRO_MESSAGENAME        | 消息名称  | VARCHAR      |   100   | &nbsp; |
+| ISLINK        | 是否是链接消息  | INTEGER      |   -1   | &nbsp; |
+| ISRETRY        | 是否重发  | INTEGER      |   -1   | &nbsp; |
+| ISSYNC        | 是否同步  | INTEGER      |   -1   | &nbsp; |
+| LINKURL        | 链接地址  | VARCHAR      |   100   | &nbsp; |
+| PARAM        | 消息参数  | CLOB      |   1,048,576   | &nbsp; |
+| RETRYINTERVALTIME        | 重发间隔时间  | INTEGER      |   -1   | &nbsp; |
+| RETRYTIMES        | 重发次数  | INTEGER      |   -1   | &nbsp; |
+| SUBJECT        | 标题  | VARCHAR      |   100   | &nbsp; |
+| TO        | 接收方  | CLOB      |   1,048,576   | &nbsp; |
 | TYPE        | 消息类型  | VARCHAR      |   60   | &nbsp; |
 
 
@@ -61413,20 +61413,20 @@ CREATE TABLE `zt_history`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| SCORE        | 总评分  | INTEGER      |   -1   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| IBIZPRO_PLUGINID        | 系统插件标识  | VARCHAR      |   100   | 主键&nbsp; |
-| VERSION        | 版本  | INTEGER      |   -1   | &nbsp; |
 | COMMENTCOUNT        | 总评论数  | INTEGER      |   -1   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| KEYWORD        | 关键字  | VARCHAR      |   2,000   | &nbsp; |
-| IBIZPRO_PLUGINNAME        | 系统插件名称  | VARCHAR      |   200   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| TYPE        | 类型  | VARCHAR      |   10   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| DOWNLOADURL        | 最新版本下载地址  | VARCHAR      |   100   | &nbsp; |
-| TAG        | 标签  | VARCHAR      |   2,000   | &nbsp; |
 | DOWNLOADCOUNT        | 总下载量  | INTEGER      |   -1   | &nbsp; |
+| DOWNLOADURL        | 最新版本下载地址  | VARCHAR      |   100   | &nbsp; |
+| IBIZPRO_PLUGINID        | 系统插件标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBIZPRO_PLUGINNAME        | 系统插件名称  | VARCHAR      |   200   | &nbsp; |
+| KEYWORD        | 关键字  | VARCHAR      |   2,000   | &nbsp; |
+| SCORE        | 总评分  | INTEGER      |   -1   | &nbsp; |
+| TAG        | 标签  | VARCHAR      |   2,000   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   10   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| VERSION        | 版本  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -65090,10 +65090,10 @@ CREATE TABLE `zt_history`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| IBIZ_ID        | IBIZ标识  | VARCHAR      |   100   | &nbsp; |
-| NAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
 | CODE        | 产品代号  | VARCHAR      |   45   | &nbsp; |
+| IBIZ_ID        | IBIZ标识  | VARCHAR      |   100   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| NAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
 
 
 
@@ -66934,45 +66934,45 @@ CREATE TABLE `zt_product`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| CLOSEDREASON        | 关闭原因  | VARCHAR      |   100   | &nbsp; |
-| TOBUG        | 转Bug  | INTEGER      |   100   | &nbsp; |
-| CHILDSTORIES        | 需求细分  | VARCHAR      |   100   | &nbsp; |
-| SOURCENOTE        | 来源备注  | VARCHAR      |   255   | &nbsp; |
-| PRODUCT        | 编号  |       |   8   | &nbsp; |
-| STATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
-| MAILTO        | 抄送给  | VARCHAR      |   100   | &nbsp; |
-| OPENEDBY        | 由谁创建  | VARCHAR      |   100   | &nbsp; |
-| FROMBUG        | 来源Bug  | INTEGER      |   100   | &nbsp; |
-| REVIEWEDDATE        | 评审时间  | DATETIME      |   -1   | &nbsp; |
-| COLOR        | 颜色  | VARCHAR      |   60   | &nbsp; |
 | ASSIGNEDDATE        | 指派日期  | DATETIME      |   -1   | &nbsp; |
-| LASTEDITEDDATE        | 最后修改日期  | DATETIME      |   -1   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| ESTIMATE        | 预计工时  | DOUBLE      |   -1   | &nbsp; |
-| REVIEWEDBY        | 由谁评审  | VARCHAR      |   2,000   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| TYPE        | 需求类型  | VARCHAR      |   60   | &nbsp; |
+| ASSIGNEDTO        | 指派给  | VARCHAR      |   100   | &nbsp; |
 | BRANCH        | 平台  | INTEGER      |   100   | &nbsp; |
+| CHILDSTORIES        | 需求细分  | VARCHAR      |   100   | &nbsp; |
+| CLOSEDBY        | 由谁关闭  | VARCHAR      |   100   | &nbsp; |
+| CLOSEDDATE        | 关闭日期	  | DATETIME      |   -1   | &nbsp; |
+| CLOSEDREASON        | 关闭原因  | VARCHAR      |   100   | &nbsp; |
+| COLOR        | 颜色  | VARCHAR      |   60   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
 | DUPLICATESTORY        | 重复需求  | INTEGER      |   100   | &nbsp; |
+| ESTIMATE        | 预计工时  | DOUBLE      |   -1   | &nbsp; |
+| FROMBUG        | 来源Bug  | INTEGER      |   100   | &nbsp; |
+| IBIZ_ID        | IBIZ标识  | VARCHAR      |   100   | &nbsp; |
 | IBIZ_SOURCEID        | 来源对象标识  | VARCHAR      |   100   | &nbsp; |
 | IBIZ_SOURCENAME        | 来源对象名称  | VARCHAR      |   100   | &nbsp; |
-| SUBSTATUS        | 子状态  | VARCHAR      |   100   | &nbsp; |
-| STAGE        | 需求阶段  | VARCHAR      |   60   | &nbsp; |
-| KEYWORDS        | 关键词  | VARCHAR      |   255   | &nbsp; |
-| MODULE        | id  |       |   20   | &nbsp; |
-| CLOSEDDATE        | 关闭日期	  | DATETIME      |   -1   | &nbsp; |
 | IBIZ_SOURCEOBJECT        | 来源对象  | VARCHAR      |   100   | &nbsp; |
-| LINKSTORIES        | 相关需求  | VARCHAR      |   100   | &nbsp; |
-| ASSIGNEDTO        | 指派给  | VARCHAR      |   100   | &nbsp; |
-| CLOSEDBY        | 由谁关闭  | VARCHAR      |   100   | &nbsp; |
-| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
-| TITLE        | 需求名称  | VARCHAR      |   255   | &nbsp; |
-| SOURCE        | 需求来源  | VARCHAR      |   20   | &nbsp; |
-| STAGEDBY        | 设置阶段者  | VARCHAR      |   60   | &nbsp; |
-| PRI        | 优先级  | INTEGER      |   60   | &nbsp; |
-| IBIZ_ID        | IBIZ标识  | VARCHAR      |   100   | &nbsp; |
-| VERSION        | 版本号  | INTEGER      |   6   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| KEYWORDS        | 关键词  | VARCHAR      |   255   | &nbsp; |
 | LASTEDITEDBY        | 最后修改者  | VARCHAR      |   100   | &nbsp; |
+| LASTEDITEDDATE        | 最后修改日期  | DATETIME      |   -1   | &nbsp; |
+| LINKSTORIES        | 相关需求  | VARCHAR      |   100   | &nbsp; |
+| MAILTO        | 抄送给  | VARCHAR      |   100   | &nbsp; |
+| MODULE        | id  |       |   20   | &nbsp; |
+| OPENEDBY        | 由谁创建  | VARCHAR      |   100   | &nbsp; |
+| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
+| PRI        | 优先级  | INTEGER      |   60   | &nbsp; |
+| PRODUCT        | 编号  |       |   8   | &nbsp; |
+| REVIEWEDBY        | 由谁评审  | VARCHAR      |   2,000   | &nbsp; |
+| REVIEWEDDATE        | 评审时间  | DATETIME      |   -1   | &nbsp; |
+| SOURCE        | 需求来源  | VARCHAR      |   20   | &nbsp; |
+| SOURCENOTE        | 来源备注  | VARCHAR      |   255   | &nbsp; |
+| STAGE        | 需求阶段  | VARCHAR      |   60   | &nbsp; |
+| STAGEDBY        | 设置阶段者  | VARCHAR      |   60   | &nbsp; |
+| STATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
+| SUBSTATUS        | 子状态  | VARCHAR      |   100   | &nbsp; |
+| TITLE        | 需求名称  | VARCHAR      |   255   | &nbsp; |
+| TOBUG        | 转Bug  | INTEGER      |   100   | &nbsp; |
+| TYPE        | 需求类型  | VARCHAR      |   60   | &nbsp; |
+| VERSION        | 版本号  | INTEGER      |   6   | &nbsp; |
 
 
 
@@ -68848,20 +68848,20 @@ CREATE TABLE `zt_story`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| IBIZ_ID        | IBIZ标识  | VARCHAR      |   100   | &nbsp; |
-| PRODUCTNAME        | 产品  | VARCHAR      |   90   | &nbsp; |
-| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
-| GRADE        | 级别  | INTEGER      |   3   | &nbsp; |
 | COLLECTOR        | collector  | CLOB      |   65,535   | &nbsp; |
-| TYPE        | 类型  | VARCHAR      |   30   | &nbsp; |
-| PARENT        | id  |       |   20   | &nbsp; |
-| ROOT        | 编号  |       |   8   | &nbsp; |
 | DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| PATH        | 路径  | VARCHAR      |   255   | &nbsp; |
+| GRADE        | 级别  | INTEGER      |   3   | &nbsp; |
+| IBIZ_ID        | IBIZ标识  | VARCHAR      |   100   | &nbsp; |
 | IBIZ_STORYTYPE        | 需求模块类型  | VARCHAR      |   60   | &nbsp; |
-| SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
-| OWNER        | owner  | VARCHAR      |   30   | &nbsp; |
 | ID        | id  |       |   20   | 主键&nbsp; |
+| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
+| OWNER        | owner  | VARCHAR      |   30   | &nbsp; |
+| PARENT        | id  |       |   20   | &nbsp; |
+| PATH        | 路径  | VARCHAR      |   255   | &nbsp; |
+| PRODUCTNAME        | 产品  | VARCHAR      |   90   | &nbsp; |
+| ROOT        | 编号  |       |   8   | &nbsp; |
+| SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -70711,17 +70711,17 @@ CREATE TABLE `zt_module`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| IBZPRO_SYSTPLNAME        | 系统模板名称  | VARCHAR      |   200   | &nbsp; |
-| FILE        | id  |       |   -1   | &nbsp; |
-| PUBLIC        | 是否公开  | VARCHAR      |   1   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| IBZPRO_SYSTPLID        | 系统模板标识  | VARCHAR      |   100   | 主键&nbsp; |
 | CONTENT        | 模板内容  | CLOB      |   65,535   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| IBIZ_SOURCEOBJECT        | 来源对象  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| TPLTYPE        | IBIZ模板类型  | VARCHAR      |   60   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| FILE        | id  |       |   -1   | &nbsp; |
+| IBIZ_SOURCEOBJECT        | 来源对象  | VARCHAR      |   100   | &nbsp; |
+| IBZPRO_SYSTPLID        | 系统模板标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZPRO_SYSTPLNAME        | 系统模板名称  | VARCHAR      |   200   | &nbsp; |
+| PUBLIC        | 是否公开  | VARCHAR      |   1   | &nbsp; |
+| TPLTYPE        | IBIZ模板类型  | VARCHAR      |   60   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -72569,12 +72569,12 @@ CREATE TABLE `T_IBZPRO_SYSTPL`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| IBZPRO_SYSTEMID        | 运行生产系统标识  | VARCHAR      |   100   | 主键&nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| IBZPRO_SYSTEMID        | 运行生产系统标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZPRO_SYSTEMNAME        | 运行生产系统名称  | VARCHAR      |   200   | &nbsp; |
 | UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 | UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IBZPRO_SYSTEMNAME        | 运行生产系统名称  | VARCHAR      |   200   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 
 
 
@@ -74417,21 +74417,21 @@ CREATE TABLE `T_IBZPRO_SYSTEM`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| EDITEDBY        | 由谁更新  | VARCHAR      |   100   | &nbsp; |
-| OBJECTTYPE        | 对象类型  | VARCHAR      |   100   | &nbsp; |
-| IBZ_DOCID        | 文档标识  | VARCHAR      |   100   | 主键&nbsp; |
-| ORDER        | 排序  | VARCHAR      |   100   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 | ADDEDBY        | 由谁添加  | VARCHAR      |   100   | &nbsp; |
-| SIZE        | 大小  | VARCHAR      |   100   | &nbsp; |
-| IBZ_DOCNAME        | 文档名称  | VARCHAR      |   200   | &nbsp; |
-| EDITEDDATE        | 更新时间  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| LIB        | 所属文档库  | VARCHAR      |   100   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | ADDEDDATE        | 添加时间  | VARCHAR      |   100   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| EDITEDBY        | 由谁更新  | VARCHAR      |   100   | &nbsp; |
+| EDITEDDATE        | 更新时间  | VARCHAR      |   100   | &nbsp; |
+| IBZ_DOCID        | 文档标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZ_DOCNAME        | 文档名称  | VARCHAR      |   200   | &nbsp; |
 | ISCOLLECT        | 是否已收藏  | INTEGER      |   100   | &nbsp; |
+| LIB        | 所属文档库  | VARCHAR      |   100   | &nbsp; |
+| OBJECTTYPE        | 对象类型  | VARCHAR      |   100   | &nbsp; |
+| ORDER        | 排序  | VARCHAR      |   100   | &nbsp; |
+| SIZE        | 大小  | VARCHAR      |   100   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -76263,10 +76263,10 @@ CREATE TABLE `T_IBZPRO_SYSTEM`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| REALNAME        | 真实姓名  | VARCHAR      |   100   | &nbsp; |
-| ID        | ID  |       |   20   | 主键&nbsp; |
-| COMMITER        | 源代码账户  | VARCHAR      |   100   | &nbsp; |
 | ACCOUNT        | 账户  | VARCHAR      |   30   | &nbsp; |
+| COMMITER        | 源代码账户  | VARCHAR      |   100   | &nbsp; |
+| ID        | ID  |       |   20   | 主键&nbsp; |
+| REALNAME        | 真实姓名  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -78107,15 +78107,15 @@ CREATE TABLE `zt_user`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| DELETED        | 逻辑标识  | VARCHAR      |   200   | &nbsp; |
-| INDEX_TYPE        | 类型  | VARCHAR      |   200   | &nbsp; |
-| INDEXID        | 主键  |       |   -1   | 主键&nbsp; |
-| MDEPTID        | 部门标识  | VARCHAR      |   200   | &nbsp; |
-| COLOR        | 颜色  | VARCHAR      |   200   | &nbsp; |
-| ACLLIST        | 权限列表  | VARCHAR      |   200   | &nbsp; |
 | ACL        | 权限  | VARCHAR      |   200   | &nbsp; |
-| INDEXNAME        | 标题[需求、任务等]  | VARCHAR      |   200   | &nbsp; |
+| ACLLIST        | 权限列表  | VARCHAR      |   200   | &nbsp; |
+| COLOR        | 颜色  | VARCHAR      |   200   | &nbsp; |
+| DELETED        | 逻辑标识  | VARCHAR      |   200   | &nbsp; |
 | INDEXDESC        | 内容[需求、任务等]  | VARCHAR      |   200   | &nbsp; |
+| INDEXID        | 主键  |       |   -1   | 主键&nbsp; |
+| INDEXNAME        | 标题[需求、任务等]  | VARCHAR      |   200   | &nbsp; |
+| INDEX_TYPE        | 类型  | VARCHAR      |   200   | &nbsp; |
+| MDEPTID        | 部门标识  | VARCHAR      |   200   | &nbsp; |
 | ORGID        | 组织标识  | VARCHAR      |   200   | &nbsp; |
 | PROJECT        | 项目  |       |   -1   | &nbsp; |
 
@@ -79949,19 +79949,19 @@ CREATE TABLE `zt_user`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| IBIZPRO_PRODUCTDAILYNAME        | 产品日报名称  | VARCHAR      |   200   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| PRODUCT        | 产品  |       |   8   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| TASKS        | 任务  | VARCHAR      |   2,000   | &nbsp; |
 | BEGIN        | 开始日期  | DATETIME      |   -1   | &nbsp; |
-| PO        | 产品负责人  | VARCHAR      |   100   | &nbsp; |
-| END        | 结束日期  | DATETIME      |   -1   | &nbsp; |
-| TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| END        | 结束日期  | DATETIME      |   -1   | &nbsp; |
 | IBIZPRO_PRODUCTDAILYID        | 产品日报标识  |       |   100   | 主键&nbsp; |
+| IBIZPRO_PRODUCTDAILYNAME        | 产品日报名称  | VARCHAR      |   200   | &nbsp; |
+| PO        | 产品负责人  | VARCHAR      |   100   | &nbsp; |
+| PRODUCT        | 产品  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
+| TASKS        | 任务  | VARCHAR      |   2,000   | &nbsp; |
+| TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 | UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
@@ -81812,18 +81812,18 @@ CREATE TABLE `T_IBIZPRO_PRODUCTDAILY`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| IBIZPRO_PRODUCTMONTHLYNAME        | 产品月报名称  | VARCHAR      |   200   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| IBIZPRO_PRODUCTMONTHLYID        | 产品月报标识  |       |   100   | 主键&nbsp; |
+| IBIZPRO_PRODUCTMONTHLYNAME        | 产品月报名称  | VARCHAR      |   200   | &nbsp; |
 | PO        | 产品负责人  | VARCHAR      |   30   | &nbsp; |
 | PRODUCT        | 产品编号  |       |   8   | &nbsp; |
-| IBIZPRO_PRODUCTMONTHLYID        | 产品月报标识  |       |   100   | 主键&nbsp; |
+| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
 | TASKS        | 任务  | VARCHAR      |   2,000   | &nbsp; |
+| TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 | YEAR_MONTH        | 年月  | VARCHAR      |   100   | &nbsp; |
 
 
@@ -83672,20 +83672,20 @@ CREATE TABLE `T_IBIZPRO_PRODUCTMONTHLY`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | BEGINDATESTATS        | 开始统计  | VARCHAR      |   100   | &nbsp; |
-| ENDDATESTATS        | 结束统计  | VARCHAR      |   100   | &nbsp; |
-| IBIZPRO_PRODUCTWEEKLYID        | 产品周报标识  |       |   20   | 主键&nbsp; |
-| TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| ENDDATESTATS        | 结束统计  | VARCHAR      |   100   | &nbsp; |
+| IBIZPRO_PRODUCTDAILYNAME        | 产品周报名称  | VARCHAR      |   200   | &nbsp; |
+| IBIZPRO_PRODUCTWEEKLYID        | 产品周报标识  |       |   20   | 主键&nbsp; |
 | PO        | 产品负责人  | VARCHAR      |   100   | &nbsp; |
+| PRODUCT        | 编号  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
+| TASKS        | 任务  | VARCHAR      |   100   | &nbsp; |
+| TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
 | UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 | UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IBIZPRO_PRODUCTDAILYNAME        | 产品周报名称  | VARCHAR      |   200   | &nbsp; |
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| PRODUCT        | 编号  |       |   8   | &nbsp; |
-| TASKS        | 任务  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -85535,20 +85535,20 @@ CREATE TABLE `T_IBIZPRO_PRODUCTWEEKLY`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| IBIZPRO_PROJECTDAILYID        | 项目日报标识  | VARCHAR      |   100   | 主键&nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| END        | 结束日期  | DATETIME      |   -1   | &nbsp; |
-| PM        | 项目负责人  | VARCHAR      |   100   | &nbsp; |
-| IBIZPRO_PROJECTDAILYNAME        | 项目日报名称  | VARCHAR      |   200   | &nbsp; |
-| PROJECT        | 项目编号  |       |   8   | &nbsp; |
 | BEGIN        | 开始日期  | DATETIME      |   -1   | &nbsp; |
-| PROJECTNAME        | 项目名称  | VARCHAR      |   90   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| END        | 结束日期  | DATETIME      |   -1   | &nbsp; |
+| IBIZPRO_PROJECTDAILYID        | 项目日报标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBIZPRO_PROJECTDAILYNAME        | 项目日报名称  | VARCHAR      |   200   | &nbsp; |
+| PM        | 项目负责人  | VARCHAR      |   100   | &nbsp; |
+| PROJECT        | 项目编号  |       |   8   | &nbsp; |
+| PROJECTNAME        | 项目名称  | VARCHAR      |   90   | &nbsp; |
 | TASKS        | 任务  | VARCHAR      |   2,000   | &nbsp; |
+| TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -87398,19 +87398,19 @@ CREATE TABLE `T_IBIZPRO_PROJECTDAILY`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| YEAR_MONTH        | 年月  | VARCHAR      |   100   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| IBIZPRO_PROJECTMONTHLYID        | 项目月报标识  | VARCHAR      |   100   | 主键&nbsp; |
 | IBIZPRO_PROJECTMONTHLYNAME        | 项目月报名称  | VARCHAR      |   200   | &nbsp; |
+| PM        | 项目负责人  | VARCHAR      |   30   | &nbsp; |
+| PROJECT        | 项目编号  |       |   8   | &nbsp; |
+| PROJECTNAME        | 项目名称  | VARCHAR      |   90   | &nbsp; |
 | TASKS        | 任务  | VARCHAR      |   2,000   | &nbsp; |
 | TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
-| PM        | 项目负责人  | VARCHAR      |   30   | &nbsp; |
 | UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| IBIZPRO_PROJECTMONTHLYID        | 项目月报标识  | VARCHAR      |   100   | 主键&nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| PROJECTNAME        | 项目名称  | VARCHAR      |   90   | &nbsp; |
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| PROJECT        | 项目编号  |       |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| YEAR_MONTH        | 年月  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -89258,23 +89258,23 @@ CREATE TABLE `T_IBIZPRO_PROJECTMONTHLY`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| WEEK        | 周  | VARCHAR      |   100   | &nbsp; |
-| MONTH        | 月  | VARCHAR      |   100   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | BEGINDATESTATS        | 开始统计  | VARCHAR      |   100   | &nbsp; |
-| YEAR        | 年  | VARCHAR      |   100   | &nbsp; |
-| PROJECT        | 项目编号  |       |   8   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IBZPRO_PROJECTWEEKLYNAME        | 项目周报名称  | VARCHAR      |   200   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| TASKS        | 任务  | VARCHAR      |   2,000   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
-| PM        | 项目负责人  | VARCHAR      |   100   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| PROJECTNAME        | 项目名称  | VARCHAR      |   90   | &nbsp; |
 | ENDDATESTATS        | 结束统计  | VARCHAR      |   100   | &nbsp; |
 | IBZPRO_PROJECTWEEKLYID        | 项目周报标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZPRO_PROJECTWEEKLYNAME        | 项目周报名称  | VARCHAR      |   200   | &nbsp; |
+| MONTH        | 月  | VARCHAR      |   100   | &nbsp; |
+| PM        | 项目负责人  | VARCHAR      |   100   | &nbsp; |
+| PROJECT        | 项目编号  |       |   8   | &nbsp; |
+| PROJECTNAME        | 项目名称  | VARCHAR      |   90   | &nbsp; |
+| TASKS        | 任务  | VARCHAR      |   2,000   | &nbsp; |
+| TOTALESTIMATES        | 总工时  | DOUBLE      |   -1   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| WEEK        | 周  | VARCHAR      |   100   | &nbsp; |
+| YEAR        | 年  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -91128,15 +91128,15 @@ CREATE TABLE `T_IBZPRO_PROJECTWEEKLY`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | AGENTBEGIN        | 代理开始日期  | DATETIME      |   -1   | &nbsp; |
+| AGENTEND        | 代理结束日期  | DATETIME      |   -1   | &nbsp; |
+| AGENTUSER        | 代理用户  | VARCHAR      |   100   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| CREATEMANNAME        | 创建人姓名  | VARCHAR      |   100   | &nbsp; |
+| IBZ_AGENTID        | 代理标识  |       |   100   | 主键&nbsp; |
 | IBZ_AGENTNAME        | 代理名称  | VARCHAR      |   200   | &nbsp; |
 | UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| AGENTUSER        | 代理用户  | VARCHAR      |   100   | &nbsp; |
 | UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IBZ_AGENTID        | 代理标识  |       |   100   | 主键&nbsp; |
-| AGENTEND        | 代理结束日期  | DATETIME      |   -1   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| CREATEMANNAME        | 创建人姓名  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -92983,32 +92983,32 @@ CREATE TABLE `T_IBZ_AGENT`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| LIBNAME        | 用例库  | VARCHAR      |   255   | &nbsp; |
-| LASTEDITEDDATE        | 修改日期  | DATETIME      |   -1   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| MODULENAME        | 所属模块  | VARCHAR      |   60   | &nbsp; |
-| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
-| KEYWORDS        | 关键词  | VARCHAR      |   255   | &nbsp; |
-| PRI        | 优先级  | VARCHAR      |   60   | &nbsp; |
-| PATH        | path  | INTEGER      |   -1   | &nbsp; |
-| LASTEDITEDBY        | 最后修改者  | VARCHAR      |   60   | &nbsp; |
-| VERSION        | 用例版本  | INTEGER      |   -1   | &nbsp; |
-| OPENEDBY        | 由谁创建  | VARCHAR      |   60   | &nbsp; |
-| TYPE        | 用例类型  | VARCHAR      |   60   | &nbsp; |
-| STATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
-| MODULE        | id  |       |   20   | &nbsp; |
 | AUTO        | auto  | VARCHAR      |   10   | &nbsp; |
-| ID        | 用例编号  |       |   8   | 主键&nbsp; |
-| TITLE        | 用例标题  | VARCHAR      |   255   | &nbsp; |
-| PRECONDITION        | 前置条件  | CLOB      |   65,535   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
 | HOWRUN        | howRun  | VARCHAR      |   30   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   30   | &nbsp; |
+| ID        | 用例编号  |       |   8   | 主键&nbsp; |
+| KEYWORDS        | 关键词  | VARCHAR      |   255   | &nbsp; |
+| LASTEDITEDBY        | 最后修改者  | VARCHAR      |   60   | &nbsp; |
+| LASTEDITEDDATE        | 修改日期  | DATETIME      |   -1   | &nbsp; |
 | LIB        | 编号  |       |   8   | &nbsp; |
+| LIBNAME        | 用例库  | VARCHAR      |   255   | &nbsp; |
+| MODULE        | id  |       |   20   | &nbsp; |
+| MODULENAME        | 所属模块  | VARCHAR      |   60   | &nbsp; |
+| OPENEDBY        | 由谁创建  | VARCHAR      |   60   | &nbsp; |
+| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   30   | &nbsp; |
+| PATH        | path  | INTEGER      |   -1   | &nbsp; |
+| PRECONDITION        | 前置条件  | CLOB      |   65,535   | &nbsp; |
+| PRI        | 优先级  | VARCHAR      |   60   | &nbsp; |
 | SCRIPTEDBY        | scriptedBy  | VARCHAR      |   30   | &nbsp; |
-| SCRIPTSTATUS        | scriptStatus  | VARCHAR      |   30   | &nbsp; |
-| STAGE        | 适用阶段  | VARCHAR      |   2,000   | &nbsp; |
 | SCRIPTEDDATE        | scriptedDate  | DATETIME      |   -1   | &nbsp; |
 | SCRIPTLOCATION        | scriptLocation  | VARCHAR      |   255   | &nbsp; |
+| SCRIPTSTATUS        | scriptStatus  | VARCHAR      |   30   | &nbsp; |
+| STAGE        | 适用阶段  | VARCHAR      |   2,000   | &nbsp; |
+| STATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
+| TITLE        | 用例标题  | VARCHAR      |   255   | &nbsp; |
+| TYPE        | 用例类型  | VARCHAR      |   60   | &nbsp; |
+| VERSION        | 用例版本  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -94869,28 +94869,28 @@ CREATE TABLE `zt_case`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| REPORTTOPK        | 汇报给（选择）  | VARCHAR      |   200   | &nbsp; |
-| UPDATEMANNAME        | 更新人名称  | VARCHAR      |   60   | &nbsp; |
-| TODAYTASK        | 完成任务  | VARCHAR      |   2,000   | &nbsp; |
-| IBZ_DAILYID        | 日报标识  |       |   100   | 主键&nbsp; |
-| ISSUBMIT        | 是否提交  | VARCHAR      |   60   | &nbsp; |
-| WORKTODAY        | 今日工作  | CLOB      |   1,048,576   | &nbsp; |
-| MAILTO        | 抄送给  | VARCHAR      |   2,000   | &nbsp; |
-| TOMORROWPLANSTASK        | 明日计划任务  | VARCHAR      |   2,000   | &nbsp; |
-| PLANSTOMORROW        | 明日计划  | CLOB      |   1,048,576   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 | ACCOUNT        | 用户  | VARCHAR      |   60   | &nbsp; |
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
 | COMMENT        | 其他事项  | CLOB      |   1,048,576   | &nbsp; |
-| CREATEMANNAME        | 建立人名称  | VARCHAR      |   60   | &nbsp; |
-| REPORTSTATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
-| REPORTTO        | 汇报给  | VARCHAR      |   60   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IBZ_DAILYNAME        | 日报名称  | VARCHAR      |   200   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| SUBMITTIME        | 提交时间  | DATETIME      |   -1   | &nbsp; |
+| CREATEMANNAME        | 建立人名称  | VARCHAR      |   60   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| IBZ_DAILYID        | 日报标识  |       |   100   | 主键&nbsp; |
+| IBZ_DAILYNAME        | 日报名称  | VARCHAR      |   200   | &nbsp; |
+| ISSUBMIT        | 是否提交  | VARCHAR      |   60   | &nbsp; |
+| MAILTO        | 抄送给  | VARCHAR      |   2,000   | &nbsp; |
 | MAILTOPK        | 抄送给（选择）  | VARCHAR      |   200   | &nbsp; |
+| PLANSTOMORROW        | 明日计划  | CLOB      |   1,048,576   | &nbsp; |
+| REPORTSTATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
+| REPORTTO        | 汇报给  | VARCHAR      |   60   | &nbsp; |
+| REPORTTOPK        | 汇报给（选择）  | VARCHAR      |   200   | &nbsp; |
+| SUBMITTIME        | 提交时间  | DATETIME      |   -1   | &nbsp; |
+| TODAYTASK        | 完成任务  | VARCHAR      |   2,000   | &nbsp; |
+| TOMORROWPLANSTASK        | 明日计划任务  | VARCHAR      |   2,000   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| UPDATEMANNAME        | 更新人名称  | VARCHAR      |   60   | &nbsp; |
+| WORKTODAY        | 今日工作  | CLOB      |   1,048,576   | &nbsp; |
 
 
 
@@ -96747,15 +96747,15 @@ CREATE TABLE `T_IBZ_DAILY`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IBZ_FAVORITESNAME        | 收藏名称  | VARCHAR      |   200   | &nbsp; |
-| OBJECTID        | 数据对象标识  |       |   -1   | &nbsp; |
 | ACCOUNT        | 收藏用户  | VARCHAR      |   60   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | IBZ_FAVORITESID        | 收藏标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZ_FAVORITESNAME        | 收藏名称  | VARCHAR      |   200   | &nbsp; |
+| OBJECTID        | 数据对象标识  |       |   -1   | &nbsp; |
 | TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -98602,15 +98602,15 @@ CREATE TABLE `T_IBZ_FAVORITES`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | ADDEDBY        | 由谁创建  | VARCHAR      |   60   | &nbsp; |
-| TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
-| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
-| LASTEDITEDBY        | 最后编辑人  | VARCHAR      |   60   | &nbsp; |
 | ADDEDDATE        | 创建时间  | DATETIME      |   -1   | &nbsp; |
-| NAME        | 名称  | VARCHAR      |   255   | &nbsp; |
 | DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| LASTEDITEDDATE        | 最后编辑时间  | DATETIME      |   -1   | &nbsp; |
-| PRODUCT        | 产品  |       |   20   | &nbsp; |
+| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
 | ID        | 编号  |       |   8   | 主键&nbsp; |
+| LASTEDITEDBY        | 最后编辑人  | VARCHAR      |   60   | &nbsp; |
+| LASTEDITEDDATE        | 最后编辑时间  | DATETIME      |   -1   | &nbsp; |
+| NAME        | 名称  | VARCHAR      |   255   | &nbsp; |
+| PRODUCT        | 产品  |       |   20   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -100457,10 +100457,10 @@ CREATE TABLE `zt_testsuite`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
+| DESC        | 步骤  | CLOB      |   65,535   | &nbsp; |
 | EXPECT        | 预期  | CLOB      |   65,535   | &nbsp; |
 | ID        | 编号  |       |   8   | 主键&nbsp; |
-| DESC        | 步骤  | CLOB      |   65,535   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -102301,13 +102301,13 @@ CREATE TABLE `ZT_CASESTEP`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| CASE        | 用例编号  |       |   8   | &nbsp; |
 | DESC        | 步骤  | CLOB      |   65,535   | &nbsp; |
-| VERSION        | 版本  | INTEGER      |   -1   | &nbsp; |
+| EXPECT        | 预期  | CLOB      |   65,535   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
 | PARENT        | 编号  |       |   8   | &nbsp; |
 | TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| CASE        | 用例编号  |       |   8   | &nbsp; |
-| EXPECT        | 预期  | CLOB      |   65,535   | &nbsp; |
+| VERSION        | 版本  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -104150,21 +104150,21 @@ CREATE TABLE `zt_casestep`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| GRADE        | grade  | INTEGER      |   -1   | &nbsp; |
-| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
-| ROOT        | 编号  |       |   8   | &nbsp; |
-| ID        | id  |       |   20   | 主键&nbsp; |
-| PARENT        | id  |       |   20   | &nbsp; |
-| SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| ORDER        | 排序值  | INTEGER      |   -1   | &nbsp; |
-| PARENTNAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
-| TYPE        | 类型（story）  | VARCHAR      |   30   | &nbsp; |
-| OWNER        | owner  | VARCHAR      |   30   | &nbsp; |
-| COLLECTOR        | collector  | CLOB      |   65,535   | &nbsp; |
-| PATH        | path  | VARCHAR      |   255   | &nbsp; |
-| ISLEAF        | 叶子模块  | VARCHAR      |   200   | &nbsp; |
 | BRANCH        | branch  | INTEGER      |   -1   | &nbsp; |
+| COLLECTOR        | collector  | CLOB      |   65,535   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
+| GRADE        | grade  | INTEGER      |   -1   | &nbsp; |
+| ID        | id  |       |   20   | 主键&nbsp; |
+| ISLEAF        | 叶子模块  | VARCHAR      |   200   | &nbsp; |
+| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
+| ORDER        | 排序值  | INTEGER      |   -1   | &nbsp; |
+| OWNER        | owner  | VARCHAR      |   30   | &nbsp; |
+| PARENT        | id  |       |   20   | &nbsp; |
+| PARENTNAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
+| PATH        | path  | VARCHAR      |   255   | &nbsp; |
+| ROOT        | 编号  |       |   8   | &nbsp; |
+| SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
+| TYPE        | 类型（story）  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -106014,28 +106014,28 @@ CREATE TABLE `zt_module`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| CREATEMANNAME        | 建立人名称  | VARCHAR      |   60   | &nbsp; |
-| IBZ_MONTHLYID        | 月报标识  |       |   100   | 主键&nbsp; |
-| ISSUBMIT        | 是否提交  | VARCHAR      |   100   | &nbsp; |
-| MAILTOPK        | 抄送给（选择）  | VARCHAR      |   200   | &nbsp; |
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| NEXTMONTHPLANSTASK        | 下月计划任务  | VARCHAR      |   2,000   | &nbsp; |
-| PLANSNEXTMONTH        | 下月计划  | CLOB      |   1,048,576   | &nbsp; |
-| REPORTTO        | 汇报给  | VARCHAR      |   60   | &nbsp; |
-| SUBMITTIME        | 提交时间  | DATETIME      |   -1   | &nbsp; |
-| MAILTO        | 抄送给  | VARCHAR      |   2,000   | &nbsp; |
-| IBZ_MONTHLYNAME        | 月报名称  | VARCHAR      |   200   | &nbsp; |
-| REPORTSTATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
-| UPDATEMANNAME        | 更新人名称  | VARCHAR      |   60   | &nbsp; |
-| WORKTHISMONTH        | 本月工作  | CLOB      |   1,048,576   | &nbsp; |
+| ACCOUNT        | 用户  | VARCHAR      |   100   | &nbsp; |
+| COMMENT        | 其他事项  | CLOB      |   1,048,576   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| ACCOUNT        | 用户  | VARCHAR      |   100   | &nbsp; |
+| CREATEMANNAME        | 建立人名称  | VARCHAR      |   60   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| IBZ_MONTHLYID        | 月报标识  |       |   100   | 主键&nbsp; |
+| IBZ_MONTHLYNAME        | 月报名称  | VARCHAR      |   200   | &nbsp; |
+| ISSUBMIT        | 是否提交  | VARCHAR      |   100   | &nbsp; |
+| MAILTO        | 抄送给  | VARCHAR      |   2,000   | &nbsp; |
+| MAILTOPK        | 抄送给（选择）  | VARCHAR      |   200   | &nbsp; |
+| NEXTMONTHPLANSTASK        | 下月计划任务  | VARCHAR      |   2,000   | &nbsp; |
+| PLANSNEXTMONTH        | 下月计划  | CLOB      |   1,048,576   | &nbsp; |
+| REPORTSTATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
+| REPORTTO        | 汇报给  | VARCHAR      |   60   | &nbsp; |
+| REPORTTOPK        | 汇报给（选择）  | VARCHAR      |   200   | &nbsp; |
+| SUBMITTIME        | 提交时间  | DATETIME      |   -1   | &nbsp; |
 | THISMONTHTASK        | 本月完成任务  | VARCHAR      |   2,000   | &nbsp; |
-| COMMENT        | 其他事项  | CLOB      |   1,048,576   | &nbsp; |
 | UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 | UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| REPORTTOPK        | 汇报给（选择）  | VARCHAR      |   200   | &nbsp; |
+| UPDATEMANNAME        | 更新人名称  | VARCHAR      |   60   | &nbsp; |
+| WORKTHISMONTH        | 本月工作  | CLOB      |   1,048,576   | &nbsp; |
 
 
 
@@ -107892,40 +107892,40 @@ CREATE TABLE `T_IBZ_MONTHLY`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| IP        | ip  | VARCHAR      |   15   | &nbsp; |
-| DEPT        | 所属部门  | INTEGER      |   -1   | &nbsp; |
-| ADDRESS        | 通讯地址  | VARCHAR      |   120   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| RANZHI        | ranzhi  | VARCHAR      |   30   | &nbsp; |
-| ROLE        | 职位  | VARCHAR      |   100   | &nbsp; |
-| LOCKED        | locked  | DATETIME      |   -1   | &nbsp; |
-| CLIENTLANG        | clientLang  | VARCHAR      |   10   | &nbsp; |
-| REALNAME        | 真实姓名  | VARCHAR      |   100   | &nbsp; |
-| PHONE        | 电话  | VARCHAR      |   20   | &nbsp; |
-| QQ        | QQ  | VARCHAR      |   20   | &nbsp; |
-| AVATAR        | avatar  | VARCHAR      |   30   | &nbsp; |
-| JOIN        | 入职日期  | DATETIME      |   -1   | &nbsp; |
-| LAST        | 最后登录  | INTEGER      |   -1   | &nbsp; |
-| ZIPCODE        | zipcode  | VARCHAR      |   10   | &nbsp; |
-| SCORELEVEL        | scoreLevel  | INTEGER      |   -1   | &nbsp; |
-| PASSWORD        | 密码  | VARCHAR      |   32   | &nbsp; |
-| MOBILE        | 手机  | VARCHAR      |   11   | &nbsp; |
-| SCORE        | score  | INTEGER      |   -1   | &nbsp; |
-| GENDER        | 男女  | VARCHAR      |   60   | &nbsp; |
-| SKYPE        | skype  | VARCHAR      |   90   | &nbsp; |
-| NICKNAME        | nickname  | VARCHAR      |   60   | &nbsp; |
-| WEIXIN        | 微信  | VARCHAR      |   90   | &nbsp; |
-| FAILS        | fails  | INTEGER      |   -1   | &nbsp; |
-| SLACK        | slack  | VARCHAR      |   90   | &nbsp; |
 | ACCOUNT        | 账户  | VARCHAR      |   30   | &nbsp; |
+| ADDRESS        | 通讯地址  | VARCHAR      |   120   | &nbsp; |
+| AVATAR        | avatar  | VARCHAR      |   30   | &nbsp; |
+| BIRTHDAY        | birthday  | DATETIME      |   -1   | &nbsp; |
+| CLIENTLANG        | clientLang  | VARCHAR      |   10   | &nbsp; |
+| CLIENTSTATUS        | clientStatus  | VARCHAR      |   60   | &nbsp; |
+| COMMITER        | 源代码账户  | VARCHAR      |   100   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
+| DEPT        | 所属部门  | INTEGER      |   -1   | &nbsp; |
 | DINGDING        | 钉钉  | VARCHAR      |   90   | &nbsp; |
 | EMAIL        | 邮箱  | VARCHAR      |   90   | &nbsp; |
-| CLIENTSTATUS        | clientStatus  | VARCHAR      |   60   | &nbsp; |
-| WHATSAPP        | whatsapp  | VARCHAR      |   90   | &nbsp; |
+| FAILS        | fails  | INTEGER      |   -1   | &nbsp; |
+| GENDER        | 男女  | VARCHAR      |   60   | &nbsp; |
 | ID        | ID  |       |   20   | 主键&nbsp; |
-| BIRTHDAY        | birthday  | DATETIME      |   -1   | &nbsp; |
+| IP        | ip  | VARCHAR      |   15   | &nbsp; |
+| JOIN        | 入职日期  | DATETIME      |   -1   | &nbsp; |
+| LAST        | 最后登录  | INTEGER      |   -1   | &nbsp; |
+| LOCKED        | locked  | DATETIME      |   -1   | &nbsp; |
+| MOBILE        | 手机  | VARCHAR      |   11   | &nbsp; |
+| NICKNAME        | nickname  | VARCHAR      |   60   | &nbsp; |
+| PASSWORD        | 密码  | VARCHAR      |   32   | &nbsp; |
+| PHONE        | 电话  | VARCHAR      |   20   | &nbsp; |
+| QQ        | QQ  | VARCHAR      |   20   | &nbsp; |
+| RANZHI        | ranzhi  | VARCHAR      |   30   | &nbsp; |
+| REALNAME        | 真实姓名  | VARCHAR      |   100   | &nbsp; |
+| ROLE        | 职位  | VARCHAR      |   100   | &nbsp; |
+| SCORE        | score  | INTEGER      |   -1   | &nbsp; |
+| SCORELEVEL        | scoreLevel  | INTEGER      |   -1   | &nbsp; |
+| SKYPE        | skype  | VARCHAR      |   90   | &nbsp; |
+| SLACK        | slack  | VARCHAR      |   90   | &nbsp; |
 | VISITS        | 访问次数  | INTEGER      |   -1   | &nbsp; |
-| COMMITER        | 源代码账户  | VARCHAR      |   100   | &nbsp; |
+| WEIXIN        | 微信  | VARCHAR      |   90   | &nbsp; |
+| WHATSAPP        | whatsapp  | VARCHAR      |   90   | &nbsp; |
+| ZIPCODE        | zipcode  | VARCHAR      |   10   | &nbsp; |
 
 
 
@@ -109796,16 +109796,16 @@ CREATE TABLE `zt_user`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| IBZ_PLANTEMPLETNAME        | 模板名称  | VARCHAR      |   200   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 | ACL        | 权限  | VARCHAR      |   60   | &nbsp; |
-| PLANS        | 计划  | VARCHAR      |   2,000   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| IBZ_PLANTEMPLETID        | 产品计划模板标识  | VARCHAR      |   100   | 主键&nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | CREATEMANNAME        | 创建人姓名  | VARCHAR      |   100   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| IBZ_PLANTEMPLETID        | 产品计划模板标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZ_PLANTEMPLETNAME        | 模板名称  | VARCHAR      |   200   | &nbsp; |
+| PLANS        | 计划  | VARCHAR      |   2,000   | &nbsp; |
 | PRODUCT        | 产品  |       |   20   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -111652,18 +111652,18 @@ CREATE TABLE `T_IBZ_PLANTEMPLET`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| IBZ_PLANTEMPLETDETAILID        | 计划模板详情标识  | VARCHAR      |   100   | 主键&nbsp; |
-| ORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
-| IBZ_PLANTEMPLETDETAILNAME        | 计划模板详情名称  | VARCHAR      |   200   | &nbsp; |
-| PLANCODE        | 计划编号  | VARCHAR      |   100   | &nbsp; |
-| DESC        | 计划名称  | CLOB      |   1,048,576   | &nbsp; |
-| PLANTEMPLETID        | 产品计划模板标识  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| EXPECT        | 描述  | CLOB      |   1,048,576   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DESC        | 计划名称  | CLOB      |   1,048,576   | &nbsp; |
+| EXPECT        | 描述  | CLOB      |   1,048,576   | &nbsp; |
+| IBZ_PLANTEMPLETDETAILID        | 计划模板详情标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZ_PLANTEMPLETDETAILNAME        | 计划模板详情名称  | VARCHAR      |   200   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
+| PLANCODE        | 计划编号  | VARCHAR      |   100   | &nbsp; |
+| PLANTEMPLETID        | 产品计划模板标识  | VARCHAR      |   100   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -113512,19 +113512,19 @@ CREATE TABLE `T_IBZ_PLANTEMPLETDETAIL`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| THIRDMEMBER        | 团队成员（三）  | VARCHAR      |   200   | &nbsp; |
-| TEAMEMBERS        | 全部成员  | VARCHAR      |   200   | &nbsp; |
-| QD        | 测试负责人  | VARCHAR      |   200   | &nbsp; |
-| SIXTHMEMBER        | 团队成员（六）  | VARCHAR      |   200   | &nbsp; |
-| PM        | 项目负责人  | VARCHAR      |   200   | &nbsp; |
-| FOURTHMEMBER        | 团队成员（四）  | VARCHAR      |   200   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
 | FIFTHMEMBER        | 团队成员（五）  | VARCHAR      |   200   | &nbsp; |
-| PO        | 产品负责人  | VARCHAR      |   200   | &nbsp; |
-| SECONDMEMBER        | 团队成员（二）  | VARCHAR      |   200   | &nbsp; |
+| FOURTHMEMBER        | 团队成员（四）  | VARCHAR      |   200   | &nbsp; |
 | FRISTMEMBER        | 团队成员（一）  | VARCHAR      |   200   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
 | NAME        | 项目名称  | VARCHAR      |   100   | &nbsp; |
+| PM        | 项目负责人  | VARCHAR      |   200   | &nbsp; |
+| PO        | 产品负责人  | VARCHAR      |   200   | &nbsp; |
+| QD        | 测试负责人  | VARCHAR      |   200   | &nbsp; |
 | RD        | 发布负责人  | VARCHAR      |   200   | &nbsp; |
+| SECONDMEMBER        | 团队成员（二）  | VARCHAR      |   200   | &nbsp; |
+| SIXTHMEMBER        | 团队成员（六）  | VARCHAR      |   200   | &nbsp; |
+| TEAMEMBERS        | 全部成员  | VARCHAR      |   200   | &nbsp; |
+| THIRDMEMBER        | 团队成员（三）  | VARCHAR      |   200   | &nbsp; |
 
 
 
@@ -115363,25 +115363,25 @@ CREATE TABLE `zt_project`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| ACCOUNT        | 用户  | VARCHAR      |   60   | &nbsp; |
+| COMMENT        | 其他事项  | CLOB      |   1,048,576   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| CREATEMANNAME        | 建立人名称  | VARCHAR      |   60   | &nbsp; |
 | DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| MAILTO        | 抄送给  | VARCHAR      |   2,000   | &nbsp; |
 | IBZ_DAILYID        | 汇报标识  |       |   100   | 主键&nbsp; |
 | IBZ_DAILYNAME        | 汇报名称  | VARCHAR      |   200   | &nbsp; |
-| PLANSTOMORROW        | 计划  | CLOB      |   1,048,576   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| TODAYTASK        | 完成任务  | VARCHAR      |   2,000   | &nbsp; |
-| WORKTODAY        | 工作  | CLOB      |   1,048,576   | &nbsp; |
 | ISSUBMIT        | 是否提交  | VARCHAR      |   60   | &nbsp; |
-| CREATEMANNAME        | 建立人名称  | VARCHAR      |   60   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| REPORTTO        | 汇报给  | VARCHAR      |   60   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| MAILTO        | 抄送给  | VARCHAR      |   2,000   | &nbsp; |
+| PLANSTOMORROW        | 计划  | CLOB      |   1,048,576   | &nbsp; |
 | REPORTSTATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
-| COMMENT        | 其他事项  | CLOB      |   1,048,576   | &nbsp; |
+| REPORTTO        | 汇报给  | VARCHAR      |   60   | &nbsp; |
+| TODAYTASK        | 完成任务  | VARCHAR      |   2,000   | &nbsp; |
+| TOMORROWPLANSTASK        | 计划任务  | VARCHAR      |   2,000   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 | UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 | UPDATEMANNAME        | 更新人名称  | VARCHAR      |   60   | &nbsp; |
-| TOMORROWPLANSTASK        | 计划任务  | VARCHAR      |   2,000   | &nbsp; |
-| ACCOUNT        | 用户  | VARCHAR      |   60   | &nbsp; |
+| WORKTODAY        | 工作  | CLOB      |   1,048,576   | &nbsp; |
 
 
 
@@ -117237,14 +117237,14 @@ CREATE TABLE `t_ibz_daily`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| IBZ_REPORT_ROLE_CONFIGNAME        | 汇报角色配置名称  | VARCHAR      |   200   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| IBZ_REPORT_ROLE_CONFIGID        | 汇报角色配置标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZ_REPORT_ROLE_CONFIGNAME        | 汇报角色配置名称  | VARCHAR      |   200   | &nbsp; |
 | REPORT_ROLE        | 角色  | VARCHAR      |   2,000   | &nbsp; |
 | TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
-| IBZ_REPORT_ROLE_CONFIGID        | 汇报角色配置标识  | VARCHAR      |   100   | 主键&nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -119089,22 +119089,22 @@ CREATE TABLE `T_IBZ_REPORT_ROLE_CONFIG`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| ISSUBMIT        | 是否提交  | VARCHAR      |   100   | &nbsp; |
-| IBZ_REPORTLYID        | 汇报标识  |       |   100   | 主键&nbsp; |
-| REPORTSTATUS        | 状态  | VARCHAR      |   100   | &nbsp; |
-| SUBMITTIME        | 提交时间  | DATETIME      |   -1   | &nbsp; |
-| MAILTOPK        | 抄送给（选择）  | VARCHAR      |   200   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IBZ_REPORTLYNAME        | 汇报名称  | VARCHAR      |   200   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| ACCOUNT        | 用户  | VARCHAR      |   60   | &nbsp; |
 | CONTENT        | 工作内容  | CLOB      |   1,048,576   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| REPORTTOPK        | 汇报给（选择）  | VARCHAR      |   200   | &nbsp; |
-| MAILTO        | 抄送给  | VARCHAR      |   100   | &nbsp; |
-| ACCOUNT        | 用户  | VARCHAR      |   60   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | DATE        | 汇报日期  | DATETIME      |   -1   | &nbsp; |
+| IBZ_REPORTLYID        | 汇报标识  |       |   100   | 主键&nbsp; |
+| IBZ_REPORTLYNAME        | 汇报名称  | VARCHAR      |   200   | &nbsp; |
+| ISSUBMIT        | 是否提交  | VARCHAR      |   100   | &nbsp; |
+| MAILTO        | 抄送给  | VARCHAR      |   100   | &nbsp; |
+| MAILTOPK        | 抄送给（选择）  | VARCHAR      |   200   | &nbsp; |
+| REPORTSTATUS        | 状态  | VARCHAR      |   100   | &nbsp; |
 | REPORTTO        | 汇报给  | VARCHAR      |   100   | &nbsp; |
+| REPORTTOPK        | 汇报给（选择）  | VARCHAR      |   200   | &nbsp; |
+| SUBMITTIME        | 提交时间  | DATETIME      |   -1   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -120955,16 +120955,16 @@ CREATE TABLE `T_IBZ_REPORTLY`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IBZ_TOPNAME        | 置顶名称  | VARCHAR      |   200   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 | ACCOUNT        | 置顶用户  | VARCHAR      |   60   | &nbsp; |
-| OBJECTID        | 数据对象标识  | INTEGER      |   -1   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| IBZ_TOPID        | 标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZ_TOPNAME        | 置顶名称  | VARCHAR      |   200   | &nbsp; |
+| OBJECTID        | 数据对象标识  | INTEGER      |   -1   | &nbsp; |
 | OBJECTORDER        | 排序  | INTEGER      |   100   | &nbsp; |
 | TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
-| IBZ_TOPID        | 标识  | VARCHAR      |   100   | 主键&nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -122811,28 +122811,28 @@ CREATE TABLE `T_IBZ_TOP`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IBZ_WEEKLYNAME        | 周报名称  | VARCHAR      |   200   | &nbsp; |
-| NEXTWEEKTASK        | 下周计划任务  | VARCHAR      |   100   | &nbsp; |
-| THISWEEKTASK        | 本周完成任务  | VARCHAR      |   100   | &nbsp; |
-| IBZ_WEEKLYID        | 周报标识  |       |   100   | 主键&nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| MAILTO        | 抄送给  | VARCHAR      |   2,000   | &nbsp; |
-| ISSUBMIT        | 是否提交  | VARCHAR      |   60   | &nbsp; |
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| UPDATEMANNAME        | 更新人名称  | VARCHAR      |   60   | &nbsp; |
-| MAILTOPK        | 抄送给(选择)  | VARCHAR      |   200   | &nbsp; |
+| ACCOUNT        | 用户  | VARCHAR      |   60   | &nbsp; |
+| COMMENT        | 其他事项  | CLOB      |   1,048,576   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | CREATEMANNAME        | 建立人名称  | VARCHAR      |   60   | &nbsp; |
-| REPORTTO        | 汇报给  | VARCHAR      |   60   | &nbsp; |
-| COMMENT        | 其他事项  | CLOB      |   1,048,576   | &nbsp; |
-| REPORTTOPK        | 汇报给(选择)  | VARCHAR      |   200   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| WORKTHISWEEK        | 本周工作  | CLOB      |   1,048,576   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| IBZ_WEEKLYID        | 周报标识  |       |   100   | 主键&nbsp; |
+| IBZ_WEEKLYNAME        | 周报名称  | VARCHAR      |   200   | &nbsp; |
+| ISSUBMIT        | 是否提交  | VARCHAR      |   60   | &nbsp; |
+| MAILTO        | 抄送给  | VARCHAR      |   2,000   | &nbsp; |
+| MAILTOPK        | 抄送给(选择)  | VARCHAR      |   200   | &nbsp; |
+| NEXTWEEKTASK        | 下周计划任务  | VARCHAR      |   100   | &nbsp; |
 | PLANNEXTWEEK        | 下周计划  | CLOB      |   1,048,576   | &nbsp; |
-| SUBMITTIME        | 提交时间  | DATETIME      |   -1   | &nbsp; |
-| ACCOUNT        | 用户  | VARCHAR      |   60   | &nbsp; |
 | REPORTSTATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
+| REPORTTO        | 汇报给  | VARCHAR      |   60   | &nbsp; |
+| REPORTTOPK        | 汇报给(选择)  | VARCHAR      |   200   | &nbsp; |
+| SUBMITTIME        | 提交时间  | DATETIME      |   -1   | &nbsp; |
+| THISWEEKTASK        | 本周完成任务  | VARCHAR      |   100   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| UPDATEMANNAME        | 更新人名称  | VARCHAR      |   60   | &nbsp; |
+| WORKTHISWEEK        | 本周工作  | CLOB      |   1,048,576   | &nbsp; |
 
 
 
@@ -124689,17 +124689,17 @@ CREATE TABLE `T_IBZ_WEEKLY`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| MEMO        | 描述  | VARCHAR      |   100   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| MANAGEMENTSTATUS        | 管理现状  | VARCHAR      |   60   | &nbsp; |
-| TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | IBZPRO_CONFIGID        | 系统配置表标识  | VARCHAR      |   100   | 主键&nbsp; |
 | IBZPRO_CONFIGNAME        | 系统配置表名称  | VARCHAR      |   200   | &nbsp; |
-| VAILD        | 是否启用  | VARCHAR      |   60   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| MANAGEMENTSTATUS        | 管理现状  | VARCHAR      |   60   | &nbsp; |
+| MEMO        | 描述  | VARCHAR      |   100   | &nbsp; |
 | SCOPE        | 范围  | VARCHAR      |   2,000   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   60   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| VAILD        | 是否启用  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -126548,11 +126548,11 @@ CREATE TABLE `T_IBZPRO_CONFIG`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | ACCOUNT        | 用户  | VARCHAR      |   30   | &nbsp; |
-| ID        | 编号  |       |   20   | 主键&nbsp; |
 | CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
-| TASK        | 任务  |       |   20   | &nbsp; |
-| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
 | DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| ID        | 编号  |       |   20   | 主键&nbsp; |
+| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
+| TASK        | 任务  |       |   20   | &nbsp; |
 
 
 
@@ -128395,13 +128395,13 @@ CREATE TABLE `zt_taskestimate`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
-| WORK        | work  | CLOB      |   65,535   | &nbsp; |
-| ID        | 编号  |       |   20   | 主键&nbsp; |
 | ACCOUNT        | 用户  | VARCHAR      |   30   | &nbsp; |
+| CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| ID        | 编号  |       |   20   | 主键&nbsp; |
+| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
 | TASK        | 任务  |       |   20   | &nbsp; |
+| WORK        | work  | CLOB      |   65,535   | &nbsp; |
 
 
 
@@ -130245,20 +130245,20 @@ CREATE TABLE `zt_taskestimate`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| EDITEDDATE        | editedDate  | DATETIME      |   -1   | &nbsp; |
-| CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
-| LASTACTIVETIME        | lastActiveTime  | DATETIME      |   -1   | &nbsp; |
-| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
-| TYPE        | type  | VARCHAR      |   20   | &nbsp; |
-| GID        | gid  | VARCHAR      |   40   | &nbsp; |
-| PUBLIC        | public  | VARCHAR      |   1   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
-| NAME        | name  | VARCHAR      |   60   | &nbsp; |
-| SUBJECT        | subject  | INTEGER      |   -1   | &nbsp; |
 | ADMINS        | admins  | VARCHAR      |   255   | &nbsp; |
 | COMMITTERS        | committers  | VARCHAR      |   255   | &nbsp; |
+| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
+| CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
 | DISMISSDATE        | dismissDate  | DATETIME      |   -1   | &nbsp; |
+| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
+| EDITEDDATE        | editedDate  | DATETIME      |   -1   | &nbsp; |
+| GID        | gid  | VARCHAR      |   40   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| LASTACTIVETIME        | lastActiveTime  | DATETIME      |   -1   | &nbsp; |
+| NAME        | name  | VARCHAR      |   60   | &nbsp; |
+| PUBLIC        | public  | VARCHAR      |   1   | &nbsp; |
+| SUBJECT        | subject  | INTEGER      |   -1   | &nbsp; |
+| TYPE        | type  | VARCHAR      |   20   | &nbsp; |
 
 
 
@@ -132109,17 +132109,17 @@ CREATE TABLE `zt_im_chat`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| CGID        | cgid  | VARCHAR      |   40   | &nbsp; |
-| USER        | user  | INTEGER      |   -1   | &nbsp; |
-| HIDE        | hide  | VARCHAR      |   1   | &nbsp; |
-| JOIN        | join  | DATETIME      |   -1   | &nbsp; |
-| FREEZE        | freeze  | VARCHAR      |   1   | &nbsp; |
 | CATEGORY        | category  | VARCHAR      |   40   | &nbsp; |
-| STAR        | star  | VARCHAR      |   1   | &nbsp; |
-| QUIT        | quit  | DATETIME      |   -1   | &nbsp; |
+| CGID        | cgid  | VARCHAR      |   40   | &nbsp; |
+| FREEZE        | freeze  | VARCHAR      |   1   | &nbsp; |
+| HIDE        | hide  | VARCHAR      |   1   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| JOIN        | join  | DATETIME      |   -1   | &nbsp; |
 | MUTE        | mute  | VARCHAR      |   1   | &nbsp; |
 | ORDER        | order  | INTEGER      |   -1   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
+| QUIT        | quit  | DATETIME      |   -1   | &nbsp; |
+| STAR        | star  | VARCHAR      |   1   | &nbsp; |
+| USER        | user  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -133967,17 +133967,17 @@ CREATE TABLE `zt_im_chatuser`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| EDITEDDATE        | editedDate  | DATETIME      |   -1   | &nbsp; |
-| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
-| STRATEGY        | strategy  | VARCHAR      |   10   | &nbsp; |
-| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
-| VERSION        | version  | VARCHAR      |   30   | &nbsp; |
-| DOWNLOADS        | downloads  | CLOB      |   65,535   | &nbsp; |
 | CHANGELOG        | changeLog  | CLOB      |   65,535   | &nbsp; |
+| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
 | CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
 | DESC        | desc  | VARCHAR      |   100   | &nbsp; |
+| DOWNLOADS        | downloads  | CLOB      |   65,535   | &nbsp; |
+| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
+| EDITEDDATE        | editedDate  | DATETIME      |   -1   | &nbsp; |
 | ID        | id  |       |   -1   | 主键&nbsp; |
 | STATUS        | status  | VARCHAR      |   8   | &nbsp; |
+| STRATEGY        | strategy  | VARCHAR      |   10   | &nbsp; |
+| VERSION        | version  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -135825,13 +135825,13 @@ CREATE TABLE `zt_im_client`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| RID        | rid  | VARCHAR      |   24   | &nbsp; |
-| STATUS        | status  | VARCHAR      |   6   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
 | CGID        | cgid  | VARCHAR      |   40   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
 | OPENEDBY        | openedBy  | INTEGER      |   -1   | &nbsp; |
 | OPENEDDATE        | openedDate  | DATETIME      |   -1   | &nbsp; |
 | PARTICIPANTS        | participants  | CLOB      |   65,535   | &nbsp; |
+| RID        | rid  | VARCHAR      |   24   | &nbsp; |
+| STATUS        | status  | VARCHAR      |   6   | &nbsp; |
 
 
 
@@ -137675,10 +137675,10 @@ CREATE TABLE `zt_im_conference`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| DATE        | date  | DATETIME      |   -1   | &nbsp; |
 | ID        | id  |       |   -1   | 主键&nbsp; |
 | RID        | rid  | VARCHAR      |   24   | &nbsp; |
 | TYPE        | type  | VARCHAR      |   6   | &nbsp; |
-| DATE        | date  | DATETIME      |   -1   | &nbsp; |
 | USER        | user  | INTEGER      |   -1   | &nbsp; |
 
 
@@ -139521,17 +139521,17 @@ CREATE TABLE `zt_im_conferenceaction`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TYPE        | type  | VARCHAR      |   9   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| DATA        | data  | CLOB      |   65,535   | &nbsp; |
-| GID        | gid  | VARCHAR      |   40   | &nbsp; |
-| USER        | user  | VARCHAR      |   30   | &nbsp; |
-| CONTENTTYPE        | contentType  | VARCHAR      |   7   | &nbsp; |
-| DATE        | date  | DATETIME      |   -1   | &nbsp; |
-| ORDER        | order  |       |   -1   | &nbsp; |
-| CONTENT        | content  | CLOB      |   65,535   | &nbsp; |
 | CGID        | cgid  | VARCHAR      |   40   | &nbsp; |
+| CONTENT        | content  | CLOB      |   65,535   | &nbsp; |
+| CONTENTTYPE        | contentType  | VARCHAR      |   7   | &nbsp; |
+| DATA        | data  | CLOB      |   65,535   | &nbsp; |
+| DATE        | date  | DATETIME      |   -1   | &nbsp; |
 | DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
+| GID        | gid  | VARCHAR      |   40   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| ORDER        | order  |       |   -1   | &nbsp; |
+| TYPE        | type  | VARCHAR      |   9   | &nbsp; |
+| USER        | user  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -141379,10 +141379,10 @@ CREATE TABLE `zt_im_message`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| MESSAGE        | message  | INTEGER      |   -1   | &nbsp; |
-| USER        | user  | INTEGER      |   -1   | &nbsp; |
-| STATUS        | status  | VARCHAR      |   7   | &nbsp; |
 | ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
+| MESSAGE        | message  | INTEGER      |   -1   | &nbsp; |
+| STATUS        | status  | VARCHAR      |   7   | &nbsp; |
+| USER        | user  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -143222,13 +143222,13 @@ CREATE TABLE `zt_im_messagestatus`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| ID        | id  |       |   -1   | 主键&nbsp; |
 | ADDDATE        | addDate  | DATETIME      |   -1   | &nbsp; |
-| TYPE        | type  | VARCHAR      |   30   | &nbsp; |
 | CONTENT        | content  | CLOB      |   65,535   | &nbsp; |
-| RESULT        | result  | CLOB      |   65,535   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
 | PROCESSDATE        | processDate  | DATETIME      |   -1   | &nbsp; |
+| RESULT        | result  | CLOB      |   65,535   | &nbsp; |
 | STATUS        | status  | VARCHAR      |   30   | &nbsp; |
+| TYPE        | type  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -145072,17 +145072,17 @@ CREATE TABLE `zt_im_queue`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| EDITEDDATE        | editedDate  | DATETIME      |   -1   | &nbsp; |
-| NAME        | name  | VARCHAR      |   50   | &nbsp; |
+| ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
 | CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
 | CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
-| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| URL        | url  | VARCHAR      |   255   | &nbsp; |
-| TOKEN        | token  | VARCHAR      |   255   | &nbsp; |
 | DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
+| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
+| EDITEDDATE        | editedDate  | DATETIME      |   -1   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| NAME        | name  | VARCHAR      |   50   | &nbsp; |
 | PASSWORD        | password  | VARCHAR      |   30   | &nbsp; |
-| ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
+| TOKEN        | token  | VARCHAR      |   255   | &nbsp; |
+| URL        | url  | VARCHAR      |   255   | &nbsp; |
 
 
 
@@ -146930,26 +146930,26 @@ CREATE TABLE `zt_jenkins`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| SVNDIR        | svnDir  | VARCHAR      |   255   | &nbsp; |
-| JKJOB        | jkJob  | VARCHAR      |   500   | &nbsp; |
-| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
-| LASTEXEC        | lastExec  | DATETIME      |   -1   | &nbsp; |
-| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
-| ATTIME        | atTime  | VARCHAR      |   10   | &nbsp; |
-| TRIGGERTYPE        | triggerType  | VARCHAR      |   255   | &nbsp; |
-| CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
-| LASTSTATUS        | lastStatus  | VARCHAR      |   255   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| PRODUCT        | product  | INTEGER      |   -1   | &nbsp; |
-| FRAME        | frame  | VARCHAR      |   20   | &nbsp; |
-| LASTTAG        | lastTag  | VARCHAR      |   255   | &nbsp; |
-| COMMENT        | comment  | VARCHAR      |   255   | &nbsp; |
-| EDITEDDATE        | editedDate  | DATETIME      |   -1   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| NAME        | name  | VARCHAR      |   50   | &nbsp; |
 | ATDAY        | atDay  | VARCHAR      |   255   | &nbsp; |
+| ATTIME        | atTime  | VARCHAR      |   10   | &nbsp; |
+| COMMENT        | comment  | VARCHAR      |   255   | &nbsp; |
+| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
+| CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
+| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
+| EDITEDDATE        | editedDate  | DATETIME      |   -1   | &nbsp; |
+| FRAME        | frame  | VARCHAR      |   20   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
 | JKHOST        | jkHost  | INTEGER      |   -1   | &nbsp; |
+| JKJOB        | jkJob  | VARCHAR      |   500   | &nbsp; |
+| LASTEXEC        | lastExec  | DATETIME      |   -1   | &nbsp; |
+| LASTSTATUS        | lastStatus  | VARCHAR      |   255   | &nbsp; |
+| LASTTAG        | lastTag  | VARCHAR      |   255   | &nbsp; |
+| NAME        | name  | VARCHAR      |   50   | &nbsp; |
+| PRODUCT        | product  | INTEGER      |   -1   | &nbsp; |
 | REPO        | repo  | INTEGER      |   -1   | &nbsp; |
+| SVNDIR        | svnDir  | VARCHAR      |   255   | &nbsp; |
+| TRIGGERTYPE        | triggerType  | VARCHAR      |   255   | &nbsp; |
 
 
 
@@ -148806,13 +148806,13 @@ CREATE TABLE `zt_job`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| MODULE        | module  | VARCHAR      |   30   | &nbsp; |
-| LANG        | lang  | VARCHAR      |   30   | &nbsp; |
 | ID        | id  |       |   -1   | 主键&nbsp; |
 | KEY        | key  | VARCHAR      |   60   | &nbsp; |
+| LANG        | lang  | VARCHAR      |   30   | &nbsp; |
+| MODULE        | module  | VARCHAR      |   30   | &nbsp; |
 | SECTION        | section  | VARCHAR      |   30   | &nbsp; |
-| VALUE        | value  | CLOB      |   65,535   | &nbsp; |
 | SYSTEM        | system  | VARCHAR      |   1   | &nbsp; |
+| VALUE        | value  | CLOB      |   65,535   | &nbsp; |
 
 
 
@@ -150656,15 +150656,15 @@ CREATE TABLE `zt_lang`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| OBJECTID        | objectID  | INTEGER      |   -1   | &nbsp; |
-| CONTENTTYPE        | contentType  | VARCHAR      |   30   | &nbsp; |
 | ACTION        | action  | INTEGER      |   -1   | &nbsp; |
+| CONTENTTYPE        | contentType  | VARCHAR      |   30   | &nbsp; |
 | DATA        | data  | CLOB      |   65,535   | &nbsp; |
 | DATE        | date  | DATETIME      |   -1   | &nbsp; |
-| RESULT        | result  | CLOB      |   65,535   | &nbsp; |
 | ID        | id  |       |   -1   | 主键&nbsp; |
-| URL        | url  | VARCHAR      |   255   | &nbsp; |
+| OBJECTID        | objectID  | INTEGER      |   -1   | &nbsp; |
 | OBJECTTYPE        | objectType  | VARCHAR      |   30   | &nbsp; |
+| RESULT        | result  | CLOB      |   65,535   | &nbsp; |
+| URL        | url  | VARCHAR      |   255   | &nbsp; |
 
 
 
@@ -152510,22 +152510,22 @@ CREATE TABLE `zt_log`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| ROOT        | 所属根  | VARCHAR      |   8   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| PARENTNAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
-| SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
-| PARENT        | 上级模块  |       |   -1   | &nbsp; |
-| OWNER        | 负责人  | VARCHAR      |   30   | &nbsp; |
-| NAME        | 模块名称  | VARCHAR      |   60   | &nbsp; |
-| PATH        | 路径  | VARCHAR      |   255   | &nbsp; |
-| MDEPTID        | 部门标识  | VARCHAR      |   100   | &nbsp; |
-| ORGID        | 组织标识  | VARCHAR      |   100   | &nbsp; |
-| GRADE        | 级别  | INTEGER      |   3   | &nbsp; |
-| COLLECTOR        | 收藏者  | CLOB      |   65,535   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| TYPE        | 类型  | VARCHAR      |   30   | &nbsp; |
 | BRANCH        | 平台/分支  |       |   8   | &nbsp; |
+| COLLECTOR        | 收藏者  | CLOB      |   65,535   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| GRADE        | 级别  | INTEGER      |   3   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| MDEPTID        | 部门标识  | VARCHAR      |   100   | &nbsp; |
+| NAME        | 模块名称  | VARCHAR      |   60   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
+| ORGID        | 组织标识  | VARCHAR      |   100   | &nbsp; |
+| OWNER        | 负责人  | VARCHAR      |   30   | &nbsp; |
+| PARENT        | 上级模块  |       |   -1   | &nbsp; |
+| PARENTNAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
+| PATH        | 路径  | VARCHAR      |   255   | &nbsp; |
+| ROOT        | 所属根  | VARCHAR      |   8   | &nbsp; |
+| SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -154377,19 +154377,19 @@ CREATE TABLE `zt_module`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| ACTION        | action  | INTEGER      |   -1   | &nbsp; |
+| CCLIST        | ccList  | CLOB      |   65,535   | &nbsp; |
+| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
+| CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
+| DATA        | data  | CLOB      |   65,535   | &nbsp; |
 | FAILREASON        | failReason  | CLOB      |   65,535   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
 | OBJECTID        | objectID  | INTEGER      |   -1   | &nbsp; |
 | OBJECTTYPE        | objectType  | VARCHAR      |   50   | &nbsp; |
-| CCLIST        | ccList  | CLOB      |   65,535   | &nbsp; |
+| SENDTIME        | sendTime  | DATETIME      |   -1   | &nbsp; |
 | STATUS        | status  | VARCHAR      |   10   | &nbsp; |
-| DATA        | data  | CLOB      |   65,535   | &nbsp; |
-| CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
 | SUBJECT        | subject  | VARCHAR      |   255   | &nbsp; |
 | TOLIST        | toList  | VARCHAR      |   255   | &nbsp; |
-| SENDTIME        | sendTime  | DATETIME      |   -1   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
-| ACTION        | action  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -156240,23 +156240,23 @@ CREATE TABLE `zt_notify`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | ACCOUNT        | 用户  | VARCHAR      |   30   | &nbsp; |
+| CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
 | DAYS        | 可用工日  | INTEGER      |   5   | &nbsp; |
 | END        | 结束时间  | DATETIME      |   -1   | &nbsp; |
+| ESTIMATE        | 最初预计  | DOUBLE      |   -1   | &nbsp; |
+| HOURS        | 可用工时/天  | DOUBLE      |   -1   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| JOIN        | 加盟日  | DATETIME      |   -1   | &nbsp; |
+| LEADINGCADRE        | 当前负责人  | VARCHAR      |   60   | &nbsp; |
+| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
+| LIMITED        | 受限用户  | VARCHAR      |   8   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   3   | &nbsp; |
 | ROLE        | 角色  | VARCHAR      |   30   | &nbsp; |
 | ROOT        | 产品编号  |       |   8   | &nbsp; |
-| LEADINGCADRE        | 当前负责人  | VARCHAR      |   60   | &nbsp; |
 | TEAMSTATUS        | 成员状态  | VARCHAR      |   100   | &nbsp; |
-| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
-| CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| ESTIMATE        | 最初预计  | DOUBLE      |   -1   | &nbsp; |
-| JOIN        | 加盟日  | DATETIME      |   -1   | &nbsp; |
+| TOTAL        | 总计可用  | INTEGER      |   -1   | &nbsp; |
 | TYPE        | 团队类型  | VARCHAR      |   7   | &nbsp; |
 | USERNAME        | 用户  | VARCHAR      |   200   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   3   | &nbsp; |
-| TOTAL        | 总计可用  | INTEGER      |   -1   | &nbsp; |
-| LIMITED        | 受限用户  | VARCHAR      |   8   | &nbsp; |
-| HOURS        | 可用工时/天  | DOUBLE      |   -1   | &nbsp; |
 
 
 
@@ -158109,93 +158109,93 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| DYNAMODELFLAG        | 动态模型类型  | INTEGER      |   -1   | &nbsp; |
-| PSDEID        | 实体  | VARCHAR      |   100   | &nbsp; |
-| ENABLEUSERINPUT        | 默认用户行为  | INTEGER      |   -1   | &nbsp; |
-| DERPSDEFID        | 关系属性  | VARCHAR      |   100   | &nbsp; |
-| PSSUBSYSSADEID        | PSSUBSYSSADEID  | VARCHAR      |   100   | &nbsp; |
-| DBVALUEMODE2        | 数据库新建值模式  | VARCHAR      |   30   | &nbsp; |
-| ENABLECOLPRIV        | 启用列权限控制  | INTEGER      |   -1   | &nbsp; |
-| PREDEFINETYPE        | 系统预置属性  | VARCHAR      |   100   | &nbsp; |
-| UPDATEOVMODE        | 更新旧值回填  | VARCHAR      |   20   | &nbsp; |
-| MULTIFORMFIELD        | 多表单识别属性  | INTEGER      |   -1   | &nbsp; |
-| DVT        | 默认值类型  | VARCHAR      |   50   | &nbsp; |
-| EXPORTSCOPE        | 导出范围  | INTEGER      |   -1   | &nbsp; |
-| ORDERVALUE        | 排序值  | INTEGER      |   -1   | &nbsp; |
-| DERPSDEFNAME        | 关系属性  | VARCHAR      |   200   | &nbsp; |
-| UNIONKEYVALUE        | 联合键值  | VARCHAR      |   10   | &nbsp; |
-| PSDATATYPENAME        | 数据类型  | VARCHAR      |   200   | &nbsp; |
-| NO3DUPCHKPSDEFNAME        | 范围属性3  | VARCHAR      |   200   | &nbsp; |
-| VALUEPSDEFNAME        | 值项属性  | VARCHAR      |   200   | &nbsp; |
-| PRECISION2        | 浮点精度  | INTEGER      |   -1   | &nbsp; |
-| INDEXTYPE        | 索引类型属性  | INTEGER      |   -1   | &nbsp; |
-| UNITWIDTH        | 单位宽度  | INTEGER      |   -1   | &nbsp; |
-| DUPCHECKVALUES        | 检查值范围  | VARCHAR      |   200   | &nbsp; |
-| PSDENAME        | 实体  | VARCHAR      |   200   | &nbsp; |
-| USERTAG2        | 用户标记2  | VARCHAR      |   100   | &nbsp; |
-| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
-| VIEWCOLLEVEL        | 视图列级别  | INTEGER      |   -1   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| DUPCHKPSDEFNAME        | 范围属性  | VARCHAR      |   200   | &nbsp; |
-| ENABLEAUDIT        | 启用审计  | INTEGER      |   -1   | &nbsp; |
-| DEFAULTVALUE        | 属性默认值  | VARCHAR      |   200   | &nbsp; |
 | ALLOWEMPTY        | 允许为空  | INTEGER      |   -1   | &nbsp; |
-| UNICODECHAR        | 双字节字符  | INTEGER      |   -1   | &nbsp; |
-| NULLVALORDER        | 空值排序  | VARCHAR      |   10   | &nbsp; |
-| PSDATATYPEID        | 数据类型  | VARCHAR      |   100   | &nbsp; |
-| DEFTYPE        | 属性类型  | INTEGER      |   -1   | &nbsp; |
-| QUERYCS        | 查询扩展选项  | VARCHAR      |   60   | &nbsp; |
-| FORMULAFIELDS        | 逻辑属性参数  | VARCHAR      |   200   | &nbsp; |
-| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
 | AUDITINFOFORMAT        | 审计信息格式  | VARCHAR      |   200   | &nbsp; |
-| VALUEFORMAT        | 值格式化  | VARCHAR      |   50   | &nbsp; |
-| STRINGCASE        | 字符转换  | VARCHAR      |   100   | &nbsp; |
-| MAJORFIELD        | 主信息属性  | INTEGER      |   -1   | &nbsp; |
-| CUSTOMEXPORTSCOPE        | 自定义导出范围  | INTEGER      |   -1   | &nbsp; |
-| VALUEPSDEFID        | 值项属性  | VARCHAR      |   100   | &nbsp; |
-| USERTAG        | 用户标记  | VARCHAR      |   100   | &nbsp; |
-| QUERYCOLUMN        | 查询输出  | INTEGER      |   -1   | &nbsp; |
-| PHYSICALFIELD        | 物理化属性  | INTEGER      |   -1   | &nbsp; |
-| DUPCHECKMODE        | 重复值检查  | VARCHAR      |   100   | &nbsp; |
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
-| STRLENGTH        | 字符长度  | INTEGER      |   -1   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| LOGICNAME        | 中文名称  | VARCHAR      |   60   | &nbsp; |
-| ENABLETEMPDATA        | 支持临时数据  | INTEGER      |   -1   | &nbsp; |
-| CODENAME        | 代码名称  | VARCHAR      |   60   | &nbsp; |
-| NO3DUPCHKPSDEFID        | 范围属性3  | VARCHAR      |   100   | &nbsp; |
-| EXTENDMODE        | 扩展模式  | INTEGER      |   -1   | &nbsp; |
-| PKEY        | 主键属性  | INTEGER      |   -1   | &nbsp; |
-| IMPORTORDER        | 数据导入次序  | INTEGER      |   -1   | &nbsp; |
 | BIZTAG        | 业务标记  | VARCHAR      |   30   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
-| NO2DUPCHKPSDEFID        | 范围属性2  | VARCHAR      |   100   | &nbsp; |
-| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
-| UNIT        | 单位  | VARCHAR      |   20   | &nbsp; |
-| IMPORTTAG        | 数据导入标识  | VARCHAR      |   30   | &nbsp; |
-| FKEY        | 外键属性  | INTEGER      |   -1   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| USERPARAMS        | 自定义参数  | VARCHAR      |   2,000   | &nbsp; |
-| ENAWRITEBACK        | 支持链接属性回写  | INTEGER      |   -1   | &nbsp; |
-| PSDEFIELDNAME        | 实体属性名称  | VARCHAR      |   200   | &nbsp; |
-| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IMPORTKEY        | 数据导入识别  | INTEGER      |   -1   | &nbsp; |
-| VALIDFLAG        | 是否启用  | INTEGER      |   -1   | &nbsp; |
-| PSDEFIELDID        | 实体属性标识  | VARCHAR      |   100   | 主键&nbsp; |
-| PASTERESET        | 粘帖重置  | INTEGER      |   -1   | &nbsp; |
-| ENABLEQS        | 启用快速搜索  | INTEGER      |   -1   | &nbsp; |
 | CHECKRECURSION        | 检查递归  | INTEGER      |   -1   | &nbsp; |
-| STATEFIELD        | 主状态属性  | VARCHAR      |   10   | &nbsp; |
-| DUPCHKPSDEFID        | 范围属性  | VARCHAR      |   100   | &nbsp; |
-| TABLENAME        | 表名称  | VARCHAR      |   60   | &nbsp; |
-| NO2DUPCHKPSDEFNAME        | 范围属性2  | VARCHAR      |   200   | &nbsp; |
-| FORMULAFORMAT        | 逻辑字段格式  | VARCHAR      |   500   | &nbsp; |
-| LOCKFLAG        | 模型锁模式  | INTEGER      |   -1   | &nbsp; |
+| CODENAME        | 代码名称  | VARCHAR      |   60   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| CUSTOMEXPORTSCOPE        | 自定义导出范围  | INTEGER      |   -1   | &nbsp; |
 | DBVALUEMODE        | 数据库更新值模式  | VARCHAR      |   30   | &nbsp; |
-| SERVICECODENAME        | 服务代码名称  | VARCHAR      |   50   | &nbsp; |
-| TESTDATA        | 默认测试值  | VARCHAR      |   100   | &nbsp; |
+| DBVALUEMODE2        | 数据库新建值模式  | VARCHAR      |   30   | &nbsp; |
+| DEFAULTVALUE        | 属性默认值  | VARCHAR      |   200   | &nbsp; |
+| DEFTYPE        | 属性类型  | INTEGER      |   -1   | &nbsp; |
+| DERPSDEFID        | 关系属性  | VARCHAR      |   100   | &nbsp; |
+| DERPSDEFNAME        | 关系属性  | VARCHAR      |   200   | &nbsp; |
+| DUPCHECKMODE        | 重复值检查  | VARCHAR      |   100   | &nbsp; |
+| DUPCHECKVALUES        | 检查值范围  | VARCHAR      |   200   | &nbsp; |
+| DUPCHKPSDEFID        | 范围属性  | VARCHAR      |   100   | &nbsp; |
+| DUPCHKPSDEFNAME        | 范围属性  | VARCHAR      |   200   | &nbsp; |
+| DVT        | 默认值类型  | VARCHAR      |   50   | &nbsp; |
+| DYNAMODELFLAG        | 动态模型类型  | INTEGER      |   -1   | &nbsp; |
+| ENABLEAUDIT        | 启用审计  | INTEGER      |   -1   | &nbsp; |
+| ENABLECOLPRIV        | 启用列权限控制  | INTEGER      |   -1   | &nbsp; |
+| ENABLEQS        | 启用快速搜索  | INTEGER      |   -1   | &nbsp; |
+| ENABLETEMPDATA        | 支持临时数据  | INTEGER      |   -1   | &nbsp; |
+| ENABLEUSERINPUT        | 默认用户行为  | INTEGER      |   -1   | &nbsp; |
+| ENAWRITEBACK        | 支持链接属性回写  | INTEGER      |   -1   | &nbsp; |
+| EXPORTSCOPE        | 导出范围  | INTEGER      |   -1   | &nbsp; |
+| EXTENDMODE        | 扩展模式  | INTEGER      |   -1   | &nbsp; |
+| FKEY        | 外键属性  | INTEGER      |   -1   | &nbsp; |
+| FORMULAFIELDS        | 逻辑属性参数  | VARCHAR      |   200   | &nbsp; |
+| FORMULAFORMAT        | 逻辑字段格式  | VARCHAR      |   500   | &nbsp; |
+| IMPORTKEY        | 数据导入识别  | INTEGER      |   -1   | &nbsp; |
+| IMPORTORDER        | 数据导入次序  | INTEGER      |   -1   | &nbsp; |
+| IMPORTTAG        | 数据导入标识  | VARCHAR      |   30   | &nbsp; |
+| INDEXTYPE        | 索引类型属性  | INTEGER      |   -1   | &nbsp; |
 | LENGTH        | 长度  | INTEGER      |   -1   | &nbsp; |
+| LOCKFLAG        | 模型锁模式  | INTEGER      |   -1   | &nbsp; |
+| LOGICNAME        | 中文名称  | VARCHAR      |   60   | &nbsp; |
+| MAJORFIELD        | 主信息属性  | INTEGER      |   -1   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
+| MULTIFORMFIELD        | 多表单识别属性  | INTEGER      |   -1   | &nbsp; |
+| NO2DUPCHKPSDEFID        | 范围属性2  | VARCHAR      |   100   | &nbsp; |
+| NO2DUPCHKPSDEFNAME        | 范围属性2  | VARCHAR      |   200   | &nbsp; |
+| NO3DUPCHKPSDEFID        | 范围属性3  | VARCHAR      |   100   | &nbsp; |
+| NO3DUPCHKPSDEFNAME        | 范围属性3  | VARCHAR      |   200   | &nbsp; |
+| NULLVALORDER        | 空值排序  | VARCHAR      |   10   | &nbsp; |
+| ORDERVALUE        | 排序值  | INTEGER      |   -1   | &nbsp; |
+| PASTERESET        | 粘帖重置  | INTEGER      |   -1   | &nbsp; |
+| PHYSICALFIELD        | 物理化属性  | INTEGER      |   -1   | &nbsp; |
+| PKEY        | 主键属性  | INTEGER      |   -1   | &nbsp; |
+| PRECISION2        | 浮点精度  | INTEGER      |   -1   | &nbsp; |
+| PREDEFINETYPE        | 系统预置属性  | VARCHAR      |   100   | &nbsp; |
+| PSDATATYPEID        | 数据类型  | VARCHAR      |   100   | &nbsp; |
+| PSDATATYPENAME        | 数据类型  | VARCHAR      |   200   | &nbsp; |
+| PSDEFIELDID        | 实体属性标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSDEFIELDNAME        | 实体属性名称  | VARCHAR      |   200   | &nbsp; |
+| PSDEID        | 实体  | VARCHAR      |   100   | &nbsp; |
+| PSDENAME        | 实体  | VARCHAR      |   200   | &nbsp; |
+| PSSUBSYSSADEID        | PSSUBSYSSADEID  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| QUERYCOLUMN        | 查询输出  | INTEGER      |   -1   | &nbsp; |
+| QUERYCS        | 查询扩展选项  | VARCHAR      |   60   | &nbsp; |
+| SERVICECODENAME        | 服务代码名称  | VARCHAR      |   50   | &nbsp; |
+| STATEFIELD        | 主状态属性  | VARCHAR      |   10   | &nbsp; |
+| STRINGCASE        | 字符转换  | VARCHAR      |   100   | &nbsp; |
+| STRLENGTH        | 字符长度  | INTEGER      |   -1   | &nbsp; |
+| TABLENAME        | 表名称  | VARCHAR      |   60   | &nbsp; |
+| TESTDATA        | 默认测试值  | VARCHAR      |   100   | &nbsp; |
+| UNICODECHAR        | 双字节字符  | INTEGER      |   -1   | &nbsp; |
+| UNIONKEYVALUE        | 联合键值  | VARCHAR      |   10   | &nbsp; |
+| UNIT        | 单位  | VARCHAR      |   20   | &nbsp; |
+| UNITWIDTH        | 单位宽度  | INTEGER      |   -1   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| UPDATEOVMODE        | 更新旧值回填  | VARCHAR      |   20   | &nbsp; |
+| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| USERPARAMS        | 自定义参数  | VARCHAR      |   2,000   | &nbsp; |
+| USERTAG        | 用户标记  | VARCHAR      |   100   | &nbsp; |
+| USERTAG2        | 用户标记2  | VARCHAR      |   100   | &nbsp; |
+| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
+| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
+| VALIDFLAG        | 是否启用  | INTEGER      |   -1   | &nbsp; |
+| VALUEFORMAT        | 值格式化  | VARCHAR      |   50   | &nbsp; |
+| VALUEPSDEFID        | 值项属性  | VARCHAR      |   100   | &nbsp; |
+| VALUEPSDEFNAME        | 值项属性  | VARCHAR      |   200   | &nbsp; |
+| VIEWCOLLEVEL        | 视图列级别  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -160027,98 +160027,98 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| USERTAG2        | 用户标记2  | VARCHAR      |   100   | &nbsp; |
-| DECAT        | 实体类别  | VARCHAR      |   20   | &nbsp; |
-| LOGICVALID        | 启用逻辑有效  | INTEGER      |   -1   | &nbsp; |
-| VIEWLEVEL        | 多视图级别  | INTEGER      |   -1   | &nbsp; |
-| SERVICEAPIFLAG        | 服务API模式  | INTEGER      |   -1   | &nbsp; |
-| ENABLEORGMODEL        | 启用组织模型  | INTEGER      |   -1   | &nbsp; |
-| LOGICNAME        | 中文名称  | VARCHAR      |   60   | &nbsp; |
-| NOVIEWMODE        | 无视图模式  | INTEGER      |   -1   | &nbsp; |
-| MAXENTITYCACHECNT        | 最大缓存数据对象数  | INTEGER      |   -1   | &nbsp; |
-| MODELIMPEXPFLAG        | 模型导入导出能力  | INTEGER      |   -1   | &nbsp; |
-| SYSTEMFLAG        | 系统实体  | INTEGER      |   -1   | &nbsp; |
-| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
-| MODELSTATE        | 模型状态  | INTEGER      |   -1   | &nbsp; |
-| BIZTAG        | 预置业务功能模式  | VARCHAR      |   30   | &nbsp; |
-| DETAG2        | 实体标记2  | VARCHAR      |   60   | &nbsp; |
-| AUDITMODE        | 审计模式  | INTEGER      |   -1   | &nbsp; |
-| PSMODULEID        | 系统模块  | VARCHAR      |   100   | &nbsp; |
 | ACCCTRLARCH        | 访问控制体系  | INTEGER      |   -1   | &nbsp; |
-| ENATEMPDATA        | 启用临时数据  | INTEGER      |   -1   | &nbsp; |
+| AUDITMODE        | 审计模式  | INTEGER      |   -1   | &nbsp; |
 | BASECLSPARAMS        | 基类参数  | VARCHAR      |   2,000   | &nbsp; |
-| ENABLEWFMODEL        | 启用工作流模型  | INTEGER      |   -1   | &nbsp; |
-| PSSUBSYSSADENAME        | 子系统接口实体  | VARCHAR      |   200   | &nbsp; |
-| ENABLEMULTIDS        | 支持多数据源  | INTEGER      |   -1   | &nbsp; |
-| EXISTINGMODEL        | 现有数据结构  | INTEGER      |   -1   | &nbsp; |
-| DYNAMODELFLAG        | 动态模型类型  | INTEGER      |   -1   | &nbsp; |
-| VALIDFLAG        | 是否启用  | INTEGER      |   -1   | &nbsp; |
-| INDEXDETYPE        | 索引类型  | VARCHAR      |   20   | &nbsp; |
-| VIEWNAME2        | 级别2视图名称  | VARCHAR      |   60   | &nbsp; |
-| DBTABSPACE        | 数据库表空间  | VARCHAR      |   20   | &nbsp; |
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
-| STORAGEMODE        | 存储模式  | INTEGER      |   -1   | &nbsp; |
-| PSSUBSYSSERVICEAPINAME        | 子系统服务接口  | VARCHAR      |   200   | &nbsp; |
-| TODOTASK        | TODO  | VARCHAR      |   4,000   | &nbsp; |
-| REMOVEFLAG        | 删除模式  | INTEGER      |   -1   | &nbsp; |
-| DSLINK        | 默认数据源  | VARCHAR      |   20   | &nbsp; |
-| PSSUBSYSSERVICEAPIID        | 子系统服务接口  | VARCHAR      |   100   | &nbsp; |
-| ENABLEENTITYCACHE        | 启用数据对象缓存  | INTEGER      |   -1   | &nbsp; |
-| DATACHGLOGMODE        | 数据变更日志类型  | INTEGER      |   -1   | &nbsp; |
-| PSDATAENTITYNAME        | 实体名称  | VARCHAR      |   200   | &nbsp; |
-| SVRPUBMODE        | 默认发布行为服务  | INTEGER      |   -1   | &nbsp; |
-| DATAIMPEXPFLAG        | 数据导入导出能力  | INTEGER      |   -1   | &nbsp; |
-| ENTITYCACHETIMEOUT        | 数据对象缓存时长  | INTEGER      |   -1   | &nbsp; |
-| ENABLESELECT        | 支持简单查询  | INTEGER      |   -1   | &nbsp; |
-| TABLENAME        | 主表名称  | VARCHAR      |   60   | &nbsp; |
-| ENABLEDATAVER        | 启用数据版本  | INTEGER      |   -1   | &nbsp; |
-| KEYRULE        | 主键规则  | VARCHAR      |   100   | &nbsp; |
+| BIZTAG        | 预置业务功能模式  | VARCHAR      |   30   | &nbsp; |
 | CODENAME        | 代码名称  | VARCHAR      |   60   | &nbsp; |
-| DYNAMICMODE        | 扩展模式  | INTEGER      |   -1   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| ENABLEAUDIT        | 启用数据审计  | INTEGER      |   -1   | &nbsp; |
-| SUBSYSDE        | 子系统实体  | INTEGER      |   -1   | &nbsp; |
-| ENABLEMOB        | 支持移动端  | INTEGER      |   -1   | &nbsp; |
-| PSDATAENTITYID        | 实体标识  | VARCHAR      |   100   | 主键&nbsp; |
-| ENAMULTIFORM        | 启用多表单  | INTEGER      |   -1   | &nbsp; |
-| SUBSYSMODULE        | 子系统实体  | INTEGER      |   -1   | &nbsp; |
-| ENABLEDEACTION        | 支持实体行为  | INTEGER      |   -1   | &nbsp; |
-| VKEYSEPARATOR        | 虚拟主键分隔符  | VARCHAR      |   10   | &nbsp; |
-| PSSYSREQITEMNAME        | 系统设计需求  | VARCHAR      |   200   | &nbsp; |
-| ENABLEDEDATASET        | 支持获取结果集  | INTEGER      |   -1   | &nbsp; |
-| DETAG        | 实体标记  | VARCHAR      |   60   | &nbsp; |
-| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
-| VIRTUALFLAG        | 虚拟实体  | INTEGER      |   -1   | &nbsp; |
-| TESTCASEFLAG        | 默认测试单元  | INTEGER      |   -1   | &nbsp; |
-| USERPARAMS        | 自定义参数  | VARCHAR      |   2,000   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| PSSYSREQITEMID        | 系统设计需求  | VARCHAR      |   100   | &nbsp; |
-| PSSUBSYSSADEID        | 子系统接口实体  | VARCHAR      |   100   | &nbsp; |
-| PSMODULENAME        | 系统模块  | VARCHAR      |   200   | &nbsp; |
-| VIEWNAME3        | 级别3视图名称  | VARCHAR      |   60   | &nbsp; |
-| DETYPE        | 实体类型  | INTEGER      |   -1   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| MODCOLOR        | 模块颜色  | VARCHAR      |   30   | &nbsp; |
-| DELOCKFLAG        | 全局禁止子系统导入  | INTEGER      |   -1   | &nbsp; |
-| LOCKFLAG        | 模型锁模式  | INTEGER      |   -1   | &nbsp; |
-| VIEWNAME4        | 级别4视图名称  | VARCHAR      |   60   | &nbsp; |
-| USERTAG        | 用户标记  | VARCHAR      |   100   | &nbsp; |
-| DATAACCMODE        | 数据访问控制方式  | INTEGER      |   -1   | &nbsp; |
 | COLOR        | 显示颜色  | VARCHAR      |   30   | &nbsp; |
-| USERACTION        | 默认用户界面行为  | INTEGER      |   -1   | &nbsp; |
-| VIEWNAME        | 视图名称  | VARCHAR      |   60   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DATAACCMODE        | 数据访问控制方式  | INTEGER      |   -1   | &nbsp; |
+| DATACHGLOGMODE        | 数据变更日志类型  | INTEGER      |   -1   | &nbsp; |
+| DATAIMPEXPFLAG        | 数据导入导出能力  | INTEGER      |   -1   | &nbsp; |
+| DBTABSPACE        | 数据库表空间  | VARCHAR      |   20   | &nbsp; |
+| DECAT        | 实体类别  | VARCHAR      |   20   | &nbsp; |
+| DELOCKFLAG        | 全局禁止子系统导入  | INTEGER      |   -1   | &nbsp; |
 | DESN        | 实体编号  | VARCHAR      |   60   | &nbsp; |
-| ENABLEOPNAMEMODEL        | 启用操作者名称模型  | INTEGER      |   -1   | &nbsp; |
-| LOGICINVALIDVALUE        | 逻辑无效值  | VARCHAR      |   10   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| DETAG        | 实体标记  | VARCHAR      |   60   | &nbsp; |
+| DETAG2        | 实体标记2  | VARCHAR      |   60   | &nbsp; |
+| DETYPE        | 实体类型  | INTEGER      |   -1   | &nbsp; |
+| DSLINK        | 默认数据源  | VARCHAR      |   20   | &nbsp; |
+| DYNAMICMODE        | 扩展模式  | INTEGER      |   -1   | &nbsp; |
+| DYNAMODELFLAG        | 动态模型类型  | INTEGER      |   -1   | &nbsp; |
+| ENABLEAUDIT        | 启用数据审计  | INTEGER      |   -1   | &nbsp; |
 | ENABLEDALOG        | 启用DA日志  | INTEGER      |   -1   | &nbsp; |
-| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
+| ENABLEDATAVER        | 启用数据版本  | INTEGER      |   -1   | &nbsp; |
+| ENABLEDEACTION        | 支持实体行为  | INTEGER      |   -1   | &nbsp; |
+| ENABLEDEDATASET        | 支持获取结果集  | INTEGER      |   -1   | &nbsp; |
+| ENABLEENTITYCACHE        | 启用数据对象缓存  | INTEGER      |   -1   | &nbsp; |
+| ENABLEMOB        | 支持移动端  | INTEGER      |   -1   | &nbsp; |
+| ENABLEMULTIDS        | 支持多数据源  | INTEGER      |   -1   | &nbsp; |
+| ENABLEOPNAMEMODEL        | 启用操作者名称模型  | INTEGER      |   -1   | &nbsp; |
+| ENABLEORGMODEL        | 启用组织模型  | INTEGER      |   -1   | &nbsp; |
+| ENABLESELECT        | 支持简单查询  | INTEGER      |   -1   | &nbsp; |
+| ENABLEWFMODEL        | 启用工作流模型  | INTEGER      |   -1   | &nbsp; |
+| ENAMULTIFORM        | 启用多表单  | INTEGER      |   -1   | &nbsp; |
+| ENATEMPDATA        | 启用临时数据  | INTEGER      |   -1   | &nbsp; |
+| ENTITYCACHETIMEOUT        | 数据对象缓存时长  | INTEGER      |   -1   | &nbsp; |
+| EXISTINGMODEL        | 现有数据结构  | INTEGER      |   -1   | &nbsp; |
 | EXTABLENAME        | 用户表  | VARCHAR      |   100   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
-| SERVICECODENAME        | 服务代码名称  | VARCHAR      |   30   | &nbsp; |
-| SAASMODE        | SaaS构型  | INTEGER      |   -1   | &nbsp; |
-| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| INDEXDETYPE        | 索引类型  | VARCHAR      |   20   | &nbsp; |
+| KEYRULE        | 主键规则  | VARCHAR      |   100   | &nbsp; |
+| LOCKFLAG        | 模型锁模式  | INTEGER      |   -1   | &nbsp; |
+| LOGICINVALIDVALUE        | 逻辑无效值  | VARCHAR      |   10   | &nbsp; |
+| LOGICNAME        | 中文名称  | VARCHAR      |   60   | &nbsp; |
+| LOGICVALID        | 启用逻辑有效  | INTEGER      |   -1   | &nbsp; |
 | LOGICVALIDVALUE        | 逻辑有效值  | VARCHAR      |   10   | &nbsp; |
+| MAXENTITYCACHECNT        | 最大缓存数据对象数  | INTEGER      |   -1   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
+| MODCOLOR        | 模块颜色  | VARCHAR      |   30   | &nbsp; |
+| MODELIMPEXPFLAG        | 模型导入导出能力  | INTEGER      |   -1   | &nbsp; |
+| MODELSTATE        | 模型状态  | INTEGER      |   -1   | &nbsp; |
+| NOVIEWMODE        | 无视图模式  | INTEGER      |   -1   | &nbsp; |
+| PSDATAENTITYID        | 实体标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSDATAENTITYNAME        | 实体名称  | VARCHAR      |   200   | &nbsp; |
+| PSMODULEID        | 系统模块  | VARCHAR      |   100   | &nbsp; |
+| PSMODULENAME        | 系统模块  | VARCHAR      |   200   | &nbsp; |
+| PSSUBSYSSADEID        | 子系统接口实体  | VARCHAR      |   100   | &nbsp; |
+| PSSUBSYSSADENAME        | 子系统接口实体  | VARCHAR      |   200   | &nbsp; |
+| PSSUBSYSSERVICEAPIID        | 子系统服务接口  | VARCHAR      |   100   | &nbsp; |
+| PSSUBSYSSERVICEAPINAME        | 子系统服务接口  | VARCHAR      |   200   | &nbsp; |
+| PSSYSREQITEMID        | 系统设计需求  | VARCHAR      |   100   | &nbsp; |
+| PSSYSREQITEMNAME        | 系统设计需求  | VARCHAR      |   200   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| REMOVEFLAG        | 删除模式  | INTEGER      |   -1   | &nbsp; |
+| SAASMODE        | SaaS构型  | INTEGER      |   -1   | &nbsp; |
+| SERVICEAPIFLAG        | 服务API模式  | INTEGER      |   -1   | &nbsp; |
+| SERVICECODENAME        | 服务代码名称  | VARCHAR      |   30   | &nbsp; |
+| STORAGEMODE        | 存储模式  | INTEGER      |   -1   | &nbsp; |
+| SUBSYSDE        | 子系统实体  | INTEGER      |   -1   | &nbsp; |
+| SUBSYSMODULE        | 子系统实体  | INTEGER      |   -1   | &nbsp; |
+| SVRPUBMODE        | 默认发布行为服务  | INTEGER      |   -1   | &nbsp; |
+| SYSTEMFLAG        | 系统实体  | INTEGER      |   -1   | &nbsp; |
+| TABLENAME        | 主表名称  | VARCHAR      |   60   | &nbsp; |
+| TESTCASEFLAG        | 默认测试单元  | INTEGER      |   -1   | &nbsp; |
+| TODOTASK        | TODO  | VARCHAR      |   4,000   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERACTION        | 默认用户界面行为  | INTEGER      |   -1   | &nbsp; |
+| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| USERPARAMS        | 自定义参数  | VARCHAR      |   2,000   | &nbsp; |
+| USERTAG        | 用户标记  | VARCHAR      |   100   | &nbsp; |
+| USERTAG2        | 用户标记2  | VARCHAR      |   100   | &nbsp; |
+| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
+| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
+| VALIDFLAG        | 是否启用  | INTEGER      |   -1   | &nbsp; |
+| VIEWLEVEL        | 多视图级别  | INTEGER      |   -1   | &nbsp; |
+| VIEWNAME        | 视图名称  | VARCHAR      |   60   | &nbsp; |
+| VIEWNAME2        | 级别2视图名称  | VARCHAR      |   60   | &nbsp; |
+| VIEWNAME3        | 级别3视图名称  | VARCHAR      |   60   | &nbsp; |
+| VIEWNAME4        | 级别4视图名称  | VARCHAR      |   60   | &nbsp; |
+| VIRTUALFLAG        | 虚拟实体  | INTEGER      |   -1   | &nbsp; |
+| VKEYSEPARATOR        | 虚拟主键分隔符  | VARCHAR      |   10   | &nbsp; |
 
 
 
@@ -161950,37 +161950,37 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| MODTAG4        | 模块标记4  | VARCHAR      |   60   | &nbsp; |
-| SUBSYSMODULE        | 子系统模块  | INTEGER      |   -1   | &nbsp; |
-| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
-| DEFAULTFLAG        | 默认模块  | INTEGER      |   -1   | &nbsp; |
-| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
-| CODENAME        | 代码名称  | VARCHAR      |   60   | &nbsp; |
-| ORDERVALUE        | 排序值  | INTEGER      |   -1   | &nbsp; |
-| MODULESN        | 模块编号  | VARCHAR      |   100   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| MODTAG2        | 模块标记2  | VARCHAR      |   60   | &nbsp; |
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| COLOR        | 显示颜色  | VARCHAR      |   30   | &nbsp; |
-| MODTAG        | 模块标记  | VARCHAR      |   60   | &nbsp; |
-| LOCKFLAG        | 模型锁模式  | INTEGER      |   -1   | &nbsp; |
-| SERVICEAPIFLAG        | 服务API模式  | INTEGER      |   -1   | &nbsp; |
-| SYSREFTYPE        | 子系统类型  | VARCHAR      |   20   | &nbsp; |
-| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
-| PSMODULENAME        | 系统模块名称  | VARCHAR      |   200   | &nbsp; |
-| PKGCODENAME        | 代码包名  | VARCHAR      |   200   | &nbsp; |
-| MODTAG3        | 模块标记3  | VARCHAR      |   60   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
-| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
-| USERPARAMS        | 自定义参数  | VARCHAR      |   2,000   | &nbsp; |
-| NOVIEWMODE        | 无视图模式  | INTEGER      |   -1   | &nbsp; |
-| PSMODULEID        | 系统模块标识  | VARCHAR      |   100   | 主键&nbsp; |
-| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 | CLSPKGPARAMS        | 类包参数  | VARCHAR      |   4,000   | &nbsp; |
+| CODENAME        | 代码名称  | VARCHAR      |   60   | &nbsp; |
+| COLOR        | 显示颜色  | VARCHAR      |   30   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DEFAULTFLAG        | 默认模块  | INTEGER      |   -1   | &nbsp; |
+| LOCKFLAG        | 模型锁模式  | INTEGER      |   -1   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
+| MODTAG        | 模块标记  | VARCHAR      |   60   | &nbsp; |
+| MODTAG2        | 模块标记2  | VARCHAR      |   60   | &nbsp; |
+| MODTAG3        | 模块标记3  | VARCHAR      |   60   | &nbsp; |
+| MODTAG4        | 模块标记4  | VARCHAR      |   60   | &nbsp; |
+| MODULESN        | 模块编号  | VARCHAR      |   100   | &nbsp; |
+| NOVIEWMODE        | 无视图模式  | INTEGER      |   -1   | &nbsp; |
+| ORDERVALUE        | 排序值  | INTEGER      |   -1   | &nbsp; |
+| PKGCODENAME        | 代码包名  | VARCHAR      |   200   | &nbsp; |
+| PSMODULEID        | 系统模块标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSMODULENAME        | 系统模块名称  | VARCHAR      |   200   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| SERVICEAPIFLAG        | 服务API模式  | INTEGER      |   -1   | &nbsp; |
+| SUBSYSMODULE        | 子系统模块  | INTEGER      |   -1   | &nbsp; |
+| SYSREFTYPE        | 子系统类型  | VARCHAR      |   20   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| USERPARAMS        | 自定义参数  | VARCHAR      |   2,000   | &nbsp; |
 | USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
+| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
+| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
+| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
 
 
 
@@ -163812,27 +163812,27 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| DETAG        | 实体标记  | VARCHAR      |   100   | &nbsp; |
-| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
-| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
-| MAJORFLAG        | 接口模式  | INTEGER      |   -1   | &nbsp; |
-| SYNCMODELMODE        | 同步模型模式  | VARCHAR      |   10   | &nbsp; |
-| DETAG2        | 实体标记2  | VARCHAR      |   100   | &nbsp; |
-| PSSUBSYSSADEID        | 外部接口实体标识  | VARCHAR      |   100   | 主键&nbsp; |
-| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
-| PSSUBSYSSADENAME        | 外部接口实体名称  | VARCHAR      |   200   | &nbsp; |
 | CODENAME        | 代码名称  | VARCHAR      |   50   | &nbsp; |
 | CODENAME2        | 代码名称2  | VARCHAR      |   50   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| LOGICNAME        | 逻辑名称  | VARCHAR      |   200   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| PSSUBSYSSERVICEAPINAME        | 子系统接口  | VARCHAR      |   200   | &nbsp; |
-| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DETAG        | 实体标记  | VARCHAR      |   100   | &nbsp; |
+| DETAG2        | 实体标记2  | VARCHAR      |   100   | &nbsp; |
+| LOGICNAME        | 逻辑名称  | VARCHAR      |   200   | &nbsp; |
+| MAJORFLAG        | 接口模式  | INTEGER      |   -1   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
+| PSSUBSYSSADEID        | 外部接口实体标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSSUBSYSSADENAME        | 外部接口实体名称  | VARCHAR      |   200   | &nbsp; |
 | PSSUBSYSSERVICEAPIID        | 子系统接口  | VARCHAR      |   100   | &nbsp; |
+| PSSUBSYSSERVICEAPINAME        | 子系统接口  | VARCHAR      |   200   | &nbsp; |
+| SYNCMODELMODE        | 同步模型模式  | VARCHAR      |   10   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
+| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
+| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
+| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
 | VALIDFLAG        | 是否启用  | INTEGER      |   -1   | &nbsp; |
 
 
@@ -165666,17 +165666,17 @@ CREATE TABLE `zt_team`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| PSSUBSYSSERVICEAPIID        | 外部服务接口标识  | VARCHAR      |   100   | 主键&nbsp; |
-| PSSYSSERVICEAPINAME        | 系统服务接口  | VARCHAR      |   200   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | PSMODULEID        | 系统模块  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSMODULENAME        | 系统模块  | VARCHAR      |   200   | &nbsp; |
+| PSSUBSYSSERVICEAPIID        | 外部服务接口标识  | VARCHAR      |   100   | 主键&nbsp; |
 | PSSUBSYSSERVICEAPINAME        | 外部服务接口名称  | VARCHAR      |   200   | &nbsp; |
 | PSSYSSERVICEAPIID        | 系统服务接口  | VARCHAR      |   100   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| PSMODULENAME        | 系统模块  | VARCHAR      |   200   | &nbsp; |
+| PSSYSSERVICEAPINAME        | 系统服务接口  | VARCHAR      |   200   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
 | PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -167508,67 +167508,67 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PUBSYSREFVIEWONLY        | 只发布系统引用视图（废弃）  | INTEGER      |   -1   | &nbsp; |
-| GCNOPRIVDM        | 表格列无权限显示模式  | INTEGER      |   -1   | &nbsp; |
-| SERVICECODENAME        | 服务代码名称  | VARCHAR      |   60   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| PSSTUDIOTHEMEID        | 应用主题  | VARCHAR      |   100   | &nbsp; |
-| PREVENTXSS        | 防止XSS攻击  | INTEGER      |   -1   | &nbsp; |
-| GRIDCOLENABLELINK        | 表格列启用链接  | INTEGER      |   -1   | &nbsp; |
-| APPTAG4        | 应用标记4  | VARCHAR      |   60   | &nbsp; |
-| FINOPRIVDM        | 表单项无权限显示模式  | INTEGER      |   -1   | &nbsp; |
-| GRIDFORCEFIT        | 表格适应屏宽  | INTEGER      |   -1   | &nbsp; |
-| PFSTYLEPARAM        | 应用样式参数  | CLOB      |   1,048,576   | &nbsp; |
-| PSSYSAPPNAME        | 系统应用名称  | VARCHAR      |   200   | &nbsp; |
-| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
-| APPTAG        | 应用标记  | VARCHAR      |   60   | &nbsp; |
-| STARTPAGEFILE        | 起始页图片文件  | VARCHAR      |   100   | &nbsp; |
-| ORIENTATIONMODE        | 移动端方向设置  | VARCHAR      |   20   | &nbsp; |
-| PUBREFVIEWONLY        | 只发布引用视图  | INTEGER      |   -1   | &nbsp; |
-| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
-| PSSYSSERVICEAPINAME        | 默认服务接口  | VARCHAR      |   200   | &nbsp; |
-| VALIDFLAG        | 是否启用  | INTEGER      |   -1   | &nbsp; |
-| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
-| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
-| APPSN        | 应用编号  | VARCHAR      |   100   | &nbsp; |
-| UACLOGIN        | 启用统一认证  | INTEGER      |   -1   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| APPTAG2        | 应用标记2  | VARCHAR      |   60   | &nbsp; |
-| ENABLESTORYBOARD        | 启用故事板  | INTEGER      |   -1   | &nbsp; |
-| ENABLEC12TOC24        | 转换12列至24列布局  | INTEGER      |   -1   | &nbsp; |
-| BTNNOPRIVDM        | 按钮无权限显示模式  | INTEGER      |   -1   | &nbsp; |
-| PSPFSTYLEID        | 应用样式  | VARCHAR      |   100   | &nbsp; |
-| PSAPPTYPEID        | 应用类型  | VARCHAR      |   100   | &nbsp; |
-| PSPFCDNNAME        | 应用CDN  | VARCHAR      |   200   | &nbsp; |
-| PSSYSAPPID        | 系统应用标识  | VARCHAR      |   100   | 主键&nbsp; |
 | APPFOLDER        | 应用目录  | VARCHAR      |   500   | &nbsp; |
-| APPPKGNAME        | 代码名称  | VARCHAR      |   60   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| ENABLEDYNASYS        | 支持动态系统  | INTEGER      |   -1   | &nbsp; |
-| LOGICNAME        | 中文名称  | VARCHAR      |   200   | &nbsp; |
-| USERPARAMS        | 自定义参数  | VARCHAR      |   2,000   | &nbsp; |
-| DEFAULTPUB        | 默认应用  | INTEGER      |   -1   | &nbsp; |
-| REMOVEFLAG        | 删除模式  | INTEGER      |   -1   | &nbsp; |
 | APPMODE        | 应用模式  | VARCHAR      |   30   | &nbsp; |
-| ENALOCALSERVICE        | 启用本地服务  | INTEGER      |   -1   | &nbsp; |
-| PSSYSSERVICEAPIID        | 默认服务接口  | VARCHAR      |   100   | &nbsp; |
-| UISTYLE        | 内建界面式样  | VARCHAR      |   30   | &nbsp; |
-| FIUPDATEPRIVTAG        | 输出表单项更新权限标记  | INTEGER      |   -1   | &nbsp; |
-| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
-| PSPFID        | 前台技术架构  | VARCHAR      |   100   | &nbsp; |
+| APPPKGNAME        | 代码名称  | VARCHAR      |   60   | &nbsp; |
+| APPSN        | 应用编号  | VARCHAR      |   100   | &nbsp; |
+| APPTAG        | 应用标记  | VARCHAR      |   60   | &nbsp; |
+| APPTAG2        | 应用标记2  | VARCHAR      |   60   | &nbsp; |
 | APPTAG3        | 应用标记3  | VARCHAR      |   60   | &nbsp; |
-| CODEFOLDER        | 代码目录  | VARCHAR      |   60   | &nbsp; |
-| PSAPPTYPENAME        | 应用类型  | VARCHAR      |   200   | &nbsp; |
-| MAINMENUSIDE        | 视图主菜单方向  | VARCHAR      |   20   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| PSPFCDNID        | 应用CDN  | VARCHAR      |   100   | &nbsp; |
-| ICONFILE        | 图标文件  | VARCHAR      |   100   | &nbsp; |
-| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
-| PSSTUDIOTHEMENAME        | 应用主题  | VARCHAR      |   200   | &nbsp; |
-| GRIDROWACTIVEMODE        | 表格行激活模式  | INTEGER      |   -1   | &nbsp; |
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| APPTAG4        | 应用标记4  | VARCHAR      |   60   | &nbsp; |
 | AUTOADDAPPVIEW        | 自动添加应用视图  | INTEGER      |   -1   | &nbsp; |
+| BTNNOPRIVDM        | 按钮无权限显示模式  | INTEGER      |   -1   | &nbsp; |
+| CODEFOLDER        | 代码目录  | VARCHAR      |   60   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DEFAULTPUB        | 默认应用  | INTEGER      |   -1   | &nbsp; |
+| ENABLEC12TOC24        | 转换12列至24列布局  | INTEGER      |   -1   | &nbsp; |
+| ENABLEDYNASYS        | 支持动态系统  | INTEGER      |   -1   | &nbsp; |
+| ENABLESTORYBOARD        | 启用故事板  | INTEGER      |   -1   | &nbsp; |
+| ENALOCALSERVICE        | 启用本地服务  | INTEGER      |   -1   | &nbsp; |
+| FINOPRIVDM        | 表单项无权限显示模式  | INTEGER      |   -1   | &nbsp; |
+| FIUPDATEPRIVTAG        | 输出表单项更新权限标记  | INTEGER      |   -1   | &nbsp; |
+| GCNOPRIVDM        | 表格列无权限显示模式  | INTEGER      |   -1   | &nbsp; |
+| GRIDCOLENABLELINK        | 表格列启用链接  | INTEGER      |   -1   | &nbsp; |
+| GRIDFORCEFIT        | 表格适应屏宽  | INTEGER      |   -1   | &nbsp; |
+| GRIDROWACTIVEMODE        | 表格行激活模式  | INTEGER      |   -1   | &nbsp; |
+| ICONFILE        | 图标文件  | VARCHAR      |   100   | &nbsp; |
+| LOGICNAME        | 中文名称  | VARCHAR      |   200   | &nbsp; |
+| MAINMENUSIDE        | 视图主菜单方向  | VARCHAR      |   20   | &nbsp; |
 | MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
+| ORIENTATIONMODE        | 移动端方向设置  | VARCHAR      |   20   | &nbsp; |
+| PFSTYLEPARAM        | 应用样式参数  | CLOB      |   1,048,576   | &nbsp; |
+| PREVENTXSS        | 防止XSS攻击  | INTEGER      |   -1   | &nbsp; |
+| PSAPPTYPEID        | 应用类型  | VARCHAR      |   100   | &nbsp; |
+| PSAPPTYPENAME        | 应用类型  | VARCHAR      |   200   | &nbsp; |
+| PSPFCDNID        | 应用CDN  | VARCHAR      |   100   | &nbsp; |
+| PSPFCDNNAME        | 应用CDN  | VARCHAR      |   200   | &nbsp; |
+| PSPFID        | 前台技术架构  | VARCHAR      |   100   | &nbsp; |
+| PSPFSTYLEID        | 应用样式  | VARCHAR      |   100   | &nbsp; |
+| PSSTUDIOTHEMEID        | 应用主题  | VARCHAR      |   100   | &nbsp; |
+| PSSTUDIOTHEMENAME        | 应用主题  | VARCHAR      |   200   | &nbsp; |
+| PSSYSAPPID        | 系统应用标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSSYSAPPNAME        | 系统应用名称  | VARCHAR      |   200   | &nbsp; |
+| PSSYSSERVICEAPIID        | 默认服务接口  | VARCHAR      |   100   | &nbsp; |
+| PSSYSSERVICEAPINAME        | 默认服务接口  | VARCHAR      |   200   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PUBREFVIEWONLY        | 只发布引用视图  | INTEGER      |   -1   | &nbsp; |
+| PUBSYSREFVIEWONLY        | 只发布系统引用视图（废弃）  | INTEGER      |   -1   | &nbsp; |
+| REMOVEFLAG        | 删除模式  | INTEGER      |   -1   | &nbsp; |
+| SERVICECODENAME        | 服务代码名称  | VARCHAR      |   60   | &nbsp; |
+| STARTPAGEFILE        | 起始页图片文件  | VARCHAR      |   100   | &nbsp; |
+| UACLOGIN        | 启用统一认证  | INTEGER      |   -1   | &nbsp; |
+| UISTYLE        | 内建界面式样  | VARCHAR      |   30   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| USERPARAMS        | 自定义参数  | VARCHAR      |   2,000   | &nbsp; |
+| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
+| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
+| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
+| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
+| VALIDFLAG        | 是否启用  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -169400,35 +169400,35 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PSSYSREQITEMID        | 系统需求项标识  | VARCHAR      |   100   | 主键&nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| ITEMTAG2        | 项标记2  | VARCHAR      |   200   | &nbsp; |
-| REQCONTENT        | 内容  | CLOB      |   1,048,576   | &nbsp; |
 | CODENAME        | 代码标识  | VARCHAR      |   50   | &nbsp; |
-| PSSYSREQITEMNAME        | 系统需求项名称  | VARCHAR      |   200   | &nbsp; |
-| PSSYSUSERCASEID        | 系统用例  | VARCHAR      |   100   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| ITEMSN        | 项编号  | VARCHAR      |   100   | &nbsp; |
+| ITEMTAG        | 项标记  | VARCHAR      |   200   | &nbsp; |
+| ITEMTAG2        | 项标记2  | VARCHAR      |   200   | &nbsp; |
 | ITEMTYPE        | 项类型  | VARCHAR      |   50   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   4,000   | &nbsp; |
 | ORDERVALUE        | 次序  | INTEGER      |   -1   | &nbsp; |
 | PPSSYSREQITEMID        | 父需求项  | VARCHAR      |   100   | &nbsp; |
-| PSSYSUSERCASENAME        | 系统用例  | VARCHAR      |   100   | &nbsp; |
-| VER        | 版本  | INTEGER      |   -1   | &nbsp; |
-| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
-| ITEMTAG        | 项标记  | VARCHAR      |   200   | &nbsp; |
-| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
-| ITEMSN        | 项编号  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
-| PSSYSREQMODULEID        | 需求模块  | VARCHAR      |   100   | &nbsp; |
 | PPSSYSREQITEMNAME        | 父需求项  | VARCHAR      |   200   | &nbsp; |
+| PSSYSREQITEMID        | 系统需求项标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSSYSREQITEMNAME        | 系统需求项名称  | VARCHAR      |   200   | &nbsp; |
+| PSSYSREQMODULEID        | 需求模块  | VARCHAR      |   100   | &nbsp; |
+| PSSYSREQMODULENAME        | 需求模块  | VARCHAR      |   200   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSUSERCASEID        | 系统用例  | VARCHAR      |   100   | &nbsp; |
+| PSSYSUSERCASENAME        | 系统用例  | VARCHAR      |   100   | &nbsp; |
+| REQCONTENT        | 内容  | CLOB      |   1,048,576   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
+| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
+| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
 | USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
 | VALIDFLAG        | 是否有效  | INTEGER      |   -1   | &nbsp; |
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
-| PSSYSREQMODULENAME        | 需求模块  | VARCHAR      |   200   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   4,000   | &nbsp; |
-| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| VER        | 版本  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -171260,32 +171260,32 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
-| MODULETAG        | 模块标记  | VARCHAR      |   200   | &nbsp; |
-| PSSYSREQMODULENAME        | 系统需求模块名称  | VARCHAR      |   200   | &nbsp; |
-| PPSSYSREQMODULENAME        | 父需求模块  | VARCHAR      |   200   | &nbsp; |
-| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
-| MODULETAG2        | 模块标记2  | VARCHAR      |   200   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| PSMODULENAME        | 系统模块  | VARCHAR      |   200   | &nbsp; |
-| CONTENT        | 内容  | CLOB      |   4,000   | &nbsp; |
-| PSSYSREQMODULEID        | 系统需求模块标识  | VARCHAR      |   100   | 主键&nbsp; |
-| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
-| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
-| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
-| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| PPSSYSREQMODULEID        | 父需求模块  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
-| MODULESN        | 模块编号  | VARCHAR      |   100   | &nbsp; |
 | CODENAME        | 代码标识  | VARCHAR      |   50   | &nbsp; |
+| CONTENT        | 内容  | CLOB      |   4,000   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| MODULETAG3        | 模块标记3  | VARCHAR      |   200   | &nbsp; |
-| PSMODULEID        | 系统模块  | VARCHAR      |   100   | &nbsp; |
 | MEMO        | 备注  | VARCHAR      |   4,000   | &nbsp; |
-| ORDERVALUE        | 排序值  | INTEGER      |   -1   | &nbsp; |
+| MODULESN        | 模块编号  | VARCHAR      |   100   | &nbsp; |
+| MODULETAG        | 模块标记  | VARCHAR      |   200   | &nbsp; |
+| MODULETAG2        | 模块标记2  | VARCHAR      |   200   | &nbsp; |
+| MODULETAG3        | 模块标记3  | VARCHAR      |   200   | &nbsp; |
 | MODULETAG4        | 模块标记4  | VARCHAR      |   200   | &nbsp; |
+| ORDERVALUE        | 排序值  | INTEGER      |   -1   | &nbsp; |
+| PPSSYSREQMODULEID        | 父需求模块  | VARCHAR      |   100   | &nbsp; |
+| PPSSYSREQMODULENAME        | 父需求模块  | VARCHAR      |   200   | &nbsp; |
+| PSMODULEID        | 系统模块  | VARCHAR      |   100   | &nbsp; |
+| PSMODULENAME        | 系统模块  | VARCHAR      |   200   | &nbsp; |
+| PSSYSREQMODULEID        | 系统需求模块标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSSYSREQMODULENAME        | 系统需求模块名称  | VARCHAR      |   200   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
+| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
+| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
+| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
 
 
 
@@ -173117,42 +173117,42 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| RUNPARAM2        | 运行参数2  | VARCHAR      |   100   | &nbsp; |
-| PSSYSAPPID2        | 系统应用2  | VARCHAR      |   100   | &nbsp; |
-| PSSYSAPPNAME2        | 系统应用2  | VARCHAR      |   200   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| RUNSTATE        | 运行状态  | INTEGER      |   -1   | &nbsp; |
-| PSSYSRUNSESSIONNAME        | 系统运行会话名称  | VARCHAR      |   200   | &nbsp; |
-| PSSYSSERVICEAPINAME        | 系统服务接口  | VARCHAR      |   200   | &nbsp; |
-| PSSYSAPPNAME        | 系统应用  | VARCHAR      |   200   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| PSSYSTEMDBCFGID        | 运行数据库  | VARCHAR      |   100   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| RUNPARAM        | 运行参数  | VARCHAR      |   100   | &nbsp; |
-| RUNPARAM6        | 运行参数6  | INTEGER      |   -1   | &nbsp; |
-| PSDSCONSOLEID        | 控制台标识  | VARCHAR      |   100   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
-| STOPWHENTEMPLERROR        | 模板出错时终止  | INTEGER      |   -1   | &nbsp; |
-| ENABLEVC        | 签入版本库  | INTEGER      |   -1   | &nbsp; |
-| PSSYSAPPID        | 系统应用  | VARCHAR      |   100   | &nbsp; |
-| STARTTIME        | 开始时间  | DATETIME      |   -1   | &nbsp; |
-| ENDTIME        | 结束时间  | DATETIME      |   -1   | &nbsp; |
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
-| PSSYSRUNSESSIONID        | 系统运行会话标识  | VARCHAR      |   100   | 主键&nbsp; |
-| FIXDBMODEL        | 修复数据结构  | INTEGER      |   -1   | &nbsp; |
-| PSSYSSFPUBID        | 服务体系  | VARCHAR      |   100   | &nbsp; |
-| RUNPARAM4        | 运行参数4  | VARCHAR      |   100   | &nbsp; |
-| REBUILDMODE        | 重新构建  | INTEGER      |   -1   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| RUNPARAM3        | 运行参数3  | VARCHAR      |   100   | &nbsp; |
-| RUNMODE        | 运行模式  | VARCHAR      |   100   | &nbsp; |
-| PACKMODE        | 打包模式  | VARCHAR      |   20   | &nbsp; |
-| PSSYSSFPUBNAME        | 服务体系  | VARCHAR      |   100   | &nbsp; |
-| PSSYSTEMDBCFGNAME        | 运行数据库  | VARCHAR      |   100   | &nbsp; |
-| RUNPARAM5        | 运行参数5  | INTEGER      |   -1   | &nbsp; |
-| PSSYSSERVICEAPIID        | 系统服务接口  | VARCHAR      |   100   | &nbsp; |
-| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | DEBUGMODE        | 输出调试信息  | INTEGER      |   -1   | &nbsp; |
+| ENABLEVC        | 签入版本库  | INTEGER      |   -1   | &nbsp; |
+| ENDTIME        | 结束时间  | DATETIME      |   -1   | &nbsp; |
+| FIXDBMODEL        | 修复数据结构  | INTEGER      |   -1   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
+| PACKMODE        | 打包模式  | VARCHAR      |   20   | &nbsp; |
+| PSDSCONSOLEID        | 控制台标识  | VARCHAR      |   100   | &nbsp; |
+| PSSYSAPPID        | 系统应用  | VARCHAR      |   100   | &nbsp; |
+| PSSYSAPPID2        | 系统应用2  | VARCHAR      |   100   | &nbsp; |
+| PSSYSAPPNAME        | 系统应用  | VARCHAR      |   200   | &nbsp; |
+| PSSYSAPPNAME2        | 系统应用2  | VARCHAR      |   200   | &nbsp; |
+| PSSYSRUNSESSIONID        | 系统运行会话标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSSYSRUNSESSIONNAME        | 系统运行会话名称  | VARCHAR      |   200   | &nbsp; |
+| PSSYSSERVICEAPIID        | 系统服务接口  | VARCHAR      |   100   | &nbsp; |
+| PSSYSSERVICEAPINAME        | 系统服务接口  | VARCHAR      |   200   | &nbsp; |
+| PSSYSSFPUBID        | 服务体系  | VARCHAR      |   100   | &nbsp; |
+| PSSYSSFPUBNAME        | 服务体系  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMDBCFGID        | 运行数据库  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMDBCFGNAME        | 运行数据库  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| REBUILDMODE        | 重新构建  | INTEGER      |   -1   | &nbsp; |
+| RUNMODE        | 运行模式  | VARCHAR      |   100   | &nbsp; |
+| RUNPARAM        | 运行参数  | VARCHAR      |   100   | &nbsp; |
+| RUNPARAM2        | 运行参数2  | VARCHAR      |   100   | &nbsp; |
+| RUNPARAM3        | 运行参数3  | VARCHAR      |   100   | &nbsp; |
+| RUNPARAM4        | 运行参数4  | VARCHAR      |   100   | &nbsp; |
+| RUNPARAM5        | 运行参数5  | INTEGER      |   -1   | &nbsp; |
+| RUNPARAM6        | 运行参数6  | INTEGER      |   -1   | &nbsp; |
+| RUNSTATE        | 运行状态  | INTEGER      |   -1   | &nbsp; |
+| STARTTIME        | 开始时间  | DATETIME      |   -1   | &nbsp; |
+| STOPWHENTEMPLERROR        | 模板出错时终止  | INTEGER      |   -1   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -174984,42 +174984,42 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
-| PSSFSTYLEVERID        | 服务框架扩展  | VARCHAR      |   100   | &nbsp; |
-| PSSYSSFPUBNAME        | 后台服务架构名称  | VARCHAR      |   200   | &nbsp; |
-| PUBTAG        | 发布标记  | VARCHAR      |   60   | &nbsp; |
-| DOCPSSFSTYLEID        | 文档模板样式  | VARCHAR      |   100   | &nbsp; |
-| PUBTAG4        | 发布标记4  | VARCHAR      |   60   | &nbsp; |
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
-| DEFAULTPUB        | 默认后台服务  | INTEGER      |   -1   | &nbsp; |
-| STYLEPARAMS        | 服务框架参数  | VARCHAR      |   4,000   | &nbsp; |
-| DOCPSSFSTYLENAME        | 文档模板样式  | VARCHAR      |   200   | &nbsp; |
-| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
+| BASECLSPKGCODENAME        | 基类代码包名  | VARCHAR      |   200   | &nbsp; |
+| CODENAME        | 代码名称  | VARCHAR      |   100   | &nbsp; |
+| CONTENTTYPE        | 发布内容类型  | VARCHAR      |   20   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| PUBTAG2        | 发布标记2  | VARCHAR      |   60   | &nbsp; |
-| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DEFAULTPUB        | 默认后台服务  | INTEGER      |   -1   | &nbsp; |
+| DOCPSSFSTYLEID        | 文档模板样式  | VARCHAR      |   100   | &nbsp; |
+| DOCPSSFSTYLENAME        | 文档模板样式  | VARCHAR      |   200   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
+| PKGCODENAME        | 代码包名  | VARCHAR      |   200   | &nbsp; |
+| PPSSYSSFPUBID        | 父后台服务体系  | VARCHAR      |   100   | &nbsp; |
+| PPSSYSSFPUBNAME        | 父后台服务体系  | VARCHAR      |   200   | &nbsp; |
 | PSSFSTYLEID        | 服务框架  | VARCHAR      |   100   | &nbsp; |
 | PSSFSTYLEPARAMID        | 服务框架参数  | VARCHAR      |   100   | &nbsp; |
-| CONTENTTYPE        | 发布内容类型  | VARCHAR      |   20   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| PPSSYSSFPUBNAME        | 父后台服务体系  | VARCHAR      |   200   | &nbsp; |
-| CODENAME        | 代码名称  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| PSSYSSFPUBID        | 后台服务架构标识  | VARCHAR      |   100   | 主键&nbsp; |
-| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
-| BASECLSPKGCODENAME        | 基类代码包名  | VARCHAR      |   200   | &nbsp; |
-| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
-| PUBFOLDER        | 服务目录  | VARCHAR      |   500   | &nbsp; |
-| VERSTR        | 版本号  | VARCHAR      |   50   | &nbsp; |
-| PUBTAG3        | 发布标记3  | VARCHAR      |   60   | &nbsp; |
-| SUBSYSPKGFLAG        | 引用系统组件  | INTEGER      |   -1   | &nbsp; |
-| REMOVEFLAG        | 删除模式  | INTEGER      |   -1   | &nbsp; |
-| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| PKGCODENAME        | 代码包名  | VARCHAR      |   200   | &nbsp; |
-| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
-| PPSSYSSFPUBID        | 父后台服务体系  | VARCHAR      |   100   | &nbsp; |
 | PSSFSTYLEPARAMNAME        | 服务框架参数  | VARCHAR      |   200   | &nbsp; |
+| PSSFSTYLEVERID        | 服务框架扩展  | VARCHAR      |   100   | &nbsp; |
+| PSSYSSFPUBID        | 后台服务架构标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSSYSSFPUBNAME        | 后台服务架构名称  | VARCHAR      |   200   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PUBFOLDER        | 服务目录  | VARCHAR      |   500   | &nbsp; |
+| PUBTAG        | 发布标记  | VARCHAR      |   60   | &nbsp; |
+| PUBTAG2        | 发布标记2  | VARCHAR      |   60   | &nbsp; |
+| PUBTAG3        | 发布标记3  | VARCHAR      |   60   | &nbsp; |
+| PUBTAG4        | 发布标记4  | VARCHAR      |   60   | &nbsp; |
+| REMOVEFLAG        | 删除模式  | INTEGER      |   -1   | &nbsp; |
+| STYLEPARAMS        | 服务框架参数  | VARCHAR      |   4,000   | &nbsp; |
+| SUBSYSPKGFLAG        | 引用系统组件  | INTEGER      |   -1   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
+| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
+| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
+| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
+| VERSTR        | 版本号  | VARCHAR      |   50   | &nbsp; |
 
 
 
@@ -176851,51 +176851,51 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| PSMODULEID        | 系统模块  | VARCHAR      |   100   | &nbsp; |
-| AUTHCLIENTID        | 认证客户端标识  | VARCHAR      |   100   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | APIMODE        | 接口模式  | INTEGER      |   -1   | &nbsp; |
-| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
-| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
-| AUTHPARAM2        | 认证参数2  | VARCHAR      |   200   | &nbsp; |
-| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
-| VER        | 版本  | INTEGER      |   -1   | &nbsp; |
-| PSSYSSERVICEAPINAME        | 系统服务接口名称  | VARCHAR      |   200   | &nbsp; |
-| SERVICEPARAM        | 服务参数  | VARCHAR      |   200   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| DEFDEACTIONREQMETHOD        | 默认实体行为请求方式  | VARCHAR      |   20   | &nbsp; |
-| SERVICEPARAM3        | 服务参数3  | VARCHAR      |   100   | &nbsp; |
-| SERVICECODENAME        | 服务代码名称  | VARCHAR      |   60   | &nbsp; |
-| PREDEFINEDTYPE        | 平台预定义类型  | VARCHAR      |   50   | &nbsp; |
-| SERVICETYPE        | 服务类型  | VARCHAR      |   30   | &nbsp; |
-| AUTHPARAM        | 认证参数  | VARCHAR      |   200   | &nbsp; |
-| VALIDFLAG        | 是否启用  | INTEGER      |   -1   | &nbsp; |
-| SERVICEPARAM4        | 服务参数4  | VARCHAR      |   100   | &nbsp; |
-| DEFSELECTREQMETHOD        | 默认查询请求方式  | VARCHAR      |   20   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
-| SERVICEPARAM2        | 服务参数2  | VARCHAR      |   200   | &nbsp; |
-| CFGPSMODELSTORAGEID        | 配置模型存储标识  | VARCHAR      |   100   | &nbsp; |
-| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
-| AUTHCHECKTOKENURI        | 认证token路径  | VARCHAR      |   500   | &nbsp; |
-| APITAG2        | 接口标记2  | VARCHAR      |   100   | &nbsp; |
-| AUTHCLIENTSECRET        | 认证客户端密钥  | VARCHAR      |   1,000   | &nbsp; |
-| DEFDEDATASETREQMETHOD        | 默认结果集请求方式  | VARCHAR      |   20   | &nbsp; |
-| AUTHPARAM4        | 认证参数4  | VARCHAR      |   100   | &nbsp; |
 | APITAG        | 接口标记  | VARCHAR      |   100   | &nbsp; |
-| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
-| AUTHMODE        | 认证模式  | VARCHAR      |   50   | &nbsp; |
-| LOCKFLAG        | 模型锁标志  | INTEGER      |   -1   | &nbsp; |
-| CFGTAG        | 配置标记  | VARCHAR      |   100   | &nbsp; |
+| APITAG2        | 接口标记2  | VARCHAR      |   100   | &nbsp; |
 | APITYPE        | 接口类型  | VARCHAR      |   40   | &nbsp; |
-| UNIQUETAG        | 唯一标识  | VARCHAR      |   100   | &nbsp; |
-| PSSYSSERVICEAPIID        | 系统服务接口标识  | VARCHAR      |   100   | 主键&nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| PSMODULENAME        | 系统模块  | VARCHAR      |   200   | &nbsp; |
-| CODENAME        | 代码名称  | VARCHAR      |   40   | &nbsp; |
-| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
+| AUTHCHECKTOKENURI        | 认证token路径  | VARCHAR      |   500   | &nbsp; |
+| AUTHCLIENTID        | 认证客户端标识  | VARCHAR      |   100   | &nbsp; |
+| AUTHCLIENTSECRET        | 认证客户端密钥  | VARCHAR      |   1,000   | &nbsp; |
+| AUTHMODE        | 认证模式  | VARCHAR      |   50   | &nbsp; |
+| AUTHPARAM        | 认证参数  | VARCHAR      |   200   | &nbsp; |
+| AUTHPARAM2        | 认证参数2  | VARCHAR      |   200   | &nbsp; |
 | AUTHPARAM3        | 认证参数3  | VARCHAR      |   100   | &nbsp; |
+| AUTHPARAM4        | 认证参数4  | VARCHAR      |   100   | &nbsp; |
+| CFGPSMODELSTORAGEID        | 配置模型存储标识  | VARCHAR      |   100   | &nbsp; |
+| CFGTAG        | 配置标记  | VARCHAR      |   100   | &nbsp; |
+| CODENAME        | 代码名称  | VARCHAR      |   40   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DEFDEACTIONREQMETHOD        | 默认实体行为请求方式  | VARCHAR      |   20   | &nbsp; |
+| DEFDEDATASETREQMETHOD        | 默认结果集请求方式  | VARCHAR      |   20   | &nbsp; |
+| DEFSELECTREQMETHOD        | 默认查询请求方式  | VARCHAR      |   20   | &nbsp; |
+| LOCKFLAG        | 模型锁标志  | INTEGER      |   -1   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
+| PREDEFINEDTYPE        | 平台预定义类型  | VARCHAR      |   50   | &nbsp; |
+| PSMODULEID        | 系统模块  | VARCHAR      |   100   | &nbsp; |
+| PSMODULENAME        | 系统模块  | VARCHAR      |   200   | &nbsp; |
+| PSSYSSERVICEAPIID        | 系统服务接口标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSSYSSERVICEAPINAME        | 系统服务接口名称  | VARCHAR      |   200   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| SERVICECODENAME        | 服务代码名称  | VARCHAR      |   60   | &nbsp; |
+| SERVICEPARAM        | 服务参数  | VARCHAR      |   200   | &nbsp; |
+| SERVICEPARAM2        | 服务参数2  | VARCHAR      |   200   | &nbsp; |
+| SERVICEPARAM3        | 服务参数3  | VARCHAR      |   100   | &nbsp; |
+| SERVICEPARAM4        | 服务参数4  | VARCHAR      |   100   | &nbsp; |
+| SERVICETYPE        | 服务类型  | VARCHAR      |   30   | &nbsp; |
+| UNIQUETAG        | 唯一标识  | VARCHAR      |   100   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| USERTAG        | 用户标记  | VARCHAR      |   200   | &nbsp; |
+| USERTAG2        | 用户标记2  | VARCHAR      |   200   | &nbsp; |
+| USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
+| USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
+| VALIDFLAG        | 是否启用  | INTEGER      |   -1   | &nbsp; |
+| VER        | 版本  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -178727,40 +178727,40 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| APPENDSCHEMA        | 附加模式名称  | INTEGER      |   -1   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| USERPARAMS        | 自定义参数  | VARCHAR      |   2,000   | &nbsp; |
-| ENABLEWEBTOOL        | 支持Web管理  | INTEGER      |   -1   | &nbsp; |
-| TABSPACE        | 默认表空间名称  | VARCHAR      |   60   | &nbsp; |
-| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
-| RESINFO        | 资源信息  | VARCHAR      |   2,000   | &nbsp; |
-| NULLVALORDER        | 空值排序  | VARCHAR      |   10   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
-| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
-| PSSYSTEMDBCFGID        | 系统数据库标识  | VARCHAR      |   100   | 主键&nbsp; |
-| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
-| TABSPACE4        | 表空间4名称  | VARCHAR      |   60   | &nbsp; |
-| OBJNAMECASE        | 对象名称转换  | VARCHAR      |   20   | &nbsp; |
-| PUBCOMMENTFLAG        | 发布模型注释  | INTEGER      |   -1   | &nbsp; |
-| USERTAG        | 用户标记  | VARCHAR      |   100   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| NODBINSTMODE        | 无数据库模式  | INTEGER      |   -1   | &nbsp; |
-| PUBDBMODELFLAG        | 发布数据库模型  | INTEGER      |   -1   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| RESSTATE        | 资源状态  | INTEGER      |   -1   | &nbsp; |
+| DBSCHEMANAME        | 数据库模式名称  | VARCHAR      |   100   | &nbsp; |
 | DEFAULTFLAG        | 默认数据源  | INTEGER      |   -1   | &nbsp; |
+| ENABLEWEBTOOL        | 支持Web管理  | INTEGER      |   -1   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
+| NODBINSTMODE        | 无数据库模式  | INTEGER      |   -1   | &nbsp; |
+| NULLVALORDER        | 空值排序  | VARCHAR      |   10   | &nbsp; |
+| OBJNAMECASE        | 对象名称转换  | VARCHAR      |   20   | &nbsp; |
+| PSSYSTEMDBCFGID        | 系统数据库标识  | VARCHAR      |   100   | 主键&nbsp; |
+| PSSYSTEMDBCFGNAME        | 系统数据库名称  | VARCHAR      |   200   | &nbsp; |
+| PSSYSTEMID        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PSSYSTEMNAME        | 系统  | VARCHAR      |   100   | &nbsp; |
+| PUBCOMMENTFLAG        | 发布模型注释  | INTEGER      |   -1   | &nbsp; |
+| PUBDBMODELFLAG        | 发布数据库模型  | INTEGER      |   -1   | &nbsp; |
+| PUBFKEYFLAG        | 发布外键  | INTEGER      |   -1   | &nbsp; |
+| PUBINDEXFLAG        | 发布索引  | INTEGER      |   -1   | &nbsp; |
+| PUBVIEWFLAG        | 发布视图  | INTEGER      |   -1   | &nbsp; |
+| RESINFO        | 资源信息  | VARCHAR      |   2,000   | &nbsp; |
+| RESREADYTIME        | 资源就绪时间  | DATETIME      |   -1   | &nbsp; |
+| RESSTATE        | 资源状态  | INTEGER      |   -1   | &nbsp; |
+| TABSPACE        | 默认表空间名称  | VARCHAR      |   60   | &nbsp; |
+| TABSPACE2        | 表空间2名称  | VARCHAR      |   60   | &nbsp; |
+| TABSPACE3        | 表空间3名称  | VARCHAR      |   60   | &nbsp; |
+| TABSPACE4        | 表空间4名称  | VARCHAR      |   60   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERCAT        | 用户分类  | VARCHAR      |   10   | &nbsp; |
+| USERPARAMS        | 自定义参数  | VARCHAR      |   2,000   | &nbsp; |
+| USERTAG        | 用户标记  | VARCHAR      |   100   | &nbsp; |
+| USERTAG2        | 用户标记2  | VARCHAR      |   100   | &nbsp; |
 | USERTAG3        | 用户标记3  | VARCHAR      |   50   | &nbsp; |
 | USERTAG4        | 用户标记4  | VARCHAR      |   50   | &nbsp; |
-| USERTAG2        | 用户标记2  | VARCHAR      |   100   | &nbsp; |
-| PUBVIEWFLAG        | 发布视图  | INTEGER      |   -1   | &nbsp; |
-| DBSCHEMANAME        | 数据库模式名称  | VARCHAR      |   100   | &nbsp; |
-| PUBINDEXFLAG        | 发布索引  | INTEGER      |   -1   | &nbsp; |
-| RESREADYTIME        | 资源就绪时间  | DATETIME      |   -1   | &nbsp; |
-| PUBFKEYFLAG        | 发布外键  | INTEGER      |   -1   | &nbsp; |
-| TABSPACE3        | 表空间3名称  | VARCHAR      |   60   | &nbsp; |
-| APPENDSCHEMA        | 附加模式名称  | INTEGER      |   -1   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| PSSYSTEMDBCFGNAME        | 系统数据库名称  | VARCHAR      |   200   | &nbsp; |
-| TABSPACE2        | 表空间2名称  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -180592,49 +180592,49 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| ORDER1        | 排序  | INTEGER      |   -1   | &nbsp; |
-| RELEASECNT        | 发布总数  | INTEGER      |   -1   | &nbsp; |
-| CLOSEDSTORYCNT        | 已关闭需求  | INTEGER      |   -1   | &nbsp; |
-| STATUS        | 状态  | VARCHAR      |   30   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
-| PO        | 产品负责人  | VARCHAR      |   30   | &nbsp; |
-| RELATEDPROJECTS        | 关联项目数  | INTEGER      |   -1   | &nbsp; |
-| CREATEDVERSION        | 当前系统版本  | VARCHAR      |   20   | &nbsp; |
-| TYPE        | 产品类型  | VARCHAR      |   30   | &nbsp; |
-| RD        | 发布负责人  | VARCHAR      |   30   | &nbsp; |
-| PRODUCTCLASS        | 产品分类  | VARCHAR      |   10   | &nbsp; |
-| ACTIVESTORYCNT        | 激活需求数  | INTEGER      |   -1   | &nbsp; |
-| NOTCLOSEDBUGCNT        | 未关闭Bug数  | INTEGER      |   -1   | &nbsp; |
-| BUILDCNT        | BUILD数  | INTEGER      |   -1   | &nbsp; |
-| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
-| DOCCNT        | 文档数  | INTEGER      |   -1   | &nbsp; |
-| SUPPROREPORT        | 支持产品汇报  | VARCHAR      |   200   | &nbsp; |
 | ACL        | 访问控制  | VARCHAR      |   7   | &nbsp; |
-| ISTOP        | 是否置顶  | INTEGER      |   -1   | &nbsp; |
-| POPK        | 产品负责人（选择）  | VARCHAR      |   200   | &nbsp; |
-| QD        | 测试负责人  | VARCHAR      |   30   | &nbsp; |
-| RDPK        | 发布负责人（选择）  | VARCHAR      |   200   | &nbsp; |
-| QDPK        | 测试负责人（选择）  | VARCHAR      |   200   | &nbsp; |
-| CREATEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
-| LINENAME        | 产品线  | VARCHAR      |   60   | &nbsp; |
-| NAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
-| ORGID        | 组织标识  | VARCHAR      |   100   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| DRAFTSTORYCNT        | 草稿需求  | INTEGER      |   -1   | &nbsp; |
-| RELATEDBUGCNT        | 相关Bug数  | INTEGER      |   -1   | &nbsp; |
+| ACTIVEBUGCNT        | 未解决Bug数  | INTEGER      |   -1   | &nbsp; |
+| ACTIVESTORYCNT        | 激活需求数  | INTEGER      |   -1   | &nbsp; |
+| BUILDCNT        | BUILD数  | INTEGER      |   -1   | &nbsp; |
 | CASECNT        | 用例数  | INTEGER      |   -1   | &nbsp; |
-| UNCONFIRMBUGCNT        | 未确认Bug数  | INTEGER      |   -1   | &nbsp; |
-| IBIZ_ID        | IBIZ标识  | VARCHAR      |   100   | &nbsp; |
 | CHANGEDSTORYCNT        | 已变更需求  | INTEGER      |   -1   | &nbsp; |
-| MDEPTID        | 部门标识  | VARCHAR      |   100   | &nbsp; |
+| CLOSEDSTORYCNT        | 已关闭需求  | INTEGER      |   -1   | &nbsp; |
 | CODE        | 产品代号  | VARCHAR      |   45   | &nbsp; |
 | CREATEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
-| WHITELIST        | 分组白名单  | CLOB      |   65,535   | &nbsp; |
-| DESC        | 产品描述	  | CLOB      |   65,535   | &nbsp; |
-| ACTIVEBUGCNT        | 未解决Bug数  | INTEGER      |   -1   | &nbsp; |
+| CREATEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
+| CREATEDVERSION        | 当前系统版本  | VARCHAR      |   20   | &nbsp; |
 | DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| DESC        | 产品描述	  | CLOB      |   65,535   | &nbsp; |
+| DOCCNT        | 文档数  | INTEGER      |   -1   | &nbsp; |
+| DRAFTSTORYCNT        | 草稿需求  | INTEGER      |   -1   | &nbsp; |
+| IBIZ_ID        | IBIZ标识  | VARCHAR      |   100   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| ISTOP        | 是否置顶  | INTEGER      |   -1   | &nbsp; |
 | LINE        | 产品线  |       |   8   | &nbsp; |
+| LINENAME        | 产品线  | VARCHAR      |   60   | &nbsp; |
+| MDEPTID        | 部门标识  | VARCHAR      |   100   | &nbsp; |
+| NAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
+| NOTCLOSEDBUGCNT        | 未关闭Bug数  | INTEGER      |   -1   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
+| ORDER1        | 排序  | INTEGER      |   -1   | &nbsp; |
+| ORGID        | 组织标识  | VARCHAR      |   100   | &nbsp; |
+| PO        | 产品负责人  | VARCHAR      |   30   | &nbsp; |
+| POPK        | 产品负责人（选择）  | VARCHAR      |   200   | &nbsp; |
+| PRODUCTCLASS        | 产品分类  | VARCHAR      |   10   | &nbsp; |
 | PRODUCTPLANCNT        | 计划总数  | INTEGER      |   -1   | &nbsp; |
+| QD        | 测试负责人  | VARCHAR      |   30   | &nbsp; |
+| QDPK        | 测试负责人（选择）  | VARCHAR      |   200   | &nbsp; |
+| RD        | 发布负责人  | VARCHAR      |   30   | &nbsp; |
+| RDPK        | 发布负责人（选择）  | VARCHAR      |   200   | &nbsp; |
+| RELATEDBUGCNT        | 相关Bug数  | INTEGER      |   -1   | &nbsp; |
+| RELATEDPROJECTS        | 关联项目数  | INTEGER      |   -1   | &nbsp; |
+| RELEASECNT        | 发布总数  | INTEGER      |   -1   | &nbsp; |
+| STATUS        | 状态  | VARCHAR      |   30   | &nbsp; |
+| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
+| SUPPROREPORT        | 支持产品汇报  | VARCHAR      |   200   | &nbsp; |
+| TYPE        | 产品类型  | VARCHAR      |   30   | &nbsp; |
+| UNCONFIRMBUGCNT        | 未确认Bug数  | INTEGER      |   -1   | &nbsp; |
+| WHITELIST        | 分组白名单  | CLOB      |   65,535   | &nbsp; |
 
 
 
@@ -182494,20 +182494,20 @@ CREATE TABLE `zt_product`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| BEGIN        | 开始日期  | DATETIME      |   -1   | &nbsp; |
+| BRANCH        | 平台/分支  | VARCHAR      |   8   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| END        | 结束日期  | DATETIME      |   -1   | &nbsp; |
+| IBZ_PRODUCTLIFEID        | 产品生命周期标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZ_PRODUCTLIFENAME        | 产品生命周期名称  | VARCHAR      |   200   | &nbsp; |
+| MARKER        | 里程碑  | INTEGER      |   -1   | &nbsp; |
+| PARENT        | 父对象  | VARCHAR      |   8   | &nbsp; |
+| PRODUCT        | 产品  | INTEGER      |   8   | &nbsp; |
 | TYPE        | 属性  | VARCHAR      |   100   | &nbsp; |
 | UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| IBZ_PRODUCTLIFEID        | 产品生命周期标识  | VARCHAR      |   100   | 主键&nbsp; |
-| MARKER        | 里程碑  | INTEGER      |   -1   | &nbsp; |
-| END        | 结束日期  | DATETIME      |   -1   | &nbsp; |
-| BEGIN        | 开始日期  | DATETIME      |   -1   | &nbsp; |
-| YEAR        | 年  | VARCHAR      |   100   | &nbsp; |
 | UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| BRANCH        | 平台/分支  | VARCHAR      |   8   | &nbsp; |
-| PRODUCT        | 产品  | INTEGER      |   8   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| IBZ_PRODUCTLIFENAME        | 产品生命周期名称  | VARCHAR      |   200   | &nbsp; |
-| PARENT        | 父对象  | VARCHAR      |   8   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| YEAR        | 年  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -184358,12 +184358,12 @@ CREATE TABLE `T_IBZ_PRODUCTLIFE`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| IBZ_PRODUCTLINEID        | 产品线标识  | VARCHAR      |   100   | 主键&nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| IBZ_PRODUCTLINENAME        | 产品线名称  | VARCHAR      |   200   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| IBZ_PRODUCTLINEID        | 产品线标识  | VARCHAR      |   100   | 主键&nbsp; |
+| IBZ_PRODUCTLINENAME        | 产品线名称  | VARCHAR      |   200   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -186195,22 +186195,22 @@ CREATE TABLE `T_IBZ_PRODUCTLIFE`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| BRANCH        | branch  | INTEGER      |   -1   | &nbsp; |
+| COLLECTOR        | collector  | CLOB      |   65,535   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
+| GRADE        | grade  | INTEGER      |   -1   | &nbsp; |
+| ID        | id  |       |   20   | 主键&nbsp; |
+| ISLEAF        | 叶子模块  | VARCHAR      |   200   | &nbsp; |
+| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
+| ORDER        | 排序值  | INTEGER      |   -1   | &nbsp; |
+| OWNER        | owner  | VARCHAR      |   30   | &nbsp; |
+| PARENT        | id  |       |   20   | &nbsp; |
+| PARENTNAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
+| PATH        | path  | VARCHAR      |   255   | &nbsp; |
+| ROOT        | 产品  |       |   8   | &nbsp; |
 | ROOTNAME        | 所属产品  | VARCHAR      |   90   | &nbsp; |
 | SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
-| PARENTNAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
-| ID        | id  |       |   20   | 主键&nbsp; |
-| ORDER        | 排序值  | INTEGER      |   -1   | &nbsp; |
-| GRADE        | grade  | INTEGER      |   -1   | &nbsp; |
-| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
-| PARENT        | id  |       |   20   | &nbsp; |
-| ROOT        | 产品  |       |   8   | &nbsp; |
-| ISLEAF        | 叶子模块  | VARCHAR      |   200   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| PATH        | path  | VARCHAR      |   255   | &nbsp; |
-| COLLECTOR        | collector  | CLOB      |   65,535   | &nbsp; |
 | TYPE        | 类型（story）  | VARCHAR      |   30   | &nbsp; |
-| OWNER        | owner  | VARCHAR      |   30   | &nbsp; |
-| BRANCH        | branch  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -188060,31 +188060,31 @@ CREATE TABLE `zt_module`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| ORDER        | 排序  | CLOB      |   65,535   | &nbsp; |
-| BEGINSTR        | 开始日期  | VARCHAR      |   200   | &nbsp; |
-| END        | 预计结束日期  | DATETIME      |   -1   | &nbsp; |
-| ENDACT        | 实际结束日期  | DATETIME      |   -1   | &nbsp; |
-| BRANCH        | 平台/分支  |       |   8   | &nbsp; |
+| BEGIN        | 预计开始日期  | DATETIME      |   -1   | &nbsp; |
 | BEGINACT        | 实际开始日期  | DATETIME      |   -1   | &nbsp; |
-| STATUSS        | 状态  | VARCHAR      |   200   | &nbsp; |
+| BEGINSTR        | 开始日期  | VARCHAR      |   200   | &nbsp; |
+| BRANCH        | 平台/分支  |       |   8   | &nbsp; |
+| BUGCNT        | bug数  | INTEGER      |   -1   | &nbsp; |
 | DELAY        | 延期  | VARCHAR      |   200   | &nbsp; |
-| TITLE        | 名称  | VARCHAR      |   90   | &nbsp; |
-| STATUS        | 计划状态  | VARCHAR      |   100   | &nbsp; |
-| ORDERNUM        | 排序  | VARCHAR      |   200   | &nbsp; |
-| ISEXPIRED        | 是否过期  | VARCHAR      |   200   | &nbsp; |
-| STORYCNT        | 需求数  | INTEGER      |   -1   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
 | DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
 | DURATION        | 持续时间  | VARCHAR      |   200   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| FUTURE        | 待定  | VARCHAR      |   200   | &nbsp; |
-| PARENTNAME        | 父计划名称  | VARCHAR      |   90   | &nbsp; |
-| BUGCNT        | bug数  | INTEGER      |   -1   | &nbsp; |
-| PARENT        | 父计划  |       |   9   | &nbsp; |
-| PRODUCT        | 产品  |       |   8   | &nbsp; |
+| END        | 预计结束日期  | DATETIME      |   -1   | &nbsp; |
+| ENDACT        | 实际结束日期  | DATETIME      |   -1   | &nbsp; |
 | ENDSTR        | 结束日期  | VARCHAR      |   200   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
 | ESTIMATECNT        | 工时数  | INTEGER      |   -1   | &nbsp; |
-| BEGIN        | 预计开始日期  | DATETIME      |   -1   | &nbsp; |
+| FUTURE        | 待定  | VARCHAR      |   200   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| ISEXPIRED        | 是否过期  | VARCHAR      |   200   | &nbsp; |
+| ORDER        | 排序  | CLOB      |   65,535   | &nbsp; |
+| ORDERNUM        | 排序  | VARCHAR      |   200   | &nbsp; |
+| PARENT        | 父计划  |       |   9   | &nbsp; |
+| PARENTNAME        | 父计划名称  | VARCHAR      |   90   | &nbsp; |
+| PRODUCT        | 产品  |       |   8   | &nbsp; |
+| STATUS        | 计划状态  | VARCHAR      |   100   | &nbsp; |
+| STATUSS        | 状态  | VARCHAR      |   200   | &nbsp; |
+| STORYCNT        | 需求数  | INTEGER      |   -1   | &nbsp; |
+| TITLE        | 名称  | VARCHAR      |   90   | &nbsp; |
 
 
 
@@ -189934,36 +189934,36 @@ CREATE TABLE `zt_productplan`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| ACTIVEBUGCNT        | 未解决Bug数  | INTEGER      |   -1   | &nbsp; |
+| ACTIVESTORYCNT        | 激活需求数  | INTEGER      |   -1   | &nbsp; |
+| ASSIGNTOMEBUGCNT        | 指派给我的Bug数  | INTEGER      |   -1   | &nbsp; |
+| BUGCNT        | 所有Bug数  | INTEGER      |   -1   | &nbsp; |
+| CODE        | 产品代号  | VARCHAR      |   45   | &nbsp; |
 | CURRPROJECT        | 当前项目  | VARCHAR      |   200   | &nbsp; |
 | DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| YESTERDAYCLOSEDBUGCNT        | 昨天关闭Bug数  | INTEGER      |   -1   | &nbsp; |
+| DEVELOPINGSTORYCNT        | 开发中需求数  | INTEGER      |   -1   | &nbsp; |
 | ID        | 产品编号  |       |   8   | 主键&nbsp; |
-| STORYCNT        | 需求总数  | INTEGER      |   -1   | &nbsp; |
-| RESPROJECTCNT        | 关联项目数  | INTEGER      |   -1   | &nbsp; |
+| NAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
+| NORMALRELEASECNT        | 维护中发布数  | INTEGER      |   -1   | &nbsp; |
+| NOTCLOSEDBUGCNT        | 未关闭Bug数  | INTEGER      |   -1   | &nbsp; |
+| ORDER1        | 产品排序  | INTEGER      |   8   | &nbsp; |
+| PLANNEDSTORYCNT        | 已计划需求数  | INTEGER      |   -1   | &nbsp; |
 | POSTPONEDPROJECTCNT        | 已延期  | INTEGER      |   -1   | &nbsp; |
+| PRODUCTPLANCNT        | 计划总数  | INTEGER      |   -1   | &nbsp; |
+| RELEASECNT        | 发布总数  | INTEGER      |   -1   | &nbsp; |
+| RELEASEDSTORYCNT        | 已发布需求数  | INTEGER      |   -1   | &nbsp; |
+| RESPROJECTCNT        | 关联项目数  | INTEGER      |   -1   | &nbsp; |
+| STATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
+| STORYCNT        | 需求总数  | INTEGER      |   -1   | &nbsp; |
+| TESTINGSTORYCNT        | 测试中需求数  | INTEGER      |   -1   | &nbsp; |
+| TYPE        | 产品类型  | VARCHAR      |   60   | &nbsp; |
+| UNCONFIRMBUGCNT        | 未确认Bug数  | INTEGER      |   -1   | &nbsp; |
 | UNDONERESPROJECTCNT        | 未完成关联项目数  | INTEGER      |   -1   | &nbsp; |
 | UNENDPRODUCTPLANCNT        | 未过期计划数  | INTEGER      |   -1   | &nbsp; |
-| NAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
-| NOTCLOSEDBUGCNT        | 未关闭Bug数  | INTEGER      |   -1   | &nbsp; |
-| PLANNEDSTORYCNT        | 已计划需求数  | INTEGER      |   -1   | &nbsp; |
-| TYPE        | 产品类型  | VARCHAR      |   60   | &nbsp; |
-| ASSIGNTOMEBUGCNT        | 指派给我的Bug数  | INTEGER      |   -1   | &nbsp; |
 | WAITSTORYCNT        | 未开始需求数  | INTEGER      |   -1   | &nbsp; |
-| RELEASECNT        | 发布总数  | INTEGER      |   -1   | &nbsp; |
-| PRODUCTPLANCNT        | 计划总数  | INTEGER      |   -1   | &nbsp; |
-| CODE        | 产品代号  | VARCHAR      |   45   | &nbsp; |
-| ACTIVEBUGCNT        | 未解决Bug数  | INTEGER      |   -1   | &nbsp; |
-| TESTINGSTORYCNT        | 测试中需求数  | INTEGER      |   -1   | &nbsp; |
-| ACTIVESTORYCNT        | 激活需求数  | INTEGER      |   -1   | &nbsp; |
+| YESTERDAYCLOSEDBUGCNT        | 昨天关闭Bug数  | INTEGER      |   -1   | &nbsp; |
 | YESTERDAYCONFIRMBUGCNT        | 昨天确认Bug数  | INTEGER      |   -1   | &nbsp; |
-| DEVELOPINGSTORYCNT        | 开发中需求数  | INTEGER      |   -1   | &nbsp; |
-| ORDER1        | 产品排序  | INTEGER      |   8   | &nbsp; |
 | YESTERDAYRESOLVEDBUGCNT        | 昨天解决Bug数  | INTEGER      |   -1   | &nbsp; |
-| NORMALRELEASECNT        | 维护中发布数  | INTEGER      |   -1   | &nbsp; |
-| STATUS        | 状态  | VARCHAR      |   60   | &nbsp; |
-| RELEASEDSTORYCNT        | 已发布需求数  | INTEGER      |   -1   | &nbsp; |
-| BUGCNT        | 所有Bug数  | INTEGER      |   -1   | &nbsp; |
-| UNCONFIRMBUGCNT        | 未确认Bug数  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -191806,37 +191806,37 @@ CREATE TABLE `zt_product`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| WAITSTAGESTORYHOURS        | 未开始阶段需求工时  | INTEGER      |   -1   | &nbsp; |
-| CLOSEDSTAGESTORYHOURS        | 已关闭阶段需求工时  | INTEGER      |   -1   | &nbsp; |
-| CLOSEDSTAGESTORYCNT        | 已关闭阶段需求数量  | INTEGER      |   -1   | &nbsp; |
-| PLANEDSTAGESTORYHOURS        | 已计划阶段需求工时  | INTEGER      |   -1   | &nbsp; |
-| PLANEDSTAGESTORYCNT        | 已计划阶段需求数量  | INTEGER      |   -1   | &nbsp; |
 | ACTIVESTORYCNT        | 激活  | INTEGER      |   -1   | &nbsp; |
-| WAITSTAGESTORYCNT        | 未开始阶段需求数量  | INTEGER      |   -1   | &nbsp; |
-| TESTINGSTAGESTORYCNT        | 测试中阶段需求数量  | INTEGER      |   -1   | &nbsp; |
-| ID        | 主键标识  |       |   20   | 主键&nbsp; |
-| TESTEDSTAGESTORYHOURS        | 测试完毕阶段需求工时  | INTEGER      |   -1   | &nbsp; |
+| BUGCNT        | Bug数  | INTEGER      |   -1   | &nbsp; |
+| CHANGEDSTORYCNT        | 已变更  | INTEGER      |   -1   | &nbsp; |
+| CLOSEDSTAGESTORYCNT        | 已关闭阶段需求数量  | INTEGER      |   -1   | &nbsp; |
+| CLOSEDSTAGESTORYHOURS        | 已关闭阶段需求工时  | INTEGER      |   -1   | &nbsp; |
+| CLOSEDSTORYCNT        | 已关闭  | INTEGER      |   -1   | &nbsp; |
+| DEVELOPEDSTAGESTORYCNT        | 研发完毕阶段需求数量  | INTEGER      |   -1   | &nbsp; |
 | DEVELOPEDSTAGESTORYHOURS        | 研发完毕阶段需求工时  | INTEGER      |   -1   | &nbsp; |
-| VERIFIEDSTAGESTORYCNT        | 已验收阶段需求数量  | INTEGER      |   -1   | &nbsp; |
+| DEVELOPINGSTAGESTORYCNT        | 研发中阶段需求数量  | INTEGER      |   -1   | &nbsp; |
+| DEVELOPINGSTAGESTORYHOURS        | 研发中阶段需求工时  | INTEGER      |   -1   | &nbsp; |
+| ID        | 主键标识  |       |   20   | 主键&nbsp; |
 | NAME        | 产品名称  | VARCHAR      |   100   | &nbsp; |
 | PLAN        | 计划  |       |   -1   | &nbsp; |
-| VERIFIEDSTAGESTORYHOURS        | 已验收阶段需求工时  | INTEGER      |   -1   | &nbsp; |
-| TESTINGSTAGESTORYHOURS        | 测试中阶段需求工时  | INTEGER      |   -1   | &nbsp; |
-| RELEASEDSTAGESTORYCNT        | 已发布阶段需求数量  | INTEGER      |   -1   | &nbsp; |
-| TESTEDSTAGESTORYCNT        | 测试完毕阶段需求数量  | INTEGER      |   -1   | &nbsp; |
-| STORYCNT        | 总计  | INTEGER      |   -1   | &nbsp; |
-| BUGCNT        | Bug数  | INTEGER      |   -1   | &nbsp; |
-| TOTALHOURS        | 总工时  | INTEGER      |   -1   | &nbsp; |
-| DEVELOPINGSTAGESTORYCNT        | 研发中阶段需求数量  | INTEGER      |   -1   | &nbsp; |
-| PROJECTEDSTAGESTORYCNT        | 已立项阶段需求数量  | INTEGER      |   -1   | &nbsp; |
+| PLANEDSTAGESTORYCNT        | 已计划阶段需求数量  | INTEGER      |   -1   | &nbsp; |
+| PLANEDSTAGESTORYHOURS        | 已计划阶段需求工时  | INTEGER      |   -1   | &nbsp; |
 | PO        | 产品负责人  | VARCHAR      |   60   | &nbsp; |
-| WAITSTORYCNT        | 草稿  | INTEGER      |   -1   | &nbsp; |
-| DEVELOPINGSTAGESTORYHOURS        | 研发中阶段需求工时  | INTEGER      |   -1   | &nbsp; |
-| DEVELOPEDSTAGESTORYCNT        | 研发完毕阶段需求数量  | INTEGER      |   -1   | &nbsp; |
+| PROJECTEDSTAGESTORYCNT        | 已立项阶段需求数量  | INTEGER      |   -1   | &nbsp; |
 | PROJECTEDSTAGESTORYHOURS        | 已立项阶段需求工时  | INTEGER      |   -1   | &nbsp; |
+| RELEASEDSTAGESTORYCNT        | 已发布阶段需求数量  | INTEGER      |   -1   | &nbsp; |
 | RELEASEDSTAGESTORYHOURS        | 已发布阶段需求工时  | INTEGER      |   -1   | &nbsp; |
-| CLOSEDSTORYCNT        | 已关闭  | INTEGER      |   -1   | &nbsp; |
-| CHANGEDSTORYCNT        | 已变更  | INTEGER      |   -1   | &nbsp; |
+| STORYCNT        | 总计  | INTEGER      |   -1   | &nbsp; |
+| TESTEDSTAGESTORYCNT        | 测试完毕阶段需求数量  | INTEGER      |   -1   | &nbsp; |
+| TESTEDSTAGESTORYHOURS        | 测试完毕阶段需求工时  | INTEGER      |   -1   | &nbsp; |
+| TESTINGSTAGESTORYCNT        | 测试中阶段需求数量  | INTEGER      |   -1   | &nbsp; |
+| TESTINGSTAGESTORYHOURS        | 测试中阶段需求工时  | INTEGER      |   -1   | &nbsp; |
+| TOTALHOURS        | 总工时  | INTEGER      |   -1   | &nbsp; |
+| VERIFIEDSTAGESTORYCNT        | 已验收阶段需求数量  | INTEGER      |   -1   | &nbsp; |
+| VERIFIEDSTAGESTORYHOURS        | 已验收阶段需求工时  | INTEGER      |   -1   | &nbsp; |
+| WAITSTAGESTORYCNT        | 未开始阶段需求数量  | INTEGER      |   -1   | &nbsp; |
+| WAITSTAGESTORYHOURS        | 未开始阶段需求工时  | INTEGER      |   -1   | &nbsp; |
+| WAITSTORYCNT        | 草稿  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -193676,52 +193676,52 @@ CREATE TABLE `zt_product`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| QD        | 测试负责人  | VARCHAR      |   30   | &nbsp; |
-| OPENEDVERSION        | 当前系统版本  | VARCHAR      |   20   | &nbsp; |
-| CATID        | catID  | INTEGER      |   8   | &nbsp; |
+| ACL        | 访问控制  | VARCHAR      |   7   | &nbsp; |
 | BEGIN        | 开始时间  | DATETIME      |   -1   | &nbsp; |
-| PRI        | 优先级  | VARCHAR      |   1   | &nbsp; |
-| TYPE        | 项目类型  | VARCHAR      |   20   | &nbsp; |
-| STATUS        | 项目状态  | VARCHAR      |   10   | &nbsp; |
-| WHITELIST        | 分组白名单  | CLOB      |   65,535   | &nbsp; |
-| CLOSEDBY        | 由谁关闭  | VARCHAR      |   30   | &nbsp; |
-| STATGE        | statge  | VARCHAR      |   1   | &nbsp; |
-| PARENT        | 父项目  |       |   8   | &nbsp; |
-| TOTALCONSUMED        | 任务消耗总工时  | DOUBLE      |   -1   | &nbsp; |
+| BUGCNT        | Bug总数  | INTEGER      |   -1   | &nbsp; |
+| CANCELEDBY        | 由谁取消  | VARCHAR      |   30   | &nbsp; |
 | CANCELEDDATE        | 取消日期  | DATETIME      |   -1   | &nbsp; |
-| ORDER        | 项目排序  | INTEGER      |   8   | &nbsp; |
-| OPENEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
+| CATID        | catID  | INTEGER      |   8   | &nbsp; |
+| CLOSEDBY        | 由谁关闭  | VARCHAR      |   30   | &nbsp; |
+| CLOSEDDATE        | 关闭日期  | DATETIME      |   -1   | &nbsp; |
+| CODE        | 项目代号  | VARCHAR      |   45   | &nbsp; |
+| DAYS        | 可用工作日  | INTEGER      |   5   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| DESC        | 项目描述  | CLOB      |   65,535   | &nbsp; |
+| END        | 结束日期  | DATETIME      |   -1   | &nbsp; |
+| ID        | 项目编号  |       |   8   | 主键&nbsp; |
+| ISCAT        | isCat  | VARCHAR      |   1   | &nbsp; |
 | ISTOP        | 是否置顶  | INTEGER      |   -1   | &nbsp; |
+| MDEPTID        | 部门标识  | VARCHAR      |   100   | &nbsp; |
+| NAME        | 项目名称  | VARCHAR      |   90   | &nbsp; |
+| OPENEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
+| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
+| OPENEDVERSION        | 当前系统版本  | VARCHAR      |   20   | &nbsp; |
+| ORDER        | 项目排序  | INTEGER      |   8   | &nbsp; |
+| ORDER1        | 项目排序  | INTEGER      |   8   | &nbsp; |
 | ORGID        | 组织标识  | VARCHAR      |   100   | &nbsp; |
-| TOTALESTIMATE        | 任务最初预计总工时  | DOUBLE      |   -1   | &nbsp; |
+| PARENT        | 父项目  |       |   8   | &nbsp; |
+| PARENTNAME        | parent  | VARCHAR      |   90   | &nbsp; |
+| PM        | 项目负责人  | VARCHAR      |   30   | &nbsp; |
+| PMSEEPROJECTINFO        | 项目立项信息  | CLOB      |   1,048,576   | &nbsp; |
+| PO        | 产品负责人  | VARCHAR      |   30   | &nbsp; |
+| PRI        | 优先级  | VARCHAR      |   1   | &nbsp; |
+| QD        | 测试负责人  | VARCHAR      |   30   | &nbsp; |
+| RD        | 发布负责人  | VARCHAR      |   30   | &nbsp; |
+| STATGE        | statge  | VARCHAR      |   1   | &nbsp; |
+| STATUS        | 项目状态  | VARCHAR      |   10   | &nbsp; |
 | STORYCNT        | 需求总数  | INTEGER      |   -1   | &nbsp; |
 | SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
-| ACL        | 访问控制  | VARCHAR      |   7   | &nbsp; |
-| ID        | 项目编号  |       |   8   | 主键&nbsp; |
-| PARENTNAME        | parent  | VARCHAR      |   90   | &nbsp; |
-| DAYS        | 可用工作日  | INTEGER      |   5   | &nbsp; |
-| PMSEEPROJECTINFO        | 项目立项信息  | CLOB      |   1,048,576   | &nbsp; |
-| CLOSEDDATE        | 关闭日期  | DATETIME      |   -1   | &nbsp; |
-| CANCELEDBY        | 由谁取消  | VARCHAR      |   30   | &nbsp; |
-| PO        | 产品负责人  | VARCHAR      |   30   | &nbsp; |
-| RD        | 发布负责人  | VARCHAR      |   30   | &nbsp; |
-| PM        | 项目负责人  | VARCHAR      |   30   | &nbsp; |
-| ISCAT        | isCat  | VARCHAR      |   1   | &nbsp; |
-| TOTALHOURS        | 可用工时  |       |   -1   | &nbsp; |
-| BUGCNT        | Bug总数  | INTEGER      |   -1   | &nbsp; |
-| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
-| END        | 结束日期  | DATETIME      |   -1   | &nbsp; |
-| TOTALWH        | 总工时  | INTEGER      |   -1   | &nbsp; |
-| NAME        | 项目名称  | VARCHAR      |   90   | &nbsp; |
 | SUPPROREPORT        | 支持项目汇报  | VARCHAR      |   60   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| TOTALLEFT        | 任务预计剩余总工时  | DOUBLE      |   -1   | &nbsp; |
-| ORDER1        | 项目排序  | INTEGER      |   8   | &nbsp; |
-| TEAM        | 团队名称  | VARCHAR      |   90   | &nbsp; |
-| MDEPTID        | 部门标识  | VARCHAR      |   100   | &nbsp; |
-| CODE        | 项目代号  | VARCHAR      |   45   | &nbsp; |
-| DESC        | 项目描述  | CLOB      |   65,535   | &nbsp; |
 | TASKCNT        | 任务总数  | INTEGER      |   -1   | &nbsp; |
+| TEAM        | 团队名称  | VARCHAR      |   90   | &nbsp; |
+| TOTALCONSUMED        | 任务消耗总工时  | DOUBLE      |   -1   | &nbsp; |
+| TOTALESTIMATE        | 任务最初预计总工时  | DOUBLE      |   -1   | &nbsp; |
+| TOTALHOURS        | 可用工时  |       |   -1   | &nbsp; |
+| TOTALLEFT        | 任务预计剩余总工时  | DOUBLE      |   -1   | &nbsp; |
+| TOTALWH        | 总工时  | INTEGER      |   -1   | &nbsp; |
+| TYPE        | 项目类型  | VARCHAR      |   20   | &nbsp; |
+| WHITELIST        | 分组白名单  | CLOB      |   65,535   | &nbsp; |
 
 
 
@@ -195593,22 +195593,22 @@ CREATE TABLE `zt_project`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
-| TYPE        | 类型（task）  | VARCHAR      |   30   | &nbsp; |
-| ROOT        | 项目  |       |   8   | &nbsp; |
-| ID        | id  |       |   20   | 主键&nbsp; |
-| ROOTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
 | BRANCH        | branch  | INTEGER      |   -1   | &nbsp; |
-| PARENTNAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
 | COLLECTOR        | collector  | CLOB      |   65,535   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
 | GRADE        | grade  | INTEGER      |   -1   | &nbsp; |
-| PATH        | path  | VARCHAR      |   255   | &nbsp; |
+| ID        | id  |       |   20   | 主键&nbsp; |
 | ISLEAF        | 叶子模块  | VARCHAR      |   200   | &nbsp; |
+| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
+| ORDER        | 排序值  | INTEGER      |   -1   | &nbsp; |
 | OWNER        | owner  | VARCHAR      |   30   | &nbsp; |
 | PARENT        | id  |       |   20   | &nbsp; |
+| PARENTNAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
+| PATH        | path  | VARCHAR      |   255   | &nbsp; |
+| ROOT        | 项目  |       |   8   | &nbsp; |
+| ROOTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
 | SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
-| ORDER        | 排序值  | INTEGER      |   -1   | &nbsp; |
+| TYPE        | 类型（task）  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -197458,14 +197458,14 @@ CREATE TABLE `zt_module`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| BRANCH        | 平台/分支  |       |   8   | &nbsp; |
 | ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
 | PLAN        | 产品计划  |       |   8   | &nbsp; |
-| PRODUCTNAME        | 产品  | VARCHAR      |   90   | &nbsp; |
 | PLANNAME        | 计划名称  | VARCHAR      |   90   | &nbsp; |
-| PROJECTNAME        | 项目  | VARCHAR      |   90   | &nbsp; |
 | PRODUCT        | 产品  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 产品  | VARCHAR      |   90   | &nbsp; |
 | PROJECT        | 项目  |       |   8   | &nbsp; |
-| BRANCH        | 平台/分支  |       |   8   | &nbsp; |
+| PROJECTNAME        | 项目  | VARCHAR      |   90   | &nbsp; |
 
 
 
@@ -199306,50 +199306,50 @@ CREATE TABLE `zt_projectproduct`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TOTALESTIMATE        | 任务最初预计总工时  | DOUBLE      |   -1   | &nbsp; |
-| PROJECTEDSTAGESTORYCNT        | 已立项阶段需求数  | INTEGER      |   -1   | &nbsp; |
-| CLOSEDSTORY        | 已关闭需求  | INTEGER      |   -1   | &nbsp; |
-| TESTEDSTAGESTORYCNT        | 测试完毕阶段需求数  | INTEGER      |   -1   | &nbsp; |
-| ID        | 项目编号  |       |   8   | 主键&nbsp; |
-| DRAFTSTORY        | 草稿需求  | INTEGER      |   -1   | &nbsp; |
-| FINISHTASKCNT        | 已结束任务总数  | INTEGER      |   -1   | &nbsp; |
-| VERIFIEDSTAGESTORYCNT        | 已验收阶段需求数  | INTEGER      |   -1   | &nbsp; |
-| TASKCNT        | 任务总数  | INTEGER      |   -1   | &nbsp; |
-| CLOSEDSTORYCNT        | 关闭需求总数  | INTEGER      |   -1   | &nbsp; |
-| ACTIVESTORY        | 激活需求  | INTEGER      |   -1   | &nbsp; |
-| ORDER1        | 项目排序  | INTEGER      |   8   | &nbsp; |
-| RELEASEDSTAGESTORYCNT        | 已发布阶段需求数  | INTEGER      |   -1   | &nbsp; |
-| TOTALWH        | 总工时  | INTEGER      |   -1   | &nbsp; |
-| BUGCNT        | Bug总数  | INTEGER      |   -1   | &nbsp; |
-| YESTERDAYRBUGCNT        | 昨天解决Bug数  | INTEGER      |   -1   | &nbsp; |
-| DEVELOPEDSTAGESTORYCNT        | 研发完毕阶段需求数  | INTEGER      |   -1   | &nbsp; |
-| PLANNEDSTAGESTORYCNT        | 已计划阶段需求数  | INTEGER      |   -1   | &nbsp; |
-| UNCLOSEDBUGCNT        | 未关闭Bug总数  | INTEGER      |   -1   | &nbsp; |
-| UNDONETASKCNT        | 未完成任务总数  | INTEGER      |   -1   | &nbsp; |
-| UNCONFIRMEDBUGCNT        | 未确认Bug总数  | INTEGER      |   -1   | &nbsp; |
-| MEMBERCNT        | 人数  | INTEGER      |   -1   | &nbsp; |
-| STATUS        | 状态  | VARCHAR      |   100   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| SERIOUSBUGPROPORTION        | 严重Bug比率  | VARCHAR      |   200   | &nbsp; |
-| DEVELOPINGSTAGESTORYCNT        | 研发中阶段需求数  | INTEGER      |   -1   | &nbsp; |
-| UNCLOSEDSTORYCNT        | 未关闭需求总数  | INTEGER      |   -1   | &nbsp; |
-| EMPTYSTAGESTORYCNT        | 空阶段需求数  | INTEGER      |   -1   | &nbsp; |
-| CHANGEDSTORY        | 已变更需求  | INTEGER      |   -1   | &nbsp; |
-| END        | 截止日期  | DATETIME      |   -1   | &nbsp; |
-| STORYCNT        | 需求总数  | INTEGER      |   -1   | &nbsp; |
-| TESTINGSTAGESTORYCNT        | 测试中阶段需求数  | INTEGER      |   -1   | &nbsp; |
-| NAME        | 项目名称  | VARCHAR      |   90   | &nbsp; |
-| CLOSEDSTAGESTORYCNT        | 已关闭阶段需求数  | INTEGER      |   -1   | &nbsp; |
-| BEGIN        | 开始时间  | DATETIME      |   -1   | &nbsp; |
-| YESTERDAYCTASKCNT        | 昨日完成任务数  | INTEGER      |   -1   | &nbsp; |
-| RELEASEDSTORYCNT        | 已发布需求数  | INTEGER      |   -1   | &nbsp; |
 | ACTIVEBUGCNT        | 未解决Bug总数  | INTEGER      |   -1   | &nbsp; |
-| FINISHBUGCNT        | 已解决Bug总数  | INTEGER      |   -1   | &nbsp; |
-| TOTALLEFT        | 任务预计剩余总工时  | DOUBLE      |   -1   | &nbsp; |
-| PROJECTTOTALCONSUMED        | 项目消耗总工时  | DOUBLE      |   -1   | &nbsp; |
-| TOTALCONSUMED        | 任务消耗总工时  | DOUBLE      |   -1   | &nbsp; |
+| ACTIVESTORY        | 激活需求  | INTEGER      |   -1   | &nbsp; |
+| BEGIN        | 开始时间  | DATETIME      |   -1   | &nbsp; |
+| BUGCNT        | Bug总数  | INTEGER      |   -1   | &nbsp; |
+| CHANGEDSTORY        | 已变更需求  | INTEGER      |   -1   | &nbsp; |
+| CLOSEDSTAGESTORYCNT        | 已关闭阶段需求数  | INTEGER      |   -1   | &nbsp; |
+| CLOSEDSTORY        | 已关闭需求  | INTEGER      |   -1   | &nbsp; |
+| CLOSEDSTORYCNT        | 关闭需求总数  | INTEGER      |   -1   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| DEVELOPEDSTAGESTORYCNT        | 研发完毕阶段需求数  | INTEGER      |   -1   | &nbsp; |
+| DEVELOPINGSTAGESTORYCNT        | 研发中阶段需求数  | INTEGER      |   -1   | &nbsp; |
+| DRAFTSTORY        | 草稿需求  | INTEGER      |   -1   | &nbsp; |
+| EMPTYSTAGESTORYCNT        | 空阶段需求数  | INTEGER      |   -1   | &nbsp; |
 | EMPTYSTORY        | 空需求  | INTEGER      |   -1   | &nbsp; |
+| END        | 截止日期  | DATETIME      |   -1   | &nbsp; |
+| FINISHBUGCNT        | 已解决Bug总数  | INTEGER      |   -1   | &nbsp; |
+| FINISHTASKCNT        | 已结束任务总数  | INTEGER      |   -1   | &nbsp; |
+| ID        | 项目编号  |       |   8   | 主键&nbsp; |
+| MEMBERCNT        | 人数  | INTEGER      |   -1   | &nbsp; |
+| NAME        | 项目名称  | VARCHAR      |   90   | &nbsp; |
+| ORDER1        | 项目排序  | INTEGER      |   8   | &nbsp; |
+| PLANNEDSTAGESTORYCNT        | 已计划阶段需求数  | INTEGER      |   -1   | &nbsp; |
+| PROJECTEDSTAGESTORYCNT        | 已立项阶段需求数  | INTEGER      |   -1   | &nbsp; |
+| PROJECTTOTALCONSUMED        | 项目消耗总工时  | DOUBLE      |   -1   | &nbsp; |
+| RELEASEDSTAGESTORYCNT        | 已发布阶段需求数  | INTEGER      |   -1   | &nbsp; |
+| RELEASEDSTORYCNT        | 已发布需求数  | INTEGER      |   -1   | &nbsp; |
+| SERIOUSBUGPROPORTION        | 严重Bug比率  | VARCHAR      |   200   | &nbsp; |
+| STATUS        | 状态  | VARCHAR      |   100   | &nbsp; |
+| STORYCNT        | 需求总数  | INTEGER      |   -1   | &nbsp; |
+| TASKCNT        | 任务总数  | INTEGER      |   -1   | &nbsp; |
+| TESTEDSTAGESTORYCNT        | 测试完毕阶段需求数  | INTEGER      |   -1   | &nbsp; |
+| TESTINGSTAGESTORYCNT        | 测试中阶段需求数  | INTEGER      |   -1   | &nbsp; |
+| TOTALCONSUMED        | 任务消耗总工时  | DOUBLE      |   -1   | &nbsp; |
+| TOTALESTIMATE        | 任务最初预计总工时  | DOUBLE      |   -1   | &nbsp; |
+| TOTALLEFT        | 任务预计剩余总工时  | DOUBLE      |   -1   | &nbsp; |
+| TOTALWH        | 总工时  | INTEGER      |   -1   | &nbsp; |
+| UNCLOSEDBUGCNT        | 未关闭Bug总数  | INTEGER      |   -1   | &nbsp; |
+| UNCLOSEDSTORYCNT        | 未关闭需求总数  | INTEGER      |   -1   | &nbsp; |
+| UNCONFIRMEDBUGCNT        | 未确认Bug总数  | INTEGER      |   -1   | &nbsp; |
+| UNDONETASKCNT        | 未完成任务总数  | INTEGER      |   -1   | &nbsp; |
+| VERIFIEDSTAGESTORYCNT        | 已验收阶段需求数  | INTEGER      |   -1   | &nbsp; |
 | WAITSTAGESTORYCNT        | 未开始阶段需求数  | INTEGER      |   -1   | &nbsp; |
+| YESTERDAYCTASKCNT        | 昨日完成任务数  | INTEGER      |   -1   | &nbsp; |
+| YESTERDAYRBUGCNT        | 昨天解决Bug数  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -201192,12 +201192,12 @@ CREATE TABLE `zt_project`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
-| VERSION        | 需求版本  | INTEGER      |   6   | &nbsp; |
 | ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
 | ORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
-| STORY        | 需求  |       |   8   | &nbsp; |
+| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
 | PROJECT        | 项目  |       |   8   | &nbsp; |
+| STORY        | 需求  |       |   8   | &nbsp; |
+| VERSION        | 需求版本  | INTEGER      |   6   | &nbsp; |
 
 
 
@@ -203040,8 +203040,8 @@ CREATE TABLE `zt_projectstory`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
 | EVALUATIONCOST        | 评估成本  | DOUBLE      |   2   | &nbsp; |
+| INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
 
 
 
@@ -204881,24 +204881,24 @@ CREATE TABLE `zt_taskestimate`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| HOURS        | 可用工时/天  | DOUBLE      |   -1   | &nbsp; |
-| TOTAL        | 总计可用  | INTEGER      |   -1   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
 | ACCOUNT        | 用户  | VARCHAR      |   30   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   3   | &nbsp; |
-| ESTIMATE        | 最初预计  | DOUBLE      |   -1   | &nbsp; |
-| DAYS        | 可用工日  | INTEGER      |   5   | &nbsp; |
-| TYPE        | 团队类型  | VARCHAR      |   7   | &nbsp; |
-| PM        | 项目经理  | VARCHAR      |   30   | &nbsp; |
-| ROLE        | 角色  | VARCHAR      |   30   | &nbsp; |
-| USERNAME        | 用户  | VARCHAR      |   200   | &nbsp; |
-| ROOT        | 项目编号  |       |   8   | &nbsp; |
-| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
-| JOIN        | 加盟日  | DATETIME      |   -1   | &nbsp; |
 | CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
+| DAYS        | 可用工日  | INTEGER      |   5   | &nbsp; |
+| ESTIMATE        | 最初预计  | DOUBLE      |   -1   | &nbsp; |
 | EXITDATE        | 退场时间  | DATETIME      |   -1   | &nbsp; |
-| PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
+| HOURS        | 可用工时/天  | DOUBLE      |   -1   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| JOIN        | 加盟日  | DATETIME      |   -1   | &nbsp; |
+| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
 | LIMITED        | 受限用户  | VARCHAR      |   8   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   3   | &nbsp; |
+| PM        | 项目经理  | VARCHAR      |   30   | &nbsp; |
+| PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
+| ROLE        | 角色  | VARCHAR      |   30   | &nbsp; |
+| ROOT        | 项目编号  |       |   8   | &nbsp; |
+| TOTAL        | 总计可用  | INTEGER      |   -1   | &nbsp; |
+| TYPE        | 团队类型  | VARCHAR      |   7   | &nbsp; |
+| USERNAME        | 用户  | VARCHAR      |   200   | &nbsp; |
 
 
 
@@ -206748,26 +206748,26 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| CLOSEDDATE        | 关闭时间  | DATETIME      |   -1   | &nbsp; |
-| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| ASSIGNEDTO        | 指派给  | VARCHAR      |   30   | &nbsp; |
-| PRIVATE        | 私人事务  | VARCHAR      |   2,000   | &nbsp; |
-| CONSUMED        | 工时  | DOUBLE      |   4   | &nbsp; |
-| NAME        | 待办名称  | VARCHAR      |   150   | &nbsp; |
-| COST        | 费用  | INTEGER      |   -1   | &nbsp; |
-| ASSIGNEDDATE        | 指派日期  | DATETIME      |   -1   | &nbsp; |
 | ACCOUNT        | 所有者  | VARCHAR      |   30   | &nbsp; |
-| FINISHEDBY        | 由谁完成  | VARCHAR      |   30   | &nbsp; |
-| CLOSEDBY        | 由谁关闭  | VARCHAR      |   30   | &nbsp; |
-| TYPE        | 类型  | VARCHAR      |   10   | &nbsp; |
-| STATUS        | 状态  | VARCHAR      |   6   | &nbsp; |
-| CONFIG        | config  | VARCHAR      |   255   | &nbsp; |
-| IDVALUE        | 项目编号  |       |   8   | &nbsp; |
 | ASSIGNEDBY        | 由谁指派  | VARCHAR      |   30   | &nbsp; |
+| ASSIGNEDDATE        | 指派日期  | DATETIME      |   -1   | &nbsp; |
+| ASSIGNEDTO        | 指派给  | VARCHAR      |   30   | &nbsp; |
+| CLOSEDBY        | 由谁关闭  | VARCHAR      |   30   | &nbsp; |
+| CLOSEDDATE        | 关闭时间  | DATETIME      |   -1   | &nbsp; |
+| CONFIG        | config  | VARCHAR      |   255   | &nbsp; |
+| CONSUMED        | 工时  | DOUBLE      |   4   | &nbsp; |
+| COST        | 费用  | INTEGER      |   -1   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
+| FINISHEDBY        | 由谁完成  | VARCHAR      |   30   | &nbsp; |
 | FINISHEDDATE        | 完成时间  | DATETIME      |   -1   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| IDVALUE        | 项目编号  |       |   8   | &nbsp; |
+| NAME        | 待办名称  | VARCHAR      |   150   | &nbsp; |
+| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
+| PRIVATE        | 私人事务  | VARCHAR      |   2,000   | &nbsp; |
+| STATUS        | 状态  | VARCHAR      |   6   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   10   | &nbsp; |
 
 
 
@@ -208624,17 +208624,17 @@ CREATE TABLE `zt_todo`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PROJECT        | project  | INTEGER      |   -1   | &nbsp; |
-| EXTRA        | extra  | VARCHAR      |   30   | &nbsp; |
-| BID        | BID  | INTEGER      |   -1   | &nbsp; |
-| AVERSION        | AVersion  | VARCHAR      |   30   | &nbsp; |
-| BVERSION        | BVersion  | VARCHAR      |   30   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| PROGRAM        | program  | INTEGER      |   -1   | &nbsp; |
-| ATYPE        | AType  | VARCHAR      |   30   | &nbsp; |
-| PRODUCT        | product  | INTEGER      |   -1   | &nbsp; |
-| BTYPE        | BType  | VARCHAR      |   30   | &nbsp; |
 | AID        | AID  | INTEGER      |   -1   | &nbsp; |
+| ATYPE        | AType  | VARCHAR      |   30   | &nbsp; |
+| AVERSION        | AVersion  | VARCHAR      |   30   | &nbsp; |
+| BID        | BID  | INTEGER      |   -1   | &nbsp; |
+| BTYPE        | BType  | VARCHAR      |   30   | &nbsp; |
+| BVERSION        | BVersion  | VARCHAR      |   30   | &nbsp; |
+| EXTRA        | extra  | VARCHAR      |   30   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| PRODUCT        | product  | INTEGER      |   -1   | &nbsp; |
+| PROGRAM        | program  | INTEGER      |   -1   | &nbsp; |
+| PROJECT        | project  | INTEGER      |   -1   | &nbsp; |
 | RELATION        | relation  | VARCHAR      |   30   | &nbsp; |
 
 
@@ -210484,24 +210484,24 @@ CREATE TABLE `zt_relation`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| MARKER        | 里程碑  | VARCHAR      |   1   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| PRODUCTNAME        | 产品名称  | VARCHAR      |   8   | &nbsp; |
-| BUILDDATE        | 打包日期  | DATETIME      |   -1   | &nbsp; |
 | BRANCH        | 平台/分支  |       |   8   | &nbsp; |
-| PRODUCT        | 产品  |       |   8   | &nbsp; |
 | BUGS        | 解决的Bug  | CLOB      |   65,535   | &nbsp; |
-| STORIES        | 完成的需求  | CLOB      |   65,535   | &nbsp; |
-| BUILDER        | 构建者  | VARCHAR      |   30   | &nbsp; |
-| DATE        | 发布日期  | DATETIME      |   -1   | &nbsp; |
-| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
 | BUILD        | 版本  |       |   8   | &nbsp; |
-| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
+| BUILDDATE        | 打包日期  | DATETIME      |   -1   | &nbsp; |
+| BUILDER        | 构建者  | VARCHAR      |   30   | &nbsp; |
+| BUILDNAME        | 版本  | VARCHAR      |   150   | &nbsp; |
+| DATE        | 发布日期  | DATETIME      |   -1   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
 | ID        | ID  |       |   8   | 主键&nbsp; |
 | LEFTBUGS        | 遗留的Bug  | CLOB      |   65,535   | &nbsp; |
+| MARKER        | 里程碑  | VARCHAR      |   1   | &nbsp; |
 | NAME        | 发布名称  | VARCHAR      |   255   | &nbsp; |
+| PRODUCT        | 产品  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 产品名称  | VARCHAR      |   8   | &nbsp; |
 | STATUS        | 状态  | VARCHAR      |   20   | &nbsp; |
-| BUILDNAME        | 版本  | VARCHAR      |   150   | &nbsp; |
+| STORIES        | 完成的需求  | CLOB      |   65,535   | &nbsp; |
+| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -212352,22 +212352,22 @@ CREATE TABLE `zt_release`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| SCM        | SCM  | VARCHAR      |   10   | &nbsp; |
-| LASTSYNC        | lastSync  | DATETIME      |   -1   | &nbsp; |
-| DESC        | desc  | CLOB      |   65,535   | &nbsp; |
-| ENCRYPT        | encrypt  | VARCHAR      |   30   | &nbsp; |
-| COMMITS        | commits  | INTEGER      |   -1   | &nbsp; |
-| PATH        | path  | VARCHAR      |   255   | &nbsp; |
-| SYNCED        | synced  | INTEGER      |   -1   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   100   | &nbsp; |
-| ACL        | acl  | CLOB      |   65,535   | &nbsp; |
-| PREFIX        | prefix  | VARCHAR      |   100   | &nbsp; |
 | ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
+| ACL        | acl  | CLOB      |   65,535   | &nbsp; |
 | CLIENT        | client  | VARCHAR      |   100   | &nbsp; |
-| PASSWORD        | password  | VARCHAR      |   30   | &nbsp; |
+| COMMITS        | commits  | INTEGER      |   -1   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   100   | &nbsp; |
+| DESC        | desc  | CLOB      |   65,535   | &nbsp; |
 | ENCODING        | encoding  | VARCHAR      |   20   | &nbsp; |
+| ENCRYPT        | encrypt  | VARCHAR      |   30   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| LASTSYNC        | lastSync  | DATETIME      |   -1   | &nbsp; |
 | NAME        | name  | VARCHAR      |   255   | &nbsp; |
+| PASSWORD        | password  | VARCHAR      |   30   | &nbsp; |
+| PATH        | path  | VARCHAR      |   255   | &nbsp; |
+| PREFIX        | prefix  | VARCHAR      |   100   | &nbsp; |
+| SCM        | SCM  | VARCHAR      |   10   | &nbsp; |
+| SYNCED        | synced  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -214220,10 +214220,10 @@ CREATE TABLE `zt_repo`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| REPO        | repo  | INTEGER      |   -1   | &nbsp; |
-| ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
-| REVISION        | revision  | INTEGER      |   -1   | &nbsp; |
 | BRANCH        | branch  | VARCHAR      |   255   | &nbsp; |
+| ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
+| REPO        | repo  | INTEGER      |   -1   | &nbsp; |
+| REVISION        | revision  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -216063,13 +216063,13 @@ CREATE TABLE `zt_repobranch`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TYPE        | type  | VARCHAR      |   20   | &nbsp; |
-| PARENT        | parent  |       |   255   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| REVISION        | revision  | INTEGER      |   -1   | &nbsp; |
-| REPO        | repo  | INTEGER      |   -1   | &nbsp; |
-| PATH        | path  | VARCHAR      |   255   | &nbsp; |
 | ACTION        | action  | VARCHAR      |   1   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| PARENT        | parent  |       |   255   | &nbsp; |
+| PATH        | path  | VARCHAR      |   255   | &nbsp; |
+| REPO        | repo  | INTEGER      |   -1   | &nbsp; |
+| REVISION        | revision  | INTEGER      |   -1   | &nbsp; |
+| TYPE        | type  | VARCHAR      |   20   | &nbsp; |
 
 
 
@@ -217913,11 +217913,11 @@ CREATE TABLE `zt_repofiles`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| COMMIT        | commit  | INTEGER      |   -1   | &nbsp; |
-| REPO        | repo  | INTEGER      |   -1   | &nbsp; |
 | COMMENT        | comment  | CLOB      |   65,535   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
+| COMMIT        | commit  | INTEGER      |   -1   | &nbsp; |
 | COMMITTER        | committer  | VARCHAR      |   100   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| REPO        | repo  | INTEGER      |   -1   | &nbsp; |
 | REVISION        | revision  | VARCHAR      |   40   | &nbsp; |
 | TIME        | time  | DATETIME      |   -1   | &nbsp; |
 
@@ -219763,15 +219763,15 @@ CREATE TABLE `zt_repohistory`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| BEFORE        | before  | INTEGER      |   -1   | &nbsp; |
-| MODULE        | module  | VARCHAR      |   30   | &nbsp; |
-| METHOD        | method  | VARCHAR      |   30   | &nbsp; |
-| DESC        | desc  | VARCHAR      |   250   | &nbsp; |
 | ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
-| SCORE        | score  | INTEGER      |   -1   | &nbsp; |
 | AFTER        | after  | INTEGER      |   -1   | &nbsp; |
-| TIME        | time  | DATETIME      |   -1   | &nbsp; |
+| BEFORE        | before  | INTEGER      |   -1   | &nbsp; |
+| DESC        | desc  | VARCHAR      |   250   | &nbsp; |
 | ID        | id  |       |   -1   | 主键&nbsp; |
+| METHOD        | method  | VARCHAR      |   30   | &nbsp; |
+| MODULE        | module  | VARCHAR      |   30   | &nbsp; |
+| SCORE        | score  | INTEGER      |   -1   | &nbsp; |
+| TIME        | time  | DATETIME      |   -1   | &nbsp; |
 
 
 
@@ -221618,65 +221618,65 @@ CREATE TABLE `zt_score`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | ASSIGNEDDATE        | 指派日期  | DATETIME      |   -1   | &nbsp; |
-| OPENEDBY        | 由谁创建  | VARCHAR      |   200   | &nbsp; |
-| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
-| BRANCH        | 平台/分支  |       |   8   | &nbsp; |
-| SOURCEOBJECT        | 来源对象  | VARCHAR      |   100   | &nbsp; |
-| SOURCE        | 需求来源  | VARCHAR      |   20   | &nbsp; |
-| TOBUG        | 转Bug  |       |   8   | &nbsp; |
-| COLOR        | 标题颜色  | VARCHAR      |   7   | &nbsp; |
-| ISFAVORITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
-| CLOSEDDATE        | 关闭日期	  | DATETIME      |   -1   | &nbsp; |
-| LINKSTORIES        | 相关需求  | VARCHAR      |   255   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| ESTIMATE        | 预计工时  | DOUBLE      |   -1   | &nbsp; |
-| MODULENAME        | 所属模块名称  | VARCHAR      |   60   | &nbsp; |
-| LASTEDITEDDATE        | 最后修改日期  | DATETIME      |   -1   | &nbsp; |
-| SOURCENOTE        | 来源备注  | VARCHAR      |   255   | &nbsp; |
-| MODULE        | 所属模块  |       |   8   | &nbsp; |
-| KEYWORDS        | 关键词  | VARCHAR      |   255   | &nbsp; |
 | ASSIGNEDTO        | 指派给  | VARCHAR      |   30   | &nbsp; |
-| PARENTNAME        | 父需求名称  | VARCHAR      |   255   | &nbsp; |
+| ASSIGNEDTOPK        | 指派给（选择）  | VARCHAR      |   200   | &nbsp; |
+| BRANCH        | 平台/分支  |       |   8   | &nbsp; |
+| BRANCHNAME        | 平台/分支  | VARCHAR      |   255   | &nbsp; |
+| CHILDSTORIES        | 细分需求  | VARCHAR      |   255   | &nbsp; |
 | CLOSEDBY        | 由谁关闭  | VARCHAR      |   200   | &nbsp; |
-| VERSIONC        | 版本号  | VARCHAR      |   200   | &nbsp; |
-| STAGE        | 所处阶段  | VARCHAR      |   200   | &nbsp; |
+| CLOSEDDATE        | 关闭日期	  | DATETIME      |   -1   | &nbsp; |
+| CLOSEDREASON        | 关闭原因  | VARCHAR      |   30   | &nbsp; |
+| COLOR        | 标题颜色  | VARCHAR      |   7   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
 | DUPLICATESTORY        | 重复需求ID  |       |   8   | &nbsp; |
-| PATH        | 模块路径  | VARCHAR      |   255   | &nbsp; |
-| PLAN        | 所属计划  | CLOB      |   1,048,576   | &nbsp; |
+| ESTIMATE        | 预计工时  | DOUBLE      |   -1   | &nbsp; |
+| FROMBUG        | 来源Bug  |       |   8   | &nbsp; |
 | IBIZ_ID        | IBIZ标识  | VARCHAR      |   100   | &nbsp; |
+| IBIZ_SOURCEID        | 来源对象标识  | VARCHAR      |   100   | &nbsp; |
+| IBIZ_SOURCENAME        | 来源对象名称  | VARCHAR      |   100   | &nbsp; |
+| IBIZ_SOURCEOBJECT        | 来源对象  | VARCHAR      |   100   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| ISCHILD        | 是否可以细分  | VARCHAR      |   200   | &nbsp; |
+| ISFAVORITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
+| ISLEAF        | 是否子需求  | VARCHAR      |   200   | &nbsp; |
+| KEYWORDS        | 关键词  | VARCHAR      |   255   | &nbsp; |
+| LASTEDITEDBY        | 最后修改  | VARCHAR      |   200   | &nbsp; |
+| LASTEDITEDDATE        | 最后修改日期  | DATETIME      |   -1   | &nbsp; |
+| LINKSTORIES        | 相关需求  | VARCHAR      |   255   | &nbsp; |
+| MAILTO        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
+| MAILTOPK        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
+| MODULE        | 所属模块  |       |   8   | &nbsp; |
+| MODULENAME        | 所属模块名称  | VARCHAR      |   60   | &nbsp; |
+| MODULENAME1        | 所属模块名称  | VARCHAR      |   200   | &nbsp; |
+| OPENEDBY        | 由谁创建  | VARCHAR      |   200   | &nbsp; |
 | OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
 | PARENT        | 父需求  |       |   9   | &nbsp; |
+| PARENTNAME        | 父需求名称  | VARCHAR      |   255   | &nbsp; |
+| PATH        | 模块路径  | VARCHAR      |   255   | &nbsp; |
+| PLAN        | 所属计划  | CLOB      |   1,048,576   | &nbsp; |
+| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
+| PRODOCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
 | PRODUCT        | 所属产品  |       |   8   | &nbsp; |
-| FROMBUG        | 来源Bug  |       |   8   | &nbsp; |
-| ISLEAF        | 是否子需求  | VARCHAR      |   200   | &nbsp; |
+| REVIEWEDBY        | 由谁评审  | VARCHAR      |   255   | &nbsp; |
+| REVIEWEDDATE        | 评审时间  | DATETIME      |   -1   | &nbsp; |
+| SOURCE        | 需求来源  | VARCHAR      |   20   | &nbsp; |
+| SOURCEID        | 来源对象标识  | VARCHAR      |   100   | &nbsp; |
+| SOURCENAME        | 来源对象名称  | VARCHAR      |   100   | &nbsp; |
+| SOURCENOTE        | 来源备注  | VARCHAR      |   255   | &nbsp; |
+| SOURCEOBJECT        | 来源对象  | VARCHAR      |   100   | &nbsp; |
+| STAGE        | 所处阶段  | VARCHAR      |   200   | &nbsp; |
 | STAGEDBY        | 设置阶段者  | VARCHAR      |   200   | &nbsp; |
+| STATUS        | 当前状态  | VARCHAR      |   200   | &nbsp; |
+| STORYLATESTFINISHEDDATE        | 需求最晚完成时间  | DATETIME      |   -1   | &nbsp; |
+| STORYPOINTS        | 故事点  | VARCHAR      |   60   | &nbsp; |
 | STORYPROVIDEDATE        | 需求提供时间  | DATETIME      |   -1   | &nbsp; |
 | STORYPROVIDER        | 需求提供人  | VARCHAR      |   100   | &nbsp; |
-| TYPE        | 需求类型  | VARCHAR      |   30   | &nbsp; |
-| IBIZ_SOURCEID        | 来源对象标识  | VARCHAR      |   100   | &nbsp; |
-| MAILTOPK        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
-| CLOSEDREASON        | 关闭原因  | VARCHAR      |   30   | &nbsp; |
-| MODULENAME1        | 所属模块名称  | VARCHAR      |   200   | &nbsp; |
-| VERSION        | 版本号  | INTEGER      |   6   | &nbsp; |
-| ASSIGNEDTOPK        | 指派给（选择）  | VARCHAR      |   200   | &nbsp; |
-| MAILTO        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
-| IBIZ_SOURCEOBJECT        | 来源对象  | VARCHAR      |   100   | &nbsp; |
-| STORYPOINTS        | 故事点  | VARCHAR      |   60   | &nbsp; |
-| REVIEWEDBY        | 由谁评审  | VARCHAR      |   255   | &nbsp; |
-| LASTEDITEDBY        | 最后修改  | VARCHAR      |   200   | &nbsp; |
-| CHILDSTORIES        | 细分需求  | VARCHAR      |   255   | &nbsp; |
-| REVIEWEDDATE        | 评审时间  | DATETIME      |   -1   | &nbsp; |
-| IBIZ_SOURCENAME        | 来源对象名称  | VARCHAR      |   100   | &nbsp; |
 | SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
-| PRODOCTNAME        | 产品名称  | VARCHAR      |   90   | &nbsp; |
-| SOURCENAME        | 来源对象名称  | VARCHAR      |   100   | &nbsp; |
 | TITLE        | 需求名称  | VARCHAR      |   255   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| SOURCEID        | 来源对象标识  | VARCHAR      |   100   | &nbsp; |
-| ISCHILD        | 是否可以细分  | VARCHAR      |   200   | &nbsp; |
-| STATUS        | 当前状态  | VARCHAR      |   200   | &nbsp; |
-| BRANCHNAME        | 平台/分支  | VARCHAR      |   255   | &nbsp; |
-| STORYLATESTFINISHEDDATE        | 需求最晚完成时间  | DATETIME      |   -1   | &nbsp; |
+| TOBUG        | 转Bug  |       |   8   | &nbsp; |
+| TYPE        | 需求类型  | VARCHAR      |   30   | &nbsp; |
+| VERSION        | 版本号  | INTEGER      |   6   | &nbsp; |
+| VERSIONC        | 版本号  | VARCHAR      |   200   | &nbsp; |
 
 
 
@@ -223561,12 +223561,12 @@ CREATE TABLE `zt_story`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| VERSION        | 版本号  | INTEGER      |   6   | &nbsp; |
+| ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
 | SPEC        | 需求描述	  | CLOB      |   65,535   | &nbsp; |
 | STORY        | 需求  |       |   8   | &nbsp; |
-| ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
-| VERIFY        | 验收标准  | CLOB      |   65,535   | &nbsp; |
 | TITLE        | 需求名称  | VARCHAR      |   255   | &nbsp; |
+| VERIFY        | 验收标准  | CLOB      |   65,535   | &nbsp; |
+| VERSION        | 版本号  | INTEGER      |   6   | &nbsp; |
 
 
 
@@ -225408,11 +225408,11 @@ CREATE TABLE `zt_storyspec`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| STAGEDBY        | 设置阶段者  | VARCHAR      |   30   | &nbsp; |
 | BRANCH        | 平台/分支  |       |   8   | &nbsp; |
-| STAGE        | 所处阶段  | VARCHAR      |   50   | &nbsp; |
-| STORY        | 需求  |       |   8   | &nbsp; |
 | ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
+| STAGE        | 所处阶段  | VARCHAR      |   50   | &nbsp; |
+| STAGEDBY        | 设置阶段者  | VARCHAR      |   30   | &nbsp; |
+| STORY        | 需求  |       |   8   | &nbsp; |
 
 
 
@@ -227253,10 +227253,10 @@ CREATE TABLE `zt_storystage`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| SUITE        | 测试套件  |       |   8   | &nbsp; |
 | CASE        | 用例  |       |   8   | &nbsp; |
-| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
 | ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
+| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
+| SUITE        | 测试套件  |       |   8   | &nbsp; |
 | VERSION        | 用例版本  | INTEGER      |   5   | &nbsp; |
 
 
@@ -229098,25 +229098,25 @@ CREATE TABLE `zt_suitecase`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| DEPTLEVEL        | 部门级别  | INTEGER      |   -1   | &nbsp; |
-| DEPTCODE        | 部门代码  | VARCHAR      |   100   | &nbsp; |
-| DEPTNAME        | 部门名称  | VARCHAR      |   100   | &nbsp; |
+| BCODE        | 业务编码  | VARCHAR      |   100   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DEPTCODE        | 部门代码  | VARCHAR      |   100   | &nbsp; |
+| DEPTID        | 部门标识  | VARCHAR      |   100   | 主键&nbsp; |
+| DEPTLEVEL        | 部门级别  | INTEGER      |   -1   | &nbsp; |
+| DEPTNAME        | 部门名称  | VARCHAR      |   100   | &nbsp; |
+| DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
+| ENABLE        | 逻辑有效标志  | INTEGER      |   8   | &nbsp; |
+| LEADERID        | 分管领导标识  | VARCHAR      |   100   | &nbsp; |
+| LEADERNAME        | 分管领导  | VARCHAR      |   100   | &nbsp; |
 | ORGID        | 单位  | VARCHAR      |   100   | &nbsp; |
 | ORGNAME        | 单位  | VARCHAR      |   100   | &nbsp; |
-| SHOWORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| PDEPTNAME        | 上级部门  | VARCHAR      |   100   | &nbsp; |
-| BCODE        | 业务编码  | VARCHAR      |   100   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| LEADERID        | 分管领导标识  | VARCHAR      |   100   | &nbsp; |
-| DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
-| SHORTNAME        | 部门简称  | VARCHAR      |   100   | &nbsp; |
-| ENABLE        | 逻辑有效标志  | INTEGER      |   8   | &nbsp; |
-| DEPTID        | 部门标识  | VARCHAR      |   100   | 主键&nbsp; |
 | PDEPTID        | 上级部门  | VARCHAR      |   100   | &nbsp; |
+| PDEPTNAME        | 上级部门  | VARCHAR      |   100   | &nbsp; |
+| SHORTNAME        | 部门简称  | VARCHAR      |   100   | &nbsp; |
+| SHOWORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 | UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| LEADERNAME        | 分管领导  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -230948,37 +230948,37 @@ CREATE TABLE `zt_suitecase`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| USERNAME        | 用户全局名  | VARCHAR      |   100   | &nbsp; |
-| RESERVER        | 保留  | VARCHAR      |   255   | &nbsp; |
-| SHOWORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| USERID        | 用户标识  | VARCHAR      |   100   | 主键&nbsp; |
-| LANG        | 语言  | VARCHAR      |   100   | &nbsp; |
-| PASSWORD        | 密码  | VARCHAR      |   100   | &nbsp; |
-| SEX        | 性别  | VARCHAR      |   20   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   255   | &nbsp; |
-| IPADDR        | ip地址  | VARCHAR      |   100   | &nbsp; |
-| ENABLE        | 逻辑有效  | INTEGER      |   -1   | &nbsp; |
-| EMAIL        | 邮件  | VARCHAR      |   100   | &nbsp; |
+| ADDR        | 地址  | VARCHAR      |   255   | &nbsp; |
+| AVATAR        | 社交账号  | VARCHAR      |   100   | &nbsp; |
 | BCODE        | 业务编码  | VARCHAR      |   100   | &nbsp; |
-| ORGCODE        | 单位代码  | VARCHAR      |   100   | &nbsp; |
+| CREATEDATE        | 创建时间  | DATETIME      |   -1   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
+| EMAIL        | 邮件  | VARCHAR      |   100   | &nbsp; |
+| ENABLE        | 逻辑有效  | INTEGER      |   -1   | &nbsp; |
+| IPADDR        | ip地址  | VARCHAR      |   100   | &nbsp; |
+| LANG        | 语言  | VARCHAR      |   100   | &nbsp; |
+| LOGINNAME        | 登录名  | VARCHAR      |   100   | &nbsp; |
 | MDEPTCODE        | 主部门代码  | VARCHAR      |   100   | &nbsp; |
 | MDEPTID        | 主部门  | VARCHAR      |   100   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| USERCODE        | 用户工号  | VARCHAR      |   100   | &nbsp; |
-| PERSONNAME        | 姓名  | VARCHAR      |   100   | &nbsp; |
+| MDEPTNAME        | 主部门名称  | VARCHAR      |   100   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   255   | &nbsp; |
 | NICKNAME        | 昵称别名  | VARCHAR      |   100   | &nbsp; |
-| LOGINNAME        | 登录名  | VARCHAR      |   100   | &nbsp; |
-| AVATAR        | 社交账号  | VARCHAR      |   100   | &nbsp; |
-| DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
+| ORGCODE        | 单位代码  | VARCHAR      |   100   | &nbsp; |
 | ORGID        | 单位  | VARCHAR      |   100   | &nbsp; |
 | ORGNAME        | 单位名称  | VARCHAR      |   100   | &nbsp; |
-| USERICON        | 照片  | VARCHAR      |   255   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| ADDR        | 地址  | VARCHAR      |   255   | &nbsp; |
-| CREATEDATE        | 创建时间  | DATETIME      |   -1   | &nbsp; |
-| MDEPTNAME        | 主部门名称  | VARCHAR      |   100   | &nbsp; |
+| PASSWORD        | 密码  | VARCHAR      |   100   | &nbsp; |
+| PERSONNAME        | 姓名  | VARCHAR      |   100   | &nbsp; |
 | PHONE        | 联系方式  | VARCHAR      |   100   | &nbsp; |
+| RESERVER        | 保留  | VARCHAR      |   255   | &nbsp; |
+| SEX        | 性别  | VARCHAR      |   20   | &nbsp; |
+| SHOWORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| USERCODE        | 用户工号  | VARCHAR      |   100   | &nbsp; |
+| USERICON        | 照片  | VARCHAR      |   255   | &nbsp; |
+| USERID        | 用户标识  | VARCHAR      |   100   | 主键&nbsp; |
+| USERNAME        | 用户全局名  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -232810,18 +232810,18 @@ CREATE TABLE `zt_suitecase`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| ORGNAME        | 名称  | VARCHAR      |   100   | &nbsp; |
-| SHOWORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
-| ORGLEVEL        | 单位级别  | INTEGER      |   -1   | &nbsp; |
-| DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
 | CREATEDATE        | 创建时间  | DATETIME      |   -1   | &nbsp; |
-| PORGNAME        | 上级单位  | VARCHAR      |   100   | &nbsp; |
-| SHORTNAME        | 单位简称  | VARCHAR      |   100   | &nbsp; |
-| UPDATEDATE        | 最后修改时间  | DATETIME      |   -1   | &nbsp; |
+| DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
+| ENABLE        | 逻辑有效  | INTEGER      |   -1   | &nbsp; |
 | ORGCODE        | 单位代码  | VARCHAR      |   100   | &nbsp; |
 | ORGID        | 单位标识  | VARCHAR      |   100   | 主键&nbsp; |
+| ORGLEVEL        | 单位级别  | INTEGER      |   -1   | &nbsp; |
+| ORGNAME        | 名称  | VARCHAR      |   100   | &nbsp; |
 | PORGID        | 上级单位  | VARCHAR      |   100   | &nbsp; |
-| ENABLE        | 逻辑有效  | INTEGER      |   -1   | &nbsp; |
+| PORGNAME        | 上级单位  | VARCHAR      |   100   | &nbsp; |
+| SHORTNAME        | 单位简称  | VARCHAR      |   100   | &nbsp; |
+| SHOWORDER        | 排序  | INTEGER      |   -1   | &nbsp; |
+| UPDATEDATE        | 最后修改时间  | DATETIME      |   -1   | &nbsp; |
 
 
 
@@ -234655,9 +234655,9 @@ CREATE TABLE `zt_suitecase`(
 | --------   |------------| :-----:   | :----: | :--------- | 
 | DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
 | MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
-| POSTNAME        | 岗位名称  | VARCHAR      |   100   | &nbsp; |
 | POSTCODE        | 岗位编码  | VARCHAR      |   100   | &nbsp; |
 | POSTID        | 岗位标识  | VARCHAR      |   100   | 主键&nbsp; |
+| POSTNAME        | 岗位名称  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -236489,15 +236489,15 @@ CREATE TABLE `zt_suitecase`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| SYS_ROLEID        | 角色标识  | VARCHAR      |   100   | 主键&nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| SYS_ROLENAME        | 角色名称  | VARCHAR      |   200   | &nbsp; |
-| PROLENAME        | 父角色名称  | VARCHAR      |   200   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   100   | &nbsp; |
-| PROLEID        | 父角色标识  | VARCHAR      |   100   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   100   | &nbsp; |
+| PROLEID        | 父角色标识  | VARCHAR      |   100   | &nbsp; |
+| PROLENAME        | 父角色名称  | VARCHAR      |   200   | &nbsp; |
+| SYS_ROLEID        | 角色标识  | VARCHAR      |   100   | 主键&nbsp; |
+| SYS_ROLENAME        | 角色名称  | VARCHAR      |   200   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -238329,9 +238329,9 @@ CREATE TABLE `zt_suitecase`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TEAMID        | 组标识  | VARCHAR      |   100   | 主键&nbsp; |
-| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
 | DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   2,000   | &nbsp; |
+| TEAMID        | 组标识  | VARCHAR      |   100   | 主键&nbsp; |
 | TEAMNAME        | 组名称  | VARCHAR      |   100   | &nbsp; |
 
 
@@ -240164,16 +240164,16 @@ CREATE TABLE `zt_suitecase`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| USERICON        | 头像  | VARCHAR      |   255   | &nbsp; |
-| USERNAME        | 账号  | VARCHAR      |   100   | &nbsp; |
+| DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
+| PERSONNAME        | 姓名  | VARCHAR      |   100   | &nbsp; |
+| POSTID        | 岗位标识  | VARCHAR      |   100   | &nbsp; |
 | POSTNAME        | 岗位  | VARCHAR      |   100   | &nbsp; |
 | TEAMID        | 组标识  | VARCHAR      |   100   | &nbsp; |
-| PERSONNAME        | 姓名  | VARCHAR      |   100   | &nbsp; |
-| USERID        | 用户标识  | VARCHAR      |   100   | &nbsp; |
-| POSTID        | 岗位标识  | VARCHAR      |   100   | &nbsp; |
 | TEAMMEMBERID        | 组成员标识  | VARCHAR      |   100   | 主键&nbsp; |
-| DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
 | TEAMNAME        | 组名称  | VARCHAR      |   100   | &nbsp; |
+| USERICON        | 头像  | VARCHAR      |   255   | &nbsp; |
+| USERID        | 用户标识  | VARCHAR      |   100   | &nbsp; |
+| USERNAME        | 账号  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -242005,18 +242005,18 @@ CREATE TABLE `zt_suitecase`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPFEATURES        | 更新功能  | VARCHAR      |   100   | &nbsp; |
+| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| DISPLAYORDER        | 展示顺序  | INTEGER      |   -1   | &nbsp; |
+| FEATURESDESC        | 功能描述  | CLOB      |   1,048,576   | &nbsp; |
 | SYS_UPDATE_FEATURESID        | 系统更新功能标识  | VARCHAR      |   100   | 主键&nbsp; |
 | SYS_UPDATE_FEATURESNAME        | 系统更新功能名称  | VARCHAR      |   200   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
-| FEATURESDESC        | 功能描述  | CLOB      |   1,048,576   | &nbsp; |
-| SYS_UPDATE_LOGNAME        | 所属更新  | VARCHAR      |   200   | &nbsp; |
-| CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 | SYS_UPDATE_LOGID        | 系统更新日志标识  | VARCHAR      |   100   | &nbsp; |
+| SYS_UPDATE_LOGNAME        | 所属更新  | VARCHAR      |   200   | &nbsp; |
 | TYPE        | 更新类型  | VARCHAR      |   60   | &nbsp; |
-| DISPLAYORDER        | 展示顺序  | INTEGER      |   -1   | &nbsp; |
 | UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| UPFEATURES        | 更新功能  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -243864,16 +243864,16 @@ CREATE TABLE `T_SYS_UPDATE_FEATURES`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPDESC        | 更新说明  | CLOB      |   1,048,576   | &nbsp; |
-| SYS_UPDATE_LOGNAME        | 更新名称  | VARCHAR      |   200   | &nbsp; |
-| UPDATE        | 更新日期  | DATETIME      |   -1   | &nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| LATESTUPDATE        | 最新更新  | INTEGER      |   -1   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
 | CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
+| LATESTUPDATE        | 最新更新  | INTEGER      |   -1   | &nbsp; |
 | SYS_UPDATE_LOGID        | 系统更新日志标识  | VARCHAR      |   100   | 主键&nbsp; |
+| SYS_UPDATE_LOGNAME        | 更新名称  | VARCHAR      |   200   | &nbsp; |
+| UPDATE        | 更新日期  | DATETIME      |   -1   | &nbsp; |
 | UPDATEBRANCH        | 更新平台  | VARCHAR      |   60   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| UPDESC        | 更新说明  | CLOB      |   1,048,576   | &nbsp; |
 
 
 
@@ -245720,38 +245720,38 @@ CREATE TABLE `T_SYS_UPDATE_LOG`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| AVATAR        | 社交账号  | VARCHAR      |   100   | &nbsp; |
-| MDEPTNAME        | 主部门名称  | VARCHAR      |   100   | &nbsp; |
-| PASSWORD        | 密码  | VARCHAR      |   100   | &nbsp; |
-| DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
-| LANG        | 语言  | VARCHAR      |   100   | &nbsp; |
-| THEME        | 样式  | VARCHAR      |   100   | &nbsp; |
-| POSTCODE        | 岗位代码  | VARCHAR      |   100   | &nbsp; |
-| EMAIL        | 邮件  | VARCHAR      |   100   | &nbsp; |
-| ORGCODE        | 单位代码  | VARCHAR      |   100   | &nbsp; |
-| FONTSIZE        | 字号  | VARCHAR      |   10   | &nbsp; |
-| ORGNAME        | 单位名称  | VARCHAR      |   100   | &nbsp; |
 | ADDR        | 地址  | VARCHAR      |   255   | &nbsp; |
-| SUPERUSER        | 超级管理员  | INTEGER      |   -1   | &nbsp; |
-| SEX        | 性别  | VARCHAR      |   20   | &nbsp; |
-| NICKNAME        | 昵称别名  | VARCHAR      |   100   | &nbsp; |
-| USERCODE        | 用户工号  | VARCHAR      |   100   | &nbsp; |
-| PHONE        | 联系方式  | VARCHAR      |   100   | &nbsp; |
-| ORGID        | 单位  | VARCHAR      |   100   | &nbsp; |
-| CERTCODE        | 证件号码  | VARCHAR      |   100   | &nbsp; |
-| POSTID        | 岗位标识  | VARCHAR      |   100   | &nbsp; |
-| MEMO        | 备注  | VARCHAR      |   255   | &nbsp; |
-| POSTNAME        | 岗位名称  | VARCHAR      |   100   | &nbsp; |
-| BIRTHDAY        | 出生日期  | DATETIME      |   -1   | &nbsp; |
-| USERID        | 用户标识  | VARCHAR      |   100   | 主键&nbsp; |
-| MDEPTCODE        | 主部门代码  | VARCHAR      |   100   | &nbsp; |
+| AVATAR        | 社交账号  | VARCHAR      |   100   | &nbsp; |
 | BCODE        | 业务编码  | VARCHAR      |   100   | &nbsp; |
-| PERSONNAME        | 用户姓名  | VARCHAR      |   100   | &nbsp; |
-| MDEPTID        | 主部门  | VARCHAR      |   100   | &nbsp; |
-| USERNAME        | 用户全局名  | VARCHAR      |   200   | &nbsp; |
-| USERICON        | 照片  | VARCHAR      |   255   | &nbsp; |
+| BIRTHDAY        | 出生日期  | DATETIME      |   -1   | &nbsp; |
+| CERTCODE        | 证件号码  | VARCHAR      |   100   | &nbsp; |
+| DOMAINS        | 区属  | VARCHAR      |   100   | &nbsp; |
+| EMAIL        | 邮件  | VARCHAR      |   100   | &nbsp; |
+| FONTSIZE        | 字号  | VARCHAR      |   10   | &nbsp; |
+| LANG        | 语言  | VARCHAR      |   100   | &nbsp; |
 | LOGINNAME        | 登录名  | VARCHAR      |   100   | &nbsp; |
+| MDEPTCODE        | 主部门代码  | VARCHAR      |   100   | &nbsp; |
+| MDEPTID        | 主部门  | VARCHAR      |   100   | &nbsp; |
+| MDEPTNAME        | 主部门名称  | VARCHAR      |   100   | &nbsp; |
+| MEMO        | 备注  | VARCHAR      |   255   | &nbsp; |
+| NICKNAME        | 昵称别名  | VARCHAR      |   100   | &nbsp; |
+| ORGCODE        | 单位代码  | VARCHAR      |   100   | &nbsp; |
+| ORGID        | 单位  | VARCHAR      |   100   | &nbsp; |
+| ORGNAME        | 单位名称  | VARCHAR      |   100   | &nbsp; |
+| PASSWORD        | 密码  | VARCHAR      |   100   | &nbsp; |
+| PERSONNAME        | 用户姓名  | VARCHAR      |   100   | &nbsp; |
+| PHONE        | 联系方式  | VARCHAR      |   100   | &nbsp; |
+| POSTCODE        | 岗位代码  | VARCHAR      |   100   | &nbsp; |
+| POSTID        | 岗位标识  | VARCHAR      |   100   | &nbsp; |
+| POSTNAME        | 岗位名称  | VARCHAR      |   100   | &nbsp; |
 | RESERVER        | 保留  | VARCHAR      |   255   | &nbsp; |
+| SEX        | 性别  | VARCHAR      |   20   | &nbsp; |
+| SUPERUSER        | 超级管理员  | INTEGER      |   -1   | &nbsp; |
+| THEME        | 样式  | VARCHAR      |   100   | &nbsp; |
+| USERCODE        | 用户工号  | VARCHAR      |   100   | &nbsp; |
+| USERICON        | 照片  | VARCHAR      |   255   | &nbsp; |
+| USERID        | 用户标识  | VARCHAR      |   100   | 主键&nbsp; |
+| USERNAME        | 用户全局名  | VARCHAR      |   200   | &nbsp; |
 
 
 
@@ -247583,16 +247583,16 @@ CREATE TABLE `T_SYS_UPDATE_LOG`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| SYS_ROLEID        | 角色标识  | VARCHAR      |   100   | &nbsp; |
-| LOGINNAME        | 登录名  | VARCHAR      |   100   | &nbsp; |
-| SYS_USERNAME        | 用户名称  | VARCHAR      |   100   | &nbsp; |
-| SYS_USER_ROLEID        | 用户角色关系标识  | VARCHAR      |   100   | 主键&nbsp; |
-| SYS_USERID        | 用户标识  | VARCHAR      |   100   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| SYS_ROLENAME        | 角色名称  | VARCHAR      |   100   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
+| LOGINNAME        | 登录名  | VARCHAR      |   100   | &nbsp; |
 | MDEPTNAME        | 主部门  | VARCHAR      |   100   | &nbsp; |
 | ORGNAME        | 单位  | VARCHAR      |   100   | &nbsp; |
+| SYS_ROLEID        | 角色标识  | VARCHAR      |   100   | &nbsp; |
+| SYS_ROLENAME        | 角色名称  | VARCHAR      |   100   | &nbsp; |
+| SYS_USERID        | 用户标识  | VARCHAR      |   100   | &nbsp; |
+| SYS_USERNAME        | 用户名称  | VARCHAR      |   100   | &nbsp; |
+| SYS_USER_ROLEID        | 用户角色关系标识  | VARCHAR      |   100   | 主键&nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
 
 
 
@@ -249424,77 +249424,77 @@ CREATE TABLE `T_SYS_UPDATE_LOG`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| UPDATEDATE        | 最后的更新日期  | DATETIME      |   -1   | &nbsp; |
-| TASKSPECIES        | 任务种别  | VARCHAR      |   60   | &nbsp; |
-| DESC        | 任务描述  | CLOB      |   65,535   | &nbsp; |
-| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
-| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| CONFIG_MONTH        | 周期设置月  | VARCHAR      |   2,000   | &nbsp; |
-| DEADLINE        | 截止日期  | DATETIME      |   -1   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| FINISHEDDATE        | 实际完成  | DATETIME      |   -1   | &nbsp; |
-| CONFIG_TYPE        | 周期类型  | VARCHAR      |   60   | &nbsp; |
-| CONFIG_BEGIN        | 开始日期  | DATETIME      |   -1   | &nbsp; |
-| STATUS1        | 任务状态  | VARCHAR      |   200   | &nbsp; |
-| ASSIGNEDTO        | 指派给  | VARCHAR      |   30   | &nbsp; |
-| CONFIG_DAY        | 间隔天数  | INTEGER      |   -1   | &nbsp; |
-| MULTIPLE        | 多人任务  | VARCHAR      |   200   | &nbsp; |
-| TYPE        | 任务类型  | VARCHAR      |   20   | &nbsp; |
-| FROMBUG        | 来源Bug  |       |   8   | &nbsp; |
-| PROJECT        | 所属项目  |       |   8   | &nbsp; |
-| ISFAVORITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
-| CYCLE        | 周期  | INTEGER      |   3   | &nbsp; |
-| DURATION        | 持续时间  | VARCHAR      |   200   | &nbsp; |
-| PRODUCTNAME        | 产品  | VARCHAR      |   90   | &nbsp; |
-| CLOSEDDATE        | 关闭时间  | DATETIME      |   -1   | &nbsp; |
-| LASTEDITEDBY        | 最后修改  | VARCHAR      |   30   | &nbsp; |
-| FINISHEDBY        | 由谁完成  | VARCHAR      |   30   | &nbsp; |
-| OPENEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
-| STORY        | 相关需求  |       |   8   | &nbsp; |
-| PLAN        | 编号  |       |   8   | &nbsp; |
-| PROGRESSRATE        | 进度  | VARCHAR      |   200   | &nbsp; |
-| INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
-| PLANNAME        | 所属计划  | VARCHAR      |   90   | &nbsp; |
-| MAILTO        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
-| PARENTNAME        | 父任务  | VARCHAR      |   255   | &nbsp; |
-| MODULE        | 模块  |       |   8   | &nbsp; |
-| MODULENAME1        | 所属模块  | VARCHAR      |   200   | &nbsp; |
-| STORYNAME        | 相关需求  | VARCHAR      |   255   | &nbsp; |
-| LASTEDITEDDATE        | 最后修改日期  | DATETIME      |   -1   | &nbsp; |
-| CONFIG_END        | 过期日期  | DATETIME      |   -1   | &nbsp; |
-| ISLEAF        | 是否子任务  | VARCHAR      |   200   | &nbsp; |
-| FINISHEDLIST        | 完成者列表  | CLOB      |   65,535   | &nbsp; |
-| CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
-| CONFIG_BEFOREDAYS        | 提前天数  | INTEGER      |   -1   | &nbsp; |
-| DELAY        | 延期  | VARCHAR      |   200   | &nbsp; |
-| PATH        | 模块路径  | VARCHAR      |   255   | &nbsp; |
-| STATUS        | 任务状态  | VARCHAR      |   6   | &nbsp; |
-| IDVALUE        | 关联编号  |       |   8   | &nbsp; |
-| PRODUCT        | 产品  |       |   8   | &nbsp; |
-| CANCELEDBY        | 由谁取消  | VARCHAR      |   30   | &nbsp; |
-| PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
-| ESTIMATE        | 最初预计  | DOUBLE      |   -1   | &nbsp; |
-| ASSIGNEDDATE        | 指派日期  | DATETIME      |   -1   | &nbsp; |
-| ESTSTARTED        | 预计开始  | DATETIME      |   -1   | &nbsp; |
-| REALSTARTED        | 实际开始  | DATETIME      |   -1   | &nbsp; |
-| MAILTOPK        | 抄送给  | VARCHAR      |   200   | &nbsp; |
 | ASSIGN        | 是否指派  | VARCHAR      |   100   | &nbsp; |
-| PARENT        | 父任务  |       |   8   | &nbsp; |
-| STORYVERSION        | 需求版本  | INTEGER      |   6   | &nbsp; |
-| STATUSORDER        | 排序  |       |   -1   | &nbsp; |
-| MODULENAME        | 所属模块  | VARCHAR      |   60   | &nbsp; |
-| CONFIG_WEEK        | 周期设置周几  | VARCHAR      |   2,000   | &nbsp; |
+| ASSIGNEDDATE        | 指派日期  | DATETIME      |   -1   | &nbsp; |
+| ASSIGNEDTO        | 指派给  | VARCHAR      |   30   | &nbsp; |
+| CANCELEDBY        | 由谁取消  | VARCHAR      |   30   | &nbsp; |
 | CANCELEDDATE        | 取消时间  | DATETIME      |   -1   | &nbsp; |
-| COLOR        | 标题颜色  | VARCHAR      |   7   | &nbsp; |
-| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
-| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
-| CLOSEDREASON        | 关闭原因  | VARCHAR      |   30   | &nbsp; |
 | CLOSEDBY        | 由谁关闭  | VARCHAR      |   30   | &nbsp; |
+| CLOSEDDATE        | 关闭时间  | DATETIME      |   -1   | &nbsp; |
+| CLOSEDREASON        | 关闭原因  | VARCHAR      |   30   | &nbsp; |
+| COLOR        | 标题颜色  | VARCHAR      |   7   | &nbsp; |
+| CONFIG_BEFOREDAYS        | 提前天数  | INTEGER      |   -1   | &nbsp; |
+| CONFIG_BEGIN        | 开始日期  | DATETIME      |   -1   | &nbsp; |
+| CONFIG_DAY        | 间隔天数  | INTEGER      |   -1   | &nbsp; |
+| CONFIG_END        | 过期日期  | DATETIME      |   -1   | &nbsp; |
+| CONFIG_MONTH        | 周期设置月  | VARCHAR      |   2,000   | &nbsp; |
+| CONFIG_TYPE        | 周期类型  | VARCHAR      |   60   | &nbsp; |
+| CONFIG_WEEK        | 周期设置周几  | VARCHAR      |   2,000   | &nbsp; |
+| CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
+| CYCLE        | 周期  | INTEGER      |   3   | &nbsp; |
+| DEADLINE        | 截止日期  | DATETIME      |   -1   | &nbsp; |
+| DELAY        | 延期  | VARCHAR      |   200   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| DESC        | 任务描述  | CLOB      |   65,535   | &nbsp; |
+| DURATION        | 持续时间  | VARCHAR      |   200   | &nbsp; |
+| ESTIMATE        | 最初预计  | DOUBLE      |   -1   | &nbsp; |
+| ESTSTARTED        | 预计开始  | DATETIME      |   -1   | &nbsp; |
+| FINISHEDBY        | 由谁完成  | VARCHAR      |   30   | &nbsp; |
+| FINISHEDDATE        | 实际完成  | DATETIME      |   -1   | &nbsp; |
+| FINISHEDLIST        | 完成者列表  | CLOB      |   65,535   | &nbsp; |
+| FROMBUG        | 来源Bug  |       |   8   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| IDVALUE        | 关联编号  |       |   8   | &nbsp; |
+| INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
+| ISFAVORITES        | 是否收藏  | VARCHAR      |   200   | &nbsp; |
+| ISLEAF        | 是否子任务  | VARCHAR      |   200   | &nbsp; |
+| LASTEDITEDBY        | 最后修改  | VARCHAR      |   30   | &nbsp; |
+| LASTEDITEDDATE        | 最后修改日期  | DATETIME      |   -1   | &nbsp; |
+| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
+| MAILTO        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
+| MAILTOPK        | 抄送给  | VARCHAR      |   200   | &nbsp; |
+| MODULE        | 模块  |       |   8   | &nbsp; |
+| MODULENAME        | 所属模块  | VARCHAR      |   60   | &nbsp; |
+| MODULENAME1        | 所属模块  | VARCHAR      |   200   | &nbsp; |
+| MULTIPLE        | 多人任务  | VARCHAR      |   200   | &nbsp; |
 | MYCONSUMED        | 之前消耗  | DOUBLE      |   -1   | &nbsp; |
-| ORDERNUM        | 排序  | INTEGER      |   -1   | &nbsp; |
 | NAME        | 任务名称  | VARCHAR      |   255   | &nbsp; |
+| OPENEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
+| OPENEDDATE        | 创建日期  | DATETIME      |   -1   | &nbsp; |
+| ORDERNUM        | 排序  | INTEGER      |   -1   | &nbsp; |
+| PARENT        | 父任务  |       |   8   | &nbsp; |
+| PARENTNAME        | 父任务  | VARCHAR      |   255   | &nbsp; |
+| PATH        | 模块路径  | VARCHAR      |   255   | &nbsp; |
+| PLAN        | 编号  |       |   8   | &nbsp; |
+| PLANNAME        | 所属计划  | VARCHAR      |   90   | &nbsp; |
+| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
+| PRODUCT        | 产品  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 产品  | VARCHAR      |   90   | &nbsp; |
+| PROGRESSRATE        | 进度  | VARCHAR      |   200   | &nbsp; |
+| PROJECT        | 所属项目  |       |   8   | &nbsp; |
+| PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
+| REALSTARTED        | 实际开始  | DATETIME      |   -1   | &nbsp; |
+| STATUS        | 任务状态  | VARCHAR      |   6   | &nbsp; |
+| STATUS1        | 任务状态  | VARCHAR      |   200   | &nbsp; |
+| STATUSORDER        | 排序  |       |   -1   | &nbsp; |
+| STORY        | 相关需求  |       |   8   | &nbsp; |
+| STORYNAME        | 相关需求  | VARCHAR      |   255   | &nbsp; |
+| STORYVERSION        | 需求版本  | INTEGER      |   6   | &nbsp; |
+| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
+| TASKSPECIES        | 任务种别  | VARCHAR      |   60   | &nbsp; |
 | TASKTYPE        | 任务类型  | VARCHAR      |   200   | &nbsp; |
+| TYPE        | 任务类型  | VARCHAR      |   20   | &nbsp; |
+| UPDATEDATE        | 最后的更新日期  | DATETIME      |   -1   | &nbsp; |
 
 
 
@@ -251381,27 +251381,27 @@ CREATE TABLE `zt_task`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TYPE        | 任务类型  | VARCHAR      |   20   | &nbsp; |
-| EVALUATIONCOST        | 评估成本  | DOUBLE      |   2   | &nbsp; |
-| TASK        | 任务  |       |   8   | &nbsp; |
-| PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
-| TASKSPECIES        | 任务种别  | VARCHAR      |   60   | &nbsp; |
-| EVALUATIONTIME        | 评估工时  | DOUBLE      |   2   | &nbsp; |
 | ACCOUNT        | 用户  | VARCHAR      |   30   | &nbsp; |
-| TASKNAME        | 任务名称  | VARCHAR      |   255   | &nbsp; |
 | CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
-| MONTHNAME        | 月（显示）  | VARCHAR      |   100   | &nbsp; |
-| EVALUATIONDESC        | 评估说明  | CLOB      |   1,048,576   | &nbsp; |
-| FILES        | 附件  | VARCHAR      |   2,000   | &nbsp; |
-| INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
-| PROJECT        | 项目  |       |   8   | &nbsp; |
-| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
-| ID        | 编号  |       |   -1   | 主键&nbsp; |
-| DELETED        | 任务删除标识  | VARCHAR      |   1   | &nbsp; |
 | DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
 | DATES        | 日期  | DATETIME      |   -1   | &nbsp; |
-| WORK        | work  | CLOB      |   65,535   | &nbsp; |
+| DELETED        | 任务删除标识  | VARCHAR      |   1   | &nbsp; |
+| EVALUATIONCOST        | 评估成本  | DOUBLE      |   2   | &nbsp; |
+| EVALUATIONDESC        | 评估说明  | CLOB      |   1,048,576   | &nbsp; |
 | EVALUATIONSTATUS        | 评估状态  | VARCHAR      |   100   | &nbsp; |
+| EVALUATIONTIME        | 评估工时  | DOUBLE      |   2   | &nbsp; |
+| FILES        | 附件  | VARCHAR      |   2,000   | &nbsp; |
+| ID        | 编号  |       |   -1   | 主键&nbsp; |
+| INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
+| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
+| MONTHNAME        | 月（显示）  | VARCHAR      |   100   | &nbsp; |
+| PROJECT        | 项目  |       |   8   | &nbsp; |
+| PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
+| TASK        | 任务  |       |   8   | &nbsp; |
+| TASKNAME        | 任务名称  | VARCHAR      |   255   | &nbsp; |
+| TASKSPECIES        | 任务种别  | VARCHAR      |   60   | &nbsp; |
+| TYPE        | 任务类型  | VARCHAR      |   20   | &nbsp; |
+| WORK        | work  | CLOB      |   65,535   | &nbsp; |
 
 
 
@@ -253252,14 +253252,14 @@ CREATE TABLE `zt_taskestimate`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| EVALUATIONSTATUS        | 评估状态  | VARCHAR      |   100   | &nbsp; |
-| MONTHNAME        | 月（显示）  | VARCHAR      |   100   | &nbsp; |
+| ACCOUNT        | 用户  | VARCHAR      |   100   | &nbsp; |
 | DATE        | 日期  | VARCHAR      |   100   | &nbsp; |
 | EVALUATIONCOST        | 评估成本  | DOUBLE      |   2   | &nbsp; |
-| INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
-| ACCOUNT        | 用户  | VARCHAR      |   100   | &nbsp; |
-| ID        | 编号  |       |   20   | 主键&nbsp; |
+| EVALUATIONSTATUS        | 评估状态  | VARCHAR      |   100   | &nbsp; |
 | EVALUATIONTIME        | 评估工时  | DOUBLE      |   2   | &nbsp; |
+| ID        | 编号  |       |   20   | 主键&nbsp; |
+| INPUTCOST        | 投入成本  | DOUBLE      |   2   | &nbsp; |
+| MONTHNAME        | 月（显示）  | VARCHAR      |   100   | &nbsp; |
 
 
 
@@ -255105,18 +255105,18 @@ CREATE TABLE `zt_taskestimate`(
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
 | APPTASKID        | 第三方应用待办标识  | VARCHAR      |   100   | &nbsp; |
-| TASKMSGRECORDNAME        | 待办消息记录名称  | VARCHAR      |   200   | &nbsp; |
-| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | CREATEDATE        | 建立时间  | DATETIME      |   8   | &nbsp; |
-| ENABLE        | 逻辑有效标志  | INTEGER      |   8   | &nbsp; |
+| CREATEMAN        | 建立人  | VARCHAR      |   60   | &nbsp; |
 | DATAID        | 数据标识  | VARCHAR      |   100   | &nbsp; |
-| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
-| TITLE        | 标题  | VARCHAR      |   100   | &nbsp; |
+| ENABLE        | 逻辑有效标志  | INTEGER      |   8   | &nbsp; |
 | MEMO        | 备注  | VARCHAR      |   100   | &nbsp; |
-| TASKTYPE        | 待办类型  | VARCHAR      |   100   | &nbsp; |
 | TASKMSGRECORDID        | 待办消息记录标识  | VARCHAR      |   100   | 主键&nbsp; |
-| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
+| TASKMSGRECORDNAME        | 待办消息记录名称  | VARCHAR      |   200   | &nbsp; |
+| TASKTYPE        | 待办类型  | VARCHAR      |   100   | &nbsp; |
 | TASKUSERID        | 待办人标识  | VARCHAR      |   100   | &nbsp; |
+| TITLE        | 标题  | VARCHAR      |   100   | &nbsp; |
+| UPDATEDATE        | 更新时间  | DATETIME      |   8   | &nbsp; |
+| UPDATEMAN        | 更新人  | VARCHAR      |   60   | &nbsp; |
 
 
 
@@ -256948,12 +256948,12 @@ CREATE TABLE `zt_taskestimate`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TOTALCONSUMED        | 消耗总工时  | INTEGER      |   -1   | &nbsp; |
-| TOTALLEFT        | 剩余总工时  | INTEGER      |   -1   | &nbsp; |
+| ID        | 编号  |       |   20   | 主键&nbsp; |
 | NAME        | 名称  | VARCHAR      |   100   | &nbsp; |
 | TASKEFFICIENT        | 效率  | VARCHAR      |   200   | &nbsp; |
-| ID        | 编号  |       |   20   | 主键&nbsp; |
+| TOTALCONSUMED        | 消耗总工时  | INTEGER      |   -1   | &nbsp; |
 | TOTALESTIMATE        | 预计总工时  | INTEGER      |   -1   | &nbsp; |
+| TOTALLEFT        | 剩余总工时  | INTEGER      |   -1   | &nbsp; |
 
 
 
@@ -258794,19 +258794,19 @@ CREATE TABLE `zt_task`(
 | --------   |------------| :-----:   | :----: | :--------- | 
 | ACCOUNT        | 用户  | VARCHAR      |   30   | &nbsp; |
 | CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
-| LIMITED        | 受限用户  | VARCHAR      |   8   | &nbsp; |
-| ROLE        | 角色  | VARCHAR      |   30   | &nbsp; |
-| JOIN        | 加盟日  | DATETIME      |   -1   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   3   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| USERNAME        | 用户  | VARCHAR      |   200   | &nbsp; |
-| TYPE        | 团队类型  | VARCHAR      |   7   | &nbsp; |
 | DAYS        | 可用工日  | INTEGER      |   5   | &nbsp; |
-| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
-| HOURS        | 可用工时/天  | DOUBLE      |   -1   | &nbsp; |
 | ESTIMATE        | 最初预计  | DOUBLE      |   -1   | &nbsp; |
-| TOTAL        | 总计可用  | INTEGER      |   -1   | &nbsp; |
+| HOURS        | 可用工时/天  | DOUBLE      |   -1   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| JOIN        | 加盟日  | DATETIME      |   -1   | &nbsp; |
+| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
+| LIMITED        | 受限用户  | VARCHAR      |   8   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   3   | &nbsp; |
+| ROLE        | 角色  | VARCHAR      |   30   | &nbsp; |
 | ROOT        | 编号  |       |   8   | &nbsp; |
+| TOTAL        | 总计可用  | INTEGER      |   -1   | &nbsp; |
+| TYPE        | 团队类型  | VARCHAR      |   7   | &nbsp; |
+| USERNAME        | 用户  | VARCHAR      |   200   | &nbsp; |
 
 
 
@@ -260656,19 +260656,19 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TYPE        | 团队类型  | VARCHAR      |   7   | &nbsp; |
-| ORDER        | 排序  | INTEGER      |   3   | &nbsp; |
-| LIMITED        | 受限用户  | VARCHAR      |   8   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| ROOT        | 关联编号  |       |   8   | &nbsp; |
-| ROLE        | 角色  | VARCHAR      |   30   | &nbsp; |
-| HOURS        | 可用工时/天  | DOUBLE      |   -1   | &nbsp; |
-| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
-| JOIN        | 加盟日  | DATETIME      |   -1   | &nbsp; |
+| ACCOUNT        | 用户  | VARCHAR      |   30   | &nbsp; |
 | CONSUMED        | 总计消耗  | DOUBLE      |   -1   | &nbsp; |
 | DAYS        | 可用工日  | INTEGER      |   5   | &nbsp; |
 | ESTIMATE        | 最初预计  | DOUBLE      |   -1   | &nbsp; |
-| ACCOUNT        | 用户  | VARCHAR      |   30   | &nbsp; |
+| HOURS        | 可用工时/天  | DOUBLE      |   -1   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| JOIN        | 加盟日  | DATETIME      |   -1   | &nbsp; |
+| LEFT        | 预计剩余  | DOUBLE      |   -1   | &nbsp; |
+| LIMITED        | 受限用户  | VARCHAR      |   8   | &nbsp; |
+| ORDER        | 排序  | INTEGER      |   3   | &nbsp; |
+| ROLE        | 角色  | VARCHAR      |   30   | &nbsp; |
+| ROOT        | 关联编号  |       |   8   | &nbsp; |
+| TYPE        | 团队类型  | VARCHAR      |   7   | &nbsp; |
 
 
 
@@ -262518,22 +262518,22 @@ CREATE TABLE `zt_team`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| COLLECTOR        | collector  | CLOB      |   65,535   | &nbsp; |
-| ID        | id  |       |   20   | 主键&nbsp; |
-| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| ROOTNAME        | 测试  | VARCHAR      |   90   | &nbsp; |
-| PARENT        | id  |       |   20   | &nbsp; |
 | BRANCH        | branch  | INTEGER      |   -1   | &nbsp; |
-| TYPE        | 类型（story）  | VARCHAR      |   30   | &nbsp; |
-| PARENTNAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
-| ISLEAF        | 叶子模块  | VARCHAR      |   200   | &nbsp; |
+| COLLECTOR        | collector  | CLOB      |   65,535   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
 | GRADE        | grade  | INTEGER      |   -1   | &nbsp; |
-| PATH        | path  | VARCHAR      |   255   | &nbsp; |
+| ID        | id  |       |   20   | 主键&nbsp; |
+| ISLEAF        | 叶子模块  | VARCHAR      |   200   | &nbsp; |
+| NAME        | 名称  | VARCHAR      |   60   | &nbsp; |
 | ORDER        | 排序值  | INTEGER      |   -1   | &nbsp; |
-| SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
 | OWNER        | owner  | VARCHAR      |   30   | &nbsp; |
+| PARENT        | id  |       |   20   | &nbsp; |
+| PARENTNAME        | 上级模块  | VARCHAR      |   60   | &nbsp; |
+| PATH        | path  | VARCHAR      |   255   | &nbsp; |
 | ROOT        | 编号  |       |   8   | &nbsp; |
+| ROOTNAME        | 测试  | VARCHAR      |   90   | &nbsp; |
+| SHORT        | 简称  | VARCHAR      |   30   | &nbsp; |
+| TYPE        | 类型（story）  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -264383,27 +264383,27 @@ CREATE TABLE `zt_module`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| BUILDS        | 版本信息  | VARCHAR      |   255   | &nbsp; |
-| OBJECTTYPE        | 对象类型  | VARCHAR      |   20   | &nbsp; |
-| TASKS        | 测试单  | VARCHAR      |   255   | &nbsp; |
-| CREATEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
-| CASES        | 用例  | CLOB      |   65,535   | &nbsp; |
-| TITLE        | 标题  | VARCHAR      |   255   | &nbsp; |
-| PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
-| STORIES        | 测试的需求  | CLOB      |   65,535   | &nbsp; |
-| OWNER        | 负责人  | VARCHAR      |   30   | &nbsp; |
-| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
-| CREATEDDATE        | 创建时间  | DATETIME      |   -1   | &nbsp; |
-| OBJECTID        | 所属对象  | INTEGER      |   -1   | &nbsp; |
-| END        | 结束时间  | DATETIME      |   -1   | &nbsp; |
-| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
-| MEMBERS        | 参与人员  | CLOB      |   65,535   | &nbsp; |
-| PROJECT        | 所属项目  |       |   8   | &nbsp; |
-| REPORT        | 总结  | CLOB      |   65,535   | &nbsp; |
-| PRODUCTNAME        | 所属产品  | VARCHAR      |   90   | &nbsp; |
 | BEGIN        | 开始时间  | DATETIME      |   -1   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
 | BUGS        | 测试的Bug  | CLOB      |   65,535   | &nbsp; |
+| BUILDS        | 版本信息  | VARCHAR      |   255   | &nbsp; |
+| CASES        | 用例  | CLOB      |   65,535   | &nbsp; |
+| CREATEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
+| CREATEDDATE        | 创建时间  | DATETIME      |   -1   | &nbsp; |
+| DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| END        | 结束时间  | DATETIME      |   -1   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| MEMBERS        | 参与人员  | CLOB      |   65,535   | &nbsp; |
+| OBJECTID        | 所属对象  | INTEGER      |   -1   | &nbsp; |
+| OBJECTTYPE        | 对象类型  | VARCHAR      |   20   | &nbsp; |
+| OWNER        | 负责人  | VARCHAR      |   30   | &nbsp; |
+| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 所属产品  | VARCHAR      |   90   | &nbsp; |
+| PROJECT        | 所属项目  |       |   8   | &nbsp; |
+| PROJECTNAME        | 所属项目  | VARCHAR      |   90   | &nbsp; |
+| REPORT        | 总结  | CLOB      |   65,535   | &nbsp; |
+| STORIES        | 测试的需求  | CLOB      |   65,535   | &nbsp; |
+| TASKS        | 测试单  | VARCHAR      |   255   | &nbsp; |
+| TITLE        | 标题  | VARCHAR      |   255   | &nbsp; |
 
 
 
@@ -266259,23 +266259,23 @@ CREATE TABLE `zt_testreport`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| CASERESULT        | 测试结果  | VARCHAR      |   30   | &nbsp; |
-| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
-| STEPRESULTS        | 步骤结果  | CLOB      |   65,535   | &nbsp; |
-| COMPILE        | 代码编译  |       |   -1   | &nbsp; |
-| MODULENAME        | 所属模块  | VARCHAR      |   60   | &nbsp; |
-| DATE        | 测试时间  | DATETIME      |   -1   | &nbsp; |
-| JOB        | 构建任务  |       |   -1   | &nbsp; |
-| RUN        | 测试执行  |       |   8   | &nbsp; |
 | CASE        | 用例  |       |   8   | &nbsp; |
+| CASERESULT        | 测试结果  | VARCHAR      |   30   | &nbsp; |
+| COMPILE        | 代码编译  |       |   -1   | &nbsp; |
+| DATE        | 测试时间  | DATETIME      |   -1   | &nbsp; |
 | DURATION        | 持续时间  | DOUBLE      |   -1   | &nbsp; |
-| STORY        | 相关需求  |       |   8   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| JOB        | 构建任务  |       |   -1   | &nbsp; |
+| LASTRUNNER        | 最后执行人  | VARCHAR      |   30   | &nbsp; |
+| MODULE        | 所属模块  |       |   -1   | &nbsp; |
+| MODULENAME        | 所属模块  | VARCHAR      |   60   | &nbsp; |
 | PRECONDITION        | 前置条件  | CLOB      |   65,535   | &nbsp; |
+| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
+| RUN        | 测试执行  |       |   8   | &nbsp; |
+| STEPRESULTS        | 步骤结果  | CLOB      |   65,535   | &nbsp; |
+| STORY        | 相关需求  |       |   8   | &nbsp; |
 | VERSION        | 用例版本  | INTEGER      |   5   | &nbsp; |
 | XML        | 结果文件  | CLOB      |   65,535   | &nbsp; |
-| LASTRUNNER        | 最后执行人  | VARCHAR      |   30   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| MODULE        | 所属模块  |       |   -1   | &nbsp; |
 
 
 
@@ -268124,15 +268124,15 @@ CREATE TABLE `zt_testresult`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| VERSION        | 用例版本  | INTEGER      |   3   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
 | ASSIGNEDTO        | 指派给  | VARCHAR      |   30   | &nbsp; |
+| CASE        | 测试用例  |       |   8   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
 | LASTRUNDATE        | 最后执行时间  | DATETIME      |   -1   | &nbsp; |
+| LASTRUNNER        | 最后执行人  | VARCHAR      |   30   | &nbsp; |
+| LASTRUNRESULT        | 结果  | VARCHAR      |   30   | &nbsp; |
 | STATUS        | 当前状态  | VARCHAR      |   30   | &nbsp; |
 | TASK        | 测试单  |       |   8   | &nbsp; |
-| LASTRUNRESULT        | 结果  | VARCHAR      |   30   | &nbsp; |
-| CASE        | 测试用例  |       |   8   | &nbsp; |
-| LASTRUNNER        | 最后执行人  | VARCHAR      |   30   | &nbsp; |
+| VERSION        | 用例版本  | INTEGER      |   3   | &nbsp; |
 
 
 
@@ -269978,17 +269978,17 @@ CREATE TABLE `zt_testrun`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
-| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
 | ADDEDBY        | 由谁创建  | VARCHAR      |   30   | &nbsp; |
 | ADDEDDATE        | 创建时间  | DATETIME      |   -1   | &nbsp; |
+| CASECNT        | 用例数  | INTEGER      |   -1   | &nbsp; |
 | DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
+| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
 | ID        | 编号  |       |   8   | 主键&nbsp; |
 | LASTEDITEDBY        | 最后编辑人  | VARCHAR      |   30   | &nbsp; |
 | LASTEDITEDDATE        | 最后编辑时间  | DATETIME      |   -1   | &nbsp; |
-| TYPE        | 类型  | VARCHAR      |   20   | &nbsp; |
-| CASECNT        | 用例数  | INTEGER      |   -1   | &nbsp; |
 | NAME        | 名称  | VARCHAR      |   255   | &nbsp; |
+| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   20   | &nbsp; |
 
 
 
@@ -271835,28 +271835,28 @@ CREATE TABLE `zt_testsuite`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
+| AUTO        | auto  | VARCHAR      |   10   | &nbsp; |
+| BEGIN        | 开始日期  | DATETIME      |   -1   | &nbsp; |
 | BUILD        | 版本  |       |   -1   | &nbsp; |
 | BUILDNAME        | 版本  | VARCHAR      |   150   | &nbsp; |
-| REPORT        | report  | CLOB      |   65,535   | &nbsp; |
-| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
 | CASECNT        | 用例数  | INTEGER      |   -1   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| END        | 结束日期  | DATETIME      |   -1   | &nbsp; |
-| PRODUCTNAME        | 产品  | VARCHAR      |   90   | &nbsp; |
-| BEGIN        | 开始日期  | DATETIME      |   -1   | &nbsp; |
-| OWNER        | 负责人  | VARCHAR      |   30   | &nbsp; |
-| PROJECTTNAME        | 项目  | VARCHAR      |   90   | &nbsp; |
-| PROJECT        | 所属项目  |       |   8   | &nbsp; |
-| MAILTOPK        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
-| MAILTO        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
-| STATUS        | 当前状态  | VARCHAR      |   7   | &nbsp; |
-| NAME        | 名称  | VARCHAR      |   90   | &nbsp; |
-| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
 | DELETED        | 已删除  | VARCHAR      |   1   | &nbsp; |
 | DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
+| END        | 结束日期  | DATETIME      |   -1   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| MAILTO        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
+| MAILTOPK        | 抄送给  | VARCHAR      |   65,535   | &nbsp; |
+| NAME        | 名称  | VARCHAR      |   90   | &nbsp; |
+| OWNER        | 负责人  | VARCHAR      |   30   | &nbsp; |
 | OWNERPK        | 负责人（选择）  | VARCHAR      |   200   | &nbsp; |
-| AUTO        | auto  | VARCHAR      |   10   | &nbsp; |
+| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
+| PRODUCT        | 所属产品  |       |   8   | &nbsp; |
+| PRODUCTNAME        | 产品  | VARCHAR      |   90   | &nbsp; |
+| PROJECT        | 所属项目  |       |   8   | &nbsp; |
+| PROJECTTNAME        | 项目  | VARCHAR      |   90   | &nbsp; |
+| REPORT        | report  | CLOB      |   65,535   | &nbsp; |
+| STATUS        | 当前状态  | VARCHAR      |   7   | &nbsp; |
+| SUBSTATUS        | 子状态  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -273709,31 +273709,31 @@ CREATE TABLE `zt_testtask`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
-| CONFIG        | config  | VARCHAR      |   255   | &nbsp; |
-| ASSIGNEDTO        | 指派给  | VARCHAR      |   30   | &nbsp; |
+| ACCOUNT        | 所有者  | VARCHAR      |   30   | &nbsp; |
 | ASSIGNEDBY        | 由谁指派  | VARCHAR      |   30   | &nbsp; |
-| NAME        | 待办名称  | VARCHAR      |   150   | &nbsp; |
-| END        | 结束  | INTEGER      |   4   | &nbsp; |
-| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
-| CLOSEDDATE        | 关闭时间  | DATETIME      |   -1   | &nbsp; |
-| DATE1        | 日期  | VARCHAR      |   200   | &nbsp; |
 | ASSIGNEDDATE        | 指派日期  | DATETIME      |   -1   | &nbsp; |
+| ASSIGNEDTO        | 指派给  | VARCHAR      |   30   | &nbsp; |
+| ASSIGNEDTOPK        | 指派给（选择）  | VARCHAR      |   200   | &nbsp; |
+| BEGIN        | 开始  | INTEGER      |   4   | &nbsp; |
+| CLOSEDBY        | 由谁关闭  | VARCHAR      |   30   | &nbsp; |
+| CLOSEDDATE        | 关闭时间  | DATETIME      |   -1   | &nbsp; |
+| CONFIG        | config  | VARCHAR      |   255   | &nbsp; |
 | CONSUMED        | 工时  | DOUBLE      |   4   | &nbsp; |
 | COST        | 费用  | INTEGER      |   -1   | &nbsp; |
-| ACCOUNT        | 所有者  | VARCHAR      |   30   | &nbsp; |
-| BEGIN        | 开始  | INTEGER      |   4   | &nbsp; |
-| TYPE        | 类型  | VARCHAR      |   10   | &nbsp; |
-| IDVALUE        | 关联编号  |       |   8   | &nbsp; |
-| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
-| ID        | 编号  |       |   8   | 主键&nbsp; |
-| STATUS        | 状态  | VARCHAR      |   6   | &nbsp; |
-| FINISHEDBY        | 由谁完成  | VARCHAR      |   30   | &nbsp; |
-| ASSIGNEDTOPK        | 指派给（选择）  | VARCHAR      |   200   | &nbsp; |
-| FINISHEDDATE        | 完成时间  | DATETIME      |   -1   | &nbsp; |
-| PRIVATE        | 私人事务  | VARCHAR      |   4,000   | &nbsp; |
-| CLOSEDBY        | 由谁关闭  | VARCHAR      |   30   | &nbsp; |
 | CYCLE        | 周期  | INTEGER      |   3   | &nbsp; |
+| DATE        | 日期  | DATETIME      |   -1   | &nbsp; |
+| DATE1        | 日期  | VARCHAR      |   200   | &nbsp; |
+| DESC        | 描述  | CLOB      |   65,535   | &nbsp; |
+| END        | 结束  | INTEGER      |   4   | &nbsp; |
+| FINISHEDBY        | 由谁完成  | VARCHAR      |   30   | &nbsp; |
+| FINISHEDDATE        | 完成时间  | DATETIME      |   -1   | &nbsp; |
+| ID        | 编号  |       |   8   | 主键&nbsp; |
+| IDVALUE        | 关联编号  |       |   8   | &nbsp; |
+| NAME        | 待办名称  | VARCHAR      |   150   | &nbsp; |
+| PRI        | 优先级  | INTEGER      |   3   | &nbsp; |
+| PRIVATE        | 私人事务  | VARCHAR      |   4,000   | &nbsp; |
+| STATUS        | 状态  | VARCHAR      |   6   | &nbsp; |
+| TYPE        | 类型  | VARCHAR      |   10   | &nbsp; |
 
 
 
@@ -275593,40 +275593,40 @@ CREATE TABLE `zt_todo`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| SKYPE        | skype  | VARCHAR      |   90   | &nbsp; |
-| GENDER        | 性别  | VARCHAR      |   1   | &nbsp; |
-| FAILS        | fails  | INTEGER      |   -1   | &nbsp; |
+| ACCOUNT        | 账户  | VARCHAR      |   30   | &nbsp; |
+| ADDRESS        | 通讯地址  | VARCHAR      |   120   | &nbsp; |
+| AVATAR        | avatar  | VARCHAR      |   30   | &nbsp; |
+| BIRTHDAY        | birthday  | DATETIME      |   -1   | &nbsp; |
+| CLIENTLANG        | clientLang  | VARCHAR      |   10   | &nbsp; |
+| CLIENTSTATUS        | clientStatus  | VARCHAR      |   7   | &nbsp; |
+| COMMITER        | 源代码账户  | VARCHAR      |   100   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
+| DEPT        | 所属部门  | INTEGER      |   -1   | &nbsp; |
+| DINGDING        | 钉钉  | VARCHAR      |   90   | &nbsp; |
 | EMAIL        | 邮箱  | VARCHAR      |   90   | &nbsp; |
+| FAILS        | fails  | INTEGER      |   -1   | &nbsp; |
+| GENDER        | 性别  | VARCHAR      |   1   | &nbsp; |
+| ID        | ID  |       |   -1   | 主键&nbsp; |
+| IP        | ip  | VARCHAR      |   15   | &nbsp; |
+| JOIN        | 入职日期  | DATETIME      |   -1   | &nbsp; |
+| LAST        | 最后登录  | INTEGER      |   -1   | &nbsp; |
+| LOCKED        | locked  | DATETIME      |   -1   | &nbsp; |
+| MOBILE        | 手机  | VARCHAR      |   11   | &nbsp; |
+| NICKNAME        | nickname  | VARCHAR      |   60   | &nbsp; |
+| PASSWORD        | 密码  | VARCHAR      |   32   | &nbsp; |
+| PHONE        | 电话  | VARCHAR      |   20   | &nbsp; |
+| QQ        | QQ  | VARCHAR      |   20   | &nbsp; |
+| RANZHI        | ranzhi  | VARCHAR      |   30   | &nbsp; |
+| REALNAME        | 真实姓名  | VARCHAR      |   100   | &nbsp; |
 | ROLE        | 职位  | VARCHAR      |   10   | &nbsp; |
 | SCORE        | score  | INTEGER      |   -1   | &nbsp; |
-| MOBILE        | 手机  | VARCHAR      |   11   | &nbsp; |
-| DEPT        | 所属部门  | INTEGER      |   -1   | &nbsp; |
-| PASSWORD        | 密码  | VARCHAR      |   32   | &nbsp; |
-| REALNAME        | 真实姓名  | VARCHAR      |   100   | &nbsp; |
 | SCORELEVEL        | scoreLevel  | INTEGER      |   -1   | &nbsp; |
-| CLIENTSTATUS        | clientStatus  | VARCHAR      |   7   | &nbsp; |
-| JOIN        | 入职日期  | DATETIME      |   -1   | &nbsp; |
-| AVATAR        | avatar  | VARCHAR      |   30   | &nbsp; |
-| DINGDING        | 钉钉  | VARCHAR      |   90   | &nbsp; |
-| WEIXIN        | 微信  | VARCHAR      |   90   | &nbsp; |
-| LOCKED        | locked  | DATETIME      |   -1   | &nbsp; |
-| QQ        | QQ  | VARCHAR      |   20   | &nbsp; |
-| ADDRESS        | 通讯地址  | VARCHAR      |   120   | &nbsp; |
-| NICKNAME        | nickname  | VARCHAR      |   60   | &nbsp; |
-| RANZHI        | ranzhi  | VARCHAR      |   30   | &nbsp; |
-| VISITS        | 访问次数  | INTEGER      |   -1   | &nbsp; |
-| WHATSAPP        | whatsapp  | VARCHAR      |   90   | &nbsp; |
-| COMMITER        | 源代码账户  | VARCHAR      |   100   | &nbsp; |
-| IP        | ip  | VARCHAR      |   15   | &nbsp; |
-| LAST        | 最后登录  | INTEGER      |   -1   | &nbsp; |
-| PHONE        | 电话  | VARCHAR      |   20   | &nbsp; |
-| BIRTHDAY        | birthday  | DATETIME      |   -1   | &nbsp; |
-| ID        | ID  |       |   -1   | 主键&nbsp; |
+| SKYPE        | skype  | VARCHAR      |   90   | &nbsp; |
 | SLACK        | slack  | VARCHAR      |   90   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| ACCOUNT        | 账户  | VARCHAR      |   30   | &nbsp; |
+| VISITS        | 访问次数  | INTEGER      |   -1   | &nbsp; |
+| WEIXIN        | 微信  | VARCHAR      |   90   | &nbsp; |
+| WHATSAPP        | whatsapp  | VARCHAR      |   90   | &nbsp; |
 | ZIPCODE        | zipcode  | VARCHAR      |   10   | &nbsp; |
-| CLIENTLANG        | clientLang  | VARCHAR      |   10   | &nbsp; |
 
 
 
@@ -277497,10 +277497,10 @@ CREATE TABLE `zt_user`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| USERLIST        | userList  | CLOB      |   65,535   | &nbsp; |
-| LISTNAME        | 标题  | VARCHAR      |   60   | &nbsp; |
 | ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
 | ID        | id  |       |   -1   | 主键&nbsp; |
+| LISTNAME        | 标题  | VARCHAR      |   60   | &nbsp; |
+| USERLIST        | userList  | CLOB      |   65,535   | &nbsp; |
 
 
 
@@ -279341,8 +279341,8 @@ CREATE TABLE `zt_usercontact`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| GROUP        | group  | INTEGER      |   -1   | &nbsp; |
 | ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
+| GROUP        | group  | INTEGER      |   -1   | &nbsp; |
 | ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
 
 
@@ -281182,13 +281182,13 @@ CREATE TABLE `zt_usergroup`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| MODULE        | module  | VARCHAR      |   30   | &nbsp; |
-| TITLE        | title  | VARCHAR      |   90   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
 | ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
-| SQL        | sql  | CLOB      |   65,535   | &nbsp; |
 | FORM        | form  | CLOB      |   65,535   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| MODULE        | module  | VARCHAR      |   30   | &nbsp; |
 | SHORTCUT        | shortcut  | VARCHAR      |   1   | &nbsp; |
+| SQL        | sql  | CLOB      |   65,535   | &nbsp; |
+| TITLE        | title  | VARCHAR      |   90   | &nbsp; |
 
 
 
@@ -283032,12 +283032,12 @@ CREATE TABLE `zt_userquery`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| TYPE        | type  | VARCHAR      |   30   | &nbsp; |
-| PUBLIC        | 公开  | VARCHAR      |   1   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
 | ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
 | CONTENT        | content  | CLOB      |   65,535   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| PUBLIC        | 公开  | VARCHAR      |   1   | &nbsp; |
 | TITLE        | 模板标题  | VARCHAR      |   150   | &nbsp; |
+| TYPE        | type  | VARCHAR      |   30   | &nbsp; |
 
 
 
@@ -284880,9 +284880,9 @@ CREATE TABLE `zt_usertpl`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
+| ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
 | ID        | 虚拟主键  | VARCHAR      |   200   | 主键&nbsp; |
 | PRODUCTS        | products  | CLOB      |   16,777,215   | &nbsp; |
-| ACCOUNT        | account  | VARCHAR      |   30   | &nbsp; |
 | PROJECTS        | projects  | CLOB      |   16,777,215   | &nbsp; |
 
 
@@ -286723,56 +286723,56 @@ CREATE TABLE `zt_userview`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| YEARCASECNT        | 累计创建用例数  | INTEGER      |   -1   | &nbsp; |
+| ACCOUNT        | 账号  | VARCHAR      |   100   | &nbsp; |
+| ADDRESS        | 通讯地址  | VARCHAR      |   120   | &nbsp; |
+| AVATAR        | avatar  | VARCHAR      |   30   | &nbsp; |
+| BIRTHDAY        | birthday  | DATETIME      |   -1   | &nbsp; |
+| CLIENTLANG        | clientLang  | VARCHAR      |   10   | &nbsp; |
 | CLIENTSTATUS        | clientStatus  | VARCHAR      |   7   | &nbsp; |
 | COMMITER        | 源代码账户  | VARCHAR      |   100   | &nbsp; |
-| SKYPE        | skype  | VARCHAR      |   90   | &nbsp; |
 | CURMONTH        | 当前月  | VARCHAR      |   200   | &nbsp; |
-| YEARACTIONCNT        | 累计动态数  | INTEGER      |   -1   | &nbsp; |
-| IP        | ip  | VARCHAR      |   15   | &nbsp; |
-| PHONE        | 电话  | VARCHAR      |   20   | &nbsp; |
-| SCORELEVEL        | scoreLevel  | INTEGER      |   -1   | &nbsp; |
-| ID        | 用户编号  |       |   20   | 主键&nbsp; |
-| NICKNAME        | nickname  | VARCHAR      |   60   | &nbsp; |
-| YEARPRODUCTCNT        | 累计参与产品数  | INTEGER      |   -1   | &nbsp; |
-| MOBILE        | 手机  | VARCHAR      |   11   | &nbsp; |
-| QQ        | QQ  | VARCHAR      |   20   | &nbsp; |
-| WHATSAPP        | whatsapp  | VARCHAR      |   90   | &nbsp; |
-| MONTHFINISHTASK        | 月完成任务数  | INTEGER      |   -1   | &nbsp; |
-| CLIENTLANG        | clientLang  | VARCHAR      |   10   | &nbsp; |
-| FAILS        | fails  | INTEGER      |   -1   | &nbsp; |
-| WEIXIN        | 微信  | VARCHAR      |   90   | &nbsp; |
-| ADDRESS        | 通讯地址  | VARCHAR      |   120   | &nbsp; |
-| YEARSTORYCNT        | 累计创建需求数  | INTEGER      |   -1   | &nbsp; |
-| VISITS        | 累计登录次数  | INTEGER      |   -1   | &nbsp; |
-| PASSWORD        | 密码  | VARCHAR      |   32   | &nbsp; |
-| ROLE        | 角色  | VARCHAR      |   100   | &nbsp; |
+| CURYEAR        | 年度  | VARCHAR      |   200   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
+| DEPT        | 部门编号  | VARCHAR      |   60   | &nbsp; |
 | DINGDING        | 钉钉  | VARCHAR      |   90   | &nbsp; |
 | EMAIL        | 邮箱  | VARCHAR      |   90   | &nbsp; |
-| CURYEAR        | 年度  | VARCHAR      |   200   | &nbsp; |
-| LOCKED        | locked  | DATETIME      |   -1   | &nbsp; |
-| SLACK        | slack  | VARCHAR      |   90   | &nbsp; |
-| DEPT        | 部门编号  | VARCHAR      |   60   | &nbsp; |
-| JOIN        | 入职日期  | DATETIME      |   -1   | &nbsp; |
-| TITLE        | 标题  | VARCHAR      |   200   | &nbsp; |
-| BIRTHDAY        | birthday  | DATETIME      |   -1   | &nbsp; |
-| ACCOUNT        | 账号  | VARCHAR      |   100   | &nbsp; |
-| YEARVISITS        | 累计登录次数  | INTEGER      |   -1   | &nbsp; |
-| MONTRESOLVEDBUG        | 月解决Bug数  | INTEGER      |   -1   | &nbsp; |
-| REALNAME        | 真实用户名  | VARCHAR      |   100   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| RANZHI        | ranzhi  | VARCHAR      |   30   | &nbsp; |
-| AVATAR        | avatar  | VARCHAR      |   30   | &nbsp; |
+| FAILS        | fails  | INTEGER      |   -1   | &nbsp; |
 | GENDER        | 性别  | VARCHAR      |   1   | &nbsp; |
-| LAST        | 最后登录  | INTEGER      |   -1   | &nbsp; |
-| YEARLOGCNT        | 累计日志数  | INTEGER      |   -1   | &nbsp; |
-| SCORE        | score  | INTEGER      |   -1   | &nbsp; |
-| YEARESTIMATECNT        | 累计工时数  | INTEGER      |   -1   | &nbsp; |
-| YEARPLANCNT        | 累计创建计划数  | INTEGER      |   -1   | &nbsp; |
-| MONTESTIMATE        | 月累计工时  | INTEGER      |   -1   | &nbsp; |
-| ZIPCODE        | zipcode  | VARCHAR      |   10   | &nbsp; |
-| YEARBUGCNT        | 累计创建Bug数  | INTEGER      |   -1   | &nbsp; |
+| ID        | 用户编号  |       |   20   | 主键&nbsp; |
+| IP        | ip  | VARCHAR      |   15   | &nbsp; |
+| JOIN        | 入职日期  | DATETIME      |   -1   | &nbsp; |
 | JUDGEROLE        | 判断角色  | VARCHAR      |   100   | &nbsp; |
+| LAST        | 最后登录  | INTEGER      |   -1   | &nbsp; |
+| LOCKED        | locked  | DATETIME      |   -1   | &nbsp; |
+| MOBILE        | 手机  | VARCHAR      |   11   | &nbsp; |
+| MONTESTIMATE        | 月累计工时  | INTEGER      |   -1   | &nbsp; |
+| MONTHFINISHTASK        | 月完成任务数  | INTEGER      |   -1   | &nbsp; |
+| MONTRESOLVEDBUG        | 月解决Bug数  | INTEGER      |   -1   | &nbsp; |
+| NICKNAME        | nickname  | VARCHAR      |   60   | &nbsp; |
+| PASSWORD        | 密码  | VARCHAR      |   32   | &nbsp; |
+| PHONE        | 电话  | VARCHAR      |   20   | &nbsp; |
+| QQ        | QQ  | VARCHAR      |   20   | &nbsp; |
+| RANZHI        | ranzhi  | VARCHAR      |   30   | &nbsp; |
+| REALNAME        | 真实用户名  | VARCHAR      |   100   | &nbsp; |
+| ROLE        | 角色  | VARCHAR      |   100   | &nbsp; |
+| SCORE        | score  | INTEGER      |   -1   | &nbsp; |
+| SCORELEVEL        | scoreLevel  | INTEGER      |   -1   | &nbsp; |
+| SKYPE        | skype  | VARCHAR      |   90   | &nbsp; |
+| SLACK        | slack  | VARCHAR      |   90   | &nbsp; |
+| TITLE        | 标题  | VARCHAR      |   200   | &nbsp; |
+| VISITS        | 累计登录次数  | INTEGER      |   -1   | &nbsp; |
+| WEIXIN        | 微信  | VARCHAR      |   90   | &nbsp; |
+| WHATSAPP        | whatsapp  | VARCHAR      |   90   | &nbsp; |
+| YEARACTIONCNT        | 累计动态数  | INTEGER      |   -1   | &nbsp; |
+| YEARBUGCNT        | 累计创建Bug数  | INTEGER      |   -1   | &nbsp; |
+| YEARCASECNT        | 累计创建用例数  | INTEGER      |   -1   | &nbsp; |
+| YEARESTIMATECNT        | 累计工时数  | INTEGER      |   -1   | &nbsp; |
+| YEARLOGCNT        | 累计日志数  | INTEGER      |   -1   | &nbsp; |
+| YEARPLANCNT        | 累计创建计划数  | INTEGER      |   -1   | &nbsp; |
+| YEARPRODUCTCNT        | 累计参与产品数  | INTEGER      |   -1   | &nbsp; |
+| YEARSTORYCNT        | 累计创建需求数  | INTEGER      |   -1   | &nbsp; |
+| YEARVISITS        | 累计登录次数  | INTEGER      |   -1   | &nbsp; |
+| ZIPCODE        | zipcode  | VARCHAR      |   10   | &nbsp; |
 
 
 
@@ -288643,24 +288643,24 @@ CREATE TABLE `zt_user`(
 
 | 字段        |    中文名称    | 类型    |  数长度  |  备注  |
 | --------   |------------| :-----:   | :----: | :--------- | 
-| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
-| SECRET        | secret  | VARCHAR      |   255   | &nbsp; |
-| TYPE        | type  | VARCHAR      |   15   | &nbsp; |
-| ID        | id  |       |   -1   | 主键&nbsp; |
-| PRODUCTS        | products  | CLOB      |   65,535   | &nbsp; |
-| PARAMS        | params  | VARCHAR      |   100   | &nbsp; |
-| PROJECTS        | projects  | CLOB      |   65,535   | &nbsp; |
-| DESC        | desc  | CLOB      |   65,535   | &nbsp; |
-| NAME        | name  | VARCHAR      |   50   | &nbsp; |
-| URL        | url  | VARCHAR      |   255   | &nbsp; |
-| CONTENTTYPE        | contentType  | VARCHAR      |   30   | &nbsp; |
 | ACTIONS        | actions  | CLOB      |   65,535   | &nbsp; |
-| DOMAIN        | domain  | VARCHAR      |   255   | &nbsp; |
-| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
-| SENDTYPE        | sendType  | VARCHAR      |   5   | &nbsp; |
+| CONTENTTYPE        | contentType  | VARCHAR      |   30   | &nbsp; |
 | CREATEDBY        | createdBy  | VARCHAR      |   30   | &nbsp; |
 | CREATEDDATE        | createdDate  | DATETIME      |   -1   | &nbsp; |
+| DELETED        | 逻辑删除标志  | VARCHAR      |   1   | &nbsp; |
+| DESC        | desc  | CLOB      |   65,535   | &nbsp; |
+| DOMAIN        | domain  | VARCHAR      |   255   | &nbsp; |
+| EDITEDBY        | editedBy  | VARCHAR      |   30   | &nbsp; |
 | EDITEDDATE        | editedDate  | DATETIME      |   -1   | &nbsp; |
+| ID        | id  |       |   -1   | 主键&nbsp; |
+| NAME        | name  | VARCHAR      |   50   | &nbsp; |
+| PARAMS        | params  | VARCHAR      |   100   | &nbsp; |
+| PRODUCTS        | products  | CLOB      |   65,535   | &nbsp; |
+| PROJECTS        | projects  | CLOB      |   65,535   | &nbsp; |
+| SECRET        | secret  | VARCHAR      |   255   | &nbsp; |
+| SENDTYPE        | sendType  | VARCHAR      |   5   | &nbsp; |
+| TYPE        | type  | VARCHAR      |   15   | &nbsp; |
+| URL        | url  | VARCHAR      |   255   | &nbsp; |
 
 
 

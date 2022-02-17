@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSSubSysSADEFallback implements PSSubSysSADEFeignClient {
 
-    public Page<PSSubSysSADE> select() {
-        return null;
-    }
-
     public PSSubSysSADE create(PSSubSysSADE et) {
         return null;
     }
     public Boolean createBatch(List<PSSubSysSADE> pssubsyssades) {
-        return false;
-    }
-
-    public PSSubSysSADE update(String pssubsyssadeid, PSSubSysSADE et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSSubSysSADE> pssubsyssades) {
-        return false;
-    }
-
-
-    public Boolean remove(String pssubsyssadeid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class PSSubSysSADEFallback implements PSSubSysSADEFeignClient {
     }
 
 
-    public PSSubSysSADE getDraft(PSSubSysSADE entity){
-        return null;
+    public Boolean remove(String pssubsyssadeid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSSubSysSADE update(String pssubsyssadeid, PSSubSysSADE et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSSubSysSADE> pssubsyssades) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSSubSysSADE et) {
         return false;
     }
+
+
+    public Page<PSSubSysSADE> searchDefault(PSSubSysSADESearchContext context) {
+        return null;
+    }
+
+
+    public PSSubSysSADE getDraft(PSSubSysSADE entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSSubSysSADE et) {
@@ -76,9 +77,8 @@ public class PSSubSysSADEFallback implements PSSubSysSADEFeignClient {
         return false;
     }
 
-    public Page<PSSubSysSADE> searchDefault(PSSubSysSADESearchContext context) {
+    public Page<PSSubSysSADE> select() {
         return null;
     }
-
 
 }

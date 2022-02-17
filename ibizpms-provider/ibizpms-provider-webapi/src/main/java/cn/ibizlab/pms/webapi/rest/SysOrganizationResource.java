@@ -47,7 +47,7 @@ public class SysOrganizationResource {
     @Lazy
     public SysOrganizationMapping sysorganizationMapping;
 
-    @PreAuthorize("hasPermission(this.sysorganizationMapping.toDomain(#sysorganizationdto),'pms-SysOrganization-Create')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-Create-all')")
     @ApiOperation(value = "新建单位", tags = {"单位" },  notes = "新建单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations")
     public ResponseEntity<SysOrganizationDTO> create(@Validated @RequestBody SysOrganizationDTO sysorganizationdto) {
@@ -57,7 +57,7 @@ public class SysOrganizationResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationMapping.toDomain(#sysorganizationdtos),'pms-SysOrganization-Create')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-Create-all')")
     @ApiOperation(value = "批量新建单位", tags = {"单位" },  notes = "批量新建单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<SysOrganizationDTO> sysorganizationdtos) {
@@ -65,7 +65,7 @@ public class SysOrganizationResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PostAuthorize("hasPermission(this.sysorganizationMapping.toDomain(returnObject.body),'pms-SysOrganization-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-Get-all')")
     @ApiOperation(value = "获取单位", tags = {"单位" },  notes = "获取单位")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/{sysorganization_id}")
     public ResponseEntity<SysOrganizationDTO> get(@PathVariable("sysorganization_id") String sysorganization_id) {
@@ -74,14 +74,14 @@ public class SysOrganizationResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationService.get(#sysorganization_id),'pms-SysOrganization-Remove')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-Remove-all')")
     @ApiOperation(value = "删除单位", tags = {"单位" },  notes = "删除单位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/{sysorganization_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysorganization_id") String sysorganization_id) {
          return ResponseEntity.status(HttpStatus.OK).body(sysorganizationService.remove(sysorganization_id));
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationService.getSysorganizationByIds(#ids),'pms-SysOrganization-Remove')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-Remove-all')")
     @ApiOperation(value = "批量删除单位", tags = {"单位" },  notes = "批量删除单位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysorganizations/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -90,7 +90,7 @@ public class SysOrganizationResource {
     }
 
     @VersionCheck(entity = "sysorganization" , versionfield = "updatedate")
-    @PreAuthorize("hasPermission(this.sysorganizationService.get(#sysorganization_id),'pms-SysOrganization-Update')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-Update-all')")
     @ApiOperation(value = "更新单位", tags = {"单位" },  notes = "更新单位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/{sysorganization_id}")
     public ResponseEntity<SysOrganizationDTO> update(@PathVariable("sysorganization_id") String sysorganization_id, @RequestBody SysOrganizationDTO sysorganizationdto) {
@@ -101,7 +101,7 @@ public class SysOrganizationResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationService.getSysorganizationByEntities(this.sysorganizationMapping.toDomain(#sysorganizationdtos)),'pms-SysOrganization-Update')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-Update-all')")
     @ApiOperation(value = "批量更新单位", tags = {"单位" },  notes = "批量更新单位")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysorganizations/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<SysOrganizationDTO> sysorganizationdtos) {
@@ -122,7 +122,7 @@ public class SysOrganizationResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysorganizationMapping.toDto(sysorganizationService.getDraft(domain)));
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationMapping.toDomain(#sysorganizationdto),'pms-SysOrganization-Save')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-Save-all')")
     @ApiOperation(value = "保存单位", tags = {"单位" },  notes = "保存单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/save")
     public ResponseEntity<SysOrganizationDTO> save(@RequestBody SysOrganizationDTO sysorganizationdto) {
@@ -131,7 +131,7 @@ public class SysOrganizationResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysorganizationMapping.toDto(domain));
     }
 
-    @PreAuthorize("hasPermission(this.sysorganizationMapping.toDomain(#sysorganizationdtos),'pms-SysOrganization-Save')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-Save-all')")
     @ApiOperation(value = "批量保存单位", tags = {"单位" },  notes = "批量保存单位")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<SysOrganizationDTO> sysorganizationdtos) {
@@ -139,7 +139,7 @@ public class SysOrganizationResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-searchDefault-all') and hasPermission(#context,'pms-SysOrganization-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-searchDefault-all')")
 	@ApiOperation(value = "获取数据集", tags = {"单位" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.GET , value="/sysorganizations/fetchdefault")
 	public ResponseEntity<List<SysOrganizationDTO>> fetchDefault(SysOrganizationSearchContext context) {
@@ -152,7 +152,7 @@ public class SysOrganizationResource {
                 .body(list);
 	}
 
-    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-searchDefault-all') and hasPermission(#context,'pms-SysOrganization-Get')")
+    @PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN','pms-SysOrganization-searchDefault-all')")
 	@ApiOperation(value = "查询数据集", tags = {"单位" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysorganizations/searchdefault")
 	public ResponseEntity<Page<SysOrganizationDTO>> searchDefault(@RequestBody SysOrganizationSearchContext context) {

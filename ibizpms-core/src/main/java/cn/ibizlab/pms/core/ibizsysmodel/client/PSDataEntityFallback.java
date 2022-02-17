@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class PSDataEntityFallback implements PSDataEntityFeignClient {
 
-    public Page<PSDataEntity> select() {
-        return null;
-    }
-
     public PSDataEntity create(PSDataEntity et) {
         return null;
     }
     public Boolean createBatch(List<PSDataEntity> psdataentities) {
-        return false;
-    }
-
-    public PSDataEntity update(String psdataentityid, PSDataEntity et) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSDataEntity> psdataentities) {
-        return false;
-    }
-
-
-    public Boolean remove(String psdataentityid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class PSDataEntityFallback implements PSDataEntityFeignClient {
     }
 
 
-    public PSDataEntity getDraft(PSDataEntity entity){
-        return null;
+    public Boolean remove(String psdataentityid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public PSDataEntity update(String psdataentityid, PSDataEntity et) {
+        return null;
+    }
+    public Boolean updateBatch(List<PSDataEntity> psdataentities) {
+        return false;
+    }
 
 
     public Boolean checkKey(PSDataEntity et) {
         return false;
     }
+
+
+    public Page<PSDataEntity> searchDefault(PSDataEntitySearchContext context) {
+        return null;
+    }
+
+
+    public PSDataEntity getDraft(PSDataEntity entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(PSDataEntity et) {
@@ -76,9 +77,8 @@ public class PSDataEntityFallback implements PSDataEntityFeignClient {
         return false;
     }
 
-    public Page<PSDataEntity> searchDefault(PSDataEntitySearchContext context) {
+    public Page<PSDataEntity> select() {
         return null;
     }
-
 
 }

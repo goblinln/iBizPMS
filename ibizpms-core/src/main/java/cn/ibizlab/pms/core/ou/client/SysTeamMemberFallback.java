@@ -19,29 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SysTeamMemberFallback implements SysTeamMemberFeignClient {
 
-    public Page<SysTeamMember> select() {
-        return null;
-    }
-
     public SysTeamMember create(SysTeamMember et) {
         return null;
     }
     public Boolean createBatch(List<SysTeamMember> systeammembers) {
-        return false;
-    }
-
-    public SysTeamMember update(String teammemberid, SysTeamMember et) {
-        return null;
-    }
-    public Boolean updateBatch(List<SysTeamMember> systeammembers) {
-        return false;
-    }
-
-
-    public Boolean remove(String teammemberid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
         return false;
     }
 
@@ -55,15 +36,35 @@ public class SysTeamMemberFallback implements SysTeamMemberFeignClient {
     }
 
 
-    public SysTeamMember getDraft(SysTeamMember entity){
-        return null;
+    public Boolean remove(String teammemberid) {
+        return false;
+    }
+    public Boolean removeBatch(Collection<String> idList) {
+        return false;
     }
 
+    public SysTeamMember update(String teammemberid, SysTeamMember et) {
+        return null;
+    }
+    public Boolean updateBatch(List<SysTeamMember> systeammembers) {
+        return false;
+    }
 
 
     public Boolean checkKey(SysTeamMember et) {
         return false;
     }
+
+
+    public Page<SysTeamMember> searchDefault(SysTeamMemberSearchContext context) {
+        return null;
+    }
+
+
+    public SysTeamMember getDraft(SysTeamMember entity){
+        return null;
+    }
+
 
 
     public Object saveEntity(SysTeamMember et) {
@@ -76,9 +77,8 @@ public class SysTeamMemberFallback implements SysTeamMemberFeignClient {
         return false;
     }
 
-    public Page<SysTeamMember> searchDefault(SysTeamMemberSearchContext context) {
+    public Page<SysTeamMember> select() {
         return null;
     }
-
 
 }

@@ -19,29 +19,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSubSysSADE", fallback = PSSubSysSADEFallback.class)
 public interface PSSubSysSADEFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/select")
-    Page<PSSubSysSADE> select();
-
-
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades")
     PSSubSysSADE create(@RequestBody PSSubSysSADE et);
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/batch")
     Boolean createBatch(@RequestBody List<PSSubSysSADE> pssubsyssades);
-
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssubsyssades/{pssubsyssadeid}")
-    PSSubSysSADE update(@PathVariable("pssubsyssadeid") String pssubsyssadeid, @RequestBody PSSubSysSADE et);
-
-    @RequestMapping(method = RequestMethod.PUT, value = "/pssubsyssades/batch")
-    Boolean updateBatch(@RequestBody List<PSSubSysSADE> pssubsyssades);
-
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsyssades/{pssubsyssadeid}")
-    Boolean remove(@PathVariable("pssubsyssadeid") String pssubsyssadeid);
-
-    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsyssades/batch}")
-    Boolean removeBatch(@RequestBody Collection<String> idList);
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/{pssubsyssadeid}")
@@ -51,12 +33,31 @@ public interface PSSubSysSADEFeignClient {
     String getByCodeName(@PathVariable("pssubsyssadeid") String codeName);
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/getdraft")
-    PSSubSysSADE getDraft(PSSubSysSADE entity);
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsyssades/{pssubsyssadeid}")
+    Boolean remove(@PathVariable("pssubsyssadeid") String pssubsyssadeid);
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/pssubsyssades/batch}")
+    Boolean removeBatch(@RequestBody Collection<String> idList);
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssubsyssades/{pssubsyssadeid}")
+    PSSubSysSADE update(@PathVariable("pssubsyssadeid") String pssubsyssadeid, @RequestBody PSSubSysSADE et);
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/pssubsyssades/batch")
+    Boolean updateBatch(@RequestBody List<PSSubSysSADE> pssubsyssades);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/checkkey")
     Boolean checkKey(@RequestBody PSSubSysSADE et);
+
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/searchdefault")
+    Page<PSSubSysSADE> searchDefault(@RequestBody PSSubSysSADESearchContext context);
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/getdraft")
+    PSSubSysSADE getDraft(PSSubSysSADE entity);
 
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/save")
@@ -68,9 +69,8 @@ public interface PSSubSysSADEFeignClient {
     Boolean saveBatch(@RequestBody List<PSSubSysSADE> pssubsyssades);
 
 
-
-    @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/searchdefault")
-    Page<PSSubSysSADE> searchDefault(@RequestBody PSSubSysSADESearchContext context);
+    @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/select")
+    Page<PSSubSysSADE> select();
 
 
 }

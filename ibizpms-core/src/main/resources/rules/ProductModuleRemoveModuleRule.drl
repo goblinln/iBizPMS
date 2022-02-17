@@ -5,8 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.util.StringUtils;
 import org.springframework.util.ObjectUtils;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
-global cn.ibizlab.pms.core.zentao.domain.Module productmoduleremovemodulemodule;
 global cn.ibizlab.pms.core.ibiz.domain.ProductModule productmoduleremovemoduledefault;
+global cn.ibizlab.pms.core.zentao.domain.Module productmoduleremovemodulemodule;
 global cn.ibizlab.pms.core.zentao.service.IModuleService moduleservice;
 global cn.ibizlab.pms.core.ibiz.service.IProductModuleService iBzSysProductmoduleDefaultService;
 global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
@@ -14,14 +14,11 @@ global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
 
 no-loop
 
-//逻辑处理节点[设置模块参数]
-rule "prepareparam1"
-ruleflow-group "productmoduleremovemoduleprepareparam1"
+//逻辑处理节点[开始]
+rule "begin"
+ruleflow-group "productmoduleremovemodulebegin"
     when
     then
-    productmoduleremovemodulemodule.set("id",productmoduleremovemoduledefault.get("id"));
-    update(productmoduleremovemodulemodule);//更新fact中变量值
-    update(productmoduleremovemoduledefault);//更新fact中变量值
     end
 
 //逻辑处理节点[模块删除]
@@ -30,14 +27,17 @@ ruleflow-group "productmoduleremovemoduledeaction1"
     when
     then
     moduleservice.remove(productmoduleremovemodulemodule.getId());
-    update(productmoduleremovemodulemodule);//更新fact中变量值
     update(productmoduleremovemoduledefault);//更新fact中变量值
+    update(productmoduleremovemodulemodule);//更新fact中变量值
     end
 
-//逻辑处理节点[开始]
-rule "begin"
-ruleflow-group "productmoduleremovemodulebegin"
+//逻辑处理节点[设置模块参数]
+rule "prepareparam1"
+ruleflow-group "productmoduleremovemoduleprepareparam1"
     when
     then
+    productmoduleremovemodulemodule.set("id",productmoduleremovemoduledefault.get("id"));
+    update(productmoduleremovemoduledefault);//更新fact中变量值
+    update(productmoduleremovemodulemodule);//更新fact中变量值
     end
 
